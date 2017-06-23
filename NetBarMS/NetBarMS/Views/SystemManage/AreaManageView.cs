@@ -27,11 +27,14 @@ namespace NetBarMS.Views.SystemManage
             Operation,                     //操作
         }
 
-        private IList<StructDictItem> areas;            //所有的区域
-        private List<string> areaCodes = new List<string>();            //所有的区域编码
-
-        private SimpleButton selectArea = null;                //当前选择的区域
-        private List<SimpleButton> selectButtons = new List<SimpleButton>();                //当前选择的区域
+        //所有的区域
+        private IList<StructDictItem> areas;        
+        //所有的区域编码         
+        private List<string> areaCodes = new List<string>();
+        //当前选择的区域
+        private SimpleButton selectArea = null;
+        //当前选择的按钮            
+        private List<SimpleButton> selectButtons = new List<SimpleButton>();                
 
         AreaSettingManage areaManage = new AreaSettingManage();
 
@@ -42,7 +45,7 @@ namespace NetBarMS.Views.SystemManage
             InitUI();
         }
 
-        //初始化UI
+        #region 初始化UI
         private void InitUI()
         {
             ToolsManage.SetGridView(this.gridView1, GridControlType.AreaManage, out this.mainDataTable);
@@ -59,15 +62,15 @@ namespace NetBarMS.Views.SystemManage
             //获取区域列表
             GetAreaList();
         }
+        #endregion
 
-      
-        #region 获取会员等级列表
+        #region 获取区域列表
         private void GetAreaList()
         {
             SystemManageNetOperation.GetAreaList(GetAreaListResult);
 
         }
-        //获取会员等级设置的结果回调
+        //获取区域列表
         private void GetAreaListResult(ResultModel result)
         {
             System.Console.WriteLine("GetAreaList:" + result.pack);
@@ -81,6 +84,8 @@ namespace NetBarMS.Views.SystemManage
                 NetMessageManage.Manager().RemoveResultBlock(GetAreaListResult);
                 this.Invoke(new UIHandleBlock(delegate
                 {
+                    SysManage.Manage().UpdateAreaData(result.pack.Content.ScSysInfo.ChildList);
+
                     areas = result.pack.Content.ScSysInfo.ChildList;
                     areaCodes.Clear();
                     foreach (StructDictItem item in areas)

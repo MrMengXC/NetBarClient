@@ -72,25 +72,34 @@ namespace NetBarMS.Views.ProductManage
         #region 初始化UI
         private void InitUI()
         {
-            this.productTypes = null;
-            SysManage.Manage().GetProductTypes(out this.productTypes);
-            if (productTypes != null)
-            {
-                //初始化ComboBoxEdit
-                for (int i = 0; i < productTypes.Count(); i++)
+            SysManage.GetProductTypesHandle handle = new SysManage.GetProductTypesHandle(delegate (List<StructDictItem> types) {
+                this.Invoke(new UIHandleBlock(delegate
                 {
-                    StructDictItem item = productTypes[i];
+                    handle = null;
+                    this.productTypes = types.ToList<StructDictItem>();
+                    //初始化ComboBoxEdit
+                    for (int i = 0; i < productTypes.Count(); i++)
+                    {
+                        StructDictItem item = productTypes[i];
 
-                    this.comboBoxEdit1.Properties.Items.Add(item.GetItem(0));
-                }
-            }
-            // 设置 comboBox的文本值不能被编辑
-            this.comboBoxEdit1.Properties.TextEditStyle = TextEditStyles.DisableTextEditor;
+                        this.comboBoxEdit1.Properties.Items.Add(item.GetItem(0));
+                    }
 
-            ToolsManage.SetGridView(this.gridView1, GridControlType.ProductManage, out this.mainDataTable,ColumnButtonClick,null);
-            this.gridControl1.DataSource = this.mainDataTable;
+                    // 设置 comboBox的文本值不能被编辑
+                    this.comboBoxEdit1.Properties.TextEditStyle = TextEditStyles.DisableTextEditor;
 
-            GetProductList();
+                    ToolsManage.SetGridView(this.gridView1, GridControlType.ProductManage, out this.mainDataTable, ColumnButtonClick, null);
+                    this.gridControl1.DataSource = this.mainDataTable;
+
+                    GetProductList();
+                   
+                }));
+            });
+
+            //首先要获取产品列表数组
+            SysManage.Manage().GetProductTypes(handle);
+          
+       
         }
         #endregion
 

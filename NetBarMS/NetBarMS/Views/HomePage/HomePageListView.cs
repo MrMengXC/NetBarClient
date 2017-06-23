@@ -97,7 +97,7 @@ namespace NetBarMS.Views.HomePage
             DataRow row = this.mainDataTable.NewRow();
             this.mainDataTable.Rows.Add(row);
             row[TitleList.EpNumber.ToString()] = computer.Computer;
-            row[TitleList.Area.ToString()] = SysManage.Manage().GetArea(computer.Area);
+            row[TitleList.Area.ToString()] = SysManage.Manage().GetAreaName(computer.Area);
             row[TitleList.State.ToString()] = computer.Status;
             row[TitleList.IdCard.ToString()] = computer.Cardnumber;
             row[TitleList.CardType.ToString()] = computer.Usertype;

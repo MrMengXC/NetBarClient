@@ -23,22 +23,21 @@ namespace NetBarMS.Views.OtherMain
             this.loginButton.Click += LoginButtonClick;
         }
 
-       
 
-        /// <summary>
-        /// 连接服务器的回调
-        /// </summary>
+        #region 进行准备工作连接服务器进行服务器认证
+
+        // 连接服务器的回调
         public void ConnectResultBlock()
         {
             System.Console.WriteLine("ConnectBlock");
             //进行客户端认证
             ManagerNetOperation.ClientAuthen(ClientAuthenBlock);
+            //获取提前预知信息
+            SysManage.Manage().RequestSysInfo();
         }
 
-        /// <summary>
-        /// 服务器认证的回调
-        /// </summary>
-        /// <param name="result"></param>
+        
+        // 服务器认证的回调
         public void ClientAuthenBlock(ResultModel result)
         {
             if (result.pack.Cmd == Cmd.CMD_AUTHEN)
@@ -47,7 +46,9 @@ namespace NetBarMS.Views.OtherMain
                 System.Console.WriteLine(result.pack);
             }
         }
+        #endregion
 
+        #region 进行登录
         //进行登录
         private void LoginButtonClick(object sender, EventArgs e)
         {
@@ -57,10 +58,7 @@ namespace NetBarMS.Views.OtherMain
             //this.FindForm().Close();
         }
 
-        /// <summary>
-        /// 管理员登录回调
-        /// </summary>
-        /// <param name="result"></param>
+        // 管理员登录回调
         public void ManagerLoginBlock(ResultModel result)
         {
 
@@ -75,5 +73,6 @@ namespace NetBarMS.Views.OtherMain
 
             }
         }
+        #endregion
     }
 }

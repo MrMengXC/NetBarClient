@@ -35,21 +35,28 @@ namespace NetBarMS.Views.ProductManage
         //初始化UI
         private void InitUI()
         {
-            this.productTypes = null;
-            SysManage.Manage().GetProductTypes(out this.productTypes);
-            if(productTypes != null)
-            {
-                //初始化ComboBoxEdit
-                for (int i = 0; i < productTypes.Count(); i++)
+            SysManage.GetProductTypesHandle handle = new SysManage.GetProductTypesHandle(delegate (List<StructDictItem> types) {
+                this.Invoke(new UIHandleBlock(delegate
                 {
-                    StructDictItem item = this.productTypes[i];
-                    this.comboBoxEdit1.Properties.Items.Add(item.GetItem(0));
-                }
-            }
-            // 设置 comboBox的文本值不能被编辑
-            this.comboBoxEdit1.Properties.TextEditStyle = TextEditStyles.DisableTextEditor;
+                    handle = null;
+                    this.productTypes = types.ToList<StructDictItem>();
+                    //初始化ComboBoxEdit
+                    for (int i = 0; i < productTypes.Count(); i++)
+                    {
+                        StructDictItem item = this.productTypes[i];
+                        this.comboBoxEdit1.Properties.Items.Add(item.GetItem(0));
+                    }
 
-           
+                    // 设置 comboBox的文本值不能被编辑
+                    this.comboBoxEdit1.Properties.TextEditStyle = TextEditStyles.DisableTextEditor;
+                    // 设置 comboBox的文本值不能被编辑
+                    this.comboBoxEdit1.Properties.TextEditStyle = TextEditStyles.DisableTextEditor;
+                   
+                }));
+            });
+
+            //首先要获取产品列表数组
+            SysManage.Manage().GetProductTypes(handle);
         }
         //刷新UI
         private void RefreshUI()

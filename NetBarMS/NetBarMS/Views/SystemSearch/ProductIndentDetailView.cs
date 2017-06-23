@@ -101,7 +101,7 @@ namespace NetBarMS.Views.SystemSearch
         {
             DataRow row = this.mainDataTable.NewRow();
             this.mainDataTable.Rows.Add(row);
-            row[TitleList.Type.ToString()] = detail.Category;
+            row[TitleList.Type.ToString()] = SysManage.Manage().GetProductTypeName(detail.Category);
             row[TitleList.Name.ToString()] = detail.Goodsname;
             row[TitleList.Price.ToString()] = detail.Price;
             row[TitleList.Num.ToString()] = detail.Num;
