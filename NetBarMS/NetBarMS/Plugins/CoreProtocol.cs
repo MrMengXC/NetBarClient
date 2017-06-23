@@ -375,59 +375,58 @@ public static partial class CoreProtocol {
           "EwoLYWRkdGltZV9lbmQYBCABKAkSFgoOcHJvY3RpbWVfc3RhcnQYBSABKAkS", 
           "FAoMcHJvY3RpbWVfZW5kGAYgASgJEhAKCHVzZXJuYW1lGAcgASgJIisKC1ND", 
           "T3JkZXJMaXN0EhwKBm9yZGVycxgBIAMoCzIMLlN0cnVjdE9yZGVyIiAKDUNT", 
-          "T3JkZXJEZXRhaWwSDwoHb3JkZXJpZBgBIAIoBSJdCg1TQ09yZGVyRGV0YWls", 
-          "Eg8KB29yZGVyaWQYASACKAUSDwoHYWRkdGltZRgCIAIoCRINCgVtb25leRgD", 
-          "IAIoBRIbCgVnb29kcxgEIAMoCzIMLlN0cnVjdEdvb2RzIhkKB0NTTG9nb24S", 
-          "DgoGY2FyZG5vGAEgAigJIgoKCENTTG9nb2ZmIhwKCENTSGFuZ3VwEhAKCHBh", 
-          "c3N3b3JkGAEgAigJIioKDENTVXBsb2FkSGVhZBIMCgR0eXBlGAEgASgFEgwK", 
-          "BGRhdGEYAiABKAkiGwoMU0NVcGxvYWRIZWFkEgsKA3VybBgBIAEoCSIeCgtD", 
-          "U0NoZWNrTmFtZRIPCgduZXdOYW1lGAEgAigJIh0KC1NDQ2hlY2tOYW1lEg4K", 
-          "BnJlc3VsdBgBIAEoBSIyCg5DU0NoZWNrQWNjb3VudBIOCgZ1c2VySWQYASAC", 
-          "KAkSEAoIcGFzc3dvcmQYAiACKAkiIAoOU0NDaGVja0FjY291bnQSDgoGcmVz", 
-          "dWx0GAEgAigFIkQKC0NTUmVjb25uZWN0Eg4KBnVzZXJJZBgBIAIoCRIQCghw", 
-          "YXNzd29yZBgCIAIoCRITCgtkZXZpY2VUb2tlbhgDIAEoCSIuCgtTQ1JlY29u", 
-          "bmVjdBIRCglzZXNzaW9uSWQYASACKAUSDAoEZ3VpZBgCIAEoBSr+DQoDQ21k", 
-          "EhIKDUNNRF9HRVRTRVJWRVIQ6AcSDwoKQ01EX0FVVEhFThDpBxIOCglDTURf", 
-          "TE9HSU4Q6gcSFQoQQ01EX0FDQ09VTlRfSU5GTxDrBxIWChFDTURfUkVBTFRJ", 
-          "TUVfSU5GTxDsBxISCg1DTURfUk9MRV9MSVNUEPIHEhEKDENNRF9ST0xFX0FE", 
-          "RBDzBxIRCgxDTURfUk9MRV9ERUwQ9AcSFAoPQ01EX1JPTEVfVVBEQVRFEPUH", 
-          "EhQKD0NNRF9ST0xFX1JJR0hUUxD2BxITCg5DTURfQURNSU5fTElTVBD8BxIS", 
-          "Cg1DTURfQURNSU5fQUREEP0HEhIKDUNNRF9BRE1JTl9ERUwQ/gcSFQoQQ01E", 
-          "X0FETUlOX1VQREFURRD/BxITCg5DTURfQURNSU5fRklORBCACBISCg1DTURf", 
-          "QURNSU5fU05TEIEIEhYKEUNNRF9DT01QVVRFUl9MSVNUEJAIEhUKEENNRF9D", 
-          "T01QVVRFUl9BREQQkQgSFQoQQ01EX0NPTVBVVEVSX0RFTBCSCBIYChNDTURf", 
-          "Q09NUFVURVJfVVBEQVRFEJMIEhYKEUNNRF9DT01QVVRFUl9GSU5EEJQIEhYK", 
-          "EUNNRF9DT01QVVRFUl9PUEVOEJUIEhcKEkNNRF9DT01QVVRFUl9DTE9TRRCW", 
-          "CBIUCg9DTURfTUVNQkVSX0xJU1QQmggSEwoOQ01EX01FTUJFUl9BREQQmwgS", 
-          "EwoOQ01EX01FTUJFUl9ERUwQnAgSFgoRQ01EX01FTUJFUl9VUERBVEUQnQgS", 
-          "FAoPQ01EX01FTUJFUl9GSU5EEJ4IEhkKFENNRF9NRU1CRVJfQ0FSRF9JTkZP", 
-          "EJ8IEh0KGENNRF9NRU1CRVJfQ09OU1VNX1JFQ09SRBCgCBIdChhDTURfTUVN", 
-          "QkVSX0NPTlNVTV9GSUxURVIQoQgSFgoRQ01EX01FTUJFUl9WRVJJRlkQoggS", 
-          "GQoUQ01EX1NZU19CSUxMSU5HX0xJU1QQpAgSGwoWQ01EX1NZU19CSUxMSU5H", 
-          "X1VQREFURRClCBIRCgxDTURfU1lTX0lORk8QpggSEAoLQ01EX1NZU19BREQQ", 
-          "pwgSEAoLQ01EX1NZU19ERUwQqAgSEwoOQ01EX1NZU19VUERBVEUQqQgSFAoP", 
-          "Q01EX0VNS19DSEVDS0lOEK4IEhUKEENNRF9FTUtfQ0hFQ0tPVVQQrwgSFQoQ", 
-          "Q01EX0VNS19SRUNIQVJHRRCwCBITCg5DTURfRU1LX0NBTkNFTBCxCBITCg5D", 
-          "TURfRU1LX1JFQ09SRBCyCBIYChNDTURfRU1LX1JFQ09SRF9GSU5EELMIEhIK", 
-          "DUNNRF9HT09EU19BREQQuQgSEgoNQ01EX0dPT0RTX0RFTBC6CBIVChBDTURf", 
-          "R09PRFNfVVBEQVRFELsIEhMKDkNNRF9HT09EU19GSU5EELwIEhQKD0NNRF9H", 
-          "T09EU19TQUxFUxC9CBIYChNDTURfR09PRFNfU0FMRVNfVE9QEL4IEhQKD0NN", 
-          "RF9HT09EU19TVE9DSxC/CBIUCg9DTURfR09PRFNfT1JERVIQwAgSGwoWQ01E", 
-          "X0dPT0RTX09SREVSX0RFVEFJTBDBCBIUCg9DTURfVVBMT0FEX0hFQUQQwggS", 
-          "DgoJQ01EX0hFQVJUEMMIEhQKD0NNRF9QTEFZRVJfS0lDSxDECBITCg5DTURf", 
-          "Q0hFQ0tfTkFNRRDFCBIWChFDTURfQ0hFQ0tfQUNDT1VOVBDGCBISCg1DTURf", 
-          "UkVDT05ORUNUEMcIEhUKEENNRF9DTElFTlRfTE9HT04Q0A8SFgoRQ01EX0NM", 
-          "SUVOVF9MT0dPRkYQ0Q8SFgoRQ01EX0NMSUVOVF9IVU5HVVAQ0g8SGAoTQ01E", 
-          "X0NMSUVOVF9TSE9QTElTVBDUDxIYChNDTURfQ0xJRU5UX1BVUkNIQVNFENUP", 
-          "EhYKEUNNRF9DTElFTlRfQ0hBUkdFENYPEhgKE0NNRF9DTElFTlRfQU5OT1VO", 
-          "Q0UQ1w8SFwoSQ01EX0NMSUVOVF9NRVNTQUdFENgPEhQKD0NNRF9DTElFTlRf", 
-          "Q0FMTBDZDxIYChNDTURfQ0xJRU5UX0VYQ0hBTkdFENoPEhQKD0NNRF9DTElF", 
-          "TlRfU0lHThDbDxIfChpDTURfVEVSTUlOQUxfUkVDSEFSR0VfSU5GTxC4FxIc", 
-          "ChdDTURfVEVSTUlOQUxfQUREX01FTUJFUhC5FxIeChlDTURfVEVSTUlOQUxf", 
-          "QUNDT1VOVF9JTkZPELoXEhoKFUNNRF9URVJNSU5BTF9SRUNIQVJHRRC7FxIZ", 
-          "ChRDTURfVEVSTUlOQUxfQ0hFQ0tJThC8FxIaChVDTURfVEVSTUlOQUxfQ0hF", 
-          "Q0tPVVQQvRcSFAoPQ01EX0NMT1VEX0ZJUlNUEKAfQi0KHWNvbS5za3lzb2Z0", 
-        "LmNvcmUuYXV0by5tZXNzYWdlQgxDb3JlUHJvdG9jb2w="));
+          "T3JkZXJEZXRhaWwSDwoHb3JkZXJpZBgBIAIoBSI0Cg1TQ09yZGVyRGV0YWls", 
+          "EiMKB2RldGFpbHMYASADKAsyEi5TdHJ1Y3RPcmRlckRldGFpbCIZCgdDU0xv", 
+          "Z29uEg4KBmNhcmRubxgBIAIoCSIKCghDU0xvZ29mZiIcCghDU0hhbmd1cBIQ", 
+          "CghwYXNzd29yZBgBIAIoCSIqCgxDU1VwbG9hZEhlYWQSDAoEdHlwZRgBIAEo", 
+          "BRIMCgRkYXRhGAIgASgJIhsKDFNDVXBsb2FkSGVhZBILCgN1cmwYASABKAki", 
+          "HgoLQ1NDaGVja05hbWUSDwoHbmV3TmFtZRgBIAIoCSIdCgtTQ0NoZWNrTmFt", 
+          "ZRIOCgZyZXN1bHQYASABKAUiMgoOQ1NDaGVja0FjY291bnQSDgoGdXNlcklk", 
+          "GAEgAigJEhAKCHBhc3N3b3JkGAIgAigJIiAKDlNDQ2hlY2tBY2NvdW50Eg4K", 
+          "BnJlc3VsdBgBIAIoBSJECgtDU1JlY29ubmVjdBIOCgZ1c2VySWQYASACKAkS", 
+          "EAoIcGFzc3dvcmQYAiACKAkSEwoLZGV2aWNlVG9rZW4YAyABKAkiLgoLU0NS", 
+          "ZWNvbm5lY3QSEQoJc2Vzc2lvbklkGAEgAigFEgwKBGd1aWQYAiABKAUq/g0K", 
+          "A0NtZBISCg1DTURfR0VUU0VSVkVSEOgHEg8KCkNNRF9BVVRIRU4Q6QcSDgoJ", 
+          "Q01EX0xPR0lOEOoHEhUKEENNRF9BQ0NPVU5UX0lORk8Q6wcSFgoRQ01EX1JF", 
+          "QUxUSU1FX0lORk8Q7AcSEgoNQ01EX1JPTEVfTElTVBDyBxIRCgxDTURfUk9M", 
+          "RV9BREQQ8wcSEQoMQ01EX1JPTEVfREVMEPQHEhQKD0NNRF9ST0xFX1VQREFU", 
+          "RRD1BxIUCg9DTURfUk9MRV9SSUdIVFMQ9gcSEwoOQ01EX0FETUlOX0xJU1QQ", 
+          "/AcSEgoNQ01EX0FETUlOX0FERBD9BxISCg1DTURfQURNSU5fREVMEP4HEhUK", 
+          "EENNRF9BRE1JTl9VUERBVEUQ/wcSEwoOQ01EX0FETUlOX0ZJTkQQgAgSEgoN", 
+          "Q01EX0FETUlOX1NOUxCBCBIWChFDTURfQ09NUFVURVJfTElTVBCQCBIVChBD", 
+          "TURfQ09NUFVURVJfQUREEJEIEhUKEENNRF9DT01QVVRFUl9ERUwQkggSGAoT", 
+          "Q01EX0NPTVBVVEVSX1VQREFURRCTCBIWChFDTURfQ09NUFVURVJfRklORBCU", 
+          "CBIWChFDTURfQ09NUFVURVJfT1BFThCVCBIXChJDTURfQ09NUFVURVJfQ0xP", 
+          "U0UQlggSFAoPQ01EX01FTUJFUl9MSVNUEJoIEhMKDkNNRF9NRU1CRVJfQURE", 
+          "EJsIEhMKDkNNRF9NRU1CRVJfREVMEJwIEhYKEUNNRF9NRU1CRVJfVVBEQVRF", 
+          "EJ0IEhQKD0NNRF9NRU1CRVJfRklORBCeCBIZChRDTURfTUVNQkVSX0NBUkRf", 
+          "SU5GTxCfCBIdChhDTURfTUVNQkVSX0NPTlNVTV9SRUNPUkQQoAgSHQoYQ01E", 
+          "X01FTUJFUl9DT05TVU1fRklMVEVSEKEIEhYKEUNNRF9NRU1CRVJfVkVSSUZZ", 
+          "EKIIEhkKFENNRF9TWVNfQklMTElOR19MSVNUEKQIEhsKFkNNRF9TWVNfQklM", 
+          "TElOR19VUERBVEUQpQgSEQoMQ01EX1NZU19JTkZPEKYIEhAKC0NNRF9TWVNf", 
+          "QUREEKcIEhAKC0NNRF9TWVNfREVMEKgIEhMKDkNNRF9TWVNfVVBEQVRFEKkI", 
+          "EhQKD0NNRF9FTUtfQ0hFQ0tJThCuCBIVChBDTURfRU1LX0NIRUNLT1VUEK8I", 
+          "EhUKEENNRF9FTUtfUkVDSEFSR0UQsAgSEwoOQ01EX0VNS19DQU5DRUwQsQgS", 
+          "EwoOQ01EX0VNS19SRUNPUkQQsggSGAoTQ01EX0VNS19SRUNPUkRfRklORBCz", 
+          "CBISCg1DTURfR09PRFNfQUREELkIEhIKDUNNRF9HT09EU19ERUwQuggSFQoQ", 
+          "Q01EX0dPT0RTX1VQREFURRC7CBITCg5DTURfR09PRFNfRklORBC8CBIUCg9D", 
+          "TURfR09PRFNfU0FMRVMQvQgSGAoTQ01EX0dPT0RTX1NBTEVTX1RPUBC+CBIU", 
+          "Cg9DTURfR09PRFNfU1RPQ0sQvwgSFAoPQ01EX0dPT0RTX09SREVSEMAIEhsK", 
+          "FkNNRF9HT09EU19PUkRFUl9ERVRBSUwQwQgSFAoPQ01EX1VQTE9BRF9IRUFE", 
+          "EMIIEg4KCUNNRF9IRUFSVBDDCBIUCg9DTURfUExBWUVSX0tJQ0sQxAgSEwoO", 
+          "Q01EX0NIRUNLX05BTUUQxQgSFgoRQ01EX0NIRUNLX0FDQ09VTlQQxggSEgoN", 
+          "Q01EX1JFQ09OTkVDVBDHCBIVChBDTURfQ0xJRU5UX0xPR09OENAPEhYKEUNN", 
+          "RF9DTElFTlRfTE9HT0ZGENEPEhYKEUNNRF9DTElFTlRfSFVOR1VQENIPEhgK", 
+          "E0NNRF9DTElFTlRfU0hPUExJU1QQ1A8SGAoTQ01EX0NMSUVOVF9QVVJDSEFT", 
+          "RRDVDxIWChFDTURfQ0xJRU5UX0NIQVJHRRDWDxIYChNDTURfQ0xJRU5UX0FO", 
+          "Tk9VTkNFENcPEhcKEkNNRF9DTElFTlRfTUVTU0FHRRDYDxIUCg9DTURfQ0xJ", 
+          "RU5UX0NBTEwQ2Q8SGAoTQ01EX0NMSUVOVF9FWENIQU5HRRDaDxIUCg9DTURf", 
+          "Q0xJRU5UX1NJR04Q2w8SHwoaQ01EX1RFUk1JTkFMX1JFQ0hBUkdFX0lORk8Q", 
+          "uBcSHAoXQ01EX1RFUk1JTkFMX0FERF9NRU1CRVIQuRcSHgoZQ01EX1RFUk1J", 
+          "TkFMX0FDQ09VTlRfSU5GTxC6FxIaChVDTURfVEVSTUlOQUxfUkVDSEFSR0UQ", 
+          "uxcSGQoUQ01EX1RFUk1JTkFMX0NIRUNLSU4QvBcSGgoVQ01EX1RFUk1JTkFM", 
+          "X0NIRUNLT1VUEL0XEhQKD0NNRF9DTE9VRF9GSVJTVBCgH0ItCh1jb20uc2t5", 
+        "c29mdC5jb3JlLmF1dG8ubWVzc2FnZUIMQ29yZVByb3RvY29s"));
     pbd::FileDescriptor.InternalDescriptorAssigner assigner = delegate(pbd::FileDescriptor root) {
       descriptor = root;
       internal__static_MessagePack__Descriptor = Descriptor.MessageTypes[0];
@@ -741,7 +740,7 @@ public static partial class CoreProtocol {
       internal__static_SCOrderDetail__Descriptor = Descriptor.MessageTypes[77];
       internal__static_SCOrderDetail__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::SCOrderDetail, global::SCOrderDetail.Builder>(internal__static_SCOrderDetail__Descriptor,
-              new string[] { "Orderid", "Addtime", "Money", "Goods", });
+              new string[] { "Details", });
       internal__static_CSLogon__Descriptor = Descriptor.MessageTypes[78];
       internal__static_CSLogon__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSLogon, global::CSLogon.Builder>(internal__static_CSLogon__Descriptor,
@@ -32783,8 +32782,8 @@ public sealed partial class CSOrderDetail : pb::GeneratedMessage<CSOrderDetail, 
 public sealed partial class SCOrderDetail : pb::GeneratedMessage<SCOrderDetail, SCOrderDetail.Builder> {
   private SCOrderDetail() { }
   private static readonly SCOrderDetail defaultInstance = new SCOrderDetail().MakeReadOnly();
-  private static readonly string[] _sCOrderDetailFieldNames = new string[] { "addtime", "goods", "money", "orderid" };
-  private static readonly uint[] _sCOrderDetailFieldTags = new uint[] { 18, 34, 24, 8 };
+  private static readonly string[] _sCOrderDetailFieldNames = new string[] { "details" };
+  private static readonly uint[] _sCOrderDetailFieldTags = new uint[] { 10 };
   public static SCOrderDetail DefaultInstance {
     get { return defaultInstance; }
   }
@@ -32805,54 +32804,21 @@ public sealed partial class SCOrderDetail : pb::GeneratedMessage<SCOrderDetail, 
     get { return global::CoreProtocol.internal__static_SCOrderDetail__FieldAccessorTable; }
   }
   
-  public const int OrderidFieldNumber = 1;
-  private bool hasOrderid;
-  private int orderid_;
-  public bool HasOrderid {
-    get { return hasOrderid; }
+  public const int DetailsFieldNumber = 1;
+  private pbc::PopsicleList<global::StructOrderDetail> details_ = new pbc::PopsicleList<global::StructOrderDetail>();
+  public scg::IList<global::StructOrderDetail> DetailsList {
+    get { return details_; }
   }
-  public int Orderid {
-    get { return orderid_; }
+  public int DetailsCount {
+    get { return details_.Count; }
   }
-  
-  public const int AddtimeFieldNumber = 2;
-  private bool hasAddtime;
-  private string addtime_ = "";
-  public bool HasAddtime {
-    get { return hasAddtime; }
-  }
-  public string Addtime {
-    get { return addtime_; }
-  }
-  
-  public const int MoneyFieldNumber = 3;
-  private bool hasMoney;
-  private int money_;
-  public bool HasMoney {
-    get { return hasMoney; }
-  }
-  public int Money {
-    get { return money_; }
-  }
-  
-  public const int GoodsFieldNumber = 4;
-  private pbc::PopsicleList<global::StructGoods> goods_ = new pbc::PopsicleList<global::StructGoods>();
-  public scg::IList<global::StructGoods> GoodsList {
-    get { return goods_; }
-  }
-  public int GoodsCount {
-    get { return goods_.Count; }
-  }
-  public global::StructGoods GetGoods(int index) {
-    return goods_[index];
+  public global::StructOrderDetail GetDetails(int index) {
+    return details_[index];
   }
   
   public override bool IsInitialized {
     get {
-      if (!hasOrderid) return false;
-      if (!hasAddtime) return false;
-      if (!hasMoney) return false;
-      foreach (global::StructGoods element in GoodsList) {
+      foreach (global::StructOrderDetail element in DetailsList) {
         if (!element.IsInitialized) return false;
       }
       return true;
@@ -32862,17 +32828,8 @@ public sealed partial class SCOrderDetail : pb::GeneratedMessage<SCOrderDetail, 
   public override void WriteTo(pb::ICodedOutputStream output) {
     CalcSerializedSize();
     string[] field_names = _sCOrderDetailFieldNames;
-    if (hasOrderid) {
-      output.WriteInt32(1, field_names[3], Orderid);
-    }
-    if (hasAddtime) {
-      output.WriteString(2, field_names[0], Addtime);
-    }
-    if (hasMoney) {
-      output.WriteInt32(3, field_names[2], Money);
-    }
-    if (goods_.Count > 0) {
-      output.WriteMessageArray(4, field_names[1], goods_);
+    if (details_.Count > 0) {
+      output.WriteMessageArray(1, field_names[0], details_);
     }
     UnknownFields.WriteTo(output);
   }
@@ -32891,17 +32848,8 @@ public sealed partial class SCOrderDetail : pb::GeneratedMessage<SCOrderDetail, 
     if (size != -1) return size;
     
     size = 0;
-    if (hasOrderid) {
-      size += pb::CodedOutputStream.ComputeInt32Size(1, Orderid);
-    }
-    if (hasAddtime) {
-      size += pb::CodedOutputStream.ComputeStringSize(2, Addtime);
-    }
-    if (hasMoney) {
-      size += pb::CodedOutputStream.ComputeInt32Size(3, Money);
-    }
-    foreach (global::StructGoods element in GoodsList) {
-      size += pb::CodedOutputStream.ComputeMessageSize(4, element);
+    foreach (global::StructOrderDetail element in DetailsList) {
+      size += pb::CodedOutputStream.ComputeMessageSize(1, element);
     }
     size += UnknownFields.SerializedSize;
     memoizedSerializedSize = size;
@@ -32938,7 +32886,7 @@ public sealed partial class SCOrderDetail : pb::GeneratedMessage<SCOrderDetail, 
     return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
   }
   private SCOrderDetail MakeReadOnly() {
-    goods_.MakeReadOnly();
+    details_.MakeReadOnly();
     return this;
   }
   
@@ -33026,17 +32974,8 @@ public sealed partial class SCOrderDetail : pb::GeneratedMessage<SCOrderDetail, 
     public override Builder MergeFrom(SCOrderDetail other) {
       if (other == global::SCOrderDetail.DefaultInstance) return this;
       PrepareBuilder();
-      if (other.HasOrderid) {
-        Orderid = other.Orderid;
-      }
-      if (other.HasAddtime) {
-        Addtime = other.Addtime;
-      }
-      if (other.HasMoney) {
-        Money = other.Money;
-      }
-      if (other.goods_.Count != 0) {
-        result.goods_.Add(other.goods_);
+      if (other.details_.Count != 0) {
+        result.details_.Add(other.details_);
       }
       this.MergeUnknownFields(other.UnknownFields);
       return this;
@@ -33081,20 +33020,8 @@ public sealed partial class SCOrderDetail : pb::GeneratedMessage<SCOrderDetail, 
             ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
             break;
           }
-          case 8: {
-            result.hasOrderid = input.ReadInt32(ref result.orderid_);
-            break;
-          }
-          case 18: {
-            result.hasAddtime = input.ReadString(ref result.addtime_);
-            break;
-          }
-          case 24: {
-            result.hasMoney = input.ReadInt32(ref result.money_);
-            break;
-          }
-          case 34: {
-            input.ReadMessageArray(tag, field_name, result.goods_, global::StructGoods.DefaultInstance, extensionRegistry);
+          case 10: {
+            input.ReadMessageArray(tag, field_name, result.details_, global::StructOrderDetail.DefaultInstance, extensionRegistry);
             break;
           }
         }
@@ -33107,108 +33034,47 @@ public sealed partial class SCOrderDetail : pb::GeneratedMessage<SCOrderDetail, 
     }
     
     
-    public bool HasOrderid {
-      get { return result.hasOrderid; }
+    public pbc::IPopsicleList<global::StructOrderDetail> DetailsList {
+      get { return PrepareBuilder().details_; }
     }
-    public int Orderid {
-      get { return result.Orderid; }
-      set { SetOrderid(value); }
+    public int DetailsCount {
+      get { return result.DetailsCount; }
     }
-    public Builder SetOrderid(int value) {
-      PrepareBuilder();
-      result.hasOrderid = true;
-      result.orderid_ = value;
-      return this;
+    public global::StructOrderDetail GetDetails(int index) {
+      return result.GetDetails(index);
     }
-    public Builder ClearOrderid() {
-      PrepareBuilder();
-      result.hasOrderid = false;
-      result.orderid_ = 0;
-      return this;
-    }
-    
-    public bool HasAddtime {
-      get { return result.hasAddtime; }
-    }
-    public string Addtime {
-      get { return result.Addtime; }
-      set { SetAddtime(value); }
-    }
-    public Builder SetAddtime(string value) {
+    public Builder SetDetails(int index, global::StructOrderDetail value) {
       pb::ThrowHelper.ThrowIfNull(value, "value");
       PrepareBuilder();
-      result.hasAddtime = true;
-      result.addtime_ = value;
+      result.details_[index] = value;
       return this;
     }
-    public Builder ClearAddtime() {
-      PrepareBuilder();
-      result.hasAddtime = false;
-      result.addtime_ = "";
-      return this;
-    }
-    
-    public bool HasMoney {
-      get { return result.hasMoney; }
-    }
-    public int Money {
-      get { return result.Money; }
-      set { SetMoney(value); }
-    }
-    public Builder SetMoney(int value) {
-      PrepareBuilder();
-      result.hasMoney = true;
-      result.money_ = value;
-      return this;
-    }
-    public Builder ClearMoney() {
-      PrepareBuilder();
-      result.hasMoney = false;
-      result.money_ = 0;
-      return this;
-    }
-    
-    public pbc::IPopsicleList<global::StructGoods> GoodsList {
-      get { return PrepareBuilder().goods_; }
-    }
-    public int GoodsCount {
-      get { return result.GoodsCount; }
-    }
-    public global::StructGoods GetGoods(int index) {
-      return result.GetGoods(index);
-    }
-    public Builder SetGoods(int index, global::StructGoods value) {
-      pb::ThrowHelper.ThrowIfNull(value, "value");
-      PrepareBuilder();
-      result.goods_[index] = value;
-      return this;
-    }
-    public Builder SetGoods(int index, global::StructGoods.Builder builderForValue) {
+    public Builder SetDetails(int index, global::StructOrderDetail.Builder builderForValue) {
       pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
       PrepareBuilder();
-      result.goods_[index] = builderForValue.Build();
+      result.details_[index] = builderForValue.Build();
       return this;
     }
-    public Builder AddGoods(global::StructGoods value) {
+    public Builder AddDetails(global::StructOrderDetail value) {
       pb::ThrowHelper.ThrowIfNull(value, "value");
       PrepareBuilder();
-      result.goods_.Add(value);
+      result.details_.Add(value);
       return this;
     }
-    public Builder AddGoods(global::StructGoods.Builder builderForValue) {
+    public Builder AddDetails(global::StructOrderDetail.Builder builderForValue) {
       pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
       PrepareBuilder();
-      result.goods_.Add(builderForValue.Build());
+      result.details_.Add(builderForValue.Build());
       return this;
     }
-    public Builder AddRangeGoods(scg::IEnumerable<global::StructGoods> values) {
+    public Builder AddRangeDetails(scg::IEnumerable<global::StructOrderDetail> values) {
       PrepareBuilder();
-      result.goods_.Add(values);
+      result.details_.Add(values);
       return this;
     }
-    public Builder ClearGoods() {
+    public Builder ClearDetails() {
       PrepareBuilder();
-      result.goods_.Clear();
+      result.details_.Clear();
       return this;
     }
   }

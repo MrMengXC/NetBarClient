@@ -9,7 +9,7 @@ namespace NetBarMS.Codes.Tools.NetOperation
 {
     class ProductNetOperation
     {
-        //获取商品列表
+        #region 获取商品列表
         public static void GetProductList(DataResultBlock resultBlock, StructPage page,Int32 category,string keywords)
         {
 
@@ -35,8 +35,9 @@ namespace NetBarMS.Codes.Tools.NetOperation
             NetMessageManage.Manager().SendMsg(pack.Build(), resultBlock);
 
         }
+        #endregion
 
-        //添加商品
+        #region 添加商品
         public static void AddProduct(DataResultBlock resultBlock, StructGoods product)
         {
 
@@ -55,8 +56,9 @@ namespace NetBarMS.Codes.Tools.NetOperation
             NetMessageManage.Manager().SendMsg(pack.Build(), resultBlock);
 
         }
+        #endregion
 
-        //删除商品
+        #region 删除商品
         public static void DeleteProduct(DataResultBlock resultBlock, List<Int32> ids)
         {
 
@@ -75,9 +77,9 @@ namespace NetBarMS.Codes.Tools.NetOperation
             NetMessageManage.Manager().SendMsg(pack.Build(), resultBlock);
 
         }
+        #endregion
 
-
-        //更新商品
+        #region 更新商品
         public static void UpdateProduct(DataResultBlock resultBlock, StructGoods product)
         {
 
@@ -96,8 +98,9 @@ namespace NetBarMS.Codes.Tools.NetOperation
             NetMessageManage.Manager().SendMsg(pack.Build(), resultBlock);
 
         }
+        #endregion
 
-        //获取库存清单
+        #region 获取库存清单
         public static void GetStoreList(DataResultBlock resultBlock,StructPage page)
         {
 
@@ -115,8 +118,9 @@ namespace NetBarMS.Codes.Tools.NetOperation
             pack.SetContent(content);
             NetMessageManage.Manager().SendMsg(pack.Build(), resultBlock);
         }
+        #endregion
 
-        //获取销售记录清单
+        #region 获取销售记录清单
         public static void GetSellRecordList(DataResultBlock resultBlock, StructPage page,Int32 id,string start,string end)
         {
 
@@ -140,8 +144,9 @@ namespace NetBarMS.Codes.Tools.NetOperation
             pack.SetContent(content);
             NetMessageManage.Manager().SendMsg(pack.Build(), resultBlock);
         }
+        #endregion
 
-        //获取销售排行
+        #region 获取销售排行
         public static void GetSellRankList(DataResultBlock resultBlock, StructPage page)
         {
 
@@ -160,8 +165,9 @@ namespace NetBarMS.Codes.Tools.NetOperation
             pack.SetContent(content);
             NetMessageManage.Manager().SendMsg(pack.Build(), resultBlock);
         }
+        #endregion
 
-        //获取系统查询的商品订单
+        #region 获取系统查询的商品订单
         public static void GetProdcutIndentList(DataResultBlock resultBlock, StructPage page,Int32 status,string addStart,string addEnd,string handleStart,string handleEnd,string keyWrods)
         {
             CSOrderList.Builder order = new CSOrderList.Builder()
@@ -195,14 +201,15 @@ namespace NetBarMS.Codes.Tools.NetOperation
             pack.SetContent(content);
             NetMessageManage.Manager().SendMsg(pack.Build(), resultBlock);
         }
+        #endregion
 
-        //获取商品订单详情
-        public static void GetProdcutIndentDetail(DataResultBlock resultBlock)
+        #region 获取商品订单详情
+        public static void GetProdcutIndentDetail(DataResultBlock resultBlock,Int32 orderid)
         {
-   
+
             CSOrderDetail.Builder detail = new CSOrderDetail.Builder()
             {
-               
+                Orderid = orderid,
             };
            
             MessageContent.Builder content = new MessageContent.Builder();
@@ -214,5 +221,6 @@ namespace NetBarMS.Codes.Tools.NetOperation
             pack.SetContent(content);
             NetMessageManage.Manager().SendMsg(pack.Build(), resultBlock);
         }
+        #endregion
     }
 }
