@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ManageNode>
+
+  <Node name ="会员管理" tag="MemberManage">
+  </Node>
+  
+   <Node name ="商品管理" >
+     <child name = "上架商品管理" tag="ProductManage"/>
+     <child name = "商品销售排行" tag="ProductSellRank"/>
+
+   </Node>
+  
+   <Node name ="费率管理">
+     <child name = "费率管理"  tag="RataManage"/>
+     <child name = "奖励管理" tag="AwardManage"/>
+     <child name = "积分管理" tag="IntegralManage"/>
+     <child name = "其他费用管理" tag="OtherCostManage"/>
+   </Node>
+  
+  <Node name ="营收统计" tag="InComeManage" >
+    <child name = "日营收统计" tag="DayInCome"/>
+    <child name = "月营收统计" tag="MonthInCome"/>
+    <child name = "年营收统计" tag="YearInCome"/>
+  </Node>
+
+  <Node name ="系统查询">
+    <child name = "交接班记录查询" tag="ChangeShiftsRecord"/>
+    <child name = "用户充值记录查询" tag="UserPayedRecord"/>
+    <child name = "用户上网记录查询" tag="UserNetRecord"/>
+    <child name = "用户消费记录查询" tag="UserConsumeRecord"/>
+    <child name = "会员办理记录" tag="OpenMemberRecord"/>
+    <child name = "商品订单查询" tag="ProductIndent"/>
+    <child name = "上座率查询" tag="AttendanceSearch"/>
+  </Node>
+  
+  <Node name ="绩效考核" tag="JXInspect"/>
+  
+  <Node name ="评价管理">
+    <child name = "网吧评价" tag="NetBarEvaluate"/>
+    <child name = "员工评价" tag="StaffEvaluate"/>
+  </Node>
+  
+  <Node name ="系统管理">
+    <child name = "上网密码设置" tag="NetPassWord"/>
+    <child name = "会员等级设置" tag="MemberLevManage"/>
+    <child name = "商品类别设置" tag="ProductType" />
+    <child name = "区域设置" tag="AreaManage"/>
+    <child name = "第三方支付绑定"  tag=""/>
+    <child name = "客户端设置" tag="ClientManage"/>
+    <child name = "备份设置" tag="BackUpManage"/>
+    <child name = "短信设置" tag="SmsManage"/>
+
+  </Node>
+  
+  <Node name ="员工账号管理">
+    <child name = "员工列表" tag="StaffList"/>
+    <child name = "员工角色设置" tag="ManagerManage"/>
+  </Node>
+  <Node name ="日志管理" tag="LogManage"/>
+  
+  <Node name ="设备信息管理">
+     <child name = "当前设备信息"/>
+     <child name = "客户端信息"/>
+     <child name = "后台管理系统信息"/>
+  </Node>
+
+
+
+
+</ManageNode>

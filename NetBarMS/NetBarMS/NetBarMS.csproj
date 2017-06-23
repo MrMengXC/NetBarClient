@@ -1,0 +1,906 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3C8540FF-CFF1-4EEF-BE54-1426595A13A4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NetBarMS</RootNamespace>
+    <AssemblyName>NetBarMS</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Charts.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.CodeParser.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.DataAccess.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.SpellChecker.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v15.2.UI, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v15.2.Wizard, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v15.2.Extensions, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraSpellChecker.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="Google.ProtocolBuffers, Version=2.4.1.555, Culture=neutral, PublicKeyToken=17b3b1f090c3ea48, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Plugins\Google.ProtocolBuffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="XPTable">
+      <HintPath>..\..\..\..\XTable\dll\XPTable.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Codes\Keys.cs" />
+    <Compile Include="Codes\Model\GridControlModel.cs" />
+    <Compile Include="Codes\Model\HomePageNodeModel.cs" />
+    <Compile Include="Codes\Model\ManagerModel.cs" />
+    <Compile Include="Codes\Model\ProductModel.cs" />
+    <Compile Include="Codes\Model\TestModel.cs" />
+    <Compile Include="Codes\Model\UserModel.cs" />
+    <Compile Include="Codes\Tools\AreaSettingManage.cs" />
+    <Compile Include="Codes\Tools\FlowManage\ActiveFlowManage.cs" />
+    <Compile Include="Codes\Tools\NetBarException.cs" />
+    <Compile Include="Codes\Tools\NetMessageManage.cs" />
+    <Compile Include="Codes\Tools\NetOperation\HomePageNetOperation.cs" />
+    <Compile Include="Codes\Tools\NetOperation\ManagerNetOperation.cs" />
+    <Compile Include="Codes\Tools\NetOperation\MemberNetOperation.cs" />
+    <Compile Include="Codes\Tools\NetOperation\ProductNetOperation.cs" />
+    <Compile Include="Codes\Tools\NetOperation\RateManageNetOperation.cs" />
+    <Compile Include="Codes\Tools\NetOperation\StaffNetOperation.cs" />
+    <Compile Include="Codes\Tools\NetOperation\SysNetOperation.cs" />
+    <Compile Include="Codes\Tools\NetOperation\SystemManageNetOperation.cs" />
+    <Compile Include="Codes\Tools\RepositoryItemMyEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Codes\Tools\SysManage.cs" />
+    <Compile Include="Codes\Tools\ToolsManage.cs" />
+    <Compile Include="Forms\CustomForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CustomForm.Designer.cs">
+      <DependentUpon>CustomForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\NewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NewForm.Designer.cs">
+      <DependentUpon>NewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TestForm.Designer.cs">
+      <DependentUpon>TestForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Imgs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Imgs.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Plugins\BaseStruct.cs" />
+    <Compile Include="Plugins\CoreProtocol.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Codes\Tools\XMLDataManage.cs" />
+    <Compile Include="Views\CustomView\CustomMonthDate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\CustomView\CustomMonthDate.Designer.cs">
+      <DependentUpon>CustomMonthDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HomePage\HomePageView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\HomePage\HomePageView.Designer.cs">
+      <DependentUpon>HomePageView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HomePage\PayedProductIndentDetailView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\HomePage\PayedProductIndentDetailView.Designer.cs">
+      <DependentUpon>PayedProductIndentDetailView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HomePage\PayedProductIndentView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\HomePage\PayedProductIndentView.Designer.cs">
+      <DependentUpon>PayedProductIndentView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HomePage\LockListView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\HomePage\LockListView.Designer.cs">
+      <DependentUpon>LockListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HomePage\ReminderScanView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\HomePage\ReminderScanView.Designer.cs">
+      <DependentUpon>ReminderScanView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HomePage\UserLockView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\HomePage\UserLockView.Designer.cs">
+      <DependentUpon>UserLockView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InCome\AreaIncomeView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\InCome\AreaIncomeView.Designer.cs">
+      <DependentUpon>AreaIncomeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InCome\IncomeManageView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\InCome\IncomeManageView.Designer.cs">
+      <DependentUpon>IncomeManageView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InCome\MonthInComeView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\InCome\MonthInComeView.Designer.cs">
+      <DependentUpon>MonthInComeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InCome\YearInComeView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\InCome\YearInComeView.Designer.cs">
+      <DependentUpon>YearInComeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ManagerManage\StaffAddView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ManagerManage\StaffAddView.Designer.cs">
+      <DependentUpon>StaffAddView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ManagerManage\StaffListView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ManagerManage\StaffListView.Designer.cs">
+      <DependentUpon>StaffListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SystemSearch\MemberRechargeView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\SystemSearch\MemberRechargeView.Designer.cs">
+      <DependentUpon>MemberRechargeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SystemSearch\AttendanceSearchView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\SystemSearch\AttendanceSearchView.Designer.cs">
+      <DependentUpon>AttendanceSearchView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SystemSearch\OpenMemberRecordView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\SystemSearch\OpenMemberRecordView.Designer.cs">
+      <DependentUpon>OpenMemberRecordView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HomePage\CallServiceView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\HomePage\CallServiceView.Designer.cs">
+      <DependentUpon>CallServiceView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HomePage\ChatManageView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\HomePage\ChatManageView.Designer.cs">
+      <DependentUpon>ChatManageView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HomePage\CheckOutView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\HomePage\CheckOutView.Designer.cs">
+      <DependentUpon>CheckOutView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HomePage\CloseMacheView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\HomePage\CloseMacheView.Designer.cs">
+      <DependentUpon>CloseMacheView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ComputerDetail\ComputerDetailView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ComputerDetail\ComputerDetailView.Designer.cs">
+      <DependentUpon>ComputerDetailView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OtherMain\DataReportView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\OtherMain\DataReportView.Designer.cs">
+      <DependentUpon>DataReportView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EvaluateManage\NetBarEvaluateView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\EvaluateManage\NetBarEvaluateView.Designer.cs">
+      <DependentUpon>NetBarEvaluateView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EvaluateManage\StaffEvaluateView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\EvaluateManage\StaffEvaluateView.Designer.cs">
+      <DependentUpon>StaffEvaluateView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HomePage\HomePageComputerView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\HomePage\HomePageComputerView.Designer.cs">
+      <DependentUpon>HomePageComputerView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HomePage\HomePageListView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\HomePage\HomePageListView.Designer.cs">
+      <DependentUpon>HomePageListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InCome\InComeDetailView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\InCome\InComeDetailView.Designer.cs">
+      <DependentUpon>InComeDetailView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InCome\DayInComeView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\InCome\DayInComeView.Designer.cs">
+      <DependentUpon>DayInComeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OtherMain\JXInspectView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\OtherMain\JXInspectView.Designer.cs">
+      <DependentUpon>JXInspectView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OtherMain\LogManageView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\OtherMain\LogManageView.Designer.cs">
+      <DependentUpon>LogManageView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OtherMain\ManagerLoginView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\OtherMain\ManagerLoginView.Designer.cs">
+      <DependentUpon>ManagerLoginView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ManagerManage\ManagerAddView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ManagerManage\ManagerAddView.Designer.cs">
+      <DependentUpon>ManagerAddView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ManagerManage\ManagerManageView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ManagerManage\ManagerManageView.Designer.cs">
+      <DependentUpon>ManagerManageView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NetUserManage\MemberManageView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\NetUserManage\MemberManageView.Designer.cs">
+      <DependentUpon>MemberManageView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OtherMain\NetRecordView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\OtherMain\NetRecordView.Designer.cs">
+      <DependentUpon>NetRecordView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NetUserManage\UserDetailView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\NetUserManage\UserDetailView.Designer.cs">
+      <DependentUpon>UserDetailView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HomePage\ChangeShiftsView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\HomePage\ChangeShiftsView.Designer.cs">
+      <DependentUpon>ChangeShiftsView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OtherMain\MsgBoardView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\OtherMain\MsgBoardView.Designer.cs">
+      <DependentUpon>MsgBoardView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NetUserManage\OpenMemberView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\NetUserManage\OpenMemberView.Designer.cs">
+      <DependentUpon>OpenMemberView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OtherMain\UserPayView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\OtherMain\UserPayView.Designer.cs">
+      <DependentUpon>UserPayView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProductManage\ProductAddView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ProductManage\ProductAddView.Designer.cs">
+      <DependentUpon>ProductAddView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SystemSearch\ProductIndentDetailView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\SystemSearch\ProductIndentDetailView.Designer.cs">
+      <DependentUpon>ProductIndentDetailView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SystemSearch\ProductIndentView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\SystemSearch\ProductIndentView.Designer.cs">
+      <DependentUpon>ProductIndentView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProductManage\ProductManageView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ProductManage\ProductManageView.Designer.cs">
+      <DependentUpon>ProductManageView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EquipmentMessageManage\SoftwareMsgManageView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\EquipmentMessageManage\SoftwareMsgManageView.Designer.cs">
+      <DependentUpon>SoftwareMsgManageView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProductManage\ProductSellRankView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ProductManage\ProductSellRankView.Designer.cs">
+      <DependentUpon>ProductSellRankView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProductManage\ProductStockListView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ProductManage\ProductStockListView.Designer.cs">
+      <DependentUpon>ProductStockListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RateManage\AwardManageView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\RateManage\AwardManageView.Designer.cs">
+      <DependentUpon>AwardManageView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RateManage\IntegralManageView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\RateManage\IntegralManageView.Designer.cs">
+      <DependentUpon>IntegralManageView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RateManage\OtherCostView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\RateManage\OtherCostView.Designer.cs">
+      <DependentUpon>OtherCostView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RateManage\RateManageView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\RateManage\RateManageView.Designer.cs">
+      <DependentUpon>RateManageView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ResultManage\OpenMemberResultView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ResultManage\OpenMemberResultView.Designer.cs">
+      <DependentUpon>OpenMemberResultView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RootUserControlView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\RootUserControlView.Designer.cs">
+      <DependentUpon>RootUserControlView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SystemManage\AreaManageView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\SystemManage\AreaManageView.Designer.cs">
+      <DependentUpon>AreaManageView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SystemManage\BackUpManageView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\SystemManage\BackUpManageView.Designer.cs">
+      <DependentUpon>BackUpManageView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SystemManage\ClientManageView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\SystemManage\ClientManageView.Designer.cs">
+      <DependentUpon>ClientManageView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SystemManage\MemberLevAddView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\SystemManage\MemberLevAddView.Designer.cs">
+      <DependentUpon>MemberLevAddView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SystemManage\MemberLevManageView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\SystemManage\MemberLevManageView.Designer.cs">
+      <DependentUpon>MemberLevManageView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SystemManage\NetPassWordView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\SystemManage\NetPassWordView.Designer.cs">
+      <DependentUpon>NetPassWordView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SystemManage\ProductTypeManageView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\SystemManage\ProductTypeManageView.Designer.cs">
+      <DependentUpon>ProductTypeManageView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SystemManage\SmsManageView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\SystemManage\SmsManageView.Designer.cs">
+      <DependentUpon>SmsManageView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SystemManage\StaffMoneyView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\SystemManage\StaffMoneyView.Designer.cs">
+      <DependentUpon>StaffMoneyView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SystemSearch\ChangeShiftsRecordView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\SystemSearch\ChangeShiftsRecordView.Designer.cs">
+      <DependentUpon>ChangeShiftsRecordView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SystemSearch\OpenCardRecordView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\SystemSearch\OpenCardRecordView.Designer.cs">
+      <DependentUpon>OpenCardRecordView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProductManage\ProductSellRecordView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ProductManage\ProductSellRecordView.Designer.cs">
+      <DependentUpon>ProductSellRecordView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SystemSearch\UserConsumeRecordView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\SystemSearch\UserConsumeRecordView.Designer.cs">
+      <DependentUpon>UserConsumeRecordView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SystemSearch\UserNetRecordView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\SystemSearch\UserNetRecordView.Designer.cs">
+      <DependentUpon>UserNetRecordView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TestView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\TestView.Designer.cs">
+      <DependentUpon>TestView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserUseCp\UserActiveMsgView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\UserUseCp\UserActiveMsgView.Designer.cs">
+      <DependentUpon>UserActiveMsgView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserUseCp\UserCloseCpView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\UserUseCp\UserCloseCpView.Designer.cs">
+      <DependentUpon>UserCloseCpView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserUseCp\UserRechargeMsgView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\UserUseCp\UserRechargeMsgView.Designer.cs">
+      <DependentUpon>UserRechargeMsgView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserUseCp\UserRechargeView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\UserUseCp\UserRechargeView.Designer.cs">
+      <DependentUpon>UserRechargeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserUseCp\UserUseCpView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\UserUseCp\UserUseCpView.Designer.cs">
+      <DependentUpon>UserUseCpView.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Codes\Tools\RepositoryItemMyEdit.resx">
+      <DependentUpon>RepositoryItemMyEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CustomForm.resx">
+      <DependentUpon>CustomForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NewForm.resx">
+      <DependentUpon>NewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TestForm.resx">
+      <DependentUpon>TestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imgs.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Imgs.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Views\CustomView\CustomMonthDate.resx">
+      <DependentUpon>CustomMonthDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\HomePage\HomePageView.resx">
+      <DependentUpon>HomePageView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\HomePage\PayedProductIndentDetailView.resx">
+      <DependentUpon>PayedProductIndentDetailView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\HomePage\LockListView.resx">
+      <DependentUpon>LockListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\HomePage\PayedProductIndentView.resx">
+      <DependentUpon>PayedProductIndentView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\HomePage\ReminderScanView.resx">
+      <DependentUpon>ReminderScanView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\HomePage\UserLockView.resx">
+      <DependentUpon>UserLockView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\InCome\AreaIncomeView.resx">
+      <DependentUpon>AreaIncomeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\InCome\IncomeManageView.resx">
+      <DependentUpon>IncomeManageView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\InCome\MonthInComeView.resx">
+      <DependentUpon>MonthInComeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ManagerManage\StaffAddView.resx">
+      <DependentUpon>StaffAddView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ManagerManage\StaffListView.resx">
+      <DependentUpon>StaffListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SystemSearch\AttendanceSearchView.resx">
+      <DependentUpon>AttendanceSearchView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SystemSearch\MemberRechargeView.resx">
+      <DependentUpon>MemberRechargeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SystemSearch\OpenMemberRecordView.resx">
+      <DependentUpon>OpenMemberRecordView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\HomePage\CallServiceView.resx">
+      <DependentUpon>CallServiceView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\HomePage\ChatManageView.resx">
+      <DependentUpon>ChatManageView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\HomePage\CheckOutView.resx">
+      <DependentUpon>CheckOutView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\HomePage\CloseMacheView.resx">
+      <DependentUpon>CloseMacheView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ComputerDetail\ComputerDetailView.resx">
+      <DependentUpon>ComputerDetailView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\OtherMain\DataReportView.resx">
+      <DependentUpon>DataReportView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\EvaluateManage\NetBarEvaluateView.resx">
+      <DependentUpon>NetBarEvaluateView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\EvaluateManage\StaffEvaluateView.resx">
+      <DependentUpon>StaffEvaluateView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\HomePage\HomePageComputerView.resx">
+      <DependentUpon>HomePageComputerView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\HomePage\HomePageListView.resx">
+      <DependentUpon>HomePageListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\InCome\InComeDetailView.resx">
+      <DependentUpon>InComeDetailView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\InCome\DayInComeView.resx">
+      <DependentUpon>DayInComeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\OtherMain\JXInspectView.resx">
+      <DependentUpon>JXInspectView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\OtherMain\LogManageView.resx">
+      <DependentUpon>LogManageView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\OtherMain\ManagerLoginView.resx">
+      <DependentUpon>ManagerLoginView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ManagerManage\ManagerAddView.resx">
+      <DependentUpon>ManagerAddView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ManagerManage\ManagerManageView.resx">
+      <DependentUpon>ManagerManageView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\NetUserManage\MemberManageView.resx">
+      <DependentUpon>MemberManageView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\OtherMain\NetRecordView.resx">
+      <DependentUpon>NetRecordView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\NetUserManage\UserDetailView.resx">
+      <DependentUpon>UserDetailView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\HomePage\ChangeShiftsView.resx">
+      <DependentUpon>ChangeShiftsView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\OtherMain\MsgBoardView.resx">
+      <DependentUpon>MsgBoardView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\NetUserManage\OpenMemberView.resx">
+      <DependentUpon>OpenMemberView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\OtherMain\UserPayView.resx">
+      <DependentUpon>UserPayView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ProductManage\ProductAddView.resx">
+      <DependentUpon>ProductAddView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SystemSearch\ProductIndentDetailView.resx">
+      <DependentUpon>ProductIndentDetailView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SystemSearch\ProductIndentView.resx">
+      <DependentUpon>ProductIndentView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ProductManage\ProductManageView.resx">
+      <DependentUpon>ProductManageView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\EquipmentMessageManage\SoftwareMsgManageView.resx">
+      <DependentUpon>SoftwareMsgManageView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ProductManage\ProductSellRankView.resx">
+      <DependentUpon>ProductSellRankView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ProductManage\ProductStockListView.resx">
+      <DependentUpon>ProductStockListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\RateManage\AwardManageView.resx">
+      <DependentUpon>AwardManageView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\RateManage\IntegralManageView.resx">
+      <DependentUpon>IntegralManageView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\RateManage\OtherCostView.resx">
+      <DependentUpon>OtherCostView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\RateManage\RateManageView.resx">
+      <DependentUpon>RateManageView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ResultManage\OpenMemberResultView.resx">
+      <DependentUpon>OpenMemberResultView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\RootUserControlView.resx">
+      <DependentUpon>RootUserControlView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SystemManage\AreaManageView.resx">
+      <DependentUpon>AreaManageView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SystemManage\BackUpManageView.resx">
+      <DependentUpon>BackUpManageView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SystemManage\ClientManageView.resx">
+      <DependentUpon>ClientManageView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SystemManage\MemberLevAddView.resx">
+      <DependentUpon>MemberLevAddView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SystemManage\MemberLevManageView.resx">
+      <DependentUpon>MemberLevManageView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SystemManage\NetPassWordView.resx">
+      <DependentUpon>NetPassWordView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SystemManage\ProductTypeManageView.resx">
+      <DependentUpon>ProductTypeManageView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SystemManage\SmsManageView.resx">
+      <DependentUpon>SmsManageView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SystemManage\StaffMoneyView.resx">
+      <DependentUpon>StaffMoneyView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SystemSearch\ChangeShiftsRecordView.resx">
+      <DependentUpon>ChangeShiftsRecordView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SystemSearch\OpenCardRecordView.resx">
+      <DependentUpon>OpenCardRecordView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ProductManage\ProductSellRecordView.resx">
+      <DependentUpon>ProductSellRecordView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SystemSearch\UserConsumeRecordView.resx">
+      <DependentUpon>UserConsumeRecordView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SystemSearch\UserNetRecordView.resx">
+      <DependentUpon>UserNetRecordView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\TestView.resx">
+      <DependentUpon>TestView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\UserUseCp\UserActiveMsgView.resx">
+      <DependentUpon>UserActiveMsgView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\UserUseCp\UserCloseCpView.resx">
+      <DependentUpon>UserCloseCpView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\UserUseCp\UserRechargeMsgView.resx">
+      <DependentUpon>UserRechargeMsgView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\UserUseCp\UserRechargeView.resx">
+      <DependentUpon>UserRechargeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\UserUseCp\UserUseCpView.resx">
+      <DependentUpon>UserUseCpView.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="GridControl.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ManageNodes.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Plugins\Google.ProtocolBuffers.dll" />
+    <None Include="Resources\use.png" />
+    <None Include="Resources\yz.png" />
+    <None Include="Resources\lock.png" />
+    <None Include="Resources\deplane.png" />
+    <None Include="Resources\xg2.png" />
+    <None Include="Resources\xg.png" />
+    <None Include="Resources\ys.png" />
+    <None Include="Resources\search.png" />
+    <None Include="Resources\look.png" />
+    <None Include="Resources\unlock.png" />
+    <None Include="Resources\delete.png" />
+    <None Include="Resources\delete2.png" />
+    <None Include="Resources\rename.png" />
+    <None Include="Resources\gridButton.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
