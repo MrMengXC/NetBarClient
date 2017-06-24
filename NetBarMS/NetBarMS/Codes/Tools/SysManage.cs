@@ -27,14 +27,13 @@ namespace NetBarMS.Codes.Tools
         public event GetAreasHandle GetAreasEvent;
 
         #endregion
-        
+
         //首页所有电脑
         public List<StructRealTime> computers = new List<StructRealTime>();
-
         //区域数组
         private List<StructDictItem> areas;
-        //电脑区域字典
-        public Dictionary<string, StructDictItem> areaDict = new Dictionary<string, StructDictItem>();
+        //区域字典
+        private Dictionary<string, StructDictItem> areaDict = new Dictionary<string, StructDictItem>();
         
         //商品类型
         private List<StructDictItem> productTypes;
@@ -98,7 +97,6 @@ namespace NetBarMS.Codes.Tools
             }
         }
         #endregion
-
 
         #region 会员等级功能
         //获取会员等级列表
@@ -169,7 +167,6 @@ namespace NetBarMS.Codes.Tools
             }
         }
         #endregion
-
 
         #region 区域功能
         //获取区域列表

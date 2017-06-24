@@ -114,6 +114,7 @@
     <Compile Include="Codes\Tools\NetBarException.cs" />
     <Compile Include="Codes\Tools\NetMessageManage.cs" />
     <Compile Include="Codes\Tools\NetOperation\HomePageNetOperation.cs" />
+    <Compile Include="Codes\Tools\NetOperation\IncomeNetOperation.cs" />
     <Compile Include="Codes\Tools\NetOperation\ManagerNetOperation.cs" />
     <Compile Include="Codes\Tools\NetOperation\MemberNetOperation.cs" />
     <Compile Include="Codes\Tools\NetOperation\ProductNetOperation.cs" />

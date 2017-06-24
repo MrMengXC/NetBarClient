@@ -52,15 +52,19 @@ namespace NetBarMS.Views.SystemManage
             this.gridControl1.DataSource = this.mainDataTable;
 
 
-            this.areaFlowPanel.MaximumSize = new Size(MaximumSize.Width, this.areaPanel.Size.Height - this.addAreaButton.Size.Height);
-            this.areaFlowPanel.AutoSize = true;
-            this.areaFlowPanel.Dock = DockStyle.Top;
-            this.areaFlowPanel.AutoScroll = true;
+            this.panel1.MaximumSize = new Size(this.areaPanel.Width, this.areaPanel.Height - this.addAreaButton.Height);
+            this.panel1.AutoSize = true;
+            this.panel1.AutoScroll = true;
             this.MouseWheel += AreaFlowPanel_MouseWheel;
-
+            this.areaPanel.SizeChanged += AreaPanel_SizeChanged;
           
             //获取区域列表
             GetAreaList();
+        }
+        //bgSize change
+        private void AreaPanel_SizeChanged(object sender, EventArgs e)
+        {
+            this.panel1.MaximumSize = new Size(this.areaPanel.Width, this.areaPanel.Height - this.addAreaButton.Height);
         }
         #endregion
 
@@ -73,7 +77,6 @@ namespace NetBarMS.Views.SystemManage
         //获取区域列表
         private void GetAreaListResult(ResultModel result)
         {
-            System.Console.WriteLine("GetAreaList:" + result.pack);
             if (result.pack.Content.MessageType != 1)
             {
                 return;
@@ -84,8 +87,9 @@ namespace NetBarMS.Views.SystemManage
                 NetMessageManage.Manager().RemoveResultBlock(GetAreaListResult);
                 this.Invoke(new UIHandleBlock(delegate
                 {
-                    SysManage.Manage().UpdateAreaData(result.pack.Content.ScSysInfo.ChildList);
 
+                    System.Console.WriteLine("GetAreaList:" + result.pack);
+                    SysManage.Manage().UpdateAreaData(result.pack.Content.ScSysInfo.ChildList);
                     areas = result.pack.Content.ScSysInfo.ChildList;
                     areaCodes.Clear();
                     foreach (StructDictItem item in areas)
@@ -110,18 +114,18 @@ namespace NetBarMS.Views.SystemManage
             this.currentComsPanel.Controls.Clear();
             this.selectArea = null;
             this.selectButtons.Clear();
-            this.areaFlowPanel.Controls.Clear();
+            this.panel1.Controls.Clear();
 
             for (int i = 0;i<this.areas.Count;i++)
             {
                 StructDictItem item = this.areas[i];
                 SimpleButton button = new SimpleButton();
                 button.AutoSize = false;
-                button.Size = new Size(this.areaFlowPanel.Size.Width, 40);
+                button.Size = new Size(this.panel1.Size.Width, 40);
                 button.Appearance.BackColor = Color.White;
                 button.Text = item.GetItem(0);
-               // button.BorderStyle = BorderStyle.FixedSingle;
-                this.areaFlowPanel.Controls.Add(button);
+                button.Dock = DockStyle.Top;
+                this.panel1.Controls.Add(button);
                 button.Click += Text_Click;
                 button.Tag = item.Code.ToString();
                 button.Margin = new Padding(0);
@@ -361,7 +365,7 @@ namespace NetBarMS.Views.SystemManage
         }
         #endregion
 
-        //鼠标滚轮事件的监听
+        #region 鼠标滚轮事件的监听
         private void AreaFlowPanel_MouseWheel(object sender, MouseEventArgs e)
         {
 
@@ -375,14 +379,15 @@ namespace NetBarMS.Views.SystemManage
                 //设置鼠标滚动幅度的大小
                 //flowLayoutPanel1.AutoScrollPosition = new Point(0, flowLayoutPanel1.VerticalScroll.Value - e.Delta / 2);
                 System.Console.WriteLine("滚动中");
-                Point loc = this.areaFlowPanel.Location;
+                Point loc = this.panel1.Location;
                 loc .Y-= 1;
-                this.areaFlowPanel.Location = loc;
+                this.panel1.Location = loc;
 
             }
 
 
         }
-       
+        #endregion
+
     }
 }

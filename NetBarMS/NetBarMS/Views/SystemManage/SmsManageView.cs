@@ -46,10 +46,20 @@ namespace NetBarMS.Views.SystemManage
             ToolsManage.SetGridView(this.gridView1, GridControlType.SmsManage, out this.mainDataTable);
             this.gridControl1.DataSource = this.mainDataTable;
 
-            this.pushFlowLayoutPanel.AutoSize = true;
-            this.pushFlowLayoutPanel.MaximumSize = new Size(MaximumSize.Width, this.pushBgPanel.Size.Height - this.addPushButton.Size.Height);
+            this.panel1.AutoSize = true;
+            this.panel1.AutoScroll = true;
+            this.panel1.MaximumSize = new Size(MaximumSize.Width, this.pushBgPanel.Height - this.addPushButton.Height);
+            this.pushBgPanel.SizeChanged += Panel1_SizeChanged;
+
             GetPushMessageList();
             GetStaffList();
+        }
+
+        //SizeChange
+        private void Panel1_SizeChanged(object sender, EventArgs e)
+        {
+            this.panel1.MaximumSize = new Size(MaximumSize.Width, this.pushBgPanel.Height - this.addPushButton.Height);
+
         }
         #endregion
 
@@ -127,7 +137,7 @@ namespace NetBarMS.Views.SystemManage
         #region 初始化推送事项UI
         private void InitPushMsgUI(List<StructDictItem> temPushItems)
         {
-            this.pushFlowLayoutPanel.Controls.Clear();
+            this.panel1.Controls.Clear();
             this.textBox1.Text = "";
             this.selectPush = null;
             //更新右侧员工数据
@@ -142,11 +152,12 @@ namespace NetBarMS.Views.SystemManage
                 StructDictItem item = this.showPushItems[i];
                 SimpleButton button = new SimpleButton();
                 button.AutoSize = false;
-                button.Size = new Size(this.pushFlowLayoutPanel.Size.Width, 34);
+                button.Size = new Size(this.panel1.Size.Width, 34);
+                button.Dock = DockStyle.Top;
                 button.Appearance.BackColor = Color.White;
                 button.Text = item.GetItem(0);
                 button.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-                this.pushFlowLayoutPanel.Controls.Add(button);
+                this.panel1.Controls.Add(button);
                 button.Click += Text_Click;
                 button.Tag = i.ToString();
                 button.Margin = new Padding(0);
@@ -162,9 +173,6 @@ namespace NetBarMS.Views.SystemManage
                             break;
                         }
                     }
-
-
-
                 }
 
             }

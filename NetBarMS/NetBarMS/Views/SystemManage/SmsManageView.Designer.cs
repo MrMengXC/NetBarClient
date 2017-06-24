@@ -40,8 +40,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pushBgPanel = new System.Windows.Forms.Panel();
             this.addPushButton = new DevExpress.XtraEditors.SimpleButton();
-            this.pushFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.titlePanel.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -167,7 +167,7 @@
             // pushBgPanel
             // 
             this.pushBgPanel.Controls.Add(this.addPushButton);
-            this.pushBgPanel.Controls.Add(this.pushFlowLayoutPanel);
+            this.pushBgPanel.Controls.Add(this.panel1);
             this.pushBgPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pushBgPanel.Location = new System.Drawing.Point(1, 32);
             this.pushBgPanel.Margin = new System.Windows.Forms.Padding(0);
@@ -183,20 +183,12 @@
             this.addPushButton.Appearance.Options.UseForeColor = true;
             this.addPushButton.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.addPushButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.addPushButton.Location = new System.Drawing.Point(0, 100);
+            this.addPushButton.Location = new System.Drawing.Point(0, 0);
             this.addPushButton.Name = "addPushButton";
             this.addPushButton.Size = new System.Drawing.Size(185, 40);
             this.addPushButton.TabIndex = 1;
             this.addPushButton.Text = "+添加推送事项";
             this.addPushButton.Click += new System.EventHandler(this.addPushButton_Click);
-            // 
-            // pushFlowLayoutPanel
-            // 
-            this.pushFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pushFlowLayoutPanel.Location = new System.Drawing.Point(0, 0);
-            this.pushFlowLayoutPanel.Name = "pushFlowLayoutPanel";
-            this.pushFlowLayoutPanel.Size = new System.Drawing.Size(185, 100);
-            this.pushFlowLayoutPanel.TabIndex = 0;
             // 
             // simpleButton1
             // 
@@ -207,6 +199,14 @@
             this.simpleButton1.TabIndex = 83;
             this.simpleButton1.Text = "保存";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 40);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(185, 100);
+            this.panel1.TabIndex = 2;
             // 
             // SmsManageView
             // 
@@ -242,12 +242,12 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel pushBgPanel;
-        private System.Windows.Forms.FlowLayoutPanel pushFlowLayoutPanel;
         private DevExpress.XtraEditors.SimpleButton addPushButton;
         private System.Windows.Forms.TextBox textBox1;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView;
+        private System.Windows.Forms.Panel panel1;
     }
 }
