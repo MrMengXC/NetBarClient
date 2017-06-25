@@ -64,11 +64,12 @@ namespace NetBarMS.Codes.Tools
     }
     public enum GridControlType
     {
-
+        
         None = 1,
         HomePageList,           //主页列表
-        LockList,           //被锁列表
-        PayedProductIndent,
+        OpenMember,             //开通会员
+        LockList,               //被锁列表
+        PayedProductIndent,     //已付款商品订单
         NetRecord,              //上网记录
         MemberManage,           //会员管理
         ProductManage,      //上架商品管理
@@ -123,7 +124,7 @@ namespace NetBarMS.Codes.Tools
         /// <returns></returns>
         public static List<HomePageNodeModel> ReadNodesXML()
         {
-
+            //SimpleButton
             // xmlDoc.Load(Directory.GetCurrentDirectory() + a.xml)
             List<HomePageNodeModel> datas = new List<HomePageNodeModel>();
             string xmlFilePath = Application.StartupPath + "//ManageNodes.xml";//Directory.GetCurrentDirectory() +  "ManageNodes.xml";

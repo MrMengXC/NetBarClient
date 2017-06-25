@@ -13,23 +13,41 @@ using DevExpress.XtraEditors.Controls;
 using static NetBarMS.Codes.Tools.NetMessageManage;
 using NetBarMS.Views.ResultManage;
 using NetBarMS.Forms;
+using NetBarMS.Views.HomePage;
 
 namespace NetBarMS.Views.NetUserManage
 {
     public partial class OpenMemberView : RootUserControlView
     {
+        private enum TitleList{
+            None = 0,
+            Type,
+            PayMoney,
+            GiveMoney,
+
+        }
         private int memberType = -1;
         private bool isTem = false;     //  是否是临时会员
         private string[] memberTypes;
         public OpenMemberView()
         {
             InitializeComponent();
-            this.titleLabel.Text = "用户开卡";
+            this.titleLabel.Text = "会员办理";
             memberTypes = new string[]{
             "临时会员", "普通会员", "黄金会员", "钻石会员",
-            }; 
-        }
+            };
 
+            InitUI();
+        }
+        #region 初始化UI
+        //初始化UI
+        private void InitUI()
+        {
+            ToolsManage.SetGridView(this.gridView1, GridControlType.OpenMember, out this.mainDataTable);
+            this.gridControl1.DataSource = this.mainDataTable;
+
+        }
+        #endregion
         #region 添加会员以及回调方法
         //保存
         private void simpleButton2_Click(object sender, EventArgs e)
@@ -179,11 +197,11 @@ namespace NetBarMS.Views.NetUserManage
         }
         #endregion
 
-
         //进行充值
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-
+            UserScanCodeView view = new UserScanCodeView();
+            ToolsManage.ShowForm(view, false);
         }
     }
 }

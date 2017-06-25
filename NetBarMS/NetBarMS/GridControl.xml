@@ -18,8 +18,15 @@
     <column name = "MAC地址" field="MacLoc" type ="C_Text" width ="" height =""/>
     <column name = "IP地址" field="IpLoc" type ="C_Text" width ="" height =""/>
     <column name = "操作" field="Operation" type ="C_Button" width ="" height ="" bnames ="强制下机.deplane/锁定.lock1/验证.yz"/>
-
   </grid>
+  <!--办理会员-->
+  <grid type ="OpenMember">
+    <column name = "类别" field="Type" type ="C_Text" width ="" height =""/>
+    <column name = "充值金额" field="PayMoney" type ="C_Text" width ="" height =""/>
+    <column name = "赠送金额" field="GiveMoney" type ="C_Text" width ="" height =""/>
+  </grid>
+  
+  
   <!--获取锁定列表-->
   <grid type ="LockList">
     <column name = "姓名" field="EpNumber" type ="C_Text" width ="" height =""/>

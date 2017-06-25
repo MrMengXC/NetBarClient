@@ -204,6 +204,12 @@
     <Compile Include="Views\HomePage\UserLockView.Designer.cs">
       <DependentUpon>UserLockView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\HomePage\UserScanCodeView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\HomePage\UserScanCodeView.Designer.cs">
+      <DependentUpon>UserScanCodeView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\InCome\AreaIncomeView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -650,6 +656,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\HomePage\UserLockView.resx">
       <DependentUpon>UserLockView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\HomePage\UserScanCodeView.resx">
+      <DependentUpon>UserScanCodeView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\InCome\AreaIncomeView.resx">
       <DependentUpon>AreaIncomeView.cs</DependentUpon>

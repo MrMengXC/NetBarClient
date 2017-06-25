@@ -13,7 +13,7 @@ namespace NetBarMS.Codes.Tools.NetOperation
     class IncomeNetOperation
     {
 
-        #region 获取商品列表
+        #region 获取日营收
         public static void GetProductList(DataResultBlock resultBlock, StructPage page, Int32 category, string keywords)
         {
 

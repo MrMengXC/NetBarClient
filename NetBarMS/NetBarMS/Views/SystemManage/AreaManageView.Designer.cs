@@ -171,6 +171,7 @@
             this.areaPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.areaPanel.Controls.Add(this.addAreaButton);
             this.areaPanel.Controls.Add(this.panel1);
+
             this.areaPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.areaPanel.Location = new System.Drawing.Point(1, 36);
             this.areaPanel.Margin = new System.Windows.Forms.Padding(0);

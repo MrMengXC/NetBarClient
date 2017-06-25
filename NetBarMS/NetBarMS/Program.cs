@@ -33,9 +33,9 @@ namespace NetBarMS
             XMLDataManage.Instance();
 
 
-            AreaManageView newview2 = new AreaManageView();
-            CustomForm newForm2 = new CustomForm(newview2, true, false);
-            //TestForm newForm2 = new TestForm();
+            //AreaManageView newview2 = new AreaManageView();
+            //CustomForm newForm2 = new CustomForm(newview2, true, false);
+            MainForm newForm2 = new MainForm();
 
 
             Application.Run(newForm2);

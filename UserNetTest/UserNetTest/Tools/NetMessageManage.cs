@@ -9,13 +9,13 @@ using System.Net;
 using System.IO;
 using Google.ProtocolBuffers;
 using System.Windows.Forms;
+using UserNetTest.Tools;
 
-namespace NetBarMS.Codes.Tools
+namespace UserNetTest.Tools
 {
-    class NetMessageManage
+    public class NetMessageManage
     {
-
-
+        private string socketTag;
         private Socket clientSocket;
         private static NetMessageManage _instance;
         private const string ipString = "jorkenw.gnway.org";

@@ -319,7 +319,7 @@ namespace NetBarMS.Views.HomePage
 
             HomePageNetOperation.CardCheckIn(CardCheckOutBlock);
             return;
-            UserPayView view = new UserPayView();
+            UserScanCodeView view = new UserScanCodeView();
             ToolsManage.ShowForm(view, false);
         }
         /// <summary>
