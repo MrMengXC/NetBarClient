@@ -60,6 +60,7 @@
             this.homePageListPanel = new System.Windows.Forms.Panel();
             this.manageTreeView = new System.Windows.Forms.TreeView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.simpleButton13 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.searchControl1.Properties)).BeginInit();
             this.panel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -142,7 +143,7 @@
             this.panel5.BackColor = System.Drawing.Color.Red;
             this.panel5.Controls.Add(this.labelControl3);
             this.panel5.Controls.Add(this.labelControl4);
-            this.panel5.Location = new System.Drawing.Point(261, 3);
+            this.panel5.Location = new System.Drawing.Point(213, 3);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(160, 60);
             this.panel5.TabIndex = 54;
@@ -175,7 +176,7 @@
             this.panel4.BackColor = System.Drawing.Color.Yellow;
             this.panel4.Controls.Add(this.labelControl2);
             this.panel4.Controls.Add(this.labelControl1);
-            this.panel4.Location = new System.Drawing.Point(427, 3);
+            this.panel4.Location = new System.Drawing.Point(379, 3);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(160, 60);
             this.panel4.TabIndex = 53;
@@ -229,10 +230,10 @@
             this.flowLayoutPanel3.Controls.Add(this.panel4);
             this.flowLayoutPanel3.Controls.Add(this.panel5);
             this.flowLayoutPanel3.Controls.Add(this.panel6);
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(254, 1);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(200, 1);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(590, 69);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(542, 69);
             this.flowLayoutPanel3.TabIndex = 57;
             // 
             // panel6
@@ -241,7 +242,7 @@
             this.panel6.BackColor = System.Drawing.Color.Red;
             this.panel6.Controls.Add(this.labelControl6);
             this.panel6.Controls.Add(this.labelControl7);
-            this.panel6.Location = new System.Drawing.Point(95, 3);
+            this.panel6.Location = new System.Drawing.Point(47, 3);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(160, 60);
             this.panel6.TabIndex = 55;
@@ -282,17 +283,18 @@
             this.flowLayoutPanel2.Controls.Add(this.simpleButton10);
             this.flowLayoutPanel2.Controls.Add(this.simpleButton11);
             this.flowLayoutPanel2.Controls.Add(this.simpleButton12);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(850, 1);
+            this.flowLayoutPanel2.Controls.Add(this.simpleButton13);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(748, 1);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(673, 69);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(775, 69);
             this.flowLayoutPanel2.TabIndex = 56;
             // 
             // simpleButton3
             // 
             this.simpleButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton3.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.simpleButton3.Location = new System.Drawing.Point(611, 3);
+            this.simpleButton3.Location = new System.Drawing.Point(713, 3);
             this.simpleButton3.Name = "simpleButton3";
             this.simpleButton3.Size = new System.Drawing.Size(59, 60);
             this.simpleButton3.TabIndex = 0;
@@ -302,7 +304,7 @@
             // 
             this.simpleButton4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton4.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.simpleButton4.Location = new System.Drawing.Point(546, 3);
+            this.simpleButton4.Location = new System.Drawing.Point(648, 3);
             this.simpleButton4.Name = "simpleButton4";
             this.simpleButton4.Size = new System.Drawing.Size(59, 60);
             this.simpleButton4.TabIndex = 1;
@@ -313,7 +315,7 @@
             // 
             this.simpleButton5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton5.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.simpleButton5.Location = new System.Drawing.Point(481, 3);
+            this.simpleButton5.Location = new System.Drawing.Point(583, 3);
             this.simpleButton5.Name = "simpleButton5";
             this.simpleButton5.Size = new System.Drawing.Size(59, 60);
             this.simpleButton5.TabIndex = 2;
@@ -324,7 +326,7 @@
             // 
             this.simpleButton6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton6.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.simpleButton6.Location = new System.Drawing.Point(416, 3);
+            this.simpleButton6.Location = new System.Drawing.Point(518, 3);
             this.simpleButton6.Name = "simpleButton6";
             this.simpleButton6.Size = new System.Drawing.Size(59, 60);
             this.simpleButton6.TabIndex = 3;
@@ -335,7 +337,7 @@
             // 
             this.simpleButton7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton7.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.simpleButton7.Location = new System.Drawing.Point(351, 3);
+            this.simpleButton7.Location = new System.Drawing.Point(453, 3);
             this.simpleButton7.Name = "simpleButton7";
             this.simpleButton7.Size = new System.Drawing.Size(59, 60);
             this.simpleButton7.TabIndex = 4;
@@ -346,7 +348,7 @@
             // 
             this.simpleButton8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton8.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.simpleButton8.Location = new System.Drawing.Point(286, 3);
+            this.simpleButton8.Location = new System.Drawing.Point(388, 3);
             this.simpleButton8.Name = "simpleButton8";
             this.simpleButton8.Size = new System.Drawing.Size(59, 60);
             this.simpleButton8.TabIndex = 5;
@@ -357,7 +359,7 @@
             // 
             this.simpleButton9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton9.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.simpleButton9.Location = new System.Drawing.Point(221, 3);
+            this.simpleButton9.Location = new System.Drawing.Point(323, 3);
             this.simpleButton9.Name = "simpleButton9";
             this.simpleButton9.Size = new System.Drawing.Size(59, 60);
             this.simpleButton9.TabIndex = 6;
@@ -368,7 +370,7 @@
             // 
             this.simpleButton10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton10.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.simpleButton10.Location = new System.Drawing.Point(156, 3);
+            this.simpleButton10.Location = new System.Drawing.Point(258, 3);
             this.simpleButton10.Name = "simpleButton10";
             this.simpleButton10.Size = new System.Drawing.Size(59, 60);
             this.simpleButton10.TabIndex = 7;
@@ -379,7 +381,7 @@
             // 
             this.simpleButton11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton11.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.simpleButton11.Location = new System.Drawing.Point(91, 3);
+            this.simpleButton11.Location = new System.Drawing.Point(193, 3);
             this.simpleButton11.Name = "simpleButton11";
             this.simpleButton11.Size = new System.Drawing.Size(59, 60);
             this.simpleButton11.TabIndex = 8;
@@ -390,7 +392,7 @@
             // 
             this.simpleButton12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton12.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.simpleButton12.Location = new System.Drawing.Point(26, 3);
+            this.simpleButton12.Location = new System.Drawing.Point(128, 3);
             this.simpleButton12.Name = "simpleButton12";
             this.simpleButton12.Size = new System.Drawing.Size(59, 60);
             this.simpleButton12.TabIndex = 9;
@@ -425,6 +427,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(195, 890);
             this.panel1.TabIndex = 8;
+            // 
+            // simpleButton13
+            // 
+            this.simpleButton13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.simpleButton13.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.simpleButton13.Location = new System.Drawing.Point(63, 3);
+            this.simpleButton13.Name = "simpleButton13";
+            this.simpleButton13.Size = new System.Drawing.Size(59, 60);
+            this.simpleButton13.TabIndex = 10;
+            this.simpleButton13.Text = "激活";
+            this.simpleButton13.Click += new System.EventHandler(this.simpleButton13_Click);
             // 
             // MainForm
             // 
@@ -488,6 +501,7 @@
         private System.Windows.Forms.Panel panel6;
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.LabelControl labelControl7;
+        private DevExpress.XtraEditors.SimpleButton simpleButton13;
     }
 }
 

@@ -115,7 +115,6 @@ namespace NetBarMS.Codes.Tools
 
                 if (len >0)
                 {
-                    //ReceiveDataHandle(recvBytesHead);
                     try
                     {
                         CodedInputStream inputStream = CodedInputStream.CreateInstance(recvBytesHead);

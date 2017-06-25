@@ -46,17 +46,18 @@ namespace NetBarMS.Views.HomePage
             InitializeComponent();
 
             InitUI();
-            ManagerNetOperation.AccountInfo(AccountInfoBlock);
         }
-        //初始化UI
+        #region 初始化UI
         private void InitUI()
         {
-     
             ToolsManage.SetGridView(this.gridView1, GridControlType.HomePageList, out this.mainDataTable, ButtonEdit_ButtonClick, GridView_CustomColumnSort);
             this.gridControl1.DataSource = this.mainDataTable;
+            ManagerNetOperation.AccountInfo(AccountInfoBlock);
 
         }
-        #region 获取信息回调
+       
+
+        
         // 获取账户信息的回调
         public void AccountInfoBlock(ResultModel result)
         {
@@ -65,33 +66,50 @@ namespace NetBarMS.Views.HomePage
             {
                 NetMessageManage.Manager().RemoveResultBlock(AccountInfoBlock);
                 //System.Console.WriteLine("AccountInfoBlock:" + result.pack);
-                SysManage.Manage().RequestSysInfo(ResultEvent);
-
+                GetHomePageList();
             }
-        }
-        //请求信息获取Event
-        private void ResultEvent()
-        {
-            System.Console.WriteLine("刷新首页数据");
-            //TODO:更新UI 判断数据返回的类型
-            //HomePageNetOperation.HompageList(HomePageListBlock);
-            this.Invoke(new UIHandleBlock(delegate ()
-            {
-
-                this.mainDataTable.Clear();
-                IList<StructRealTime> coms = SysManage.Manage().computers;
-                for (int i = 0; i < coms.Count; i++)
-                {
-                    StructRealTime computer = coms[i];
-                    AddGridControRow(computer);
-                }
-            }));
-           
         }
         #endregion
 
+        #region 获取首页数据列表
+        public void GetHomePageList()
+        {
+            //获取上网信息
+            HomePageNetOperation.HompageList(HomePageListResult);
+        }
+
+        // 获取首页计算机列表结果回调
+        private void HomePageListResult(ResultModel result)
+        {
+
+            if (result.pack.Cmd == Cmd.CMD_REALTIME_INFO && result.pack.Content.MessageType == 1)
+            {
+                //System.Console.WriteLine("HomePageListBlock:" + result.pack);
+                SysManage.Manage().UpdateHomePageComputers(result.pack.Content.ScRealtimeInfo.RealtimesList);
+                this.Invoke(new UIHandleBlock(delegate ()
+                {
+                    RefreshGridControl();
+
+                }));
+            }
+        }
+
+        #endregion
+        
         #region 更新GridControl 的数据
-        private void AddGridControRow(StructRealTime computer)
+        private void RefreshGridControl()
+        {
+            this.mainDataTable.Clear();
+
+            List<StructRealTime> coms = SysManage.Manage().computers;
+
+            for (int i = 0; i < coms.Count; i++)
+            {
+                StructRealTime computer = coms[i];
+                AddNewRow(computer);
+            }
+        }
+        private void AddNewRow(StructRealTime computer)
         {
 
             DataRow row = this.mainDataTable.NewRow();
@@ -134,6 +152,8 @@ namespace NetBarMS.Views.HomePage
             System.Console.WriteLine("ButtonEdit_ButtonClick" + row[TitleList.EpNumber.ToString()]);
         }
         #endregion
+
+        #region 按钮标题进行点击排序
         private void GridView_CustomColumnSort(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnSortEventArgs e)
       
         {
@@ -156,5 +176,6 @@ namespace NetBarMS.Views.HomePage
             //    //...
             //}
         }
+        #endregion
     }
 }

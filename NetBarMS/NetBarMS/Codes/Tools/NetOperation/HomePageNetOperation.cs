@@ -10,6 +10,7 @@ namespace NetBarMS.Codes.Tools.NetOperation
     class HomePageNetOperation
     {
 
+        #region 上机信息实时列表
         /// <summary>
         /// 上机信息实时列表
         /// </summary>
@@ -29,15 +30,17 @@ namespace NetBarMS.Codes.Tools.NetOperation
          
 
         }
+        #endregion
 
+        #region 上机激活
         /// <summary>
         /// 上机激活
         /// </summary>
-        public static void CardCheckIn(DataResultBlock resultBlock)
+        public static void CardCheckIn(DataResultBlock resultBlock,string card)
         {
 
             CSEmkCheckin.Builder checkin = new CSEmkCheckin.Builder();
-            checkin.SetCardnumber("511725198904225281");
+            checkin.SetCardnumber(card);
 
             MessageContent.Builder content = new MessageContent.Builder();
             content.SetMessageType(1);
@@ -49,6 +52,9 @@ namespace NetBarMS.Codes.Tools.NetOperation
             NetMessageManage.Manager().SendMsg(pack.Build(), resultBlock);
 
         }
+        #endregion
+
+        #region 下机结算
         /// <summary>
         /// 下机结算
         /// </summary>
@@ -67,5 +73,39 @@ namespace NetBarMS.Codes.Tools.NetOperation
             NetMessageManage.Manager().SendMsg(pack.Build(), resultBlock);
 
         }
+        #endregion
+
+
+        #region 获取充值二维码
+        // 获取充值二维码
+        public static void GetRechargeCode(DataResultBlock resultBlock, string card,int money)
+        {
+            CSEmkPrepay.Builder pay = new CSEmkPrepay.Builder();
+            pay.SetCardnumber(card);
+            pay.Recharge = money;
+            MessageContent.Builder content = new MessageContent.Builder();
+            content.SetMessageType(1);
+            content.SetCsEmkPrepay(pay);
+
+            MessagePack.Builder pack = new MessagePack.Builder();
+            pack.SetCmd(Cmd.CMD_CLIENT_PREPAY);
+            pack.SetContent(content);
+            NetMessageManage.Manager().SendMsg(pack.Build(), resultBlock);
+
+        }
+        #endregion
+
+        #region 充值
+        // 获取充值结果
+        public static void GetRecharge(DataResultBlock resultBlock)
+        {
+
+           
+            MessagePack.Builder pack = new MessagePack.Builder();
+            pack.SetCmd(Cmd.CMD_CLIENT_TOPAY);
+            NetMessageManage.Manager().SendMsg(pack.Build(), resultBlock);
+
+        }
+        #endregion
     }
 }

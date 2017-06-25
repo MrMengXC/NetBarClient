@@ -26,6 +26,8 @@ using NetBarMS.Views.EvaluateManage;
 using NetBarMS.Views.OtherMain;
 using NetBarMS.Views.HomePage;
 using NetBarMS.Codes.Tools.NetOperation;
+using NetBarMS.Views.UserUseCp;
+
 namespace NetBarMS
 {
 
@@ -269,10 +271,11 @@ namespace NetBarMS
         }
 
         #endregion
+
         //刷新首页数据
         private void RefreshHomePageData()
         {
-            SysManage.Manage().RequestSysInfo(null);
+            this.homePageListView.GetHomePageList();
         }
         //列表视图按钮点击事件
         private void simpleButton2_Click(object sender, EventArgs e)
@@ -314,9 +317,6 @@ namespace NetBarMS
         /// <param name="e"></param>
         private void button3_Click(object sender, EventArgs e)
         {
-            HomePageNetOperation.CardCheckIn(CardCheckInBlock);
-
-            return;
             OpenMemberView view = new OpenMemberView();
             ToolsManage.ShowForm(view, false);
         }
@@ -338,9 +338,6 @@ namespace NetBarMS
         /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
-
-            HomePageNetOperation.CardCheckIn(CardCheckOutBlock);
-            return;
             UserPayView view = new UserPayView();
             ToolsManage.ShowForm(view, false);
         }
@@ -416,7 +413,16 @@ namespace NetBarMS
             ReminderScanView view = new ReminderScanView();
             ToolsManage.ShowForm(view, false);
         }
+
+        //上网
+        private void simpleButton13_Click(object sender, EventArgs e)
+        {
+            UserUseCpView view = new UserUseCpView();
+            ToolsManage.ShowForm(view, false);
+        }
         #endregion
+
+
     }
 }
 

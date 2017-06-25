@@ -128,10 +128,12 @@ public static partial class CoreProtocol {
   internal static pb::FieldAccess.FieldAccessorTable<global::CSEmkCheckout, global::CSEmkCheckout.Builder> internal__static_CSEmkCheckout__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_SCEmkCheckout__Descriptor;
   internal static pb::FieldAccess.FieldAccessorTable<global::SCEmkCheckout, global::SCEmkCheckout.Builder> internal__static_SCEmkCheckout__FieldAccessorTable;
-  internal static pbd::MessageDescriptor internal__static_CSEmkRecharge__Descriptor;
-  internal static pb::FieldAccess.FieldAccessorTable<global::CSEmkRecharge, global::CSEmkRecharge.Builder> internal__static_CSEmkRecharge__FieldAccessorTable;
-  internal static pbd::MessageDescriptor internal__static_SCEmkRecharge__Descriptor;
-  internal static pb::FieldAccess.FieldAccessorTable<global::SCEmkRecharge, global::SCEmkRecharge.Builder> internal__static_SCEmkRecharge__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_CSEmkPrepay__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::CSEmkPrepay, global::CSEmkPrepay.Builder> internal__static_CSEmkPrepay__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_SCEmkPrepay__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::SCEmkPrepay, global::SCEmkPrepay.Builder> internal__static_SCEmkPrepay__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_SCEmkTopay__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::SCEmkTopay, global::SCEmkTopay.Builder> internal__static_SCEmkTopay__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_CSEmkRecord__Descriptor;
   internal static pb::FieldAccess.FieldAccessorTable<global::CSEmkRecord, global::CSEmkRecord.Builder> internal__static_CSEmkRecord__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_SCEmkRecord__Descriptor;
@@ -170,28 +172,58 @@ public static partial class CoreProtocol {
   internal static pb::FieldAccess.FieldAccessorTable<global::CSOrderDetail, global::CSOrderDetail.Builder> internal__static_CSOrderDetail__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_SCOrderDetail__Descriptor;
   internal static pb::FieldAccess.FieldAccessorTable<global::SCOrderDetail, global::SCOrderDetail.Builder> internal__static_SCOrderDetail__FieldAccessorTable;
-  internal static pbd::MessageDescriptor internal__static_CSLogon__Descriptor;
-  internal static pb::FieldAccess.FieldAccessorTable<global::CSLogon, global::CSLogon.Builder> internal__static_CSLogon__FieldAccessorTable;
-  internal static pbd::MessageDescriptor internal__static_CSLogoff__Descriptor;
-  internal static pb::FieldAccess.FieldAccessorTable<global::CSLogoff, global::CSLogoff.Builder> internal__static_CSLogoff__FieldAccessorTable;
-  internal static pbd::MessageDescriptor internal__static_CSHangup__Descriptor;
-  internal static pb::FieldAccess.FieldAccessorTable<global::CSHangup, global::CSHangup.Builder> internal__static_CSHangup__FieldAccessorTable;
-  internal static pbd::MessageDescriptor internal__static_CSUploadHead__Descriptor;
-  internal static pb::FieldAccess.FieldAccessorTable<global::CSUploadHead, global::CSUploadHead.Builder> internal__static_CSUploadHead__FieldAccessorTable;
-  internal static pbd::MessageDescriptor internal__static_SCUploadHead__Descriptor;
-  internal static pb::FieldAccess.FieldAccessorTable<global::SCUploadHead, global::SCUploadHead.Builder> internal__static_SCUploadHead__FieldAccessorTable;
-  internal static pbd::MessageDescriptor internal__static_CSCheckName__Descriptor;
-  internal static pb::FieldAccess.FieldAccessorTable<global::CSCheckName, global::CSCheckName.Builder> internal__static_CSCheckName__FieldAccessorTable;
-  internal static pbd::MessageDescriptor internal__static_SCCheckName__Descriptor;
-  internal static pb::FieldAccess.FieldAccessorTable<global::SCCheckName, global::SCCheckName.Builder> internal__static_SCCheckName__FieldAccessorTable;
-  internal static pbd::MessageDescriptor internal__static_CSCheckAccount__Descriptor;
-  internal static pb::FieldAccess.FieldAccessorTable<global::CSCheckAccount, global::CSCheckAccount.Builder> internal__static_CSCheckAccount__FieldAccessorTable;
-  internal static pbd::MessageDescriptor internal__static_SCCheckAccount__Descriptor;
-  internal static pb::FieldAccess.FieldAccessorTable<global::SCCheckAccount, global::SCCheckAccount.Builder> internal__static_SCCheckAccount__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_CSReconnect__Descriptor;
   internal static pb::FieldAccess.FieldAccessorTable<global::CSReconnect, global::CSReconnect.Builder> internal__static_CSReconnect__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_SCReconnect__Descriptor;
   internal static pb::FieldAccess.FieldAccessorTable<global::SCReconnect, global::SCReconnect.Builder> internal__static_SCReconnect__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_CSClientOpen__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::CSClientOpen, global::CSClientOpen.Builder> internal__static_CSClientOpen__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_CSClientClose__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::CSClientClose, global::CSClientClose.Builder> internal__static_CSClientClose__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_CSLogon__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::CSLogon, global::CSLogon.Builder> internal__static_CSLogon__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_SCLogon__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::SCLogon, global::SCLogon.Builder> internal__static_SCLogon__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_CSLogoff__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::CSLogoff, global::CSLogoff.Builder> internal__static_CSLogoff__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_SCLogoff__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::SCLogoff, global::SCLogoff.Builder> internal__static_SCLogoff__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_CSHungup__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::CSHungup, global::CSHungup.Builder> internal__static_CSHungup__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_CSCharge__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::CSCharge, global::CSCharge.Builder> internal__static_CSCharge__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_SCCharge__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::SCCharge, global::SCCharge.Builder> internal__static_SCCharge__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_SCChargeResult__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::SCChargeResult, global::SCChargeResult.Builder> internal__static_SCChargeResult__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_SCShop__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::SCShop, global::SCShop.Builder> internal__static_SCShop__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_CSCartAdd__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::CSCartAdd, global::CSCartAdd.Builder> internal__static_CSCartAdd__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_CSCartDel__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::CSCartDel, global::CSCartDel.Builder> internal__static_CSCartDel__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_CSCartBuy__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::CSCartBuy, global::CSCartBuy.Builder> internal__static_CSCartBuy__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_SCCartBuy__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::SCCartBuy, global::SCCartBuy.Builder> internal__static_SCCartBuy__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_SCCartBuyResult__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::SCCartBuyResult, global::SCCartBuyResult.Builder> internal__static_SCCartBuyResult__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_SCSysMessage__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::SCSysMessage, global::SCSysMessage.Builder> internal__static_SCSysMessage__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_CSUserMessage__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::CSUserMessage, global::CSUserMessage.Builder> internal__static_CSUserMessage__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_CSEvaluate__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::CSEvaluate, global::CSEvaluate.Builder> internal__static_CSEvaluate__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_SCEvaluate__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::SCEvaluate, global::SCEvaluate.Builder> internal__static_SCEvaluate__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_CSVerifyCode__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::CSVerifyCode, global::CSVerifyCode.Builder> internal__static_CSVerifyCode__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_SCVerifyCode__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::SCVerifyCode, global::SCVerifyCode.Builder> internal__static_SCVerifyCode__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_CSBindMobile__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::CSBindMobile, global::CSBindMobile.Builder> internal__static_CSBindMobile__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_SCBindMobile__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::SCBindMobile, global::SCBindMobile.Builder> internal__static_SCBindMobile__FieldAccessorTable;
   #endregion
   #region Descriptor
   public static pbd::FileDescriptor Descriptor {
@@ -205,7 +237,7 @@ public static partial class CoreProtocol {
           "ChJDb3JlUHJvdG9jb2wucHJvdG8aEEJhc2VTdHJ1Y3QucHJvdG8iZgoLTWVz", 
           "c2FnZVBhY2sSEQoDY21kGAEgAigOMgQuQ21kEg8KB3ZlcnNpb24YAiABKAUS", 
           "EQoJc2Vzc2lvbklkGAMgASgFEiAKB2NvbnRlbnQYBCABKAsyDy5NZXNzYWdl", 
-          "Q29udGVudCKQGgoOTWVzc2FnZUNvbnRlbnQSEwoLbWVzc2FnZVR5cGUYASAC", 
+          "Q29udGVudCKpHgoOTWVzc2FnZUNvbnRlbnQSEwoLbWVzc2FnZVR5cGUYASAC", 
           "KAUSIQoIZXJyb3JUaXAYAiABKAsyDy5TdHJ1Y3RFcnJvclRpcBIhCgtjbEFz", 
           "a1NlcnZlchgDIAEoCzIMLkNMQXNrU2VydmVyEiEKC2xjUmV0U2VydmVyGAQg", 
           "ASgLMgwuTENSZXRTZXJ2ZXISGwoIY3NBdXRoZW4YBSABKAsyCS5DU0F1dGhl", 
@@ -253,161 +285,195 @@ public static partial class CoreProtocol {
           "IAEoCzIQLkNTVXBkYXRlU3lzSW5mbxIjCgxjc0Vta0NoZWNraW4YOCABKAsy", 
           "DS5DU0Vta0NoZWNraW4SIwoMc2NFbWtDaGVja2luGDkgASgLMg0uU0NFbWtD", 
           "aGVja2luEiUKDWNzRW1rQ2hlY2tvdXQYOiABKAsyDi5DU0Vta0NoZWNrb3V0", 
-          "EiUKDXNjRW1rQ2hlY2tvdXQYOyABKAsyDi5TQ0Vta0NoZWNrb3V0EiQKDGNz", 
-          "RW1rUmVoYXJnZRg8IAEoCzIOLkNTRW1rUmVjaGFyZ2USJQoNc2NFbWtSZWNo", 
-          "YXJnZRg9IAEoCzIOLlNDRW1rUmVjaGFyZ2USIQoLY3NFbWtSZWNvcmQYPiAB", 
-          "KAsyDC5DU0Vta1JlY29yZBIhCgtzY0Vta1JlY29yZBg/IAEoCzIMLlNDRW1r", 
-          "UmVjb3JkEikKD2NzRW1rUmVjb3JkRmluZBhAIAEoCzIQLkNTRW1rUmVjb3Jk", 
-          "RmluZBIpCg9zY0Vta1JlY29yZEZpbmQYQSABKAsyEC5TQ0Vta1JlY29yZEZp", 
-          "bmQSIQoLY3NHb29kc0ZpbmQYQiABKAsyDC5DU0dvb2RzRmluZBIhCgtzY0dv", 
-          "b2RzRmluZBhDIAEoCzIMLlNDR29vZHNGaW5kEh8KCmNzR29vZHNBZGQYRCAB", 
-          "KAsyCy5DU0dvb2RzQWRkEh8KCmNzR29vZHNEZWwYRSABKAsyCy5DU0dvb2Rz", 
-          "RGVsEiUKDWNzR29vZHNVcGRhdGUYRiABKAsyDi5DU0dvb2RzVXBkYXRlEiMK", 
-          "DGNzR29vZHNTdG9jaxhHIAEoCzINLkNTR29vZHNTdG9jaxIjCgxzY0dvb2Rz", 
-          "U3RvY2sYSCABKAsyDS5TQ0dvb2RzU3RvY2sSJQoNY3NTYWxlc1JlY29yZBhJ", 
-          "IAEoCzIOLkNTU2FsZXNSZWNvcmQSJQoNc2NTYWxlc1JlY29yZBhKIAEoCzIO", 
-          "LlNDU2FsZXNSZWNvcmQSHwoKY3NTYWxlc1RvcBhLIAEoCzILLkNTU2FsZXNU", 
-          "b3ASHwoKc2NTYWxlc1RvcBhMIAEoCzILLlNDU2FsZXNUb3ASIQoLY3NPcmRl", 
-          "ckxpc3QYTSABKAsyDC5DU09yZGVyTGlzdBIhCgtzY09yZGVyTGlzdBhOIAEo", 
-          "CzIMLlNDT3JkZXJMaXN0EiUKDWNzT3JkZXJEZXRhaWwYTyABKAsyDi5DU09y", 
-          "ZGVyRGV0YWlsEiUKDXNjT3JkZXJEZXRhaWwYUCABKAsyDi5TQ09yZGVyRGV0", 
-          "YWlsEhkKB2NzTG9nb24YUSABKAsyCC5DU0xvZ29uEhsKCGNzTG9nb2ZmGFIg", 
-          "ASgLMgkuQ1NMb2dvZmYSGwoIY3NIYW5ndXAYUyABKAsyCS5DU0hhbmd1cBIj", 
-          "Cgxjc1VwbG9hZEhlYWQYVCABKAsyDS5DU1VwbG9hZEhlYWQSIwoMc2NVcGxv", 
-          "YWRIZWFkGFUgASgLMg0uU0NVcGxvYWRIZWFkEiEKC2NzQ2hlY2tOYW1lGFYg", 
-          "ASgLMgwuQ1NDaGVja05hbWUSIQoLc2NDaGVja05hbWUYVyABKAsyDC5TQ0No", 
-          "ZWNrTmFtZRInCg5jc0NoZWNrQWNjb3VudBhYIAEoCzIPLkNTQ2hlY2tBY2Nv", 
-          "dW50EicKDnNjQ2hlY2tBY2NvdW50GFkgASgLMg8uU0NDaGVja0FjY291bnQS", 
-          "IQoLY3NSZWNvbm5lY3QYWiABKAsyDC5DU1JlY29ubmVjdBIhCgtzY1JlY29u", 
-          "bmVjdBhbIAEoCzIMLlNDUmVjb25uZWN0IhsKC0NMQXNrU2VydmVyEgwKBHV1", 
-          "aWQYASACKAkiLQoLTENSZXRTZXJ2ZXISEAoIc2VydmVyaXAYASABKAkSDAoE", 
-          "cG9ydBgCIAEoBSIYCghDU0F1dGhlbhIMCgR0ZXh0GAEgAigJIisKCFNDQXV0", 
-          "aGVuEhEKCXNlc3Npb25JZBgBIAIoBRIMCgRndWlkGAIgASgFImEKB0NTTG9n", 
-          "aW4SDAoEdHlwZRgBIAIoBRISCgpmaW5nZXJkYXRhGAIgASgJEhIKCmNhcmRu", 
-          "dW1iZXIYAyABKAkSDgoGdXNlcklkGAQgASgJEhAKCHBhc3N3b3JkGAUgASgJ", 
-          "IioKB1NDTG9naW4SEQoJc2Vzc2lvbklkGAEgAigFEgwKBGd1aWQYAiABKAUi", 
-          "ZwoNU0NBY2NvdW50SW5mbxIfCgdhY2NvdW50GAEgAigLMg4uU3RydWN0QWNj", 
-          "b3VudBIZCgRyb2xlGAIgAigLMgsuU3RydWN0Um9sZRIaCgVtZW51cxgDIAMo", 
-          "CzILLlN0cnVjdE1lbnUiNAoOU0NSZWFsdGltZUluZm8SIgoJcmVhbHRpbWVz", 
-          "GAEgAygLMg8uU3RydWN0UmVhbFRpbWUiHAoKQ1NSb2xlTGlzdBIOCgZyb2xl", 
-          "aWQYASACKAUiRAoKU0NSb2xlTGlzdBIaCgVyb2xlcxgBIAMoCzILLlN0cnVj", 
-          "dFJvbGUSGgoFbWVudXMYAiADKAsyCy5TdHJ1Y3RNZW51IhkKCUNTUm9sZUFk", 
-          "ZBIMCgRuYW1lGAEgAigJIiYKCVNDUm9sZUFkZBIZCgRyb2xlGAEgAigLMgsu", 
-          "U3RydWN0Um9sZSIbCglDU1JvbGVEZWwSDgoGcm9sZWlkGAEgAigFIiwKDENT", 
-          "Um9sZVVwZGF0ZRIOCgZyb2xlaWQYASACKAUSDAoEbmFtZRgCIAIoCSIuCgxD", 
-          "U1JvbGVSaWdodHMSDgoGcm9sZWlkGAEgAigFEg4KBnJpZ2h0cxgCIAIoCSIw", 
-          "Cg1TQ0FjY291bnRMaXN0Eh8KB2FjY291bnQYASADKAsyDi5TdHJ1Y3RBY2Nv", 
-          "dW50Ii8KDENTQWNjb3VudEFkZBIfCgdhY2NvdW50GAEgAigLMg4uU3RydWN0", 
-          "QWNjb3VudCIfCgxDU0FjY291bnREZWwSDwoHYWRtaW5pZBgBIAIoCSIyCg9D", 
-          "U0FjY291bnRVcGRhdGUSHwoHYWNjb3VudBgBIAMoCzIOLlN0cnVjdEFjY291", 
-          "bnQiLgoMQ1NBY2NvdW50U25zEhEKCWFjY291bnRpZBgBIAIoBRILCgNzbnMY", 
-          "AiACKAkiNAoOU0NDb21wdXRlckxpc3QSIgoJY29tcHV0ZXJzGAEgAygLMg8u", 
-          "U3RydWN0Q29tcHV0ZXIiMgoNQ1NDb21wdXRlckFkZBIhCghjb21wdXRlchgB", 
-          "IAIoCzIPLlN0cnVjdENvbXB1dGVyIiMKDUNTQ29tcHV0ZXJEZWwSEgoKY29t", 
-          "cHV0ZXJpZBgBIAMoBSI1ChBDU0NvbXB1dGVyVXBkYXRlEiEKCGNvbXB1dGVy", 
-          "GAEgAygLMg8uU3RydWN0Q29tcHV0ZXIiHgoOQ1NDb21wdXRlckZpbmQSDAoE", 
-          "bmFtZRgBIAIoCSI0Cg5TQ0NvbXB1dGVyRmluZBIiCgljb21wdXRlcnMYASAD", 
-          "KAsyDy5TdHJ1Y3RDb21wdXRlciIQCg5DU0NvbXB1dGVyT3BlbiIRCg9DU0Nv", 
-          "bXB1dGVyQ2xvc2UiKQoMQ1NNZW1iZXJMaXN0EhkKBHBhZ2UYASACKAsyCy5T", 
-          "dHJ1Y3RQYWdlIi4KDFNDTWVtYmVyTGlzdBIeCgdtZW1iZXJzGAEgAygLMg0u", 
-          "U3RydWN0TWVtYmVyIo0BCgtDU01lbWJlckFkZBIdCghjYXJkaW5mbxgBIAIo", 
-          "CzILLlN0cnVjdENhcmQSEgoKbWVtYmVydHlwZRgCIAIoBRIQCghyZWNoYXJn", 
-          "ZRgDIAIoBRINCgVwaG9uZRgEIAEoCRIUCgxmaW5nZXJwcmludDEYBSABKAkS", 
-          "FAoMZmluZ2VycHJpbnQyGAYgASgJInIKC1NDTWVtYmVyQWRkEgwKBG5hbWUY", 
-          "ASACKAkSEgoKY2FyZG51bWJlchgCIAIoCRINCgVyaWdodBgDIAIoCRIQCghy", 
-          "ZWNoYXJnZRgEIAIoBRIPCgdiYWxhbmNlGAUgAigFEg8KB2ludGVnYWwYBiAC", 
-          "KAUiHwoLQ1NNZW1iZXJEZWwSEAoIbWVtYmVyaWQYASADKAUiNwoUQ1NNZW1i", 
-          "ZXJVcGRhdGVTdGF0dXMSDAoEbWFzaxgBIAIoBRIRCgltZW1iZXJpZHMYAiAC", 
-          "KAUiWgoMQ1NNZW1iZXJGaW5kEhkKBHBhZ2UYASACKAsyCy5TdHJ1Y3RQYWdl", 
-          "Eg4KBnN0YXR1cxgCIAEoBRINCgVyaWdodBgDIAEoBRIQCghrZXl3b3JkcxgE", 
-          "IAEoCSIuCgxTQ01lbWJlckZpbmQSHgoHbWVtYmVycxgBIAMoCzINLlN0cnVj", 
-          "dE1lbWJlciIkChBDU01lbWJlckNhcmRJbmZvEhAKCG1lbWJlcmlkGAEgAigF", 
-          "IjEKEFNDTWVtYmVyQ2FyZEluZm8SHQoIY2FyZGluZm8YASACKAsyCy5TdHJ1", 
-          "Y3RDYXJkIkMKFENTTWVtYmVyQ29uc3VtUmVjb3JkEhkKBHBhZ2UYASACKAsy", 
-          "Cy5TdHJ1Y3RQYWdlEhAKCG1lbWJlcmlkGAIgAigFIjkKFFNDTWVtYmVyQ29u", 
-          "c3VtUmVjb3JkEiEKCmNvbnN1bWluZm8YASADKAsyDS5TdHJ1Y3RDb25zdW0i", 
-          "jAEKFENTTWVtYmVyQ29uc3VtRmlsdGVyEhkKBHBhZ2UYASACKAsyCy5TdHJ1", 
-          "Y3RQYWdlEhAKCG1lbWJlcmlkGAIgAigFEhEKCWJlZ2ludGltZRgDIAEoCRIP", 
-          "CgdlbmR0aW1lGAQgASgJEhIKCmNvbnN1bXR5cGUYBSABKAUSDwoHcGF5bW9k", 
-          "ZRgGIAEoBSI5ChRTQ01lbWJlckNvbnN1bUZpbHRlchIhCgpjb25zdW1pbmZv", 
-          "GAEgAygLMg0uU3RydWN0Q29uc3VtIiIKDkNTTWVtYmVyVmVyaWZ5EhAKCG1l", 
-          "bWJlcmlkGAEgAygFIlcKDVNDU3lzQmlsbExpc3QSIQoIdXNlckFyZWEYASAD", 
-          "KAsyDy5TdHJ1Y3RVc2VyQXJlYRIjCgdzZXR0aW5nGAIgAygLMhIuU3RydWN0", 
-          "QmlsbFNldHRpbmciWQoPQ1NTeXNCaWxsVXBkYXRlEiEKCHVzZXJBcmVhGAEg", 
-          "AygLMg8uU3RydWN0VXNlckFyZWESIwoHc2V0dGluZxgCIAMoCzISLlN0cnVj", 
-          "dEJpbGxTZXR0aW5nIlkKD1NDU3lzQmlsbFVwZGF0ZRIhCgh1c2VyQXJlYRgB", 
-          "IAMoCzIPLlN0cnVjdFVzZXJBcmVhEiMKB3NldHRpbmcYAiADKAsyEi5TdHJ1", 
-          "Y3RCaWxsU2V0dGluZyIbCglDU1N5c0ludG8SDgoGcGFyZW50GAEgAigJIjsK", 
-          "CVNDU3lzSW5mbxIOCgZwYXJlbnQYASACKAkSHgoFY2hpbGQYAiADKAsyDy5T", 
-          "dHJ1Y3REaWN0SXRlbSI+CgxDU0FkZFN5c0luZm8SDgoGcGFyZW50GAEgAigJ", 
-          "Eh4KBWNoaWxkGAIgAigLMg8uU3RydWN0RGljdEl0ZW0iLQoMQ1NEZWxTeXNJ", 
-          "bmZvEg4KBnBhcmVudBgBIAIoCRINCgVjaGlsZBgCIAMoCSJBCg9DU1VwZGF0", 
-          "ZVN5c0luZm8SDgoGcGFyZW50GAEgAigJEh4KBWNoaWxkGAIgAygLMg8uU3Ry", 
-          "dWN0RGljdEl0ZW0iIgoMQ1NFbWtDaGVja2luEhIKCmNhcmRudW1iZXIYASAC", 
-          "KAkiUAoMU0NFbWtDaGVja2luEgwKBG5hbWUYASACKAkSEgoKY2FyZG51bWJl", 
-          "chgCIAIoCRINCgVyaWdodBgDIAIoCRIPCgdiYWxhbmNlGAQgAigFIiMKDUNT", 
-          "RW1rQ2hlY2tvdXQSEgoKY2FyZG51bWJlchgBIAIoCSJ2Cg1TQ0Vta0NoZWNr", 
-          "b3V0EgwKBG5hbWUYASACKAkSEgoKY2FyZG51bWJlchgCIAIoCRINCgVyaWdo", 
-          "dBgDIAIoCRIPCgdiYWxhbmNlGAQgAigFEhEKCXVzZWRtb25leRgFIAIoBRIQ", 
-          "Cgh1c2VkdGltZRgGIAIoBSI1Cg1DU0Vta1JlY2hhcmdlEhIKCmNhcmRudW1i", 
-          "ZXIYASACKAkSEAoIcmVjaGFyZ2UYAiACKAUidAoNU0NFbWtSZWNoYXJnZRIM", 
-          "CgRuYW1lGAEgAigJEhIKCmNhcmRudW1iZXIYAiACKAkSDQoFcmlnaHQYAyAC", 
-          "KAkSEAoIcmVjaGFyZ2UYBCACKAUSDwoHYmFsYW5jZRgFIAIoBRIPCgdpbnRl", 
-          "Z2FsGAYgAigFIjoKC0NTRW1rUmVjb3JkEhkKBHBhZ2UYASACKAsyCy5TdHJ1", 
-          "Y3RQYWdlEhAKCG1lbWJlcmlkGAIgAigFIjIKC1NDRW1rUmVjb3JkEiMKB2Vt", 
-          "a2luZm8YASADKAsyEi5TdHJ1Y3RFbWJhcmthdGlvbiJhCg9DU0Vta1JlY29y", 
-          "ZEZpbmQSGQoEcGFnZRgBIAIoCzILLlN0cnVjdFBhZ2USEQoJYmVnaW50aW1l", 
-          "GAIgASgJEg8KB2VuZHRpbWUYAyABKAkSDwoHa2V5d29yZBgEIAEoCSI2Cg9T", 
-          "Q0Vta1JlY29yZEZpbmQSIwoHZW1raW5mbxgBIAMoCzISLlN0cnVjdEVtYmFy", 
-          "a2F0aW9uIikKCkNTR29vZHNBZGQSGwoFZ29vZHMYASACKAsyDC5TdHJ1Y3RH", 
-          "b29kcyIZCgpDU0dvb2RzRGVsEgsKA2lkcxgBIAMoBSIsCg1DU0dvb2RzVXBk", 
-          "YXRlEhsKBWdvb2RzGAEgAigLMgwuU3RydWN0R29vZHMiTAoLQ1NHb29kc0Zp", 
-          "bmQSGQoEcGFnZRgBIAIoCzILLlN0cnVjdFBhZ2USEAoIY2F0ZWdvcnkYAiAB", 
-          "KAUSEAoIa2V5d29yZHMYBCABKAkiKgoLU0NHb29kc0ZpbmQSGwoFZ29vZHMY", 
-          "ASADKAsyDC5TdHJ1Y3RHb29kcyIpCgxDU0dvb2RzU3RvY2sSGQoEcGFnZRgB", 
-          "IAIoCzILLlN0cnVjdFBhZ2UiKwoMU0NHb29kc1N0b2NrEhsKBWdvb2RzGAEg", 
-          "AygLMgwuU3RydWN0U3RvY2siXwoNQ1NTYWxlc1JlY29yZBIZCgRwYWdlGAEg", 
-          "AigLMgsuU3RydWN0UGFnZRIPCgdnb29kc2lkGAIgAigFEhEKCWJlZ2ludGlt", 
-          "ZRgDIAEoCRIPCgdlbmR0aW1lGAQgASgJIisKDVNDU2FsZXNSZWNvcmQSGgoF", 
-          "c2FsZXMYASADKAsyCy5TdHJ1Y3RTYWxlIgwKCkNTU2FsZXNUb3AiDAoKU0NT", 
-          "YWxlc1RvcCKkAQoLQ1NPcmRlckxpc3QSGQoEcGFnZRgBIAIoCzILLlN0cnVj", 
-          "dFBhZ2USDgoGc3RhdHVzGAIgASgFEhUKDWFkZHRpbWVfc3RhcnQYAyABKAkS", 
-          "EwoLYWRkdGltZV9lbmQYBCABKAkSFgoOcHJvY3RpbWVfc3RhcnQYBSABKAkS", 
-          "FAoMcHJvY3RpbWVfZW5kGAYgASgJEhAKCHVzZXJuYW1lGAcgASgJIisKC1ND", 
-          "T3JkZXJMaXN0EhwKBm9yZGVycxgBIAMoCzIMLlN0cnVjdE9yZGVyIiAKDUNT", 
-          "T3JkZXJEZXRhaWwSDwoHb3JkZXJpZBgBIAIoBSI0Cg1TQ09yZGVyRGV0YWls", 
-          "EiMKB2RldGFpbHMYASADKAsyEi5TdHJ1Y3RPcmRlckRldGFpbCIZCgdDU0xv", 
-          "Z29uEg4KBmNhcmRubxgBIAIoCSIKCghDU0xvZ29mZiIcCghDU0hhbmd1cBIQ", 
-          "CghwYXNzd29yZBgBIAIoCSIqCgxDU1VwbG9hZEhlYWQSDAoEdHlwZRgBIAEo", 
-          "BRIMCgRkYXRhGAIgASgJIhsKDFNDVXBsb2FkSGVhZBILCgN1cmwYASABKAki", 
-          "HgoLQ1NDaGVja05hbWUSDwoHbmV3TmFtZRgBIAIoCSIdCgtTQ0NoZWNrTmFt", 
-          "ZRIOCgZyZXN1bHQYASABKAUiMgoOQ1NDaGVja0FjY291bnQSDgoGdXNlcklk", 
-          "GAEgAigJEhAKCHBhc3N3b3JkGAIgAigJIiAKDlNDQ2hlY2tBY2NvdW50Eg4K", 
-          "BnJlc3VsdBgBIAIoBSJECgtDU1JlY29ubmVjdBIOCgZ1c2VySWQYASACKAkS", 
-          "EAoIcGFzc3dvcmQYAiACKAkSEwoLZGV2aWNlVG9rZW4YAyABKAkiLgoLU0NS", 
-          "ZWNvbm5lY3QSEQoJc2Vzc2lvbklkGAEgAigFEgwKBGd1aWQYAiABKAUq/g0K", 
-          "A0NtZBISCg1DTURfR0VUU0VSVkVSEOgHEg8KCkNNRF9BVVRIRU4Q6QcSDgoJ", 
-          "Q01EX0xPR0lOEOoHEhUKEENNRF9BQ0NPVU5UX0lORk8Q6wcSFgoRQ01EX1JF", 
-          "QUxUSU1FX0lORk8Q7AcSEgoNQ01EX1JPTEVfTElTVBDyBxIRCgxDTURfUk9M", 
-          "RV9BREQQ8wcSEQoMQ01EX1JPTEVfREVMEPQHEhQKD0NNRF9ST0xFX1VQREFU", 
-          "RRD1BxIUCg9DTURfUk9MRV9SSUdIVFMQ9gcSEwoOQ01EX0FETUlOX0xJU1QQ", 
-          "/AcSEgoNQ01EX0FETUlOX0FERBD9BxISCg1DTURfQURNSU5fREVMEP4HEhUK", 
-          "EENNRF9BRE1JTl9VUERBVEUQ/wcSEwoOQ01EX0FETUlOX0ZJTkQQgAgSEgoN", 
-          "Q01EX0FETUlOX1NOUxCBCBIWChFDTURfQ09NUFVURVJfTElTVBCQCBIVChBD", 
-          "TURfQ09NUFVURVJfQUREEJEIEhUKEENNRF9DT01QVVRFUl9ERUwQkggSGAoT", 
-          "Q01EX0NPTVBVVEVSX1VQREFURRCTCBIWChFDTURfQ09NUFVURVJfRklORBCU", 
-          "CBIWChFDTURfQ09NUFVURVJfT1BFThCVCBIXChJDTURfQ09NUFVURVJfQ0xP", 
-          "U0UQlggSFAoPQ01EX01FTUJFUl9MSVNUEJoIEhMKDkNNRF9NRU1CRVJfQURE", 
-          "EJsIEhMKDkNNRF9NRU1CRVJfREVMEJwIEhYKEUNNRF9NRU1CRVJfVVBEQVRF", 
-          "EJ0IEhQKD0NNRF9NRU1CRVJfRklORBCeCBIZChRDTURfTUVNQkVSX0NBUkRf", 
-          "SU5GTxCfCBIdChhDTURfTUVNQkVSX0NPTlNVTV9SRUNPUkQQoAgSHQoYQ01E", 
-          "X01FTUJFUl9DT05TVU1fRklMVEVSEKEIEhYKEUNNRF9NRU1CRVJfVkVSSUZZ", 
-          "EKIIEhkKFENNRF9TWVNfQklMTElOR19MSVNUEKQIEhsKFkNNRF9TWVNfQklM", 
-          "TElOR19VUERBVEUQpQgSEQoMQ01EX1NZU19JTkZPEKYIEhAKC0NNRF9TWVNf", 
-          "QUREEKcIEhAKC0NNRF9TWVNfREVMEKgIEhMKDkNNRF9TWVNfVVBEQVRFEKkI", 
-          "EhQKD0NNRF9FTUtfQ0hFQ0tJThCuCBIVChBDTURfRU1LX0NIRUNLT1VUEK8I", 
-          "EhUKEENNRF9FTUtfUkVDSEFSR0UQsAgSEwoOQ01EX0VNS19DQU5DRUwQsQgS", 
-          "EwoOQ01EX0VNS19SRUNPUkQQsggSGAoTQ01EX0VNS19SRUNPUkRfRklORBCz", 
+          "EiUKDXNjRW1rQ2hlY2tvdXQYOyABKAsyDi5TQ0Vta0NoZWNrb3V0EiEKC2Nz", 
+          "RW1rUHJlcGF5GDwgASgLMgwuQ1NFbWtQcmVwYXkSIQoLc2NFbWtQcmVwYXkY", 
+          "PSABKAsyDC5TQ0Vta1ByZXBheRIfCgpzY0Vta1RvcGF5GD4gASgLMgsuU0NF", 
+          "bWtUb3BheRIhCgtjc0Vta1JlY29yZBg/IAEoCzIMLkNTRW1rUmVjb3JkEiEK", 
+          "C3NjRW1rUmVjb3JkGEAgASgLMgwuU0NFbWtSZWNvcmQSKQoPY3NFbWtSZWNv", 
+          "cmRGaW5kGEEgASgLMhAuQ1NFbWtSZWNvcmRGaW5kEikKD3NjRW1rUmVjb3Jk", 
+          "RmluZBhCIAEoCzIQLlNDRW1rUmVjb3JkRmluZBIhCgtjc0dvb2RzRmluZBhD", 
+          "IAEoCzIMLkNTR29vZHNGaW5kEiEKC3NjR29vZHNGaW5kGEQgASgLMgwuU0NH", 
+          "b29kc0ZpbmQSHwoKY3NHb29kc0FkZBhFIAEoCzILLkNTR29vZHNBZGQSHwoK", 
+          "Y3NHb29kc0RlbBhGIAEoCzILLkNTR29vZHNEZWwSJQoNY3NHb29kc1VwZGF0", 
+          "ZRhHIAEoCzIOLkNTR29vZHNVcGRhdGUSIwoMY3NHb29kc1N0b2NrGEggASgL", 
+          "Mg0uQ1NHb29kc1N0b2NrEiMKDHNjR29vZHNTdG9jaxhJIAEoCzINLlNDR29v", 
+          "ZHNTdG9jaxIlCg1jc1NhbGVzUmVjb3JkGEogASgLMg4uQ1NTYWxlc1JlY29y", 
+          "ZBIlCg1zY1NhbGVzUmVjb3JkGEsgASgLMg4uU0NTYWxlc1JlY29yZBIfCgpj", 
+          "c1NhbGVzVG9wGEwgASgLMgsuQ1NTYWxlc1RvcBIfCgpzY1NhbGVzVG9wGE0g", 
+          "ASgLMgsuU0NTYWxlc1RvcBIhCgtjc09yZGVyTGlzdBhOIAEoCzIMLkNTT3Jk", 
+          "ZXJMaXN0EiEKC3NjT3JkZXJMaXN0GE8gASgLMgwuU0NPcmRlckxpc3QSJQoN", 
+          "Y3NPcmRlckRldGFpbBhQIAEoCzIOLkNTT3JkZXJEZXRhaWwSJQoNc2NPcmRl", 
+          "ckRldGFpbBhRIAEoCzIOLlNDT3JkZXJEZXRhaWwSIQoLY3NSZWNvbm5lY3QY", 
+          "UiABKAsyDC5DU1JlY29ubmVjdBIhCgtzY1JlY29ubmVjdBhTIAEoCzIMLlND", 
+          "UmVjb25uZWN0EiQKDGNzQ2xpZW50T3BlbhjIASABKAsyDS5DU0NsaWVudE9w", 
+          "ZW4SJgoNY3NDbGllbnRDbG9zZRjJASABKAsyDi5DU0NsaWVudENsb3NlEhoK", 
+          "B2NzTG9nb24YygEgASgLMgguQ1NMb2dvbhIaCgdzY0xvZ29uGMsBIAEoCzII", 
+          "LlNDTG9nb24SHAoIY3NMb2dvZmYYzAEgASgLMgkuQ1NMb2dvZmYSHAoIc2NM", 
+          "b2dvZmYYzQEgASgLMgkuU0NMb2dvZmYSHAoIY3NIdW5ndXAYzgEgASgLMgku", 
+          "Q1NIdW5ndXASHAoIY3NDaGFyZ2UYzwEgASgLMgkuQ1NDaGFyZ2USHAoIc2ND", 
+          "aGFyZ2UY0AEgASgLMgkuU0NDaGFyZ2USKAoOc2NDaGFyZ2VSZXN1bHQY0QEg", 
+          "ASgLMg8uU0NDaGFyZ2VSZXN1bHQSGAoGc2NTaG9wGNIBIAEoCzIHLlNDU2hv", 
+          "cBIeCgljc0NhcnRBZGQY0wEgASgLMgouQ1NDYXJ0QWRkEh4KCWNzQ2FydERl", 
+          "bBjUASABKAsyCi5DU0NhcnREZWwSHgoJY3NDYXJ0QnV5GNUBIAEoCzIKLkNT", 
+          "Q2FydEJ1eRIeCglzY0NhcnRCdXkY1gEgASgLMgouU0NDYXJ0QnV5EioKD3Nj", 
+          "Q2FydEJ1eVJlc3VsdBjXASABKAsyEC5TQ0NhcnRCdXlSZXN1bHQSJAoMc2NT", 
+          "eXNNZXNzYWdlGNgBIAEoCzINLlNDU3lzTWVzc2FnZRImCg1jc1VzZXJNZXNz", 
+          "YWdlGNkBIAEoCzIOLkNTVXNlck1lc3NhZ2USIAoKY3NFdmFsdWF0ZRjaASAB", 
+          "KAsyCy5DU0V2YWx1YXRlEiAKCnNjRXZhbHVhdGUY2wEgASgLMgsuU0NFdmFs", 
+          "dWF0ZRIkCgxjc1ZlcmlmeUNvZGUY3AEgASgLMg0uQ1NWZXJpZnlDb2RlEiQK", 
+          "DHNjVmVyaWZ5Q29kZRjdASABKAsyDS5TQ1ZlcmlmeUNvZGUSJAoMY3NCaW5k", 
+          "TW9iaWxlGN4BIAEoCzINLkNTQmluZE1vYmlsZRIkCgxzY0JpbmRNb2JpbGUY", 
+          "3wEgASgLMg0uU0NCaW5kTW9iaWxlIhsKC0NMQXNrU2VydmVyEgwKBHV1aWQY", 
+          "ASACKAkiLQoLTENSZXRTZXJ2ZXISEAoIc2VydmVyaXAYASABKAkSDAoEcG9y", 
+          "dBgCIAEoBSIYCghDU0F1dGhlbhIMCgR0ZXh0GAEgAigJIisKCFNDQXV0aGVu", 
+          "EhEKCXNlc3Npb25JZBgBIAIoBRIMCgRndWlkGAIgASgFImEKB0NTTG9naW4S", 
+          "DAoEdHlwZRgBIAIoBRISCgpmaW5nZXJkYXRhGAIgASgJEhIKCmNhcmRudW1i", 
+          "ZXIYAyABKAkSDgoGdXNlcklkGAQgASgJEhAKCHBhc3N3b3JkGAUgASgJIioK", 
+          "B1NDTG9naW4SEQoJc2Vzc2lvbklkGAEgAigFEgwKBGd1aWQYAiABKAUiZwoN", 
+          "U0NBY2NvdW50SW5mbxIfCgdhY2NvdW50GAEgAigLMg4uU3RydWN0QWNjb3Vu", 
+          "dBIZCgRyb2xlGAIgAigLMgsuU3RydWN0Um9sZRIaCgVtZW51cxgDIAMoCzIL", 
+          "LlN0cnVjdE1lbnUiNAoOU0NSZWFsdGltZUluZm8SIgoJcmVhbHRpbWVzGAEg", 
+          "AygLMg8uU3RydWN0UmVhbFRpbWUiHAoKQ1NSb2xlTGlzdBIOCgZyb2xlaWQY", 
+          "ASACKAUiRAoKU0NSb2xlTGlzdBIaCgVyb2xlcxgBIAMoCzILLlN0cnVjdFJv", 
+          "bGUSGgoFbWVudXMYAiADKAsyCy5TdHJ1Y3RNZW51IhkKCUNTUm9sZUFkZBIM", 
+          "CgRuYW1lGAEgAigJIiYKCVNDUm9sZUFkZBIZCgRyb2xlGAEgAigLMgsuU3Ry", 
+          "dWN0Um9sZSIbCglDU1JvbGVEZWwSDgoGcm9sZWlkGAEgAigFIiwKDENTUm9s", 
+          "ZVVwZGF0ZRIOCgZyb2xlaWQYASACKAUSDAoEbmFtZRgCIAIoCSIuCgxDU1Jv", 
+          "bGVSaWdodHMSDgoGcm9sZWlkGAEgAigFEg4KBnJpZ2h0cxgCIAIoCSIwCg1T", 
+          "Q0FjY291bnRMaXN0Eh8KB2FjY291bnQYASADKAsyDi5TdHJ1Y3RBY2NvdW50", 
+          "Ii8KDENTQWNjb3VudEFkZBIfCgdhY2NvdW50GAEgAigLMg4uU3RydWN0QWNj", 
+          "b3VudCIfCgxDU0FjY291bnREZWwSDwoHYWRtaW5pZBgBIAIoCSIyCg9DU0Fj", 
+          "Y291bnRVcGRhdGUSHwoHYWNjb3VudBgBIAMoCzIOLlN0cnVjdEFjY291bnQi", 
+          "LgoMQ1NBY2NvdW50U25zEhEKCWFjY291bnRpZBgBIAIoBRILCgNzbnMYAiAC", 
+          "KAkiNAoOU0NDb21wdXRlckxpc3QSIgoJY29tcHV0ZXJzGAEgAygLMg8uU3Ry", 
+          "dWN0Q29tcHV0ZXIiMgoNQ1NDb21wdXRlckFkZBIhCghjb21wdXRlchgBIAIo", 
+          "CzIPLlN0cnVjdENvbXB1dGVyIiMKDUNTQ29tcHV0ZXJEZWwSEgoKY29tcHV0", 
+          "ZXJpZBgBIAMoBSI1ChBDU0NvbXB1dGVyVXBkYXRlEiEKCGNvbXB1dGVyGAEg", 
+          "AygLMg8uU3RydWN0Q29tcHV0ZXIiHgoOQ1NDb21wdXRlckZpbmQSDAoEbmFt", 
+          "ZRgBIAIoCSI0Cg5TQ0NvbXB1dGVyRmluZBIiCgljb21wdXRlcnMYASADKAsy", 
+          "Dy5TdHJ1Y3RDb21wdXRlciIQCg5DU0NvbXB1dGVyT3BlbiIRCg9DU0NvbXB1", 
+          "dGVyQ2xvc2UiKQoMQ1NNZW1iZXJMaXN0EhkKBHBhZ2UYASACKAsyCy5TdHJ1", 
+          "Y3RQYWdlIi4KDFNDTWVtYmVyTGlzdBIeCgdtZW1iZXJzGAEgAygLMg0uU3Ry", 
+          "dWN0TWVtYmVyIo0BCgtDU01lbWJlckFkZBIdCghjYXJkaW5mbxgBIAIoCzIL", 
+          "LlN0cnVjdENhcmQSEgoKbWVtYmVydHlwZRgCIAIoBRIQCghyZWNoYXJnZRgD", 
+          "IAIoBRINCgVwaG9uZRgEIAEoCRIUCgxmaW5nZXJwcmludDEYBSABKAkSFAoM", 
+          "ZmluZ2VycHJpbnQyGAYgASgJInIKC1NDTWVtYmVyQWRkEgwKBG5hbWUYASAC", 
+          "KAkSEgoKY2FyZG51bWJlchgCIAIoCRINCgVyaWdodBgDIAIoCRIQCghyZWNo", 
+          "YXJnZRgEIAIoBRIPCgdiYWxhbmNlGAUgAigFEg8KB2ludGVnYWwYBiACKAUi", 
+          "HwoLQ1NNZW1iZXJEZWwSEAoIbWVtYmVyaWQYASADKAUiNwoUQ1NNZW1iZXJV", 
+          "cGRhdGVTdGF0dXMSDAoEbWFzaxgBIAIoBRIRCgltZW1iZXJpZHMYAiACKAUi", 
+          "WgoMQ1NNZW1iZXJGaW5kEhkKBHBhZ2UYASACKAsyCy5TdHJ1Y3RQYWdlEg4K", 
+          "BnN0YXR1cxgCIAEoBRINCgVyaWdodBgDIAEoBRIQCghrZXl3b3JkcxgEIAEo", 
+          "CSIuCgxTQ01lbWJlckZpbmQSHgoHbWVtYmVycxgBIAMoCzINLlN0cnVjdE1l", 
+          "bWJlciIkChBDU01lbWJlckNhcmRJbmZvEhAKCG1lbWJlcmlkGAEgAigFIjEK", 
+          "EFNDTWVtYmVyQ2FyZEluZm8SHQoIY2FyZGluZm8YASACKAsyCy5TdHJ1Y3RD", 
+          "YXJkIkMKFENTTWVtYmVyQ29uc3VtUmVjb3JkEhkKBHBhZ2UYASACKAsyCy5T", 
+          "dHJ1Y3RQYWdlEhAKCG1lbWJlcmlkGAIgAigFIjkKFFNDTWVtYmVyQ29uc3Vt", 
+          "UmVjb3JkEiEKCmNvbnN1bWluZm8YASADKAsyDS5TdHJ1Y3RDb25zdW0ijAEK", 
+          "FENTTWVtYmVyQ29uc3VtRmlsdGVyEhkKBHBhZ2UYASACKAsyCy5TdHJ1Y3RQ", 
+          "YWdlEhAKCG1lbWJlcmlkGAIgAigFEhEKCWJlZ2ludGltZRgDIAEoCRIPCgdl", 
+          "bmR0aW1lGAQgASgJEhIKCmNvbnN1bXR5cGUYBSABKAUSDwoHcGF5bW9kZRgG", 
+          "IAEoBSI5ChRTQ01lbWJlckNvbnN1bUZpbHRlchIhCgpjb25zdW1pbmZvGAEg", 
+          "AygLMg0uU3RydWN0Q29uc3VtIiIKDkNTTWVtYmVyVmVyaWZ5EhAKCG1lbWJl", 
+          "cmlkGAEgAygFIlcKDVNDU3lzQmlsbExpc3QSIQoIdXNlckFyZWEYASADKAsy", 
+          "Dy5TdHJ1Y3RVc2VyQXJlYRIjCgdzZXR0aW5nGAIgAygLMhIuU3RydWN0Qmls", 
+          "bFNldHRpbmciWQoPQ1NTeXNCaWxsVXBkYXRlEiEKCHVzZXJBcmVhGAEgAygL", 
+          "Mg8uU3RydWN0VXNlckFyZWESIwoHc2V0dGluZxgCIAMoCzISLlN0cnVjdEJp", 
+          "bGxTZXR0aW5nIlkKD1NDU3lzQmlsbFVwZGF0ZRIhCgh1c2VyQXJlYRgBIAMo", 
+          "CzIPLlN0cnVjdFVzZXJBcmVhEiMKB3NldHRpbmcYAiADKAsyEi5TdHJ1Y3RC", 
+          "aWxsU2V0dGluZyIbCglDU1N5c0ludG8SDgoGcGFyZW50GAEgAigJIjsKCVND", 
+          "U3lzSW5mbxIOCgZwYXJlbnQYASACKAkSHgoFY2hpbGQYAiADKAsyDy5TdHJ1", 
+          "Y3REaWN0SXRlbSI+CgxDU0FkZFN5c0luZm8SDgoGcGFyZW50GAEgAigJEh4K", 
+          "BWNoaWxkGAIgAigLMg8uU3RydWN0RGljdEl0ZW0iLQoMQ1NEZWxTeXNJbmZv", 
+          "Eg4KBnBhcmVudBgBIAIoCRINCgVjaGlsZBgCIAMoCSJBCg9DU1VwZGF0ZVN5", 
+          "c0luZm8SDgoGcGFyZW50GAEgAigJEh4KBWNoaWxkGAIgAygLMg8uU3RydWN0", 
+          "RGljdEl0ZW0iIgoMQ1NFbWtDaGVja2luEhIKCmNhcmRudW1iZXIYASACKAki", 
+          "UAoMU0NFbWtDaGVja2luEgwKBG5hbWUYASACKAkSEgoKY2FyZG51bWJlchgC", 
+          "IAIoCRINCgVyaWdodBgDIAIoCRIPCgdiYWxhbmNlGAQgAigFIiMKDUNTRW1r", 
+          "Q2hlY2tvdXQSEgoKY2FyZG51bWJlchgBIAIoCSJ2Cg1TQ0Vta0NoZWNrb3V0", 
+          "EgwKBG5hbWUYASACKAkSEgoKY2FyZG51bWJlchgCIAIoCRINCgVyaWdodBgD", 
+          "IAIoCRIPCgdiYWxhbmNlGAQgAigFEhEKCXVzZWRtb25leRgFIAIoBRIQCgh1", 
+          "c2VkdGltZRgGIAIoBSIzCgtDU0Vta1ByZXBheRISCgpjYXJkbnVtYmVyGAEg", 
+          "AigJEhAKCHJlY2hhcmdlGAIgAigFIh0KC1NDRW1rUHJlcGF5Eg4KBnFyY29k", 
+          "ZRgBIAIoCSJxCgpTQ0Vta1RvcGF5EgwKBG5hbWUYASACKAkSEgoKY2FyZG51", 
+          "bWJlchgCIAIoCRINCgVyaWdodBgDIAIoCRIQCghyZWNoYXJnZRgEIAIoBRIP", 
+          "CgdiYWxhbmNlGAUgAigFEg8KB2ludGVnYWwYBiACKAUiOgoLQ1NFbWtSZWNv", 
+          "cmQSGQoEcGFnZRgBIAIoCzILLlN0cnVjdFBhZ2USEAoIbWVtYmVyaWQYAiAC", 
+          "KAUiMgoLU0NFbWtSZWNvcmQSIwoHZW1raW5mbxgBIAMoCzISLlN0cnVjdEVt", 
+          "YmFya2F0aW9uImEKD0NTRW1rUmVjb3JkRmluZBIZCgRwYWdlGAEgAigLMgsu", 
+          "U3RydWN0UGFnZRIRCgliZWdpbnRpbWUYAiABKAkSDwoHZW5kdGltZRgDIAEo", 
+          "CRIPCgdrZXl3b3JkGAQgASgJIjYKD1NDRW1rUmVjb3JkRmluZBIjCgdlbWtp", 
+          "bmZvGAEgAygLMhIuU3RydWN0RW1iYXJrYXRpb24iKQoKQ1NHb29kc0FkZBIb", 
+          "CgVnb29kcxgBIAIoCzIMLlN0cnVjdEdvb2RzIhkKCkNTR29vZHNEZWwSCwoD", 
+          "aWRzGAEgAygFIiwKDUNTR29vZHNVcGRhdGUSGwoFZ29vZHMYASACKAsyDC5T", 
+          "dHJ1Y3RHb29kcyJMCgtDU0dvb2RzRmluZBIZCgRwYWdlGAEgAigLMgsuU3Ry", 
+          "dWN0UGFnZRIQCghjYXRlZ29yeRgCIAEoBRIQCghrZXl3b3JkcxgEIAEoCSIq", 
+          "CgtTQ0dvb2RzRmluZBIbCgVnb29kcxgBIAMoCzIMLlN0cnVjdEdvb2RzIikK", 
+          "DENTR29vZHNTdG9jaxIZCgRwYWdlGAEgAigLMgsuU3RydWN0UGFnZSIrCgxT", 
+          "Q0dvb2RzU3RvY2sSGwoFZ29vZHMYASADKAsyDC5TdHJ1Y3RTdG9jayJfCg1D", 
+          "U1NhbGVzUmVjb3JkEhkKBHBhZ2UYASACKAsyCy5TdHJ1Y3RQYWdlEg8KB2dv", 
+          "b2RzaWQYAiACKAUSEQoJYmVnaW50aW1lGAMgASgJEg8KB2VuZHRpbWUYBCAB", 
+          "KAkiKwoNU0NTYWxlc1JlY29yZBIaCgVzYWxlcxgBIAMoCzILLlN0cnVjdFNh", 
+          "bGUiDAoKQ1NTYWxlc1RvcCIMCgpTQ1NhbGVzVG9wIqQBCgtDU09yZGVyTGlz", 
+          "dBIZCgRwYWdlGAEgAigLMgsuU3RydWN0UGFnZRIOCgZzdGF0dXMYAiABKAUS", 
+          "FQoNYWRkdGltZV9zdGFydBgDIAEoCRITCgthZGR0aW1lX2VuZBgEIAEoCRIW", 
+          "Cg5wcm9jdGltZV9zdGFydBgFIAEoCRIUCgxwcm9jdGltZV9lbmQYBiABKAkS", 
+          "EAoIdXNlcm5hbWUYByABKAkiKwoLU0NPcmRlckxpc3QSHAoGb3JkZXJzGAEg", 
+          "AygLMgwuU3RydWN0T3JkZXIiIAoNQ1NPcmRlckRldGFpbBIPCgdvcmRlcmlk", 
+          "GAEgAigFIjQKDVNDT3JkZXJEZXRhaWwSIwoHZGV0YWlscxgBIAMoCzISLlN0", 
+          "cnVjdE9yZGVyRGV0YWlsIkQKC0NTUmVjb25uZWN0Eg4KBnVzZXJJZBgBIAIo", 
+          "CRIQCghwYXNzd29yZBgCIAIoCRITCgtkZXZpY2VUb2tlbhgDIAEoCSIuCgtT", 
+          "Q1JlY29ubmVjdBIRCglzZXNzaW9uSWQYASACKAUSDAoEZ3VpZBgCIAEoBSIc", 
+          "CgxDU0NsaWVudE9wZW4SDAoEdGV4dBgBIAIoCSIPCg1DU0NsaWVudENsb3Nl", 
+          "Ih0KB0NTTG9nb24SEgoKY2FyZG51bWJlchgBIAIoCSJuCgdTQ0xvZ29uEhAK", 
+          "CG1lbWJlcmlkGAEgAigFEhIKCmNhcmRudW1iZXIYAiACKAkSDAoEbmFtZRgE", 
+          "IAIoCRINCgVyaWdodBgFIAIoBRIPCgdiYWxhbmNlGAkgAigFEg8KB2ludGVn", 
+          "YWwYDCACKAUiHgoIQ1NMb2dvZmYSEgoKY2FyZG51bWJlchgBIAIoCSJxCghT", 
+          "Q0xvZ29mZhIMCgRuYW1lGAEgAigJEhIKCmNhcmRudW1iZXIYAiACKAkSDQoF", 
+          "cmlnaHQYAyACKAkSDwoHYmFsYW5jZRgEIAIoBRIRCgl1c2VkbW9uZXkYBSAC", 
+          "KAUSEAoIdXNlZHRpbWUYBiACKAUiHgoIQ1NIdW5ndXASEgoKY2FyZG51bWJl", 
+          "chgBIAIoCSIuCghDU0NoYXJnZRISCgpjYXJkbnVtYmVyGAIgAigJEg4KBmFt", 
+          "b3VudBgDIAIoBSIaCghTQ0NoYXJnZRIOCgZxcmNvZGUYASACKAkidQoOU0ND", 
+          "aGFyZ2VSZXN1bHQSDAoEbmFtZRgBIAIoCRISCgpjYXJkbnVtYmVyGAIgAigJ", 
+          "Eg0KBXJpZ2h0GAMgAigJEhAKCHJlY2hhcmdlGAQgAigFEg8KB2JhbGFuY2UY", 
+          "BSACKAUSDwoHaW50ZWdhbBgGIAIoBSIlCgZTQ1Nob3ASGwoFZ29vZHMYASAD", 
+          "KAsyDC5TdHJ1Y3RHb29kcyIuCglDU0NhcnRBZGQSDwoHZ29vZHNpZBgBIAIo", 
+          "BRIQCghnb29kc251bRgCIAIoBSIuCglDU0NhcnREZWwSDwoHZ29vZHNpZBgB", 
+          "IAIoBRIQCghnb29kc251bRgCIAIoBSIfCglDU0NhcnRCdXkSEgoKY2FyZG51", 
+          "bWJlchgBIAIoCSIbCglTQ0NhcnRCdXkSDgoGcXJjb2RlGAEgAigJIowBCg9T", 
+          "Q0NhcnRCdXlSZXN1bHQSDAoEbmFtZRgBIAIoCRISCgpjYXJkbnVtYmVyGAIg", 
+          "AigJEg0KBXJpZ2h0GAMgAigJEhEKCXVzZWRtb25leRgEIAIoBRITCgt1c2Vk", 
+          "aW50ZWdhbBgFIAIoBRIPCgdiYWxhbmNlGAYgAigFEg8KB2ludGVnYWwYByAC", 
+          "KAUiHAoMU0NTeXNNZXNzYWdlEgwKBHRleHQYASACKAkiHQoNQ1NVc2VyTWVz", 
+          "c2FnZRIMCgR0ZXh0GAEgAigJIk8KCkNTRXZhbHVhdGUSEQoJc3RhZmZTdGFy", 
+          "GAEgAigFEg8KB2VudlN0YXIYAiACKAUSDwoHZGV2U3RhchgDIAIoBRIMCgRl", 
+          "dmFsGAQgASgJIh0KClNDRXZhbHVhdGUSDwoHaW50ZWdhbBgBIAIoBSIjCgxD", 
+          "U1ZlcmlmeUNvZGUSEwoLcGhvbmVudW1iZXIYASACKAkiIgoMU0NWZXJpZnlD", 
+          "b2RlEhIKCnZlcmlmeWNvZGUYASACKAkiNwoMQ1NCaW5kTW9iaWxlEhMKC3Bo", 
+          "b25lbnVtYmVyGAEgAigJEhIKCnZlcmlmeWNvZGUYAiACKAkiHwoMU0NCaW5k", 
+          "TW9iaWxlEg8KB2ludGVnYWwYASACKAUqpw0KA0NtZBISCg1DTURfR0VUU0VS", 
+          "VkVSEOgHEg8KCkNNRF9BVVRIRU4Q6QcSDgoJQ01EX0xPR0lOEOoHEhUKEENN", 
+          "RF9BQ0NPVU5UX0lORk8Q6wcSFgoRQ01EX1JFQUxUSU1FX0lORk8Q7AcSEgoN", 
+          "Q01EX1JPTEVfTElTVBDyBxIRCgxDTURfUk9MRV9BREQQ8wcSEQoMQ01EX1JP", 
+          "TEVfREVMEPQHEhQKD0NNRF9ST0xFX1VQREFURRD1BxIUCg9DTURfUk9MRV9S", 
+          "SUdIVFMQ9gcSEwoOQ01EX0FETUlOX0xJU1QQ/AcSEgoNQ01EX0FETUlOX0FE", 
+          "RBD9BxISCg1DTURfQURNSU5fREVMEP4HEhUKEENNRF9BRE1JTl9VUERBVEUQ", 
+          "/wcSEwoOQ01EX0FETUlOX0ZJTkQQgAgSEgoNQ01EX0FETUlOX1NOUxCBCBIW", 
+          "ChFDTURfQ09NUFVURVJfTElTVBCQCBIVChBDTURfQ09NUFVURVJfQUREEJEI", 
+          "EhUKEENNRF9DT01QVVRFUl9ERUwQkggSGAoTQ01EX0NPTVBVVEVSX1VQREFU", 
+          "RRCTCBIWChFDTURfQ09NUFVURVJfRklORBCUCBIWChFDTURfQ09NUFVURVJf", 
+          "T1BFThCVCBIXChJDTURfQ09NUFVURVJfQ0xPU0UQlggSFAoPQ01EX01FTUJF", 
+          "Ul9MSVNUEJoIEhMKDkNNRF9NRU1CRVJfQUREEJsIEhMKDkNNRF9NRU1CRVJf", 
+          "REVMEJwIEhYKEUNNRF9NRU1CRVJfVVBEQVRFEJ0IEhQKD0NNRF9NRU1CRVJf", 
+          "RklORBCeCBIZChRDTURfTUVNQkVSX0NBUkRfSU5GTxCfCBIdChhDTURfTUVN", 
+          "QkVSX0NPTlNVTV9SRUNPUkQQoAgSHQoYQ01EX01FTUJFUl9DT05TVU1fRklM", 
+          "VEVSEKEIEhYKEUNNRF9NRU1CRVJfVkVSSUZZEKIIEhkKFENNRF9TWVNfQklM", 
+          "TElOR19MSVNUEKQIEhsKFkNNRF9TWVNfQklMTElOR19VUERBVEUQpQgSEQoM", 
+          "Q01EX1NZU19JTkZPEKYIEhAKC0NNRF9TWVNfQUREEKcIEhAKC0NNRF9TWVNf", 
+          "REVMEKgIEhMKDkNNRF9TWVNfVVBEQVRFEKkIEhQKD0NNRF9FTUtfQ0hFQ0tJ", 
+          "ThCuCBIVChBDTURfRU1LX0NIRUNLT1VUEK8IEhMKDkNNRF9FTUtfUFJFUEFZ", 
+          "ELAIEhIKDUNNRF9FTUtfVE9QQVkQsQgSEwoOQ01EX0VNS19DQU5DRUwQsggS", 
+          "EwoOQ01EX0VNS19SRUNPUkQQswgSGAoTQ01EX0VNS19SRUNPUkRfRklORBC0", 
           "CBISCg1DTURfR09PRFNfQUREELkIEhIKDUNNRF9HT09EU19ERUwQuggSFQoQ", 
           "Q01EX0dPT0RTX1VQREFURRC7CBITCg5DTURfR09PRFNfRklORBC8CBIUCg9D", 
           "TURfR09PRFNfU0FMRVMQvQgSGAoTQ01EX0dPT0RTX1NBTEVTX1RPUBC+CBIU", 
@@ -415,18 +481,16 @@ public static partial class CoreProtocol {
           "FkNNRF9HT09EU19PUkRFUl9ERVRBSUwQwQgSFAoPQ01EX1VQTE9BRF9IRUFE", 
           "EMIIEg4KCUNNRF9IRUFSVBDDCBIUCg9DTURfUExBWUVSX0tJQ0sQxAgSEwoO", 
           "Q01EX0NIRUNLX05BTUUQxQgSFgoRQ01EX0NIRUNLX0FDQ09VTlQQxggSEgoN", 
-          "Q01EX1JFQ09OTkVDVBDHCBIVChBDTURfQ0xJRU5UX0xPR09OENAPEhYKEUNN", 
-          "RF9DTElFTlRfTE9HT0ZGENEPEhYKEUNNRF9DTElFTlRfSFVOR1VQENIPEhgK", 
-          "E0NNRF9DTElFTlRfU0hPUExJU1QQ1A8SGAoTQ01EX0NMSUVOVF9QVVJDSEFT", 
-          "RRDVDxIWChFDTURfQ0xJRU5UX0NIQVJHRRDWDxIYChNDTURfQ0xJRU5UX0FO", 
-          "Tk9VTkNFENcPEhcKEkNNRF9DTElFTlRfTUVTU0FHRRDYDxIUCg9DTURfQ0xJ", 
-          "RU5UX0NBTEwQ2Q8SGAoTQ01EX0NMSUVOVF9FWENIQU5HRRDaDxIUCg9DTURf", 
-          "Q0xJRU5UX1NJR04Q2w8SHwoaQ01EX1RFUk1JTkFMX1JFQ0hBUkdFX0lORk8Q", 
-          "uBcSHAoXQ01EX1RFUk1JTkFMX0FERF9NRU1CRVIQuRcSHgoZQ01EX1RFUk1J", 
-          "TkFMX0FDQ09VTlRfSU5GTxC6FxIaChVDTURfVEVSTUlOQUxfUkVDSEFSR0UQ", 
-          "uxcSGQoUQ01EX1RFUk1JTkFMX0NIRUNLSU4QvBcSGgoVQ01EX1RFUk1JTkFM", 
-          "X0NIRUNLT1VUEL0XEhQKD0NNRF9DTE9VRF9GSVJTVBCgH0ItCh1jb20uc2t5", 
-        "c29mdC5jb3JlLmF1dG8ubWVzc2FnZUIMQ29yZVByb3RvY29s"));
+          "Q01EX1JFQ09OTkVDVBDHCBIUCg9DTURfQ0xJRU5UX09QRU4Q0A8SFQoQQ01E", 
+          "X0NMSUVOVF9DTE9TRRDRDxIVChBDTURfQ0xJRU5UX0xPR09OENIPEhYKEUNN", 
+          "RF9DTElFTlRfTE9HT0ZGENMPEhYKEUNNRF9DTElFTlRfSFVOR1VQENQPEhYK", 
+          "EUNNRF9DTElFTlRfUFJFUEFZENUPEhUKEENNRF9DTElFTlRfVE9QQVkQ1g8S", 
+          "FAoPQ01EX0NMSUVOVF9TSE9QENcPEhgKE0NNRF9DTElFTlRfQ0FSVF9BREQQ", 
+          "2A8SGAoTQ01EX0NMSUVOVF9DQVJUX0RFTBDZDxIYChNDTURfQ0xJRU5UX0NB", 
+          "UlRfQlVZENoPEhMKDkNNRF9DTElFTlRfQlVZENsPEhcKEkNNRF9DTElFTlRf", 
+          "TUVTU0FHRRDcDxIYChNDTURfQ0xJRU5UX0VWQUxVQVRFEN0PEhoKFUNNRF9D", 
+          "TElFTlRfQklORE1PQklMRRDeD0ItCh1jb20uc2t5c29mdC5jb3JlLmF1dG8u", 
+        "bWVzc2FnZUIMQ29yZVByb3RvY29s"));
     pbd::FileDescriptor.InternalDescriptorAssigner assigner = delegate(pbd::FileDescriptor root) {
       descriptor = root;
       internal__static_MessagePack__Descriptor = Descriptor.MessageTypes[0];
@@ -436,7 +500,7 @@ public static partial class CoreProtocol {
       internal__static_MessageContent__Descriptor = Descriptor.MessageTypes[1];
       internal__static_MessageContent__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::MessageContent, global::MessageContent.Builder>(internal__static_MessageContent__Descriptor,
-              new string[] { "MessageType", "ErrorTip", "ClAskServer", "LcRetServer", "CsAuthen", "ScAuthen", "CsLogin", "ScLogin", "ScAccountInfo", "ScRealtimeInfo", "CsRoleList", "ScRoleList", "CsRoleAdd", "ScRoleAdd", "CsRoleDel", "CsRoleUpdate", "CsRoleRights", "ScAccountList", "CsAccountAdd", "CsAccountDel", "CsAccountUpdate", "CsAccountSns", "ScComputerList", "CsComputerAdd", "CsComputerDel", "CsComputerUpdate", "CsComputerFind", "ScComputerFind", "CsComputerOpen", "CsComputerClose", "CsMemberList", "ScMemberList", "CsMemberAdd", "ScMemberAdd", "CsMemberDel", "CsMemberUpdate", "CsMemberFind", "ScMemberFind", "CsMemberCardInfo", "ScMemberCardInfo", "CsMemberConsumRecord", "ScMemberConsumRecord", "CsMemberConsumFilter", "ScMemberConsumFilter", "CsMemberVerify", "ScSysBillList", "CsSysBillUpdate", "ScSysBillUpdate", "CsSysInfo", "ScSysInfo", "CsAddSysInfo", "CsDelSysInfo", "CsUpdateSysInfo", "CsEmkCheckin", "ScEmkCheckin", "CsEmkCheckout", "ScEmkCheckout", "CsEmkReharge", "ScEmkRecharge", "CsEmkRecord", "ScEmkRecord", "CsEmkRecordFind", "ScEmkRecordFind", "CsGoodsFind", "ScGoodsFind", "CsGoodsAdd", "CsGoodsDel", "CsGoodsUpdate", "CsGoodsStock", "ScGoodsStock", "CsSalesRecord", "ScSalesRecord", "CsSalesTop", "ScSalesTop", "CsOrderList", "ScOrderList", "CsOrderDetail", "ScOrderDetail", "CsLogon", "CsLogoff", "CsHangup", "CsUploadHead", "ScUploadHead", "CsCheckName", "ScCheckName", "CsCheckAccount", "ScCheckAccount", "CsReconnect", "ScReconnect", });
+              new string[] { "MessageType", "ErrorTip", "ClAskServer", "LcRetServer", "CsAuthen", "ScAuthen", "CsLogin", "ScLogin", "ScAccountInfo", "ScRealtimeInfo", "CsRoleList", "ScRoleList", "CsRoleAdd", "ScRoleAdd", "CsRoleDel", "CsRoleUpdate", "CsRoleRights", "ScAccountList", "CsAccountAdd", "CsAccountDel", "CsAccountUpdate", "CsAccountSns", "ScComputerList", "CsComputerAdd", "CsComputerDel", "CsComputerUpdate", "CsComputerFind", "ScComputerFind", "CsComputerOpen", "CsComputerClose", "CsMemberList", "ScMemberList", "CsMemberAdd", "ScMemberAdd", "CsMemberDel", "CsMemberUpdate", "CsMemberFind", "ScMemberFind", "CsMemberCardInfo", "ScMemberCardInfo", "CsMemberConsumRecord", "ScMemberConsumRecord", "CsMemberConsumFilter", "ScMemberConsumFilter", "CsMemberVerify", "ScSysBillList", "CsSysBillUpdate", "ScSysBillUpdate", "CsSysInfo", "ScSysInfo", "CsAddSysInfo", "CsDelSysInfo", "CsUpdateSysInfo", "CsEmkCheckin", "ScEmkCheckin", "CsEmkCheckout", "ScEmkCheckout", "CsEmkPrepay", "ScEmkPrepay", "ScEmkTopay", "CsEmkRecord", "ScEmkRecord", "CsEmkRecordFind", "ScEmkRecordFind", "CsGoodsFind", "ScGoodsFind", "CsGoodsAdd", "CsGoodsDel", "CsGoodsUpdate", "CsGoodsStock", "ScGoodsStock", "CsSalesRecord", "ScSalesRecord", "CsSalesTop", "ScSalesTop", "CsOrderList", "ScOrderList", "CsOrderDetail", "ScOrderDetail", "CsReconnect", "ScReconnect", "CsClientOpen", "CsClientClose", "CsLogon", "ScLogon", "CsLogoff", "ScLogoff", "CsHungup", "CsCharge", "ScCharge", "ScChargeResult", "ScShop", "CsCartAdd", "CsCartDel", "CsCartBuy", "ScCartBuy", "ScCartBuyResult", "ScSysMessage", "CsUserMessage", "CsEvaluate", "ScEvaluate", "CsVerifyCode", "ScVerifyCode", "CsBindMobile", "ScBindMobile", });
       internal__static_CLAskServer__Descriptor = Descriptor.MessageTypes[2];
       internal__static_CLAskServer__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CLAskServer, global::CLAskServer.Builder>(internal__static_CLAskServer__Descriptor,
@@ -657,134 +721,198 @@ public static partial class CoreProtocol {
       internal__static_SCEmkCheckout__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::SCEmkCheckout, global::SCEmkCheckout.Builder>(internal__static_SCEmkCheckout__Descriptor,
               new string[] { "Name", "Cardnumber", "Right", "Balance", "Usedmoney", "Usedtime", });
-      internal__static_CSEmkRecharge__Descriptor = Descriptor.MessageTypes[57];
-      internal__static_CSEmkRecharge__FieldAccessorTable = 
-          new pb::FieldAccess.FieldAccessorTable<global::CSEmkRecharge, global::CSEmkRecharge.Builder>(internal__static_CSEmkRecharge__Descriptor,
+      internal__static_CSEmkPrepay__Descriptor = Descriptor.MessageTypes[57];
+      internal__static_CSEmkPrepay__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::CSEmkPrepay, global::CSEmkPrepay.Builder>(internal__static_CSEmkPrepay__Descriptor,
               new string[] { "Cardnumber", "Recharge", });
-      internal__static_SCEmkRecharge__Descriptor = Descriptor.MessageTypes[58];
-      internal__static_SCEmkRecharge__FieldAccessorTable = 
-          new pb::FieldAccess.FieldAccessorTable<global::SCEmkRecharge, global::SCEmkRecharge.Builder>(internal__static_SCEmkRecharge__Descriptor,
+      internal__static_SCEmkPrepay__Descriptor = Descriptor.MessageTypes[58];
+      internal__static_SCEmkPrepay__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::SCEmkPrepay, global::SCEmkPrepay.Builder>(internal__static_SCEmkPrepay__Descriptor,
+              new string[] { "Qrcode", });
+      internal__static_SCEmkTopay__Descriptor = Descriptor.MessageTypes[59];
+      internal__static_SCEmkTopay__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::SCEmkTopay, global::SCEmkTopay.Builder>(internal__static_SCEmkTopay__Descriptor,
               new string[] { "Name", "Cardnumber", "Right", "Recharge", "Balance", "Integal", });
-      internal__static_CSEmkRecord__Descriptor = Descriptor.MessageTypes[59];
+      internal__static_CSEmkRecord__Descriptor = Descriptor.MessageTypes[60];
       internal__static_CSEmkRecord__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSEmkRecord, global::CSEmkRecord.Builder>(internal__static_CSEmkRecord__Descriptor,
               new string[] { "Page", "Memberid", });
-      internal__static_SCEmkRecord__Descriptor = Descriptor.MessageTypes[60];
+      internal__static_SCEmkRecord__Descriptor = Descriptor.MessageTypes[61];
       internal__static_SCEmkRecord__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::SCEmkRecord, global::SCEmkRecord.Builder>(internal__static_SCEmkRecord__Descriptor,
               new string[] { "Emkinfo", });
-      internal__static_CSEmkRecordFind__Descriptor = Descriptor.MessageTypes[61];
+      internal__static_CSEmkRecordFind__Descriptor = Descriptor.MessageTypes[62];
       internal__static_CSEmkRecordFind__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSEmkRecordFind, global::CSEmkRecordFind.Builder>(internal__static_CSEmkRecordFind__Descriptor,
               new string[] { "Page", "Begintime", "Endtime", "Keyword", });
-      internal__static_SCEmkRecordFind__Descriptor = Descriptor.MessageTypes[62];
+      internal__static_SCEmkRecordFind__Descriptor = Descriptor.MessageTypes[63];
       internal__static_SCEmkRecordFind__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::SCEmkRecordFind, global::SCEmkRecordFind.Builder>(internal__static_SCEmkRecordFind__Descriptor,
               new string[] { "Emkinfo", });
-      internal__static_CSGoodsAdd__Descriptor = Descriptor.MessageTypes[63];
+      internal__static_CSGoodsAdd__Descriptor = Descriptor.MessageTypes[64];
       internal__static_CSGoodsAdd__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSGoodsAdd, global::CSGoodsAdd.Builder>(internal__static_CSGoodsAdd__Descriptor,
               new string[] { "Goods", });
-      internal__static_CSGoodsDel__Descriptor = Descriptor.MessageTypes[64];
+      internal__static_CSGoodsDel__Descriptor = Descriptor.MessageTypes[65];
       internal__static_CSGoodsDel__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSGoodsDel, global::CSGoodsDel.Builder>(internal__static_CSGoodsDel__Descriptor,
               new string[] { "Ids", });
-      internal__static_CSGoodsUpdate__Descriptor = Descriptor.MessageTypes[65];
+      internal__static_CSGoodsUpdate__Descriptor = Descriptor.MessageTypes[66];
       internal__static_CSGoodsUpdate__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSGoodsUpdate, global::CSGoodsUpdate.Builder>(internal__static_CSGoodsUpdate__Descriptor,
               new string[] { "Goods", });
-      internal__static_CSGoodsFind__Descriptor = Descriptor.MessageTypes[66];
+      internal__static_CSGoodsFind__Descriptor = Descriptor.MessageTypes[67];
       internal__static_CSGoodsFind__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSGoodsFind, global::CSGoodsFind.Builder>(internal__static_CSGoodsFind__Descriptor,
               new string[] { "Page", "Category", "Keywords", });
-      internal__static_SCGoodsFind__Descriptor = Descriptor.MessageTypes[67];
+      internal__static_SCGoodsFind__Descriptor = Descriptor.MessageTypes[68];
       internal__static_SCGoodsFind__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::SCGoodsFind, global::SCGoodsFind.Builder>(internal__static_SCGoodsFind__Descriptor,
               new string[] { "Goods", });
-      internal__static_CSGoodsStock__Descriptor = Descriptor.MessageTypes[68];
+      internal__static_CSGoodsStock__Descriptor = Descriptor.MessageTypes[69];
       internal__static_CSGoodsStock__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSGoodsStock, global::CSGoodsStock.Builder>(internal__static_CSGoodsStock__Descriptor,
               new string[] { "Page", });
-      internal__static_SCGoodsStock__Descriptor = Descriptor.MessageTypes[69];
+      internal__static_SCGoodsStock__Descriptor = Descriptor.MessageTypes[70];
       internal__static_SCGoodsStock__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::SCGoodsStock, global::SCGoodsStock.Builder>(internal__static_SCGoodsStock__Descriptor,
               new string[] { "Goods", });
-      internal__static_CSSalesRecord__Descriptor = Descriptor.MessageTypes[70];
+      internal__static_CSSalesRecord__Descriptor = Descriptor.MessageTypes[71];
       internal__static_CSSalesRecord__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSSalesRecord, global::CSSalesRecord.Builder>(internal__static_CSSalesRecord__Descriptor,
               new string[] { "Page", "Goodsid", "Begintime", "Endtime", });
-      internal__static_SCSalesRecord__Descriptor = Descriptor.MessageTypes[71];
+      internal__static_SCSalesRecord__Descriptor = Descriptor.MessageTypes[72];
       internal__static_SCSalesRecord__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::SCSalesRecord, global::SCSalesRecord.Builder>(internal__static_SCSalesRecord__Descriptor,
               new string[] { "Sales", });
-      internal__static_CSSalesTop__Descriptor = Descriptor.MessageTypes[72];
+      internal__static_CSSalesTop__Descriptor = Descriptor.MessageTypes[73];
       internal__static_CSSalesTop__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSSalesTop, global::CSSalesTop.Builder>(internal__static_CSSalesTop__Descriptor,
               new string[] { });
-      internal__static_SCSalesTop__Descriptor = Descriptor.MessageTypes[73];
+      internal__static_SCSalesTop__Descriptor = Descriptor.MessageTypes[74];
       internal__static_SCSalesTop__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::SCSalesTop, global::SCSalesTop.Builder>(internal__static_SCSalesTop__Descriptor,
               new string[] { });
-      internal__static_CSOrderList__Descriptor = Descriptor.MessageTypes[74];
+      internal__static_CSOrderList__Descriptor = Descriptor.MessageTypes[75];
       internal__static_CSOrderList__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSOrderList, global::CSOrderList.Builder>(internal__static_CSOrderList__Descriptor,
               new string[] { "Page", "Status", "AddtimeStart", "AddtimeEnd", "ProctimeStart", "ProctimeEnd", "Username", });
-      internal__static_SCOrderList__Descriptor = Descriptor.MessageTypes[75];
+      internal__static_SCOrderList__Descriptor = Descriptor.MessageTypes[76];
       internal__static_SCOrderList__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::SCOrderList, global::SCOrderList.Builder>(internal__static_SCOrderList__Descriptor,
               new string[] { "Orders", });
-      internal__static_CSOrderDetail__Descriptor = Descriptor.MessageTypes[76];
+      internal__static_CSOrderDetail__Descriptor = Descriptor.MessageTypes[77];
       internal__static_CSOrderDetail__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSOrderDetail, global::CSOrderDetail.Builder>(internal__static_CSOrderDetail__Descriptor,
               new string[] { "Orderid", });
-      internal__static_SCOrderDetail__Descriptor = Descriptor.MessageTypes[77];
+      internal__static_SCOrderDetail__Descriptor = Descriptor.MessageTypes[78];
       internal__static_SCOrderDetail__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::SCOrderDetail, global::SCOrderDetail.Builder>(internal__static_SCOrderDetail__Descriptor,
               new string[] { "Details", });
-      internal__static_CSLogon__Descriptor = Descriptor.MessageTypes[78];
-      internal__static_CSLogon__FieldAccessorTable = 
-          new pb::FieldAccess.FieldAccessorTable<global::CSLogon, global::CSLogon.Builder>(internal__static_CSLogon__Descriptor,
-              new string[] { "Cardno", });
-      internal__static_CSLogoff__Descriptor = Descriptor.MessageTypes[79];
-      internal__static_CSLogoff__FieldAccessorTable = 
-          new pb::FieldAccess.FieldAccessorTable<global::CSLogoff, global::CSLogoff.Builder>(internal__static_CSLogoff__Descriptor,
-              new string[] { });
-      internal__static_CSHangup__Descriptor = Descriptor.MessageTypes[80];
-      internal__static_CSHangup__FieldAccessorTable = 
-          new pb::FieldAccess.FieldAccessorTable<global::CSHangup, global::CSHangup.Builder>(internal__static_CSHangup__Descriptor,
-              new string[] { "Password", });
-      internal__static_CSUploadHead__Descriptor = Descriptor.MessageTypes[81];
-      internal__static_CSUploadHead__FieldAccessorTable = 
-          new pb::FieldAccess.FieldAccessorTable<global::CSUploadHead, global::CSUploadHead.Builder>(internal__static_CSUploadHead__Descriptor,
-              new string[] { "Type", "Data", });
-      internal__static_SCUploadHead__Descriptor = Descriptor.MessageTypes[82];
-      internal__static_SCUploadHead__FieldAccessorTable = 
-          new pb::FieldAccess.FieldAccessorTable<global::SCUploadHead, global::SCUploadHead.Builder>(internal__static_SCUploadHead__Descriptor,
-              new string[] { "Url", });
-      internal__static_CSCheckName__Descriptor = Descriptor.MessageTypes[83];
-      internal__static_CSCheckName__FieldAccessorTable = 
-          new pb::FieldAccess.FieldAccessorTable<global::CSCheckName, global::CSCheckName.Builder>(internal__static_CSCheckName__Descriptor,
-              new string[] { "NewName", });
-      internal__static_SCCheckName__Descriptor = Descriptor.MessageTypes[84];
-      internal__static_SCCheckName__FieldAccessorTable = 
-          new pb::FieldAccess.FieldAccessorTable<global::SCCheckName, global::SCCheckName.Builder>(internal__static_SCCheckName__Descriptor,
-              new string[] { "Result", });
-      internal__static_CSCheckAccount__Descriptor = Descriptor.MessageTypes[85];
-      internal__static_CSCheckAccount__FieldAccessorTable = 
-          new pb::FieldAccess.FieldAccessorTable<global::CSCheckAccount, global::CSCheckAccount.Builder>(internal__static_CSCheckAccount__Descriptor,
-              new string[] { "UserId", "Password", });
-      internal__static_SCCheckAccount__Descriptor = Descriptor.MessageTypes[86];
-      internal__static_SCCheckAccount__FieldAccessorTable = 
-          new pb::FieldAccess.FieldAccessorTable<global::SCCheckAccount, global::SCCheckAccount.Builder>(internal__static_SCCheckAccount__Descriptor,
-              new string[] { "Result", });
-      internal__static_CSReconnect__Descriptor = Descriptor.MessageTypes[87];
+      internal__static_CSReconnect__Descriptor = Descriptor.MessageTypes[79];
       internal__static_CSReconnect__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSReconnect, global::CSReconnect.Builder>(internal__static_CSReconnect__Descriptor,
               new string[] { "UserId", "Password", "DeviceToken", });
-      internal__static_SCReconnect__Descriptor = Descriptor.MessageTypes[88];
+      internal__static_SCReconnect__Descriptor = Descriptor.MessageTypes[80];
       internal__static_SCReconnect__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::SCReconnect, global::SCReconnect.Builder>(internal__static_SCReconnect__Descriptor,
               new string[] { "SessionId", "Guid", });
+      internal__static_CSClientOpen__Descriptor = Descriptor.MessageTypes[81];
+      internal__static_CSClientOpen__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::CSClientOpen, global::CSClientOpen.Builder>(internal__static_CSClientOpen__Descriptor,
+              new string[] { "Text", });
+      internal__static_CSClientClose__Descriptor = Descriptor.MessageTypes[82];
+      internal__static_CSClientClose__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::CSClientClose, global::CSClientClose.Builder>(internal__static_CSClientClose__Descriptor,
+              new string[] { });
+      internal__static_CSLogon__Descriptor = Descriptor.MessageTypes[83];
+      internal__static_CSLogon__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::CSLogon, global::CSLogon.Builder>(internal__static_CSLogon__Descriptor,
+              new string[] { "Cardnumber", });
+      internal__static_SCLogon__Descriptor = Descriptor.MessageTypes[84];
+      internal__static_SCLogon__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::SCLogon, global::SCLogon.Builder>(internal__static_SCLogon__Descriptor,
+              new string[] { "Memberid", "Cardnumber", "Name", "Right", "Balance", "Integal", });
+      internal__static_CSLogoff__Descriptor = Descriptor.MessageTypes[85];
+      internal__static_CSLogoff__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::CSLogoff, global::CSLogoff.Builder>(internal__static_CSLogoff__Descriptor,
+              new string[] { "Cardnumber", });
+      internal__static_SCLogoff__Descriptor = Descriptor.MessageTypes[86];
+      internal__static_SCLogoff__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::SCLogoff, global::SCLogoff.Builder>(internal__static_SCLogoff__Descriptor,
+              new string[] { "Name", "Cardnumber", "Right", "Balance", "Usedmoney", "Usedtime", });
+      internal__static_CSHungup__Descriptor = Descriptor.MessageTypes[87];
+      internal__static_CSHungup__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::CSHungup, global::CSHungup.Builder>(internal__static_CSHungup__Descriptor,
+              new string[] { "Cardnumber", });
+      internal__static_CSCharge__Descriptor = Descriptor.MessageTypes[88];
+      internal__static_CSCharge__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::CSCharge, global::CSCharge.Builder>(internal__static_CSCharge__Descriptor,
+              new string[] { "Cardnumber", "Amount", });
+      internal__static_SCCharge__Descriptor = Descriptor.MessageTypes[89];
+      internal__static_SCCharge__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::SCCharge, global::SCCharge.Builder>(internal__static_SCCharge__Descriptor,
+              new string[] { "Qrcode", });
+      internal__static_SCChargeResult__Descriptor = Descriptor.MessageTypes[90];
+      internal__static_SCChargeResult__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::SCChargeResult, global::SCChargeResult.Builder>(internal__static_SCChargeResult__Descriptor,
+              new string[] { "Name", "Cardnumber", "Right", "Recharge", "Balance", "Integal", });
+      internal__static_SCShop__Descriptor = Descriptor.MessageTypes[91];
+      internal__static_SCShop__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::SCShop, global::SCShop.Builder>(internal__static_SCShop__Descriptor,
+              new string[] { "Goods", });
+      internal__static_CSCartAdd__Descriptor = Descriptor.MessageTypes[92];
+      internal__static_CSCartAdd__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::CSCartAdd, global::CSCartAdd.Builder>(internal__static_CSCartAdd__Descriptor,
+              new string[] { "Goodsid", "Goodsnum", });
+      internal__static_CSCartDel__Descriptor = Descriptor.MessageTypes[93];
+      internal__static_CSCartDel__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::CSCartDel, global::CSCartDel.Builder>(internal__static_CSCartDel__Descriptor,
+              new string[] { "Goodsid", "Goodsnum", });
+      internal__static_CSCartBuy__Descriptor = Descriptor.MessageTypes[94];
+      internal__static_CSCartBuy__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::CSCartBuy, global::CSCartBuy.Builder>(internal__static_CSCartBuy__Descriptor,
+              new string[] { "Cardnumber", });
+      internal__static_SCCartBuy__Descriptor = Descriptor.MessageTypes[95];
+      internal__static_SCCartBuy__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::SCCartBuy, global::SCCartBuy.Builder>(internal__static_SCCartBuy__Descriptor,
+              new string[] { "Qrcode", });
+      internal__static_SCCartBuyResult__Descriptor = Descriptor.MessageTypes[96];
+      internal__static_SCCartBuyResult__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::SCCartBuyResult, global::SCCartBuyResult.Builder>(internal__static_SCCartBuyResult__Descriptor,
+              new string[] { "Name", "Cardnumber", "Right", "Usedmoney", "Usedintegal", "Balance", "Integal", });
+      internal__static_SCSysMessage__Descriptor = Descriptor.MessageTypes[97];
+      internal__static_SCSysMessage__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::SCSysMessage, global::SCSysMessage.Builder>(internal__static_SCSysMessage__Descriptor,
+              new string[] { "Text", });
+      internal__static_CSUserMessage__Descriptor = Descriptor.MessageTypes[98];
+      internal__static_CSUserMessage__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::CSUserMessage, global::CSUserMessage.Builder>(internal__static_CSUserMessage__Descriptor,
+              new string[] { "Text", });
+      internal__static_CSEvaluate__Descriptor = Descriptor.MessageTypes[99];
+      internal__static_CSEvaluate__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::CSEvaluate, global::CSEvaluate.Builder>(internal__static_CSEvaluate__Descriptor,
+              new string[] { "StaffStar", "EnvStar", "DevStar", "Eval", });
+      internal__static_SCEvaluate__Descriptor = Descriptor.MessageTypes[100];
+      internal__static_SCEvaluate__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::SCEvaluate, global::SCEvaluate.Builder>(internal__static_SCEvaluate__Descriptor,
+              new string[] { "Integal", });
+      internal__static_CSVerifyCode__Descriptor = Descriptor.MessageTypes[101];
+      internal__static_CSVerifyCode__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::CSVerifyCode, global::CSVerifyCode.Builder>(internal__static_CSVerifyCode__Descriptor,
+              new string[] { "Phonenumber", });
+      internal__static_SCVerifyCode__Descriptor = Descriptor.MessageTypes[102];
+      internal__static_SCVerifyCode__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::SCVerifyCode, global::SCVerifyCode.Builder>(internal__static_SCVerifyCode__Descriptor,
+              new string[] { "Verifycode", });
+      internal__static_CSBindMobile__Descriptor = Descriptor.MessageTypes[103];
+      internal__static_CSBindMobile__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::CSBindMobile, global::CSBindMobile.Builder>(internal__static_CSBindMobile__Descriptor,
+              new string[] { "Phonenumber", "Verifycode", });
+      internal__static_SCBindMobile__Descriptor = Descriptor.MessageTypes[104];
+      internal__static_SCBindMobile__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::SCBindMobile, global::SCBindMobile.Builder>(internal__static_SCBindMobile__Descriptor,
+              new string[] { "Integal", });
       return null;
     };
     pbd::FileDescriptor.InternalBuildGeneratedFileFrom(descriptorData,
@@ -837,10 +965,11 @@ public enum Cmd {
   CMD_SYS_UPDATE = 1065,
   CMD_EMK_CHECKIN = 1070,
   CMD_EMK_CHECKOUT = 1071,
-  CMD_EMK_RECHARGE = 1072,
-  CMD_EMK_CANCEL = 1073,
-  CMD_EMK_RECORD = 1074,
-  CMD_EMK_RECORD_FIND = 1075,
+  CMD_EMK_PREPAY = 1072,
+  CMD_EMK_TOPAY = 1073,
+  CMD_EMK_CANCEL = 1074,
+  CMD_EMK_RECORD = 1075,
+  CMD_EMK_RECORD_FIND = 1076,
   CMD_GOODS_ADD = 1081,
   CMD_GOODS_DEL = 1082,
   CMD_GOODS_UPDATE = 1083,
@@ -856,24 +985,21 @@ public enum Cmd {
   CMD_CHECK_NAME = 1093,
   CMD_CHECK_ACCOUNT = 1094,
   CMD_RECONNECT = 1095,
-  CMD_CLIENT_LOGON = 2000,
-  CMD_CLIENT_LOGOFF = 2001,
-  CMD_CLIENT_HUNGUP = 2002,
-  CMD_CLIENT_SHOPLIST = 2004,
-  CMD_CLIENT_PURCHASE = 2005,
-  CMD_CLIENT_CHARGE = 2006,
-  CMD_CLIENT_ANNOUNCE = 2007,
-  CMD_CLIENT_MESSAGE = 2008,
-  CMD_CLIENT_CALL = 2009,
-  CMD_CLIENT_EXCHANGE = 2010,
-  CMD_CLIENT_SIGN = 2011,
-  CMD_TERMINAL_RECHARGE_INFO = 3000,
-  CMD_TERMINAL_ADD_MEMBER = 3001,
-  CMD_TERMINAL_ACCOUNT_INFO = 3002,
-  CMD_TERMINAL_RECHARGE = 3003,
-  CMD_TERMINAL_CHECKIN = 3004,
-  CMD_TERMINAL_CHECKOUT = 3005,
-  CMD_CLOUD_FIRST = 4000,
+  CMD_CLIENT_OPEN = 2000,
+  CMD_CLIENT_CLOSE = 2001,
+  CMD_CLIENT_LOGON = 2002,
+  CMD_CLIENT_LOGOFF = 2003,
+  CMD_CLIENT_HUNGUP = 2004,
+  CMD_CLIENT_PREPAY = 2005,
+  CMD_CLIENT_TOPAY = 2006,
+  CMD_CLIENT_SHOP = 2007,
+  CMD_CLIENT_CART_ADD = 2008,
+  CMD_CLIENT_CART_DEL = 2009,
+  CMD_CLIENT_CART_BUY = 2010,
+  CMD_CLIENT_BUY = 2011,
+  CMD_CLIENT_MESSAGE = 2012,
+  CMD_CLIENT_EVALUATE = 2013,
+  CMD_CLIENT_BINDMOBILE = 2014,
 }
 
 #endregion
@@ -1324,8 +1450,8 @@ public sealed partial class MessagePack : pb::GeneratedMessage<MessagePack, Mess
 public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent, MessageContent.Builder> {
   private MessageContent() { }
   private static readonly MessageContent defaultInstance = new MessageContent().MakeReadOnly();
-  private static readonly string[] _messageContentFieldNames = new string[] { "clAskServer", "csAccountAdd", "csAccountDel", "csAccountSns", "csAccountUpdate", "csAddSysInfo", "csAuthen", "csCheckAccount", "csCheckName", "csComputerAdd", "csComputerClose", "csComputerDel", "csComputerFind", "csComputerOpen", "csComputerUpdate", "csDelSysInfo", "csEmkCheckin", "csEmkCheckout", "csEmkRecord", "csEmkRecordFind", "csEmkReharge", "csGoodsAdd", "csGoodsDel", "csGoodsFind", "csGoodsStock", "csGoodsUpdate", "csHangup", "csLogin", "csLogoff", "csLogon", "csMemberAdd", "csMemberCardInfo", "csMemberConsumFilter", "csMemberConsumRecord", "csMemberDel", "csMemberFind", "csMemberList", "csMemberUpdate", "csMemberVerify", "csOrderDetail", "csOrderList", "csReconnect", "csRoleAdd", "csRoleDel", "csRoleList", "csRoleRights", "csRoleUpdate", "csSalesRecord", "csSalesTop", "csSysBillUpdate", "csSysInfo", "csUpdateSysInfo", "csUploadHead", "errorTip", "lcRetServer", "messageType", "scAccountInfo", "scAccountList", "scAuthen", "scCheckAccount", "scCheckName", "scComputerFind", "scComputerList", "scEmkCheckin", "scEmkCheckout", "scEmkRecharge", "scEmkRecord", "scEmkRecordFind", "scGoodsFind", "scGoodsStock", "scLogin", "scMemberAdd", "scMemberCardInfo", "scMemberConsumFilter", "scMemberConsumRecord", "scMemberFind", "scMemberList", "scOrderDetail", "scOrderList", "scRealtimeInfo", "scReconnect", "scRoleAdd", "scRoleList", "scSalesRecord", "scSalesTop", "scSysBillList", "scSysBillUpdate", "scSysInfo", "scUploadHead" };
-  private static readonly uint[] _messageContentFieldTags = new uint[] { 26, 170, 178, 194, 186, 426, 42, 706, 690, 210, 258, 218, 234, 250, 226, 434, 450, 466, 498, 514, 482, 546, 554, 530, 570, 562, 666, 58, 658, 650, 282, 330, 362, 346, 298, 314, 266, 306, 378, 634, 618, 722, 122, 138, 106, 154, 146, 586, 602, 394, 410, 442, 674, 18, 34, 8, 82, 162, 50, 714, 698, 242, 202, 458, 474, 490, 506, 522, 538, 578, 66, 290, 338, 370, 354, 322, 274, 642, 626, 98, 730, 130, 114, 594, 610, 386, 402, 418, 682 };
+  private static readonly string[] _messageContentFieldNames = new string[] { "clAskServer", "csAccountAdd", "csAccountDel", "csAccountSns", "csAccountUpdate", "csAddSysInfo", "csAuthen", "csBindMobile", "csCartAdd", "csCartBuy", "csCartDel", "csCharge", "csClientClose", "csClientOpen", "csComputerAdd", "csComputerClose", "csComputerDel", "csComputerFind", "csComputerOpen", "csComputerUpdate", "csDelSysInfo", "csEmkCheckin", "csEmkCheckout", "csEmkPrepay", "csEmkRecord", "csEmkRecordFind", "csEvaluate", "csGoodsAdd", "csGoodsDel", "csGoodsFind", "csGoodsStock", "csGoodsUpdate", "csHungup", "csLogin", "csLogoff", "csLogon", "csMemberAdd", "csMemberCardInfo", "csMemberConsumFilter", "csMemberConsumRecord", "csMemberDel", "csMemberFind", "csMemberList", "csMemberUpdate", "csMemberVerify", "csOrderDetail", "csOrderList", "csReconnect", "csRoleAdd", "csRoleDel", "csRoleList", "csRoleRights", "csRoleUpdate", "csSalesRecord", "csSalesTop", "csSysBillUpdate", "csSysInfo", "csUpdateSysInfo", "csUserMessage", "csVerifyCode", "errorTip", "lcRetServer", "messageType", "scAccountInfo", "scAccountList", "scAuthen", "scBindMobile", "scCartBuy", "scCartBuyResult", "scCharge", "scChargeResult", "scComputerFind", "scComputerList", "scEmkCheckin", "scEmkCheckout", "scEmkPrepay", "scEmkRecord", "scEmkRecordFind", "scEmkTopay", "scEvaluate", "scGoodsFind", "scGoodsStock", "scLogin", "scLogoff", "scLogon", "scMemberAdd", "scMemberCardInfo", "scMemberConsumFilter", "scMemberConsumRecord", "scMemberFind", "scMemberList", "scOrderDetail", "scOrderList", "scRealtimeInfo", "scReconnect", "scRoleAdd", "scRoleList", "scSalesRecord", "scSalesTop", "scShop", "scSysBillList", "scSysBillUpdate", "scSysInfo", "scSysMessage", "scVerifyCode" };
+  private static readonly uint[] _messageContentFieldTags = new uint[] { 26, 170, 178, 194, 186, 426, 42, 1778, 1690, 1706, 1698, 1658, 1610, 1602, 210, 258, 218, 234, 250, 226, 434, 450, 466, 482, 506, 522, 1746, 554, 562, 538, 578, 570, 1650, 58, 1634, 1618, 282, 330, 362, 346, 298, 314, 266, 306, 378, 642, 626, 658, 122, 138, 106, 154, 146, 594, 610, 394, 410, 442, 1738, 1762, 18, 34, 8, 82, 162, 50, 1786, 1714, 1722, 1666, 1674, 242, 202, 458, 474, 490, 514, 530, 498, 1754, 546, 586, 66, 1642, 1626, 290, 338, 370, 354, 322, 274, 650, 634, 98, 666, 130, 114, 602, 618, 1682, 386, 402, 418, 1730, 1770 };
   public static MessageContent DefaultInstance {
     get { return defaultInstance; }
   }
@@ -1916,27 +2042,37 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return scEmkCheckout_ ?? global::SCEmkCheckout.DefaultInstance; }
   }
   
-  public const int CsEmkRehargeFieldNumber = 60;
-  private bool hasCsEmkReharge;
-  private global::CSEmkRecharge csEmkReharge_;
-  public bool HasCsEmkReharge {
-    get { return hasCsEmkReharge; }
+  public const int CsEmkPrepayFieldNumber = 60;
+  private bool hasCsEmkPrepay;
+  private global::CSEmkPrepay csEmkPrepay_;
+  public bool HasCsEmkPrepay {
+    get { return hasCsEmkPrepay; }
   }
-  public global::CSEmkRecharge CsEmkReharge {
-    get { return csEmkReharge_ ?? global::CSEmkRecharge.DefaultInstance; }
-  }
-  
-  public const int ScEmkRechargeFieldNumber = 61;
-  private bool hasScEmkRecharge;
-  private global::SCEmkRecharge scEmkRecharge_;
-  public bool HasScEmkRecharge {
-    get { return hasScEmkRecharge; }
-  }
-  public global::SCEmkRecharge ScEmkRecharge {
-    get { return scEmkRecharge_ ?? global::SCEmkRecharge.DefaultInstance; }
+  public global::CSEmkPrepay CsEmkPrepay {
+    get { return csEmkPrepay_ ?? global::CSEmkPrepay.DefaultInstance; }
   }
   
-  public const int CsEmkRecordFieldNumber = 62;
+  public const int ScEmkPrepayFieldNumber = 61;
+  private bool hasScEmkPrepay;
+  private global::SCEmkPrepay scEmkPrepay_;
+  public bool HasScEmkPrepay {
+    get { return hasScEmkPrepay; }
+  }
+  public global::SCEmkPrepay ScEmkPrepay {
+    get { return scEmkPrepay_ ?? global::SCEmkPrepay.DefaultInstance; }
+  }
+  
+  public const int ScEmkTopayFieldNumber = 62;
+  private bool hasScEmkTopay;
+  private global::SCEmkTopay scEmkTopay_;
+  public bool HasScEmkTopay {
+    get { return hasScEmkTopay; }
+  }
+  public global::SCEmkTopay ScEmkTopay {
+    get { return scEmkTopay_ ?? global::SCEmkTopay.DefaultInstance; }
+  }
+  
+  public const int CsEmkRecordFieldNumber = 63;
   private bool hasCsEmkRecord;
   private global::CSEmkRecord csEmkRecord_;
   public bool HasCsEmkRecord {
@@ -1946,7 +2082,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return csEmkRecord_ ?? global::CSEmkRecord.DefaultInstance; }
   }
   
-  public const int ScEmkRecordFieldNumber = 63;
+  public const int ScEmkRecordFieldNumber = 64;
   private bool hasScEmkRecord;
   private global::SCEmkRecord scEmkRecord_;
   public bool HasScEmkRecord {
@@ -1956,7 +2092,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return scEmkRecord_ ?? global::SCEmkRecord.DefaultInstance; }
   }
   
-  public const int CsEmkRecordFindFieldNumber = 64;
+  public const int CsEmkRecordFindFieldNumber = 65;
   private bool hasCsEmkRecordFind;
   private global::CSEmkRecordFind csEmkRecordFind_;
   public bool HasCsEmkRecordFind {
@@ -1966,7 +2102,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return csEmkRecordFind_ ?? global::CSEmkRecordFind.DefaultInstance; }
   }
   
-  public const int ScEmkRecordFindFieldNumber = 65;
+  public const int ScEmkRecordFindFieldNumber = 66;
   private bool hasScEmkRecordFind;
   private global::SCEmkRecordFind scEmkRecordFind_;
   public bool HasScEmkRecordFind {
@@ -1976,7 +2112,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return scEmkRecordFind_ ?? global::SCEmkRecordFind.DefaultInstance; }
   }
   
-  public const int CsGoodsFindFieldNumber = 66;
+  public const int CsGoodsFindFieldNumber = 67;
   private bool hasCsGoodsFind;
   private global::CSGoodsFind csGoodsFind_;
   public bool HasCsGoodsFind {
@@ -1986,7 +2122,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return csGoodsFind_ ?? global::CSGoodsFind.DefaultInstance; }
   }
   
-  public const int ScGoodsFindFieldNumber = 67;
+  public const int ScGoodsFindFieldNumber = 68;
   private bool hasScGoodsFind;
   private global::SCGoodsFind scGoodsFind_;
   public bool HasScGoodsFind {
@@ -1996,7 +2132,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return scGoodsFind_ ?? global::SCGoodsFind.DefaultInstance; }
   }
   
-  public const int CsGoodsAddFieldNumber = 68;
+  public const int CsGoodsAddFieldNumber = 69;
   private bool hasCsGoodsAdd;
   private global::CSGoodsAdd csGoodsAdd_;
   public bool HasCsGoodsAdd {
@@ -2006,7 +2142,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return csGoodsAdd_ ?? global::CSGoodsAdd.DefaultInstance; }
   }
   
-  public const int CsGoodsDelFieldNumber = 69;
+  public const int CsGoodsDelFieldNumber = 70;
   private bool hasCsGoodsDel;
   private global::CSGoodsDel csGoodsDel_;
   public bool HasCsGoodsDel {
@@ -2016,7 +2152,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return csGoodsDel_ ?? global::CSGoodsDel.DefaultInstance; }
   }
   
-  public const int CsGoodsUpdateFieldNumber = 70;
+  public const int CsGoodsUpdateFieldNumber = 71;
   private bool hasCsGoodsUpdate;
   private global::CSGoodsUpdate csGoodsUpdate_;
   public bool HasCsGoodsUpdate {
@@ -2026,7 +2162,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return csGoodsUpdate_ ?? global::CSGoodsUpdate.DefaultInstance; }
   }
   
-  public const int CsGoodsStockFieldNumber = 71;
+  public const int CsGoodsStockFieldNumber = 72;
   private bool hasCsGoodsStock;
   private global::CSGoodsStock csGoodsStock_;
   public bool HasCsGoodsStock {
@@ -2036,7 +2172,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return csGoodsStock_ ?? global::CSGoodsStock.DefaultInstance; }
   }
   
-  public const int ScGoodsStockFieldNumber = 72;
+  public const int ScGoodsStockFieldNumber = 73;
   private bool hasScGoodsStock;
   private global::SCGoodsStock scGoodsStock_;
   public bool HasScGoodsStock {
@@ -2046,7 +2182,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return scGoodsStock_ ?? global::SCGoodsStock.DefaultInstance; }
   }
   
-  public const int CsSalesRecordFieldNumber = 73;
+  public const int CsSalesRecordFieldNumber = 74;
   private bool hasCsSalesRecord;
   private global::CSSalesRecord csSalesRecord_;
   public bool HasCsSalesRecord {
@@ -2056,7 +2192,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return csSalesRecord_ ?? global::CSSalesRecord.DefaultInstance; }
   }
   
-  public const int ScSalesRecordFieldNumber = 74;
+  public const int ScSalesRecordFieldNumber = 75;
   private bool hasScSalesRecord;
   private global::SCSalesRecord scSalesRecord_;
   public bool HasScSalesRecord {
@@ -2066,7 +2202,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return scSalesRecord_ ?? global::SCSalesRecord.DefaultInstance; }
   }
   
-  public const int CsSalesTopFieldNumber = 75;
+  public const int CsSalesTopFieldNumber = 76;
   private bool hasCsSalesTop;
   private global::CSSalesTop csSalesTop_;
   public bool HasCsSalesTop {
@@ -2076,7 +2212,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return csSalesTop_ ?? global::CSSalesTop.DefaultInstance; }
   }
   
-  public const int ScSalesTopFieldNumber = 76;
+  public const int ScSalesTopFieldNumber = 77;
   private bool hasScSalesTop;
   private global::SCSalesTop scSalesTop_;
   public bool HasScSalesTop {
@@ -2086,7 +2222,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return scSalesTop_ ?? global::SCSalesTop.DefaultInstance; }
   }
   
-  public const int CsOrderListFieldNumber = 77;
+  public const int CsOrderListFieldNumber = 78;
   private bool hasCsOrderList;
   private global::CSOrderList csOrderList_;
   public bool HasCsOrderList {
@@ -2096,7 +2232,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return csOrderList_ ?? global::CSOrderList.DefaultInstance; }
   }
   
-  public const int ScOrderListFieldNumber = 78;
+  public const int ScOrderListFieldNumber = 79;
   private bool hasScOrderList;
   private global::SCOrderList scOrderList_;
   public bool HasScOrderList {
@@ -2106,7 +2242,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return scOrderList_ ?? global::SCOrderList.DefaultInstance; }
   }
   
-  public const int CsOrderDetailFieldNumber = 79;
+  public const int CsOrderDetailFieldNumber = 80;
   private bool hasCsOrderDetail;
   private global::CSOrderDetail csOrderDetail_;
   public bool HasCsOrderDetail {
@@ -2116,7 +2252,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return csOrderDetail_ ?? global::CSOrderDetail.DefaultInstance; }
   }
   
-  public const int ScOrderDetailFieldNumber = 80;
+  public const int ScOrderDetailFieldNumber = 81;
   private bool hasScOrderDetail;
   private global::SCOrderDetail scOrderDetail_;
   public bool HasScOrderDetail {
@@ -2126,97 +2262,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return scOrderDetail_ ?? global::SCOrderDetail.DefaultInstance; }
   }
   
-  public const int CsLogonFieldNumber = 81;
-  private bool hasCsLogon;
-  private global::CSLogon csLogon_;
-  public bool HasCsLogon {
-    get { return hasCsLogon; }
-  }
-  public global::CSLogon CsLogon {
-    get { return csLogon_ ?? global::CSLogon.DefaultInstance; }
-  }
-  
-  public const int CsLogoffFieldNumber = 82;
-  private bool hasCsLogoff;
-  private global::CSLogoff csLogoff_;
-  public bool HasCsLogoff {
-    get { return hasCsLogoff; }
-  }
-  public global::CSLogoff CsLogoff {
-    get { return csLogoff_ ?? global::CSLogoff.DefaultInstance; }
-  }
-  
-  public const int CsHangupFieldNumber = 83;
-  private bool hasCsHangup;
-  private global::CSHangup csHangup_;
-  public bool HasCsHangup {
-    get { return hasCsHangup; }
-  }
-  public global::CSHangup CsHangup {
-    get { return csHangup_ ?? global::CSHangup.DefaultInstance; }
-  }
-  
-  public const int CsUploadHeadFieldNumber = 84;
-  private bool hasCsUploadHead;
-  private global::CSUploadHead csUploadHead_;
-  public bool HasCsUploadHead {
-    get { return hasCsUploadHead; }
-  }
-  public global::CSUploadHead CsUploadHead {
-    get { return csUploadHead_ ?? global::CSUploadHead.DefaultInstance; }
-  }
-  
-  public const int ScUploadHeadFieldNumber = 85;
-  private bool hasScUploadHead;
-  private global::SCUploadHead scUploadHead_;
-  public bool HasScUploadHead {
-    get { return hasScUploadHead; }
-  }
-  public global::SCUploadHead ScUploadHead {
-    get { return scUploadHead_ ?? global::SCUploadHead.DefaultInstance; }
-  }
-  
-  public const int CsCheckNameFieldNumber = 86;
-  private bool hasCsCheckName;
-  private global::CSCheckName csCheckName_;
-  public bool HasCsCheckName {
-    get { return hasCsCheckName; }
-  }
-  public global::CSCheckName CsCheckName {
-    get { return csCheckName_ ?? global::CSCheckName.DefaultInstance; }
-  }
-  
-  public const int ScCheckNameFieldNumber = 87;
-  private bool hasScCheckName;
-  private global::SCCheckName scCheckName_;
-  public bool HasScCheckName {
-    get { return hasScCheckName; }
-  }
-  public global::SCCheckName ScCheckName {
-    get { return scCheckName_ ?? global::SCCheckName.DefaultInstance; }
-  }
-  
-  public const int CsCheckAccountFieldNumber = 88;
-  private bool hasCsCheckAccount;
-  private global::CSCheckAccount csCheckAccount_;
-  public bool HasCsCheckAccount {
-    get { return hasCsCheckAccount; }
-  }
-  public global::CSCheckAccount CsCheckAccount {
-    get { return csCheckAccount_ ?? global::CSCheckAccount.DefaultInstance; }
-  }
-  
-  public const int ScCheckAccountFieldNumber = 89;
-  private bool hasScCheckAccount;
-  private global::SCCheckAccount scCheckAccount_;
-  public bool HasScCheckAccount {
-    get { return hasScCheckAccount; }
-  }
-  public global::SCCheckAccount ScCheckAccount {
-    get { return scCheckAccount_ ?? global::SCCheckAccount.DefaultInstance; }
-  }
-  
-  public const int CsReconnectFieldNumber = 90;
+  public const int CsReconnectFieldNumber = 82;
   private bool hasCsReconnect;
   private global::CSReconnect csReconnect_;
   public bool HasCsReconnect {
@@ -2226,7 +2272,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return csReconnect_ ?? global::CSReconnect.DefaultInstance; }
   }
   
-  public const int ScReconnectFieldNumber = 91;
+  public const int ScReconnectFieldNumber = 83;
   private bool hasScReconnect;
   private global::SCReconnect scReconnect_;
   public bool HasScReconnect {
@@ -2234,6 +2280,246 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
   }
   public global::SCReconnect ScReconnect {
     get { return scReconnect_ ?? global::SCReconnect.DefaultInstance; }
+  }
+  
+  public const int CsClientOpenFieldNumber = 200;
+  private bool hasCsClientOpen;
+  private global::CSClientOpen csClientOpen_;
+  public bool HasCsClientOpen {
+    get { return hasCsClientOpen; }
+  }
+  public global::CSClientOpen CsClientOpen {
+    get { return csClientOpen_ ?? global::CSClientOpen.DefaultInstance; }
+  }
+  
+  public const int CsClientCloseFieldNumber = 201;
+  private bool hasCsClientClose;
+  private global::CSClientClose csClientClose_;
+  public bool HasCsClientClose {
+    get { return hasCsClientClose; }
+  }
+  public global::CSClientClose CsClientClose {
+    get { return csClientClose_ ?? global::CSClientClose.DefaultInstance; }
+  }
+  
+  public const int CsLogonFieldNumber = 202;
+  private bool hasCsLogon;
+  private global::CSLogon csLogon_;
+  public bool HasCsLogon {
+    get { return hasCsLogon; }
+  }
+  public global::CSLogon CsLogon {
+    get { return csLogon_ ?? global::CSLogon.DefaultInstance; }
+  }
+  
+  public const int ScLogonFieldNumber = 203;
+  private bool hasScLogon;
+  private global::SCLogon scLogon_;
+  public bool HasScLogon {
+    get { return hasScLogon; }
+  }
+  public global::SCLogon ScLogon {
+    get { return scLogon_ ?? global::SCLogon.DefaultInstance; }
+  }
+  
+  public const int CsLogoffFieldNumber = 204;
+  private bool hasCsLogoff;
+  private global::CSLogoff csLogoff_;
+  public bool HasCsLogoff {
+    get { return hasCsLogoff; }
+  }
+  public global::CSLogoff CsLogoff {
+    get { return csLogoff_ ?? global::CSLogoff.DefaultInstance; }
+  }
+  
+  public const int ScLogoffFieldNumber = 205;
+  private bool hasScLogoff;
+  private global::SCLogoff scLogoff_;
+  public bool HasScLogoff {
+    get { return hasScLogoff; }
+  }
+  public global::SCLogoff ScLogoff {
+    get { return scLogoff_ ?? global::SCLogoff.DefaultInstance; }
+  }
+  
+  public const int CsHungupFieldNumber = 206;
+  private bool hasCsHungup;
+  private global::CSHungup csHungup_;
+  public bool HasCsHungup {
+    get { return hasCsHungup; }
+  }
+  public global::CSHungup CsHungup {
+    get { return csHungup_ ?? global::CSHungup.DefaultInstance; }
+  }
+  
+  public const int CsChargeFieldNumber = 207;
+  private bool hasCsCharge;
+  private global::CSCharge csCharge_;
+  public bool HasCsCharge {
+    get { return hasCsCharge; }
+  }
+  public global::CSCharge CsCharge {
+    get { return csCharge_ ?? global::CSCharge.DefaultInstance; }
+  }
+  
+  public const int ScChargeFieldNumber = 208;
+  private bool hasScCharge;
+  private global::SCCharge scCharge_;
+  public bool HasScCharge {
+    get { return hasScCharge; }
+  }
+  public global::SCCharge ScCharge {
+    get { return scCharge_ ?? global::SCCharge.DefaultInstance; }
+  }
+  
+  public const int ScChargeResultFieldNumber = 209;
+  private bool hasScChargeResult;
+  private global::SCChargeResult scChargeResult_;
+  public bool HasScChargeResult {
+    get { return hasScChargeResult; }
+  }
+  public global::SCChargeResult ScChargeResult {
+    get { return scChargeResult_ ?? global::SCChargeResult.DefaultInstance; }
+  }
+  
+  public const int ScShopFieldNumber = 210;
+  private bool hasScShop;
+  private global::SCShop scShop_;
+  public bool HasScShop {
+    get { return hasScShop; }
+  }
+  public global::SCShop ScShop {
+    get { return scShop_ ?? global::SCShop.DefaultInstance; }
+  }
+  
+  public const int CsCartAddFieldNumber = 211;
+  private bool hasCsCartAdd;
+  private global::CSCartAdd csCartAdd_;
+  public bool HasCsCartAdd {
+    get { return hasCsCartAdd; }
+  }
+  public global::CSCartAdd CsCartAdd {
+    get { return csCartAdd_ ?? global::CSCartAdd.DefaultInstance; }
+  }
+  
+  public const int CsCartDelFieldNumber = 212;
+  private bool hasCsCartDel;
+  private global::CSCartDel csCartDel_;
+  public bool HasCsCartDel {
+    get { return hasCsCartDel; }
+  }
+  public global::CSCartDel CsCartDel {
+    get { return csCartDel_ ?? global::CSCartDel.DefaultInstance; }
+  }
+  
+  public const int CsCartBuyFieldNumber = 213;
+  private bool hasCsCartBuy;
+  private global::CSCartBuy csCartBuy_;
+  public bool HasCsCartBuy {
+    get { return hasCsCartBuy; }
+  }
+  public global::CSCartBuy CsCartBuy {
+    get { return csCartBuy_ ?? global::CSCartBuy.DefaultInstance; }
+  }
+  
+  public const int ScCartBuyFieldNumber = 214;
+  private bool hasScCartBuy;
+  private global::SCCartBuy scCartBuy_;
+  public bool HasScCartBuy {
+    get { return hasScCartBuy; }
+  }
+  public global::SCCartBuy ScCartBuy {
+    get { return scCartBuy_ ?? global::SCCartBuy.DefaultInstance; }
+  }
+  
+  public const int ScCartBuyResultFieldNumber = 215;
+  private bool hasScCartBuyResult;
+  private global::SCCartBuyResult scCartBuyResult_;
+  public bool HasScCartBuyResult {
+    get { return hasScCartBuyResult; }
+  }
+  public global::SCCartBuyResult ScCartBuyResult {
+    get { return scCartBuyResult_ ?? global::SCCartBuyResult.DefaultInstance; }
+  }
+  
+  public const int ScSysMessageFieldNumber = 216;
+  private bool hasScSysMessage;
+  private global::SCSysMessage scSysMessage_;
+  public bool HasScSysMessage {
+    get { return hasScSysMessage; }
+  }
+  public global::SCSysMessage ScSysMessage {
+    get { return scSysMessage_ ?? global::SCSysMessage.DefaultInstance; }
+  }
+  
+  public const int CsUserMessageFieldNumber = 217;
+  private bool hasCsUserMessage;
+  private global::CSUserMessage csUserMessage_;
+  public bool HasCsUserMessage {
+    get { return hasCsUserMessage; }
+  }
+  public global::CSUserMessage CsUserMessage {
+    get { return csUserMessage_ ?? global::CSUserMessage.DefaultInstance; }
+  }
+  
+  public const int CsEvaluateFieldNumber = 218;
+  private bool hasCsEvaluate;
+  private global::CSEvaluate csEvaluate_;
+  public bool HasCsEvaluate {
+    get { return hasCsEvaluate; }
+  }
+  public global::CSEvaluate CsEvaluate {
+    get { return csEvaluate_ ?? global::CSEvaluate.DefaultInstance; }
+  }
+  
+  public const int ScEvaluateFieldNumber = 219;
+  private bool hasScEvaluate;
+  private global::SCEvaluate scEvaluate_;
+  public bool HasScEvaluate {
+    get { return hasScEvaluate; }
+  }
+  public global::SCEvaluate ScEvaluate {
+    get { return scEvaluate_ ?? global::SCEvaluate.DefaultInstance; }
+  }
+  
+  public const int CsVerifyCodeFieldNumber = 220;
+  private bool hasCsVerifyCode;
+  private global::CSVerifyCode csVerifyCode_;
+  public bool HasCsVerifyCode {
+    get { return hasCsVerifyCode; }
+  }
+  public global::CSVerifyCode CsVerifyCode {
+    get { return csVerifyCode_ ?? global::CSVerifyCode.DefaultInstance; }
+  }
+  
+  public const int ScVerifyCodeFieldNumber = 221;
+  private bool hasScVerifyCode;
+  private global::SCVerifyCode scVerifyCode_;
+  public bool HasScVerifyCode {
+    get { return hasScVerifyCode; }
+  }
+  public global::SCVerifyCode ScVerifyCode {
+    get { return scVerifyCode_ ?? global::SCVerifyCode.DefaultInstance; }
+  }
+  
+  public const int CsBindMobileFieldNumber = 222;
+  private bool hasCsBindMobile;
+  private global::CSBindMobile csBindMobile_;
+  public bool HasCsBindMobile {
+    get { return hasCsBindMobile; }
+  }
+  public global::CSBindMobile CsBindMobile {
+    get { return csBindMobile_ ?? global::CSBindMobile.DefaultInstance; }
+  }
+  
+  public const int ScBindMobileFieldNumber = 223;
+  private bool hasScBindMobile;
+  private global::SCBindMobile scBindMobile_;
+  public bool HasScBindMobile {
+    get { return hasScBindMobile; }
+  }
+  public global::SCBindMobile ScBindMobile {
+    get { return scBindMobile_ ?? global::SCBindMobile.DefaultInstance; }
   }
   
   public override bool IsInitialized {
@@ -2389,11 +2675,14 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
       if (HasScEmkCheckout) {
         if (!ScEmkCheckout.IsInitialized) return false;
       }
-      if (HasCsEmkReharge) {
-        if (!CsEmkReharge.IsInitialized) return false;
+      if (HasCsEmkPrepay) {
+        if (!CsEmkPrepay.IsInitialized) return false;
       }
-      if (HasScEmkRecharge) {
-        if (!ScEmkRecharge.IsInitialized) return false;
+      if (HasScEmkPrepay) {
+        if (!ScEmkPrepay.IsInitialized) return false;
+      }
+      if (HasScEmkTopay) {
+        if (!ScEmkTopay.IsInitialized) return false;
       }
       if (HasCsEmkRecord) {
         if (!CsEmkRecord.IsInitialized) return false;
@@ -2443,26 +2732,80 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
       if (HasScOrderDetail) {
         if (!ScOrderDetail.IsInitialized) return false;
       }
-      if (HasCsLogon) {
-        if (!CsLogon.IsInitialized) return false;
-      }
-      if (HasCsHangup) {
-        if (!CsHangup.IsInitialized) return false;
-      }
-      if (HasCsCheckName) {
-        if (!CsCheckName.IsInitialized) return false;
-      }
-      if (HasCsCheckAccount) {
-        if (!CsCheckAccount.IsInitialized) return false;
-      }
-      if (HasScCheckAccount) {
-        if (!ScCheckAccount.IsInitialized) return false;
-      }
       if (HasCsReconnect) {
         if (!CsReconnect.IsInitialized) return false;
       }
       if (HasScReconnect) {
         if (!ScReconnect.IsInitialized) return false;
+      }
+      if (HasCsClientOpen) {
+        if (!CsClientOpen.IsInitialized) return false;
+      }
+      if (HasCsLogon) {
+        if (!CsLogon.IsInitialized) return false;
+      }
+      if (HasScLogon) {
+        if (!ScLogon.IsInitialized) return false;
+      }
+      if (HasCsLogoff) {
+        if (!CsLogoff.IsInitialized) return false;
+      }
+      if (HasScLogoff) {
+        if (!ScLogoff.IsInitialized) return false;
+      }
+      if (HasCsHungup) {
+        if (!CsHungup.IsInitialized) return false;
+      }
+      if (HasCsCharge) {
+        if (!CsCharge.IsInitialized) return false;
+      }
+      if (HasScCharge) {
+        if (!ScCharge.IsInitialized) return false;
+      }
+      if (HasScChargeResult) {
+        if (!ScChargeResult.IsInitialized) return false;
+      }
+      if (HasScShop) {
+        if (!ScShop.IsInitialized) return false;
+      }
+      if (HasCsCartAdd) {
+        if (!CsCartAdd.IsInitialized) return false;
+      }
+      if (HasCsCartDel) {
+        if (!CsCartDel.IsInitialized) return false;
+      }
+      if (HasCsCartBuy) {
+        if (!CsCartBuy.IsInitialized) return false;
+      }
+      if (HasScCartBuy) {
+        if (!ScCartBuy.IsInitialized) return false;
+      }
+      if (HasScCartBuyResult) {
+        if (!ScCartBuyResult.IsInitialized) return false;
+      }
+      if (HasScSysMessage) {
+        if (!ScSysMessage.IsInitialized) return false;
+      }
+      if (HasCsUserMessage) {
+        if (!CsUserMessage.IsInitialized) return false;
+      }
+      if (HasCsEvaluate) {
+        if (!CsEvaluate.IsInitialized) return false;
+      }
+      if (HasScEvaluate) {
+        if (!ScEvaluate.IsInitialized) return false;
+      }
+      if (HasCsVerifyCode) {
+        if (!CsVerifyCode.IsInitialized) return false;
+      }
+      if (HasScVerifyCode) {
+        if (!ScVerifyCode.IsInitialized) return false;
+      }
+      if (HasCsBindMobile) {
+        if (!CsBindMobile.IsInitialized) return false;
+      }
+      if (HasScBindMobile) {
+        if (!ScBindMobile.IsInitialized) return false;
       }
       return true;
     }
@@ -2472,58 +2815,58 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     CalcSerializedSize();
     string[] field_names = _messageContentFieldNames;
     if (hasMessageType) {
-      output.WriteInt32(1, field_names[55], MessageType);
+      output.WriteInt32(1, field_names[62], MessageType);
     }
     if (hasErrorTip) {
-      output.WriteMessage(2, field_names[53], ErrorTip);
+      output.WriteMessage(2, field_names[60], ErrorTip);
     }
     if (hasClAskServer) {
       output.WriteMessage(3, field_names[0], ClAskServer);
     }
     if (hasLcRetServer) {
-      output.WriteMessage(4, field_names[54], LcRetServer);
+      output.WriteMessage(4, field_names[61], LcRetServer);
     }
     if (hasCsAuthen) {
       output.WriteMessage(5, field_names[6], CsAuthen);
     }
     if (hasScAuthen) {
-      output.WriteMessage(6, field_names[58], ScAuthen);
+      output.WriteMessage(6, field_names[65], ScAuthen);
     }
     if (hasCsLogin) {
-      output.WriteMessage(7, field_names[27], CsLogin);
+      output.WriteMessage(7, field_names[33], CsLogin);
     }
     if (hasScLogin) {
-      output.WriteMessage(8, field_names[70], ScLogin);
+      output.WriteMessage(8, field_names[82], ScLogin);
     }
     if (hasScAccountInfo) {
-      output.WriteMessage(10, field_names[56], ScAccountInfo);
+      output.WriteMessage(10, field_names[63], ScAccountInfo);
     }
     if (hasScRealtimeInfo) {
-      output.WriteMessage(12, field_names[79], ScRealtimeInfo);
+      output.WriteMessage(12, field_names[93], ScRealtimeInfo);
     }
     if (hasCsRoleList) {
-      output.WriteMessage(13, field_names[44], CsRoleList);
+      output.WriteMessage(13, field_names[50], CsRoleList);
     }
     if (hasScRoleList) {
-      output.WriteMessage(14, field_names[82], ScRoleList);
+      output.WriteMessage(14, field_names[96], ScRoleList);
     }
     if (hasCsRoleAdd) {
-      output.WriteMessage(15, field_names[42], CsRoleAdd);
+      output.WriteMessage(15, field_names[48], CsRoleAdd);
     }
     if (hasScRoleAdd) {
-      output.WriteMessage(16, field_names[81], ScRoleAdd);
+      output.WriteMessage(16, field_names[95], ScRoleAdd);
     }
     if (hasCsRoleDel) {
-      output.WriteMessage(17, field_names[43], CsRoleDel);
+      output.WriteMessage(17, field_names[49], CsRoleDel);
     }
     if (hasCsRoleUpdate) {
-      output.WriteMessage(18, field_names[46], CsRoleUpdate);
+      output.WriteMessage(18, field_names[52], CsRoleUpdate);
     }
     if (hasCsRoleRights) {
-      output.WriteMessage(19, field_names[45], CsRoleRights);
+      output.WriteMessage(19, field_names[51], CsRoleRights);
     }
     if (hasScAccountList) {
-      output.WriteMessage(20, field_names[57], ScAccountList);
+      output.WriteMessage(20, field_names[64], ScAccountList);
     }
     if (hasCsAccountAdd) {
       output.WriteMessage(21, field_names[1], CsAccountAdd);
@@ -2538,205 +2881,253 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
       output.WriteMessage(24, field_names[3], CsAccountSns);
     }
     if (hasScComputerList) {
-      output.WriteMessage(25, field_names[62], ScComputerList);
+      output.WriteMessage(25, field_names[72], ScComputerList);
     }
     if (hasCsComputerAdd) {
-      output.WriteMessage(26, field_names[9], CsComputerAdd);
+      output.WriteMessage(26, field_names[14], CsComputerAdd);
     }
     if (hasCsComputerDel) {
-      output.WriteMessage(27, field_names[11], CsComputerDel);
+      output.WriteMessage(27, field_names[16], CsComputerDel);
     }
     if (hasCsComputerUpdate) {
-      output.WriteMessage(28, field_names[14], CsComputerUpdate);
+      output.WriteMessage(28, field_names[19], CsComputerUpdate);
     }
     if (hasCsComputerFind) {
-      output.WriteMessage(29, field_names[12], CsComputerFind);
+      output.WriteMessage(29, field_names[17], CsComputerFind);
     }
     if (hasScComputerFind) {
-      output.WriteMessage(30, field_names[61], ScComputerFind);
+      output.WriteMessage(30, field_names[71], ScComputerFind);
     }
     if (hasCsComputerOpen) {
-      output.WriteMessage(31, field_names[13], CsComputerOpen);
+      output.WriteMessage(31, field_names[18], CsComputerOpen);
     }
     if (hasCsComputerClose) {
-      output.WriteMessage(32, field_names[10], CsComputerClose);
+      output.WriteMessage(32, field_names[15], CsComputerClose);
     }
     if (hasCsMemberList) {
-      output.WriteMessage(33, field_names[36], CsMemberList);
+      output.WriteMessage(33, field_names[42], CsMemberList);
     }
     if (hasScMemberList) {
-      output.WriteMessage(34, field_names[76], ScMemberList);
+      output.WriteMessage(34, field_names[90], ScMemberList);
     }
     if (hasCsMemberAdd) {
-      output.WriteMessage(35, field_names[30], CsMemberAdd);
+      output.WriteMessage(35, field_names[36], CsMemberAdd);
     }
     if (hasScMemberAdd) {
-      output.WriteMessage(36, field_names[71], ScMemberAdd);
+      output.WriteMessage(36, field_names[85], ScMemberAdd);
     }
     if (hasCsMemberDel) {
-      output.WriteMessage(37, field_names[34], CsMemberDel);
+      output.WriteMessage(37, field_names[40], CsMemberDel);
     }
     if (hasCsMemberUpdate) {
-      output.WriteMessage(38, field_names[37], CsMemberUpdate);
+      output.WriteMessage(38, field_names[43], CsMemberUpdate);
     }
     if (hasCsMemberFind) {
-      output.WriteMessage(39, field_names[35], CsMemberFind);
+      output.WriteMessage(39, field_names[41], CsMemberFind);
     }
     if (hasScMemberFind) {
-      output.WriteMessage(40, field_names[75], ScMemberFind);
+      output.WriteMessage(40, field_names[89], ScMemberFind);
     }
     if (hasCsMemberCardInfo) {
-      output.WriteMessage(41, field_names[31], CsMemberCardInfo);
+      output.WriteMessage(41, field_names[37], CsMemberCardInfo);
     }
     if (hasScMemberCardInfo) {
-      output.WriteMessage(42, field_names[72], ScMemberCardInfo);
+      output.WriteMessage(42, field_names[86], ScMemberCardInfo);
     }
     if (hasCsMemberConsumRecord) {
-      output.WriteMessage(43, field_names[33], CsMemberConsumRecord);
+      output.WriteMessage(43, field_names[39], CsMemberConsumRecord);
     }
     if (hasScMemberConsumRecord) {
-      output.WriteMessage(44, field_names[74], ScMemberConsumRecord);
+      output.WriteMessage(44, field_names[88], ScMemberConsumRecord);
     }
     if (hasCsMemberConsumFilter) {
-      output.WriteMessage(45, field_names[32], CsMemberConsumFilter);
+      output.WriteMessage(45, field_names[38], CsMemberConsumFilter);
     }
     if (hasScMemberConsumFilter) {
-      output.WriteMessage(46, field_names[73], ScMemberConsumFilter);
+      output.WriteMessage(46, field_names[87], ScMemberConsumFilter);
     }
     if (hasCsMemberVerify) {
-      output.WriteMessage(47, field_names[38], CsMemberVerify);
+      output.WriteMessage(47, field_names[44], CsMemberVerify);
     }
     if (hasScSysBillList) {
-      output.WriteMessage(48, field_names[85], ScSysBillList);
+      output.WriteMessage(48, field_names[100], ScSysBillList);
     }
     if (hasCsSysBillUpdate) {
-      output.WriteMessage(49, field_names[49], CsSysBillUpdate);
+      output.WriteMessage(49, field_names[55], CsSysBillUpdate);
     }
     if (hasScSysBillUpdate) {
-      output.WriteMessage(50, field_names[86], ScSysBillUpdate);
+      output.WriteMessage(50, field_names[101], ScSysBillUpdate);
     }
     if (hasCsSysInfo) {
-      output.WriteMessage(51, field_names[50], CsSysInfo);
+      output.WriteMessage(51, field_names[56], CsSysInfo);
     }
     if (hasScSysInfo) {
-      output.WriteMessage(52, field_names[87], ScSysInfo);
+      output.WriteMessage(52, field_names[102], ScSysInfo);
     }
     if (hasCsAddSysInfo) {
       output.WriteMessage(53, field_names[5], CsAddSysInfo);
     }
     if (hasCsDelSysInfo) {
-      output.WriteMessage(54, field_names[15], CsDelSysInfo);
+      output.WriteMessage(54, field_names[20], CsDelSysInfo);
     }
     if (hasCsUpdateSysInfo) {
-      output.WriteMessage(55, field_names[51], CsUpdateSysInfo);
+      output.WriteMessage(55, field_names[57], CsUpdateSysInfo);
     }
     if (hasCsEmkCheckin) {
-      output.WriteMessage(56, field_names[16], CsEmkCheckin);
+      output.WriteMessage(56, field_names[21], CsEmkCheckin);
     }
     if (hasScEmkCheckin) {
-      output.WriteMessage(57, field_names[63], ScEmkCheckin);
+      output.WriteMessage(57, field_names[73], ScEmkCheckin);
     }
     if (hasCsEmkCheckout) {
-      output.WriteMessage(58, field_names[17], CsEmkCheckout);
+      output.WriteMessage(58, field_names[22], CsEmkCheckout);
     }
     if (hasScEmkCheckout) {
-      output.WriteMessage(59, field_names[64], ScEmkCheckout);
+      output.WriteMessage(59, field_names[74], ScEmkCheckout);
     }
-    if (hasCsEmkReharge) {
-      output.WriteMessage(60, field_names[20], CsEmkReharge);
+    if (hasCsEmkPrepay) {
+      output.WriteMessage(60, field_names[23], CsEmkPrepay);
     }
-    if (hasScEmkRecharge) {
-      output.WriteMessage(61, field_names[65], ScEmkRecharge);
+    if (hasScEmkPrepay) {
+      output.WriteMessage(61, field_names[75], ScEmkPrepay);
+    }
+    if (hasScEmkTopay) {
+      output.WriteMessage(62, field_names[78], ScEmkTopay);
     }
     if (hasCsEmkRecord) {
-      output.WriteMessage(62, field_names[18], CsEmkRecord);
+      output.WriteMessage(63, field_names[24], CsEmkRecord);
     }
     if (hasScEmkRecord) {
-      output.WriteMessage(63, field_names[66], ScEmkRecord);
+      output.WriteMessage(64, field_names[76], ScEmkRecord);
     }
     if (hasCsEmkRecordFind) {
-      output.WriteMessage(64, field_names[19], CsEmkRecordFind);
+      output.WriteMessage(65, field_names[25], CsEmkRecordFind);
     }
     if (hasScEmkRecordFind) {
-      output.WriteMessage(65, field_names[67], ScEmkRecordFind);
+      output.WriteMessage(66, field_names[77], ScEmkRecordFind);
     }
     if (hasCsGoodsFind) {
-      output.WriteMessage(66, field_names[23], CsGoodsFind);
+      output.WriteMessage(67, field_names[29], CsGoodsFind);
     }
     if (hasScGoodsFind) {
-      output.WriteMessage(67, field_names[68], ScGoodsFind);
+      output.WriteMessage(68, field_names[80], ScGoodsFind);
     }
     if (hasCsGoodsAdd) {
-      output.WriteMessage(68, field_names[21], CsGoodsAdd);
+      output.WriteMessage(69, field_names[27], CsGoodsAdd);
     }
     if (hasCsGoodsDel) {
-      output.WriteMessage(69, field_names[22], CsGoodsDel);
+      output.WriteMessage(70, field_names[28], CsGoodsDel);
     }
     if (hasCsGoodsUpdate) {
-      output.WriteMessage(70, field_names[25], CsGoodsUpdate);
+      output.WriteMessage(71, field_names[31], CsGoodsUpdate);
     }
     if (hasCsGoodsStock) {
-      output.WriteMessage(71, field_names[24], CsGoodsStock);
+      output.WriteMessage(72, field_names[30], CsGoodsStock);
     }
     if (hasScGoodsStock) {
-      output.WriteMessage(72, field_names[69], ScGoodsStock);
+      output.WriteMessage(73, field_names[81], ScGoodsStock);
     }
     if (hasCsSalesRecord) {
-      output.WriteMessage(73, field_names[47], CsSalesRecord);
+      output.WriteMessage(74, field_names[53], CsSalesRecord);
     }
     if (hasScSalesRecord) {
-      output.WriteMessage(74, field_names[83], ScSalesRecord);
+      output.WriteMessage(75, field_names[97], ScSalesRecord);
     }
     if (hasCsSalesTop) {
-      output.WriteMessage(75, field_names[48], CsSalesTop);
+      output.WriteMessage(76, field_names[54], CsSalesTop);
     }
     if (hasScSalesTop) {
-      output.WriteMessage(76, field_names[84], ScSalesTop);
+      output.WriteMessage(77, field_names[98], ScSalesTop);
     }
     if (hasCsOrderList) {
-      output.WriteMessage(77, field_names[40], CsOrderList);
+      output.WriteMessage(78, field_names[46], CsOrderList);
     }
     if (hasScOrderList) {
-      output.WriteMessage(78, field_names[78], ScOrderList);
+      output.WriteMessage(79, field_names[92], ScOrderList);
     }
     if (hasCsOrderDetail) {
-      output.WriteMessage(79, field_names[39], CsOrderDetail);
+      output.WriteMessage(80, field_names[45], CsOrderDetail);
     }
     if (hasScOrderDetail) {
-      output.WriteMessage(80, field_names[77], ScOrderDetail);
-    }
-    if (hasCsLogon) {
-      output.WriteMessage(81, field_names[29], CsLogon);
-    }
-    if (hasCsLogoff) {
-      output.WriteMessage(82, field_names[28], CsLogoff);
-    }
-    if (hasCsHangup) {
-      output.WriteMessage(83, field_names[26], CsHangup);
-    }
-    if (hasCsUploadHead) {
-      output.WriteMessage(84, field_names[52], CsUploadHead);
-    }
-    if (hasScUploadHead) {
-      output.WriteMessage(85, field_names[88], ScUploadHead);
-    }
-    if (hasCsCheckName) {
-      output.WriteMessage(86, field_names[8], CsCheckName);
-    }
-    if (hasScCheckName) {
-      output.WriteMessage(87, field_names[60], ScCheckName);
-    }
-    if (hasCsCheckAccount) {
-      output.WriteMessage(88, field_names[7], CsCheckAccount);
-    }
-    if (hasScCheckAccount) {
-      output.WriteMessage(89, field_names[59], ScCheckAccount);
+      output.WriteMessage(81, field_names[91], ScOrderDetail);
     }
     if (hasCsReconnect) {
-      output.WriteMessage(90, field_names[41], CsReconnect);
+      output.WriteMessage(82, field_names[47], CsReconnect);
     }
     if (hasScReconnect) {
-      output.WriteMessage(91, field_names[80], ScReconnect);
+      output.WriteMessage(83, field_names[94], ScReconnect);
+    }
+    if (hasCsClientOpen) {
+      output.WriteMessage(200, field_names[13], CsClientOpen);
+    }
+    if (hasCsClientClose) {
+      output.WriteMessage(201, field_names[12], CsClientClose);
+    }
+    if (hasCsLogon) {
+      output.WriteMessage(202, field_names[35], CsLogon);
+    }
+    if (hasScLogon) {
+      output.WriteMessage(203, field_names[84], ScLogon);
+    }
+    if (hasCsLogoff) {
+      output.WriteMessage(204, field_names[34], CsLogoff);
+    }
+    if (hasScLogoff) {
+      output.WriteMessage(205, field_names[83], ScLogoff);
+    }
+    if (hasCsHungup) {
+      output.WriteMessage(206, field_names[32], CsHungup);
+    }
+    if (hasCsCharge) {
+      output.WriteMessage(207, field_names[11], CsCharge);
+    }
+    if (hasScCharge) {
+      output.WriteMessage(208, field_names[69], ScCharge);
+    }
+    if (hasScChargeResult) {
+      output.WriteMessage(209, field_names[70], ScChargeResult);
+    }
+    if (hasScShop) {
+      output.WriteMessage(210, field_names[99], ScShop);
+    }
+    if (hasCsCartAdd) {
+      output.WriteMessage(211, field_names[8], CsCartAdd);
+    }
+    if (hasCsCartDel) {
+      output.WriteMessage(212, field_names[10], CsCartDel);
+    }
+    if (hasCsCartBuy) {
+      output.WriteMessage(213, field_names[9], CsCartBuy);
+    }
+    if (hasScCartBuy) {
+      output.WriteMessage(214, field_names[67], ScCartBuy);
+    }
+    if (hasScCartBuyResult) {
+      output.WriteMessage(215, field_names[68], ScCartBuyResult);
+    }
+    if (hasScSysMessage) {
+      output.WriteMessage(216, field_names[103], ScSysMessage);
+    }
+    if (hasCsUserMessage) {
+      output.WriteMessage(217, field_names[58], CsUserMessage);
+    }
+    if (hasCsEvaluate) {
+      output.WriteMessage(218, field_names[26], CsEvaluate);
+    }
+    if (hasScEvaluate) {
+      output.WriteMessage(219, field_names[79], ScEvaluate);
+    }
+    if (hasCsVerifyCode) {
+      output.WriteMessage(220, field_names[59], CsVerifyCode);
+    }
+    if (hasScVerifyCode) {
+      output.WriteMessage(221, field_names[104], ScVerifyCode);
+    }
+    if (hasCsBindMobile) {
+      output.WriteMessage(222, field_names[7], CsBindMobile);
+    }
+    if (hasScBindMobile) {
+      output.WriteMessage(223, field_names[66], ScBindMobile);
     }
     UnknownFields.WriteTo(output);
   }
@@ -2926,101 +3317,149 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     if (hasScEmkCheckout) {
       size += pb::CodedOutputStream.ComputeMessageSize(59, ScEmkCheckout);
     }
-    if (hasCsEmkReharge) {
-      size += pb::CodedOutputStream.ComputeMessageSize(60, CsEmkReharge);
+    if (hasCsEmkPrepay) {
+      size += pb::CodedOutputStream.ComputeMessageSize(60, CsEmkPrepay);
     }
-    if (hasScEmkRecharge) {
-      size += pb::CodedOutputStream.ComputeMessageSize(61, ScEmkRecharge);
+    if (hasScEmkPrepay) {
+      size += pb::CodedOutputStream.ComputeMessageSize(61, ScEmkPrepay);
+    }
+    if (hasScEmkTopay) {
+      size += pb::CodedOutputStream.ComputeMessageSize(62, ScEmkTopay);
     }
     if (hasCsEmkRecord) {
-      size += pb::CodedOutputStream.ComputeMessageSize(62, CsEmkRecord);
+      size += pb::CodedOutputStream.ComputeMessageSize(63, CsEmkRecord);
     }
     if (hasScEmkRecord) {
-      size += pb::CodedOutputStream.ComputeMessageSize(63, ScEmkRecord);
+      size += pb::CodedOutputStream.ComputeMessageSize(64, ScEmkRecord);
     }
     if (hasCsEmkRecordFind) {
-      size += pb::CodedOutputStream.ComputeMessageSize(64, CsEmkRecordFind);
+      size += pb::CodedOutputStream.ComputeMessageSize(65, CsEmkRecordFind);
     }
     if (hasScEmkRecordFind) {
-      size += pb::CodedOutputStream.ComputeMessageSize(65, ScEmkRecordFind);
+      size += pb::CodedOutputStream.ComputeMessageSize(66, ScEmkRecordFind);
     }
     if (hasCsGoodsFind) {
-      size += pb::CodedOutputStream.ComputeMessageSize(66, CsGoodsFind);
+      size += pb::CodedOutputStream.ComputeMessageSize(67, CsGoodsFind);
     }
     if (hasScGoodsFind) {
-      size += pb::CodedOutputStream.ComputeMessageSize(67, ScGoodsFind);
+      size += pb::CodedOutputStream.ComputeMessageSize(68, ScGoodsFind);
     }
     if (hasCsGoodsAdd) {
-      size += pb::CodedOutputStream.ComputeMessageSize(68, CsGoodsAdd);
+      size += pb::CodedOutputStream.ComputeMessageSize(69, CsGoodsAdd);
     }
     if (hasCsGoodsDel) {
-      size += pb::CodedOutputStream.ComputeMessageSize(69, CsGoodsDel);
+      size += pb::CodedOutputStream.ComputeMessageSize(70, CsGoodsDel);
     }
     if (hasCsGoodsUpdate) {
-      size += pb::CodedOutputStream.ComputeMessageSize(70, CsGoodsUpdate);
+      size += pb::CodedOutputStream.ComputeMessageSize(71, CsGoodsUpdate);
     }
     if (hasCsGoodsStock) {
-      size += pb::CodedOutputStream.ComputeMessageSize(71, CsGoodsStock);
+      size += pb::CodedOutputStream.ComputeMessageSize(72, CsGoodsStock);
     }
     if (hasScGoodsStock) {
-      size += pb::CodedOutputStream.ComputeMessageSize(72, ScGoodsStock);
+      size += pb::CodedOutputStream.ComputeMessageSize(73, ScGoodsStock);
     }
     if (hasCsSalesRecord) {
-      size += pb::CodedOutputStream.ComputeMessageSize(73, CsSalesRecord);
+      size += pb::CodedOutputStream.ComputeMessageSize(74, CsSalesRecord);
     }
     if (hasScSalesRecord) {
-      size += pb::CodedOutputStream.ComputeMessageSize(74, ScSalesRecord);
+      size += pb::CodedOutputStream.ComputeMessageSize(75, ScSalesRecord);
     }
     if (hasCsSalesTop) {
-      size += pb::CodedOutputStream.ComputeMessageSize(75, CsSalesTop);
+      size += pb::CodedOutputStream.ComputeMessageSize(76, CsSalesTop);
     }
     if (hasScSalesTop) {
-      size += pb::CodedOutputStream.ComputeMessageSize(76, ScSalesTop);
+      size += pb::CodedOutputStream.ComputeMessageSize(77, ScSalesTop);
     }
     if (hasCsOrderList) {
-      size += pb::CodedOutputStream.ComputeMessageSize(77, CsOrderList);
+      size += pb::CodedOutputStream.ComputeMessageSize(78, CsOrderList);
     }
     if (hasScOrderList) {
-      size += pb::CodedOutputStream.ComputeMessageSize(78, ScOrderList);
+      size += pb::CodedOutputStream.ComputeMessageSize(79, ScOrderList);
     }
     if (hasCsOrderDetail) {
-      size += pb::CodedOutputStream.ComputeMessageSize(79, CsOrderDetail);
+      size += pb::CodedOutputStream.ComputeMessageSize(80, CsOrderDetail);
     }
     if (hasScOrderDetail) {
-      size += pb::CodedOutputStream.ComputeMessageSize(80, ScOrderDetail);
-    }
-    if (hasCsLogon) {
-      size += pb::CodedOutputStream.ComputeMessageSize(81, CsLogon);
-    }
-    if (hasCsLogoff) {
-      size += pb::CodedOutputStream.ComputeMessageSize(82, CsLogoff);
-    }
-    if (hasCsHangup) {
-      size += pb::CodedOutputStream.ComputeMessageSize(83, CsHangup);
-    }
-    if (hasCsUploadHead) {
-      size += pb::CodedOutputStream.ComputeMessageSize(84, CsUploadHead);
-    }
-    if (hasScUploadHead) {
-      size += pb::CodedOutputStream.ComputeMessageSize(85, ScUploadHead);
-    }
-    if (hasCsCheckName) {
-      size += pb::CodedOutputStream.ComputeMessageSize(86, CsCheckName);
-    }
-    if (hasScCheckName) {
-      size += pb::CodedOutputStream.ComputeMessageSize(87, ScCheckName);
-    }
-    if (hasCsCheckAccount) {
-      size += pb::CodedOutputStream.ComputeMessageSize(88, CsCheckAccount);
-    }
-    if (hasScCheckAccount) {
-      size += pb::CodedOutputStream.ComputeMessageSize(89, ScCheckAccount);
+      size += pb::CodedOutputStream.ComputeMessageSize(81, ScOrderDetail);
     }
     if (hasCsReconnect) {
-      size += pb::CodedOutputStream.ComputeMessageSize(90, CsReconnect);
+      size += pb::CodedOutputStream.ComputeMessageSize(82, CsReconnect);
     }
     if (hasScReconnect) {
-      size += pb::CodedOutputStream.ComputeMessageSize(91, ScReconnect);
+      size += pb::CodedOutputStream.ComputeMessageSize(83, ScReconnect);
+    }
+    if (hasCsClientOpen) {
+      size += pb::CodedOutputStream.ComputeMessageSize(200, CsClientOpen);
+    }
+    if (hasCsClientClose) {
+      size += pb::CodedOutputStream.ComputeMessageSize(201, CsClientClose);
+    }
+    if (hasCsLogon) {
+      size += pb::CodedOutputStream.ComputeMessageSize(202, CsLogon);
+    }
+    if (hasScLogon) {
+      size += pb::CodedOutputStream.ComputeMessageSize(203, ScLogon);
+    }
+    if (hasCsLogoff) {
+      size += pb::CodedOutputStream.ComputeMessageSize(204, CsLogoff);
+    }
+    if (hasScLogoff) {
+      size += pb::CodedOutputStream.ComputeMessageSize(205, ScLogoff);
+    }
+    if (hasCsHungup) {
+      size += pb::CodedOutputStream.ComputeMessageSize(206, CsHungup);
+    }
+    if (hasCsCharge) {
+      size += pb::CodedOutputStream.ComputeMessageSize(207, CsCharge);
+    }
+    if (hasScCharge) {
+      size += pb::CodedOutputStream.ComputeMessageSize(208, ScCharge);
+    }
+    if (hasScChargeResult) {
+      size += pb::CodedOutputStream.ComputeMessageSize(209, ScChargeResult);
+    }
+    if (hasScShop) {
+      size += pb::CodedOutputStream.ComputeMessageSize(210, ScShop);
+    }
+    if (hasCsCartAdd) {
+      size += pb::CodedOutputStream.ComputeMessageSize(211, CsCartAdd);
+    }
+    if (hasCsCartDel) {
+      size += pb::CodedOutputStream.ComputeMessageSize(212, CsCartDel);
+    }
+    if (hasCsCartBuy) {
+      size += pb::CodedOutputStream.ComputeMessageSize(213, CsCartBuy);
+    }
+    if (hasScCartBuy) {
+      size += pb::CodedOutputStream.ComputeMessageSize(214, ScCartBuy);
+    }
+    if (hasScCartBuyResult) {
+      size += pb::CodedOutputStream.ComputeMessageSize(215, ScCartBuyResult);
+    }
+    if (hasScSysMessage) {
+      size += pb::CodedOutputStream.ComputeMessageSize(216, ScSysMessage);
+    }
+    if (hasCsUserMessage) {
+      size += pb::CodedOutputStream.ComputeMessageSize(217, CsUserMessage);
+    }
+    if (hasCsEvaluate) {
+      size += pb::CodedOutputStream.ComputeMessageSize(218, CsEvaluate);
+    }
+    if (hasScEvaluate) {
+      size += pb::CodedOutputStream.ComputeMessageSize(219, ScEvaluate);
+    }
+    if (hasCsVerifyCode) {
+      size += pb::CodedOutputStream.ComputeMessageSize(220, CsVerifyCode);
+    }
+    if (hasScVerifyCode) {
+      size += pb::CodedOutputStream.ComputeMessageSize(221, ScVerifyCode);
+    }
+    if (hasCsBindMobile) {
+      size += pb::CodedOutputStream.ComputeMessageSize(222, CsBindMobile);
+    }
+    if (hasScBindMobile) {
+      size += pb::CodedOutputStream.ComputeMessageSize(223, ScBindMobile);
     }
     size += UnknownFields.SerializedSize;
     memoizedSerializedSize = size;
@@ -3315,11 +3754,14 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
       if (other.HasScEmkCheckout) {
         MergeScEmkCheckout(other.ScEmkCheckout);
       }
-      if (other.HasCsEmkReharge) {
-        MergeCsEmkReharge(other.CsEmkReharge);
+      if (other.HasCsEmkPrepay) {
+        MergeCsEmkPrepay(other.CsEmkPrepay);
       }
-      if (other.HasScEmkRecharge) {
-        MergeScEmkRecharge(other.ScEmkRecharge);
+      if (other.HasScEmkPrepay) {
+        MergeScEmkPrepay(other.ScEmkPrepay);
+      }
+      if (other.HasScEmkTopay) {
+        MergeScEmkTopay(other.ScEmkTopay);
       }
       if (other.HasCsEmkRecord) {
         MergeCsEmkRecord(other.CsEmkRecord);
@@ -3378,38 +3820,83 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
       if (other.HasScOrderDetail) {
         MergeScOrderDetail(other.ScOrderDetail);
       }
-      if (other.HasCsLogon) {
-        MergeCsLogon(other.CsLogon);
-      }
-      if (other.HasCsLogoff) {
-        MergeCsLogoff(other.CsLogoff);
-      }
-      if (other.HasCsHangup) {
-        MergeCsHangup(other.CsHangup);
-      }
-      if (other.HasCsUploadHead) {
-        MergeCsUploadHead(other.CsUploadHead);
-      }
-      if (other.HasScUploadHead) {
-        MergeScUploadHead(other.ScUploadHead);
-      }
-      if (other.HasCsCheckName) {
-        MergeCsCheckName(other.CsCheckName);
-      }
-      if (other.HasScCheckName) {
-        MergeScCheckName(other.ScCheckName);
-      }
-      if (other.HasCsCheckAccount) {
-        MergeCsCheckAccount(other.CsCheckAccount);
-      }
-      if (other.HasScCheckAccount) {
-        MergeScCheckAccount(other.ScCheckAccount);
-      }
       if (other.HasCsReconnect) {
         MergeCsReconnect(other.CsReconnect);
       }
       if (other.HasScReconnect) {
         MergeScReconnect(other.ScReconnect);
+      }
+      if (other.HasCsClientOpen) {
+        MergeCsClientOpen(other.CsClientOpen);
+      }
+      if (other.HasCsClientClose) {
+        MergeCsClientClose(other.CsClientClose);
+      }
+      if (other.HasCsLogon) {
+        MergeCsLogon(other.CsLogon);
+      }
+      if (other.HasScLogon) {
+        MergeScLogon(other.ScLogon);
+      }
+      if (other.HasCsLogoff) {
+        MergeCsLogoff(other.CsLogoff);
+      }
+      if (other.HasScLogoff) {
+        MergeScLogoff(other.ScLogoff);
+      }
+      if (other.HasCsHungup) {
+        MergeCsHungup(other.CsHungup);
+      }
+      if (other.HasCsCharge) {
+        MergeCsCharge(other.CsCharge);
+      }
+      if (other.HasScCharge) {
+        MergeScCharge(other.ScCharge);
+      }
+      if (other.HasScChargeResult) {
+        MergeScChargeResult(other.ScChargeResult);
+      }
+      if (other.HasScShop) {
+        MergeScShop(other.ScShop);
+      }
+      if (other.HasCsCartAdd) {
+        MergeCsCartAdd(other.CsCartAdd);
+      }
+      if (other.HasCsCartDel) {
+        MergeCsCartDel(other.CsCartDel);
+      }
+      if (other.HasCsCartBuy) {
+        MergeCsCartBuy(other.CsCartBuy);
+      }
+      if (other.HasScCartBuy) {
+        MergeScCartBuy(other.ScCartBuy);
+      }
+      if (other.HasScCartBuyResult) {
+        MergeScCartBuyResult(other.ScCartBuyResult);
+      }
+      if (other.HasScSysMessage) {
+        MergeScSysMessage(other.ScSysMessage);
+      }
+      if (other.HasCsUserMessage) {
+        MergeCsUserMessage(other.CsUserMessage);
+      }
+      if (other.HasCsEvaluate) {
+        MergeCsEvaluate(other.CsEvaluate);
+      }
+      if (other.HasScEvaluate) {
+        MergeScEvaluate(other.ScEvaluate);
+      }
+      if (other.HasCsVerifyCode) {
+        MergeCsVerifyCode(other.CsVerifyCode);
+      }
+      if (other.HasScVerifyCode) {
+        MergeScVerifyCode(other.ScVerifyCode);
+      }
+      if (other.HasCsBindMobile) {
+        MergeCsBindMobile(other.CsBindMobile);
+      }
+      if (other.HasScBindMobile) {
+        MergeScBindMobile(other.ScBindMobile);
       }
       this.MergeUnknownFields(other.UnknownFields);
       return this;
@@ -3963,24 +4450,33 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             break;
           }
           case 482: {
-            global::CSEmkRecharge.Builder subBuilder = global::CSEmkRecharge.CreateBuilder();
-            if (result.hasCsEmkReharge) {
-              subBuilder.MergeFrom(CsEmkReharge);
+            global::CSEmkPrepay.Builder subBuilder = global::CSEmkPrepay.CreateBuilder();
+            if (result.hasCsEmkPrepay) {
+              subBuilder.MergeFrom(CsEmkPrepay);
             }
             input.ReadMessage(subBuilder, extensionRegistry);
-            CsEmkReharge = subBuilder.BuildPartial();
+            CsEmkPrepay = subBuilder.BuildPartial();
             break;
           }
           case 490: {
-            global::SCEmkRecharge.Builder subBuilder = global::SCEmkRecharge.CreateBuilder();
-            if (result.hasScEmkRecharge) {
-              subBuilder.MergeFrom(ScEmkRecharge);
+            global::SCEmkPrepay.Builder subBuilder = global::SCEmkPrepay.CreateBuilder();
+            if (result.hasScEmkPrepay) {
+              subBuilder.MergeFrom(ScEmkPrepay);
             }
             input.ReadMessage(subBuilder, extensionRegistry);
-            ScEmkRecharge = subBuilder.BuildPartial();
+            ScEmkPrepay = subBuilder.BuildPartial();
             break;
           }
           case 498: {
+            global::SCEmkTopay.Builder subBuilder = global::SCEmkTopay.CreateBuilder();
+            if (result.hasScEmkTopay) {
+              subBuilder.MergeFrom(ScEmkTopay);
+            }
+            input.ReadMessage(subBuilder, extensionRegistry);
+            ScEmkTopay = subBuilder.BuildPartial();
+            break;
+          }
+          case 506: {
             global::CSEmkRecord.Builder subBuilder = global::CSEmkRecord.CreateBuilder();
             if (result.hasCsEmkRecord) {
               subBuilder.MergeFrom(CsEmkRecord);
@@ -3989,7 +4485,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             CsEmkRecord = subBuilder.BuildPartial();
             break;
           }
-          case 506: {
+          case 514: {
             global::SCEmkRecord.Builder subBuilder = global::SCEmkRecord.CreateBuilder();
             if (result.hasScEmkRecord) {
               subBuilder.MergeFrom(ScEmkRecord);
@@ -3998,7 +4494,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             ScEmkRecord = subBuilder.BuildPartial();
             break;
           }
-          case 514: {
+          case 522: {
             global::CSEmkRecordFind.Builder subBuilder = global::CSEmkRecordFind.CreateBuilder();
             if (result.hasCsEmkRecordFind) {
               subBuilder.MergeFrom(CsEmkRecordFind);
@@ -4007,7 +4503,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             CsEmkRecordFind = subBuilder.BuildPartial();
             break;
           }
-          case 522: {
+          case 530: {
             global::SCEmkRecordFind.Builder subBuilder = global::SCEmkRecordFind.CreateBuilder();
             if (result.hasScEmkRecordFind) {
               subBuilder.MergeFrom(ScEmkRecordFind);
@@ -4016,7 +4512,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             ScEmkRecordFind = subBuilder.BuildPartial();
             break;
           }
-          case 530: {
+          case 538: {
             global::CSGoodsFind.Builder subBuilder = global::CSGoodsFind.CreateBuilder();
             if (result.hasCsGoodsFind) {
               subBuilder.MergeFrom(CsGoodsFind);
@@ -4025,7 +4521,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             CsGoodsFind = subBuilder.BuildPartial();
             break;
           }
-          case 538: {
+          case 546: {
             global::SCGoodsFind.Builder subBuilder = global::SCGoodsFind.CreateBuilder();
             if (result.hasScGoodsFind) {
               subBuilder.MergeFrom(ScGoodsFind);
@@ -4034,7 +4530,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             ScGoodsFind = subBuilder.BuildPartial();
             break;
           }
-          case 546: {
+          case 554: {
             global::CSGoodsAdd.Builder subBuilder = global::CSGoodsAdd.CreateBuilder();
             if (result.hasCsGoodsAdd) {
               subBuilder.MergeFrom(CsGoodsAdd);
@@ -4043,7 +4539,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             CsGoodsAdd = subBuilder.BuildPartial();
             break;
           }
-          case 554: {
+          case 562: {
             global::CSGoodsDel.Builder subBuilder = global::CSGoodsDel.CreateBuilder();
             if (result.hasCsGoodsDel) {
               subBuilder.MergeFrom(CsGoodsDel);
@@ -4052,7 +4548,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             CsGoodsDel = subBuilder.BuildPartial();
             break;
           }
-          case 562: {
+          case 570: {
             global::CSGoodsUpdate.Builder subBuilder = global::CSGoodsUpdate.CreateBuilder();
             if (result.hasCsGoodsUpdate) {
               subBuilder.MergeFrom(CsGoodsUpdate);
@@ -4061,7 +4557,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             CsGoodsUpdate = subBuilder.BuildPartial();
             break;
           }
-          case 570: {
+          case 578: {
             global::CSGoodsStock.Builder subBuilder = global::CSGoodsStock.CreateBuilder();
             if (result.hasCsGoodsStock) {
               subBuilder.MergeFrom(CsGoodsStock);
@@ -4070,7 +4566,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             CsGoodsStock = subBuilder.BuildPartial();
             break;
           }
-          case 578: {
+          case 586: {
             global::SCGoodsStock.Builder subBuilder = global::SCGoodsStock.CreateBuilder();
             if (result.hasScGoodsStock) {
               subBuilder.MergeFrom(ScGoodsStock);
@@ -4079,7 +4575,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             ScGoodsStock = subBuilder.BuildPartial();
             break;
           }
-          case 586: {
+          case 594: {
             global::CSSalesRecord.Builder subBuilder = global::CSSalesRecord.CreateBuilder();
             if (result.hasCsSalesRecord) {
               subBuilder.MergeFrom(CsSalesRecord);
@@ -4088,7 +4584,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             CsSalesRecord = subBuilder.BuildPartial();
             break;
           }
-          case 594: {
+          case 602: {
             global::SCSalesRecord.Builder subBuilder = global::SCSalesRecord.CreateBuilder();
             if (result.hasScSalesRecord) {
               subBuilder.MergeFrom(ScSalesRecord);
@@ -4097,7 +4593,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             ScSalesRecord = subBuilder.BuildPartial();
             break;
           }
-          case 602: {
+          case 610: {
             global::CSSalesTop.Builder subBuilder = global::CSSalesTop.CreateBuilder();
             if (result.hasCsSalesTop) {
               subBuilder.MergeFrom(CsSalesTop);
@@ -4106,7 +4602,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             CsSalesTop = subBuilder.BuildPartial();
             break;
           }
-          case 610: {
+          case 618: {
             global::SCSalesTop.Builder subBuilder = global::SCSalesTop.CreateBuilder();
             if (result.hasScSalesTop) {
               subBuilder.MergeFrom(ScSalesTop);
@@ -4115,7 +4611,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             ScSalesTop = subBuilder.BuildPartial();
             break;
           }
-          case 618: {
+          case 626: {
             global::CSOrderList.Builder subBuilder = global::CSOrderList.CreateBuilder();
             if (result.hasCsOrderList) {
               subBuilder.MergeFrom(CsOrderList);
@@ -4124,7 +4620,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             CsOrderList = subBuilder.BuildPartial();
             break;
           }
-          case 626: {
+          case 634: {
             global::SCOrderList.Builder subBuilder = global::SCOrderList.CreateBuilder();
             if (result.hasScOrderList) {
               subBuilder.MergeFrom(ScOrderList);
@@ -4133,7 +4629,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             ScOrderList = subBuilder.BuildPartial();
             break;
           }
-          case 634: {
+          case 642: {
             global::CSOrderDetail.Builder subBuilder = global::CSOrderDetail.CreateBuilder();
             if (result.hasCsOrderDetail) {
               subBuilder.MergeFrom(CsOrderDetail);
@@ -4142,7 +4638,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             CsOrderDetail = subBuilder.BuildPartial();
             break;
           }
-          case 642: {
+          case 650: {
             global::SCOrderDetail.Builder subBuilder = global::SCOrderDetail.CreateBuilder();
             if (result.hasScOrderDetail) {
               subBuilder.MergeFrom(ScOrderDetail);
@@ -4151,88 +4647,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             ScOrderDetail = subBuilder.BuildPartial();
             break;
           }
-          case 650: {
-            global::CSLogon.Builder subBuilder = global::CSLogon.CreateBuilder();
-            if (result.hasCsLogon) {
-              subBuilder.MergeFrom(CsLogon);
-            }
-            input.ReadMessage(subBuilder, extensionRegistry);
-            CsLogon = subBuilder.BuildPartial();
-            break;
-          }
           case 658: {
-            global::CSLogoff.Builder subBuilder = global::CSLogoff.CreateBuilder();
-            if (result.hasCsLogoff) {
-              subBuilder.MergeFrom(CsLogoff);
-            }
-            input.ReadMessage(subBuilder, extensionRegistry);
-            CsLogoff = subBuilder.BuildPartial();
-            break;
-          }
-          case 666: {
-            global::CSHangup.Builder subBuilder = global::CSHangup.CreateBuilder();
-            if (result.hasCsHangup) {
-              subBuilder.MergeFrom(CsHangup);
-            }
-            input.ReadMessage(subBuilder, extensionRegistry);
-            CsHangup = subBuilder.BuildPartial();
-            break;
-          }
-          case 674: {
-            global::CSUploadHead.Builder subBuilder = global::CSUploadHead.CreateBuilder();
-            if (result.hasCsUploadHead) {
-              subBuilder.MergeFrom(CsUploadHead);
-            }
-            input.ReadMessage(subBuilder, extensionRegistry);
-            CsUploadHead = subBuilder.BuildPartial();
-            break;
-          }
-          case 682: {
-            global::SCUploadHead.Builder subBuilder = global::SCUploadHead.CreateBuilder();
-            if (result.hasScUploadHead) {
-              subBuilder.MergeFrom(ScUploadHead);
-            }
-            input.ReadMessage(subBuilder, extensionRegistry);
-            ScUploadHead = subBuilder.BuildPartial();
-            break;
-          }
-          case 690: {
-            global::CSCheckName.Builder subBuilder = global::CSCheckName.CreateBuilder();
-            if (result.hasCsCheckName) {
-              subBuilder.MergeFrom(CsCheckName);
-            }
-            input.ReadMessage(subBuilder, extensionRegistry);
-            CsCheckName = subBuilder.BuildPartial();
-            break;
-          }
-          case 698: {
-            global::SCCheckName.Builder subBuilder = global::SCCheckName.CreateBuilder();
-            if (result.hasScCheckName) {
-              subBuilder.MergeFrom(ScCheckName);
-            }
-            input.ReadMessage(subBuilder, extensionRegistry);
-            ScCheckName = subBuilder.BuildPartial();
-            break;
-          }
-          case 706: {
-            global::CSCheckAccount.Builder subBuilder = global::CSCheckAccount.CreateBuilder();
-            if (result.hasCsCheckAccount) {
-              subBuilder.MergeFrom(CsCheckAccount);
-            }
-            input.ReadMessage(subBuilder, extensionRegistry);
-            CsCheckAccount = subBuilder.BuildPartial();
-            break;
-          }
-          case 714: {
-            global::SCCheckAccount.Builder subBuilder = global::SCCheckAccount.CreateBuilder();
-            if (result.hasScCheckAccount) {
-              subBuilder.MergeFrom(ScCheckAccount);
-            }
-            input.ReadMessage(subBuilder, extensionRegistry);
-            ScCheckAccount = subBuilder.BuildPartial();
-            break;
-          }
-          case 722: {
             global::CSReconnect.Builder subBuilder = global::CSReconnect.CreateBuilder();
             if (result.hasCsReconnect) {
               subBuilder.MergeFrom(CsReconnect);
@@ -4241,13 +4656,229 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             CsReconnect = subBuilder.BuildPartial();
             break;
           }
-          case 730: {
+          case 666: {
             global::SCReconnect.Builder subBuilder = global::SCReconnect.CreateBuilder();
             if (result.hasScReconnect) {
               subBuilder.MergeFrom(ScReconnect);
             }
             input.ReadMessage(subBuilder, extensionRegistry);
             ScReconnect = subBuilder.BuildPartial();
+            break;
+          }
+          case 1602: {
+            global::CSClientOpen.Builder subBuilder = global::CSClientOpen.CreateBuilder();
+            if (result.hasCsClientOpen) {
+              subBuilder.MergeFrom(CsClientOpen);
+            }
+            input.ReadMessage(subBuilder, extensionRegistry);
+            CsClientOpen = subBuilder.BuildPartial();
+            break;
+          }
+          case 1610: {
+            global::CSClientClose.Builder subBuilder = global::CSClientClose.CreateBuilder();
+            if (result.hasCsClientClose) {
+              subBuilder.MergeFrom(CsClientClose);
+            }
+            input.ReadMessage(subBuilder, extensionRegistry);
+            CsClientClose = subBuilder.BuildPartial();
+            break;
+          }
+          case 1618: {
+            global::CSLogon.Builder subBuilder = global::CSLogon.CreateBuilder();
+            if (result.hasCsLogon) {
+              subBuilder.MergeFrom(CsLogon);
+            }
+            input.ReadMessage(subBuilder, extensionRegistry);
+            CsLogon = subBuilder.BuildPartial();
+            break;
+          }
+          case 1626: {
+            global::SCLogon.Builder subBuilder = global::SCLogon.CreateBuilder();
+            if (result.hasScLogon) {
+              subBuilder.MergeFrom(ScLogon);
+            }
+            input.ReadMessage(subBuilder, extensionRegistry);
+            ScLogon = subBuilder.BuildPartial();
+            break;
+          }
+          case 1634: {
+            global::CSLogoff.Builder subBuilder = global::CSLogoff.CreateBuilder();
+            if (result.hasCsLogoff) {
+              subBuilder.MergeFrom(CsLogoff);
+            }
+            input.ReadMessage(subBuilder, extensionRegistry);
+            CsLogoff = subBuilder.BuildPartial();
+            break;
+          }
+          case 1642: {
+            global::SCLogoff.Builder subBuilder = global::SCLogoff.CreateBuilder();
+            if (result.hasScLogoff) {
+              subBuilder.MergeFrom(ScLogoff);
+            }
+            input.ReadMessage(subBuilder, extensionRegistry);
+            ScLogoff = subBuilder.BuildPartial();
+            break;
+          }
+          case 1650: {
+            global::CSHungup.Builder subBuilder = global::CSHungup.CreateBuilder();
+            if (result.hasCsHungup) {
+              subBuilder.MergeFrom(CsHungup);
+            }
+            input.ReadMessage(subBuilder, extensionRegistry);
+            CsHungup = subBuilder.BuildPartial();
+            break;
+          }
+          case 1658: {
+            global::CSCharge.Builder subBuilder = global::CSCharge.CreateBuilder();
+            if (result.hasCsCharge) {
+              subBuilder.MergeFrom(CsCharge);
+            }
+            input.ReadMessage(subBuilder, extensionRegistry);
+            CsCharge = subBuilder.BuildPartial();
+            break;
+          }
+          case 1666: {
+            global::SCCharge.Builder subBuilder = global::SCCharge.CreateBuilder();
+            if (result.hasScCharge) {
+              subBuilder.MergeFrom(ScCharge);
+            }
+            input.ReadMessage(subBuilder, extensionRegistry);
+            ScCharge = subBuilder.BuildPartial();
+            break;
+          }
+          case 1674: {
+            global::SCChargeResult.Builder subBuilder = global::SCChargeResult.CreateBuilder();
+            if (result.hasScChargeResult) {
+              subBuilder.MergeFrom(ScChargeResult);
+            }
+            input.ReadMessage(subBuilder, extensionRegistry);
+            ScChargeResult = subBuilder.BuildPartial();
+            break;
+          }
+          case 1682: {
+            global::SCShop.Builder subBuilder = global::SCShop.CreateBuilder();
+            if (result.hasScShop) {
+              subBuilder.MergeFrom(ScShop);
+            }
+            input.ReadMessage(subBuilder, extensionRegistry);
+            ScShop = subBuilder.BuildPartial();
+            break;
+          }
+          case 1690: {
+            global::CSCartAdd.Builder subBuilder = global::CSCartAdd.CreateBuilder();
+            if (result.hasCsCartAdd) {
+              subBuilder.MergeFrom(CsCartAdd);
+            }
+            input.ReadMessage(subBuilder, extensionRegistry);
+            CsCartAdd = subBuilder.BuildPartial();
+            break;
+          }
+          case 1698: {
+            global::CSCartDel.Builder subBuilder = global::CSCartDel.CreateBuilder();
+            if (result.hasCsCartDel) {
+              subBuilder.MergeFrom(CsCartDel);
+            }
+            input.ReadMessage(subBuilder, extensionRegistry);
+            CsCartDel = subBuilder.BuildPartial();
+            break;
+          }
+          case 1706: {
+            global::CSCartBuy.Builder subBuilder = global::CSCartBuy.CreateBuilder();
+            if (result.hasCsCartBuy) {
+              subBuilder.MergeFrom(CsCartBuy);
+            }
+            input.ReadMessage(subBuilder, extensionRegistry);
+            CsCartBuy = subBuilder.BuildPartial();
+            break;
+          }
+          case 1714: {
+            global::SCCartBuy.Builder subBuilder = global::SCCartBuy.CreateBuilder();
+            if (result.hasScCartBuy) {
+              subBuilder.MergeFrom(ScCartBuy);
+            }
+            input.ReadMessage(subBuilder, extensionRegistry);
+            ScCartBuy = subBuilder.BuildPartial();
+            break;
+          }
+          case 1722: {
+            global::SCCartBuyResult.Builder subBuilder = global::SCCartBuyResult.CreateBuilder();
+            if (result.hasScCartBuyResult) {
+              subBuilder.MergeFrom(ScCartBuyResult);
+            }
+            input.ReadMessage(subBuilder, extensionRegistry);
+            ScCartBuyResult = subBuilder.BuildPartial();
+            break;
+          }
+          case 1730: {
+            global::SCSysMessage.Builder subBuilder = global::SCSysMessage.CreateBuilder();
+            if (result.hasScSysMessage) {
+              subBuilder.MergeFrom(ScSysMessage);
+            }
+            input.ReadMessage(subBuilder, extensionRegistry);
+            ScSysMessage = subBuilder.BuildPartial();
+            break;
+          }
+          case 1738: {
+            global::CSUserMessage.Builder subBuilder = global::CSUserMessage.CreateBuilder();
+            if (result.hasCsUserMessage) {
+              subBuilder.MergeFrom(CsUserMessage);
+            }
+            input.ReadMessage(subBuilder, extensionRegistry);
+            CsUserMessage = subBuilder.BuildPartial();
+            break;
+          }
+          case 1746: {
+            global::CSEvaluate.Builder subBuilder = global::CSEvaluate.CreateBuilder();
+            if (result.hasCsEvaluate) {
+              subBuilder.MergeFrom(CsEvaluate);
+            }
+            input.ReadMessage(subBuilder, extensionRegistry);
+            CsEvaluate = subBuilder.BuildPartial();
+            break;
+          }
+          case 1754: {
+            global::SCEvaluate.Builder subBuilder = global::SCEvaluate.CreateBuilder();
+            if (result.hasScEvaluate) {
+              subBuilder.MergeFrom(ScEvaluate);
+            }
+            input.ReadMessage(subBuilder, extensionRegistry);
+            ScEvaluate = subBuilder.BuildPartial();
+            break;
+          }
+          case 1762: {
+            global::CSVerifyCode.Builder subBuilder = global::CSVerifyCode.CreateBuilder();
+            if (result.hasCsVerifyCode) {
+              subBuilder.MergeFrom(CsVerifyCode);
+            }
+            input.ReadMessage(subBuilder, extensionRegistry);
+            CsVerifyCode = subBuilder.BuildPartial();
+            break;
+          }
+          case 1770: {
+            global::SCVerifyCode.Builder subBuilder = global::SCVerifyCode.CreateBuilder();
+            if (result.hasScVerifyCode) {
+              subBuilder.MergeFrom(ScVerifyCode);
+            }
+            input.ReadMessage(subBuilder, extensionRegistry);
+            ScVerifyCode = subBuilder.BuildPartial();
+            break;
+          }
+          case 1778: {
+            global::CSBindMobile.Builder subBuilder = global::CSBindMobile.CreateBuilder();
+            if (result.hasCsBindMobile) {
+              subBuilder.MergeFrom(CsBindMobile);
+            }
+            input.ReadMessage(subBuilder, extensionRegistry);
+            CsBindMobile = subBuilder.BuildPartial();
+            break;
+          }
+          case 1786: {
+            global::SCBindMobile.Builder subBuilder = global::SCBindMobile.CreateBuilder();
+            if (result.hasScBindMobile) {
+              subBuilder.MergeFrom(ScBindMobile);
+            }
+            input.ReadMessage(subBuilder, extensionRegistry);
+            ScBindMobile = subBuilder.BuildPartial();
             break;
           }
         }
@@ -6520,83 +7151,123 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
       return this;
     }
     
-    public bool HasCsEmkReharge {
-     get { return result.hasCsEmkReharge; }
+    public bool HasCsEmkPrepay {
+     get { return result.hasCsEmkPrepay; }
     }
-    public global::CSEmkRecharge CsEmkReharge {
-      get { return result.CsEmkReharge; }
-      set { SetCsEmkReharge(value); }
+    public global::CSEmkPrepay CsEmkPrepay {
+      get { return result.CsEmkPrepay; }
+      set { SetCsEmkPrepay(value); }
     }
-    public Builder SetCsEmkReharge(global::CSEmkRecharge value) {
+    public Builder SetCsEmkPrepay(global::CSEmkPrepay value) {
       pb::ThrowHelper.ThrowIfNull(value, "value");
       PrepareBuilder();
-      result.hasCsEmkReharge = true;
-      result.csEmkReharge_ = value;
+      result.hasCsEmkPrepay = true;
+      result.csEmkPrepay_ = value;
       return this;
     }
-    public Builder SetCsEmkReharge(global::CSEmkRecharge.Builder builderForValue) {
+    public Builder SetCsEmkPrepay(global::CSEmkPrepay.Builder builderForValue) {
       pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
       PrepareBuilder();
-      result.hasCsEmkReharge = true;
-      result.csEmkReharge_ = builderForValue.Build();
+      result.hasCsEmkPrepay = true;
+      result.csEmkPrepay_ = builderForValue.Build();
       return this;
     }
-    public Builder MergeCsEmkReharge(global::CSEmkRecharge value) {
+    public Builder MergeCsEmkPrepay(global::CSEmkPrepay value) {
       pb::ThrowHelper.ThrowIfNull(value, "value");
       PrepareBuilder();
-      if (result.hasCsEmkReharge &&
-          result.csEmkReharge_ != global::CSEmkRecharge.DefaultInstance) {
-          result.csEmkReharge_ = global::CSEmkRecharge.CreateBuilder(result.csEmkReharge_).MergeFrom(value).BuildPartial();
+      if (result.hasCsEmkPrepay &&
+          result.csEmkPrepay_ != global::CSEmkPrepay.DefaultInstance) {
+          result.csEmkPrepay_ = global::CSEmkPrepay.CreateBuilder(result.csEmkPrepay_).MergeFrom(value).BuildPartial();
       } else {
-        result.csEmkReharge_ = value;
+        result.csEmkPrepay_ = value;
       }
-      result.hasCsEmkReharge = true;
+      result.hasCsEmkPrepay = true;
       return this;
     }
-    public Builder ClearCsEmkReharge() {
+    public Builder ClearCsEmkPrepay() {
       PrepareBuilder();
-      result.hasCsEmkReharge = false;
-      result.csEmkReharge_ = null;
+      result.hasCsEmkPrepay = false;
+      result.csEmkPrepay_ = null;
       return this;
     }
     
-    public bool HasScEmkRecharge {
-     get { return result.hasScEmkRecharge; }
+    public bool HasScEmkPrepay {
+     get { return result.hasScEmkPrepay; }
     }
-    public global::SCEmkRecharge ScEmkRecharge {
-      get { return result.ScEmkRecharge; }
-      set { SetScEmkRecharge(value); }
+    public global::SCEmkPrepay ScEmkPrepay {
+      get { return result.ScEmkPrepay; }
+      set { SetScEmkPrepay(value); }
     }
-    public Builder SetScEmkRecharge(global::SCEmkRecharge value) {
+    public Builder SetScEmkPrepay(global::SCEmkPrepay value) {
       pb::ThrowHelper.ThrowIfNull(value, "value");
       PrepareBuilder();
-      result.hasScEmkRecharge = true;
-      result.scEmkRecharge_ = value;
+      result.hasScEmkPrepay = true;
+      result.scEmkPrepay_ = value;
       return this;
     }
-    public Builder SetScEmkRecharge(global::SCEmkRecharge.Builder builderForValue) {
+    public Builder SetScEmkPrepay(global::SCEmkPrepay.Builder builderForValue) {
       pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
       PrepareBuilder();
-      result.hasScEmkRecharge = true;
-      result.scEmkRecharge_ = builderForValue.Build();
+      result.hasScEmkPrepay = true;
+      result.scEmkPrepay_ = builderForValue.Build();
       return this;
     }
-    public Builder MergeScEmkRecharge(global::SCEmkRecharge value) {
+    public Builder MergeScEmkPrepay(global::SCEmkPrepay value) {
       pb::ThrowHelper.ThrowIfNull(value, "value");
       PrepareBuilder();
-      if (result.hasScEmkRecharge &&
-          result.scEmkRecharge_ != global::SCEmkRecharge.DefaultInstance) {
-          result.scEmkRecharge_ = global::SCEmkRecharge.CreateBuilder(result.scEmkRecharge_).MergeFrom(value).BuildPartial();
+      if (result.hasScEmkPrepay &&
+          result.scEmkPrepay_ != global::SCEmkPrepay.DefaultInstance) {
+          result.scEmkPrepay_ = global::SCEmkPrepay.CreateBuilder(result.scEmkPrepay_).MergeFrom(value).BuildPartial();
       } else {
-        result.scEmkRecharge_ = value;
+        result.scEmkPrepay_ = value;
       }
-      result.hasScEmkRecharge = true;
+      result.hasScEmkPrepay = true;
       return this;
     }
-    public Builder ClearScEmkRecharge() {
+    public Builder ClearScEmkPrepay() {
       PrepareBuilder();
-      result.hasScEmkRecharge = false;
-      result.scEmkRecharge_ = null;
+      result.hasScEmkPrepay = false;
+      result.scEmkPrepay_ = null;
+      return this;
+    }
+    
+    public bool HasScEmkTopay {
+     get { return result.hasScEmkTopay; }
+    }
+    public global::SCEmkTopay ScEmkTopay {
+      get { return result.ScEmkTopay; }
+      set { SetScEmkTopay(value); }
+    }
+    public Builder SetScEmkTopay(global::SCEmkTopay value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasScEmkTopay = true;
+      result.scEmkTopay_ = value;
+      return this;
+    }
+    public Builder SetScEmkTopay(global::SCEmkTopay.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
+      PrepareBuilder();
+      result.hasScEmkTopay = true;
+      result.scEmkTopay_ = builderForValue.Build();
+      return this;
+    }
+    public Builder MergeScEmkTopay(global::SCEmkTopay value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      if (result.hasScEmkTopay &&
+          result.scEmkTopay_ != global::SCEmkTopay.DefaultInstance) {
+          result.scEmkTopay_ = global::SCEmkTopay.CreateBuilder(result.scEmkTopay_).MergeFrom(value).BuildPartial();
+      } else {
+        result.scEmkTopay_ = value;
+      }
+      result.hasScEmkTopay = true;
+      return this;
+    }
+    public Builder ClearScEmkTopay() {
+      PrepareBuilder();
+      result.hasScEmkTopay = false;
+      result.scEmkTopay_ = null;
       return this;
     }
     
@@ -7360,366 +8031,6 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
       return this;
     }
     
-    public bool HasCsLogon {
-     get { return result.hasCsLogon; }
-    }
-    public global::CSLogon CsLogon {
-      get { return result.CsLogon; }
-      set { SetCsLogon(value); }
-    }
-    public Builder SetCsLogon(global::CSLogon value) {
-      pb::ThrowHelper.ThrowIfNull(value, "value");
-      PrepareBuilder();
-      result.hasCsLogon = true;
-      result.csLogon_ = value;
-      return this;
-    }
-    public Builder SetCsLogon(global::CSLogon.Builder builderForValue) {
-      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
-      PrepareBuilder();
-      result.hasCsLogon = true;
-      result.csLogon_ = builderForValue.Build();
-      return this;
-    }
-    public Builder MergeCsLogon(global::CSLogon value) {
-      pb::ThrowHelper.ThrowIfNull(value, "value");
-      PrepareBuilder();
-      if (result.hasCsLogon &&
-          result.csLogon_ != global::CSLogon.DefaultInstance) {
-          result.csLogon_ = global::CSLogon.CreateBuilder(result.csLogon_).MergeFrom(value).BuildPartial();
-      } else {
-        result.csLogon_ = value;
-      }
-      result.hasCsLogon = true;
-      return this;
-    }
-    public Builder ClearCsLogon() {
-      PrepareBuilder();
-      result.hasCsLogon = false;
-      result.csLogon_ = null;
-      return this;
-    }
-    
-    public bool HasCsLogoff {
-     get { return result.hasCsLogoff; }
-    }
-    public global::CSLogoff CsLogoff {
-      get { return result.CsLogoff; }
-      set { SetCsLogoff(value); }
-    }
-    public Builder SetCsLogoff(global::CSLogoff value) {
-      pb::ThrowHelper.ThrowIfNull(value, "value");
-      PrepareBuilder();
-      result.hasCsLogoff = true;
-      result.csLogoff_ = value;
-      return this;
-    }
-    public Builder SetCsLogoff(global::CSLogoff.Builder builderForValue) {
-      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
-      PrepareBuilder();
-      result.hasCsLogoff = true;
-      result.csLogoff_ = builderForValue.Build();
-      return this;
-    }
-    public Builder MergeCsLogoff(global::CSLogoff value) {
-      pb::ThrowHelper.ThrowIfNull(value, "value");
-      PrepareBuilder();
-      if (result.hasCsLogoff &&
-          result.csLogoff_ != global::CSLogoff.DefaultInstance) {
-          result.csLogoff_ = global::CSLogoff.CreateBuilder(result.csLogoff_).MergeFrom(value).BuildPartial();
-      } else {
-        result.csLogoff_ = value;
-      }
-      result.hasCsLogoff = true;
-      return this;
-    }
-    public Builder ClearCsLogoff() {
-      PrepareBuilder();
-      result.hasCsLogoff = false;
-      result.csLogoff_ = null;
-      return this;
-    }
-    
-    public bool HasCsHangup {
-     get { return result.hasCsHangup; }
-    }
-    public global::CSHangup CsHangup {
-      get { return result.CsHangup; }
-      set { SetCsHangup(value); }
-    }
-    public Builder SetCsHangup(global::CSHangup value) {
-      pb::ThrowHelper.ThrowIfNull(value, "value");
-      PrepareBuilder();
-      result.hasCsHangup = true;
-      result.csHangup_ = value;
-      return this;
-    }
-    public Builder SetCsHangup(global::CSHangup.Builder builderForValue) {
-      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
-      PrepareBuilder();
-      result.hasCsHangup = true;
-      result.csHangup_ = builderForValue.Build();
-      return this;
-    }
-    public Builder MergeCsHangup(global::CSHangup value) {
-      pb::ThrowHelper.ThrowIfNull(value, "value");
-      PrepareBuilder();
-      if (result.hasCsHangup &&
-          result.csHangup_ != global::CSHangup.DefaultInstance) {
-          result.csHangup_ = global::CSHangup.CreateBuilder(result.csHangup_).MergeFrom(value).BuildPartial();
-      } else {
-        result.csHangup_ = value;
-      }
-      result.hasCsHangup = true;
-      return this;
-    }
-    public Builder ClearCsHangup() {
-      PrepareBuilder();
-      result.hasCsHangup = false;
-      result.csHangup_ = null;
-      return this;
-    }
-    
-    public bool HasCsUploadHead {
-     get { return result.hasCsUploadHead; }
-    }
-    public global::CSUploadHead CsUploadHead {
-      get { return result.CsUploadHead; }
-      set { SetCsUploadHead(value); }
-    }
-    public Builder SetCsUploadHead(global::CSUploadHead value) {
-      pb::ThrowHelper.ThrowIfNull(value, "value");
-      PrepareBuilder();
-      result.hasCsUploadHead = true;
-      result.csUploadHead_ = value;
-      return this;
-    }
-    public Builder SetCsUploadHead(global::CSUploadHead.Builder builderForValue) {
-      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
-      PrepareBuilder();
-      result.hasCsUploadHead = true;
-      result.csUploadHead_ = builderForValue.Build();
-      return this;
-    }
-    public Builder MergeCsUploadHead(global::CSUploadHead value) {
-      pb::ThrowHelper.ThrowIfNull(value, "value");
-      PrepareBuilder();
-      if (result.hasCsUploadHead &&
-          result.csUploadHead_ != global::CSUploadHead.DefaultInstance) {
-          result.csUploadHead_ = global::CSUploadHead.CreateBuilder(result.csUploadHead_).MergeFrom(value).BuildPartial();
-      } else {
-        result.csUploadHead_ = value;
-      }
-      result.hasCsUploadHead = true;
-      return this;
-    }
-    public Builder ClearCsUploadHead() {
-      PrepareBuilder();
-      result.hasCsUploadHead = false;
-      result.csUploadHead_ = null;
-      return this;
-    }
-    
-    public bool HasScUploadHead {
-     get { return result.hasScUploadHead; }
-    }
-    public global::SCUploadHead ScUploadHead {
-      get { return result.ScUploadHead; }
-      set { SetScUploadHead(value); }
-    }
-    public Builder SetScUploadHead(global::SCUploadHead value) {
-      pb::ThrowHelper.ThrowIfNull(value, "value");
-      PrepareBuilder();
-      result.hasScUploadHead = true;
-      result.scUploadHead_ = value;
-      return this;
-    }
-    public Builder SetScUploadHead(global::SCUploadHead.Builder builderForValue) {
-      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
-      PrepareBuilder();
-      result.hasScUploadHead = true;
-      result.scUploadHead_ = builderForValue.Build();
-      return this;
-    }
-    public Builder MergeScUploadHead(global::SCUploadHead value) {
-      pb::ThrowHelper.ThrowIfNull(value, "value");
-      PrepareBuilder();
-      if (result.hasScUploadHead &&
-          result.scUploadHead_ != global::SCUploadHead.DefaultInstance) {
-          result.scUploadHead_ = global::SCUploadHead.CreateBuilder(result.scUploadHead_).MergeFrom(value).BuildPartial();
-      } else {
-        result.scUploadHead_ = value;
-      }
-      result.hasScUploadHead = true;
-      return this;
-    }
-    public Builder ClearScUploadHead() {
-      PrepareBuilder();
-      result.hasScUploadHead = false;
-      result.scUploadHead_ = null;
-      return this;
-    }
-    
-    public bool HasCsCheckName {
-     get { return result.hasCsCheckName; }
-    }
-    public global::CSCheckName CsCheckName {
-      get { return result.CsCheckName; }
-      set { SetCsCheckName(value); }
-    }
-    public Builder SetCsCheckName(global::CSCheckName value) {
-      pb::ThrowHelper.ThrowIfNull(value, "value");
-      PrepareBuilder();
-      result.hasCsCheckName = true;
-      result.csCheckName_ = value;
-      return this;
-    }
-    public Builder SetCsCheckName(global::CSCheckName.Builder builderForValue) {
-      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
-      PrepareBuilder();
-      result.hasCsCheckName = true;
-      result.csCheckName_ = builderForValue.Build();
-      return this;
-    }
-    public Builder MergeCsCheckName(global::CSCheckName value) {
-      pb::ThrowHelper.ThrowIfNull(value, "value");
-      PrepareBuilder();
-      if (result.hasCsCheckName &&
-          result.csCheckName_ != global::CSCheckName.DefaultInstance) {
-          result.csCheckName_ = global::CSCheckName.CreateBuilder(result.csCheckName_).MergeFrom(value).BuildPartial();
-      } else {
-        result.csCheckName_ = value;
-      }
-      result.hasCsCheckName = true;
-      return this;
-    }
-    public Builder ClearCsCheckName() {
-      PrepareBuilder();
-      result.hasCsCheckName = false;
-      result.csCheckName_ = null;
-      return this;
-    }
-    
-    public bool HasScCheckName {
-     get { return result.hasScCheckName; }
-    }
-    public global::SCCheckName ScCheckName {
-      get { return result.ScCheckName; }
-      set { SetScCheckName(value); }
-    }
-    public Builder SetScCheckName(global::SCCheckName value) {
-      pb::ThrowHelper.ThrowIfNull(value, "value");
-      PrepareBuilder();
-      result.hasScCheckName = true;
-      result.scCheckName_ = value;
-      return this;
-    }
-    public Builder SetScCheckName(global::SCCheckName.Builder builderForValue) {
-      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
-      PrepareBuilder();
-      result.hasScCheckName = true;
-      result.scCheckName_ = builderForValue.Build();
-      return this;
-    }
-    public Builder MergeScCheckName(global::SCCheckName value) {
-      pb::ThrowHelper.ThrowIfNull(value, "value");
-      PrepareBuilder();
-      if (result.hasScCheckName &&
-          result.scCheckName_ != global::SCCheckName.DefaultInstance) {
-          result.scCheckName_ = global::SCCheckName.CreateBuilder(result.scCheckName_).MergeFrom(value).BuildPartial();
-      } else {
-        result.scCheckName_ = value;
-      }
-      result.hasScCheckName = true;
-      return this;
-    }
-    public Builder ClearScCheckName() {
-      PrepareBuilder();
-      result.hasScCheckName = false;
-      result.scCheckName_ = null;
-      return this;
-    }
-    
-    public bool HasCsCheckAccount {
-     get { return result.hasCsCheckAccount; }
-    }
-    public global::CSCheckAccount CsCheckAccount {
-      get { return result.CsCheckAccount; }
-      set { SetCsCheckAccount(value); }
-    }
-    public Builder SetCsCheckAccount(global::CSCheckAccount value) {
-      pb::ThrowHelper.ThrowIfNull(value, "value");
-      PrepareBuilder();
-      result.hasCsCheckAccount = true;
-      result.csCheckAccount_ = value;
-      return this;
-    }
-    public Builder SetCsCheckAccount(global::CSCheckAccount.Builder builderForValue) {
-      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
-      PrepareBuilder();
-      result.hasCsCheckAccount = true;
-      result.csCheckAccount_ = builderForValue.Build();
-      return this;
-    }
-    public Builder MergeCsCheckAccount(global::CSCheckAccount value) {
-      pb::ThrowHelper.ThrowIfNull(value, "value");
-      PrepareBuilder();
-      if (result.hasCsCheckAccount &&
-          result.csCheckAccount_ != global::CSCheckAccount.DefaultInstance) {
-          result.csCheckAccount_ = global::CSCheckAccount.CreateBuilder(result.csCheckAccount_).MergeFrom(value).BuildPartial();
-      } else {
-        result.csCheckAccount_ = value;
-      }
-      result.hasCsCheckAccount = true;
-      return this;
-    }
-    public Builder ClearCsCheckAccount() {
-      PrepareBuilder();
-      result.hasCsCheckAccount = false;
-      result.csCheckAccount_ = null;
-      return this;
-    }
-    
-    public bool HasScCheckAccount {
-     get { return result.hasScCheckAccount; }
-    }
-    public global::SCCheckAccount ScCheckAccount {
-      get { return result.ScCheckAccount; }
-      set { SetScCheckAccount(value); }
-    }
-    public Builder SetScCheckAccount(global::SCCheckAccount value) {
-      pb::ThrowHelper.ThrowIfNull(value, "value");
-      PrepareBuilder();
-      result.hasScCheckAccount = true;
-      result.scCheckAccount_ = value;
-      return this;
-    }
-    public Builder SetScCheckAccount(global::SCCheckAccount.Builder builderForValue) {
-      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
-      PrepareBuilder();
-      result.hasScCheckAccount = true;
-      result.scCheckAccount_ = builderForValue.Build();
-      return this;
-    }
-    public Builder MergeScCheckAccount(global::SCCheckAccount value) {
-      pb::ThrowHelper.ThrowIfNull(value, "value");
-      PrepareBuilder();
-      if (result.hasScCheckAccount &&
-          result.scCheckAccount_ != global::SCCheckAccount.DefaultInstance) {
-          result.scCheckAccount_ = global::SCCheckAccount.CreateBuilder(result.scCheckAccount_).MergeFrom(value).BuildPartial();
-      } else {
-        result.scCheckAccount_ = value;
-      }
-      result.hasScCheckAccount = true;
-      return this;
-    }
-    public Builder ClearScCheckAccount() {
-      PrepareBuilder();
-      result.hasScCheckAccount = false;
-      result.scCheckAccount_ = null;
-      return this;
-    }
-    
     public bool HasCsReconnect {
      get { return result.hasCsReconnect; }
     }
@@ -7797,6 +8108,966 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
       PrepareBuilder();
       result.hasScReconnect = false;
       result.scReconnect_ = null;
+      return this;
+    }
+    
+    public bool HasCsClientOpen {
+     get { return result.hasCsClientOpen; }
+    }
+    public global::CSClientOpen CsClientOpen {
+      get { return result.CsClientOpen; }
+      set { SetCsClientOpen(value); }
+    }
+    public Builder SetCsClientOpen(global::CSClientOpen value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasCsClientOpen = true;
+      result.csClientOpen_ = value;
+      return this;
+    }
+    public Builder SetCsClientOpen(global::CSClientOpen.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
+      PrepareBuilder();
+      result.hasCsClientOpen = true;
+      result.csClientOpen_ = builderForValue.Build();
+      return this;
+    }
+    public Builder MergeCsClientOpen(global::CSClientOpen value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      if (result.hasCsClientOpen &&
+          result.csClientOpen_ != global::CSClientOpen.DefaultInstance) {
+          result.csClientOpen_ = global::CSClientOpen.CreateBuilder(result.csClientOpen_).MergeFrom(value).BuildPartial();
+      } else {
+        result.csClientOpen_ = value;
+      }
+      result.hasCsClientOpen = true;
+      return this;
+    }
+    public Builder ClearCsClientOpen() {
+      PrepareBuilder();
+      result.hasCsClientOpen = false;
+      result.csClientOpen_ = null;
+      return this;
+    }
+    
+    public bool HasCsClientClose {
+     get { return result.hasCsClientClose; }
+    }
+    public global::CSClientClose CsClientClose {
+      get { return result.CsClientClose; }
+      set { SetCsClientClose(value); }
+    }
+    public Builder SetCsClientClose(global::CSClientClose value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasCsClientClose = true;
+      result.csClientClose_ = value;
+      return this;
+    }
+    public Builder SetCsClientClose(global::CSClientClose.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
+      PrepareBuilder();
+      result.hasCsClientClose = true;
+      result.csClientClose_ = builderForValue.Build();
+      return this;
+    }
+    public Builder MergeCsClientClose(global::CSClientClose value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      if (result.hasCsClientClose &&
+          result.csClientClose_ != global::CSClientClose.DefaultInstance) {
+          result.csClientClose_ = global::CSClientClose.CreateBuilder(result.csClientClose_).MergeFrom(value).BuildPartial();
+      } else {
+        result.csClientClose_ = value;
+      }
+      result.hasCsClientClose = true;
+      return this;
+    }
+    public Builder ClearCsClientClose() {
+      PrepareBuilder();
+      result.hasCsClientClose = false;
+      result.csClientClose_ = null;
+      return this;
+    }
+    
+    public bool HasCsLogon {
+     get { return result.hasCsLogon; }
+    }
+    public global::CSLogon CsLogon {
+      get { return result.CsLogon; }
+      set { SetCsLogon(value); }
+    }
+    public Builder SetCsLogon(global::CSLogon value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasCsLogon = true;
+      result.csLogon_ = value;
+      return this;
+    }
+    public Builder SetCsLogon(global::CSLogon.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
+      PrepareBuilder();
+      result.hasCsLogon = true;
+      result.csLogon_ = builderForValue.Build();
+      return this;
+    }
+    public Builder MergeCsLogon(global::CSLogon value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      if (result.hasCsLogon &&
+          result.csLogon_ != global::CSLogon.DefaultInstance) {
+          result.csLogon_ = global::CSLogon.CreateBuilder(result.csLogon_).MergeFrom(value).BuildPartial();
+      } else {
+        result.csLogon_ = value;
+      }
+      result.hasCsLogon = true;
+      return this;
+    }
+    public Builder ClearCsLogon() {
+      PrepareBuilder();
+      result.hasCsLogon = false;
+      result.csLogon_ = null;
+      return this;
+    }
+    
+    public bool HasScLogon {
+     get { return result.hasScLogon; }
+    }
+    public global::SCLogon ScLogon {
+      get { return result.ScLogon; }
+      set { SetScLogon(value); }
+    }
+    public Builder SetScLogon(global::SCLogon value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasScLogon = true;
+      result.scLogon_ = value;
+      return this;
+    }
+    public Builder SetScLogon(global::SCLogon.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
+      PrepareBuilder();
+      result.hasScLogon = true;
+      result.scLogon_ = builderForValue.Build();
+      return this;
+    }
+    public Builder MergeScLogon(global::SCLogon value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      if (result.hasScLogon &&
+          result.scLogon_ != global::SCLogon.DefaultInstance) {
+          result.scLogon_ = global::SCLogon.CreateBuilder(result.scLogon_).MergeFrom(value).BuildPartial();
+      } else {
+        result.scLogon_ = value;
+      }
+      result.hasScLogon = true;
+      return this;
+    }
+    public Builder ClearScLogon() {
+      PrepareBuilder();
+      result.hasScLogon = false;
+      result.scLogon_ = null;
+      return this;
+    }
+    
+    public bool HasCsLogoff {
+     get { return result.hasCsLogoff; }
+    }
+    public global::CSLogoff CsLogoff {
+      get { return result.CsLogoff; }
+      set { SetCsLogoff(value); }
+    }
+    public Builder SetCsLogoff(global::CSLogoff value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasCsLogoff = true;
+      result.csLogoff_ = value;
+      return this;
+    }
+    public Builder SetCsLogoff(global::CSLogoff.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
+      PrepareBuilder();
+      result.hasCsLogoff = true;
+      result.csLogoff_ = builderForValue.Build();
+      return this;
+    }
+    public Builder MergeCsLogoff(global::CSLogoff value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      if (result.hasCsLogoff &&
+          result.csLogoff_ != global::CSLogoff.DefaultInstance) {
+          result.csLogoff_ = global::CSLogoff.CreateBuilder(result.csLogoff_).MergeFrom(value).BuildPartial();
+      } else {
+        result.csLogoff_ = value;
+      }
+      result.hasCsLogoff = true;
+      return this;
+    }
+    public Builder ClearCsLogoff() {
+      PrepareBuilder();
+      result.hasCsLogoff = false;
+      result.csLogoff_ = null;
+      return this;
+    }
+    
+    public bool HasScLogoff {
+     get { return result.hasScLogoff; }
+    }
+    public global::SCLogoff ScLogoff {
+      get { return result.ScLogoff; }
+      set { SetScLogoff(value); }
+    }
+    public Builder SetScLogoff(global::SCLogoff value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasScLogoff = true;
+      result.scLogoff_ = value;
+      return this;
+    }
+    public Builder SetScLogoff(global::SCLogoff.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
+      PrepareBuilder();
+      result.hasScLogoff = true;
+      result.scLogoff_ = builderForValue.Build();
+      return this;
+    }
+    public Builder MergeScLogoff(global::SCLogoff value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      if (result.hasScLogoff &&
+          result.scLogoff_ != global::SCLogoff.DefaultInstance) {
+          result.scLogoff_ = global::SCLogoff.CreateBuilder(result.scLogoff_).MergeFrom(value).BuildPartial();
+      } else {
+        result.scLogoff_ = value;
+      }
+      result.hasScLogoff = true;
+      return this;
+    }
+    public Builder ClearScLogoff() {
+      PrepareBuilder();
+      result.hasScLogoff = false;
+      result.scLogoff_ = null;
+      return this;
+    }
+    
+    public bool HasCsHungup {
+     get { return result.hasCsHungup; }
+    }
+    public global::CSHungup CsHungup {
+      get { return result.CsHungup; }
+      set { SetCsHungup(value); }
+    }
+    public Builder SetCsHungup(global::CSHungup value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasCsHungup = true;
+      result.csHungup_ = value;
+      return this;
+    }
+    public Builder SetCsHungup(global::CSHungup.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
+      PrepareBuilder();
+      result.hasCsHungup = true;
+      result.csHungup_ = builderForValue.Build();
+      return this;
+    }
+    public Builder MergeCsHungup(global::CSHungup value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      if (result.hasCsHungup &&
+          result.csHungup_ != global::CSHungup.DefaultInstance) {
+          result.csHungup_ = global::CSHungup.CreateBuilder(result.csHungup_).MergeFrom(value).BuildPartial();
+      } else {
+        result.csHungup_ = value;
+      }
+      result.hasCsHungup = true;
+      return this;
+    }
+    public Builder ClearCsHungup() {
+      PrepareBuilder();
+      result.hasCsHungup = false;
+      result.csHungup_ = null;
+      return this;
+    }
+    
+    public bool HasCsCharge {
+     get { return result.hasCsCharge; }
+    }
+    public global::CSCharge CsCharge {
+      get { return result.CsCharge; }
+      set { SetCsCharge(value); }
+    }
+    public Builder SetCsCharge(global::CSCharge value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasCsCharge = true;
+      result.csCharge_ = value;
+      return this;
+    }
+    public Builder SetCsCharge(global::CSCharge.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
+      PrepareBuilder();
+      result.hasCsCharge = true;
+      result.csCharge_ = builderForValue.Build();
+      return this;
+    }
+    public Builder MergeCsCharge(global::CSCharge value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      if (result.hasCsCharge &&
+          result.csCharge_ != global::CSCharge.DefaultInstance) {
+          result.csCharge_ = global::CSCharge.CreateBuilder(result.csCharge_).MergeFrom(value).BuildPartial();
+      } else {
+        result.csCharge_ = value;
+      }
+      result.hasCsCharge = true;
+      return this;
+    }
+    public Builder ClearCsCharge() {
+      PrepareBuilder();
+      result.hasCsCharge = false;
+      result.csCharge_ = null;
+      return this;
+    }
+    
+    public bool HasScCharge {
+     get { return result.hasScCharge; }
+    }
+    public global::SCCharge ScCharge {
+      get { return result.ScCharge; }
+      set { SetScCharge(value); }
+    }
+    public Builder SetScCharge(global::SCCharge value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasScCharge = true;
+      result.scCharge_ = value;
+      return this;
+    }
+    public Builder SetScCharge(global::SCCharge.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
+      PrepareBuilder();
+      result.hasScCharge = true;
+      result.scCharge_ = builderForValue.Build();
+      return this;
+    }
+    public Builder MergeScCharge(global::SCCharge value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      if (result.hasScCharge &&
+          result.scCharge_ != global::SCCharge.DefaultInstance) {
+          result.scCharge_ = global::SCCharge.CreateBuilder(result.scCharge_).MergeFrom(value).BuildPartial();
+      } else {
+        result.scCharge_ = value;
+      }
+      result.hasScCharge = true;
+      return this;
+    }
+    public Builder ClearScCharge() {
+      PrepareBuilder();
+      result.hasScCharge = false;
+      result.scCharge_ = null;
+      return this;
+    }
+    
+    public bool HasScChargeResult {
+     get { return result.hasScChargeResult; }
+    }
+    public global::SCChargeResult ScChargeResult {
+      get { return result.ScChargeResult; }
+      set { SetScChargeResult(value); }
+    }
+    public Builder SetScChargeResult(global::SCChargeResult value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasScChargeResult = true;
+      result.scChargeResult_ = value;
+      return this;
+    }
+    public Builder SetScChargeResult(global::SCChargeResult.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
+      PrepareBuilder();
+      result.hasScChargeResult = true;
+      result.scChargeResult_ = builderForValue.Build();
+      return this;
+    }
+    public Builder MergeScChargeResult(global::SCChargeResult value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      if (result.hasScChargeResult &&
+          result.scChargeResult_ != global::SCChargeResult.DefaultInstance) {
+          result.scChargeResult_ = global::SCChargeResult.CreateBuilder(result.scChargeResult_).MergeFrom(value).BuildPartial();
+      } else {
+        result.scChargeResult_ = value;
+      }
+      result.hasScChargeResult = true;
+      return this;
+    }
+    public Builder ClearScChargeResult() {
+      PrepareBuilder();
+      result.hasScChargeResult = false;
+      result.scChargeResult_ = null;
+      return this;
+    }
+    
+    public bool HasScShop {
+     get { return result.hasScShop; }
+    }
+    public global::SCShop ScShop {
+      get { return result.ScShop; }
+      set { SetScShop(value); }
+    }
+    public Builder SetScShop(global::SCShop value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasScShop = true;
+      result.scShop_ = value;
+      return this;
+    }
+    public Builder SetScShop(global::SCShop.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
+      PrepareBuilder();
+      result.hasScShop = true;
+      result.scShop_ = builderForValue.Build();
+      return this;
+    }
+    public Builder MergeScShop(global::SCShop value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      if (result.hasScShop &&
+          result.scShop_ != global::SCShop.DefaultInstance) {
+          result.scShop_ = global::SCShop.CreateBuilder(result.scShop_).MergeFrom(value).BuildPartial();
+      } else {
+        result.scShop_ = value;
+      }
+      result.hasScShop = true;
+      return this;
+    }
+    public Builder ClearScShop() {
+      PrepareBuilder();
+      result.hasScShop = false;
+      result.scShop_ = null;
+      return this;
+    }
+    
+    public bool HasCsCartAdd {
+     get { return result.hasCsCartAdd; }
+    }
+    public global::CSCartAdd CsCartAdd {
+      get { return result.CsCartAdd; }
+      set { SetCsCartAdd(value); }
+    }
+    public Builder SetCsCartAdd(global::CSCartAdd value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasCsCartAdd = true;
+      result.csCartAdd_ = value;
+      return this;
+    }
+    public Builder SetCsCartAdd(global::CSCartAdd.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
+      PrepareBuilder();
+      result.hasCsCartAdd = true;
+      result.csCartAdd_ = builderForValue.Build();
+      return this;
+    }
+    public Builder MergeCsCartAdd(global::CSCartAdd value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      if (result.hasCsCartAdd &&
+          result.csCartAdd_ != global::CSCartAdd.DefaultInstance) {
+          result.csCartAdd_ = global::CSCartAdd.CreateBuilder(result.csCartAdd_).MergeFrom(value).BuildPartial();
+      } else {
+        result.csCartAdd_ = value;
+      }
+      result.hasCsCartAdd = true;
+      return this;
+    }
+    public Builder ClearCsCartAdd() {
+      PrepareBuilder();
+      result.hasCsCartAdd = false;
+      result.csCartAdd_ = null;
+      return this;
+    }
+    
+    public bool HasCsCartDel {
+     get { return result.hasCsCartDel; }
+    }
+    public global::CSCartDel CsCartDel {
+      get { return result.CsCartDel; }
+      set { SetCsCartDel(value); }
+    }
+    public Builder SetCsCartDel(global::CSCartDel value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasCsCartDel = true;
+      result.csCartDel_ = value;
+      return this;
+    }
+    public Builder SetCsCartDel(global::CSCartDel.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
+      PrepareBuilder();
+      result.hasCsCartDel = true;
+      result.csCartDel_ = builderForValue.Build();
+      return this;
+    }
+    public Builder MergeCsCartDel(global::CSCartDel value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      if (result.hasCsCartDel &&
+          result.csCartDel_ != global::CSCartDel.DefaultInstance) {
+          result.csCartDel_ = global::CSCartDel.CreateBuilder(result.csCartDel_).MergeFrom(value).BuildPartial();
+      } else {
+        result.csCartDel_ = value;
+      }
+      result.hasCsCartDel = true;
+      return this;
+    }
+    public Builder ClearCsCartDel() {
+      PrepareBuilder();
+      result.hasCsCartDel = false;
+      result.csCartDel_ = null;
+      return this;
+    }
+    
+    public bool HasCsCartBuy {
+     get { return result.hasCsCartBuy; }
+    }
+    public global::CSCartBuy CsCartBuy {
+      get { return result.CsCartBuy; }
+      set { SetCsCartBuy(value); }
+    }
+    public Builder SetCsCartBuy(global::CSCartBuy value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasCsCartBuy = true;
+      result.csCartBuy_ = value;
+      return this;
+    }
+    public Builder SetCsCartBuy(global::CSCartBuy.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
+      PrepareBuilder();
+      result.hasCsCartBuy = true;
+      result.csCartBuy_ = builderForValue.Build();
+      return this;
+    }
+    public Builder MergeCsCartBuy(global::CSCartBuy value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      if (result.hasCsCartBuy &&
+          result.csCartBuy_ != global::CSCartBuy.DefaultInstance) {
+          result.csCartBuy_ = global::CSCartBuy.CreateBuilder(result.csCartBuy_).MergeFrom(value).BuildPartial();
+      } else {
+        result.csCartBuy_ = value;
+      }
+      result.hasCsCartBuy = true;
+      return this;
+    }
+    public Builder ClearCsCartBuy() {
+      PrepareBuilder();
+      result.hasCsCartBuy = false;
+      result.csCartBuy_ = null;
+      return this;
+    }
+    
+    public bool HasScCartBuy {
+     get { return result.hasScCartBuy; }
+    }
+    public global::SCCartBuy ScCartBuy {
+      get { return result.ScCartBuy; }
+      set { SetScCartBuy(value); }
+    }
+    public Builder SetScCartBuy(global::SCCartBuy value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasScCartBuy = true;
+      result.scCartBuy_ = value;
+      return this;
+    }
+    public Builder SetScCartBuy(global::SCCartBuy.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
+      PrepareBuilder();
+      result.hasScCartBuy = true;
+      result.scCartBuy_ = builderForValue.Build();
+      return this;
+    }
+    public Builder MergeScCartBuy(global::SCCartBuy value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      if (result.hasScCartBuy &&
+          result.scCartBuy_ != global::SCCartBuy.DefaultInstance) {
+          result.scCartBuy_ = global::SCCartBuy.CreateBuilder(result.scCartBuy_).MergeFrom(value).BuildPartial();
+      } else {
+        result.scCartBuy_ = value;
+      }
+      result.hasScCartBuy = true;
+      return this;
+    }
+    public Builder ClearScCartBuy() {
+      PrepareBuilder();
+      result.hasScCartBuy = false;
+      result.scCartBuy_ = null;
+      return this;
+    }
+    
+    public bool HasScCartBuyResult {
+     get { return result.hasScCartBuyResult; }
+    }
+    public global::SCCartBuyResult ScCartBuyResult {
+      get { return result.ScCartBuyResult; }
+      set { SetScCartBuyResult(value); }
+    }
+    public Builder SetScCartBuyResult(global::SCCartBuyResult value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasScCartBuyResult = true;
+      result.scCartBuyResult_ = value;
+      return this;
+    }
+    public Builder SetScCartBuyResult(global::SCCartBuyResult.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
+      PrepareBuilder();
+      result.hasScCartBuyResult = true;
+      result.scCartBuyResult_ = builderForValue.Build();
+      return this;
+    }
+    public Builder MergeScCartBuyResult(global::SCCartBuyResult value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      if (result.hasScCartBuyResult &&
+          result.scCartBuyResult_ != global::SCCartBuyResult.DefaultInstance) {
+          result.scCartBuyResult_ = global::SCCartBuyResult.CreateBuilder(result.scCartBuyResult_).MergeFrom(value).BuildPartial();
+      } else {
+        result.scCartBuyResult_ = value;
+      }
+      result.hasScCartBuyResult = true;
+      return this;
+    }
+    public Builder ClearScCartBuyResult() {
+      PrepareBuilder();
+      result.hasScCartBuyResult = false;
+      result.scCartBuyResult_ = null;
+      return this;
+    }
+    
+    public bool HasScSysMessage {
+     get { return result.hasScSysMessage; }
+    }
+    public global::SCSysMessage ScSysMessage {
+      get { return result.ScSysMessage; }
+      set { SetScSysMessage(value); }
+    }
+    public Builder SetScSysMessage(global::SCSysMessage value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasScSysMessage = true;
+      result.scSysMessage_ = value;
+      return this;
+    }
+    public Builder SetScSysMessage(global::SCSysMessage.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
+      PrepareBuilder();
+      result.hasScSysMessage = true;
+      result.scSysMessage_ = builderForValue.Build();
+      return this;
+    }
+    public Builder MergeScSysMessage(global::SCSysMessage value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      if (result.hasScSysMessage &&
+          result.scSysMessage_ != global::SCSysMessage.DefaultInstance) {
+          result.scSysMessage_ = global::SCSysMessage.CreateBuilder(result.scSysMessage_).MergeFrom(value).BuildPartial();
+      } else {
+        result.scSysMessage_ = value;
+      }
+      result.hasScSysMessage = true;
+      return this;
+    }
+    public Builder ClearScSysMessage() {
+      PrepareBuilder();
+      result.hasScSysMessage = false;
+      result.scSysMessage_ = null;
+      return this;
+    }
+    
+    public bool HasCsUserMessage {
+     get { return result.hasCsUserMessage; }
+    }
+    public global::CSUserMessage CsUserMessage {
+      get { return result.CsUserMessage; }
+      set { SetCsUserMessage(value); }
+    }
+    public Builder SetCsUserMessage(global::CSUserMessage value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasCsUserMessage = true;
+      result.csUserMessage_ = value;
+      return this;
+    }
+    public Builder SetCsUserMessage(global::CSUserMessage.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
+      PrepareBuilder();
+      result.hasCsUserMessage = true;
+      result.csUserMessage_ = builderForValue.Build();
+      return this;
+    }
+    public Builder MergeCsUserMessage(global::CSUserMessage value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      if (result.hasCsUserMessage &&
+          result.csUserMessage_ != global::CSUserMessage.DefaultInstance) {
+          result.csUserMessage_ = global::CSUserMessage.CreateBuilder(result.csUserMessage_).MergeFrom(value).BuildPartial();
+      } else {
+        result.csUserMessage_ = value;
+      }
+      result.hasCsUserMessage = true;
+      return this;
+    }
+    public Builder ClearCsUserMessage() {
+      PrepareBuilder();
+      result.hasCsUserMessage = false;
+      result.csUserMessage_ = null;
+      return this;
+    }
+    
+    public bool HasCsEvaluate {
+     get { return result.hasCsEvaluate; }
+    }
+    public global::CSEvaluate CsEvaluate {
+      get { return result.CsEvaluate; }
+      set { SetCsEvaluate(value); }
+    }
+    public Builder SetCsEvaluate(global::CSEvaluate value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasCsEvaluate = true;
+      result.csEvaluate_ = value;
+      return this;
+    }
+    public Builder SetCsEvaluate(global::CSEvaluate.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
+      PrepareBuilder();
+      result.hasCsEvaluate = true;
+      result.csEvaluate_ = builderForValue.Build();
+      return this;
+    }
+    public Builder MergeCsEvaluate(global::CSEvaluate value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      if (result.hasCsEvaluate &&
+          result.csEvaluate_ != global::CSEvaluate.DefaultInstance) {
+          result.csEvaluate_ = global::CSEvaluate.CreateBuilder(result.csEvaluate_).MergeFrom(value).BuildPartial();
+      } else {
+        result.csEvaluate_ = value;
+      }
+      result.hasCsEvaluate = true;
+      return this;
+    }
+    public Builder ClearCsEvaluate() {
+      PrepareBuilder();
+      result.hasCsEvaluate = false;
+      result.csEvaluate_ = null;
+      return this;
+    }
+    
+    public bool HasScEvaluate {
+     get { return result.hasScEvaluate; }
+    }
+    public global::SCEvaluate ScEvaluate {
+      get { return result.ScEvaluate; }
+      set { SetScEvaluate(value); }
+    }
+    public Builder SetScEvaluate(global::SCEvaluate value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasScEvaluate = true;
+      result.scEvaluate_ = value;
+      return this;
+    }
+    public Builder SetScEvaluate(global::SCEvaluate.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
+      PrepareBuilder();
+      result.hasScEvaluate = true;
+      result.scEvaluate_ = builderForValue.Build();
+      return this;
+    }
+    public Builder MergeScEvaluate(global::SCEvaluate value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      if (result.hasScEvaluate &&
+          result.scEvaluate_ != global::SCEvaluate.DefaultInstance) {
+          result.scEvaluate_ = global::SCEvaluate.CreateBuilder(result.scEvaluate_).MergeFrom(value).BuildPartial();
+      } else {
+        result.scEvaluate_ = value;
+      }
+      result.hasScEvaluate = true;
+      return this;
+    }
+    public Builder ClearScEvaluate() {
+      PrepareBuilder();
+      result.hasScEvaluate = false;
+      result.scEvaluate_ = null;
+      return this;
+    }
+    
+    public bool HasCsVerifyCode {
+     get { return result.hasCsVerifyCode; }
+    }
+    public global::CSVerifyCode CsVerifyCode {
+      get { return result.CsVerifyCode; }
+      set { SetCsVerifyCode(value); }
+    }
+    public Builder SetCsVerifyCode(global::CSVerifyCode value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasCsVerifyCode = true;
+      result.csVerifyCode_ = value;
+      return this;
+    }
+    public Builder SetCsVerifyCode(global::CSVerifyCode.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
+      PrepareBuilder();
+      result.hasCsVerifyCode = true;
+      result.csVerifyCode_ = builderForValue.Build();
+      return this;
+    }
+    public Builder MergeCsVerifyCode(global::CSVerifyCode value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      if (result.hasCsVerifyCode &&
+          result.csVerifyCode_ != global::CSVerifyCode.DefaultInstance) {
+          result.csVerifyCode_ = global::CSVerifyCode.CreateBuilder(result.csVerifyCode_).MergeFrom(value).BuildPartial();
+      } else {
+        result.csVerifyCode_ = value;
+      }
+      result.hasCsVerifyCode = true;
+      return this;
+    }
+    public Builder ClearCsVerifyCode() {
+      PrepareBuilder();
+      result.hasCsVerifyCode = false;
+      result.csVerifyCode_ = null;
+      return this;
+    }
+    
+    public bool HasScVerifyCode {
+     get { return result.hasScVerifyCode; }
+    }
+    public global::SCVerifyCode ScVerifyCode {
+      get { return result.ScVerifyCode; }
+      set { SetScVerifyCode(value); }
+    }
+    public Builder SetScVerifyCode(global::SCVerifyCode value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasScVerifyCode = true;
+      result.scVerifyCode_ = value;
+      return this;
+    }
+    public Builder SetScVerifyCode(global::SCVerifyCode.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
+      PrepareBuilder();
+      result.hasScVerifyCode = true;
+      result.scVerifyCode_ = builderForValue.Build();
+      return this;
+    }
+    public Builder MergeScVerifyCode(global::SCVerifyCode value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      if (result.hasScVerifyCode &&
+          result.scVerifyCode_ != global::SCVerifyCode.DefaultInstance) {
+          result.scVerifyCode_ = global::SCVerifyCode.CreateBuilder(result.scVerifyCode_).MergeFrom(value).BuildPartial();
+      } else {
+        result.scVerifyCode_ = value;
+      }
+      result.hasScVerifyCode = true;
+      return this;
+    }
+    public Builder ClearScVerifyCode() {
+      PrepareBuilder();
+      result.hasScVerifyCode = false;
+      result.scVerifyCode_ = null;
+      return this;
+    }
+    
+    public bool HasCsBindMobile {
+     get { return result.hasCsBindMobile; }
+    }
+    public global::CSBindMobile CsBindMobile {
+      get { return result.CsBindMobile; }
+      set { SetCsBindMobile(value); }
+    }
+    public Builder SetCsBindMobile(global::CSBindMobile value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasCsBindMobile = true;
+      result.csBindMobile_ = value;
+      return this;
+    }
+    public Builder SetCsBindMobile(global::CSBindMobile.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
+      PrepareBuilder();
+      result.hasCsBindMobile = true;
+      result.csBindMobile_ = builderForValue.Build();
+      return this;
+    }
+    public Builder MergeCsBindMobile(global::CSBindMobile value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      if (result.hasCsBindMobile &&
+          result.csBindMobile_ != global::CSBindMobile.DefaultInstance) {
+          result.csBindMobile_ = global::CSBindMobile.CreateBuilder(result.csBindMobile_).MergeFrom(value).BuildPartial();
+      } else {
+        result.csBindMobile_ = value;
+      }
+      result.hasCsBindMobile = true;
+      return this;
+    }
+    public Builder ClearCsBindMobile() {
+      PrepareBuilder();
+      result.hasCsBindMobile = false;
+      result.csBindMobile_ = null;
+      return this;
+    }
+    
+    public bool HasScBindMobile {
+     get { return result.hasScBindMobile; }
+    }
+    public global::SCBindMobile ScBindMobile {
+      get { return result.ScBindMobile; }
+      set { SetScBindMobile(value); }
+    }
+    public Builder SetScBindMobile(global::SCBindMobile value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasScBindMobile = true;
+      result.scBindMobile_ = value;
+      return this;
+    }
+    public Builder SetScBindMobile(global::SCBindMobile.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
+      PrepareBuilder();
+      result.hasScBindMobile = true;
+      result.scBindMobile_ = builderForValue.Build();
+      return this;
+    }
+    public Builder MergeScBindMobile(global::SCBindMobile value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      if (result.hasScBindMobile &&
+          result.scBindMobile_ != global::SCBindMobile.DefaultInstance) {
+          result.scBindMobile_ = global::SCBindMobile.CreateBuilder(result.scBindMobile_).MergeFrom(value).BuildPartial();
+      } else {
+        result.scBindMobile_ = value;
+      }
+      result.hasScBindMobile = true;
+      return this;
+    }
+    public Builder ClearScBindMobile() {
+      PrepareBuilder();
+      result.hasScBindMobile = false;
+      result.scBindMobile_ = null;
       return this;
     }
   }
@@ -26021,29 +27292,29 @@ public sealed partial class SCEmkCheckout : pb::GeneratedMessage<SCEmkCheckout, 
 }
 
 [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-public sealed partial class CSEmkRecharge : pb::GeneratedMessage<CSEmkRecharge, CSEmkRecharge.Builder> {
-  private CSEmkRecharge() { }
-  private static readonly CSEmkRecharge defaultInstance = new CSEmkRecharge().MakeReadOnly();
-  private static readonly string[] _cSEmkRechargeFieldNames = new string[] { "cardnumber", "recharge" };
-  private static readonly uint[] _cSEmkRechargeFieldTags = new uint[] { 10, 16 };
-  public static CSEmkRecharge DefaultInstance {
+public sealed partial class CSEmkPrepay : pb::GeneratedMessage<CSEmkPrepay, CSEmkPrepay.Builder> {
+  private CSEmkPrepay() { }
+  private static readonly CSEmkPrepay defaultInstance = new CSEmkPrepay().MakeReadOnly();
+  private static readonly string[] _cSEmkPrepayFieldNames = new string[] { "cardnumber", "recharge" };
+  private static readonly uint[] _cSEmkPrepayFieldTags = new uint[] { 10, 16 };
+  public static CSEmkPrepay DefaultInstance {
     get { return defaultInstance; }
   }
   
-  public override CSEmkRecharge DefaultInstanceForType {
+  public override CSEmkPrepay DefaultInstanceForType {
     get { return DefaultInstance; }
   }
   
-  protected override CSEmkRecharge ThisMessage {
+  protected override CSEmkPrepay ThisMessage {
     get { return this; }
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::CoreProtocol.internal__static_CSEmkRecharge__Descriptor; }
+    get { return global::CoreProtocol.internal__static_CSEmkPrepay__Descriptor; }
   }
   
-  protected override pb::FieldAccess.FieldAccessorTable<CSEmkRecharge, CSEmkRecharge.Builder> InternalFieldAccessors {
-    get { return global::CoreProtocol.internal__static_CSEmkRecharge__FieldAccessorTable; }
+  protected override pb::FieldAccess.FieldAccessorTable<CSEmkPrepay, CSEmkPrepay.Builder> InternalFieldAccessors {
+    get { return global::CoreProtocol.internal__static_CSEmkPrepay__FieldAccessorTable; }
   }
   
   public const int CardnumberFieldNumber = 1;
@@ -26076,7 +27347,7 @@ public sealed partial class CSEmkRecharge : pb::GeneratedMessage<CSEmkRecharge, 
   
   public override void WriteTo(pb::ICodedOutputStream output) {
     CalcSerializedSize();
-    string[] field_names = _cSEmkRechargeFieldNames;
+    string[] field_names = _cSEmkPrepayFieldNames;
     if (hasCardnumber) {
       output.WriteString(1, field_names[0], Cardnumber);
     }
@@ -26110,49 +27381,49 @@ public sealed partial class CSEmkRecharge : pb::GeneratedMessage<CSEmkRecharge, 
     memoizedSerializedSize = size;
     return size;
   }
-  public static CSEmkRecharge ParseFrom(pb::ByteString data) {
+  public static CSEmkPrepay ParseFrom(pb::ByteString data) {
     return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
   }
-  public static CSEmkRecharge ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+  public static CSEmkPrepay ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
     return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
   }
-  public static CSEmkRecharge ParseFrom(byte[] data) {
+  public static CSEmkPrepay ParseFrom(byte[] data) {
     return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
   }
-  public static CSEmkRecharge ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+  public static CSEmkPrepay ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
     return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
   }
-  public static CSEmkRecharge ParseFrom(global::System.IO.Stream input) {
+  public static CSEmkPrepay ParseFrom(global::System.IO.Stream input) {
     return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
   }
-  public static CSEmkRecharge ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+  public static CSEmkPrepay ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
     return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
   }
-  public static CSEmkRecharge ParseDelimitedFrom(global::System.IO.Stream input) {
+  public static CSEmkPrepay ParseDelimitedFrom(global::System.IO.Stream input) {
     return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
   }
-  public static CSEmkRecharge ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+  public static CSEmkPrepay ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
     return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
   }
-  public static CSEmkRecharge ParseFrom(pb::ICodedInputStream input) {
+  public static CSEmkPrepay ParseFrom(pb::ICodedInputStream input) {
     return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
   }
-  public static CSEmkRecharge ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+  public static CSEmkPrepay ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
     return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
   }
-  private CSEmkRecharge MakeReadOnly() {
+  private CSEmkPrepay MakeReadOnly() {
     return this;
   }
   
   public static Builder CreateBuilder() { return new Builder(); }
   public override Builder ToBuilder() { return CreateBuilder(this); }
   public override Builder CreateBuilderForType() { return new Builder(); }
-  public static Builder CreateBuilder(CSEmkRecharge prototype) {
+  public static Builder CreateBuilder(CSEmkPrepay prototype) {
     return new Builder(prototype);
   }
   
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-  public sealed partial class Builder : pb::GeneratedBuilder<CSEmkRecharge, Builder> {
+  public sealed partial class Builder : pb::GeneratedBuilder<CSEmkPrepay, Builder> {
     protected override Builder ThisBuilder {
       get { return this; }
     }
@@ -26160,18 +27431,18 @@ public sealed partial class CSEmkRecharge : pb::GeneratedMessage<CSEmkRecharge, 
       result = DefaultInstance;
       resultIsReadOnly = true;
     }
-    internal Builder(CSEmkRecharge cloneFrom) {
+    internal Builder(CSEmkPrepay cloneFrom) {
       result = cloneFrom;
       resultIsReadOnly = true;
     }
     
     private bool resultIsReadOnly;
-    private CSEmkRecharge result;
+    private CSEmkPrepay result;
     
-    private CSEmkRecharge PrepareBuilder() {
+    private CSEmkPrepay PrepareBuilder() {
       if (resultIsReadOnly) {
-        CSEmkRecharge original = result;
-        result = new CSEmkRecharge();
+        CSEmkPrepay original = result;
+        result = new CSEmkPrepay();
         resultIsReadOnly = false;
         MergeFrom(original);
       }
@@ -26182,7 +27453,7 @@ public sealed partial class CSEmkRecharge : pb::GeneratedMessage<CSEmkRecharge, 
       get { return result.IsInitialized; }
     }
     
-    protected override CSEmkRecharge MessageBeingBuilt {
+    protected override CSEmkPrepay MessageBeingBuilt {
       get { return PrepareBuilder(); }
     }
     
@@ -26201,14 +27472,14 @@ public sealed partial class CSEmkRecharge : pb::GeneratedMessage<CSEmkRecharge, 
     }
     
     public override pbd::MessageDescriptor DescriptorForType {
-      get { return global::CSEmkRecharge.Descriptor; }
+      get { return global::CSEmkPrepay.Descriptor; }
     }
     
-    public override CSEmkRecharge DefaultInstanceForType {
-      get { return global::CSEmkRecharge.DefaultInstance; }
+    public override CSEmkPrepay DefaultInstanceForType {
+      get { return global::CSEmkPrepay.DefaultInstance; }
     }
     
-    public override CSEmkRecharge BuildPartial() {
+    public override CSEmkPrepay BuildPartial() {
       if (resultIsReadOnly) {
         return result;
       }
@@ -26217,16 +27488,16 @@ public sealed partial class CSEmkRecharge : pb::GeneratedMessage<CSEmkRecharge, 
     }
     
     public override Builder MergeFrom(pb::IMessage other) {
-      if (other is CSEmkRecharge) {
-        return MergeFrom((CSEmkRecharge) other);
+      if (other is CSEmkPrepay) {
+        return MergeFrom((CSEmkPrepay) other);
       } else {
         base.MergeFrom(other);
         return this;
       }
     }
     
-    public override Builder MergeFrom(CSEmkRecharge other) {
-      if (other == global::CSEmkRecharge.DefaultInstance) return this;
+    public override Builder MergeFrom(CSEmkPrepay other) {
+      if (other == global::CSEmkPrepay.DefaultInstance) return this;
       PrepareBuilder();
       if (other.HasCardnumber) {
         Cardnumber = other.Cardnumber;
@@ -26249,9 +27520,9 @@ public sealed partial class CSEmkRecharge : pb::GeneratedMessage<CSEmkRecharge, 
       string field_name;
       while (input.ReadTag(out tag, out field_name)) {
         if(tag == 0 && field_name != null) {
-          int field_ordinal = global::System.Array.BinarySearch(_cSEmkRechargeFieldNames, field_name, global::System.StringComparer.Ordinal);
+          int field_ordinal = global::System.Array.BinarySearch(_cSEmkPrepayFieldNames, field_name, global::System.StringComparer.Ordinal);
           if(field_ordinal >= 0)
-            tag = _cSEmkRechargeFieldTags[field_ordinal];
+            tag = _cSEmkPrepayFieldTags[field_ordinal];
           else {
             if (unknownFields == null) {
               unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
@@ -26336,35 +27607,312 @@ public sealed partial class CSEmkRecharge : pb::GeneratedMessage<CSEmkRecharge, 
       return this;
     }
   }
-  static CSEmkRecharge() {
+  static CSEmkPrepay() {
     object.ReferenceEquals(global::CoreProtocol.Descriptor, null);
   }
 }
 
 [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-public sealed partial class SCEmkRecharge : pb::GeneratedMessage<SCEmkRecharge, SCEmkRecharge.Builder> {
-  private SCEmkRecharge() { }
-  private static readonly SCEmkRecharge defaultInstance = new SCEmkRecharge().MakeReadOnly();
-  private static readonly string[] _sCEmkRechargeFieldNames = new string[] { "balance", "cardnumber", "integal", "name", "recharge", "right" };
-  private static readonly uint[] _sCEmkRechargeFieldTags = new uint[] { 40, 18, 48, 10, 32, 26 };
-  public static SCEmkRecharge DefaultInstance {
+public sealed partial class SCEmkPrepay : pb::GeneratedMessage<SCEmkPrepay, SCEmkPrepay.Builder> {
+  private SCEmkPrepay() { }
+  private static readonly SCEmkPrepay defaultInstance = new SCEmkPrepay().MakeReadOnly();
+  private static readonly string[] _sCEmkPrepayFieldNames = new string[] { "qrcode" };
+  private static readonly uint[] _sCEmkPrepayFieldTags = new uint[] { 10 };
+  public static SCEmkPrepay DefaultInstance {
     get { return defaultInstance; }
   }
   
-  public override SCEmkRecharge DefaultInstanceForType {
+  public override SCEmkPrepay DefaultInstanceForType {
     get { return DefaultInstance; }
   }
   
-  protected override SCEmkRecharge ThisMessage {
+  protected override SCEmkPrepay ThisMessage {
     get { return this; }
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::CoreProtocol.internal__static_SCEmkRecharge__Descriptor; }
+    get { return global::CoreProtocol.internal__static_SCEmkPrepay__Descriptor; }
   }
   
-  protected override pb::FieldAccess.FieldAccessorTable<SCEmkRecharge, SCEmkRecharge.Builder> InternalFieldAccessors {
-    get { return global::CoreProtocol.internal__static_SCEmkRecharge__FieldAccessorTable; }
+  protected override pb::FieldAccess.FieldAccessorTable<SCEmkPrepay, SCEmkPrepay.Builder> InternalFieldAccessors {
+    get { return global::CoreProtocol.internal__static_SCEmkPrepay__FieldAccessorTable; }
+  }
+  
+  public const int QrcodeFieldNumber = 1;
+  private bool hasQrcode;
+  private string qrcode_ = "";
+  public bool HasQrcode {
+    get { return hasQrcode; }
+  }
+  public string Qrcode {
+    get { return qrcode_; }
+  }
+  
+  public override bool IsInitialized {
+    get {
+      if (!hasQrcode) return false;
+      return true;
+    }
+  }
+  
+  public override void WriteTo(pb::ICodedOutputStream output) {
+    CalcSerializedSize();
+    string[] field_names = _sCEmkPrepayFieldNames;
+    if (hasQrcode) {
+      output.WriteString(1, field_names[0], Qrcode);
+    }
+    UnknownFields.WriteTo(output);
+  }
+  
+  private int memoizedSerializedSize = -1;
+  public override int SerializedSize {
+    get {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+      return CalcSerializedSize();
+    }
+  }
+  
+  private int CalcSerializedSize() {
+    int size = memoizedSerializedSize;
+    if (size != -1) return size;
+    
+    size = 0;
+    if (hasQrcode) {
+      size += pb::CodedOutputStream.ComputeStringSize(1, Qrcode);
+    }
+    size += UnknownFields.SerializedSize;
+    memoizedSerializedSize = size;
+    return size;
+  }
+  public static SCEmkPrepay ParseFrom(pb::ByteString data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static SCEmkPrepay ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static SCEmkPrepay ParseFrom(byte[] data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static SCEmkPrepay ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static SCEmkPrepay ParseFrom(global::System.IO.Stream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static SCEmkPrepay ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  public static SCEmkPrepay ParseDelimitedFrom(global::System.IO.Stream input) {
+    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
+  }
+  public static SCEmkPrepay ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
+  }
+  public static SCEmkPrepay ParseFrom(pb::ICodedInputStream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static SCEmkPrepay ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  private SCEmkPrepay MakeReadOnly() {
+    return this;
+  }
+  
+  public static Builder CreateBuilder() { return new Builder(); }
+  public override Builder ToBuilder() { return CreateBuilder(this); }
+  public override Builder CreateBuilderForType() { return new Builder(); }
+  public static Builder CreateBuilder(SCEmkPrepay prototype) {
+    return new Builder(prototype);
+  }
+  
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class Builder : pb::GeneratedBuilder<SCEmkPrepay, Builder> {
+    protected override Builder ThisBuilder {
+      get { return this; }
+    }
+    public Builder() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+    }
+    internal Builder(SCEmkPrepay cloneFrom) {
+      result = cloneFrom;
+      resultIsReadOnly = true;
+    }
+    
+    private bool resultIsReadOnly;
+    private SCEmkPrepay result;
+    
+    private SCEmkPrepay PrepareBuilder() {
+      if (resultIsReadOnly) {
+        SCEmkPrepay original = result;
+        result = new SCEmkPrepay();
+        resultIsReadOnly = false;
+        MergeFrom(original);
+      }
+      return result;
+    }
+    
+    public override bool IsInitialized {
+      get { return result.IsInitialized; }
+    }
+    
+    protected override SCEmkPrepay MessageBeingBuilt {
+      get { return PrepareBuilder(); }
+    }
+    
+    public override Builder Clear() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+      return this;
+    }
+    
+    public override Builder Clone() {
+      if (resultIsReadOnly) {
+        return new Builder(result);
+      } else {
+        return new Builder().MergeFrom(result);
+      }
+    }
+    
+    public override pbd::MessageDescriptor DescriptorForType {
+      get { return global::SCEmkPrepay.Descriptor; }
+    }
+    
+    public override SCEmkPrepay DefaultInstanceForType {
+      get { return global::SCEmkPrepay.DefaultInstance; }
+    }
+    
+    public override SCEmkPrepay BuildPartial() {
+      if (resultIsReadOnly) {
+        return result;
+      }
+      resultIsReadOnly = true;
+      return result.MakeReadOnly();
+    }
+    
+    public override Builder MergeFrom(pb::IMessage other) {
+      if (other is SCEmkPrepay) {
+        return MergeFrom((SCEmkPrepay) other);
+      } else {
+        base.MergeFrom(other);
+        return this;
+      }
+    }
+    
+    public override Builder MergeFrom(SCEmkPrepay other) {
+      if (other == global::SCEmkPrepay.DefaultInstance) return this;
+      PrepareBuilder();
+      if (other.HasQrcode) {
+        Qrcode = other.Qrcode;
+      }
+      this.MergeUnknownFields(other.UnknownFields);
+      return this;
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input) {
+      return MergeFrom(input, pb::ExtensionRegistry.Empty);
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+      PrepareBuilder();
+      pb::UnknownFieldSet.Builder unknownFields = null;
+      uint tag;
+      string field_name;
+      while (input.ReadTag(out tag, out field_name)) {
+        if(tag == 0 && field_name != null) {
+          int field_ordinal = global::System.Array.BinarySearch(_sCEmkPrepayFieldNames, field_name, global::System.StringComparer.Ordinal);
+          if(field_ordinal >= 0)
+            tag = _sCEmkPrepayFieldTags[field_ordinal];
+          else {
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            continue;
+          }
+        }
+        switch (tag) {
+          case 0: {
+            throw pb::InvalidProtocolBufferException.InvalidTag();
+          }
+          default: {
+            if (pb::WireFormat.IsEndGroupTag(tag)) {
+              if (unknownFields != null) {
+                this.UnknownFields = unknownFields.Build();
+              }
+              return this;
+            }
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            break;
+          }
+          case 10: {
+            result.hasQrcode = input.ReadString(ref result.qrcode_);
+            break;
+          }
+        }
+      }
+      
+      if (unknownFields != null) {
+        this.UnknownFields = unknownFields.Build();
+      }
+      return this;
+    }
+    
+    
+    public bool HasQrcode {
+      get { return result.hasQrcode; }
+    }
+    public string Qrcode {
+      get { return result.Qrcode; }
+      set { SetQrcode(value); }
+    }
+    public Builder SetQrcode(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasQrcode = true;
+      result.qrcode_ = value;
+      return this;
+    }
+    public Builder ClearQrcode() {
+      PrepareBuilder();
+      result.hasQrcode = false;
+      result.qrcode_ = "";
+      return this;
+    }
+  }
+  static SCEmkPrepay() {
+    object.ReferenceEquals(global::CoreProtocol.Descriptor, null);
+  }
+}
+
+[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+public sealed partial class SCEmkTopay : pb::GeneratedMessage<SCEmkTopay, SCEmkTopay.Builder> {
+  private SCEmkTopay() { }
+  private static readonly SCEmkTopay defaultInstance = new SCEmkTopay().MakeReadOnly();
+  private static readonly string[] _sCEmkTopayFieldNames = new string[] { "balance", "cardnumber", "integal", "name", "recharge", "right" };
+  private static readonly uint[] _sCEmkTopayFieldTags = new uint[] { 40, 18, 48, 10, 32, 26 };
+  public static SCEmkTopay DefaultInstance {
+    get { return defaultInstance; }
+  }
+  
+  public override SCEmkTopay DefaultInstanceForType {
+    get { return DefaultInstance; }
+  }
+  
+  protected override SCEmkTopay ThisMessage {
+    get { return this; }
+  }
+  
+  public static pbd::MessageDescriptor Descriptor {
+    get { return global::CoreProtocol.internal__static_SCEmkTopay__Descriptor; }
+  }
+  
+  protected override pb::FieldAccess.FieldAccessorTable<SCEmkTopay, SCEmkTopay.Builder> InternalFieldAccessors {
+    get { return global::CoreProtocol.internal__static_SCEmkTopay__FieldAccessorTable; }
   }
   
   public const int NameFieldNumber = 1;
@@ -26441,7 +27989,7 @@ public sealed partial class SCEmkRecharge : pb::GeneratedMessage<SCEmkRecharge, 
   
   public override void WriteTo(pb::ICodedOutputStream output) {
     CalcSerializedSize();
-    string[] field_names = _sCEmkRechargeFieldNames;
+    string[] field_names = _sCEmkTopayFieldNames;
     if (hasName) {
       output.WriteString(1, field_names[3], Name);
     }
@@ -26499,49 +28047,49 @@ public sealed partial class SCEmkRecharge : pb::GeneratedMessage<SCEmkRecharge, 
     memoizedSerializedSize = size;
     return size;
   }
-  public static SCEmkRecharge ParseFrom(pb::ByteString data) {
+  public static SCEmkTopay ParseFrom(pb::ByteString data) {
     return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
   }
-  public static SCEmkRecharge ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+  public static SCEmkTopay ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
     return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
   }
-  public static SCEmkRecharge ParseFrom(byte[] data) {
+  public static SCEmkTopay ParseFrom(byte[] data) {
     return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
   }
-  public static SCEmkRecharge ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+  public static SCEmkTopay ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
     return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
   }
-  public static SCEmkRecharge ParseFrom(global::System.IO.Stream input) {
+  public static SCEmkTopay ParseFrom(global::System.IO.Stream input) {
     return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
   }
-  public static SCEmkRecharge ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+  public static SCEmkTopay ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
     return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
   }
-  public static SCEmkRecharge ParseDelimitedFrom(global::System.IO.Stream input) {
+  public static SCEmkTopay ParseDelimitedFrom(global::System.IO.Stream input) {
     return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
   }
-  public static SCEmkRecharge ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+  public static SCEmkTopay ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
     return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
   }
-  public static SCEmkRecharge ParseFrom(pb::ICodedInputStream input) {
+  public static SCEmkTopay ParseFrom(pb::ICodedInputStream input) {
     return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
   }
-  public static SCEmkRecharge ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+  public static SCEmkTopay ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
     return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
   }
-  private SCEmkRecharge MakeReadOnly() {
+  private SCEmkTopay MakeReadOnly() {
     return this;
   }
   
   public static Builder CreateBuilder() { return new Builder(); }
   public override Builder ToBuilder() { return CreateBuilder(this); }
   public override Builder CreateBuilderForType() { return new Builder(); }
-  public static Builder CreateBuilder(SCEmkRecharge prototype) {
+  public static Builder CreateBuilder(SCEmkTopay prototype) {
     return new Builder(prototype);
   }
   
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-  public sealed partial class Builder : pb::GeneratedBuilder<SCEmkRecharge, Builder> {
+  public sealed partial class Builder : pb::GeneratedBuilder<SCEmkTopay, Builder> {
     protected override Builder ThisBuilder {
       get { return this; }
     }
@@ -26549,18 +28097,18 @@ public sealed partial class SCEmkRecharge : pb::GeneratedMessage<SCEmkRecharge, 
       result = DefaultInstance;
       resultIsReadOnly = true;
     }
-    internal Builder(SCEmkRecharge cloneFrom) {
+    internal Builder(SCEmkTopay cloneFrom) {
       result = cloneFrom;
       resultIsReadOnly = true;
     }
     
     private bool resultIsReadOnly;
-    private SCEmkRecharge result;
+    private SCEmkTopay result;
     
-    private SCEmkRecharge PrepareBuilder() {
+    private SCEmkTopay PrepareBuilder() {
       if (resultIsReadOnly) {
-        SCEmkRecharge original = result;
-        result = new SCEmkRecharge();
+        SCEmkTopay original = result;
+        result = new SCEmkTopay();
         resultIsReadOnly = false;
         MergeFrom(original);
       }
@@ -26571,7 +28119,7 @@ public sealed partial class SCEmkRecharge : pb::GeneratedMessage<SCEmkRecharge, 
       get { return result.IsInitialized; }
     }
     
-    protected override SCEmkRecharge MessageBeingBuilt {
+    protected override SCEmkTopay MessageBeingBuilt {
       get { return PrepareBuilder(); }
     }
     
@@ -26590,14 +28138,14 @@ public sealed partial class SCEmkRecharge : pb::GeneratedMessage<SCEmkRecharge, 
     }
     
     public override pbd::MessageDescriptor DescriptorForType {
-      get { return global::SCEmkRecharge.Descriptor; }
+      get { return global::SCEmkTopay.Descriptor; }
     }
     
-    public override SCEmkRecharge DefaultInstanceForType {
-      get { return global::SCEmkRecharge.DefaultInstance; }
+    public override SCEmkTopay DefaultInstanceForType {
+      get { return global::SCEmkTopay.DefaultInstance; }
     }
     
-    public override SCEmkRecharge BuildPartial() {
+    public override SCEmkTopay BuildPartial() {
       if (resultIsReadOnly) {
         return result;
       }
@@ -26606,16 +28154,16 @@ public sealed partial class SCEmkRecharge : pb::GeneratedMessage<SCEmkRecharge, 
     }
     
     public override Builder MergeFrom(pb::IMessage other) {
-      if (other is SCEmkRecharge) {
-        return MergeFrom((SCEmkRecharge) other);
+      if (other is SCEmkTopay) {
+        return MergeFrom((SCEmkTopay) other);
       } else {
         base.MergeFrom(other);
         return this;
       }
     }
     
-    public override Builder MergeFrom(SCEmkRecharge other) {
-      if (other == global::SCEmkRecharge.DefaultInstance) return this;
+    public override Builder MergeFrom(SCEmkTopay other) {
+      if (other == global::SCEmkTopay.DefaultInstance) return this;
       PrepareBuilder();
       if (other.HasName) {
         Name = other.Name;
@@ -26650,9 +28198,9 @@ public sealed partial class SCEmkRecharge : pb::GeneratedMessage<SCEmkRecharge, 
       string field_name;
       while (input.ReadTag(out tag, out field_name)) {
         if(tag == 0 && field_name != null) {
-          int field_ordinal = global::System.Array.BinarySearch(_sCEmkRechargeFieldNames, field_name, global::System.StringComparer.Ordinal);
+          int field_ordinal = global::System.Array.BinarySearch(_sCEmkTopayFieldNames, field_name, global::System.StringComparer.Ordinal);
           if(field_ordinal >= 0)
-            tag = _sCEmkRechargeFieldTags[field_ordinal];
+            tag = _sCEmkTopayFieldTags[field_ordinal];
           else {
             if (unknownFields == null) {
               unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
@@ -26835,7 +28383,7 @@ public sealed partial class SCEmkRecharge : pb::GeneratedMessage<SCEmkRecharge, 
       return this;
     }
   }
-  static SCEmkRecharge() {
+  static SCEmkTopay() {
     object.ReferenceEquals(global::CoreProtocol.Descriptor, null);
   }
 }
@@ -33084,2537 +34632,6 @@ public sealed partial class SCOrderDetail : pb::GeneratedMessage<SCOrderDetail, 
 }
 
 [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-public sealed partial class CSLogon : pb::GeneratedMessage<CSLogon, CSLogon.Builder> {
-  private CSLogon() { }
-  private static readonly CSLogon defaultInstance = new CSLogon().MakeReadOnly();
-  private static readonly string[] _cSLogonFieldNames = new string[] { "cardno" };
-  private static readonly uint[] _cSLogonFieldTags = new uint[] { 10 };
-  public static CSLogon DefaultInstance {
-    get { return defaultInstance; }
-  }
-  
-  public override CSLogon DefaultInstanceForType {
-    get { return DefaultInstance; }
-  }
-  
-  protected override CSLogon ThisMessage {
-    get { return this; }
-  }
-  
-  public static pbd::MessageDescriptor Descriptor {
-    get { return global::CoreProtocol.internal__static_CSLogon__Descriptor; }
-  }
-  
-  protected override pb::FieldAccess.FieldAccessorTable<CSLogon, CSLogon.Builder> InternalFieldAccessors {
-    get { return global::CoreProtocol.internal__static_CSLogon__FieldAccessorTable; }
-  }
-  
-  public const int CardnoFieldNumber = 1;
-  private bool hasCardno;
-  private string cardno_ = "";
-  public bool HasCardno {
-    get { return hasCardno; }
-  }
-  public string Cardno {
-    get { return cardno_; }
-  }
-  
-  public override bool IsInitialized {
-    get {
-      if (!hasCardno) return false;
-      return true;
-    }
-  }
-  
-  public override void WriteTo(pb::ICodedOutputStream output) {
-    CalcSerializedSize();
-    string[] field_names = _cSLogonFieldNames;
-    if (hasCardno) {
-      output.WriteString(1, field_names[0], Cardno);
-    }
-    UnknownFields.WriteTo(output);
-  }
-  
-  private int memoizedSerializedSize = -1;
-  public override int SerializedSize {
-    get {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-      return CalcSerializedSize();
-    }
-  }
-  
-  private int CalcSerializedSize() {
-    int size = memoizedSerializedSize;
-    if (size != -1) return size;
-    
-    size = 0;
-    if (hasCardno) {
-      size += pb::CodedOutputStream.ComputeStringSize(1, Cardno);
-    }
-    size += UnknownFields.SerializedSize;
-    memoizedSerializedSize = size;
-    return size;
-  }
-  public static CSLogon ParseFrom(pb::ByteString data) {
-    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
-  }
-  public static CSLogon ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
-  }
-  public static CSLogon ParseFrom(byte[] data) {
-    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
-  }
-  public static CSLogon ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
-  }
-  public static CSLogon ParseFrom(global::System.IO.Stream input) {
-    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
-  }
-  public static CSLogon ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
-  }
-  public static CSLogon ParseDelimitedFrom(global::System.IO.Stream input) {
-    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
-  }
-  public static CSLogon ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
-    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
-  }
-  public static CSLogon ParseFrom(pb::ICodedInputStream input) {
-    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
-  }
-  public static CSLogon ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
-  }
-  private CSLogon MakeReadOnly() {
-    return this;
-  }
-  
-  public static Builder CreateBuilder() { return new Builder(); }
-  public override Builder ToBuilder() { return CreateBuilder(this); }
-  public override Builder CreateBuilderForType() { return new Builder(); }
-  public static Builder CreateBuilder(CSLogon prototype) {
-    return new Builder(prototype);
-  }
-  
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-  public sealed partial class Builder : pb::GeneratedBuilder<CSLogon, Builder> {
-    protected override Builder ThisBuilder {
-      get { return this; }
-    }
-    public Builder() {
-      result = DefaultInstance;
-      resultIsReadOnly = true;
-    }
-    internal Builder(CSLogon cloneFrom) {
-      result = cloneFrom;
-      resultIsReadOnly = true;
-    }
-    
-    private bool resultIsReadOnly;
-    private CSLogon result;
-    
-    private CSLogon PrepareBuilder() {
-      if (resultIsReadOnly) {
-        CSLogon original = result;
-        result = new CSLogon();
-        resultIsReadOnly = false;
-        MergeFrom(original);
-      }
-      return result;
-    }
-    
-    public override bool IsInitialized {
-      get { return result.IsInitialized; }
-    }
-    
-    protected override CSLogon MessageBeingBuilt {
-      get { return PrepareBuilder(); }
-    }
-    
-    public override Builder Clear() {
-      result = DefaultInstance;
-      resultIsReadOnly = true;
-      return this;
-    }
-    
-    public override Builder Clone() {
-      if (resultIsReadOnly) {
-        return new Builder(result);
-      } else {
-        return new Builder().MergeFrom(result);
-      }
-    }
-    
-    public override pbd::MessageDescriptor DescriptorForType {
-      get { return global::CSLogon.Descriptor; }
-    }
-    
-    public override CSLogon DefaultInstanceForType {
-      get { return global::CSLogon.DefaultInstance; }
-    }
-    
-    public override CSLogon BuildPartial() {
-      if (resultIsReadOnly) {
-        return result;
-      }
-      resultIsReadOnly = true;
-      return result.MakeReadOnly();
-    }
-    
-    public override Builder MergeFrom(pb::IMessage other) {
-      if (other is CSLogon) {
-        return MergeFrom((CSLogon) other);
-      } else {
-        base.MergeFrom(other);
-        return this;
-      }
-    }
-    
-    public override Builder MergeFrom(CSLogon other) {
-      if (other == global::CSLogon.DefaultInstance) return this;
-      PrepareBuilder();
-      if (other.HasCardno) {
-        Cardno = other.Cardno;
-      }
-      this.MergeUnknownFields(other.UnknownFields);
-      return this;
-    }
-    
-    public override Builder MergeFrom(pb::ICodedInputStream input) {
-      return MergeFrom(input, pb::ExtensionRegistry.Empty);
-    }
-    
-    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
-      PrepareBuilder();
-      pb::UnknownFieldSet.Builder unknownFields = null;
-      uint tag;
-      string field_name;
-      while (input.ReadTag(out tag, out field_name)) {
-        if(tag == 0 && field_name != null) {
-          int field_ordinal = global::System.Array.BinarySearch(_cSLogonFieldNames, field_name, global::System.StringComparer.Ordinal);
-          if(field_ordinal >= 0)
-            tag = _cSLogonFieldTags[field_ordinal];
-          else {
-            if (unknownFields == null) {
-              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
-            }
-            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
-            continue;
-          }
-        }
-        switch (tag) {
-          case 0: {
-            throw pb::InvalidProtocolBufferException.InvalidTag();
-          }
-          default: {
-            if (pb::WireFormat.IsEndGroupTag(tag)) {
-              if (unknownFields != null) {
-                this.UnknownFields = unknownFields.Build();
-              }
-              return this;
-            }
-            if (unknownFields == null) {
-              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
-            }
-            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
-            break;
-          }
-          case 10: {
-            result.hasCardno = input.ReadString(ref result.cardno_);
-            break;
-          }
-        }
-      }
-      
-      if (unknownFields != null) {
-        this.UnknownFields = unknownFields.Build();
-      }
-      return this;
-    }
-    
-    
-    public bool HasCardno {
-      get { return result.hasCardno; }
-    }
-    public string Cardno {
-      get { return result.Cardno; }
-      set { SetCardno(value); }
-    }
-    public Builder SetCardno(string value) {
-      pb::ThrowHelper.ThrowIfNull(value, "value");
-      PrepareBuilder();
-      result.hasCardno = true;
-      result.cardno_ = value;
-      return this;
-    }
-    public Builder ClearCardno() {
-      PrepareBuilder();
-      result.hasCardno = false;
-      result.cardno_ = "";
-      return this;
-    }
-  }
-  static CSLogon() {
-    object.ReferenceEquals(global::CoreProtocol.Descriptor, null);
-  }
-}
-
-[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-public sealed partial class CSLogoff : pb::GeneratedMessage<CSLogoff, CSLogoff.Builder> {
-  private CSLogoff() { }
-  private static readonly CSLogoff defaultInstance = new CSLogoff().MakeReadOnly();
-  private static readonly string[] _cSLogoffFieldNames = new string[] {  };
-  private static readonly uint[] _cSLogoffFieldTags = new uint[] {  };
-  public static CSLogoff DefaultInstance {
-    get { return defaultInstance; }
-  }
-  
-  public override CSLogoff DefaultInstanceForType {
-    get { return DefaultInstance; }
-  }
-  
-  protected override CSLogoff ThisMessage {
-    get { return this; }
-  }
-  
-  public static pbd::MessageDescriptor Descriptor {
-    get { return global::CoreProtocol.internal__static_CSLogoff__Descriptor; }
-  }
-  
-  protected override pb::FieldAccess.FieldAccessorTable<CSLogoff, CSLogoff.Builder> InternalFieldAccessors {
-    get { return global::CoreProtocol.internal__static_CSLogoff__FieldAccessorTable; }
-  }
-  
-  public override bool IsInitialized {
-    get {
-      return true;
-    }
-  }
-  
-  public override void WriteTo(pb::ICodedOutputStream output) {
-    CalcSerializedSize();
-    string[] field_names = _cSLogoffFieldNames;
-    UnknownFields.WriteTo(output);
-  }
-  
-  private int memoizedSerializedSize = -1;
-  public override int SerializedSize {
-    get {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-      return CalcSerializedSize();
-    }
-  }
-  
-  private int CalcSerializedSize() {
-    int size = memoizedSerializedSize;
-    if (size != -1) return size;
-    
-    size = 0;
-    size += UnknownFields.SerializedSize;
-    memoizedSerializedSize = size;
-    return size;
-  }
-  public static CSLogoff ParseFrom(pb::ByteString data) {
-    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
-  }
-  public static CSLogoff ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
-  }
-  public static CSLogoff ParseFrom(byte[] data) {
-    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
-  }
-  public static CSLogoff ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
-  }
-  public static CSLogoff ParseFrom(global::System.IO.Stream input) {
-    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
-  }
-  public static CSLogoff ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
-  }
-  public static CSLogoff ParseDelimitedFrom(global::System.IO.Stream input) {
-    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
-  }
-  public static CSLogoff ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
-    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
-  }
-  public static CSLogoff ParseFrom(pb::ICodedInputStream input) {
-    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
-  }
-  public static CSLogoff ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
-  }
-  private CSLogoff MakeReadOnly() {
-    return this;
-  }
-  
-  public static Builder CreateBuilder() { return new Builder(); }
-  public override Builder ToBuilder() { return CreateBuilder(this); }
-  public override Builder CreateBuilderForType() { return new Builder(); }
-  public static Builder CreateBuilder(CSLogoff prototype) {
-    return new Builder(prototype);
-  }
-  
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-  public sealed partial class Builder : pb::GeneratedBuilder<CSLogoff, Builder> {
-    protected override Builder ThisBuilder {
-      get { return this; }
-    }
-    public Builder() {
-      result = DefaultInstance;
-      resultIsReadOnly = true;
-    }
-    internal Builder(CSLogoff cloneFrom) {
-      result = cloneFrom;
-      resultIsReadOnly = true;
-    }
-    
-    private bool resultIsReadOnly;
-    private CSLogoff result;
-    
-    private CSLogoff PrepareBuilder() {
-      if (resultIsReadOnly) {
-        CSLogoff original = result;
-        result = new CSLogoff();
-        resultIsReadOnly = false;
-        MergeFrom(original);
-      }
-      return result;
-    }
-    
-    public override bool IsInitialized {
-      get { return result.IsInitialized; }
-    }
-    
-    protected override CSLogoff MessageBeingBuilt {
-      get { return PrepareBuilder(); }
-    }
-    
-    public override Builder Clear() {
-      result = DefaultInstance;
-      resultIsReadOnly = true;
-      return this;
-    }
-    
-    public override Builder Clone() {
-      if (resultIsReadOnly) {
-        return new Builder(result);
-      } else {
-        return new Builder().MergeFrom(result);
-      }
-    }
-    
-    public override pbd::MessageDescriptor DescriptorForType {
-      get { return global::CSLogoff.Descriptor; }
-    }
-    
-    public override CSLogoff DefaultInstanceForType {
-      get { return global::CSLogoff.DefaultInstance; }
-    }
-    
-    public override CSLogoff BuildPartial() {
-      if (resultIsReadOnly) {
-        return result;
-      }
-      resultIsReadOnly = true;
-      return result.MakeReadOnly();
-    }
-    
-    public override Builder MergeFrom(pb::IMessage other) {
-      if (other is CSLogoff) {
-        return MergeFrom((CSLogoff) other);
-      } else {
-        base.MergeFrom(other);
-        return this;
-      }
-    }
-    
-    public override Builder MergeFrom(CSLogoff other) {
-      if (other == global::CSLogoff.DefaultInstance) return this;
-      PrepareBuilder();
-      this.MergeUnknownFields(other.UnknownFields);
-      return this;
-    }
-    
-    public override Builder MergeFrom(pb::ICodedInputStream input) {
-      return MergeFrom(input, pb::ExtensionRegistry.Empty);
-    }
-    
-    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
-      PrepareBuilder();
-      pb::UnknownFieldSet.Builder unknownFields = null;
-      uint tag;
-      string field_name;
-      while (input.ReadTag(out tag, out field_name)) {
-        if(tag == 0 && field_name != null) {
-          int field_ordinal = global::System.Array.BinarySearch(_cSLogoffFieldNames, field_name, global::System.StringComparer.Ordinal);
-          if(field_ordinal >= 0)
-            tag = _cSLogoffFieldTags[field_ordinal];
-          else {
-            if (unknownFields == null) {
-              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
-            }
-            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
-            continue;
-          }
-        }
-        switch (tag) {
-          case 0: {
-            throw pb::InvalidProtocolBufferException.InvalidTag();
-          }
-          default: {
-            if (pb::WireFormat.IsEndGroupTag(tag)) {
-              if (unknownFields != null) {
-                this.UnknownFields = unknownFields.Build();
-              }
-              return this;
-            }
-            if (unknownFields == null) {
-              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
-            }
-            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
-            break;
-          }
-        }
-      }
-      
-      if (unknownFields != null) {
-        this.UnknownFields = unknownFields.Build();
-      }
-      return this;
-    }
-    
-  }
-  static CSLogoff() {
-    object.ReferenceEquals(global::CoreProtocol.Descriptor, null);
-  }
-}
-
-[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-public sealed partial class CSHangup : pb::GeneratedMessage<CSHangup, CSHangup.Builder> {
-  private CSHangup() { }
-  private static readonly CSHangup defaultInstance = new CSHangup().MakeReadOnly();
-  private static readonly string[] _cSHangupFieldNames = new string[] { "password" };
-  private static readonly uint[] _cSHangupFieldTags = new uint[] { 10 };
-  public static CSHangup DefaultInstance {
-    get { return defaultInstance; }
-  }
-  
-  public override CSHangup DefaultInstanceForType {
-    get { return DefaultInstance; }
-  }
-  
-  protected override CSHangup ThisMessage {
-    get { return this; }
-  }
-  
-  public static pbd::MessageDescriptor Descriptor {
-    get { return global::CoreProtocol.internal__static_CSHangup__Descriptor; }
-  }
-  
-  protected override pb::FieldAccess.FieldAccessorTable<CSHangup, CSHangup.Builder> InternalFieldAccessors {
-    get { return global::CoreProtocol.internal__static_CSHangup__FieldAccessorTable; }
-  }
-  
-  public const int PasswordFieldNumber = 1;
-  private bool hasPassword;
-  private string password_ = "";
-  public bool HasPassword {
-    get { return hasPassword; }
-  }
-  public string Password {
-    get { return password_; }
-  }
-  
-  public override bool IsInitialized {
-    get {
-      if (!hasPassword) return false;
-      return true;
-    }
-  }
-  
-  public override void WriteTo(pb::ICodedOutputStream output) {
-    CalcSerializedSize();
-    string[] field_names = _cSHangupFieldNames;
-    if (hasPassword) {
-      output.WriteString(1, field_names[0], Password);
-    }
-    UnknownFields.WriteTo(output);
-  }
-  
-  private int memoizedSerializedSize = -1;
-  public override int SerializedSize {
-    get {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-      return CalcSerializedSize();
-    }
-  }
-  
-  private int CalcSerializedSize() {
-    int size = memoizedSerializedSize;
-    if (size != -1) return size;
-    
-    size = 0;
-    if (hasPassword) {
-      size += pb::CodedOutputStream.ComputeStringSize(1, Password);
-    }
-    size += UnknownFields.SerializedSize;
-    memoizedSerializedSize = size;
-    return size;
-  }
-  public static CSHangup ParseFrom(pb::ByteString data) {
-    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
-  }
-  public static CSHangup ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
-  }
-  public static CSHangup ParseFrom(byte[] data) {
-    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
-  }
-  public static CSHangup ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
-  }
-  public static CSHangup ParseFrom(global::System.IO.Stream input) {
-    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
-  }
-  public static CSHangup ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
-  }
-  public static CSHangup ParseDelimitedFrom(global::System.IO.Stream input) {
-    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
-  }
-  public static CSHangup ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
-    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
-  }
-  public static CSHangup ParseFrom(pb::ICodedInputStream input) {
-    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
-  }
-  public static CSHangup ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
-  }
-  private CSHangup MakeReadOnly() {
-    return this;
-  }
-  
-  public static Builder CreateBuilder() { return new Builder(); }
-  public override Builder ToBuilder() { return CreateBuilder(this); }
-  public override Builder CreateBuilderForType() { return new Builder(); }
-  public static Builder CreateBuilder(CSHangup prototype) {
-    return new Builder(prototype);
-  }
-  
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-  public sealed partial class Builder : pb::GeneratedBuilder<CSHangup, Builder> {
-    protected override Builder ThisBuilder {
-      get { return this; }
-    }
-    public Builder() {
-      result = DefaultInstance;
-      resultIsReadOnly = true;
-    }
-    internal Builder(CSHangup cloneFrom) {
-      result = cloneFrom;
-      resultIsReadOnly = true;
-    }
-    
-    private bool resultIsReadOnly;
-    private CSHangup result;
-    
-    private CSHangup PrepareBuilder() {
-      if (resultIsReadOnly) {
-        CSHangup original = result;
-        result = new CSHangup();
-        resultIsReadOnly = false;
-        MergeFrom(original);
-      }
-      return result;
-    }
-    
-    public override bool IsInitialized {
-      get { return result.IsInitialized; }
-    }
-    
-    protected override CSHangup MessageBeingBuilt {
-      get { return PrepareBuilder(); }
-    }
-    
-    public override Builder Clear() {
-      result = DefaultInstance;
-      resultIsReadOnly = true;
-      return this;
-    }
-    
-    public override Builder Clone() {
-      if (resultIsReadOnly) {
-        return new Builder(result);
-      } else {
-        return new Builder().MergeFrom(result);
-      }
-    }
-    
-    public override pbd::MessageDescriptor DescriptorForType {
-      get { return global::CSHangup.Descriptor; }
-    }
-    
-    public override CSHangup DefaultInstanceForType {
-      get { return global::CSHangup.DefaultInstance; }
-    }
-    
-    public override CSHangup BuildPartial() {
-      if (resultIsReadOnly) {
-        return result;
-      }
-      resultIsReadOnly = true;
-      return result.MakeReadOnly();
-    }
-    
-    public override Builder MergeFrom(pb::IMessage other) {
-      if (other is CSHangup) {
-        return MergeFrom((CSHangup) other);
-      } else {
-        base.MergeFrom(other);
-        return this;
-      }
-    }
-    
-    public override Builder MergeFrom(CSHangup other) {
-      if (other == global::CSHangup.DefaultInstance) return this;
-      PrepareBuilder();
-      if (other.HasPassword) {
-        Password = other.Password;
-      }
-      this.MergeUnknownFields(other.UnknownFields);
-      return this;
-    }
-    
-    public override Builder MergeFrom(pb::ICodedInputStream input) {
-      return MergeFrom(input, pb::ExtensionRegistry.Empty);
-    }
-    
-    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
-      PrepareBuilder();
-      pb::UnknownFieldSet.Builder unknownFields = null;
-      uint tag;
-      string field_name;
-      while (input.ReadTag(out tag, out field_name)) {
-        if(tag == 0 && field_name != null) {
-          int field_ordinal = global::System.Array.BinarySearch(_cSHangupFieldNames, field_name, global::System.StringComparer.Ordinal);
-          if(field_ordinal >= 0)
-            tag = _cSHangupFieldTags[field_ordinal];
-          else {
-            if (unknownFields == null) {
-              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
-            }
-            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
-            continue;
-          }
-        }
-        switch (tag) {
-          case 0: {
-            throw pb::InvalidProtocolBufferException.InvalidTag();
-          }
-          default: {
-            if (pb::WireFormat.IsEndGroupTag(tag)) {
-              if (unknownFields != null) {
-                this.UnknownFields = unknownFields.Build();
-              }
-              return this;
-            }
-            if (unknownFields == null) {
-              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
-            }
-            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
-            break;
-          }
-          case 10: {
-            result.hasPassword = input.ReadString(ref result.password_);
-            break;
-          }
-        }
-      }
-      
-      if (unknownFields != null) {
-        this.UnknownFields = unknownFields.Build();
-      }
-      return this;
-    }
-    
-    
-    public bool HasPassword {
-      get { return result.hasPassword; }
-    }
-    public string Password {
-      get { return result.Password; }
-      set { SetPassword(value); }
-    }
-    public Builder SetPassword(string value) {
-      pb::ThrowHelper.ThrowIfNull(value, "value");
-      PrepareBuilder();
-      result.hasPassword = true;
-      result.password_ = value;
-      return this;
-    }
-    public Builder ClearPassword() {
-      PrepareBuilder();
-      result.hasPassword = false;
-      result.password_ = "";
-      return this;
-    }
-  }
-  static CSHangup() {
-    object.ReferenceEquals(global::CoreProtocol.Descriptor, null);
-  }
-}
-
-[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-public sealed partial class CSUploadHead : pb::GeneratedMessage<CSUploadHead, CSUploadHead.Builder> {
-  private CSUploadHead() { }
-  private static readonly CSUploadHead defaultInstance = new CSUploadHead().MakeReadOnly();
-  private static readonly string[] _cSUploadHeadFieldNames = new string[] { "data", "type" };
-  private static readonly uint[] _cSUploadHeadFieldTags = new uint[] { 18, 8 };
-  public static CSUploadHead DefaultInstance {
-    get { return defaultInstance; }
-  }
-  
-  public override CSUploadHead DefaultInstanceForType {
-    get { return DefaultInstance; }
-  }
-  
-  protected override CSUploadHead ThisMessage {
-    get { return this; }
-  }
-  
-  public static pbd::MessageDescriptor Descriptor {
-    get { return global::CoreProtocol.internal__static_CSUploadHead__Descriptor; }
-  }
-  
-  protected override pb::FieldAccess.FieldAccessorTable<CSUploadHead, CSUploadHead.Builder> InternalFieldAccessors {
-    get { return global::CoreProtocol.internal__static_CSUploadHead__FieldAccessorTable; }
-  }
-  
-  public const int TypeFieldNumber = 1;
-  private bool hasType;
-  private int type_;
-  public bool HasType {
-    get { return hasType; }
-  }
-  public int Type {
-    get { return type_; }
-  }
-  
-  public const int DataFieldNumber = 2;
-  private bool hasData;
-  private string data_ = "";
-  public bool HasData {
-    get { return hasData; }
-  }
-  public string Data {
-    get { return data_; }
-  }
-  
-  public override bool IsInitialized {
-    get {
-      return true;
-    }
-  }
-  
-  public override void WriteTo(pb::ICodedOutputStream output) {
-    CalcSerializedSize();
-    string[] field_names = _cSUploadHeadFieldNames;
-    if (hasType) {
-      output.WriteInt32(1, field_names[1], Type);
-    }
-    if (hasData) {
-      output.WriteString(2, field_names[0], Data);
-    }
-    UnknownFields.WriteTo(output);
-  }
-  
-  private int memoizedSerializedSize = -1;
-  public override int SerializedSize {
-    get {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-      return CalcSerializedSize();
-    }
-  }
-  
-  private int CalcSerializedSize() {
-    int size = memoizedSerializedSize;
-    if (size != -1) return size;
-    
-    size = 0;
-    if (hasType) {
-      size += pb::CodedOutputStream.ComputeInt32Size(1, Type);
-    }
-    if (hasData) {
-      size += pb::CodedOutputStream.ComputeStringSize(2, Data);
-    }
-    size += UnknownFields.SerializedSize;
-    memoizedSerializedSize = size;
-    return size;
-  }
-  public static CSUploadHead ParseFrom(pb::ByteString data) {
-    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
-  }
-  public static CSUploadHead ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
-  }
-  public static CSUploadHead ParseFrom(byte[] data) {
-    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
-  }
-  public static CSUploadHead ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
-  }
-  public static CSUploadHead ParseFrom(global::System.IO.Stream input) {
-    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
-  }
-  public static CSUploadHead ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
-  }
-  public static CSUploadHead ParseDelimitedFrom(global::System.IO.Stream input) {
-    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
-  }
-  public static CSUploadHead ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
-    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
-  }
-  public static CSUploadHead ParseFrom(pb::ICodedInputStream input) {
-    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
-  }
-  public static CSUploadHead ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
-  }
-  private CSUploadHead MakeReadOnly() {
-    return this;
-  }
-  
-  public static Builder CreateBuilder() { return new Builder(); }
-  public override Builder ToBuilder() { return CreateBuilder(this); }
-  public override Builder CreateBuilderForType() { return new Builder(); }
-  public static Builder CreateBuilder(CSUploadHead prototype) {
-    return new Builder(prototype);
-  }
-  
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-  public sealed partial class Builder : pb::GeneratedBuilder<CSUploadHead, Builder> {
-    protected override Builder ThisBuilder {
-      get { return this; }
-    }
-    public Builder() {
-      result = DefaultInstance;
-      resultIsReadOnly = true;
-    }
-    internal Builder(CSUploadHead cloneFrom) {
-      result = cloneFrom;
-      resultIsReadOnly = true;
-    }
-    
-    private bool resultIsReadOnly;
-    private CSUploadHead result;
-    
-    private CSUploadHead PrepareBuilder() {
-      if (resultIsReadOnly) {
-        CSUploadHead original = result;
-        result = new CSUploadHead();
-        resultIsReadOnly = false;
-        MergeFrom(original);
-      }
-      return result;
-    }
-    
-    public override bool IsInitialized {
-      get { return result.IsInitialized; }
-    }
-    
-    protected override CSUploadHead MessageBeingBuilt {
-      get { return PrepareBuilder(); }
-    }
-    
-    public override Builder Clear() {
-      result = DefaultInstance;
-      resultIsReadOnly = true;
-      return this;
-    }
-    
-    public override Builder Clone() {
-      if (resultIsReadOnly) {
-        return new Builder(result);
-      } else {
-        return new Builder().MergeFrom(result);
-      }
-    }
-    
-    public override pbd::MessageDescriptor DescriptorForType {
-      get { return global::CSUploadHead.Descriptor; }
-    }
-    
-    public override CSUploadHead DefaultInstanceForType {
-      get { return global::CSUploadHead.DefaultInstance; }
-    }
-    
-    public override CSUploadHead BuildPartial() {
-      if (resultIsReadOnly) {
-        return result;
-      }
-      resultIsReadOnly = true;
-      return result.MakeReadOnly();
-    }
-    
-    public override Builder MergeFrom(pb::IMessage other) {
-      if (other is CSUploadHead) {
-        return MergeFrom((CSUploadHead) other);
-      } else {
-        base.MergeFrom(other);
-        return this;
-      }
-    }
-    
-    public override Builder MergeFrom(CSUploadHead other) {
-      if (other == global::CSUploadHead.DefaultInstance) return this;
-      PrepareBuilder();
-      if (other.HasType) {
-        Type = other.Type;
-      }
-      if (other.HasData) {
-        Data = other.Data;
-      }
-      this.MergeUnknownFields(other.UnknownFields);
-      return this;
-    }
-    
-    public override Builder MergeFrom(pb::ICodedInputStream input) {
-      return MergeFrom(input, pb::ExtensionRegistry.Empty);
-    }
-    
-    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
-      PrepareBuilder();
-      pb::UnknownFieldSet.Builder unknownFields = null;
-      uint tag;
-      string field_name;
-      while (input.ReadTag(out tag, out field_name)) {
-        if(tag == 0 && field_name != null) {
-          int field_ordinal = global::System.Array.BinarySearch(_cSUploadHeadFieldNames, field_name, global::System.StringComparer.Ordinal);
-          if(field_ordinal >= 0)
-            tag = _cSUploadHeadFieldTags[field_ordinal];
-          else {
-            if (unknownFields == null) {
-              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
-            }
-            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
-            continue;
-          }
-        }
-        switch (tag) {
-          case 0: {
-            throw pb::InvalidProtocolBufferException.InvalidTag();
-          }
-          default: {
-            if (pb::WireFormat.IsEndGroupTag(tag)) {
-              if (unknownFields != null) {
-                this.UnknownFields = unknownFields.Build();
-              }
-              return this;
-            }
-            if (unknownFields == null) {
-              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
-            }
-            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
-            break;
-          }
-          case 8: {
-            result.hasType = input.ReadInt32(ref result.type_);
-            break;
-          }
-          case 18: {
-            result.hasData = input.ReadString(ref result.data_);
-            break;
-          }
-        }
-      }
-      
-      if (unknownFields != null) {
-        this.UnknownFields = unknownFields.Build();
-      }
-      return this;
-    }
-    
-    
-    public bool HasType {
-      get { return result.hasType; }
-    }
-    public int Type {
-      get { return result.Type; }
-      set { SetType(value); }
-    }
-    public Builder SetType(int value) {
-      PrepareBuilder();
-      result.hasType = true;
-      result.type_ = value;
-      return this;
-    }
-    public Builder ClearType() {
-      PrepareBuilder();
-      result.hasType = false;
-      result.type_ = 0;
-      return this;
-    }
-    
-    public bool HasData {
-      get { return result.hasData; }
-    }
-    public string Data {
-      get { return result.Data; }
-      set { SetData(value); }
-    }
-    public Builder SetData(string value) {
-      pb::ThrowHelper.ThrowIfNull(value, "value");
-      PrepareBuilder();
-      result.hasData = true;
-      result.data_ = value;
-      return this;
-    }
-    public Builder ClearData() {
-      PrepareBuilder();
-      result.hasData = false;
-      result.data_ = "";
-      return this;
-    }
-  }
-  static CSUploadHead() {
-    object.ReferenceEquals(global::CoreProtocol.Descriptor, null);
-  }
-}
-
-[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-public sealed partial class SCUploadHead : pb::GeneratedMessage<SCUploadHead, SCUploadHead.Builder> {
-  private SCUploadHead() { }
-  private static readonly SCUploadHead defaultInstance = new SCUploadHead().MakeReadOnly();
-  private static readonly string[] _sCUploadHeadFieldNames = new string[] { "url" };
-  private static readonly uint[] _sCUploadHeadFieldTags = new uint[] { 10 };
-  public static SCUploadHead DefaultInstance {
-    get { return defaultInstance; }
-  }
-  
-  public override SCUploadHead DefaultInstanceForType {
-    get { return DefaultInstance; }
-  }
-  
-  protected override SCUploadHead ThisMessage {
-    get { return this; }
-  }
-  
-  public static pbd::MessageDescriptor Descriptor {
-    get { return global::CoreProtocol.internal__static_SCUploadHead__Descriptor; }
-  }
-  
-  protected override pb::FieldAccess.FieldAccessorTable<SCUploadHead, SCUploadHead.Builder> InternalFieldAccessors {
-    get { return global::CoreProtocol.internal__static_SCUploadHead__FieldAccessorTable; }
-  }
-  
-  public const int UrlFieldNumber = 1;
-  private bool hasUrl;
-  private string url_ = "";
-  public bool HasUrl {
-    get { return hasUrl; }
-  }
-  public string Url {
-    get { return url_; }
-  }
-  
-  public override bool IsInitialized {
-    get {
-      return true;
-    }
-  }
-  
-  public override void WriteTo(pb::ICodedOutputStream output) {
-    CalcSerializedSize();
-    string[] field_names = _sCUploadHeadFieldNames;
-    if (hasUrl) {
-      output.WriteString(1, field_names[0], Url);
-    }
-    UnknownFields.WriteTo(output);
-  }
-  
-  private int memoizedSerializedSize = -1;
-  public override int SerializedSize {
-    get {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-      return CalcSerializedSize();
-    }
-  }
-  
-  private int CalcSerializedSize() {
-    int size = memoizedSerializedSize;
-    if (size != -1) return size;
-    
-    size = 0;
-    if (hasUrl) {
-      size += pb::CodedOutputStream.ComputeStringSize(1, Url);
-    }
-    size += UnknownFields.SerializedSize;
-    memoizedSerializedSize = size;
-    return size;
-  }
-  public static SCUploadHead ParseFrom(pb::ByteString data) {
-    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
-  }
-  public static SCUploadHead ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
-  }
-  public static SCUploadHead ParseFrom(byte[] data) {
-    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
-  }
-  public static SCUploadHead ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
-  }
-  public static SCUploadHead ParseFrom(global::System.IO.Stream input) {
-    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
-  }
-  public static SCUploadHead ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
-  }
-  public static SCUploadHead ParseDelimitedFrom(global::System.IO.Stream input) {
-    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
-  }
-  public static SCUploadHead ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
-    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
-  }
-  public static SCUploadHead ParseFrom(pb::ICodedInputStream input) {
-    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
-  }
-  public static SCUploadHead ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
-  }
-  private SCUploadHead MakeReadOnly() {
-    return this;
-  }
-  
-  public static Builder CreateBuilder() { return new Builder(); }
-  public override Builder ToBuilder() { return CreateBuilder(this); }
-  public override Builder CreateBuilderForType() { return new Builder(); }
-  public static Builder CreateBuilder(SCUploadHead prototype) {
-    return new Builder(prototype);
-  }
-  
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-  public sealed partial class Builder : pb::GeneratedBuilder<SCUploadHead, Builder> {
-    protected override Builder ThisBuilder {
-      get { return this; }
-    }
-    public Builder() {
-      result = DefaultInstance;
-      resultIsReadOnly = true;
-    }
-    internal Builder(SCUploadHead cloneFrom) {
-      result = cloneFrom;
-      resultIsReadOnly = true;
-    }
-    
-    private bool resultIsReadOnly;
-    private SCUploadHead result;
-    
-    private SCUploadHead PrepareBuilder() {
-      if (resultIsReadOnly) {
-        SCUploadHead original = result;
-        result = new SCUploadHead();
-        resultIsReadOnly = false;
-        MergeFrom(original);
-      }
-      return result;
-    }
-    
-    public override bool IsInitialized {
-      get { return result.IsInitialized; }
-    }
-    
-    protected override SCUploadHead MessageBeingBuilt {
-      get { return PrepareBuilder(); }
-    }
-    
-    public override Builder Clear() {
-      result = DefaultInstance;
-      resultIsReadOnly = true;
-      return this;
-    }
-    
-    public override Builder Clone() {
-      if (resultIsReadOnly) {
-        return new Builder(result);
-      } else {
-        return new Builder().MergeFrom(result);
-      }
-    }
-    
-    public override pbd::MessageDescriptor DescriptorForType {
-      get { return global::SCUploadHead.Descriptor; }
-    }
-    
-    public override SCUploadHead DefaultInstanceForType {
-      get { return global::SCUploadHead.DefaultInstance; }
-    }
-    
-    public override SCUploadHead BuildPartial() {
-      if (resultIsReadOnly) {
-        return result;
-      }
-      resultIsReadOnly = true;
-      return result.MakeReadOnly();
-    }
-    
-    public override Builder MergeFrom(pb::IMessage other) {
-      if (other is SCUploadHead) {
-        return MergeFrom((SCUploadHead) other);
-      } else {
-        base.MergeFrom(other);
-        return this;
-      }
-    }
-    
-    public override Builder MergeFrom(SCUploadHead other) {
-      if (other == global::SCUploadHead.DefaultInstance) return this;
-      PrepareBuilder();
-      if (other.HasUrl) {
-        Url = other.Url;
-      }
-      this.MergeUnknownFields(other.UnknownFields);
-      return this;
-    }
-    
-    public override Builder MergeFrom(pb::ICodedInputStream input) {
-      return MergeFrom(input, pb::ExtensionRegistry.Empty);
-    }
-    
-    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
-      PrepareBuilder();
-      pb::UnknownFieldSet.Builder unknownFields = null;
-      uint tag;
-      string field_name;
-      while (input.ReadTag(out tag, out field_name)) {
-        if(tag == 0 && field_name != null) {
-          int field_ordinal = global::System.Array.BinarySearch(_sCUploadHeadFieldNames, field_name, global::System.StringComparer.Ordinal);
-          if(field_ordinal >= 0)
-            tag = _sCUploadHeadFieldTags[field_ordinal];
-          else {
-            if (unknownFields == null) {
-              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
-            }
-            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
-            continue;
-          }
-        }
-        switch (tag) {
-          case 0: {
-            throw pb::InvalidProtocolBufferException.InvalidTag();
-          }
-          default: {
-            if (pb::WireFormat.IsEndGroupTag(tag)) {
-              if (unknownFields != null) {
-                this.UnknownFields = unknownFields.Build();
-              }
-              return this;
-            }
-            if (unknownFields == null) {
-              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
-            }
-            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
-            break;
-          }
-          case 10: {
-            result.hasUrl = input.ReadString(ref result.url_);
-            break;
-          }
-        }
-      }
-      
-      if (unknownFields != null) {
-        this.UnknownFields = unknownFields.Build();
-      }
-      return this;
-    }
-    
-    
-    public bool HasUrl {
-      get { return result.hasUrl; }
-    }
-    public string Url {
-      get { return result.Url; }
-      set { SetUrl(value); }
-    }
-    public Builder SetUrl(string value) {
-      pb::ThrowHelper.ThrowIfNull(value, "value");
-      PrepareBuilder();
-      result.hasUrl = true;
-      result.url_ = value;
-      return this;
-    }
-    public Builder ClearUrl() {
-      PrepareBuilder();
-      result.hasUrl = false;
-      result.url_ = "";
-      return this;
-    }
-  }
-  static SCUploadHead() {
-    object.ReferenceEquals(global::CoreProtocol.Descriptor, null);
-  }
-}
-
-[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-public sealed partial class CSCheckName : pb::GeneratedMessage<CSCheckName, CSCheckName.Builder> {
-  private CSCheckName() { }
-  private static readonly CSCheckName defaultInstance = new CSCheckName().MakeReadOnly();
-  private static readonly string[] _cSCheckNameFieldNames = new string[] { "newName" };
-  private static readonly uint[] _cSCheckNameFieldTags = new uint[] { 10 };
-  public static CSCheckName DefaultInstance {
-    get { return defaultInstance; }
-  }
-  
-  public override CSCheckName DefaultInstanceForType {
-    get { return DefaultInstance; }
-  }
-  
-  protected override CSCheckName ThisMessage {
-    get { return this; }
-  }
-  
-  public static pbd::MessageDescriptor Descriptor {
-    get { return global::CoreProtocol.internal__static_CSCheckName__Descriptor; }
-  }
-  
-  protected override pb::FieldAccess.FieldAccessorTable<CSCheckName, CSCheckName.Builder> InternalFieldAccessors {
-    get { return global::CoreProtocol.internal__static_CSCheckName__FieldAccessorTable; }
-  }
-  
-  public const int NewNameFieldNumber = 1;
-  private bool hasNewName;
-  private string newName_ = "";
-  public bool HasNewName {
-    get { return hasNewName; }
-  }
-  public string NewName {
-    get { return newName_; }
-  }
-  
-  public override bool IsInitialized {
-    get {
-      if (!hasNewName) return false;
-      return true;
-    }
-  }
-  
-  public override void WriteTo(pb::ICodedOutputStream output) {
-    CalcSerializedSize();
-    string[] field_names = _cSCheckNameFieldNames;
-    if (hasNewName) {
-      output.WriteString(1, field_names[0], NewName);
-    }
-    UnknownFields.WriteTo(output);
-  }
-  
-  private int memoizedSerializedSize = -1;
-  public override int SerializedSize {
-    get {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-      return CalcSerializedSize();
-    }
-  }
-  
-  private int CalcSerializedSize() {
-    int size = memoizedSerializedSize;
-    if (size != -1) return size;
-    
-    size = 0;
-    if (hasNewName) {
-      size += pb::CodedOutputStream.ComputeStringSize(1, NewName);
-    }
-    size += UnknownFields.SerializedSize;
-    memoizedSerializedSize = size;
-    return size;
-  }
-  public static CSCheckName ParseFrom(pb::ByteString data) {
-    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
-  }
-  public static CSCheckName ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
-  }
-  public static CSCheckName ParseFrom(byte[] data) {
-    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
-  }
-  public static CSCheckName ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
-  }
-  public static CSCheckName ParseFrom(global::System.IO.Stream input) {
-    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
-  }
-  public static CSCheckName ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
-  }
-  public static CSCheckName ParseDelimitedFrom(global::System.IO.Stream input) {
-    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
-  }
-  public static CSCheckName ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
-    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
-  }
-  public static CSCheckName ParseFrom(pb::ICodedInputStream input) {
-    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
-  }
-  public static CSCheckName ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
-  }
-  private CSCheckName MakeReadOnly() {
-    return this;
-  }
-  
-  public static Builder CreateBuilder() { return new Builder(); }
-  public override Builder ToBuilder() { return CreateBuilder(this); }
-  public override Builder CreateBuilderForType() { return new Builder(); }
-  public static Builder CreateBuilder(CSCheckName prototype) {
-    return new Builder(prototype);
-  }
-  
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-  public sealed partial class Builder : pb::GeneratedBuilder<CSCheckName, Builder> {
-    protected override Builder ThisBuilder {
-      get { return this; }
-    }
-    public Builder() {
-      result = DefaultInstance;
-      resultIsReadOnly = true;
-    }
-    internal Builder(CSCheckName cloneFrom) {
-      result = cloneFrom;
-      resultIsReadOnly = true;
-    }
-    
-    private bool resultIsReadOnly;
-    private CSCheckName result;
-    
-    private CSCheckName PrepareBuilder() {
-      if (resultIsReadOnly) {
-        CSCheckName original = result;
-        result = new CSCheckName();
-        resultIsReadOnly = false;
-        MergeFrom(original);
-      }
-      return result;
-    }
-    
-    public override bool IsInitialized {
-      get { return result.IsInitialized; }
-    }
-    
-    protected override CSCheckName MessageBeingBuilt {
-      get { return PrepareBuilder(); }
-    }
-    
-    public override Builder Clear() {
-      result = DefaultInstance;
-      resultIsReadOnly = true;
-      return this;
-    }
-    
-    public override Builder Clone() {
-      if (resultIsReadOnly) {
-        return new Builder(result);
-      } else {
-        return new Builder().MergeFrom(result);
-      }
-    }
-    
-    public override pbd::MessageDescriptor DescriptorForType {
-      get { return global::CSCheckName.Descriptor; }
-    }
-    
-    public override CSCheckName DefaultInstanceForType {
-      get { return global::CSCheckName.DefaultInstance; }
-    }
-    
-    public override CSCheckName BuildPartial() {
-      if (resultIsReadOnly) {
-        return result;
-      }
-      resultIsReadOnly = true;
-      return result.MakeReadOnly();
-    }
-    
-    public override Builder MergeFrom(pb::IMessage other) {
-      if (other is CSCheckName) {
-        return MergeFrom((CSCheckName) other);
-      } else {
-        base.MergeFrom(other);
-        return this;
-      }
-    }
-    
-    public override Builder MergeFrom(CSCheckName other) {
-      if (other == global::CSCheckName.DefaultInstance) return this;
-      PrepareBuilder();
-      if (other.HasNewName) {
-        NewName = other.NewName;
-      }
-      this.MergeUnknownFields(other.UnknownFields);
-      return this;
-    }
-    
-    public override Builder MergeFrom(pb::ICodedInputStream input) {
-      return MergeFrom(input, pb::ExtensionRegistry.Empty);
-    }
-    
-    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
-      PrepareBuilder();
-      pb::UnknownFieldSet.Builder unknownFields = null;
-      uint tag;
-      string field_name;
-      while (input.ReadTag(out tag, out field_name)) {
-        if(tag == 0 && field_name != null) {
-          int field_ordinal = global::System.Array.BinarySearch(_cSCheckNameFieldNames, field_name, global::System.StringComparer.Ordinal);
-          if(field_ordinal >= 0)
-            tag = _cSCheckNameFieldTags[field_ordinal];
-          else {
-            if (unknownFields == null) {
-              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
-            }
-            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
-            continue;
-          }
-        }
-        switch (tag) {
-          case 0: {
-            throw pb::InvalidProtocolBufferException.InvalidTag();
-          }
-          default: {
-            if (pb::WireFormat.IsEndGroupTag(tag)) {
-              if (unknownFields != null) {
-                this.UnknownFields = unknownFields.Build();
-              }
-              return this;
-            }
-            if (unknownFields == null) {
-              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
-            }
-            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
-            break;
-          }
-          case 10: {
-            result.hasNewName = input.ReadString(ref result.newName_);
-            break;
-          }
-        }
-      }
-      
-      if (unknownFields != null) {
-        this.UnknownFields = unknownFields.Build();
-      }
-      return this;
-    }
-    
-    
-    public bool HasNewName {
-      get { return result.hasNewName; }
-    }
-    public string NewName {
-      get { return result.NewName; }
-      set { SetNewName(value); }
-    }
-    public Builder SetNewName(string value) {
-      pb::ThrowHelper.ThrowIfNull(value, "value");
-      PrepareBuilder();
-      result.hasNewName = true;
-      result.newName_ = value;
-      return this;
-    }
-    public Builder ClearNewName() {
-      PrepareBuilder();
-      result.hasNewName = false;
-      result.newName_ = "";
-      return this;
-    }
-  }
-  static CSCheckName() {
-    object.ReferenceEquals(global::CoreProtocol.Descriptor, null);
-  }
-}
-
-[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-public sealed partial class SCCheckName : pb::GeneratedMessage<SCCheckName, SCCheckName.Builder> {
-  private SCCheckName() { }
-  private static readonly SCCheckName defaultInstance = new SCCheckName().MakeReadOnly();
-  private static readonly string[] _sCCheckNameFieldNames = new string[] { "result" };
-  private static readonly uint[] _sCCheckNameFieldTags = new uint[] { 8 };
-  public static SCCheckName DefaultInstance {
-    get { return defaultInstance; }
-  }
-  
-  public override SCCheckName DefaultInstanceForType {
-    get { return DefaultInstance; }
-  }
-  
-  protected override SCCheckName ThisMessage {
-    get { return this; }
-  }
-  
-  public static pbd::MessageDescriptor Descriptor {
-    get { return global::CoreProtocol.internal__static_SCCheckName__Descriptor; }
-  }
-  
-  protected override pb::FieldAccess.FieldAccessorTable<SCCheckName, SCCheckName.Builder> InternalFieldAccessors {
-    get { return global::CoreProtocol.internal__static_SCCheckName__FieldAccessorTable; }
-  }
-  
-  public const int ResultFieldNumber = 1;
-  private bool hasResult;
-  private int result_;
-  public bool HasResult {
-    get { return hasResult; }
-  }
-  public int Result {
-    get { return result_; }
-  }
-  
-  public override bool IsInitialized {
-    get {
-      return true;
-    }
-  }
-  
-  public override void WriteTo(pb::ICodedOutputStream output) {
-    CalcSerializedSize();
-    string[] field_names = _sCCheckNameFieldNames;
-    if (hasResult) {
-      output.WriteInt32(1, field_names[0], Result);
-    }
-    UnknownFields.WriteTo(output);
-  }
-  
-  private int memoizedSerializedSize = -1;
-  public override int SerializedSize {
-    get {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-      return CalcSerializedSize();
-    }
-  }
-  
-  private int CalcSerializedSize() {
-    int size = memoizedSerializedSize;
-    if (size != -1) return size;
-    
-    size = 0;
-    if (hasResult) {
-      size += pb::CodedOutputStream.ComputeInt32Size(1, Result);
-    }
-    size += UnknownFields.SerializedSize;
-    memoizedSerializedSize = size;
-    return size;
-  }
-  public static SCCheckName ParseFrom(pb::ByteString data) {
-    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
-  }
-  public static SCCheckName ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
-  }
-  public static SCCheckName ParseFrom(byte[] data) {
-    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
-  }
-  public static SCCheckName ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
-  }
-  public static SCCheckName ParseFrom(global::System.IO.Stream input) {
-    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
-  }
-  public static SCCheckName ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
-  }
-  public static SCCheckName ParseDelimitedFrom(global::System.IO.Stream input) {
-    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
-  }
-  public static SCCheckName ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
-    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
-  }
-  public static SCCheckName ParseFrom(pb::ICodedInputStream input) {
-    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
-  }
-  public static SCCheckName ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
-  }
-  private SCCheckName MakeReadOnly() {
-    return this;
-  }
-  
-  public static Builder CreateBuilder() { return new Builder(); }
-  public override Builder ToBuilder() { return CreateBuilder(this); }
-  public override Builder CreateBuilderForType() { return new Builder(); }
-  public static Builder CreateBuilder(SCCheckName prototype) {
-    return new Builder(prototype);
-  }
-  
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-  public sealed partial class Builder : pb::GeneratedBuilder<SCCheckName, Builder> {
-    protected override Builder ThisBuilder {
-      get { return this; }
-    }
-    public Builder() {
-      result = DefaultInstance;
-      resultIsReadOnly = true;
-    }
-    internal Builder(SCCheckName cloneFrom) {
-      result = cloneFrom;
-      resultIsReadOnly = true;
-    }
-    
-    private bool resultIsReadOnly;
-    private SCCheckName result;
-    
-    private SCCheckName PrepareBuilder() {
-      if (resultIsReadOnly) {
-        SCCheckName original = result;
-        result = new SCCheckName();
-        resultIsReadOnly = false;
-        MergeFrom(original);
-      }
-      return result;
-    }
-    
-    public override bool IsInitialized {
-      get { return result.IsInitialized; }
-    }
-    
-    protected override SCCheckName MessageBeingBuilt {
-      get { return PrepareBuilder(); }
-    }
-    
-    public override Builder Clear() {
-      result = DefaultInstance;
-      resultIsReadOnly = true;
-      return this;
-    }
-    
-    public override Builder Clone() {
-      if (resultIsReadOnly) {
-        return new Builder(result);
-      } else {
-        return new Builder().MergeFrom(result);
-      }
-    }
-    
-    public override pbd::MessageDescriptor DescriptorForType {
-      get { return global::SCCheckName.Descriptor; }
-    }
-    
-    public override SCCheckName DefaultInstanceForType {
-      get { return global::SCCheckName.DefaultInstance; }
-    }
-    
-    public override SCCheckName BuildPartial() {
-      if (resultIsReadOnly) {
-        return result;
-      }
-      resultIsReadOnly = true;
-      return result.MakeReadOnly();
-    }
-    
-    public override Builder MergeFrom(pb::IMessage other) {
-      if (other is SCCheckName) {
-        return MergeFrom((SCCheckName) other);
-      } else {
-        base.MergeFrom(other);
-        return this;
-      }
-    }
-    
-    public override Builder MergeFrom(SCCheckName other) {
-      if (other == global::SCCheckName.DefaultInstance) return this;
-      PrepareBuilder();
-      if (other.HasResult) {
-        Result = other.Result;
-      }
-      this.MergeUnknownFields(other.UnknownFields);
-      return this;
-    }
-    
-    public override Builder MergeFrom(pb::ICodedInputStream input) {
-      return MergeFrom(input, pb::ExtensionRegistry.Empty);
-    }
-    
-    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
-      PrepareBuilder();
-      pb::UnknownFieldSet.Builder unknownFields = null;
-      uint tag;
-      string field_name;
-      while (input.ReadTag(out tag, out field_name)) {
-        if(tag == 0 && field_name != null) {
-          int field_ordinal = global::System.Array.BinarySearch(_sCCheckNameFieldNames, field_name, global::System.StringComparer.Ordinal);
-          if(field_ordinal >= 0)
-            tag = _sCCheckNameFieldTags[field_ordinal];
-          else {
-            if (unknownFields == null) {
-              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
-            }
-            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
-            continue;
-          }
-        }
-        switch (tag) {
-          case 0: {
-            throw pb::InvalidProtocolBufferException.InvalidTag();
-          }
-          default: {
-            if (pb::WireFormat.IsEndGroupTag(tag)) {
-              if (unknownFields != null) {
-                this.UnknownFields = unknownFields.Build();
-              }
-              return this;
-            }
-            if (unknownFields == null) {
-              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
-            }
-            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
-            break;
-          }
-          case 8: {
-            result.hasResult = input.ReadInt32(ref result.result_);
-            break;
-          }
-        }
-      }
-      
-      if (unknownFields != null) {
-        this.UnknownFields = unknownFields.Build();
-      }
-      return this;
-    }
-    
-    
-    public bool HasResult {
-      get { return result.hasResult; }
-    }
-    public int Result {
-      get { return result.Result; }
-      set { SetResult(value); }
-    }
-    public Builder SetResult(int value) {
-      PrepareBuilder();
-      result.hasResult = true;
-      result.result_ = value;
-      return this;
-    }
-    public Builder ClearResult() {
-      PrepareBuilder();
-      result.hasResult = false;
-      result.result_ = 0;
-      return this;
-    }
-  }
-  static SCCheckName() {
-    object.ReferenceEquals(global::CoreProtocol.Descriptor, null);
-  }
-}
-
-[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-public sealed partial class CSCheckAccount : pb::GeneratedMessage<CSCheckAccount, CSCheckAccount.Builder> {
-  private CSCheckAccount() { }
-  private static readonly CSCheckAccount defaultInstance = new CSCheckAccount().MakeReadOnly();
-  private static readonly string[] _cSCheckAccountFieldNames = new string[] { "password", "userId" };
-  private static readonly uint[] _cSCheckAccountFieldTags = new uint[] { 18, 10 };
-  public static CSCheckAccount DefaultInstance {
-    get { return defaultInstance; }
-  }
-  
-  public override CSCheckAccount DefaultInstanceForType {
-    get { return DefaultInstance; }
-  }
-  
-  protected override CSCheckAccount ThisMessage {
-    get { return this; }
-  }
-  
-  public static pbd::MessageDescriptor Descriptor {
-    get { return global::CoreProtocol.internal__static_CSCheckAccount__Descriptor; }
-  }
-  
-  protected override pb::FieldAccess.FieldAccessorTable<CSCheckAccount, CSCheckAccount.Builder> InternalFieldAccessors {
-    get { return global::CoreProtocol.internal__static_CSCheckAccount__FieldAccessorTable; }
-  }
-  
-  public const int UserIdFieldNumber = 1;
-  private bool hasUserId;
-  private string userId_ = "";
-  public bool HasUserId {
-    get { return hasUserId; }
-  }
-  public string UserId {
-    get { return userId_; }
-  }
-  
-  public const int PasswordFieldNumber = 2;
-  private bool hasPassword;
-  private string password_ = "";
-  public bool HasPassword {
-    get { return hasPassword; }
-  }
-  public string Password {
-    get { return password_; }
-  }
-  
-  public override bool IsInitialized {
-    get {
-      if (!hasUserId) return false;
-      if (!hasPassword) return false;
-      return true;
-    }
-  }
-  
-  public override void WriteTo(pb::ICodedOutputStream output) {
-    CalcSerializedSize();
-    string[] field_names = _cSCheckAccountFieldNames;
-    if (hasUserId) {
-      output.WriteString(1, field_names[1], UserId);
-    }
-    if (hasPassword) {
-      output.WriteString(2, field_names[0], Password);
-    }
-    UnknownFields.WriteTo(output);
-  }
-  
-  private int memoizedSerializedSize = -1;
-  public override int SerializedSize {
-    get {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-      return CalcSerializedSize();
-    }
-  }
-  
-  private int CalcSerializedSize() {
-    int size = memoizedSerializedSize;
-    if (size != -1) return size;
-    
-    size = 0;
-    if (hasUserId) {
-      size += pb::CodedOutputStream.ComputeStringSize(1, UserId);
-    }
-    if (hasPassword) {
-      size += pb::CodedOutputStream.ComputeStringSize(2, Password);
-    }
-    size += UnknownFields.SerializedSize;
-    memoizedSerializedSize = size;
-    return size;
-  }
-  public static CSCheckAccount ParseFrom(pb::ByteString data) {
-    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
-  }
-  public static CSCheckAccount ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
-  }
-  public static CSCheckAccount ParseFrom(byte[] data) {
-    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
-  }
-  public static CSCheckAccount ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
-  }
-  public static CSCheckAccount ParseFrom(global::System.IO.Stream input) {
-    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
-  }
-  public static CSCheckAccount ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
-  }
-  public static CSCheckAccount ParseDelimitedFrom(global::System.IO.Stream input) {
-    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
-  }
-  public static CSCheckAccount ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
-    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
-  }
-  public static CSCheckAccount ParseFrom(pb::ICodedInputStream input) {
-    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
-  }
-  public static CSCheckAccount ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
-  }
-  private CSCheckAccount MakeReadOnly() {
-    return this;
-  }
-  
-  public static Builder CreateBuilder() { return new Builder(); }
-  public override Builder ToBuilder() { return CreateBuilder(this); }
-  public override Builder CreateBuilderForType() { return new Builder(); }
-  public static Builder CreateBuilder(CSCheckAccount prototype) {
-    return new Builder(prototype);
-  }
-  
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-  public sealed partial class Builder : pb::GeneratedBuilder<CSCheckAccount, Builder> {
-    protected override Builder ThisBuilder {
-      get { return this; }
-    }
-    public Builder() {
-      result = DefaultInstance;
-      resultIsReadOnly = true;
-    }
-    internal Builder(CSCheckAccount cloneFrom) {
-      result = cloneFrom;
-      resultIsReadOnly = true;
-    }
-    
-    private bool resultIsReadOnly;
-    private CSCheckAccount result;
-    
-    private CSCheckAccount PrepareBuilder() {
-      if (resultIsReadOnly) {
-        CSCheckAccount original = result;
-        result = new CSCheckAccount();
-        resultIsReadOnly = false;
-        MergeFrom(original);
-      }
-      return result;
-    }
-    
-    public override bool IsInitialized {
-      get { return result.IsInitialized; }
-    }
-    
-    protected override CSCheckAccount MessageBeingBuilt {
-      get { return PrepareBuilder(); }
-    }
-    
-    public override Builder Clear() {
-      result = DefaultInstance;
-      resultIsReadOnly = true;
-      return this;
-    }
-    
-    public override Builder Clone() {
-      if (resultIsReadOnly) {
-        return new Builder(result);
-      } else {
-        return new Builder().MergeFrom(result);
-      }
-    }
-    
-    public override pbd::MessageDescriptor DescriptorForType {
-      get { return global::CSCheckAccount.Descriptor; }
-    }
-    
-    public override CSCheckAccount DefaultInstanceForType {
-      get { return global::CSCheckAccount.DefaultInstance; }
-    }
-    
-    public override CSCheckAccount BuildPartial() {
-      if (resultIsReadOnly) {
-        return result;
-      }
-      resultIsReadOnly = true;
-      return result.MakeReadOnly();
-    }
-    
-    public override Builder MergeFrom(pb::IMessage other) {
-      if (other is CSCheckAccount) {
-        return MergeFrom((CSCheckAccount) other);
-      } else {
-        base.MergeFrom(other);
-        return this;
-      }
-    }
-    
-    public override Builder MergeFrom(CSCheckAccount other) {
-      if (other == global::CSCheckAccount.DefaultInstance) return this;
-      PrepareBuilder();
-      if (other.HasUserId) {
-        UserId = other.UserId;
-      }
-      if (other.HasPassword) {
-        Password = other.Password;
-      }
-      this.MergeUnknownFields(other.UnknownFields);
-      return this;
-    }
-    
-    public override Builder MergeFrom(pb::ICodedInputStream input) {
-      return MergeFrom(input, pb::ExtensionRegistry.Empty);
-    }
-    
-    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
-      PrepareBuilder();
-      pb::UnknownFieldSet.Builder unknownFields = null;
-      uint tag;
-      string field_name;
-      while (input.ReadTag(out tag, out field_name)) {
-        if(tag == 0 && field_name != null) {
-          int field_ordinal = global::System.Array.BinarySearch(_cSCheckAccountFieldNames, field_name, global::System.StringComparer.Ordinal);
-          if(field_ordinal >= 0)
-            tag = _cSCheckAccountFieldTags[field_ordinal];
-          else {
-            if (unknownFields == null) {
-              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
-            }
-            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
-            continue;
-          }
-        }
-        switch (tag) {
-          case 0: {
-            throw pb::InvalidProtocolBufferException.InvalidTag();
-          }
-          default: {
-            if (pb::WireFormat.IsEndGroupTag(tag)) {
-              if (unknownFields != null) {
-                this.UnknownFields = unknownFields.Build();
-              }
-              return this;
-            }
-            if (unknownFields == null) {
-              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
-            }
-            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
-            break;
-          }
-          case 10: {
-            result.hasUserId = input.ReadString(ref result.userId_);
-            break;
-          }
-          case 18: {
-            result.hasPassword = input.ReadString(ref result.password_);
-            break;
-          }
-        }
-      }
-      
-      if (unknownFields != null) {
-        this.UnknownFields = unknownFields.Build();
-      }
-      return this;
-    }
-    
-    
-    public bool HasUserId {
-      get { return result.hasUserId; }
-    }
-    public string UserId {
-      get { return result.UserId; }
-      set { SetUserId(value); }
-    }
-    public Builder SetUserId(string value) {
-      pb::ThrowHelper.ThrowIfNull(value, "value");
-      PrepareBuilder();
-      result.hasUserId = true;
-      result.userId_ = value;
-      return this;
-    }
-    public Builder ClearUserId() {
-      PrepareBuilder();
-      result.hasUserId = false;
-      result.userId_ = "";
-      return this;
-    }
-    
-    public bool HasPassword {
-      get { return result.hasPassword; }
-    }
-    public string Password {
-      get { return result.Password; }
-      set { SetPassword(value); }
-    }
-    public Builder SetPassword(string value) {
-      pb::ThrowHelper.ThrowIfNull(value, "value");
-      PrepareBuilder();
-      result.hasPassword = true;
-      result.password_ = value;
-      return this;
-    }
-    public Builder ClearPassword() {
-      PrepareBuilder();
-      result.hasPassword = false;
-      result.password_ = "";
-      return this;
-    }
-  }
-  static CSCheckAccount() {
-    object.ReferenceEquals(global::CoreProtocol.Descriptor, null);
-  }
-}
-
-[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-public sealed partial class SCCheckAccount : pb::GeneratedMessage<SCCheckAccount, SCCheckAccount.Builder> {
-  private SCCheckAccount() { }
-  private static readonly SCCheckAccount defaultInstance = new SCCheckAccount().MakeReadOnly();
-  private static readonly string[] _sCCheckAccountFieldNames = new string[] { "result" };
-  private static readonly uint[] _sCCheckAccountFieldTags = new uint[] { 8 };
-  public static SCCheckAccount DefaultInstance {
-    get { return defaultInstance; }
-  }
-  
-  public override SCCheckAccount DefaultInstanceForType {
-    get { return DefaultInstance; }
-  }
-  
-  protected override SCCheckAccount ThisMessage {
-    get { return this; }
-  }
-  
-  public static pbd::MessageDescriptor Descriptor {
-    get { return global::CoreProtocol.internal__static_SCCheckAccount__Descriptor; }
-  }
-  
-  protected override pb::FieldAccess.FieldAccessorTable<SCCheckAccount, SCCheckAccount.Builder> InternalFieldAccessors {
-    get { return global::CoreProtocol.internal__static_SCCheckAccount__FieldAccessorTable; }
-  }
-  
-  public const int ResultFieldNumber = 1;
-  private bool hasResult;
-  private int result_;
-  public bool HasResult {
-    get { return hasResult; }
-  }
-  public int Result {
-    get { return result_; }
-  }
-  
-  public override bool IsInitialized {
-    get {
-      if (!hasResult) return false;
-      return true;
-    }
-  }
-  
-  public override void WriteTo(pb::ICodedOutputStream output) {
-    CalcSerializedSize();
-    string[] field_names = _sCCheckAccountFieldNames;
-    if (hasResult) {
-      output.WriteInt32(1, field_names[0], Result);
-    }
-    UnknownFields.WriteTo(output);
-  }
-  
-  private int memoizedSerializedSize = -1;
-  public override int SerializedSize {
-    get {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-      return CalcSerializedSize();
-    }
-  }
-  
-  private int CalcSerializedSize() {
-    int size = memoizedSerializedSize;
-    if (size != -1) return size;
-    
-    size = 0;
-    if (hasResult) {
-      size += pb::CodedOutputStream.ComputeInt32Size(1, Result);
-    }
-    size += UnknownFields.SerializedSize;
-    memoizedSerializedSize = size;
-    return size;
-  }
-  public static SCCheckAccount ParseFrom(pb::ByteString data) {
-    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
-  }
-  public static SCCheckAccount ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
-  }
-  public static SCCheckAccount ParseFrom(byte[] data) {
-    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
-  }
-  public static SCCheckAccount ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
-  }
-  public static SCCheckAccount ParseFrom(global::System.IO.Stream input) {
-    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
-  }
-  public static SCCheckAccount ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
-  }
-  public static SCCheckAccount ParseDelimitedFrom(global::System.IO.Stream input) {
-    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
-  }
-  public static SCCheckAccount ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
-    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
-  }
-  public static SCCheckAccount ParseFrom(pb::ICodedInputStream input) {
-    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
-  }
-  public static SCCheckAccount ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
-  }
-  private SCCheckAccount MakeReadOnly() {
-    return this;
-  }
-  
-  public static Builder CreateBuilder() { return new Builder(); }
-  public override Builder ToBuilder() { return CreateBuilder(this); }
-  public override Builder CreateBuilderForType() { return new Builder(); }
-  public static Builder CreateBuilder(SCCheckAccount prototype) {
-    return new Builder(prototype);
-  }
-  
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-  public sealed partial class Builder : pb::GeneratedBuilder<SCCheckAccount, Builder> {
-    protected override Builder ThisBuilder {
-      get { return this; }
-    }
-    public Builder() {
-      result = DefaultInstance;
-      resultIsReadOnly = true;
-    }
-    internal Builder(SCCheckAccount cloneFrom) {
-      result = cloneFrom;
-      resultIsReadOnly = true;
-    }
-    
-    private bool resultIsReadOnly;
-    private SCCheckAccount result;
-    
-    private SCCheckAccount PrepareBuilder() {
-      if (resultIsReadOnly) {
-        SCCheckAccount original = result;
-        result = new SCCheckAccount();
-        resultIsReadOnly = false;
-        MergeFrom(original);
-      }
-      return result;
-    }
-    
-    public override bool IsInitialized {
-      get { return result.IsInitialized; }
-    }
-    
-    protected override SCCheckAccount MessageBeingBuilt {
-      get { return PrepareBuilder(); }
-    }
-    
-    public override Builder Clear() {
-      result = DefaultInstance;
-      resultIsReadOnly = true;
-      return this;
-    }
-    
-    public override Builder Clone() {
-      if (resultIsReadOnly) {
-        return new Builder(result);
-      } else {
-        return new Builder().MergeFrom(result);
-      }
-    }
-    
-    public override pbd::MessageDescriptor DescriptorForType {
-      get { return global::SCCheckAccount.Descriptor; }
-    }
-    
-    public override SCCheckAccount DefaultInstanceForType {
-      get { return global::SCCheckAccount.DefaultInstance; }
-    }
-    
-    public override SCCheckAccount BuildPartial() {
-      if (resultIsReadOnly) {
-        return result;
-      }
-      resultIsReadOnly = true;
-      return result.MakeReadOnly();
-    }
-    
-    public override Builder MergeFrom(pb::IMessage other) {
-      if (other is SCCheckAccount) {
-        return MergeFrom((SCCheckAccount) other);
-      } else {
-        base.MergeFrom(other);
-        return this;
-      }
-    }
-    
-    public override Builder MergeFrom(SCCheckAccount other) {
-      if (other == global::SCCheckAccount.DefaultInstance) return this;
-      PrepareBuilder();
-      if (other.HasResult) {
-        Result = other.Result;
-      }
-      this.MergeUnknownFields(other.UnknownFields);
-      return this;
-    }
-    
-    public override Builder MergeFrom(pb::ICodedInputStream input) {
-      return MergeFrom(input, pb::ExtensionRegistry.Empty);
-    }
-    
-    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
-      PrepareBuilder();
-      pb::UnknownFieldSet.Builder unknownFields = null;
-      uint tag;
-      string field_name;
-      while (input.ReadTag(out tag, out field_name)) {
-        if(tag == 0 && field_name != null) {
-          int field_ordinal = global::System.Array.BinarySearch(_sCCheckAccountFieldNames, field_name, global::System.StringComparer.Ordinal);
-          if(field_ordinal >= 0)
-            tag = _sCCheckAccountFieldTags[field_ordinal];
-          else {
-            if (unknownFields == null) {
-              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
-            }
-            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
-            continue;
-          }
-        }
-        switch (tag) {
-          case 0: {
-            throw pb::InvalidProtocolBufferException.InvalidTag();
-          }
-          default: {
-            if (pb::WireFormat.IsEndGroupTag(tag)) {
-              if (unknownFields != null) {
-                this.UnknownFields = unknownFields.Build();
-              }
-              return this;
-            }
-            if (unknownFields == null) {
-              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
-            }
-            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
-            break;
-          }
-          case 8: {
-            result.hasResult = input.ReadInt32(ref result.result_);
-            break;
-          }
-        }
-      }
-      
-      if (unknownFields != null) {
-        this.UnknownFields = unknownFields.Build();
-      }
-      return this;
-    }
-    
-    
-    public bool HasResult {
-      get { return result.hasResult; }
-    }
-    public int Result {
-      get { return result.Result; }
-      set { SetResult(value); }
-    }
-    public Builder SetResult(int value) {
-      PrepareBuilder();
-      result.hasResult = true;
-      result.result_ = value;
-      return this;
-    }
-    public Builder ClearResult() {
-      PrepareBuilder();
-      result.hasResult = false;
-      result.result_ = 0;
-      return this;
-    }
-  }
-  static SCCheckAccount() {
-    object.ReferenceEquals(global::CoreProtocol.Descriptor, null);
-  }
-}
-
-[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 public sealed partial class CSReconnect : pb::GeneratedMessage<CSReconnect, CSReconnect.Builder> {
   private CSReconnect() { }
   private static readonly CSReconnect defaultInstance = new CSReconnect().MakeReadOnly();
@@ -36295,6 +35312,7872 @@ public sealed partial class SCReconnect : pb::GeneratedMessage<SCReconnect, SCRe
     }
   }
   static SCReconnect() {
+    object.ReferenceEquals(global::CoreProtocol.Descriptor, null);
+  }
+}
+
+[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+public sealed partial class CSClientOpen : pb::GeneratedMessage<CSClientOpen, CSClientOpen.Builder> {
+  private CSClientOpen() { }
+  private static readonly CSClientOpen defaultInstance = new CSClientOpen().MakeReadOnly();
+  private static readonly string[] _cSClientOpenFieldNames = new string[] { "text" };
+  private static readonly uint[] _cSClientOpenFieldTags = new uint[] { 10 };
+  public static CSClientOpen DefaultInstance {
+    get { return defaultInstance; }
+  }
+  
+  public override CSClientOpen DefaultInstanceForType {
+    get { return DefaultInstance; }
+  }
+  
+  protected override CSClientOpen ThisMessage {
+    get { return this; }
+  }
+  
+  public static pbd::MessageDescriptor Descriptor {
+    get { return global::CoreProtocol.internal__static_CSClientOpen__Descriptor; }
+  }
+  
+  protected override pb::FieldAccess.FieldAccessorTable<CSClientOpen, CSClientOpen.Builder> InternalFieldAccessors {
+    get { return global::CoreProtocol.internal__static_CSClientOpen__FieldAccessorTable; }
+  }
+  
+  public const int TextFieldNumber = 1;
+  private bool hasText;
+  private string text_ = "";
+  public bool HasText {
+    get { return hasText; }
+  }
+  public string Text {
+    get { return text_; }
+  }
+  
+  public override bool IsInitialized {
+    get {
+      if (!hasText) return false;
+      return true;
+    }
+  }
+  
+  public override void WriteTo(pb::ICodedOutputStream output) {
+    CalcSerializedSize();
+    string[] field_names = _cSClientOpenFieldNames;
+    if (hasText) {
+      output.WriteString(1, field_names[0], Text);
+    }
+    UnknownFields.WriteTo(output);
+  }
+  
+  private int memoizedSerializedSize = -1;
+  public override int SerializedSize {
+    get {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+      return CalcSerializedSize();
+    }
+  }
+  
+  private int CalcSerializedSize() {
+    int size = memoizedSerializedSize;
+    if (size != -1) return size;
+    
+    size = 0;
+    if (hasText) {
+      size += pb::CodedOutputStream.ComputeStringSize(1, Text);
+    }
+    size += UnknownFields.SerializedSize;
+    memoizedSerializedSize = size;
+    return size;
+  }
+  public static CSClientOpen ParseFrom(pb::ByteString data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static CSClientOpen ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static CSClientOpen ParseFrom(byte[] data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static CSClientOpen ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static CSClientOpen ParseFrom(global::System.IO.Stream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static CSClientOpen ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  public static CSClientOpen ParseDelimitedFrom(global::System.IO.Stream input) {
+    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
+  }
+  public static CSClientOpen ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
+  }
+  public static CSClientOpen ParseFrom(pb::ICodedInputStream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static CSClientOpen ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  private CSClientOpen MakeReadOnly() {
+    return this;
+  }
+  
+  public static Builder CreateBuilder() { return new Builder(); }
+  public override Builder ToBuilder() { return CreateBuilder(this); }
+  public override Builder CreateBuilderForType() { return new Builder(); }
+  public static Builder CreateBuilder(CSClientOpen prototype) {
+    return new Builder(prototype);
+  }
+  
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class Builder : pb::GeneratedBuilder<CSClientOpen, Builder> {
+    protected override Builder ThisBuilder {
+      get { return this; }
+    }
+    public Builder() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+    }
+    internal Builder(CSClientOpen cloneFrom) {
+      result = cloneFrom;
+      resultIsReadOnly = true;
+    }
+    
+    private bool resultIsReadOnly;
+    private CSClientOpen result;
+    
+    private CSClientOpen PrepareBuilder() {
+      if (resultIsReadOnly) {
+        CSClientOpen original = result;
+        result = new CSClientOpen();
+        resultIsReadOnly = false;
+        MergeFrom(original);
+      }
+      return result;
+    }
+    
+    public override bool IsInitialized {
+      get { return result.IsInitialized; }
+    }
+    
+    protected override CSClientOpen MessageBeingBuilt {
+      get { return PrepareBuilder(); }
+    }
+    
+    public override Builder Clear() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+      return this;
+    }
+    
+    public override Builder Clone() {
+      if (resultIsReadOnly) {
+        return new Builder(result);
+      } else {
+        return new Builder().MergeFrom(result);
+      }
+    }
+    
+    public override pbd::MessageDescriptor DescriptorForType {
+      get { return global::CSClientOpen.Descriptor; }
+    }
+    
+    public override CSClientOpen DefaultInstanceForType {
+      get { return global::CSClientOpen.DefaultInstance; }
+    }
+    
+    public override CSClientOpen BuildPartial() {
+      if (resultIsReadOnly) {
+        return result;
+      }
+      resultIsReadOnly = true;
+      return result.MakeReadOnly();
+    }
+    
+    public override Builder MergeFrom(pb::IMessage other) {
+      if (other is CSClientOpen) {
+        return MergeFrom((CSClientOpen) other);
+      } else {
+        base.MergeFrom(other);
+        return this;
+      }
+    }
+    
+    public override Builder MergeFrom(CSClientOpen other) {
+      if (other == global::CSClientOpen.DefaultInstance) return this;
+      PrepareBuilder();
+      if (other.HasText) {
+        Text = other.Text;
+      }
+      this.MergeUnknownFields(other.UnknownFields);
+      return this;
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input) {
+      return MergeFrom(input, pb::ExtensionRegistry.Empty);
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+      PrepareBuilder();
+      pb::UnknownFieldSet.Builder unknownFields = null;
+      uint tag;
+      string field_name;
+      while (input.ReadTag(out tag, out field_name)) {
+        if(tag == 0 && field_name != null) {
+          int field_ordinal = global::System.Array.BinarySearch(_cSClientOpenFieldNames, field_name, global::System.StringComparer.Ordinal);
+          if(field_ordinal >= 0)
+            tag = _cSClientOpenFieldTags[field_ordinal];
+          else {
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            continue;
+          }
+        }
+        switch (tag) {
+          case 0: {
+            throw pb::InvalidProtocolBufferException.InvalidTag();
+          }
+          default: {
+            if (pb::WireFormat.IsEndGroupTag(tag)) {
+              if (unknownFields != null) {
+                this.UnknownFields = unknownFields.Build();
+              }
+              return this;
+            }
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            break;
+          }
+          case 10: {
+            result.hasText = input.ReadString(ref result.text_);
+            break;
+          }
+        }
+      }
+      
+      if (unknownFields != null) {
+        this.UnknownFields = unknownFields.Build();
+      }
+      return this;
+    }
+    
+    
+    public bool HasText {
+      get { return result.hasText; }
+    }
+    public string Text {
+      get { return result.Text; }
+      set { SetText(value); }
+    }
+    public Builder SetText(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasText = true;
+      result.text_ = value;
+      return this;
+    }
+    public Builder ClearText() {
+      PrepareBuilder();
+      result.hasText = false;
+      result.text_ = "";
+      return this;
+    }
+  }
+  static CSClientOpen() {
+    object.ReferenceEquals(global::CoreProtocol.Descriptor, null);
+  }
+}
+
+[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+public sealed partial class CSClientClose : pb::GeneratedMessage<CSClientClose, CSClientClose.Builder> {
+  private CSClientClose() { }
+  private static readonly CSClientClose defaultInstance = new CSClientClose().MakeReadOnly();
+  private static readonly string[] _cSClientCloseFieldNames = new string[] {  };
+  private static readonly uint[] _cSClientCloseFieldTags = new uint[] {  };
+  public static CSClientClose DefaultInstance {
+    get { return defaultInstance; }
+  }
+  
+  public override CSClientClose DefaultInstanceForType {
+    get { return DefaultInstance; }
+  }
+  
+  protected override CSClientClose ThisMessage {
+    get { return this; }
+  }
+  
+  public static pbd::MessageDescriptor Descriptor {
+    get { return global::CoreProtocol.internal__static_CSClientClose__Descriptor; }
+  }
+  
+  protected override pb::FieldAccess.FieldAccessorTable<CSClientClose, CSClientClose.Builder> InternalFieldAccessors {
+    get { return global::CoreProtocol.internal__static_CSClientClose__FieldAccessorTable; }
+  }
+  
+  public override bool IsInitialized {
+    get {
+      return true;
+    }
+  }
+  
+  public override void WriteTo(pb::ICodedOutputStream output) {
+    CalcSerializedSize();
+    string[] field_names = _cSClientCloseFieldNames;
+    UnknownFields.WriteTo(output);
+  }
+  
+  private int memoizedSerializedSize = -1;
+  public override int SerializedSize {
+    get {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+      return CalcSerializedSize();
+    }
+  }
+  
+  private int CalcSerializedSize() {
+    int size = memoizedSerializedSize;
+    if (size != -1) return size;
+    
+    size = 0;
+    size += UnknownFields.SerializedSize;
+    memoizedSerializedSize = size;
+    return size;
+  }
+  public static CSClientClose ParseFrom(pb::ByteString data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static CSClientClose ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static CSClientClose ParseFrom(byte[] data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static CSClientClose ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static CSClientClose ParseFrom(global::System.IO.Stream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static CSClientClose ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  public static CSClientClose ParseDelimitedFrom(global::System.IO.Stream input) {
+    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
+  }
+  public static CSClientClose ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
+  }
+  public static CSClientClose ParseFrom(pb::ICodedInputStream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static CSClientClose ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  private CSClientClose MakeReadOnly() {
+    return this;
+  }
+  
+  public static Builder CreateBuilder() { return new Builder(); }
+  public override Builder ToBuilder() { return CreateBuilder(this); }
+  public override Builder CreateBuilderForType() { return new Builder(); }
+  public static Builder CreateBuilder(CSClientClose prototype) {
+    return new Builder(prototype);
+  }
+  
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class Builder : pb::GeneratedBuilder<CSClientClose, Builder> {
+    protected override Builder ThisBuilder {
+      get { return this; }
+    }
+    public Builder() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+    }
+    internal Builder(CSClientClose cloneFrom) {
+      result = cloneFrom;
+      resultIsReadOnly = true;
+    }
+    
+    private bool resultIsReadOnly;
+    private CSClientClose result;
+    
+    private CSClientClose PrepareBuilder() {
+      if (resultIsReadOnly) {
+        CSClientClose original = result;
+        result = new CSClientClose();
+        resultIsReadOnly = false;
+        MergeFrom(original);
+      }
+      return result;
+    }
+    
+    public override bool IsInitialized {
+      get { return result.IsInitialized; }
+    }
+    
+    protected override CSClientClose MessageBeingBuilt {
+      get { return PrepareBuilder(); }
+    }
+    
+    public override Builder Clear() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+      return this;
+    }
+    
+    public override Builder Clone() {
+      if (resultIsReadOnly) {
+        return new Builder(result);
+      } else {
+        return new Builder().MergeFrom(result);
+      }
+    }
+    
+    public override pbd::MessageDescriptor DescriptorForType {
+      get { return global::CSClientClose.Descriptor; }
+    }
+    
+    public override CSClientClose DefaultInstanceForType {
+      get { return global::CSClientClose.DefaultInstance; }
+    }
+    
+    public override CSClientClose BuildPartial() {
+      if (resultIsReadOnly) {
+        return result;
+      }
+      resultIsReadOnly = true;
+      return result.MakeReadOnly();
+    }
+    
+    public override Builder MergeFrom(pb::IMessage other) {
+      if (other is CSClientClose) {
+        return MergeFrom((CSClientClose) other);
+      } else {
+        base.MergeFrom(other);
+        return this;
+      }
+    }
+    
+    public override Builder MergeFrom(CSClientClose other) {
+      if (other == global::CSClientClose.DefaultInstance) return this;
+      PrepareBuilder();
+      this.MergeUnknownFields(other.UnknownFields);
+      return this;
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input) {
+      return MergeFrom(input, pb::ExtensionRegistry.Empty);
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+      PrepareBuilder();
+      pb::UnknownFieldSet.Builder unknownFields = null;
+      uint tag;
+      string field_name;
+      while (input.ReadTag(out tag, out field_name)) {
+        if(tag == 0 && field_name != null) {
+          int field_ordinal = global::System.Array.BinarySearch(_cSClientCloseFieldNames, field_name, global::System.StringComparer.Ordinal);
+          if(field_ordinal >= 0)
+            tag = _cSClientCloseFieldTags[field_ordinal];
+          else {
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            continue;
+          }
+        }
+        switch (tag) {
+          case 0: {
+            throw pb::InvalidProtocolBufferException.InvalidTag();
+          }
+          default: {
+            if (pb::WireFormat.IsEndGroupTag(tag)) {
+              if (unknownFields != null) {
+                this.UnknownFields = unknownFields.Build();
+              }
+              return this;
+            }
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            break;
+          }
+        }
+      }
+      
+      if (unknownFields != null) {
+        this.UnknownFields = unknownFields.Build();
+      }
+      return this;
+    }
+    
+  }
+  static CSClientClose() {
+    object.ReferenceEquals(global::CoreProtocol.Descriptor, null);
+  }
+}
+
+[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+public sealed partial class CSLogon : pb::GeneratedMessage<CSLogon, CSLogon.Builder> {
+  private CSLogon() { }
+  private static readonly CSLogon defaultInstance = new CSLogon().MakeReadOnly();
+  private static readonly string[] _cSLogonFieldNames = new string[] { "cardnumber" };
+  private static readonly uint[] _cSLogonFieldTags = new uint[] { 10 };
+  public static CSLogon DefaultInstance {
+    get { return defaultInstance; }
+  }
+  
+  public override CSLogon DefaultInstanceForType {
+    get { return DefaultInstance; }
+  }
+  
+  protected override CSLogon ThisMessage {
+    get { return this; }
+  }
+  
+  public static pbd::MessageDescriptor Descriptor {
+    get { return global::CoreProtocol.internal__static_CSLogon__Descriptor; }
+  }
+  
+  protected override pb::FieldAccess.FieldAccessorTable<CSLogon, CSLogon.Builder> InternalFieldAccessors {
+    get { return global::CoreProtocol.internal__static_CSLogon__FieldAccessorTable; }
+  }
+  
+  public const int CardnumberFieldNumber = 1;
+  private bool hasCardnumber;
+  private string cardnumber_ = "";
+  public bool HasCardnumber {
+    get { return hasCardnumber; }
+  }
+  public string Cardnumber {
+    get { return cardnumber_; }
+  }
+  
+  public override bool IsInitialized {
+    get {
+      if (!hasCardnumber) return false;
+      return true;
+    }
+  }
+  
+  public override void WriteTo(pb::ICodedOutputStream output) {
+    CalcSerializedSize();
+    string[] field_names = _cSLogonFieldNames;
+    if (hasCardnumber) {
+      output.WriteString(1, field_names[0], Cardnumber);
+    }
+    UnknownFields.WriteTo(output);
+  }
+  
+  private int memoizedSerializedSize = -1;
+  public override int SerializedSize {
+    get {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+      return CalcSerializedSize();
+    }
+  }
+  
+  private int CalcSerializedSize() {
+    int size = memoizedSerializedSize;
+    if (size != -1) return size;
+    
+    size = 0;
+    if (hasCardnumber) {
+      size += pb::CodedOutputStream.ComputeStringSize(1, Cardnumber);
+    }
+    size += UnknownFields.SerializedSize;
+    memoizedSerializedSize = size;
+    return size;
+  }
+  public static CSLogon ParseFrom(pb::ByteString data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static CSLogon ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static CSLogon ParseFrom(byte[] data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static CSLogon ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static CSLogon ParseFrom(global::System.IO.Stream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static CSLogon ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  public static CSLogon ParseDelimitedFrom(global::System.IO.Stream input) {
+    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
+  }
+  public static CSLogon ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
+  }
+  public static CSLogon ParseFrom(pb::ICodedInputStream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static CSLogon ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  private CSLogon MakeReadOnly() {
+    return this;
+  }
+  
+  public static Builder CreateBuilder() { return new Builder(); }
+  public override Builder ToBuilder() { return CreateBuilder(this); }
+  public override Builder CreateBuilderForType() { return new Builder(); }
+  public static Builder CreateBuilder(CSLogon prototype) {
+    return new Builder(prototype);
+  }
+  
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class Builder : pb::GeneratedBuilder<CSLogon, Builder> {
+    protected override Builder ThisBuilder {
+      get { return this; }
+    }
+    public Builder() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+    }
+    internal Builder(CSLogon cloneFrom) {
+      result = cloneFrom;
+      resultIsReadOnly = true;
+    }
+    
+    private bool resultIsReadOnly;
+    private CSLogon result;
+    
+    private CSLogon PrepareBuilder() {
+      if (resultIsReadOnly) {
+        CSLogon original = result;
+        result = new CSLogon();
+        resultIsReadOnly = false;
+        MergeFrom(original);
+      }
+      return result;
+    }
+    
+    public override bool IsInitialized {
+      get { return result.IsInitialized; }
+    }
+    
+    protected override CSLogon MessageBeingBuilt {
+      get { return PrepareBuilder(); }
+    }
+    
+    public override Builder Clear() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+      return this;
+    }
+    
+    public override Builder Clone() {
+      if (resultIsReadOnly) {
+        return new Builder(result);
+      } else {
+        return new Builder().MergeFrom(result);
+      }
+    }
+    
+    public override pbd::MessageDescriptor DescriptorForType {
+      get { return global::CSLogon.Descriptor; }
+    }
+    
+    public override CSLogon DefaultInstanceForType {
+      get { return global::CSLogon.DefaultInstance; }
+    }
+    
+    public override CSLogon BuildPartial() {
+      if (resultIsReadOnly) {
+        return result;
+      }
+      resultIsReadOnly = true;
+      return result.MakeReadOnly();
+    }
+    
+    public override Builder MergeFrom(pb::IMessage other) {
+      if (other is CSLogon) {
+        return MergeFrom((CSLogon) other);
+      } else {
+        base.MergeFrom(other);
+        return this;
+      }
+    }
+    
+    public override Builder MergeFrom(CSLogon other) {
+      if (other == global::CSLogon.DefaultInstance) return this;
+      PrepareBuilder();
+      if (other.HasCardnumber) {
+        Cardnumber = other.Cardnumber;
+      }
+      this.MergeUnknownFields(other.UnknownFields);
+      return this;
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input) {
+      return MergeFrom(input, pb::ExtensionRegistry.Empty);
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+      PrepareBuilder();
+      pb::UnknownFieldSet.Builder unknownFields = null;
+      uint tag;
+      string field_name;
+      while (input.ReadTag(out tag, out field_name)) {
+        if(tag == 0 && field_name != null) {
+          int field_ordinal = global::System.Array.BinarySearch(_cSLogonFieldNames, field_name, global::System.StringComparer.Ordinal);
+          if(field_ordinal >= 0)
+            tag = _cSLogonFieldTags[field_ordinal];
+          else {
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            continue;
+          }
+        }
+        switch (tag) {
+          case 0: {
+            throw pb::InvalidProtocolBufferException.InvalidTag();
+          }
+          default: {
+            if (pb::WireFormat.IsEndGroupTag(tag)) {
+              if (unknownFields != null) {
+                this.UnknownFields = unknownFields.Build();
+              }
+              return this;
+            }
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            break;
+          }
+          case 10: {
+            result.hasCardnumber = input.ReadString(ref result.cardnumber_);
+            break;
+          }
+        }
+      }
+      
+      if (unknownFields != null) {
+        this.UnknownFields = unknownFields.Build();
+      }
+      return this;
+    }
+    
+    
+    public bool HasCardnumber {
+      get { return result.hasCardnumber; }
+    }
+    public string Cardnumber {
+      get { return result.Cardnumber; }
+      set { SetCardnumber(value); }
+    }
+    public Builder SetCardnumber(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasCardnumber = true;
+      result.cardnumber_ = value;
+      return this;
+    }
+    public Builder ClearCardnumber() {
+      PrepareBuilder();
+      result.hasCardnumber = false;
+      result.cardnumber_ = "";
+      return this;
+    }
+  }
+  static CSLogon() {
+    object.ReferenceEquals(global::CoreProtocol.Descriptor, null);
+  }
+}
+
+[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+public sealed partial class SCLogon : pb::GeneratedMessage<SCLogon, SCLogon.Builder> {
+  private SCLogon() { }
+  private static readonly SCLogon defaultInstance = new SCLogon().MakeReadOnly();
+  private static readonly string[] _sCLogonFieldNames = new string[] { "balance", "cardnumber", "integal", "memberid", "name", "right" };
+  private static readonly uint[] _sCLogonFieldTags = new uint[] { 72, 18, 96, 8, 34, 40 };
+  public static SCLogon DefaultInstance {
+    get { return defaultInstance; }
+  }
+  
+  public override SCLogon DefaultInstanceForType {
+    get { return DefaultInstance; }
+  }
+  
+  protected override SCLogon ThisMessage {
+    get { return this; }
+  }
+  
+  public static pbd::MessageDescriptor Descriptor {
+    get { return global::CoreProtocol.internal__static_SCLogon__Descriptor; }
+  }
+  
+  protected override pb::FieldAccess.FieldAccessorTable<SCLogon, SCLogon.Builder> InternalFieldAccessors {
+    get { return global::CoreProtocol.internal__static_SCLogon__FieldAccessorTable; }
+  }
+  
+  public const int MemberidFieldNumber = 1;
+  private bool hasMemberid;
+  private int memberid_;
+  public bool HasMemberid {
+    get { return hasMemberid; }
+  }
+  public int Memberid {
+    get { return memberid_; }
+  }
+  
+  public const int CardnumberFieldNumber = 2;
+  private bool hasCardnumber;
+  private string cardnumber_ = "";
+  public bool HasCardnumber {
+    get { return hasCardnumber; }
+  }
+  public string Cardnumber {
+    get { return cardnumber_; }
+  }
+  
+  public const int NameFieldNumber = 4;
+  private bool hasName;
+  private string name_ = "";
+  public bool HasName {
+    get { return hasName; }
+  }
+  public string Name {
+    get { return name_; }
+  }
+  
+  public const int RightFieldNumber = 5;
+  private bool hasRight;
+  private int right_;
+  public bool HasRight {
+    get { return hasRight; }
+  }
+  public int Right {
+    get { return right_; }
+  }
+  
+  public const int BalanceFieldNumber = 9;
+  private bool hasBalance;
+  private int balance_;
+  public bool HasBalance {
+    get { return hasBalance; }
+  }
+  public int Balance {
+    get { return balance_; }
+  }
+  
+  public const int IntegalFieldNumber = 12;
+  private bool hasIntegal;
+  private int integal_;
+  public bool HasIntegal {
+    get { return hasIntegal; }
+  }
+  public int Integal {
+    get { return integal_; }
+  }
+  
+  public override bool IsInitialized {
+    get {
+      if (!hasMemberid) return false;
+      if (!hasCardnumber) return false;
+      if (!hasName) return false;
+      if (!hasRight) return false;
+      if (!hasBalance) return false;
+      if (!hasIntegal) return false;
+      return true;
+    }
+  }
+  
+  public override void WriteTo(pb::ICodedOutputStream output) {
+    CalcSerializedSize();
+    string[] field_names = _sCLogonFieldNames;
+    if (hasMemberid) {
+      output.WriteInt32(1, field_names[3], Memberid);
+    }
+    if (hasCardnumber) {
+      output.WriteString(2, field_names[1], Cardnumber);
+    }
+    if (hasName) {
+      output.WriteString(4, field_names[4], Name);
+    }
+    if (hasRight) {
+      output.WriteInt32(5, field_names[5], Right);
+    }
+    if (hasBalance) {
+      output.WriteInt32(9, field_names[0], Balance);
+    }
+    if (hasIntegal) {
+      output.WriteInt32(12, field_names[2], Integal);
+    }
+    UnknownFields.WriteTo(output);
+  }
+  
+  private int memoizedSerializedSize = -1;
+  public override int SerializedSize {
+    get {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+      return CalcSerializedSize();
+    }
+  }
+  
+  private int CalcSerializedSize() {
+    int size = memoizedSerializedSize;
+    if (size != -1) return size;
+    
+    size = 0;
+    if (hasMemberid) {
+      size += pb::CodedOutputStream.ComputeInt32Size(1, Memberid);
+    }
+    if (hasCardnumber) {
+      size += pb::CodedOutputStream.ComputeStringSize(2, Cardnumber);
+    }
+    if (hasName) {
+      size += pb::CodedOutputStream.ComputeStringSize(4, Name);
+    }
+    if (hasRight) {
+      size += pb::CodedOutputStream.ComputeInt32Size(5, Right);
+    }
+    if (hasBalance) {
+      size += pb::CodedOutputStream.ComputeInt32Size(9, Balance);
+    }
+    if (hasIntegal) {
+      size += pb::CodedOutputStream.ComputeInt32Size(12, Integal);
+    }
+    size += UnknownFields.SerializedSize;
+    memoizedSerializedSize = size;
+    return size;
+  }
+  public static SCLogon ParseFrom(pb::ByteString data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static SCLogon ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static SCLogon ParseFrom(byte[] data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static SCLogon ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static SCLogon ParseFrom(global::System.IO.Stream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static SCLogon ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  public static SCLogon ParseDelimitedFrom(global::System.IO.Stream input) {
+    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
+  }
+  public static SCLogon ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
+  }
+  public static SCLogon ParseFrom(pb::ICodedInputStream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static SCLogon ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  private SCLogon MakeReadOnly() {
+    return this;
+  }
+  
+  public static Builder CreateBuilder() { return new Builder(); }
+  public override Builder ToBuilder() { return CreateBuilder(this); }
+  public override Builder CreateBuilderForType() { return new Builder(); }
+  public static Builder CreateBuilder(SCLogon prototype) {
+    return new Builder(prototype);
+  }
+  
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class Builder : pb::GeneratedBuilder<SCLogon, Builder> {
+    protected override Builder ThisBuilder {
+      get { return this; }
+    }
+    public Builder() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+    }
+    internal Builder(SCLogon cloneFrom) {
+      result = cloneFrom;
+      resultIsReadOnly = true;
+    }
+    
+    private bool resultIsReadOnly;
+    private SCLogon result;
+    
+    private SCLogon PrepareBuilder() {
+      if (resultIsReadOnly) {
+        SCLogon original = result;
+        result = new SCLogon();
+        resultIsReadOnly = false;
+        MergeFrom(original);
+      }
+      return result;
+    }
+    
+    public override bool IsInitialized {
+      get { return result.IsInitialized; }
+    }
+    
+    protected override SCLogon MessageBeingBuilt {
+      get { return PrepareBuilder(); }
+    }
+    
+    public override Builder Clear() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+      return this;
+    }
+    
+    public override Builder Clone() {
+      if (resultIsReadOnly) {
+        return new Builder(result);
+      } else {
+        return new Builder().MergeFrom(result);
+      }
+    }
+    
+    public override pbd::MessageDescriptor DescriptorForType {
+      get { return global::SCLogon.Descriptor; }
+    }
+    
+    public override SCLogon DefaultInstanceForType {
+      get { return global::SCLogon.DefaultInstance; }
+    }
+    
+    public override SCLogon BuildPartial() {
+      if (resultIsReadOnly) {
+        return result;
+      }
+      resultIsReadOnly = true;
+      return result.MakeReadOnly();
+    }
+    
+    public override Builder MergeFrom(pb::IMessage other) {
+      if (other is SCLogon) {
+        return MergeFrom((SCLogon) other);
+      } else {
+        base.MergeFrom(other);
+        return this;
+      }
+    }
+    
+    public override Builder MergeFrom(SCLogon other) {
+      if (other == global::SCLogon.DefaultInstance) return this;
+      PrepareBuilder();
+      if (other.HasMemberid) {
+        Memberid = other.Memberid;
+      }
+      if (other.HasCardnumber) {
+        Cardnumber = other.Cardnumber;
+      }
+      if (other.HasName) {
+        Name = other.Name;
+      }
+      if (other.HasRight) {
+        Right = other.Right;
+      }
+      if (other.HasBalance) {
+        Balance = other.Balance;
+      }
+      if (other.HasIntegal) {
+        Integal = other.Integal;
+      }
+      this.MergeUnknownFields(other.UnknownFields);
+      return this;
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input) {
+      return MergeFrom(input, pb::ExtensionRegistry.Empty);
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+      PrepareBuilder();
+      pb::UnknownFieldSet.Builder unknownFields = null;
+      uint tag;
+      string field_name;
+      while (input.ReadTag(out tag, out field_name)) {
+        if(tag == 0 && field_name != null) {
+          int field_ordinal = global::System.Array.BinarySearch(_sCLogonFieldNames, field_name, global::System.StringComparer.Ordinal);
+          if(field_ordinal >= 0)
+            tag = _sCLogonFieldTags[field_ordinal];
+          else {
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            continue;
+          }
+        }
+        switch (tag) {
+          case 0: {
+            throw pb::InvalidProtocolBufferException.InvalidTag();
+          }
+          default: {
+            if (pb::WireFormat.IsEndGroupTag(tag)) {
+              if (unknownFields != null) {
+                this.UnknownFields = unknownFields.Build();
+              }
+              return this;
+            }
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            break;
+          }
+          case 8: {
+            result.hasMemberid = input.ReadInt32(ref result.memberid_);
+            break;
+          }
+          case 18: {
+            result.hasCardnumber = input.ReadString(ref result.cardnumber_);
+            break;
+          }
+          case 34: {
+            result.hasName = input.ReadString(ref result.name_);
+            break;
+          }
+          case 40: {
+            result.hasRight = input.ReadInt32(ref result.right_);
+            break;
+          }
+          case 72: {
+            result.hasBalance = input.ReadInt32(ref result.balance_);
+            break;
+          }
+          case 96: {
+            result.hasIntegal = input.ReadInt32(ref result.integal_);
+            break;
+          }
+        }
+      }
+      
+      if (unknownFields != null) {
+        this.UnknownFields = unknownFields.Build();
+      }
+      return this;
+    }
+    
+    
+    public bool HasMemberid {
+      get { return result.hasMemberid; }
+    }
+    public int Memberid {
+      get { return result.Memberid; }
+      set { SetMemberid(value); }
+    }
+    public Builder SetMemberid(int value) {
+      PrepareBuilder();
+      result.hasMemberid = true;
+      result.memberid_ = value;
+      return this;
+    }
+    public Builder ClearMemberid() {
+      PrepareBuilder();
+      result.hasMemberid = false;
+      result.memberid_ = 0;
+      return this;
+    }
+    
+    public bool HasCardnumber {
+      get { return result.hasCardnumber; }
+    }
+    public string Cardnumber {
+      get { return result.Cardnumber; }
+      set { SetCardnumber(value); }
+    }
+    public Builder SetCardnumber(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasCardnumber = true;
+      result.cardnumber_ = value;
+      return this;
+    }
+    public Builder ClearCardnumber() {
+      PrepareBuilder();
+      result.hasCardnumber = false;
+      result.cardnumber_ = "";
+      return this;
+    }
+    
+    public bool HasName {
+      get { return result.hasName; }
+    }
+    public string Name {
+      get { return result.Name; }
+      set { SetName(value); }
+    }
+    public Builder SetName(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasName = true;
+      result.name_ = value;
+      return this;
+    }
+    public Builder ClearName() {
+      PrepareBuilder();
+      result.hasName = false;
+      result.name_ = "";
+      return this;
+    }
+    
+    public bool HasRight {
+      get { return result.hasRight; }
+    }
+    public int Right {
+      get { return result.Right; }
+      set { SetRight(value); }
+    }
+    public Builder SetRight(int value) {
+      PrepareBuilder();
+      result.hasRight = true;
+      result.right_ = value;
+      return this;
+    }
+    public Builder ClearRight() {
+      PrepareBuilder();
+      result.hasRight = false;
+      result.right_ = 0;
+      return this;
+    }
+    
+    public bool HasBalance {
+      get { return result.hasBalance; }
+    }
+    public int Balance {
+      get { return result.Balance; }
+      set { SetBalance(value); }
+    }
+    public Builder SetBalance(int value) {
+      PrepareBuilder();
+      result.hasBalance = true;
+      result.balance_ = value;
+      return this;
+    }
+    public Builder ClearBalance() {
+      PrepareBuilder();
+      result.hasBalance = false;
+      result.balance_ = 0;
+      return this;
+    }
+    
+    public bool HasIntegal {
+      get { return result.hasIntegal; }
+    }
+    public int Integal {
+      get { return result.Integal; }
+      set { SetIntegal(value); }
+    }
+    public Builder SetIntegal(int value) {
+      PrepareBuilder();
+      result.hasIntegal = true;
+      result.integal_ = value;
+      return this;
+    }
+    public Builder ClearIntegal() {
+      PrepareBuilder();
+      result.hasIntegal = false;
+      result.integal_ = 0;
+      return this;
+    }
+  }
+  static SCLogon() {
+    object.ReferenceEquals(global::CoreProtocol.Descriptor, null);
+  }
+}
+
+[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+public sealed partial class CSLogoff : pb::GeneratedMessage<CSLogoff, CSLogoff.Builder> {
+  private CSLogoff() { }
+  private static readonly CSLogoff defaultInstance = new CSLogoff().MakeReadOnly();
+  private static readonly string[] _cSLogoffFieldNames = new string[] { "cardnumber" };
+  private static readonly uint[] _cSLogoffFieldTags = new uint[] { 10 };
+  public static CSLogoff DefaultInstance {
+    get { return defaultInstance; }
+  }
+  
+  public override CSLogoff DefaultInstanceForType {
+    get { return DefaultInstance; }
+  }
+  
+  protected override CSLogoff ThisMessage {
+    get { return this; }
+  }
+  
+  public static pbd::MessageDescriptor Descriptor {
+    get { return global::CoreProtocol.internal__static_CSLogoff__Descriptor; }
+  }
+  
+  protected override pb::FieldAccess.FieldAccessorTable<CSLogoff, CSLogoff.Builder> InternalFieldAccessors {
+    get { return global::CoreProtocol.internal__static_CSLogoff__FieldAccessorTable; }
+  }
+  
+  public const int CardnumberFieldNumber = 1;
+  private bool hasCardnumber;
+  private string cardnumber_ = "";
+  public bool HasCardnumber {
+    get { return hasCardnumber; }
+  }
+  public string Cardnumber {
+    get { return cardnumber_; }
+  }
+  
+  public override bool IsInitialized {
+    get {
+      if (!hasCardnumber) return false;
+      return true;
+    }
+  }
+  
+  public override void WriteTo(pb::ICodedOutputStream output) {
+    CalcSerializedSize();
+    string[] field_names = _cSLogoffFieldNames;
+    if (hasCardnumber) {
+      output.WriteString(1, field_names[0], Cardnumber);
+    }
+    UnknownFields.WriteTo(output);
+  }
+  
+  private int memoizedSerializedSize = -1;
+  public override int SerializedSize {
+    get {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+      return CalcSerializedSize();
+    }
+  }
+  
+  private int CalcSerializedSize() {
+    int size = memoizedSerializedSize;
+    if (size != -1) return size;
+    
+    size = 0;
+    if (hasCardnumber) {
+      size += pb::CodedOutputStream.ComputeStringSize(1, Cardnumber);
+    }
+    size += UnknownFields.SerializedSize;
+    memoizedSerializedSize = size;
+    return size;
+  }
+  public static CSLogoff ParseFrom(pb::ByteString data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static CSLogoff ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static CSLogoff ParseFrom(byte[] data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static CSLogoff ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static CSLogoff ParseFrom(global::System.IO.Stream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static CSLogoff ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  public static CSLogoff ParseDelimitedFrom(global::System.IO.Stream input) {
+    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
+  }
+  public static CSLogoff ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
+  }
+  public static CSLogoff ParseFrom(pb::ICodedInputStream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static CSLogoff ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  private CSLogoff MakeReadOnly() {
+    return this;
+  }
+  
+  public static Builder CreateBuilder() { return new Builder(); }
+  public override Builder ToBuilder() { return CreateBuilder(this); }
+  public override Builder CreateBuilderForType() { return new Builder(); }
+  public static Builder CreateBuilder(CSLogoff prototype) {
+    return new Builder(prototype);
+  }
+  
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class Builder : pb::GeneratedBuilder<CSLogoff, Builder> {
+    protected override Builder ThisBuilder {
+      get { return this; }
+    }
+    public Builder() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+    }
+    internal Builder(CSLogoff cloneFrom) {
+      result = cloneFrom;
+      resultIsReadOnly = true;
+    }
+    
+    private bool resultIsReadOnly;
+    private CSLogoff result;
+    
+    private CSLogoff PrepareBuilder() {
+      if (resultIsReadOnly) {
+        CSLogoff original = result;
+        result = new CSLogoff();
+        resultIsReadOnly = false;
+        MergeFrom(original);
+      }
+      return result;
+    }
+    
+    public override bool IsInitialized {
+      get { return result.IsInitialized; }
+    }
+    
+    protected override CSLogoff MessageBeingBuilt {
+      get { return PrepareBuilder(); }
+    }
+    
+    public override Builder Clear() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+      return this;
+    }
+    
+    public override Builder Clone() {
+      if (resultIsReadOnly) {
+        return new Builder(result);
+      } else {
+        return new Builder().MergeFrom(result);
+      }
+    }
+    
+    public override pbd::MessageDescriptor DescriptorForType {
+      get { return global::CSLogoff.Descriptor; }
+    }
+    
+    public override CSLogoff DefaultInstanceForType {
+      get { return global::CSLogoff.DefaultInstance; }
+    }
+    
+    public override CSLogoff BuildPartial() {
+      if (resultIsReadOnly) {
+        return result;
+      }
+      resultIsReadOnly = true;
+      return result.MakeReadOnly();
+    }
+    
+    public override Builder MergeFrom(pb::IMessage other) {
+      if (other is CSLogoff) {
+        return MergeFrom((CSLogoff) other);
+      } else {
+        base.MergeFrom(other);
+        return this;
+      }
+    }
+    
+    public override Builder MergeFrom(CSLogoff other) {
+      if (other == global::CSLogoff.DefaultInstance) return this;
+      PrepareBuilder();
+      if (other.HasCardnumber) {
+        Cardnumber = other.Cardnumber;
+      }
+      this.MergeUnknownFields(other.UnknownFields);
+      return this;
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input) {
+      return MergeFrom(input, pb::ExtensionRegistry.Empty);
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+      PrepareBuilder();
+      pb::UnknownFieldSet.Builder unknownFields = null;
+      uint tag;
+      string field_name;
+      while (input.ReadTag(out tag, out field_name)) {
+        if(tag == 0 && field_name != null) {
+          int field_ordinal = global::System.Array.BinarySearch(_cSLogoffFieldNames, field_name, global::System.StringComparer.Ordinal);
+          if(field_ordinal >= 0)
+            tag = _cSLogoffFieldTags[field_ordinal];
+          else {
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            continue;
+          }
+        }
+        switch (tag) {
+          case 0: {
+            throw pb::InvalidProtocolBufferException.InvalidTag();
+          }
+          default: {
+            if (pb::WireFormat.IsEndGroupTag(tag)) {
+              if (unknownFields != null) {
+                this.UnknownFields = unknownFields.Build();
+              }
+              return this;
+            }
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            break;
+          }
+          case 10: {
+            result.hasCardnumber = input.ReadString(ref result.cardnumber_);
+            break;
+          }
+        }
+      }
+      
+      if (unknownFields != null) {
+        this.UnknownFields = unknownFields.Build();
+      }
+      return this;
+    }
+    
+    
+    public bool HasCardnumber {
+      get { return result.hasCardnumber; }
+    }
+    public string Cardnumber {
+      get { return result.Cardnumber; }
+      set { SetCardnumber(value); }
+    }
+    public Builder SetCardnumber(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasCardnumber = true;
+      result.cardnumber_ = value;
+      return this;
+    }
+    public Builder ClearCardnumber() {
+      PrepareBuilder();
+      result.hasCardnumber = false;
+      result.cardnumber_ = "";
+      return this;
+    }
+  }
+  static CSLogoff() {
+    object.ReferenceEquals(global::CoreProtocol.Descriptor, null);
+  }
+}
+
+[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+public sealed partial class SCLogoff : pb::GeneratedMessage<SCLogoff, SCLogoff.Builder> {
+  private SCLogoff() { }
+  private static readonly SCLogoff defaultInstance = new SCLogoff().MakeReadOnly();
+  private static readonly string[] _sCLogoffFieldNames = new string[] { "balance", "cardnumber", "name", "right", "usedmoney", "usedtime" };
+  private static readonly uint[] _sCLogoffFieldTags = new uint[] { 32, 18, 10, 26, 40, 48 };
+  public static SCLogoff DefaultInstance {
+    get { return defaultInstance; }
+  }
+  
+  public override SCLogoff DefaultInstanceForType {
+    get { return DefaultInstance; }
+  }
+  
+  protected override SCLogoff ThisMessage {
+    get { return this; }
+  }
+  
+  public static pbd::MessageDescriptor Descriptor {
+    get { return global::CoreProtocol.internal__static_SCLogoff__Descriptor; }
+  }
+  
+  protected override pb::FieldAccess.FieldAccessorTable<SCLogoff, SCLogoff.Builder> InternalFieldAccessors {
+    get { return global::CoreProtocol.internal__static_SCLogoff__FieldAccessorTable; }
+  }
+  
+  public const int NameFieldNumber = 1;
+  private bool hasName;
+  private string name_ = "";
+  public bool HasName {
+    get { return hasName; }
+  }
+  public string Name {
+    get { return name_; }
+  }
+  
+  public const int CardnumberFieldNumber = 2;
+  private bool hasCardnumber;
+  private string cardnumber_ = "";
+  public bool HasCardnumber {
+    get { return hasCardnumber; }
+  }
+  public string Cardnumber {
+    get { return cardnumber_; }
+  }
+  
+  public const int RightFieldNumber = 3;
+  private bool hasRight;
+  private string right_ = "";
+  public bool HasRight {
+    get { return hasRight; }
+  }
+  public string Right {
+    get { return right_; }
+  }
+  
+  public const int BalanceFieldNumber = 4;
+  private bool hasBalance;
+  private int balance_;
+  public bool HasBalance {
+    get { return hasBalance; }
+  }
+  public int Balance {
+    get { return balance_; }
+  }
+  
+  public const int UsedmoneyFieldNumber = 5;
+  private bool hasUsedmoney;
+  private int usedmoney_;
+  public bool HasUsedmoney {
+    get { return hasUsedmoney; }
+  }
+  public int Usedmoney {
+    get { return usedmoney_; }
+  }
+  
+  public const int UsedtimeFieldNumber = 6;
+  private bool hasUsedtime;
+  private int usedtime_;
+  public bool HasUsedtime {
+    get { return hasUsedtime; }
+  }
+  public int Usedtime {
+    get { return usedtime_; }
+  }
+  
+  public override bool IsInitialized {
+    get {
+      if (!hasName) return false;
+      if (!hasCardnumber) return false;
+      if (!hasRight) return false;
+      if (!hasBalance) return false;
+      if (!hasUsedmoney) return false;
+      if (!hasUsedtime) return false;
+      return true;
+    }
+  }
+  
+  public override void WriteTo(pb::ICodedOutputStream output) {
+    CalcSerializedSize();
+    string[] field_names = _sCLogoffFieldNames;
+    if (hasName) {
+      output.WriteString(1, field_names[2], Name);
+    }
+    if (hasCardnumber) {
+      output.WriteString(2, field_names[1], Cardnumber);
+    }
+    if (hasRight) {
+      output.WriteString(3, field_names[3], Right);
+    }
+    if (hasBalance) {
+      output.WriteInt32(4, field_names[0], Balance);
+    }
+    if (hasUsedmoney) {
+      output.WriteInt32(5, field_names[4], Usedmoney);
+    }
+    if (hasUsedtime) {
+      output.WriteInt32(6, field_names[5], Usedtime);
+    }
+    UnknownFields.WriteTo(output);
+  }
+  
+  private int memoizedSerializedSize = -1;
+  public override int SerializedSize {
+    get {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+      return CalcSerializedSize();
+    }
+  }
+  
+  private int CalcSerializedSize() {
+    int size = memoizedSerializedSize;
+    if (size != -1) return size;
+    
+    size = 0;
+    if (hasName) {
+      size += pb::CodedOutputStream.ComputeStringSize(1, Name);
+    }
+    if (hasCardnumber) {
+      size += pb::CodedOutputStream.ComputeStringSize(2, Cardnumber);
+    }
+    if (hasRight) {
+      size += pb::CodedOutputStream.ComputeStringSize(3, Right);
+    }
+    if (hasBalance) {
+      size += pb::CodedOutputStream.ComputeInt32Size(4, Balance);
+    }
+    if (hasUsedmoney) {
+      size += pb::CodedOutputStream.ComputeInt32Size(5, Usedmoney);
+    }
+    if (hasUsedtime) {
+      size += pb::CodedOutputStream.ComputeInt32Size(6, Usedtime);
+    }
+    size += UnknownFields.SerializedSize;
+    memoizedSerializedSize = size;
+    return size;
+  }
+  public static SCLogoff ParseFrom(pb::ByteString data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static SCLogoff ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static SCLogoff ParseFrom(byte[] data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static SCLogoff ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static SCLogoff ParseFrom(global::System.IO.Stream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static SCLogoff ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  public static SCLogoff ParseDelimitedFrom(global::System.IO.Stream input) {
+    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
+  }
+  public static SCLogoff ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
+  }
+  public static SCLogoff ParseFrom(pb::ICodedInputStream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static SCLogoff ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  private SCLogoff MakeReadOnly() {
+    return this;
+  }
+  
+  public static Builder CreateBuilder() { return new Builder(); }
+  public override Builder ToBuilder() { return CreateBuilder(this); }
+  public override Builder CreateBuilderForType() { return new Builder(); }
+  public static Builder CreateBuilder(SCLogoff prototype) {
+    return new Builder(prototype);
+  }
+  
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class Builder : pb::GeneratedBuilder<SCLogoff, Builder> {
+    protected override Builder ThisBuilder {
+      get { return this; }
+    }
+    public Builder() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+    }
+    internal Builder(SCLogoff cloneFrom) {
+      result = cloneFrom;
+      resultIsReadOnly = true;
+    }
+    
+    private bool resultIsReadOnly;
+    private SCLogoff result;
+    
+    private SCLogoff PrepareBuilder() {
+      if (resultIsReadOnly) {
+        SCLogoff original = result;
+        result = new SCLogoff();
+        resultIsReadOnly = false;
+        MergeFrom(original);
+      }
+      return result;
+    }
+    
+    public override bool IsInitialized {
+      get { return result.IsInitialized; }
+    }
+    
+    protected override SCLogoff MessageBeingBuilt {
+      get { return PrepareBuilder(); }
+    }
+    
+    public override Builder Clear() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+      return this;
+    }
+    
+    public override Builder Clone() {
+      if (resultIsReadOnly) {
+        return new Builder(result);
+      } else {
+        return new Builder().MergeFrom(result);
+      }
+    }
+    
+    public override pbd::MessageDescriptor DescriptorForType {
+      get { return global::SCLogoff.Descriptor; }
+    }
+    
+    public override SCLogoff DefaultInstanceForType {
+      get { return global::SCLogoff.DefaultInstance; }
+    }
+    
+    public override SCLogoff BuildPartial() {
+      if (resultIsReadOnly) {
+        return result;
+      }
+      resultIsReadOnly = true;
+      return result.MakeReadOnly();
+    }
+    
+    public override Builder MergeFrom(pb::IMessage other) {
+      if (other is SCLogoff) {
+        return MergeFrom((SCLogoff) other);
+      } else {
+        base.MergeFrom(other);
+        return this;
+      }
+    }
+    
+    public override Builder MergeFrom(SCLogoff other) {
+      if (other == global::SCLogoff.DefaultInstance) return this;
+      PrepareBuilder();
+      if (other.HasName) {
+        Name = other.Name;
+      }
+      if (other.HasCardnumber) {
+        Cardnumber = other.Cardnumber;
+      }
+      if (other.HasRight) {
+        Right = other.Right;
+      }
+      if (other.HasBalance) {
+        Balance = other.Balance;
+      }
+      if (other.HasUsedmoney) {
+        Usedmoney = other.Usedmoney;
+      }
+      if (other.HasUsedtime) {
+        Usedtime = other.Usedtime;
+      }
+      this.MergeUnknownFields(other.UnknownFields);
+      return this;
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input) {
+      return MergeFrom(input, pb::ExtensionRegistry.Empty);
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+      PrepareBuilder();
+      pb::UnknownFieldSet.Builder unknownFields = null;
+      uint tag;
+      string field_name;
+      while (input.ReadTag(out tag, out field_name)) {
+        if(tag == 0 && field_name != null) {
+          int field_ordinal = global::System.Array.BinarySearch(_sCLogoffFieldNames, field_name, global::System.StringComparer.Ordinal);
+          if(field_ordinal >= 0)
+            tag = _sCLogoffFieldTags[field_ordinal];
+          else {
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            continue;
+          }
+        }
+        switch (tag) {
+          case 0: {
+            throw pb::InvalidProtocolBufferException.InvalidTag();
+          }
+          default: {
+            if (pb::WireFormat.IsEndGroupTag(tag)) {
+              if (unknownFields != null) {
+                this.UnknownFields = unknownFields.Build();
+              }
+              return this;
+            }
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            break;
+          }
+          case 10: {
+            result.hasName = input.ReadString(ref result.name_);
+            break;
+          }
+          case 18: {
+            result.hasCardnumber = input.ReadString(ref result.cardnumber_);
+            break;
+          }
+          case 26: {
+            result.hasRight = input.ReadString(ref result.right_);
+            break;
+          }
+          case 32: {
+            result.hasBalance = input.ReadInt32(ref result.balance_);
+            break;
+          }
+          case 40: {
+            result.hasUsedmoney = input.ReadInt32(ref result.usedmoney_);
+            break;
+          }
+          case 48: {
+            result.hasUsedtime = input.ReadInt32(ref result.usedtime_);
+            break;
+          }
+        }
+      }
+      
+      if (unknownFields != null) {
+        this.UnknownFields = unknownFields.Build();
+      }
+      return this;
+    }
+    
+    
+    public bool HasName {
+      get { return result.hasName; }
+    }
+    public string Name {
+      get { return result.Name; }
+      set { SetName(value); }
+    }
+    public Builder SetName(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasName = true;
+      result.name_ = value;
+      return this;
+    }
+    public Builder ClearName() {
+      PrepareBuilder();
+      result.hasName = false;
+      result.name_ = "";
+      return this;
+    }
+    
+    public bool HasCardnumber {
+      get { return result.hasCardnumber; }
+    }
+    public string Cardnumber {
+      get { return result.Cardnumber; }
+      set { SetCardnumber(value); }
+    }
+    public Builder SetCardnumber(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasCardnumber = true;
+      result.cardnumber_ = value;
+      return this;
+    }
+    public Builder ClearCardnumber() {
+      PrepareBuilder();
+      result.hasCardnumber = false;
+      result.cardnumber_ = "";
+      return this;
+    }
+    
+    public bool HasRight {
+      get { return result.hasRight; }
+    }
+    public string Right {
+      get { return result.Right; }
+      set { SetRight(value); }
+    }
+    public Builder SetRight(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasRight = true;
+      result.right_ = value;
+      return this;
+    }
+    public Builder ClearRight() {
+      PrepareBuilder();
+      result.hasRight = false;
+      result.right_ = "";
+      return this;
+    }
+    
+    public bool HasBalance {
+      get { return result.hasBalance; }
+    }
+    public int Balance {
+      get { return result.Balance; }
+      set { SetBalance(value); }
+    }
+    public Builder SetBalance(int value) {
+      PrepareBuilder();
+      result.hasBalance = true;
+      result.balance_ = value;
+      return this;
+    }
+    public Builder ClearBalance() {
+      PrepareBuilder();
+      result.hasBalance = false;
+      result.balance_ = 0;
+      return this;
+    }
+    
+    public bool HasUsedmoney {
+      get { return result.hasUsedmoney; }
+    }
+    public int Usedmoney {
+      get { return result.Usedmoney; }
+      set { SetUsedmoney(value); }
+    }
+    public Builder SetUsedmoney(int value) {
+      PrepareBuilder();
+      result.hasUsedmoney = true;
+      result.usedmoney_ = value;
+      return this;
+    }
+    public Builder ClearUsedmoney() {
+      PrepareBuilder();
+      result.hasUsedmoney = false;
+      result.usedmoney_ = 0;
+      return this;
+    }
+    
+    public bool HasUsedtime {
+      get { return result.hasUsedtime; }
+    }
+    public int Usedtime {
+      get { return result.Usedtime; }
+      set { SetUsedtime(value); }
+    }
+    public Builder SetUsedtime(int value) {
+      PrepareBuilder();
+      result.hasUsedtime = true;
+      result.usedtime_ = value;
+      return this;
+    }
+    public Builder ClearUsedtime() {
+      PrepareBuilder();
+      result.hasUsedtime = false;
+      result.usedtime_ = 0;
+      return this;
+    }
+  }
+  static SCLogoff() {
+    object.ReferenceEquals(global::CoreProtocol.Descriptor, null);
+  }
+}
+
+[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+public sealed partial class CSHungup : pb::GeneratedMessage<CSHungup, CSHungup.Builder> {
+  private CSHungup() { }
+  private static readonly CSHungup defaultInstance = new CSHungup().MakeReadOnly();
+  private static readonly string[] _cSHungupFieldNames = new string[] { "cardnumber" };
+  private static readonly uint[] _cSHungupFieldTags = new uint[] { 10 };
+  public static CSHungup DefaultInstance {
+    get { return defaultInstance; }
+  }
+  
+  public override CSHungup DefaultInstanceForType {
+    get { return DefaultInstance; }
+  }
+  
+  protected override CSHungup ThisMessage {
+    get { return this; }
+  }
+  
+  public static pbd::MessageDescriptor Descriptor {
+    get { return global::CoreProtocol.internal__static_CSHungup__Descriptor; }
+  }
+  
+  protected override pb::FieldAccess.FieldAccessorTable<CSHungup, CSHungup.Builder> InternalFieldAccessors {
+    get { return global::CoreProtocol.internal__static_CSHungup__FieldAccessorTable; }
+  }
+  
+  public const int CardnumberFieldNumber = 1;
+  private bool hasCardnumber;
+  private string cardnumber_ = "";
+  public bool HasCardnumber {
+    get { return hasCardnumber; }
+  }
+  public string Cardnumber {
+    get { return cardnumber_; }
+  }
+  
+  public override bool IsInitialized {
+    get {
+      if (!hasCardnumber) return false;
+      return true;
+    }
+  }
+  
+  public override void WriteTo(pb::ICodedOutputStream output) {
+    CalcSerializedSize();
+    string[] field_names = _cSHungupFieldNames;
+    if (hasCardnumber) {
+      output.WriteString(1, field_names[0], Cardnumber);
+    }
+    UnknownFields.WriteTo(output);
+  }
+  
+  private int memoizedSerializedSize = -1;
+  public override int SerializedSize {
+    get {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+      return CalcSerializedSize();
+    }
+  }
+  
+  private int CalcSerializedSize() {
+    int size = memoizedSerializedSize;
+    if (size != -1) return size;
+    
+    size = 0;
+    if (hasCardnumber) {
+      size += pb::CodedOutputStream.ComputeStringSize(1, Cardnumber);
+    }
+    size += UnknownFields.SerializedSize;
+    memoizedSerializedSize = size;
+    return size;
+  }
+  public static CSHungup ParseFrom(pb::ByteString data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static CSHungup ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static CSHungup ParseFrom(byte[] data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static CSHungup ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static CSHungup ParseFrom(global::System.IO.Stream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static CSHungup ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  public static CSHungup ParseDelimitedFrom(global::System.IO.Stream input) {
+    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
+  }
+  public static CSHungup ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
+  }
+  public static CSHungup ParseFrom(pb::ICodedInputStream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static CSHungup ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  private CSHungup MakeReadOnly() {
+    return this;
+  }
+  
+  public static Builder CreateBuilder() { return new Builder(); }
+  public override Builder ToBuilder() { return CreateBuilder(this); }
+  public override Builder CreateBuilderForType() { return new Builder(); }
+  public static Builder CreateBuilder(CSHungup prototype) {
+    return new Builder(prototype);
+  }
+  
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class Builder : pb::GeneratedBuilder<CSHungup, Builder> {
+    protected override Builder ThisBuilder {
+      get { return this; }
+    }
+    public Builder() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+    }
+    internal Builder(CSHungup cloneFrom) {
+      result = cloneFrom;
+      resultIsReadOnly = true;
+    }
+    
+    private bool resultIsReadOnly;
+    private CSHungup result;
+    
+    private CSHungup PrepareBuilder() {
+      if (resultIsReadOnly) {
+        CSHungup original = result;
+        result = new CSHungup();
+        resultIsReadOnly = false;
+        MergeFrom(original);
+      }
+      return result;
+    }
+    
+    public override bool IsInitialized {
+      get { return result.IsInitialized; }
+    }
+    
+    protected override CSHungup MessageBeingBuilt {
+      get { return PrepareBuilder(); }
+    }
+    
+    public override Builder Clear() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+      return this;
+    }
+    
+    public override Builder Clone() {
+      if (resultIsReadOnly) {
+        return new Builder(result);
+      } else {
+        return new Builder().MergeFrom(result);
+      }
+    }
+    
+    public override pbd::MessageDescriptor DescriptorForType {
+      get { return global::CSHungup.Descriptor; }
+    }
+    
+    public override CSHungup DefaultInstanceForType {
+      get { return global::CSHungup.DefaultInstance; }
+    }
+    
+    public override CSHungup BuildPartial() {
+      if (resultIsReadOnly) {
+        return result;
+      }
+      resultIsReadOnly = true;
+      return result.MakeReadOnly();
+    }
+    
+    public override Builder MergeFrom(pb::IMessage other) {
+      if (other is CSHungup) {
+        return MergeFrom((CSHungup) other);
+      } else {
+        base.MergeFrom(other);
+        return this;
+      }
+    }
+    
+    public override Builder MergeFrom(CSHungup other) {
+      if (other == global::CSHungup.DefaultInstance) return this;
+      PrepareBuilder();
+      if (other.HasCardnumber) {
+        Cardnumber = other.Cardnumber;
+      }
+      this.MergeUnknownFields(other.UnknownFields);
+      return this;
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input) {
+      return MergeFrom(input, pb::ExtensionRegistry.Empty);
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+      PrepareBuilder();
+      pb::UnknownFieldSet.Builder unknownFields = null;
+      uint tag;
+      string field_name;
+      while (input.ReadTag(out tag, out field_name)) {
+        if(tag == 0 && field_name != null) {
+          int field_ordinal = global::System.Array.BinarySearch(_cSHungupFieldNames, field_name, global::System.StringComparer.Ordinal);
+          if(field_ordinal >= 0)
+            tag = _cSHungupFieldTags[field_ordinal];
+          else {
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            continue;
+          }
+        }
+        switch (tag) {
+          case 0: {
+            throw pb::InvalidProtocolBufferException.InvalidTag();
+          }
+          default: {
+            if (pb::WireFormat.IsEndGroupTag(tag)) {
+              if (unknownFields != null) {
+                this.UnknownFields = unknownFields.Build();
+              }
+              return this;
+            }
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            break;
+          }
+          case 10: {
+            result.hasCardnumber = input.ReadString(ref result.cardnumber_);
+            break;
+          }
+        }
+      }
+      
+      if (unknownFields != null) {
+        this.UnknownFields = unknownFields.Build();
+      }
+      return this;
+    }
+    
+    
+    public bool HasCardnumber {
+      get { return result.hasCardnumber; }
+    }
+    public string Cardnumber {
+      get { return result.Cardnumber; }
+      set { SetCardnumber(value); }
+    }
+    public Builder SetCardnumber(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasCardnumber = true;
+      result.cardnumber_ = value;
+      return this;
+    }
+    public Builder ClearCardnumber() {
+      PrepareBuilder();
+      result.hasCardnumber = false;
+      result.cardnumber_ = "";
+      return this;
+    }
+  }
+  static CSHungup() {
+    object.ReferenceEquals(global::CoreProtocol.Descriptor, null);
+  }
+}
+
+[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+public sealed partial class CSCharge : pb::GeneratedMessage<CSCharge, CSCharge.Builder> {
+  private CSCharge() { }
+  private static readonly CSCharge defaultInstance = new CSCharge().MakeReadOnly();
+  private static readonly string[] _cSChargeFieldNames = new string[] { "amount", "cardnumber" };
+  private static readonly uint[] _cSChargeFieldTags = new uint[] { 24, 18 };
+  public static CSCharge DefaultInstance {
+    get { return defaultInstance; }
+  }
+  
+  public override CSCharge DefaultInstanceForType {
+    get { return DefaultInstance; }
+  }
+  
+  protected override CSCharge ThisMessage {
+    get { return this; }
+  }
+  
+  public static pbd::MessageDescriptor Descriptor {
+    get { return global::CoreProtocol.internal__static_CSCharge__Descriptor; }
+  }
+  
+  protected override pb::FieldAccess.FieldAccessorTable<CSCharge, CSCharge.Builder> InternalFieldAccessors {
+    get { return global::CoreProtocol.internal__static_CSCharge__FieldAccessorTable; }
+  }
+  
+  public const int CardnumberFieldNumber = 2;
+  private bool hasCardnumber;
+  private string cardnumber_ = "";
+  public bool HasCardnumber {
+    get { return hasCardnumber; }
+  }
+  public string Cardnumber {
+    get { return cardnumber_; }
+  }
+  
+  public const int AmountFieldNumber = 3;
+  private bool hasAmount;
+  private int amount_;
+  public bool HasAmount {
+    get { return hasAmount; }
+  }
+  public int Amount {
+    get { return amount_; }
+  }
+  
+  public override bool IsInitialized {
+    get {
+      if (!hasCardnumber) return false;
+      if (!hasAmount) return false;
+      return true;
+    }
+  }
+  
+  public override void WriteTo(pb::ICodedOutputStream output) {
+    CalcSerializedSize();
+    string[] field_names = _cSChargeFieldNames;
+    if (hasCardnumber) {
+      output.WriteString(2, field_names[1], Cardnumber);
+    }
+    if (hasAmount) {
+      output.WriteInt32(3, field_names[0], Amount);
+    }
+    UnknownFields.WriteTo(output);
+  }
+  
+  private int memoizedSerializedSize = -1;
+  public override int SerializedSize {
+    get {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+      return CalcSerializedSize();
+    }
+  }
+  
+  private int CalcSerializedSize() {
+    int size = memoizedSerializedSize;
+    if (size != -1) return size;
+    
+    size = 0;
+    if (hasCardnumber) {
+      size += pb::CodedOutputStream.ComputeStringSize(2, Cardnumber);
+    }
+    if (hasAmount) {
+      size += pb::CodedOutputStream.ComputeInt32Size(3, Amount);
+    }
+    size += UnknownFields.SerializedSize;
+    memoizedSerializedSize = size;
+    return size;
+  }
+  public static CSCharge ParseFrom(pb::ByteString data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static CSCharge ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static CSCharge ParseFrom(byte[] data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static CSCharge ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static CSCharge ParseFrom(global::System.IO.Stream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static CSCharge ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  public static CSCharge ParseDelimitedFrom(global::System.IO.Stream input) {
+    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
+  }
+  public static CSCharge ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
+  }
+  public static CSCharge ParseFrom(pb::ICodedInputStream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static CSCharge ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  private CSCharge MakeReadOnly() {
+    return this;
+  }
+  
+  public static Builder CreateBuilder() { return new Builder(); }
+  public override Builder ToBuilder() { return CreateBuilder(this); }
+  public override Builder CreateBuilderForType() { return new Builder(); }
+  public static Builder CreateBuilder(CSCharge prototype) {
+    return new Builder(prototype);
+  }
+  
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class Builder : pb::GeneratedBuilder<CSCharge, Builder> {
+    protected override Builder ThisBuilder {
+      get { return this; }
+    }
+    public Builder() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+    }
+    internal Builder(CSCharge cloneFrom) {
+      result = cloneFrom;
+      resultIsReadOnly = true;
+    }
+    
+    private bool resultIsReadOnly;
+    private CSCharge result;
+    
+    private CSCharge PrepareBuilder() {
+      if (resultIsReadOnly) {
+        CSCharge original = result;
+        result = new CSCharge();
+        resultIsReadOnly = false;
+        MergeFrom(original);
+      }
+      return result;
+    }
+    
+    public override bool IsInitialized {
+      get { return result.IsInitialized; }
+    }
+    
+    protected override CSCharge MessageBeingBuilt {
+      get { return PrepareBuilder(); }
+    }
+    
+    public override Builder Clear() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+      return this;
+    }
+    
+    public override Builder Clone() {
+      if (resultIsReadOnly) {
+        return new Builder(result);
+      } else {
+        return new Builder().MergeFrom(result);
+      }
+    }
+    
+    public override pbd::MessageDescriptor DescriptorForType {
+      get { return global::CSCharge.Descriptor; }
+    }
+    
+    public override CSCharge DefaultInstanceForType {
+      get { return global::CSCharge.DefaultInstance; }
+    }
+    
+    public override CSCharge BuildPartial() {
+      if (resultIsReadOnly) {
+        return result;
+      }
+      resultIsReadOnly = true;
+      return result.MakeReadOnly();
+    }
+    
+    public override Builder MergeFrom(pb::IMessage other) {
+      if (other is CSCharge) {
+        return MergeFrom((CSCharge) other);
+      } else {
+        base.MergeFrom(other);
+        return this;
+      }
+    }
+    
+    public override Builder MergeFrom(CSCharge other) {
+      if (other == global::CSCharge.DefaultInstance) return this;
+      PrepareBuilder();
+      if (other.HasCardnumber) {
+        Cardnumber = other.Cardnumber;
+      }
+      if (other.HasAmount) {
+        Amount = other.Amount;
+      }
+      this.MergeUnknownFields(other.UnknownFields);
+      return this;
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input) {
+      return MergeFrom(input, pb::ExtensionRegistry.Empty);
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+      PrepareBuilder();
+      pb::UnknownFieldSet.Builder unknownFields = null;
+      uint tag;
+      string field_name;
+      while (input.ReadTag(out tag, out field_name)) {
+        if(tag == 0 && field_name != null) {
+          int field_ordinal = global::System.Array.BinarySearch(_cSChargeFieldNames, field_name, global::System.StringComparer.Ordinal);
+          if(field_ordinal >= 0)
+            tag = _cSChargeFieldTags[field_ordinal];
+          else {
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            continue;
+          }
+        }
+        switch (tag) {
+          case 0: {
+            throw pb::InvalidProtocolBufferException.InvalidTag();
+          }
+          default: {
+            if (pb::WireFormat.IsEndGroupTag(tag)) {
+              if (unknownFields != null) {
+                this.UnknownFields = unknownFields.Build();
+              }
+              return this;
+            }
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            break;
+          }
+          case 18: {
+            result.hasCardnumber = input.ReadString(ref result.cardnumber_);
+            break;
+          }
+          case 24: {
+            result.hasAmount = input.ReadInt32(ref result.amount_);
+            break;
+          }
+        }
+      }
+      
+      if (unknownFields != null) {
+        this.UnknownFields = unknownFields.Build();
+      }
+      return this;
+    }
+    
+    
+    public bool HasCardnumber {
+      get { return result.hasCardnumber; }
+    }
+    public string Cardnumber {
+      get { return result.Cardnumber; }
+      set { SetCardnumber(value); }
+    }
+    public Builder SetCardnumber(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasCardnumber = true;
+      result.cardnumber_ = value;
+      return this;
+    }
+    public Builder ClearCardnumber() {
+      PrepareBuilder();
+      result.hasCardnumber = false;
+      result.cardnumber_ = "";
+      return this;
+    }
+    
+    public bool HasAmount {
+      get { return result.hasAmount; }
+    }
+    public int Amount {
+      get { return result.Amount; }
+      set { SetAmount(value); }
+    }
+    public Builder SetAmount(int value) {
+      PrepareBuilder();
+      result.hasAmount = true;
+      result.amount_ = value;
+      return this;
+    }
+    public Builder ClearAmount() {
+      PrepareBuilder();
+      result.hasAmount = false;
+      result.amount_ = 0;
+      return this;
+    }
+  }
+  static CSCharge() {
+    object.ReferenceEquals(global::CoreProtocol.Descriptor, null);
+  }
+}
+
+[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+public sealed partial class SCCharge : pb::GeneratedMessage<SCCharge, SCCharge.Builder> {
+  private SCCharge() { }
+  private static readonly SCCharge defaultInstance = new SCCharge().MakeReadOnly();
+  private static readonly string[] _sCChargeFieldNames = new string[] { "qrcode" };
+  private static readonly uint[] _sCChargeFieldTags = new uint[] { 10 };
+  public static SCCharge DefaultInstance {
+    get { return defaultInstance; }
+  }
+  
+  public override SCCharge DefaultInstanceForType {
+    get { return DefaultInstance; }
+  }
+  
+  protected override SCCharge ThisMessage {
+    get { return this; }
+  }
+  
+  public static pbd::MessageDescriptor Descriptor {
+    get { return global::CoreProtocol.internal__static_SCCharge__Descriptor; }
+  }
+  
+  protected override pb::FieldAccess.FieldAccessorTable<SCCharge, SCCharge.Builder> InternalFieldAccessors {
+    get { return global::CoreProtocol.internal__static_SCCharge__FieldAccessorTable; }
+  }
+  
+  public const int QrcodeFieldNumber = 1;
+  private bool hasQrcode;
+  private string qrcode_ = "";
+  public bool HasQrcode {
+    get { return hasQrcode; }
+  }
+  public string Qrcode {
+    get { return qrcode_; }
+  }
+  
+  public override bool IsInitialized {
+    get {
+      if (!hasQrcode) return false;
+      return true;
+    }
+  }
+  
+  public override void WriteTo(pb::ICodedOutputStream output) {
+    CalcSerializedSize();
+    string[] field_names = _sCChargeFieldNames;
+    if (hasQrcode) {
+      output.WriteString(1, field_names[0], Qrcode);
+    }
+    UnknownFields.WriteTo(output);
+  }
+  
+  private int memoizedSerializedSize = -1;
+  public override int SerializedSize {
+    get {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+      return CalcSerializedSize();
+    }
+  }
+  
+  private int CalcSerializedSize() {
+    int size = memoizedSerializedSize;
+    if (size != -1) return size;
+    
+    size = 0;
+    if (hasQrcode) {
+      size += pb::CodedOutputStream.ComputeStringSize(1, Qrcode);
+    }
+    size += UnknownFields.SerializedSize;
+    memoizedSerializedSize = size;
+    return size;
+  }
+  public static SCCharge ParseFrom(pb::ByteString data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static SCCharge ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static SCCharge ParseFrom(byte[] data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static SCCharge ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static SCCharge ParseFrom(global::System.IO.Stream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static SCCharge ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  public static SCCharge ParseDelimitedFrom(global::System.IO.Stream input) {
+    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
+  }
+  public static SCCharge ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
+  }
+  public static SCCharge ParseFrom(pb::ICodedInputStream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static SCCharge ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  private SCCharge MakeReadOnly() {
+    return this;
+  }
+  
+  public static Builder CreateBuilder() { return new Builder(); }
+  public override Builder ToBuilder() { return CreateBuilder(this); }
+  public override Builder CreateBuilderForType() { return new Builder(); }
+  public static Builder CreateBuilder(SCCharge prototype) {
+    return new Builder(prototype);
+  }
+  
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class Builder : pb::GeneratedBuilder<SCCharge, Builder> {
+    protected override Builder ThisBuilder {
+      get { return this; }
+    }
+    public Builder() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+    }
+    internal Builder(SCCharge cloneFrom) {
+      result = cloneFrom;
+      resultIsReadOnly = true;
+    }
+    
+    private bool resultIsReadOnly;
+    private SCCharge result;
+    
+    private SCCharge PrepareBuilder() {
+      if (resultIsReadOnly) {
+        SCCharge original = result;
+        result = new SCCharge();
+        resultIsReadOnly = false;
+        MergeFrom(original);
+      }
+      return result;
+    }
+    
+    public override bool IsInitialized {
+      get { return result.IsInitialized; }
+    }
+    
+    protected override SCCharge MessageBeingBuilt {
+      get { return PrepareBuilder(); }
+    }
+    
+    public override Builder Clear() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+      return this;
+    }
+    
+    public override Builder Clone() {
+      if (resultIsReadOnly) {
+        return new Builder(result);
+      } else {
+        return new Builder().MergeFrom(result);
+      }
+    }
+    
+    public override pbd::MessageDescriptor DescriptorForType {
+      get { return global::SCCharge.Descriptor; }
+    }
+    
+    public override SCCharge DefaultInstanceForType {
+      get { return global::SCCharge.DefaultInstance; }
+    }
+    
+    public override SCCharge BuildPartial() {
+      if (resultIsReadOnly) {
+        return result;
+      }
+      resultIsReadOnly = true;
+      return result.MakeReadOnly();
+    }
+    
+    public override Builder MergeFrom(pb::IMessage other) {
+      if (other is SCCharge) {
+        return MergeFrom((SCCharge) other);
+      } else {
+        base.MergeFrom(other);
+        return this;
+      }
+    }
+    
+    public override Builder MergeFrom(SCCharge other) {
+      if (other == global::SCCharge.DefaultInstance) return this;
+      PrepareBuilder();
+      if (other.HasQrcode) {
+        Qrcode = other.Qrcode;
+      }
+      this.MergeUnknownFields(other.UnknownFields);
+      return this;
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input) {
+      return MergeFrom(input, pb::ExtensionRegistry.Empty);
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+      PrepareBuilder();
+      pb::UnknownFieldSet.Builder unknownFields = null;
+      uint tag;
+      string field_name;
+      while (input.ReadTag(out tag, out field_name)) {
+        if(tag == 0 && field_name != null) {
+          int field_ordinal = global::System.Array.BinarySearch(_sCChargeFieldNames, field_name, global::System.StringComparer.Ordinal);
+          if(field_ordinal >= 0)
+            tag = _sCChargeFieldTags[field_ordinal];
+          else {
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            continue;
+          }
+        }
+        switch (tag) {
+          case 0: {
+            throw pb::InvalidProtocolBufferException.InvalidTag();
+          }
+          default: {
+            if (pb::WireFormat.IsEndGroupTag(tag)) {
+              if (unknownFields != null) {
+                this.UnknownFields = unknownFields.Build();
+              }
+              return this;
+            }
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            break;
+          }
+          case 10: {
+            result.hasQrcode = input.ReadString(ref result.qrcode_);
+            break;
+          }
+        }
+      }
+      
+      if (unknownFields != null) {
+        this.UnknownFields = unknownFields.Build();
+      }
+      return this;
+    }
+    
+    
+    public bool HasQrcode {
+      get { return result.hasQrcode; }
+    }
+    public string Qrcode {
+      get { return result.Qrcode; }
+      set { SetQrcode(value); }
+    }
+    public Builder SetQrcode(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasQrcode = true;
+      result.qrcode_ = value;
+      return this;
+    }
+    public Builder ClearQrcode() {
+      PrepareBuilder();
+      result.hasQrcode = false;
+      result.qrcode_ = "";
+      return this;
+    }
+  }
+  static SCCharge() {
+    object.ReferenceEquals(global::CoreProtocol.Descriptor, null);
+  }
+}
+
+[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+public sealed partial class SCChargeResult : pb::GeneratedMessage<SCChargeResult, SCChargeResult.Builder> {
+  private SCChargeResult() { }
+  private static readonly SCChargeResult defaultInstance = new SCChargeResult().MakeReadOnly();
+  private static readonly string[] _sCChargeResultFieldNames = new string[] { "balance", "cardnumber", "integal", "name", "recharge", "right" };
+  private static readonly uint[] _sCChargeResultFieldTags = new uint[] { 40, 18, 48, 10, 32, 26 };
+  public static SCChargeResult DefaultInstance {
+    get { return defaultInstance; }
+  }
+  
+  public override SCChargeResult DefaultInstanceForType {
+    get { return DefaultInstance; }
+  }
+  
+  protected override SCChargeResult ThisMessage {
+    get { return this; }
+  }
+  
+  public static pbd::MessageDescriptor Descriptor {
+    get { return global::CoreProtocol.internal__static_SCChargeResult__Descriptor; }
+  }
+  
+  protected override pb::FieldAccess.FieldAccessorTable<SCChargeResult, SCChargeResult.Builder> InternalFieldAccessors {
+    get { return global::CoreProtocol.internal__static_SCChargeResult__FieldAccessorTable; }
+  }
+  
+  public const int NameFieldNumber = 1;
+  private bool hasName;
+  private string name_ = "";
+  public bool HasName {
+    get { return hasName; }
+  }
+  public string Name {
+    get { return name_; }
+  }
+  
+  public const int CardnumberFieldNumber = 2;
+  private bool hasCardnumber;
+  private string cardnumber_ = "";
+  public bool HasCardnumber {
+    get { return hasCardnumber; }
+  }
+  public string Cardnumber {
+    get { return cardnumber_; }
+  }
+  
+  public const int RightFieldNumber = 3;
+  private bool hasRight;
+  private string right_ = "";
+  public bool HasRight {
+    get { return hasRight; }
+  }
+  public string Right {
+    get { return right_; }
+  }
+  
+  public const int RechargeFieldNumber = 4;
+  private bool hasRecharge;
+  private int recharge_;
+  public bool HasRecharge {
+    get { return hasRecharge; }
+  }
+  public int Recharge {
+    get { return recharge_; }
+  }
+  
+  public const int BalanceFieldNumber = 5;
+  private bool hasBalance;
+  private int balance_;
+  public bool HasBalance {
+    get { return hasBalance; }
+  }
+  public int Balance {
+    get { return balance_; }
+  }
+  
+  public const int IntegalFieldNumber = 6;
+  private bool hasIntegal;
+  private int integal_;
+  public bool HasIntegal {
+    get { return hasIntegal; }
+  }
+  public int Integal {
+    get { return integal_; }
+  }
+  
+  public override bool IsInitialized {
+    get {
+      if (!hasName) return false;
+      if (!hasCardnumber) return false;
+      if (!hasRight) return false;
+      if (!hasRecharge) return false;
+      if (!hasBalance) return false;
+      if (!hasIntegal) return false;
+      return true;
+    }
+  }
+  
+  public override void WriteTo(pb::ICodedOutputStream output) {
+    CalcSerializedSize();
+    string[] field_names = _sCChargeResultFieldNames;
+    if (hasName) {
+      output.WriteString(1, field_names[3], Name);
+    }
+    if (hasCardnumber) {
+      output.WriteString(2, field_names[1], Cardnumber);
+    }
+    if (hasRight) {
+      output.WriteString(3, field_names[5], Right);
+    }
+    if (hasRecharge) {
+      output.WriteInt32(4, field_names[4], Recharge);
+    }
+    if (hasBalance) {
+      output.WriteInt32(5, field_names[0], Balance);
+    }
+    if (hasIntegal) {
+      output.WriteInt32(6, field_names[2], Integal);
+    }
+    UnknownFields.WriteTo(output);
+  }
+  
+  private int memoizedSerializedSize = -1;
+  public override int SerializedSize {
+    get {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+      return CalcSerializedSize();
+    }
+  }
+  
+  private int CalcSerializedSize() {
+    int size = memoizedSerializedSize;
+    if (size != -1) return size;
+    
+    size = 0;
+    if (hasName) {
+      size += pb::CodedOutputStream.ComputeStringSize(1, Name);
+    }
+    if (hasCardnumber) {
+      size += pb::CodedOutputStream.ComputeStringSize(2, Cardnumber);
+    }
+    if (hasRight) {
+      size += pb::CodedOutputStream.ComputeStringSize(3, Right);
+    }
+    if (hasRecharge) {
+      size += pb::CodedOutputStream.ComputeInt32Size(4, Recharge);
+    }
+    if (hasBalance) {
+      size += pb::CodedOutputStream.ComputeInt32Size(5, Balance);
+    }
+    if (hasIntegal) {
+      size += pb::CodedOutputStream.ComputeInt32Size(6, Integal);
+    }
+    size += UnknownFields.SerializedSize;
+    memoizedSerializedSize = size;
+    return size;
+  }
+  public static SCChargeResult ParseFrom(pb::ByteString data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static SCChargeResult ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static SCChargeResult ParseFrom(byte[] data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static SCChargeResult ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static SCChargeResult ParseFrom(global::System.IO.Stream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static SCChargeResult ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  public static SCChargeResult ParseDelimitedFrom(global::System.IO.Stream input) {
+    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
+  }
+  public static SCChargeResult ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
+  }
+  public static SCChargeResult ParseFrom(pb::ICodedInputStream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static SCChargeResult ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  private SCChargeResult MakeReadOnly() {
+    return this;
+  }
+  
+  public static Builder CreateBuilder() { return new Builder(); }
+  public override Builder ToBuilder() { return CreateBuilder(this); }
+  public override Builder CreateBuilderForType() { return new Builder(); }
+  public static Builder CreateBuilder(SCChargeResult prototype) {
+    return new Builder(prototype);
+  }
+  
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class Builder : pb::GeneratedBuilder<SCChargeResult, Builder> {
+    protected override Builder ThisBuilder {
+      get { return this; }
+    }
+    public Builder() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+    }
+    internal Builder(SCChargeResult cloneFrom) {
+      result = cloneFrom;
+      resultIsReadOnly = true;
+    }
+    
+    private bool resultIsReadOnly;
+    private SCChargeResult result;
+    
+    private SCChargeResult PrepareBuilder() {
+      if (resultIsReadOnly) {
+        SCChargeResult original = result;
+        result = new SCChargeResult();
+        resultIsReadOnly = false;
+        MergeFrom(original);
+      }
+      return result;
+    }
+    
+    public override bool IsInitialized {
+      get { return result.IsInitialized; }
+    }
+    
+    protected override SCChargeResult MessageBeingBuilt {
+      get { return PrepareBuilder(); }
+    }
+    
+    public override Builder Clear() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+      return this;
+    }
+    
+    public override Builder Clone() {
+      if (resultIsReadOnly) {
+        return new Builder(result);
+      } else {
+        return new Builder().MergeFrom(result);
+      }
+    }
+    
+    public override pbd::MessageDescriptor DescriptorForType {
+      get { return global::SCChargeResult.Descriptor; }
+    }
+    
+    public override SCChargeResult DefaultInstanceForType {
+      get { return global::SCChargeResult.DefaultInstance; }
+    }
+    
+    public override SCChargeResult BuildPartial() {
+      if (resultIsReadOnly) {
+        return result;
+      }
+      resultIsReadOnly = true;
+      return result.MakeReadOnly();
+    }
+    
+    public override Builder MergeFrom(pb::IMessage other) {
+      if (other is SCChargeResult) {
+        return MergeFrom((SCChargeResult) other);
+      } else {
+        base.MergeFrom(other);
+        return this;
+      }
+    }
+    
+    public override Builder MergeFrom(SCChargeResult other) {
+      if (other == global::SCChargeResult.DefaultInstance) return this;
+      PrepareBuilder();
+      if (other.HasName) {
+        Name = other.Name;
+      }
+      if (other.HasCardnumber) {
+        Cardnumber = other.Cardnumber;
+      }
+      if (other.HasRight) {
+        Right = other.Right;
+      }
+      if (other.HasRecharge) {
+        Recharge = other.Recharge;
+      }
+      if (other.HasBalance) {
+        Balance = other.Balance;
+      }
+      if (other.HasIntegal) {
+        Integal = other.Integal;
+      }
+      this.MergeUnknownFields(other.UnknownFields);
+      return this;
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input) {
+      return MergeFrom(input, pb::ExtensionRegistry.Empty);
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+      PrepareBuilder();
+      pb::UnknownFieldSet.Builder unknownFields = null;
+      uint tag;
+      string field_name;
+      while (input.ReadTag(out tag, out field_name)) {
+        if(tag == 0 && field_name != null) {
+          int field_ordinal = global::System.Array.BinarySearch(_sCChargeResultFieldNames, field_name, global::System.StringComparer.Ordinal);
+          if(field_ordinal >= 0)
+            tag = _sCChargeResultFieldTags[field_ordinal];
+          else {
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            continue;
+          }
+        }
+        switch (tag) {
+          case 0: {
+            throw pb::InvalidProtocolBufferException.InvalidTag();
+          }
+          default: {
+            if (pb::WireFormat.IsEndGroupTag(tag)) {
+              if (unknownFields != null) {
+                this.UnknownFields = unknownFields.Build();
+              }
+              return this;
+            }
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            break;
+          }
+          case 10: {
+            result.hasName = input.ReadString(ref result.name_);
+            break;
+          }
+          case 18: {
+            result.hasCardnumber = input.ReadString(ref result.cardnumber_);
+            break;
+          }
+          case 26: {
+            result.hasRight = input.ReadString(ref result.right_);
+            break;
+          }
+          case 32: {
+            result.hasRecharge = input.ReadInt32(ref result.recharge_);
+            break;
+          }
+          case 40: {
+            result.hasBalance = input.ReadInt32(ref result.balance_);
+            break;
+          }
+          case 48: {
+            result.hasIntegal = input.ReadInt32(ref result.integal_);
+            break;
+          }
+        }
+      }
+      
+      if (unknownFields != null) {
+        this.UnknownFields = unknownFields.Build();
+      }
+      return this;
+    }
+    
+    
+    public bool HasName {
+      get { return result.hasName; }
+    }
+    public string Name {
+      get { return result.Name; }
+      set { SetName(value); }
+    }
+    public Builder SetName(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasName = true;
+      result.name_ = value;
+      return this;
+    }
+    public Builder ClearName() {
+      PrepareBuilder();
+      result.hasName = false;
+      result.name_ = "";
+      return this;
+    }
+    
+    public bool HasCardnumber {
+      get { return result.hasCardnumber; }
+    }
+    public string Cardnumber {
+      get { return result.Cardnumber; }
+      set { SetCardnumber(value); }
+    }
+    public Builder SetCardnumber(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasCardnumber = true;
+      result.cardnumber_ = value;
+      return this;
+    }
+    public Builder ClearCardnumber() {
+      PrepareBuilder();
+      result.hasCardnumber = false;
+      result.cardnumber_ = "";
+      return this;
+    }
+    
+    public bool HasRight {
+      get { return result.hasRight; }
+    }
+    public string Right {
+      get { return result.Right; }
+      set { SetRight(value); }
+    }
+    public Builder SetRight(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasRight = true;
+      result.right_ = value;
+      return this;
+    }
+    public Builder ClearRight() {
+      PrepareBuilder();
+      result.hasRight = false;
+      result.right_ = "";
+      return this;
+    }
+    
+    public bool HasRecharge {
+      get { return result.hasRecharge; }
+    }
+    public int Recharge {
+      get { return result.Recharge; }
+      set { SetRecharge(value); }
+    }
+    public Builder SetRecharge(int value) {
+      PrepareBuilder();
+      result.hasRecharge = true;
+      result.recharge_ = value;
+      return this;
+    }
+    public Builder ClearRecharge() {
+      PrepareBuilder();
+      result.hasRecharge = false;
+      result.recharge_ = 0;
+      return this;
+    }
+    
+    public bool HasBalance {
+      get { return result.hasBalance; }
+    }
+    public int Balance {
+      get { return result.Balance; }
+      set { SetBalance(value); }
+    }
+    public Builder SetBalance(int value) {
+      PrepareBuilder();
+      result.hasBalance = true;
+      result.balance_ = value;
+      return this;
+    }
+    public Builder ClearBalance() {
+      PrepareBuilder();
+      result.hasBalance = false;
+      result.balance_ = 0;
+      return this;
+    }
+    
+    public bool HasIntegal {
+      get { return result.hasIntegal; }
+    }
+    public int Integal {
+      get { return result.Integal; }
+      set { SetIntegal(value); }
+    }
+    public Builder SetIntegal(int value) {
+      PrepareBuilder();
+      result.hasIntegal = true;
+      result.integal_ = value;
+      return this;
+    }
+    public Builder ClearIntegal() {
+      PrepareBuilder();
+      result.hasIntegal = false;
+      result.integal_ = 0;
+      return this;
+    }
+  }
+  static SCChargeResult() {
+    object.ReferenceEquals(global::CoreProtocol.Descriptor, null);
+  }
+}
+
+[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+public sealed partial class SCShop : pb::GeneratedMessage<SCShop, SCShop.Builder> {
+  private SCShop() { }
+  private static readonly SCShop defaultInstance = new SCShop().MakeReadOnly();
+  private static readonly string[] _sCShopFieldNames = new string[] { "goods" };
+  private static readonly uint[] _sCShopFieldTags = new uint[] { 10 };
+  public static SCShop DefaultInstance {
+    get { return defaultInstance; }
+  }
+  
+  public override SCShop DefaultInstanceForType {
+    get { return DefaultInstance; }
+  }
+  
+  protected override SCShop ThisMessage {
+    get { return this; }
+  }
+  
+  public static pbd::MessageDescriptor Descriptor {
+    get { return global::CoreProtocol.internal__static_SCShop__Descriptor; }
+  }
+  
+  protected override pb::FieldAccess.FieldAccessorTable<SCShop, SCShop.Builder> InternalFieldAccessors {
+    get { return global::CoreProtocol.internal__static_SCShop__FieldAccessorTable; }
+  }
+  
+  public const int GoodsFieldNumber = 1;
+  private pbc::PopsicleList<global::StructGoods> goods_ = new pbc::PopsicleList<global::StructGoods>();
+  public scg::IList<global::StructGoods> GoodsList {
+    get { return goods_; }
+  }
+  public int GoodsCount {
+    get { return goods_.Count; }
+  }
+  public global::StructGoods GetGoods(int index) {
+    return goods_[index];
+  }
+  
+  public override bool IsInitialized {
+    get {
+      foreach (global::StructGoods element in GoodsList) {
+        if (!element.IsInitialized) return false;
+      }
+      return true;
+    }
+  }
+  
+  public override void WriteTo(pb::ICodedOutputStream output) {
+    CalcSerializedSize();
+    string[] field_names = _sCShopFieldNames;
+    if (goods_.Count > 0) {
+      output.WriteMessageArray(1, field_names[0], goods_);
+    }
+    UnknownFields.WriteTo(output);
+  }
+  
+  private int memoizedSerializedSize = -1;
+  public override int SerializedSize {
+    get {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+      return CalcSerializedSize();
+    }
+  }
+  
+  private int CalcSerializedSize() {
+    int size = memoizedSerializedSize;
+    if (size != -1) return size;
+    
+    size = 0;
+    foreach (global::StructGoods element in GoodsList) {
+      size += pb::CodedOutputStream.ComputeMessageSize(1, element);
+    }
+    size += UnknownFields.SerializedSize;
+    memoizedSerializedSize = size;
+    return size;
+  }
+  public static SCShop ParseFrom(pb::ByteString data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static SCShop ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static SCShop ParseFrom(byte[] data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static SCShop ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static SCShop ParseFrom(global::System.IO.Stream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static SCShop ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  public static SCShop ParseDelimitedFrom(global::System.IO.Stream input) {
+    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
+  }
+  public static SCShop ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
+  }
+  public static SCShop ParseFrom(pb::ICodedInputStream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static SCShop ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  private SCShop MakeReadOnly() {
+    goods_.MakeReadOnly();
+    return this;
+  }
+  
+  public static Builder CreateBuilder() { return new Builder(); }
+  public override Builder ToBuilder() { return CreateBuilder(this); }
+  public override Builder CreateBuilderForType() { return new Builder(); }
+  public static Builder CreateBuilder(SCShop prototype) {
+    return new Builder(prototype);
+  }
+  
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class Builder : pb::GeneratedBuilder<SCShop, Builder> {
+    protected override Builder ThisBuilder {
+      get { return this; }
+    }
+    public Builder() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+    }
+    internal Builder(SCShop cloneFrom) {
+      result = cloneFrom;
+      resultIsReadOnly = true;
+    }
+    
+    private bool resultIsReadOnly;
+    private SCShop result;
+    
+    private SCShop PrepareBuilder() {
+      if (resultIsReadOnly) {
+        SCShop original = result;
+        result = new SCShop();
+        resultIsReadOnly = false;
+        MergeFrom(original);
+      }
+      return result;
+    }
+    
+    public override bool IsInitialized {
+      get { return result.IsInitialized; }
+    }
+    
+    protected override SCShop MessageBeingBuilt {
+      get { return PrepareBuilder(); }
+    }
+    
+    public override Builder Clear() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+      return this;
+    }
+    
+    public override Builder Clone() {
+      if (resultIsReadOnly) {
+        return new Builder(result);
+      } else {
+        return new Builder().MergeFrom(result);
+      }
+    }
+    
+    public override pbd::MessageDescriptor DescriptorForType {
+      get { return global::SCShop.Descriptor; }
+    }
+    
+    public override SCShop DefaultInstanceForType {
+      get { return global::SCShop.DefaultInstance; }
+    }
+    
+    public override SCShop BuildPartial() {
+      if (resultIsReadOnly) {
+        return result;
+      }
+      resultIsReadOnly = true;
+      return result.MakeReadOnly();
+    }
+    
+    public override Builder MergeFrom(pb::IMessage other) {
+      if (other is SCShop) {
+        return MergeFrom((SCShop) other);
+      } else {
+        base.MergeFrom(other);
+        return this;
+      }
+    }
+    
+    public override Builder MergeFrom(SCShop other) {
+      if (other == global::SCShop.DefaultInstance) return this;
+      PrepareBuilder();
+      if (other.goods_.Count != 0) {
+        result.goods_.Add(other.goods_);
+      }
+      this.MergeUnknownFields(other.UnknownFields);
+      return this;
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input) {
+      return MergeFrom(input, pb::ExtensionRegistry.Empty);
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+      PrepareBuilder();
+      pb::UnknownFieldSet.Builder unknownFields = null;
+      uint tag;
+      string field_name;
+      while (input.ReadTag(out tag, out field_name)) {
+        if(tag == 0 && field_name != null) {
+          int field_ordinal = global::System.Array.BinarySearch(_sCShopFieldNames, field_name, global::System.StringComparer.Ordinal);
+          if(field_ordinal >= 0)
+            tag = _sCShopFieldTags[field_ordinal];
+          else {
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            continue;
+          }
+        }
+        switch (tag) {
+          case 0: {
+            throw pb::InvalidProtocolBufferException.InvalidTag();
+          }
+          default: {
+            if (pb::WireFormat.IsEndGroupTag(tag)) {
+              if (unknownFields != null) {
+                this.UnknownFields = unknownFields.Build();
+              }
+              return this;
+            }
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            break;
+          }
+          case 10: {
+            input.ReadMessageArray(tag, field_name, result.goods_, global::StructGoods.DefaultInstance, extensionRegistry);
+            break;
+          }
+        }
+      }
+      
+      if (unknownFields != null) {
+        this.UnknownFields = unknownFields.Build();
+      }
+      return this;
+    }
+    
+    
+    public pbc::IPopsicleList<global::StructGoods> GoodsList {
+      get { return PrepareBuilder().goods_; }
+    }
+    public int GoodsCount {
+      get { return result.GoodsCount; }
+    }
+    public global::StructGoods GetGoods(int index) {
+      return result.GetGoods(index);
+    }
+    public Builder SetGoods(int index, global::StructGoods value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.goods_[index] = value;
+      return this;
+    }
+    public Builder SetGoods(int index, global::StructGoods.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
+      PrepareBuilder();
+      result.goods_[index] = builderForValue.Build();
+      return this;
+    }
+    public Builder AddGoods(global::StructGoods value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.goods_.Add(value);
+      return this;
+    }
+    public Builder AddGoods(global::StructGoods.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
+      PrepareBuilder();
+      result.goods_.Add(builderForValue.Build());
+      return this;
+    }
+    public Builder AddRangeGoods(scg::IEnumerable<global::StructGoods> values) {
+      PrepareBuilder();
+      result.goods_.Add(values);
+      return this;
+    }
+    public Builder ClearGoods() {
+      PrepareBuilder();
+      result.goods_.Clear();
+      return this;
+    }
+  }
+  static SCShop() {
+    object.ReferenceEquals(global::CoreProtocol.Descriptor, null);
+  }
+}
+
+[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+public sealed partial class CSCartAdd : pb::GeneratedMessage<CSCartAdd, CSCartAdd.Builder> {
+  private CSCartAdd() { }
+  private static readonly CSCartAdd defaultInstance = new CSCartAdd().MakeReadOnly();
+  private static readonly string[] _cSCartAddFieldNames = new string[] { "goodsid", "goodsnum" };
+  private static readonly uint[] _cSCartAddFieldTags = new uint[] { 8, 16 };
+  public static CSCartAdd DefaultInstance {
+    get { return defaultInstance; }
+  }
+  
+  public override CSCartAdd DefaultInstanceForType {
+    get { return DefaultInstance; }
+  }
+  
+  protected override CSCartAdd ThisMessage {
+    get { return this; }
+  }
+  
+  public static pbd::MessageDescriptor Descriptor {
+    get { return global::CoreProtocol.internal__static_CSCartAdd__Descriptor; }
+  }
+  
+  protected override pb::FieldAccess.FieldAccessorTable<CSCartAdd, CSCartAdd.Builder> InternalFieldAccessors {
+    get { return global::CoreProtocol.internal__static_CSCartAdd__FieldAccessorTable; }
+  }
+  
+  public const int GoodsidFieldNumber = 1;
+  private bool hasGoodsid;
+  private int goodsid_;
+  public bool HasGoodsid {
+    get { return hasGoodsid; }
+  }
+  public int Goodsid {
+    get { return goodsid_; }
+  }
+  
+  public const int GoodsnumFieldNumber = 2;
+  private bool hasGoodsnum;
+  private int goodsnum_;
+  public bool HasGoodsnum {
+    get { return hasGoodsnum; }
+  }
+  public int Goodsnum {
+    get { return goodsnum_; }
+  }
+  
+  public override bool IsInitialized {
+    get {
+      if (!hasGoodsid) return false;
+      if (!hasGoodsnum) return false;
+      return true;
+    }
+  }
+  
+  public override void WriteTo(pb::ICodedOutputStream output) {
+    CalcSerializedSize();
+    string[] field_names = _cSCartAddFieldNames;
+    if (hasGoodsid) {
+      output.WriteInt32(1, field_names[0], Goodsid);
+    }
+    if (hasGoodsnum) {
+      output.WriteInt32(2, field_names[1], Goodsnum);
+    }
+    UnknownFields.WriteTo(output);
+  }
+  
+  private int memoizedSerializedSize = -1;
+  public override int SerializedSize {
+    get {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+      return CalcSerializedSize();
+    }
+  }
+  
+  private int CalcSerializedSize() {
+    int size = memoizedSerializedSize;
+    if (size != -1) return size;
+    
+    size = 0;
+    if (hasGoodsid) {
+      size += pb::CodedOutputStream.ComputeInt32Size(1, Goodsid);
+    }
+    if (hasGoodsnum) {
+      size += pb::CodedOutputStream.ComputeInt32Size(2, Goodsnum);
+    }
+    size += UnknownFields.SerializedSize;
+    memoizedSerializedSize = size;
+    return size;
+  }
+  public static CSCartAdd ParseFrom(pb::ByteString data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static CSCartAdd ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static CSCartAdd ParseFrom(byte[] data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static CSCartAdd ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static CSCartAdd ParseFrom(global::System.IO.Stream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static CSCartAdd ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  public static CSCartAdd ParseDelimitedFrom(global::System.IO.Stream input) {
+    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
+  }
+  public static CSCartAdd ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
+  }
+  public static CSCartAdd ParseFrom(pb::ICodedInputStream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static CSCartAdd ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  private CSCartAdd MakeReadOnly() {
+    return this;
+  }
+  
+  public static Builder CreateBuilder() { return new Builder(); }
+  public override Builder ToBuilder() { return CreateBuilder(this); }
+  public override Builder CreateBuilderForType() { return new Builder(); }
+  public static Builder CreateBuilder(CSCartAdd prototype) {
+    return new Builder(prototype);
+  }
+  
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class Builder : pb::GeneratedBuilder<CSCartAdd, Builder> {
+    protected override Builder ThisBuilder {
+      get { return this; }
+    }
+    public Builder() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+    }
+    internal Builder(CSCartAdd cloneFrom) {
+      result = cloneFrom;
+      resultIsReadOnly = true;
+    }
+    
+    private bool resultIsReadOnly;
+    private CSCartAdd result;
+    
+    private CSCartAdd PrepareBuilder() {
+      if (resultIsReadOnly) {
+        CSCartAdd original = result;
+        result = new CSCartAdd();
+        resultIsReadOnly = false;
+        MergeFrom(original);
+      }
+      return result;
+    }
+    
+    public override bool IsInitialized {
+      get { return result.IsInitialized; }
+    }
+    
+    protected override CSCartAdd MessageBeingBuilt {
+      get { return PrepareBuilder(); }
+    }
+    
+    public override Builder Clear() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+      return this;
+    }
+    
+    public override Builder Clone() {
+      if (resultIsReadOnly) {
+        return new Builder(result);
+      } else {
+        return new Builder().MergeFrom(result);
+      }
+    }
+    
+    public override pbd::MessageDescriptor DescriptorForType {
+      get { return global::CSCartAdd.Descriptor; }
+    }
+    
+    public override CSCartAdd DefaultInstanceForType {
+      get { return global::CSCartAdd.DefaultInstance; }
+    }
+    
+    public override CSCartAdd BuildPartial() {
+      if (resultIsReadOnly) {
+        return result;
+      }
+      resultIsReadOnly = true;
+      return result.MakeReadOnly();
+    }
+    
+    public override Builder MergeFrom(pb::IMessage other) {
+      if (other is CSCartAdd) {
+        return MergeFrom((CSCartAdd) other);
+      } else {
+        base.MergeFrom(other);
+        return this;
+      }
+    }
+    
+    public override Builder MergeFrom(CSCartAdd other) {
+      if (other == global::CSCartAdd.DefaultInstance) return this;
+      PrepareBuilder();
+      if (other.HasGoodsid) {
+        Goodsid = other.Goodsid;
+      }
+      if (other.HasGoodsnum) {
+        Goodsnum = other.Goodsnum;
+      }
+      this.MergeUnknownFields(other.UnknownFields);
+      return this;
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input) {
+      return MergeFrom(input, pb::ExtensionRegistry.Empty);
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+      PrepareBuilder();
+      pb::UnknownFieldSet.Builder unknownFields = null;
+      uint tag;
+      string field_name;
+      while (input.ReadTag(out tag, out field_name)) {
+        if(tag == 0 && field_name != null) {
+          int field_ordinal = global::System.Array.BinarySearch(_cSCartAddFieldNames, field_name, global::System.StringComparer.Ordinal);
+          if(field_ordinal >= 0)
+            tag = _cSCartAddFieldTags[field_ordinal];
+          else {
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            continue;
+          }
+        }
+        switch (tag) {
+          case 0: {
+            throw pb::InvalidProtocolBufferException.InvalidTag();
+          }
+          default: {
+            if (pb::WireFormat.IsEndGroupTag(tag)) {
+              if (unknownFields != null) {
+                this.UnknownFields = unknownFields.Build();
+              }
+              return this;
+            }
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            break;
+          }
+          case 8: {
+            result.hasGoodsid = input.ReadInt32(ref result.goodsid_);
+            break;
+          }
+          case 16: {
+            result.hasGoodsnum = input.ReadInt32(ref result.goodsnum_);
+            break;
+          }
+        }
+      }
+      
+      if (unknownFields != null) {
+        this.UnknownFields = unknownFields.Build();
+      }
+      return this;
+    }
+    
+    
+    public bool HasGoodsid {
+      get { return result.hasGoodsid; }
+    }
+    public int Goodsid {
+      get { return result.Goodsid; }
+      set { SetGoodsid(value); }
+    }
+    public Builder SetGoodsid(int value) {
+      PrepareBuilder();
+      result.hasGoodsid = true;
+      result.goodsid_ = value;
+      return this;
+    }
+    public Builder ClearGoodsid() {
+      PrepareBuilder();
+      result.hasGoodsid = false;
+      result.goodsid_ = 0;
+      return this;
+    }
+    
+    public bool HasGoodsnum {
+      get { return result.hasGoodsnum; }
+    }
+    public int Goodsnum {
+      get { return result.Goodsnum; }
+      set { SetGoodsnum(value); }
+    }
+    public Builder SetGoodsnum(int value) {
+      PrepareBuilder();
+      result.hasGoodsnum = true;
+      result.goodsnum_ = value;
+      return this;
+    }
+    public Builder ClearGoodsnum() {
+      PrepareBuilder();
+      result.hasGoodsnum = false;
+      result.goodsnum_ = 0;
+      return this;
+    }
+  }
+  static CSCartAdd() {
+    object.ReferenceEquals(global::CoreProtocol.Descriptor, null);
+  }
+}
+
+[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+public sealed partial class CSCartDel : pb::GeneratedMessage<CSCartDel, CSCartDel.Builder> {
+  private CSCartDel() { }
+  private static readonly CSCartDel defaultInstance = new CSCartDel().MakeReadOnly();
+  private static readonly string[] _cSCartDelFieldNames = new string[] { "goodsid", "goodsnum" };
+  private static readonly uint[] _cSCartDelFieldTags = new uint[] { 8, 16 };
+  public static CSCartDel DefaultInstance {
+    get { return defaultInstance; }
+  }
+  
+  public override CSCartDel DefaultInstanceForType {
+    get { return DefaultInstance; }
+  }
+  
+  protected override CSCartDel ThisMessage {
+    get { return this; }
+  }
+  
+  public static pbd::MessageDescriptor Descriptor {
+    get { return global::CoreProtocol.internal__static_CSCartDel__Descriptor; }
+  }
+  
+  protected override pb::FieldAccess.FieldAccessorTable<CSCartDel, CSCartDel.Builder> InternalFieldAccessors {
+    get { return global::CoreProtocol.internal__static_CSCartDel__FieldAccessorTable; }
+  }
+  
+  public const int GoodsidFieldNumber = 1;
+  private bool hasGoodsid;
+  private int goodsid_;
+  public bool HasGoodsid {
+    get { return hasGoodsid; }
+  }
+  public int Goodsid {
+    get { return goodsid_; }
+  }
+  
+  public const int GoodsnumFieldNumber = 2;
+  private bool hasGoodsnum;
+  private int goodsnum_;
+  public bool HasGoodsnum {
+    get { return hasGoodsnum; }
+  }
+  public int Goodsnum {
+    get { return goodsnum_; }
+  }
+  
+  public override bool IsInitialized {
+    get {
+      if (!hasGoodsid) return false;
+      if (!hasGoodsnum) return false;
+      return true;
+    }
+  }
+  
+  public override void WriteTo(pb::ICodedOutputStream output) {
+    CalcSerializedSize();
+    string[] field_names = _cSCartDelFieldNames;
+    if (hasGoodsid) {
+      output.WriteInt32(1, field_names[0], Goodsid);
+    }
+    if (hasGoodsnum) {
+      output.WriteInt32(2, field_names[1], Goodsnum);
+    }
+    UnknownFields.WriteTo(output);
+  }
+  
+  private int memoizedSerializedSize = -1;
+  public override int SerializedSize {
+    get {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+      return CalcSerializedSize();
+    }
+  }
+  
+  private int CalcSerializedSize() {
+    int size = memoizedSerializedSize;
+    if (size != -1) return size;
+    
+    size = 0;
+    if (hasGoodsid) {
+      size += pb::CodedOutputStream.ComputeInt32Size(1, Goodsid);
+    }
+    if (hasGoodsnum) {
+      size += pb::CodedOutputStream.ComputeInt32Size(2, Goodsnum);
+    }
+    size += UnknownFields.SerializedSize;
+    memoizedSerializedSize = size;
+    return size;
+  }
+  public static CSCartDel ParseFrom(pb::ByteString data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static CSCartDel ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static CSCartDel ParseFrom(byte[] data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static CSCartDel ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static CSCartDel ParseFrom(global::System.IO.Stream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static CSCartDel ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  public static CSCartDel ParseDelimitedFrom(global::System.IO.Stream input) {
+    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
+  }
+  public static CSCartDel ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
+  }
+  public static CSCartDel ParseFrom(pb::ICodedInputStream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static CSCartDel ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  private CSCartDel MakeReadOnly() {
+    return this;
+  }
+  
+  public static Builder CreateBuilder() { return new Builder(); }
+  public override Builder ToBuilder() { return CreateBuilder(this); }
+  public override Builder CreateBuilderForType() { return new Builder(); }
+  public static Builder CreateBuilder(CSCartDel prototype) {
+    return new Builder(prototype);
+  }
+  
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class Builder : pb::GeneratedBuilder<CSCartDel, Builder> {
+    protected override Builder ThisBuilder {
+      get { return this; }
+    }
+    public Builder() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+    }
+    internal Builder(CSCartDel cloneFrom) {
+      result = cloneFrom;
+      resultIsReadOnly = true;
+    }
+    
+    private bool resultIsReadOnly;
+    private CSCartDel result;
+    
+    private CSCartDel PrepareBuilder() {
+      if (resultIsReadOnly) {
+        CSCartDel original = result;
+        result = new CSCartDel();
+        resultIsReadOnly = false;
+        MergeFrom(original);
+      }
+      return result;
+    }
+    
+    public override bool IsInitialized {
+      get { return result.IsInitialized; }
+    }
+    
+    protected override CSCartDel MessageBeingBuilt {
+      get { return PrepareBuilder(); }
+    }
+    
+    public override Builder Clear() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+      return this;
+    }
+    
+    public override Builder Clone() {
+      if (resultIsReadOnly) {
+        return new Builder(result);
+      } else {
+        return new Builder().MergeFrom(result);
+      }
+    }
+    
+    public override pbd::MessageDescriptor DescriptorForType {
+      get { return global::CSCartDel.Descriptor; }
+    }
+    
+    public override CSCartDel DefaultInstanceForType {
+      get { return global::CSCartDel.DefaultInstance; }
+    }
+    
+    public override CSCartDel BuildPartial() {
+      if (resultIsReadOnly) {
+        return result;
+      }
+      resultIsReadOnly = true;
+      return result.MakeReadOnly();
+    }
+    
+    public override Builder MergeFrom(pb::IMessage other) {
+      if (other is CSCartDel) {
+        return MergeFrom((CSCartDel) other);
+      } else {
+        base.MergeFrom(other);
+        return this;
+      }
+    }
+    
+    public override Builder MergeFrom(CSCartDel other) {
+      if (other == global::CSCartDel.DefaultInstance) return this;
+      PrepareBuilder();
+      if (other.HasGoodsid) {
+        Goodsid = other.Goodsid;
+      }
+      if (other.HasGoodsnum) {
+        Goodsnum = other.Goodsnum;
+      }
+      this.MergeUnknownFields(other.UnknownFields);
+      return this;
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input) {
+      return MergeFrom(input, pb::ExtensionRegistry.Empty);
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+      PrepareBuilder();
+      pb::UnknownFieldSet.Builder unknownFields = null;
+      uint tag;
+      string field_name;
+      while (input.ReadTag(out tag, out field_name)) {
+        if(tag == 0 && field_name != null) {
+          int field_ordinal = global::System.Array.BinarySearch(_cSCartDelFieldNames, field_name, global::System.StringComparer.Ordinal);
+          if(field_ordinal >= 0)
+            tag = _cSCartDelFieldTags[field_ordinal];
+          else {
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            continue;
+          }
+        }
+        switch (tag) {
+          case 0: {
+            throw pb::InvalidProtocolBufferException.InvalidTag();
+          }
+          default: {
+            if (pb::WireFormat.IsEndGroupTag(tag)) {
+              if (unknownFields != null) {
+                this.UnknownFields = unknownFields.Build();
+              }
+              return this;
+            }
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            break;
+          }
+          case 8: {
+            result.hasGoodsid = input.ReadInt32(ref result.goodsid_);
+            break;
+          }
+          case 16: {
+            result.hasGoodsnum = input.ReadInt32(ref result.goodsnum_);
+            break;
+          }
+        }
+      }
+      
+      if (unknownFields != null) {
+        this.UnknownFields = unknownFields.Build();
+      }
+      return this;
+    }
+    
+    
+    public bool HasGoodsid {
+      get { return result.hasGoodsid; }
+    }
+    public int Goodsid {
+      get { return result.Goodsid; }
+      set { SetGoodsid(value); }
+    }
+    public Builder SetGoodsid(int value) {
+      PrepareBuilder();
+      result.hasGoodsid = true;
+      result.goodsid_ = value;
+      return this;
+    }
+    public Builder ClearGoodsid() {
+      PrepareBuilder();
+      result.hasGoodsid = false;
+      result.goodsid_ = 0;
+      return this;
+    }
+    
+    public bool HasGoodsnum {
+      get { return result.hasGoodsnum; }
+    }
+    public int Goodsnum {
+      get { return result.Goodsnum; }
+      set { SetGoodsnum(value); }
+    }
+    public Builder SetGoodsnum(int value) {
+      PrepareBuilder();
+      result.hasGoodsnum = true;
+      result.goodsnum_ = value;
+      return this;
+    }
+    public Builder ClearGoodsnum() {
+      PrepareBuilder();
+      result.hasGoodsnum = false;
+      result.goodsnum_ = 0;
+      return this;
+    }
+  }
+  static CSCartDel() {
+    object.ReferenceEquals(global::CoreProtocol.Descriptor, null);
+  }
+}
+
+[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+public sealed partial class CSCartBuy : pb::GeneratedMessage<CSCartBuy, CSCartBuy.Builder> {
+  private CSCartBuy() { }
+  private static readonly CSCartBuy defaultInstance = new CSCartBuy().MakeReadOnly();
+  private static readonly string[] _cSCartBuyFieldNames = new string[] { "cardnumber" };
+  private static readonly uint[] _cSCartBuyFieldTags = new uint[] { 10 };
+  public static CSCartBuy DefaultInstance {
+    get { return defaultInstance; }
+  }
+  
+  public override CSCartBuy DefaultInstanceForType {
+    get { return DefaultInstance; }
+  }
+  
+  protected override CSCartBuy ThisMessage {
+    get { return this; }
+  }
+  
+  public static pbd::MessageDescriptor Descriptor {
+    get { return global::CoreProtocol.internal__static_CSCartBuy__Descriptor; }
+  }
+  
+  protected override pb::FieldAccess.FieldAccessorTable<CSCartBuy, CSCartBuy.Builder> InternalFieldAccessors {
+    get { return global::CoreProtocol.internal__static_CSCartBuy__FieldAccessorTable; }
+  }
+  
+  public const int CardnumberFieldNumber = 1;
+  private bool hasCardnumber;
+  private string cardnumber_ = "";
+  public bool HasCardnumber {
+    get { return hasCardnumber; }
+  }
+  public string Cardnumber {
+    get { return cardnumber_; }
+  }
+  
+  public override bool IsInitialized {
+    get {
+      if (!hasCardnumber) return false;
+      return true;
+    }
+  }
+  
+  public override void WriteTo(pb::ICodedOutputStream output) {
+    CalcSerializedSize();
+    string[] field_names = _cSCartBuyFieldNames;
+    if (hasCardnumber) {
+      output.WriteString(1, field_names[0], Cardnumber);
+    }
+    UnknownFields.WriteTo(output);
+  }
+  
+  private int memoizedSerializedSize = -1;
+  public override int SerializedSize {
+    get {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+      return CalcSerializedSize();
+    }
+  }
+  
+  private int CalcSerializedSize() {
+    int size = memoizedSerializedSize;
+    if (size != -1) return size;
+    
+    size = 0;
+    if (hasCardnumber) {
+      size += pb::CodedOutputStream.ComputeStringSize(1, Cardnumber);
+    }
+    size += UnknownFields.SerializedSize;
+    memoizedSerializedSize = size;
+    return size;
+  }
+  public static CSCartBuy ParseFrom(pb::ByteString data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static CSCartBuy ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static CSCartBuy ParseFrom(byte[] data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static CSCartBuy ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static CSCartBuy ParseFrom(global::System.IO.Stream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static CSCartBuy ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  public static CSCartBuy ParseDelimitedFrom(global::System.IO.Stream input) {
+    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
+  }
+  public static CSCartBuy ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
+  }
+  public static CSCartBuy ParseFrom(pb::ICodedInputStream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static CSCartBuy ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  private CSCartBuy MakeReadOnly() {
+    return this;
+  }
+  
+  public static Builder CreateBuilder() { return new Builder(); }
+  public override Builder ToBuilder() { return CreateBuilder(this); }
+  public override Builder CreateBuilderForType() { return new Builder(); }
+  public static Builder CreateBuilder(CSCartBuy prototype) {
+    return new Builder(prototype);
+  }
+  
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class Builder : pb::GeneratedBuilder<CSCartBuy, Builder> {
+    protected override Builder ThisBuilder {
+      get { return this; }
+    }
+    public Builder() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+    }
+    internal Builder(CSCartBuy cloneFrom) {
+      result = cloneFrom;
+      resultIsReadOnly = true;
+    }
+    
+    private bool resultIsReadOnly;
+    private CSCartBuy result;
+    
+    private CSCartBuy PrepareBuilder() {
+      if (resultIsReadOnly) {
+        CSCartBuy original = result;
+        result = new CSCartBuy();
+        resultIsReadOnly = false;
+        MergeFrom(original);
+      }
+      return result;
+    }
+    
+    public override bool IsInitialized {
+      get { return result.IsInitialized; }
+    }
+    
+    protected override CSCartBuy MessageBeingBuilt {
+      get { return PrepareBuilder(); }
+    }
+    
+    public override Builder Clear() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+      return this;
+    }
+    
+    public override Builder Clone() {
+      if (resultIsReadOnly) {
+        return new Builder(result);
+      } else {
+        return new Builder().MergeFrom(result);
+      }
+    }
+    
+    public override pbd::MessageDescriptor DescriptorForType {
+      get { return global::CSCartBuy.Descriptor; }
+    }
+    
+    public override CSCartBuy DefaultInstanceForType {
+      get { return global::CSCartBuy.DefaultInstance; }
+    }
+    
+    public override CSCartBuy BuildPartial() {
+      if (resultIsReadOnly) {
+        return result;
+      }
+      resultIsReadOnly = true;
+      return result.MakeReadOnly();
+    }
+    
+    public override Builder MergeFrom(pb::IMessage other) {
+      if (other is CSCartBuy) {
+        return MergeFrom((CSCartBuy) other);
+      } else {
+        base.MergeFrom(other);
+        return this;
+      }
+    }
+    
+    public override Builder MergeFrom(CSCartBuy other) {
+      if (other == global::CSCartBuy.DefaultInstance) return this;
+      PrepareBuilder();
+      if (other.HasCardnumber) {
+        Cardnumber = other.Cardnumber;
+      }
+      this.MergeUnknownFields(other.UnknownFields);
+      return this;
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input) {
+      return MergeFrom(input, pb::ExtensionRegistry.Empty);
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+      PrepareBuilder();
+      pb::UnknownFieldSet.Builder unknownFields = null;
+      uint tag;
+      string field_name;
+      while (input.ReadTag(out tag, out field_name)) {
+        if(tag == 0 && field_name != null) {
+          int field_ordinal = global::System.Array.BinarySearch(_cSCartBuyFieldNames, field_name, global::System.StringComparer.Ordinal);
+          if(field_ordinal >= 0)
+            tag = _cSCartBuyFieldTags[field_ordinal];
+          else {
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            continue;
+          }
+        }
+        switch (tag) {
+          case 0: {
+            throw pb::InvalidProtocolBufferException.InvalidTag();
+          }
+          default: {
+            if (pb::WireFormat.IsEndGroupTag(tag)) {
+              if (unknownFields != null) {
+                this.UnknownFields = unknownFields.Build();
+              }
+              return this;
+            }
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            break;
+          }
+          case 10: {
+            result.hasCardnumber = input.ReadString(ref result.cardnumber_);
+            break;
+          }
+        }
+      }
+      
+      if (unknownFields != null) {
+        this.UnknownFields = unknownFields.Build();
+      }
+      return this;
+    }
+    
+    
+    public bool HasCardnumber {
+      get { return result.hasCardnumber; }
+    }
+    public string Cardnumber {
+      get { return result.Cardnumber; }
+      set { SetCardnumber(value); }
+    }
+    public Builder SetCardnumber(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasCardnumber = true;
+      result.cardnumber_ = value;
+      return this;
+    }
+    public Builder ClearCardnumber() {
+      PrepareBuilder();
+      result.hasCardnumber = false;
+      result.cardnumber_ = "";
+      return this;
+    }
+  }
+  static CSCartBuy() {
+    object.ReferenceEquals(global::CoreProtocol.Descriptor, null);
+  }
+}
+
+[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+public sealed partial class SCCartBuy : pb::GeneratedMessage<SCCartBuy, SCCartBuy.Builder> {
+  private SCCartBuy() { }
+  private static readonly SCCartBuy defaultInstance = new SCCartBuy().MakeReadOnly();
+  private static readonly string[] _sCCartBuyFieldNames = new string[] { "qrcode" };
+  private static readonly uint[] _sCCartBuyFieldTags = new uint[] { 10 };
+  public static SCCartBuy DefaultInstance {
+    get { return defaultInstance; }
+  }
+  
+  public override SCCartBuy DefaultInstanceForType {
+    get { return DefaultInstance; }
+  }
+  
+  protected override SCCartBuy ThisMessage {
+    get { return this; }
+  }
+  
+  public static pbd::MessageDescriptor Descriptor {
+    get { return global::CoreProtocol.internal__static_SCCartBuy__Descriptor; }
+  }
+  
+  protected override pb::FieldAccess.FieldAccessorTable<SCCartBuy, SCCartBuy.Builder> InternalFieldAccessors {
+    get { return global::CoreProtocol.internal__static_SCCartBuy__FieldAccessorTable; }
+  }
+  
+  public const int QrcodeFieldNumber = 1;
+  private bool hasQrcode;
+  private string qrcode_ = "";
+  public bool HasQrcode {
+    get { return hasQrcode; }
+  }
+  public string Qrcode {
+    get { return qrcode_; }
+  }
+  
+  public override bool IsInitialized {
+    get {
+      if (!hasQrcode) return false;
+      return true;
+    }
+  }
+  
+  public override void WriteTo(pb::ICodedOutputStream output) {
+    CalcSerializedSize();
+    string[] field_names = _sCCartBuyFieldNames;
+    if (hasQrcode) {
+      output.WriteString(1, field_names[0], Qrcode);
+    }
+    UnknownFields.WriteTo(output);
+  }
+  
+  private int memoizedSerializedSize = -1;
+  public override int SerializedSize {
+    get {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+      return CalcSerializedSize();
+    }
+  }
+  
+  private int CalcSerializedSize() {
+    int size = memoizedSerializedSize;
+    if (size != -1) return size;
+    
+    size = 0;
+    if (hasQrcode) {
+      size += pb::CodedOutputStream.ComputeStringSize(1, Qrcode);
+    }
+    size += UnknownFields.SerializedSize;
+    memoizedSerializedSize = size;
+    return size;
+  }
+  public static SCCartBuy ParseFrom(pb::ByteString data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static SCCartBuy ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static SCCartBuy ParseFrom(byte[] data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static SCCartBuy ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static SCCartBuy ParseFrom(global::System.IO.Stream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static SCCartBuy ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  public static SCCartBuy ParseDelimitedFrom(global::System.IO.Stream input) {
+    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
+  }
+  public static SCCartBuy ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
+  }
+  public static SCCartBuy ParseFrom(pb::ICodedInputStream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static SCCartBuy ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  private SCCartBuy MakeReadOnly() {
+    return this;
+  }
+  
+  public static Builder CreateBuilder() { return new Builder(); }
+  public override Builder ToBuilder() { return CreateBuilder(this); }
+  public override Builder CreateBuilderForType() { return new Builder(); }
+  public static Builder CreateBuilder(SCCartBuy prototype) {
+    return new Builder(prototype);
+  }
+  
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class Builder : pb::GeneratedBuilder<SCCartBuy, Builder> {
+    protected override Builder ThisBuilder {
+      get { return this; }
+    }
+    public Builder() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+    }
+    internal Builder(SCCartBuy cloneFrom) {
+      result = cloneFrom;
+      resultIsReadOnly = true;
+    }
+    
+    private bool resultIsReadOnly;
+    private SCCartBuy result;
+    
+    private SCCartBuy PrepareBuilder() {
+      if (resultIsReadOnly) {
+        SCCartBuy original = result;
+        result = new SCCartBuy();
+        resultIsReadOnly = false;
+        MergeFrom(original);
+      }
+      return result;
+    }
+    
+    public override bool IsInitialized {
+      get { return result.IsInitialized; }
+    }
+    
+    protected override SCCartBuy MessageBeingBuilt {
+      get { return PrepareBuilder(); }
+    }
+    
+    public override Builder Clear() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+      return this;
+    }
+    
+    public override Builder Clone() {
+      if (resultIsReadOnly) {
+        return new Builder(result);
+      } else {
+        return new Builder().MergeFrom(result);
+      }
+    }
+    
+    public override pbd::MessageDescriptor DescriptorForType {
+      get { return global::SCCartBuy.Descriptor; }
+    }
+    
+    public override SCCartBuy DefaultInstanceForType {
+      get { return global::SCCartBuy.DefaultInstance; }
+    }
+    
+    public override SCCartBuy BuildPartial() {
+      if (resultIsReadOnly) {
+        return result;
+      }
+      resultIsReadOnly = true;
+      return result.MakeReadOnly();
+    }
+    
+    public override Builder MergeFrom(pb::IMessage other) {
+      if (other is SCCartBuy) {
+        return MergeFrom((SCCartBuy) other);
+      } else {
+        base.MergeFrom(other);
+        return this;
+      }
+    }
+    
+    public override Builder MergeFrom(SCCartBuy other) {
+      if (other == global::SCCartBuy.DefaultInstance) return this;
+      PrepareBuilder();
+      if (other.HasQrcode) {
+        Qrcode = other.Qrcode;
+      }
+      this.MergeUnknownFields(other.UnknownFields);
+      return this;
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input) {
+      return MergeFrom(input, pb::ExtensionRegistry.Empty);
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+      PrepareBuilder();
+      pb::UnknownFieldSet.Builder unknownFields = null;
+      uint tag;
+      string field_name;
+      while (input.ReadTag(out tag, out field_name)) {
+        if(tag == 0 && field_name != null) {
+          int field_ordinal = global::System.Array.BinarySearch(_sCCartBuyFieldNames, field_name, global::System.StringComparer.Ordinal);
+          if(field_ordinal >= 0)
+            tag = _sCCartBuyFieldTags[field_ordinal];
+          else {
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            continue;
+          }
+        }
+        switch (tag) {
+          case 0: {
+            throw pb::InvalidProtocolBufferException.InvalidTag();
+          }
+          default: {
+            if (pb::WireFormat.IsEndGroupTag(tag)) {
+              if (unknownFields != null) {
+                this.UnknownFields = unknownFields.Build();
+              }
+              return this;
+            }
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            break;
+          }
+          case 10: {
+            result.hasQrcode = input.ReadString(ref result.qrcode_);
+            break;
+          }
+        }
+      }
+      
+      if (unknownFields != null) {
+        this.UnknownFields = unknownFields.Build();
+      }
+      return this;
+    }
+    
+    
+    public bool HasQrcode {
+      get { return result.hasQrcode; }
+    }
+    public string Qrcode {
+      get { return result.Qrcode; }
+      set { SetQrcode(value); }
+    }
+    public Builder SetQrcode(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasQrcode = true;
+      result.qrcode_ = value;
+      return this;
+    }
+    public Builder ClearQrcode() {
+      PrepareBuilder();
+      result.hasQrcode = false;
+      result.qrcode_ = "";
+      return this;
+    }
+  }
+  static SCCartBuy() {
+    object.ReferenceEquals(global::CoreProtocol.Descriptor, null);
+  }
+}
+
+[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+public sealed partial class SCCartBuyResult : pb::GeneratedMessage<SCCartBuyResult, SCCartBuyResult.Builder> {
+  private SCCartBuyResult() { }
+  private static readonly SCCartBuyResult defaultInstance = new SCCartBuyResult().MakeReadOnly();
+  private static readonly string[] _sCCartBuyResultFieldNames = new string[] { "balance", "cardnumber", "integal", "name", "right", "usedintegal", "usedmoney" };
+  private static readonly uint[] _sCCartBuyResultFieldTags = new uint[] { 48, 18, 56, 10, 26, 40, 32 };
+  public static SCCartBuyResult DefaultInstance {
+    get { return defaultInstance; }
+  }
+  
+  public override SCCartBuyResult DefaultInstanceForType {
+    get { return DefaultInstance; }
+  }
+  
+  protected override SCCartBuyResult ThisMessage {
+    get { return this; }
+  }
+  
+  public static pbd::MessageDescriptor Descriptor {
+    get { return global::CoreProtocol.internal__static_SCCartBuyResult__Descriptor; }
+  }
+  
+  protected override pb::FieldAccess.FieldAccessorTable<SCCartBuyResult, SCCartBuyResult.Builder> InternalFieldAccessors {
+    get { return global::CoreProtocol.internal__static_SCCartBuyResult__FieldAccessorTable; }
+  }
+  
+  public const int NameFieldNumber = 1;
+  private bool hasName;
+  private string name_ = "";
+  public bool HasName {
+    get { return hasName; }
+  }
+  public string Name {
+    get { return name_; }
+  }
+  
+  public const int CardnumberFieldNumber = 2;
+  private bool hasCardnumber;
+  private string cardnumber_ = "";
+  public bool HasCardnumber {
+    get { return hasCardnumber; }
+  }
+  public string Cardnumber {
+    get { return cardnumber_; }
+  }
+  
+  public const int RightFieldNumber = 3;
+  private bool hasRight;
+  private string right_ = "";
+  public bool HasRight {
+    get { return hasRight; }
+  }
+  public string Right {
+    get { return right_; }
+  }
+  
+  public const int UsedmoneyFieldNumber = 4;
+  private bool hasUsedmoney;
+  private int usedmoney_;
+  public bool HasUsedmoney {
+    get { return hasUsedmoney; }
+  }
+  public int Usedmoney {
+    get { return usedmoney_; }
+  }
+  
+  public const int UsedintegalFieldNumber = 5;
+  private bool hasUsedintegal;
+  private int usedintegal_;
+  public bool HasUsedintegal {
+    get { return hasUsedintegal; }
+  }
+  public int Usedintegal {
+    get { return usedintegal_; }
+  }
+  
+  public const int BalanceFieldNumber = 6;
+  private bool hasBalance;
+  private int balance_;
+  public bool HasBalance {
+    get { return hasBalance; }
+  }
+  public int Balance {
+    get { return balance_; }
+  }
+  
+  public const int IntegalFieldNumber = 7;
+  private bool hasIntegal;
+  private int integal_;
+  public bool HasIntegal {
+    get { return hasIntegal; }
+  }
+  public int Integal {
+    get { return integal_; }
+  }
+  
+  public override bool IsInitialized {
+    get {
+      if (!hasName) return false;
+      if (!hasCardnumber) return false;
+      if (!hasRight) return false;
+      if (!hasUsedmoney) return false;
+      if (!hasUsedintegal) return false;
+      if (!hasBalance) return false;
+      if (!hasIntegal) return false;
+      return true;
+    }
+  }
+  
+  public override void WriteTo(pb::ICodedOutputStream output) {
+    CalcSerializedSize();
+    string[] field_names = _sCCartBuyResultFieldNames;
+    if (hasName) {
+      output.WriteString(1, field_names[3], Name);
+    }
+    if (hasCardnumber) {
+      output.WriteString(2, field_names[1], Cardnumber);
+    }
+    if (hasRight) {
+      output.WriteString(3, field_names[4], Right);
+    }
+    if (hasUsedmoney) {
+      output.WriteInt32(4, field_names[6], Usedmoney);
+    }
+    if (hasUsedintegal) {
+      output.WriteInt32(5, field_names[5], Usedintegal);
+    }
+    if (hasBalance) {
+      output.WriteInt32(6, field_names[0], Balance);
+    }
+    if (hasIntegal) {
+      output.WriteInt32(7, field_names[2], Integal);
+    }
+    UnknownFields.WriteTo(output);
+  }
+  
+  private int memoizedSerializedSize = -1;
+  public override int SerializedSize {
+    get {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+      return CalcSerializedSize();
+    }
+  }
+  
+  private int CalcSerializedSize() {
+    int size = memoizedSerializedSize;
+    if (size != -1) return size;
+    
+    size = 0;
+    if (hasName) {
+      size += pb::CodedOutputStream.ComputeStringSize(1, Name);
+    }
+    if (hasCardnumber) {
+      size += pb::CodedOutputStream.ComputeStringSize(2, Cardnumber);
+    }
+    if (hasRight) {
+      size += pb::CodedOutputStream.ComputeStringSize(3, Right);
+    }
+    if (hasUsedmoney) {
+      size += pb::CodedOutputStream.ComputeInt32Size(4, Usedmoney);
+    }
+    if (hasUsedintegal) {
+      size += pb::CodedOutputStream.ComputeInt32Size(5, Usedintegal);
+    }
+    if (hasBalance) {
+      size += pb::CodedOutputStream.ComputeInt32Size(6, Balance);
+    }
+    if (hasIntegal) {
+      size += pb::CodedOutputStream.ComputeInt32Size(7, Integal);
+    }
+    size += UnknownFields.SerializedSize;
+    memoizedSerializedSize = size;
+    return size;
+  }
+  public static SCCartBuyResult ParseFrom(pb::ByteString data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static SCCartBuyResult ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static SCCartBuyResult ParseFrom(byte[] data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static SCCartBuyResult ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static SCCartBuyResult ParseFrom(global::System.IO.Stream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static SCCartBuyResult ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  public static SCCartBuyResult ParseDelimitedFrom(global::System.IO.Stream input) {
+    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
+  }
+  public static SCCartBuyResult ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
+  }
+  public static SCCartBuyResult ParseFrom(pb::ICodedInputStream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static SCCartBuyResult ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  private SCCartBuyResult MakeReadOnly() {
+    return this;
+  }
+  
+  public static Builder CreateBuilder() { return new Builder(); }
+  public override Builder ToBuilder() { return CreateBuilder(this); }
+  public override Builder CreateBuilderForType() { return new Builder(); }
+  public static Builder CreateBuilder(SCCartBuyResult prototype) {
+    return new Builder(prototype);
+  }
+  
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class Builder : pb::GeneratedBuilder<SCCartBuyResult, Builder> {
+    protected override Builder ThisBuilder {
+      get { return this; }
+    }
+    public Builder() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+    }
+    internal Builder(SCCartBuyResult cloneFrom) {
+      result = cloneFrom;
+      resultIsReadOnly = true;
+    }
+    
+    private bool resultIsReadOnly;
+    private SCCartBuyResult result;
+    
+    private SCCartBuyResult PrepareBuilder() {
+      if (resultIsReadOnly) {
+        SCCartBuyResult original = result;
+        result = new SCCartBuyResult();
+        resultIsReadOnly = false;
+        MergeFrom(original);
+      }
+      return result;
+    }
+    
+    public override bool IsInitialized {
+      get { return result.IsInitialized; }
+    }
+    
+    protected override SCCartBuyResult MessageBeingBuilt {
+      get { return PrepareBuilder(); }
+    }
+    
+    public override Builder Clear() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+      return this;
+    }
+    
+    public override Builder Clone() {
+      if (resultIsReadOnly) {
+        return new Builder(result);
+      } else {
+        return new Builder().MergeFrom(result);
+      }
+    }
+    
+    public override pbd::MessageDescriptor DescriptorForType {
+      get { return global::SCCartBuyResult.Descriptor; }
+    }
+    
+    public override SCCartBuyResult DefaultInstanceForType {
+      get { return global::SCCartBuyResult.DefaultInstance; }
+    }
+    
+    public override SCCartBuyResult BuildPartial() {
+      if (resultIsReadOnly) {
+        return result;
+      }
+      resultIsReadOnly = true;
+      return result.MakeReadOnly();
+    }
+    
+    public override Builder MergeFrom(pb::IMessage other) {
+      if (other is SCCartBuyResult) {
+        return MergeFrom((SCCartBuyResult) other);
+      } else {
+        base.MergeFrom(other);
+        return this;
+      }
+    }
+    
+    public override Builder MergeFrom(SCCartBuyResult other) {
+      if (other == global::SCCartBuyResult.DefaultInstance) return this;
+      PrepareBuilder();
+      if (other.HasName) {
+        Name = other.Name;
+      }
+      if (other.HasCardnumber) {
+        Cardnumber = other.Cardnumber;
+      }
+      if (other.HasRight) {
+        Right = other.Right;
+      }
+      if (other.HasUsedmoney) {
+        Usedmoney = other.Usedmoney;
+      }
+      if (other.HasUsedintegal) {
+        Usedintegal = other.Usedintegal;
+      }
+      if (other.HasBalance) {
+        Balance = other.Balance;
+      }
+      if (other.HasIntegal) {
+        Integal = other.Integal;
+      }
+      this.MergeUnknownFields(other.UnknownFields);
+      return this;
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input) {
+      return MergeFrom(input, pb::ExtensionRegistry.Empty);
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+      PrepareBuilder();
+      pb::UnknownFieldSet.Builder unknownFields = null;
+      uint tag;
+      string field_name;
+      while (input.ReadTag(out tag, out field_name)) {
+        if(tag == 0 && field_name != null) {
+          int field_ordinal = global::System.Array.BinarySearch(_sCCartBuyResultFieldNames, field_name, global::System.StringComparer.Ordinal);
+          if(field_ordinal >= 0)
+            tag = _sCCartBuyResultFieldTags[field_ordinal];
+          else {
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            continue;
+          }
+        }
+        switch (tag) {
+          case 0: {
+            throw pb::InvalidProtocolBufferException.InvalidTag();
+          }
+          default: {
+            if (pb::WireFormat.IsEndGroupTag(tag)) {
+              if (unknownFields != null) {
+                this.UnknownFields = unknownFields.Build();
+              }
+              return this;
+            }
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            break;
+          }
+          case 10: {
+            result.hasName = input.ReadString(ref result.name_);
+            break;
+          }
+          case 18: {
+            result.hasCardnumber = input.ReadString(ref result.cardnumber_);
+            break;
+          }
+          case 26: {
+            result.hasRight = input.ReadString(ref result.right_);
+            break;
+          }
+          case 32: {
+            result.hasUsedmoney = input.ReadInt32(ref result.usedmoney_);
+            break;
+          }
+          case 40: {
+            result.hasUsedintegal = input.ReadInt32(ref result.usedintegal_);
+            break;
+          }
+          case 48: {
+            result.hasBalance = input.ReadInt32(ref result.balance_);
+            break;
+          }
+          case 56: {
+            result.hasIntegal = input.ReadInt32(ref result.integal_);
+            break;
+          }
+        }
+      }
+      
+      if (unknownFields != null) {
+        this.UnknownFields = unknownFields.Build();
+      }
+      return this;
+    }
+    
+    
+    public bool HasName {
+      get { return result.hasName; }
+    }
+    public string Name {
+      get { return result.Name; }
+      set { SetName(value); }
+    }
+    public Builder SetName(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasName = true;
+      result.name_ = value;
+      return this;
+    }
+    public Builder ClearName() {
+      PrepareBuilder();
+      result.hasName = false;
+      result.name_ = "";
+      return this;
+    }
+    
+    public bool HasCardnumber {
+      get { return result.hasCardnumber; }
+    }
+    public string Cardnumber {
+      get { return result.Cardnumber; }
+      set { SetCardnumber(value); }
+    }
+    public Builder SetCardnumber(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasCardnumber = true;
+      result.cardnumber_ = value;
+      return this;
+    }
+    public Builder ClearCardnumber() {
+      PrepareBuilder();
+      result.hasCardnumber = false;
+      result.cardnumber_ = "";
+      return this;
+    }
+    
+    public bool HasRight {
+      get { return result.hasRight; }
+    }
+    public string Right {
+      get { return result.Right; }
+      set { SetRight(value); }
+    }
+    public Builder SetRight(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasRight = true;
+      result.right_ = value;
+      return this;
+    }
+    public Builder ClearRight() {
+      PrepareBuilder();
+      result.hasRight = false;
+      result.right_ = "";
+      return this;
+    }
+    
+    public bool HasUsedmoney {
+      get { return result.hasUsedmoney; }
+    }
+    public int Usedmoney {
+      get { return result.Usedmoney; }
+      set { SetUsedmoney(value); }
+    }
+    public Builder SetUsedmoney(int value) {
+      PrepareBuilder();
+      result.hasUsedmoney = true;
+      result.usedmoney_ = value;
+      return this;
+    }
+    public Builder ClearUsedmoney() {
+      PrepareBuilder();
+      result.hasUsedmoney = false;
+      result.usedmoney_ = 0;
+      return this;
+    }
+    
+    public bool HasUsedintegal {
+      get { return result.hasUsedintegal; }
+    }
+    public int Usedintegal {
+      get { return result.Usedintegal; }
+      set { SetUsedintegal(value); }
+    }
+    public Builder SetUsedintegal(int value) {
+      PrepareBuilder();
+      result.hasUsedintegal = true;
+      result.usedintegal_ = value;
+      return this;
+    }
+    public Builder ClearUsedintegal() {
+      PrepareBuilder();
+      result.hasUsedintegal = false;
+      result.usedintegal_ = 0;
+      return this;
+    }
+    
+    public bool HasBalance {
+      get { return result.hasBalance; }
+    }
+    public int Balance {
+      get { return result.Balance; }
+      set { SetBalance(value); }
+    }
+    public Builder SetBalance(int value) {
+      PrepareBuilder();
+      result.hasBalance = true;
+      result.balance_ = value;
+      return this;
+    }
+    public Builder ClearBalance() {
+      PrepareBuilder();
+      result.hasBalance = false;
+      result.balance_ = 0;
+      return this;
+    }
+    
+    public bool HasIntegal {
+      get { return result.hasIntegal; }
+    }
+    public int Integal {
+      get { return result.Integal; }
+      set { SetIntegal(value); }
+    }
+    public Builder SetIntegal(int value) {
+      PrepareBuilder();
+      result.hasIntegal = true;
+      result.integal_ = value;
+      return this;
+    }
+    public Builder ClearIntegal() {
+      PrepareBuilder();
+      result.hasIntegal = false;
+      result.integal_ = 0;
+      return this;
+    }
+  }
+  static SCCartBuyResult() {
+    object.ReferenceEquals(global::CoreProtocol.Descriptor, null);
+  }
+}
+
+[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+public sealed partial class SCSysMessage : pb::GeneratedMessage<SCSysMessage, SCSysMessage.Builder> {
+  private SCSysMessage() { }
+  private static readonly SCSysMessage defaultInstance = new SCSysMessage().MakeReadOnly();
+  private static readonly string[] _sCSysMessageFieldNames = new string[] { "text" };
+  private static readonly uint[] _sCSysMessageFieldTags = new uint[] { 10 };
+  public static SCSysMessage DefaultInstance {
+    get { return defaultInstance; }
+  }
+  
+  public override SCSysMessage DefaultInstanceForType {
+    get { return DefaultInstance; }
+  }
+  
+  protected override SCSysMessage ThisMessage {
+    get { return this; }
+  }
+  
+  public static pbd::MessageDescriptor Descriptor {
+    get { return global::CoreProtocol.internal__static_SCSysMessage__Descriptor; }
+  }
+  
+  protected override pb::FieldAccess.FieldAccessorTable<SCSysMessage, SCSysMessage.Builder> InternalFieldAccessors {
+    get { return global::CoreProtocol.internal__static_SCSysMessage__FieldAccessorTable; }
+  }
+  
+  public const int TextFieldNumber = 1;
+  private bool hasText;
+  private string text_ = "";
+  public bool HasText {
+    get { return hasText; }
+  }
+  public string Text {
+    get { return text_; }
+  }
+  
+  public override bool IsInitialized {
+    get {
+      if (!hasText) return false;
+      return true;
+    }
+  }
+  
+  public override void WriteTo(pb::ICodedOutputStream output) {
+    CalcSerializedSize();
+    string[] field_names = _sCSysMessageFieldNames;
+    if (hasText) {
+      output.WriteString(1, field_names[0], Text);
+    }
+    UnknownFields.WriteTo(output);
+  }
+  
+  private int memoizedSerializedSize = -1;
+  public override int SerializedSize {
+    get {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+      return CalcSerializedSize();
+    }
+  }
+  
+  private int CalcSerializedSize() {
+    int size = memoizedSerializedSize;
+    if (size != -1) return size;
+    
+    size = 0;
+    if (hasText) {
+      size += pb::CodedOutputStream.ComputeStringSize(1, Text);
+    }
+    size += UnknownFields.SerializedSize;
+    memoizedSerializedSize = size;
+    return size;
+  }
+  public static SCSysMessage ParseFrom(pb::ByteString data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static SCSysMessage ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static SCSysMessage ParseFrom(byte[] data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static SCSysMessage ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static SCSysMessage ParseFrom(global::System.IO.Stream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static SCSysMessage ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  public static SCSysMessage ParseDelimitedFrom(global::System.IO.Stream input) {
+    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
+  }
+  public static SCSysMessage ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
+  }
+  public static SCSysMessage ParseFrom(pb::ICodedInputStream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static SCSysMessage ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  private SCSysMessage MakeReadOnly() {
+    return this;
+  }
+  
+  public static Builder CreateBuilder() { return new Builder(); }
+  public override Builder ToBuilder() { return CreateBuilder(this); }
+  public override Builder CreateBuilderForType() { return new Builder(); }
+  public static Builder CreateBuilder(SCSysMessage prototype) {
+    return new Builder(prototype);
+  }
+  
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class Builder : pb::GeneratedBuilder<SCSysMessage, Builder> {
+    protected override Builder ThisBuilder {
+      get { return this; }
+    }
+    public Builder() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+    }
+    internal Builder(SCSysMessage cloneFrom) {
+      result = cloneFrom;
+      resultIsReadOnly = true;
+    }
+    
+    private bool resultIsReadOnly;
+    private SCSysMessage result;
+    
+    private SCSysMessage PrepareBuilder() {
+      if (resultIsReadOnly) {
+        SCSysMessage original = result;
+        result = new SCSysMessage();
+        resultIsReadOnly = false;
+        MergeFrom(original);
+      }
+      return result;
+    }
+    
+    public override bool IsInitialized {
+      get { return result.IsInitialized; }
+    }
+    
+    protected override SCSysMessage MessageBeingBuilt {
+      get { return PrepareBuilder(); }
+    }
+    
+    public override Builder Clear() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+      return this;
+    }
+    
+    public override Builder Clone() {
+      if (resultIsReadOnly) {
+        return new Builder(result);
+      } else {
+        return new Builder().MergeFrom(result);
+      }
+    }
+    
+    public override pbd::MessageDescriptor DescriptorForType {
+      get { return global::SCSysMessage.Descriptor; }
+    }
+    
+    public override SCSysMessage DefaultInstanceForType {
+      get { return global::SCSysMessage.DefaultInstance; }
+    }
+    
+    public override SCSysMessage BuildPartial() {
+      if (resultIsReadOnly) {
+        return result;
+      }
+      resultIsReadOnly = true;
+      return result.MakeReadOnly();
+    }
+    
+    public override Builder MergeFrom(pb::IMessage other) {
+      if (other is SCSysMessage) {
+        return MergeFrom((SCSysMessage) other);
+      } else {
+        base.MergeFrom(other);
+        return this;
+      }
+    }
+    
+    public override Builder MergeFrom(SCSysMessage other) {
+      if (other == global::SCSysMessage.DefaultInstance) return this;
+      PrepareBuilder();
+      if (other.HasText) {
+        Text = other.Text;
+      }
+      this.MergeUnknownFields(other.UnknownFields);
+      return this;
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input) {
+      return MergeFrom(input, pb::ExtensionRegistry.Empty);
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+      PrepareBuilder();
+      pb::UnknownFieldSet.Builder unknownFields = null;
+      uint tag;
+      string field_name;
+      while (input.ReadTag(out tag, out field_name)) {
+        if(tag == 0 && field_name != null) {
+          int field_ordinal = global::System.Array.BinarySearch(_sCSysMessageFieldNames, field_name, global::System.StringComparer.Ordinal);
+          if(field_ordinal >= 0)
+            tag = _sCSysMessageFieldTags[field_ordinal];
+          else {
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            continue;
+          }
+        }
+        switch (tag) {
+          case 0: {
+            throw pb::InvalidProtocolBufferException.InvalidTag();
+          }
+          default: {
+            if (pb::WireFormat.IsEndGroupTag(tag)) {
+              if (unknownFields != null) {
+                this.UnknownFields = unknownFields.Build();
+              }
+              return this;
+            }
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            break;
+          }
+          case 10: {
+            result.hasText = input.ReadString(ref result.text_);
+            break;
+          }
+        }
+      }
+      
+      if (unknownFields != null) {
+        this.UnknownFields = unknownFields.Build();
+      }
+      return this;
+    }
+    
+    
+    public bool HasText {
+      get { return result.hasText; }
+    }
+    public string Text {
+      get { return result.Text; }
+      set { SetText(value); }
+    }
+    public Builder SetText(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasText = true;
+      result.text_ = value;
+      return this;
+    }
+    public Builder ClearText() {
+      PrepareBuilder();
+      result.hasText = false;
+      result.text_ = "";
+      return this;
+    }
+  }
+  static SCSysMessage() {
+    object.ReferenceEquals(global::CoreProtocol.Descriptor, null);
+  }
+}
+
+[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+public sealed partial class CSUserMessage : pb::GeneratedMessage<CSUserMessage, CSUserMessage.Builder> {
+  private CSUserMessage() { }
+  private static readonly CSUserMessage defaultInstance = new CSUserMessage().MakeReadOnly();
+  private static readonly string[] _cSUserMessageFieldNames = new string[] { "text" };
+  private static readonly uint[] _cSUserMessageFieldTags = new uint[] { 10 };
+  public static CSUserMessage DefaultInstance {
+    get { return defaultInstance; }
+  }
+  
+  public override CSUserMessage DefaultInstanceForType {
+    get { return DefaultInstance; }
+  }
+  
+  protected override CSUserMessage ThisMessage {
+    get { return this; }
+  }
+  
+  public static pbd::MessageDescriptor Descriptor {
+    get { return global::CoreProtocol.internal__static_CSUserMessage__Descriptor; }
+  }
+  
+  protected override pb::FieldAccess.FieldAccessorTable<CSUserMessage, CSUserMessage.Builder> InternalFieldAccessors {
+    get { return global::CoreProtocol.internal__static_CSUserMessage__FieldAccessorTable; }
+  }
+  
+  public const int TextFieldNumber = 1;
+  private bool hasText;
+  private string text_ = "";
+  public bool HasText {
+    get { return hasText; }
+  }
+  public string Text {
+    get { return text_; }
+  }
+  
+  public override bool IsInitialized {
+    get {
+      if (!hasText) return false;
+      return true;
+    }
+  }
+  
+  public override void WriteTo(pb::ICodedOutputStream output) {
+    CalcSerializedSize();
+    string[] field_names = _cSUserMessageFieldNames;
+    if (hasText) {
+      output.WriteString(1, field_names[0], Text);
+    }
+    UnknownFields.WriteTo(output);
+  }
+  
+  private int memoizedSerializedSize = -1;
+  public override int SerializedSize {
+    get {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+      return CalcSerializedSize();
+    }
+  }
+  
+  private int CalcSerializedSize() {
+    int size = memoizedSerializedSize;
+    if (size != -1) return size;
+    
+    size = 0;
+    if (hasText) {
+      size += pb::CodedOutputStream.ComputeStringSize(1, Text);
+    }
+    size += UnknownFields.SerializedSize;
+    memoizedSerializedSize = size;
+    return size;
+  }
+  public static CSUserMessage ParseFrom(pb::ByteString data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static CSUserMessage ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static CSUserMessage ParseFrom(byte[] data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static CSUserMessage ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static CSUserMessage ParseFrom(global::System.IO.Stream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static CSUserMessage ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  public static CSUserMessage ParseDelimitedFrom(global::System.IO.Stream input) {
+    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
+  }
+  public static CSUserMessage ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
+  }
+  public static CSUserMessage ParseFrom(pb::ICodedInputStream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static CSUserMessage ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  private CSUserMessage MakeReadOnly() {
+    return this;
+  }
+  
+  public static Builder CreateBuilder() { return new Builder(); }
+  public override Builder ToBuilder() { return CreateBuilder(this); }
+  public override Builder CreateBuilderForType() { return new Builder(); }
+  public static Builder CreateBuilder(CSUserMessage prototype) {
+    return new Builder(prototype);
+  }
+  
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class Builder : pb::GeneratedBuilder<CSUserMessage, Builder> {
+    protected override Builder ThisBuilder {
+      get { return this; }
+    }
+    public Builder() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+    }
+    internal Builder(CSUserMessage cloneFrom) {
+      result = cloneFrom;
+      resultIsReadOnly = true;
+    }
+    
+    private bool resultIsReadOnly;
+    private CSUserMessage result;
+    
+    private CSUserMessage PrepareBuilder() {
+      if (resultIsReadOnly) {
+        CSUserMessage original = result;
+        result = new CSUserMessage();
+        resultIsReadOnly = false;
+        MergeFrom(original);
+      }
+      return result;
+    }
+    
+    public override bool IsInitialized {
+      get { return result.IsInitialized; }
+    }
+    
+    protected override CSUserMessage MessageBeingBuilt {
+      get { return PrepareBuilder(); }
+    }
+    
+    public override Builder Clear() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+      return this;
+    }
+    
+    public override Builder Clone() {
+      if (resultIsReadOnly) {
+        return new Builder(result);
+      } else {
+        return new Builder().MergeFrom(result);
+      }
+    }
+    
+    public override pbd::MessageDescriptor DescriptorForType {
+      get { return global::CSUserMessage.Descriptor; }
+    }
+    
+    public override CSUserMessage DefaultInstanceForType {
+      get { return global::CSUserMessage.DefaultInstance; }
+    }
+    
+    public override CSUserMessage BuildPartial() {
+      if (resultIsReadOnly) {
+        return result;
+      }
+      resultIsReadOnly = true;
+      return result.MakeReadOnly();
+    }
+    
+    public override Builder MergeFrom(pb::IMessage other) {
+      if (other is CSUserMessage) {
+        return MergeFrom((CSUserMessage) other);
+      } else {
+        base.MergeFrom(other);
+        return this;
+      }
+    }
+    
+    public override Builder MergeFrom(CSUserMessage other) {
+      if (other == global::CSUserMessage.DefaultInstance) return this;
+      PrepareBuilder();
+      if (other.HasText) {
+        Text = other.Text;
+      }
+      this.MergeUnknownFields(other.UnknownFields);
+      return this;
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input) {
+      return MergeFrom(input, pb::ExtensionRegistry.Empty);
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+      PrepareBuilder();
+      pb::UnknownFieldSet.Builder unknownFields = null;
+      uint tag;
+      string field_name;
+      while (input.ReadTag(out tag, out field_name)) {
+        if(tag == 0 && field_name != null) {
+          int field_ordinal = global::System.Array.BinarySearch(_cSUserMessageFieldNames, field_name, global::System.StringComparer.Ordinal);
+          if(field_ordinal >= 0)
+            tag = _cSUserMessageFieldTags[field_ordinal];
+          else {
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            continue;
+          }
+        }
+        switch (tag) {
+          case 0: {
+            throw pb::InvalidProtocolBufferException.InvalidTag();
+          }
+          default: {
+            if (pb::WireFormat.IsEndGroupTag(tag)) {
+              if (unknownFields != null) {
+                this.UnknownFields = unknownFields.Build();
+              }
+              return this;
+            }
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            break;
+          }
+          case 10: {
+            result.hasText = input.ReadString(ref result.text_);
+            break;
+          }
+        }
+      }
+      
+      if (unknownFields != null) {
+        this.UnknownFields = unknownFields.Build();
+      }
+      return this;
+    }
+    
+    
+    public bool HasText {
+      get { return result.hasText; }
+    }
+    public string Text {
+      get { return result.Text; }
+      set { SetText(value); }
+    }
+    public Builder SetText(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasText = true;
+      result.text_ = value;
+      return this;
+    }
+    public Builder ClearText() {
+      PrepareBuilder();
+      result.hasText = false;
+      result.text_ = "";
+      return this;
+    }
+  }
+  static CSUserMessage() {
+    object.ReferenceEquals(global::CoreProtocol.Descriptor, null);
+  }
+}
+
+[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+public sealed partial class CSEvaluate : pb::GeneratedMessage<CSEvaluate, CSEvaluate.Builder> {
+  private CSEvaluate() { }
+  private static readonly CSEvaluate defaultInstance = new CSEvaluate().MakeReadOnly();
+  private static readonly string[] _cSEvaluateFieldNames = new string[] { "devStar", "envStar", "eval", "staffStar" };
+  private static readonly uint[] _cSEvaluateFieldTags = new uint[] { 24, 16, 34, 8 };
+  public static CSEvaluate DefaultInstance {
+    get { return defaultInstance; }
+  }
+  
+  public override CSEvaluate DefaultInstanceForType {
+    get { return DefaultInstance; }
+  }
+  
+  protected override CSEvaluate ThisMessage {
+    get { return this; }
+  }
+  
+  public static pbd::MessageDescriptor Descriptor {
+    get { return global::CoreProtocol.internal__static_CSEvaluate__Descriptor; }
+  }
+  
+  protected override pb::FieldAccess.FieldAccessorTable<CSEvaluate, CSEvaluate.Builder> InternalFieldAccessors {
+    get { return global::CoreProtocol.internal__static_CSEvaluate__FieldAccessorTable; }
+  }
+  
+  public const int StaffStarFieldNumber = 1;
+  private bool hasStaffStar;
+  private int staffStar_;
+  public bool HasStaffStar {
+    get { return hasStaffStar; }
+  }
+  public int StaffStar {
+    get { return staffStar_; }
+  }
+  
+  public const int EnvStarFieldNumber = 2;
+  private bool hasEnvStar;
+  private int envStar_;
+  public bool HasEnvStar {
+    get { return hasEnvStar; }
+  }
+  public int EnvStar {
+    get { return envStar_; }
+  }
+  
+  public const int DevStarFieldNumber = 3;
+  private bool hasDevStar;
+  private int devStar_;
+  public bool HasDevStar {
+    get { return hasDevStar; }
+  }
+  public int DevStar {
+    get { return devStar_; }
+  }
+  
+  public const int EvalFieldNumber = 4;
+  private bool hasEval;
+  private string eval_ = "";
+  public bool HasEval {
+    get { return hasEval; }
+  }
+  public string Eval {
+    get { return eval_; }
+  }
+  
+  public override bool IsInitialized {
+    get {
+      if (!hasStaffStar) return false;
+      if (!hasEnvStar) return false;
+      if (!hasDevStar) return false;
+      return true;
+    }
+  }
+  
+  public override void WriteTo(pb::ICodedOutputStream output) {
+    CalcSerializedSize();
+    string[] field_names = _cSEvaluateFieldNames;
+    if (hasStaffStar) {
+      output.WriteInt32(1, field_names[3], StaffStar);
+    }
+    if (hasEnvStar) {
+      output.WriteInt32(2, field_names[1], EnvStar);
+    }
+    if (hasDevStar) {
+      output.WriteInt32(3, field_names[0], DevStar);
+    }
+    if (hasEval) {
+      output.WriteString(4, field_names[2], Eval);
+    }
+    UnknownFields.WriteTo(output);
+  }
+  
+  private int memoizedSerializedSize = -1;
+  public override int SerializedSize {
+    get {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+      return CalcSerializedSize();
+    }
+  }
+  
+  private int CalcSerializedSize() {
+    int size = memoizedSerializedSize;
+    if (size != -1) return size;
+    
+    size = 0;
+    if (hasStaffStar) {
+      size += pb::CodedOutputStream.ComputeInt32Size(1, StaffStar);
+    }
+    if (hasEnvStar) {
+      size += pb::CodedOutputStream.ComputeInt32Size(2, EnvStar);
+    }
+    if (hasDevStar) {
+      size += pb::CodedOutputStream.ComputeInt32Size(3, DevStar);
+    }
+    if (hasEval) {
+      size += pb::CodedOutputStream.ComputeStringSize(4, Eval);
+    }
+    size += UnknownFields.SerializedSize;
+    memoizedSerializedSize = size;
+    return size;
+  }
+  public static CSEvaluate ParseFrom(pb::ByteString data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static CSEvaluate ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static CSEvaluate ParseFrom(byte[] data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static CSEvaluate ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static CSEvaluate ParseFrom(global::System.IO.Stream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static CSEvaluate ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  public static CSEvaluate ParseDelimitedFrom(global::System.IO.Stream input) {
+    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
+  }
+  public static CSEvaluate ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
+  }
+  public static CSEvaluate ParseFrom(pb::ICodedInputStream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static CSEvaluate ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  private CSEvaluate MakeReadOnly() {
+    return this;
+  }
+  
+  public static Builder CreateBuilder() { return new Builder(); }
+  public override Builder ToBuilder() { return CreateBuilder(this); }
+  public override Builder CreateBuilderForType() { return new Builder(); }
+  public static Builder CreateBuilder(CSEvaluate prototype) {
+    return new Builder(prototype);
+  }
+  
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class Builder : pb::GeneratedBuilder<CSEvaluate, Builder> {
+    protected override Builder ThisBuilder {
+      get { return this; }
+    }
+    public Builder() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+    }
+    internal Builder(CSEvaluate cloneFrom) {
+      result = cloneFrom;
+      resultIsReadOnly = true;
+    }
+    
+    private bool resultIsReadOnly;
+    private CSEvaluate result;
+    
+    private CSEvaluate PrepareBuilder() {
+      if (resultIsReadOnly) {
+        CSEvaluate original = result;
+        result = new CSEvaluate();
+        resultIsReadOnly = false;
+        MergeFrom(original);
+      }
+      return result;
+    }
+    
+    public override bool IsInitialized {
+      get { return result.IsInitialized; }
+    }
+    
+    protected override CSEvaluate MessageBeingBuilt {
+      get { return PrepareBuilder(); }
+    }
+    
+    public override Builder Clear() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+      return this;
+    }
+    
+    public override Builder Clone() {
+      if (resultIsReadOnly) {
+        return new Builder(result);
+      } else {
+        return new Builder().MergeFrom(result);
+      }
+    }
+    
+    public override pbd::MessageDescriptor DescriptorForType {
+      get { return global::CSEvaluate.Descriptor; }
+    }
+    
+    public override CSEvaluate DefaultInstanceForType {
+      get { return global::CSEvaluate.DefaultInstance; }
+    }
+    
+    public override CSEvaluate BuildPartial() {
+      if (resultIsReadOnly) {
+        return result;
+      }
+      resultIsReadOnly = true;
+      return result.MakeReadOnly();
+    }
+    
+    public override Builder MergeFrom(pb::IMessage other) {
+      if (other is CSEvaluate) {
+        return MergeFrom((CSEvaluate) other);
+      } else {
+        base.MergeFrom(other);
+        return this;
+      }
+    }
+    
+    public override Builder MergeFrom(CSEvaluate other) {
+      if (other == global::CSEvaluate.DefaultInstance) return this;
+      PrepareBuilder();
+      if (other.HasStaffStar) {
+        StaffStar = other.StaffStar;
+      }
+      if (other.HasEnvStar) {
+        EnvStar = other.EnvStar;
+      }
+      if (other.HasDevStar) {
+        DevStar = other.DevStar;
+      }
+      if (other.HasEval) {
+        Eval = other.Eval;
+      }
+      this.MergeUnknownFields(other.UnknownFields);
+      return this;
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input) {
+      return MergeFrom(input, pb::ExtensionRegistry.Empty);
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+      PrepareBuilder();
+      pb::UnknownFieldSet.Builder unknownFields = null;
+      uint tag;
+      string field_name;
+      while (input.ReadTag(out tag, out field_name)) {
+        if(tag == 0 && field_name != null) {
+          int field_ordinal = global::System.Array.BinarySearch(_cSEvaluateFieldNames, field_name, global::System.StringComparer.Ordinal);
+          if(field_ordinal >= 0)
+            tag = _cSEvaluateFieldTags[field_ordinal];
+          else {
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            continue;
+          }
+        }
+        switch (tag) {
+          case 0: {
+            throw pb::InvalidProtocolBufferException.InvalidTag();
+          }
+          default: {
+            if (pb::WireFormat.IsEndGroupTag(tag)) {
+              if (unknownFields != null) {
+                this.UnknownFields = unknownFields.Build();
+              }
+              return this;
+            }
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            break;
+          }
+          case 8: {
+            result.hasStaffStar = input.ReadInt32(ref result.staffStar_);
+            break;
+          }
+          case 16: {
+            result.hasEnvStar = input.ReadInt32(ref result.envStar_);
+            break;
+          }
+          case 24: {
+            result.hasDevStar = input.ReadInt32(ref result.devStar_);
+            break;
+          }
+          case 34: {
+            result.hasEval = input.ReadString(ref result.eval_);
+            break;
+          }
+        }
+      }
+      
+      if (unknownFields != null) {
+        this.UnknownFields = unknownFields.Build();
+      }
+      return this;
+    }
+    
+    
+    public bool HasStaffStar {
+      get { return result.hasStaffStar; }
+    }
+    public int StaffStar {
+      get { return result.StaffStar; }
+      set { SetStaffStar(value); }
+    }
+    public Builder SetStaffStar(int value) {
+      PrepareBuilder();
+      result.hasStaffStar = true;
+      result.staffStar_ = value;
+      return this;
+    }
+    public Builder ClearStaffStar() {
+      PrepareBuilder();
+      result.hasStaffStar = false;
+      result.staffStar_ = 0;
+      return this;
+    }
+    
+    public bool HasEnvStar {
+      get { return result.hasEnvStar; }
+    }
+    public int EnvStar {
+      get { return result.EnvStar; }
+      set { SetEnvStar(value); }
+    }
+    public Builder SetEnvStar(int value) {
+      PrepareBuilder();
+      result.hasEnvStar = true;
+      result.envStar_ = value;
+      return this;
+    }
+    public Builder ClearEnvStar() {
+      PrepareBuilder();
+      result.hasEnvStar = false;
+      result.envStar_ = 0;
+      return this;
+    }
+    
+    public bool HasDevStar {
+      get { return result.hasDevStar; }
+    }
+    public int DevStar {
+      get { return result.DevStar; }
+      set { SetDevStar(value); }
+    }
+    public Builder SetDevStar(int value) {
+      PrepareBuilder();
+      result.hasDevStar = true;
+      result.devStar_ = value;
+      return this;
+    }
+    public Builder ClearDevStar() {
+      PrepareBuilder();
+      result.hasDevStar = false;
+      result.devStar_ = 0;
+      return this;
+    }
+    
+    public bool HasEval {
+      get { return result.hasEval; }
+    }
+    public string Eval {
+      get { return result.Eval; }
+      set { SetEval(value); }
+    }
+    public Builder SetEval(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasEval = true;
+      result.eval_ = value;
+      return this;
+    }
+    public Builder ClearEval() {
+      PrepareBuilder();
+      result.hasEval = false;
+      result.eval_ = "";
+      return this;
+    }
+  }
+  static CSEvaluate() {
+    object.ReferenceEquals(global::CoreProtocol.Descriptor, null);
+  }
+}
+
+[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+public sealed partial class SCEvaluate : pb::GeneratedMessage<SCEvaluate, SCEvaluate.Builder> {
+  private SCEvaluate() { }
+  private static readonly SCEvaluate defaultInstance = new SCEvaluate().MakeReadOnly();
+  private static readonly string[] _sCEvaluateFieldNames = new string[] { "integal" };
+  private static readonly uint[] _sCEvaluateFieldTags = new uint[] { 8 };
+  public static SCEvaluate DefaultInstance {
+    get { return defaultInstance; }
+  }
+  
+  public override SCEvaluate DefaultInstanceForType {
+    get { return DefaultInstance; }
+  }
+  
+  protected override SCEvaluate ThisMessage {
+    get { return this; }
+  }
+  
+  public static pbd::MessageDescriptor Descriptor {
+    get { return global::CoreProtocol.internal__static_SCEvaluate__Descriptor; }
+  }
+  
+  protected override pb::FieldAccess.FieldAccessorTable<SCEvaluate, SCEvaluate.Builder> InternalFieldAccessors {
+    get { return global::CoreProtocol.internal__static_SCEvaluate__FieldAccessorTable; }
+  }
+  
+  public const int IntegalFieldNumber = 1;
+  private bool hasIntegal;
+  private int integal_;
+  public bool HasIntegal {
+    get { return hasIntegal; }
+  }
+  public int Integal {
+    get { return integal_; }
+  }
+  
+  public override bool IsInitialized {
+    get {
+      if (!hasIntegal) return false;
+      return true;
+    }
+  }
+  
+  public override void WriteTo(pb::ICodedOutputStream output) {
+    CalcSerializedSize();
+    string[] field_names = _sCEvaluateFieldNames;
+    if (hasIntegal) {
+      output.WriteInt32(1, field_names[0], Integal);
+    }
+    UnknownFields.WriteTo(output);
+  }
+  
+  private int memoizedSerializedSize = -1;
+  public override int SerializedSize {
+    get {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+      return CalcSerializedSize();
+    }
+  }
+  
+  private int CalcSerializedSize() {
+    int size = memoizedSerializedSize;
+    if (size != -1) return size;
+    
+    size = 0;
+    if (hasIntegal) {
+      size += pb::CodedOutputStream.ComputeInt32Size(1, Integal);
+    }
+    size += UnknownFields.SerializedSize;
+    memoizedSerializedSize = size;
+    return size;
+  }
+  public static SCEvaluate ParseFrom(pb::ByteString data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static SCEvaluate ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static SCEvaluate ParseFrom(byte[] data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static SCEvaluate ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static SCEvaluate ParseFrom(global::System.IO.Stream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static SCEvaluate ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  public static SCEvaluate ParseDelimitedFrom(global::System.IO.Stream input) {
+    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
+  }
+  public static SCEvaluate ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
+  }
+  public static SCEvaluate ParseFrom(pb::ICodedInputStream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static SCEvaluate ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  private SCEvaluate MakeReadOnly() {
+    return this;
+  }
+  
+  public static Builder CreateBuilder() { return new Builder(); }
+  public override Builder ToBuilder() { return CreateBuilder(this); }
+  public override Builder CreateBuilderForType() { return new Builder(); }
+  public static Builder CreateBuilder(SCEvaluate prototype) {
+    return new Builder(prototype);
+  }
+  
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class Builder : pb::GeneratedBuilder<SCEvaluate, Builder> {
+    protected override Builder ThisBuilder {
+      get { return this; }
+    }
+    public Builder() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+    }
+    internal Builder(SCEvaluate cloneFrom) {
+      result = cloneFrom;
+      resultIsReadOnly = true;
+    }
+    
+    private bool resultIsReadOnly;
+    private SCEvaluate result;
+    
+    private SCEvaluate PrepareBuilder() {
+      if (resultIsReadOnly) {
+        SCEvaluate original = result;
+        result = new SCEvaluate();
+        resultIsReadOnly = false;
+        MergeFrom(original);
+      }
+      return result;
+    }
+    
+    public override bool IsInitialized {
+      get { return result.IsInitialized; }
+    }
+    
+    protected override SCEvaluate MessageBeingBuilt {
+      get { return PrepareBuilder(); }
+    }
+    
+    public override Builder Clear() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+      return this;
+    }
+    
+    public override Builder Clone() {
+      if (resultIsReadOnly) {
+        return new Builder(result);
+      } else {
+        return new Builder().MergeFrom(result);
+      }
+    }
+    
+    public override pbd::MessageDescriptor DescriptorForType {
+      get { return global::SCEvaluate.Descriptor; }
+    }
+    
+    public override SCEvaluate DefaultInstanceForType {
+      get { return global::SCEvaluate.DefaultInstance; }
+    }
+    
+    public override SCEvaluate BuildPartial() {
+      if (resultIsReadOnly) {
+        return result;
+      }
+      resultIsReadOnly = true;
+      return result.MakeReadOnly();
+    }
+    
+    public override Builder MergeFrom(pb::IMessage other) {
+      if (other is SCEvaluate) {
+        return MergeFrom((SCEvaluate) other);
+      } else {
+        base.MergeFrom(other);
+        return this;
+      }
+    }
+    
+    public override Builder MergeFrom(SCEvaluate other) {
+      if (other == global::SCEvaluate.DefaultInstance) return this;
+      PrepareBuilder();
+      if (other.HasIntegal) {
+        Integal = other.Integal;
+      }
+      this.MergeUnknownFields(other.UnknownFields);
+      return this;
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input) {
+      return MergeFrom(input, pb::ExtensionRegistry.Empty);
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+      PrepareBuilder();
+      pb::UnknownFieldSet.Builder unknownFields = null;
+      uint tag;
+      string field_name;
+      while (input.ReadTag(out tag, out field_name)) {
+        if(tag == 0 && field_name != null) {
+          int field_ordinal = global::System.Array.BinarySearch(_sCEvaluateFieldNames, field_name, global::System.StringComparer.Ordinal);
+          if(field_ordinal >= 0)
+            tag = _sCEvaluateFieldTags[field_ordinal];
+          else {
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            continue;
+          }
+        }
+        switch (tag) {
+          case 0: {
+            throw pb::InvalidProtocolBufferException.InvalidTag();
+          }
+          default: {
+            if (pb::WireFormat.IsEndGroupTag(tag)) {
+              if (unknownFields != null) {
+                this.UnknownFields = unknownFields.Build();
+              }
+              return this;
+            }
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            break;
+          }
+          case 8: {
+            result.hasIntegal = input.ReadInt32(ref result.integal_);
+            break;
+          }
+        }
+      }
+      
+      if (unknownFields != null) {
+        this.UnknownFields = unknownFields.Build();
+      }
+      return this;
+    }
+    
+    
+    public bool HasIntegal {
+      get { return result.hasIntegal; }
+    }
+    public int Integal {
+      get { return result.Integal; }
+      set { SetIntegal(value); }
+    }
+    public Builder SetIntegal(int value) {
+      PrepareBuilder();
+      result.hasIntegal = true;
+      result.integal_ = value;
+      return this;
+    }
+    public Builder ClearIntegal() {
+      PrepareBuilder();
+      result.hasIntegal = false;
+      result.integal_ = 0;
+      return this;
+    }
+  }
+  static SCEvaluate() {
+    object.ReferenceEquals(global::CoreProtocol.Descriptor, null);
+  }
+}
+
+[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+public sealed partial class CSVerifyCode : pb::GeneratedMessage<CSVerifyCode, CSVerifyCode.Builder> {
+  private CSVerifyCode() { }
+  private static readonly CSVerifyCode defaultInstance = new CSVerifyCode().MakeReadOnly();
+  private static readonly string[] _cSVerifyCodeFieldNames = new string[] { "phonenumber" };
+  private static readonly uint[] _cSVerifyCodeFieldTags = new uint[] { 10 };
+  public static CSVerifyCode DefaultInstance {
+    get { return defaultInstance; }
+  }
+  
+  public override CSVerifyCode DefaultInstanceForType {
+    get { return DefaultInstance; }
+  }
+  
+  protected override CSVerifyCode ThisMessage {
+    get { return this; }
+  }
+  
+  public static pbd::MessageDescriptor Descriptor {
+    get { return global::CoreProtocol.internal__static_CSVerifyCode__Descriptor; }
+  }
+  
+  protected override pb::FieldAccess.FieldAccessorTable<CSVerifyCode, CSVerifyCode.Builder> InternalFieldAccessors {
+    get { return global::CoreProtocol.internal__static_CSVerifyCode__FieldAccessorTable; }
+  }
+  
+  public const int PhonenumberFieldNumber = 1;
+  private bool hasPhonenumber;
+  private string phonenumber_ = "";
+  public bool HasPhonenumber {
+    get { return hasPhonenumber; }
+  }
+  public string Phonenumber {
+    get { return phonenumber_; }
+  }
+  
+  public override bool IsInitialized {
+    get {
+      if (!hasPhonenumber) return false;
+      return true;
+    }
+  }
+  
+  public override void WriteTo(pb::ICodedOutputStream output) {
+    CalcSerializedSize();
+    string[] field_names = _cSVerifyCodeFieldNames;
+    if (hasPhonenumber) {
+      output.WriteString(1, field_names[0], Phonenumber);
+    }
+    UnknownFields.WriteTo(output);
+  }
+  
+  private int memoizedSerializedSize = -1;
+  public override int SerializedSize {
+    get {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+      return CalcSerializedSize();
+    }
+  }
+  
+  private int CalcSerializedSize() {
+    int size = memoizedSerializedSize;
+    if (size != -1) return size;
+    
+    size = 0;
+    if (hasPhonenumber) {
+      size += pb::CodedOutputStream.ComputeStringSize(1, Phonenumber);
+    }
+    size += UnknownFields.SerializedSize;
+    memoizedSerializedSize = size;
+    return size;
+  }
+  public static CSVerifyCode ParseFrom(pb::ByteString data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static CSVerifyCode ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static CSVerifyCode ParseFrom(byte[] data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static CSVerifyCode ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static CSVerifyCode ParseFrom(global::System.IO.Stream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static CSVerifyCode ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  public static CSVerifyCode ParseDelimitedFrom(global::System.IO.Stream input) {
+    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
+  }
+  public static CSVerifyCode ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
+  }
+  public static CSVerifyCode ParseFrom(pb::ICodedInputStream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static CSVerifyCode ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  private CSVerifyCode MakeReadOnly() {
+    return this;
+  }
+  
+  public static Builder CreateBuilder() { return new Builder(); }
+  public override Builder ToBuilder() { return CreateBuilder(this); }
+  public override Builder CreateBuilderForType() { return new Builder(); }
+  public static Builder CreateBuilder(CSVerifyCode prototype) {
+    return new Builder(prototype);
+  }
+  
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class Builder : pb::GeneratedBuilder<CSVerifyCode, Builder> {
+    protected override Builder ThisBuilder {
+      get { return this; }
+    }
+    public Builder() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+    }
+    internal Builder(CSVerifyCode cloneFrom) {
+      result = cloneFrom;
+      resultIsReadOnly = true;
+    }
+    
+    private bool resultIsReadOnly;
+    private CSVerifyCode result;
+    
+    private CSVerifyCode PrepareBuilder() {
+      if (resultIsReadOnly) {
+        CSVerifyCode original = result;
+        result = new CSVerifyCode();
+        resultIsReadOnly = false;
+        MergeFrom(original);
+      }
+      return result;
+    }
+    
+    public override bool IsInitialized {
+      get { return result.IsInitialized; }
+    }
+    
+    protected override CSVerifyCode MessageBeingBuilt {
+      get { return PrepareBuilder(); }
+    }
+    
+    public override Builder Clear() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+      return this;
+    }
+    
+    public override Builder Clone() {
+      if (resultIsReadOnly) {
+        return new Builder(result);
+      } else {
+        return new Builder().MergeFrom(result);
+      }
+    }
+    
+    public override pbd::MessageDescriptor DescriptorForType {
+      get { return global::CSVerifyCode.Descriptor; }
+    }
+    
+    public override CSVerifyCode DefaultInstanceForType {
+      get { return global::CSVerifyCode.DefaultInstance; }
+    }
+    
+    public override CSVerifyCode BuildPartial() {
+      if (resultIsReadOnly) {
+        return result;
+      }
+      resultIsReadOnly = true;
+      return result.MakeReadOnly();
+    }
+    
+    public override Builder MergeFrom(pb::IMessage other) {
+      if (other is CSVerifyCode) {
+        return MergeFrom((CSVerifyCode) other);
+      } else {
+        base.MergeFrom(other);
+        return this;
+      }
+    }
+    
+    public override Builder MergeFrom(CSVerifyCode other) {
+      if (other == global::CSVerifyCode.DefaultInstance) return this;
+      PrepareBuilder();
+      if (other.HasPhonenumber) {
+        Phonenumber = other.Phonenumber;
+      }
+      this.MergeUnknownFields(other.UnknownFields);
+      return this;
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input) {
+      return MergeFrom(input, pb::ExtensionRegistry.Empty);
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+      PrepareBuilder();
+      pb::UnknownFieldSet.Builder unknownFields = null;
+      uint tag;
+      string field_name;
+      while (input.ReadTag(out tag, out field_name)) {
+        if(tag == 0 && field_name != null) {
+          int field_ordinal = global::System.Array.BinarySearch(_cSVerifyCodeFieldNames, field_name, global::System.StringComparer.Ordinal);
+          if(field_ordinal >= 0)
+            tag = _cSVerifyCodeFieldTags[field_ordinal];
+          else {
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            continue;
+          }
+        }
+        switch (tag) {
+          case 0: {
+            throw pb::InvalidProtocolBufferException.InvalidTag();
+          }
+          default: {
+            if (pb::WireFormat.IsEndGroupTag(tag)) {
+              if (unknownFields != null) {
+                this.UnknownFields = unknownFields.Build();
+              }
+              return this;
+            }
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            break;
+          }
+          case 10: {
+            result.hasPhonenumber = input.ReadString(ref result.phonenumber_);
+            break;
+          }
+        }
+      }
+      
+      if (unknownFields != null) {
+        this.UnknownFields = unknownFields.Build();
+      }
+      return this;
+    }
+    
+    
+    public bool HasPhonenumber {
+      get { return result.hasPhonenumber; }
+    }
+    public string Phonenumber {
+      get { return result.Phonenumber; }
+      set { SetPhonenumber(value); }
+    }
+    public Builder SetPhonenumber(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasPhonenumber = true;
+      result.phonenumber_ = value;
+      return this;
+    }
+    public Builder ClearPhonenumber() {
+      PrepareBuilder();
+      result.hasPhonenumber = false;
+      result.phonenumber_ = "";
+      return this;
+    }
+  }
+  static CSVerifyCode() {
+    object.ReferenceEquals(global::CoreProtocol.Descriptor, null);
+  }
+}
+
+[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+public sealed partial class SCVerifyCode : pb::GeneratedMessage<SCVerifyCode, SCVerifyCode.Builder> {
+  private SCVerifyCode() { }
+  private static readonly SCVerifyCode defaultInstance = new SCVerifyCode().MakeReadOnly();
+  private static readonly string[] _sCVerifyCodeFieldNames = new string[] { "verifycode" };
+  private static readonly uint[] _sCVerifyCodeFieldTags = new uint[] { 10 };
+  public static SCVerifyCode DefaultInstance {
+    get { return defaultInstance; }
+  }
+  
+  public override SCVerifyCode DefaultInstanceForType {
+    get { return DefaultInstance; }
+  }
+  
+  protected override SCVerifyCode ThisMessage {
+    get { return this; }
+  }
+  
+  public static pbd::MessageDescriptor Descriptor {
+    get { return global::CoreProtocol.internal__static_SCVerifyCode__Descriptor; }
+  }
+  
+  protected override pb::FieldAccess.FieldAccessorTable<SCVerifyCode, SCVerifyCode.Builder> InternalFieldAccessors {
+    get { return global::CoreProtocol.internal__static_SCVerifyCode__FieldAccessorTable; }
+  }
+  
+  public const int VerifycodeFieldNumber = 1;
+  private bool hasVerifycode;
+  private string verifycode_ = "";
+  public bool HasVerifycode {
+    get { return hasVerifycode; }
+  }
+  public string Verifycode {
+    get { return verifycode_; }
+  }
+  
+  public override bool IsInitialized {
+    get {
+      if (!hasVerifycode) return false;
+      return true;
+    }
+  }
+  
+  public override void WriteTo(pb::ICodedOutputStream output) {
+    CalcSerializedSize();
+    string[] field_names = _sCVerifyCodeFieldNames;
+    if (hasVerifycode) {
+      output.WriteString(1, field_names[0], Verifycode);
+    }
+    UnknownFields.WriteTo(output);
+  }
+  
+  private int memoizedSerializedSize = -1;
+  public override int SerializedSize {
+    get {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+      return CalcSerializedSize();
+    }
+  }
+  
+  private int CalcSerializedSize() {
+    int size = memoizedSerializedSize;
+    if (size != -1) return size;
+    
+    size = 0;
+    if (hasVerifycode) {
+      size += pb::CodedOutputStream.ComputeStringSize(1, Verifycode);
+    }
+    size += UnknownFields.SerializedSize;
+    memoizedSerializedSize = size;
+    return size;
+  }
+  public static SCVerifyCode ParseFrom(pb::ByteString data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static SCVerifyCode ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static SCVerifyCode ParseFrom(byte[] data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static SCVerifyCode ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static SCVerifyCode ParseFrom(global::System.IO.Stream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static SCVerifyCode ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  public static SCVerifyCode ParseDelimitedFrom(global::System.IO.Stream input) {
+    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
+  }
+  public static SCVerifyCode ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
+  }
+  public static SCVerifyCode ParseFrom(pb::ICodedInputStream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static SCVerifyCode ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  private SCVerifyCode MakeReadOnly() {
+    return this;
+  }
+  
+  public static Builder CreateBuilder() { return new Builder(); }
+  public override Builder ToBuilder() { return CreateBuilder(this); }
+  public override Builder CreateBuilderForType() { return new Builder(); }
+  public static Builder CreateBuilder(SCVerifyCode prototype) {
+    return new Builder(prototype);
+  }
+  
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class Builder : pb::GeneratedBuilder<SCVerifyCode, Builder> {
+    protected override Builder ThisBuilder {
+      get { return this; }
+    }
+    public Builder() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+    }
+    internal Builder(SCVerifyCode cloneFrom) {
+      result = cloneFrom;
+      resultIsReadOnly = true;
+    }
+    
+    private bool resultIsReadOnly;
+    private SCVerifyCode result;
+    
+    private SCVerifyCode PrepareBuilder() {
+      if (resultIsReadOnly) {
+        SCVerifyCode original = result;
+        result = new SCVerifyCode();
+        resultIsReadOnly = false;
+        MergeFrom(original);
+      }
+      return result;
+    }
+    
+    public override bool IsInitialized {
+      get { return result.IsInitialized; }
+    }
+    
+    protected override SCVerifyCode MessageBeingBuilt {
+      get { return PrepareBuilder(); }
+    }
+    
+    public override Builder Clear() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+      return this;
+    }
+    
+    public override Builder Clone() {
+      if (resultIsReadOnly) {
+        return new Builder(result);
+      } else {
+        return new Builder().MergeFrom(result);
+      }
+    }
+    
+    public override pbd::MessageDescriptor DescriptorForType {
+      get { return global::SCVerifyCode.Descriptor; }
+    }
+    
+    public override SCVerifyCode DefaultInstanceForType {
+      get { return global::SCVerifyCode.DefaultInstance; }
+    }
+    
+    public override SCVerifyCode BuildPartial() {
+      if (resultIsReadOnly) {
+        return result;
+      }
+      resultIsReadOnly = true;
+      return result.MakeReadOnly();
+    }
+    
+    public override Builder MergeFrom(pb::IMessage other) {
+      if (other is SCVerifyCode) {
+        return MergeFrom((SCVerifyCode) other);
+      } else {
+        base.MergeFrom(other);
+        return this;
+      }
+    }
+    
+    public override Builder MergeFrom(SCVerifyCode other) {
+      if (other == global::SCVerifyCode.DefaultInstance) return this;
+      PrepareBuilder();
+      if (other.HasVerifycode) {
+        Verifycode = other.Verifycode;
+      }
+      this.MergeUnknownFields(other.UnknownFields);
+      return this;
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input) {
+      return MergeFrom(input, pb::ExtensionRegistry.Empty);
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+      PrepareBuilder();
+      pb::UnknownFieldSet.Builder unknownFields = null;
+      uint tag;
+      string field_name;
+      while (input.ReadTag(out tag, out field_name)) {
+        if(tag == 0 && field_name != null) {
+          int field_ordinal = global::System.Array.BinarySearch(_sCVerifyCodeFieldNames, field_name, global::System.StringComparer.Ordinal);
+          if(field_ordinal >= 0)
+            tag = _sCVerifyCodeFieldTags[field_ordinal];
+          else {
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            continue;
+          }
+        }
+        switch (tag) {
+          case 0: {
+            throw pb::InvalidProtocolBufferException.InvalidTag();
+          }
+          default: {
+            if (pb::WireFormat.IsEndGroupTag(tag)) {
+              if (unknownFields != null) {
+                this.UnknownFields = unknownFields.Build();
+              }
+              return this;
+            }
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            break;
+          }
+          case 10: {
+            result.hasVerifycode = input.ReadString(ref result.verifycode_);
+            break;
+          }
+        }
+      }
+      
+      if (unknownFields != null) {
+        this.UnknownFields = unknownFields.Build();
+      }
+      return this;
+    }
+    
+    
+    public bool HasVerifycode {
+      get { return result.hasVerifycode; }
+    }
+    public string Verifycode {
+      get { return result.Verifycode; }
+      set { SetVerifycode(value); }
+    }
+    public Builder SetVerifycode(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasVerifycode = true;
+      result.verifycode_ = value;
+      return this;
+    }
+    public Builder ClearVerifycode() {
+      PrepareBuilder();
+      result.hasVerifycode = false;
+      result.verifycode_ = "";
+      return this;
+    }
+  }
+  static SCVerifyCode() {
+    object.ReferenceEquals(global::CoreProtocol.Descriptor, null);
+  }
+}
+
+[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+public sealed partial class CSBindMobile : pb::GeneratedMessage<CSBindMobile, CSBindMobile.Builder> {
+  private CSBindMobile() { }
+  private static readonly CSBindMobile defaultInstance = new CSBindMobile().MakeReadOnly();
+  private static readonly string[] _cSBindMobileFieldNames = new string[] { "phonenumber", "verifycode" };
+  private static readonly uint[] _cSBindMobileFieldTags = new uint[] { 10, 18 };
+  public static CSBindMobile DefaultInstance {
+    get { return defaultInstance; }
+  }
+  
+  public override CSBindMobile DefaultInstanceForType {
+    get { return DefaultInstance; }
+  }
+  
+  protected override CSBindMobile ThisMessage {
+    get { return this; }
+  }
+  
+  public static pbd::MessageDescriptor Descriptor {
+    get { return global::CoreProtocol.internal__static_CSBindMobile__Descriptor; }
+  }
+  
+  protected override pb::FieldAccess.FieldAccessorTable<CSBindMobile, CSBindMobile.Builder> InternalFieldAccessors {
+    get { return global::CoreProtocol.internal__static_CSBindMobile__FieldAccessorTable; }
+  }
+  
+  public const int PhonenumberFieldNumber = 1;
+  private bool hasPhonenumber;
+  private string phonenumber_ = "";
+  public bool HasPhonenumber {
+    get { return hasPhonenumber; }
+  }
+  public string Phonenumber {
+    get { return phonenumber_; }
+  }
+  
+  public const int VerifycodeFieldNumber = 2;
+  private bool hasVerifycode;
+  private string verifycode_ = "";
+  public bool HasVerifycode {
+    get { return hasVerifycode; }
+  }
+  public string Verifycode {
+    get { return verifycode_; }
+  }
+  
+  public override bool IsInitialized {
+    get {
+      if (!hasPhonenumber) return false;
+      if (!hasVerifycode) return false;
+      return true;
+    }
+  }
+  
+  public override void WriteTo(pb::ICodedOutputStream output) {
+    CalcSerializedSize();
+    string[] field_names = _cSBindMobileFieldNames;
+    if (hasPhonenumber) {
+      output.WriteString(1, field_names[0], Phonenumber);
+    }
+    if (hasVerifycode) {
+      output.WriteString(2, field_names[1], Verifycode);
+    }
+    UnknownFields.WriteTo(output);
+  }
+  
+  private int memoizedSerializedSize = -1;
+  public override int SerializedSize {
+    get {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+      return CalcSerializedSize();
+    }
+  }
+  
+  private int CalcSerializedSize() {
+    int size = memoizedSerializedSize;
+    if (size != -1) return size;
+    
+    size = 0;
+    if (hasPhonenumber) {
+      size += pb::CodedOutputStream.ComputeStringSize(1, Phonenumber);
+    }
+    if (hasVerifycode) {
+      size += pb::CodedOutputStream.ComputeStringSize(2, Verifycode);
+    }
+    size += UnknownFields.SerializedSize;
+    memoizedSerializedSize = size;
+    return size;
+  }
+  public static CSBindMobile ParseFrom(pb::ByteString data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static CSBindMobile ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static CSBindMobile ParseFrom(byte[] data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static CSBindMobile ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static CSBindMobile ParseFrom(global::System.IO.Stream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static CSBindMobile ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  public static CSBindMobile ParseDelimitedFrom(global::System.IO.Stream input) {
+    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
+  }
+  public static CSBindMobile ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
+  }
+  public static CSBindMobile ParseFrom(pb::ICodedInputStream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static CSBindMobile ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  private CSBindMobile MakeReadOnly() {
+    return this;
+  }
+  
+  public static Builder CreateBuilder() { return new Builder(); }
+  public override Builder ToBuilder() { return CreateBuilder(this); }
+  public override Builder CreateBuilderForType() { return new Builder(); }
+  public static Builder CreateBuilder(CSBindMobile prototype) {
+    return new Builder(prototype);
+  }
+  
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class Builder : pb::GeneratedBuilder<CSBindMobile, Builder> {
+    protected override Builder ThisBuilder {
+      get { return this; }
+    }
+    public Builder() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+    }
+    internal Builder(CSBindMobile cloneFrom) {
+      result = cloneFrom;
+      resultIsReadOnly = true;
+    }
+    
+    private bool resultIsReadOnly;
+    private CSBindMobile result;
+    
+    private CSBindMobile PrepareBuilder() {
+      if (resultIsReadOnly) {
+        CSBindMobile original = result;
+        result = new CSBindMobile();
+        resultIsReadOnly = false;
+        MergeFrom(original);
+      }
+      return result;
+    }
+    
+    public override bool IsInitialized {
+      get { return result.IsInitialized; }
+    }
+    
+    protected override CSBindMobile MessageBeingBuilt {
+      get { return PrepareBuilder(); }
+    }
+    
+    public override Builder Clear() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+      return this;
+    }
+    
+    public override Builder Clone() {
+      if (resultIsReadOnly) {
+        return new Builder(result);
+      } else {
+        return new Builder().MergeFrom(result);
+      }
+    }
+    
+    public override pbd::MessageDescriptor DescriptorForType {
+      get { return global::CSBindMobile.Descriptor; }
+    }
+    
+    public override CSBindMobile DefaultInstanceForType {
+      get { return global::CSBindMobile.DefaultInstance; }
+    }
+    
+    public override CSBindMobile BuildPartial() {
+      if (resultIsReadOnly) {
+        return result;
+      }
+      resultIsReadOnly = true;
+      return result.MakeReadOnly();
+    }
+    
+    public override Builder MergeFrom(pb::IMessage other) {
+      if (other is CSBindMobile) {
+        return MergeFrom((CSBindMobile) other);
+      } else {
+        base.MergeFrom(other);
+        return this;
+      }
+    }
+    
+    public override Builder MergeFrom(CSBindMobile other) {
+      if (other == global::CSBindMobile.DefaultInstance) return this;
+      PrepareBuilder();
+      if (other.HasPhonenumber) {
+        Phonenumber = other.Phonenumber;
+      }
+      if (other.HasVerifycode) {
+        Verifycode = other.Verifycode;
+      }
+      this.MergeUnknownFields(other.UnknownFields);
+      return this;
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input) {
+      return MergeFrom(input, pb::ExtensionRegistry.Empty);
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+      PrepareBuilder();
+      pb::UnknownFieldSet.Builder unknownFields = null;
+      uint tag;
+      string field_name;
+      while (input.ReadTag(out tag, out field_name)) {
+        if(tag == 0 && field_name != null) {
+          int field_ordinal = global::System.Array.BinarySearch(_cSBindMobileFieldNames, field_name, global::System.StringComparer.Ordinal);
+          if(field_ordinal >= 0)
+            tag = _cSBindMobileFieldTags[field_ordinal];
+          else {
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            continue;
+          }
+        }
+        switch (tag) {
+          case 0: {
+            throw pb::InvalidProtocolBufferException.InvalidTag();
+          }
+          default: {
+            if (pb::WireFormat.IsEndGroupTag(tag)) {
+              if (unknownFields != null) {
+                this.UnknownFields = unknownFields.Build();
+              }
+              return this;
+            }
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            break;
+          }
+          case 10: {
+            result.hasPhonenumber = input.ReadString(ref result.phonenumber_);
+            break;
+          }
+          case 18: {
+            result.hasVerifycode = input.ReadString(ref result.verifycode_);
+            break;
+          }
+        }
+      }
+      
+      if (unknownFields != null) {
+        this.UnknownFields = unknownFields.Build();
+      }
+      return this;
+    }
+    
+    
+    public bool HasPhonenumber {
+      get { return result.hasPhonenumber; }
+    }
+    public string Phonenumber {
+      get { return result.Phonenumber; }
+      set { SetPhonenumber(value); }
+    }
+    public Builder SetPhonenumber(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasPhonenumber = true;
+      result.phonenumber_ = value;
+      return this;
+    }
+    public Builder ClearPhonenumber() {
+      PrepareBuilder();
+      result.hasPhonenumber = false;
+      result.phonenumber_ = "";
+      return this;
+    }
+    
+    public bool HasVerifycode {
+      get { return result.hasVerifycode; }
+    }
+    public string Verifycode {
+      get { return result.Verifycode; }
+      set { SetVerifycode(value); }
+    }
+    public Builder SetVerifycode(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasVerifycode = true;
+      result.verifycode_ = value;
+      return this;
+    }
+    public Builder ClearVerifycode() {
+      PrepareBuilder();
+      result.hasVerifycode = false;
+      result.verifycode_ = "";
+      return this;
+    }
+  }
+  static CSBindMobile() {
+    object.ReferenceEquals(global::CoreProtocol.Descriptor, null);
+  }
+}
+
+[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+public sealed partial class SCBindMobile : pb::GeneratedMessage<SCBindMobile, SCBindMobile.Builder> {
+  private SCBindMobile() { }
+  private static readonly SCBindMobile defaultInstance = new SCBindMobile().MakeReadOnly();
+  private static readonly string[] _sCBindMobileFieldNames = new string[] { "integal" };
+  private static readonly uint[] _sCBindMobileFieldTags = new uint[] { 8 };
+  public static SCBindMobile DefaultInstance {
+    get { return defaultInstance; }
+  }
+  
+  public override SCBindMobile DefaultInstanceForType {
+    get { return DefaultInstance; }
+  }
+  
+  protected override SCBindMobile ThisMessage {
+    get { return this; }
+  }
+  
+  public static pbd::MessageDescriptor Descriptor {
+    get { return global::CoreProtocol.internal__static_SCBindMobile__Descriptor; }
+  }
+  
+  protected override pb::FieldAccess.FieldAccessorTable<SCBindMobile, SCBindMobile.Builder> InternalFieldAccessors {
+    get { return global::CoreProtocol.internal__static_SCBindMobile__FieldAccessorTable; }
+  }
+  
+  public const int IntegalFieldNumber = 1;
+  private bool hasIntegal;
+  private int integal_;
+  public bool HasIntegal {
+    get { return hasIntegal; }
+  }
+  public int Integal {
+    get { return integal_; }
+  }
+  
+  public override bool IsInitialized {
+    get {
+      if (!hasIntegal) return false;
+      return true;
+    }
+  }
+  
+  public override void WriteTo(pb::ICodedOutputStream output) {
+    CalcSerializedSize();
+    string[] field_names = _sCBindMobileFieldNames;
+    if (hasIntegal) {
+      output.WriteInt32(1, field_names[0], Integal);
+    }
+    UnknownFields.WriteTo(output);
+  }
+  
+  private int memoizedSerializedSize = -1;
+  public override int SerializedSize {
+    get {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+      return CalcSerializedSize();
+    }
+  }
+  
+  private int CalcSerializedSize() {
+    int size = memoizedSerializedSize;
+    if (size != -1) return size;
+    
+    size = 0;
+    if (hasIntegal) {
+      size += pb::CodedOutputStream.ComputeInt32Size(1, Integal);
+    }
+    size += UnknownFields.SerializedSize;
+    memoizedSerializedSize = size;
+    return size;
+  }
+  public static SCBindMobile ParseFrom(pb::ByteString data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static SCBindMobile ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static SCBindMobile ParseFrom(byte[] data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static SCBindMobile ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static SCBindMobile ParseFrom(global::System.IO.Stream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static SCBindMobile ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  public static SCBindMobile ParseDelimitedFrom(global::System.IO.Stream input) {
+    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
+  }
+  public static SCBindMobile ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
+  }
+  public static SCBindMobile ParseFrom(pb::ICodedInputStream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static SCBindMobile ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  private SCBindMobile MakeReadOnly() {
+    return this;
+  }
+  
+  public static Builder CreateBuilder() { return new Builder(); }
+  public override Builder ToBuilder() { return CreateBuilder(this); }
+  public override Builder CreateBuilderForType() { return new Builder(); }
+  public static Builder CreateBuilder(SCBindMobile prototype) {
+    return new Builder(prototype);
+  }
+  
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class Builder : pb::GeneratedBuilder<SCBindMobile, Builder> {
+    protected override Builder ThisBuilder {
+      get { return this; }
+    }
+    public Builder() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+    }
+    internal Builder(SCBindMobile cloneFrom) {
+      result = cloneFrom;
+      resultIsReadOnly = true;
+    }
+    
+    private bool resultIsReadOnly;
+    private SCBindMobile result;
+    
+    private SCBindMobile PrepareBuilder() {
+      if (resultIsReadOnly) {
+        SCBindMobile original = result;
+        result = new SCBindMobile();
+        resultIsReadOnly = false;
+        MergeFrom(original);
+      }
+      return result;
+    }
+    
+    public override bool IsInitialized {
+      get { return result.IsInitialized; }
+    }
+    
+    protected override SCBindMobile MessageBeingBuilt {
+      get { return PrepareBuilder(); }
+    }
+    
+    public override Builder Clear() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+      return this;
+    }
+    
+    public override Builder Clone() {
+      if (resultIsReadOnly) {
+        return new Builder(result);
+      } else {
+        return new Builder().MergeFrom(result);
+      }
+    }
+    
+    public override pbd::MessageDescriptor DescriptorForType {
+      get { return global::SCBindMobile.Descriptor; }
+    }
+    
+    public override SCBindMobile DefaultInstanceForType {
+      get { return global::SCBindMobile.DefaultInstance; }
+    }
+    
+    public override SCBindMobile BuildPartial() {
+      if (resultIsReadOnly) {
+        return result;
+      }
+      resultIsReadOnly = true;
+      return result.MakeReadOnly();
+    }
+    
+    public override Builder MergeFrom(pb::IMessage other) {
+      if (other is SCBindMobile) {
+        return MergeFrom((SCBindMobile) other);
+      } else {
+        base.MergeFrom(other);
+        return this;
+      }
+    }
+    
+    public override Builder MergeFrom(SCBindMobile other) {
+      if (other == global::SCBindMobile.DefaultInstance) return this;
+      PrepareBuilder();
+      if (other.HasIntegal) {
+        Integal = other.Integal;
+      }
+      this.MergeUnknownFields(other.UnknownFields);
+      return this;
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input) {
+      return MergeFrom(input, pb::ExtensionRegistry.Empty);
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+      PrepareBuilder();
+      pb::UnknownFieldSet.Builder unknownFields = null;
+      uint tag;
+      string field_name;
+      while (input.ReadTag(out tag, out field_name)) {
+        if(tag == 0 && field_name != null) {
+          int field_ordinal = global::System.Array.BinarySearch(_sCBindMobileFieldNames, field_name, global::System.StringComparer.Ordinal);
+          if(field_ordinal >= 0)
+            tag = _sCBindMobileFieldTags[field_ordinal];
+          else {
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            continue;
+          }
+        }
+        switch (tag) {
+          case 0: {
+            throw pb::InvalidProtocolBufferException.InvalidTag();
+          }
+          default: {
+            if (pb::WireFormat.IsEndGroupTag(tag)) {
+              if (unknownFields != null) {
+                this.UnknownFields = unknownFields.Build();
+              }
+              return this;
+            }
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            break;
+          }
+          case 8: {
+            result.hasIntegal = input.ReadInt32(ref result.integal_);
+            break;
+          }
+        }
+      }
+      
+      if (unknownFields != null) {
+        this.UnknownFields = unknownFields.Build();
+      }
+      return this;
+    }
+    
+    
+    public bool HasIntegal {
+      get { return result.hasIntegal; }
+    }
+    public int Integal {
+      get { return result.Integal; }
+      set { SetIntegal(value); }
+    }
+    public Builder SetIntegal(int value) {
+      PrepareBuilder();
+      result.hasIntegal = true;
+      result.integal_ = value;
+      return this;
+    }
+    public Builder ClearIntegal() {
+      PrepareBuilder();
+      result.hasIntegal = false;
+      result.integal_ = 0;
+      return this;
+    }
+  }
+  static SCBindMobile() {
     object.ReferenceEquals(global::CoreProtocol.Descriptor, null);
   }
 }

@@ -15,9 +15,9 @@ namespace UserNetTest.Tools
 {
     public class NetMessageManage
     {
-        private string socketTag;
+        private int index;
         private Socket clientSocket;
-        private static NetMessageManage _instance;
+        //private static NetMessageManage _instance;
         private const string ipString = "jorkenw.gnway.org";
         private const int port = 8465;
 
@@ -34,27 +34,16 @@ namespace UserNetTest.Tools
         public delegate void UIHandleBlock();
         #endregion
 
-        public static NetMessageManage Manager(ConnectResultBlock connect)
+        public NetMessageManage(int tem)
         {
-            if (_instance == null)
-            {
-                _instance = new NetMessageManage();
-                _instance.ConnectSever();
-                _instance.ConnectBlockHandle += connect;
-            }
-            return _instance;
+            index = tem;
         }
-        public static NetMessageManage Manager()
+        //连接服务器
+        public void ConnectServer(ConnectResultBlock connect)
         {
-            if(_instance == null)
-            {
-                _instance = new NetMessageManage();
-                _instance.ConnectSever();
-            }
-            return _instance;
+            this.ConnectBlockHandle += connect;
+            this.ConnectSever();
         }
-
-
         /// <summary>
         /// 连接服务器
         /// </summary>
@@ -63,12 +52,13 @@ namespace UserNetTest.Tools
             clientSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             clientSocket.BeginConnect(ipString, port, new AsyncCallback(ConnectCallback), clientSocket);
         }
-
-        /// <summary>
-        /// 连接服务器回调
-        /// </summary>
-        /// <param name="asyncConnect">Async connect.</param>
-        private void ConnectCallback(IAsyncResult asyncConnect)
+        //关闭服务器连接
+        public void CloseServerConnect()
+        {
+            clientSocket.Close();
+        }
+        // 连接服务器回调
+         private void ConnectCallback(IAsyncResult asyncConnect)
         {
             //这里做一个超时的监测，当连接超过5秒还没成功表示超时  
             bool success = asyncConnect.AsyncWaitHandle.WaitOne(100, true);
@@ -93,8 +83,6 @@ namespace UserNetTest.Tools
 
 
         }
-
-
         //循环接收数据
         private void ReceiveData()
         {
@@ -165,6 +153,7 @@ namespace UserNetTest.Tools
                     {
                         pack = pack,
                         error = 0,
+                        index = this.index,
                     });
                 }
 
@@ -268,7 +257,7 @@ namespace UserNetTest.Tools
 
         }
 
-
+   
 
     }
 
@@ -279,5 +268,7 @@ namespace UserNetTest.Tools
     {
         public int error = 0;   // 0/1 无错误、有错误
         public MessagePack pack;
+        public int index;
+
     }
 }

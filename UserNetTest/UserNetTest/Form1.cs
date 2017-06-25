@@ -8,7 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UserNetTest.Forms;
 using UserNetTest.Tools;
+using static UserNetTest.Tools.NetMessageManage;
 
 namespace UserNetTest
 {
@@ -83,7 +85,7 @@ namespace UserNetTest
                 SimpleModel model = new SimpleModel() {
                     button = com,
                     status = COM_STATUS.CLOSE_STATUS,
-                    manage = new NetMessageManage(),
+                    manage = new NetMessageManage(index),
 
                 };
                 
@@ -143,9 +145,7 @@ namespace UserNetTest
             SimpleModel model = this.GetModel(this.panel1.Controls.IndexOf(this.selectButton));
             COM_STATUS status = model.status;
 
-            
             this.panel4.Controls.Clear();
-
             switch (status)
             {
                 case COM_STATUS.CLOSE_STATUS:       //关机状态（开机）
@@ -163,6 +163,7 @@ namespace UserNetTest
 
                         SimpleButton close = this.InitOpenButton("关机",CloseComputer);
                         this.panel4.Controls.Add(close);
+
                     }
                     break;
 
@@ -202,48 +203,182 @@ namespace UserNetTest
         #endregion
 
         #region 按钮操作
-        //进行开机（连接服务器）
+
+        #region 进行开机（连接服务器）
         private void OpenComputer(object sender, EventArgs e)
         {
-            //成功回调
             SimpleModel model = this.GetModel(this.panel1.Controls.GetChildIndex(this.selectButton));
-            model.status = COM_STATUS.OPEN_STATUS;
+            ClientNetOperation.OpenComputer(model.manage, OpenComputerResult);
 
-         
-            //判断当前按钮可以进行的操作
-            ComputerOperation();
+          
         }
-        //进行关机（服务器断开）
+        //开机回调
+        private void OpenComputerResult(ResultModel result)
+        {
+            if(result.pack.Content.MessageType != 1)
+            {
+                this.Invoke(new UIHandleBlock(delegate
+                {
+                    MessageBox.Show("开机失败");
+                }));
+                return;
+            }
+            if(result.pack.Cmd == Cmd.CMD_CLIENT_OPEN)
+            {
+                SimpleModel model = this.GetModel(result.index);
+                model.manage.RemoveResultBlock(OpenComputerResult);
+                System.Console.WriteLine("OpenComputerResult:" + result.pack);
+                this.Invoke(new UIHandleBlock(delegate 
+                {
+                    //成功回调
+                    model.status = COM_STATUS.OPEN_STATUS;
+                    //判断是否是当前按钮，是的话当前按钮可以进行的操作
+                    SimpleButton button =(SimpleButton) this.panel1.Controls[result.index];
+                    if(button.Equals(this.selectButton))
+                    {
+                        ComputerOperation();
+                    }
+
+                }));
+            
+               
+            }
+        }
+
+        #endregion
+
+        #region 进行关机（服务器断开）
         private void CloseComputer(object sender, EventArgs e)
         {
-            //成功回调
             SimpleModel model = this.GetModel(this.panel1.Controls.GetChildIndex(this.selectButton));
-            model.status = COM_STATUS.CLOSE_STATUS;
-            //判断当前按钮可以进行的操作
-            ComputerOperation();
-
+            ClientNetOperation.CloseComputer(model.manage, CloseComputerResult);
 
         }
-        //进行上机（用户登录）
+        //关机回调
+        private void CloseComputerResult(ResultModel result)
+        {
+
+            if (result.pack.Content.MessageType != 1)
+            {
+                this.Invoke(new UIHandleBlock(delegate
+                {
+                    MessageBox.Show("关机失败");
+                }));
+                return;
+            }
+            if (result.pack.Cmd == Cmd.CMD_CLIENT_CLOSE)
+            {
+                SimpleModel model = this.GetModel(result.index);
+                model.manage.RemoveResultBlock(CloseComputerResult);
+                model.manage.CloseServerConnect();
+                System.Console.WriteLine("CloseComputerResult:" + result.pack);
+
+                this.Invoke(new UIHandleBlock(delegate
+                {
+                    //成功回调
+                    model.status = COM_STATUS.CLOSE_STATUS;
+                    //判断是否是当前按钮，是的话当前按钮可以进行的操作
+                    SimpleButton button = (SimpleButton)this.panel1.Controls[result.index];
+                    if (button.Equals(this.selectButton))
+                    {
+                        ComputerOperation();
+                    }
+
+                }));
+
+
+            }
+        }
+        #endregion
+
+        #region 进行上机（用户登录）
         private void UpComputer(object sender, EventArgs e)
         {
-
-            //成功回调
-            SimpleModel model = this.GetModel(this.panel1.Controls.GetChildIndex(this.selectButton));
-            model.status = COM_STATUS.UP_STATUS;
-            //判断当前按钮可以进行的操作
-            ComputerOperation();
-
+            LoginForm.LoginResultHandle login = new LoginForm.LoginResultHandle(delegate (string text) {
+                int index = this.panel1.Controls.GetChildIndex(this.selectButton);
+                SimpleModel model = this.GetModel(index);
+                //输入身份证号
+                model.card = text;
+                ClientNetOperation.UpComputer(model.manage, text, UpComputerResult);
+            });
+            LoginForm form = new LoginForm(login);
+            form.Show();
+          
         }
-        //进行下机（用户登出）
+        //上机回调
+        private void UpComputerResult(ResultModel result)
+        {
+
+            if (result.pack.Content.MessageType != 1)
+            {
+                this.Invoke(new UIHandleBlock(delegate
+                {
+                    MessageBox.Show("上机失败");
+                }));
+                return;
+            }
+            if (result.pack.Cmd == Cmd.CMD_CLIENT_LOGON)
+            {
+                SimpleModel model = this.GetModel(result.index);
+                model.manage.RemoveResultBlock(UpComputerResult);
+                System.Console.WriteLine("UpComputerResult:" + result.pack);
+                this.Invoke(new UIHandleBlock(delegate
+                {
+                    //成功回调
+                    model.status = COM_STATUS.UP_STATUS;
+                    //判断是否是当前按钮，是的话当前按钮可以进行的操作
+                    SimpleButton button = (SimpleButton)this.panel1.Controls[result.index];
+                    if (button.Equals(this.selectButton))
+                    {
+                        ComputerOperation();
+                    }
+                }));
+
+
+            }
+        }
+        #endregion
+
+
+        #region 进行下机（用户登出）
         private void DownComputer(object sender, EventArgs e)
         {
-            //成功回调
-            SimpleModel model = this.GetModel(this.panel1.Controls.GetChildIndex(this.selectButton));
-            model.status = COM_STATUS.OPEN_STATUS;
-            //判断当前按钮可以进行的操作
-            ComputerOperation();
+            int index = this.panel1.Controls.GetChildIndex(this.selectButton);
+            SimpleModel model = this.GetModel(index);
+            ClientNetOperation.DownComputer(model.manage, index.ToString(), DownComputerResult);
         }
+        //下机回调
+        private void DownComputerResult(ResultModel result)
+        {
+            if (result.pack.Content.MessageType != 1)
+            {
+                this.Invoke(new UIHandleBlock(delegate
+                {
+                    MessageBox.Show("下机失败");
+                }));
+                return;
+            }
+            if (result.pack.Cmd == Cmd.CMD_CLIENT_LOGOFF)
+            {
+                SimpleModel model = this.GetModel(result.index);
+                model.manage.RemoveResultBlock(DownComputerResult);
+                System.Console.WriteLine("DownComputerResult:" + result.pack);
+                this.Invoke(new UIHandleBlock(delegate
+                {
+                    //成功回调
+                    model.status = COM_STATUS.OPEN_STATUS;
+                    //判断是否是当前按钮，是的话当前按钮可以进行的操作
+                    SimpleButton button = (SimpleButton)this.panel1.Controls[result.index];
+                    if (button.Equals(this.selectButton))
+                    {
+                        ComputerOperation();
+                    }
+                }));
+
+
+            }
+        }
+        #endregion
         //进行充值（用户充值）
         private void UserPay(object sender, EventArgs e)
         {
@@ -288,6 +423,9 @@ namespace UserNetTest
     {
         public SimpleButton button;
         public NetMessageManage manage;
-        public COM_STATUS status;
+        public COM_STATUS status;               
+        public string card;                     //身份证号
     }
+
+   
 }

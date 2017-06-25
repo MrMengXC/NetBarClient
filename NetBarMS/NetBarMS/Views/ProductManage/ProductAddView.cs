@@ -29,34 +29,21 @@ namespace NetBarMS.Views.ProductManage
                 product = updateProduct;
                 RefreshUI();
             }
-  
-
         }
         //初始化UI
         private void InitUI()
         {
-            SysManage.GetProductTypesHandle handle = new SysManage.GetProductTypesHandle(delegate (List<StructDictItem> types) {
-                this.Invoke(new UIHandleBlock(delegate
-                {
-                    handle = null;
-                    this.productTypes = types.ToList<StructDictItem>();
-                    //初始化ComboBoxEdit
-                    for (int i = 0; i < productTypes.Count(); i++)
-                    {
-                        StructDictItem item = this.productTypes[i];
-                        this.comboBoxEdit1.Properties.Items.Add(item.GetItem(0));
-                    }
-
-                    // 设置 comboBox的文本值不能被编辑
-                    this.comboBoxEdit1.Properties.TextEditStyle = TextEditStyles.DisableTextEditor;
-                    // 设置 comboBox的文本值不能被编辑
-                    this.comboBoxEdit1.Properties.TextEditStyle = TextEditStyles.DisableTextEditor;
-                   
-                }));
-            });
-
             //首先要获取产品列表数组
-            SysManage.Manage().GetProductTypes(handle);
+            SysManage.Manage().GetProductTypes(out this.productTypes);
+            // 设置 comboBox的文本值不能被编辑
+            this.comboBoxEdit1.Properties.TextEditStyle = TextEditStyles.DisableTextEditor;
+            this.comboBoxEdit1.Properties.TextEditStyle = TextEditStyles.DisableTextEditor;
+            //初始化ComboBoxEdit
+            for (int i = 0; i < productTypes.Count(); i++)
+            {
+                StructDictItem item = this.productTypes[i];
+                this.comboBoxEdit1.Properties.Items.Add(item.GetItem(0));
+            }
         }
         //刷新UI
         private void RefreshUI()
@@ -68,7 +55,6 @@ namespace NetBarMS.Views.ProductManage
             if(this.productTypes!=null)
             {
                 this.comboBoxEdit1.Text = SysManage.Manage().GetProductTypeName(this.product.Category);
-
             }
 
             this.checkedListBoxControl1.Items[0].CheckState = this.product.UseIntegal ? CheckState.Checked : CheckState.Unchecked;
@@ -79,8 +65,6 @@ namespace NetBarMS.Views.ProductManage
         //保存/修改
         private void simpleButton2_Click(object sender, EventArgs e)
         {
-           
-
             string pname = this.textEdit1.Text;
             int index = this.comboBoxEdit1.SelectedIndex;
             string num = textEdit2.Text;
@@ -89,12 +73,9 @@ namespace NetBarMS.Views.ProductManage
 
             if(index < 0 || pname.Equals("") || num.Equals("") || price.Equals("") ||integal.Equals(""))
             {
-
                 MessageBox.Show("请完整添加选项");
                 return;
             }
-
-
             StructGoods.Builder newProduct;
             //修改
             if (this.product != null)

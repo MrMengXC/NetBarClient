@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.Utils.SimpleContextButton simpleContextButton16 = new DevExpress.Utils.SimpleContextButton();
-            DevExpress.Utils.SimpleContextButton simpleContextButton17 = new DevExpress.Utils.SimpleContextButton();
-            DevExpress.Utils.SimpleContextButton simpleContextButton18 = new DevExpress.Utils.SimpleContextButton();
+            DevExpress.Utils.SimpleContextButton simpleContextButton1 = new DevExpress.Utils.SimpleContextButton();
+            DevExpress.Utils.SimpleContextButton simpleContextButton2 = new DevExpress.Utils.SimpleContextButton();
+            DevExpress.Utils.SimpleContextButton simpleContextButton3 = new DevExpress.Utils.SimpleContextButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.label2 = new System.Windows.Forms.Label();
@@ -41,7 +41,7 @@
             this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
             this.textEdit5 = new DevExpress.XtraEditors.TextEdit();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.checkedListBoxControl1 = new DevExpress.XtraEditors.CheckedListBoxControl();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
@@ -53,7 +53,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.label11 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.checkedListBoxControl1 = new DevExpress.XtraEditors.CheckedListBoxControl();
             this.titlePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
@@ -62,14 +62,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.checkedListBoxControl1)).BeginInit();
+            this.flowLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.checkedListBoxControl1)).BeginInit();
             this.SuspendLayout();
             // 
             // titlePanel
@@ -167,28 +167,20 @@
             this.panel2.Size = new System.Drawing.Size(340, 389);
             this.panel2.TabIndex = 2;
             // 
-            // checkedListBoxControl1
+            // flowLayoutPanel1
             // 
-            simpleContextButton16.Id = new System.Guid("7a5f8276-fd1b-4c5d-a151-dd81f8f8d42c");
-            simpleContextButton16.Name = "SimpleContextButton";
-            simpleContextButton16.Visibility = DevExpress.Utils.ContextItemVisibility.Visible;
-            simpleContextButton17.Id = new System.Guid("579ee131-84bb-45a8-8bf3-05fc40a4bd2e");
-            simpleContextButton17.Name = "SimpleContextButton";
-            simpleContextButton17.Visibility = DevExpress.Utils.ContextItemVisibility.Visible;
-            simpleContextButton18.Id = new System.Guid("761e5cbd-5db8-4a97-b370-9adb799db086");
-            simpleContextButton18.Name = "SimpleContextButton";
-            simpleContextButton18.Visibility = DevExpress.Utils.ContextItemVisibility.Visible;
-            this.checkedListBoxControl1.ContextButtons.Add(simpleContextButton16);
-            this.checkedListBoxControl1.ContextButtons.Add(simpleContextButton17);
-            this.checkedListBoxControl1.ContextButtons.Add(simpleContextButton18);
-            this.checkedListBoxControl1.Items.AddRange(new DevExpress.XtraEditors.Controls.CheckedListBoxItem[] {
-            new DevExpress.XtraEditors.Controls.CheckedListBoxItem(null, "允许使用积分购买"),
-            new DevExpress.XtraEditors.Controls.CheckedListBoxItem(null, "允许第三方购买"),
-            new DevExpress.XtraEditors.Controls.CheckedListBoxItem(null, "是否在商城中显示")});
-            this.checkedListBoxControl1.Location = new System.Drawing.Point(6, 275);
-            this.checkedListBoxControl1.Name = "checkedListBoxControl1";
-            this.checkedListBoxControl1.Size = new System.Drawing.Size(324, 73);
-            this.checkedListBoxControl1.TabIndex = 119;
+            this.flowLayoutPanel1.AutoSize = true;
+            this.flowLayoutPanel1.Controls.Add(this.tableLayoutPanel1);
+            this.flowLayoutPanel1.Controls.Add(this.tableLayoutPanel2);
+            this.flowLayoutPanel1.Controls.Add(this.tableLayoutPanel3);
+            this.flowLayoutPanel1.Controls.Add(this.tableLayoutPanel4);
+            this.flowLayoutPanel1.Controls.Add(this.tableLayoutPanel5);
+            this.flowLayoutPanel1.Controls.Add(this.tableLayoutPanel6);
+            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(330, 208);
+            this.flowLayoutPanel1.TabIndex = 120;
             // 
             // tableLayoutPanel1
             // 
@@ -326,20 +318,28 @@
             this.label11.Text = "商品图片：";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // flowLayoutPanel1
+            // checkedListBoxControl1
             // 
-            this.flowLayoutPanel1.AutoSize = true;
-            this.flowLayoutPanel1.Controls.Add(this.tableLayoutPanel1);
-            this.flowLayoutPanel1.Controls.Add(this.tableLayoutPanel2);
-            this.flowLayoutPanel1.Controls.Add(this.tableLayoutPanel3);
-            this.flowLayoutPanel1.Controls.Add(this.tableLayoutPanel4);
-            this.flowLayoutPanel1.Controls.Add(this.tableLayoutPanel5);
-            this.flowLayoutPanel1.Controls.Add(this.tableLayoutPanel6);
-            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(330, 208);
-            this.flowLayoutPanel1.TabIndex = 120;
+            simpleContextButton1.Id = new System.Guid("7a5f8276-fd1b-4c5d-a151-dd81f8f8d42c");
+            simpleContextButton1.Name = "SimpleContextButton";
+            simpleContextButton1.Visibility = DevExpress.Utils.ContextItemVisibility.Visible;
+            simpleContextButton2.Id = new System.Guid("579ee131-84bb-45a8-8bf3-05fc40a4bd2e");
+            simpleContextButton2.Name = "SimpleContextButton";
+            simpleContextButton2.Visibility = DevExpress.Utils.ContextItemVisibility.Visible;
+            simpleContextButton3.Id = new System.Guid("761e5cbd-5db8-4a97-b370-9adb799db086");
+            simpleContextButton3.Name = "SimpleContextButton";
+            simpleContextButton3.Visibility = DevExpress.Utils.ContextItemVisibility.Visible;
+            this.checkedListBoxControl1.ContextButtons.Add(simpleContextButton1);
+            this.checkedListBoxControl1.ContextButtons.Add(simpleContextButton2);
+            this.checkedListBoxControl1.ContextButtons.Add(simpleContextButton3);
+            this.checkedListBoxControl1.Items.AddRange(new DevExpress.XtraEditors.Controls.CheckedListBoxItem[] {
+            new DevExpress.XtraEditors.Controls.CheckedListBoxItem(null, "允许使用积分购买"),
+            new DevExpress.XtraEditors.Controls.CheckedListBoxItem(null, "允许第三方购买"),
+            new DevExpress.XtraEditors.Controls.CheckedListBoxItem(null, "是否在商城中显示")});
+            this.checkedListBoxControl1.Location = new System.Drawing.Point(6, 275);
+            this.checkedListBoxControl1.Name = "checkedListBoxControl1";
+            this.checkedListBoxControl1.Size = new System.Drawing.Size(324, 73);
+            this.checkedListBoxControl1.TabIndex = 119;
             // 
             // ProductAddView
             // 
@@ -361,14 +361,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.checkedListBoxControl1)).EndInit();
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
-            this.flowLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.checkedListBoxControl1)).EndInit();
             this.ResumeLayout(false);
 
         }

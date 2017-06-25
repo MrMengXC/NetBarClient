@@ -76,6 +76,7 @@
       <HintPath>Plugins\Google.ProtocolBuffers.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Activities" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -85,9 +86,12 @@
     <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Activities" />
+    <Reference Include="System.ServiceModel.Channels" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -174,6 +178,12 @@
     <Compile Include="Views\HomePage\HomePageView.Designer.cs">
       <DependentUpon>HomePageView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Message\ReminderOpenMemberView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Message\ReminderOpenMemberView.Designer.cs">
+      <DependentUpon>ReminderOpenMemberView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\HomePage\PayedProductIndentDetailView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -192,10 +202,10 @@
     <Compile Include="Views\HomePage\LockListView.Designer.cs">
       <DependentUpon>LockListView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\HomePage\ReminderScanView.cs">
+    <Compile Include="Views\Message\ReminderScanView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\HomePage\ReminderScanView.Designer.cs">
+    <Compile Include="Views\Message\ReminderScanView.Designer.cs">
       <DependentUpon>ReminderScanView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\HomePage\UserLockView.cs">
@@ -642,6 +652,9 @@
     <EmbeddedResource Include="Views\HomePage\HomePageView.resx">
       <DependentUpon>HomePageView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Message\ReminderOpenMemberView.resx">
+      <DependentUpon>ReminderOpenMemberView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\HomePage\PayedProductIndentDetailView.resx">
       <DependentUpon>PayedProductIndentDetailView.cs</DependentUpon>
     </EmbeddedResource>
@@ -651,7 +664,7 @@
     <EmbeddedResource Include="Views\HomePage\PayedProductIndentView.resx">
       <DependentUpon>PayedProductIndentView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\HomePage\ReminderScanView.resx">
+    <EmbeddedResource Include="Views\Message\ReminderScanView.resx">
       <DependentUpon>ReminderScanView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\HomePage\UserLockView.resx">

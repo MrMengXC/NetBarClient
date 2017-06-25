@@ -72,34 +72,22 @@ namespace NetBarMS.Views.ProductManage
         #region 初始化UI
         private void InitUI()
         {
-            SysManage.GetProductTypesHandle handle = new SysManage.GetProductTypesHandle(delegate (List<StructDictItem> types) {
-                this.Invoke(new UIHandleBlock(delegate
-                {
-                    handle = null;
-                    this.productTypes = types.ToList<StructDictItem>();
-                    //初始化ComboBoxEdit
-                    for (int i = 0; i < productTypes.Count(); i++)
-                    {
-                        StructDictItem item = productTypes[i];
-
-                        this.comboBoxEdit1.Properties.Items.Add(item.GetItem(0));
-                    }
-
-                    // 设置 comboBox的文本值不能被编辑
-                    this.comboBoxEdit1.Properties.TextEditStyle = TextEditStyles.DisableTextEditor;
-
-                    ToolsManage.SetGridView(this.gridView1, GridControlType.ProductManage, out this.mainDataTable, ColumnButtonClick, null);
-                    this.gridControl1.DataSource = this.mainDataTable;
-
-                    GetProductList();
-                   
-                }));
-            });
-
             //首先要获取产品列表数组
-            SysManage.Manage().GetProductTypes(handle);
+            SysManage.Manage().GetProductTypes(out this.productTypes);
+
+            // 设置 comboBox的文本值不能被编辑
+            this.comboBoxEdit1.Properties.TextEditStyle = TextEditStyles.DisableTextEditor;
+            ToolsManage.SetGridView(this.gridView1, GridControlType.ProductManage, out this.mainDataTable, ColumnButtonClick, null);
+            this.gridControl1.DataSource = this.mainDataTable;
           
-       
+            //初始化ComboBoxEdit
+            for (int i = 0; i < productTypes.Count(); i++)
+            {
+                StructDictItem item = productTypes[i];
+                this.comboBoxEdit1.Properties.Items.Add(item.GetItem(0));
+            }
+            GetProductList();
+
         }
         #endregion
 

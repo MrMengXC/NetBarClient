@@ -15,16 +15,16 @@ namespace NetBarMS.Codes.Tools
         #region delegate
         public delegate void ResultHandle();
         public event ResultHandle resultEvent;
-        //获取会员类型代理
-        public delegate void GetMemberTypesHandle(List<StructDictItem> types);
-        public event GetMemberTypesHandle GetMemberTypesEvent;
+        ////获取会员类型代理
+        //public delegate void GetMemberTypesHandle(List<StructDictItem> types);
+        //public event GetMemberTypesHandle GetMemberTypesEvent;
 
-        //获取商品类型代理
-        public delegate void GetProductTypesHandle(List<StructDictItem> types);
-        public event GetProductTypesHandle GetProductTypesEvent;
-        //获取区域的代理
-        public delegate void GetAreasHandle(List<StructDictItem> types);
-        public event GetAreasHandle GetAreasEvent;
+        ////获取商品类型代理
+        //public delegate void GetProductTypesHandle(List<StructDictItem> types);
+        //public event GetProductTypesHandle GetProductTypesEvent;
+        ////获取区域的代理
+        //public delegate void GetAreasHandle(List<StructDictItem> types);
+        //public event GetAreasHandle GetAreasEvent;
 
         #endregion
 
@@ -64,40 +64,12 @@ namespace NetBarMS.Codes.Tools
             GetProductTypes();
             GetProductTypes();
         }
-
-
-        //获取系统信息（会员类型，区域）
-        public void RequestSysInfo(ResultHandle handle)
-        {
-            if(handle != null)
-            {
-                this.resultEvent += handle;
-            }
-            //获取区域列表
-            GetAreaList();
-            //获取商品类型
-            GetProductTypes();
-
-        }
-
-        // 获取首页计算机列表结果回调
-        private void HomePageListBlock(ResultModel result)
-        {
-
-             if (result.pack.Cmd == Cmd.CMD_REALTIME_INFO && result.pack.Content.MessageType == 1)
-            {
-                //System.Console.WriteLine("HomePageListBlock:" + result.pack);
-                SCRealtimeInfo info = result.pack.Content.ScRealtimeInfo;
-                computers = result.pack.Content.ScRealtimeInfo.RealtimesList.ToList<StructRealTime>();
-                if(this.resultEvent != null)
-                {
-                    this.resultEvent();
-                }
-
-            }
-        }
         #endregion
+        public void UpdateHomePageComputers(IList<StructRealTime> tem)
+        {
+            this.computers = tem.ToList<StructRealTime>();
 
+        }
         #region 会员等级功能
         //获取会员等级列表
         private void GetMemberLvList(){
@@ -113,16 +85,14 @@ namespace NetBarMS.Codes.Tools
             if (result.pack.Cmd == Cmd.CMD_SYS_INFO && result.pack.Content.ScSysInfo.Parent.Equals(SystemManageNetOperation.lvParent))
             {
                 NetMessageManage.Manager().RemoveResultBlock(GetMemberLvSettingResult);
+                System.Console.WriteLine("获取会员等级信息");
                 this.memberTypes = result.pack.Content.ScSysInfo.ChildList.ToList<StructDictItem>();
                 this.memberDict.Clear();
                 foreach (StructDictItem item in this.memberTypes)
                 {
                     memberDict.Add(item.Id, item);
                 }
-                if(this.GetMemberTypesEvent != null)
-                {
-                    this.GetMemberTypesEvent(this.memberTypes);
-                }
+               
 
             }
         }
@@ -153,17 +123,16 @@ namespace NetBarMS.Codes.Tools
             }
         }
         //获取会员类型
-        public void GetMembersTypes(GetMemberTypesHandle newevent)
+        public void GetMembersTypes(out List<StructDictItem>items)
         {
             //如果存在应该直接返回
             if(this.memberTypes != null)
             {
-                newevent(this.memberTypes);
+                items = this.memberTypes;
             }
             else
             {
-                this.GetMemberTypesEvent += newevent;
-                GetMemberLvList(); 
+                items = new List<StructDictItem>();
             }
         }
         #endregion
@@ -187,6 +156,7 @@ namespace NetBarMS.Codes.Tools
             {
                 NetMessageManage.Manager().RemoveResultBlock(GetAreaListResult);
                 //System.Console.WriteLine("GetAreaList:" + result.pack);
+                System.Console.WriteLine("获取区域信息");
 
                 this.areas = result.pack.Content.ScSysInfo.ChildList.ToList<StructDictItem>();
                 areaDict.Clear();
@@ -195,12 +165,6 @@ namespace NetBarMS.Codes.Tools
                 {
                     areaDict.Add(item.Code.ToString(), item);
                 }
-                if(this.GetAreasEvent != null)
-                {
-                    this.GetAreasEvent(this.areas);
-                }
-                //获取区域列表
-              //HomePageNetOperation.HompageList(HomePageListBlock);
             }
 
         }
@@ -219,17 +183,16 @@ namespace NetBarMS.Codes.Tools
             }
         }
         //获取区域列表
-        public void GetAreasList(GetAreasHandle newevent)
+        public void GetAreasList(out List<StructDictItem>items)
         {
             //如果存在应该直接返回
             if (this.areas != null)
             {
-                newevent(this.areas);
+                items = this.areas;
             }
             else
             {
-                this.GetAreasEvent += newevent;
-                GetAreaList();
+                items = new List<StructDictItem>();
             }
         }
 
@@ -263,16 +226,13 @@ namespace NetBarMS.Codes.Tools
             {
                 // System.Console.WriteLine("ProductTypeInfoResult:" + result.pack);
                 NetMessageManage.Manager().RemoveResultBlock(ProductTypeInfoResult);
+                System.Console.WriteLine("获取商品类别信息");
 
                 this.productTypes = result.pack.Content.ScSysInfo.ChildList.ToList<StructDictItem>();
                 productDict.Clear();
                 foreach (StructDictItem item in this.productTypes)
                 {
                     productDict.Add(item.Id, item);
-                }
-                if(this.GetProductTypesEvent != null)
-                {
-                    this.GetProductTypesEvent(this.productTypes);
                 }
             }
         }
@@ -307,20 +267,37 @@ namespace NetBarMS.Codes.Tools
         }
         
         // 获取产品的类型
-        public void GetProductTypes(GetProductTypesHandle newevent)
+        public void GetProductTypes(out List<StructDictItem> items)
         {
             if(this.productTypes != null)
             {
-                newevent(this.productTypes);
-
+                items = this.productTypes;
             }
             else
             {
-                this.GetProductTypesEvent += newevent;
-                GetProductTypes();
+                items = new List<StructDictItem>();
+
             }
         }
         #endregion
+
+        //#region 移除结果回调
+        ////移除商品类别的结果回调
+        //public void RemoveProductTypesResult(GetProductTypesHandle handle)
+        //{
+        //    this.GetProductTypesEvent -= handle;
+        //}
+        ////移除会员类型的结果回调
+        //public void RemoveMemberTypesResult(GetMemberTypesHandle handle)
+        //{
+        //    this.GetMemberTypesEvent -= handle;
+        //}
+        ////移除区域的结果回调
+        //public void RemoveAreasResult(GetAreasHandle handle)
+        //{
+        //    this.GetAreasEvent -= handle;
+        //}
+        //#endregion
 
     }
 }

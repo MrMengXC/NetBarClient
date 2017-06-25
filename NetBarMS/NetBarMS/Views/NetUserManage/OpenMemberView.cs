@@ -39,6 +39,7 @@ namespace NetBarMS.Views.NetUserManage
 
             InitUI();
         }
+
         #region 初始化UI
         //初始化UI
         private void InitUI()
@@ -48,6 +49,7 @@ namespace NetBarMS.Views.NetUserManage
 
         }
         #endregion
+
         #region 添加会员以及回调方法
         //保存
         private void simpleButton2_Click(object sender, EventArgs e)
@@ -79,7 +81,6 @@ namespace NetBarMS.Views.NetUserManage
                 Membertype = this.memberType+1,
                 Recharge = money,
                 Phone = this.phoneTextEdit.Text,
-
             };
 
             MemberNetOperation.AddMember(AddMemberBlock, member);
@@ -197,11 +198,14 @@ namespace NetBarMS.Views.NetUserManage
         }
         #endregion
 
-        //进行充值
+        #region 进行充值
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            UserScanCodeView view = new UserScanCodeView();
-            ToolsManage.ShowForm(view, false);
+            //UserScanCodeView view = new UserScanCodeView();
+            //ToolsManage.ShowForm(view, false);
         }
+        #endregion
+
+
     }
 }

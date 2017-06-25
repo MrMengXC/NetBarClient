@@ -17,5 +17,12 @@ namespace NetBarMS.Views.OtherMain
             InitializeComponent();
             this.titleLabel.Text = "用户充值";
         }
+
+
+        //
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
