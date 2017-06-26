@@ -124,10 +124,10 @@ namespace NetBarMS.Codes.Tools
                     Console.WriteLine("断开连接");
                     break;
                 }
-                //Console.WriteLine("Time:" + DateTime.Now);
+               // Console.WriteLine("Time:" + DateTime.Now);
                 byte[] receiveBytes = new byte[1024];
                 //存储数据头的所有字节数 varint32:1419 1417
-                int len = clientSocket.Receive(receiveBytes, 0);
+                Int32 len = clientSocket.Receive(receiveBytes, 0);
 
                 if (len > 0)
                 {
@@ -152,42 +152,69 @@ namespace NetBarMS.Codes.Tools
         //处理粘包(递归) 接收的长度
         private void HandleReceveBytes(byte[] recveBytes, Int32 recelen)
         {
-            CodedInputStream inputStream = CodedInputStream.CreateInstance(recveBytes);
-            //数据所有长度
-            int varint32 = (int)inputStream.ReadRawVarint32();
-            //获取消息头长度
-            int headlength = CodedOutputStream.ComputeRawVarint32Size((uint)varint32);
-           //System.Console.WriteLine("len:" + recelen + "\nvarint32:" + varint32 + "\nlen:" + headlength);
-
-            //如果所有有长度大于接收的长度。断包了
-            if (varint32 > recelen-headlength)
+            try
             {
-                //
-                int needlen = varint32 + headlength - recelen;
-                byte[] newResult = new byte[needlen];
-                int newLen = clientSocket.Receive(newResult, 0, needlen, SocketFlags.None);
+                CodedInputStream inputStream = CodedInputStream.CreateInstance(recveBytes);
+                //数据所有长度
+                Int32 varint32 = (Int32)inputStream.ReadRawVarint32();
+                //获取消息头长度
+                Int32 headlength = CodedOutputStream.ComputeRawVarint32Size((uint)varint32);
+             //   System.Console.WriteLine("len:" + recelen + "\nvarint32:" + varint32 + "\nlen:" + headlength);
 
-                byte[] resArr = new byte[varint32 + headlength];
-                recveBytes.CopyTo(resArr, 0);
-                newResult.CopyTo(resArr, recveBytes.Length);
-
-                Thread thread = new Thread(new ParameterizedThreadStart(ReceiveDataHandle));
-                thread.Start(resArr);
-
-            }
-            else
-            {
-                Thread thread = new Thread(new ParameterizedThreadStart(ReceiveDataHandle));
-                thread.Start(recveBytes);
-              //  ReceiveDataHandle(recveBytes);
-                //如果实际接受的长度大于包体长度+包头长（粘包）
-                if (recelen > (varint32 + headlength))
+                //如果所有有长度大于接收的长度。断包了
+                if (varint32 > recelen - headlength)
                 {
-                    //剩下的进行解决
-                    byte[] res = recveBytes.Skip<byte>(varint32 + headlength).ToArray<byte>();
-                    HandleReceveBytes(res, recelen - varint32 - headlength);
+
+                    //需要的长度
+                    Int32 needlen = varint32 + headlength - recelen;
+                    //已经的长度
+                    Int32 haslen = recelen;
+                    byte[] resArr = new byte[varint32 + headlength];
+                    recveBytes.CopyTo(resArr, 0);
+
+                    while (true)
+                    {
+                        //
+
+
+                        byte[] newResult = new byte[needlen];
+                        int len = clientSocket.Receive(newResult, 0, needlen, SocketFlags.None);
+                        //System.Console.WriteLine("len:" + len + "\nhaslen:" + haslen + "\nneedlen:" + needlen);
+
+                        newResult.CopyTo(resArr, haslen);
+                        haslen += len;
+                        needlen -= len;
+
+                        if (needlen == 0)
+                        {
+                            break;
+                        }
+                    }
+
+                    Thread thread = new Thread(new ParameterizedThreadStart(ReceiveDataHandle));
+                    thread.Start(resArr);
+
                 }
+                else
+                {
+                    Thread thread = new Thread(new ParameterizedThreadStart(ReceiveDataHandle));
+                    thread.Start(recveBytes);
+                    //  ReceiveDataHandle(recveBytes);
+                    //如果实际接受的长度大于包体长度+包头长（粘包）
+                    if (recelen > (varint32 + headlength))
+                    {
+                        //剩下的进行解决
+                        byte[] res = recveBytes.Skip<byte>(varint32 + headlength).ToArray<byte>();
+                        HandleReceveBytes(res, recelen - varint32 - headlength);
+                    }
+                }
+
             }
+            catch(Exception exc)
+            {
+                System.Console.WriteLine("接受数据出问题："+exc);
+            }
+            
         }
 
 
@@ -201,8 +228,7 @@ namespace NetBarMS.Codes.Tools
                 int varint32 = (int)inputStream.ReadRawVarint32(); 
                 byte[] body = inputStream.ReadRawBytes(varint32);
                 MessagePack pack = MessagePack.ParseFrom(body);
-                
-               // System.Console.WriteLine("pack:"+ pack);
+              //  System.Console.WriteLine("pack:"+ pack);
                 if (ResultBlockHandle != null)
                 {
                     ResultBlockHandle(new ResultModel()

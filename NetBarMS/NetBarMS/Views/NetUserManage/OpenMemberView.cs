@@ -14,6 +14,7 @@ using static NetBarMS.Codes.Tools.NetMessageManage;
 using NetBarMS.Views.ResultManage;
 using NetBarMS.Forms;
 using NetBarMS.Views.HomePage;
+using NetBarMS.Codes.Tools.FlowManage;
 
 namespace NetBarMS.Views.NetUserManage
 {
@@ -26,18 +27,15 @@ namespace NetBarMS.Views.NetUserManage
             GiveMoney,
 
         }
-        private int memberType = -1;
-        private bool isTem = false;     //  是否是临时会员
-       // private string[] memberTypes;
+
+        //当前的会员类型
+        private int memberIndex = -1;
         private List<StructDictItem> memberTypes;
 
         public OpenMemberView()
         {
             InitializeComponent();
             this.titleLabel.Text = "会员办理";
-            //memberTypes = new string[]{
-            //"临时会员", "普通会员", "黄金会员", "钻石会员",
-            //};
             InitUI();
         }
 
@@ -74,7 +72,7 @@ namespace NetBarMS.Views.NetUserManage
         private void simpleButton2_Click(object sender, EventArgs e)
         {
             //显示提示
-            if (this.memberType == -1)
+            if (this.memberIndex <0)
             {
                 MessageBox.Show("请选择会员类型");
                 return;
@@ -98,15 +96,11 @@ namespace NetBarMS.Views.NetUserManage
             CSMemberAdd.Builder member = new CSMemberAdd.Builder()
             {
                 Cardinfo = card.Build(),
-                Membertype = 1,
+                Membertype = this.memberTypes[memberIndex].Id,
                 Recharge = money,
                 Phone = this.phoneTextEdit.Text,
             };
-
             MemberNetOperation.AddMember(AddMemberBlock, member);
-
-
-
         }
 
         //添加会员回调
@@ -135,6 +129,11 @@ namespace NetBarMS.Views.NetUserManage
         public void OpenMemberResultView_FormClose()
         {
             this.CloseFormClick();
+
+            //判断是否在激活页面向叶面发送激活消息
+            ActiveFlowManage.ActiveFlow().MemberRegistSuccess();
+
+
         }
         #endregion
 
@@ -144,56 +143,45 @@ namespace NetBarMS.Views.NetUserManage
         {
             //0 - 20元 普通 20 - 40元黄金 40元以上钻石 type 1，2，3，
             //0为临时
-            SetMemberType();
-        }
-        #endregion
-
-        #region 金额与会员类型的判断
-        private void SetMemberType()
-        {
-            if (isTem)       //如果是临时不判断
-            {
-                return;
-            }
-
             //0为临时
             //通过输入的金额判断类新
             try
             {
                 int money = int.Parse(this.moneyTextEdit.Text);
-                if (money < 20)
+                int need = 0;
+
+                memberIndex = -1;
+
+                foreach(StructDictItem item in this.memberTypes)
                 {
-                    memberType = -1;
+                    int tem = int.Parse(item.GetItem(1));
+
+                    if (money >= tem && tem > need)
+                    {
+                        memberIndex = this.memberTypes.IndexOf(item);
+                        need = tem;
+                        //System.Console("");
+                    }
+
                 }
-                else if (money < 40)
-                {
-                    memberType = 1;
-                }
-                else if (money < 60)
-                {
-                    memberType = 2;
-                }
-                else
-                {
-                    memberType = 3;
-                }
+               
             }
             catch (Exception exp)
             {
-                memberType = -1;
+                memberIndex = -1;
             }
 
-            if (memberType == -1)
+            if (memberIndex == -1)
             {
                 this.memberTypeTextEdit.Text = null;
             }
             else
             {
-                //this.memberTypeTextEdit.Text = memberTypes[memberType];
+                this.memberTypeTextEdit.Text = memberTypes[memberIndex].GetItem(0);
             }
-
         }
         #endregion
+
 
         #region 进行充值
         private void simpleButton1_Click(object sender, EventArgs e)

@@ -55,7 +55,6 @@ namespace NetBarMS.Codes.Tools.FlowManage
                     case NEED_RECHARGE:
                         UserScanCodeView codeView = new UserScanCodeView(this.card,50);
                         ToolsManage.ShowForm(codeView, false);
-
                         break;
                     case NEED_REGIST:
                         ReminderOpenMemberView view = new ReminderOpenMemberView();
@@ -65,16 +64,26 @@ namespace NetBarMS.Codes.Tools.FlowManage
                 }
                 return;
             }
+            //激活成功后提示激活成功，将值设置成不激活状态
+            else
+            {
+
+            }
             
         }
 
         //会员注册成功
         public void MemberRegistSuccess()
         {
+            this.CardCheckIn(this.card);
+        }
+
+        //会员充值成功
+        public void MemberPaySuccess()
+        {
 
 
             this.CardCheckIn(this.card);
         }
-
     }
 }

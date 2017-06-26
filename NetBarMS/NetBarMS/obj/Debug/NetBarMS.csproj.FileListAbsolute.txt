@@ -311,7 +311,6 @@ C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\bin\Debug\DevExpre
 C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\bin\Debug\DevExpress.XtraSpellChecker.v15.2.xml
 C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\bin\Debug\DevExpress.XtraTreeList.v15.2.xml
 C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\bin\Debug\DevExpress.XtraVerticalGrid.v15.2.xml
-C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\bin\Debug\XPTable.xml
 C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\bin\Debug\DevExpress.Utils.v15.2.UI.xml
 C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\bin\Debug\DevExpress.XtraNavBar.v15.2.xml
 C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\bin\Debug\DevExpress.RichEdit.v15.2.Core.xml
@@ -419,7 +418,6 @@ C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\bin\Debug\de\DevEx
 C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\bin\Debug\es\DevExpress.Pdf.v15.2.Core.resources.dll
 C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\bin\Debug\ja\DevExpress.Pdf.v15.2.Core.resources.dll
 C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\bin\Debug\ru\DevExpress.Pdf.v15.2.Core.resources.dll
-C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\obj\Debug\NetBarMS.csprojResolveAssemblyReference.cache
 C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\obj\Debug\NetBarMS.Codes.Tools.RepositoryItemMyEdit.resources
 C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\obj\Debug\NetBarMS.Forms.CustomForm.resources
 C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\obj\Debug\NetBarMS.MainForm.resources
@@ -503,3 +501,4 @@ C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\obj\Debug\NetBarMS
 C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\obj\Debug\NetBarMS.Views.HomePage.UserScanCodeView.resources
 C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\obj\Debug\NetBarMS.Views.HomePage.Message.ReminderOpenMemberView.resources
 C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\obj\Debug\NetBarMS.Views.UserUseCp.UserActiveView.resources
+C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\obj\Debug\NetBarMS.csprojResolveAssemblyReference.cache

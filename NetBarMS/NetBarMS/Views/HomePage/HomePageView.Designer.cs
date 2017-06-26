@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.manageTreeView = new System.Windows.Forms.TreeView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -60,6 +59,28 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.searchControl1 = new DevExpress.XtraEditors.SearchControl();
             this.homePageListPanel = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.simpleButton13 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton14 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton15 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton16 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton17 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton18 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton19 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton20 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton21 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton22 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton23 = new DevExpress.XtraEditors.SimpleButton();
+            this.navigationPane1 = new DevExpress.XtraBars.Navigation.NavigationPane();
+            this.navigationPage1 = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.navigationPage2 = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.navigationPage3 = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.navigationPage5 = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.navigationPage6 = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.navigationPage7 = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.officeNavigationBar1 = new DevExpress.XtraBars.Navigation.OfficeNavigationBar();
+            this.navigationBarItem1 = new DevExpress.XtraBars.Navigation.NavigationBarItem();
+            this.navigationBarItem2 = new DevExpress.XtraBars.Navigation.NavigationBarItem();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
@@ -70,25 +91,21 @@
             this.panel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.searchControl1.Properties)).BeginInit();
+            this.homePageListPanel.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.navigationPane1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.officeNavigationBar1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panel1.Controls.Add(this.manageTreeView);
+            this.panel1.Controls.Add(this.panel7);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(195, 943);
             this.panel1.TabIndex = 9;
-            // 
-            // manageTreeView
-            // 
-            this.manageTreeView.BackColor = System.Drawing.Color.DimGray;
-            this.manageTreeView.Location = new System.Drawing.Point(12, 80);
-            this.manageTreeView.Name = "manageTreeView";
-            this.manageTreeView.Size = new System.Drawing.Size(152, 820);
-            this.manageTreeView.TabIndex = 0;
             // 
             // panel3
             // 
@@ -408,11 +425,234 @@
             // homePageListPanel
             // 
             this.homePageListPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.homePageListPanel.Controls.Add(this.officeNavigationBar1);
+            this.homePageListPanel.Controls.Add(this.navigationPane1);
             this.homePageListPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.homePageListPanel.Location = new System.Drawing.Point(195, 112);
             this.homePageListPanel.Name = "homePageListPanel";
             this.homePageListPanel.Size = new System.Drawing.Size(1545, 831);
             this.homePageListPanel.TabIndex = 44;
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.simpleButton23);
+            this.panel7.Controls.Add(this.simpleButton22);
+            this.panel7.Controls.Add(this.simpleButton21);
+            this.panel7.Controls.Add(this.simpleButton20);
+            this.panel7.Controls.Add(this.simpleButton19);
+            this.panel7.Controls.Add(this.simpleButton18);
+            this.panel7.Controls.Add(this.simpleButton17);
+            this.panel7.Controls.Add(this.simpleButton16);
+            this.panel7.Controls.Add(this.simpleButton15);
+            this.panel7.Controls.Add(this.simpleButton14);
+            this.panel7.Controls.Add(this.simpleButton13);
+            this.panel7.Location = new System.Drawing.Point(51, 112);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(144, 549);
+            this.panel7.TabIndex = 0;
+            // 
+            // simpleButton13
+            // 
+            this.simpleButton13.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.simpleButton13.Dock = System.Windows.Forms.DockStyle.Top;
+            this.simpleButton13.Location = new System.Drawing.Point(0, 0);
+            this.simpleButton13.Margin = new System.Windows.Forms.Padding(0);
+            this.simpleButton13.Name = "simpleButton13";
+            this.simpleButton13.Size = new System.Drawing.Size(144, 48);
+            this.simpleButton13.TabIndex = 0;
+            this.simpleButton13.Text = "会员管理";
+            // 
+            // simpleButton14
+            // 
+            this.simpleButton14.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.simpleButton14.Dock = System.Windows.Forms.DockStyle.Top;
+            this.simpleButton14.Location = new System.Drawing.Point(0, 48);
+            this.simpleButton14.Margin = new System.Windows.Forms.Padding(0);
+            this.simpleButton14.Name = "simpleButton14";
+            this.simpleButton14.Size = new System.Drawing.Size(144, 48);
+            this.simpleButton14.TabIndex = 1;
+            this.simpleButton14.Text = "商品管理";
+            // 
+            // simpleButton15
+            // 
+            this.simpleButton15.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.simpleButton15.Dock = System.Windows.Forms.DockStyle.Top;
+            this.simpleButton15.Location = new System.Drawing.Point(0, 96);
+            this.simpleButton15.Margin = new System.Windows.Forms.Padding(0);
+            this.simpleButton15.Name = "simpleButton15";
+            this.simpleButton15.Size = new System.Drawing.Size(144, 48);
+            this.simpleButton15.TabIndex = 2;
+            this.simpleButton15.Text = "费率管理";
+            // 
+            // simpleButton16
+            // 
+            this.simpleButton16.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.simpleButton16.Dock = System.Windows.Forms.DockStyle.Top;
+            this.simpleButton16.Location = new System.Drawing.Point(0, 144);
+            this.simpleButton16.Margin = new System.Windows.Forms.Padding(0);
+            this.simpleButton16.Name = "simpleButton16";
+            this.simpleButton16.Size = new System.Drawing.Size(144, 48);
+            this.simpleButton16.TabIndex = 3;
+            this.simpleButton16.Text = "营收统计";
+            // 
+            // simpleButton17
+            // 
+            this.simpleButton17.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.simpleButton17.Dock = System.Windows.Forms.DockStyle.Top;
+            this.simpleButton17.Location = new System.Drawing.Point(0, 192);
+            this.simpleButton17.Margin = new System.Windows.Forms.Padding(0);
+            this.simpleButton17.Name = "simpleButton17";
+            this.simpleButton17.Size = new System.Drawing.Size(144, 48);
+            this.simpleButton17.TabIndex = 4;
+            this.simpleButton17.Text = "系统查询";
+            // 
+            // simpleButton18
+            // 
+            this.simpleButton18.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.simpleButton18.Dock = System.Windows.Forms.DockStyle.Top;
+            this.simpleButton18.Location = new System.Drawing.Point(0, 240);
+            this.simpleButton18.Margin = new System.Windows.Forms.Padding(0);
+            this.simpleButton18.Name = "simpleButton18";
+            this.simpleButton18.Size = new System.Drawing.Size(144, 48);
+            this.simpleButton18.TabIndex = 5;
+            this.simpleButton18.Text = "绩效考核";
+            // 
+            // simpleButton19
+            // 
+            this.simpleButton19.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.simpleButton19.Dock = System.Windows.Forms.DockStyle.Top;
+            this.simpleButton19.Location = new System.Drawing.Point(0, 288);
+            this.simpleButton19.Margin = new System.Windows.Forms.Padding(0);
+            this.simpleButton19.Name = "simpleButton19";
+            this.simpleButton19.Size = new System.Drawing.Size(144, 48);
+            this.simpleButton19.TabIndex = 6;
+            this.simpleButton19.Text = "评价管理";
+            // 
+            // simpleButton20
+            // 
+            this.simpleButton20.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.simpleButton20.Dock = System.Windows.Forms.DockStyle.Top;
+            this.simpleButton20.Location = new System.Drawing.Point(0, 336);
+            this.simpleButton20.Margin = new System.Windows.Forms.Padding(0);
+            this.simpleButton20.Name = "simpleButton20";
+            this.simpleButton20.Size = new System.Drawing.Size(144, 48);
+            this.simpleButton20.TabIndex = 7;
+            this.simpleButton20.Text = "系统管理";
+            // 
+            // simpleButton21
+            // 
+            this.simpleButton21.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.simpleButton21.Dock = System.Windows.Forms.DockStyle.Top;
+            this.simpleButton21.Location = new System.Drawing.Point(0, 384);
+            this.simpleButton21.Margin = new System.Windows.Forms.Padding(0);
+            this.simpleButton21.Name = "simpleButton21";
+            this.simpleButton21.Size = new System.Drawing.Size(144, 48);
+            this.simpleButton21.TabIndex = 8;
+            this.simpleButton21.Text = "员工账号管理";
+            // 
+            // simpleButton22
+            // 
+            this.simpleButton22.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.simpleButton22.Dock = System.Windows.Forms.DockStyle.Top;
+            this.simpleButton22.Location = new System.Drawing.Point(0, 432);
+            this.simpleButton22.Margin = new System.Windows.Forms.Padding(0);
+            this.simpleButton22.Name = "simpleButton22";
+            this.simpleButton22.Size = new System.Drawing.Size(144, 48);
+            this.simpleButton22.TabIndex = 9;
+            this.simpleButton22.Text = "日志管理";
+            // 
+            // simpleButton23
+            // 
+            this.simpleButton23.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.simpleButton23.Dock = System.Windows.Forms.DockStyle.Top;
+            this.simpleButton23.Location = new System.Drawing.Point(0, 480);
+            this.simpleButton23.Margin = new System.Windows.Forms.Padding(0);
+            this.simpleButton23.Name = "simpleButton23";
+            this.simpleButton23.Size = new System.Drawing.Size(144, 48);
+            this.simpleButton23.TabIndex = 10;
+            this.simpleButton23.Text = "设备信息管理";
+            // 
+            // navigationPane1
+            // 
+            this.navigationPane1.Controls.Add(this.navigationPage1);
+            this.navigationPane1.Controls.Add(this.navigationPage2);
+            this.navigationPane1.Controls.Add(this.navigationPage3);
+            this.navigationPane1.Controls.Add(this.navigationPage5);
+            this.navigationPane1.Controls.Add(this.navigationPage6);
+            this.navigationPane1.Controls.Add(this.navigationPage7);
+            this.navigationPane1.Location = new System.Drawing.Point(276, 144);
+            this.navigationPane1.Name = "navigationPane1";
+            this.navigationPane1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
+            this.navigationPage1,
+            this.navigationPage2,
+            this.navigationPage3,
+            this.navigationPage5,
+            this.navigationPage6,
+            this.navigationPage7});
+            this.navigationPane1.RegularSize = new System.Drawing.Size(536, 313);
+            this.navigationPane1.SelectedPage = this.navigationPage2;
+            this.navigationPane1.SelectedPageIndex = 5;
+            this.navigationPane1.Size = new System.Drawing.Size(536, 313);
+            this.navigationPane1.TabIndex = 0;
+            this.navigationPane1.Text = "navigationPane1";
+            // 
+            // navigationPage1
+            // 
+            this.navigationPage1.Caption = "navigationPage1";
+            this.navigationPage1.Name = "navigationPage1";
+            this.navigationPage1.Size = new System.Drawing.Size(413, 253);
+            // 
+            // navigationPage2
+            // 
+            this.navigationPage2.Caption = "navigationPage2";
+            this.navigationPage2.Name = "navigationPage2";
+            this.navigationPage2.Size = new System.Drawing.Size(413, 253);
+            // 
+            // navigationPage3
+            // 
+            this.navigationPage3.Caption = "navigationPage3";
+            this.navigationPage3.Name = "navigationPage3";
+            this.navigationPage3.Size = new System.Drawing.Size(413, 253);
+            // 
+            // navigationPage5
+            // 
+            this.navigationPage5.Caption = "navigationPage5";
+            this.navigationPage5.Name = "navigationPage5";
+            this.navigationPage5.Size = new System.Drawing.Size(413, 253);
+            // 
+            // navigationPage6
+            // 
+            this.navigationPage6.Caption = "navigationPage6";
+            this.navigationPage6.Name = "navigationPage6";
+            this.navigationPage6.Size = new System.Drawing.Size(413, 253);
+            // 
+            // navigationPage7
+            // 
+            this.navigationPage7.Caption = "navigationPage7";
+            this.navigationPage7.Name = "navigationPage7";
+            this.navigationPage7.Size = new System.Drawing.Size(413, 253);
+            // 
+            // officeNavigationBar1
+            // 
+            this.officeNavigationBar1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.officeNavigationBar1.Items.AddRange(new DevExpress.XtraBars.Navigation.NavigationBarItem[] {
+            this.navigationBarItem1,
+            this.navigationBarItem2});
+            this.officeNavigationBar1.Location = new System.Drawing.Point(0, 785);
+            this.officeNavigationBar1.Name = "officeNavigationBar1";
+            this.officeNavigationBar1.Size = new System.Drawing.Size(1545, 46);
+            this.officeNavigationBar1.TabIndex = 1;
+            this.officeNavigationBar1.Text = "officeNavigationBar1";
+            // 
+            // navigationBarItem1
+            // 
+            this.navigationBarItem1.Name = "navigationBarItem1";
+            this.navigationBarItem1.Text = "Item1";
+            // 
+            // navigationBarItem2
+            // 
+            this.navigationBarItem2.Name = "navigationBarItem2";
+            this.navigationBarItem2.Text = "Item2";
             // 
             // HomePageView
             // 
@@ -439,6 +679,11 @@
             this.panel2.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.searchControl1.Properties)).EndInit();
+            this.homePageListPanel.ResumeLayout(false);
+            this.homePageListPanel.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.navigationPane1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.officeNavigationBar1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -446,7 +691,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TreeView manageTreeView;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
         private System.Windows.Forms.Panel panel4;
@@ -477,5 +721,27 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private DevExpress.XtraEditors.SearchControl searchControl1;
         private System.Windows.Forms.Panel homePageListPanel;
+        private System.Windows.Forms.Panel panel7;
+        private DevExpress.XtraEditors.SimpleButton simpleButton13;
+        private DevExpress.XtraEditors.SimpleButton simpleButton22;
+        private DevExpress.XtraEditors.SimpleButton simpleButton21;
+        private DevExpress.XtraEditors.SimpleButton simpleButton20;
+        private DevExpress.XtraEditors.SimpleButton simpleButton19;
+        private DevExpress.XtraEditors.SimpleButton simpleButton18;
+        private DevExpress.XtraEditors.SimpleButton simpleButton17;
+        private DevExpress.XtraEditors.SimpleButton simpleButton16;
+        private DevExpress.XtraEditors.SimpleButton simpleButton15;
+        private DevExpress.XtraEditors.SimpleButton simpleButton14;
+        private DevExpress.XtraEditors.SimpleButton simpleButton23;
+        private DevExpress.XtraBars.Navigation.OfficeNavigationBar officeNavigationBar1;
+        private DevExpress.XtraBars.Navigation.NavigationBarItem navigationBarItem1;
+        private DevExpress.XtraBars.Navigation.NavigationBarItem navigationBarItem2;
+        private DevExpress.XtraBars.Navigation.NavigationPane navigationPane1;
+        private DevExpress.XtraBars.Navigation.NavigationPage navigationPage1;
+        private DevExpress.XtraBars.Navigation.NavigationPage navigationPage2;
+        private DevExpress.XtraBars.Navigation.NavigationPage navigationPage3;
+        private DevExpress.XtraBars.Navigation.NavigationPage navigationPage5;
+        private DevExpress.XtraBars.Navigation.NavigationPage navigationPage6;
+        private DevExpress.XtraBars.Navigation.NavigationPage navigationPage7;
     }
 }
