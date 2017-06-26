@@ -63,7 +63,7 @@ namespace NetBarMS.Views.SystemManage
                 this.Invoke(new UIHandleBlock(delegate 
                 {
                     //更新系统管理数据
-                    SysManage.Manage().UpdateProductData(result.pack.Content.ScSysInfo.ChildList);
+                    SysManage.Manage().UpdateMemberTypeData(result.pack.Content.ScSysInfo.ChildList);
                     //更新界面
                     items = result.pack.Content.ScSysInfo.ChildList;
                     UpdateGridControlData();

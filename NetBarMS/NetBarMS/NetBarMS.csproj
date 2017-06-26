@@ -586,35 +586,35 @@
     <Compile Include="Views\TestView.Designer.cs">
       <DependentUpon>TestView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\UserUseCp\UserActiveMsgView.cs">
+    <Compile Include="Views\UserActive\UserActiveMsgView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\UserUseCp\UserActiveMsgView.Designer.cs">
+    <Compile Include="Views\UserActive\UserActiveMsgView.Designer.cs">
       <DependentUpon>UserActiveMsgView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\UserUseCp\UserCloseCpView.cs">
+    <Compile Include="Views\UserActive\UserCloseCpView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\UserUseCp\UserCloseCpView.Designer.cs">
+    <Compile Include="Views\UserActive\UserCloseCpView.Designer.cs">
       <DependentUpon>UserCloseCpView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\UserUseCp\UserRechargeMsgView.cs">
+    <Compile Include="Views\UserActive\UserRechargeMsgView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\UserUseCp\UserRechargeMsgView.Designer.cs">
+    <Compile Include="Views\UserActive\UserRechargeMsgView.Designer.cs">
       <DependentUpon>UserRechargeMsgView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\UserUseCp\UserRechargeView.cs">
+    <Compile Include="Views\UserActive\UserRechargeView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\UserUseCp\UserRechargeView.Designer.cs">
+    <Compile Include="Views\UserActive\UserRechargeView.Designer.cs">
       <DependentUpon>UserRechargeView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\UserUseCp\UserUseCpView.cs">
+    <Compile Include="Views\UserActive\UserActiveView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\UserUseCp\UserUseCpView.Designer.cs">
-      <DependentUpon>UserUseCpView.cs</DependentUpon>
+    <Compile Include="Views\UserActive\UserActiveView.Designer.cs">
+      <DependentUpon>UserActiveView.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Codes\Tools\RepositoryItemMyEdit.resx">
       <DependentUpon>RepositoryItemMyEdit.cs</DependentUpon>
@@ -853,20 +853,20 @@
     <EmbeddedResource Include="Views\TestView.resx">
       <DependentUpon>TestView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\UserUseCp\UserActiveMsgView.resx">
+    <EmbeddedResource Include="Views\UserActive\UserActiveMsgView.resx">
       <DependentUpon>UserActiveMsgView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\UserUseCp\UserCloseCpView.resx">
+    <EmbeddedResource Include="Views\UserActive\UserCloseCpView.resx">
       <DependentUpon>UserCloseCpView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\UserUseCp\UserRechargeMsgView.resx">
+    <EmbeddedResource Include="Views\UserActive\UserRechargeMsgView.resx">
       <DependentUpon>UserRechargeMsgView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\UserUseCp\UserRechargeView.resx">
+    <EmbeddedResource Include="Views\UserActive\UserRechargeView.resx">
       <DependentUpon>UserRechargeView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\UserUseCp\UserUseCpView.resx">
-      <DependentUpon>UserUseCpView.cs</DependentUpon>
+    <EmbeddedResource Include="Views\UserActive\UserActiveView.resx">
+      <DependentUpon>UserActiveView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

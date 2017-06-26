@@ -16,7 +16,7 @@ namespace NetBarMS.Codes.Tools.FlowManage
     {
 
         private static ActiveFlowManage _manage = null;
-        public string card = "";
+        public string card = "";                        //身份证号
        
 
         public static ActiveFlowManage ActiveFlow()
@@ -34,9 +34,8 @@ namespace NetBarMS.Codes.Tools.FlowManage
         {
             this.card = tem;
             HomePageNetOperation.CardCheckIn(_manage.ActiveFlowResult,this.card);
+
         }
-
-
         const int NEED_RECHARGE = 7;          //需要充值
         const int NEED_REGIST = 6;          //需要注册
         private void ActiveFlowResult(ResultModel result)
@@ -51,11 +50,9 @@ namespace NetBarMS.Codes.Tools.FlowManage
             {
 
                 int tem = int.Parse(result.pack.Content.ErrorTip.Key);
-
                 switch (tem)
                 {
                     case NEED_RECHARGE:
-                        System.Console.WriteLine("需要充值");
                         UserScanCodeView codeView = new UserScanCodeView(this.card,50);
                         ToolsManage.ShowForm(codeView, false);
 
@@ -66,13 +63,9 @@ namespace NetBarMS.Codes.Tools.FlowManage
 
                         break;
                 }
-
-
                 return;
             }
             
-            
-
         }
 
         //会员注册成功

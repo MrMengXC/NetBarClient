@@ -417,7 +417,7 @@ namespace NetBarMS
         //上网
         private void simpleButton13_Click(object sender, EventArgs e)
         {
-            UserUseCpView view = new UserUseCpView();
+            UserActiveView view = new UserActiveView();
             ToolsManage.ShowForm(view, false);
         }
         #endregion

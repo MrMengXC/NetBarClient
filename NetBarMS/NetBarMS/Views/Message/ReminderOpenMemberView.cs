@@ -38,11 +38,11 @@ namespace NetBarMS.Views.HomePage.Message
            
         }
 
-        //不开通（默认注册临时会员）
+        #region 不开通（默认注册临时会员）
         private void simpleButton2_Click(object sender, EventArgs e)
         {
+           
             string text = ActiveFlowManage.ActiveFlow().card;
-
             StructCard.Builder card = new StructCard.Builder()
             {
                 Name = "xx22",
@@ -57,7 +57,6 @@ namespace NetBarMS.Views.HomePage.Message
 
             };
 
-
             CSMemberAdd.Builder member = new CSMemberAdd.Builder()
             {
                 Cardinfo = card.Build(),
@@ -66,14 +65,15 @@ namespace NetBarMS.Views.HomePage.Message
             };
 
             System.Console.WriteLine("AddMemeber："+member);
-            MemberNetOperation.AddMember(AddMemberBlock, member);
+            MemberNetOperation.AddMember(this.AddMemberBlock, member);
 
 
 
         }
         //添加会员回调
-        private void AddMemberBlock(ResultModel result)
+         private void AddMemberBlock(ResultModel result)
         {
+
             if (result.pack.Cmd != Cmd.CMD_MEMBER_ADD)
             {
                 return;
@@ -86,12 +86,13 @@ namespace NetBarMS.Views.HomePage.Message
                 this.Invoke(new UIHandleBlock(delegate ()
                 {
                     //
+                    this.FindForm().Close();
                     ActiveFlowManage.ActiveFlow().MemberRegistSuccess();
                 }));
             }
 
         }
-
+        #endregion
 
     }
 }

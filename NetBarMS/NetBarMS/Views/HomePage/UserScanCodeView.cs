@@ -33,15 +33,41 @@ namespace NetBarMS.Views.HomePage
         private void InitUI()
         {
 
-            HomePageNetOperation.GetRechargeCode(GetRechargeCode, cardNum, recharge);
-
+            //获取二维码
+            HomePageNetOperation.GetRechargeCode(GetRechargeCode, cardNum, recharge,0);
+            HomePageNetOperation.GetRecharge(GetRechargeResult);
 
         }
-
+        //获取充值二维码
         private void GetRechargeCode(ResultModel result)
         {
-            System.Console.WriteLine("GetRechargeCode:"+result.pack);
+            if(result.pack.Cmd != Cmd.CMD_PRECHARGE)
+            {
+                return;
+            }
 
+            System.Console.WriteLine("GetRechargeCode:" + result.pack);
+            NetMessageManage.Manager().RemoveResultBlock(GetRechargeCode);
+            if (result.pack.Content.MessageType == 1)
+            {
+
+            }
+
+        }
+        //获取充值结果
+        private void GetRechargeResult(ResultModel result)
+        {
+            if (result.pack.Cmd != Cmd.CMD_PREBUY)
+            {
+                return;
+            }
+
+            System.Console.WriteLine("GetRechargeResult:" + result.pack);
+            NetMessageManage.Manager().RemoveResultBlock(GetRechargeResult);
+            if (result.pack.Content.MessageType == 1)
+            {
+
+            }
         }
     }
 }

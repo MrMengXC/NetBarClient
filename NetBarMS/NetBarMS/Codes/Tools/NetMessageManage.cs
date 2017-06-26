@@ -15,13 +15,13 @@ namespace NetBarMS.Codes.Tools
     class NetMessageManage
     {
 
-
+        private byte[] receiveBytes = new byte[1024];
         private Socket clientSocket;
         private static NetMessageManage _instance;
         private const string ipString = "jorkenw.gnway.org";
         private const int port = 8465;
 
-        #region
+        #region Delegate
         // 接受回调代理
         public delegate void DataResultBlock(ResultModel result);
         public event DataResultBlock ResultBlockHandle;
@@ -34,6 +34,7 @@ namespace NetBarMS.Codes.Tools
         public delegate void UIHandleBlock();
         #endregion
 
+        #region 静态方法
         public static NetMessageManage Manager(ConnectResultBlock connect)
         {
             if (_instance == null)
@@ -54,7 +55,9 @@ namespace NetBarMS.Codes.Tools
             return _instance;
         }
 
+        #endregion
 
+        #region 开始连接服务器
         /// <summary>
         /// 连接服务器
         /// </summary>
@@ -62,8 +65,23 @@ namespace NetBarMS.Codes.Tools
         {
             clientSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             clientSocket.BeginConnect(ipString, port, new AsyncCallback(ConnectCallback), clientSocket);
-        }
 
+        }
+        private void ReceiveResult(System.IAsyncResult res)
+        {
+
+            int len = clientSocket.EndReceive(res);
+            res.AsyncWaitHandle.Close();
+
+            
+            clientSocket.BeginReceive(receiveBytes, 0, 1024, 0, new AsyncCallback(ReceiveResult), clientSocket);
+            HandleReceveBytes(receiveBytes, len);
+
+          //  System.Console.WriteLine("ReceiveResult");
+
+
+
+        }
         /// <summary>
         /// 连接服务器回调
         /// </summary>
@@ -84,21 +102,19 @@ namespace NetBarMS.Codes.Tools
                 Thread thread = new Thread(ReceiveData);
                 thread.Start();
                 //发送连接成功回调
-                if(this.ConnectBlockHandle!=null)
+                if (this.ConnectBlockHandle!=null)
                 {
                     this.ConnectBlockHandle();
                 }
             }
-
-
-
         }
 
+        #endregion
 
+        #region 接收数据
         //循环接收数据
         private void ReceiveData()
         {
-            
             //不断接收服务器发来的数据
             while (true)
             {
@@ -108,56 +124,85 @@ namespace NetBarMS.Codes.Tools
                     Console.WriteLine("断开连接");
                     break;
                 }
-
+                //Console.WriteLine("Time:" + DateTime.Now);
+                byte[] receiveBytes = new byte[1024];
                 //存储数据头的所有字节数 varint32:1419 1417
-                byte[] recvBytesHead = new byte[1024];
-                int len = clientSocket.Receive(recvBytesHead);
+                int len = clientSocket.Receive(receiveBytes, 0);
 
-                if (len >0)
+                if (len > 0)
                 {
                     try
                     {
-                        CodedInputStream inputStream = CodedInputStream.CreateInstance(recvBytesHead);
-                        int varint32 = (int)inputStream.ReadRawVarint32();
-                        if (varint32 >= len)
-                        {
-                            byte[] newResult = new byte[varint32];
-                            int newLen = clientSocket.Receive(newResult, 0, varint32, SocketFlags.None);
-                            //System.Console.WriteLine("varint32:" + varint32);
-                            byte[] resArr = new byte[varint32 + len];
-                            recvBytesHead.CopyTo(resArr, 0);
-                            newResult.CopyTo(resArr, recvBytesHead.Length);
-                            ReceiveDataHandle(resArr);
-                        }
-                        else
-                        {
-                            ReceiveDataHandle(recvBytesHead);
-
-
-                        }
+                        //处理接受到的数据
+                        HandleReceveBytes(receiveBytes, len);
                     }
                     catch (Exception ex)
                     {
-                        // MessageBox.Show("接收服务器数据出错");
                         System.Console.WriteLine("接收服务器数据出错");
                     }
-
+                }
+                else
+                {
 
                 }
 
 
             }
         }
+        //处理粘包(递归) 接收的长度
+        private void HandleReceveBytes(byte[] recveBytes, Int32 recelen)
+        {
+            CodedInputStream inputStream = CodedInputStream.CreateInstance(recveBytes);
+            //数据所有长度
+            int varint32 = (int)inputStream.ReadRawVarint32();
+            //获取消息头长度
+            int headlength = CodedOutputStream.ComputeRawVarint32Size((uint)varint32);
+           //System.Console.WriteLine("len:" + recelen + "\nvarint32:" + varint32 + "\nlen:" + headlength);
+
+            //如果所有有长度大于接收的长度。断包了
+            if (varint32 > recelen-headlength)
+            {
+                //
+                int needlen = varint32 + headlength - recelen;
+                byte[] newResult = new byte[needlen];
+                int newLen = clientSocket.Receive(newResult, 0, needlen, SocketFlags.None);
+
+                byte[] resArr = new byte[varint32 + headlength];
+                recveBytes.CopyTo(resArr, 0);
+                newResult.CopyTo(resArr, recveBytes.Length);
+
+                Thread thread = new Thread(new ParameterizedThreadStart(ReceiveDataHandle));
+                thread.Start(resArr);
+
+            }
+            else
+            {
+                Thread thread = new Thread(new ParameterizedThreadStart(ReceiveDataHandle));
+                thread.Start(recveBytes);
+              //  ReceiveDataHandle(recveBytes);
+                //如果实际接受的长度大于包体长度+包头长（粘包）
+                if (recelen > (varint32 + headlength))
+                {
+                    //剩下的进行解决
+                    byte[] res = recveBytes.Skip<byte>(varint32 + headlength).ToArray<byte>();
+                    HandleReceveBytes(res, recelen - varint32 - headlength);
+                }
+            }
+        }
+
 
         //接收数据处理
-        private void ReceiveDataHandle(byte[] result)
+        private void ReceiveDataHandle(object obj)
         {
+            byte[] result = (byte[])obj;
             try
             {
                 CodedInputStream inputStream = CodedInputStream.CreateInstance(result);
                 int varint32 = (int)inputStream.ReadRawVarint32(); 
                 byte[] body = inputStream.ReadRawBytes(varint32);
                 MessagePack pack = MessagePack.ParseFrom(body);
+                
+               // System.Console.WriteLine("pack:"+ pack);
                 if (ResultBlockHandle != null)
                 {
                     ResultBlockHandle(new ResultModel()
@@ -165,6 +210,7 @@ namespace NetBarMS.Codes.Tools
                         pack = pack,
                         error = 0,
                     });
+
                 }
 
             }
@@ -174,7 +220,9 @@ namespace NetBarMS.Codes.Tools
             }
 
         }
-     
+        #endregion
+
+        #region 发送数据
         // 发送数据1
         private void SendMsg(IMessageLite value)
         {
@@ -245,6 +293,10 @@ namespace NetBarMS.Codes.Tools
 
             }
         }
+
+        #endregion
+
+
         //是否连接中
         private bool IsConnected()
         {
@@ -264,7 +316,6 @@ namespace NetBarMS.Codes.Tools
         public void RemoveResultBlock(DataResultBlock result)
         {
             this.ResultBlockHandle -= result;
-
         }
 
 

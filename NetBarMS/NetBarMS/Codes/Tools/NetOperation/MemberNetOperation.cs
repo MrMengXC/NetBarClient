@@ -36,15 +36,14 @@ namespace NetBarMS.Codes.Tools.NetOperation
         /// </summary>
         public static void AddMember(DataResultBlock resultBlock, CSMemberAdd.Builder member)
         {
-
-
-
             MessageContent.Builder content = new MessageContent.Builder();
             content.SetMessageType(1);
             content.SetCsMemberAdd(member);
+
             MessagePack.Builder pack = new MessagePack.Builder();
             pack.SetCmd(Cmd.CMD_MEMBER_ADD);
             pack.SetContent(content);
+
             NetMessageManage.Manager().SendMsg(pack.Build(), resultBlock);
         }
         #endregion

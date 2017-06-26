@@ -16,10 +16,10 @@ namespace NetBarMS.Views.UserUseCp
 
 
 
-    public partial class UserUseCpView : RootUserControlView
+    public partial class UserActiveView : RootUserControlView
     {
 
-        public UserUseCpView()
+        public UserActiveView()
         {
             InitializeComponent();
             this.titleLabel.Text = "用户上机";
@@ -37,7 +37,12 @@ namespace NetBarMS.Views.UserUseCp
         private void simpleButton1_Click(object sender, EventArgs e)
         {
 
-            ActiveFlowManage.ActiveFlow().CardCheckIn("511725198904225281");
+            if(this.textEdit1.Text.Equals(""))
+            {
+                return;
+
+            }
+            ActiveFlowManage.ActiveFlow().CardCheckIn(this.textEdit1.Text);
         }
 
      

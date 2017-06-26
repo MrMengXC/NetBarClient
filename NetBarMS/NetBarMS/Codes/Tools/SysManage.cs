@@ -62,7 +62,7 @@ namespace NetBarMS.Codes.Tools
         {
             GetAreaList();
             GetProductTypes();
-            GetProductTypes();
+            GetMemberLvList();
         }
         #endregion
         public void UpdateHomePageComputers(IList<StructRealTime> tem)
@@ -78,23 +78,26 @@ namespace NetBarMS.Codes.Tools
         //获取会员等级设置的结果回调
         private void GetMemberLvSettingResult(ResultModel result)
         {
-            if (result.pack.Content.MessageType != 1)
-            {
-                return;
-            }
             if (result.pack.Cmd == Cmd.CMD_SYS_INFO && result.pack.Content.ScSysInfo.Parent.Equals(SystemManageNetOperation.lvParent))
             {
+
                 NetMessageManage.Manager().RemoveResultBlock(GetMemberLvSettingResult);
+                //System.Console.WriteLine("GetMemberLvSettingResult:" + result.pack);
                 System.Console.WriteLine("获取会员等级信息");
-                this.memberTypes = result.pack.Content.ScSysInfo.ChildList.ToList<StructDictItem>();
-                this.memberDict.Clear();
-                foreach (StructDictItem item in this.memberTypes)
+                if (result.pack.Content.MessageType == 1)
                 {
-                    memberDict.Add(item.Id, item);
+                    this.memberTypes = result.pack.Content.ScSysInfo.ChildList.ToList<StructDictItem>();
+                    this.memberDict.Clear();
+                    foreach (StructDictItem item in this.memberTypes)
+                    {
+                        memberDict.Add(item.Id, item);
+                    }
+
+
                 }
-               
 
             }
+           
         }
         //更新会员数据（会员等级设定使用）
         public void UpdateMemberTypeData(IList<StructDictItem> newMemberTypes)
@@ -128,7 +131,7 @@ namespace NetBarMS.Codes.Tools
             //如果存在应该直接返回
             if(this.memberTypes != null)
             {
-                items = this.memberTypes;
+                items = this.memberTypes.ToList<StructDictItem>();
             }
             else
             {
@@ -147,25 +150,28 @@ namespace NetBarMS.Codes.Tools
         //获取区域列表的结果回调
         private void GetAreaListResult(ResultModel result)
         {
-            if (result.pack.Content.MessageType != 1)
-            {
-                return;
-            }
-
+           
             if (result.pack.Cmd == Cmd.CMD_SYS_INFO && result.pack.Content.ScSysInfo.Parent.Equals(SystemManageNetOperation.areaParent))
             {
+
                 NetMessageManage.Manager().RemoveResultBlock(GetAreaListResult);
                 //System.Console.WriteLine("GetAreaList:" + result.pack);
                 System.Console.WriteLine("获取区域信息");
-
-                this.areas = result.pack.Content.ScSysInfo.ChildList.ToList<StructDictItem>();
-                areaDict.Clear();
-
-                foreach (StructDictItem item in this.areas)
+                if (result.pack.Content.MessageType == 1)
                 {
-                    areaDict.Add(item.Code.ToString(), item);
+                    this.areas = result.pack.Content.ScSysInfo.ChildList.ToList<StructDictItem>();
+                    areaDict.Clear();
+                    foreach (StructDictItem item in this.areas)
+                    {
+                        areaDict.Add(item.Code.ToString(), item);
+                    }
                 }
+
+
             }
+
+            
+        
 
         }
         //获取区域名称
@@ -217,24 +223,23 @@ namespace NetBarMS.Codes.Tools
         //获取商品类型结果回调
         private void ProductTypeInfoResult(ResultModel result)
         {
-            if (result.pack.Content.MessageType != 1)
-            {
-                return;
-            }
-
             if (result.pack.Cmd == Cmd.CMD_SYS_INFO && result.pack.Content.ScSysInfo.Parent.Equals(SystemManageNetOperation.productTypeParent))
             {
-                // System.Console.WriteLine("ProductTypeInfoResult:" + result.pack);
+                //System.Console.WriteLine("ProductTypeInfoResult:" + result.pack);
                 NetMessageManage.Manager().RemoveResultBlock(ProductTypeInfoResult);
                 System.Console.WriteLine("获取商品类别信息");
-
-                this.productTypes = result.pack.Content.ScSysInfo.ChildList.ToList<StructDictItem>();
-                productDict.Clear();
-                foreach (StructDictItem item in this.productTypes)
+                if (result.pack.Content.MessageType == 1)
                 {
-                    productDict.Add(item.Id, item);
+                    this.productTypes = result.pack.Content.ScSysInfo.ChildList.ToList<StructDictItem>();
+                    productDict.Clear();
+                    foreach (StructDictItem item in this.productTypes)
+                    {
+                        productDict.Add(item.Id, item);
+                    }
+
                 }
             }
+          
         }
         //更新商品类别
         public void UpdateProductData(IList<StructDictItem> newProductTypes)

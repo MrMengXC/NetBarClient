@@ -78,17 +78,19 @@ namespace NetBarMS.Codes.Tools.NetOperation
 
         #region 获取充值二维码
         // 获取充值二维码
-        public static void GetRechargeCode(DataResultBlock resultBlock, string card,int money)
+        public static void GetRechargeCode(DataResultBlock resultBlock, string card,int money,int payMode)
         {
-            CSEmkPrepay.Builder pay = new CSEmkPrepay.Builder();
+            CSPreCharge.Builder pay = new CSPreCharge.Builder();
             pay.SetCardnumber(card);
-            pay.Recharge = money;
+            pay.Amount = money;
+            pay.Paymode = payMode; //1 - 微信 2 - 支付宝 3 - 现金
+
             MessageContent.Builder content = new MessageContent.Builder();
             content.SetMessageType(1);
-            content.SetCsEmkPrepay(pay);
+            content.SetCsPreCharge(pay);
 
             MessagePack.Builder pack = new MessagePack.Builder();
-            pack.SetCmd(Cmd.CMD_CLIENT_PREPAY);
+            pack.SetCmd(Cmd.CMD_PRECHARGE);
             pack.SetContent(content);
             NetMessageManage.Manager().SendMsg(pack.Build(), resultBlock);
 
@@ -99,12 +101,9 @@ namespace NetBarMS.Codes.Tools.NetOperation
         // 获取充值结果
         public static void GetRecharge(DataResultBlock resultBlock)
         {
-
-           
             MessagePack.Builder pack = new MessagePack.Builder();
-            pack.SetCmd(Cmd.CMD_CLIENT_TOPAY);
+            pack.SetCmd(Cmd.CMD_PREBUY);
             NetMessageManage.Manager().SendMsg(pack.Build(), resultBlock);
-
         }
         #endregion
     }

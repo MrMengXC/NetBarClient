@@ -45,17 +45,15 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.temCheckEdit = new DevExpress.XtraEditors.CheckEdit();
-            this.memberCheckEdit = new DevExpress.XtraEditors.CheckEdit();
             this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
             this.moneyTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
             this.memberTypeTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.phoneTextEdit = new DevExpress.XtraEditors.TextEdit();
@@ -73,8 +71,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.temCheckEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.memberCheckEdit.Properties)).BeginInit();
             this.flowLayoutPanel5.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.moneyTextEdit.Properties)).BeginInit();
@@ -240,7 +236,7 @@
             this.labelControl12.Appearance.BackColor = System.Drawing.Color.Gray;
             this.labelControl12.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
             this.labelControl12.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.labelControl12.Location = new System.Drawing.Point(4, 4);
+            this.labelControl12.Location = new System.Drawing.Point(8, 0);
             this.labelControl12.Name = "labelControl12";
             this.labelControl12.Size = new System.Drawing.Size(122, 26);
             this.labelControl12.TabIndex = 0;
@@ -251,50 +247,30 @@
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.temCheckEdit);
-            this.panel4.Controls.Add(this.memberCheckEdit);
             this.panel4.Controls.Add(this.flowLayoutPanel5);
             this.panel4.Controls.Add(this.simpleButton2);
             this.panel4.Location = new System.Drawing.Point(7, 15);
             this.panel4.Margin = new System.Windows.Forms.Padding(0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(443, 219);
+            this.panel4.Size = new System.Drawing.Size(443, 208);
             this.panel4.TabIndex = 1;
-            // 
-            // temCheckEdit
-            // 
-            this.temCheckEdit.Location = new System.Drawing.Point(155, 31);
-            this.temCheckEdit.Name = "temCheckEdit";
-            this.temCheckEdit.Properties.Caption = "办理临时会员";
-            this.temCheckEdit.Size = new System.Drawing.Size(111, 19);
-            this.temCheckEdit.TabIndex = 23;
-            this.temCheckEdit.CheckedChanged += new System.EventHandler(this.temCheckEdit_CheckedChanged);
-            // 
-            // memberCheckEdit
-            // 
-            this.memberCheckEdit.EditValue = true;
-            this.memberCheckEdit.Location = new System.Drawing.Point(31, 31);
-            this.memberCheckEdit.Name = "memberCheckEdit";
-            this.memberCheckEdit.Properties.Caption = "办理正式会员";
-            this.memberCheckEdit.Size = new System.Drawing.Size(118, 19);
-            this.memberCheckEdit.TabIndex = 22;
-            this.memberCheckEdit.CheckedChanged += new System.EventHandler(this.memberCheckEdit_CheckedChanged);
             // 
             // flowLayoutPanel5
             // 
             this.flowLayoutPanel5.Controls.Add(this.flowLayoutPanel1);
             this.flowLayoutPanel5.Controls.Add(this.flowLayoutPanel4);
             this.flowLayoutPanel5.Controls.Add(this.flowLayoutPanel2);
-            this.flowLayoutPanel5.Location = new System.Drawing.Point(26, 53);
+            this.flowLayoutPanel5.Location = new System.Drawing.Point(14, 26);
             this.flowLayoutPanel5.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
-            this.flowLayoutPanel5.Size = new System.Drawing.Size(406, 118);
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(406, 103);
             this.flowLayoutPanel5.TabIndex = 21;
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.labelControl18);
             this.flowLayoutPanel1.Controls.Add(this.moneyTextEdit);
+            this.flowLayoutPanel1.Controls.Add(this.labelControl14);
             this.flowLayoutPanel1.Controls.Add(this.simpleButton1);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
@@ -322,12 +298,20 @@
             this.moneyTextEdit.TabIndex = 13;
             this.moneyTextEdit.EditValueChanged += new System.EventHandler(this.moneyTextEdit_EditValueChanged);
             // 
+            // labelControl14
+            // 
+            this.labelControl14.Location = new System.Drawing.Point(241, 3);
+            this.labelControl14.Name = "labelControl14";
+            this.labelControl14.Size = new System.Drawing.Size(12, 14);
+            this.labelControl14.TabIndex = 15;
+            this.labelControl14.Text = "元";
+            // 
             // simpleButton1
             // 
             this.simpleButton1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.simpleButton1.Appearance.Options.UseBackColor = true;
             this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.simpleButton1.Location = new System.Drawing.Point(241, 3);
+            this.simpleButton1.Location = new System.Drawing.Point(259, 3);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(113, 23);
             this.simpleButton1.TabIndex = 17;
@@ -338,7 +322,6 @@
             // 
             this.flowLayoutPanel4.Controls.Add(this.labelControl15);
             this.flowLayoutPanel4.Controls.Add(this.memberTypeTextEdit);
-            this.flowLayoutPanel4.Controls.Add(this.labelControl14);
             this.flowLayoutPanel4.Location = new System.Drawing.Point(0, 30);
             this.flowLayoutPanel4.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
@@ -359,16 +342,8 @@
             this.memberTypeTextEdit.Name = "memberTypeTextEdit";
             this.memberTypeTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.memberTypeTextEdit.Properties.NullText = "根据充值金额自动填充会员类型";
-            this.memberTypeTextEdit.Size = new System.Drawing.Size(166, 20);
+            this.memberTypeTextEdit.Size = new System.Drawing.Size(184, 20);
             this.memberTypeTextEdit.TabIndex = 14;
-            // 
-            // labelControl14
-            // 
-            this.labelControl14.Location = new System.Drawing.Point(241, 3);
-            this.labelControl14.Name = "labelControl14";
-            this.labelControl14.Size = new System.Drawing.Size(12, 14);
-            this.labelControl14.TabIndex = 15;
-            this.labelControl14.Text = "元";
             // 
             // flowLayoutPanel2
             // 
@@ -397,7 +372,7 @@
             this.phoneTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.phoneTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.phoneTextEdit.Properties.NullText = "请输入手机号码";
-            this.phoneTextEdit.Size = new System.Drawing.Size(166, 20);
+            this.phoneTextEdit.Size = new System.Drawing.Size(184, 20);
             this.phoneTextEdit.TabIndex = 12;
             // 
             // simpleButton2
@@ -405,7 +380,7 @@
             this.simpleButton2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.simpleButton2.Appearance.Options.UseBackColor = true;
             this.simpleButton2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.simpleButton2.Location = new System.Drawing.Point(122, 191);
+            this.simpleButton2.Location = new System.Drawing.Point(154, 159);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(113, 23);
             this.simpleButton2.TabIndex = 16;
@@ -504,8 +479,6 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.temCheckEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.memberCheckEdit.Properties)).EndInit();
             this.flowLayoutPanel5.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
@@ -558,8 +531,6 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel6;
         private DevExpress.XtraEditors.TextEdit memberTypeTextEdit;
         private DevExpress.XtraEditors.LabelControl labelControl14;
-        private DevExpress.XtraEditors.CheckEdit temCheckEdit;
-        private DevExpress.XtraEditors.CheckEdit memberCheckEdit;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel6;

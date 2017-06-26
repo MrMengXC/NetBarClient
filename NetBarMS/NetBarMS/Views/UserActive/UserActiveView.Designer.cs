@@ -1,6 +1,6 @@
 ﻿namespace NetBarMS.Views.UserUseCp
 {
-    partial class UserUseCpView
+    partial class UserActiveView
     {
         /// <summary> 
         /// 必需的设计器变量。
@@ -43,11 +43,16 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
+            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.titlePanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
+            this.flowLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // titlePanel
@@ -57,6 +62,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.panel1.Controls.Add(this.flowLayoutPanel3);
             this.panel1.Controls.Add(this.flowLayoutPanel2);
             this.panel1.Controls.Add(this.flowLayoutPanel1);
             this.panel1.Controls.Add(this.pictureEdit1);
@@ -70,7 +76,7 @@
             this.flowLayoutPanel2.Controls.Add(this.simpleButton1);
             this.flowLayoutPanel2.Controls.Add(this.simpleButton2);
             this.flowLayoutPanel2.Controls.Add(this.simpleButton3);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(91, 351);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(91, 367);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(275, 34);
             this.flowLayoutPanel2.TabIndex = 3;
@@ -113,7 +119,7 @@
             this.flowLayoutPanel1.Controls.Add(this.label7);
             this.flowLayoutPanel1.Controls.Add(this.label8);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(102, 159);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(102, 144);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(264, 186);
             this.flowLayoutPanel1.TabIndex = 1;
@@ -198,12 +204,37 @@
             this.pictureEdit1.Size = new System.Drawing.Size(100, 135);
             this.pictureEdit1.TabIndex = 0;
             // 
-            // UserUseCpView
+            // flowLayoutPanel3
+            // 
+            this.flowLayoutPanel3.Controls.Add(this.label9);
+            this.flowLayoutPanel3.Controls.Add(this.textEdit1);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(94, 332);
+            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(300, 32);
+            this.flowLayoutPanel3.TabIndex = 4;
+            // 
+            // label9
+            // 
+            this.label9.Location = new System.Drawing.Point(3, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(100, 32);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "临时输入身份证号：";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // textEdit1
+            // 
+            this.textEdit1.Location = new System.Drawing.Point(109, 3);
+            this.textEdit1.Name = "textEdit1";
+            this.textEdit1.Size = new System.Drawing.Size(174, 20);
+            this.textEdit1.TabIndex = 1;
+            // 
+            // UserActiveView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
-            this.Name = "UserUseCpView";
+            this.Name = "UserActiveView";
             this.Size = new System.Drawing.Size(445, 474);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.titlePanel, 0);
@@ -213,6 +244,8 @@
             this.flowLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
+            this.flowLayoutPanel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -234,5 +267,8 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraEditors.SimpleButton simpleButton3;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
+        private System.Windows.Forms.Label label9;
+        private DevExpress.XtraEditors.TextEdit textEdit1;
     }
 }

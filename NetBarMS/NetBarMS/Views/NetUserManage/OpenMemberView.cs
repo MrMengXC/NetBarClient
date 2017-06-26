@@ -28,15 +28,16 @@ namespace NetBarMS.Views.NetUserManage
         }
         private int memberType = -1;
         private bool isTem = false;     //  是否是临时会员
-        private string[] memberTypes;
+       // private string[] memberTypes;
+        private List<StructDictItem> memberTypes;
+
         public OpenMemberView()
         {
             InitializeComponent();
             this.titleLabel.Text = "会员办理";
-            memberTypes = new string[]{
-            "临时会员", "普通会员", "黄金会员", "钻石会员",
-            };
-
+            //memberTypes = new string[]{
+            //"临时会员", "普通会员", "黄金会员", "钻石会员",
+            //};
             InitUI();
         }
 
@@ -44,11 +45,29 @@ namespace NetBarMS.Views.NetUserManage
         //初始化UI
         private void InitUI()
         {
+            //先接受数据
+            SysManage.Manage().GetMembersTypes(out this.memberTypes);
+            //初始化GridControl
             ToolsManage.SetGridView(this.gridView1, GridControlType.OpenMember, out this.mainDataTable);
             this.gridControl1.DataSource = this.mainDataTable;
+            RefreshGridControl();
+        }
+        //刷新GridControl
+        private void RefreshGridControl()
+        {
 
+            foreach(StructDictItem item in this.memberTypes)
+            {
+                DataRow row = this.mainDataTable.NewRow();
+                this.mainDataTable.Rows.Add(row);
+                row[TitleList.Type.ToString()] = item.GetItem(0);
+                row[TitleList.PayMoney.ToString()] = item.GetItem(1);
+
+            }
         }
         #endregion
+
+
 
         #region 添加会员以及回调方法
         //保存
@@ -68,17 +87,18 @@ namespace NetBarMS.Views.NetUserManage
                 Gender = 1,
                 Nation = "2112",
                 Number = idNum,
-                Birthday = "1212",
+                Birthday = "1992-05-01",
                 Address = "海南省",
                 Organization = "海南",
                 HeadUrl = "#dasdasd#",
+                Vld = "",
             };
             int money = int.Parse(this.moneyTextEdit.Text);
 
             CSMemberAdd.Builder member = new CSMemberAdd.Builder()
             {
                 Cardinfo = card.Build(),
-                Membertype = this.memberType+1,
+                Membertype = 1,
                 Recharge = money,
                 Phone = this.phoneTextEdit.Text,
             };
@@ -93,10 +113,15 @@ namespace NetBarMS.Views.NetUserManage
         private void AddMemberBlock(ResultModel result)
         {
 
-            if (result.pack.Cmd == Cmd.CMD_MEMBER_ADD && result.pack.Content.MessageType == 1)
+            if (result.pack.Cmd != Cmd.CMD_MEMBER_ADD)
             {
-                NetMessageManage.Manager().RemoveResultBlock(AddMemberBlock);
-                System.Console.WriteLine("AddMemberBlock:" + result.pack);
+                return;
+            }
+
+            System.Console.WriteLine("AddMemberBlock:" + result.pack);
+            NetMessageManage.Manager().RemoveResultBlock(AddMemberBlock);
+            if (result.pack.Content.MessageType == 1)
+            {
                 this.Invoke(new UIHandleBlock(delegate ()
                 {
                     //显示提示
@@ -120,34 +145,6 @@ namespace NetBarMS.Views.NetUserManage
             //0 - 20元 普通 20 - 40元黄金 40元以上钻石 type 1，2，3，
             //0为临时
             SetMemberType();
-        }
-
-        //正式会员勾选
-        private void memberCheckEdit_CheckedChanged(object sender, EventArgs e)
-        {
-            if(this.memberCheckEdit.Checked)
-            {
-                isTem = false;
-                this.temCheckEdit.Checked = false;
-                memberType = -1;
-                this.memberTypeTextEdit.Text = null;
-                SetMemberType();
-            }
-        }
-        //临时会员勾选
-        private void temCheckEdit_CheckedChanged(object sender, EventArgs e)
-        {
-           
-            if (this.temCheckEdit.Checked)
-            {
-                isTem = true;
-                this.memberCheckEdit.Checked = false;
-                memberType = 0;
-                this.memberTypeTextEdit.Text = memberTypes[memberType];
-                System.Console.WriteLine(memberTypes[memberType]);
-            }
-           
-
         }
         #endregion
 
@@ -192,7 +189,7 @@ namespace NetBarMS.Views.NetUserManage
             }
             else
             {
-                this.memberTypeTextEdit.Text = memberTypes[memberType];
+                //this.memberTypeTextEdit.Text = memberTypes[memberType];
             }
 
         }
