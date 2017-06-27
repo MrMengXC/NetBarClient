@@ -32,24 +32,24 @@ public static partial class ClientProtocol {
   internal static pb::FieldAccess.FieldAccessorTable<global::SCLogoff, global::SCLogoff.Builder> internal__static_SCLogoff__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_CSHungup__Descriptor;
   internal static pb::FieldAccess.FieldAccessorTable<global::CSHungup, global::CSHungup.Builder> internal__static_CSHungup__FieldAccessorTable;
-  internal static pbd::MessageDescriptor internal__static_CSCharge__Descriptor;
-  internal static pb::FieldAccess.FieldAccessorTable<global::CSCharge, global::CSCharge.Builder> internal__static_CSCharge__FieldAccessorTable;
-  internal static pbd::MessageDescriptor internal__static_SCCharge__Descriptor;
-  internal static pb::FieldAccess.FieldAccessorTable<global::SCCharge, global::SCCharge.Builder> internal__static_SCCharge__FieldAccessorTable;
-  internal static pbd::MessageDescriptor internal__static_SCChargeResult__Descriptor;
-  internal static pb::FieldAccess.FieldAccessorTable<global::SCChargeResult, global::SCChargeResult.Builder> internal__static_SCChargeResult__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_CSPreCharge__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::CSPreCharge, global::CSPreCharge.Builder> internal__static_CSPreCharge__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_SCPreCharge__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::SCPreCharge, global::SCPreCharge.Builder> internal__static_SCPreCharge__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_SCToCharge__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::SCToCharge, global::SCToCharge.Builder> internal__static_SCToCharge__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_SCShop__Descriptor;
   internal static pb::FieldAccess.FieldAccessorTable<global::SCShop, global::SCShop.Builder> internal__static_SCShop__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_CSCartAdd__Descriptor;
   internal static pb::FieldAccess.FieldAccessorTable<global::CSCartAdd, global::CSCartAdd.Builder> internal__static_CSCartAdd__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_CSCartDel__Descriptor;
   internal static pb::FieldAccess.FieldAccessorTable<global::CSCartDel, global::CSCartDel.Builder> internal__static_CSCartDel__FieldAccessorTable;
-  internal static pbd::MessageDescriptor internal__static_CSCartBuy__Descriptor;
-  internal static pb::FieldAccess.FieldAccessorTable<global::CSCartBuy, global::CSCartBuy.Builder> internal__static_CSCartBuy__FieldAccessorTable;
-  internal static pbd::MessageDescriptor internal__static_SCCartBuy__Descriptor;
-  internal static pb::FieldAccess.FieldAccessorTable<global::SCCartBuy, global::SCCartBuy.Builder> internal__static_SCCartBuy__FieldAccessorTable;
-  internal static pbd::MessageDescriptor internal__static_SCCartBuyResult__Descriptor;
-  internal static pb::FieldAccess.FieldAccessorTable<global::SCCartBuyResult, global::SCCartBuyResult.Builder> internal__static_SCCartBuyResult__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_CSPreBuy__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::CSPreBuy, global::CSPreBuy.Builder> internal__static_CSPreBuy__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_SCPreBuy__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::SCPreBuy, global::SCPreBuy.Builder> internal__static_SCPreBuy__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_SCToBuy__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::SCToBuy, global::SCToBuy.Builder> internal__static_SCToBuy__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_SCSysMessage__Descriptor;
   internal static pb::FieldAccess.FieldAccessorTable<global::SCSysMessage, global::SCSysMessage.Builder> internal__static_SCSysMessage__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_CSUserMessage__Descriptor;
@@ -79,64 +79,64 @@ public static partial class ClientProtocol {
           "ChRDbGllbnRQcm90b2NvbC5wcm90bxoQQmFzZVN0cnVjdC5wcm90byJmCgtN", 
           "ZXNzYWdlUGFjaxIRCgNjbWQYASACKA4yBC5DbWQSDwoHdmVyc2lvbhgCIAEo", 
           "BRIRCglzZXNzaW9uSWQYAyABKAUSIAoHY29udGVudBgEIAEoCzIPLk1lc3Nh", 
-          "Z2VDb250ZW50Iv4GCg5NZXNzYWdlQ29udGVudBITCgttZXNzYWdlVHlwZRgB", 
+          "Z2VDb250ZW50Iu4GCg5NZXNzYWdlQ29udGVudBITCgttZXNzYWdlVHlwZRgB", 
           "IAIoBRIhCghlcnJvclRpcBgCIAEoCzIPLlN0cnVjdEVycm9yVGlwEiQKDGNz", 
           "Q2xpZW50T3BlbhjIASABKAsyDS5DU0NsaWVudE9wZW4SJgoNY3NDbGllbnRD", 
           "bG9zZRjJASABKAsyDi5DU0NsaWVudENsb3NlEhoKB2NzTG9nb24YygEgASgL", 
           "MgguQ1NMb2dvbhIaCgdzY0xvZ29uGMsBIAEoCzIILlNDTG9nb24SHAoIY3NM", 
           "b2dvZmYYzAEgASgLMgkuQ1NMb2dvZmYSHAoIc2NMb2dvZmYYzQEgASgLMgku", 
-          "U0NMb2dvZmYSHAoIY3NIdW5ndXAYzgEgASgLMgkuQ1NIdW5ndXASHAoIY3ND", 
-          "aGFyZ2UYzwEgASgLMgkuQ1NDaGFyZ2USHAoIc2NDaGFyZ2UY0AEgASgLMgku", 
-          "U0NDaGFyZ2USKAoOc2NDaGFyZ2VSZXN1bHQY0QEgASgLMg8uU0NDaGFyZ2VS", 
-          "ZXN1bHQSGAoGc2NTaG9wGNIBIAEoCzIHLlNDU2hvcBIeCgljc0NhcnRBZGQY", 
-          "0wEgASgLMgouQ1NDYXJ0QWRkEh4KCWNzQ2FydERlbBjUASABKAsyCi5DU0Nh", 
-          "cnREZWwSHgoJY3NDYXJ0QnV5GNUBIAEoCzIKLkNTQ2FydEJ1eRIeCglzY0Nh", 
-          "cnRCdXkY1gEgASgLMgouU0NDYXJ0QnV5EioKD3NjQ2FydEJ1eVJlc3VsdBjX", 
-          "ASABKAsyEC5TQ0NhcnRCdXlSZXN1bHQSJAoMc2NTeXNNZXNzYWdlGNgBIAEo", 
-          "CzINLlNDU3lzTWVzc2FnZRImCg1jc1VzZXJNZXNzYWdlGNkBIAEoCzIOLkNT", 
-          "VXNlck1lc3NhZ2USIAoKY3NFdmFsdWF0ZRjaASABKAsyCy5DU0V2YWx1YXRl", 
-          "EiAKCnNjRXZhbHVhdGUY2wEgASgLMgsuU0NFdmFsdWF0ZRIkCgxjc1Zlcmlm", 
-          "eUNvZGUY3AEgASgLMg0uQ1NWZXJpZnlDb2RlEiQKDHNjVmVyaWZ5Q29kZRjd", 
-          "ASABKAsyDS5TQ1ZlcmlmeUNvZGUSJAoMY3NCaW5kTW9iaWxlGN4BIAEoCzIN", 
-          "LkNTQmluZE1vYmlsZRIkCgxzY0JpbmRNb2JpbGUY3wEgASgLMg0uU0NCaW5k", 
-          "TW9iaWxlIhwKDENTQ2xpZW50T3BlbhIMCgR0ZXh0GAEgAigJIg8KDUNTQ2xp", 
-          "ZW50Q2xvc2UiHQoHQ1NMb2dvbhISCgpjYXJkbnVtYmVyGAEgAigJIm4KB1ND", 
-          "TG9nb24SEAoIbWVtYmVyaWQYASACKAUSEgoKY2FyZG51bWJlchgCIAIoCRIM", 
-          "CgRuYW1lGAQgAigJEg0KBXJpZ2h0GAUgAigFEg8KB2JhbGFuY2UYCSACKAUS", 
-          "DwoHaW50ZWdhbBgMIAIoBSIeCghDU0xvZ29mZhISCgpjYXJkbnVtYmVyGAEg", 
-          "AigJInEKCFNDTG9nb2ZmEgwKBG5hbWUYASACKAkSEgoKY2FyZG51bWJlchgC", 
-          "IAIoCRINCgVyaWdodBgDIAIoCRIPCgdiYWxhbmNlGAQgAigFEhEKCXVzZWRt", 
-          "b25leRgFIAIoBRIQCgh1c2VkdGltZRgGIAIoBSIeCghDU0h1bmd1cBISCgpj", 
-          "YXJkbnVtYmVyGAEgAigJIi4KCENTQ2hhcmdlEhIKCmNhcmRudW1iZXIYAiAC", 
-          "KAkSDgoGYW1vdW50GAMgAigFIhoKCFNDQ2hhcmdlEg4KBnFyY29kZRgBIAIo", 
-          "CSJ1Cg5TQ0NoYXJnZVJlc3VsdBIMCgRuYW1lGAEgAigJEhIKCmNhcmRudW1i", 
-          "ZXIYAiACKAkSDQoFcmlnaHQYAyACKAkSEAoIcmVjaGFyZ2UYBCACKAUSDwoH", 
-          "YmFsYW5jZRgFIAIoBRIPCgdpbnRlZ2FsGAYgAigFIiUKBlNDU2hvcBIbCgVn", 
-          "b29kcxgBIAMoCzIMLlN0cnVjdEdvb2RzIi4KCUNTQ2FydEFkZBIPCgdnb29k", 
-          "c2lkGAEgAigFEhAKCGdvb2RzbnVtGAIgAigFIi4KCUNTQ2FydERlbBIPCgdn", 
-          "b29kc2lkGAEgAigFEhAKCGdvb2RzbnVtGAIgAigFIh8KCUNTQ2FydEJ1eRIS", 
-          "CgpjYXJkbnVtYmVyGAEgAigJIhsKCVNDQ2FydEJ1eRIOCgZxcmNvZGUYASAC", 
-          "KAkijAEKD1NDQ2FydEJ1eVJlc3VsdBIMCgRuYW1lGAEgAigJEhIKCmNhcmRu", 
-          "dW1iZXIYAiACKAkSDQoFcmlnaHQYAyACKAkSEQoJdXNlZG1vbmV5GAQgAigF", 
-          "EhMKC3VzZWRpbnRlZ2FsGAUgAigFEg8KB2JhbGFuY2UYBiACKAUSDwoHaW50", 
-          "ZWdhbBgHIAIoBSIcCgxTQ1N5c01lc3NhZ2USDAoEdGV4dBgBIAIoCSIdCg1D", 
-          "U1VzZXJNZXNzYWdlEgwKBHRleHQYASACKAkiTwoKQ1NFdmFsdWF0ZRIRCglz", 
-          "dGFmZlN0YXIYASACKAUSDwoHZW52U3RhchgCIAIoBRIPCgdkZXZTdGFyGAMg", 
-          "AigFEgwKBGV2YWwYBCABKAkiHQoKU0NFdmFsdWF0ZRIPCgdpbnRlZ2FsGAEg", 
-          "AigFIiMKDENTVmVyaWZ5Q29kZRITCgtwaG9uZW51bWJlchgBIAIoCSIiCgxT", 
-          "Q1ZlcmlmeUNvZGUSEgoKdmVyaWZ5Y29kZRgBIAIoCSI3CgxDU0JpbmRNb2Jp", 
-          "bGUSEwoLcGhvbmVudW1iZXIYASACKAkSEgoKdmVyaWZ5Y29kZRgCIAIoCSIf", 
-          "CgxTQ0JpbmRNb2JpbGUSDwoHaW50ZWdhbBgBIAIoBSrwAgoDQ21kEhQKD0NN", 
-          "RF9DTElFTlRfT1BFThDQDxIVChBDTURfQ0xJRU5UX0NMT1NFENEPEhUKEENN", 
-          "RF9DTElFTlRfTE9HT04Q0g8SFgoRQ01EX0NMSUVOVF9MT0dPRkYQ0w8SFgoR", 
-          "Q01EX0NMSUVOVF9IVU5HVVAQ1A8SFgoRQ01EX0NMSUVOVF9QUkVQQVkQ1Q8S", 
-          "FQoQQ01EX0NMSUVOVF9UT1BBWRDWDxIUCg9DTURfQ0xJRU5UX1NIT1AQ1w8S", 
-          "GAoTQ01EX0NMSUVOVF9DQVJUX0FERBDYDxIYChNDTURfQ0xJRU5UX0NBUlRf", 
-          "REVMENkPEhgKE0NNRF9DTElFTlRfQ0FSVF9CVVkQ2g8SEwoOQ01EX0NMSUVO", 
-          "VF9CVVkQ2w8SFwoSQ01EX0NMSUVOVF9NRVNTQUdFENwPEhgKE0NNRF9DTElF", 
-          "TlRfRVZBTFVBVEUQ3Q8SGgoVQ01EX0NMSUVOVF9CSU5ETU9CSUxFEN4PQi8K", 
-          "HWNvbS5za3lzb2Z0LmNvcmUuYXV0by5tZXNzYWdlQg5DbGllbnRQcm90b2Nv", 
-        "bA=="));
+          "U0NMb2dvZmYSHAoIY3NIdW5ndXAYzgEgASgLMgkuQ1NIdW5ndXASIgoLY3NQ", 
+          "cmVDaGFyZ2UYzwEgASgLMgwuQ1NQcmVDaGFyZ2USIgoLc2NQcmVDaGFyZ2UY", 
+          "0AEgASgLMgwuU0NQcmVDaGFyZ2USIAoKc2NUb0NoYXJnZRjRASABKAsyCy5T", 
+          "Q1RvQ2hhcmdlEhgKBnNjU2hvcBjSASABKAsyBy5TQ1Nob3ASHgoJY3NDYXJ0", 
+          "QWRkGNMBIAEoCzIKLkNTQ2FydEFkZBIeCgljc0NhcnREZWwY1AEgASgLMgou", 
+          "Q1NDYXJ0RGVsEhwKCGNzUHJlQnV5GNUBIAEoCzIJLkNTUHJlQnV5EhwKCHNj", 
+          "UHJlQnV5GNYBIAEoCzIJLlNDUHJlQnV5EhoKB3NjVG9CdXkY1wEgASgLMggu", 
+          "U0NUb0J1eRIkCgxzY1N5c01lc3NhZ2UY2AEgASgLMg0uU0NTeXNNZXNzYWdl", 
+          "EiYKDWNzVXNlck1lc3NhZ2UY2QEgASgLMg4uQ1NVc2VyTWVzc2FnZRIgCgpj", 
+          "c0V2YWx1YXRlGNoBIAEoCzILLkNTRXZhbHVhdGUSIAoKc2NFdmFsdWF0ZRjb", 
+          "ASABKAsyCy5TQ0V2YWx1YXRlEiQKDGNzVmVyaWZ5Q29kZRjcASABKAsyDS5D", 
+          "U1ZlcmlmeUNvZGUSJAoMc2NWZXJpZnlDb2RlGN0BIAEoCzINLlNDVmVyaWZ5", 
+          "Q29kZRIkCgxjc0JpbmRNb2JpbGUY3gEgASgLMg0uQ1NCaW5kTW9iaWxlEiQK", 
+          "DHNjQmluZE1vYmlsZRjfASABKAsyDS5TQ0JpbmRNb2JpbGUiHAoMQ1NDbGll", 
+          "bnRPcGVuEgwKBHRleHQYASACKAkiDwoNQ1NDbGllbnRDbG9zZSIdCgdDU0xv", 
+          "Z29uEhIKCmNhcmRudW1iZXIYASACKAkibgoHU0NMb2dvbhIQCghtZW1iZXJp", 
+          "ZBgBIAIoBRISCgpjYXJkbnVtYmVyGAIgAigJEgwKBG5hbWUYBCACKAkSDQoF", 
+          "cmlnaHQYBSACKAUSDwoHYmFsYW5jZRgJIAIoBRIPCgdpbnRlZ2FsGAwgAigF", 
+          "Ih4KCENTTG9nb2ZmEhIKCmNhcmRudW1iZXIYASACKAkicQoIU0NMb2dvZmYS", 
+          "DAoEbmFtZRgBIAIoCRISCgpjYXJkbnVtYmVyGAIgAigJEg0KBXJpZ2h0GAMg", 
+          "AigJEg8KB2JhbGFuY2UYBCACKAUSEQoJdXNlZG1vbmV5GAUgAigFEhAKCHVz", 
+          "ZWR0aW1lGAYgAigFIh4KCENTSHVuZ3VwEhIKCmNhcmRudW1iZXIYASACKAki", 
+          "QgoLQ1NQcmVDaGFyZ2USEgoKY2FyZG51bWJlchgBIAIoCRIOCgZhbW91bnQY", 
+          "AiACKAUSDwoHcGF5bW9kZRgDIAIoBSIdCgtTQ1ByZUNoYXJnZRIOCgZxcmNv", 
+          "ZGUYASACKAkicQoKU0NUb0NoYXJnZRIMCgRuYW1lGAEgAigJEhIKCmNhcmRu", 
+          "dW1iZXIYAiACKAkSDQoFcmlnaHQYAyACKAkSEAoIcmVjaGFyZ2UYBCACKAUS", 
+          "DwoHYmFsYW5jZRgFIAIoBRIPCgdpbnRlZ2FsGAYgAigFIiUKBlNDU2hvcBIb", 
+          "CgVnb29kcxgBIAMoCzIMLlN0cnVjdEdvb2RzIi4KCUNTQ2FydEFkZBIPCgdn", 
+          "b29kc2lkGAEgAigFEhAKCGdvb2RzbnVtGAIgAigFIi4KCUNTQ2FydERlbBIP", 
+          "Cgdnb29kc2lkGAEgAigFEhAKCGdvb2RzbnVtGAIgAigFIh4KCENTUHJlQnV5", 
+          "EhIKCmNhcmRudW1iZXIYASACKAkiGgoIU0NQcmVCdXkSDgoGcXJjb2RlGAEg", 
+          "AigJIoQBCgdTQ1RvQnV5EgwKBG5hbWUYASACKAkSEgoKY2FyZG51bWJlchgC", 
+          "IAIoCRINCgVyaWdodBgDIAIoCRIRCgl1c2VkbW9uZXkYBCACKAUSEwoLdXNl", 
+          "ZGludGVnYWwYBSACKAUSDwoHYmFsYW5jZRgGIAIoBRIPCgdpbnRlZ2FsGAcg", 
+          "AigFIhwKDFNDU3lzTWVzc2FnZRIMCgR0ZXh0GAEgAigJIh0KDUNTVXNlck1l", 
+          "c3NhZ2USDAoEdGV4dBgBIAIoCSJPCgpDU0V2YWx1YXRlEhEKCXN0YWZmU3Rh", 
+          "chgBIAIoBRIPCgdlbnZTdGFyGAIgAigFEg8KB2RldlN0YXIYAyACKAUSDAoE", 
+          "ZXZhbBgEIAEoCSIdCgpTQ0V2YWx1YXRlEg8KB2ludGVnYWwYASACKAUiIwoM", 
+          "Q1NWZXJpZnlDb2RlEhMKC3Bob25lbnVtYmVyGAEgAigJIiIKDFNDVmVyaWZ5", 
+          "Q29kZRISCgp2ZXJpZnljb2RlGAEgAigJIjcKDENTQmluZE1vYmlsZRITCgtw", 
+          "aG9uZW51bWJlchgBIAIoCRISCgp2ZXJpZnljb2RlGAIgAigJIh8KDFNDQmlu", 
+          "ZE1vYmlsZRIPCgdpbnRlZ2FsGAEgAigFKpYDCgNDbWQSFAoPQ01EX0NMSUVO", 
+          "VF9PUEVOENAPEhUKEENNRF9DTElFTlRfQ0xPU0UQ0Q8SFQoQQ01EX0NMSUVO", 
+          "VF9MT0dPThDSDxIWChFDTURfQ0xJRU5UX0xPR09GRhDTDxIWChFDTURfQ0xJ", 
+          "RU5UX0hVTkdVUBDUDxISCg1DTURfUFJFQ0hBUkdFENUPEhEKDENNRF9UT0NI", 
+          "QVJHRRDWDxIUCg9DTURfQ0xJRU5UX1NIT1AQ1w8SGAoTQ01EX0NMSUVOVF9D", 
+          "QVJUX0FERBDYDxIYChNDTURfQ0xJRU5UX0NBUlRfREVMENkPEg8KCkNNRF9Q", 
+          "UkVCVVkQ2g8SDgoJQ01EX1RPQlVZENsPEhoKFUNNRF9DTElFTlRfU1lTTUVT", 
+          "U0FHRRDcDxIbChZDTURfQ0xJRU5UX1VTRVJNRVNTQUdFEN0PEhgKE0NNRF9D", 
+          "TElFTlRfRVZBTFVBVEUQ3g8SGgoVQ01EX0NMSUVOVF9WRVJJRllDT0RFEN8P", 
+          "EhoKFUNNRF9DTElFTlRfQklORE1PQklMRRDgD0IvCh1jb20uc2t5c29mdC5j", 
+        "b3JlLmF1dG8ubWVzc2FnZUIOQ2xpZW50UHJvdG9jb2w="));
     pbd::FileDescriptor.InternalDescriptorAssigner assigner = delegate(pbd::FileDescriptor root) {
       descriptor = root;
       internal__static_MessagePack__Descriptor = Descriptor.MessageTypes[0];
@@ -146,7 +146,7 @@ public static partial class ClientProtocol {
       internal__static_MessageContent__Descriptor = Descriptor.MessageTypes[1];
       internal__static_MessageContent__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::MessageContent, global::MessageContent.Builder>(internal__static_MessageContent__Descriptor,
-              new string[] { "MessageType", "ErrorTip", "CsClientOpen", "CsClientClose", "CsLogon", "ScLogon", "CsLogoff", "ScLogoff", "CsHungup", "CsCharge", "ScCharge", "ScChargeResult", "ScShop", "CsCartAdd", "CsCartDel", "CsCartBuy", "ScCartBuy", "ScCartBuyResult", "ScSysMessage", "CsUserMessage", "CsEvaluate", "ScEvaluate", "CsVerifyCode", "ScVerifyCode", "CsBindMobile", "ScBindMobile", });
+              new string[] { "MessageType", "ErrorTip", "CsClientOpen", "CsClientClose", "CsLogon", "ScLogon", "CsLogoff", "ScLogoff", "CsHungup", "CsPreCharge", "ScPreCharge", "ScToCharge", "ScShop", "CsCartAdd", "CsCartDel", "CsPreBuy", "ScPreBuy", "ScToBuy", "ScSysMessage", "CsUserMessage", "CsEvaluate", "ScEvaluate", "CsVerifyCode", "ScVerifyCode", "CsBindMobile", "ScBindMobile", });
       internal__static_CSClientOpen__Descriptor = Descriptor.MessageTypes[2];
       internal__static_CSClientOpen__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSClientOpen, global::CSClientOpen.Builder>(internal__static_CSClientOpen__Descriptor,
@@ -175,17 +175,17 @@ public static partial class ClientProtocol {
       internal__static_CSHungup__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSHungup, global::CSHungup.Builder>(internal__static_CSHungup__Descriptor,
               new string[] { "Cardnumber", });
-      internal__static_CSCharge__Descriptor = Descriptor.MessageTypes[9];
-      internal__static_CSCharge__FieldAccessorTable = 
-          new pb::FieldAccess.FieldAccessorTable<global::CSCharge, global::CSCharge.Builder>(internal__static_CSCharge__Descriptor,
-              new string[] { "Cardnumber", "Amount", });
-      internal__static_SCCharge__Descriptor = Descriptor.MessageTypes[10];
-      internal__static_SCCharge__FieldAccessorTable = 
-          new pb::FieldAccess.FieldAccessorTable<global::SCCharge, global::SCCharge.Builder>(internal__static_SCCharge__Descriptor,
+      internal__static_CSPreCharge__Descriptor = Descriptor.MessageTypes[9];
+      internal__static_CSPreCharge__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::CSPreCharge, global::CSPreCharge.Builder>(internal__static_CSPreCharge__Descriptor,
+              new string[] { "Cardnumber", "Amount", "Paymode", });
+      internal__static_SCPreCharge__Descriptor = Descriptor.MessageTypes[10];
+      internal__static_SCPreCharge__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::SCPreCharge, global::SCPreCharge.Builder>(internal__static_SCPreCharge__Descriptor,
               new string[] { "Qrcode", });
-      internal__static_SCChargeResult__Descriptor = Descriptor.MessageTypes[11];
-      internal__static_SCChargeResult__FieldAccessorTable = 
-          new pb::FieldAccess.FieldAccessorTable<global::SCChargeResult, global::SCChargeResult.Builder>(internal__static_SCChargeResult__Descriptor,
+      internal__static_SCToCharge__Descriptor = Descriptor.MessageTypes[11];
+      internal__static_SCToCharge__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::SCToCharge, global::SCToCharge.Builder>(internal__static_SCToCharge__Descriptor,
               new string[] { "Name", "Cardnumber", "Right", "Recharge", "Balance", "Integal", });
       internal__static_SCShop__Descriptor = Descriptor.MessageTypes[12];
       internal__static_SCShop__FieldAccessorTable = 
@@ -199,17 +199,17 @@ public static partial class ClientProtocol {
       internal__static_CSCartDel__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSCartDel, global::CSCartDel.Builder>(internal__static_CSCartDel__Descriptor,
               new string[] { "Goodsid", "Goodsnum", });
-      internal__static_CSCartBuy__Descriptor = Descriptor.MessageTypes[15];
-      internal__static_CSCartBuy__FieldAccessorTable = 
-          new pb::FieldAccess.FieldAccessorTable<global::CSCartBuy, global::CSCartBuy.Builder>(internal__static_CSCartBuy__Descriptor,
+      internal__static_CSPreBuy__Descriptor = Descriptor.MessageTypes[15];
+      internal__static_CSPreBuy__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::CSPreBuy, global::CSPreBuy.Builder>(internal__static_CSPreBuy__Descriptor,
               new string[] { "Cardnumber", });
-      internal__static_SCCartBuy__Descriptor = Descriptor.MessageTypes[16];
-      internal__static_SCCartBuy__FieldAccessorTable = 
-          new pb::FieldAccess.FieldAccessorTable<global::SCCartBuy, global::SCCartBuy.Builder>(internal__static_SCCartBuy__Descriptor,
+      internal__static_SCPreBuy__Descriptor = Descriptor.MessageTypes[16];
+      internal__static_SCPreBuy__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::SCPreBuy, global::SCPreBuy.Builder>(internal__static_SCPreBuy__Descriptor,
               new string[] { "Qrcode", });
-      internal__static_SCCartBuyResult__Descriptor = Descriptor.MessageTypes[17];
-      internal__static_SCCartBuyResult__FieldAccessorTable = 
-          new pb::FieldAccess.FieldAccessorTable<global::SCCartBuyResult, global::SCCartBuyResult.Builder>(internal__static_SCCartBuyResult__Descriptor,
+      internal__static_SCToBuy__Descriptor = Descriptor.MessageTypes[17];
+      internal__static_SCToBuy__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::SCToBuy, global::SCToBuy.Builder>(internal__static_SCToBuy__Descriptor,
               new string[] { "Name", "Cardnumber", "Right", "Usedmoney", "Usedintegal", "Balance", "Integal", });
       internal__static_SCSysMessage__Descriptor = Descriptor.MessageTypes[18];
       internal__static_SCSysMessage__FieldAccessorTable = 
@@ -260,16 +260,18 @@ public enum Cmd {
   CMD_CLIENT_LOGON = 2002,
   CMD_CLIENT_LOGOFF = 2003,
   CMD_CLIENT_HUNGUP = 2004,
-  CMD_CLIENT_PREPAY = 2005,
-  CMD_CLIENT_TOPAY = 2006,
+  CMD_PRECHARGE = 2005,
+  CMD_TOCHARGE = 2006,
   CMD_CLIENT_SHOP = 2007,
   CMD_CLIENT_CART_ADD = 2008,
   CMD_CLIENT_CART_DEL = 2009,
-  CMD_CLIENT_CART_BUY = 2010,
-  CMD_CLIENT_BUY = 2011,
-  CMD_CLIENT_MESSAGE = 2012,
-  CMD_CLIENT_EVALUATE = 2013,
-  CMD_CLIENT_BINDMOBILE = 2014,
+  CMD_PREBUY = 2010,
+  CMD_TOBUY = 2011,
+  CMD_CLIENT_SYSMESSAGE = 2012,
+  CMD_CLIENT_USERMESSAGE = 2013,
+  CMD_CLIENT_EVALUATE = 2014,
+  CMD_CLIENT_VERIFYCODE = 2015,
+  CMD_CLIENT_BINDMOBILE = 2016,
 }
 
 #endregion
@@ -720,8 +722,8 @@ public sealed partial class MessagePack : pb::GeneratedMessage<MessagePack, Mess
 public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent, MessageContent.Builder> {
   private MessageContent() { }
   private static readonly MessageContent defaultInstance = new MessageContent().MakeReadOnly();
-  private static readonly string[] _messageContentFieldNames = new string[] { "csBindMobile", "csCartAdd", "csCartBuy", "csCartDel", "csCharge", "csClientClose", "csClientOpen", "csEvaluate", "csHungup", "csLogoff", "csLogon", "csUserMessage", "csVerifyCode", "errorTip", "messageType", "scBindMobile", "scCartBuy", "scCartBuyResult", "scCharge", "scChargeResult", "scEvaluate", "scLogoff", "scLogon", "scShop", "scSysMessage", "scVerifyCode" };
-  private static readonly uint[] _messageContentFieldTags = new uint[] { 1778, 1690, 1706, 1698, 1658, 1610, 1602, 1746, 1650, 1634, 1618, 1738, 1762, 18, 8, 1786, 1714, 1722, 1666, 1674, 1754, 1642, 1626, 1682, 1730, 1770 };
+  private static readonly string[] _messageContentFieldNames = new string[] { "csBindMobile", "csCartAdd", "csCartDel", "csClientClose", "csClientOpen", "csEvaluate", "csHungup", "csLogoff", "csLogon", "csPreBuy", "csPreCharge", "csUserMessage", "csVerifyCode", "errorTip", "messageType", "scBindMobile", "scEvaluate", "scLogoff", "scLogon", "scPreBuy", "scPreCharge", "scShop", "scSysMessage", "scToBuy", "scToCharge", "scVerifyCode" };
+  private static readonly uint[] _messageContentFieldTags = new uint[] { 1778, 1690, 1698, 1610, 1602, 1746, 1650, 1634, 1618, 1706, 1658, 1738, 1762, 18, 8, 1786, 1754, 1642, 1626, 1714, 1666, 1682, 1730, 1722, 1674, 1770 };
   public static MessageContent DefaultInstance {
     get { return defaultInstance; }
   }
@@ -832,34 +834,34 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return csHungup_ ?? global::CSHungup.DefaultInstance; }
   }
   
-  public const int CsChargeFieldNumber = 207;
-  private bool hasCsCharge;
-  private global::CSCharge csCharge_;
-  public bool HasCsCharge {
-    get { return hasCsCharge; }
+  public const int CsPreChargeFieldNumber = 207;
+  private bool hasCsPreCharge;
+  private global::CSPreCharge csPreCharge_;
+  public bool HasCsPreCharge {
+    get { return hasCsPreCharge; }
   }
-  public global::CSCharge CsCharge {
-    get { return csCharge_ ?? global::CSCharge.DefaultInstance; }
-  }
-  
-  public const int ScChargeFieldNumber = 208;
-  private bool hasScCharge;
-  private global::SCCharge scCharge_;
-  public bool HasScCharge {
-    get { return hasScCharge; }
-  }
-  public global::SCCharge ScCharge {
-    get { return scCharge_ ?? global::SCCharge.DefaultInstance; }
+  public global::CSPreCharge CsPreCharge {
+    get { return csPreCharge_ ?? global::CSPreCharge.DefaultInstance; }
   }
   
-  public const int ScChargeResultFieldNumber = 209;
-  private bool hasScChargeResult;
-  private global::SCChargeResult scChargeResult_;
-  public bool HasScChargeResult {
-    get { return hasScChargeResult; }
+  public const int ScPreChargeFieldNumber = 208;
+  private bool hasScPreCharge;
+  private global::SCPreCharge scPreCharge_;
+  public bool HasScPreCharge {
+    get { return hasScPreCharge; }
   }
-  public global::SCChargeResult ScChargeResult {
-    get { return scChargeResult_ ?? global::SCChargeResult.DefaultInstance; }
+  public global::SCPreCharge ScPreCharge {
+    get { return scPreCharge_ ?? global::SCPreCharge.DefaultInstance; }
+  }
+  
+  public const int ScToChargeFieldNumber = 209;
+  private bool hasScToCharge;
+  private global::SCToCharge scToCharge_;
+  public bool HasScToCharge {
+    get { return hasScToCharge; }
+  }
+  public global::SCToCharge ScToCharge {
+    get { return scToCharge_ ?? global::SCToCharge.DefaultInstance; }
   }
   
   public const int ScShopFieldNumber = 210;
@@ -892,34 +894,34 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return csCartDel_ ?? global::CSCartDel.DefaultInstance; }
   }
   
-  public const int CsCartBuyFieldNumber = 213;
-  private bool hasCsCartBuy;
-  private global::CSCartBuy csCartBuy_;
-  public bool HasCsCartBuy {
-    get { return hasCsCartBuy; }
+  public const int CsPreBuyFieldNumber = 213;
+  private bool hasCsPreBuy;
+  private global::CSPreBuy csPreBuy_;
+  public bool HasCsPreBuy {
+    get { return hasCsPreBuy; }
   }
-  public global::CSCartBuy CsCartBuy {
-    get { return csCartBuy_ ?? global::CSCartBuy.DefaultInstance; }
-  }
-  
-  public const int ScCartBuyFieldNumber = 214;
-  private bool hasScCartBuy;
-  private global::SCCartBuy scCartBuy_;
-  public bool HasScCartBuy {
-    get { return hasScCartBuy; }
-  }
-  public global::SCCartBuy ScCartBuy {
-    get { return scCartBuy_ ?? global::SCCartBuy.DefaultInstance; }
+  public global::CSPreBuy CsPreBuy {
+    get { return csPreBuy_ ?? global::CSPreBuy.DefaultInstance; }
   }
   
-  public const int ScCartBuyResultFieldNumber = 215;
-  private bool hasScCartBuyResult;
-  private global::SCCartBuyResult scCartBuyResult_;
-  public bool HasScCartBuyResult {
-    get { return hasScCartBuyResult; }
+  public const int ScPreBuyFieldNumber = 214;
+  private bool hasScPreBuy;
+  private global::SCPreBuy scPreBuy_;
+  public bool HasScPreBuy {
+    get { return hasScPreBuy; }
   }
-  public global::SCCartBuyResult ScCartBuyResult {
-    get { return scCartBuyResult_ ?? global::SCCartBuyResult.DefaultInstance; }
+  public global::SCPreBuy ScPreBuy {
+    get { return scPreBuy_ ?? global::SCPreBuy.DefaultInstance; }
+  }
+  
+  public const int ScToBuyFieldNumber = 215;
+  private bool hasScToBuy;
+  private global::SCToBuy scToBuy_;
+  public bool HasScToBuy {
+    get { return hasScToBuy; }
+  }
+  public global::SCToBuy ScToBuy {
+    get { return scToBuy_ ?? global::SCToBuy.DefaultInstance; }
   }
   
   public const int ScSysMessageFieldNumber = 216;
@@ -1026,14 +1028,14 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
       if (HasCsHungup) {
         if (!CsHungup.IsInitialized) return false;
       }
-      if (HasCsCharge) {
-        if (!CsCharge.IsInitialized) return false;
+      if (HasCsPreCharge) {
+        if (!CsPreCharge.IsInitialized) return false;
       }
-      if (HasScCharge) {
-        if (!ScCharge.IsInitialized) return false;
+      if (HasScPreCharge) {
+        if (!ScPreCharge.IsInitialized) return false;
       }
-      if (HasScChargeResult) {
-        if (!ScChargeResult.IsInitialized) return false;
+      if (HasScToCharge) {
+        if (!ScToCharge.IsInitialized) return false;
       }
       if (HasScShop) {
         if (!ScShop.IsInitialized) return false;
@@ -1044,14 +1046,14 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
       if (HasCsCartDel) {
         if (!CsCartDel.IsInitialized) return false;
       }
-      if (HasCsCartBuy) {
-        if (!CsCartBuy.IsInitialized) return false;
+      if (HasCsPreBuy) {
+        if (!CsPreBuy.IsInitialized) return false;
       }
-      if (HasScCartBuy) {
-        if (!ScCartBuy.IsInitialized) return false;
+      if (HasScPreBuy) {
+        if (!ScPreBuy.IsInitialized) return false;
       }
-      if (HasScCartBuyResult) {
-        if (!ScCartBuyResult.IsInitialized) return false;
+      if (HasScToBuy) {
+        if (!ScToBuy.IsInitialized) return false;
       }
       if (HasScSysMessage) {
         if (!ScSysMessage.IsInitialized) return false;
@@ -1091,64 +1093,64 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
       output.WriteMessage(2, field_names[13], ErrorTip);
     }
     if (hasCsClientOpen) {
-      output.WriteMessage(200, field_names[6], CsClientOpen);
+      output.WriteMessage(200, field_names[4], CsClientOpen);
     }
     if (hasCsClientClose) {
-      output.WriteMessage(201, field_names[5], CsClientClose);
+      output.WriteMessage(201, field_names[3], CsClientClose);
     }
     if (hasCsLogon) {
-      output.WriteMessage(202, field_names[10], CsLogon);
+      output.WriteMessage(202, field_names[8], CsLogon);
     }
     if (hasScLogon) {
-      output.WriteMessage(203, field_names[22], ScLogon);
+      output.WriteMessage(203, field_names[18], ScLogon);
     }
     if (hasCsLogoff) {
-      output.WriteMessage(204, field_names[9], CsLogoff);
+      output.WriteMessage(204, field_names[7], CsLogoff);
     }
     if (hasScLogoff) {
-      output.WriteMessage(205, field_names[21], ScLogoff);
+      output.WriteMessage(205, field_names[17], ScLogoff);
     }
     if (hasCsHungup) {
-      output.WriteMessage(206, field_names[8], CsHungup);
+      output.WriteMessage(206, field_names[6], CsHungup);
     }
-    if (hasCsCharge) {
-      output.WriteMessage(207, field_names[4], CsCharge);
+    if (hasCsPreCharge) {
+      output.WriteMessage(207, field_names[10], CsPreCharge);
     }
-    if (hasScCharge) {
-      output.WriteMessage(208, field_names[18], ScCharge);
+    if (hasScPreCharge) {
+      output.WriteMessage(208, field_names[20], ScPreCharge);
     }
-    if (hasScChargeResult) {
-      output.WriteMessage(209, field_names[19], ScChargeResult);
+    if (hasScToCharge) {
+      output.WriteMessage(209, field_names[24], ScToCharge);
     }
     if (hasScShop) {
-      output.WriteMessage(210, field_names[23], ScShop);
+      output.WriteMessage(210, field_names[21], ScShop);
     }
     if (hasCsCartAdd) {
       output.WriteMessage(211, field_names[1], CsCartAdd);
     }
     if (hasCsCartDel) {
-      output.WriteMessage(212, field_names[3], CsCartDel);
+      output.WriteMessage(212, field_names[2], CsCartDel);
     }
-    if (hasCsCartBuy) {
-      output.WriteMessage(213, field_names[2], CsCartBuy);
+    if (hasCsPreBuy) {
+      output.WriteMessage(213, field_names[9], CsPreBuy);
     }
-    if (hasScCartBuy) {
-      output.WriteMessage(214, field_names[16], ScCartBuy);
+    if (hasScPreBuy) {
+      output.WriteMessage(214, field_names[19], ScPreBuy);
     }
-    if (hasScCartBuyResult) {
-      output.WriteMessage(215, field_names[17], ScCartBuyResult);
+    if (hasScToBuy) {
+      output.WriteMessage(215, field_names[23], ScToBuy);
     }
     if (hasScSysMessage) {
-      output.WriteMessage(216, field_names[24], ScSysMessage);
+      output.WriteMessage(216, field_names[22], ScSysMessage);
     }
     if (hasCsUserMessage) {
       output.WriteMessage(217, field_names[11], CsUserMessage);
     }
     if (hasCsEvaluate) {
-      output.WriteMessage(218, field_names[7], CsEvaluate);
+      output.WriteMessage(218, field_names[5], CsEvaluate);
     }
     if (hasScEvaluate) {
-      output.WriteMessage(219, field_names[20], ScEvaluate);
+      output.WriteMessage(219, field_names[16], ScEvaluate);
     }
     if (hasCsVerifyCode) {
       output.WriteMessage(220, field_names[12], CsVerifyCode);
@@ -1206,14 +1208,14 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     if (hasCsHungup) {
       size += pb::CodedOutputStream.ComputeMessageSize(206, CsHungup);
     }
-    if (hasCsCharge) {
-      size += pb::CodedOutputStream.ComputeMessageSize(207, CsCharge);
+    if (hasCsPreCharge) {
+      size += pb::CodedOutputStream.ComputeMessageSize(207, CsPreCharge);
     }
-    if (hasScCharge) {
-      size += pb::CodedOutputStream.ComputeMessageSize(208, ScCharge);
+    if (hasScPreCharge) {
+      size += pb::CodedOutputStream.ComputeMessageSize(208, ScPreCharge);
     }
-    if (hasScChargeResult) {
-      size += pb::CodedOutputStream.ComputeMessageSize(209, ScChargeResult);
+    if (hasScToCharge) {
+      size += pb::CodedOutputStream.ComputeMessageSize(209, ScToCharge);
     }
     if (hasScShop) {
       size += pb::CodedOutputStream.ComputeMessageSize(210, ScShop);
@@ -1224,14 +1226,14 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     if (hasCsCartDel) {
       size += pb::CodedOutputStream.ComputeMessageSize(212, CsCartDel);
     }
-    if (hasCsCartBuy) {
-      size += pb::CodedOutputStream.ComputeMessageSize(213, CsCartBuy);
+    if (hasCsPreBuy) {
+      size += pb::CodedOutputStream.ComputeMessageSize(213, CsPreBuy);
     }
-    if (hasScCartBuy) {
-      size += pb::CodedOutputStream.ComputeMessageSize(214, ScCartBuy);
+    if (hasScPreBuy) {
+      size += pb::CodedOutputStream.ComputeMessageSize(214, ScPreBuy);
     }
-    if (hasScCartBuyResult) {
-      size += pb::CodedOutputStream.ComputeMessageSize(215, ScCartBuyResult);
+    if (hasScToBuy) {
+      size += pb::CodedOutputStream.ComputeMessageSize(215, ScToBuy);
     }
     if (hasScSysMessage) {
       size += pb::CodedOutputStream.ComputeMessageSize(216, ScSysMessage);
@@ -1406,14 +1408,14 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
       if (other.HasCsHungup) {
         MergeCsHungup(other.CsHungup);
       }
-      if (other.HasCsCharge) {
-        MergeCsCharge(other.CsCharge);
+      if (other.HasCsPreCharge) {
+        MergeCsPreCharge(other.CsPreCharge);
       }
-      if (other.HasScCharge) {
-        MergeScCharge(other.ScCharge);
+      if (other.HasScPreCharge) {
+        MergeScPreCharge(other.ScPreCharge);
       }
-      if (other.HasScChargeResult) {
-        MergeScChargeResult(other.ScChargeResult);
+      if (other.HasScToCharge) {
+        MergeScToCharge(other.ScToCharge);
       }
       if (other.HasScShop) {
         MergeScShop(other.ScShop);
@@ -1424,14 +1426,14 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
       if (other.HasCsCartDel) {
         MergeCsCartDel(other.CsCartDel);
       }
-      if (other.HasCsCartBuy) {
-        MergeCsCartBuy(other.CsCartBuy);
+      if (other.HasCsPreBuy) {
+        MergeCsPreBuy(other.CsPreBuy);
       }
-      if (other.HasScCartBuy) {
-        MergeScCartBuy(other.ScCartBuy);
+      if (other.HasScPreBuy) {
+        MergeScPreBuy(other.ScPreBuy);
       }
-      if (other.HasScCartBuyResult) {
-        MergeScCartBuyResult(other.ScCartBuyResult);
+      if (other.HasScToBuy) {
+        MergeScToBuy(other.ScToBuy);
       }
       if (other.HasScSysMessage) {
         MergeScSysMessage(other.ScSysMessage);
@@ -1577,30 +1579,30 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             break;
           }
           case 1658: {
-            global::CSCharge.Builder subBuilder = global::CSCharge.CreateBuilder();
-            if (result.hasCsCharge) {
-              subBuilder.MergeFrom(CsCharge);
+            global::CSPreCharge.Builder subBuilder = global::CSPreCharge.CreateBuilder();
+            if (result.hasCsPreCharge) {
+              subBuilder.MergeFrom(CsPreCharge);
             }
             input.ReadMessage(subBuilder, extensionRegistry);
-            CsCharge = subBuilder.BuildPartial();
+            CsPreCharge = subBuilder.BuildPartial();
             break;
           }
           case 1666: {
-            global::SCCharge.Builder subBuilder = global::SCCharge.CreateBuilder();
-            if (result.hasScCharge) {
-              subBuilder.MergeFrom(ScCharge);
+            global::SCPreCharge.Builder subBuilder = global::SCPreCharge.CreateBuilder();
+            if (result.hasScPreCharge) {
+              subBuilder.MergeFrom(ScPreCharge);
             }
             input.ReadMessage(subBuilder, extensionRegistry);
-            ScCharge = subBuilder.BuildPartial();
+            ScPreCharge = subBuilder.BuildPartial();
             break;
           }
           case 1674: {
-            global::SCChargeResult.Builder subBuilder = global::SCChargeResult.CreateBuilder();
-            if (result.hasScChargeResult) {
-              subBuilder.MergeFrom(ScChargeResult);
+            global::SCToCharge.Builder subBuilder = global::SCToCharge.CreateBuilder();
+            if (result.hasScToCharge) {
+              subBuilder.MergeFrom(ScToCharge);
             }
             input.ReadMessage(subBuilder, extensionRegistry);
-            ScChargeResult = subBuilder.BuildPartial();
+            ScToCharge = subBuilder.BuildPartial();
             break;
           }
           case 1682: {
@@ -1631,30 +1633,30 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             break;
           }
           case 1706: {
-            global::CSCartBuy.Builder subBuilder = global::CSCartBuy.CreateBuilder();
-            if (result.hasCsCartBuy) {
-              subBuilder.MergeFrom(CsCartBuy);
+            global::CSPreBuy.Builder subBuilder = global::CSPreBuy.CreateBuilder();
+            if (result.hasCsPreBuy) {
+              subBuilder.MergeFrom(CsPreBuy);
             }
             input.ReadMessage(subBuilder, extensionRegistry);
-            CsCartBuy = subBuilder.BuildPartial();
+            CsPreBuy = subBuilder.BuildPartial();
             break;
           }
           case 1714: {
-            global::SCCartBuy.Builder subBuilder = global::SCCartBuy.CreateBuilder();
-            if (result.hasScCartBuy) {
-              subBuilder.MergeFrom(ScCartBuy);
+            global::SCPreBuy.Builder subBuilder = global::SCPreBuy.CreateBuilder();
+            if (result.hasScPreBuy) {
+              subBuilder.MergeFrom(ScPreBuy);
             }
             input.ReadMessage(subBuilder, extensionRegistry);
-            ScCartBuy = subBuilder.BuildPartial();
+            ScPreBuy = subBuilder.BuildPartial();
             break;
           }
           case 1722: {
-            global::SCCartBuyResult.Builder subBuilder = global::SCCartBuyResult.CreateBuilder();
-            if (result.hasScCartBuyResult) {
-              subBuilder.MergeFrom(ScCartBuyResult);
+            global::SCToBuy.Builder subBuilder = global::SCToBuy.CreateBuilder();
+            if (result.hasScToBuy) {
+              subBuilder.MergeFrom(ScToBuy);
             }
             input.ReadMessage(subBuilder, extensionRegistry);
-            ScCartBuyResult = subBuilder.BuildPartial();
+            ScToBuy = subBuilder.BuildPartial();
             break;
           }
           case 1730: {
@@ -2079,123 +2081,123 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
       return this;
     }
     
-    public bool HasCsCharge {
-     get { return result.hasCsCharge; }
+    public bool HasCsPreCharge {
+     get { return result.hasCsPreCharge; }
     }
-    public global::CSCharge CsCharge {
-      get { return result.CsCharge; }
-      set { SetCsCharge(value); }
+    public global::CSPreCharge CsPreCharge {
+      get { return result.CsPreCharge; }
+      set { SetCsPreCharge(value); }
     }
-    public Builder SetCsCharge(global::CSCharge value) {
+    public Builder SetCsPreCharge(global::CSPreCharge value) {
       pb::ThrowHelper.ThrowIfNull(value, "value");
       PrepareBuilder();
-      result.hasCsCharge = true;
-      result.csCharge_ = value;
+      result.hasCsPreCharge = true;
+      result.csPreCharge_ = value;
       return this;
     }
-    public Builder SetCsCharge(global::CSCharge.Builder builderForValue) {
+    public Builder SetCsPreCharge(global::CSPreCharge.Builder builderForValue) {
       pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
       PrepareBuilder();
-      result.hasCsCharge = true;
-      result.csCharge_ = builderForValue.Build();
+      result.hasCsPreCharge = true;
+      result.csPreCharge_ = builderForValue.Build();
       return this;
     }
-    public Builder MergeCsCharge(global::CSCharge value) {
+    public Builder MergeCsPreCharge(global::CSPreCharge value) {
       pb::ThrowHelper.ThrowIfNull(value, "value");
       PrepareBuilder();
-      if (result.hasCsCharge &&
-          result.csCharge_ != global::CSCharge.DefaultInstance) {
-          result.csCharge_ = global::CSCharge.CreateBuilder(result.csCharge_).MergeFrom(value).BuildPartial();
+      if (result.hasCsPreCharge &&
+          result.csPreCharge_ != global::CSPreCharge.DefaultInstance) {
+          result.csPreCharge_ = global::CSPreCharge.CreateBuilder(result.csPreCharge_).MergeFrom(value).BuildPartial();
       } else {
-        result.csCharge_ = value;
+        result.csPreCharge_ = value;
       }
-      result.hasCsCharge = true;
+      result.hasCsPreCharge = true;
       return this;
     }
-    public Builder ClearCsCharge() {
+    public Builder ClearCsPreCharge() {
       PrepareBuilder();
-      result.hasCsCharge = false;
-      result.csCharge_ = null;
+      result.hasCsPreCharge = false;
+      result.csPreCharge_ = null;
       return this;
     }
     
-    public bool HasScCharge {
-     get { return result.hasScCharge; }
+    public bool HasScPreCharge {
+     get { return result.hasScPreCharge; }
     }
-    public global::SCCharge ScCharge {
-      get { return result.ScCharge; }
-      set { SetScCharge(value); }
+    public global::SCPreCharge ScPreCharge {
+      get { return result.ScPreCharge; }
+      set { SetScPreCharge(value); }
     }
-    public Builder SetScCharge(global::SCCharge value) {
+    public Builder SetScPreCharge(global::SCPreCharge value) {
       pb::ThrowHelper.ThrowIfNull(value, "value");
       PrepareBuilder();
-      result.hasScCharge = true;
-      result.scCharge_ = value;
+      result.hasScPreCharge = true;
+      result.scPreCharge_ = value;
       return this;
     }
-    public Builder SetScCharge(global::SCCharge.Builder builderForValue) {
+    public Builder SetScPreCharge(global::SCPreCharge.Builder builderForValue) {
       pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
       PrepareBuilder();
-      result.hasScCharge = true;
-      result.scCharge_ = builderForValue.Build();
+      result.hasScPreCharge = true;
+      result.scPreCharge_ = builderForValue.Build();
       return this;
     }
-    public Builder MergeScCharge(global::SCCharge value) {
+    public Builder MergeScPreCharge(global::SCPreCharge value) {
       pb::ThrowHelper.ThrowIfNull(value, "value");
       PrepareBuilder();
-      if (result.hasScCharge &&
-          result.scCharge_ != global::SCCharge.DefaultInstance) {
-          result.scCharge_ = global::SCCharge.CreateBuilder(result.scCharge_).MergeFrom(value).BuildPartial();
+      if (result.hasScPreCharge &&
+          result.scPreCharge_ != global::SCPreCharge.DefaultInstance) {
+          result.scPreCharge_ = global::SCPreCharge.CreateBuilder(result.scPreCharge_).MergeFrom(value).BuildPartial();
       } else {
-        result.scCharge_ = value;
+        result.scPreCharge_ = value;
       }
-      result.hasScCharge = true;
+      result.hasScPreCharge = true;
       return this;
     }
-    public Builder ClearScCharge() {
+    public Builder ClearScPreCharge() {
       PrepareBuilder();
-      result.hasScCharge = false;
-      result.scCharge_ = null;
+      result.hasScPreCharge = false;
+      result.scPreCharge_ = null;
       return this;
     }
     
-    public bool HasScChargeResult {
-     get { return result.hasScChargeResult; }
+    public bool HasScToCharge {
+     get { return result.hasScToCharge; }
     }
-    public global::SCChargeResult ScChargeResult {
-      get { return result.ScChargeResult; }
-      set { SetScChargeResult(value); }
+    public global::SCToCharge ScToCharge {
+      get { return result.ScToCharge; }
+      set { SetScToCharge(value); }
     }
-    public Builder SetScChargeResult(global::SCChargeResult value) {
+    public Builder SetScToCharge(global::SCToCharge value) {
       pb::ThrowHelper.ThrowIfNull(value, "value");
       PrepareBuilder();
-      result.hasScChargeResult = true;
-      result.scChargeResult_ = value;
+      result.hasScToCharge = true;
+      result.scToCharge_ = value;
       return this;
     }
-    public Builder SetScChargeResult(global::SCChargeResult.Builder builderForValue) {
+    public Builder SetScToCharge(global::SCToCharge.Builder builderForValue) {
       pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
       PrepareBuilder();
-      result.hasScChargeResult = true;
-      result.scChargeResult_ = builderForValue.Build();
+      result.hasScToCharge = true;
+      result.scToCharge_ = builderForValue.Build();
       return this;
     }
-    public Builder MergeScChargeResult(global::SCChargeResult value) {
+    public Builder MergeScToCharge(global::SCToCharge value) {
       pb::ThrowHelper.ThrowIfNull(value, "value");
       PrepareBuilder();
-      if (result.hasScChargeResult &&
-          result.scChargeResult_ != global::SCChargeResult.DefaultInstance) {
-          result.scChargeResult_ = global::SCChargeResult.CreateBuilder(result.scChargeResult_).MergeFrom(value).BuildPartial();
+      if (result.hasScToCharge &&
+          result.scToCharge_ != global::SCToCharge.DefaultInstance) {
+          result.scToCharge_ = global::SCToCharge.CreateBuilder(result.scToCharge_).MergeFrom(value).BuildPartial();
       } else {
-        result.scChargeResult_ = value;
+        result.scToCharge_ = value;
       }
-      result.hasScChargeResult = true;
+      result.hasScToCharge = true;
       return this;
     }
-    public Builder ClearScChargeResult() {
+    public Builder ClearScToCharge() {
       PrepareBuilder();
-      result.hasScChargeResult = false;
-      result.scChargeResult_ = null;
+      result.hasScToCharge = false;
+      result.scToCharge_ = null;
       return this;
     }
     
@@ -2319,123 +2321,123 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
       return this;
     }
     
-    public bool HasCsCartBuy {
-     get { return result.hasCsCartBuy; }
+    public bool HasCsPreBuy {
+     get { return result.hasCsPreBuy; }
     }
-    public global::CSCartBuy CsCartBuy {
-      get { return result.CsCartBuy; }
-      set { SetCsCartBuy(value); }
+    public global::CSPreBuy CsPreBuy {
+      get { return result.CsPreBuy; }
+      set { SetCsPreBuy(value); }
     }
-    public Builder SetCsCartBuy(global::CSCartBuy value) {
+    public Builder SetCsPreBuy(global::CSPreBuy value) {
       pb::ThrowHelper.ThrowIfNull(value, "value");
       PrepareBuilder();
-      result.hasCsCartBuy = true;
-      result.csCartBuy_ = value;
+      result.hasCsPreBuy = true;
+      result.csPreBuy_ = value;
       return this;
     }
-    public Builder SetCsCartBuy(global::CSCartBuy.Builder builderForValue) {
+    public Builder SetCsPreBuy(global::CSPreBuy.Builder builderForValue) {
       pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
       PrepareBuilder();
-      result.hasCsCartBuy = true;
-      result.csCartBuy_ = builderForValue.Build();
+      result.hasCsPreBuy = true;
+      result.csPreBuy_ = builderForValue.Build();
       return this;
     }
-    public Builder MergeCsCartBuy(global::CSCartBuy value) {
+    public Builder MergeCsPreBuy(global::CSPreBuy value) {
       pb::ThrowHelper.ThrowIfNull(value, "value");
       PrepareBuilder();
-      if (result.hasCsCartBuy &&
-          result.csCartBuy_ != global::CSCartBuy.DefaultInstance) {
-          result.csCartBuy_ = global::CSCartBuy.CreateBuilder(result.csCartBuy_).MergeFrom(value).BuildPartial();
+      if (result.hasCsPreBuy &&
+          result.csPreBuy_ != global::CSPreBuy.DefaultInstance) {
+          result.csPreBuy_ = global::CSPreBuy.CreateBuilder(result.csPreBuy_).MergeFrom(value).BuildPartial();
       } else {
-        result.csCartBuy_ = value;
+        result.csPreBuy_ = value;
       }
-      result.hasCsCartBuy = true;
+      result.hasCsPreBuy = true;
       return this;
     }
-    public Builder ClearCsCartBuy() {
+    public Builder ClearCsPreBuy() {
       PrepareBuilder();
-      result.hasCsCartBuy = false;
-      result.csCartBuy_ = null;
+      result.hasCsPreBuy = false;
+      result.csPreBuy_ = null;
       return this;
     }
     
-    public bool HasScCartBuy {
-     get { return result.hasScCartBuy; }
+    public bool HasScPreBuy {
+     get { return result.hasScPreBuy; }
     }
-    public global::SCCartBuy ScCartBuy {
-      get { return result.ScCartBuy; }
-      set { SetScCartBuy(value); }
+    public global::SCPreBuy ScPreBuy {
+      get { return result.ScPreBuy; }
+      set { SetScPreBuy(value); }
     }
-    public Builder SetScCartBuy(global::SCCartBuy value) {
+    public Builder SetScPreBuy(global::SCPreBuy value) {
       pb::ThrowHelper.ThrowIfNull(value, "value");
       PrepareBuilder();
-      result.hasScCartBuy = true;
-      result.scCartBuy_ = value;
+      result.hasScPreBuy = true;
+      result.scPreBuy_ = value;
       return this;
     }
-    public Builder SetScCartBuy(global::SCCartBuy.Builder builderForValue) {
+    public Builder SetScPreBuy(global::SCPreBuy.Builder builderForValue) {
       pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
       PrepareBuilder();
-      result.hasScCartBuy = true;
-      result.scCartBuy_ = builderForValue.Build();
+      result.hasScPreBuy = true;
+      result.scPreBuy_ = builderForValue.Build();
       return this;
     }
-    public Builder MergeScCartBuy(global::SCCartBuy value) {
+    public Builder MergeScPreBuy(global::SCPreBuy value) {
       pb::ThrowHelper.ThrowIfNull(value, "value");
       PrepareBuilder();
-      if (result.hasScCartBuy &&
-          result.scCartBuy_ != global::SCCartBuy.DefaultInstance) {
-          result.scCartBuy_ = global::SCCartBuy.CreateBuilder(result.scCartBuy_).MergeFrom(value).BuildPartial();
+      if (result.hasScPreBuy &&
+          result.scPreBuy_ != global::SCPreBuy.DefaultInstance) {
+          result.scPreBuy_ = global::SCPreBuy.CreateBuilder(result.scPreBuy_).MergeFrom(value).BuildPartial();
       } else {
-        result.scCartBuy_ = value;
+        result.scPreBuy_ = value;
       }
-      result.hasScCartBuy = true;
+      result.hasScPreBuy = true;
       return this;
     }
-    public Builder ClearScCartBuy() {
+    public Builder ClearScPreBuy() {
       PrepareBuilder();
-      result.hasScCartBuy = false;
-      result.scCartBuy_ = null;
+      result.hasScPreBuy = false;
+      result.scPreBuy_ = null;
       return this;
     }
     
-    public bool HasScCartBuyResult {
-     get { return result.hasScCartBuyResult; }
+    public bool HasScToBuy {
+     get { return result.hasScToBuy; }
     }
-    public global::SCCartBuyResult ScCartBuyResult {
-      get { return result.ScCartBuyResult; }
-      set { SetScCartBuyResult(value); }
+    public global::SCToBuy ScToBuy {
+      get { return result.ScToBuy; }
+      set { SetScToBuy(value); }
     }
-    public Builder SetScCartBuyResult(global::SCCartBuyResult value) {
+    public Builder SetScToBuy(global::SCToBuy value) {
       pb::ThrowHelper.ThrowIfNull(value, "value");
       PrepareBuilder();
-      result.hasScCartBuyResult = true;
-      result.scCartBuyResult_ = value;
+      result.hasScToBuy = true;
+      result.scToBuy_ = value;
       return this;
     }
-    public Builder SetScCartBuyResult(global::SCCartBuyResult.Builder builderForValue) {
+    public Builder SetScToBuy(global::SCToBuy.Builder builderForValue) {
       pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
       PrepareBuilder();
-      result.hasScCartBuyResult = true;
-      result.scCartBuyResult_ = builderForValue.Build();
+      result.hasScToBuy = true;
+      result.scToBuy_ = builderForValue.Build();
       return this;
     }
-    public Builder MergeScCartBuyResult(global::SCCartBuyResult value) {
+    public Builder MergeScToBuy(global::SCToBuy value) {
       pb::ThrowHelper.ThrowIfNull(value, "value");
       PrepareBuilder();
-      if (result.hasScCartBuyResult &&
-          result.scCartBuyResult_ != global::SCCartBuyResult.DefaultInstance) {
-          result.scCartBuyResult_ = global::SCCartBuyResult.CreateBuilder(result.scCartBuyResult_).MergeFrom(value).BuildPartial();
+      if (result.hasScToBuy &&
+          result.scToBuy_ != global::SCToBuy.DefaultInstance) {
+          result.scToBuy_ = global::SCToBuy.CreateBuilder(result.scToBuy_).MergeFrom(value).BuildPartial();
       } else {
-        result.scCartBuyResult_ = value;
+        result.scToBuy_ = value;
       }
-      result.hasScCartBuyResult = true;
+      result.hasScToBuy = true;
       return this;
     }
-    public Builder ClearScCartBuyResult() {
+    public Builder ClearScToBuy() {
       PrepareBuilder();
-      result.hasScCartBuyResult = false;
-      result.scCartBuyResult_ = null;
+      result.hasScToBuy = false;
+      result.scToBuy_ = null;
       return this;
     }
     
@@ -5102,32 +5104,32 @@ public sealed partial class CSHungup : pb::GeneratedMessage<CSHungup, CSHungup.B
 }
 
 [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-public sealed partial class CSCharge : pb::GeneratedMessage<CSCharge, CSCharge.Builder> {
-  private CSCharge() { }
-  private static readonly CSCharge defaultInstance = new CSCharge().MakeReadOnly();
-  private static readonly string[] _cSChargeFieldNames = new string[] { "amount", "cardnumber" };
-  private static readonly uint[] _cSChargeFieldTags = new uint[] { 24, 18 };
-  public static CSCharge DefaultInstance {
+public sealed partial class CSPreCharge : pb::GeneratedMessage<CSPreCharge, CSPreCharge.Builder> {
+  private CSPreCharge() { }
+  private static readonly CSPreCharge defaultInstance = new CSPreCharge().MakeReadOnly();
+  private static readonly string[] _cSPreChargeFieldNames = new string[] { "amount", "cardnumber", "paymode" };
+  private static readonly uint[] _cSPreChargeFieldTags = new uint[] { 16, 10, 24 };
+  public static CSPreCharge DefaultInstance {
     get { return defaultInstance; }
   }
   
-  public override CSCharge DefaultInstanceForType {
+  public override CSPreCharge DefaultInstanceForType {
     get { return DefaultInstance; }
   }
   
-  protected override CSCharge ThisMessage {
+  protected override CSPreCharge ThisMessage {
     get { return this; }
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::ClientProtocol.internal__static_CSCharge__Descriptor; }
+    get { return global::ClientProtocol.internal__static_CSPreCharge__Descriptor; }
   }
   
-  protected override pb::FieldAccess.FieldAccessorTable<CSCharge, CSCharge.Builder> InternalFieldAccessors {
-    get { return global::ClientProtocol.internal__static_CSCharge__FieldAccessorTable; }
+  protected override pb::FieldAccess.FieldAccessorTable<CSPreCharge, CSPreCharge.Builder> InternalFieldAccessors {
+    get { return global::ClientProtocol.internal__static_CSPreCharge__FieldAccessorTable; }
   }
   
-  public const int CardnumberFieldNumber = 2;
+  public const int CardnumberFieldNumber = 1;
   private bool hasCardnumber;
   private string cardnumber_ = "";
   public bool HasCardnumber {
@@ -5137,7 +5139,7 @@ public sealed partial class CSCharge : pb::GeneratedMessage<CSCharge, CSCharge.B
     get { return cardnumber_; }
   }
   
-  public const int AmountFieldNumber = 3;
+  public const int AmountFieldNumber = 2;
   private bool hasAmount;
   private int amount_;
   public bool HasAmount {
@@ -5147,22 +5149,36 @@ public sealed partial class CSCharge : pb::GeneratedMessage<CSCharge, CSCharge.B
     get { return amount_; }
   }
   
+  public const int PaymodeFieldNumber = 3;
+  private bool hasPaymode;
+  private int paymode_;
+  public bool HasPaymode {
+    get { return hasPaymode; }
+  }
+  public int Paymode {
+    get { return paymode_; }
+  }
+  
   public override bool IsInitialized {
     get {
       if (!hasCardnumber) return false;
       if (!hasAmount) return false;
+      if (!hasPaymode) return false;
       return true;
     }
   }
   
   public override void WriteTo(pb::ICodedOutputStream output) {
     CalcSerializedSize();
-    string[] field_names = _cSChargeFieldNames;
+    string[] field_names = _cSPreChargeFieldNames;
     if (hasCardnumber) {
-      output.WriteString(2, field_names[1], Cardnumber);
+      output.WriteString(1, field_names[1], Cardnumber);
     }
     if (hasAmount) {
-      output.WriteInt32(3, field_names[0], Amount);
+      output.WriteInt32(2, field_names[0], Amount);
+    }
+    if (hasPaymode) {
+      output.WriteInt32(3, field_names[2], Paymode);
     }
     UnknownFields.WriteTo(output);
   }
@@ -5182,58 +5198,61 @@ public sealed partial class CSCharge : pb::GeneratedMessage<CSCharge, CSCharge.B
     
     size = 0;
     if (hasCardnumber) {
-      size += pb::CodedOutputStream.ComputeStringSize(2, Cardnumber);
+      size += pb::CodedOutputStream.ComputeStringSize(1, Cardnumber);
     }
     if (hasAmount) {
-      size += pb::CodedOutputStream.ComputeInt32Size(3, Amount);
+      size += pb::CodedOutputStream.ComputeInt32Size(2, Amount);
+    }
+    if (hasPaymode) {
+      size += pb::CodedOutputStream.ComputeInt32Size(3, Paymode);
     }
     size += UnknownFields.SerializedSize;
     memoizedSerializedSize = size;
     return size;
   }
-  public static CSCharge ParseFrom(pb::ByteString data) {
+  public static CSPreCharge ParseFrom(pb::ByteString data) {
     return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
   }
-  public static CSCharge ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+  public static CSPreCharge ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
     return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
   }
-  public static CSCharge ParseFrom(byte[] data) {
+  public static CSPreCharge ParseFrom(byte[] data) {
     return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
   }
-  public static CSCharge ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+  public static CSPreCharge ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
     return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
   }
-  public static CSCharge ParseFrom(global::System.IO.Stream input) {
+  public static CSPreCharge ParseFrom(global::System.IO.Stream input) {
     return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
   }
-  public static CSCharge ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+  public static CSPreCharge ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
     return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
   }
-  public static CSCharge ParseDelimitedFrom(global::System.IO.Stream input) {
+  public static CSPreCharge ParseDelimitedFrom(global::System.IO.Stream input) {
     return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
   }
-  public static CSCharge ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+  public static CSPreCharge ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
     return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
   }
-  public static CSCharge ParseFrom(pb::ICodedInputStream input) {
+  public static CSPreCharge ParseFrom(pb::ICodedInputStream input) {
     return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
   }
-  public static CSCharge ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+  public static CSPreCharge ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
     return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
   }
-  private CSCharge MakeReadOnly() {
+  private CSPreCharge MakeReadOnly() {
     return this;
   }
   
   public static Builder CreateBuilder() { return new Builder(); }
   public override Builder ToBuilder() { return CreateBuilder(this); }
   public override Builder CreateBuilderForType() { return new Builder(); }
-  public static Builder CreateBuilder(CSCharge prototype) {
+  public static Builder CreateBuilder(CSPreCharge prototype) {
     return new Builder(prototype);
   }
   
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-  public sealed partial class Builder : pb::GeneratedBuilder<CSCharge, Builder> {
+  public sealed partial class Builder : pb::GeneratedBuilder<CSPreCharge, Builder> {
     protected override Builder ThisBuilder {
       get { return this; }
     }
@@ -5241,18 +5260,18 @@ public sealed partial class CSCharge : pb::GeneratedMessage<CSCharge, CSCharge.B
       result = DefaultInstance;
       resultIsReadOnly = true;
     }
-    internal Builder(CSCharge cloneFrom) {
+    internal Builder(CSPreCharge cloneFrom) {
       result = cloneFrom;
       resultIsReadOnly = true;
     }
     
     private bool resultIsReadOnly;
-    private CSCharge result;
+    private CSPreCharge result;
     
-    private CSCharge PrepareBuilder() {
+    private CSPreCharge PrepareBuilder() {
       if (resultIsReadOnly) {
-        CSCharge original = result;
-        result = new CSCharge();
+        CSPreCharge original = result;
+        result = new CSPreCharge();
         resultIsReadOnly = false;
         MergeFrom(original);
       }
@@ -5263,7 +5282,7 @@ public sealed partial class CSCharge : pb::GeneratedMessage<CSCharge, CSCharge.B
       get { return result.IsInitialized; }
     }
     
-    protected override CSCharge MessageBeingBuilt {
+    protected override CSPreCharge MessageBeingBuilt {
       get { return PrepareBuilder(); }
     }
     
@@ -5282,14 +5301,14 @@ public sealed partial class CSCharge : pb::GeneratedMessage<CSCharge, CSCharge.B
     }
     
     public override pbd::MessageDescriptor DescriptorForType {
-      get { return global::CSCharge.Descriptor; }
+      get { return global::CSPreCharge.Descriptor; }
     }
     
-    public override CSCharge DefaultInstanceForType {
-      get { return global::CSCharge.DefaultInstance; }
+    public override CSPreCharge DefaultInstanceForType {
+      get { return global::CSPreCharge.DefaultInstance; }
     }
     
-    public override CSCharge BuildPartial() {
+    public override CSPreCharge BuildPartial() {
       if (resultIsReadOnly) {
         return result;
       }
@@ -5298,22 +5317,25 @@ public sealed partial class CSCharge : pb::GeneratedMessage<CSCharge, CSCharge.B
     }
     
     public override Builder MergeFrom(pb::IMessage other) {
-      if (other is CSCharge) {
-        return MergeFrom((CSCharge) other);
+      if (other is CSPreCharge) {
+        return MergeFrom((CSPreCharge) other);
       } else {
         base.MergeFrom(other);
         return this;
       }
     }
     
-    public override Builder MergeFrom(CSCharge other) {
-      if (other == global::CSCharge.DefaultInstance) return this;
+    public override Builder MergeFrom(CSPreCharge other) {
+      if (other == global::CSPreCharge.DefaultInstance) return this;
       PrepareBuilder();
       if (other.HasCardnumber) {
         Cardnumber = other.Cardnumber;
       }
       if (other.HasAmount) {
         Amount = other.Amount;
+      }
+      if (other.HasPaymode) {
+        Paymode = other.Paymode;
       }
       this.MergeUnknownFields(other.UnknownFields);
       return this;
@@ -5330,9 +5352,9 @@ public sealed partial class CSCharge : pb::GeneratedMessage<CSCharge, CSCharge.B
       string field_name;
       while (input.ReadTag(out tag, out field_name)) {
         if(tag == 0 && field_name != null) {
-          int field_ordinal = global::System.Array.BinarySearch(_cSChargeFieldNames, field_name, global::System.StringComparer.Ordinal);
+          int field_ordinal = global::System.Array.BinarySearch(_cSPreChargeFieldNames, field_name, global::System.StringComparer.Ordinal);
           if(field_ordinal >= 0)
-            tag = _cSChargeFieldTags[field_ordinal];
+            tag = _cSPreChargeFieldTags[field_ordinal];
           else {
             if (unknownFields == null) {
               unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
@@ -5358,12 +5380,16 @@ public sealed partial class CSCharge : pb::GeneratedMessage<CSCharge, CSCharge.B
             ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
             break;
           }
-          case 18: {
+          case 10: {
             result.hasCardnumber = input.ReadString(ref result.cardnumber_);
             break;
           }
-          case 24: {
+          case 16: {
             result.hasAmount = input.ReadInt32(ref result.amount_);
+            break;
+          }
+          case 24: {
+            result.hasPaymode = input.ReadInt32(ref result.paymode_);
             break;
           }
         }
@@ -5416,36 +5442,56 @@ public sealed partial class CSCharge : pb::GeneratedMessage<CSCharge, CSCharge.B
       result.amount_ = 0;
       return this;
     }
+    
+    public bool HasPaymode {
+      get { return result.hasPaymode; }
+    }
+    public int Paymode {
+      get { return result.Paymode; }
+      set { SetPaymode(value); }
+    }
+    public Builder SetPaymode(int value) {
+      PrepareBuilder();
+      result.hasPaymode = true;
+      result.paymode_ = value;
+      return this;
+    }
+    public Builder ClearPaymode() {
+      PrepareBuilder();
+      result.hasPaymode = false;
+      result.paymode_ = 0;
+      return this;
+    }
   }
-  static CSCharge() {
+  static CSPreCharge() {
     object.ReferenceEquals(global::ClientProtocol.Descriptor, null);
   }
 }
 
 [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-public sealed partial class SCCharge : pb::GeneratedMessage<SCCharge, SCCharge.Builder> {
-  private SCCharge() { }
-  private static readonly SCCharge defaultInstance = new SCCharge().MakeReadOnly();
-  private static readonly string[] _sCChargeFieldNames = new string[] { "qrcode" };
-  private static readonly uint[] _sCChargeFieldTags = new uint[] { 10 };
-  public static SCCharge DefaultInstance {
+public sealed partial class SCPreCharge : pb::GeneratedMessage<SCPreCharge, SCPreCharge.Builder> {
+  private SCPreCharge() { }
+  private static readonly SCPreCharge defaultInstance = new SCPreCharge().MakeReadOnly();
+  private static readonly string[] _sCPreChargeFieldNames = new string[] { "qrcode" };
+  private static readonly uint[] _sCPreChargeFieldTags = new uint[] { 10 };
+  public static SCPreCharge DefaultInstance {
     get { return defaultInstance; }
   }
   
-  public override SCCharge DefaultInstanceForType {
+  public override SCPreCharge DefaultInstanceForType {
     get { return DefaultInstance; }
   }
   
-  protected override SCCharge ThisMessage {
+  protected override SCPreCharge ThisMessage {
     get { return this; }
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::ClientProtocol.internal__static_SCCharge__Descriptor; }
+    get { return global::ClientProtocol.internal__static_SCPreCharge__Descriptor; }
   }
   
-  protected override pb::FieldAccess.FieldAccessorTable<SCCharge, SCCharge.Builder> InternalFieldAccessors {
-    get { return global::ClientProtocol.internal__static_SCCharge__FieldAccessorTable; }
+  protected override pb::FieldAccess.FieldAccessorTable<SCPreCharge, SCPreCharge.Builder> InternalFieldAccessors {
+    get { return global::ClientProtocol.internal__static_SCPreCharge__FieldAccessorTable; }
   }
   
   public const int QrcodeFieldNumber = 1;
@@ -5467,7 +5513,7 @@ public sealed partial class SCCharge : pb::GeneratedMessage<SCCharge, SCCharge.B
   
   public override void WriteTo(pb::ICodedOutputStream output) {
     CalcSerializedSize();
-    string[] field_names = _sCChargeFieldNames;
+    string[] field_names = _sCPreChargeFieldNames;
     if (hasQrcode) {
       output.WriteString(1, field_names[0], Qrcode);
     }
@@ -5495,49 +5541,49 @@ public sealed partial class SCCharge : pb::GeneratedMessage<SCCharge, SCCharge.B
     memoizedSerializedSize = size;
     return size;
   }
-  public static SCCharge ParseFrom(pb::ByteString data) {
+  public static SCPreCharge ParseFrom(pb::ByteString data) {
     return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
   }
-  public static SCCharge ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+  public static SCPreCharge ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
     return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
   }
-  public static SCCharge ParseFrom(byte[] data) {
+  public static SCPreCharge ParseFrom(byte[] data) {
     return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
   }
-  public static SCCharge ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+  public static SCPreCharge ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
     return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
   }
-  public static SCCharge ParseFrom(global::System.IO.Stream input) {
+  public static SCPreCharge ParseFrom(global::System.IO.Stream input) {
     return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
   }
-  public static SCCharge ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+  public static SCPreCharge ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
     return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
   }
-  public static SCCharge ParseDelimitedFrom(global::System.IO.Stream input) {
+  public static SCPreCharge ParseDelimitedFrom(global::System.IO.Stream input) {
     return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
   }
-  public static SCCharge ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+  public static SCPreCharge ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
     return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
   }
-  public static SCCharge ParseFrom(pb::ICodedInputStream input) {
+  public static SCPreCharge ParseFrom(pb::ICodedInputStream input) {
     return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
   }
-  public static SCCharge ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+  public static SCPreCharge ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
     return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
   }
-  private SCCharge MakeReadOnly() {
+  private SCPreCharge MakeReadOnly() {
     return this;
   }
   
   public static Builder CreateBuilder() { return new Builder(); }
   public override Builder ToBuilder() { return CreateBuilder(this); }
   public override Builder CreateBuilderForType() { return new Builder(); }
-  public static Builder CreateBuilder(SCCharge prototype) {
+  public static Builder CreateBuilder(SCPreCharge prototype) {
     return new Builder(prototype);
   }
   
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-  public sealed partial class Builder : pb::GeneratedBuilder<SCCharge, Builder> {
+  public sealed partial class Builder : pb::GeneratedBuilder<SCPreCharge, Builder> {
     protected override Builder ThisBuilder {
       get { return this; }
     }
@@ -5545,18 +5591,18 @@ public sealed partial class SCCharge : pb::GeneratedMessage<SCCharge, SCCharge.B
       result = DefaultInstance;
       resultIsReadOnly = true;
     }
-    internal Builder(SCCharge cloneFrom) {
+    internal Builder(SCPreCharge cloneFrom) {
       result = cloneFrom;
       resultIsReadOnly = true;
     }
     
     private bool resultIsReadOnly;
-    private SCCharge result;
+    private SCPreCharge result;
     
-    private SCCharge PrepareBuilder() {
+    private SCPreCharge PrepareBuilder() {
       if (resultIsReadOnly) {
-        SCCharge original = result;
-        result = new SCCharge();
+        SCPreCharge original = result;
+        result = new SCPreCharge();
         resultIsReadOnly = false;
         MergeFrom(original);
       }
@@ -5567,7 +5613,7 @@ public sealed partial class SCCharge : pb::GeneratedMessage<SCCharge, SCCharge.B
       get { return result.IsInitialized; }
     }
     
-    protected override SCCharge MessageBeingBuilt {
+    protected override SCPreCharge MessageBeingBuilt {
       get { return PrepareBuilder(); }
     }
     
@@ -5586,14 +5632,14 @@ public sealed partial class SCCharge : pb::GeneratedMessage<SCCharge, SCCharge.B
     }
     
     public override pbd::MessageDescriptor DescriptorForType {
-      get { return global::SCCharge.Descriptor; }
+      get { return global::SCPreCharge.Descriptor; }
     }
     
-    public override SCCharge DefaultInstanceForType {
-      get { return global::SCCharge.DefaultInstance; }
+    public override SCPreCharge DefaultInstanceForType {
+      get { return global::SCPreCharge.DefaultInstance; }
     }
     
-    public override SCCharge BuildPartial() {
+    public override SCPreCharge BuildPartial() {
       if (resultIsReadOnly) {
         return result;
       }
@@ -5602,16 +5648,16 @@ public sealed partial class SCCharge : pb::GeneratedMessage<SCCharge, SCCharge.B
     }
     
     public override Builder MergeFrom(pb::IMessage other) {
-      if (other is SCCharge) {
-        return MergeFrom((SCCharge) other);
+      if (other is SCPreCharge) {
+        return MergeFrom((SCPreCharge) other);
       } else {
         base.MergeFrom(other);
         return this;
       }
     }
     
-    public override Builder MergeFrom(SCCharge other) {
-      if (other == global::SCCharge.DefaultInstance) return this;
+    public override Builder MergeFrom(SCPreCharge other) {
+      if (other == global::SCPreCharge.DefaultInstance) return this;
       PrepareBuilder();
       if (other.HasQrcode) {
         Qrcode = other.Qrcode;
@@ -5631,9 +5677,9 @@ public sealed partial class SCCharge : pb::GeneratedMessage<SCCharge, SCCharge.B
       string field_name;
       while (input.ReadTag(out tag, out field_name)) {
         if(tag == 0 && field_name != null) {
-          int field_ordinal = global::System.Array.BinarySearch(_sCChargeFieldNames, field_name, global::System.StringComparer.Ordinal);
+          int field_ordinal = global::System.Array.BinarySearch(_sCPreChargeFieldNames, field_name, global::System.StringComparer.Ordinal);
           if(field_ordinal >= 0)
-            tag = _sCChargeFieldTags[field_ordinal];
+            tag = _sCPreChargeFieldTags[field_ordinal];
           else {
             if (unknownFields == null) {
               unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
@@ -5694,35 +5740,35 @@ public sealed partial class SCCharge : pb::GeneratedMessage<SCCharge, SCCharge.B
       return this;
     }
   }
-  static SCCharge() {
+  static SCPreCharge() {
     object.ReferenceEquals(global::ClientProtocol.Descriptor, null);
   }
 }
 
 [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-public sealed partial class SCChargeResult : pb::GeneratedMessage<SCChargeResult, SCChargeResult.Builder> {
-  private SCChargeResult() { }
-  private static readonly SCChargeResult defaultInstance = new SCChargeResult().MakeReadOnly();
-  private static readonly string[] _sCChargeResultFieldNames = new string[] { "balance", "cardnumber", "integal", "name", "recharge", "right" };
-  private static readonly uint[] _sCChargeResultFieldTags = new uint[] { 40, 18, 48, 10, 32, 26 };
-  public static SCChargeResult DefaultInstance {
+public sealed partial class SCToCharge : pb::GeneratedMessage<SCToCharge, SCToCharge.Builder> {
+  private SCToCharge() { }
+  private static readonly SCToCharge defaultInstance = new SCToCharge().MakeReadOnly();
+  private static readonly string[] _sCToChargeFieldNames = new string[] { "balance", "cardnumber", "integal", "name", "recharge", "right" };
+  private static readonly uint[] _sCToChargeFieldTags = new uint[] { 40, 18, 48, 10, 32, 26 };
+  public static SCToCharge DefaultInstance {
     get { return defaultInstance; }
   }
   
-  public override SCChargeResult DefaultInstanceForType {
+  public override SCToCharge DefaultInstanceForType {
     get { return DefaultInstance; }
   }
   
-  protected override SCChargeResult ThisMessage {
+  protected override SCToCharge ThisMessage {
     get { return this; }
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::ClientProtocol.internal__static_SCChargeResult__Descriptor; }
+    get { return global::ClientProtocol.internal__static_SCToCharge__Descriptor; }
   }
   
-  protected override pb::FieldAccess.FieldAccessorTable<SCChargeResult, SCChargeResult.Builder> InternalFieldAccessors {
-    get { return global::ClientProtocol.internal__static_SCChargeResult__FieldAccessorTable; }
+  protected override pb::FieldAccess.FieldAccessorTable<SCToCharge, SCToCharge.Builder> InternalFieldAccessors {
+    get { return global::ClientProtocol.internal__static_SCToCharge__FieldAccessorTable; }
   }
   
   public const int NameFieldNumber = 1;
@@ -5799,7 +5845,7 @@ public sealed partial class SCChargeResult : pb::GeneratedMessage<SCChargeResult
   
   public override void WriteTo(pb::ICodedOutputStream output) {
     CalcSerializedSize();
-    string[] field_names = _sCChargeResultFieldNames;
+    string[] field_names = _sCToChargeFieldNames;
     if (hasName) {
       output.WriteString(1, field_names[3], Name);
     }
@@ -5857,49 +5903,49 @@ public sealed partial class SCChargeResult : pb::GeneratedMessage<SCChargeResult
     memoizedSerializedSize = size;
     return size;
   }
-  public static SCChargeResult ParseFrom(pb::ByteString data) {
+  public static SCToCharge ParseFrom(pb::ByteString data) {
     return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
   }
-  public static SCChargeResult ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+  public static SCToCharge ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
     return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
   }
-  public static SCChargeResult ParseFrom(byte[] data) {
+  public static SCToCharge ParseFrom(byte[] data) {
     return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
   }
-  public static SCChargeResult ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+  public static SCToCharge ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
     return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
   }
-  public static SCChargeResult ParseFrom(global::System.IO.Stream input) {
+  public static SCToCharge ParseFrom(global::System.IO.Stream input) {
     return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
   }
-  public static SCChargeResult ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+  public static SCToCharge ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
     return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
   }
-  public static SCChargeResult ParseDelimitedFrom(global::System.IO.Stream input) {
+  public static SCToCharge ParseDelimitedFrom(global::System.IO.Stream input) {
     return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
   }
-  public static SCChargeResult ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+  public static SCToCharge ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
     return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
   }
-  public static SCChargeResult ParseFrom(pb::ICodedInputStream input) {
+  public static SCToCharge ParseFrom(pb::ICodedInputStream input) {
     return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
   }
-  public static SCChargeResult ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+  public static SCToCharge ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
     return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
   }
-  private SCChargeResult MakeReadOnly() {
+  private SCToCharge MakeReadOnly() {
     return this;
   }
   
   public static Builder CreateBuilder() { return new Builder(); }
   public override Builder ToBuilder() { return CreateBuilder(this); }
   public override Builder CreateBuilderForType() { return new Builder(); }
-  public static Builder CreateBuilder(SCChargeResult prototype) {
+  public static Builder CreateBuilder(SCToCharge prototype) {
     return new Builder(prototype);
   }
   
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-  public sealed partial class Builder : pb::GeneratedBuilder<SCChargeResult, Builder> {
+  public sealed partial class Builder : pb::GeneratedBuilder<SCToCharge, Builder> {
     protected override Builder ThisBuilder {
       get { return this; }
     }
@@ -5907,18 +5953,18 @@ public sealed partial class SCChargeResult : pb::GeneratedMessage<SCChargeResult
       result = DefaultInstance;
       resultIsReadOnly = true;
     }
-    internal Builder(SCChargeResult cloneFrom) {
+    internal Builder(SCToCharge cloneFrom) {
       result = cloneFrom;
       resultIsReadOnly = true;
     }
     
     private bool resultIsReadOnly;
-    private SCChargeResult result;
+    private SCToCharge result;
     
-    private SCChargeResult PrepareBuilder() {
+    private SCToCharge PrepareBuilder() {
       if (resultIsReadOnly) {
-        SCChargeResult original = result;
-        result = new SCChargeResult();
+        SCToCharge original = result;
+        result = new SCToCharge();
         resultIsReadOnly = false;
         MergeFrom(original);
       }
@@ -5929,7 +5975,7 @@ public sealed partial class SCChargeResult : pb::GeneratedMessage<SCChargeResult
       get { return result.IsInitialized; }
     }
     
-    protected override SCChargeResult MessageBeingBuilt {
+    protected override SCToCharge MessageBeingBuilt {
       get { return PrepareBuilder(); }
     }
     
@@ -5948,14 +5994,14 @@ public sealed partial class SCChargeResult : pb::GeneratedMessage<SCChargeResult
     }
     
     public override pbd::MessageDescriptor DescriptorForType {
-      get { return global::SCChargeResult.Descriptor; }
+      get { return global::SCToCharge.Descriptor; }
     }
     
-    public override SCChargeResult DefaultInstanceForType {
-      get { return global::SCChargeResult.DefaultInstance; }
+    public override SCToCharge DefaultInstanceForType {
+      get { return global::SCToCharge.DefaultInstance; }
     }
     
-    public override SCChargeResult BuildPartial() {
+    public override SCToCharge BuildPartial() {
       if (resultIsReadOnly) {
         return result;
       }
@@ -5964,16 +6010,16 @@ public sealed partial class SCChargeResult : pb::GeneratedMessage<SCChargeResult
     }
     
     public override Builder MergeFrom(pb::IMessage other) {
-      if (other is SCChargeResult) {
-        return MergeFrom((SCChargeResult) other);
+      if (other is SCToCharge) {
+        return MergeFrom((SCToCharge) other);
       } else {
         base.MergeFrom(other);
         return this;
       }
     }
     
-    public override Builder MergeFrom(SCChargeResult other) {
-      if (other == global::SCChargeResult.DefaultInstance) return this;
+    public override Builder MergeFrom(SCToCharge other) {
+      if (other == global::SCToCharge.DefaultInstance) return this;
       PrepareBuilder();
       if (other.HasName) {
         Name = other.Name;
@@ -6008,9 +6054,9 @@ public sealed partial class SCChargeResult : pb::GeneratedMessage<SCChargeResult
       string field_name;
       while (input.ReadTag(out tag, out field_name)) {
         if(tag == 0 && field_name != null) {
-          int field_ordinal = global::System.Array.BinarySearch(_sCChargeResultFieldNames, field_name, global::System.StringComparer.Ordinal);
+          int field_ordinal = global::System.Array.BinarySearch(_sCToChargeFieldNames, field_name, global::System.StringComparer.Ordinal);
           if(field_ordinal >= 0)
-            tag = _sCChargeResultFieldTags[field_ordinal];
+            tag = _sCToChargeFieldTags[field_ordinal];
           else {
             if (unknownFields == null) {
               unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
@@ -6193,7 +6239,7 @@ public sealed partial class SCChargeResult : pb::GeneratedMessage<SCChargeResult
       return this;
     }
   }
-  static SCChargeResult() {
+  static SCToCharge() {
     object.ReferenceEquals(global::ClientProtocol.Descriptor, null);
   }
 }
@@ -7144,29 +7190,29 @@ public sealed partial class CSCartDel : pb::GeneratedMessage<CSCartDel, CSCartDe
 }
 
 [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-public sealed partial class CSCartBuy : pb::GeneratedMessage<CSCartBuy, CSCartBuy.Builder> {
-  private CSCartBuy() { }
-  private static readonly CSCartBuy defaultInstance = new CSCartBuy().MakeReadOnly();
-  private static readonly string[] _cSCartBuyFieldNames = new string[] { "cardnumber" };
-  private static readonly uint[] _cSCartBuyFieldTags = new uint[] { 10 };
-  public static CSCartBuy DefaultInstance {
+public sealed partial class CSPreBuy : pb::GeneratedMessage<CSPreBuy, CSPreBuy.Builder> {
+  private CSPreBuy() { }
+  private static readonly CSPreBuy defaultInstance = new CSPreBuy().MakeReadOnly();
+  private static readonly string[] _cSPreBuyFieldNames = new string[] { "cardnumber" };
+  private static readonly uint[] _cSPreBuyFieldTags = new uint[] { 10 };
+  public static CSPreBuy DefaultInstance {
     get { return defaultInstance; }
   }
   
-  public override CSCartBuy DefaultInstanceForType {
+  public override CSPreBuy DefaultInstanceForType {
     get { return DefaultInstance; }
   }
   
-  protected override CSCartBuy ThisMessage {
+  protected override CSPreBuy ThisMessage {
     get { return this; }
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::ClientProtocol.internal__static_CSCartBuy__Descriptor; }
+    get { return global::ClientProtocol.internal__static_CSPreBuy__Descriptor; }
   }
   
-  protected override pb::FieldAccess.FieldAccessorTable<CSCartBuy, CSCartBuy.Builder> InternalFieldAccessors {
-    get { return global::ClientProtocol.internal__static_CSCartBuy__FieldAccessorTable; }
+  protected override pb::FieldAccess.FieldAccessorTable<CSPreBuy, CSPreBuy.Builder> InternalFieldAccessors {
+    get { return global::ClientProtocol.internal__static_CSPreBuy__FieldAccessorTable; }
   }
   
   public const int CardnumberFieldNumber = 1;
@@ -7188,7 +7234,7 @@ public sealed partial class CSCartBuy : pb::GeneratedMessage<CSCartBuy, CSCartBu
   
   public override void WriteTo(pb::ICodedOutputStream output) {
     CalcSerializedSize();
-    string[] field_names = _cSCartBuyFieldNames;
+    string[] field_names = _cSPreBuyFieldNames;
     if (hasCardnumber) {
       output.WriteString(1, field_names[0], Cardnumber);
     }
@@ -7216,49 +7262,49 @@ public sealed partial class CSCartBuy : pb::GeneratedMessage<CSCartBuy, CSCartBu
     memoizedSerializedSize = size;
     return size;
   }
-  public static CSCartBuy ParseFrom(pb::ByteString data) {
+  public static CSPreBuy ParseFrom(pb::ByteString data) {
     return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
   }
-  public static CSCartBuy ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+  public static CSPreBuy ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
     return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
   }
-  public static CSCartBuy ParseFrom(byte[] data) {
+  public static CSPreBuy ParseFrom(byte[] data) {
     return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
   }
-  public static CSCartBuy ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+  public static CSPreBuy ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
     return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
   }
-  public static CSCartBuy ParseFrom(global::System.IO.Stream input) {
+  public static CSPreBuy ParseFrom(global::System.IO.Stream input) {
     return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
   }
-  public static CSCartBuy ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+  public static CSPreBuy ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
     return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
   }
-  public static CSCartBuy ParseDelimitedFrom(global::System.IO.Stream input) {
+  public static CSPreBuy ParseDelimitedFrom(global::System.IO.Stream input) {
     return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
   }
-  public static CSCartBuy ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+  public static CSPreBuy ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
     return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
   }
-  public static CSCartBuy ParseFrom(pb::ICodedInputStream input) {
+  public static CSPreBuy ParseFrom(pb::ICodedInputStream input) {
     return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
   }
-  public static CSCartBuy ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+  public static CSPreBuy ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
     return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
   }
-  private CSCartBuy MakeReadOnly() {
+  private CSPreBuy MakeReadOnly() {
     return this;
   }
   
   public static Builder CreateBuilder() { return new Builder(); }
   public override Builder ToBuilder() { return CreateBuilder(this); }
   public override Builder CreateBuilderForType() { return new Builder(); }
-  public static Builder CreateBuilder(CSCartBuy prototype) {
+  public static Builder CreateBuilder(CSPreBuy prototype) {
     return new Builder(prototype);
   }
   
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-  public sealed partial class Builder : pb::GeneratedBuilder<CSCartBuy, Builder> {
+  public sealed partial class Builder : pb::GeneratedBuilder<CSPreBuy, Builder> {
     protected override Builder ThisBuilder {
       get { return this; }
     }
@@ -7266,18 +7312,18 @@ public sealed partial class CSCartBuy : pb::GeneratedMessage<CSCartBuy, CSCartBu
       result = DefaultInstance;
       resultIsReadOnly = true;
     }
-    internal Builder(CSCartBuy cloneFrom) {
+    internal Builder(CSPreBuy cloneFrom) {
       result = cloneFrom;
       resultIsReadOnly = true;
     }
     
     private bool resultIsReadOnly;
-    private CSCartBuy result;
+    private CSPreBuy result;
     
-    private CSCartBuy PrepareBuilder() {
+    private CSPreBuy PrepareBuilder() {
       if (resultIsReadOnly) {
-        CSCartBuy original = result;
-        result = new CSCartBuy();
+        CSPreBuy original = result;
+        result = new CSPreBuy();
         resultIsReadOnly = false;
         MergeFrom(original);
       }
@@ -7288,7 +7334,7 @@ public sealed partial class CSCartBuy : pb::GeneratedMessage<CSCartBuy, CSCartBu
       get { return result.IsInitialized; }
     }
     
-    protected override CSCartBuy MessageBeingBuilt {
+    protected override CSPreBuy MessageBeingBuilt {
       get { return PrepareBuilder(); }
     }
     
@@ -7307,14 +7353,14 @@ public sealed partial class CSCartBuy : pb::GeneratedMessage<CSCartBuy, CSCartBu
     }
     
     public override pbd::MessageDescriptor DescriptorForType {
-      get { return global::CSCartBuy.Descriptor; }
+      get { return global::CSPreBuy.Descriptor; }
     }
     
-    public override CSCartBuy DefaultInstanceForType {
-      get { return global::CSCartBuy.DefaultInstance; }
+    public override CSPreBuy DefaultInstanceForType {
+      get { return global::CSPreBuy.DefaultInstance; }
     }
     
-    public override CSCartBuy BuildPartial() {
+    public override CSPreBuy BuildPartial() {
       if (resultIsReadOnly) {
         return result;
       }
@@ -7323,16 +7369,16 @@ public sealed partial class CSCartBuy : pb::GeneratedMessage<CSCartBuy, CSCartBu
     }
     
     public override Builder MergeFrom(pb::IMessage other) {
-      if (other is CSCartBuy) {
-        return MergeFrom((CSCartBuy) other);
+      if (other is CSPreBuy) {
+        return MergeFrom((CSPreBuy) other);
       } else {
         base.MergeFrom(other);
         return this;
       }
     }
     
-    public override Builder MergeFrom(CSCartBuy other) {
-      if (other == global::CSCartBuy.DefaultInstance) return this;
+    public override Builder MergeFrom(CSPreBuy other) {
+      if (other == global::CSPreBuy.DefaultInstance) return this;
       PrepareBuilder();
       if (other.HasCardnumber) {
         Cardnumber = other.Cardnumber;
@@ -7352,9 +7398,9 @@ public sealed partial class CSCartBuy : pb::GeneratedMessage<CSCartBuy, CSCartBu
       string field_name;
       while (input.ReadTag(out tag, out field_name)) {
         if(tag == 0 && field_name != null) {
-          int field_ordinal = global::System.Array.BinarySearch(_cSCartBuyFieldNames, field_name, global::System.StringComparer.Ordinal);
+          int field_ordinal = global::System.Array.BinarySearch(_cSPreBuyFieldNames, field_name, global::System.StringComparer.Ordinal);
           if(field_ordinal >= 0)
-            tag = _cSCartBuyFieldTags[field_ordinal];
+            tag = _cSPreBuyFieldTags[field_ordinal];
           else {
             if (unknownFields == null) {
               unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
@@ -7415,35 +7461,35 @@ public sealed partial class CSCartBuy : pb::GeneratedMessage<CSCartBuy, CSCartBu
       return this;
     }
   }
-  static CSCartBuy() {
+  static CSPreBuy() {
     object.ReferenceEquals(global::ClientProtocol.Descriptor, null);
   }
 }
 
 [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-public sealed partial class SCCartBuy : pb::GeneratedMessage<SCCartBuy, SCCartBuy.Builder> {
-  private SCCartBuy() { }
-  private static readonly SCCartBuy defaultInstance = new SCCartBuy().MakeReadOnly();
-  private static readonly string[] _sCCartBuyFieldNames = new string[] { "qrcode" };
-  private static readonly uint[] _sCCartBuyFieldTags = new uint[] { 10 };
-  public static SCCartBuy DefaultInstance {
+public sealed partial class SCPreBuy : pb::GeneratedMessage<SCPreBuy, SCPreBuy.Builder> {
+  private SCPreBuy() { }
+  private static readonly SCPreBuy defaultInstance = new SCPreBuy().MakeReadOnly();
+  private static readonly string[] _sCPreBuyFieldNames = new string[] { "qrcode" };
+  private static readonly uint[] _sCPreBuyFieldTags = new uint[] { 10 };
+  public static SCPreBuy DefaultInstance {
     get { return defaultInstance; }
   }
   
-  public override SCCartBuy DefaultInstanceForType {
+  public override SCPreBuy DefaultInstanceForType {
     get { return DefaultInstance; }
   }
   
-  protected override SCCartBuy ThisMessage {
+  protected override SCPreBuy ThisMessage {
     get { return this; }
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::ClientProtocol.internal__static_SCCartBuy__Descriptor; }
+    get { return global::ClientProtocol.internal__static_SCPreBuy__Descriptor; }
   }
   
-  protected override pb::FieldAccess.FieldAccessorTable<SCCartBuy, SCCartBuy.Builder> InternalFieldAccessors {
-    get { return global::ClientProtocol.internal__static_SCCartBuy__FieldAccessorTable; }
+  protected override pb::FieldAccess.FieldAccessorTable<SCPreBuy, SCPreBuy.Builder> InternalFieldAccessors {
+    get { return global::ClientProtocol.internal__static_SCPreBuy__FieldAccessorTable; }
   }
   
   public const int QrcodeFieldNumber = 1;
@@ -7465,7 +7511,7 @@ public sealed partial class SCCartBuy : pb::GeneratedMessage<SCCartBuy, SCCartBu
   
   public override void WriteTo(pb::ICodedOutputStream output) {
     CalcSerializedSize();
-    string[] field_names = _sCCartBuyFieldNames;
+    string[] field_names = _sCPreBuyFieldNames;
     if (hasQrcode) {
       output.WriteString(1, field_names[0], Qrcode);
     }
@@ -7493,49 +7539,49 @@ public sealed partial class SCCartBuy : pb::GeneratedMessage<SCCartBuy, SCCartBu
     memoizedSerializedSize = size;
     return size;
   }
-  public static SCCartBuy ParseFrom(pb::ByteString data) {
+  public static SCPreBuy ParseFrom(pb::ByteString data) {
     return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
   }
-  public static SCCartBuy ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+  public static SCPreBuy ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
     return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
   }
-  public static SCCartBuy ParseFrom(byte[] data) {
+  public static SCPreBuy ParseFrom(byte[] data) {
     return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
   }
-  public static SCCartBuy ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+  public static SCPreBuy ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
     return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
   }
-  public static SCCartBuy ParseFrom(global::System.IO.Stream input) {
+  public static SCPreBuy ParseFrom(global::System.IO.Stream input) {
     return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
   }
-  public static SCCartBuy ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+  public static SCPreBuy ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
     return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
   }
-  public static SCCartBuy ParseDelimitedFrom(global::System.IO.Stream input) {
+  public static SCPreBuy ParseDelimitedFrom(global::System.IO.Stream input) {
     return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
   }
-  public static SCCartBuy ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+  public static SCPreBuy ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
     return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
   }
-  public static SCCartBuy ParseFrom(pb::ICodedInputStream input) {
+  public static SCPreBuy ParseFrom(pb::ICodedInputStream input) {
     return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
   }
-  public static SCCartBuy ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+  public static SCPreBuy ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
     return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
   }
-  private SCCartBuy MakeReadOnly() {
+  private SCPreBuy MakeReadOnly() {
     return this;
   }
   
   public static Builder CreateBuilder() { return new Builder(); }
   public override Builder ToBuilder() { return CreateBuilder(this); }
   public override Builder CreateBuilderForType() { return new Builder(); }
-  public static Builder CreateBuilder(SCCartBuy prototype) {
+  public static Builder CreateBuilder(SCPreBuy prototype) {
     return new Builder(prototype);
   }
   
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-  public sealed partial class Builder : pb::GeneratedBuilder<SCCartBuy, Builder> {
+  public sealed partial class Builder : pb::GeneratedBuilder<SCPreBuy, Builder> {
     protected override Builder ThisBuilder {
       get { return this; }
     }
@@ -7543,18 +7589,18 @@ public sealed partial class SCCartBuy : pb::GeneratedMessage<SCCartBuy, SCCartBu
       result = DefaultInstance;
       resultIsReadOnly = true;
     }
-    internal Builder(SCCartBuy cloneFrom) {
+    internal Builder(SCPreBuy cloneFrom) {
       result = cloneFrom;
       resultIsReadOnly = true;
     }
     
     private bool resultIsReadOnly;
-    private SCCartBuy result;
+    private SCPreBuy result;
     
-    private SCCartBuy PrepareBuilder() {
+    private SCPreBuy PrepareBuilder() {
       if (resultIsReadOnly) {
-        SCCartBuy original = result;
-        result = new SCCartBuy();
+        SCPreBuy original = result;
+        result = new SCPreBuy();
         resultIsReadOnly = false;
         MergeFrom(original);
       }
@@ -7565,7 +7611,7 @@ public sealed partial class SCCartBuy : pb::GeneratedMessage<SCCartBuy, SCCartBu
       get { return result.IsInitialized; }
     }
     
-    protected override SCCartBuy MessageBeingBuilt {
+    protected override SCPreBuy MessageBeingBuilt {
       get { return PrepareBuilder(); }
     }
     
@@ -7584,14 +7630,14 @@ public sealed partial class SCCartBuy : pb::GeneratedMessage<SCCartBuy, SCCartBu
     }
     
     public override pbd::MessageDescriptor DescriptorForType {
-      get { return global::SCCartBuy.Descriptor; }
+      get { return global::SCPreBuy.Descriptor; }
     }
     
-    public override SCCartBuy DefaultInstanceForType {
-      get { return global::SCCartBuy.DefaultInstance; }
+    public override SCPreBuy DefaultInstanceForType {
+      get { return global::SCPreBuy.DefaultInstance; }
     }
     
-    public override SCCartBuy BuildPartial() {
+    public override SCPreBuy BuildPartial() {
       if (resultIsReadOnly) {
         return result;
       }
@@ -7600,16 +7646,16 @@ public sealed partial class SCCartBuy : pb::GeneratedMessage<SCCartBuy, SCCartBu
     }
     
     public override Builder MergeFrom(pb::IMessage other) {
-      if (other is SCCartBuy) {
-        return MergeFrom((SCCartBuy) other);
+      if (other is SCPreBuy) {
+        return MergeFrom((SCPreBuy) other);
       } else {
         base.MergeFrom(other);
         return this;
       }
     }
     
-    public override Builder MergeFrom(SCCartBuy other) {
-      if (other == global::SCCartBuy.DefaultInstance) return this;
+    public override Builder MergeFrom(SCPreBuy other) {
+      if (other == global::SCPreBuy.DefaultInstance) return this;
       PrepareBuilder();
       if (other.HasQrcode) {
         Qrcode = other.Qrcode;
@@ -7629,9 +7675,9 @@ public sealed partial class SCCartBuy : pb::GeneratedMessage<SCCartBuy, SCCartBu
       string field_name;
       while (input.ReadTag(out tag, out field_name)) {
         if(tag == 0 && field_name != null) {
-          int field_ordinal = global::System.Array.BinarySearch(_sCCartBuyFieldNames, field_name, global::System.StringComparer.Ordinal);
+          int field_ordinal = global::System.Array.BinarySearch(_sCPreBuyFieldNames, field_name, global::System.StringComparer.Ordinal);
           if(field_ordinal >= 0)
-            tag = _sCCartBuyFieldTags[field_ordinal];
+            tag = _sCPreBuyFieldTags[field_ordinal];
           else {
             if (unknownFields == null) {
               unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
@@ -7692,35 +7738,35 @@ public sealed partial class SCCartBuy : pb::GeneratedMessage<SCCartBuy, SCCartBu
       return this;
     }
   }
-  static SCCartBuy() {
+  static SCPreBuy() {
     object.ReferenceEquals(global::ClientProtocol.Descriptor, null);
   }
 }
 
 [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-public sealed partial class SCCartBuyResult : pb::GeneratedMessage<SCCartBuyResult, SCCartBuyResult.Builder> {
-  private SCCartBuyResult() { }
-  private static readonly SCCartBuyResult defaultInstance = new SCCartBuyResult().MakeReadOnly();
-  private static readonly string[] _sCCartBuyResultFieldNames = new string[] { "balance", "cardnumber", "integal", "name", "right", "usedintegal", "usedmoney" };
-  private static readonly uint[] _sCCartBuyResultFieldTags = new uint[] { 48, 18, 56, 10, 26, 40, 32 };
-  public static SCCartBuyResult DefaultInstance {
+public sealed partial class SCToBuy : pb::GeneratedMessage<SCToBuy, SCToBuy.Builder> {
+  private SCToBuy() { }
+  private static readonly SCToBuy defaultInstance = new SCToBuy().MakeReadOnly();
+  private static readonly string[] _sCToBuyFieldNames = new string[] { "balance", "cardnumber", "integal", "name", "right", "usedintegal", "usedmoney" };
+  private static readonly uint[] _sCToBuyFieldTags = new uint[] { 48, 18, 56, 10, 26, 40, 32 };
+  public static SCToBuy DefaultInstance {
     get { return defaultInstance; }
   }
   
-  public override SCCartBuyResult DefaultInstanceForType {
+  public override SCToBuy DefaultInstanceForType {
     get { return DefaultInstance; }
   }
   
-  protected override SCCartBuyResult ThisMessage {
+  protected override SCToBuy ThisMessage {
     get { return this; }
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::ClientProtocol.internal__static_SCCartBuyResult__Descriptor; }
+    get { return global::ClientProtocol.internal__static_SCToBuy__Descriptor; }
   }
   
-  protected override pb::FieldAccess.FieldAccessorTable<SCCartBuyResult, SCCartBuyResult.Builder> InternalFieldAccessors {
-    get { return global::ClientProtocol.internal__static_SCCartBuyResult__FieldAccessorTable; }
+  protected override pb::FieldAccess.FieldAccessorTable<SCToBuy, SCToBuy.Builder> InternalFieldAccessors {
+    get { return global::ClientProtocol.internal__static_SCToBuy__FieldAccessorTable; }
   }
   
   public const int NameFieldNumber = 1;
@@ -7808,7 +7854,7 @@ public sealed partial class SCCartBuyResult : pb::GeneratedMessage<SCCartBuyResu
   
   public override void WriteTo(pb::ICodedOutputStream output) {
     CalcSerializedSize();
-    string[] field_names = _sCCartBuyResultFieldNames;
+    string[] field_names = _sCToBuyFieldNames;
     if (hasName) {
       output.WriteString(1, field_names[3], Name);
     }
@@ -7872,49 +7918,49 @@ public sealed partial class SCCartBuyResult : pb::GeneratedMessage<SCCartBuyResu
     memoizedSerializedSize = size;
     return size;
   }
-  public static SCCartBuyResult ParseFrom(pb::ByteString data) {
+  public static SCToBuy ParseFrom(pb::ByteString data) {
     return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
   }
-  public static SCCartBuyResult ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+  public static SCToBuy ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
     return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
   }
-  public static SCCartBuyResult ParseFrom(byte[] data) {
+  public static SCToBuy ParseFrom(byte[] data) {
     return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
   }
-  public static SCCartBuyResult ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+  public static SCToBuy ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
     return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
   }
-  public static SCCartBuyResult ParseFrom(global::System.IO.Stream input) {
+  public static SCToBuy ParseFrom(global::System.IO.Stream input) {
     return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
   }
-  public static SCCartBuyResult ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+  public static SCToBuy ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
     return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
   }
-  public static SCCartBuyResult ParseDelimitedFrom(global::System.IO.Stream input) {
+  public static SCToBuy ParseDelimitedFrom(global::System.IO.Stream input) {
     return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
   }
-  public static SCCartBuyResult ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+  public static SCToBuy ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
     return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
   }
-  public static SCCartBuyResult ParseFrom(pb::ICodedInputStream input) {
+  public static SCToBuy ParseFrom(pb::ICodedInputStream input) {
     return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
   }
-  public static SCCartBuyResult ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+  public static SCToBuy ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
     return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
   }
-  private SCCartBuyResult MakeReadOnly() {
+  private SCToBuy MakeReadOnly() {
     return this;
   }
   
   public static Builder CreateBuilder() { return new Builder(); }
   public override Builder ToBuilder() { return CreateBuilder(this); }
   public override Builder CreateBuilderForType() { return new Builder(); }
-  public static Builder CreateBuilder(SCCartBuyResult prototype) {
+  public static Builder CreateBuilder(SCToBuy prototype) {
     return new Builder(prototype);
   }
   
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-  public sealed partial class Builder : pb::GeneratedBuilder<SCCartBuyResult, Builder> {
+  public sealed partial class Builder : pb::GeneratedBuilder<SCToBuy, Builder> {
     protected override Builder ThisBuilder {
       get { return this; }
     }
@@ -7922,18 +7968,18 @@ public sealed partial class SCCartBuyResult : pb::GeneratedMessage<SCCartBuyResu
       result = DefaultInstance;
       resultIsReadOnly = true;
     }
-    internal Builder(SCCartBuyResult cloneFrom) {
+    internal Builder(SCToBuy cloneFrom) {
       result = cloneFrom;
       resultIsReadOnly = true;
     }
     
     private bool resultIsReadOnly;
-    private SCCartBuyResult result;
+    private SCToBuy result;
     
-    private SCCartBuyResult PrepareBuilder() {
+    private SCToBuy PrepareBuilder() {
       if (resultIsReadOnly) {
-        SCCartBuyResult original = result;
-        result = new SCCartBuyResult();
+        SCToBuy original = result;
+        result = new SCToBuy();
         resultIsReadOnly = false;
         MergeFrom(original);
       }
@@ -7944,7 +7990,7 @@ public sealed partial class SCCartBuyResult : pb::GeneratedMessage<SCCartBuyResu
       get { return result.IsInitialized; }
     }
     
-    protected override SCCartBuyResult MessageBeingBuilt {
+    protected override SCToBuy MessageBeingBuilt {
       get { return PrepareBuilder(); }
     }
     
@@ -7963,14 +8009,14 @@ public sealed partial class SCCartBuyResult : pb::GeneratedMessage<SCCartBuyResu
     }
     
     public override pbd::MessageDescriptor DescriptorForType {
-      get { return global::SCCartBuyResult.Descriptor; }
+      get { return global::SCToBuy.Descriptor; }
     }
     
-    public override SCCartBuyResult DefaultInstanceForType {
-      get { return global::SCCartBuyResult.DefaultInstance; }
+    public override SCToBuy DefaultInstanceForType {
+      get { return global::SCToBuy.DefaultInstance; }
     }
     
-    public override SCCartBuyResult BuildPartial() {
+    public override SCToBuy BuildPartial() {
       if (resultIsReadOnly) {
         return result;
       }
@@ -7979,16 +8025,16 @@ public sealed partial class SCCartBuyResult : pb::GeneratedMessage<SCCartBuyResu
     }
     
     public override Builder MergeFrom(pb::IMessage other) {
-      if (other is SCCartBuyResult) {
-        return MergeFrom((SCCartBuyResult) other);
+      if (other is SCToBuy) {
+        return MergeFrom((SCToBuy) other);
       } else {
         base.MergeFrom(other);
         return this;
       }
     }
     
-    public override Builder MergeFrom(SCCartBuyResult other) {
-      if (other == global::SCCartBuyResult.DefaultInstance) return this;
+    public override Builder MergeFrom(SCToBuy other) {
+      if (other == global::SCToBuy.DefaultInstance) return this;
       PrepareBuilder();
       if (other.HasName) {
         Name = other.Name;
@@ -8026,9 +8072,9 @@ public sealed partial class SCCartBuyResult : pb::GeneratedMessage<SCCartBuyResu
       string field_name;
       while (input.ReadTag(out tag, out field_name)) {
         if(tag == 0 && field_name != null) {
-          int field_ordinal = global::System.Array.BinarySearch(_sCCartBuyResultFieldNames, field_name, global::System.StringComparer.Ordinal);
+          int field_ordinal = global::System.Array.BinarySearch(_sCToBuyFieldNames, field_name, global::System.StringComparer.Ordinal);
           if(field_ordinal >= 0)
-            tag = _sCCartBuyResultFieldTags[field_ordinal];
+            tag = _sCToBuyFieldTags[field_ordinal];
           else {
             if (unknownFields == null) {
               unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
@@ -8235,7 +8281,7 @@ public sealed partial class SCCartBuyResult : pb::GeneratedMessage<SCCartBuyResu
       return this;
     }
   }
-  static SCCartBuyResult() {
+  static SCToBuy() {
     object.ReferenceEquals(global::ClientProtocol.Descriptor, null);
   }
 }

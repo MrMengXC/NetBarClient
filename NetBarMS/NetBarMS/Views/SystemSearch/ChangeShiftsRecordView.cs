@@ -58,9 +58,6 @@ namespace NetBarMS.Views.SystemSearch
             this.mainDataTable.Rows.Add(row);
 
         }
-
-
-
         private void SetBandGridView(
             GridControlType type,
             out DataTable table

@@ -85,6 +85,12 @@ namespace NetBarMS.Views
             ToolsManage.SetGridView(this.gridView1, GridControlType.MemberManage, out this.mainDataTable,ColumnButtonClick,null);
             this.gridControl1.DataSource = this.mainDataTable;
 
+            for (int i = 0;i < 5;i++)
+            {
+                DataRow row = this.mainDataTable.NewRow();
+                this.mainDataTable.Rows.Add(row);
+            }
+
             GetMemberList();
 
         }
@@ -319,6 +325,7 @@ namespace NetBarMS.Views
         //按钮列的点击事件
         public void ColumnButtonClick(object sender, ButtonPressedEventArgs e)
         {
+            return;
             int rowhandle = this.gridView1.FocusedRowHandle;
             DataRow row = this.gridView1.GetDataRow(rowhandle);
             StructMember member = members[rowhandle];

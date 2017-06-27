@@ -28,27 +28,27 @@ namespace NetBarMS.Views.HomePage.Message
 
         }
 
-        //开通会员（跳入开通会员界面）
+        #region 开通会员（跳入开通会员界面）
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-
             this.FindForm().Close();
-            OpenMemberView view = new OpenMemberView();
+            string cardNum = ActiveFlowManage.ActiveFlow().card;
+            OpenMemberView view = new OpenMemberView(FLOW_STATUS.ACTIVE_STATUS, cardNum);
             ToolsManage.ShowForm(view,false);
-           
         }
+        #endregion
 
         #region 不开通（默认注册临时会员）
         private void simpleButton2_Click(object sender, EventArgs e)
         {
            
-            string text = ActiveFlowManage.ActiveFlow().card;
+            string cardNum = ActiveFlowManage.ActiveFlow().card;
             StructCard.Builder card = new StructCard.Builder()
             {
                 Name = "xx22",
                 Gender = 1,
                 Nation = "2112",
-                Number = text,
+                Number = cardNum,
                 Birthday = "2012-09-01",
                 Address = "海南省",
                 Organization = "海南",
@@ -60,7 +60,7 @@ namespace NetBarMS.Views.HomePage.Message
             CSMemberAdd.Builder member = new CSMemberAdd.Builder()
             {
                 Cardinfo = card.Build(),
-                Membertype = 1,
+                Membertype = IdTools.TEM_MEMBER_ID,
                 Recharge = 0,
             };
 

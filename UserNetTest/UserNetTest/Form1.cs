@@ -73,7 +73,7 @@ namespace UserNetTest
                 int y = DISTANCE * (i / NUM + 1) + i / NUM * bth_W;
                 com.Location = new Point(x,y);
                 com.Size = new Size(bth_W, bth_W);
-                com.Text = i + "";
+                com.Text = "192.168.0."+(i+1);
                 com.Click += Com_Click;
                 com.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
                 Color bgColor = Color.Gray;
@@ -86,8 +86,9 @@ namespace UserNetTest
                     button = com,
                     status = COM_STATUS.CLOSE_STATUS,
                     manage = new NetMessageManage(index),
+                    ip = "192.168.0." + (i + 1),
 
-                };
+            };
                 
 
                 this.comDict.Add(index, model);
@@ -208,40 +209,44 @@ namespace UserNetTest
         private void OpenComputer(object sender, EventArgs e)
         {
             SimpleModel model = this.GetModel(this.panel1.Controls.GetChildIndex(this.selectButton));
-            ClientNetOperation.OpenComputer(model.manage, OpenComputerResult);
+            ClientNetOperation.OpenComputer(model.manage, model.ip, OpenComputerResult);
 
           
         }
         //开机回调
         private void OpenComputerResult(ResultModel result)
         {
-            if(result.pack.Content.MessageType != 1)
+            if(result.pack.Cmd != Cmd.CMD_CLIENT_OPEN)
             {
-                this.Invoke(new UIHandleBlock(delegate
-                {
-                    MessageBox.Show("开机失败");
-                }));
                 return;
             }
-            if(result.pack.Cmd == Cmd.CMD_CLIENT_OPEN)
+
+            SimpleModel model = this.GetModel(result.index);
+            model.manage.RemoveResultBlock(OpenComputerResult);
+            System.Console.WriteLine("OpenComputerResult:" + result.pack);
+
+            if (result.pack.Content.MessageType == 1)
             {
-                SimpleModel model = this.GetModel(result.index);
-                model.manage.RemoveResultBlock(OpenComputerResult);
-                System.Console.WriteLine("OpenComputerResult:" + result.pack);
-                this.Invoke(new UIHandleBlock(delegate 
+               
+                this.Invoke(new UIHandleBlock(delegate
                 {
                     //成功回调
                     model.status = COM_STATUS.OPEN_STATUS;
                     //判断是否是当前按钮，是的话当前按钮可以进行的操作
-                    SimpleButton button =(SimpleButton) this.panel1.Controls[result.index];
-                    if(button.Equals(this.selectButton))
+                    SimpleButton button = (SimpleButton)this.panel1.Controls[result.index];
+                    if (button.Equals(this.selectButton))
                     {
                         ComputerOperation();
                     }
 
                 }));
-            
-               
+            }
+            else
+            {
+                this.Invoke(new UIHandleBlock(delegate
+                {
+                    MessageBox.Show("开机失败");
+                }));
             }
         }
 
@@ -257,22 +262,18 @@ namespace UserNetTest
         //关机回调
         private void CloseComputerResult(ResultModel result)
         {
-
-            if (result.pack.Content.MessageType != 1)
+            if (result.pack.Cmd != Cmd.CMD_CLIENT_CLOSE)
             {
-                this.Invoke(new UIHandleBlock(delegate
-                {
-                    MessageBox.Show("关机失败");
-                }));
                 return;
             }
-            if (result.pack.Cmd == Cmd.CMD_CLIENT_CLOSE)
-            {
-                SimpleModel model = this.GetModel(result.index);
-                model.manage.RemoveResultBlock(CloseComputerResult);
-                model.manage.CloseServerConnect();
-                System.Console.WriteLine("CloseComputerResult:" + result.pack);
+            SimpleModel model = this.GetModel(result.index);
+            model.manage.RemoveResultBlock(CloseComputerResult);
+            System.Console.WriteLine("CloseComputerResult:" + result.pack);
 
+            if (result.pack.Content.MessageType == 1)
+            {
+                //关闭服务器连接
+                model.manage.CloseServerConnect();
                 this.Invoke(new UIHandleBlock(delegate
                 {
                     //成功回调
@@ -287,6 +288,13 @@ namespace UserNetTest
                 }));
 
 
+            }
+            else
+            {
+                this.Invoke(new UIHandleBlock(delegate
+                {
+                    MessageBox.Show("关机失败");
+                }));
             }
         }
         #endregion
@@ -309,19 +317,17 @@ namespace UserNetTest
         private void UpComputerResult(ResultModel result)
         {
 
-            if (result.pack.Content.MessageType != 1)
+            if (result.pack.Cmd != Cmd.CMD_CLIENT_LOGON)
             {
-                this.Invoke(new UIHandleBlock(delegate
-                {
-                    MessageBox.Show("上机失败");
-                }));
                 return;
             }
-            if (result.pack.Cmd == Cmd.CMD_CLIENT_LOGON)
+            SimpleModel model = this.GetModel(result.index);
+            model.manage.RemoveResultBlock(UpComputerResult);
+            System.Console.WriteLine("UpComputerResult:" + result.pack);
+
+            if (result.pack.Content.MessageType == 1)
             {
-                SimpleModel model = this.GetModel(result.index);
-                model.manage.RemoveResultBlock(UpComputerResult);
-                System.Console.WriteLine("UpComputerResult:" + result.pack);
+               
                 this.Invoke(new UIHandleBlock(delegate
                 {
                     //成功回调
@@ -333,12 +339,16 @@ namespace UserNetTest
                         ComputerOperation();
                     }
                 }));
-
-
+            }
+            else
+            {
+                this.Invoke(new UIHandleBlock(delegate
+                {
+                    MessageBox.Show("上机失败");
+                }));
             }
         }
         #endregion
-
 
         #region 进行下机（用户登出）
         private void DownComputer(object sender, EventArgs e)
@@ -350,19 +360,17 @@ namespace UserNetTest
         //下机回调
         private void DownComputerResult(ResultModel result)
         {
-            if (result.pack.Content.MessageType != 1)
+            if (result.pack.Cmd != Cmd.CMD_CLIENT_LOGOFF)
             {
-                this.Invoke(new UIHandleBlock(delegate
-                {
-                    MessageBox.Show("下机失败");
-                }));
                 return;
             }
-            if (result.pack.Cmd == Cmd.CMD_CLIENT_LOGOFF)
+            SimpleModel model = this.GetModel(result.index);
+            model.manage.RemoveResultBlock(DownComputerResult);
+            System.Console.WriteLine("DownComputerResult:" + result.pack);
+            if (result.pack.Content.MessageType == 1)
             {
-                SimpleModel model = this.GetModel(result.index);
-                model.manage.RemoveResultBlock(DownComputerResult);
-                System.Console.WriteLine("DownComputerResult:" + result.pack);
+               
+
                 this.Invoke(new UIHandleBlock(delegate
                 {
                     //成功回调
@@ -374,11 +382,20 @@ namespace UserNetTest
                         ComputerOperation();
                     }
                 }));
-
-
             }
+            else
+            {
+                this.Invoke(new UIHandleBlock(delegate
+                {
+                    MessageBox.Show("下机失败");
+                }));
+            }
+
+
         }
         #endregion
+
+
         //进行充值（用户充值）
         private void UserPay(object sender, EventArgs e)
         {
@@ -425,6 +442,7 @@ namespace UserNetTest
         public NetMessageManage manage;
         public COM_STATUS status;               
         public string card;                     //身份证号
+        public string ip;
     }
 
    

@@ -44,6 +44,7 @@ namespace UserNetTest.Tools
             this.ConnectBlockHandle += connect;
             this.ConnectSever();
         }
+
         /// <summary>
         /// 连接服务器
         /// </summary>
@@ -83,10 +84,10 @@ namespace UserNetTest.Tools
 
 
         }
+        #region 接收数据
         //循环接收数据
         private void ReceiveData()
         {
-            
             //不断接收服务器发来的数据
             while (true)
             {
@@ -96,65 +97,119 @@ namespace UserNetTest.Tools
                     Console.WriteLine("断开连接");
                     break;
                 }
-
+                // Console.WriteLine("Time:" + DateTime.Now);
+                byte[] receiveBytes = new byte[1024];
                 //存储数据头的所有字节数 varint32:1419 1417
-                byte[] recvBytesHead = new byte[1024];
-                int len = clientSocket.Receive(recvBytesHead);
+                Int32 len = clientSocket.Receive(receiveBytes, 0);
 
-                if (len >0)
+                if (len > 0)
                 {
-                    //ReceiveDataHandle(recvBytesHead);
                     try
                     {
-                        CodedInputStream inputStream = CodedInputStream.CreateInstance(recvBytesHead);
-                        int varint32 = (int)inputStream.ReadRawVarint32();
-                        if (varint32 >= len)
-                        {
-                            byte[] newResult = new byte[varint32];
-                            int newLen = clientSocket.Receive(newResult, 0, varint32, SocketFlags.None);
-                            //System.Console.WriteLine("varint32:" + varint32);
-                            byte[] resArr = new byte[varint32 + len];
-                            recvBytesHead.CopyTo(resArr, 0);
-                            newResult.CopyTo(resArr, recvBytesHead.Length);
-                            ReceiveDataHandle(resArr);
-                        }
-                        else
-                        {
-                            ReceiveDataHandle(recvBytesHead);
-
-
-                        }
+                        //处理接受到的数据
+                        HandleReceveBytes(receiveBytes, len);
                     }
                     catch (Exception ex)
                     {
-                        // MessageBox.Show("接收服务器数据出错");
                         System.Console.WriteLine("接收服务器数据出错");
                     }
-
+                }
+                else
+                {
 
                 }
 
 
             }
         }
-
-        //接收数据处理
-        private void ReceiveDataHandle(byte[] result)
+        //处理粘包(递归) 接收的长度
+        private void HandleReceveBytes(byte[] recveBytes, Int32 recelen)
         {
             try
             {
+                CodedInputStream inputStream = CodedInputStream.CreateInstance(recveBytes);
+                //数据所有长度
+                Int32 varint32 = (Int32)inputStream.ReadRawVarint32();
+                //获取消息头长度
+                Int32 headlength = CodedOutputStream.ComputeRawVarint32Size((uint)varint32);
+                //   System.Console.WriteLine("len:" + recelen + "\nvarint32:" + varint32 + "\nlen:" + headlength);
+
+                //如果所有有长度大于接收的长度。断包了
+                if (varint32 > recelen - headlength)
+                {
+
+                    //需要的长度
+                    Int32 needlen = varint32 + headlength - recelen;
+                    //已经的长度
+                    Int32 haslen = recelen;
+                    byte[] resArr = new byte[varint32 + headlength];
+                    recveBytes.CopyTo(resArr, 0);
+
+                    while (true)
+                    {
+                        //
+
+
+                        byte[] newResult = new byte[needlen];
+                        int len = clientSocket.Receive(newResult, 0, needlen, SocketFlags.None);
+                        //System.Console.WriteLine("len:" + len + "\nhaslen:" + haslen + "\nneedlen:" + needlen);
+
+                        newResult.CopyTo(resArr, haslen);
+                        haslen += len;
+                        needlen -= len;
+
+                        if (needlen == 0)
+                        {
+                            break;
+                        }
+                    }
+
+                    Thread thread = new Thread(new ParameterizedThreadStart(ReceiveDataHandle));
+                    thread.Start(resArr);
+
+                }
+                else
+                {
+                    Thread thread = new Thread(new ParameterizedThreadStart(ReceiveDataHandle));
+                    thread.Start(recveBytes);
+                    //  ReceiveDataHandle(recveBytes);
+                    //如果实际接受的长度大于包体长度+包头长（粘包）
+                    if (recelen > (varint32 + headlength))
+                    {
+                        //剩下的进行解决
+                        byte[] res = recveBytes.Skip<byte>(varint32 + headlength).ToArray<byte>();
+                        HandleReceveBytes(res, recelen - varint32 - headlength);
+                    }
+                }
+
+            }
+            catch (Exception exc)
+            {
+                System.Console.WriteLine("接受数据出问题：" + exc);
+            }
+
+        }
+
+
+        //接收数据处理
+        private void ReceiveDataHandle(object obj)
+        {
+            byte[] result = (byte[])obj;
+            try
+            {
                 CodedInputStream inputStream = CodedInputStream.CreateInstance(result);
-                int varint32 = (int)inputStream.ReadRawVarint32(); 
+                int varint32 = (int)inputStream.ReadRawVarint32();
                 byte[] body = inputStream.ReadRawBytes(varint32);
                 MessagePack pack = MessagePack.ParseFrom(body);
+                //  System.Console.WriteLine("pack:"+ pack);
                 if (ResultBlockHandle != null)
                 {
                     ResultBlockHandle(new ResultModel()
                     {
                         pack = pack,
                         error = 0,
-                        index = this.index,
                     });
+
                 }
 
             }
@@ -164,7 +219,8 @@ namespace UserNetTest.Tools
             }
 
         }
-     
+        #endregion
+
         // 发送数据1
         private void SendMsg(IMessageLite value)
         {

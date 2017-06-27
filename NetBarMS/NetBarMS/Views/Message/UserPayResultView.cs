@@ -8,11 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace NetBarMS.Views.UserUseCp
+namespace NetBarMS.Views.Message
 {
-    public partial class UserRechargeMsgView : RootUserControlView
+    /// <summary>
+    /// 用户充值结果充值
+    /// </summary>
+    public partial class UserPayResultView : RootUserControlView
     {
-        public UserRechargeMsgView()
+        public UserPayResultView()
         {
             InitializeComponent();
             this.titleLabel.Text = "用户充值";

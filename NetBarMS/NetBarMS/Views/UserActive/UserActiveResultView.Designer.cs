@@ -1,6 +1,6 @@
-﻿namespace NetBarMS.Views.UserUseCp
+﻿namespace NetBarMS.Views.UserActive
 {
-    partial class UserActiveMsgView
+    partial class UserActivResultView
     {
         /// <summary> 
         /// 必需的设计器变量。

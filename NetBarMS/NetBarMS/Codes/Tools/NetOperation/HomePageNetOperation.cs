@@ -58,10 +58,10 @@ namespace NetBarMS.Codes.Tools.NetOperation
         /// <summary>
         /// 下机结算
         /// </summary>
-        public static void CardCheckOut(DataResultBlock resultBlock)
+        public static void CardCheckOut(DataResultBlock resultBlock,string card)
         {
             CSEmkCheckout.Builder checkout = new CSEmkCheckout.Builder();
-            checkout.SetCardnumber("511725198904225281");
+            checkout.SetCardnumber(card);
 
             MessageContent.Builder content = new MessageContent.Builder();
             content.SetMessageType(1);
@@ -81,13 +81,13 @@ namespace NetBarMS.Codes.Tools.NetOperation
         public static void GetRechargeCode(DataResultBlock resultBlock, string card,int money,int payMode)
         {
             CSPreCharge.Builder pay = new CSPreCharge.Builder();
-            pay.SetCardnumber(card);
+            pay.Cardnumber = card;
             pay.Amount = money;
             pay.Paymode = payMode; //1 - 微信 2 - 支付宝 3 - 现金
 
             MessageContent.Builder content = new MessageContent.Builder();
-            content.SetMessageType(1);
-            content.SetCsPreCharge(pay);
+            content.MessageType = 1;
+            content.CsPreCharge = pay.Build();
 
             MessagePack.Builder pack = new MessagePack.Builder();
             pack.SetCmd(Cmd.CMD_PRECHARGE);

@@ -1,6 +1,6 @@
-﻿namespace NetBarMS.Views.UserUseCp
+﻿namespace NetBarMS.Views.Message
 {
-    partial class UserRechargeMsgView
+    partial class UserPayResultView
     {
         /// <summary> 
         /// 必需的设计器变量。
@@ -28,19 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.label1 = new System.Windows.Forms.Label();
             this.titlePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // titlePanel
             // 
-            this.titlePanel.Size = new System.Drawing.Size(524, 50);
+            this.titlePanel.Size = new System.Drawing.Size(501, 50);
             // 
-            // UserRechargeMsgView
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(182, 110);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(100, 23);
+            this.label1.TabIndex = 62;
+            this.label1.Text = "充值成功！";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // UserPayResultView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Name = "UserRechargeMsgView";
-            this.Size = new System.Drawing.Size(524, 270);
+            this.Controls.Add(this.label1);
+            this.Name = "UserPayResultView";
+            this.Size = new System.Drawing.Size(501, 211);
+            this.Controls.SetChildIndex(this.titlePanel, 0);
+            this.Controls.SetChildIndex(this.label1, 0);
             this.titlePanel.ResumeLayout(false);
             this.titlePanel.PerformLayout();
             this.ResumeLayout(false);
@@ -48,5 +61,7 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.Label label1;
     }
 }

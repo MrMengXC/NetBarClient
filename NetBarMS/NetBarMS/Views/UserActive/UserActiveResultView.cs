@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace NetBarMS.Views.UserUseCp
+namespace NetBarMS.Views.UserActive
 {
-    public partial class UserActiveMsgView : RootUserControlView
+    public partial class UserActivResultView : RootUserControlView
     {
-        public UserActiveMsgView()
+        public UserActivResultView()
         {
             InitializeComponent();
             this.titleLabel.Text = "用户激活";

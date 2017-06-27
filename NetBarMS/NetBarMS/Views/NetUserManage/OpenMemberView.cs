@@ -25,84 +25,92 @@ namespace NetBarMS.Views.NetUserManage
             Type,
             PayMoney,
             GiveMoney,
-
         }
+       
+        private List<StructDictItem> memberTypes;       //会员类别数组
+        private int memberIndex = -1;                   //当前会员类别索引
+        private FLOW_STATUS flowstatus = FLOW_STATUS.NONE_STATUS;                 //判断返回的状态
+        private char[] sp = { '：', ':' };
+        private Color activeColor = Color.FromArgb(0, 192, 192);
+        private Color notActiveColor = Color.Gray;
 
-        //当前的会员类型
-        private int memberIndex = -1;
-        private List<StructDictItem> memberTypes;
-
+        #region 初始化方法
         public OpenMemberView()
         {
             InitializeComponent();
             this.titleLabel.Text = "会员办理";
-            InitUI();
+            string idNum = new Random().Next(1000, 90000000).ToString();
+            InitUI(idNum);
         }
+        //临时使用
+        public OpenMemberView(FLOW_STATUS status,String card)
+        {
+            InitializeComponent();
+            this.titleLabel.Text = "会员办理";
+            this.flowstatus = status;
+            InitUI(card);
+        }
+        #endregion
 
         #region 初始化UI
         //初始化UI
-        private void InitUI()
+        private void InitUI(string card)
         {
             //先接受数据
             SysManage.Manage().GetMembersTypes(out this.memberTypes);
+            //隐藏按钮可点击
+            this.simpleButton1.Enabled = false;
+            this.simpleButton1.Appearance.BackColor = notActiveColor;
+            this.simpleButton2.Enabled = false;
+            this.simpleButton2.Appearance.BackColor = notActiveColor;
+
+
+
+            //初始化Label
+            this.nameLabel.Text += "xx22";          //姓名
+            this.genderLabel.Text += "男";        //性别
+            this.nationLabel.Text += "2112";        //民族
+            this.cardTypeLabel.Text += "";      //卡类型
+            this.cardNumLabel.Text += card;       //卡号
+            this.cardValidityLabel.Text += "1992-05-01";  //有效期
+            this.addressLabel.Text += "海南省";           //地址
+            this.organLabel.Text += "海南";             //发证机关
+            this.countryLabel.Text += "";              //国籍
+            this.birthdayLabel.Text += "1992-05-01";              //出生日期
+
             //初始化GridControl
             ToolsManage.SetGridView(this.gridView1, GridControlType.OpenMember, out this.mainDataTable);
             this.gridControl1.DataSource = this.mainDataTable;
             RefreshGridControl();
+
+            //先开通临时会员
+            AddTemMemeber();
         }
-        //刷新GridControl
-        private void RefreshGridControl()
+
+        //添加临时会员
+        private void AddTemMemeber()
         {
-
-            foreach(StructDictItem item in this.memberTypes)
-            {
-                DataRow row = this.mainDataTable.NewRow();
-                this.mainDataTable.Rows.Add(row);
-                row[TitleList.Type.ToString()] = item.GetItem(0);
-                row[TitleList.PayMoney.ToString()] = item.GetItem(1);
-
-            }
-        }
-        #endregion
-
-
-
-        #region 添加会员以及回调方法
-        //保存
-        private void simpleButton2_Click(object sender, EventArgs e)
-        {
-            //显示提示
-            if (this.memberIndex <0)
-            {
-                MessageBox.Show("请选择会员类型");
-                return;
-            }
-            string idNum = new Random().Next(1000, 90000000).ToString();
-
             StructCard.Builder card = new StructCard.Builder()
             {
-                Name = "xx22",
-                Gender = 1,
-                Nation = "2112",
-                Number = idNum,
-                Birthday = "1992-05-01",
-                Address = "海南省",
-                Organization = "海南",
+                Name = nameLabel.Text.Split(sp)[1],
+                Gender = genderLabel.Text.Split(sp)[1].Equals("男") ? 1 : 0,
+                Nation = nationLabel.Text.Split(sp)[1],
+                Number = cardNumLabel.Text.Split(sp)[1],
+                Birthday = birthdayLabel.Text.Split(sp)[1],
+                Address = addressLabel.Text.Split(sp)[1],
+                Organization = organLabel.Text.Split(sp)[1],
                 HeadUrl = "#dasdasd#",
-                Vld = "",
+                Vld = cardValidityLabel.Text.Split(sp)[1],
             };
-            int money = int.Parse(this.moneyTextEdit.Text);
-
             CSMemberAdd.Builder member = new CSMemberAdd.Builder()
             {
                 Cardinfo = card.Build(),
-                Membertype = this.memberTypes[memberIndex].Id,
-                Recharge = money,
-                Phone = this.phoneTextEdit.Text,
+                Membertype = IdTools.TEM_MEMBER_ID,
+                Recharge = 0,
             };
             MemberNetOperation.AddMember(AddMemberBlock, member);
-        }
 
+        }
         //添加会员回调
         private void AddMemberBlock(ResultModel result)
         {
@@ -111,39 +119,100 @@ namespace NetBarMS.Views.NetUserManage
             {
                 return;
             }
-
             System.Console.WriteLine("AddMemberBlock:" + result.pack);
             NetMessageManage.Manager().RemoveResultBlock(AddMemberBlock);
             if (result.pack.Content.MessageType == 1)
             {
                 this.Invoke(new UIHandleBlock(delegate ()
                 {
-                    //显示提示
-                    OpenMemberResultView view = new OpenMemberResultView();
-                    ToolsManage.ShowForm(view, false, OpenMemberResultView_FormClose);
+                    //将按钮回复可以点击
+                    this.simpleButton1.Enabled = true;
+                    this.simpleButton1.Appearance.BackColor = activeColor;
+                    this.simpleButton2.Enabled = true;
+                    this.simpleButton2.Appearance.BackColor = activeColor;
+
+
                 }));
             }
 
         }
-        //OpenMemberResultView 所在窗体关闭的回调
-        public void OpenMemberResultView_FormClose()
+
+        //刷新GridControl
+        private void RefreshGridControl()
         {
-            this.CloseFormClick();
-
-            //判断是否在激活页面向叶面发送激活消息
-            ActiveFlowManage.ActiveFlow().MemberRegistSuccess();
-
-
+            foreach(StructDictItem item in this.memberTypes)
+            {
+                DataRow row = this.mainDataTable.NewRow();
+                this.mainDataTable.Rows.Add(row);
+                row[TitleList.Type.ToString()] = item.GetItem(0);
+                row[TitleList.PayMoney.ToString()] = item.GetItem(1);
+            }
         }
+        #endregion
+
+        #region 添加会员以及回调方法
+        //保存(更新会员)
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            CloseFormHandle closeHandle = new CloseFormHandle(delegate
+            {
+                if (this.flowstatus == FLOW_STATUS.ACTIVE_STATUS)
+                {
+                    //System.Console.WriteLine("点击关闭会员注册成功");
+                    ActiveFlowManage.ActiveFlow().MemberRegistSuccess();
+                }
+                this.CloseFormClick();
+        
+                
+            });
+            //显示提示
+            OpenMemberResultView view = new OpenMemberResultView();
+            ToolsManage.ShowForm(view, false, closeHandle);
+
+            return;
+
+
+            //显示提示
+            if (this.memberIndex <0)
+            {
+                MessageBox.Show("请选择会员类型");
+                return;
+            }
+
+            StructCard.Builder card = new StructCard.Builder()
+            {
+                Name = nameLabel.Text.Split(sp)[1],
+                Gender = genderLabel.Text.Split(sp)[1].Equals("男")?1:0,
+
+                Nation = nationLabel.Text.Split(sp)[1],
+                Number = cardNumLabel.Text.Split(sp)[1],
+                Birthday = birthdayLabel.Text.Split(sp)[1],
+                Address = addressLabel.Text.Split(sp)[1],
+                Organization = organLabel.Text.Split(sp)[1],
+                HeadUrl = "#dasdasd#",
+                Vld = cardValidityLabel.Text.Split(sp)[1],
+            };
+
+
+            int money = int.Parse(this.moneyTextEdit.Text);
+            CSMemberAdd.Builder member = new CSMemberAdd.Builder()
+            {
+                Cardinfo = card.Build(),
+                Membertype = this.memberTypes[memberIndex].Id,
+                Recharge = money,
+                Phone = this.phoneTextEdit.Text,
+            };
+            //MemberNetOperation
+            MemberNetOperation.AddMember(AddMemberBlock, member);
+        }
+
+       
         #endregion
 
         #region 控件的操作
         //金额的输入
         private void moneyTextEdit_EditValueChanged(object sender, EventArgs e)
         {
-            //0 - 20元 普通 20 - 40元黄金 40元以上钻石 type 1，2，3，
-            //0为临时
-            //0为临时
             //通过输入的金额判断类新
             try
             {
@@ -182,12 +251,12 @@ namespace NetBarMS.Views.NetUserManage
         }
         #endregion
 
-
         #region 进行充值
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            //UserScanCodeView view = new UserScanCodeView();
-            //ToolsManage.ShowForm(view, false);
+            int money = int.Parse(this.moneyTextEdit.Text);
+            UserScanCodeView view = new UserScanCodeView(cardNumLabel.Text.Split(sp)[1], money);
+            ToolsManage.ShowForm(view, false);
         }
         #endregion
 

@@ -10,7 +10,7 @@ namespace UserNetTest.Tools
     {
 
         #region 打开电脑
-        public static void OpenComputer(NetMessageManage manage,NetMessageManage.DataResultBlock resultBlock)
+        public static void OpenComputer(NetMessageManage manage,string ip,NetMessageManage.DataResultBlock resultBlock)
         {
             //连接服务器
             NetMessageManage.ConnectResultBlock result = new NetMessageManage.ConnectResultBlock(delegate {
@@ -19,7 +19,7 @@ namespace UserNetTest.Tools
 
                 CSClientOpen.Builder open = new CSClientOpen.Builder()
                 {
-                    Text = "",
+                    Text = ip,
                 };
 
                 MessageContent.Builder content = new MessageContent.Builder()
@@ -108,23 +108,34 @@ namespace UserNetTest.Tools
         #endregion
 
         #region 用户充值
-        public static void UserPay(NetMessageManage manage, String card, NetMessageManage.DataResultBlock resultBlock)
+        //用户预充值 获取充值二维码
+        public static void UserPreCharge(NetMessageManage manage, String card, NetMessageManage.DataResultBlock resultBlock,int amount)
         {
-            CSLogoff.Builder off = new CSLogoff.Builder()
+            CSPreCharge.Builder charge = new CSPreCharge.Builder()
             {
                 Cardnumber = card,
+                Amount = amount,
+                Paymode = 1,
             };
             MessageContent.Builder content = new MessageContent.Builder()
             {
                 MessageType = 1,
-                CsLogoff = off.Build(),
+                CsPreCharge = charge.Build(),
             };
-
-
             MessagePack.Builder pack = new MessagePack.Builder()
             {
-               // Cmd = Cmd.cmd_,
+                Cmd = Cmd.CMD_PRECHARGE,
                 Content = content.Build(),
+            };
+            manage.SendMsg(pack.Build(), resultBlock);
+        }
+        //获取充值结果
+        public static void UserRecharge(NetMessageManage manage, NetMessageManage.DataResultBlock resultBlock)
+        {           
+             
+            MessagePack.Builder pack = new MessagePack.Builder()
+            {
+               Cmd = Cmd.CMD_PREBUY,
             };
             manage.SendMsg(pack.Build(), resultBlock);
         }

@@ -24,6 +24,13 @@ using System.Resources;
 
 namespace NetBarMS.Codes.Tools
 {
+    //流程状态（充值，注册会员）
+    public enum FLOW_STATUS
+    {
+        NONE_STATUS,        //无状态
+        NORMAL_STATUS,      //正常状态，不需要其他操作
+        ACTIVE_STATUS,      //激活状态，返回激活页面，再次激活
+    }
     class ToolsManage
     {
         #region 显示自定义窗体
@@ -72,20 +79,28 @@ namespace NetBarMS.Codes.Tools
                     fieldname = columnModel.field;
                 }
                 
-                        
-
                 GridColumn column = gridView.Columns.AddVisible(fieldname, columnModel.name);                
                 column.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
                 column.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
                 column.OptionsColumn.AllowEdit = false;
+            
                 switch (columnModel.type)
                 {
                    
                     case ColumnType.C_Custom:
-                        RepositoryItemMyEdit edit = new RepositoryItemMyEdit();
-                        column.ColumnEdit = edit;
+                        {
+                            RepositoryItemHyperLinkEdit link = new RepositoryItemHyperLinkEdit();
+                            link.LinkColor = Color.Gray;
                        
+                            //link.Buttons.Add()
+                            link.Caption = fieldname;
 
+                            column.ColumnEdit = link;
+                            column.OptionsColumn.AllowEdit = true;
+                            DataColumn dataColumn = new DataColumn(fieldname);
+                            table.Columns.Add(dataColumn);
+                        }
+                       
 
                         break;
                     #region 添加复选框
@@ -112,6 +127,10 @@ namespace NetBarMS.Codes.Tools
                             RepositoryItemButtonEdit buttonEdit = new RepositoryItemButtonEdit();
                             buttonEdit.Buttons.Clear();
                             buttonEdit.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+                            buttonEdit.AppearanceFocused.BackColor = Color.Green;
+                            buttonEdit.AppearanceFocused.ForeColor = Color.Green;
+                            buttonEdit.Appearance.ForeColor = Color.Green;
+
                             //buttonEdit.ButtonsStyle = BorderStyles.NoBorder;
                             //buttonEdit.BorderStyle = BorderStyles.NoBorder;
                             //buttonEdit.AutoHeight = false;
@@ -119,6 +138,7 @@ namespace NetBarMS.Codes.Tools
                             {
                                 buttonEdit.ButtonClick += buttonclik;
                             }
+                           
                             #region 添加按钮
                             int num = 0;
                             int width = 8;
@@ -128,28 +148,31 @@ namespace NetBarMS.Codes.Tools
                                 char[] splits = { '.' };
                                 string[] names = name.Split(splits);
 
-
                                 EditorButton button = new EditorButton();
                                 button.Kind = ButtonPredefines.Glyph;
-
+                                button.Appearance.ForeColor = Color.Blue;
+                                
                                 //按钮显示
                                 button.Visible = true;
                                 button.Tag = fieldname + "_" + num;
-                                //button.Appearance.Options.UseBackColor = true;
                                 //button.Appearance.BackColor = Color.Red;
-                                Image btnImg = (System.Drawing.Bitmap)Imgs.ResourceManager.GetObject(names[1]);
-                                if(btnImg != null)
-                                {
-                                    button.Image =btnImg;
-                                    width += btnImg.Width+8;
-                                }
-                                else
-                                {
-                                    button.Caption = names[0];
-                                    width += 50;
-                                }
-                                button.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-                                button.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+                               // Image btnImg = (System.Drawing.Bitmap)Imgs.ResourceManager.GetObject(names[1]);
+                                button.Caption = names[0];
+
+                                //if (btnImg != null)
+                                //{
+                                //    button.Image =btnImg;
+                                //    width += btnImg.Width+8;
+                                //}
+                                //else
+                                //{
+                                //    button.Caption = names[0];
+                                //    width += 50;
+                                //}
+                                width += 50;
+
+                                //button.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+                                button.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
                                 buttonEdit.Buttons.Add(button);
                                 num++;
                             }
@@ -192,7 +215,12 @@ namespace NetBarMS.Codes.Tools
 
         }
 
-      
+        
+       
+
+
+
+
 
         /// <summary>
         ///  设置GridControl下的GridView

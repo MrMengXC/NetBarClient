@@ -12,6 +12,8 @@ using NetBarMS.Codes.Tools;
 using System.IO;
 using static NetBarMS.Codes.Tools.NetMessageManage;
 using NetBarMS.Codes.Tools.FlowManage;
+using NetBarMS.Views.Message;
+using System.Net;
 
 namespace NetBarMS.Views.HomePage
 {
@@ -21,55 +23,60 @@ namespace NetBarMS.Views.HomePage
     public partial class UserScanCodeView : RootUserControlView
     {
 
-        private string cardNum = "";
-        int recharge;
-        
+        private string cardNum = "";        //身份证号
+        private int recharge;               //充值的今晚
+        private FLOW_STATUS flowstatus = FLOW_STATUS.NONE_STATUS;     //流程状态判断返回的状态
+
+        #region 初始化方法
         public UserScanCodeView(string card,int money)
         {
             InitializeComponent();
+            InitUI(card, money, FLOW_STATUS.NORMAL_STATUS);
+        }
+        public UserScanCodeView(string card, int money,FLOW_STATUS status)
+        {
+            InitializeComponent();
+            InitUI(card,money,status);
+        }
+        //初始化UI
+        private void InitUI(string card, int money, FLOW_STATUS status)
+        {
             this.titleLabel.Text = "用户充值";
             cardNum = card;
             recharge = money;
-            InitUI();
-        }
-        //初始化UI
-        private void InitUI()
-        {
-
+            this.flowstatus = status;
             //获取二维码
-            HomePageNetOperation.GetRechargeCode(GetRechargeCode, cardNum, recharge,0);
+            HomePageNetOperation.GetRechargeCode(GetRechargeCodeResult, cardNum, recharge,0);
+            //获取充值结果
             HomePageNetOperation.GetRecharge(GetRechargeResult);
 
         }
+
+        #endregion
+
+        #region 获取充值二维码和充值结果的回调
         //获取充值二维码
-        private void GetRechargeCode(ResultModel result)
+        private void GetRechargeCodeResult(ResultModel result)
         {
+
             if(result.pack.Cmd != Cmd.CMD_PRECHARGE)
             {
                 return;
             }
-
-            NetMessageManage.Manager().RemoveResultBlock(GetRechargeCode);
+            NetMessageManage.Manager().RemoveResultBlock(GetRechargeCodeResult);
             if (result.pack.Content.MessageType == 1)
             {
                 this.Invoke(new UIHandleBlock(delegate {
                     try
                     {
-                       // System.Console.WriteLine("GetRechargeCode:" + result.pack);
+                        System.Console.WriteLine("GetRechargeCodeResult:" + result.pack);
                         string wxCode = result.pack.Content.ScPreCharge.Qrcode;
-                        //System.Console.WriteLine(charge.Qrcode);
-
-                        // byte[] imagebytes = System.Text.Encoding.UTF8.GetString(charge.Qrcode);
-                        //   string mgDataStr = Encoding.UTF8.GetString(Encoding.UTF8.GetBytes(charge.Qrcode));
-                        byte[] imagebytes = Encoding.ASCII.GetBytes(wxCode);
-
-
-                        ////imagebytes = Convert.FromBase64String(Convert.ToBase64String(imagebytes));//再将字符串分拆成字节数组
-                        //MemoryStream ChangeAfterMS = new MemoryStream(imagebytes);//将字节数组保存到新的内存流上
-
-                        //this.pictureEdit1.Image = Image.FromStream(ChangeAfterMS);//将内存流保存成一张图片
+                        string url = "http://jorkenw.gnway.org:8080/" + wxCode;
+                        Stream stream = WebRequest.Create(url).GetResponse().GetResponseStream();
+                        this.pictureEdit1.Image = Image.FromStream(stream);
+                        
                     }
-                    catch(System.ArgumentException exc)
+                    catch (System.ArgumentException exc)
                     {
                         System.Console.WriteLine("exc:"+exc.ToString());
 
@@ -94,9 +101,19 @@ namespace NetBarMS.Views.HomePage
             {
                 this.Invoke(new UIHandleBlock(delegate 
                 {
-                    ActiveFlowManage.ActiveFlow().MemberPaySuccess();
+                    //充值成功，显示充值成功的界面9
+                    CloseFormHandle handle = new CloseFormHandle(delegate {                      
+                        if(this.flowstatus == FLOW_STATUS.ACTIVE_STATUS)
+                        {
+                            ActiveFlowManage.ActiveFlow().MemberPaySuccess();
+                        }
+                        this.FindForm().Close();
+                    });
+                    UserPayResultView view = new UserPayResultView();
+                    ToolsManage.ShowForm(view,false,handle);
                 }));
             }
         }
+        #endregion
     }
 }

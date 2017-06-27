@@ -47,6 +47,23 @@ namespace NetBarMS.Codes.Tools.NetOperation
             NetMessageManage.Manager().SendMsg(pack.Build(), resultBlock);
         }
         #endregion
+        #region 更新会员
+        /// <summary>
+        /// 更新会员
+        /// </summary>
+        public static void UpdateMember(DataResultBlock resultBlock, CSMemberAdd.Builder member)
+        {
+            //MessageContent.Builder content = new MessageContent.Builder();
+            //content.SetMessageType(1);
+            //content.SetCsMemberAdd(member);
+
+            //MessagePack.Builder pack = new MessagePack.Builder();
+            //pack.SetCmd(Cmd.CMD_MEMBER_ADD);
+            //pack.SetContent(content);
+
+            //NetMessageManage.Manager().SendMsg(pack.Build(), resultBlock);
+        }
+        #endregion
 
         #region 删除会员
         /// <summary>
