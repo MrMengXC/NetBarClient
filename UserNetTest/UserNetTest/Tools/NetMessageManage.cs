@@ -15,7 +15,7 @@ namespace UserNetTest.Tools
 {
     public class NetMessageManage
     {
-        private int index;
+        public int index;
         private Socket clientSocket;
         //private static NetMessageManage _instance;
         private const string ipString = "jorkenw.gnway.org";
@@ -38,6 +38,7 @@ namespace UserNetTest.Tools
         {
             index = tem;
         }
+        #region 连接服务器
         //连接服务器
         public void ConnectServer(ConnectResultBlock connect)
         {
@@ -81,9 +82,8 @@ namespace UserNetTest.Tools
                 }
             }
 
-
-
         }
+        #endregion
         #region 接收数据
         //循环接收数据
         private void ReceiveData()
@@ -97,27 +97,26 @@ namespace UserNetTest.Tools
                     Console.WriteLine("断开连接");
                     break;
                 }
-                // Console.WriteLine("Time:" + DateTime.Now);
-                byte[] receiveBytes = new byte[1024];
-                //存储数据头的所有字节数 varint32:1419 1417
-                Int32 len = clientSocket.Receive(receiveBytes, 0);
-
-                if (len > 0)
+                try
                 {
-                    try
+                    // Console.WriteLine("Time:" + DateTime.Now);
+                    byte[] receiveBytes = new byte[1024];
+                    //存储数据头的所有字节数 varint32:1419 1417
+                    Int32 len = clientSocket.Receive(receiveBytes, 0);
+                    if (len > 0)
                     {
                         //处理接受到的数据
                         HandleReceveBytes(receiveBytes, len);
                     }
-                    catch (Exception ex)
-                    {
-                        System.Console.WriteLine("接收服务器数据出错");
-                    }
                 }
-                else
+                catch(Exception exc)
                 {
+                   // System.Console.WriteLine("接收服务器数据出错");
 
                 }
+
+
+
 
 
             }
@@ -207,6 +206,7 @@ namespace UserNetTest.Tools
                     ResultBlockHandle(new ResultModel()
                     {
                         pack = pack,
+                        index = this.index,
                         error = 0,
                     });
 
@@ -221,6 +221,7 @@ namespace UserNetTest.Tools
         }
         #endregion
 
+        #region 发送数据
         // 发送数据1
         private void SendMsg(IMessageLite value)
         {
@@ -291,6 +292,8 @@ namespace UserNetTest.Tools
 
             }
         }
+        #endregion
+
         //是否连接中
         private bool IsConnected()
         {

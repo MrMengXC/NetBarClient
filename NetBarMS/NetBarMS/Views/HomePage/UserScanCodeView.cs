@@ -28,27 +28,40 @@ namespace NetBarMS.Views.HomePage
         private FLOW_STATUS flowstatus = FLOW_STATUS.NONE_STATUS;     //流程状态判断返回的状态
 
         #region 初始化方法
-        public UserScanCodeView(string card,int money)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="card">神锋证号</param>
+        /// <param name="money">充值金额</param>
+        /// <param name="offical">是否办理会员</param>
+        public UserScanCodeView(string card,int money,int offical)
         {
             InitializeComponent();
-            InitUI(card, money, FLOW_STATUS.NORMAL_STATUS);
+            InitUI(card, money, FLOW_STATUS.NORMAL_STATUS,offical);
         }
-        public UserScanCodeView(string card, int money,FLOW_STATUS status)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="card">身份证号</param>
+        /// <param name="money">充值金额</param>
+        /// <param name="status">流程状态</param>
+        /// <param name="offical">是否办理会员</param>
+        public UserScanCodeView(string card, int money,FLOW_STATUS status, int offical)
         {
             InitializeComponent();
-            InitUI(card,money,status);
+            InitUI(card,money,status,offical);
         }
         //初始化UI
-        private void InitUI(string card, int money, FLOW_STATUS status)
+        private void InitUI(string card, int money, FLOW_STATUS status, int offical)
         {
             this.titleLabel.Text = "用户充值";
             cardNum = card;
             recharge = money;
             this.flowstatus = status;
             //获取二维码
-            HomePageNetOperation.GetRechargeCode(GetRechargeCodeResult, cardNum, recharge,0);
+            HomePageNetOperation.GetRechargeCode(GetRechargeCodeResult, cardNum, recharge,0, offical);
             //获取充值结果
-            HomePageNetOperation.GetRecharge(GetRechargeResult);
+            //HomePageNetOperation.GetRecharge(GetRechargeResult);
 
         }
 
@@ -71,10 +84,22 @@ namespace NetBarMS.Views.HomePage
                     {
                         System.Console.WriteLine("GetRechargeCodeResult:" + result.pack);
                         string wxCode = result.pack.Content.ScPreCharge.Qrcode;
-                        string url = "http://jorkenw.gnway.org:8080/" + wxCode;
+                        string url = IdTools.IMG_HEADER + wxCode;
                         Stream stream = WebRequest.Create(url).GetResponse().GetResponseStream();
                         this.pictureEdit1.Image = Image.FromStream(stream);
-                        
+
+                        //TODO:暂时显示充值成功
+                        //充值成功，显示充值成功的界面9
+                        CloseFormHandle handle = new CloseFormHandle(delegate {
+                            if (this.flowstatus == FLOW_STATUS.ACTIVE_STATUS)
+                            {
+                                ActiveFlowManage.ActiveFlow().MemberPaySuccess();
+                            }
+                            this.FindForm().Close();
+                        });
+                        UserPayResultView view = new UserPayResultView();
+                        ToolsManage.ShowForm(view, false, handle);
+
                     }
                     catch (System.ArgumentException exc)
                     {

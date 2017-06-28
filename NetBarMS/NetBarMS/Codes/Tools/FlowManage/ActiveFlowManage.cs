@@ -56,7 +56,7 @@ namespace NetBarMS.Codes.Tools.FlowManage
                 {
                     //需要充值
                     case NEED_RECHARGE:
-                        UserScanCodeView codeView = new UserScanCodeView(this.card,50,FLOW_STATUS.ACTIVE_STATUS);
+                        UserScanCodeView codeView = new UserScanCodeView(this.card,50,FLOW_STATUS.ACTIVE_STATUS,(int)PRECHARGE_TYPE.NOT_MEMBER);
                         ToolsManage.ShowForm(codeView, false);
                         break;
                     //需要注册

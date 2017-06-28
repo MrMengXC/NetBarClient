@@ -75,16 +75,17 @@ namespace NetBarMS.Codes.Tools.NetOperation
         }
         #endregion
 
-
         #region 获取充值二维码
         // 获取充值二维码
-        public static void GetRechargeCode(DataResultBlock resultBlock, string card,int money,int payMode)
+        public static void GetRechargeCode(DataResultBlock resultBlock, string card,int money,int payMode,int offical)
         {
             CSPreCharge.Builder pay = new CSPreCharge.Builder();
             pay.Cardnumber = card;
             pay.Amount = money;
             pay.Paymode = payMode; //1 - 微信 2 - 支付宝 3 - 现金
+            pay.Offical = offical;  //是否办理正式会员1办理 0不办理
 
+            //System.Console.WriteLine("pay:"+pay);
             MessageContent.Builder content = new MessageContent.Builder();
             content.MessageType = 1;
             content.CsPreCharge = pay.Build();
@@ -102,7 +103,7 @@ namespace NetBarMS.Codes.Tools.NetOperation
         public static void GetRecharge(DataResultBlock resultBlock)
         {
             MessagePack.Builder pack = new MessagePack.Builder();
-            pack.SetCmd(Cmd.CMD_PREBUY);
+            pack.SetCmd(Cmd.CMD_TOCHARGE);
             NetMessageManage.Manager().SendMsg(pack.Build(), resultBlock);
         }
         #endregion

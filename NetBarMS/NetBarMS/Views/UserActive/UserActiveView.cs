@@ -53,7 +53,7 @@ namespace NetBarMS.Views.UserUseCp
             {
                 return;
             }
-            UserScanCodeView view = new UserScanCodeView(this.textEdit1.Text, 50);
+            UserScanCodeView view = new UserScanCodeView(this.textEdit1.Text, 50, (int)PRECHARGE_TYPE.NOT_MEMBER);
             ToolsManage.ShowForm(view, false);
         }
         #endregion

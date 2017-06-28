@@ -13,6 +13,10 @@ namespace NetBarMS.Codes.Tools
         /// </summary>
         public static int TEM_MEMBER_ID = 1;
 
+        /// <summary>
+        /// 图片前标
+        /// </summary>
+        public static string IMG_HEADER = "http://jorkenw.gnway.org:8080/";
         
 
     }

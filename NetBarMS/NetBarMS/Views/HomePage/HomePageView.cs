@@ -19,12 +19,67 @@ using NetBarMS.Views.OtherMain;
 using NetBarMS.Views.SystemManage;
 using NetBarMS.Views.ManagerManage;
 using NetBarMS.Codes.Tools.NetOperation;
+using DevExpress.XtraEditors;
 
 namespace NetBarMS.Views.HomePage
 {
-    public partial class HomePageView : UserControl
+    public partial class HomePageView : RootUserControlView
     {
-       
+
+        public HomePageView()
+        {
+            InitializeComponent();
+            InitUI();
+        }
+
+        private void InitUI()
+        {
+            //添加按钮列
+            //添加点击事件
+            //this.manageTreeView.NodeMouseClick += ManageTreeViewNodeMouseClick;
+            //this.manageTreeView.ShowLines = false;
+            //this.manageTreeView.ImageIndex
+
+            List<HomePageNodeModel> modelList = XMLDataManage.ReadNodesXML();
+           
+            for (int i = modelList.Count-1; i>=0; i--)
+            {
+                HomePageNodeModel nodeModel = modelList[i];
+                SimpleButton button = new SimpleButton();
+                button.Text = nodeModel.nodeName;
+                button.Size = new Size(50, 50);
+                button.Dock = DockStyle.Top;
+                button.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+                
+                this.functionPanel.Controls.Add(button);
+
+
+
+                //TreeNode rootTreeNode = new TreeNode(nodeModel.nodeName);
+                //rootTreeNode.Tag = nodeModel.nodeTag;
+                //rootTreeNode.ForeColor = Color.White;
+
+                //foreach (HomePageNodeModel childNodeModel in nodeModel.childNodes)
+                //{
+                //    TreeNode childTreeNode = new TreeNode(childNodeModel.nodeName);
+                //    childTreeNode.Tag = childNodeModel.nodeTag;
+                //    rootTreeNode.Nodes.Add(childTreeNode);
+                //    childTreeNode.ForeColor = Color.White;
+
+                //}
+                //this.manageTreeView.Nodes.Add(rootTreeNode);
+
+
+            }
+
+
+        }
+
+
+
+
+
+
     }
 
 }

@@ -107,36 +107,37 @@ public static partial class ClientProtocol {
           "DAoEbmFtZRgBIAIoCRISCgpjYXJkbnVtYmVyGAIgAigJEg0KBXJpZ2h0GAMg", 
           "AigJEg8KB2JhbGFuY2UYBCACKAUSEQoJdXNlZG1vbmV5GAUgAigFEhAKCHVz", 
           "ZWR0aW1lGAYgAigFIh4KCENTSHVuZ3VwEhIKCmNhcmRudW1iZXIYASACKAki", 
-          "QgoLQ1NQcmVDaGFyZ2USEgoKY2FyZG51bWJlchgBIAIoCRIOCgZhbW91bnQY", 
-          "AiACKAUSDwoHcGF5bW9kZRgDIAIoBSIdCgtTQ1ByZUNoYXJnZRIOCgZxcmNv", 
-          "ZGUYASACKAkicQoKU0NUb0NoYXJnZRIMCgRuYW1lGAEgAigJEhIKCmNhcmRu", 
-          "dW1iZXIYAiACKAkSDQoFcmlnaHQYAyACKAkSEAoIcmVjaGFyZ2UYBCACKAUS", 
-          "DwoHYmFsYW5jZRgFIAIoBRIPCgdpbnRlZ2FsGAYgAigFIiUKBlNDU2hvcBIb", 
-          "CgVnb29kcxgBIAMoCzIMLlN0cnVjdEdvb2RzIi4KCUNTQ2FydEFkZBIPCgdn", 
-          "b29kc2lkGAEgAigFEhAKCGdvb2RzbnVtGAIgAigFIi4KCUNTQ2FydERlbBIP", 
-          "Cgdnb29kc2lkGAEgAigFEhAKCGdvb2RzbnVtGAIgAigFIh4KCENTUHJlQnV5", 
-          "EhIKCmNhcmRudW1iZXIYASACKAkiGgoIU0NQcmVCdXkSDgoGcXJjb2RlGAEg", 
-          "AigJIoQBCgdTQ1RvQnV5EgwKBG5hbWUYASACKAkSEgoKY2FyZG51bWJlchgC", 
-          "IAIoCRINCgVyaWdodBgDIAIoCRIRCgl1c2VkbW9uZXkYBCACKAUSEwoLdXNl", 
-          "ZGludGVnYWwYBSACKAUSDwoHYmFsYW5jZRgGIAIoBRIPCgdpbnRlZ2FsGAcg", 
-          "AigFIhwKDFNDU3lzTWVzc2FnZRIMCgR0ZXh0GAEgAigJIh0KDUNTVXNlck1l", 
-          "c3NhZ2USDAoEdGV4dBgBIAIoCSJPCgpDU0V2YWx1YXRlEhEKCXN0YWZmU3Rh", 
-          "chgBIAIoBRIPCgdlbnZTdGFyGAIgAigFEg8KB2RldlN0YXIYAyACKAUSDAoE", 
-          "ZXZhbBgEIAEoCSIdCgpTQ0V2YWx1YXRlEg8KB2ludGVnYWwYASACKAUiIwoM", 
-          "Q1NWZXJpZnlDb2RlEhMKC3Bob25lbnVtYmVyGAEgAigJIiIKDFNDVmVyaWZ5", 
-          "Q29kZRISCgp2ZXJpZnljb2RlGAEgAigJIjcKDENTQmluZE1vYmlsZRITCgtw", 
-          "aG9uZW51bWJlchgBIAIoCRISCgp2ZXJpZnljb2RlGAIgAigJIh8KDFNDQmlu", 
-          "ZE1vYmlsZRIPCgdpbnRlZ2FsGAEgAigFKpYDCgNDbWQSFAoPQ01EX0NMSUVO", 
-          "VF9PUEVOENAPEhUKEENNRF9DTElFTlRfQ0xPU0UQ0Q8SFQoQQ01EX0NMSUVO", 
-          "VF9MT0dPThDSDxIWChFDTURfQ0xJRU5UX0xPR09GRhDTDxIWChFDTURfQ0xJ", 
-          "RU5UX0hVTkdVUBDUDxISCg1DTURfUFJFQ0hBUkdFENUPEhEKDENNRF9UT0NI", 
-          "QVJHRRDWDxIUCg9DTURfQ0xJRU5UX1NIT1AQ1w8SGAoTQ01EX0NMSUVOVF9D", 
-          "QVJUX0FERBDYDxIYChNDTURfQ0xJRU5UX0NBUlRfREVMENkPEg8KCkNNRF9Q", 
-          "UkVCVVkQ2g8SDgoJQ01EX1RPQlVZENsPEhoKFUNNRF9DTElFTlRfU1lTTUVT", 
-          "U0FHRRDcDxIbChZDTURfQ0xJRU5UX1VTRVJNRVNTQUdFEN0PEhgKE0NNRF9D", 
-          "TElFTlRfRVZBTFVBVEUQ3g8SGgoVQ01EX0NMSUVOVF9WRVJJRllDT0RFEN8P", 
-          "EhoKFUNNRF9DTElFTlRfQklORE1PQklMRRDgD0IvCh1jb20uc2t5c29mdC5j", 
-        "b3JlLmF1dG8ubWVzc2FnZUIOQ2xpZW50UHJvdG9jb2w="));
+          "UwoLQ1NQcmVDaGFyZ2USEgoKY2FyZG51bWJlchgBIAIoCRIOCgZhbW91bnQY", 
+          "AiACKAUSDwoHcGF5bW9kZRgDIAIoBRIPCgdvZmZpY2FsGAQgAigFIh0KC1ND", 
+          "UHJlQ2hhcmdlEg4KBnFyY29kZRgBIAIoCSJxCgpTQ1RvQ2hhcmdlEgwKBG5h", 
+          "bWUYASACKAkSEgoKY2FyZG51bWJlchgCIAIoCRINCgVyaWdodBgDIAIoCRIQ", 
+          "CghyZWNoYXJnZRgEIAIoBRIPCgdiYWxhbmNlGAUgAigFEg8KB2ludGVnYWwY", 
+          "BiACKAUiJQoGU0NTaG9wEhsKBWdvb2RzGAEgAygLMgwuU3RydWN0R29vZHMi", 
+          "LgoJQ1NDYXJ0QWRkEg8KB2dvb2RzaWQYASACKAUSEAoIZ29vZHNudW0YAiAC", 
+          "KAUiLgoJQ1NDYXJ0RGVsEg8KB2dvb2RzaWQYASACKAUSEAoIZ29vZHNudW0Y", 
+          "AiACKAUiHgoIQ1NQcmVCdXkSEgoKY2FyZG51bWJlchgBIAIoCSIaCghTQ1By", 
+          "ZUJ1eRIOCgZxcmNvZGUYASACKAkihAEKB1NDVG9CdXkSDAoEbmFtZRgBIAIo", 
+          "CRISCgpjYXJkbnVtYmVyGAIgAigJEg0KBXJpZ2h0GAMgAigJEhEKCXVzZWRt", 
+          "b25leRgEIAIoBRITCgt1c2VkaW50ZWdhbBgFIAIoBRIPCgdiYWxhbmNlGAYg", 
+          "AigFEg8KB2ludGVnYWwYByACKAUiHAoMU0NTeXNNZXNzYWdlEgwKBHRleHQY", 
+          "ASACKAkiHQoNQ1NVc2VyTWVzc2FnZRIMCgR0ZXh0GAEgAigJIk8KCkNTRXZh", 
+          "bHVhdGUSEQoJc3RhZmZTdGFyGAEgAigFEg8KB2VudlN0YXIYAiACKAUSDwoH", 
+          "ZGV2U3RhchgDIAIoBRIMCgRldmFsGAQgASgJIh0KClNDRXZhbHVhdGUSDwoH", 
+          "aW50ZWdhbBgBIAIoBSIjCgxDU1ZlcmlmeUNvZGUSEwoLcGhvbmVudW1iZXIY", 
+          "ASACKAkiIgoMU0NWZXJpZnlDb2RlEhIKCnZlcmlmeWNvZGUYASACKAkiNwoM", 
+          "Q1NCaW5kTW9iaWxlEhMKC3Bob25lbnVtYmVyGAEgAigJEhIKCnZlcmlmeWNv", 
+          "ZGUYAiACKAkiHwoMU0NCaW5kTW9iaWxlEg8KB2ludGVnYWwYASACKAUqlgMK", 
+          "A0NtZBIUCg9DTURfQ0xJRU5UX09QRU4Q0A8SFQoQQ01EX0NMSUVOVF9DTE9T", 
+          "RRDRDxIVChBDTURfQ0xJRU5UX0xPR09OENIPEhYKEUNNRF9DTElFTlRfTE9H", 
+          "T0ZGENMPEhYKEUNNRF9DTElFTlRfSFVOR1VQENQPEhIKDUNNRF9QUkVDSEFS", 
+          "R0UQ1Q8SEQoMQ01EX1RPQ0hBUkdFENYPEhQKD0NNRF9DTElFTlRfU0hPUBDX", 
+          "DxIYChNDTURfQ0xJRU5UX0NBUlRfQUREENgPEhgKE0NNRF9DTElFTlRfQ0FS", 
+          "VF9ERUwQ2Q8SDwoKQ01EX1BSRUJVWRDaDxIOCglDTURfVE9CVVkQ2w8SGgoV", 
+          "Q01EX0NMSUVOVF9TWVNNRVNTQUdFENwPEhsKFkNNRF9DTElFTlRfVVNFUk1F", 
+          "U1NBR0UQ3Q8SGAoTQ01EX0NMSUVOVF9FVkFMVUFURRDeDxIaChVDTURfQ0xJ", 
+          "RU5UX1ZFUklGWUNPREUQ3w8SGgoVQ01EX0NMSUVOVF9CSU5ETU9CSUxFEOAP", 
+          "Qi8KHWNvbS5za3lzb2Z0LmNvcmUuYXV0by5tZXNzYWdlQg5DbGllbnRQcm90", 
+        "b2NvbA=="));
     pbd::FileDescriptor.InternalDescriptorAssigner assigner = delegate(pbd::FileDescriptor root) {
       descriptor = root;
       internal__static_MessagePack__Descriptor = Descriptor.MessageTypes[0];
@@ -178,7 +179,7 @@ public static partial class ClientProtocol {
       internal__static_CSPreCharge__Descriptor = Descriptor.MessageTypes[9];
       internal__static_CSPreCharge__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSPreCharge, global::CSPreCharge.Builder>(internal__static_CSPreCharge__Descriptor,
-              new string[] { "Cardnumber", "Amount", "Paymode", });
+              new string[] { "Cardnumber", "Amount", "Paymode", "Offical", });
       internal__static_SCPreCharge__Descriptor = Descriptor.MessageTypes[10];
       internal__static_SCPreCharge__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::SCPreCharge, global::SCPreCharge.Builder>(internal__static_SCPreCharge__Descriptor,
@@ -5107,8 +5108,8 @@ public sealed partial class CSHungup : pb::GeneratedMessage<CSHungup, CSHungup.B
 public sealed partial class CSPreCharge : pb::GeneratedMessage<CSPreCharge, CSPreCharge.Builder> {
   private CSPreCharge() { }
   private static readonly CSPreCharge defaultInstance = new CSPreCharge().MakeReadOnly();
-  private static readonly string[] _cSPreChargeFieldNames = new string[] { "amount", "cardnumber", "paymode" };
-  private static readonly uint[] _cSPreChargeFieldTags = new uint[] { 16, 10, 24 };
+  private static readonly string[] _cSPreChargeFieldNames = new string[] { "amount", "cardnumber", "offical", "paymode" };
+  private static readonly uint[] _cSPreChargeFieldTags = new uint[] { 16, 10, 32, 24 };
   public static CSPreCharge DefaultInstance {
     get { return defaultInstance; }
   }
@@ -5159,11 +5160,22 @@ public sealed partial class CSPreCharge : pb::GeneratedMessage<CSPreCharge, CSPr
     get { return paymode_; }
   }
   
+  public const int OfficalFieldNumber = 4;
+  private bool hasOffical;
+  private int offical_;
+  public bool HasOffical {
+    get { return hasOffical; }
+  }
+  public int Offical {
+    get { return offical_; }
+  }
+  
   public override bool IsInitialized {
     get {
       if (!hasCardnumber) return false;
       if (!hasAmount) return false;
       if (!hasPaymode) return false;
+      if (!hasOffical) return false;
       return true;
     }
   }
@@ -5178,7 +5190,10 @@ public sealed partial class CSPreCharge : pb::GeneratedMessage<CSPreCharge, CSPr
       output.WriteInt32(2, field_names[0], Amount);
     }
     if (hasPaymode) {
-      output.WriteInt32(3, field_names[2], Paymode);
+      output.WriteInt32(3, field_names[3], Paymode);
+    }
+    if (hasOffical) {
+      output.WriteInt32(4, field_names[2], Offical);
     }
     UnknownFields.WriteTo(output);
   }
@@ -5205,6 +5220,9 @@ public sealed partial class CSPreCharge : pb::GeneratedMessage<CSPreCharge, CSPr
     }
     if (hasPaymode) {
       size += pb::CodedOutputStream.ComputeInt32Size(3, Paymode);
+    }
+    if (hasOffical) {
+      size += pb::CodedOutputStream.ComputeInt32Size(4, Offical);
     }
     size += UnknownFields.SerializedSize;
     memoizedSerializedSize = size;
@@ -5337,6 +5355,9 @@ public sealed partial class CSPreCharge : pb::GeneratedMessage<CSPreCharge, CSPr
       if (other.HasPaymode) {
         Paymode = other.Paymode;
       }
+      if (other.HasOffical) {
+        Offical = other.Offical;
+      }
       this.MergeUnknownFields(other.UnknownFields);
       return this;
     }
@@ -5390,6 +5411,10 @@ public sealed partial class CSPreCharge : pb::GeneratedMessage<CSPreCharge, CSPr
           }
           case 24: {
             result.hasPaymode = input.ReadInt32(ref result.paymode_);
+            break;
+          }
+          case 32: {
+            result.hasOffical = input.ReadInt32(ref result.offical_);
             break;
           }
         }
@@ -5460,6 +5485,26 @@ public sealed partial class CSPreCharge : pb::GeneratedMessage<CSPreCharge, CSPr
       PrepareBuilder();
       result.hasPaymode = false;
       result.paymode_ = 0;
+      return this;
+    }
+    
+    public bool HasOffical {
+      get { return result.hasOffical; }
+    }
+    public int Offical {
+      get { return result.Offical; }
+      set { SetOffical(value); }
+    }
+    public Builder SetOffical(int value) {
+      PrepareBuilder();
+      result.hasOffical = true;
+      result.offical_ = value;
+      return this;
+    }
+    public Builder ClearOffical() {
+      PrepareBuilder();
+      result.hasOffical = false;
+      result.offical_ = 0;
       return this;
     }
   }

@@ -29,18 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.simpleButton23 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton22 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton21 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton20 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton19 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton18 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton17 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton16 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton15 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton14 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton13 = new DevExpress.XtraEditors.SimpleButton();
+            this.functionPanel = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -64,174 +53,32 @@
             this.simpleButton11 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton12 = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.searchControl1 = new DevExpress.XtraEditors.SearchControl();
-            this.homePageListPanel = new System.Windows.Forms.Panel();
+            this.contentBgPanel = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
-            this.panel7.SuspendLayout();
             this.panel3.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.searchControl1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panel1.Controls.Add(this.panel7);
+            this.panel1.Controls.Add(this.functionPanel);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(195, 943);
             this.panel1.TabIndex = 9;
             // 
-            // panel7
+            // functionPanel
             // 
-            this.panel7.Controls.Add(this.simpleButton23);
-            this.panel7.Controls.Add(this.simpleButton22);
-            this.panel7.Controls.Add(this.simpleButton21);
-            this.panel7.Controls.Add(this.simpleButton20);
-            this.panel7.Controls.Add(this.simpleButton19);
-            this.panel7.Controls.Add(this.simpleButton18);
-            this.panel7.Controls.Add(this.simpleButton17);
-            this.panel7.Controls.Add(this.simpleButton16);
-            this.panel7.Controls.Add(this.simpleButton15);
-            this.panel7.Controls.Add(this.simpleButton14);
-            this.panel7.Controls.Add(this.simpleButton13);
-            this.panel7.Location = new System.Drawing.Point(51, 112);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(144, 620);
-            this.panel7.TabIndex = 0;
-            // 
-            // simpleButton23
-            // 
-            this.simpleButton23.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.simpleButton23.Dock = System.Windows.Forms.DockStyle.Top;
-            this.simpleButton23.Location = new System.Drawing.Point(0, 480);
-            this.simpleButton23.Margin = new System.Windows.Forms.Padding(0);
-            this.simpleButton23.Name = "simpleButton23";
-            this.simpleButton23.Size = new System.Drawing.Size(144, 48);
-            this.simpleButton23.TabIndex = 10;
-            this.simpleButton23.Text = "设备信息管理";
-            // 
-            // simpleButton22
-            // 
-            this.simpleButton22.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.simpleButton22.Dock = System.Windows.Forms.DockStyle.Top;
-            this.simpleButton22.Location = new System.Drawing.Point(0, 432);
-            this.simpleButton22.Margin = new System.Windows.Forms.Padding(0);
-            this.simpleButton22.Name = "simpleButton22";
-            this.simpleButton22.Size = new System.Drawing.Size(144, 48);
-            this.simpleButton22.TabIndex = 9;
-            this.simpleButton22.Text = "日志管理";
-            // 
-            // simpleButton21
-            // 
-            this.simpleButton21.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.simpleButton21.Dock = System.Windows.Forms.DockStyle.Top;
-            this.simpleButton21.Location = new System.Drawing.Point(0, 384);
-            this.simpleButton21.Margin = new System.Windows.Forms.Padding(0);
-            this.simpleButton21.Name = "simpleButton21";
-            this.simpleButton21.Size = new System.Drawing.Size(144, 48);
-            this.simpleButton21.TabIndex = 8;
-            this.simpleButton21.Text = "员工账号管理";
-            // 
-            // simpleButton20
-            // 
-            this.simpleButton20.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.simpleButton20.Dock = System.Windows.Forms.DockStyle.Top;
-            this.simpleButton20.Location = new System.Drawing.Point(0, 336);
-            this.simpleButton20.Margin = new System.Windows.Forms.Padding(0);
-            this.simpleButton20.Name = "simpleButton20";
-            this.simpleButton20.Size = new System.Drawing.Size(144, 48);
-            this.simpleButton20.TabIndex = 7;
-            this.simpleButton20.Text = "系统管理";
-            // 
-            // simpleButton19
-            // 
-            this.simpleButton19.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.simpleButton19.Dock = System.Windows.Forms.DockStyle.Top;
-            this.simpleButton19.Location = new System.Drawing.Point(0, 288);
-            this.simpleButton19.Margin = new System.Windows.Forms.Padding(0);
-            this.simpleButton19.Name = "simpleButton19";
-            this.simpleButton19.Size = new System.Drawing.Size(144, 48);
-            this.simpleButton19.TabIndex = 6;
-            this.simpleButton19.Text = "评价管理";
-            // 
-            // simpleButton18
-            // 
-            this.simpleButton18.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.simpleButton18.Dock = System.Windows.Forms.DockStyle.Top;
-            this.simpleButton18.Location = new System.Drawing.Point(0, 240);
-            this.simpleButton18.Margin = new System.Windows.Forms.Padding(0);
-            this.simpleButton18.Name = "simpleButton18";
-            this.simpleButton18.Size = new System.Drawing.Size(144, 48);
-            this.simpleButton18.TabIndex = 5;
-            this.simpleButton18.Text = "绩效考核";
-            // 
-            // simpleButton17
-            // 
-            this.simpleButton17.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.simpleButton17.Dock = System.Windows.Forms.DockStyle.Top;
-            this.simpleButton17.Location = new System.Drawing.Point(0, 192);
-            this.simpleButton17.Margin = new System.Windows.Forms.Padding(0);
-            this.simpleButton17.Name = "simpleButton17";
-            this.simpleButton17.Size = new System.Drawing.Size(144, 48);
-            this.simpleButton17.TabIndex = 4;
-            this.simpleButton17.Text = "系统查询";
-            // 
-            // simpleButton16
-            // 
-            this.simpleButton16.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.simpleButton16.Dock = System.Windows.Forms.DockStyle.Top;
-            this.simpleButton16.Location = new System.Drawing.Point(0, 144);
-            this.simpleButton16.Margin = new System.Windows.Forms.Padding(0);
-            this.simpleButton16.Name = "simpleButton16";
-            this.simpleButton16.Size = new System.Drawing.Size(144, 48);
-            this.simpleButton16.TabIndex = 3;
-            this.simpleButton16.Text = "营收统计";
-            // 
-            // simpleButton15
-            // 
-            this.simpleButton15.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.simpleButton15.Dock = System.Windows.Forms.DockStyle.Top;
-            this.simpleButton15.Location = new System.Drawing.Point(0, 96);
-            this.simpleButton15.Margin = new System.Windows.Forms.Padding(0);
-            this.simpleButton15.Name = "simpleButton15";
-            this.simpleButton15.Size = new System.Drawing.Size(144, 48);
-            this.simpleButton15.TabIndex = 2;
-            this.simpleButton15.Text = "费率管理";
-            // 
-            // simpleButton14
-            // 
-            this.simpleButton14.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.simpleButton14.Dock = System.Windows.Forms.DockStyle.Top;
-            this.simpleButton14.Location = new System.Drawing.Point(0, 48);
-            this.simpleButton14.Margin = new System.Windows.Forms.Padding(0);
-            this.simpleButton14.Name = "simpleButton14";
-            this.simpleButton14.Size = new System.Drawing.Size(144, 48);
-            this.simpleButton14.TabIndex = 1;
-            this.simpleButton14.Text = "商品管理";
-            // 
-            // simpleButton13
-            // 
-            this.simpleButton13.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.simpleButton13.Dock = System.Windows.Forms.DockStyle.Top;
-            this.simpleButton13.Location = new System.Drawing.Point(0, 0);
-            this.simpleButton13.Margin = new System.Windows.Forms.Padding(0);
-            this.simpleButton13.Name = "simpleButton13";
-            this.simpleButton13.Size = new System.Drawing.Size(144, 48);
-            this.simpleButton13.TabIndex = 0;
-            this.simpleButton13.Text = "会员管理";
+            this.functionPanel.Location = new System.Drawing.Point(51, 70);
+            this.functionPanel.Name = "functionPanel";
+            this.functionPanel.Size = new System.Drawing.Size(144, 870);
+            this.functionPanel.TabIndex = 0;
             // 
             // panel3
             // 
@@ -485,91 +332,26 @@
             this.labelControl5.TabIndex = 55;
             this.labelControl5.Text = "东馨网吧";
             // 
-            // panel2
+            // contentBgPanel
             // 
-            this.panel2.Controls.Add(this.flowLayoutPanel1);
-            this.panel2.Controls.Add(this.comboBox1);
-            this.panel2.Controls.Add(this.searchControl1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(195, 70);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1545, 42);
-            this.panel2.TabIndex = 43;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.simpleButton2);
-            this.flowLayoutPanel1.Controls.Add(this.simpleButton1);
-            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(1278, 5);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(239, 34);
-            this.flowLayoutPanel1.TabIndex = 40;
-            // 
-            // simpleButton2
-            // 
-            this.simpleButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButton2.Appearance.BackColor = System.Drawing.Color.Red;
-            this.simpleButton2.Appearance.Options.UseBackColor = true;
-            this.simpleButton2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.simpleButton2.Location = new System.Drawing.Point(161, 3);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton2.TabIndex = 39;
-            this.simpleButton2.Text = "列表视图";
-            // 
-            // simpleButton1
-            // 
-            this.simpleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButton1.Appearance.BackColor = System.Drawing.Color.Red;
-            this.simpleButton1.Appearance.Options.UseBackColor = true;
-            this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.simpleButton1.Location = new System.Drawing.Point(80, 3);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton1.TabIndex = 38;
-            this.simpleButton1.Text = "电脑视图";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(9, 9);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 20);
-            this.comboBox1.TabIndex = 36;
-            // 
-            // searchControl1
-            // 
-            this.searchControl1.Location = new System.Drawing.Point(136, 9);
-            this.searchControl1.Name = "searchControl1";
-            this.searchControl1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Repository.ClearButton(),
-            new DevExpress.XtraEditors.Repository.SearchButton()});
-            this.searchControl1.Size = new System.Drawing.Size(100, 20);
-            this.searchControl1.TabIndex = 37;
-            // 
-            // homePageListPanel
-            // 
-            this.homePageListPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.homePageListPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.homePageListPanel.Location = new System.Drawing.Point(195, 112);
-            this.homePageListPanel.Name = "homePageListPanel";
-            this.homePageListPanel.Size = new System.Drawing.Size(1545, 831);
-            this.homePageListPanel.TabIndex = 44;
+            this.contentBgPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.contentBgPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.contentBgPanel.Location = new System.Drawing.Point(195, 70);
+            this.contentBgPanel.Name = "contentBgPanel";
+            this.contentBgPanel.Size = new System.Drawing.Size(1545, 873);
+            this.contentBgPanel.TabIndex = 44;
             // 
             // HomePageView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.homePageListPanel);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.contentBgPanel);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Name = "HomePageView";
             this.Size = new System.Drawing.Size(1740, 943);
             this.panel1.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.flowLayoutPanel3.ResumeLayout(false);
@@ -580,9 +362,6 @@
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.flowLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.searchControl1.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -613,24 +392,7 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton11;
         private DevExpress.XtraEditors.SimpleButton simpleButton12;
         private DevExpress.XtraEditors.LabelControl labelControl5;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private DevExpress.XtraEditors.SearchControl searchControl1;
-        private System.Windows.Forms.Panel homePageListPanel;
-        private System.Windows.Forms.Panel panel7;
-        private DevExpress.XtraEditors.SimpleButton simpleButton13;
-        private DevExpress.XtraEditors.SimpleButton simpleButton22;
-        private DevExpress.XtraEditors.SimpleButton simpleButton21;
-        private DevExpress.XtraEditors.SimpleButton simpleButton20;
-        private DevExpress.XtraEditors.SimpleButton simpleButton19;
-        private DevExpress.XtraEditors.SimpleButton simpleButton18;
-        private DevExpress.XtraEditors.SimpleButton simpleButton17;
-        private DevExpress.XtraEditors.SimpleButton simpleButton16;
-        private DevExpress.XtraEditors.SimpleButton simpleButton15;
-        private DevExpress.XtraEditors.SimpleButton simpleButton14;
-        private DevExpress.XtraEditors.SimpleButton simpleButton23;
+        private System.Windows.Forms.Panel contentBgPanel;
+        private System.Windows.Forms.Panel functionPanel;
     }
 }

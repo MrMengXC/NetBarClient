@@ -168,45 +168,7 @@ namespace NetBarMS.Views.NetUserManage
             //显示提示
             OpenMemberResultView view = new OpenMemberResultView();
             ToolsManage.ShowForm(view, false, closeHandle);
-
-            return;
-
-
-            //显示提示
-            if (this.memberIndex <0)
-            {
-                MessageBox.Show("请选择会员类型");
-                return;
-            }
-
-            StructCard.Builder card = new StructCard.Builder()
-            {
-                Name = nameLabel.Text.Split(sp)[1],
-                Gender = genderLabel.Text.Split(sp)[1].Equals("男")?1:0,
-
-                Nation = nationLabel.Text.Split(sp)[1],
-                Number = cardNumLabel.Text.Split(sp)[1],
-                Birthday = birthdayLabel.Text.Split(sp)[1],
-                Address = addressLabel.Text.Split(sp)[1],
-                Organization = organLabel.Text.Split(sp)[1],
-                HeadUrl = "#dasdasd#",
-                Vld = cardValidityLabel.Text.Split(sp)[1],
-            };
-
-
-            int money = int.Parse(this.moneyTextEdit.Text);
-            CSMemberAdd.Builder member = new CSMemberAdd.Builder()
-            {
-                Cardinfo = card.Build(),
-                Membertype = this.memberTypes[memberIndex].Id,
-                Recharge = money,
-                Phone = this.phoneTextEdit.Text,
-            };
-            //MemberNetOperation
-            MemberNetOperation.AddMember(AddMemberBlock, member);
         }
-
-       
         #endregion
 
         #region 控件的操作
@@ -255,7 +217,7 @@ namespace NetBarMS.Views.NetUserManage
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             int money = int.Parse(this.moneyTextEdit.Text);
-            UserScanCodeView view = new UserScanCodeView(cardNumLabel.Text.Split(sp)[1], money);
+            UserScanCodeView view = new UserScanCodeView(cardNumLabel.Text.Split(sp)[1], money, (int)PRECHARGE_TYPE.OPEN_MEMBER);
             ToolsManage.ShowForm(view, false);
         }
         #endregion

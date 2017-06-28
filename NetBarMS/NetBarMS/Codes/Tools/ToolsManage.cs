@@ -31,6 +31,12 @@ namespace NetBarMS.Codes.Tools
         NORMAL_STATUS,      //正常状态，不需要其他操作
         ACTIVE_STATUS,      //激活状态，返回激活页面，再次激活
     }
+    //充值类型
+    public enum PRECHARGE_TYPE
+    {
+        NOT_MEMBER = 0,        //不开通会员
+        OPEN_MEMBER,      //开通会员
+    }
     class ToolsManage
     {
         #region 显示自定义窗体

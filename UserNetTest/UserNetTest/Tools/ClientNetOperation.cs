@@ -97,12 +97,12 @@ namespace UserNetTest.Tools
                 CsLogoff = off.Build(),
             };
 
-
             MessagePack.Builder pack = new MessagePack.Builder()
             {
                 Cmd = Cmd.CMD_CLIENT_LOGOFF,
                 Content = content.Build(),
             };
+
             manage.SendMsg(pack.Build(), resultBlock);
         }
         #endregion
@@ -116,6 +116,7 @@ namespace UserNetTest.Tools
                 Cardnumber = card,
                 Amount = amount,
                 Paymode = 1,
+                Offical = 0,
             };
             MessageContent.Builder content = new MessageContent.Builder()
             {
@@ -135,7 +136,7 @@ namespace UserNetTest.Tools
              
             MessagePack.Builder pack = new MessagePack.Builder()
             {
-               Cmd = Cmd.CMD_PREBUY,
+               Cmd = Cmd.CMD_TOCHARGE,
             };
             manage.SendMsg(pack.Build(), resultBlock);
         }

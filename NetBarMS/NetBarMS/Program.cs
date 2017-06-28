@@ -17,6 +17,7 @@ using NetBarMS.Views.EvaluateManage;
 using NetBarMS.Views.OtherMain;
 
 using NetBarMS.Codes;
+using NetBarMS.Views.HomePage;
 
 namespace NetBarMS
 {
@@ -33,14 +34,12 @@ namespace NetBarMS
             XMLDataManage.Instance();
 
 
-            MemberManageView newview2 = new MemberManageView();
-            CustomForm newForm2 = new CustomForm(newview2, true, false);
-           // MainForm newForm2 = new MainForm();
+            //HomePageView newview2 = new HomePageView();
+            //CustomForm newForm2 = new CustomForm(newview2, true, false);
+            //// MainForm newForm2 = new MainForm
+            //Application.Run(newForm2);
 
-
-            Application.Run(newForm2);
-
-            return;
+            //return;
 
             ManagerLoginView view = new ManagerLoginView();
             CustomForm newForm = new CustomForm(view, true);

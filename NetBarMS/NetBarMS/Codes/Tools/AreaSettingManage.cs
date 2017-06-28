@@ -17,9 +17,7 @@ namespace NetBarMS.Codes.Tools
         public AreaSettingManage()
         {
             allComputers = SysManage.Manage().computers.ToList<StructRealTime>();
-
         }
-        
 
         #region 获取区域所对应的电脑和其他电脑
         public void GetOtherComputers(string code, List<string> areas)
