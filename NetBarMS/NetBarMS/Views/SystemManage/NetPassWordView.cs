@@ -52,7 +52,7 @@ namespace NetBarMS.Views.SystemManage
 
             if (result.pack.Cmd == Cmd.CMD_SYS_INFO && result.pack.Content.ScSysInfo.Parent.Equals(SystemManageNetOperation.pwParent))
             {
-                NetMessageManage.Manager().RemoveResultBlock(GetPwSettingResult);
+                NetMessageManage.Manage().RemoveResultBlock(GetPwSettingResult);
                 this.Invoke(new UIHandleBlock(delegate {
                     this.items = result.pack.Content.ScSysInfo.ChildList;
                     SetSetting();
@@ -70,7 +70,7 @@ namespace NetBarMS.Views.SystemManage
             }
             if (result.pack.Cmd == Cmd.CMD_SYS_UPDATE)
             {
-                NetMessageManage.Manager().RemoveResultBlock(UpdatePwSettingResult);
+                NetMessageManage.Manage().RemoveResultBlock(UpdatePwSettingResult);
                 this.Invoke(new UIHandleBlock(delegate {
                     MessageBox.Show("保存成功");
                 }));

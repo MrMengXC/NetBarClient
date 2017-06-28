@@ -104,7 +104,7 @@ namespace NetBarMS.Views.SystemSearch
 
             if (result.pack.Cmd == Cmd.CMD_GOODS_ORDER)
             {
-                NetMessageManage.Manager().RemoveResultBlock(GetProdcutIndentListResult);
+                NetMessageManage.Manage().RemoveResultBlock(GetProdcutIndentListResult);
                 System.Console.WriteLine("GetProdcutIndentListResult:" + result.pack);
                 this.Invoke(new UIHandleBlock(delegate {
 

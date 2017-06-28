@@ -32,7 +32,7 @@ namespace NetBarMS.Codes.Tools.NetOperation
             MessagePack.Builder pack = new MessagePack.Builder();
             pack.SetCmd(Cmd.CMD_GOODS_FIND);
             pack.SetContent(content);
-            NetMessageManage.Manager().SendMsg(pack.Build(), resultBlock);
+            NetMessageManage.Manage().SendMsg(pack.Build(), resultBlock);
 
         }
         #endregion
@@ -53,7 +53,7 @@ namespace NetBarMS.Codes.Tools.NetOperation
             MessagePack.Builder pack = new MessagePack.Builder();
             pack.SetCmd(Cmd.CMD_GOODS_ADD);
             pack.SetContent(content);
-            NetMessageManage.Manager().SendMsg(pack.Build(), resultBlock);
+            NetMessageManage.Manage().SendMsg(pack.Build(), resultBlock);
 
         }
         #endregion
@@ -74,7 +74,7 @@ namespace NetBarMS.Codes.Tools.NetOperation
             MessagePack.Builder pack = new MessagePack.Builder();
             pack.SetCmd(Cmd.CMD_GOODS_DEL);
             pack.SetContent(content);
-            NetMessageManage.Manager().SendMsg(pack.Build(), resultBlock);
+            NetMessageManage.Manage().SendMsg(pack.Build(), resultBlock);
 
         }
         #endregion
@@ -95,7 +95,7 @@ namespace NetBarMS.Codes.Tools.NetOperation
             MessagePack.Builder pack = new MessagePack.Builder();
             pack.SetCmd(Cmd.CMD_GOODS_UPDATE);
             pack.SetContent(content);
-            NetMessageManage.Manager().SendMsg(pack.Build(), resultBlock);
+            NetMessageManage.Manage().SendMsg(pack.Build(), resultBlock);
 
         }
         #endregion
@@ -116,7 +116,7 @@ namespace NetBarMS.Codes.Tools.NetOperation
             MessagePack.Builder pack = new MessagePack.Builder();
             pack.SetCmd(Cmd.CMD_GOODS_STOCK);
             pack.SetContent(content);
-            NetMessageManage.Manager().SendMsg(pack.Build(), resultBlock);
+            NetMessageManage.Manage().SendMsg(pack.Build(), resultBlock);
         }
         #endregion
 
@@ -142,7 +142,7 @@ namespace NetBarMS.Codes.Tools.NetOperation
             MessagePack.Builder pack = new MessagePack.Builder();
             pack.SetCmd(Cmd.CMD_GOODS_SALES);
             pack.SetContent(content);
-            NetMessageManage.Manager().SendMsg(pack.Build(), resultBlock);
+            NetMessageManage.Manage().SendMsg(pack.Build(), resultBlock);
         }
         #endregion
 
@@ -163,7 +163,7 @@ namespace NetBarMS.Codes.Tools.NetOperation
             MessagePack.Builder pack = new MessagePack.Builder();
             pack.SetCmd(Cmd.CMD_GOODS_SALES_TOP);
             pack.SetContent(content);
-            NetMessageManage.Manager().SendMsg(pack.Build(), resultBlock);
+            NetMessageManage.Manage().SendMsg(pack.Build(), resultBlock);
         }
         #endregion
 
@@ -199,7 +199,7 @@ namespace NetBarMS.Codes.Tools.NetOperation
             MessagePack.Builder pack = new MessagePack.Builder();
             pack.SetCmd(Cmd.CMD_GOODS_ORDER);
             pack.SetContent(content);
-            NetMessageManage.Manager().SendMsg(pack.Build(), resultBlock);
+            NetMessageManage.Manage().SendMsg(pack.Build(), resultBlock);
         }
         #endregion
 
@@ -219,7 +219,7 @@ namespace NetBarMS.Codes.Tools.NetOperation
             MessagePack.Builder pack = new MessagePack.Builder();
             pack.SetCmd(Cmd.CMD_GOODS_ORDER_DETAIL);
             pack.SetContent(content);
-            NetMessageManage.Manager().SendMsg(pack.Build(), resultBlock);
+            NetMessageManage.Manage().SendMsg(pack.Build(), resultBlock);
         }
         #endregion
     }

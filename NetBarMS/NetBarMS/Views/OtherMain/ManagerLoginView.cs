@@ -19,7 +19,7 @@ namespace NetBarMS.Views.OtherMain
         public ManagerLoginView()
         {
             InitializeComponent();
-            NetMessageManage.Manager(ConnectResultBlock);
+            NetMessageManage.Manage(ConnectResultBlock);
             this.loginButton.Click += LoginButtonClick;
         }
 
@@ -42,7 +42,7 @@ namespace NetBarMS.Views.OtherMain
         {
             if (result.pack.Cmd == Cmd.CMD_AUTHEN)
             {
-                NetMessageManage.Manager().RemoveResultBlock(ClientAuthenBlock);
+                NetMessageManage.Manage().RemoveResultBlock(ClientAuthenBlock);
                 System.Console.WriteLine(result.pack);
             }
         }
@@ -54,18 +54,19 @@ namespace NetBarMS.Views.OtherMain
         {
 
             ManagerNetOperation.ManagerLogin(ManagerLoginBlock);
-            //this.FindForm().DialogResult = DialogResult.OK;
-            //this.FindForm().Close();
         }
 
         // 管理员登录回调
         public void ManagerLoginBlock(ResultModel result)
         {
-
-            if (result.pack.Cmd == Cmd.CMD_LOGIN && result.pack.Content.MessageType == 1)
+            if (result.pack.Cmd != Cmd.CMD_LOGIN)
             {
-                NetMessageManage.Manager().RemoveResultBlock(ManagerLoginBlock);
-                System.Console.WriteLine(result.pack);
+
+            }
+            NetMessageManage.Manage().RemoveResultBlock(ManagerLoginBlock);
+            System.Console.WriteLine("ManagerLoginBlock:" + result.pack);
+            if (result.pack.Content.MessageType == 1)
+            {               
                 this.Invoke(new UIHandleBlock(delegate () {
                     this.FindForm().DialogResult = DialogResult.OK;
                     this.FindForm().Close();

@@ -78,7 +78,7 @@ namespace NetBarMS.Views.HomePage.Message
             {
                 return;
             }
-            NetMessageManage.Manager().RemoveResultBlock(AddMemberBlock);
+            NetMessageManage.Manage().RemoveResultBlock(AddMemberBlock);
             System.Console.WriteLine("AddMemberBlock:" + result.pack);
 
             if (result.pack.Content.MessageType == 1)

@@ -41,7 +41,7 @@
             // 
             // titlePanel
             // 
-            this.titlePanel.Size = new System.Drawing.Size(455, 50);
+            this.titlePanel.Size = new System.Drawing.Size(455, 46);
             // 
             // gridControl1
             // 
@@ -70,6 +70,7 @@
             // 
             // addManagerButton
             // 
+            this.addManagerButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.addManagerButton.Location = new System.Drawing.Point(322, 378);
             this.addManagerButton.Name = "addManagerButton";
             this.addManagerButton.Size = new System.Drawing.Size(62, 30);
@@ -79,6 +80,7 @@
             // 
             // deleteManagerButton
             // 
+            this.deleteManagerButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.deleteManagerButton.Location = new System.Drawing.Point(390, 378);
             this.deleteManagerButton.Name = "deleteManagerButton";
             this.deleteManagerButton.Size = new System.Drawing.Size(62, 30);

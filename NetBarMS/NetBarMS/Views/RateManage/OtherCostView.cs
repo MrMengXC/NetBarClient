@@ -53,7 +53,7 @@ namespace NetBarMS.Views.RateManage
 
             if (result.pack.Cmd == Cmd.CMD_SYS_INFO && result.pack.Content.ScSysInfo.Parent.Equals(RateManageNetOperation.otherParent))
             {
-                NetMessageManage.Manager().RemoveResultBlock(GetOthertSettingResult);
+                NetMessageManage.Manage().RemoveResultBlock(GetOthertSettingResult);
                 this.Invoke(new UIHandleBlock(delegate {
                     this.items = result.pack.Content.ScSysInfo.ChildList;
                     SetSetting();
@@ -71,7 +71,7 @@ namespace NetBarMS.Views.RateManage
             }
             if (result.pack.Cmd == Cmd.CMD_SYS_UPDATE)
             {
-                NetMessageManage.Manager().RemoveResultBlock(UpdateOtherSettingResult);
+                NetMessageManage.Manage().RemoveResultBlock(UpdateOtherSettingResult);
                 this.Invoke(new UIHandleBlock(delegate {
                     MessageBox.Show("保存成功");
                 }));

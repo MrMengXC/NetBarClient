@@ -54,7 +54,7 @@ namespace NetBarMS.Views.SystemManage
 
             if (result.pack.Cmd == Cmd.CMD_SYS_INFO && result.pack.Content.ScSysInfo.Parent.Equals(SystemManageNetOperation.productTypeParent))
             {
-                NetMessageManage.Manager().RemoveResultBlock(ProductTypeInfoResult);
+                NetMessageManage.Manage().RemoveResultBlock(ProductTypeInfoResult);
                 System.Console.WriteLine("ProductTypeInfoResult:" + result.pack);
 
                 this.Invoke(new UIHandleBlock(delegate {
@@ -123,7 +123,7 @@ namespace NetBarMS.Views.SystemManage
 
             if (result.pack.Cmd == Cmd.CMD_SYS_UPDATE )
             {
-                NetMessageManage.Manager().RemoveResultBlock(UpdateProductTypeResult);
+                NetMessageManage.Manage().RemoveResultBlock(UpdateProductTypeResult);
                 this.Invoke(new UIHandleBlock(delegate {
                     SystemManageNetOperation.ProductTypeInfo(ProductTypeInfoResult);
                 }));
@@ -173,7 +173,7 @@ namespace NetBarMS.Views.SystemManage
 
             if (result.pack.Cmd == Cmd.CMD_SYS_ADD)
             {
-                NetMessageManage.Manager().RemoveResultBlock(AddProductTypeResult);
+                NetMessageManage.Manage().RemoveResultBlock(AddProductTypeResult);
                 System.Console.WriteLine("AddProductTypeInfoResult:" + result.pack);
 
                 this.Invoke(new UIHandleBlock(delegate {
@@ -207,7 +207,7 @@ namespace NetBarMS.Views.SystemManage
 
             if (result.pack.Cmd == Cmd.CMD_SYS_DEL)
             {
-                NetMessageManage.Manager().RemoveResultBlock(DeleteProductTypeResult);
+                NetMessageManage.Manage().RemoveResultBlock(DeleteProductTypeResult);
                 this.Invoke(new UIHandleBlock(delegate {
                     SystemManageNetOperation.ProductTypeInfo(ProductTypeInfoResult);
                 }));

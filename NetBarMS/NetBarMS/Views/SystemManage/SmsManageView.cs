@@ -79,7 +79,7 @@ namespace NetBarMS.Views.SystemManage
             if (result.pack.Cmd == Cmd.CMD_ADMIN_LIST)
             {
                 System.Console.WriteLine("GetStaffListResult:" + result.pack);
-                NetMessageManage.Manager().RemoveResultBlock(GetStaffListResult);
+                NetMessageManage.Manage().RemoveResultBlock(GetStaffListResult);
                 this.Invoke(new UIHandleBlock(delegate
                 {
                     this.oriStaffs = result.pack.Content.ScAccountList.AccountList.ToList<StructAccount>();
@@ -119,7 +119,7 @@ namespace NetBarMS.Views.SystemManage
             if (result.pack.Cmd == Cmd.CMD_SYS_INFO && result.pack.Content.ScSysInfo.Parent.Equals(SystemManageNetOperation.smspush))
             {
                 System.Console.WriteLine("SmsPushMessageInfoResult:" + result.pack);
-                NetMessageManage.Manager().RemoveResultBlock(SmsPushMessageInfoResult);
+                NetMessageManage.Manage().RemoveResultBlock(SmsPushMessageInfoResult);
                 this.Invoke(new UIHandleBlock(delegate
                 {
                     List<StructDictItem> temShow = this.showPushItems;
@@ -259,7 +259,7 @@ namespace NetBarMS.Views.SystemManage
 
             if (result.pack.Cmd == Cmd.CMD_SYS_ADD)
             {
-                NetMessageManage.Manager().RemoveResultBlock(AddSmsPushMessage);
+                NetMessageManage.Manage().RemoveResultBlock(AddSmsPushMessage);
                 //重新获取短信列表
                 this.GetPushMessageList();
             }
@@ -275,7 +275,7 @@ namespace NetBarMS.Views.SystemManage
 
             if (result.pack.Cmd == Cmd.CMD_SYS_DEL)
             {
-                NetMessageManage.Manager().RemoveResultBlock(DeleteSmsPushMessage);
+                NetMessageManage.Manage().RemoveResultBlock(DeleteSmsPushMessage);
                 this.Invoke(new UIHandleBlock(delegate {
                  
                 }));
@@ -336,7 +336,7 @@ namespace NetBarMS.Views.SystemManage
             if (result.pack.Cmd == Cmd.CMD_SYS_UPDATE)
             {
                 System.Console.WriteLine("UpdateSmsPushMessage:" + result.pack);
-                NetMessageManage.Manager().RemoveResultBlock(UpdateSmsPushMessage);
+                NetMessageManage.Manage().RemoveResultBlock(UpdateSmsPushMessage);
                 // this.oriPushItems = new IList<StructDictItem>();
                 this.oriPushItems = this.showPushItems.ToList<StructDictItem>();
 
@@ -354,7 +354,7 @@ namespace NetBarMS.Views.SystemManage
             if (result.pack.Cmd == Cmd.CMD_ADMIN_UPDATE)
             {
                 System.Console.WriteLine("UpdateStaffResult:" + result.pack);
-                NetMessageManage.Manager().RemoveResultBlock(UpdateStaffResult);
+                NetMessageManage.Manage().RemoveResultBlock(UpdateStaffResult);
                 this.oriStaffs = this.showStaffs.ToList<StructAccount>();
 
 

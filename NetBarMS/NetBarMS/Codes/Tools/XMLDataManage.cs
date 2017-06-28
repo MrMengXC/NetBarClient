@@ -168,7 +168,59 @@ namespace NetBarMS.Codes.Tools
 
 
         }
+        /// <summary>
+        /// 获取主页树节点的数据
+        /// </summary>
+        /// <returns></returns>
+        public static List<HomePageNodeModel> ReadManagerManageNodesXML()
+        {
+            string xmlFilePath = Application.StartupPath + "//ManagerManageNodes.xml";
 
+            return XMLDataManage.GetTreeNodes(xmlFilePath);
+
+        }
+        private static List<HomePageNodeModel> GetTreeNodes(string xmlFilePath)
+        {
+            //SimpleButton
+            List<HomePageNodeModel> datas = new List<HomePageNodeModel>();
+            XmlDocument xmlDoc = new XmlDocument();
+            xmlDoc.Load(xmlFilePath);
+
+            XmlNodeList nodeList = xmlDoc.SelectNodes("//ManageNode//Node");
+
+            foreach (XmlElement nodeEle in nodeList)
+            {
+
+                List<HomePageNodeModel> childNodes = new List<HomePageNodeModel>();
+                XmlNodeList childNodeList = nodeEle.SelectNodes("child");
+
+                foreach (XmlElement childEle in childNodeList)
+                {
+                    string childNodeTag = childEle.GetAttribute("tag") == null || childEle.GetAttribute("tag") == "" ? "None" : childEle.GetAttribute("tag");
+
+                    HomePageNodeModel childNodeModel = new HomePageNodeModel()
+                    {
+                        nodeName = childEle.GetAttribute("name"),
+                        nodeTag = childNodeTag,
+                    };
+                    childNodes.Add(childNodeModel);
+
+                }
+
+                string nodeTag = nodeEle.GetAttribute("tag") == null || nodeEle.GetAttribute("tag") == "" ? "None" : nodeEle.GetAttribute("tag");
+
+                HomePageNodeModel nodeModel = new HomePageNodeModel()
+                {
+                    nodeName = nodeEle.GetAttribute("name"),
+                    childNodes = childNodes,
+                    nodeTag = nodeTag,
+                };
+
+                datas.Add(nodeModel);
+
+            }
+            return datas;
+        }
         /// <summary>
         ///单例方法
         /// </summary>

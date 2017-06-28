@@ -73,7 +73,7 @@ namespace NetBarMS.Views.ProductManage
             }
             if (result.pack.Cmd == Cmd.CMD_GOODS_STOCK)
             {
-                NetMessageManage.Manager().RemoveResultBlock(GetStoreListResult);
+                NetMessageManage.Manage().RemoveResultBlock(GetStoreListResult);
                 System.Console.WriteLine("GetStoreListResult:" + result.pack);
                 this.Invoke(new UIHandleBlock(delegate
                 {

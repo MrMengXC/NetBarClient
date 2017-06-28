@@ -20,8 +20,6 @@ public static partial class BaseStruct {
   internal static pb::FieldAccess.FieldAccessorTable<global::StructAccount, global::StructAccount.Builder> internal__static_StructAccount__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_StructRole__Descriptor;
   internal static pb::FieldAccess.FieldAccessorTable<global::StructRole, global::StructRole.Builder> internal__static_StructRole__FieldAccessorTable;
-  internal static pbd::MessageDescriptor internal__static_StructMenu__Descriptor;
-  internal static pb::FieldAccess.FieldAccessorTable<global::StructMenu, global::StructMenu.Builder> internal__static_StructMenu__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_StructComputer__Descriptor;
   internal static pb::FieldAccess.FieldAccessorTable<global::StructComputer, global::StructComputer.Builder> internal__static_StructComputer__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_StructArea__Descriptor;
@@ -74,64 +72,63 @@ public static partial class BaseStruct {
           "ByABKAkSCwoDc25zGAggASgJIo8BCgpTdHJ1Y3RSb2xlEg4KBnJvbGVpZBgB", 
           "IAIoCRIMCgRuYW1lGAIgAigJEg4KBnJpZ2h0cxgDIAIoCRIQCghwYXJlbnRp", 
           "ZBgEIAIoCRIOCgZhZGRfcXgYBSACKAkSDgoGZGVsX3F4GAYgAigJEg8KB2Vk", 
-          "aXRfcXgYByACKAkSEAoIcXVlcnlfcXgYCCACKAkiPAoKU3RydWN0TWVudRIO", 
-          "CgZtZW51aWQYASACKAkSDAoEbmFtZRgCIAIoCRIQCghwYXJlbnRpZBgDIAIo", 
-          "CSJACg5TdHJ1Y3RDb21wdXRlchISCgpjb21wdXRlcmlkGAEgAigFEgwKBG5h", 
-          "bWUYAiABKAkSDAoEYXJlYRgDIAEoCSIqCgpTdHJ1Y3RBcmVhEg4KBmFyZWFp", 
-          "ZBgBIAIoBRIMCgRuYW1lGAIgAigJIpYBCgxTdHJ1Y3RDb25zdW0SEAoIY29u", 
-          "c3VtaWQYASACKAUSEAoIdXNlcm5hbWUYAiACKAkSEgoKY2FyZG51bWJlchgD", 
-          "IAIoCRIMCgRhcmVhGAQgAigFEhIKCmNvbnN1bXR5cGUYBSACKAUSDQoFbW9u", 
-          "ZXkYBiACKAUSDAoEdGltZRgHIAIoCRIPCgdwYXltb2RlGAggAigFIsoBChFT", 
-          "dHJ1Y3RFbWJhcmthdGlvbhIQCghjb21wdXRlchgBIAIoCRISCgpjYXJkbnVt", 
-          "YmVyGAIgAigJEhAKCHVzZXJuYW1lGAMgAigJEhAKCHVzZXJ0eXBlGAQgAigJ", 
-          "EhEKCXN0YXJ0dGltZRgFIAIoCRIQCghzdG9wdGltZRgGIAIoCRIMCgRhcmVh", 
-          "GAcgAigJEhAKCHVzZWR0aW1lGAggAigFEg0KBW1vbmV5GAkgAigFEgsKA21h", 
-          "YxgKIAIoCRIKCgJpcBgLIAIoCSKQAgoOU3RydWN0UmVhbFRpbWUSEgoKY29t", 
-          "cHV0ZXJpZBgBIAIoBRIQCghjb21wdXRlchgCIAIoCRIMCgRhcmVhGAMgAigJ", 
-          "Eg4KBnN0YXR1cxgEIAIoCRISCgpjYXJkbnVtYmVyGAUgAigJEhAKCHVzZXJ0", 
-          "eXBlGAYgAigJEg8KB2JpbGxpbmcYByACKAkSDgoGdmVyaWZ5GAggAigJEg8K", 
-          "B2JhbGFuY2UYCSACKAkSEgoKcmVtYWludGltZRgKIAIoCRIRCglzdGFydHRp", 
-          "bWUYCyACKAkSEAoIdXNlZHRpbWUYDCACKAkSEAoIc3RvcHRpbWUYDSACKAkS", 
-          "CwoDbWFjGA4gAigJEgoKAmlwGA8gAigJIqEBCgpTdHJ1Y3RDYXJkEgwKBG5h", 
-          "bWUYASACKAkSDgoGZ2VuZGVyGAIgAigFEg4KBm5hdGlvbhgDIAIoCRIOCgZu", 
-          "dW1iZXIYBCACKAkSEAoIYmlydGhkYXkYBSACKAkSCwoDdmxkGAYgAigJEg8K", 
-          "B2FkZHJlc3MYByACKAkSFAoMb3JnYW5pemF0aW9uGAggAigJEg8KB2hlYWRV", 
-          "cmwYCSACKAkimwIKDFN0cnVjdE1lbWJlchIQCghtZW1iZXJpZBgBIAIoBRIS", 
-          "CgpjYXJkbnVtYmVyGAIgAigJEg4KBmdlbmRlchgDIAIoCRIMCgRuYW1lGAQg", 
-          "AigJEhIKCm1lbWJlcnR5cGUYBSACKAUSDQoFcGhvbmUYBiACKAkSEAoIb3Bl", 
-          "bnRpbWUYByACKAkSEAoIbGFzdHRpbWUYCCACKAkSDwoHYmFsYW5jZRgJIAIo", 
-          "BRIVCg10b3RhbFJlY2hhcmdlGAogAigFEhIKCnRvdGFsQm9udXMYCyACKAUS", 
-          "DwoHaW50ZWdhbBgMIAIoBRITCgt1c2VkSW50ZWdhbBgNIAIoBRIOCgZzdGF0", 
-          "dXMYDiACKAUSDgoGdmVyaWZ5GA8gAigFIlMKClN0cnVjdFBhZ2USEAoIcGFn", 
-          "ZXNpemUYASACKAUSEQoJcGFnZWJlZ2luGAIgAigFEhEKCWZpZWxkbmFtZRgD", 
-          "IAIoBRINCgVvcmRlchgEIAIoBSKfAQoOU3RydWN0VXNlckFyZWESEAoIdXNl", 
-          "cnR5cGUYASACKAUSEAoIYXJlYXR5cGUYAiACKAUSFQoNb3JkaW5hcnlQcmlj", 
-          "ZRgDIAIoBRIYChBvcmRpbmFyeUludGVydmFsGAQgAigFEhIKCm5pZ2h0UHJp", 
-          "Y2UYBSACKAUSFQoNbmlnaHRJbnRlcnZhbBgGIAIoBRINCgVpbmRleBgHIAIo", 
-          "BSJ1ChFTdHJ1Y3RCaWxsU2V0dGluZxIMCgRkYXkwGAEgAigFEgwKBGRheTEY", 
-          "AiACKAUSDAoEZGF5MhgDIAIoBRIMCgRkYXkzGAQgAigFEgwKBGRheTQYBSAC", 
-          "KAUSDAoEZGF5NRgGIAIoBRIMCgRkYXk2GAcgAigFIjgKDlN0cnVjdERpY3RJ", 
-          "dGVtEgoKAmlkGAEgAigFEgwKBGNvZGUYAiACKAUSDAoEaXRlbRgDIAMoCSKm", 
-          "AQoLU3RydWN0R29vZHMSDwoHZ29vZHNJZBgBIAIoBRIRCglnb29kc05hbWUY", 
-          "AiACKAkSEAoIZ29vZHNJbWcYAyACKAkSEAoIY2F0ZWdvcnkYBCACKAUSDQoF", 
-          "cHJpY2UYBSACKAkSEgoKdXNlSW50ZWdhbBgGIAIoCBIMCgRoaWRlGAcgAigI", 
-          "Eg8KB2ludGVnYWwYCCACKAUSDQoFY291bnQYCSACKAUipgEKClN0cnVjdFNh", 
-          "bGUSDwoHb3JkZXJpZBgBIAIoBRIQCgh1c2VybmFtZRgCIAIoCRISCgpjYXJk", 
-          "bnVtYmVyGAMgAigJEhAKCGFyZWFuYW1lGAQgAigJEhEKCWdvb2RzbmFtZRgF", 
-          "IAIoCRILCgNudW0YBiACKAUSDQoFbW9uZXkYByACKAUSDwoHYWRkdGltZRgI", 
-          "IAIoCRIPCgdwYXltb2RlGAkgAigJIlAKDVN0cnVjdFNhbGVUb3ASEAoIY2F0", 
-          "ZWdvcnkYASACKAUSEQoJZ29vZHNuYW1lGAIgAigJEgsKA251bRgDIAIoBRIN", 
-          "CgVtb25leRgEIAIoBSJOCgtTdHJ1Y3RTdG9jaxIRCglnb29kc25hbWUYASAC", 
-          "KAkSEAoIY2F0ZWdvcnkYAiACKAUSDQoFcHJpY2UYAyACKAkSCwoDbnVtGAQg", 
-          "AigFIsoBCgtTdHJ1Y3RPcmRlchIPCgdvcmRlcmlkGAEgAigFEhAKCHVzZXJu", 
-          "YW1lGAIgAigJEhIKCmNhcmRudW1iZXIYAyACKAkSEAoIYXJlYW5hbWUYBCAC", 
-          "KAkSDQoFbW9uZXkYBSACKAUSDwoHYWRkdGltZRgGIAIoCRIQCghwcm9jdGlt", 
-          "ZRgHIAIoCRIQCghvcGVyYXRvchgIIAIoCRIOCgZzdGF0dXMYCSACKAkSDwoH", 
-          "cGF5bW9kZRgKIAIoCRINCgVwYXlpZBgLIAIoCSJUChFTdHJ1Y3RPcmRlckRl", 
-          "dGFpbBIRCglnb29kc25hbWUYASACKAkSEAoIY2F0ZWdvcnkYAiACKAUSDQoF", 
-          "cHJpY2UYAyACKAkSCwoDbnVtGAQgAigFKigKBFR5cGUSCAoESVRFTRABEgwK", 
-          "CENVUlJFTkNZEAISCAoEUEFDSxADQisKHWNvbS5za3lzb2Z0LmNvcmUuYXV0", 
-        "by5tZXNzYWdlQgpCYXNlU3RydWN0"));
+          "aXRfcXgYByACKAkSEAoIcXVlcnlfcXgYCCACKAkiQAoOU3RydWN0Q29tcHV0", 
+          "ZXISEgoKY29tcHV0ZXJpZBgBIAIoBRIMCgRuYW1lGAIgASgJEgwKBGFyZWEY", 
+          "AyABKAkiKgoKU3RydWN0QXJlYRIOCgZhcmVhaWQYASACKAUSDAoEbmFtZRgC", 
+          "IAIoCSKWAQoMU3RydWN0Q29uc3VtEhAKCGNvbnN1bWlkGAEgAigFEhAKCHVz", 
+          "ZXJuYW1lGAIgAigJEhIKCmNhcmRudW1iZXIYAyACKAkSDAoEYXJlYRgEIAIo", 
+          "BRISCgpjb25zdW10eXBlGAUgAigFEg0KBW1vbmV5GAYgAigFEgwKBHRpbWUY", 
+          "ByACKAkSDwoHcGF5bW9kZRgIIAIoBSLKAQoRU3RydWN0RW1iYXJrYXRpb24S", 
+          "EAoIY29tcHV0ZXIYASACKAkSEgoKY2FyZG51bWJlchgCIAIoCRIQCgh1c2Vy", 
+          "bmFtZRgDIAIoCRIQCgh1c2VydHlwZRgEIAIoCRIRCglzdGFydHRpbWUYBSAC", 
+          "KAkSEAoIc3RvcHRpbWUYBiACKAkSDAoEYXJlYRgHIAIoCRIQCgh1c2VkdGlt", 
+          "ZRgIIAIoBRINCgVtb25leRgJIAIoBRILCgNtYWMYCiACKAkSCgoCaXAYCyAC", 
+          "KAkikAIKDlN0cnVjdFJlYWxUaW1lEhIKCmNvbXB1dGVyaWQYASACKAUSEAoI", 
+          "Y29tcHV0ZXIYAiACKAkSDAoEYXJlYRgDIAIoCRIOCgZzdGF0dXMYBCACKAkS", 
+          "EgoKY2FyZG51bWJlchgFIAIoCRIQCgh1c2VydHlwZRgGIAIoCRIPCgdiaWxs", 
+          "aW5nGAcgAigJEg4KBnZlcmlmeRgIIAIoCRIPCgdiYWxhbmNlGAkgAigJEhIK", 
+          "CnJlbWFpbnRpbWUYCiACKAkSEQoJc3RhcnR0aW1lGAsgAigJEhAKCHVzZWR0", 
+          "aW1lGAwgAigJEhAKCHN0b3B0aW1lGA0gAigJEgsKA21hYxgOIAIoCRIKCgJp", 
+          "cBgPIAIoCSKhAQoKU3RydWN0Q2FyZBIMCgRuYW1lGAEgAigJEg4KBmdlbmRl", 
+          "chgCIAIoBRIOCgZuYXRpb24YAyACKAkSDgoGbnVtYmVyGAQgAigJEhAKCGJp", 
+          "cnRoZGF5GAUgAigJEgsKA3ZsZBgGIAIoCRIPCgdhZGRyZXNzGAcgAigJEhQK", 
+          "DG9yZ2FuaXphdGlvbhgIIAIoCRIPCgdoZWFkVXJsGAkgAigJIpsCCgxTdHJ1", 
+          "Y3RNZW1iZXISEAoIbWVtYmVyaWQYASACKAUSEgoKY2FyZG51bWJlchgCIAIo", 
+          "CRIOCgZnZW5kZXIYAyACKAkSDAoEbmFtZRgEIAIoCRISCgptZW1iZXJ0eXBl", 
+          "GAUgAigFEg0KBXBob25lGAYgAigJEhAKCG9wZW50aW1lGAcgAigJEhAKCGxh", 
+          "c3R0aW1lGAggAigJEg8KB2JhbGFuY2UYCSACKAUSFQoNdG90YWxSZWNoYXJn", 
+          "ZRgKIAIoBRISCgp0b3RhbEJvbnVzGAsgAigFEg8KB2ludGVnYWwYDCACKAUS", 
+          "EwoLdXNlZEludGVnYWwYDSACKAUSDgoGc3RhdHVzGA4gAigFEg4KBnZlcmlm", 
+          "eRgPIAIoBSJTCgpTdHJ1Y3RQYWdlEhAKCHBhZ2VzaXplGAEgAigFEhEKCXBh", 
+          "Z2ViZWdpbhgCIAIoBRIRCglmaWVsZG5hbWUYAyACKAUSDQoFb3JkZXIYBCAC", 
+          "KAUinwEKDlN0cnVjdFVzZXJBcmVhEhAKCHVzZXJ0eXBlGAEgAigFEhAKCGFy", 
+          "ZWF0eXBlGAIgAigFEhUKDW9yZGluYXJ5UHJpY2UYAyACKAUSGAoQb3JkaW5h", 
+          "cnlJbnRlcnZhbBgEIAIoBRISCgpuaWdodFByaWNlGAUgAigFEhUKDW5pZ2h0", 
+          "SW50ZXJ2YWwYBiACKAUSDQoFaW5kZXgYByACKAUidQoRU3RydWN0QmlsbFNl", 
+          "dHRpbmcSDAoEZGF5MBgBIAIoBRIMCgRkYXkxGAIgAigFEgwKBGRheTIYAyAC", 
+          "KAUSDAoEZGF5MxgEIAIoBRIMCgRkYXk0GAUgAigFEgwKBGRheTUYBiACKAUS", 
+          "DAoEZGF5NhgHIAIoBSI4Cg5TdHJ1Y3REaWN0SXRlbRIKCgJpZBgBIAIoBRIM", 
+          "CgRjb2RlGAIgAigFEgwKBGl0ZW0YAyADKAkipgEKC1N0cnVjdEdvb2RzEg8K", 
+          "B2dvb2RzSWQYASACKAUSEQoJZ29vZHNOYW1lGAIgAigJEhAKCGdvb2RzSW1n", 
+          "GAMgAigJEhAKCGNhdGVnb3J5GAQgAigFEg0KBXByaWNlGAUgAigJEhIKCnVz", 
+          "ZUludGVnYWwYBiACKAgSDAoEaGlkZRgHIAIoCBIPCgdpbnRlZ2FsGAggAigF", 
+          "Eg0KBWNvdW50GAkgAigFIqYBCgpTdHJ1Y3RTYWxlEg8KB29yZGVyaWQYASAC", 
+          "KAUSEAoIdXNlcm5hbWUYAiACKAkSEgoKY2FyZG51bWJlchgDIAIoCRIQCghh", 
+          "cmVhbmFtZRgEIAIoCRIRCglnb29kc25hbWUYBSACKAkSCwoDbnVtGAYgAigF", 
+          "Eg0KBW1vbmV5GAcgAigFEg8KB2FkZHRpbWUYCCACKAkSDwoHcGF5bW9kZRgJ", 
+          "IAIoCSJQCg1TdHJ1Y3RTYWxlVG9wEhAKCGNhdGVnb3J5GAEgAigFEhEKCWdv", 
+          "b2RzbmFtZRgCIAIoCRILCgNudW0YAyACKAUSDQoFbW9uZXkYBCACKAUiTgoL", 
+          "U3RydWN0U3RvY2sSEQoJZ29vZHNuYW1lGAEgAigJEhAKCGNhdGVnb3J5GAIg", 
+          "AigFEg0KBXByaWNlGAMgAigJEgsKA251bRgEIAIoBSLKAQoLU3RydWN0T3Jk", 
+          "ZXISDwoHb3JkZXJpZBgBIAIoBRIQCgh1c2VybmFtZRgCIAIoCRISCgpjYXJk", 
+          "bnVtYmVyGAMgAigJEhAKCGFyZWFuYW1lGAQgAigJEg0KBW1vbmV5GAUgAigF", 
+          "Eg8KB2FkZHRpbWUYBiACKAkSEAoIcHJvY3RpbWUYByACKAkSEAoIb3BlcmF0", 
+          "b3IYCCACKAkSDgoGc3RhdHVzGAkgAigJEg8KB3BheW1vZGUYCiACKAkSDQoF", 
+          "cGF5aWQYCyACKAkiVAoRU3RydWN0T3JkZXJEZXRhaWwSEQoJZ29vZHNuYW1l", 
+          "GAEgAigJEhAKCGNhdGVnb3J5GAIgAigFEg0KBXByaWNlGAMgAigJEgsKA251", 
+          "bRgEIAIoBSooCgRUeXBlEggKBElURU0QARIMCghDVVJSRU5DWRACEggKBFBB", 
+          "Q0sQA0IrCh1jb20uc2t5c29mdC5jb3JlLmF1dG8ubWVzc2FnZUIKQmFzZVN0", 
+        "cnVjdA=="));
     pbd::FileDescriptor.InternalDescriptorAssigner assigner = delegate(pbd::FileDescriptor root) {
       descriptor = root;
       internal__static_StructErrorTip__Descriptor = Descriptor.MessageTypes[0];
@@ -146,75 +143,71 @@ public static partial class BaseStruct {
       internal__static_StructRole__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructRole, global::StructRole.Builder>(internal__static_StructRole__Descriptor,
               new string[] { "Roleid", "Name", "Rights", "Parentid", "AddQx", "DelQx", "EditQx", "QueryQx", });
-      internal__static_StructMenu__Descriptor = Descriptor.MessageTypes[3];
-      internal__static_StructMenu__FieldAccessorTable = 
-          new pb::FieldAccess.FieldAccessorTable<global::StructMenu, global::StructMenu.Builder>(internal__static_StructMenu__Descriptor,
-              new string[] { "Menuid", "Name", "Parentid", });
-      internal__static_StructComputer__Descriptor = Descriptor.MessageTypes[4];
+      internal__static_StructComputer__Descriptor = Descriptor.MessageTypes[3];
       internal__static_StructComputer__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructComputer, global::StructComputer.Builder>(internal__static_StructComputer__Descriptor,
               new string[] { "Computerid", "Name", "Area", });
-      internal__static_StructArea__Descriptor = Descriptor.MessageTypes[5];
+      internal__static_StructArea__Descriptor = Descriptor.MessageTypes[4];
       internal__static_StructArea__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructArea, global::StructArea.Builder>(internal__static_StructArea__Descriptor,
               new string[] { "Areaid", "Name", });
-      internal__static_StructConsum__Descriptor = Descriptor.MessageTypes[6];
+      internal__static_StructConsum__Descriptor = Descriptor.MessageTypes[5];
       internal__static_StructConsum__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructConsum, global::StructConsum.Builder>(internal__static_StructConsum__Descriptor,
               new string[] { "Consumid", "Username", "Cardnumber", "Area", "Consumtype", "Money", "Time", "Paymode", });
-      internal__static_StructEmbarkation__Descriptor = Descriptor.MessageTypes[7];
+      internal__static_StructEmbarkation__Descriptor = Descriptor.MessageTypes[6];
       internal__static_StructEmbarkation__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructEmbarkation, global::StructEmbarkation.Builder>(internal__static_StructEmbarkation__Descriptor,
               new string[] { "Computer", "Cardnumber", "Username", "Usertype", "Starttime", "Stoptime", "Area", "Usedtime", "Money", "Mac", "Ip", });
-      internal__static_StructRealTime__Descriptor = Descriptor.MessageTypes[8];
+      internal__static_StructRealTime__Descriptor = Descriptor.MessageTypes[7];
       internal__static_StructRealTime__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructRealTime, global::StructRealTime.Builder>(internal__static_StructRealTime__Descriptor,
               new string[] { "Computerid", "Computer", "Area", "Status", "Cardnumber", "Usertype", "Billing", "Verify", "Balance", "Remaintime", "Starttime", "Usedtime", "Stoptime", "Mac", "Ip", });
-      internal__static_StructCard__Descriptor = Descriptor.MessageTypes[9];
+      internal__static_StructCard__Descriptor = Descriptor.MessageTypes[8];
       internal__static_StructCard__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructCard, global::StructCard.Builder>(internal__static_StructCard__Descriptor,
               new string[] { "Name", "Gender", "Nation", "Number", "Birthday", "Vld", "Address", "Organization", "HeadUrl", });
-      internal__static_StructMember__Descriptor = Descriptor.MessageTypes[10];
+      internal__static_StructMember__Descriptor = Descriptor.MessageTypes[9];
       internal__static_StructMember__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructMember, global::StructMember.Builder>(internal__static_StructMember__Descriptor,
               new string[] { "Memberid", "Cardnumber", "Gender", "Name", "Membertype", "Phone", "Opentime", "Lasttime", "Balance", "TotalRecharge", "TotalBonus", "Integal", "UsedIntegal", "Status", "Verify", });
-      internal__static_StructPage__Descriptor = Descriptor.MessageTypes[11];
+      internal__static_StructPage__Descriptor = Descriptor.MessageTypes[10];
       internal__static_StructPage__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructPage, global::StructPage.Builder>(internal__static_StructPage__Descriptor,
               new string[] { "Pagesize", "Pagebegin", "Fieldname", "Order", });
-      internal__static_StructUserArea__Descriptor = Descriptor.MessageTypes[12];
+      internal__static_StructUserArea__Descriptor = Descriptor.MessageTypes[11];
       internal__static_StructUserArea__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructUserArea, global::StructUserArea.Builder>(internal__static_StructUserArea__Descriptor,
               new string[] { "Usertype", "Areatype", "OrdinaryPrice", "OrdinaryInterval", "NightPrice", "NightInterval", "Index", });
-      internal__static_StructBillSetting__Descriptor = Descriptor.MessageTypes[13];
+      internal__static_StructBillSetting__Descriptor = Descriptor.MessageTypes[12];
       internal__static_StructBillSetting__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructBillSetting, global::StructBillSetting.Builder>(internal__static_StructBillSetting__Descriptor,
               new string[] { "Day0", "Day1", "Day2", "Day3", "Day4", "Day5", "Day6", });
-      internal__static_StructDictItem__Descriptor = Descriptor.MessageTypes[14];
+      internal__static_StructDictItem__Descriptor = Descriptor.MessageTypes[13];
       internal__static_StructDictItem__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructDictItem, global::StructDictItem.Builder>(internal__static_StructDictItem__Descriptor,
               new string[] { "Id", "Code", "Item", });
-      internal__static_StructGoods__Descriptor = Descriptor.MessageTypes[15];
+      internal__static_StructGoods__Descriptor = Descriptor.MessageTypes[14];
       internal__static_StructGoods__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructGoods, global::StructGoods.Builder>(internal__static_StructGoods__Descriptor,
               new string[] { "GoodsId", "GoodsName", "GoodsImg", "Category", "Price", "UseIntegal", "Hide", "Integal", "Count", });
-      internal__static_StructSale__Descriptor = Descriptor.MessageTypes[16];
+      internal__static_StructSale__Descriptor = Descriptor.MessageTypes[15];
       internal__static_StructSale__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructSale, global::StructSale.Builder>(internal__static_StructSale__Descriptor,
               new string[] { "Orderid", "Username", "Cardnumber", "Areaname", "Goodsname", "Num", "Money", "Addtime", "Paymode", });
-      internal__static_StructSaleTop__Descriptor = Descriptor.MessageTypes[17];
+      internal__static_StructSaleTop__Descriptor = Descriptor.MessageTypes[16];
       internal__static_StructSaleTop__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructSaleTop, global::StructSaleTop.Builder>(internal__static_StructSaleTop__Descriptor,
               new string[] { "Category", "Goodsname", "Num", "Money", });
-      internal__static_StructStock__Descriptor = Descriptor.MessageTypes[18];
+      internal__static_StructStock__Descriptor = Descriptor.MessageTypes[17];
       internal__static_StructStock__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructStock, global::StructStock.Builder>(internal__static_StructStock__Descriptor,
               new string[] { "Goodsname", "Category", "Price", "Num", });
-      internal__static_StructOrder__Descriptor = Descriptor.MessageTypes[19];
+      internal__static_StructOrder__Descriptor = Descriptor.MessageTypes[18];
       internal__static_StructOrder__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructOrder, global::StructOrder.Builder>(internal__static_StructOrder__Descriptor,
               new string[] { "Orderid", "Username", "Cardnumber", "Areaname", "Money", "Addtime", "Proctime", "Operator", "Status", "Paymode", "Payid", });
-      internal__static_StructOrderDetail__Descriptor = Descriptor.MessageTypes[20];
+      internal__static_StructOrderDetail__Descriptor = Descriptor.MessageTypes[19];
       internal__static_StructOrderDetail__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructOrderDetail, global::StructOrderDetail.Builder>(internal__static_StructOrderDetail__Descriptor,
               new string[] { "Goodsname", "Category", "Price", "Num", });
@@ -1838,373 +1831,6 @@ public sealed partial class StructRole : pb::GeneratedMessage<StructRole, Struct
     }
   }
   static StructRole() {
-    object.ReferenceEquals(global::BaseStruct.Descriptor, null);
-  }
-}
-
-[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-public sealed partial class StructMenu : pb::GeneratedMessage<StructMenu, StructMenu.Builder> {
-  private StructMenu() { }
-  private static readonly StructMenu defaultInstance = new StructMenu().MakeReadOnly();
-  private static readonly string[] _structMenuFieldNames = new string[] { "menuid", "name", "parentid" };
-  private static readonly uint[] _structMenuFieldTags = new uint[] { 10, 18, 26 };
-  public static StructMenu DefaultInstance {
-    get { return defaultInstance; }
-  }
-  
-  public override StructMenu DefaultInstanceForType {
-    get { return DefaultInstance; }
-  }
-  
-  protected override StructMenu ThisMessage {
-    get { return this; }
-  }
-  
-  public static pbd::MessageDescriptor Descriptor {
-    get { return global::BaseStruct.internal__static_StructMenu__Descriptor; }
-  }
-  
-  protected override pb::FieldAccess.FieldAccessorTable<StructMenu, StructMenu.Builder> InternalFieldAccessors {
-    get { return global::BaseStruct.internal__static_StructMenu__FieldAccessorTable; }
-  }
-  
-  public const int MenuidFieldNumber = 1;
-  private bool hasMenuid;
-  private string menuid_ = "";
-  public bool HasMenuid {
-    get { return hasMenuid; }
-  }
-  public string Menuid {
-    get { return menuid_; }
-  }
-  
-  public const int NameFieldNumber = 2;
-  private bool hasName;
-  private string name_ = "";
-  public bool HasName {
-    get { return hasName; }
-  }
-  public string Name {
-    get { return name_; }
-  }
-  
-  public const int ParentidFieldNumber = 3;
-  private bool hasParentid;
-  private string parentid_ = "";
-  public bool HasParentid {
-    get { return hasParentid; }
-  }
-  public string Parentid {
-    get { return parentid_; }
-  }
-  
-  public override bool IsInitialized {
-    get {
-      if (!hasMenuid) return false;
-      if (!hasName) return false;
-      if (!hasParentid) return false;
-      return true;
-    }
-  }
-  
-  public override void WriteTo(pb::ICodedOutputStream output) {
-    CalcSerializedSize();
-    string[] field_names = _structMenuFieldNames;
-    if (hasMenuid) {
-      output.WriteString(1, field_names[0], Menuid);
-    }
-    if (hasName) {
-      output.WriteString(2, field_names[1], Name);
-    }
-    if (hasParentid) {
-      output.WriteString(3, field_names[2], Parentid);
-    }
-    UnknownFields.WriteTo(output);
-  }
-  
-  private int memoizedSerializedSize = -1;
-  public override int SerializedSize {
-    get {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-      return CalcSerializedSize();
-    }
-  }
-  
-  private int CalcSerializedSize() {
-    int size = memoizedSerializedSize;
-    if (size != -1) return size;
-    
-    size = 0;
-    if (hasMenuid) {
-      size += pb::CodedOutputStream.ComputeStringSize(1, Menuid);
-    }
-    if (hasName) {
-      size += pb::CodedOutputStream.ComputeStringSize(2, Name);
-    }
-    if (hasParentid) {
-      size += pb::CodedOutputStream.ComputeStringSize(3, Parentid);
-    }
-    size += UnknownFields.SerializedSize;
-    memoizedSerializedSize = size;
-    return size;
-  }
-  public static StructMenu ParseFrom(pb::ByteString data) {
-    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
-  }
-  public static StructMenu ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
-  }
-  public static StructMenu ParseFrom(byte[] data) {
-    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
-  }
-  public static StructMenu ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
-  }
-  public static StructMenu ParseFrom(global::System.IO.Stream input) {
-    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
-  }
-  public static StructMenu ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
-  }
-  public static StructMenu ParseDelimitedFrom(global::System.IO.Stream input) {
-    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
-  }
-  public static StructMenu ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
-    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
-  }
-  public static StructMenu ParseFrom(pb::ICodedInputStream input) {
-    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
-  }
-  public static StructMenu ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
-  }
-  private StructMenu MakeReadOnly() {
-    return this;
-  }
-  
-  public static Builder CreateBuilder() { return new Builder(); }
-  public override Builder ToBuilder() { return CreateBuilder(this); }
-  public override Builder CreateBuilderForType() { return new Builder(); }
-  public static Builder CreateBuilder(StructMenu prototype) {
-    return new Builder(prototype);
-  }
-  
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-  public sealed partial class Builder : pb::GeneratedBuilder<StructMenu, Builder> {
-    protected override Builder ThisBuilder {
-      get { return this; }
-    }
-    public Builder() {
-      result = DefaultInstance;
-      resultIsReadOnly = true;
-    }
-    internal Builder(StructMenu cloneFrom) {
-      result = cloneFrom;
-      resultIsReadOnly = true;
-    }
-    
-    private bool resultIsReadOnly;
-    private StructMenu result;
-    
-    private StructMenu PrepareBuilder() {
-      if (resultIsReadOnly) {
-        StructMenu original = result;
-        result = new StructMenu();
-        resultIsReadOnly = false;
-        MergeFrom(original);
-      }
-      return result;
-    }
-    
-    public override bool IsInitialized {
-      get { return result.IsInitialized; }
-    }
-    
-    protected override StructMenu MessageBeingBuilt {
-      get { return PrepareBuilder(); }
-    }
-    
-    public override Builder Clear() {
-      result = DefaultInstance;
-      resultIsReadOnly = true;
-      return this;
-    }
-    
-    public override Builder Clone() {
-      if (resultIsReadOnly) {
-        return new Builder(result);
-      } else {
-        return new Builder().MergeFrom(result);
-      }
-    }
-    
-    public override pbd::MessageDescriptor DescriptorForType {
-      get { return global::StructMenu.Descriptor; }
-    }
-    
-    public override StructMenu DefaultInstanceForType {
-      get { return global::StructMenu.DefaultInstance; }
-    }
-    
-    public override StructMenu BuildPartial() {
-      if (resultIsReadOnly) {
-        return result;
-      }
-      resultIsReadOnly = true;
-      return result.MakeReadOnly();
-    }
-    
-    public override Builder MergeFrom(pb::IMessage other) {
-      if (other is StructMenu) {
-        return MergeFrom((StructMenu) other);
-      } else {
-        base.MergeFrom(other);
-        return this;
-      }
-    }
-    
-    public override Builder MergeFrom(StructMenu other) {
-      if (other == global::StructMenu.DefaultInstance) return this;
-      PrepareBuilder();
-      if (other.HasMenuid) {
-        Menuid = other.Menuid;
-      }
-      if (other.HasName) {
-        Name = other.Name;
-      }
-      if (other.HasParentid) {
-        Parentid = other.Parentid;
-      }
-      this.MergeUnknownFields(other.UnknownFields);
-      return this;
-    }
-    
-    public override Builder MergeFrom(pb::ICodedInputStream input) {
-      return MergeFrom(input, pb::ExtensionRegistry.Empty);
-    }
-    
-    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
-      PrepareBuilder();
-      pb::UnknownFieldSet.Builder unknownFields = null;
-      uint tag;
-      string field_name;
-      while (input.ReadTag(out tag, out field_name)) {
-        if(tag == 0 && field_name != null) {
-          int field_ordinal = global::System.Array.BinarySearch(_structMenuFieldNames, field_name, global::System.StringComparer.Ordinal);
-          if(field_ordinal >= 0)
-            tag = _structMenuFieldTags[field_ordinal];
-          else {
-            if (unknownFields == null) {
-              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
-            }
-            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
-            continue;
-          }
-        }
-        switch (tag) {
-          case 0: {
-            throw pb::InvalidProtocolBufferException.InvalidTag();
-          }
-          default: {
-            if (pb::WireFormat.IsEndGroupTag(tag)) {
-              if (unknownFields != null) {
-                this.UnknownFields = unknownFields.Build();
-              }
-              return this;
-            }
-            if (unknownFields == null) {
-              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
-            }
-            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
-            break;
-          }
-          case 10: {
-            result.hasMenuid = input.ReadString(ref result.menuid_);
-            break;
-          }
-          case 18: {
-            result.hasName = input.ReadString(ref result.name_);
-            break;
-          }
-          case 26: {
-            result.hasParentid = input.ReadString(ref result.parentid_);
-            break;
-          }
-        }
-      }
-      
-      if (unknownFields != null) {
-        this.UnknownFields = unknownFields.Build();
-      }
-      return this;
-    }
-    
-    
-    public bool HasMenuid {
-      get { return result.hasMenuid; }
-    }
-    public string Menuid {
-      get { return result.Menuid; }
-      set { SetMenuid(value); }
-    }
-    public Builder SetMenuid(string value) {
-      pb::ThrowHelper.ThrowIfNull(value, "value");
-      PrepareBuilder();
-      result.hasMenuid = true;
-      result.menuid_ = value;
-      return this;
-    }
-    public Builder ClearMenuid() {
-      PrepareBuilder();
-      result.hasMenuid = false;
-      result.menuid_ = "";
-      return this;
-    }
-    
-    public bool HasName {
-      get { return result.hasName; }
-    }
-    public string Name {
-      get { return result.Name; }
-      set { SetName(value); }
-    }
-    public Builder SetName(string value) {
-      pb::ThrowHelper.ThrowIfNull(value, "value");
-      PrepareBuilder();
-      result.hasName = true;
-      result.name_ = value;
-      return this;
-    }
-    public Builder ClearName() {
-      PrepareBuilder();
-      result.hasName = false;
-      result.name_ = "";
-      return this;
-    }
-    
-    public bool HasParentid {
-      get { return result.hasParentid; }
-    }
-    public string Parentid {
-      get { return result.Parentid; }
-      set { SetParentid(value); }
-    }
-    public Builder SetParentid(string value) {
-      pb::ThrowHelper.ThrowIfNull(value, "value");
-      PrepareBuilder();
-      result.hasParentid = true;
-      result.parentid_ = value;
-      return this;
-    }
-    public Builder ClearParentid() {
-      PrepareBuilder();
-      result.hasParentid = false;
-      result.parentid_ = "";
-      return this;
-    }
-  }
-  static StructMenu() {
     object.ReferenceEquals(global::BaseStruct.Descriptor, null);
   }
 }

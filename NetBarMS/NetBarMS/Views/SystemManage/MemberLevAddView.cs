@@ -87,7 +87,7 @@ namespace NetBarMS.Views.SystemManage
             }
             if(result.pack.Cmd == Cmd.CMD_SYS_ADD)
             {
-                NetMessageManage.Manager().RemoveResultBlock(AddMemberLvResult);
+                NetMessageManage.Manage().RemoveResultBlock(AddMemberLvResult);
                 this.Invoke(new UIHandleBlock(delegate {
 
                     MessageBox.Show("添加成功");
@@ -105,7 +105,7 @@ namespace NetBarMS.Views.SystemManage
             }
             if (result.pack.Cmd == Cmd.CMD_SYS_UPDATE)
             {
-                NetMessageManage.Manager().RemoveResultBlock(UpdateMemberLvResult);
+                NetMessageManage.Manage().RemoveResultBlock(UpdateMemberLvResult);
                 this.Invoke(new UIHandleBlock(delegate {
 
                     MessageBox.Show("修改成功");

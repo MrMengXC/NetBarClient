@@ -37,14 +37,14 @@
     <column name = "锁定原因" field="MoneyType" type ="C_Text" width ="" height =""/>
     <column name = "操作" field="VerifyType" type ="C_Button" width ="" height ="" bnames ="解锁.lock1"/>
   </grid>
+  
   <!--已付款商品订单管理-->
   <grid type ="PayedProductIndent">
-    <column name = "订单用户" field="EpNumber" type ="C_Text" width ="" height =""/>
+    <column name = "订单用户" field="Name" type ="C_Text" width ="" height =""/>
     <column name = "位置" field="Area" type ="C_Text" width ="" height =""/>
-    <column name = "订单金额" field="State" type ="C_Text" width ="" height =""/>
-    <column name = "下单时间" field="IdCard" type ="C_Text" width ="" height =""/>
-    <column name = "上次使用时间" field="CardType" type ="C_Text" width ="" height =""/>
-    <column name = "订单详情" field="VerifyType" type ="C_Button" width ="" height ="" bnames ="查看.look"/>
+    <column name = "订单金额" field="Money" type ="C_Text" width ="" height =""/>
+    <column name = "下单时间" field="Time" type ="C_Text" width ="" height =""/>
+    <column name = "订单详情" field="Detail" type ="C_Button" width ="" height ="" bnames ="查看.look"/>
   </grid>
   <!--上网记录-->
   <grid type ="NetRecord">
@@ -370,8 +370,8 @@
   <grid type ="ManagerManage">
     <column name = "勾选" field="Check" type ="C_Check" width ="" height =""/>
     <column name = "序号" field="Number" type ="C_Text" width ="" height =""/>
-    <column name = "角色名称" field="UserName" type ="C_Text" width ="" height =""/>
-    <column name = "功能权限" field="UserRole" type ="C_Text" width ="" height =""/>
+    <column name = "角色名称" field="ManagerName" type ="C_Text" width ="" height =""/>
+    <column name = "功能权限" field="ManagerLimit" type ="C_Text" width ="" height =""/>
     <column name = "操作" field="Operation" type ="C_Button" width ="" height ="" bnames="修改.xg"/>
   </grid>
   <!--员工列表-->

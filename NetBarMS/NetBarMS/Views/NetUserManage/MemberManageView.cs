@@ -117,7 +117,7 @@ namespace NetBarMS.Views
 
             if (result.pack.Cmd == Cmd.CMD_MEMBER_LIST && result.pack.Content.MessageType == 1)
             {
-                NetMessageManage.Manager().RemoveResultBlock(MemberListResult);
+                NetMessageManage.Manage().RemoveResultBlock(MemberListResult);
                 // System.Console.WriteLine("MemberListBlock:" + result.pack);
                 this.Invoke(new UIHandleBlock(delegate () {
                     this.UpdateGridControl(result.pack.Content.ScMemberList.MembersList);
@@ -201,7 +201,7 @@ namespace NetBarMS.Views
            
             if (result.pack.Cmd == Cmd.CMD_MEMBER_DEL && result.pack.Content.MessageType == 1)
             {
-                NetMessageManage.Manager().RemoveResultBlock(DeleteMemberResult);
+                NetMessageManage.Manage().RemoveResultBlock(DeleteMemberResult);
                 System.Console.WriteLine("DeleteMemberResult:" + result.pack);
                 this.Invoke(new UIHandleBlock(delegate ()
                 {
@@ -231,7 +231,7 @@ namespace NetBarMS.Views
 
             if (result.pack.Cmd == Cmd.CMD_MEMBER_VERIFY && result.pack.Content.MessageType == 1)
             {
-                NetMessageManage.Manager().RemoveResultBlock(VerifyMemberResult);
+                NetMessageManage.Manage().RemoveResultBlock(VerifyMemberResult);
                 System.Console.WriteLine("VerifyMemberResult:" + result.pack);
                 this.Invoke(new UIHandleBlock(delegate ()
                 {
@@ -290,7 +290,7 @@ namespace NetBarMS.Views
             if (result.pack.Cmd == Cmd.CMD_MEMBER_FIND && result.pack.Content.MessageType == 1)
             {
                 //锁定0 激活1 在线2 离线3
-                NetMessageManage.Manager().RemoveResultBlock(SearchMemberResult);
+                NetMessageManage.Manage().RemoveResultBlock(SearchMemberResult);
                 System.Console.WriteLine("SearchMemberResult:" + result.pack);
                 this.Invoke(new UIHandleBlock(delegate ()
                 {

@@ -28,14 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("上网用户管理");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("会员管理");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("库存管理");
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("订单管理");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("商品管理", new System.Windows.Forms.TreeNode[] {
-            treeNode3,
-            treeNode4});
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("客户端管理");
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
@@ -50,6 +42,10 @@
             // titlePanel
             // 
             this.titlePanel.Size = new System.Drawing.Size(455, 50);
+            // 
+            // closeButton
+            // 
+            this.closeButton.Location = new System.Drawing.Point(398, 0);
             // 
             // labelControl1
             // 
@@ -77,25 +73,9 @@
             // treeView1
             // 
             this.treeView1.CheckBoxes = true;
-            this.treeView1.Location = new System.Drawing.Point(26, 158);
+            this.treeView1.HotTracking = true;
+            this.treeView1.Location = new System.Drawing.Point(26, 159);
             this.treeView1.Name = "treeView1";
-            treeNode1.Name = "节点0";
-            treeNode1.Text = "上网用户管理";
-            treeNode2.Name = "节点1";
-            treeNode2.Text = "会员管理";
-            treeNode3.Name = "节点4";
-            treeNode3.Text = "库存管理";
-            treeNode4.Name = "节点5";
-            treeNode4.Text = "订单管理";
-            treeNode5.Name = "节点2";
-            treeNode5.Text = "商品管理";
-            treeNode6.Name = "节点3";
-            treeNode6.Text = "客户端管理";
-            this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2,
-            treeNode5,
-            treeNode6});
             this.treeView1.Size = new System.Drawing.Size(398, 120);
             this.treeView1.TabIndex = 65;
             // 
@@ -115,6 +95,7 @@
             this.simpleButton1.Size = new System.Drawing.Size(75, 23);
             this.simpleButton1.TabIndex = 67;
             this.simpleButton1.Text = "保存";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // ManagerAddView
             // 

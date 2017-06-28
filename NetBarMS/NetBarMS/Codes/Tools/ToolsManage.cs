@@ -54,6 +54,16 @@ namespace NetBarMS.Codes.Tools
             CustomForm newForm = new CustomForm(control, showInTaskbar);
 
         }
+        public static void ShowMessageView(RootUserControlView control, bool showInTaskbar, CloseFormHandle close)
+        {
+            //添加背景图片，显示中间输入
+            if (close != null)
+            {
+                control.CloseForm += close;
+            }
+            CustomForm newForm = new CustomForm(control, showInTaskbar);
+
+        }
         #endregion
 
         #region 设置GridControl ，创建标题

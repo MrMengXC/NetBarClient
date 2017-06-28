@@ -115,6 +115,7 @@
     <Compile Include="Codes\Model\TestModel.cs" />
     <Compile Include="Codes\Model\UserModel.cs" />
     <Compile Include="Codes\Tools\AreaSettingManage.cs" />
+    <Compile Include="Codes\Tools\CurrentStaffManage.cs" />
     <Compile Include="Codes\Tools\FlowManage\ActiveFlowManage.cs" />
     <Compile Include="Codes\Tools\IdTools.cs" />
     <Compile Include="Codes\Tools\NetBarException.cs" />
@@ -173,6 +174,12 @@
     </Compile>
     <Compile Include="Views\CustomView\CustomMonthDate.Designer.cs">
       <DependentUpon>CustomMonthDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CustomView\PageView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\CustomView\PageView.Designer.cs">
+      <DependentUpon>PageView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\HomePage\HomePageView.cs">
       <SubType>UserControl</SubType>
@@ -645,6 +652,9 @@
     <EmbeddedResource Include="Views\CustomView\CustomMonthDate.resx">
       <DependentUpon>CustomMonthDate.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\CustomView\PageView.resx">
+      <DependentUpon>PageView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\HomePage\HomePageView.resx">
       <DependentUpon>HomePageView.cs</DependentUpon>
     </EmbeddedResource>
@@ -890,6 +900,10 @@
     <Content Include="GridControl.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ManagerManageNodes.xml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="ManageNodes.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

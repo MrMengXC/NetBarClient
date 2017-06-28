@@ -35,7 +35,7 @@ namespace NetBarMS.Codes.Tools
         #endregion
 
         #region 静态方法
-        public static NetMessageManage Manager(ConnectResultBlock connect)
+        public static NetMessageManage Manage(ConnectResultBlock connect)
         {
             if (_instance == null)
             {
@@ -45,7 +45,7 @@ namespace NetBarMS.Codes.Tools
             }
             return _instance;
         }
-        public static NetMessageManage Manager()
+        public static NetMessageManage Manage()
         {
             if(_instance == null)
             {
@@ -175,8 +175,6 @@ namespace NetBarMS.Codes.Tools
                     while (true)
                     {
                         //
-
-
                         byte[] newResult = new byte[needlen];
                         int len = clientSocket.Receive(newResult, 0, needlen, SocketFlags.None);
                         //System.Console.WriteLine("len:" + len + "\nhaslen:" + haslen + "\nneedlen:" + needlen);

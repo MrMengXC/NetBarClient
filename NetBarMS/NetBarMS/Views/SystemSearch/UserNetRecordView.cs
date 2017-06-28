@@ -102,7 +102,7 @@ namespace NetBarMS.Views.NetUserManage
             if(result.pack.Cmd == Cmd.CMD_EMK_RECORD)
             {
                 System.Console.WriteLine("MemberNetRecordResult:" + result.pack);
-                NetMessageManage.Manager().RemoveResultBlock(MemberNetRecordResult);
+                NetMessageManage.Manage().RemoveResultBlock(MemberNetRecordResult);
                 this.Invoke(new UIHandleBlock(delegate {
                     UpdateGridControl(result.pack.Content.ScEmkRecord.EmkinfoList);
                 }));

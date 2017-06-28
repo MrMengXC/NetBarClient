@@ -120,7 +120,7 @@ namespace NetBarMS.Views.NetUserManage
                 return;
             }
             System.Console.WriteLine("AddMemberBlock:" + result.pack);
-            NetMessageManage.Manager().RemoveResultBlock(AddMemberBlock);
+            NetMessageManage.Manage().RemoveResultBlock(AddMemberBlock);
             if (result.pack.Content.MessageType == 1)
             {
                 this.Invoke(new UIHandleBlock(delegate ()

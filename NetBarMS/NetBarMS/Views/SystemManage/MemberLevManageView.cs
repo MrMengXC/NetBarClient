@@ -59,7 +59,7 @@ namespace NetBarMS.Views.SystemManage
             }
             if(result.pack.Cmd == Cmd.CMD_SYS_INFO && result.pack.Content.ScSysInfo.Parent.Equals(SystemManageNetOperation.lvParent))
             {
-                NetMessageManage.Manager().RemoveResultBlock(GetMemberLvSettingResult);
+                NetMessageManage.Manage().RemoveResultBlock(GetMemberLvSettingResult);
                 this.Invoke(new UIHandleBlock(delegate 
                 {
                     //更新系统管理数据
@@ -171,7 +171,7 @@ namespace NetBarMS.Views.SystemManage
             }
             if (result.pack.Cmd == Cmd.CMD_SYS_DEL)
             {
-                NetMessageManage.Manager().RemoveResultBlock(DeleteMemberLvResult);
+                NetMessageManage.Manage().RemoveResultBlock(DeleteMemberLvResult);
                 this.Invoke(new UIHandleBlock(delegate
                 {
                     this.GetMemberLvList();

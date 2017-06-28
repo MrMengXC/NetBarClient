@@ -84,7 +84,7 @@ namespace NetBarMS.Views.ProductManage
 
             if (result.pack.Cmd == Cmd.CMD_GOODS_SALES)
             {
-                NetMessageManage.Manager().RemoveResultBlock(GetSellRecordListResult);
+                NetMessageManage.Manage().RemoveResultBlock(GetSellRecordListResult);
                 System.Console.WriteLine("GetSellRecordListResult:" + result.pack);
                 this.Invoke(new UIHandleBlock(delegate{
                     sales = result.pack.Content.ScSalesRecord.SalesList;

@@ -16,5 +16,10 @@ namespace NetBarMS.Views
         {
             InitializeComponent();
         }
+
+        private void buttonEdit1_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

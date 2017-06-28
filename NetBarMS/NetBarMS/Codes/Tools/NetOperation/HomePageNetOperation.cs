@@ -20,7 +20,7 @@ namespace NetBarMS.Codes.Tools.NetOperation
             {
                 MessagePack.Builder pack = new MessagePack.Builder();
                 pack.SetCmd(Cmd.CMD_REALTIME_INFO);
-                NetMessageManage.Manager().SendMsg(pack.Build(), resultBlock);
+                NetMessageManage.Manage().SendMsg(pack.Build(), resultBlock);
             }
             catch(Exception exc)
             {
@@ -49,7 +49,7 @@ namespace NetBarMS.Codes.Tools.NetOperation
             MessagePack.Builder pack = new MessagePack.Builder();
             pack.SetCmd(Cmd.CMD_EMK_CHECKIN);
             pack.SetContent(content);
-            NetMessageManage.Manager().SendMsg(pack.Build(), resultBlock);
+            NetMessageManage.Manage().SendMsg(pack.Build(), resultBlock);
 
         }
         #endregion
@@ -70,7 +70,7 @@ namespace NetBarMS.Codes.Tools.NetOperation
             MessagePack.Builder pack = new MessagePack.Builder();
             pack.SetCmd(Cmd.CMD_EMK_CHECKOUT);
             pack.SetContent(content);
-            NetMessageManage.Manager().SendMsg(pack.Build(), resultBlock);
+            NetMessageManage.Manage().SendMsg(pack.Build(), resultBlock);
 
         }
         #endregion
@@ -93,7 +93,7 @@ namespace NetBarMS.Codes.Tools.NetOperation
             MessagePack.Builder pack = new MessagePack.Builder();
             pack.SetCmd(Cmd.CMD_PRECHARGE);
             pack.SetContent(content);
-            NetMessageManage.Manager().SendMsg(pack.Build(), resultBlock);
+            NetMessageManage.Manage().SendMsg(pack.Build(), resultBlock);
 
         }
         #endregion
@@ -104,7 +104,7 @@ namespace NetBarMS.Codes.Tools.NetOperation
         {
             MessagePack.Builder pack = new MessagePack.Builder();
             pack.SetCmd(Cmd.CMD_TOCHARGE);
-            NetMessageManage.Manager().SendMsg(pack.Build(), resultBlock);
+            NetMessageManage.Manage().SendMsg(pack.Build(), resultBlock);
         }
         #endregion
     }

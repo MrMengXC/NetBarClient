@@ -47,7 +47,7 @@ namespace NetBarMS.Codes.Tools.FlowManage
                 return;
             }
             System.Console.WriteLine("CardCheckInResult:" + result.pack);
-            NetMessageManage.Manager().RemoveResultBlock(ActiveFlowResult);
+            NetMessageManage.Manage().RemoveResultBlock(ActiveFlowResult);
             if (result.pack.Content.MessageType != 1)
             {
 

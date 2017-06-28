@@ -84,7 +84,7 @@ namespace NetBarMS.Views.SystemManage
 
             if (result.pack.Cmd == Cmd.CMD_SYS_INFO && result.pack.Content.ScSysInfo.Parent.Equals(SystemManageNetOperation.areaParent))
             {
-                NetMessageManage.Manager().RemoveResultBlock(GetAreaListResult);
+                NetMessageManage.Manage().RemoveResultBlock(GetAreaListResult);
                 this.Invoke(new UIHandleBlock(delegate
                 {
 
@@ -246,7 +246,7 @@ namespace NetBarMS.Views.SystemManage
 
             if (result.pack.Cmd == Cmd.CMD_SYS_ADD)
             {
-                NetMessageManage.Manager().RemoveResultBlock(AddAreaResult);
+                NetMessageManage.Manage().RemoveResultBlock(AddAreaResult);
                 //重新获取区域列表
                 GetAreaList();
              
@@ -263,7 +263,7 @@ namespace NetBarMS.Views.SystemManage
 
             if (result.pack.Cmd == Cmd.CMD_SYS_DEL)
             {
-                NetMessageManage.Manager().RemoveResultBlock(DeleteAreaResult);
+                NetMessageManage.Manage().RemoveResultBlock(DeleteAreaResult);
 
             }
         }
@@ -355,7 +355,7 @@ namespace NetBarMS.Views.SystemManage
             }
             if (result.pack.Cmd == Cmd.CMD_COMPUTER_UPDATE )
             {
-                NetMessageManage.Manager().RemoveResultBlock(UpdateAreaComputerResult);
+                NetMessageManage.Manage().RemoveResultBlock(UpdateAreaComputerResult);
                 this.Invoke(new UIHandleBlock(delegate
                 {
                     MessageBox.Show("保存成功");

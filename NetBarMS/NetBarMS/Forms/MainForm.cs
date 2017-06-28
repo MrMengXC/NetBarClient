@@ -70,12 +70,7 @@ namespace NetBarMS
             this.homePageListView.Size = this.homePageListPanel.Size;
             //this.homePageListView.Anchor = AnchorStyles.Bottom | AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             this.homePageListView.Dock = DockStyle.Fill;//AnchorStyles.Bottom | AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-
             this.homePageListView.BringToFront();
-
-
-
-
         }
 
         #region 初始化TreeView

@@ -25,7 +25,7 @@ namespace NetBarMS.Codes.Tools.NetOperation
             MessagePack.Builder pack = new MessagePack.Builder();
             pack.SetCmd(Cmd.CMD_MEMBER_LIST);
             pack.SetContent(content);
-            NetMessageManage.Manager().SendMsg(pack.Build(), resultBlock);
+            NetMessageManage.Manage().SendMsg(pack.Build(), resultBlock);
 
         }
         #endregion
@@ -44,7 +44,7 @@ namespace NetBarMS.Codes.Tools.NetOperation
             pack.SetCmd(Cmd.CMD_MEMBER_ADD);
             pack.SetContent(content);
 
-            NetMessageManage.Manager().SendMsg(pack.Build(), resultBlock);
+            NetMessageManage.Manage().SendMsg(pack.Build(), resultBlock);
         }
         #endregion
         #region 更新会员
@@ -61,7 +61,7 @@ namespace NetBarMS.Codes.Tools.NetOperation
             //pack.SetCmd(Cmd.CMD_MEMBER_ADD);
             //pack.SetContent(content);
 
-            //NetMessageManage.Manager().SendMsg(pack.Build(), resultBlock);
+            //NetMessageManage.Manage().SendMsg(pack.Build(), resultBlock);
         }
         #endregion
 
@@ -84,7 +84,7 @@ namespace NetBarMS.Codes.Tools.NetOperation
             MessagePack.Builder pack = new MessagePack.Builder();
             pack.SetCmd(Cmd.CMD_MEMBER_DEL);
             pack.SetContent(content);
-            NetMessageManage.Manager().SendMsg(pack.Build(), resultBlock);
+            NetMessageManage.Manage().SendMsg(pack.Build(), resultBlock);
         }
         #endregion
 
@@ -106,7 +106,7 @@ namespace NetBarMS.Codes.Tools.NetOperation
             MessagePack.Builder pack = new MessagePack.Builder();
             pack.SetCmd(Cmd.CMD_MEMBER_VERIFY);
             pack.SetContent(content);
-            NetMessageManage.Manager().SendMsg(pack.Build(), resultBlock);
+            NetMessageManage.Manage().SendMsg(pack.Build(), resultBlock);
         }
 
         #endregion
@@ -146,7 +146,7 @@ namespace NetBarMS.Codes.Tools.NetOperation
             MessagePack.Builder pack = new MessagePack.Builder();
             pack.SetCmd(Cmd.CMD_MEMBER_FIND);
             pack.SetContent(content);
-            NetMessageManage.Manager().SendMsg(pack.Build(), resultBlock);
+            NetMessageManage.Manage().SendMsg(pack.Build(), resultBlock);
         }
 
         #endregion
@@ -167,7 +167,7 @@ namespace NetBarMS.Codes.Tools.NetOperation
             MessagePack.Builder pack = new MessagePack.Builder();
             pack.SetCmd(Cmd.CMD_MEMBER_CARD_INFO);
             pack.SetContent(content);
-            NetMessageManage.Manager().SendMsg(pack.Build(), resultBlock);
+            NetMessageManage.Manage().SendMsg(pack.Build(), resultBlock);
         }
         #endregion
 
@@ -189,7 +189,7 @@ namespace NetBarMS.Codes.Tools.NetOperation
             MessagePack.Builder pack = new MessagePack.Builder();
             pack.SetCmd(Cmd.CMD_MEMBER_CONSUM_RECORD);
             pack.SetContent(content);
-            NetMessageManage.Manager().SendMsg(pack.Build(), resultBlock);
+            NetMessageManage.Manage().SendMsg(pack.Build(), resultBlock);
         }
 
         /// <summary>
@@ -229,7 +229,7 @@ namespace NetBarMS.Codes.Tools.NetOperation
             MessagePack.Builder pack = new MessagePack.Builder();
             pack.SetCmd(Cmd.CMD_MEMBER_CONSUM_FILTER);
             pack.SetContent(content);
-            NetMessageManage.Manager().SendMsg(pack.Build(), resultBlock);
+            NetMessageManage.Manage().SendMsg(pack.Build(), resultBlock);
         }
         #endregion
 
@@ -251,7 +251,7 @@ namespace NetBarMS.Codes.Tools.NetOperation
             MessagePack.Builder pack = new MessagePack.Builder();
             pack.SetCmd(Cmd.CMD_EMK_RECORD);
             pack.SetContent(content);
-            NetMessageManage.Manager().SendMsg(pack.Build(), resultBlock);
+            NetMessageManage.Manage().SendMsg(pack.Build(), resultBlock);
 
         }
 
@@ -280,7 +280,7 @@ namespace NetBarMS.Codes.Tools.NetOperation
             MessagePack.Builder pack = new MessagePack.Builder();
             pack.SetCmd(Cmd.CMD_EMK_RECORD_FIND);
             pack.SetContent(content);
-            NetMessageManage.Manager().SendMsg(pack.Build(), resultBlock);
+            NetMessageManage.Manage().SendMsg(pack.Build(), resultBlock);
         }
         #endregion
 

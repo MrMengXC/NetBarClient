@@ -118,7 +118,7 @@ namespace NetBarMS.Views.ProductManage
             }
             if (result.pack.Cmd == Cmd.CMD_GOODS_ADD)
             {
-                NetMessageManage.Manager().RemoveResultBlock(ProductResult);
+                NetMessageManage.Manage().RemoveResultBlock(ProductResult);
                 System.Console.WriteLine("ProductResult:" + result.pack);
                 this.Invoke(new UIHandleBlock(delegate
                 {
@@ -127,7 +127,7 @@ namespace NetBarMS.Views.ProductManage
             }
             else if (result.pack.Cmd == Cmd.CMD_GOODS_UPDATE)
             {
-                NetMessageManage.Manager().RemoveResultBlock(ProductResult);
+                NetMessageManage.Manage().RemoveResultBlock(ProductResult);
                 System.Console.WriteLine("ProductResult:" + result.pack);
                 this.Invoke(new UIHandleBlock(delegate
                 {

@@ -72,7 +72,7 @@ namespace NetBarMS.Views.SystemSearch
 
             if (result.pack.Cmd == Cmd.CMD_GOODS_ORDER_DETAIL)
             {
-                NetMessageManage.Manager().RemoveResultBlock(GetProdcutIndentDetailResult);
+                NetMessageManage.Manage().RemoveResultBlock(GetProdcutIndentDetailResult);
                 System.Console.WriteLine("GetProdcutIndentDetailResult:" + result.pack);
                 this.Invoke(new UIHandleBlock(delegate {
                     this.details = result.pack.Content.ScOrderDetail.DetailsList;

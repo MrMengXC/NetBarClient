@@ -31,7 +31,7 @@ namespace NetBarMS.Codes.Tools.NetOperation
             MessagePack.Builder pack = new MessagePack.Builder();
             pack.SetCmd(Cmd.CMD_SYS_BILLING_UPDATE);
             pack.SetContent(content);
-            NetMessageManage.Manager().SendMsg(pack.Build(), resultBlock);
+            NetMessageManage.Manage().SendMsg(pack.Build(), resultBlock);
 
         }
         //费率管理列表
@@ -39,7 +39,7 @@ namespace NetBarMS.Codes.Tools.NetOperation
         {
             MessagePack.Builder pack = new MessagePack.Builder();
             pack.SetCmd(Cmd.CMD_SYS_BILLING_LIST);
-            NetMessageManage.Manager().SendMsg(pack.Build(), resultBlock);
+            NetMessageManage.Manage().SendMsg(pack.Build(), resultBlock);
         }
         #endregion
 

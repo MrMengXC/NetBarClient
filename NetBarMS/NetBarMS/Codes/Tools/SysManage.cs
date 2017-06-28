@@ -81,7 +81,7 @@ namespace NetBarMS.Codes.Tools
             if (result.pack.Cmd == Cmd.CMD_SYS_INFO && result.pack.Content.ScSysInfo.Parent.Equals(SystemManageNetOperation.lvParent))
             {
 
-                NetMessageManage.Manager().RemoveResultBlock(GetMemberLvSettingResult);
+                NetMessageManage.Manage().RemoveResultBlock(GetMemberLvSettingResult);
                 //System.Console.WriteLine("GetMemberLvSettingResult:" + result.pack);
                 System.Console.WriteLine("获取会员等级信息");
                 if (result.pack.Content.MessageType == 1)
@@ -154,7 +154,7 @@ namespace NetBarMS.Codes.Tools
             if (result.pack.Cmd == Cmd.CMD_SYS_INFO && result.pack.Content.ScSysInfo.Parent.Equals(SystemManageNetOperation.areaParent))
             {
 
-                NetMessageManage.Manager().RemoveResultBlock(GetAreaListResult);
+                NetMessageManage.Manage().RemoveResultBlock(GetAreaListResult);
                 //System.Console.WriteLine("GetAreaList:" + result.pack);
                 System.Console.WriteLine("获取区域信息");
                 if (result.pack.Content.MessageType == 1)
@@ -226,7 +226,7 @@ namespace NetBarMS.Codes.Tools
             if (result.pack.Cmd == Cmd.CMD_SYS_INFO && result.pack.Content.ScSysInfo.Parent.Equals(SystemManageNetOperation.productTypeParent))
             {
                 //System.Console.WriteLine("ProductTypeInfoResult:" + result.pack);
-                NetMessageManage.Manager().RemoveResultBlock(ProductTypeInfoResult);
+                NetMessageManage.Manage().RemoveResultBlock(ProductTypeInfoResult);
                 System.Console.WriteLine("获取商品类别信息");
                 if (result.pack.Content.MessageType == 1)
                 {

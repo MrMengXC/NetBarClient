@@ -49,7 +49,12 @@
             // 
             // titlePanel
             // 
-            this.titlePanel.Size = new System.Drawing.Size(1000, 50);
+            this.titlePanel.Size = new System.Drawing.Size(1000, 54);
+            // 
+            // closeButton
+            // 
+            this.closeButton.Location = new System.Drawing.Point(714, 0);
+            this.closeButton.Size = new System.Drawing.Size(286, 54);
             // 
             // panel1
             // 

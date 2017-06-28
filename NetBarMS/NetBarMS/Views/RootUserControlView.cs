@@ -24,10 +24,7 @@ namespace NetBarMS.Views
         {
             InitializeComponent();
             this.closeButton.Click += CloseFormClick;
-
         }
-
-
         private void CloseFormClick(object sender, EventArgs e)
         {
             this.CloseFormClick();

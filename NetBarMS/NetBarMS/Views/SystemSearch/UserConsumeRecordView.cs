@@ -127,7 +127,7 @@ namespace NetBarMS.Views.NetUserManage
             }
             if (result.pack.Cmd == Cmd.CMD_MEMBER_CONSUM_RECORD )
             {
-                NetMessageManage.Manager().RemoveResultBlock(MemberConsumeRecordResult);
+                NetMessageManage.Manage().RemoveResultBlock(MemberConsumeRecordResult);
                 System.Console.WriteLine(result.pack);
                 this.Invoke(new UIHandleBlock(delegate {
                     UpdateGridControl(result.pack.Content.ScMemberConsumRecord.ConsuminfoList);
@@ -135,7 +135,7 @@ namespace NetBarMS.Views.NetUserManage
                 }));        
             }else if(result.pack.Cmd == Cmd.CMD_MEMBER_CONSUM_FILTER)
             {
-                NetMessageManage.Manager().RemoveResultBlock(MemberConsumeRecordResult);
+                NetMessageManage.Manage().RemoveResultBlock(MemberConsumeRecordResult);
                 System.Console.WriteLine("MemberConsumeRecordFilterResult" + result.pack);
                 this.Invoke(new UIHandleBlock(delegate {
                     this.mainDataTable.Clear();

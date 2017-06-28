@@ -125,7 +125,7 @@ namespace NetBarMS.Views.ProductManage
             }
             if(result.pack.Cmd == Cmd.CMD_GOODS_FIND)
             {
-                NetMessageManage.Manager().RemoveResultBlock(GetProductListResult);
+                NetMessageManage.Manage().RemoveResultBlock(GetProductListResult);
                 System.Console.WriteLine("GetProductListResult:"+result.pack);
                 this.Invoke(new UIHandleBlock(delegate
                 {
@@ -256,7 +256,7 @@ namespace NetBarMS.Views.ProductManage
             }
             if (result.pack.Cmd == Cmd.CMD_GOODS_DEL)
             {
-                NetMessageManage.Manager().RemoveResultBlock(DeleteProductResult);
+                NetMessageManage.Manage().RemoveResultBlock(DeleteProductResult);
                 System.Console.WriteLine("DeleteProductResult:" + result.pack);
                 this.Invoke(new UIHandleBlock(delegate
                 {

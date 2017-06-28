@@ -104,7 +104,7 @@ namespace NetBarMS.Views.RateManage
             {
                 return;
             }
-            NetMessageManage.Manager().RemoveResultBlock(RateManageResult);
+            NetMessageManage.Manage().RemoveResultBlock(RateManageResult);
 
             if (result.pack.Cmd == Cmd.CMD_SYS_BILLING_LIST)
             {

@@ -95,7 +95,7 @@ namespace NetBarMS.Views.RateManage
             if(result.pack.Cmd == Cmd.CMD_SYS_INFO && result.pack.Content.ScSysInfo.Parent.Equals(RateManageNetOperation.awardParent))
             {
 
-                NetMessageManage.Manager().RemoveResultBlock(AwardManageListResult);
+                NetMessageManage.Manage().RemoveResultBlock(AwardManageListResult);
                 this.Invoke(new UIHandleBlock(delegate
                 {
                     this.nitems = result.pack.Content.ScSysInfo.ChildList;
@@ -115,7 +115,7 @@ namespace NetBarMS.Views.RateManage
             }
             if (result.pack.Cmd == Cmd.CMD_SYS_INFO && result.pack.Content.ScSysInfo.Parent.Equals(RateManageNetOperation.memberDayAwardParent))
             {
-                NetMessageManage.Manager().RemoveResultBlock(MemberDayAwardManageListResult);
+                NetMessageManage.Manage().RemoveResultBlock(MemberDayAwardManageListResult);
                 
                 this.Invoke(new UIHandleBlock(delegate
                 {
@@ -200,7 +200,7 @@ namespace NetBarMS.Views.RateManage
             }
             if (result.pack.Cmd == Cmd.CMD_SYS_ADD)
             {
-                NetMessageManage.Manager().RemoveResultBlock(AddAwardResult);
+                NetMessageManage.Manage().RemoveResultBlock(AddAwardResult);
                 this.Invoke(new UIHandleBlock(delegate
                 {
                     //获取数据
@@ -220,7 +220,7 @@ namespace NetBarMS.Views.RateManage
             }
             if (result.pack.Cmd == Cmd.CMD_SYS_ADD)
             {
-                NetMessageManage.Manager().RemoveResultBlock(AddMemberDayAwardResult);
+                NetMessageManage.Manage().RemoveResultBlock(AddMemberDayAwardResult);
 
                 this.Invoke(new UIHandleBlock(delegate
                 {
@@ -268,7 +268,7 @@ namespace NetBarMS.Views.RateManage
             }
             if (result.pack.Cmd == Cmd.CMD_SYS_UPDATE)
             {
-                NetMessageManage.Manager().RemoveResultBlock(UpdateAwardResult);
+                NetMessageManage.Manage().RemoveResultBlock(UpdateAwardResult);
                 this.Invoke(new UIHandleBlock(delegate
                 {
                     //获取数据
@@ -288,7 +288,7 @@ namespace NetBarMS.Views.RateManage
             }
             if (result.pack.Cmd == Cmd.CMD_SYS_UPDATE)
             {
-                NetMessageManage.Manager().RemoveResultBlock(UpdateMemberDayAwardResult);
+                NetMessageManage.Manage().RemoveResultBlock(UpdateMemberDayAwardResult);
 
                 this.Invoke(new UIHandleBlock(delegate
                 {
@@ -332,7 +332,7 @@ namespace NetBarMS.Views.RateManage
             }
             if (result.pack.Cmd == Cmd.CMD_SYS_DEL)
             {
-                NetMessageManage.Manager().RemoveResultBlock(DeleteAwardResult);
+                NetMessageManage.Manage().RemoveResultBlock(DeleteAwardResult);
                 this.Invoke(new UIHandleBlock(delegate
                 {
                     //获取数据
@@ -351,7 +351,7 @@ namespace NetBarMS.Views.RateManage
             }
             if (result.pack.Cmd == Cmd.CMD_SYS_DEL)
             {
-                NetMessageManage.Manager().RemoveResultBlock(DeleteMemberDayAwardResult);
+                NetMessageManage.Manage().RemoveResultBlock(DeleteMemberDayAwardResult);
 
                 this.Invoke(new UIHandleBlock(delegate
                 {

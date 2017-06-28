@@ -77,7 +77,7 @@ namespace NetBarMS.Views.UserUseCp
             {
                 return;
             }
-            NetMessageManage.Manager().RemoveResultBlock(CardCheckOutResult);
+            NetMessageManage.Manage().RemoveResultBlock(CardCheckOutResult);
             System.Console.WriteLine("CardCheckOutResult:" + result.pack);
             if(result.pack.Content.MessageType == 1)
             {

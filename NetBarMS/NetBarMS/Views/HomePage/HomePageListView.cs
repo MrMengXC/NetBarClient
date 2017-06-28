@@ -62,10 +62,16 @@ namespace NetBarMS.Views.HomePage
         public void AccountInfoBlock(ResultModel result)
         {
         
-            if (result.pack.Cmd == Cmd.CMD_ACCOUNT_INFO && result.pack.Content.MessageType == 1)
+            if(result.pack.Cmd != Cmd.CMD_ACCOUNT_INFO)
             {
-                NetMessageManage.Manager().RemoveResultBlock(AccountInfoBlock);
-                //System.Console.WriteLine("AccountInfoBlock:" + result.pack);
+                return;
+            }
+            NetMessageManage.Manage().RemoveResultBlock(AccountInfoBlock);
+            System.Console.WriteLine("AccountInfoBlock:" + result.pack);
+            if (result.pack.Content.MessageType == 1)
+            {
+                //进行管理员管理
+                CurrentStaffManage.Manage().UpdateStaffInfo(result.pack.Content.ScAccountInfo);
                 GetHomePageList();
             }
         }

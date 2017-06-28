@@ -36,19 +36,19 @@
             // 
             // titlePanel
             // 
-            this.titlePanel.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.titlePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.titlePanel.Controls.Add(this.closeButton);
             this.titlePanel.Controls.Add(this.titleLabel);
             this.titlePanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.titlePanel.Location = new System.Drawing.Point(0, 0);
             this.titlePanel.Name = "titlePanel";
-            this.titlePanel.Size = new System.Drawing.Size(319, 50);
+            this.titlePanel.Size = new System.Drawing.Size(637, 50);
             this.titlePanel.TabIndex = 61;
             // 
             // closeButton
             // 
             this.closeButton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.closeButton.Location = new System.Drawing.Point(262, 0);
+            this.closeButton.Location = new System.Drawing.Point(580, 0);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(57, 50);
             this.closeButton.TabIndex = 2;
@@ -70,7 +70,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.titlePanel);
             this.Name = "RootUserControlView";
-            this.Size = new System.Drawing.Size(319, 399);
+            this.Size = new System.Drawing.Size(637, 399);
             this.titlePanel.ResumeLayout(false);
             this.titlePanel.PerformLayout();
             this.ResumeLayout(false);
@@ -80,7 +80,7 @@
         #endregion
 
         public System.Windows.Forms.Panel titlePanel;
-        private System.Windows.Forms.Button closeButton;
+        public System.Windows.Forms.Button closeButton;
         public System.Windows.Forms.Label titleLabel;
     }
 }

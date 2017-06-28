@@ -56,6 +56,7 @@
     <child name = "员工列表" tag="StaffList"/>
     <child name = "员工角色设置" tag="ManagerManage"/>
   </Node>
+  
   <Node name ="日志管理" tag="LogManage"/>
   
   <Node name ="设备信息管理">
