@@ -75,47 +75,89 @@ namespace NetBarMS.Codes.Tools.NetOperation
         /// </summary>
         public static void GetManagerList(DataResultBlock resultBlock,Int32 roleId)
         {
-
-            CSRoleList.Builder list = new CSRoleList.Builder();
-            list.Roleid = roleId;
-
-            MessageContent.Builder content = new MessageContent.Builder();
-            content.SetCsRoleList(list);
-            content.SetMessageType(1);
-
             MessagePack.Builder pack = new MessagePack.Builder();
             pack.SetCmd(Cmd.CMD_ROLE_LIST);
-            pack.SetContent(content);
             NetMessageManage.Manage().SendMsg(pack.Build(), resultBlock);
-        
-
-    }
+        }
         #endregion
+
         #region 添加管理员新角色
         /// <summary>
         /// 添加管理员新角色
         /// </summary>
-        public static void AddManager(DataResultBlock resultBlock)
+        public static void AddManager(DataResultBlock resultBlock,string name)
         {
+            CSRoleAdd.Builder add = new CSRoleAdd.Builder();
+            add.SetName(name);
 
+            MessageContent.Builder content = new MessageContent.Builder();
+            content.SetMessageType(1);
+            content.SetCsRoleAdd(add.Build());
+
+            MessagePack.Builder pack = new MessagePack.Builder();
+            pack.SetCmd(Cmd.CMD_ROLE_ADD);
+            pack.SetContent(content.Build());
+            NetMessageManage.Manage().SendMsg(pack.Build(), resultBlock);
         }
         #endregion
+
         #region 修改管理员的角色
         /// <summary>
-        /// 修改管理员的角色
+        /// 修改管理员的角色名称
         /// </summary>
-        public static void UpdateManager(DataResultBlock resultBlock)
+        public static void UpdateManagerName(DataResultBlock resultBlock,Int32 roleId,string name)
         {
+            CSRoleUpdate.Builder update = new CSRoleUpdate.Builder();
+            update.SetName(name);
+            update.SetRoleid(roleId);
+            MessageContent.Builder content = new MessageContent.Builder();
+            content.SetMessageType(1);
+            content.SetCsRoleUpdate(update.Build());
 
+            MessagePack.Builder pack = new MessagePack.Builder();
+            pack.SetCmd(Cmd.CMD_ROLE_UPDATE);
+            pack.SetContent(content.Build());
+            NetMessageManage.Manage().SendMsg(pack.Build(), resultBlock);
+        }
+        /// <summary>
+        /// 修改管理员的角色权限
+        /// </summary>
+        public static void UpdateManagerRights(DataResultBlock resultBlock, Int32 roleId, int rightType,string rights)
+        {
+            //权限类型，增删改查 1-5
+
+            CSRoleRights.Builder rolerights = new CSRoleRights.Builder();
+            rolerights.SetRoleid(roleId);
+            rolerights.SetRighttype(rightType);
+            rolerights.SetRights(rights);
+            MessageContent.Builder content = new MessageContent.Builder();
+            content.SetMessageType(1);
+            content.SetCsRoleRights(rolerights.Build());
+
+            MessagePack.Builder pack = new MessagePack.Builder();
+            pack.SetCmd(Cmd.CMD_ROLE_RIGHTS);
+            pack.SetContent(content.Build());
+            NetMessageManage.Manage().SendMsg(pack.Build(), resultBlock);
         }
         #endregion
+
         #region 删除管理员的角色
         /// <summary>
         /// 删除管理员的角色
         /// </summary>
-        public static void DeleteManager(DataResultBlock resultBlock)
+        public static void DeleteManager(DataResultBlock resultBlock,Int32 id)
         {
+            CSRoleDel.Builder del = new CSRoleDel.Builder();
+            del.SetRoleid(id);
 
+            MessageContent.Builder content = new MessageContent.Builder();
+            content.SetMessageType(1);
+            content.SetCsRoleDel(del.Build());
+
+            MessagePack.Builder pack = new MessagePack.Builder();
+            pack.SetCmd(Cmd.CMD_ROLE_DEL);
+            pack.SetContent(content.Build());
+            NetMessageManage.Manage().SendMsg(pack.Build(), resultBlock);
         }
         #endregion
     }

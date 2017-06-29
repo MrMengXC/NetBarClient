@@ -43,6 +43,11 @@
             // 
             this.titlePanel.Size = new System.Drawing.Size(455, 46);
             // 
+            // closeButton
+            // 
+            this.closeButton.Location = new System.Drawing.Point(398, 0);
+            this.closeButton.Size = new System.Drawing.Size(57, 46);
+            // 
             // gridControl1
             // 
             this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -86,6 +91,7 @@
             this.deleteManagerButton.Size = new System.Drawing.Size(62, 30);
             this.deleteManagerButton.TabIndex = 81;
             this.deleteManagerButton.Text = "删除";
+            this.deleteManagerButton.Click += new System.EventHandler(this.deleteManagerButton_Click);
             // 
             // ManagerManageView
             // 

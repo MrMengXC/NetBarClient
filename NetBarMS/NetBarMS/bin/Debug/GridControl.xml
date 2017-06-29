@@ -371,7 +371,6 @@
     <column name = "勾选" field="Check" type ="C_Check" width ="" height =""/>
     <column name = "序号" field="Number" type ="C_Text" width ="" height =""/>
     <column name = "角色名称" field="ManagerName" type ="C_Text" width ="" height =""/>
-    <column name = "功能权限" field="ManagerLimit" type ="C_Text" width ="" height =""/>
     <column name = "操作" field="Operation" type ="C_Button" width ="" height ="" bnames="修改.xg"/>
   </grid>
   <!--员工列表-->

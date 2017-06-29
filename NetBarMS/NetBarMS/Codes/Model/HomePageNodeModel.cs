@@ -17,7 +17,8 @@ namespace NetBarMS.Codes.Model
         //名称
         public string nodeName;
 
-
+        //id
+        public int nodeid;
         //子节点
         public List<HomePageNodeModel> childNodes;
 

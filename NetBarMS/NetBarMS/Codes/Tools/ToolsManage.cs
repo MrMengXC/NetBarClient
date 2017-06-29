@@ -82,7 +82,7 @@ namespace NetBarMS.Codes.Tools
         {
    
 
-            GridControlModel model = XMLDataManage.Instance().GetGridControlModel(type.ToString());
+            GridControlModel model = XMLDataManage.GetGridControlModel(type.ToString());
             table = new DataTable();
 
             int i = 0;
@@ -380,6 +380,26 @@ namespace NetBarMS.Codes.Tools
         }
         #endregion
 
+        #region 利用BigInteger对权限进行2的权的和计算
+        public static BigInteger SumRights(List<int> rights)
+        {
 
+            BigInteger big = new BigInteger();
+
+            for (int i = 0; i < rights.Count; i++)
+            {
+                //System.Console.WriteLine("(uint)rights[i]:"+(uint)rights[i]);
+                big.setBit((uint)rights[i]);
+            }
+            return big;
+        }
+        #endregion
+
+        #region 测试是否具有指定编码的权限
+        public static bool TestRights(BigInteger sum, int targetRights)
+        {
+            return sum.FermatLittleTest(targetRights);
+        }
+        #endregion
     }
 }

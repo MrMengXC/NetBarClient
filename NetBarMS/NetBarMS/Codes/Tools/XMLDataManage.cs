@@ -118,67 +118,61 @@ namespace NetBarMS.Codes.Tools
         private static XMLDataManage manage = null;
         private Dictionary<string,GridControlModel> gridControlDict = new Dictionary<string,GridControlModel>();
 
+        private List<HomePageNodeModel> homepageNodes = new List<HomePageNodeModel>();
+        private Dictionary<int, HomePageNodeModel> homePageNodeDict = new Dictionary<int, HomePageNodeModel>();
+
+
+
+        #region Static Fuc
         /// <summary>
-        /// 获取主页树节点的数据
+        ///单例方法
         /// </summary>
         /// <returns></returns>
-        public static List<HomePageNodeModel> ReadNodesXML()
+        private static XMLDataManage Manage()
         {
-            //SimpleButton
-            // xmlDoc.Load(Directory.GetCurrentDirectory() + a.xml)
-            List<HomePageNodeModel> datas = new List<HomePageNodeModel>();
-            string xmlFilePath = Application.StartupPath + "//ManageNodes.xml";//Directory.GetCurrentDirectory() +  "ManageNodes.xml";
-            XmlDocument xmlDoc = new XmlDocument();
-            xmlDoc.Load(xmlFilePath);
-
-            XmlNodeList nodeList = xmlDoc.SelectNodes("//ManageNode//Node");
-
-            foreach (XmlElement nodeEle in nodeList)
+           
+            if(manage == null)
             {
-
-                List<HomePageNodeModel> childNodes = new List<HomePageNodeModel>();
-                XmlNodeList childNodeList = nodeEle.SelectNodes("child");
-
-                foreach (XmlElement childEle in childNodeList)
-                {
-                    string childNodeTag = childEle.GetAttribute("tag") == null || childEle.GetAttribute("tag") == "" ? "None" : childEle.GetAttribute("tag");
-
-                    HomePageNodeModel childNodeModel = new HomePageNodeModel()
-                    {
-                        nodeName = childEle.GetAttribute("name"),
-                        nodeTag = childNodeTag,
-                    };
-                    childNodes.Add(childNodeModel);
-
-                }
-
-                string nodeTag = nodeEle.GetAttribute("tag") == null||nodeEle.GetAttribute("tag") == "" ? "None" : nodeEle.GetAttribute("tag");
-
-                HomePageNodeModel nodeModel = new HomePageNodeModel()
-                {
-                    nodeName = nodeEle.GetAttribute("name"),
-                    childNodes = childNodes,
-                    nodeTag = nodeTag,
-                };
-       
-                datas.Add(nodeModel);
-
+                manage = new XMLDataManage();
+                manage.ReadGridControlXML();
+                manage.ReadNodesXML();
             }
-            return datas;
-
-
+            return manage;
         }
+        public static void Init()
+        {
+            XMLDataManage.Manage();
+        }
+
         /// <summary>
         /// 获取主页树节点的数据
         /// </summary>
-        /// <returns></returns>
-        public static List<HomePageNodeModel> ReadManagerManageNodesXML()
+        public static List<HomePageNodeModel> GetNodesXML()
         {
-            string xmlFilePath = Application.StartupPath + "//ManagerManageNodes.xml";
 
-            return XMLDataManage.GetTreeNodes(xmlFilePath);
+            return XMLDataManage.Manage().homepageNodes;
 
         }
+
+        #region 获取节点数据
+
+        private void ReadNodesXML()
+        {
+            string xmlFilePath = Application.StartupPath + "//ManageNodes.xml";
+            homepageNodes = XMLDataManage.GetTreeNodes(xmlFilePath);
+            //foreach(HomePageNodeModel model in homepageNodes)
+            //{
+            //    foreach(HomePageNodeModel child in model.childNodes)
+            //    {
+            //        this.homePageNodeDict[child.nodeid] = child;
+
+            //    }
+            //    this.homePageNodeDict[model.nodeid] = model;
+
+            //}
+        }
+
+
         private static List<HomePageNodeModel> GetTreeNodes(string xmlFilePath)
         {
             //SimpleButton
@@ -197,47 +191,42 @@ namespace NetBarMS.Codes.Tools
                 foreach (XmlElement childEle in childNodeList)
                 {
                     string childNodeTag = childEle.GetAttribute("tag") == null || childEle.GetAttribute("tag") == "" ? "None" : childEle.GetAttribute("tag");
+                    int childNodeId = childEle.GetAttribute("id") == null || childEle.GetAttribute("id") == "" ? 0 : int.Parse(childEle.GetAttribute("id"));
 
                     HomePageNodeModel childNodeModel = new HomePageNodeModel()
                     {
                         nodeName = childEle.GetAttribute("name"),
                         nodeTag = childNodeTag,
+                        nodeid = childNodeId,
                     };
                     childNodes.Add(childNodeModel);
 
                 }
 
                 string nodeTag = nodeEle.GetAttribute("tag") == null || nodeEle.GetAttribute("tag") == "" ? "None" : nodeEle.GetAttribute("tag");
+                int nodeId = nodeEle.GetAttribute("id") == null || nodeEle.GetAttribute("id") == "" ? 0 : int.Parse(nodeEle.GetAttribute("id"));
 
                 HomePageNodeModel nodeModel = new HomePageNodeModel()
                 {
                     nodeName = nodeEle.GetAttribute("name"),
                     childNodes = childNodes,
                     nodeTag = nodeTag,
+                    nodeid = nodeId,
                 };
+               
 
                 datas.Add(nodeModel);
 
             }
             return datas;
         }
-        /// <summary>
-        ///单例方法
-        /// </summary>
-        /// <returns></returns>
-        public static XMLDataManage Instance()
-        {
-           
-            if(manage == null)
-            {
-                manage = new XMLDataManage();
-                manage.ReadGridControlXML();
-            }
-            return manage;
-        }
+        #endregion
 
+        #endregion
+
+        #region 获取GridControl 的数据
         /// <summary>
-        /// 获取GridControl 的标题火数据
+        /// 获取GridControl 的标题数据
         /// </summary>
         /// <returns></returns>
         private void ReadGridControlXML()
@@ -287,13 +276,20 @@ namespace NetBarMS.Codes.Tools
 
 
         }
+        #endregion
 
-
-        public GridControlModel GetGridControlModel(string type)
+        public static GridControlModel GetGridControlModel(string type)
         {
 
             GridControlModel model = null;
-            this.gridControlDict.TryGetValue(type, out model);
+
+            XMLDataManage.Manage().gridControlDict.TryGetValue(type, out model);
+            return model;
+        }
+        public static HomePageNodeModel GetGridControlModel(int nodeId)
+        {
+            HomePageNodeModel model = null;
+            XMLDataManage.Manage().homePageNodeDict.TryGetValue(nodeId, out model);
             return model;
         }
     }

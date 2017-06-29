@@ -40,7 +40,7 @@ namespace NetBarMS.Views.HomePage
             //this.manageTreeView.ShowLines = false;
             //this.manageTreeView.ImageIndex
 
-            List<HomePageNodeModel> modelList = XMLDataManage.ReadNodesXML();
+            List<HomePageNodeModel> modelList = XMLDataManage.GetNodesXML();
            
             for (int i = modelList.Count-1; i>=0; i--)
             {

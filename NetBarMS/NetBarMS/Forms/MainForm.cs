@@ -81,7 +81,7 @@ namespace NetBarMS
             this.manageTreeView.ShowLines = false;
             //this.manageTreeView.ImageIndex
            
-            List<HomePageNodeModel> modelList = XMLDataManage.ReadNodesXML();
+            List<HomePageNodeModel> modelList = XMLDataManage.GetNodesXML();
 
             foreach(HomePageNodeModel nodeModel in modelList)
             {

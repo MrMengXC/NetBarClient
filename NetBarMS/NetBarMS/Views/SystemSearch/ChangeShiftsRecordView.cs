@@ -74,7 +74,7 @@ namespace NetBarMS.Views.SystemSearch
       
 
 
-            GridControlModel model = XMLDataManage.Instance().GetGridControlModel(type.ToString());
+            GridControlModel model = XMLDataManage.GetGridControlModel(type.ToString());
             table = new DataTable();
 
             int i = 0;
