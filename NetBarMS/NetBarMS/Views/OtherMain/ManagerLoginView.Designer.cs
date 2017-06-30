@@ -53,8 +53,7 @@
             // 
             // closeButton
             // 
-            this.closeButton.Location = new System.Drawing.Point(714, 0);
-            this.closeButton.Size = new System.Drawing.Size(286, 54);
+ 
             // 
             // panel1
             // 

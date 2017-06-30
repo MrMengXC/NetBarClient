@@ -57,24 +57,11 @@ namespace NetBarMS.Views.ManagerManage
                 
                 if(this.manager != null && !this.manager.Rights.Equals(""))
                 {
-                    BigInteger big = new BigInteger(this.manager.Rights,10);
-                    //System.Console.WriteLine("big:" + big + "\nid:" + nodeModel.nodeid);
-                    //nodeId: 11
-                    //nodeId: 12
-                    //nodeId: 13
-                    //14336
-
-                    //BigInteger test = new BigInteger();
-                    
-                    //test.setBit((uint)nodeModel.nodeid);
-                    //System.Console.WriteLine("big.FermatLittleTest：" + big.modInverse(test).ToString() + "nodeModel.nodeid:"+ nodeModel.nodeid);
-                    //if ()
-                    //{
-                    //    System.Console.WriteLine("big:"+big +"\nid:"+nodeModel.nodeid);
-
-                    //}
-
-
+                  
+                   if (ToolsManage.TestRights(this.manager.Rights,nodeModel.nodeid))
+                    {
+                        node.Checked = true;
+                    }
                 }
                 if(nodeModel.childNodes !=null && nodeModel.childNodes.Count > 0)
                 {
@@ -95,6 +82,7 @@ namespace NetBarMS.Views.ManagerManage
             }
         }
         #endregion
+
         #region 保存
         //保存
         private void simpleButton1_Click(object sender, EventArgs e)
@@ -182,6 +170,7 @@ namespace NetBarMS.Views.ManagerManage
             }
         }
         #endregion
+
         #region 添加
         private void AddManager()
         {
@@ -209,6 +198,7 @@ namespace NetBarMS.Views.ManagerManage
             }
         }
         #endregion
+        
         #endregion
 
 

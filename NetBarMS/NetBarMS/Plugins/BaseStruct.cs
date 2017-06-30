@@ -54,6 +54,8 @@ public static partial class BaseStruct {
   internal static pb::FieldAccess.FieldAccessorTable<global::StructOrder, global::StructOrder.Builder> internal__static_StructOrder__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_StructOrderDetail__Descriptor;
   internal static pb::FieldAccess.FieldAccessorTable<global::StructOrderDetail, global::StructOrderDetail.Builder> internal__static_StructOrderDetail__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_StructComment__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::StructComment, global::StructComment.Builder> internal__static_StructComment__FieldAccessorTable;
   #endregion
   #region Descriptor
   public static pbd::FileDescriptor Descriptor {
@@ -126,9 +128,13 @@ public static partial class BaseStruct {
           "b3IYCCACKAkSDgoGc3RhdHVzGAkgAigJEg8KB3BheW1vZGUYCiACKAkSDQoF", 
           "cGF5aWQYCyACKAkiVAoRU3RydWN0T3JkZXJEZXRhaWwSEQoJZ29vZHNuYW1l", 
           "GAEgAigJEhAKCGNhdGVnb3J5GAIgAigFEg0KBXByaWNlGAMgAigJEgsKA251", 
-          "bRgEIAIoBSooCgRUeXBlEggKBElURU0QARIMCghDVVJSRU5DWRACEggKBFBB", 
-          "Q0sQA0IrCh1jb20uc2t5c29mdC5jb3JlLmF1dG8ubWVzc2FnZUIKQmFzZVN0", 
-        "cnVjdA=="));
+          "bRgEIAIoBSK5AQoNU3RydWN0Q29tbWVudBIPCgdhZGR0aW1lGAEgAigJEhAK", 
+          "CGN1c3RvbWVyGAIgAigJEhIKCmNhcmRudW1iZXIYAyACKAkSDQoFYm9udXMY", 
+          "BCACKAUSDQoFc3RhZmYYBSABKAkSDQoFcG9pbnQYBiABKAUSEwoLZW52aXJv", 
+          "bm1lbnQYByABKAUSDwoHc2VydmljZRgIIAEoBRIOCgZkZXZpY2UYCSABKAUS", 
+          "DgoGZGV0YWlsGAogASgJKigKBFR5cGUSCAoESVRFTRABEgwKCENVUlJFTkNZ", 
+          "EAISCAoEUEFDSxADQisKHWNvbS5za3lzb2Z0LmNvcmUuYXV0by5tZXNzYWdl", 
+        "QgpCYXNlU3RydWN0"));
     pbd::FileDescriptor.InternalDescriptorAssigner assigner = delegate(pbd::FileDescriptor root) {
       descriptor = root;
       internal__static_StructErrorTip__Descriptor = Descriptor.MessageTypes[0];
@@ -211,6 +217,10 @@ public static partial class BaseStruct {
       internal__static_StructOrderDetail__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructOrderDetail, global::StructOrderDetail.Builder>(internal__static_StructOrderDetail__Descriptor,
               new string[] { "Goodsname", "Category", "Price", "Num", });
+      internal__static_StructComment__Descriptor = Descriptor.MessageTypes[20];
+      internal__static_StructComment__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::StructComment, global::StructComment.Builder>(internal__static_StructComment__Descriptor,
+              new string[] { "Addtime", "Customer", "Cardnumber", "Bonus", "Staff", "Point", "Environment", "Service", "Device", "Detail", });
       return null;
     };
     pbd::FileDescriptor.InternalBuildGeneratedFileFrom(descriptorData,
@@ -11358,6 +11368,677 @@ public sealed partial class StructOrderDetail : pb::GeneratedMessage<StructOrder
     }
   }
   static StructOrderDetail() {
+    object.ReferenceEquals(global::BaseStruct.Descriptor, null);
+  }
+}
+
+[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+public sealed partial class StructComment : pb::GeneratedMessage<StructComment, StructComment.Builder> {
+  private StructComment() { }
+  private static readonly StructComment defaultInstance = new StructComment().MakeReadOnly();
+  private static readonly string[] _structCommentFieldNames = new string[] { "addtime", "bonus", "cardnumber", "customer", "detail", "device", "environment", "point", "service", "staff" };
+  private static readonly uint[] _structCommentFieldTags = new uint[] { 10, 32, 26, 18, 82, 72, 56, 48, 64, 42 };
+  public static StructComment DefaultInstance {
+    get { return defaultInstance; }
+  }
+  
+  public override StructComment DefaultInstanceForType {
+    get { return DefaultInstance; }
+  }
+  
+  protected override StructComment ThisMessage {
+    get { return this; }
+  }
+  
+  public static pbd::MessageDescriptor Descriptor {
+    get { return global::BaseStruct.internal__static_StructComment__Descriptor; }
+  }
+  
+  protected override pb::FieldAccess.FieldAccessorTable<StructComment, StructComment.Builder> InternalFieldAccessors {
+    get { return global::BaseStruct.internal__static_StructComment__FieldAccessorTable; }
+  }
+  
+  public const int AddtimeFieldNumber = 1;
+  private bool hasAddtime;
+  private string addtime_ = "";
+  public bool HasAddtime {
+    get { return hasAddtime; }
+  }
+  public string Addtime {
+    get { return addtime_; }
+  }
+  
+  public const int CustomerFieldNumber = 2;
+  private bool hasCustomer;
+  private string customer_ = "";
+  public bool HasCustomer {
+    get { return hasCustomer; }
+  }
+  public string Customer {
+    get { return customer_; }
+  }
+  
+  public const int CardnumberFieldNumber = 3;
+  private bool hasCardnumber;
+  private string cardnumber_ = "";
+  public bool HasCardnumber {
+    get { return hasCardnumber; }
+  }
+  public string Cardnumber {
+    get { return cardnumber_; }
+  }
+  
+  public const int BonusFieldNumber = 4;
+  private bool hasBonus;
+  private int bonus_;
+  public bool HasBonus {
+    get { return hasBonus; }
+  }
+  public int Bonus {
+    get { return bonus_; }
+  }
+  
+  public const int StaffFieldNumber = 5;
+  private bool hasStaff;
+  private string staff_ = "";
+  public bool HasStaff {
+    get { return hasStaff; }
+  }
+  public string Staff {
+    get { return staff_; }
+  }
+  
+  public const int PointFieldNumber = 6;
+  private bool hasPoint;
+  private int point_;
+  public bool HasPoint {
+    get { return hasPoint; }
+  }
+  public int Point {
+    get { return point_; }
+  }
+  
+  public const int EnvironmentFieldNumber = 7;
+  private bool hasEnvironment;
+  private int environment_;
+  public bool HasEnvironment {
+    get { return hasEnvironment; }
+  }
+  public int Environment {
+    get { return environment_; }
+  }
+  
+  public const int ServiceFieldNumber = 8;
+  private bool hasService;
+  private int service_;
+  public bool HasService {
+    get { return hasService; }
+  }
+  public int Service {
+    get { return service_; }
+  }
+  
+  public const int DeviceFieldNumber = 9;
+  private bool hasDevice;
+  private int device_;
+  public bool HasDevice {
+    get { return hasDevice; }
+  }
+  public int Device {
+    get { return device_; }
+  }
+  
+  public const int DetailFieldNumber = 10;
+  private bool hasDetail;
+  private string detail_ = "";
+  public bool HasDetail {
+    get { return hasDetail; }
+  }
+  public string Detail {
+    get { return detail_; }
+  }
+  
+  public override bool IsInitialized {
+    get {
+      if (!hasAddtime) return false;
+      if (!hasCustomer) return false;
+      if (!hasCardnumber) return false;
+      if (!hasBonus) return false;
+      return true;
+    }
+  }
+  
+  public override void WriteTo(pb::ICodedOutputStream output) {
+    CalcSerializedSize();
+    string[] field_names = _structCommentFieldNames;
+    if (hasAddtime) {
+      output.WriteString(1, field_names[0], Addtime);
+    }
+    if (hasCustomer) {
+      output.WriteString(2, field_names[3], Customer);
+    }
+    if (hasCardnumber) {
+      output.WriteString(3, field_names[2], Cardnumber);
+    }
+    if (hasBonus) {
+      output.WriteInt32(4, field_names[1], Bonus);
+    }
+    if (hasStaff) {
+      output.WriteString(5, field_names[9], Staff);
+    }
+    if (hasPoint) {
+      output.WriteInt32(6, field_names[7], Point);
+    }
+    if (hasEnvironment) {
+      output.WriteInt32(7, field_names[6], Environment);
+    }
+    if (hasService) {
+      output.WriteInt32(8, field_names[8], Service);
+    }
+    if (hasDevice) {
+      output.WriteInt32(9, field_names[5], Device);
+    }
+    if (hasDetail) {
+      output.WriteString(10, field_names[4], Detail);
+    }
+    UnknownFields.WriteTo(output);
+  }
+  
+  private int memoizedSerializedSize = -1;
+  public override int SerializedSize {
+    get {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+      return CalcSerializedSize();
+    }
+  }
+  
+  private int CalcSerializedSize() {
+    int size = memoizedSerializedSize;
+    if (size != -1) return size;
+    
+    size = 0;
+    if (hasAddtime) {
+      size += pb::CodedOutputStream.ComputeStringSize(1, Addtime);
+    }
+    if (hasCustomer) {
+      size += pb::CodedOutputStream.ComputeStringSize(2, Customer);
+    }
+    if (hasCardnumber) {
+      size += pb::CodedOutputStream.ComputeStringSize(3, Cardnumber);
+    }
+    if (hasBonus) {
+      size += pb::CodedOutputStream.ComputeInt32Size(4, Bonus);
+    }
+    if (hasStaff) {
+      size += pb::CodedOutputStream.ComputeStringSize(5, Staff);
+    }
+    if (hasPoint) {
+      size += pb::CodedOutputStream.ComputeInt32Size(6, Point);
+    }
+    if (hasEnvironment) {
+      size += pb::CodedOutputStream.ComputeInt32Size(7, Environment);
+    }
+    if (hasService) {
+      size += pb::CodedOutputStream.ComputeInt32Size(8, Service);
+    }
+    if (hasDevice) {
+      size += pb::CodedOutputStream.ComputeInt32Size(9, Device);
+    }
+    if (hasDetail) {
+      size += pb::CodedOutputStream.ComputeStringSize(10, Detail);
+    }
+    size += UnknownFields.SerializedSize;
+    memoizedSerializedSize = size;
+    return size;
+  }
+  public static StructComment ParseFrom(pb::ByteString data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static StructComment ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static StructComment ParseFrom(byte[] data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static StructComment ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static StructComment ParseFrom(global::System.IO.Stream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static StructComment ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  public static StructComment ParseDelimitedFrom(global::System.IO.Stream input) {
+    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
+  }
+  public static StructComment ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
+  }
+  public static StructComment ParseFrom(pb::ICodedInputStream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static StructComment ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  private StructComment MakeReadOnly() {
+    return this;
+  }
+  
+  public static Builder CreateBuilder() { return new Builder(); }
+  public override Builder ToBuilder() { return CreateBuilder(this); }
+  public override Builder CreateBuilderForType() { return new Builder(); }
+  public static Builder CreateBuilder(StructComment prototype) {
+    return new Builder(prototype);
+  }
+  
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class Builder : pb::GeneratedBuilder<StructComment, Builder> {
+    protected override Builder ThisBuilder {
+      get { return this; }
+    }
+    public Builder() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+    }
+    internal Builder(StructComment cloneFrom) {
+      result = cloneFrom;
+      resultIsReadOnly = true;
+    }
+    
+    private bool resultIsReadOnly;
+    private StructComment result;
+    
+    private StructComment PrepareBuilder() {
+      if (resultIsReadOnly) {
+        StructComment original = result;
+        result = new StructComment();
+        resultIsReadOnly = false;
+        MergeFrom(original);
+      }
+      return result;
+    }
+    
+    public override bool IsInitialized {
+      get { return result.IsInitialized; }
+    }
+    
+    protected override StructComment MessageBeingBuilt {
+      get { return PrepareBuilder(); }
+    }
+    
+    public override Builder Clear() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+      return this;
+    }
+    
+    public override Builder Clone() {
+      if (resultIsReadOnly) {
+        return new Builder(result);
+      } else {
+        return new Builder().MergeFrom(result);
+      }
+    }
+    
+    public override pbd::MessageDescriptor DescriptorForType {
+      get { return global::StructComment.Descriptor; }
+    }
+    
+    public override StructComment DefaultInstanceForType {
+      get { return global::StructComment.DefaultInstance; }
+    }
+    
+    public override StructComment BuildPartial() {
+      if (resultIsReadOnly) {
+        return result;
+      }
+      resultIsReadOnly = true;
+      return result.MakeReadOnly();
+    }
+    
+    public override Builder MergeFrom(pb::IMessage other) {
+      if (other is StructComment) {
+        return MergeFrom((StructComment) other);
+      } else {
+        base.MergeFrom(other);
+        return this;
+      }
+    }
+    
+    public override Builder MergeFrom(StructComment other) {
+      if (other == global::StructComment.DefaultInstance) return this;
+      PrepareBuilder();
+      if (other.HasAddtime) {
+        Addtime = other.Addtime;
+      }
+      if (other.HasCustomer) {
+        Customer = other.Customer;
+      }
+      if (other.HasCardnumber) {
+        Cardnumber = other.Cardnumber;
+      }
+      if (other.HasBonus) {
+        Bonus = other.Bonus;
+      }
+      if (other.HasStaff) {
+        Staff = other.Staff;
+      }
+      if (other.HasPoint) {
+        Point = other.Point;
+      }
+      if (other.HasEnvironment) {
+        Environment = other.Environment;
+      }
+      if (other.HasService) {
+        Service = other.Service;
+      }
+      if (other.HasDevice) {
+        Device = other.Device;
+      }
+      if (other.HasDetail) {
+        Detail = other.Detail;
+      }
+      this.MergeUnknownFields(other.UnknownFields);
+      return this;
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input) {
+      return MergeFrom(input, pb::ExtensionRegistry.Empty);
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+      PrepareBuilder();
+      pb::UnknownFieldSet.Builder unknownFields = null;
+      uint tag;
+      string field_name;
+      while (input.ReadTag(out tag, out field_name)) {
+        if(tag == 0 && field_name != null) {
+          int field_ordinal = global::System.Array.BinarySearch(_structCommentFieldNames, field_name, global::System.StringComparer.Ordinal);
+          if(field_ordinal >= 0)
+            tag = _structCommentFieldTags[field_ordinal];
+          else {
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            continue;
+          }
+        }
+        switch (tag) {
+          case 0: {
+            throw pb::InvalidProtocolBufferException.InvalidTag();
+          }
+          default: {
+            if (pb::WireFormat.IsEndGroupTag(tag)) {
+              if (unknownFields != null) {
+                this.UnknownFields = unknownFields.Build();
+              }
+              return this;
+            }
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            break;
+          }
+          case 10: {
+            result.hasAddtime = input.ReadString(ref result.addtime_);
+            break;
+          }
+          case 18: {
+            result.hasCustomer = input.ReadString(ref result.customer_);
+            break;
+          }
+          case 26: {
+            result.hasCardnumber = input.ReadString(ref result.cardnumber_);
+            break;
+          }
+          case 32: {
+            result.hasBonus = input.ReadInt32(ref result.bonus_);
+            break;
+          }
+          case 42: {
+            result.hasStaff = input.ReadString(ref result.staff_);
+            break;
+          }
+          case 48: {
+            result.hasPoint = input.ReadInt32(ref result.point_);
+            break;
+          }
+          case 56: {
+            result.hasEnvironment = input.ReadInt32(ref result.environment_);
+            break;
+          }
+          case 64: {
+            result.hasService = input.ReadInt32(ref result.service_);
+            break;
+          }
+          case 72: {
+            result.hasDevice = input.ReadInt32(ref result.device_);
+            break;
+          }
+          case 82: {
+            result.hasDetail = input.ReadString(ref result.detail_);
+            break;
+          }
+        }
+      }
+      
+      if (unknownFields != null) {
+        this.UnknownFields = unknownFields.Build();
+      }
+      return this;
+    }
+    
+    
+    public bool HasAddtime {
+      get { return result.hasAddtime; }
+    }
+    public string Addtime {
+      get { return result.Addtime; }
+      set { SetAddtime(value); }
+    }
+    public Builder SetAddtime(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasAddtime = true;
+      result.addtime_ = value;
+      return this;
+    }
+    public Builder ClearAddtime() {
+      PrepareBuilder();
+      result.hasAddtime = false;
+      result.addtime_ = "";
+      return this;
+    }
+    
+    public bool HasCustomer {
+      get { return result.hasCustomer; }
+    }
+    public string Customer {
+      get { return result.Customer; }
+      set { SetCustomer(value); }
+    }
+    public Builder SetCustomer(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasCustomer = true;
+      result.customer_ = value;
+      return this;
+    }
+    public Builder ClearCustomer() {
+      PrepareBuilder();
+      result.hasCustomer = false;
+      result.customer_ = "";
+      return this;
+    }
+    
+    public bool HasCardnumber {
+      get { return result.hasCardnumber; }
+    }
+    public string Cardnumber {
+      get { return result.Cardnumber; }
+      set { SetCardnumber(value); }
+    }
+    public Builder SetCardnumber(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasCardnumber = true;
+      result.cardnumber_ = value;
+      return this;
+    }
+    public Builder ClearCardnumber() {
+      PrepareBuilder();
+      result.hasCardnumber = false;
+      result.cardnumber_ = "";
+      return this;
+    }
+    
+    public bool HasBonus {
+      get { return result.hasBonus; }
+    }
+    public int Bonus {
+      get { return result.Bonus; }
+      set { SetBonus(value); }
+    }
+    public Builder SetBonus(int value) {
+      PrepareBuilder();
+      result.hasBonus = true;
+      result.bonus_ = value;
+      return this;
+    }
+    public Builder ClearBonus() {
+      PrepareBuilder();
+      result.hasBonus = false;
+      result.bonus_ = 0;
+      return this;
+    }
+    
+    public bool HasStaff {
+      get { return result.hasStaff; }
+    }
+    public string Staff {
+      get { return result.Staff; }
+      set { SetStaff(value); }
+    }
+    public Builder SetStaff(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasStaff = true;
+      result.staff_ = value;
+      return this;
+    }
+    public Builder ClearStaff() {
+      PrepareBuilder();
+      result.hasStaff = false;
+      result.staff_ = "";
+      return this;
+    }
+    
+    public bool HasPoint {
+      get { return result.hasPoint; }
+    }
+    public int Point {
+      get { return result.Point; }
+      set { SetPoint(value); }
+    }
+    public Builder SetPoint(int value) {
+      PrepareBuilder();
+      result.hasPoint = true;
+      result.point_ = value;
+      return this;
+    }
+    public Builder ClearPoint() {
+      PrepareBuilder();
+      result.hasPoint = false;
+      result.point_ = 0;
+      return this;
+    }
+    
+    public bool HasEnvironment {
+      get { return result.hasEnvironment; }
+    }
+    public int Environment {
+      get { return result.Environment; }
+      set { SetEnvironment(value); }
+    }
+    public Builder SetEnvironment(int value) {
+      PrepareBuilder();
+      result.hasEnvironment = true;
+      result.environment_ = value;
+      return this;
+    }
+    public Builder ClearEnvironment() {
+      PrepareBuilder();
+      result.hasEnvironment = false;
+      result.environment_ = 0;
+      return this;
+    }
+    
+    public bool HasService {
+      get { return result.hasService; }
+    }
+    public int Service {
+      get { return result.Service; }
+      set { SetService(value); }
+    }
+    public Builder SetService(int value) {
+      PrepareBuilder();
+      result.hasService = true;
+      result.service_ = value;
+      return this;
+    }
+    public Builder ClearService() {
+      PrepareBuilder();
+      result.hasService = false;
+      result.service_ = 0;
+      return this;
+    }
+    
+    public bool HasDevice {
+      get { return result.hasDevice; }
+    }
+    public int Device {
+      get { return result.Device; }
+      set { SetDevice(value); }
+    }
+    public Builder SetDevice(int value) {
+      PrepareBuilder();
+      result.hasDevice = true;
+      result.device_ = value;
+      return this;
+    }
+    public Builder ClearDevice() {
+      PrepareBuilder();
+      result.hasDevice = false;
+      result.device_ = 0;
+      return this;
+    }
+    
+    public bool HasDetail {
+      get { return result.hasDetail; }
+    }
+    public string Detail {
+      get { return result.Detail; }
+      set { SetDetail(value); }
+    }
+    public Builder SetDetail(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasDetail = true;
+      result.detail_ = value;
+      return this;
+    }
+    public Builder ClearDetail() {
+      PrepareBuilder();
+      result.hasDetail = false;
+      result.detail_ = "";
+      return this;
+    }
+  }
+  static StructComment() {
     object.ReferenceEquals(global::BaseStruct.Descriptor, null);
   }
 }

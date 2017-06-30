@@ -43,7 +43,18 @@ namespace NetBarMS.Codes.Tools
         //会员类型
         private List<StructDictItem> memberTypes;
         //会员字典     
-        private Dictionary<int, StructDictItem> memberDict = new Dictionary<int, StructDictItem>(); 
+        private Dictionary<int, StructDictItem> memberDict = new Dictionary<int, StructDictItem>();
+
+        //管理员类型
+        private List<StructRole> managers;
+        //管理员字典     
+        private Dictionary<string, StructRole> managerDict = new Dictionary<string, StructRole>();
+
+        //员工列表
+        private List<StructAccount> staffs;
+
+        //员工字典     
+        private Dictionary<string, StructAccount> staffDict = new Dictionary<string, StructAccount>();
 
         //单例
         public static SysManage Manage()
@@ -63,6 +74,8 @@ namespace NetBarMS.Codes.Tools
             GetAreaList();
             GetProductTypes();
             GetMemberLvList();
+            GetManagerList();
+            GetStaffList();
         }
         #endregion
         public void UpdateHomePageComputers(IList<StructRealTime> tem)
@@ -286,23 +299,153 @@ namespace NetBarMS.Codes.Tools
         }
         #endregion
 
-        //#region 移除结果回调
-        ////移除商品类别的结果回调
-        //public void RemoveProductTypesResult(GetProductTypesHandle handle)
-        //{
-        //    this.GetProductTypesEvent -= handle;
-        //}
-        ////移除会员类型的结果回调
-        //public void RemoveMemberTypesResult(GetMemberTypesHandle handle)
-        //{
-        //    this.GetMemberTypesEvent -= handle;
-        //}
-        ////移除区域的结果回调
-        //public void RemoveAreasResult(GetAreasHandle handle)
-        //{
-        //    this.GetAreasEvent -= handle;
-        //}
-        //#endregion
+        #region 管理员类别功能
+        //获取管理员列表
+        private void GetManagerList()
+        {
+            ManagerNetOperation.GetManagerList(GetManagerListResult, CurrentStaffManage.Manage().GetCurrentStaffId());
+        }
+        //获取管理员列表结果回调
+        private void GetManagerListResult(ResultModel result)
+        {
 
+            if (result.pack.Cmd != Cmd.CMD_ROLE_LIST)
+            {
+                return;
+            }
+            NetMessageManage.Manage().RemoveResultBlock(GetManagerListResult);
+            //System.Console.WriteLine("GetManagerListResult:" + result.pack);
+            System.Console.WriteLine("获取管理员");
+
+            if (result.pack.Content.MessageType == 1)
+            {
+
+                this.managers = result.pack.Content.ScRoleList.RolesList.ToList<StructRole>();
+                this.managerDict.Clear();
+                foreach (StructRole role in this.managers)
+                {
+                    managerDict.Add(role.Roleid, role);
+                }
+
+            }
+        }
+       
+        //更新管理员数据（管理员管理界面使用）
+        public void UpdateManagerData(IList<StructRole> temmanagers)
+        {
+
+            this.managers = temmanagers.ToList<StructRole>();
+
+            managerDict.Clear();
+            foreach (StructRole role in this.managers)
+            {
+                managerDict.Add(role.Roleid, role);
+            }
+        }
+        //获取管理员名称
+        public string GetManagerName(string id)
+        {
+
+            StructRole role;
+            this.managerDict.TryGetValue(id, out role);
+            if (role == null)
+            {
+                return "该管理员角色已移除";
+            }
+            else
+            {
+                return role.Name;
+            }
+        }
+        //获取管理员数据
+        public void GetManagers(out List<StructRole> items)
+        {
+            //如果存在应该直接返回
+            if (this.managers != null)
+            {
+                items = this.managers.ToList<StructRole>();
+            }
+            else
+            {
+                items = new List<StructRole>();
+            }
+        }
+        #endregion
+
+        #region 员工列表
+        //获取员工列表
+        private void GetStaffList()
+        {
+            StaffNetOperation.GetStaffList(GetStaffListResult);
+        }
+
+        //获取员工列表结果回调
+        private void GetStaffListResult(ResultModel result)
+        {
+            if (result.pack.Cmd != Cmd.CMD_STAFF_LIST)
+            {
+                return;
+            }
+            NetMessageManage.Manage().RemoveResultBlock(GetStaffListResult);
+
+            if (result.pack.Content.MessageType == 1)
+            {
+                System.Console.WriteLine("获取员工列表");
+
+                this.staffs = result.pack.Content.ScAccountList.AccountList.ToList<StructAccount>();
+                this.staffDict.Clear();
+                foreach (StructAccount staff in this.staffs)
+                {
+                    staffDict.Add(staff.Guid, staff);
+                }
+            }
+            else
+            {
+                System.Console.WriteLine("GetStaffListResult:" + result.pack);
+            }
+        }
+       
+
+        //更新员工数据（修改短信推送，修改员工信息）
+        public void UpdateStaffData(IList<StructAccount> tem)
+        {
+
+            this.staffs = tem.ToList<StructAccount>();
+
+            this.staffDict.Clear();
+            foreach (StructAccount staff in this.staffs)
+            {
+                this.staffDict.Add(staff.Guid, staff);
+            }
+        }
+        //获取员工姓名
+        public string GetStaffName(string id)
+        {
+
+            StructAccount staff;
+            this.staffDict.TryGetValue(id, out staff);
+            if (staff == null)
+            {
+                return "该员工已移除";
+            }
+            else
+            {
+                return staff.Nickname;
+            }
+        }
+        //获取员工数据
+        public void GetStaffs(out List<StructAccount> items)
+        {
+            //如果存在应该直接返回
+            if (this.staffs != null)
+            {
+                items = this.staffs.ToList<StructAccount>();
+            }
+            else
+            {
+                items = new List<StructAccount>();
+            }
+        }
+        #endregion
     }
 }

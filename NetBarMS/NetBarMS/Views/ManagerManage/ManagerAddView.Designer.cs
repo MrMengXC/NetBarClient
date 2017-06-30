@@ -45,7 +45,6 @@
             // 
             // closeButton
             // 
-            this.closeButton.Location = new System.Drawing.Point(398, 0);
             // 
             // labelControl1
             // 

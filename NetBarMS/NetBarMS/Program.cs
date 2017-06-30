@@ -35,8 +35,6 @@ namespace NetBarMS
             //初始化XML
             XMLDataManage.Init();
 
-            BigInteger big = new BigInteger("14336", 10);
-            big.setBit(14);
             //ManagerAddView newview2 = new ManagerAddView();
             //CustomForm newForm2 = new CustomForm(newview2, true, false);
             //// MainForm newForm2 = new MainForm

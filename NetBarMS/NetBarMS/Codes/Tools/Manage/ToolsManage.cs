@@ -396,9 +396,15 @@ namespace NetBarMS.Codes.Tools
         #endregion
 
         #region 测试是否具有指定编码的权限
-        public static bool TestRights(BigInteger sum, int targetRights)
+        public static bool TestRights(string sum, int targetRights)
         {
-            return sum.FermatLittleTest(targetRights);
+            if(sum.Equals(""))
+            {
+                return false;
+            }
+            BigInteger big = new BigInteger(sum, 10);
+            big.setBit((uint)targetRights);
+            return big.ToString().Equals(sum);
         }
         #endregion
     }

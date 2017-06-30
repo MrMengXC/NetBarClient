@@ -45,8 +45,7 @@
             // 
             // closeButton
             // 
-            this.closeButton.Location = new System.Drawing.Point(398, 0);
-            this.closeButton.Size = new System.Drawing.Size(57, 46);
+   
             // 
             // gridControl1
             // 

@@ -418,7 +418,6 @@ C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\bin\Debug\de\DevEx
 C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\bin\Debug\es\DevExpress.Pdf.v15.2.Core.resources.dll
 C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\bin\Debug\ja\DevExpress.Pdf.v15.2.Core.resources.dll
 C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\bin\Debug\ru\DevExpress.Pdf.v15.2.Core.resources.dll
-C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\obj\Debug\NetBarMS.Codes.Tools.RepositoryItemMyEdit.resources
 C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\obj\Debug\NetBarMS.Forms.CustomForm.resources
 C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\obj\Debug\NetBarMS.MainForm.resources
 C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\obj\Debug\NetBarMS.Forms.NewForm.resources

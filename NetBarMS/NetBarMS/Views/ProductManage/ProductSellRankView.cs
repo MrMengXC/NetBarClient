@@ -25,8 +25,11 @@ namespace NetBarMS.Views.ProductManage
             SellNumRank,        //销售量排行
             SellMoney,          //销售额
             SellMoneyRank,       //销售额排行
-
         }
+
+
+   
+
         public ProductSellRankView()
         {
             InitializeComponent();

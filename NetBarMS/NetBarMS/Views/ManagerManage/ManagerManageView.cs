@@ -62,6 +62,7 @@ namespace NetBarMS.Views.ManagerManage
             if(result.pack.Content.MessageType == 1)
             {
                 this.Invoke(new UIHandleBlock(delegate {
+                    SysManage.Manage().UpdateManagerData(result.pack.Content.ScRoleList.RolesList);
                     managers = result.pack.Content.ScRoleList.RolesList;
                     RefreshGridControl();
 

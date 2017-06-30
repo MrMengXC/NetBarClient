@@ -80,7 +80,7 @@
         #endregion
 
         public System.Windows.Forms.Panel titlePanel;
-        public System.Windows.Forms.Button closeButton;
+        private System.Windows.Forms.Button closeButton;
         public System.Windows.Forms.Label titleLabel;
     }
 }

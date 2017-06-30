@@ -115,13 +115,14 @@
     <Compile Include="Codes\Model\ProductModel.cs" />
     <Compile Include="Codes\Model\TestModel.cs" />
     <Compile Include="Codes\Model\UserModel.cs" />
-    <Compile Include="Codes\Tools\AreaSettingManage.cs" />
-    <Compile Include="Codes\Tools\BigInteger.cs" />
-    <Compile Include="Codes\Tools\CurrentStaffManage.cs" />
+    <Compile Include="Codes\Tools\Manage\AreaSettingManage.cs" />
+    <Compile Include="Codes\Tools\NetOperation\EvaluateNetOperation.cs" />
+    <Compile Include="Plugins\BigInteger.cs" />
+    <Compile Include="Codes\Tools\Manage\CurrentStaffManage.cs" />
     <Compile Include="Codes\Tools\FlowManage\ActiveFlowManage.cs" />
-    <Compile Include="Codes\Tools\IdTools.cs" />
-    <Compile Include="Codes\Tools\NetBarException.cs" />
-    <Compile Include="Codes\Tools\NetMessageManage.cs" />
+    <Compile Include="Codes\Tools\Manage\IdTools.cs" />
+    <Compile Include="Codes\Tools\Manage\NetBarException.cs" />
+    <Compile Include="Codes\Tools\Manage\NetMessageManage.cs" />
     <Compile Include="Codes\Tools\NetOperation\HomePageNetOperation.cs" />
     <Compile Include="Codes\Tools\NetOperation\IncomeNetOperation.cs" />
     <Compile Include="Codes\Tools\NetOperation\ManagerNetOperation.cs" />
@@ -131,11 +132,8 @@
     <Compile Include="Codes\Tools\NetOperation\StaffNetOperation.cs" />
     <Compile Include="Codes\Tools\NetOperation\SysNetOperation.cs" />
     <Compile Include="Codes\Tools\NetOperation\SystemManageNetOperation.cs" />
-    <Compile Include="Codes\Tools\RepositoryItemMyEdit.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Codes\Tools\SysManage.cs" />
-    <Compile Include="Codes\Tools\ToolsManage.cs" />
+    <Compile Include="Codes\Tools\Manage\SysManage.cs" />
+    <Compile Include="Codes\Tools\Manage\ToolsManage.cs" />
     <Compile Include="Forms\CustomForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,7 +168,7 @@
     <Compile Include="Plugins\CoreProtocol.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Codes\Tools\XMLDataManage.cs" />
+    <Compile Include="Codes\Tools\Manage\XMLDataManage.cs" />
     <Compile Include="Views\CustomView\CustomMonthDate.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -621,9 +619,6 @@
     <Compile Include="Views\UserActive\UserActiveView.Designer.cs">
       <DependentUpon>UserActiveView.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Codes\Tools\RepositoryItemMyEdit.resx">
-      <DependentUpon>RepositoryItemMyEdit.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CustomForm.resx">
       <DependentUpon>CustomForm.cs</DependentUpon>
     </EmbeddedResource>

@@ -72,20 +72,25 @@ namespace NetBarMS.Views.SystemManage
         //获取员工列表列表的结果回调
         private void GetStaffListResult(ResultModel result)
         {
-            if (result.pack.Content.MessageType != 1)
+
+            if (result.pack.Cmd != Cmd.CMD_STAFF_LIST)
             {
                 return;
             }
-            if (result.pack.Cmd == Cmd.CMD_ADMIN_LIST)
+            NetMessageManage.Manage().RemoveResultBlock(GetStaffListResult);
+            if (result.pack.Content.MessageType == 1)
             {
-                System.Console.WriteLine("GetStaffListResult:" + result.pack);
-                NetMessageManage.Manage().RemoveResultBlock(GetStaffListResult);
+                
                 this.Invoke(new UIHandleBlock(delegate
                 {
                     this.oriStaffs = result.pack.Content.ScAccountList.AccountList.ToList<StructAccount>();
                     this.showStaffs = this.oriStaffs.ToList<StructAccount>();
                     RefreshGridControl();
                 }));
+            }
+            else
+            {
+                System.Console.WriteLine("GetStaffListResult:" + result.pack);
             }
 
         }
@@ -111,24 +116,31 @@ namespace NetBarMS.Views.SystemManage
         //获取推送信息列表的结果回调
         private void SmsPushMessageInfoResult(ResultModel result)
         {
-            if (result.pack.Content.MessageType != 1)
+            if (result.pack.Cmd != Cmd.CMD_SYS_INFO)
+            {
+                return;
+            }
+            if(!result.pack.Content.ScSysInfo.Parent.Equals(SystemManageNetOperation.smspush))
             {
                 return;
             }
 
-            if (result.pack.Cmd == Cmd.CMD_SYS_INFO && result.pack.Content.ScSysInfo.Parent.Equals(SystemManageNetOperation.smspush))
+            NetMessageManage.Manage().RemoveResultBlock(SmsPushMessageInfoResult);
+            if ( result.pack.Content.MessageType == 1)
             {
-                System.Console.WriteLine("SmsPushMessageInfoResult:" + result.pack);
-                NetMessageManage.Manage().RemoveResultBlock(SmsPushMessageInfoResult);
+             
                 this.Invoke(new UIHandleBlock(delegate
                 {
                     List<StructDictItem> temShow = this.showPushItems;
-
                     this.oriPushItems = result.pack.Content.ScSysInfo.ChildList.ToList<StructDictItem>();
                     //重新将之前的赋值
                     this.showPushItems = this.oriPushItems.ToList<StructDictItem>();
                     InitPushMsgUI(temShow);
                 }));
+            }
+            else
+            {
+                System.Console.WriteLine("SmsPushMessageInfoResult:" + result.pack);
             }
 
         }
@@ -209,13 +221,7 @@ namespace NetBarMS.Views.SystemManage
             {
                 DataRow row = this.gridView1.GetDataRow(i);
                 StructAccount staff = showStaffs[i];
-                string[] splits = { "," };
-                List<string> ids = staff.Sns.Split(splits, StringSplitOptions.None).ToList<string>();
-
-                row[TitleList.Check.ToString()] = ids.Contains(item.Id.ToString());
-
-
-
+                row[TitleList.Check.ToString()] = ToolsManage.TestRights(staff.Sns, item.Id);
             }
 
         }
@@ -226,13 +232,7 @@ namespace NetBarMS.Views.SystemManage
         //添加推送事项
         private void addPushButton_Click(object sender, EventArgs e)
         {
-            //List<string> ids = new List<string>() { "701" };
-
-            //SystemManageNetOperation.DeleteSmsPushMessage(DeleteAreaResult, ids);
-            //return;
-
-            //string message = this.textBox1.Text;
-
+          
             //保存当前的
             SaveCurrentSetting();
 
@@ -251,31 +251,34 @@ namespace NetBarMS.Views.SystemManage
         //添加推送事项回调
         private void AddSmsPushMessage(ResultModel result)
         {
-            System.Console.WriteLine("AddSmsPushMessage:" + result.pack);
-            if (result.pack.Content.MessageType != 1)
+            if (result.pack.Cmd != Cmd.CMD_SYS_ADD)
             {
                 return;
             }
 
-            if (result.pack.Cmd == Cmd.CMD_SYS_ADD)
+            NetMessageManage.Manage().RemoveResultBlock(AddSmsPushMessage);
+            if (result.pack.Content.MessageType == 1)
             {
-                NetMessageManage.Manage().RemoveResultBlock(AddSmsPushMessage);
                 //重新获取短信列表
                 this.GetPushMessageList();
+            }
+            else
+            {
+                System.Console.WriteLine("AddSmsPushMessage:" + result.pack);
             }
         }
         //删除区域结果回调
         private void DeleteSmsPushMessage(ResultModel result)
         {
-            System.Console.WriteLine("DeleteSmsPushMessage:" + result.pack);
-            if (result.pack.Content.MessageType != 1)
+            if (result.pack.Cmd != Cmd.CMD_SYS_DEL)
             {
                 return;
             }
 
-            if (result.pack.Cmd == Cmd.CMD_SYS_DEL)
+            System.Console.WriteLine("DeleteSmsPushMessage:" + result.pack);
+            NetMessageManage.Manage().RemoveResultBlock(DeleteSmsPushMessage);
+            if (result.pack.Content.MessageType == 1)
             {
-                NetMessageManage.Manage().RemoveResultBlock(DeleteSmsPushMessage);
                 this.Invoke(new UIHandleBlock(delegate {
                  
                 }));
@@ -299,7 +302,7 @@ namespace NetBarMS.Views.SystemManage
                 if(!ori.Sns.Equals(change.Sns))
                 {
                     changeStaffs.Add(change);
-                    System.Console.WriteLine("change:"+change);
+                    System.Console.WriteLine("ori:" + ori + "\nchange:" + change);
                 }
             }
 
@@ -316,49 +319,46 @@ namespace NetBarMS.Views.SystemManage
             }
             if(changePush.Count >0)
             {
-                System.Console.WriteLine("UpdateSmsPushMessage");
                 SystemManageNetOperation.UpdateSmsPushMessage(UpdateSmsPushMessage, changePush);
-
             }
             if (changeStaffs.Count > 0)
             {
-                StaffNetOperation.UpdateStaff(UpdateStaffResult, changeStaffs);
+                StaffNetOperation.UpdateStaffSns(UpdateStaffSnsResult, changeStaffs);
             }
         }
         //更新短信推送事项结果回调
         private void UpdateSmsPushMessage(ResultModel result)
         {
-            if (result.pack.Content.MessageType != 1)
+            if (result.pack.Cmd != Cmd.CMD_SYS_UPDATE)
             {
                 return;
             }
 
-            if (result.pack.Cmd == Cmd.CMD_SYS_UPDATE)
+            System.Console.WriteLine("UpdateSmsPushMessage:" + result.pack);
+            NetMessageManage.Manage().RemoveResultBlock(UpdateSmsPushMessage);
+            if (result.pack.Content.MessageType == 1)
             {
-                System.Console.WriteLine("UpdateSmsPushMessage:" + result.pack);
-                NetMessageManage.Manage().RemoveResultBlock(UpdateSmsPushMessage);
                 // this.oriPushItems = new IList<StructDictItem>();
                 this.oriPushItems = this.showPushItems.ToList<StructDictItem>();
-
+            }
+            else
+            {
 
             }
         }
         //更新员工结果回调
-        private void UpdateStaffResult(ResultModel result)
+        private void UpdateStaffSnsResult(ResultModel result)
         {
-            if (result.pack.Content.MessageType != 1)
+            if (result.pack.Cmd != Cmd.CMD_STAFF_SNS)
             {
                 return;
             }
-
-            if (result.pack.Cmd == Cmd.CMD_ADMIN_UPDATE)
+            System.Console.WriteLine("UpdateStaffSnsResult:" + result.pack);
+            NetMessageManage.Manage().RemoveResultBlock(UpdateStaffSnsResult);
+            if (result.pack.Content.MessageType == 1)
             {
-                System.Console.WriteLine("UpdateStaffResult:" + result.pack);
-                NetMessageManage.Manage().RemoveResultBlock(UpdateStaffResult);
+           
                 this.oriStaffs = this.showStaffs.ToList<StructAccount>();
-
-
-
             }
         }
         #endregion
@@ -374,7 +374,7 @@ namespace NetBarMS.Views.SystemManage
             //获取当前选中的推送事项
             int index = int.Parse((string)this.selectPush.Tag);
             StructDictItem item = this.showPushItems[index];
-
+           
             #region 修改员工短信Sns
             for (int i = 0; i < this.gridView1.RowCount; i++)
             {
@@ -383,45 +383,37 @@ namespace NetBarMS.Views.SystemManage
 
                 string value = row[TitleList.Check.ToString()].ToString();
                 StructAccount staff = showStaffs[i];
-                char[] splits = { ',' };
-                List<string> ids = staff.Sns.Split(splits,StringSplitOptions.RemoveEmptyEntries).ToList<string>();
+                BigInteger big;
+                if (staff.Sns.Equals(""))
+                {
+                    big = new BigInteger();
+                }
+                else
+                {
+                    big = new BigInteger(staff.Sns, 10);
+                }
 
                 //勾选上的
                 if (value.Equals("True"))
                 {
-                    //判断之前是否保存过,保存过就不保存了
-                    if (!ids.Contains(item.Id.ToString()))
-                    {
-                        ids.Add(item.Id.ToString());
-                    }
+                    big.setBit((uint)item.Id);
                 }
                 else
                 {
                     //判断之前是否保存过,保存过就删除掉
-                    if (ids.Contains(item.Id.ToString()))
+                    if (ToolsManage.TestRights(staff.Sns,item.Id))
                     {
-                        ids.Remove(item.Id.ToString());
+                        BigInteger other = new BigInteger();
+                        other.setBit((uint)item.Id);
+                       // System.Console.WriteLine("item.Id:" + (new BigInteger(item.Id).ToString() + "\nbig:" + big.ToString()));
+                        big = big - other;
+                       // System.Console.WriteLine("big:" + big.ToString());
+
                     }
                 }
 
-                string sns = "";
+                string sns = big.ToString(10);
                 
-                for (int j = 0; j < ids.Count; j++)
-                {
-                    string tem = ids[j];
-                    if (tem.Equals(""))
-                    {
-                        continue;
-                    }
-                    if (sns.Equals(""))
-                    {
-                        sns += ids[j];
-                    }
-                    else
-                    {
-                        sns += ("," + ids[j]);
-                    }
-                }
                // System.Console.WriteLine("sns:"+sns);
                 //有改变
                 if (!sns.Equals(staff.Sns))
