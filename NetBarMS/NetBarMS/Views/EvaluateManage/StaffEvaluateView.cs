@@ -15,7 +15,7 @@ namespace NetBarMS.Views.EvaluateManage
 {
     public partial class StaffEvaluateView : RootUserControlView
     {
-        enum TitleList
+        private enum TitleList
         {
             None,
 
@@ -46,7 +46,7 @@ namespace NetBarMS.Views.EvaluateManage
         private void InitUI()
         {
            
-            ToolsManage.SetGridView(this.gridView1, GridControlType.NetBarEvaluate, out this.mainDataTable);
+            ToolsManage.SetGridView(this.gridView1, GridControlType.StaffEvaluate, out this.mainDataTable);
             this.gridControl1.DataSource = this.mainDataTable;
             this.comboBoxEdit1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.dateNavigator1.UpdateDateTimeWhenNavigating = false;
@@ -58,11 +58,11 @@ namespace NetBarMS.Views.EvaluateManage
             {
                 this.comboBoxEdit1.Properties.Items.Add(staff.Nickname);
             }
-            GetNetBarEvaluateList();
+            GetStaffEvaluateList();
         }
-       
+        #region 获取员工评价列表
         //获取员工评价列表
-        private void GetNetBarEvaluateList()
+        private void GetStaffEvaluateList()
         {
             StructPage.Builder page = new StructPage.Builder()
             {
@@ -71,18 +71,22 @@ namespace NetBarMS.Views.EvaluateManage
                 Fieldname = 0,
                 Order = 0
             };
-            EvaluateNetOperation.GetStaffEvaluateList(GetStaffEvaluateListResult,page.Build(),2,"","","","");
+            string staff = "";
+            if(this.comboBoxEdit1.SelectedIndex >= 0)
+            {
+                staff = this.staffs[this.comboBoxEdit1.SelectedIndex].Nickname;
+            }
+            string member = this.buttonEdit1.Text;
+            EvaluateNetOperation.GetStaffEvaluateList(GetStaffEvaluateListResult,page.Build(),this.startTime,this.endTime,staff,member);
         }
         //获取员工评价列表结果回调
         private void GetStaffEvaluateListResult(ResultModel result)
         {
-            if(result.pack.Cmd != Cmd.CMD_STAFF_COMMENT)
+            if (result.pack.Cmd != Cmd.CMD_STAFF_COMMENT)
             {
                 return;
             }
-
             NetMessageManage.Manage().RemoveResultBlock(GetStaffEvaluateListResult);
-            System.Console.WriteLine("GetStaffEvaluateListResult:"+result.pack);
             if(result.pack.Content.MessageType == 1)
             {
                 this.Invoke(new UIHandleBlock(delegate {
@@ -92,9 +96,16 @@ namespace NetBarMS.Views.EvaluateManage
 
                 }));
             }
+            else
+            {
+                System.Console.WriteLine("GetStaffEvaluateListResult:" + result.pack);
+            }
 
 
         }
+        #endregion
+
+        #region 刷新GridControl
         //刷新GridControl
         private void RefreshGridControl()
         {
@@ -108,7 +119,6 @@ namespace NetBarMS.Views.EvaluateManage
         //获取新行
         private void AddNewRow(StructComment com)
         {
-
             DataRow row = this.mainDataTable.NewRow();
             this.mainDataTable.Rows.Add(row);
             row[TitleList.ETime.ToString()] = com.Addtime;
@@ -119,6 +129,7 @@ namespace NetBarMS.Views.EvaluateManage
             row[TitleList.EScore.ToString()] = com.Point;
             row[TitleList.EDetail.ToString()] = com.Detail;
         }
+        #endregion
 
         #region 日期选择
         //日期选择触发
@@ -135,19 +146,23 @@ namespace NetBarMS.Views.EvaluateManage
         {
             //进行查询
             System.Console.WriteLine("start:" + startTime + "end:" + endTime);
+            this.GetStaffEvaluateList();
+
 
         }
         #endregion
 
+        #region 条件搜索
         //进行搜索点击
         private void ButtonEdit1_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            
+            this.GetStaffEvaluateList();
         }
         //进行员工姓名选择
         private void comboBoxEdit1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            this.GetStaffEvaluateList();
         }
+        #endregion
     }
 }

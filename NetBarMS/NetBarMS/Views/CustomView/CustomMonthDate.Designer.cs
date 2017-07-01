@@ -45,11 +45,8 @@
             this.NextButton = new DevExpress.XtraEditors.SimpleButton();
             this.lastButton = new DevExpress.XtraEditors.SimpleButton();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.durLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -288,35 +285,16 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(107, 32);
             this.flowLayoutPanel1.TabIndex = 4;
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.durLabel);
-            this.panel1.Controls.Add(this.flowLayoutPanel1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(220, 63);
-            this.panel1.TabIndex = 5;
-            // 
-            // durLabel
-            // 
-            this.durLabel.Location = new System.Drawing.Point(-2, 38);
-            this.durLabel.Name = "durLabel";
-            this.durLabel.Size = new System.Drawing.Size(222, 25);
-            this.durLabel.TabIndex = 5;
-            this.durLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // CustomMonthDate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "CustomMonthDate";
             this.Size = new System.Drawing.Size(220, 200);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -340,7 +318,5 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label durLabel;
     }
 }

@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using NetBarMS.Codes.Tools;
+using NetBarMS.Codes.Tools.NetOperation;
+using static NetBarMS.Codes.Tools.NetMessageManage;
 
 namespace NetBarMS.Views.EvaluateManage
 {
@@ -31,6 +33,7 @@ namespace NetBarMS.Views.EvaluateManage
         private string startTime = "", endTime = "";
         private DateTime lastDate = DateTime.MinValue;
         private int pagebegin = 0, pageSize = 15;
+        private IList<StructComment> comments;
 
         public NetBarEvaluateView()
         {
@@ -51,25 +54,68 @@ namespace NetBarMS.Views.EvaluateManage
             this.dateNavigator1.UpdateSelectionWhenNavigating = false;
             this.dateNavigator1.SyncSelectionWithEditValue = false;
 
+            GetNetBarEvaluateList();
         }
 
         //获取网吧评价列表
         private void GetNetBarEvaluateList()
         {
+            StructPage.Builder page = new StructPage.Builder()
+            {
+                Pagebegin = this.pagebegin,
+                Pagesize = this.pageSize,
+                Fieldname = 0,
+                Order = 0
+            };
+
+            string member = this.buttonEdit1.Text;
+            EvaluateNetOperation.GetNetBarEvaluateList(GetNetBarEvaluateListResult, page.Build(), startTime, endTime, member);
+        }
+        //获取网吧评价列表结果回调
+        private void GetNetBarEvaluateListResult(ResultModel result)
+        {
+            if (result.pack.Cmd != Cmd.CMD_STAFF_COMMENT)
+            {
+                return;
+            }
+            NetMessageManage.Manage().RemoveResultBlock(GetNetBarEvaluateListResult);
+            System.Console.WriteLine("GetNetBarEvaluateListResult:" + result.pack);
+            if (result.pack.Content.MessageType == 1)
+            {
+                this.Invoke(new UIHandleBlock(delegate {
+
+                    this.comments = result.pack.Content.ScStaffComment.CommentsList;
+                    RefreshGridControl();
+
+                }));
+            }
+
 
         }
-
         //刷新GridControl
-        private void RefreshGridControle()
+        private void RefreshGridControl()
         {
-
+            this.mainDataTable.Clear();
+            foreach (StructComment com in this.comments)
+            {
+                AddNewRow(com);
+            }
         }
 
         //获取新行
-        private void AddNewRow()
+        private void AddNewRow(StructComment com)
         {
+
             DataRow row = this.mainDataTable.NewRow();
             this.mainDataTable.Rows.Add(row);
+            row[TitleList.ETime.ToString()] = com.Addtime;
+            row[TitleList.EPerson.ToString()] = com.Customer;
+            row[TitleList.EIdNumber.ToString()] = com.Cardnumber;
+            row[TitleList.GiveIntegral.ToString()] = com.Bonus;
+            row[TitleList.EnvironmentScore.ToString()] = com.Environment;
+            row[TitleList.SeverScore.ToString()] = com.Service;
+            row[TitleList.HardwareScore.ToString()] = com.Device;
+            row[TitleList.UserMsg.ToString()] = com.Detail;
 
         }
 
@@ -86,9 +132,15 @@ namespace NetBarMS.Views.EvaluateManage
         {
             //进行查询
             System.Console.WriteLine("start:"+startTime +"end:"+endTime);
-           
+            this.GetNetBarEvaluateList();
+
         }
         #endregion
 
+        //进行搜索点击
+        private void ButtonEdit1_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            this.GetNetBarEvaluateList();
+        }
     }
 }

@@ -50,7 +50,6 @@ namespace NetBarMS.Views.ManagerManage
         private void GetStaffList()
         {
             StaffNetOperation.GetStaffList(GetStaffListResult);
-
         }
 
         //获取员工列表结果回调
@@ -66,6 +65,7 @@ namespace NetBarMS.Views.ManagerManage
             if(result.pack.Content.MessageType == 1)
             {
                 this.Invoke(new UIHandleBlock(delegate {
+                    SysManage.Manage().UpdateStaffData(result.pack.Content.ScAccountList.AccountList);
                     this.staffs = result.pack.Content.ScAccountList.AccountList;
                     RefreshGridControle();
                 }));

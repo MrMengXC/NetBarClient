@@ -117,6 +117,7 @@
     <Compile Include="Codes\Model\UserModel.cs" />
     <Compile Include="Codes\Tools\Manage\AreaSettingManage.cs" />
     <Compile Include="Codes\Tools\NetOperation\EvaluateNetOperation.cs" />
+    <Compile Include="Codes\Tools\NetOperation\OtherMainNetOperation.cs" />
     <Compile Include="Plugins\BigInteger.cs" />
     <Compile Include="Codes\Tools\Manage\CurrentStaffManage.cs" />
     <Compile Include="Codes\Tools\FlowManage\ActiveFlowManage.cs" />

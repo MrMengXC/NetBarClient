@@ -145,7 +145,7 @@
             this.dateNavigator1.Name = "dateNavigator1";
             this.dateNavigator1.Size = new System.Drawing.Size(255, 214);
             this.dateNavigator1.TabIndex = 0;
-            this.dateNavigator1.DateTimeChanged += new System.EventHandler(this.DateNavigator_EditValueChanged);
+            this.dateNavigator1.Click += new System.EventHandler(this.DateNavigator_EditValueChanged);
             // 
             // comboBoxEdit1
             // 
@@ -165,6 +165,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Search)});
             this.buttonEdit1.Size = new System.Drawing.Size(123, 20);
             this.buttonEdit1.TabIndex = 87;
+            this.buttonEdit1.ButtonClick += ButtonEdit1_ButtonClick;
             // 
             // StaffEvaluateView
             // 

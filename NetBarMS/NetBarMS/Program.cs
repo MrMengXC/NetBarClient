@@ -35,12 +35,12 @@ namespace NetBarMS
             //初始化XML
             XMLDataManage.Init();
 
-            //ManagerAddView newview2 = new ManagerAddView();
-            //CustomForm newForm2 = new CustomForm(newview2, true, false);
-            //// MainForm newForm2 = new MainForm
-            //Application.Run(newForm2);
+            DayInComeView newview2 = new DayInComeView();
+            CustomForm newForm2 = new CustomForm(newview2, true, false);
+            // MainForm newForm2 = new MainForm
+            Application.Run(newForm2);
 
-            //return;
+            return;
 
             ManagerLoginView view = new ManagerLoginView();
             CustomForm newForm = new CustomForm(view, true);

@@ -25,7 +25,10 @@ namespace NetBarMS.Views.CustomView
             DateTime time = DateTime.Now;
             int year = time.Year;
             this.YearLabel.Text = year + "";
+
+            //显示当年月份
             ShowCurrentYearMonths();
+
         }
 
         #region 显示当年月份
@@ -55,11 +58,14 @@ namespace NetBarMS.Views.CustomView
 
                     if (!currentTime.Equals(DateTime.MinValue))
                     {
-                        if(temTime.CompareTo(startTime)>=0 && temTime.CompareTo(endTime) <= 0)
+                        //if(temTime.CompareTo(startTime)>=0 && temTime.CompareTo(endTime) <= 0)
+                        //{
+                        //    control.BackColor = Color.Blue;
+                        //}
+                        if(temTime.CompareTo(currentTime) == 0)
                         {
                             control.BackColor = Color.Blue;
                         }
-
                     }
                 }
             }
@@ -72,10 +78,26 @@ namespace NetBarMS.Views.CustomView
         //选择日期
         private void Control_Click(object sender, EventArgs e)
         {
+
+
+
             int currentYear = int.Parse(this.YearLabel.Text);
             string tag = (string)((Label)sender).Tag;
+
+
             DateTime temTime = TagToDate(tag, currentYear);
 
+
+            //这是不连续的方法
+            currentTime = temTime;
+            ShowCurrentYearMonths();
+
+            //关闭
+
+
+
+
+            return;
             if (currentTime.Equals(DateTime.MinValue))
             {
                 startTime = temTime;
@@ -104,7 +126,7 @@ namespace NetBarMS.Views.CustomView
             }
             currentTime = temTime;
             // System.Console.WriteLine("start:" + startTime + "end:" + endTime);// (");
-            this.durLabel.Text = startTime.ToString("yyyy-MM") + " 至 " + endTime.ToString("yyyy-MM");
+            //this.durLabel.Text = startTime.ToString("yyyy-MM") + " 至 " + endTime.ToString("yyyy-MM");
             ShowCurrentYearMonths();
 
 
@@ -142,7 +164,7 @@ namespace NetBarMS.Views.CustomView
         #endregion
 
         #region 获取当前区间时间
-        public void GetTimeDur(out String start,out string end,string format)
+        public void GetCurrentTimeDur(out String start,out string end,string format)
         {
 
             if(currentTime.Equals(DateTime.MinValue))
@@ -156,5 +178,29 @@ namespace NetBarMS.Views.CustomView
             }
         }
         #endregion
+
+        #region 获取当前年月
+        public void GetCurrentTimeDur(out int year, out int month)
+        {
+
+            if (currentTime.Equals(DateTime.MinValue))
+            {
+                DateTime current = DateTime.Now;
+                current = current.AddMonths(-1);
+                year = current.Year;
+                month = current.Month;
+
+
+            }
+            else
+            {
+                year = this.currentTime.Year;
+                month = this.currentTime.Month;
+
+            }
+        }
+        #endregion
+
+
     }
 }

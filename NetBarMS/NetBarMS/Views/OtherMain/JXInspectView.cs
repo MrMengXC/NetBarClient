@@ -8,12 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using NetBarMS.Codes.Tools;
+using static NetBarMS.Codes.Tools.NetMessageManage;
+using NetBarMS.Codes.Tools.NetOperation;
 
 namespace NetBarMS.Views.OtherMain
 {
     public partial class JXInspectView : RootUserControlView
     {
-        enum TitleList
+        private enum TitleList
         {
             None,
 
@@ -25,23 +27,83 @@ namespace NetBarMS.Views.OtherMain
             SfDegree,               //满意程度
          
         }
+
+      
+        private IList<StructPerform> performs;
         public JXInspectView()
         {
             InitializeComponent();
             this.titleLabel.Text = "绩效考核";
-            AddData();
+            InitUI();
         }
-        /// <summary>
-        /// 添加ListView数据
-        /// </summary>
-        private void AddData()
+       
+
+        //初始化UI
+        private void InitUI()
         {
             ToolsManage.SetGridView(this.gridView1, GridControlType.JXInspect, out this.mainDataTable);
-            //DataRow row = this.mainDataTable.NewRow();
-            //this.mainDataTable.Rows.Add(row);
-            //row["column_0"] = "dasdasd";
             this.gridControl1.DataSource = this.mainDataTable;
+            GetJXList();
+        }
+        //获取绩效数据列表
+        private void GetJXList()
+        {
+            int year, month;
+            this.customMonthDate1.GetCurrentTimeDur(out year, out month);
+            OtherMainNetOperation.GetJXList(GetJXListResult, year, month);
+        }
+        //获取绩效数据列表结果回调
+        private void GetJXListResult(ResultModel result)
+        {
+            if (result.pack.Cmd != Cmd.CMD_STAFF_PERFORM)
+            {
+                return;
+            }
+            NetMessageManage.Manage().RemoveResultBlock(GetJXListResult);
+            if (result.pack.Content.MessageType == 1)
+            {
+                this.Invoke(new UIHandleBlock(delegate {
+                    this.performs = result.pack.Content.ScStaffPerform.PerformsList;
+                    RefreshGridControl();
+                }));
+            }
+            else
+            {
+                System.Console.WriteLine("GetJXListResult:" + result.pack);
+            }
 
         }
+        //刷新GridControl
+        private void RefreshGridControl()
+        {
+            this.mainDataTable.Clear();
+            foreach (StructPerform perform in this.performs)
+            {
+                AddNewRow(perform);
+            }
+        }
+
+        //获取新行
+        private void AddNewRow(StructPerform perform)
+        {
+            DataRow row = this.mainDataTable.NewRow();
+            this.mainDataTable.Rows.Add(row);
+            row[TitleList.StaffName.ToString()] = perform.Name;
+            row[TitleList.StaffRole.ToString()] = perform.Role;
+            row[TitleList.WorkDuration.ToString()] = perform.Hours;
+            row[TitleList.RechargeMoney.ToString()] = perform.Charge;
+            row[TitleList.SellMoney.ToString()] = perform.Sales;
+            row[TitleList.SfDegree.ToString()] = perform.Satisfy;
+       
+        }
+
+
+        #region 关闭日期
+        private void PopupContainerEdit1_Closed(object sender, DevExpress.XtraEditors.Controls.ClosedEventArgs e)
+        {
+            //进行查询
+            GetJXList();
+        }
+        #endregion
     }
 }

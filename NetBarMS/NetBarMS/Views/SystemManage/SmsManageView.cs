@@ -83,6 +83,7 @@ namespace NetBarMS.Views.SystemManage
                 
                 this.Invoke(new UIHandleBlock(delegate
                 {
+                    SysManage.Manage().UpdateStaffData(result.pack.Content.ScAccountList.AccountList);
                     this.oriStaffs = result.pack.Content.ScAccountList.AccountList.ToList<StructAccount>();
                     this.showStaffs = this.oriStaffs.ToList<StructAccount>();
                     RefreshGridControl();

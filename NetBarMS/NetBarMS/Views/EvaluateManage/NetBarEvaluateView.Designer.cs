@@ -33,21 +33,21 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.popupContainerEdit1 = new DevExpress.XtraEditors.PopupContainerEdit();
+            this.buttonEdit1 = new DevExpress.XtraEditors.ButtonEdit();
             this.popupContainerControl1 = new DevExpress.XtraEditors.PopupContainerControl();
             this.dateNavigator1 = new DevExpress.XtraScheduler.DateNavigator();
-            this.buttonEdit1 = new DevExpress.XtraEditors.ButtonEdit();
+            this.popupContainerEdit1 = new DevExpress.XtraEditors.PopupContainerEdit();
             this.titlePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.popupContainerEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupContainerControl1)).BeginInit();
             this.popupContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateNavigator1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNavigator1.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.buttonEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupContainerEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // titlePanel
@@ -102,16 +102,15 @@
             this.panel1.Size = new System.Drawing.Size(1050, 40);
             this.panel1.TabIndex = 83;
             // 
-            // popupContainerEdit1
+            // buttonEdit1
             // 
-            this.popupContainerEdit1.Location = new System.Drawing.Point(34, 7);
-            this.popupContainerEdit1.Name = "popupContainerEdit1";
-            this.popupContainerEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.popupContainerEdit1.Properties.PopupControl = this.popupContainerControl1;
-            this.popupContainerEdit1.Size = new System.Drawing.Size(146, 20);
-            this.popupContainerEdit1.TabIndex = 75;
-            this.popupContainerEdit1.Closed += new DevExpress.XtraEditors.Controls.ClosedEventHandler(this.PopupContainerEdit1_Closed);
+            this.buttonEdit1.Location = new System.Drawing.Point(198, 7);
+            this.buttonEdit1.Name = "buttonEdit1";
+            this.buttonEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Search)});
+            this.buttonEdit1.Size = new System.Drawing.Size(125, 20);
+            this.buttonEdit1.TabIndex = 85;
+            this.buttonEdit1.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.ButtonEdit1_ButtonClick);
             // 
             // popupContainerControl1
             // 
@@ -132,16 +131,18 @@
             this.dateNavigator1.Name = "dateNavigator1";
             this.dateNavigator1.Size = new System.Drawing.Size(255, 214);
             this.dateNavigator1.TabIndex = 0;
-            this.dateNavigator1.DateTimeChanged += new System.EventHandler(this.DateNavigator_EditValueChanged);
+            this.dateNavigator1.Click += DateNavigator_EditValueChanged;
             // 
-            // buttonEdit1
+            // popupContainerEdit1
             // 
-            this.buttonEdit1.Location = new System.Drawing.Point(198, 7);
-            this.buttonEdit1.Name = "buttonEdit1";
-            this.buttonEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Search)});
-            this.buttonEdit1.Size = new System.Drawing.Size(125, 20);
-            this.buttonEdit1.TabIndex = 85;
+            this.popupContainerEdit1.Location = new System.Drawing.Point(34, 7);
+            this.popupContainerEdit1.Name = "popupContainerEdit1";
+            this.popupContainerEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.popupContainerEdit1.Properties.PopupControl = this.popupContainerControl1;
+            this.popupContainerEdit1.Size = new System.Drawing.Size(146, 20);
+            this.popupContainerEdit1.TabIndex = 75;
+            this.popupContainerEdit1.Closed += new DevExpress.XtraEditors.Controls.ClosedEventHandler(this.PopupContainerEdit1_Closed);
             // 
             // NetBarEvaluateView
             // 
@@ -160,12 +161,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).EndInit();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.popupContainerEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupContainerControl1)).EndInit();
             this.popupContainerControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dateNavigator1.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNavigator1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.buttonEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupContainerEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

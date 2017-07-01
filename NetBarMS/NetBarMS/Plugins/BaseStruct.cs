@@ -56,6 +56,10 @@ public static partial class BaseStruct {
   internal static pb::FieldAccess.FieldAccessorTable<global::StructOrderDetail, global::StructOrderDetail.Builder> internal__static_StructOrderDetail__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_StructComment__Descriptor;
   internal static pb::FieldAccess.FieldAccessorTable<global::StructComment, global::StructComment.Builder> internal__static_StructComment__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_StructPerform__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::StructPerform, global::StructPerform.Builder> internal__static_StructPerform__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_StructLog__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::StructLog, global::StructLog.Builder> internal__static_StructLog__FieldAccessorTable;
   #endregion
   #region Descriptor
   public static pbd::FileDescriptor Descriptor {
@@ -132,9 +136,13 @@ public static partial class BaseStruct {
           "CGN1c3RvbWVyGAIgAigJEhIKCmNhcmRudW1iZXIYAyACKAkSDQoFYm9udXMY", 
           "BCACKAUSDQoFc3RhZmYYBSABKAkSDQoFcG9pbnQYBiABKAUSEwoLZW52aXJv", 
           "bm1lbnQYByABKAUSDwoHc2VydmljZRgIIAEoBRIOCgZkZXZpY2UYCSABKAUS", 
-          "DgoGZGV0YWlsGAogASgJKigKBFR5cGUSCAoESVRFTRABEgwKCENVUlJFTkNZ", 
-          "EAISCAoEUEFDSxADQisKHWNvbS5za3lzb2Z0LmNvcmUuYXV0by5tZXNzYWdl", 
-        "QgpCYXNlU3RydWN0"));
+          "DgoGZGV0YWlsGAogASgJImoKDVN0cnVjdFBlcmZvcm0SDAoEbmFtZRgBIAIo", 
+          "CRIMCgRyb2xlGAIgAigJEg0KBWhvdXJzGAMgAigFEg4KBmNoYXJnZRgEIAIo", 
+          "BRINCgVzYWxlcxgFIAIoBRIPCgdzYXRpc2Z5GAYgAigFIl0KCVN0cnVjdExv", 
+          "ZxIQCghvcGVyYXRvchgBIAIoCRIRCglvcGVyYXRpb24YAiACKAkSCgoCaXAY", 
+          "AyACKAkSDwoHYWRkdGltZRgEIAIoCRIOCgZzdGF0dXMYBSACKAkqKAoEVHlw", 
+          "ZRIICgRJVEVNEAESDAoIQ1VSUkVOQ1kQAhIICgRQQUNLEANCKwodY29tLnNr", 
+        "eXNvZnQuY29yZS5hdXRvLm1lc3NhZ2VCCkJhc2VTdHJ1Y3Q="));
     pbd::FileDescriptor.InternalDescriptorAssigner assigner = delegate(pbd::FileDescriptor root) {
       descriptor = root;
       internal__static_StructErrorTip__Descriptor = Descriptor.MessageTypes[0];
@@ -221,6 +229,14 @@ public static partial class BaseStruct {
       internal__static_StructComment__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructComment, global::StructComment.Builder>(internal__static_StructComment__Descriptor,
               new string[] { "Addtime", "Customer", "Cardnumber", "Bonus", "Staff", "Point", "Environment", "Service", "Device", "Detail", });
+      internal__static_StructPerform__Descriptor = Descriptor.MessageTypes[21];
+      internal__static_StructPerform__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::StructPerform, global::StructPerform.Builder>(internal__static_StructPerform__Descriptor,
+              new string[] { "Name", "Role", "Hours", "Charge", "Sales", "Satisfy", });
+      internal__static_StructLog__Descriptor = Descriptor.MessageTypes[22];
+      internal__static_StructLog__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::StructLog, global::StructLog.Builder>(internal__static_StructLog__Descriptor,
+              new string[] { "Operator", "Operation", "Ip", "Addtime", "Status", });
       return null;
     };
     pbd::FileDescriptor.InternalBuildGeneratedFileFrom(descriptorData,
@@ -12039,6 +12055,961 @@ public sealed partial class StructComment : pb::GeneratedMessage<StructComment, 
     }
   }
   static StructComment() {
+    object.ReferenceEquals(global::BaseStruct.Descriptor, null);
+  }
+}
+
+[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+public sealed partial class StructPerform : pb::GeneratedMessage<StructPerform, StructPerform.Builder> {
+  private StructPerform() { }
+  private static readonly StructPerform defaultInstance = new StructPerform().MakeReadOnly();
+  private static readonly string[] _structPerformFieldNames = new string[] { "charge", "hours", "name", "role", "sales", "satisfy" };
+  private static readonly uint[] _structPerformFieldTags = new uint[] { 32, 24, 10, 18, 40, 48 };
+  public static StructPerform DefaultInstance {
+    get { return defaultInstance; }
+  }
+  
+  public override StructPerform DefaultInstanceForType {
+    get { return DefaultInstance; }
+  }
+  
+  protected override StructPerform ThisMessage {
+    get { return this; }
+  }
+  
+  public static pbd::MessageDescriptor Descriptor {
+    get { return global::BaseStruct.internal__static_StructPerform__Descriptor; }
+  }
+  
+  protected override pb::FieldAccess.FieldAccessorTable<StructPerform, StructPerform.Builder> InternalFieldAccessors {
+    get { return global::BaseStruct.internal__static_StructPerform__FieldAccessorTable; }
+  }
+  
+  public const int NameFieldNumber = 1;
+  private bool hasName;
+  private string name_ = "";
+  public bool HasName {
+    get { return hasName; }
+  }
+  public string Name {
+    get { return name_; }
+  }
+  
+  public const int RoleFieldNumber = 2;
+  private bool hasRole;
+  private string role_ = "";
+  public bool HasRole {
+    get { return hasRole; }
+  }
+  public string Role {
+    get { return role_; }
+  }
+  
+  public const int HoursFieldNumber = 3;
+  private bool hasHours;
+  private int hours_;
+  public bool HasHours {
+    get { return hasHours; }
+  }
+  public int Hours {
+    get { return hours_; }
+  }
+  
+  public const int ChargeFieldNumber = 4;
+  private bool hasCharge;
+  private int charge_;
+  public bool HasCharge {
+    get { return hasCharge; }
+  }
+  public int Charge {
+    get { return charge_; }
+  }
+  
+  public const int SalesFieldNumber = 5;
+  private bool hasSales;
+  private int sales_;
+  public bool HasSales {
+    get { return hasSales; }
+  }
+  public int Sales {
+    get { return sales_; }
+  }
+  
+  public const int SatisfyFieldNumber = 6;
+  private bool hasSatisfy;
+  private int satisfy_;
+  public bool HasSatisfy {
+    get { return hasSatisfy; }
+  }
+  public int Satisfy {
+    get { return satisfy_; }
+  }
+  
+  public override bool IsInitialized {
+    get {
+      if (!hasName) return false;
+      if (!hasRole) return false;
+      if (!hasHours) return false;
+      if (!hasCharge) return false;
+      if (!hasSales) return false;
+      if (!hasSatisfy) return false;
+      return true;
+    }
+  }
+  
+  public override void WriteTo(pb::ICodedOutputStream output) {
+    CalcSerializedSize();
+    string[] field_names = _structPerformFieldNames;
+    if (hasName) {
+      output.WriteString(1, field_names[2], Name);
+    }
+    if (hasRole) {
+      output.WriteString(2, field_names[3], Role);
+    }
+    if (hasHours) {
+      output.WriteInt32(3, field_names[1], Hours);
+    }
+    if (hasCharge) {
+      output.WriteInt32(4, field_names[0], Charge);
+    }
+    if (hasSales) {
+      output.WriteInt32(5, field_names[4], Sales);
+    }
+    if (hasSatisfy) {
+      output.WriteInt32(6, field_names[5], Satisfy);
+    }
+    UnknownFields.WriteTo(output);
+  }
+  
+  private int memoizedSerializedSize = -1;
+  public override int SerializedSize {
+    get {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+      return CalcSerializedSize();
+    }
+  }
+  
+  private int CalcSerializedSize() {
+    int size = memoizedSerializedSize;
+    if (size != -1) return size;
+    
+    size = 0;
+    if (hasName) {
+      size += pb::CodedOutputStream.ComputeStringSize(1, Name);
+    }
+    if (hasRole) {
+      size += pb::CodedOutputStream.ComputeStringSize(2, Role);
+    }
+    if (hasHours) {
+      size += pb::CodedOutputStream.ComputeInt32Size(3, Hours);
+    }
+    if (hasCharge) {
+      size += pb::CodedOutputStream.ComputeInt32Size(4, Charge);
+    }
+    if (hasSales) {
+      size += pb::CodedOutputStream.ComputeInt32Size(5, Sales);
+    }
+    if (hasSatisfy) {
+      size += pb::CodedOutputStream.ComputeInt32Size(6, Satisfy);
+    }
+    size += UnknownFields.SerializedSize;
+    memoizedSerializedSize = size;
+    return size;
+  }
+  public static StructPerform ParseFrom(pb::ByteString data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static StructPerform ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static StructPerform ParseFrom(byte[] data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static StructPerform ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static StructPerform ParseFrom(global::System.IO.Stream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static StructPerform ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  public static StructPerform ParseDelimitedFrom(global::System.IO.Stream input) {
+    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
+  }
+  public static StructPerform ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
+  }
+  public static StructPerform ParseFrom(pb::ICodedInputStream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static StructPerform ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  private StructPerform MakeReadOnly() {
+    return this;
+  }
+  
+  public static Builder CreateBuilder() { return new Builder(); }
+  public override Builder ToBuilder() { return CreateBuilder(this); }
+  public override Builder CreateBuilderForType() { return new Builder(); }
+  public static Builder CreateBuilder(StructPerform prototype) {
+    return new Builder(prototype);
+  }
+  
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class Builder : pb::GeneratedBuilder<StructPerform, Builder> {
+    protected override Builder ThisBuilder {
+      get { return this; }
+    }
+    public Builder() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+    }
+    internal Builder(StructPerform cloneFrom) {
+      result = cloneFrom;
+      resultIsReadOnly = true;
+    }
+    
+    private bool resultIsReadOnly;
+    private StructPerform result;
+    
+    private StructPerform PrepareBuilder() {
+      if (resultIsReadOnly) {
+        StructPerform original = result;
+        result = new StructPerform();
+        resultIsReadOnly = false;
+        MergeFrom(original);
+      }
+      return result;
+    }
+    
+    public override bool IsInitialized {
+      get { return result.IsInitialized; }
+    }
+    
+    protected override StructPerform MessageBeingBuilt {
+      get { return PrepareBuilder(); }
+    }
+    
+    public override Builder Clear() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+      return this;
+    }
+    
+    public override Builder Clone() {
+      if (resultIsReadOnly) {
+        return new Builder(result);
+      } else {
+        return new Builder().MergeFrom(result);
+      }
+    }
+    
+    public override pbd::MessageDescriptor DescriptorForType {
+      get { return global::StructPerform.Descriptor; }
+    }
+    
+    public override StructPerform DefaultInstanceForType {
+      get { return global::StructPerform.DefaultInstance; }
+    }
+    
+    public override StructPerform BuildPartial() {
+      if (resultIsReadOnly) {
+        return result;
+      }
+      resultIsReadOnly = true;
+      return result.MakeReadOnly();
+    }
+    
+    public override Builder MergeFrom(pb::IMessage other) {
+      if (other is StructPerform) {
+        return MergeFrom((StructPerform) other);
+      } else {
+        base.MergeFrom(other);
+        return this;
+      }
+    }
+    
+    public override Builder MergeFrom(StructPerform other) {
+      if (other == global::StructPerform.DefaultInstance) return this;
+      PrepareBuilder();
+      if (other.HasName) {
+        Name = other.Name;
+      }
+      if (other.HasRole) {
+        Role = other.Role;
+      }
+      if (other.HasHours) {
+        Hours = other.Hours;
+      }
+      if (other.HasCharge) {
+        Charge = other.Charge;
+      }
+      if (other.HasSales) {
+        Sales = other.Sales;
+      }
+      if (other.HasSatisfy) {
+        Satisfy = other.Satisfy;
+      }
+      this.MergeUnknownFields(other.UnknownFields);
+      return this;
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input) {
+      return MergeFrom(input, pb::ExtensionRegistry.Empty);
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+      PrepareBuilder();
+      pb::UnknownFieldSet.Builder unknownFields = null;
+      uint tag;
+      string field_name;
+      while (input.ReadTag(out tag, out field_name)) {
+        if(tag == 0 && field_name != null) {
+          int field_ordinal = global::System.Array.BinarySearch(_structPerformFieldNames, field_name, global::System.StringComparer.Ordinal);
+          if(field_ordinal >= 0)
+            tag = _structPerformFieldTags[field_ordinal];
+          else {
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            continue;
+          }
+        }
+        switch (tag) {
+          case 0: {
+            throw pb::InvalidProtocolBufferException.InvalidTag();
+          }
+          default: {
+            if (pb::WireFormat.IsEndGroupTag(tag)) {
+              if (unknownFields != null) {
+                this.UnknownFields = unknownFields.Build();
+              }
+              return this;
+            }
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            break;
+          }
+          case 10: {
+            result.hasName = input.ReadString(ref result.name_);
+            break;
+          }
+          case 18: {
+            result.hasRole = input.ReadString(ref result.role_);
+            break;
+          }
+          case 24: {
+            result.hasHours = input.ReadInt32(ref result.hours_);
+            break;
+          }
+          case 32: {
+            result.hasCharge = input.ReadInt32(ref result.charge_);
+            break;
+          }
+          case 40: {
+            result.hasSales = input.ReadInt32(ref result.sales_);
+            break;
+          }
+          case 48: {
+            result.hasSatisfy = input.ReadInt32(ref result.satisfy_);
+            break;
+          }
+        }
+      }
+      
+      if (unknownFields != null) {
+        this.UnknownFields = unknownFields.Build();
+      }
+      return this;
+    }
+    
+    
+    public bool HasName {
+      get { return result.hasName; }
+    }
+    public string Name {
+      get { return result.Name; }
+      set { SetName(value); }
+    }
+    public Builder SetName(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasName = true;
+      result.name_ = value;
+      return this;
+    }
+    public Builder ClearName() {
+      PrepareBuilder();
+      result.hasName = false;
+      result.name_ = "";
+      return this;
+    }
+    
+    public bool HasRole {
+      get { return result.hasRole; }
+    }
+    public string Role {
+      get { return result.Role; }
+      set { SetRole(value); }
+    }
+    public Builder SetRole(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasRole = true;
+      result.role_ = value;
+      return this;
+    }
+    public Builder ClearRole() {
+      PrepareBuilder();
+      result.hasRole = false;
+      result.role_ = "";
+      return this;
+    }
+    
+    public bool HasHours {
+      get { return result.hasHours; }
+    }
+    public int Hours {
+      get { return result.Hours; }
+      set { SetHours(value); }
+    }
+    public Builder SetHours(int value) {
+      PrepareBuilder();
+      result.hasHours = true;
+      result.hours_ = value;
+      return this;
+    }
+    public Builder ClearHours() {
+      PrepareBuilder();
+      result.hasHours = false;
+      result.hours_ = 0;
+      return this;
+    }
+    
+    public bool HasCharge {
+      get { return result.hasCharge; }
+    }
+    public int Charge {
+      get { return result.Charge; }
+      set { SetCharge(value); }
+    }
+    public Builder SetCharge(int value) {
+      PrepareBuilder();
+      result.hasCharge = true;
+      result.charge_ = value;
+      return this;
+    }
+    public Builder ClearCharge() {
+      PrepareBuilder();
+      result.hasCharge = false;
+      result.charge_ = 0;
+      return this;
+    }
+    
+    public bool HasSales {
+      get { return result.hasSales; }
+    }
+    public int Sales {
+      get { return result.Sales; }
+      set { SetSales(value); }
+    }
+    public Builder SetSales(int value) {
+      PrepareBuilder();
+      result.hasSales = true;
+      result.sales_ = value;
+      return this;
+    }
+    public Builder ClearSales() {
+      PrepareBuilder();
+      result.hasSales = false;
+      result.sales_ = 0;
+      return this;
+    }
+    
+    public bool HasSatisfy {
+      get { return result.hasSatisfy; }
+    }
+    public int Satisfy {
+      get { return result.Satisfy; }
+      set { SetSatisfy(value); }
+    }
+    public Builder SetSatisfy(int value) {
+      PrepareBuilder();
+      result.hasSatisfy = true;
+      result.satisfy_ = value;
+      return this;
+    }
+    public Builder ClearSatisfy() {
+      PrepareBuilder();
+      result.hasSatisfy = false;
+      result.satisfy_ = 0;
+      return this;
+    }
+  }
+  static StructPerform() {
+    object.ReferenceEquals(global::BaseStruct.Descriptor, null);
+  }
+}
+
+[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+public sealed partial class StructLog : pb::GeneratedMessage<StructLog, StructLog.Builder> {
+  private StructLog() { }
+  private static readonly StructLog defaultInstance = new StructLog().MakeReadOnly();
+  private static readonly string[] _structLogFieldNames = new string[] { "addtime", "ip", "operation", "operator", "status" };
+  private static readonly uint[] _structLogFieldTags = new uint[] { 34, 26, 18, 10, 42 };
+  public static StructLog DefaultInstance {
+    get { return defaultInstance; }
+  }
+  
+  public override StructLog DefaultInstanceForType {
+    get { return DefaultInstance; }
+  }
+  
+  protected override StructLog ThisMessage {
+    get { return this; }
+  }
+  
+  public static pbd::MessageDescriptor Descriptor {
+    get { return global::BaseStruct.internal__static_StructLog__Descriptor; }
+  }
+  
+  protected override pb::FieldAccess.FieldAccessorTable<StructLog, StructLog.Builder> InternalFieldAccessors {
+    get { return global::BaseStruct.internal__static_StructLog__FieldAccessorTable; }
+  }
+  
+  public const int OperatorFieldNumber = 1;
+  private bool hasOperator;
+  private string operator_ = "";
+  public bool HasOperator {
+    get { return hasOperator; }
+  }
+  public string Operator {
+    get { return operator_; }
+  }
+  
+  public const int OperationFieldNumber = 2;
+  private bool hasOperation;
+  private string operation_ = "";
+  public bool HasOperation {
+    get { return hasOperation; }
+  }
+  public string Operation {
+    get { return operation_; }
+  }
+  
+  public const int IpFieldNumber = 3;
+  private bool hasIp;
+  private string ip_ = "";
+  public bool HasIp {
+    get { return hasIp; }
+  }
+  public string Ip {
+    get { return ip_; }
+  }
+  
+  public const int AddtimeFieldNumber = 4;
+  private bool hasAddtime;
+  private string addtime_ = "";
+  public bool HasAddtime {
+    get { return hasAddtime; }
+  }
+  public string Addtime {
+    get { return addtime_; }
+  }
+  
+  public const int StatusFieldNumber = 5;
+  private bool hasStatus;
+  private string status_ = "";
+  public bool HasStatus {
+    get { return hasStatus; }
+  }
+  public string Status {
+    get { return status_; }
+  }
+  
+  public override bool IsInitialized {
+    get {
+      if (!hasOperator) return false;
+      if (!hasOperation) return false;
+      if (!hasIp) return false;
+      if (!hasAddtime) return false;
+      if (!hasStatus) return false;
+      return true;
+    }
+  }
+  
+  public override void WriteTo(pb::ICodedOutputStream output) {
+    CalcSerializedSize();
+    string[] field_names = _structLogFieldNames;
+    if (hasOperator) {
+      output.WriteString(1, field_names[3], Operator);
+    }
+    if (hasOperation) {
+      output.WriteString(2, field_names[2], Operation);
+    }
+    if (hasIp) {
+      output.WriteString(3, field_names[1], Ip);
+    }
+    if (hasAddtime) {
+      output.WriteString(4, field_names[0], Addtime);
+    }
+    if (hasStatus) {
+      output.WriteString(5, field_names[4], Status);
+    }
+    UnknownFields.WriteTo(output);
+  }
+  
+  private int memoizedSerializedSize = -1;
+  public override int SerializedSize {
+    get {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+      return CalcSerializedSize();
+    }
+  }
+  
+  private int CalcSerializedSize() {
+    int size = memoizedSerializedSize;
+    if (size != -1) return size;
+    
+    size = 0;
+    if (hasOperator) {
+      size += pb::CodedOutputStream.ComputeStringSize(1, Operator);
+    }
+    if (hasOperation) {
+      size += pb::CodedOutputStream.ComputeStringSize(2, Operation);
+    }
+    if (hasIp) {
+      size += pb::CodedOutputStream.ComputeStringSize(3, Ip);
+    }
+    if (hasAddtime) {
+      size += pb::CodedOutputStream.ComputeStringSize(4, Addtime);
+    }
+    if (hasStatus) {
+      size += pb::CodedOutputStream.ComputeStringSize(5, Status);
+    }
+    size += UnknownFields.SerializedSize;
+    memoizedSerializedSize = size;
+    return size;
+  }
+  public static StructLog ParseFrom(pb::ByteString data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static StructLog ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static StructLog ParseFrom(byte[] data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static StructLog ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static StructLog ParseFrom(global::System.IO.Stream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static StructLog ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  public static StructLog ParseDelimitedFrom(global::System.IO.Stream input) {
+    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
+  }
+  public static StructLog ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
+  }
+  public static StructLog ParseFrom(pb::ICodedInputStream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static StructLog ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  private StructLog MakeReadOnly() {
+    return this;
+  }
+  
+  public static Builder CreateBuilder() { return new Builder(); }
+  public override Builder ToBuilder() { return CreateBuilder(this); }
+  public override Builder CreateBuilderForType() { return new Builder(); }
+  public static Builder CreateBuilder(StructLog prototype) {
+    return new Builder(prototype);
+  }
+  
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class Builder : pb::GeneratedBuilder<StructLog, Builder> {
+    protected override Builder ThisBuilder {
+      get { return this; }
+    }
+    public Builder() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+    }
+    internal Builder(StructLog cloneFrom) {
+      result = cloneFrom;
+      resultIsReadOnly = true;
+    }
+    
+    private bool resultIsReadOnly;
+    private StructLog result;
+    
+    private StructLog PrepareBuilder() {
+      if (resultIsReadOnly) {
+        StructLog original = result;
+        result = new StructLog();
+        resultIsReadOnly = false;
+        MergeFrom(original);
+      }
+      return result;
+    }
+    
+    public override bool IsInitialized {
+      get { return result.IsInitialized; }
+    }
+    
+    protected override StructLog MessageBeingBuilt {
+      get { return PrepareBuilder(); }
+    }
+    
+    public override Builder Clear() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+      return this;
+    }
+    
+    public override Builder Clone() {
+      if (resultIsReadOnly) {
+        return new Builder(result);
+      } else {
+        return new Builder().MergeFrom(result);
+      }
+    }
+    
+    public override pbd::MessageDescriptor DescriptorForType {
+      get { return global::StructLog.Descriptor; }
+    }
+    
+    public override StructLog DefaultInstanceForType {
+      get { return global::StructLog.DefaultInstance; }
+    }
+    
+    public override StructLog BuildPartial() {
+      if (resultIsReadOnly) {
+        return result;
+      }
+      resultIsReadOnly = true;
+      return result.MakeReadOnly();
+    }
+    
+    public override Builder MergeFrom(pb::IMessage other) {
+      if (other is StructLog) {
+        return MergeFrom((StructLog) other);
+      } else {
+        base.MergeFrom(other);
+        return this;
+      }
+    }
+    
+    public override Builder MergeFrom(StructLog other) {
+      if (other == global::StructLog.DefaultInstance) return this;
+      PrepareBuilder();
+      if (other.HasOperator) {
+        Operator = other.Operator;
+      }
+      if (other.HasOperation) {
+        Operation = other.Operation;
+      }
+      if (other.HasIp) {
+        Ip = other.Ip;
+      }
+      if (other.HasAddtime) {
+        Addtime = other.Addtime;
+      }
+      if (other.HasStatus) {
+        Status = other.Status;
+      }
+      this.MergeUnknownFields(other.UnknownFields);
+      return this;
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input) {
+      return MergeFrom(input, pb::ExtensionRegistry.Empty);
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+      PrepareBuilder();
+      pb::UnknownFieldSet.Builder unknownFields = null;
+      uint tag;
+      string field_name;
+      while (input.ReadTag(out tag, out field_name)) {
+        if(tag == 0 && field_name != null) {
+          int field_ordinal = global::System.Array.BinarySearch(_structLogFieldNames, field_name, global::System.StringComparer.Ordinal);
+          if(field_ordinal >= 0)
+            tag = _structLogFieldTags[field_ordinal];
+          else {
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            continue;
+          }
+        }
+        switch (tag) {
+          case 0: {
+            throw pb::InvalidProtocolBufferException.InvalidTag();
+          }
+          default: {
+            if (pb::WireFormat.IsEndGroupTag(tag)) {
+              if (unknownFields != null) {
+                this.UnknownFields = unknownFields.Build();
+              }
+              return this;
+            }
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            break;
+          }
+          case 10: {
+            result.hasOperator = input.ReadString(ref result.operator_);
+            break;
+          }
+          case 18: {
+            result.hasOperation = input.ReadString(ref result.operation_);
+            break;
+          }
+          case 26: {
+            result.hasIp = input.ReadString(ref result.ip_);
+            break;
+          }
+          case 34: {
+            result.hasAddtime = input.ReadString(ref result.addtime_);
+            break;
+          }
+          case 42: {
+            result.hasStatus = input.ReadString(ref result.status_);
+            break;
+          }
+        }
+      }
+      
+      if (unknownFields != null) {
+        this.UnknownFields = unknownFields.Build();
+      }
+      return this;
+    }
+    
+    
+    public bool HasOperator {
+      get { return result.hasOperator; }
+    }
+    public string Operator {
+      get { return result.Operator; }
+      set { SetOperator(value); }
+    }
+    public Builder SetOperator(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasOperator = true;
+      result.operator_ = value;
+      return this;
+    }
+    public Builder ClearOperator() {
+      PrepareBuilder();
+      result.hasOperator = false;
+      result.operator_ = "";
+      return this;
+    }
+    
+    public bool HasOperation {
+      get { return result.hasOperation; }
+    }
+    public string Operation {
+      get { return result.Operation; }
+      set { SetOperation(value); }
+    }
+    public Builder SetOperation(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasOperation = true;
+      result.operation_ = value;
+      return this;
+    }
+    public Builder ClearOperation() {
+      PrepareBuilder();
+      result.hasOperation = false;
+      result.operation_ = "";
+      return this;
+    }
+    
+    public bool HasIp {
+      get { return result.hasIp; }
+    }
+    public string Ip {
+      get { return result.Ip; }
+      set { SetIp(value); }
+    }
+    public Builder SetIp(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasIp = true;
+      result.ip_ = value;
+      return this;
+    }
+    public Builder ClearIp() {
+      PrepareBuilder();
+      result.hasIp = false;
+      result.ip_ = "";
+      return this;
+    }
+    
+    public bool HasAddtime {
+      get { return result.hasAddtime; }
+    }
+    public string Addtime {
+      get { return result.Addtime; }
+      set { SetAddtime(value); }
+    }
+    public Builder SetAddtime(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasAddtime = true;
+      result.addtime_ = value;
+      return this;
+    }
+    public Builder ClearAddtime() {
+      PrepareBuilder();
+      result.hasAddtime = false;
+      result.addtime_ = "";
+      return this;
+    }
+    
+    public bool HasStatus {
+      get { return result.hasStatus; }
+    }
+    public string Status {
+      get { return result.Status; }
+      set { SetStatus(value); }
+    }
+    public Builder SetStatus(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasStatus = true;
+      result.status_ = value;
+      return this;
+    }
+    public Builder ClearStatus() {
+      PrepareBuilder();
+      result.hasStatus = false;
+      result.status_ = "";
+      return this;
+    }
+  }
+  static StructLog() {
     object.ReferenceEquals(global::BaseStruct.Descriptor, null);
   }
 }
