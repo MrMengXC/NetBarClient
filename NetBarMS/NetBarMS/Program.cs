@@ -35,7 +35,7 @@ namespace NetBarMS
             //初始化XML
             XMLDataManage.Init();
 
-            DayInComeView newview2 = new DayInComeView();
+            YearInComeView newview2 = new YearInComeView();
             CustomForm newForm2 = new CustomForm(newview2, true, false);
             // MainForm newForm2 = new MainForm
             Application.Run(newForm2);

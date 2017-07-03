@@ -401,5 +401,38 @@
     <column name = "值班人" field="Staff" type ="C_Text" width ="" height =""/>
     <column name = "操作" field="Operation" type ="C_Button" width ="" height ="" bnames ="已处理"/>
   </grid>
-  
+
+  <!--日营收-->
+  <grid type ="DayIncomeDetail">
+    <column name = "小时段" field="Time" type ="C_Text" width ="" height =""/>
+    <column name = "购物消费金额" field="SellMoney" type ="C_Text" width ="" height =""/>
+    <column name = "网费充值金额" field="PayMoney" type ="C_Text" width ="" height =""/>
+    <column name = "收入总额" field="AllIncome" type ="C_Text" width ="" height =""/>
+    <column name = "支付宝收入" field="ZfbIncome" type ="C_Text" width ="" height =""/>
+    <column name = "微信收入" field="WxIncome" type ="C_Text" width ="" height =""/>
+    <column name = "现金收入收入" field="CashIncome" type ="C_Text" width ="" height =""/>
+
+  </grid>
+  <!--月营收-->
+  <grid type ="MonthIncomeDetail">
+    <column name = "日期" field="Time" type ="C_Text" width ="" height =""/>
+    <column name = "购物消费金额" field="SellMoney" type ="C_Text" width ="" height =""/>
+    <column name = "网费充值金额" field="PayMoney" type ="C_Text" width ="" height =""/>
+    <column name = "收入总额" field="AllIncome" type ="C_Text" width ="" height =""/>
+    <column name = "支付宝收入" field="ZfbIncome" type ="C_Text" width ="" height =""/>
+    <column name = "微信收入" field="WxIncome" type ="C_Text" width ="" height =""/>
+    <column name = "现金收入收入" field="CashIncome" type ="C_Text" width ="" height =""/>
+
+  </grid>
+  <!--年营收-->
+  <grid type ="YearIncomeDetail">
+    <column name = "月份" field="Time" type ="C_Text" width ="" height =""/>
+    <column name = "购物消费金额" field="SellMoney" type ="C_Text" width ="" height =""/>
+    <column name = "网费充值金额" field="PayMoney" type ="C_Text" width ="" height =""/>
+    <column name = "收入总额" field="AllIncome" type ="C_Text" width ="" height =""/>
+    <column name = "支付宝收入" field="ZfbIncome" type ="C_Text" width ="" height =""/>
+    <column name = "微信收入" field="WxIncome" type ="C_Text" width ="" height =""/>
+    <column name = "现金收入收入" field="CashIncome" type ="C_Text" width ="" height =""/>
+
+  </grid>
 </gridcontrol>

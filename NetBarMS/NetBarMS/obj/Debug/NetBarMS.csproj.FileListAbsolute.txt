@@ -502,3 +502,5 @@ C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\obj\Debug\NetBarMS
 C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\obj\Debug\NetBarMS.Views.UserActive.UserActivResultView.resources
 C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\obj\Debug\NetBarMS.Views.CustomView.PageView.resources
 C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\bin\Debug\ManagerManageNodes.xml
+C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\obj\Debug\NetBarMS.Views.InCome.IncomeDetail.resources
+C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\obj\Debug\NetBarMS.Views.InCome.YearInComeView.resources

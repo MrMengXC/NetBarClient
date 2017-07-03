@@ -208,8 +208,10 @@ namespace NetBarMS.Codes.Tools
 
                             DataColumn dataColumn = new DataColumn(fieldname);
                             table.Columns.Add(dataColumn);
+                            //dataColumn.DataType = typeof(Int32);
+
                         }
-                    
+
                         break;
                 }
                 i++;

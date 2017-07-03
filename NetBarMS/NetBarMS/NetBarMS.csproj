@@ -188,6 +188,12 @@
     <Compile Include="Views\HomePage\HomePageView.Designer.cs">
       <DependentUpon>HomePageView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\InCome\IncomeDetail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\InCome\IncomeDetail.Designer.cs">
+      <DependentUpon>IncomeDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Message\ReminderOpenMemberView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -655,6 +661,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\HomePage\HomePageView.resx">
       <DependentUpon>HomePageView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\InCome\IncomeDetail.resx">
+      <DependentUpon>IncomeDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\InCome\YearInComeView.resx">
+      <DependentUpon>YearInComeView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Message\ReminderOpenMemberView.resx">
       <DependentUpon>ReminderOpenMemberView.cs</DependentUpon>

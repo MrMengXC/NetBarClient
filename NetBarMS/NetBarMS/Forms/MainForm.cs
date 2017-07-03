@@ -159,10 +159,10 @@ namespace NetBarMS
                         view = new DayInComeView();
                         break;
                     case TreeNodeTag.MonthInCome:   //月营收
-                        view = new DayInComeView();
+                        view = new MonthInComeView();
                         break;
                     case TreeNodeTag.YearInCome:   //年营收
-                        view = new DayInComeView();
+                        view = new YearInComeView();
                         break;
                     #endregion
 

@@ -128,7 +128,6 @@ namespace NetBarMS.Codes.Tools
                 byte[] receiveBytes = new byte[1024];
                 //存储数据头的所有字节数 varint32:1419 1417
                 Int32 len = clientSocket.Receive(receiveBytes, 0);
-
                 if (len > 0)
                 {
                     try

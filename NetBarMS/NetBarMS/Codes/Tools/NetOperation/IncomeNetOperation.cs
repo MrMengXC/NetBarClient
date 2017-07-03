@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static NetBarMS.Codes.Tools.NetMessageManage;
+using static NetBarMS.Views.InCome.IncomeDetail;
 
 namespace NetBarMS.Codes.Tools.NetOperation
 {
@@ -14,27 +15,29 @@ namespace NetBarMS.Codes.Tools.NetOperation
     {
 
         #region 获取日营收
-        public static void GetProductList(DataResultBlock resultBlock, StructPage page, Int32 category, string keywords)
+        public static void GetIncomeDetail(DataResultBlock resultBlock, string start,string end,IncomeType type)
         {
 
-            CSGoodsFind.Builder products = new CSGoodsFind.Builder();
-            products.SetPage(page);
-            if (category >= 0)
-            {
-                products.SetCategory(category);
-            }
-            if (keywords != null)
-            {
-                products.SetKeywords(keywords);
-            }
-
-            System.Console.WriteLine(products); ;
+            CSEarning.Builder earing = new CSEarning.Builder();
+            earing.Starttime = start;
+            earing.Endtime = end;
             MessageContent.Builder content = new MessageContent.Builder();
             content.SetMessageType(1);
-            content.SetCsGoodsFind(products);
+            content.SetCsEarning(earing);
 
             MessagePack.Builder pack = new MessagePack.Builder();
-            pack.SetCmd(Cmd.CMD_GOODS_FIND);
+            if(type == IncomeType.DAY_INCOME)
+            {
+                pack.SetCmd(Cmd.CMD_EARNING_DAY);
+            }
+            else if(type == IncomeType.MONTH_INCOME)
+            {
+                pack.SetCmd(Cmd.CMD_EARNING_MONTH);
+            }
+            else
+            {
+                pack.SetCmd(Cmd.CMD_EARNING_YEAR);
+            }
             pack.SetContent(content);
             NetMessageManage.Manage().SendMsg(pack.Build(), resultBlock);
 

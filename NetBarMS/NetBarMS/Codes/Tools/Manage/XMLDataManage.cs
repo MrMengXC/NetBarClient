@@ -60,7 +60,6 @@ namespace NetBarMS.Codes.Tools
         LogManage,          //日志管理
 
 
-
     }
     public enum GridControlType
     {
@@ -110,6 +109,12 @@ namespace NetBarMS.Codes.Tools
         CallService,        //呼叫服务
         StaffList,          //员工列表
         ProductSellRank,    //产品销售排行
+
+
+        DayIncomeDetail,          //日营收
+        MonthIncomeDetail,          //月营收
+        YearIncomeDetail,          //年营收
+
     }
 
     class XMLDataManage
