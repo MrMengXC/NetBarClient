@@ -159,23 +159,6 @@ namespace NetBarMS.Codes.Tools
 
         }
 
-        #region 获取节点数据
-
-        private void ReadNodesXML()
-        {
-            string xmlFilePath = Application.StartupPath + "//ManageNodes.xml";
-            homepageNodes = XMLDataManage.GetTreeNodes(xmlFilePath);
-            //foreach(HomePageNodeModel model in homepageNodes)
-            //{
-            //    foreach(HomePageNodeModel child in model.childNodes)
-            //    {
-            //        this.homePageNodeDict[child.nodeid] = child;
-
-            //    }
-            //    this.homePageNodeDict[model.nodeid] = model;
-
-            //}
-        }
 
 
         private static List<HomePageNodeModel> GetTreeNodes(string xmlFilePath)
@@ -227,6 +210,23 @@ namespace NetBarMS.Codes.Tools
         }
         #endregion
 
+        #region 获取节点数据
+
+        private void ReadNodesXML()
+        {
+            string xmlFilePath = Application.StartupPath + "//ManageNodes.xml";
+            homepageNodes = XMLDataManage.GetTreeNodes(xmlFilePath);
+            foreach (HomePageNodeModel model in homepageNodes)
+            {
+                foreach (HomePageNodeModel child in model.childNodes)
+                {
+                    this.homePageNodeDict[child.nodeid] = child;
+
+                }
+                this.homePageNodeDict[model.nodeid] = model;
+
+            }
+        }
         #endregion
 
         #region 获取GridControl 的数据
@@ -291,7 +291,7 @@ namespace NetBarMS.Codes.Tools
             XMLDataManage.Manage().gridControlDict.TryGetValue(type, out model);
             return model;
         }
-        public static HomePageNodeModel GetGridControlModel(int nodeId)
+        public static HomePageNodeModel GetHomePageNodeModel(int nodeId)
         {
             HomePageNodeModel model = null;
             XMLDataManage.Manage().homePageNodeDict.TryGetValue(nodeId, out model);

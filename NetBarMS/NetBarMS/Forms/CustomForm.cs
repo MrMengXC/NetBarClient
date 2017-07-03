@@ -50,6 +50,28 @@ namespace NetBarMS.Forms
 
 
         }
+        private void InitForm(UserControl control, bool showInTaskbar)
+        {
+            InitializeComponent();
+
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.ControlBox = false;
+
+            control.BackColor = Color.White;
+            control.Location = new Point(2, 2);
+            this.Controls.Add(control);
+
+
+            //newForm.TopMost = true;           //是否显示最前面
+            //newForm.Focus();
+            this.Size = new Size(control.Size.Width + 4, control.Size.Height + 4);
+            control.Anchor = AnchorStyles.Right | AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Bottom;
+            this.BackColor = Color.Wheat;
+            this.ShowInTaskbar = showInTaskbar;      //是否在任务栏显示
+            this.Show();
+
+
+        }
         #endregion
 
         #region 声明窗体的方法
@@ -60,6 +82,10 @@ namespace NetBarMS.Forms
         public CustomForm(RootUserControlView control, bool showInTaskbar,bool isShow)
         {
             this.InitForm(control, showInTaskbar, isShow);
+        }
+        public CustomForm(UserControl control, bool showInTaskbar)
+        {
+            this.InitForm(control, showInTaskbar);
         }
         #endregion
 
