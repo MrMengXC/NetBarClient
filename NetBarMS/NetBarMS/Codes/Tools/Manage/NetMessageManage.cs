@@ -118,7 +118,6 @@ namespace NetBarMS.Codes.Tools
             //不断接收服务器发来的数据
             while (true)
             {
-
                 if (!clientSocket.Connected)
                 {
                     Console.WriteLine("断开连接");
@@ -159,7 +158,6 @@ namespace NetBarMS.Codes.Tools
                 //获取消息头长度
                 Int32 headlength = CodedOutputStream.ComputeRawVarint32Size((uint)varint32);
              //   System.Console.WriteLine("len:" + recelen + "\nvarint32:" + varint32 + "\nlen:" + headlength);
-
                 //如果所有有长度大于接收的长度。断包了
                 if (varint32 > recelen - headlength)
                 {

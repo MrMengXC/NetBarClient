@@ -24,7 +24,8 @@ namespace NetBarMS.Views.InCome
         public DayInComeView()
         {
             InitializeComponent();
-            this.titleLabel.Text = "日营收管理";
+            //this.titleLabel.Text = "日营收管理";
+            
             InitUI();
         }
 
@@ -71,6 +72,7 @@ namespace NetBarMS.Views.InCome
                         IncomeRate(earns[0]);
                         WxRate(earns[0]);
                         ZfbRate(earns[0]);
+                        AreaRate(earns[0].AreaTotalList);
                     }
                 }));
 
@@ -111,6 +113,8 @@ namespace NetBarMS.Views.InCome
                 IncomeRate(earn);
                 WxRate(earn);
                 ZfbRate(earn);
+                AreaRate(earn.AreaTotalList);
+
             }
         }
         //营收占比
@@ -165,6 +169,19 @@ namespace NetBarMS.Views.InCome
             p2.Color = Color.Orange;
             zfbPieSeries.Points.Add(p1);
             zfbPieSeries.Points.Add(p2);
+        }
+        //区域收入占比
+        private void AreaRate(IList<StructAreaTotal> areas)
+        {
+            //支付宝收入占比
+            Series areaPieSeries = this.chartControl5.Series[0];
+            areaPieSeries.ToolTipEnabled = DevExpress.Utils.DefaultBoolean.True;  // 设置鼠标悬浮显示toolTip  
+            areaPieSeries.Points.Clear();
+            foreach(StructAreaTotal area in areas)
+            {
+                SeriesPoint p = new SeriesPoint(area.Areaname, area.Amount);
+                areaPieSeries.Points.Add(p);
+            }          
         }
         #endregion
 

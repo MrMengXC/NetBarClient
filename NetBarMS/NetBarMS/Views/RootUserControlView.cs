@@ -40,5 +40,9 @@ namespace NetBarMS.Views
 
         }
 
+        private void topView1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

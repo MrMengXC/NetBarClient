@@ -60,6 +60,8 @@ public static partial class BaseStruct {
   internal static pb::FieldAccess.FieldAccessorTable<global::StructPerform, global::StructPerform.Builder> internal__static_StructPerform__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_StructLog__Descriptor;
   internal static pb::FieldAccess.FieldAccessorTable<global::StructLog, global::StructLog.Builder> internal__static_StructLog__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_StructAreaTotal__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::StructAreaTotal, global::StructAreaTotal.Builder> internal__static_StructAreaTotal__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_StructEarn__Descriptor;
   internal static pb::FieldAccess.FieldAccessorTable<global::StructEarn, global::StructEarn.Builder> internal__static_StructEarn__FieldAccessorTable;
   #endregion
@@ -142,13 +144,15 @@ public static partial class BaseStruct {
           "CRIMCgRyb2xlGAIgAigJEg0KBWhvdXJzGAMgAigFEg4KBmNoYXJnZRgEIAIo", 
           "BRINCgVzYWxlcxgFIAIoBRIPCgdzYXRpc2Z5GAYgAigFIl0KCVN0cnVjdExv", 
           "ZxIQCghvcGVyYXRvchgBIAIoCRIRCglvcGVyYXRpb24YAiACKAkSCgoCaXAY", 
-          "AyACKAkSDwoHYWRkdGltZRgEIAIoCRIOCgZzdGF0dXMYBSACKAkingEKClN0", 
-          "cnVjdEVhcm4SEAoIZGF0ZXRpbWUYASACKAUSFQoNYWxpcGF5X2NoYXJnZRgC", 
-          "IAIoBRITCgthbGlwYXlfc2FsZRgDIAIoBRIVCg10ZW5wYXlfY2hhcmdlGAQg", 
-          "AigFEhMKC3RlbnBheV9zYWxlGAUgAigFEhMKC2Nhc2hfY2hhcmdlGAYgAigF", 
-          "EhEKCWNhc2hfc2FsZRgHIAIoBSooCgRUeXBlEggKBElURU0QARIMCghDVVJS", 
-          "RU5DWRACEggKBFBBQ0sQA0IrCh1jb20uc2t5c29mdC5jb3JlLmF1dG8ubWVz", 
-        "c2FnZUIKQmFzZVN0cnVjdA=="));
+          "AyACKAkSDwoHYWRkdGltZRgEIAIoCRIOCgZzdGF0dXMYBSACKAkiMwoPU3Ry", 
+          "dWN0QXJlYVRvdGFsEhAKCGFyZWFuYW1lGAEgAigJEg4KBmFtb3VudBgCIAIo", 
+          "BSLEAQoKU3RydWN0RWFybhIQCghkYXRldGltZRgBIAIoBRIVCg1hbGlwYXlf", 
+          "Y2hhcmdlGAIgAigFEhMKC2FsaXBheV9zYWxlGAMgAigFEhUKDXRlbnBheV9j", 
+          "aGFyZ2UYBCACKAUSEwoLdGVucGF5X3NhbGUYBSACKAUSEwoLY2FzaF9jaGFy", 
+          "Z2UYBiACKAUSEQoJY2FzaF9zYWxlGAcgAigFEiQKCmFyZWFfdG90YWwYCCAD", 
+          "KAsyEC5TdHJ1Y3RBcmVhVG90YWwqKAoEVHlwZRIICgRJVEVNEAESDAoIQ1VS", 
+          "UkVOQ1kQAhIICgRQQUNLEANCKwodY29tLnNreXNvZnQuY29yZS5hdXRvLm1l", 
+        "c3NhZ2VCCkJhc2VTdHJ1Y3Q="));
     pbd::FileDescriptor.InternalDescriptorAssigner assigner = delegate(pbd::FileDescriptor root) {
       descriptor = root;
       internal__static_StructErrorTip__Descriptor = Descriptor.MessageTypes[0];
@@ -243,10 +247,14 @@ public static partial class BaseStruct {
       internal__static_StructLog__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructLog, global::StructLog.Builder>(internal__static_StructLog__Descriptor,
               new string[] { "Operator", "Operation", "Ip", "Addtime", "Status", });
-      internal__static_StructEarn__Descriptor = Descriptor.MessageTypes[23];
+      internal__static_StructAreaTotal__Descriptor = Descriptor.MessageTypes[23];
+      internal__static_StructAreaTotal__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::StructAreaTotal, global::StructAreaTotal.Builder>(internal__static_StructAreaTotal__Descriptor,
+              new string[] { "Areaname", "Amount", });
+      internal__static_StructEarn__Descriptor = Descriptor.MessageTypes[24];
       internal__static_StructEarn__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructEarn, global::StructEarn.Builder>(internal__static_StructEarn__Descriptor,
-              new string[] { "Datetime", "AlipayCharge", "AlipaySale", "TenpayCharge", "TenpaySale", "CashCharge", "CashSale", });
+              new string[] { "Datetime", "AlipayCharge", "AlipaySale", "TenpayCharge", "TenpaySale", "CashCharge", "CashSale", "AreaTotal", });
       return null;
     };
     pbd::FileDescriptor.InternalBuildGeneratedFileFrom(descriptorData,
@@ -13025,11 +13033,332 @@ public sealed partial class StructLog : pb::GeneratedMessage<StructLog, StructLo
 }
 
 [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+public sealed partial class StructAreaTotal : pb::GeneratedMessage<StructAreaTotal, StructAreaTotal.Builder> {
+  private StructAreaTotal() { }
+  private static readonly StructAreaTotal defaultInstance = new StructAreaTotal().MakeReadOnly();
+  private static readonly string[] _structAreaTotalFieldNames = new string[] { "amount", "areaname" };
+  private static readonly uint[] _structAreaTotalFieldTags = new uint[] { 16, 10 };
+  public static StructAreaTotal DefaultInstance {
+    get { return defaultInstance; }
+  }
+  
+  public override StructAreaTotal DefaultInstanceForType {
+    get { return DefaultInstance; }
+  }
+  
+  protected override StructAreaTotal ThisMessage {
+    get { return this; }
+  }
+  
+  public static pbd::MessageDescriptor Descriptor {
+    get { return global::BaseStruct.internal__static_StructAreaTotal__Descriptor; }
+  }
+  
+  protected override pb::FieldAccess.FieldAccessorTable<StructAreaTotal, StructAreaTotal.Builder> InternalFieldAccessors {
+    get { return global::BaseStruct.internal__static_StructAreaTotal__FieldAccessorTable; }
+  }
+  
+  public const int AreanameFieldNumber = 1;
+  private bool hasAreaname;
+  private string areaname_ = "";
+  public bool HasAreaname {
+    get { return hasAreaname; }
+  }
+  public string Areaname {
+    get { return areaname_; }
+  }
+  
+  public const int AmountFieldNumber = 2;
+  private bool hasAmount;
+  private int amount_;
+  public bool HasAmount {
+    get { return hasAmount; }
+  }
+  public int Amount {
+    get { return amount_; }
+  }
+  
+  public override bool IsInitialized {
+    get {
+      if (!hasAreaname) return false;
+      if (!hasAmount) return false;
+      return true;
+    }
+  }
+  
+  public override void WriteTo(pb::ICodedOutputStream output) {
+    CalcSerializedSize();
+    string[] field_names = _structAreaTotalFieldNames;
+    if (hasAreaname) {
+      output.WriteString(1, field_names[1], Areaname);
+    }
+    if (hasAmount) {
+      output.WriteInt32(2, field_names[0], Amount);
+    }
+    UnknownFields.WriteTo(output);
+  }
+  
+  private int memoizedSerializedSize = -1;
+  public override int SerializedSize {
+    get {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+      return CalcSerializedSize();
+    }
+  }
+  
+  private int CalcSerializedSize() {
+    int size = memoizedSerializedSize;
+    if (size != -1) return size;
+    
+    size = 0;
+    if (hasAreaname) {
+      size += pb::CodedOutputStream.ComputeStringSize(1, Areaname);
+    }
+    if (hasAmount) {
+      size += pb::CodedOutputStream.ComputeInt32Size(2, Amount);
+    }
+    size += UnknownFields.SerializedSize;
+    memoizedSerializedSize = size;
+    return size;
+  }
+  public static StructAreaTotal ParseFrom(pb::ByteString data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static StructAreaTotal ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static StructAreaTotal ParseFrom(byte[] data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static StructAreaTotal ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static StructAreaTotal ParseFrom(global::System.IO.Stream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static StructAreaTotal ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  public static StructAreaTotal ParseDelimitedFrom(global::System.IO.Stream input) {
+    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
+  }
+  public static StructAreaTotal ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
+  }
+  public static StructAreaTotal ParseFrom(pb::ICodedInputStream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static StructAreaTotal ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  private StructAreaTotal MakeReadOnly() {
+    return this;
+  }
+  
+  public static Builder CreateBuilder() { return new Builder(); }
+  public override Builder ToBuilder() { return CreateBuilder(this); }
+  public override Builder CreateBuilderForType() { return new Builder(); }
+  public static Builder CreateBuilder(StructAreaTotal prototype) {
+    return new Builder(prototype);
+  }
+  
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class Builder : pb::GeneratedBuilder<StructAreaTotal, Builder> {
+    protected override Builder ThisBuilder {
+      get { return this; }
+    }
+    public Builder() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+    }
+    internal Builder(StructAreaTotal cloneFrom) {
+      result = cloneFrom;
+      resultIsReadOnly = true;
+    }
+    
+    private bool resultIsReadOnly;
+    private StructAreaTotal result;
+    
+    private StructAreaTotal PrepareBuilder() {
+      if (resultIsReadOnly) {
+        StructAreaTotal original = result;
+        result = new StructAreaTotal();
+        resultIsReadOnly = false;
+        MergeFrom(original);
+      }
+      return result;
+    }
+    
+    public override bool IsInitialized {
+      get { return result.IsInitialized; }
+    }
+    
+    protected override StructAreaTotal MessageBeingBuilt {
+      get { return PrepareBuilder(); }
+    }
+    
+    public override Builder Clear() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+      return this;
+    }
+    
+    public override Builder Clone() {
+      if (resultIsReadOnly) {
+        return new Builder(result);
+      } else {
+        return new Builder().MergeFrom(result);
+      }
+    }
+    
+    public override pbd::MessageDescriptor DescriptorForType {
+      get { return global::StructAreaTotal.Descriptor; }
+    }
+    
+    public override StructAreaTotal DefaultInstanceForType {
+      get { return global::StructAreaTotal.DefaultInstance; }
+    }
+    
+    public override StructAreaTotal BuildPartial() {
+      if (resultIsReadOnly) {
+        return result;
+      }
+      resultIsReadOnly = true;
+      return result.MakeReadOnly();
+    }
+    
+    public override Builder MergeFrom(pb::IMessage other) {
+      if (other is StructAreaTotal) {
+        return MergeFrom((StructAreaTotal) other);
+      } else {
+        base.MergeFrom(other);
+        return this;
+      }
+    }
+    
+    public override Builder MergeFrom(StructAreaTotal other) {
+      if (other == global::StructAreaTotal.DefaultInstance) return this;
+      PrepareBuilder();
+      if (other.HasAreaname) {
+        Areaname = other.Areaname;
+      }
+      if (other.HasAmount) {
+        Amount = other.Amount;
+      }
+      this.MergeUnknownFields(other.UnknownFields);
+      return this;
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input) {
+      return MergeFrom(input, pb::ExtensionRegistry.Empty);
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+      PrepareBuilder();
+      pb::UnknownFieldSet.Builder unknownFields = null;
+      uint tag;
+      string field_name;
+      while (input.ReadTag(out tag, out field_name)) {
+        if(tag == 0 && field_name != null) {
+          int field_ordinal = global::System.Array.BinarySearch(_structAreaTotalFieldNames, field_name, global::System.StringComparer.Ordinal);
+          if(field_ordinal >= 0)
+            tag = _structAreaTotalFieldTags[field_ordinal];
+          else {
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            continue;
+          }
+        }
+        switch (tag) {
+          case 0: {
+            throw pb::InvalidProtocolBufferException.InvalidTag();
+          }
+          default: {
+            if (pb::WireFormat.IsEndGroupTag(tag)) {
+              if (unknownFields != null) {
+                this.UnknownFields = unknownFields.Build();
+              }
+              return this;
+            }
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            break;
+          }
+          case 10: {
+            result.hasAreaname = input.ReadString(ref result.areaname_);
+            break;
+          }
+          case 16: {
+            result.hasAmount = input.ReadInt32(ref result.amount_);
+            break;
+          }
+        }
+      }
+      
+      if (unknownFields != null) {
+        this.UnknownFields = unknownFields.Build();
+      }
+      return this;
+    }
+    
+    
+    public bool HasAreaname {
+      get { return result.hasAreaname; }
+    }
+    public string Areaname {
+      get { return result.Areaname; }
+      set { SetAreaname(value); }
+    }
+    public Builder SetAreaname(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasAreaname = true;
+      result.areaname_ = value;
+      return this;
+    }
+    public Builder ClearAreaname() {
+      PrepareBuilder();
+      result.hasAreaname = false;
+      result.areaname_ = "";
+      return this;
+    }
+    
+    public bool HasAmount {
+      get { return result.hasAmount; }
+    }
+    public int Amount {
+      get { return result.Amount; }
+      set { SetAmount(value); }
+    }
+    public Builder SetAmount(int value) {
+      PrepareBuilder();
+      result.hasAmount = true;
+      result.amount_ = value;
+      return this;
+    }
+    public Builder ClearAmount() {
+      PrepareBuilder();
+      result.hasAmount = false;
+      result.amount_ = 0;
+      return this;
+    }
+  }
+  static StructAreaTotal() {
+    object.ReferenceEquals(global::BaseStruct.Descriptor, null);
+  }
+}
+
+[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 public sealed partial class StructEarn : pb::GeneratedMessage<StructEarn, StructEarn.Builder> {
   private StructEarn() { }
   private static readonly StructEarn defaultInstance = new StructEarn().MakeReadOnly();
-  private static readonly string[] _structEarnFieldNames = new string[] { "alipay_charge", "alipay_sale", "cash_charge", "cash_sale", "datetime", "tenpay_charge", "tenpay_sale" };
-  private static readonly uint[] _structEarnFieldTags = new uint[] { 16, 24, 48, 56, 8, 32, 40 };
+  private static readonly string[] _structEarnFieldNames = new string[] { "alipay_charge", "alipay_sale", "area_total", "cash_charge", "cash_sale", "datetime", "tenpay_charge", "tenpay_sale" };
+  private static readonly uint[] _structEarnFieldTags = new uint[] { 16, 24, 66, 48, 56, 8, 32, 40 };
   public static StructEarn DefaultInstance {
     get { return defaultInstance; }
   }
@@ -13120,6 +13449,18 @@ public sealed partial class StructEarn : pb::GeneratedMessage<StructEarn, Struct
     get { return cashSale_; }
   }
   
+  public const int AreaTotalFieldNumber = 8;
+  private pbc::PopsicleList<global::StructAreaTotal> areaTotal_ = new pbc::PopsicleList<global::StructAreaTotal>();
+  public scg::IList<global::StructAreaTotal> AreaTotalList {
+    get { return areaTotal_; }
+  }
+  public int AreaTotalCount {
+    get { return areaTotal_.Count; }
+  }
+  public global::StructAreaTotal GetAreaTotal(int index) {
+    return areaTotal_[index];
+  }
+  
   public override bool IsInitialized {
     get {
       if (!hasDatetime) return false;
@@ -13129,6 +13470,9 @@ public sealed partial class StructEarn : pb::GeneratedMessage<StructEarn, Struct
       if (!hasTenpaySale) return false;
       if (!hasCashCharge) return false;
       if (!hasCashSale) return false;
+      foreach (global::StructAreaTotal element in AreaTotalList) {
+        if (!element.IsInitialized) return false;
+      }
       return true;
     }
   }
@@ -13137,7 +13481,7 @@ public sealed partial class StructEarn : pb::GeneratedMessage<StructEarn, Struct
     CalcSerializedSize();
     string[] field_names = _structEarnFieldNames;
     if (hasDatetime) {
-      output.WriteInt32(1, field_names[4], Datetime);
+      output.WriteInt32(1, field_names[5], Datetime);
     }
     if (hasAlipayCharge) {
       output.WriteInt32(2, field_names[0], AlipayCharge);
@@ -13146,16 +13490,19 @@ public sealed partial class StructEarn : pb::GeneratedMessage<StructEarn, Struct
       output.WriteInt32(3, field_names[1], AlipaySale);
     }
     if (hasTenpayCharge) {
-      output.WriteInt32(4, field_names[5], TenpayCharge);
+      output.WriteInt32(4, field_names[6], TenpayCharge);
     }
     if (hasTenpaySale) {
-      output.WriteInt32(5, field_names[6], TenpaySale);
+      output.WriteInt32(5, field_names[7], TenpaySale);
     }
     if (hasCashCharge) {
-      output.WriteInt32(6, field_names[2], CashCharge);
+      output.WriteInt32(6, field_names[3], CashCharge);
     }
     if (hasCashSale) {
-      output.WriteInt32(7, field_names[3], CashSale);
+      output.WriteInt32(7, field_names[4], CashSale);
+    }
+    if (areaTotal_.Count > 0) {
+      output.WriteMessageArray(8, field_names[2], areaTotal_);
     }
     UnknownFields.WriteTo(output);
   }
@@ -13195,6 +13542,9 @@ public sealed partial class StructEarn : pb::GeneratedMessage<StructEarn, Struct
     if (hasCashSale) {
       size += pb::CodedOutputStream.ComputeInt32Size(7, CashSale);
     }
+    foreach (global::StructAreaTotal element in AreaTotalList) {
+      size += pb::CodedOutputStream.ComputeMessageSize(8, element);
+    }
     size += UnknownFields.SerializedSize;
     memoizedSerializedSize = size;
     return size;
@@ -13230,6 +13580,7 @@ public sealed partial class StructEarn : pb::GeneratedMessage<StructEarn, Struct
     return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
   }
   private StructEarn MakeReadOnly() {
+    areaTotal_.MakeReadOnly();
     return this;
   }
   
@@ -13338,6 +13689,9 @@ public sealed partial class StructEarn : pb::GeneratedMessage<StructEarn, Struct
       if (other.HasCashSale) {
         CashSale = other.CashSale;
       }
+      if (other.areaTotal_.Count != 0) {
+        result.areaTotal_.Add(other.areaTotal_);
+      }
       this.MergeUnknownFields(other.UnknownFields);
       return this;
     }
@@ -13407,6 +13761,10 @@ public sealed partial class StructEarn : pb::GeneratedMessage<StructEarn, Struct
           }
           case 56: {
             result.hasCashSale = input.ReadInt32(ref result.cashSale_);
+            break;
+          }
+          case 66: {
+            input.ReadMessageArray(tag, field_name, result.areaTotal_, global::StructAreaTotal.DefaultInstance, extensionRegistry);
             break;
           }
         }
@@ -13556,6 +13914,50 @@ public sealed partial class StructEarn : pb::GeneratedMessage<StructEarn, Struct
       PrepareBuilder();
       result.hasCashSale = false;
       result.cashSale_ = 0;
+      return this;
+    }
+    
+    public pbc::IPopsicleList<global::StructAreaTotal> AreaTotalList {
+      get { return PrepareBuilder().areaTotal_; }
+    }
+    public int AreaTotalCount {
+      get { return result.AreaTotalCount; }
+    }
+    public global::StructAreaTotal GetAreaTotal(int index) {
+      return result.GetAreaTotal(index);
+    }
+    public Builder SetAreaTotal(int index, global::StructAreaTotal value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.areaTotal_[index] = value;
+      return this;
+    }
+    public Builder SetAreaTotal(int index, global::StructAreaTotal.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
+      PrepareBuilder();
+      result.areaTotal_[index] = builderForValue.Build();
+      return this;
+    }
+    public Builder AddAreaTotal(global::StructAreaTotal value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.areaTotal_.Add(value);
+      return this;
+    }
+    public Builder AddAreaTotal(global::StructAreaTotal.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
+      PrepareBuilder();
+      result.areaTotal_.Add(builderForValue.Build());
+      return this;
+    }
+    public Builder AddRangeAreaTotal(scg::IEnumerable<global::StructAreaTotal> values) {
+      PrepareBuilder();
+      result.areaTotal_.Add(values);
+      return this;
+    }
+    public Builder ClearAreaTotal() {
+      PrepareBuilder();
+      result.areaTotal_.Clear();
       return this;
     }
   }

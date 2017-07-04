@@ -85,6 +85,7 @@ namespace NetBarMS.Views.HomePage
                         System.Console.WriteLine("GetRechargeCodeResult:" + result.pack);
                         string wxCode = result.pack.Content.ScPreCharge.Qrcode;
                         string url = IdTools.IMG_HEADER + wxCode;
+                        //TODO:服务器没开引起崩溃
                         Stream stream = WebRequest.Create(url).GetResponse().GetResponseStream();
                         this.pictureEdit1.Image = Image.FromStream(stream);
 

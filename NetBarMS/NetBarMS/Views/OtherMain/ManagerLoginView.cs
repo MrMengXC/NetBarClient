@@ -21,6 +21,7 @@ namespace NetBarMS.Views.OtherMain
             InitializeComponent();
             NetMessageManage.Manage(ConnectResultBlock);
             this.loginButton.Click += LoginButtonClick;
+            //this.leftFlowLayoutPanel.Controls.Add
         }
 
 

@@ -51,9 +51,12 @@
             // 
             this.titlePanel.Size = new System.Drawing.Size(1000, 54);
             // 
-            // closeButton
+            // titleLabel
             // 
- 
+            this.titleLabel.AutoSize = false;
+            this.titleLabel.Dock = System.Windows.Forms.DockStyle.None;
+            this.titleLabel.Location = new System.Drawing.Point(3, 16);
+            this.titleLabel.Size = new System.Drawing.Size(93, 17);
             // 
             // panel1
             // 
@@ -159,7 +162,6 @@
             this.Controls.SetChildIndex(this.titlePanel, 0);
             this.Controls.SetChildIndex(this.pictureEdit1, 0);
             this.titlePanel.ResumeLayout(false);
-            this.titlePanel.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
