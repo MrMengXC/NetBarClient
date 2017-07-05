@@ -11,25 +11,7 @@ namespace NetBarMS.Codes.Tools
     {
         //单例类
         private static SysManage _manage = null;
-
-        #region delegate
-        public delegate void ResultHandle();
-        public event ResultHandle resultEvent;
-        ////获取会员类型代理
-        //public delegate void GetMemberTypesHandle(List<StructDictItem> types);
-        //public event GetMemberTypesHandle GetMemberTypesEvent;
-
-        ////获取商品类型代理
-        //public delegate void GetProductTypesHandle(List<StructDictItem> types);
-        //public event GetProductTypesHandle GetProductTypesEvent;
-        ////获取区域的代理
-        //public delegate void GetAreasHandle(List<StructDictItem> types);
-        //public event GetAreasHandle GetAreasEvent;
-
-        #endregion
-
-        //首页所有电脑
-        public List<StructRealTime> computers = new List<StructRealTime>();
+      
         //区域数组
         private List<StructDictItem> areas;
         //区域字典
@@ -78,11 +60,7 @@ namespace NetBarMS.Codes.Tools
             GetStaffList();
         }
         #endregion
-        public void UpdateHomePageComputers(IList<StructRealTime> tem)
-        {
-            this.computers = tem.ToList<StructRealTime>();
 
-        }
         #region 会员等级功能
         //获取会员等级列表
         private void GetMemberLvList(){

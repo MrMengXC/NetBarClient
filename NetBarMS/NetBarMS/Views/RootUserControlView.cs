@@ -25,11 +25,13 @@ namespace NetBarMS.Views
             InitializeComponent();
             this.closeButton.Click += CloseFormClick;
         }
+        //按钮关闭窗体
         private void CloseFormClick(object sender, EventArgs e)
         {
             this.CloseFormClick();
         }
 
+        //关闭窗体方法
         public void CloseFormClick()
         {
             if (this.CloseForm != null)
@@ -40,9 +42,5 @@ namespace NetBarMS.Views
 
         }
 
-        private void topView1_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

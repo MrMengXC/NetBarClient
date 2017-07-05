@@ -13,6 +13,7 @@ using NetBarMS.Codes.Tools.NetOperation;
 using System.Threading;
 using DevExpress.XtraEditors.Controls;
 using static NetBarMS.Codes.Tools.NetMessageManage;
+using NetBarMS.Codes.Tools.Manage;
 
 namespace NetBarMS.Views.HomePage
 {
@@ -40,7 +41,7 @@ namespace NetBarMS.Views.HomePage
     public partial class HomePageListView : UserControl
     {
         public DataTable mainDataTable;     //
-
+        private List<StructRealTime> coms;
         public HomePageListView()
         {
             InitializeComponent();
@@ -52,6 +53,8 @@ namespace NetBarMS.Views.HomePage
         {
             ToolsManage.SetGridView(this.gridView1, GridControlType.HomePageList, out this.mainDataTable, ButtonEdit_ButtonClick, GridView_CustomColumnSort);
             this.gridControl1.DataSource = this.mainDataTable;
+
+            //获取账户信息
             ManagerNetOperation.AccountInfo(AccountInfoBlock);
 
         }
@@ -72,54 +75,59 @@ namespace NetBarMS.Views.HomePage
             {
                 //进行管理员管理
                 CurrentStaffManage.Manage().UpdateStaffInfo(result.pack.Content.ScAccountInfo);
-                GetHomePageList();
+                //获取首页数据
+                HomePageMessageManage.Manage().GetHomePageList(GetHomePageListResult,UpdateHomePageData);
             }
         }
         #endregion
 
         #region 获取首页数据列表
-        public void GetHomePageList()
+        public void GetHomePageListResult(bool success)
         {
-            //获取上网信息
-            HomePageNetOperation.HompageList(HomePageListResult);
-        }
-
-        // 获取首页计算机列表结果回调
-        private void HomePageListResult(ResultModel result)
-        {
-
-            if (result.pack.Cmd == Cmd.CMD_REALTIME_INFO && result.pack.Content.MessageType == 1)
+            HomePageMessageManage.Manage().RemoveResultHandel(GetHomePageListResult);
+            if (success)
             {
-                //System.Console.WriteLine("HomePageListBlock:" + result.pack);
-                SysManage.Manage().UpdateHomePageComputers(result.pack.Content.ScRealtimeInfo.RealtimesList);
+                HomePageMessageManage.Manage().GetComputers(out this.coms);
                 this.Invoke(new UIHandleBlock(delegate ()
                 {
                     RefreshGridControl();
-
                 }));
             }
         }
-
         #endregion
-        
+
+        #region 更新首页数据
+        public void UpdateHomePageData(int index ,StructRealTime com)
+        {
+            this.Invoke(new UIHandleBlock(delegate {
+                this.coms[index] = com;
+                DataRow row = this.mainDataTable.Rows[index];
+                AddNewRow(com, row);
+            }));
+           
+        }
+        #endregion
+
+
         #region 更新GridControl 的数据
         private void RefreshGridControl()
         {
             this.mainDataTable.Clear();
-
-            List<StructRealTime> coms = SysManage.Manage().computers;
-
-            for (int i = 0; i < coms.Count; i++)
+            for (int i = 0; i < this.coms.Count; i++)
             {
                 StructRealTime computer = coms[i];
-                AddNewRow(computer);
+                AddNewRow(computer,null);
             }
         }
-        private void AddNewRow(StructRealTime computer)
+        //添加新行
+        private void AddNewRow(StructRealTime computer, DataRow row)
         {
-
-            DataRow row = this.mainDataTable.NewRow();
-            this.mainDataTable.Rows.Add(row);
+            if(row == null)
+            {
+                row = this.mainDataTable.NewRow();
+                this.mainDataTable.Rows.Add(row);
+            }
+           
             row[TitleList.EpNumber.ToString()] = computer.Computer;
             row[TitleList.Area.ToString()] = SysManage.Manage().GetAreaName(computer.Area);
             row[TitleList.State.ToString()] = computer.Status;
@@ -139,7 +147,6 @@ namespace NetBarMS.Views.HomePage
 
 
         #endregion
-
 
         #region 按钮列点击事件
         private void ButtonEdit_ButtonClick(object sender, ButtonPressedEventArgs e)

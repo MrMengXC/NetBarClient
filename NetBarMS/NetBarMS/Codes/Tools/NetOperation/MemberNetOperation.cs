@@ -47,6 +47,7 @@ namespace NetBarMS.Codes.Tools.NetOperation
             NetMessageManage.Manage().SendMsg(pack.Build(), resultBlock);
         }
         #endregion
+
         #region 更新会员
         /// <summary>
         /// 更新会员

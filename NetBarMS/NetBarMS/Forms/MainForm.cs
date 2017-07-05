@@ -270,7 +270,7 @@ namespace NetBarMS
         //刷新首页数据
         private void RefreshHomePageData()
         {
-            this.homePageListView.GetHomePageList();
+            //this.homePageListView.GetHomePageList();
         }
         //列表视图按钮点击事件
         private void simpleButton2_Click(object sender, EventArgs e)

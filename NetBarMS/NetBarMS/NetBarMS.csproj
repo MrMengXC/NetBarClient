@@ -116,6 +116,7 @@
     <Compile Include="Codes\Model\TestModel.cs" />
     <Compile Include="Codes\Model\UserModel.cs" />
     <Compile Include="Codes\Tools\Manage\AreaSettingManage.cs" />
+    <Compile Include="Codes\Tools\Manage\HomePageMessageManage.cs" />
     <Compile Include="Codes\Tools\NetOperation\EvaluateNetOperation.cs" />
     <Compile Include="Codes\Tools\NetOperation\OtherMainNetOperation.cs" />
     <Compile Include="Plugins\BigInteger.cs" />
@@ -277,6 +278,12 @@
     </Compile>
     <Compile Include="Views\Message\UserPayResultView.Designer.cs">
       <DependentUpon>UserPayResultView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RootFormView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\RootFormView.Designer.cs">
+      <DependentUpon>RootFormView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\SystemSearch\MemberRechargeView.cs">
       <SubType>UserControl</SubType>
@@ -602,12 +609,6 @@
     <Compile Include="Views\SystemSearch\UserNetRecordView.Designer.cs">
       <DependentUpon>UserNetRecordView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\TestView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\TestView.Designer.cs">
-      <DependentUpon>TestView.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\UserActive\UserActiveResultView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -706,6 +707,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Message\UserPayResultView.resx">
       <DependentUpon>UserPayResultView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\RootFormView.resx">
+      <DependentUpon>RootFormView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\SystemSearch\AttendanceSearchView.resx">
       <DependentUpon>AttendanceSearchView.cs</DependentUpon>
@@ -868,9 +872,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\SystemSearch\UserNetRecordView.resx">
       <DependentUpon>UserNetRecordView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\TestView.resx">
-      <DependentUpon>TestView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\UserActive\UserActiveResultView.resx">
       <DependentUpon>UserActiveResultView.cs</DependentUpon>

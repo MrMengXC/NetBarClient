@@ -40,7 +40,6 @@ namespace NetBarMS.Codes.Tools.NetOperation
 
             CSLogin.Builder login = new CSLogin.Builder()
             {
-                Type = 1,
                 UserId = "lyc",
                 Password = "123",
 

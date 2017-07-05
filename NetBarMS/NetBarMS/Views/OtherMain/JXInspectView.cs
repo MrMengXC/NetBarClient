@@ -33,7 +33,6 @@ namespace NetBarMS.Views.OtherMain
         public JXInspectView()
         {
             InitializeComponent();
-            this.titleLabel.Text = "绩效考核";
             InitUI();
         }
        
@@ -73,7 +72,7 @@ namespace NetBarMS.Views.OtherMain
             }
 
         }
-        //刷新GridControl
+        #region 刷新GridControl
         private void RefreshGridControl()
         {
             this.mainDataTable.Clear();
@@ -96,7 +95,7 @@ namespace NetBarMS.Views.OtherMain
             row[TitleList.SfDegree.ToString()] = perform.Satisfy;
        
         }
-
+        #endregion
 
         #region 关闭日期
         private void PopupContainerEdit1_Closed(object sender, DevExpress.XtraEditors.Controls.ClosedEventArgs e)

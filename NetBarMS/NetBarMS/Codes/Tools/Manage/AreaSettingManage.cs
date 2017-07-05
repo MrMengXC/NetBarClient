@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NetBarMS.Codes.Tools.Manage;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,7 +17,7 @@ namespace NetBarMS.Codes.Tools
 
         public AreaSettingManage()
         {
-            allComputers = SysManage.Manage().computers.ToList<StructRealTime>();
+            HomePageMessageManage.Manage().GetComputers(out allComputers);
         }
 
         #region 获取区域所对应的电脑和其他电脑

@@ -8,7 +8,6 @@ using System.Net.Sockets;
 using System.Net;
 using System.IO;
 using Google.ProtocolBuffers;
-using System.Windows.Forms;
 
 namespace NetBarMS.Codes.Tools
 {
@@ -330,19 +329,26 @@ namespace NetBarMS.Codes.Tools
 
         }
 
+        #region 添加/移除结果回调
         /// <summary>
         /// 移除结果回调
         /// </summary>
-        /// <param name="result"></param>
         public void RemoveResultBlock(DataResultBlock result)
         {
             this.ResultBlockHandle -= result;
         }
-
-
+        /// <summary>
+        /// 添加结果回调
+        /// </summary>
+        public void AddResultBlock(DataResultBlock result)
+        {
+            this.ResultBlockHandle += result;
+        }
+        #endregion
 
     }
 
+    #region 结果Model
     /// <summary>
     /// 结果Model
     /// </summary>
@@ -351,4 +357,5 @@ namespace NetBarMS.Codes.Tools
         public int error = 0;   // 0/1 无错误、有错误
         public MessagePack pack;
     }
+    #endregion
 }
