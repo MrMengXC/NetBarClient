@@ -61,10 +61,6 @@
             // 
             this.titlePanel.Size = new System.Drawing.Size(1160, 50);
             // 
-            // closeButton
-            // 
-            this.closeButton.Location = new System.Drawing.Point(1112, 0);
-            // 
             // label2
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));

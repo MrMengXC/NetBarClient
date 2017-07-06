@@ -22,7 +22,7 @@ namespace NetBarMS.Views
         public RootUserControlView()
         {
             InitializeComponent();
-            this.closeButton.Click += CloseFormClick;
+            this.rootCloseButton.Click += CloseFormClick;
         }
         //按钮关闭窗体
         private void CloseFormClick(object sender, EventArgs e)

@@ -335,7 +335,6 @@ namespace NetBarMS.Views
         //按钮列的点击事件
         public void ColumnButtonClick(object sender, ButtonPressedEventArgs e)
         {
-            return;
             int rowhandle = this.gridView1.FocusedRowHandle;
             DataRow row = this.gridView1.GetDataRow(rowhandle);
             StructMember member = members[rowhandle];

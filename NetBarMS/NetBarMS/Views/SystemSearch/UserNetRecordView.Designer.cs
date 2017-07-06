@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.closeButton = new System.Windows.Forms.Button();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -55,16 +54,6 @@
             // titlePanel
             // 
             this.titlePanel.Size = new System.Drawing.Size(1050, 50);
-            // 
-            // closeButton
-            // 
-            this.closeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.closeButton.Location = new System.Drawing.Point(1027, 15);
-            this.closeButton.Name = "closeButton";
-            this.closeButton.Size = new System.Drawing.Size(20, 20);
-            this.closeButton.TabIndex = 2;
-            this.closeButton.Text = "X";
-            this.closeButton.UseVisualStyleBackColor = true;
             // 
             // gridControl1
             // 
@@ -120,7 +109,6 @@
             this.popupContainerEdit1.Properties.PopupControl = this.popupContainerControl1;
             this.popupContainerEdit1.Size = new System.Drawing.Size(155, 20);
             this.popupContainerEdit1.TabIndex = 4;
-            this.popupContainerEdit1.Closed += this.PopupContainerEdit1_Closed;
             // 
             // popupContainerControl1
             // 
@@ -143,7 +131,6 @@
             this.dateNavigator.Name = "dateNavigator";
             this.dateNavigator.Size = new System.Drawing.Size(283, 258);
             this.dateNavigator.TabIndex = 0;
-            this.dateNavigator.DateTimeChanged += this.DateNavigator_Click;
             // 
             // searchButtonEdit
             // 
@@ -153,7 +140,6 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Search)});
             this.searchButtonEdit.Size = new System.Drawing.Size(136, 20);
             this.searchButtonEdit.TabIndex = 5;
-            this.searchButtonEdit.ButtonClick += SearchButtonEdit_ButtonClick;
             // 
             // UserNetRecordView
             // 
@@ -188,7 +174,7 @@
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView;
-        private System.Windows.Forms.Button closeButton;
+      //  private System.Windows.Forms.Button closeButton;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private DevExpress.XtraEditors.PopupContainerEdit popupContainerEdit1;

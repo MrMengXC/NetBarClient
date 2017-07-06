@@ -51,6 +51,8 @@ namespace NetBarMS.Views.NetUserManage
             InitializeComponent();
             this.titleLabel.Text = "上网记录查询";
             InitUI();
+            //MemberNetRecord();
+
 
         }
         //初始化UI
@@ -67,6 +69,7 @@ namespace NetBarMS.Views.NetUserManage
         //会员上网记录查询
         private void MemberNetRecord()
         {
+
             StructPage.Builder page = new StructPage.Builder()
             {
                 Pagesize = 15,
@@ -87,6 +90,7 @@ namespace NetBarMS.Views.NetUserManage
                 Fieldname = 0,
                 Order = 0,
             };
+           // MemberNetOperation.MemberConsumeRecordFilter()
 
 
         }
@@ -94,15 +98,17 @@ namespace NetBarMS.Views.NetUserManage
         private void MemberNetRecordResult(ResultModel result)
         {
 
-            if (result.pack.Content.MessageType!=1)
+            
+            if(result.pack.Cmd != Cmd.CMD_EMK_RECORD)
             {
                 return;
             }
-            if(result.pack.Cmd == Cmd.CMD_EMK_RECORD)
+
+            System.Console.WriteLine("MemberNetRecordResult:" + result.pack);
+            NetMessageManage.Manage().RemoveResultBlock(MemberNetRecordResult);
+            if (result.pack.Content.MessageType == 1)
             {
-                System.Console.WriteLine("MemberNetRecordResult:" + result.pack);
-                NetMessageManage.Manage().RemoveResultBlock(MemberNetRecordResult);
-                this.Invoke(new UIHandleBlock(delegate {
+                 this.Invoke(new UIHandleBlock(delegate {
                     UpdateGridControl(result.pack.Content.ScEmkRecord.EmkinfoList);
                 }));
             }

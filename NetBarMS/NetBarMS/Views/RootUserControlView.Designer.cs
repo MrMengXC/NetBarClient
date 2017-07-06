@@ -29,21 +29,31 @@
         private void InitializeComponent()
         {
             this.titlePanel = new System.Windows.Forms.Panel();
+            this.rootCloseButton = new System.Windows.Forms.Button();
             this.titleLabel = new System.Windows.Forms.Label();
-            this.closeButton = new System.Windows.Forms.Button();
             this.titlePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // titlePanel
             // 
             this.titlePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.titlePanel.Controls.Add(this.closeButton);
+            this.titlePanel.Controls.Add(this.rootCloseButton);
             this.titlePanel.Controls.Add(this.titleLabel);
             this.titlePanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.titlePanel.Location = new System.Drawing.Point(0, 0);
             this.titlePanel.Name = "titlePanel";
             this.titlePanel.Size = new System.Drawing.Size(637, 50);
             this.titlePanel.TabIndex = 61;
+            // 
+            // rootCloseButton
+            // 
+            this.rootCloseButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.rootCloseButton.Location = new System.Drawing.Point(589, 0);
+            this.rootCloseButton.Name = "rootCloseButton";
+            this.rootCloseButton.Size = new System.Drawing.Size(48, 50);
+            this.rootCloseButton.TabIndex = 2;
+            this.rootCloseButton.Text = "X";
+            this.rootCloseButton.UseVisualStyleBackColor = true;
             // 
             // titleLabel
             // 
@@ -54,16 +64,6 @@
             this.titleLabel.Name = "titleLabel";
             this.titleLabel.Size = new System.Drawing.Size(0, 17);
             this.titleLabel.TabIndex = 1;
-            // 
-            // closeButton
-            // 
-            this.closeButton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.closeButton.Location = new System.Drawing.Point(589, 0);
-            this.closeButton.Name = "closeButton";
-            this.closeButton.Size = new System.Drawing.Size(48, 50);
-            this.closeButton.TabIndex = 2;
-            this.closeButton.Text = "X";
-            this.closeButton.UseVisualStyleBackColor = true;
             // 
             // RootUserControlView
             // 
@@ -81,7 +81,7 @@
         #endregion
 
         public System.Windows.Forms.Panel titlePanel;
-        protected System.Windows.Forms.Button closeButton;
+        private System.Windows.Forms.Button rootCloseButton;
         public System.Windows.Forms.Label titleLabel;
     }
 }

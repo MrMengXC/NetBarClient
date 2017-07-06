@@ -55,7 +55,6 @@
             // 
             // closeButton
             // 
-            this.closeButton.Location = new System.Drawing.Point(318, 0);
             // 
             // flowLayoutPanel1
             // 

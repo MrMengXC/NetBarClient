@@ -14,10 +14,14 @@ namespace NetBarMS.Views.RateManage
 {
     public partial class RateManageView : RootUserControlView
     {
-        private Label selectTypeLabel, selectAreaLabel;
-        private IList<StructUserArea> userAreas;
-        private IList<StructBillSetting> settings ;
 
+        //选择的类型Label。 选中的区域Label
+        private Label selectTypeLabel, selectAreaLabel;
+        //费率数组
+        private IList<StructUserArea> userAreas;
+        //费率设置数组
+        private IList<StructBillSetting> settings ;
+        //更新
         private CSSysBillUpdate.Builder updateRateMange = new CSSysBillUpdate.Builder();          //更新
 
 
@@ -43,39 +47,45 @@ namespace NetBarMS.Views.RateManage
                 dataGridView1.Rows[index].Cells[0].Value = titls[i];
             }
             this.dataGridView1.SelectionChanged += DataGridView1_SelectionChanged;
-
-
+           
             //添加会员
-            string[] memberTypes = {
-                "临时会员","普通会员", "黄金会员", "钻石会员"
-            };
 
-            for(int i = memberTypes.Count()-1;i>=0;i--)
+            List<StructDictItem> types;
+            SysManage.Manage().GetMembersTypes(out types);
+            for(int i = types.Count()-1;i>=0;i--)
             {
-                CreateLabel(this.memberTypePanel,"type_" + (i + 1),memberTypes[i]);
+                string name = "type_" + types[i].Code;
+                string text = types[i].ItemList[0];
+
+                CreateLabel(this.memberTypePanel,name,text);
             }
-            
+            this.memberTypePanel.AutoScroll = true;
             //添加区域
-            string[] areas = {
-                "A区","B区", "C区"
-            };
+            List<StructDictItem> areas;
+            SysManage.Manage().GetAreasList(out areas);
+      
             for (int i = areas.Count() - 1; i >= 0; i--)
             {
-                CreateLabel(this.areaPanel, "area_"+(i+1), areas[i]);
-            }
+                string name = "area_" + types[i].Code;
+                string text = types[i].ItemList[0];
 
+                CreateLabel(this.areaPanel, name, text);
+            }
+            this.areaPanel.AutoScroll = true;
+            //获取费率列表数据
             RateManageList();
 
         }
 
-     
+
+        const int LABEL_HEIGHT = 34;
         //创建Label
         private void CreateLabel(Panel parent,string name,string text)
         {
 
             Label newLabel = new Label();
             newLabel.AutoSize = false;
-            newLabel.Size = new Size(112, 34);
+            newLabel.Size = new Size(112, LABEL_HEIGHT);
             newLabel.BackColor = Color.White;
             newLabel.Text = text;
             newLabel.TextAlign = ContentAlignment.MiddleCenter;
@@ -92,37 +102,25 @@ namespace NetBarMS.Views.RateManage
         //获取费率管理列表
         private void RateManageList()
         {
-
-            RateManageNetOperation.RateManageList(RateManageResult);
+            RateManageNetOperation.RateManageList(RateManageListResult);
 
         }
         //获取费率管理列表回调结果
-        private void RateManageResult(ResultModel result)
+        private void RateManageListResult(ResultModel result)
         {
-            if (result.pack.Content.MessageType != 1)
+            
+            if (result.pack.Cmd != Cmd.CMD_SYS_BILLING_LIST)
             {
                 return;
             }
-            NetMessageManage.Manage().RemoveResultBlock(RateManageResult);
 
-            if (result.pack.Cmd == Cmd.CMD_SYS_BILLING_LIST)
+            NetMessageManage.Manage().RemoveResultBlock(RateManageListResult);
+            System.Console.WriteLine("RateManageListResult:" + result.pack);
+            if (result.pack.Content.MessageType == 1)
             {
                 this.userAreas = result.pack.Content.ScSysBillList.UserAreaList;
                 this.settings = result.pack.Content.ScSysBillList.SettingList;
-
-                System.Console.WriteLine("RateManageListResult:" + result.pack);
             }
-            else if (result.pack.Cmd == Cmd.CMD_SYS_BILLING_UPDATE)
-            {
-                System.Console.WriteLine("RateManageListResult:" + result.pack);
-                this.userAreas = result.pack.Content.ScSysBillUpdate.UserAreaList;
-                this.settings = result.pack.Content.ScSysBillUpdate.SettingList;
-                this.updateRateMange.Clear();
-                this.Invoke(new UIHandleBlock(delegate {
-                    MessageBox.Show("保存费率设置成功");
-                }));
-            }
-
         }
 
         #endregion
@@ -345,8 +343,29 @@ namespace NetBarMS.Views.RateManage
             }
 
             //上传
-           RateManageNetOperation.RateManageUpdate(RateManageResult, updateRateMange.Build());
+           RateManageNetOperation.RateManageUpdate(RateManageUpdateResult, updateRateMange.Build());
 
+        }
+        //更新费率管理结果回调
+        private void RateManageUpdateResult(ResultModel result)
+        {
+           
+            if (result.pack.Cmd != Cmd.CMD_SYS_BILLING_UPDATE)
+            {
+                return;
+            }
+
+            System.Console.WriteLine("RateManageUpdateResult:" + result.pack);
+            NetMessageManage.Manage().RemoveResultBlock(RateManageUpdateResult);
+            if (result.pack.Content.MessageType == 1)
+            {
+                this.userAreas = result.pack.Content.ScSysBillUpdate.UserAreaList;
+                this.settings = result.pack.Content.ScSysBillUpdate.SettingList;
+                this.updateRateMange.Clear();
+                this.Invoke(new UIHandleBlock(delegate {
+                    MessageBox.Show("保存费率设置成功");
+                }));
+            }
         }
         #endregion
 
