@@ -30,12 +30,15 @@ namespace NetBarMS.Views.RateManage
 
         private DataTable table1;
         private DataTable table2;
+        //正常日费率Items
         private IList<StructDictItem> nitems;
+        //会员日费率Items
         private IList<StructDictItem> mitems;
         private DateTime nlastDate = DateTime.MinValue,mlastDate = DateTime.MinValue;
         private string nstartTime = "", nendTime = "", mstartTime = "", mendTime = "";
 
-   
+        private List<StructDictItem> memberTypes;
+
 
 
         public AwardManageView()
@@ -55,13 +58,15 @@ namespace NetBarMS.Views.RateManage
             this.gridControl2.DataSource = this.table2;
 
             //设置两个ComboBox
-
-            string[] types = {"普通会员", "黄金会员","钻石会员"};
-            foreach(string type in types)
+            SysManage.Manage().GetMembersTypes(out memberTypes);
+            foreach(StructDictItem item in memberTypes)
             {
-                this.comboBoxEdit1.Properties.Items.Add(type);
-                this.comboBoxEdit3.Properties.Items.Add(type);
-
+                if(item.Code != IdTools.TEM_MEMBER_ID)
+                {
+                    string type = item.GetItem(0);
+                    this.comboBoxEdit1.Properties.Items.Add(type);
+                    this.comboBoxEdit3.Properties.Items.Add(type);
+                }
             }
             this.comboBoxEdit1.Properties.TextEditStyle = TextEditStyles.DisableTextEditor;
             this.popupContainerEdit1.Properties.TextEditStyle = TextEditStyles.DisableTextEditor;
@@ -191,20 +196,22 @@ namespace NetBarMS.Views.RateManage
         }
         private void AddAwardResult(ResultModel result)
         {
-            System.Console.WriteLine(result.pack);
 
-            if (result.pack.Content.MessageType != 1)
+           
+            if (result.pack.Cmd != Cmd.CMD_SYS_ADD)
             {
                 return;
             }
-            if (result.pack.Cmd == Cmd.CMD_SYS_ADD)
+
+            System.Console.WriteLine(result.pack);
+            NetMessageManage.Manage().RemoveResultBlock(AddAwardResult);
+
+            if (result.pack.Content.MessageType == 1)
             {
-                NetMessageManage.Manage().RemoveResultBlock(AddAwardResult);
                 this.Invoke(new UIHandleBlock(delegate
                 {
                     //获取数据
                     RateManageNetOperation.AwardManageList(AwardManageListResult);
-
                 }));
             }
             
