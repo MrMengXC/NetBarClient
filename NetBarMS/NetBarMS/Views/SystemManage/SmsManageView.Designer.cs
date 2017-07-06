@@ -40,8 +40,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pushBgPanel = new System.Windows.Forms.Panel();
             this.addPushButton = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.titlePanel.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -183,12 +183,20 @@
             this.addPushButton.Appearance.Options.UseForeColor = true;
             this.addPushButton.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.addPushButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.addPushButton.Location = new System.Drawing.Point(0, 0);
+            this.addPushButton.Location = new System.Drawing.Point(0, 100);
             this.addPushButton.Name = "addPushButton";
             this.addPushButton.Size = new System.Drawing.Size(185, 40);
             this.addPushButton.TabIndex = 1;
             this.addPushButton.Text = "+添加推送事项";
             this.addPushButton.Click += new System.EventHandler(this.addPushButton_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(185, 100);
+            this.panel1.TabIndex = 2;
             // 
             // simpleButton1
             // 
@@ -199,14 +207,6 @@
             this.simpleButton1.TabIndex = 83;
             this.simpleButton1.Text = "保存";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 40);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(185, 100);
-            this.panel1.TabIndex = 2;
             // 
             // SmsManageView
             // 

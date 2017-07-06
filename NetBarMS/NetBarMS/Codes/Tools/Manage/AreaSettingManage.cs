@@ -17,6 +17,7 @@ namespace NetBarMS.Codes.Tools
 
         public AreaSettingManage()
         {
+            //获取所有电脑数据
             HomePageMessageManage.Manage().GetComputers(out allComputers);
         }
 
@@ -85,8 +86,22 @@ namespace NetBarMS.Codes.Tools
                 computer.Area = com.Area;
                 update.AddComputer(computer);
             }
-            this.changeComDict.Clear();
             return update.Build();
+        }
+        #endregion
+
+        #region 修改电脑区域从属信息成功-更新首页区域数据
+        public void UpateHomePageComputerArea()
+        {
+            this.changeComDict.Clear(); 
+            HomePageMessageManage.Manage().UpdateHomePageComputerArea(this.allComputers);
+        }
+        #endregion
+
+        #region 修改区域信息成功-更新首页区域数据
+        public void ChangeAreaUpateHomePageComputerArea()
+        {
+            HomePageMessageManage.Manage().ChangeAreaUpdateComputerArea();
         }
         #endregion
     }

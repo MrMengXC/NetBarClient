@@ -66,12 +66,12 @@
             this.gridView.GridControl = this.gridControl1;
             this.gridView.Name = "gridView";
             // 
-            // DayIncomeDetail
+            // IncomeDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.gridControl1);
-            this.Name = "DayIncomeDetail";
+            this.Name = "IncomeDetail";
             this.Size = new System.Drawing.Size(861, 883);
             this.Controls.SetChildIndex(this.titlePanel, 0);
             this.Controls.SetChildIndex(this.gridControl1, 0);

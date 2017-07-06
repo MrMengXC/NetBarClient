@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using NetBarMS.Codes.Tools.NetOperation;
 using NetBarMS.Codes.Tools;
 using DevExpress.XtraEditors.Controls;
-using static NetBarMS.Codes.Tools.NetMessageManage;
 using NetBarMS.Views.ResultManage;
 using NetBarMS.Forms;
 using NetBarMS.Views.HomePage;
@@ -140,6 +139,7 @@ namespace NetBarMS.Views.NetUserManage
         //刷新GridControl
         private void RefreshGridControl()
         {
+            this.mainDataTable.Clear();
             foreach(StructDictItem item in this.memberTypes)
             {
                 DataRow row = this.mainDataTable.NewRow();
@@ -187,13 +187,12 @@ namespace NetBarMS.Views.NetUserManage
                 {
                     int tem = int.Parse(item.GetItem(1));
 
-                    if (money >= tem && tem > need)
+                    if (money >= tem && tem > need && item.Code != IdTools.TEM_MEMBER_ID)
                     {
                         memberIndex = this.memberTypes.IndexOf(item);
                         need = tem;
                         //System.Console("");
                     }
-
                 }
                
             }

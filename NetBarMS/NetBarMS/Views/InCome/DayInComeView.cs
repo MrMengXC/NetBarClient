@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using DevExpress.XtraCharts;
 using NetBarMS.Codes.Tools.NetOperation;
 using NetBarMS.Codes.Tools;
-using static NetBarMS.Codes.Tools.NetMessageManage;
+
 
 namespace NetBarMS.Views.InCome
 {
@@ -51,7 +51,7 @@ namespace NetBarMS.Views.InCome
         //获取日营收详情
         private void GetDayIncomeDetail()
         {
-            IncomeNetOperation.GetIncomeDetail(GetIncomeDetailResult, start, end,InCome.IncomeDetail.IncomeType.DAY_INCOME);
+            IncomeNetOperation.GetIncomeDetail(GetIncomeDetailResult, start, end,IncomeType.DAY_INCOME);
         }
         //获取日收入的结果回调
         private void GetIncomeDetailResult(ResultModel result)
@@ -189,7 +189,7 @@ namespace NetBarMS.Views.InCome
         //导出营收详情
         private void simpleButton2_Click(object sender, EventArgs e)
         {
-            IncomeDetail detail = new InCome.IncomeDetail(InCome.IncomeDetail.IncomeType.DAY_INCOME, this.earns.ToList<StructEarn>(),0,0);
+            IncomeDetail detail = new InCome.IncomeDetail(IncomeType.DAY_INCOME, this.earns.ToList<StructEarn>(),0,0);
             ToolsManage.ShowForm(detail, false);
         }
 

@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using NetBarMS.Codes.Tools;
 using NetBarMS.Codes.Tools.NetOperation;
-using static NetBarMS.Codes.Tools.NetMessageManage;
 using DevExpress.XtraEditors.Controls;
 
 namespace NetBarMS.Views.SystemManage
@@ -52,14 +51,16 @@ namespace NetBarMS.Views.SystemManage
         //获取会员等级设置的结果回调
         private void GetMemberLvSettingResult(ResultModel result)
         {
-            System.Console.WriteLine("GetMemberLvSetting:" + result.pack);
-            if(result.pack.Content.MessageType != 1)
+            if(result.pack.Cmd != Cmd.CMD_SYS_INFO)
             {
                 return;
             }
-            if(result.pack.Cmd == Cmd.CMD_SYS_INFO && result.pack.Content.ScSysInfo.Parent.Equals(SystemManageNetOperation.lvParent))
+
+            //System.Console.WriteLine("GetMemberLvSetting:" + result.pack);
+            NetMessageManage.Manage().RemoveResultBlock(GetMemberLvSettingResult);
+
+            if (result.pack.Content.MessageType == 1 && result.pack.Content.ScSysInfo.Parent.Equals(SystemManageNetOperation.lvParent))
             {
-                NetMessageManage.Manage().RemoveResultBlock(GetMemberLvSettingResult);
                 this.Invoke(new UIHandleBlock(delegate 
                 {
                     //更新系统管理数据
@@ -79,7 +80,11 @@ namespace NetBarMS.Views.SystemManage
             this.mainDataTable.Clear();
             foreach(StructDictItem item in this.items)
             {
-                AddNewRow(item);
+                if(item.Code != 1)
+                {
+                    AddNewRow(item);
+                }
+           
             }
         }
         //GridControl 添加新行
@@ -91,8 +96,6 @@ namespace NetBarMS.Views.SystemManage
             row[TitleList.Type.ToString()] = item.GetItem(0);
             row[TitleList.RechargeMoney.ToString()] = item.GetItem(1);
             row[TitleList.NeedIntegral.ToString()] = item.GetItem(2);
-
-
         }
 
 
@@ -164,17 +167,21 @@ namespace NetBarMS.Views.SystemManage
         //获取会员等级设置的结果回调
         private void DeleteMemberLvResult(ResultModel result)
         {
-            System.Console.WriteLine("DeleteMemberLvResult:" + result.pack);
-            if (result.pack.Content.MessageType != 1)
+           
+            if (result.pack.Cmd != Cmd.CMD_SYS_DEL)
             {
                 return;
             }
-            if (result.pack.Cmd == Cmd.CMD_SYS_DEL)
+
+            System.Console.WriteLine("DeleteMemberLvResult:" + result.pack);
+            NetMessageManage.Manage().RemoveResultBlock(DeleteMemberLvResult);
+
+            if (result.pack.Content.MessageType == 1)
             {
-                NetMessageManage.Manage().RemoveResultBlock(DeleteMemberLvResult);
                 this.Invoke(new UIHandleBlock(delegate
                 {
                     this.GetMemberLvList();
+                    MessageBox.Show("删除成功");
                 }));
             }
         }

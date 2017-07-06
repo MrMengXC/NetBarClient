@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static NetBarMS.Codes.Tools.NetMessageManage;
+
 
 namespace NetBarMS.Codes.Tools.NetOperation
 {
@@ -89,6 +89,13 @@ namespace NetBarMS.Codes.Tools.NetOperation
         public static void DeleteArea(DataResultBlock resultBlock, List<string>ids)
         {
             SysNetOperation.DeleteSysInfo(resultBlock, areaParent, ids);
+        }
+        #endregion
+
+        #region 修改区域名称
+        public static void UpdateArea(DataResultBlock resultBlock, StructDictItem item)
+        {
+            SysNetOperation.UpdateSysInfo(resultBlock, productTypeParent, item);
         }
         #endregion
 

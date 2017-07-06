@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static NetBarMS.Codes.Tools.NetMessageManage;
-using static NetBarMS.Views.InCome.IncomeDetail;
 
 namespace NetBarMS.Codes.Tools.NetOperation
 {

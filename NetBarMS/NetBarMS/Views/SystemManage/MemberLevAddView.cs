@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using NetBarMS.Codes.Tools.NetOperation;
 using NetBarMS.Codes.Tools;
-using static NetBarMS.Codes.Tools.NetMessageManage;
 
 namespace NetBarMS.Views.SystemManage
 {
@@ -45,6 +44,7 @@ namespace NetBarMS.Views.SystemManage
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             //保存
+            //等级名称
             string memberType = this.typeTextEdit.Text;
             string recharge = this.rechargeTextEdit.Text;
             string integral = this.integralTextEdit.Text;
@@ -80,34 +80,36 @@ namespace NetBarMS.Views.SystemManage
         //保存会员信息回调
         private void AddMemberLvResult(ResultModel result)
         {
-            System.Console.WriteLine("AddMemberLvResult:" +result.pack);
-            if(result.pack.Content.MessageType!=1)
+            if (result.pack.Cmd != Cmd.CMD_SYS_ADD)
             {
+
                 return;
             }
-            if(result.pack.Cmd == Cmd.CMD_SYS_ADD)
+
+            NetMessageManage.Manage().RemoveResultBlock(AddMemberLvResult);
+            System.Console.WriteLine("AddMemberLvResult:" + result.pack);
+
+            if (result.pack.Content.MessageType == 1)
             {
-                NetMessageManage.Manage().RemoveResultBlock(AddMemberLvResult);
                 this.Invoke(new UIHandleBlock(delegate {
 
                     MessageBox.Show("添加成功");
                 }));
-
             }
+           
         }
         //修改会员信息回调
         private void UpdateMemberLvResult(ResultModel result)
         {
-            System.Console.WriteLine("UpdateMemberLvResult:" + result.pack);
-            if (result.pack.Content.MessageType != 1)
+            if (result.pack.Cmd != Cmd.CMD_SYS_UPDATE)
             {
                 return;
             }
-            if (result.pack.Cmd == Cmd.CMD_SYS_UPDATE)
+            NetMessageManage.Manage().RemoveResultBlock(UpdateMemberLvResult);
+            System.Console.WriteLine("UpdateMemberLvResult:" + result.pack);
+            if (result.pack.Content.MessageType == 1)
             {
-                NetMessageManage.Manage().RemoveResultBlock(UpdateMemberLvResult);
                 this.Invoke(new UIHandleBlock(delegate {
-
                     MessageBox.Show("修改成功");
                 }));
 

@@ -25,12 +25,7 @@ namespace NetBarMS.Views.InCome
             CashIncome          //现金收入
         }
 
-        public enum IncomeType
-        {
-            DAY_INCOME,
-            MONTH_INCOME,
-            YEAR_INCOME,
-        }
+        
         private IncomeType incomeType;
         private List<StructEarn> earns;
         private int year;

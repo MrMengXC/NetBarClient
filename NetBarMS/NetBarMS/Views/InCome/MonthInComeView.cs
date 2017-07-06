@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using NetBarMS.Codes.Tools.NetOperation;
 using NetBarMS.Codes.Tools;
-using static NetBarMS.Codes.Tools.NetMessageManage;
 using DevExpress.XtraCharts;
 
 namespace NetBarMS.Views.InCome
@@ -47,7 +46,7 @@ namespace NetBarMS.Views.InCome
         //获取月营收详情
         private void GetMonthIncomeDetail()
         {
-            IncomeNetOperation.GetIncomeDetail(GetIncomeDetailResult, start, end, InCome.IncomeDetail.IncomeType.MONTH_INCOME);
+            IncomeNetOperation.GetIncomeDetail(GetIncomeDetailResult, start, end, IncomeType.MONTH_INCOME);
         }
         //获取月收入的结果回调
         private void GetIncomeDetailResult(ResultModel result)
@@ -184,7 +183,7 @@ namespace NetBarMS.Views.InCome
         private void simpleButton2_Click(object sender, EventArgs e)
         {
             DateTime time = DateTime.ParseExact(this.start, "yyyy-MM-dd HH:mm:ss", System.Globalization.CultureInfo.CurrentCulture);
-            IncomeDetail detail = new InCome.IncomeDetail(InCome.IncomeDetail.IncomeType.MONTH_INCOME, this.earns.ToList<StructEarn>(),time.Year,time.Month);
+            IncomeDetail detail = new InCome.IncomeDetail(IncomeType.MONTH_INCOME, this.earns.ToList<StructEarn>(),time.Year,time.Month);
             ToolsManage.ShowForm(detail, false);
         }
 

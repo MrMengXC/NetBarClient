@@ -11,7 +11,6 @@ using NetBarMS.Codes.Tools.NetOperation;
 using NetBarMS.Codes.Tools;
 using NetBarMS.Codes.Tools.FlowManage;
 using NetBarMS.Views.HomePage;
-using static NetBarMS.Codes.Tools.NetMessageManage;
 
 namespace NetBarMS.Views.UserUseCp
 {

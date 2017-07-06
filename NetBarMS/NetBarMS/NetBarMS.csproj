@@ -116,6 +116,8 @@
     <Compile Include="Codes\Model\TestModel.cs" />
     <Compile Include="Codes\Model\UserModel.cs" />
     <Compile Include="Codes\Tools\Manage\AreaSettingManage.cs" />
+    <Compile Include="Codes\Tools\Manage\DelegateManage.cs" />
+    <Compile Include="Codes\Tools\Manage\EnumManage.cs" />
     <Compile Include="Codes\Tools\Manage\HomePageMessageManage.cs" />
     <Compile Include="Codes\Tools\NetOperation\EvaluateNetOperation.cs" />
     <Compile Include="Codes\Tools\NetOperation\OtherMainNetOperation.cs" />

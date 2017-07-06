@@ -114,7 +114,7 @@ namespace NetBarMS
                 //System.Console.WriteLine("e.Node.Tag:"+ e.Node.Tag);
                 RootUserControlView view = null;
                 TreeNodeTag tag = (TreeNodeTag)Enum.Parse(typeof(TreeNodeTag), (string)e.Node.Tag);
-                RootUserControlView.CloseFormHandle closeEvent = null;
+                CloseFormHandle closeEvent = null;
 
                 switch (tag)
                 {
@@ -221,7 +221,7 @@ namespace NetBarMS
                         break;
                     case TreeNodeTag.AreaManage:   //区域设置
                         view = new AreaManageView();
-                        closeEvent = new RootUserControlView.CloseFormHandle(this.RefreshHomePageData);
+                        closeEvent = new CloseFormHandle(this.RefreshHomePageData);
                         break;
                     case TreeNodeTag.ClientManage:   //客户端设置
                         view = new ClientManageView();

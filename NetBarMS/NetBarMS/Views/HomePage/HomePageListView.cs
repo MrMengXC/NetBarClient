@@ -12,7 +12,6 @@ using NetBarMS.Codes;
 using NetBarMS.Codes.Tools.NetOperation;
 using System.Threading;
 using DevExpress.XtraEditors.Controls;
-using static NetBarMS.Codes.Tools.NetMessageManage;
 using NetBarMS.Codes.Tools.Manage;
 
 namespace NetBarMS.Views.HomePage
@@ -45,7 +44,6 @@ namespace NetBarMS.Views.HomePage
         public HomePageListView()
         {
             InitializeComponent();
-
             InitUI();
         }
         #region 初始化UI
@@ -53,7 +51,6 @@ namespace NetBarMS.Views.HomePage
         {
             ToolsManage.SetGridView(this.gridView1, GridControlType.HomePageList, out this.mainDataTable, ButtonEdit_ButtonClick, GridView_CustomColumnSort);
             this.gridControl1.DataSource = this.mainDataTable;
-
             //获取账户信息
             ManagerNetOperation.AccountInfo(AccountInfoBlock);
 
@@ -76,7 +73,7 @@ namespace NetBarMS.Views.HomePage
                 //进行管理员管理
                 CurrentStaffManage.Manage().UpdateStaffInfo(result.pack.Content.ScAccountInfo);
                 //获取首页数据
-                HomePageMessageManage.Manage().GetHomePageList(GetHomePageListResult,UpdateHomePageData);
+                HomePageMessageManage.Manage().GetHomePageList(GetHomePageListResult,UpdateHomePageData,UpdateHomePageArea);
             }
         }
         #endregion
@@ -106,6 +103,15 @@ namespace NetBarMS.Views.HomePage
             }));
            
         }
+        public void UpdateHomePageArea(int index, StructRealTime com)
+        {
+            this.Invoke(new UIHandleBlock(delegate {
+                this.coms[index] = com;
+                DataRow row = this.mainDataTable.Rows[index];
+                row[TitleList.Area.ToString()] = SysManage.Manage().GetAreaName(com.Area);
+            }));
+
+        }
         #endregion
 
 
@@ -130,9 +136,10 @@ namespace NetBarMS.Views.HomePage
            
             row[TitleList.EpNumber.ToString()] = computer.Computer;
             row[TitleList.Area.ToString()] = SysManage.Manage().GetAreaName(computer.Area);
+            //TODO:状态需要判断
             row[TitleList.State.ToString()] = computer.Status;
             row[TitleList.IdCard.ToString()] = computer.Cardnumber;
-            row[TitleList.CardType.ToString()] = computer.Usertype;
+            row[TitleList.CardType.ToString()] = SysManage.Manage().GetMemberTypeName(computer.Usertype);
             row[TitleList.MoneyType.ToString()] = computer.Billing;
             row[TitleList.VerifyType.ToString()] = computer.Verify;
             row[TitleList.ResMoney.ToString()] = computer.Balance;

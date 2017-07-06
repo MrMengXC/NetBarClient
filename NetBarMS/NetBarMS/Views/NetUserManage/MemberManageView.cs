@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using XPTable.Models;
 using NetBarMS.Codes.Tools;
 using NetBarMS.Codes.Tools.NetOperation;
-using static NetBarMS.Codes.Tools.NetMessageManage;
 using DevExpress.XtraEditors.Controls;
 using NetBarMS.Views.OtherMain;
 using NetBarMS.Views.NetUserManage;
@@ -18,38 +17,40 @@ using DevExpress.XtraEditors;
 
 namespace NetBarMS.Views
 {
-    enum TitleList
-    {
-        None,
-
-        Check = 0,              //勾选
-        IdNumber,               //身份证号
-        Gender,                 //性别
-        Name,                   //姓名
-        MemberType,             //会员类型
-        PhoneNumber,            //手机号
-        OpenCardTime,           //开卡时间
-        LastUseTime,            //上次使用时间
-        RemMoney,               //剩余金额
-        AccRcMoney,             //累积充值金额
-        AccGvMoney,             //累积赠送金额
-        Integral,               //积分
-        UseIntegral,            //已用积分
-        LoopsStatus,            //指纹状态
-        Status,                 //状态
-        Verify,                 //验证
-        UserMsg,                //用户信息
-        CsRecord,               //消费记录
-        NetRecord,              //上网记录
-
-
-    }
+    
     public partial class MemberManageView : RootUserControlView
     {
-        private Int32 pageBegin = 0;        //页面开始的页数
+        private enum TitleList
+        {
+            None,
+
+            Check = 0,              //勾选
+            IdNumber,               //身份证号
+            Gender,                 //性别
+            Name,                   //姓名
+            MemberType,             //会员类型
+            PhoneNumber,            //手机号
+            OpenCardTime,           //开卡时间
+            LastUseTime,            //上次使用时间
+            RemMoney,               //剩余金额
+            AccRcMoney,             //累积充值金额
+            AccGvMoney,             //累积赠送金额
+            Integral,               //积分
+            UseIntegral,            //已用积分
+            LoopsStatus,            //指纹状态
+            Status,                 //状态
+            Verify,                 //验证
+            UserMsg,                //用户信息
+            CsRecord,               //消费记录
+            NetRecord,              //上网记录
+
+
+        }
+        private Int32 pageBegin = 0,pageSize = 15;        //页面开始的页数,开始的Size
         private Int32 field = 0;            //需要按照排序的字段
         private Int32 order = 1;            //升序还是降序
         private IList<StructMember> members;
+        private List<StructDictItem> memberTypes;
 
         public MemberManageView()
         {
@@ -62,20 +63,22 @@ namespace NetBarMS.Views
         // 初始化UI
         private void InitUI()
         {
+
            
 
-            //锁定1 激活2 在线3 离线4
-
-            String[] memberType = {"无","临时会员","普通会员","黄金会员","钻石会员"};
             String[] memberStatus = {"无","锁定","激活","在线","离线"};
             //初始化ComboBoxEdit
-            for (int i = 0;i<memberType.Count();i++)
+            for (int i = 0;i< memberStatus.Count();i++)
             {
                 this.statusComboBoxEdit.Properties.Items.Add(memberStatus[i]);
             }
-            for (int i = 0; i < memberStatus.Count(); i++)
+
+            SysManage.Manage().GetMembersTypes(out memberTypes);
+            //锁定1 激活2 在线3 离线4
+            this.memberTypeComboBoxEdit.Properties.Items.Add("无");
+            for (int i = 0; i < this.memberTypes.Count(); i++)
             {
-                this.memberTypeComboBoxEdit.Properties.Items.Add(memberType[i]);
+                this.memberTypeComboBoxEdit.Properties.Items.Add(memberTypes[i].ItemList[0]);
             }
             // 设置 comboBox的文本值不能被编辑
             this.statusComboBoxEdit.Properties.TextEditStyle = TextEditStyles.DisableTextEditor;   
@@ -84,12 +87,6 @@ namespace NetBarMS.Views
             //初始化GridControl
             ToolsManage.SetGridView(this.gridView1, GridControlType.MemberManage, out this.mainDataTable,ColumnButtonClick,null);
             this.gridControl1.DataSource = this.mainDataTable;
-
-            for (int i = 0;i < 5;i++)
-            {
-                DataRow row = this.mainDataTable.NewRow();
-                this.mainDataTable.Rows.Add(row);
-            }
 
             GetMemberList();
 
@@ -103,22 +100,25 @@ namespace NetBarMS.Views
             StructPage.Builder page = new StructPage.Builder()
             {
                 Pagebegin = this.pageBegin,
-                Pagesize = 15,
+                Pagesize = this.pageSize,
                 Fieldname = this.field,
                 Order = this.order,      //
             };
             MemberNetOperation.GetMemberList(MemberListResult, page.Build());
-
         }
         
         // 获取所有会员列表数据的回调
         public void MemberListResult(ResultModel result)
         {
 
-            if (result.pack.Cmd == Cmd.CMD_MEMBER_LIST && result.pack.Content.MessageType == 1)
+            if (result.pack.Cmd != Cmd.CMD_MEMBER_LIST)
             {
-                NetMessageManage.Manage().RemoveResultBlock(MemberListResult);
-                // System.Console.WriteLine("MemberListBlock:" + result.pack);
+                return;
+            }
+            NetMessageManage.Manage().RemoveResultBlock(MemberListResult);
+            //System.Console.WriteLine("MemberListBlock:" + result.pack);
+            if (result.pack.Content.MessageType == 1)
+            {           
                 this.Invoke(new UIHandleBlock(delegate () {
                     this.UpdateGridControl(result.pack.Content.ScMemberList.MembersList);
                 }));
@@ -130,17 +130,18 @@ namespace NetBarMS.Views
         //更新GridControl
         private void UpdateGridControl(IList<StructMember> tem)
         {
+            this.mainDataTable.Clear();
             this.members = tem;
             for (int i = 0; i < this.members.Count; i++)
             {
                 StructMember member = this.members[i];
-                AddGridControlNewRow(member);
+                AddNewRow(member);
 
             }
         }
 
         //添加新行数据
-        private void AddGridControlNewRow(StructMember member)
+        private void AddNewRow(StructMember member)
         {
 
             DataRow row = this.mainDataTable.NewRow();
@@ -178,7 +179,7 @@ namespace NetBarMS.Views
         //会员办理窗体关闭回调事件
         public void OpenMemberView_FormClose()
         {
-            this.mainDataTable.Clear();
+      
             GetMemberList();
         }
         #endregion
@@ -205,7 +206,6 @@ namespace NetBarMS.Views
                 System.Console.WriteLine("DeleteMemberResult:" + result.pack);
                 this.Invoke(new UIHandleBlock(delegate ()
                 {
-                    this.mainDataTable.Clear();
                     GetMemberList();
                 }));
             
@@ -235,7 +235,6 @@ namespace NetBarMS.Views
                 System.Console.WriteLine("VerifyMemberResult:" + result.pack);
                 this.Invoke(new UIHandleBlock(delegate ()
                 {
-                    this.mainDataTable.Clear();
                     GetMemberList();
                 }));
 
@@ -268,16 +267,24 @@ namespace NetBarMS.Views
         //通过条件查询会员
         private void SearchMember()
         {
-            int type = Math.Max(0, this.memberTypeComboBoxEdit.SelectedIndex);
+            int index = Math.Max(0, this.memberTypeComboBoxEdit.SelectedIndex);
             int status = Math.Max(0, this.statusComboBoxEdit.SelectedIndex);
             string key = this.searchButtonEdit.Text;
+
+
+            int type = 0;
+            if(index - 1>=0)
+            {
+                StructDictItem item = this.memberTypes[index - 1];
+                type = item.Code;
+            }
 
             System.Console.WriteLine("type:" + type + "\nstatus:" + status + "\nkey:" + key);
             //测试多条件查询
             StructPage.Builder page = new StructPage.Builder()
             {
-                Pagebegin = 0,
-                Pagesize = 15,
+                Pagebegin = this.pageBegin,
+                Pagesize = this.pageSize,
                 Fieldname = field,
                 Order = order,      //
             };
@@ -287,14 +294,17 @@ namespace NetBarMS.Views
         //按条件查询会员的回调
         private void SearchMemberResult(ResultModel result)
         {
-            if (result.pack.Cmd == Cmd.CMD_MEMBER_FIND && result.pack.Content.MessageType == 1)
+            if (result.pack.Cmd != Cmd.CMD_MEMBER_FIND)
+            {
+                return;
+            }
+            if (result.pack.Content.MessageType == 1)
             {
                 //锁定0 激活1 在线2 离线3
                 NetMessageManage.Manage().RemoveResultBlock(SearchMemberResult);
-                System.Console.WriteLine("SearchMemberResult:" + result.pack);
+                //System.Console.WriteLine("SearchMemberResult:" + result.pack);
                 this.Invoke(new UIHandleBlock(delegate ()
                 {
-                    this.mainDataTable.Clear();
                     UpdateGridControl(result.pack.Content.ScMemberFind.MembersList);
                 }));
 

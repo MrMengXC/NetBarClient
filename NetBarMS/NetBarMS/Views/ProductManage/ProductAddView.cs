@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using NetBarMS.Codes.Tools.NetOperation;
 using NetBarMS.Codes.Tools;
-using static NetBarMS.Codes.Tools.NetMessageManage;
 using DevExpress.XtraEditors.Controls;
 
 namespace NetBarMS.Views.ProductManage
@@ -89,7 +88,7 @@ namespace NetBarMS.Views.ProductManage
                 newProduct.GoodsId = 0;
             }
             newProduct.GoodsName = pname;
-            newProduct.Category = this.productTypes[index].Id;
+            newProduct.Category = this.productTypes[index].Code;
             newProduct.Count = int.Parse(num);
             newProduct.Price = price;
             newProduct.Integal = int.Parse(integal);
@@ -112,10 +111,13 @@ namespace NetBarMS.Views.ProductManage
         //添加修改结果回调
         private void ProductResult(ResultModel result)
         {
+
+          
             if (result.pack.Content.MessageType != 1)
             {
                 return;
             }
+
             if (result.pack.Cmd == Cmd.CMD_GOODS_ADD)
             {
                 NetMessageManage.Manage().RemoveResultBlock(ProductResult);

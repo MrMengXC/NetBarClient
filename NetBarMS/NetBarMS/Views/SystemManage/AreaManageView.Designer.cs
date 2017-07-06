@@ -38,6 +38,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.areaPanel = new System.Windows.Forms.Panel();
+            this.deleteAreaButton = new DevExpress.XtraEditors.SimpleButton();
             this.addAreaButton = new DevExpress.XtraEditors.SimpleButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.currentComsPanel = new System.Windows.Forms.FlowLayoutPanel();
@@ -63,6 +64,10 @@
             // titlePanel
             // 
             this.titlePanel.Size = new System.Drawing.Size(795, 50);
+            // 
+            // closeButton
+            // 
+            this.closeButton.Location = new System.Drawing.Point(747, 0);
             // 
             // gridView
             // 
@@ -169,15 +174,29 @@
             // areaPanel
             // 
             this.areaPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.areaPanel.Controls.Add(this.deleteAreaButton);
             this.areaPanel.Controls.Add(this.addAreaButton);
             this.areaPanel.Controls.Add(this.panel1);
-
             this.areaPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.areaPanel.Location = new System.Drawing.Point(1, 36);
             this.areaPanel.Margin = new System.Windows.Forms.Padding(0);
             this.areaPanel.Name = "areaPanel";
             this.areaPanel.Size = new System.Drawing.Size(100, 328);
             this.areaPanel.TabIndex = 2;
+            // 
+            // deleteAreaButton
+            // 
+            this.deleteAreaButton.Appearance.BackColor = System.Drawing.Color.Cyan;
+            this.deleteAreaButton.Appearance.Options.UseBackColor = true;
+            this.deleteAreaButton.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.deleteAreaButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.deleteAreaButton.Location = new System.Drawing.Point(0, 140);
+            this.deleteAreaButton.Margin = new System.Windows.Forms.Padding(0);
+            this.deleteAreaButton.Name = "deleteAreaButton";
+            this.deleteAreaButton.Size = new System.Drawing.Size(100, 40);
+            this.deleteAreaButton.TabIndex = 3;
+            this.deleteAreaButton.Text = "删除区域";
+            this.deleteAreaButton.Click += new System.EventHandler(this.deleteAreaButton_Click);
             // 
             // addAreaButton
             // 
@@ -329,5 +348,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel4;
+        private DevExpress.XtraEditors.SimpleButton deleteAreaButton;
     }
 }

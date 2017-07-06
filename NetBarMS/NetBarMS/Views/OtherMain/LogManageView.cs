@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using NetBarMS.Codes.Tools;
-using static NetBarMS.Codes.Tools.NetMessageManage;
 using NetBarMS.Codes.Tools.NetOperation;
 
 namespace NetBarMS.Views

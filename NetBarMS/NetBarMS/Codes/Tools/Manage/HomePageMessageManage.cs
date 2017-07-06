@@ -13,14 +13,17 @@ namespace NetBarMS.Codes.Tools.Manage
     /// </summary>
     class HomePageMessageManage
     {
-        //代理方法
+        #region 代理方法
         //获取首页数据
         public delegate void GetDataResultHandle(bool success);
         public event GetDataResultHandle GetDataResultEvent;
         //更新计算机数据
         public delegate void UpdateComputerDataHandle(int index,StructRealTime com);
         public event UpdateComputerDataHandle UpdateComputerDataEvent;
+        //更新计算机所在区域
+        public event UpdateComputerDataHandle UpdateComputerAreaEvent;
 
+        #endregion
 
         //电脑数据
         private List<StructRealTime> computers = new List<StructRealTime>();
@@ -39,13 +42,16 @@ namespace NetBarMS.Codes.Tools.Manage
             return _manage;
         }
         #region 获取首页数据列表
-        public void GetHomePageList(GetDataResultHandle result,UpdateComputerDataHandle update)
+        public void GetHomePageList(GetDataResultHandle result,UpdateComputerDataHandle update, UpdateComputerDataHandle updateArea)
         {
             this.GetDataResultEvent += result;
             this.UpdateComputerDataEvent += update;
+            this.UpdateComputerAreaEvent += updateArea;
+
             //获取上网信息
             HomePageNetOperation.HompageList(HomePageListResult);
         }
+
         // 获取首页计算机列表结果回调
         private void HomePageListResult(ResultModel result)
         {
@@ -63,7 +69,6 @@ namespace NetBarMS.Codes.Tools.Manage
                 {
                     this.computerDict[com.Computerid] = com;
                 }
-
                 //获取回调
                 GetSysMessage();
             }
@@ -166,6 +171,13 @@ namespace NetBarMS.Codes.Tools.Manage
             newCom.Starttime = pars[6];
             newCom.Usedtime = pars[7];
             newCom.Stoptime = pars[8];
+            //计算剩余时间
+            DateTime start = DateTime.Parse(newCom.Starttime);
+            DateTime end = DateTime.Parse(newCom.Stoptime);
+            TimeSpan ts = end.Subtract(start);
+            int dateDiffSecond = ts.Days *24 * 60 + ts.Hours * 60+ ts.Minutes;
+            newCom.Remaintime = (dateDiffSecond - int.Parse(newCom.Usedtime)) + "";
+
 
         }
         #endregion
@@ -177,9 +189,15 @@ namespace NetBarMS.Codes.Tools.Manage
             //----// 余额，开始时间。已用时。结束时间
             newCom.Balance = pars[1];
             newCom.Starttime = pars[2];
-            newCom.Remaintime = pars[3];
+            newCom.Usedtime = pars[3];
             newCom.Stoptime = pars[4];
 
+            //计算剩余时间
+            DateTime start = DateTime.Parse(newCom.Starttime);
+            DateTime end = DateTime.Parse(newCom.Stoptime);
+            TimeSpan ts = end.Subtract(start);
+            int dateDiffSecond = ts.Days * 24 * 60 + ts.Hours * 60 + ts.Minutes;
+            newCom.Remaintime = (dateDiffSecond - int.Parse(newCom.Usedtime)) + "";
         }
         #endregion
 
@@ -221,6 +239,49 @@ namespace NetBarMS.Codes.Tools.Manage
             else
             {
                 tem = new List<StructRealTime>();
+            }
+        }
+        #endregion
+
+        #region 更新首页电脑所在区域与名称
+        public void UpdateHomePageComputerArea(List<StructRealTime> tem)
+        {
+            for(int i = 0;i<tem.Count;i++)
+            {
+                StructRealTime ori = this.computers[i];
+                StructRealTime change = tem[i];
+                if (!ori.Area.Equals(change.Area))
+                {
+                    StructRealTime.Builder newCom = new StructRealTime.Builder(ori);
+                    newCom.Area = change.Area;
+                    this.computers[i] = newCom.Build();
+                    this.computerDict[newCom.Computerid] = newCom.Build();
+                    if (this.UpdateComputerAreaEvent != null)
+                    {
+                        this.UpdateComputerAreaEvent(i, newCom.Build());
+                    }
+                }
+                else
+                {
+                    if (this.UpdateComputerAreaEvent != null)
+                    {
+                        this.UpdateComputerAreaEvent(i, ori);
+                    }
+                }
+            }
+        }
+        #endregion
+
+        #region 删除/修改区域后更新电脑区域
+        public void ChangeAreaUpdateComputerArea()
+        {
+            for (int i = 0; i < this.computers.Count; i++)
+            {
+                StructRealTime ori = this.computers[i];
+                if (this.UpdateComputerAreaEvent != null)
+                {
+                    this.UpdateComputerAreaEvent(i, ori);
+                }
             }
         }
         #endregion

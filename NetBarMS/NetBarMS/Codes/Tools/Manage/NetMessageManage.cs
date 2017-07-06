@@ -11,27 +11,21 @@ using Google.ProtocolBuffers;
 
 namespace NetBarMS.Codes.Tools
 {
+   
     class NetMessageManage
     {
+        private static NetMessageManage _instance;
 
         private byte[] receiveBytes = new byte[1024];
         private Socket clientSocket;
-        private static NetMessageManage _instance;
         private const string ipString = "jorkenw.gnway.org";
         private const int port = 8465;
 
-        #region Delegate
-        // 接受回调代理
-        public delegate void DataResultBlock(ResultModel result);
+        //结果
         public event DataResultBlock ResultBlockHandle;
-
-        // 连接结果回调
-        public delegate void ConnectResultBlock();
+        //连接结果
         public event ConnectResultBlock ConnectBlockHandle;
-        
-        //UI回调代理
-        public delegate void UIHandleBlock();
-        #endregion
+
 
         #region 静态方法
         public static NetMessageManage Manage(ConnectResultBlock connect)

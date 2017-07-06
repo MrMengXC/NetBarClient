@@ -10,8 +10,6 @@ using System.Windows.Forms;
 using NetBarMS.Codes.Tools;
 using DevExpress.XtraScheduler;
 using NetBarMS.Codes.Tools.NetOperation;
-using static NetBarMS.Codes.Tools.NetMessageManage;
-
 namespace NetBarMS.Views.ProductManage
 {
     public partial class ProductSellRecordView : RootUserControlView

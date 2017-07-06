@@ -9,9 +9,12 @@ namespace NetBarMS.Codes.Tools
 {
     class SysManage
     {
+        #region Property
         //单例类
         private static SysManage _manage = null;
-      
+        //获取请求信息结果
+        private event DataResultBlock RequestSysEvent;
+
         //区域数组
         private List<StructDictItem> areas;
         //区域字典
@@ -24,7 +27,7 @@ namespace NetBarMS.Codes.Tools
        
         //会员类型
         private List<StructDictItem> memberTypes;
-        //会员字典     
+        //会员字典 code
         private Dictionary<int, StructDictItem> memberDict = new Dictionary<int, StructDictItem>();
 
         //管理员类型
@@ -38,7 +41,10 @@ namespace NetBarMS.Codes.Tools
         //员工字典     
         private Dictionary<string, StructAccount> staffDict = new Dictionary<string, StructAccount>();
 
-        //单例
+
+        #endregion
+
+        #region 单例
         public static SysManage Manage()
         {
             if(_manage == null)
@@ -47,17 +53,26 @@ namespace NetBarMS.Codes.Tools
             }
             return _manage;
         }
+        #endregion
 
         #region 获取应提前知道的信息（会员类型。区域。商品类型）
 
         //获取系统信息（会员类型，区域,商品类型）
-        public void RequestSysInfo()
+        public void RequestSysInfo(DataResultBlock result)
         {
+            this.RequestSysEvent += result;
             GetAreaList();
             GetProductTypes();
             GetMemberLvList();
             GetManagerList();
             GetStaffList();
+        }
+        #endregion
+
+        #region 移除请求系统信息
+        public void RemoveRequestSysInfo(DataResultBlock result)
+        {
+            this.RequestSysEvent -= result;
         }
         #endregion
 
@@ -69,26 +84,30 @@ namespace NetBarMS.Codes.Tools
         //获取会员等级设置的结果回调
         private void GetMemberLvSettingResult(ResultModel result)
         {
-            if (result.pack.Cmd == Cmd.CMD_SYS_INFO && result.pack.Content.ScSysInfo.Parent.Equals(SystemManageNetOperation.lvParent))
+            if(result.pack.Cmd != Cmd.CMD_SYS_INFO || !result.pack.Content.ScSysInfo.Parent.Equals(SystemManageNetOperation.lvParent))
+            {
+                return;
+            }
+
+            NetMessageManage.Manage().RemoveResultBlock(GetMemberLvSettingResult);
+            //System.Console.WriteLine("GetMemberLvSettingResult:" + result.pack);
+            System.Console.WriteLine("获取会员等级信息");
+            if (result.pack.Content.MessageType == 1)
             {
 
-                NetMessageManage.Manage().RemoveResultBlock(GetMemberLvSettingResult);
-                //System.Console.WriteLine("GetMemberLvSettingResult:" + result.pack);
-                System.Console.WriteLine("获取会员等级信息");
-                if (result.pack.Content.MessageType == 1)
+                this.memberTypes = result.pack.Content.ScSysInfo.ChildList.ToList<StructDictItem>();
+                this.memberDict.Clear();
+                foreach (StructDictItem item in this.memberTypes)
                 {
-                    this.memberTypes = result.pack.Content.ScSysInfo.ChildList.ToList<StructDictItem>();
-                    this.memberDict.Clear();
-                    foreach (StructDictItem item in this.memberTypes)
-                    {
-                        memberDict.Add(item.Id, item);
-                    }
-
-
+                    memberDict.Add(item.Code, item);
+                }
+                if (RequestSysEvent != null)
+                {
+                    this.RequestSysEvent(result);
                 }
 
             }
-           
+
         }
         //更新会员数据（会员等级设定使用）
         public void UpdateMemberTypeData(IList<StructDictItem> newMemberTypes)
@@ -98,23 +117,35 @@ namespace NetBarMS.Codes.Tools
             memberDict.Clear();
             foreach (StructDictItem item in this.memberTypes)
             {
-                memberDict.Add(item.Id, item);
+                memberDict.Add(item.Code, item);
             }
         }
         //获取会员类型名称
-        public string GetMemberTypeName(int id)
+        public string GetMemberTypeName(string temId)
         {
-
-            StructDictItem item;
-            this.memberDict.TryGetValue(id, out item);
-            if (item == null)
+            try
             {
-                return "该会员等级已移除";
+                int id = int.Parse(temId);
+                StructDictItem item;
+                this.memberDict.TryGetValue(id, out item);
+                if (item == null)
+                {
+                    //if(id == IdTools.TEM_MEMBER_ID)
+                    //{
+                    //    return "临时会员";
+                    //}
+                    return "该会员等级已移除";
+                }
+                else
+                {
+                    return item.GetItem(0);
+                }
             }
-            else
+            catch (Exception exc)
             {
-                return item.GetItem(0);
+                return "";
             }
+           
         }
         //获取会员类型
         public void GetMembersTypes(out List<StructDictItem>items)
@@ -146,7 +177,7 @@ namespace NetBarMS.Codes.Tools
             {
 
                 NetMessageManage.Manage().RemoveResultBlock(GetAreaListResult);
-                //System.Console.WriteLine("GetAreaList:" + result.pack);
+                System.Console.WriteLine("GetAreaList:" + result.pack);
                 System.Console.WriteLine("获取区域信息");
                 if (result.pack.Content.MessageType == 1)
                 {
@@ -155,6 +186,10 @@ namespace NetBarMS.Codes.Tools
                     foreach (StructDictItem item in this.areas)
                     {
                         areaDict.Add(item.Code.ToString(), item);
+                    }
+                    if (RequestSysEvent != null)
+                    {
+                        this.RequestSysEvent(result);
                     }
                 }
 
@@ -225,7 +260,11 @@ namespace NetBarMS.Codes.Tools
                     productDict.Clear();
                     foreach (StructDictItem item in this.productTypes)
                     {
-                        productDict.Add(item.Id, item);
+                        productDict.Add(item.Code, item);
+                    }
+                    if (RequestSysEvent != null)
+                    {
+                        this.RequestSysEvent(result);
                     }
 
                 }
@@ -240,16 +279,16 @@ namespace NetBarMS.Codes.Tools
             productDict.Clear();
             foreach (StructDictItem item in this.productTypes)
             {
-                productDict.Add(item.Id, item);
+                productDict.Add(item.Code, item);
             }
         }
         
         // 获取产品类型名称
-        public string GetProductTypeName(int id)
+        public string GetProductTypeName(int code)
         {
 
             StructDictItem item;
-            this.productDict.TryGetValue(id, out item);
+            this.productDict.TryGetValue(code, out item);
 
             if(item == null)
             {
@@ -303,6 +342,10 @@ namespace NetBarMS.Codes.Tools
                 foreach (StructRole role in this.managers)
                 {
                     managerDict.Add(role.Roleid, role);
+                }
+                if (RequestSysEvent != null)
+                {
+                    this.RequestSysEvent(result);
                 }
 
             }
@@ -375,6 +418,10 @@ namespace NetBarMS.Codes.Tools
                 foreach (StructAccount staff in this.staffs)
                 {
                     staffDict.Add(staff.Guid, staff);
+                }
+                if (RequestSysEvent != null)
+                {
+                    this.RequestSysEvent(result);
                 }
             }
             else

@@ -19,7 +19,6 @@ using NetBarMS.Views;
 using System.Text.RegularExpressions;
 using System.IO;
 using DevExpress.XtraScheduler;
-using static NetBarMS.Views.RootUserControlView;
 using System.Resources;
 
 namespace NetBarMS.Codes.Tools
@@ -195,7 +194,7 @@ namespace NetBarMS.Codes.Tools
                             #endregion
                             column.ColumnEdit = buttonEdit;
                             column.Width = width;
-                            column.MinWidth = width;
+                            //column.MinWidth = width;
                             column.OptionsColumn.AllowEdit = true;
                             column.UnboundType = DevExpress.Data.UnboundColumnType.String;
                         }

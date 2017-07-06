@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using NetBarMS.Codes.Tools;
 using DevExpress.XtraEditors.Controls;
-using static NetBarMS.Codes.Tools.NetMessageManage;
 using NetBarMS.Codes.Tools.NetOperation;
 
 namespace NetBarMS.Views.SystemSearch
@@ -97,24 +96,24 @@ namespace NetBarMS.Views.SystemSearch
         //获取销售记录结果回调
         private void GetProdcutIndentListResult(ResultModel result)
         {
-            if (result.pack.Content.MessageType != 1)
+            
+            if (result.pack.Cmd != Cmd.CMD_GOODS_ORDER)
             {
                 return;
             }
 
-            if (result.pack.Cmd == Cmd.CMD_GOODS_ORDER)
+            NetMessageManage.Manage().RemoveResultBlock(GetProdcutIndentListResult);
+            System.Console.WriteLine("GetProdcutIndentListResult:" + result.pack);
+            if (result.pack.Content.MessageType == 1)
             {
-                NetMessageManage.Manage().RemoveResultBlock(GetProdcutIndentListResult);
-                System.Console.WriteLine("GetProdcutIndentListResult:" + result.pack);
                 this.Invoke(new UIHandleBlock(delegate {
-
                     this.orders = result.pack.Content.ScOrderList.OrdersList;
                     RefreshGridControl();
 
                 }));
-
-
             }
+            
+
         }
         #endregion
 

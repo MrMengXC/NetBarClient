@@ -31,6 +31,16 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.panel2 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
+            this.nameLabel = new System.Windows.Forms.Label();
+            this.nationLabel = new System.Windows.Forms.Label();
+            this.cardTypeLabel = new System.Windows.Forms.Label();
+            this.cardNumLabel = new System.Windows.Forms.Label();
+            this.birthdayLabel = new System.Windows.Forms.Label();
+            this.cardValidityLabel = new System.Windows.Forms.Label();
+            this.addressLabel = new System.Windows.Forms.Label();
+            this.organLabel = new System.Windows.Forms.Label();
+            this.countryLabel = new System.Windows.Forms.Label();
+            this.genderLabel = new System.Windows.Forms.Label();
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             this.panel3 = new System.Windows.Forms.Panel();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
@@ -55,16 +65,6 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.nameLabel = new System.Windows.Forms.Label();
-            this.nationLabel = new System.Windows.Forms.Label();
-            this.cardTypeLabel = new System.Windows.Forms.Label();
-            this.cardNumLabel = new System.Windows.Forms.Label();
-            this.birthdayLabel = new System.Windows.Forms.Label();
-            this.cardValidityLabel = new System.Windows.Forms.Label();
-            this.addressLabel = new System.Windows.Forms.Label();
-            this.organLabel = new System.Windows.Forms.Label();
-            this.countryLabel = new System.Windows.Forms.Label();
-            this.genderLabel = new System.Windows.Forms.Label();
             this.titlePanel.SuspendLayout();
             this.panel2.SuspendLayout();
             this.flowLayoutPanel6.SuspendLayout();
@@ -89,6 +89,10 @@
             // titlePanel
             // 
             this.titlePanel.Size = new System.Drawing.Size(756, 50);
+            // 
+            // closeButton
+            // 
+            this.closeButton.Location = new System.Drawing.Point(708, 0);
             // 
             // labelControl1
             // 
@@ -131,6 +135,106 @@
             this.flowLayoutPanel6.Name = "flowLayoutPanel6";
             this.flowLayoutPanel6.Size = new System.Drawing.Size(236, 166);
             this.flowLayoutPanel6.TabIndex = 11;
+            // 
+            // nameLabel
+            // 
+            this.nameLabel.AutoSize = true;
+            this.nameLabel.Location = new System.Drawing.Point(3, 3);
+            this.nameLabel.Margin = new System.Windows.Forms.Padding(3);
+            this.nameLabel.Name = "nameLabel";
+            this.nameLabel.Size = new System.Drawing.Size(41, 12);
+            this.nameLabel.TabIndex = 10;
+            this.nameLabel.Text = "姓名：";
+            // 
+            // nationLabel
+            // 
+            this.nationLabel.AutoSize = true;
+            this.nationLabel.Location = new System.Drawing.Point(3, 21);
+            this.nationLabel.Margin = new System.Windows.Forms.Padding(3);
+            this.nationLabel.Name = "nationLabel";
+            this.nationLabel.Size = new System.Drawing.Size(41, 12);
+            this.nationLabel.TabIndex = 11;
+            this.nationLabel.Text = "民族：";
+            // 
+            // cardTypeLabel
+            // 
+            this.cardTypeLabel.AutoSize = true;
+            this.cardTypeLabel.Location = new System.Drawing.Point(3, 39);
+            this.cardTypeLabel.Margin = new System.Windows.Forms.Padding(3);
+            this.cardTypeLabel.Name = "cardTypeLabel";
+            this.cardTypeLabel.Size = new System.Drawing.Size(65, 12);
+            this.cardTypeLabel.TabIndex = 12;
+            this.cardTypeLabel.Text = "证件类型：";
+            // 
+            // cardNumLabel
+            // 
+            this.cardNumLabel.AutoSize = true;
+            this.cardNumLabel.Location = new System.Drawing.Point(3, 57);
+            this.cardNumLabel.Margin = new System.Windows.Forms.Padding(3);
+            this.cardNumLabel.Name = "cardNumLabel";
+            this.cardNumLabel.Size = new System.Drawing.Size(65, 12);
+            this.cardNumLabel.TabIndex = 13;
+            this.cardNumLabel.Text = "证件号码：";
+            // 
+            // birthdayLabel
+            // 
+            this.birthdayLabel.AutoSize = true;
+            this.birthdayLabel.Location = new System.Drawing.Point(3, 75);
+            this.birthdayLabel.Margin = new System.Windows.Forms.Padding(3);
+            this.birthdayLabel.Name = "birthdayLabel";
+            this.birthdayLabel.Size = new System.Drawing.Size(65, 12);
+            this.birthdayLabel.TabIndex = 14;
+            this.birthdayLabel.Text = "出生日期：";
+            // 
+            // cardValidityLabel
+            // 
+            this.cardValidityLabel.AutoSize = true;
+            this.cardValidityLabel.Location = new System.Drawing.Point(3, 93);
+            this.cardValidityLabel.Margin = new System.Windows.Forms.Padding(3);
+            this.cardValidityLabel.Name = "cardValidityLabel";
+            this.cardValidityLabel.Size = new System.Drawing.Size(77, 12);
+            this.cardValidityLabel.TabIndex = 15;
+            this.cardValidityLabel.Text = "证件有效期：";
+            // 
+            // addressLabel
+            // 
+            this.addressLabel.AutoSize = true;
+            this.addressLabel.Location = new System.Drawing.Point(3, 111);
+            this.addressLabel.Margin = new System.Windows.Forms.Padding(3);
+            this.addressLabel.Name = "addressLabel";
+            this.addressLabel.Size = new System.Drawing.Size(41, 12);
+            this.addressLabel.TabIndex = 16;
+            this.addressLabel.Text = "地址：";
+            // 
+            // organLabel
+            // 
+            this.organLabel.AutoSize = true;
+            this.organLabel.Location = new System.Drawing.Point(3, 129);
+            this.organLabel.Margin = new System.Windows.Forms.Padding(3);
+            this.organLabel.Name = "organLabel";
+            this.organLabel.Size = new System.Drawing.Size(65, 12);
+            this.organLabel.TabIndex = 17;
+            this.organLabel.Text = "发证机关：";
+            // 
+            // countryLabel
+            // 
+            this.countryLabel.AutoSize = true;
+            this.countryLabel.Location = new System.Drawing.Point(3, 147);
+            this.countryLabel.Margin = new System.Windows.Forms.Padding(3);
+            this.countryLabel.Name = "countryLabel";
+            this.countryLabel.Size = new System.Drawing.Size(41, 12);
+            this.countryLabel.TabIndex = 18;
+            this.countryLabel.Text = "国籍：";
+            // 
+            // genderLabel
+            // 
+            this.genderLabel.AutoSize = true;
+            this.genderLabel.Location = new System.Drawing.Point(86, 3);
+            this.genderLabel.Margin = new System.Windows.Forms.Padding(3);
+            this.genderLabel.Name = "genderLabel";
+            this.genderLabel.Size = new System.Drawing.Size(41, 12);
+            this.genderLabel.TabIndex = 19;
+            this.genderLabel.Text = "性别：";
             // 
             // pictureEdit1
             // 
@@ -379,106 +483,6 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(450, 256);
             this.panel5.TabIndex = 0;
-            // 
-            // nameLabel
-            // 
-            this.nameLabel.AutoSize = true;
-            this.nameLabel.Location = new System.Drawing.Point(3, 3);
-            this.nameLabel.Margin = new System.Windows.Forms.Padding(3);
-            this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(41, 12);
-            this.nameLabel.TabIndex = 10;
-            this.nameLabel.Text = "姓名：";
-            // 
-            // nationLabel
-            // 
-            this.nationLabel.AutoSize = true;
-            this.nationLabel.Location = new System.Drawing.Point(3, 21);
-            this.nationLabel.Margin = new System.Windows.Forms.Padding(3);
-            this.nationLabel.Name = "nationLabel";
-            this.nationLabel.Size = new System.Drawing.Size(41, 12);
-            this.nationLabel.TabIndex = 11;
-            this.nationLabel.Text = "民族：";
-            // 
-            // cardTypeLabel
-            // 
-            this.cardTypeLabel.AutoSize = true;
-            this.cardTypeLabel.Location = new System.Drawing.Point(3, 39);
-            this.cardTypeLabel.Margin = new System.Windows.Forms.Padding(3);
-            this.cardTypeLabel.Name = "cardTypeLabel";
-            this.cardTypeLabel.Size = new System.Drawing.Size(65, 12);
-            this.cardTypeLabel.TabIndex = 12;
-            this.cardTypeLabel.Text = "证件类型：";
-            // 
-            // cardNumLabel
-            // 
-            this.cardNumLabel.AutoSize = true;
-            this.cardNumLabel.Location = new System.Drawing.Point(3, 57);
-            this.cardNumLabel.Margin = new System.Windows.Forms.Padding(3);
-            this.cardNumLabel.Name = "cardNumLabel";
-            this.cardNumLabel.Size = new System.Drawing.Size(65, 12);
-            this.cardNumLabel.TabIndex = 13;
-            this.cardNumLabel.Text = "证件号码：";
-            // 
-            // birthdayLabel
-            // 
-            this.birthdayLabel.AutoSize = true;
-            this.birthdayLabel.Location = new System.Drawing.Point(3, 75);
-            this.birthdayLabel.Margin = new System.Windows.Forms.Padding(3);
-            this.birthdayLabel.Name = "birthdayLabel";
-            this.birthdayLabel.Size = new System.Drawing.Size(65, 12);
-            this.birthdayLabel.TabIndex = 14;
-            this.birthdayLabel.Text = "出生日期：";
-            // 
-            // cardValidityLabel
-            // 
-            this.cardValidityLabel.AutoSize = true;
-            this.cardValidityLabel.Location = new System.Drawing.Point(3, 93);
-            this.cardValidityLabel.Margin = new System.Windows.Forms.Padding(3);
-            this.cardValidityLabel.Name = "cardValidityLabel";
-            this.cardValidityLabel.Size = new System.Drawing.Size(77, 12);
-            this.cardValidityLabel.TabIndex = 15;
-            this.cardValidityLabel.Text = "证件有效期：";
-            // 
-            // addressLabel
-            // 
-            this.addressLabel.AutoSize = true;
-            this.addressLabel.Location = new System.Drawing.Point(3, 111);
-            this.addressLabel.Margin = new System.Windows.Forms.Padding(3);
-            this.addressLabel.Name = "addressLabel";
-            this.addressLabel.Size = new System.Drawing.Size(41, 12);
-            this.addressLabel.TabIndex = 16;
-            this.addressLabel.Text = "地址：";
-            // 
-            // organLabel
-            // 
-            this.organLabel.AutoSize = true;
-            this.organLabel.Location = new System.Drawing.Point(3, 129);
-            this.organLabel.Margin = new System.Windows.Forms.Padding(3);
-            this.organLabel.Name = "organLabel";
-            this.organLabel.Size = new System.Drawing.Size(65, 12);
-            this.organLabel.TabIndex = 17;
-            this.organLabel.Text = "发证机关：";
-            // 
-            // countryLabel
-            // 
-            this.countryLabel.AutoSize = true;
-            this.countryLabel.Location = new System.Drawing.Point(3, 147);
-            this.countryLabel.Margin = new System.Windows.Forms.Padding(3);
-            this.countryLabel.Name = "countryLabel";
-            this.countryLabel.Size = new System.Drawing.Size(41, 12);
-            this.countryLabel.TabIndex = 18;
-            this.countryLabel.Text = "国籍：";
-            // 
-            // genderLabel
-            // 
-            this.genderLabel.AutoSize = true;
-            this.genderLabel.Location = new System.Drawing.Point(86, 3);
-            this.genderLabel.Margin = new System.Windows.Forms.Padding(3);
-            this.genderLabel.Name = "genderLabel";
-            this.genderLabel.Size = new System.Drawing.Size(41, 12);
-            this.genderLabel.TabIndex = 19;
-            this.genderLabel.Text = "性别：";
             // 
             // OpenMemberView
             // 

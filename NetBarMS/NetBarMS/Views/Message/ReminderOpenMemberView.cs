@@ -11,7 +11,6 @@ using NetBarMS.Views.NetUserManage;
 using NetBarMS.Codes.Tools;
 using NetBarMS.Codes.Tools.NetOperation;
 using NetBarMS.Codes.Tools.FlowManage;
-using static NetBarMS.Codes.Tools.NetMessageManage;
 using NetBarMS.Views.ResultManage;
 
 namespace NetBarMS.Views.HomePage.Message

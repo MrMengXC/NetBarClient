@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using NetBarMS.Codes.Tools.NetOperation;
 using NetBarMS.Codes.Tools;
 using System.IO;
-using static NetBarMS.Codes.Tools.NetMessageManage;
 using NetBarMS.Codes.Tools.FlowManage;
 using NetBarMS.Views.Message;
 using System.Net;

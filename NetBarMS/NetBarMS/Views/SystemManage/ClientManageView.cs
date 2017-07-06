@@ -12,7 +12,6 @@ using NetBarMS.Codes.Tools;
 using NetBarMS.Codes.Model;
 using DevExpress.XtraGrid.Views.Base;
 using NetBarMS.Codes.Tools.NetOperation;
-using static NetBarMS.Codes.Tools.NetMessageManage;
 using DevExpress.XtraEditors.Controls;
 
 namespace NetBarMS.Views.SystemManage

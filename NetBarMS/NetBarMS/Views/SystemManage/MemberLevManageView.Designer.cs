@@ -43,6 +43,10 @@
             // 
             this.titlePanel.Size = new System.Drawing.Size(366, 50);
             // 
+            // closeButton
+            // 
+            this.closeButton.Location = new System.Drawing.Point(318, 0);
+            // 
             // gridControl1
             // 
             this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 

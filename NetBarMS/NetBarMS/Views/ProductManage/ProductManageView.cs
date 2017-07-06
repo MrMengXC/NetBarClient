@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using NetBarMS.Codes.Tools;
 using DevExpress.XtraEditors.Controls;
 using NetBarMS.Codes.Tools.NetOperation;
-using static NetBarMS.Codes.Tools.NetMessageManage;
+
 
 namespace NetBarMS.Views.ProductManage
 {

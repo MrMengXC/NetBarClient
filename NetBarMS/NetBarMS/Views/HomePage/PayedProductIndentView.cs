@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using NetBarMS.Codes.Tools;
 using DevExpress.XtraEditors.Controls;
-using static NetBarMS.Codes.Tools.NetMessageManage;
+
 
 namespace NetBarMS.Views.HomePage
 {

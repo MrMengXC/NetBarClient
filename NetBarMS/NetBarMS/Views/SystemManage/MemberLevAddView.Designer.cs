@@ -53,6 +53,10 @@
             // 
             this.titlePanel.Size = new System.Drawing.Size(366, 50);
             // 
+            // closeButton
+            // 
+            this.closeButton.Location = new System.Drawing.Point(318, 0);
+            // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.flowLayoutPanel2);
