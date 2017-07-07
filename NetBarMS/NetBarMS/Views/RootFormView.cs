@@ -7,13 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NetBarMS.Codes.Tools;
 
 namespace NetBarMS.Views
 {
     public partial class RootFormView : UserControl
     {
-        //关闭窗体代理
-        public delegate void CloseFormHandle();
         public event CloseFormHandle CloseForm;
 
         public DataTable mainDataTable;     //
@@ -22,8 +21,10 @@ namespace NetBarMS.Views
         public RootFormView()
         {
             InitializeComponent();
-            this.closeButton.Click += CloseFormClick;
+            this.closeBtn.Click += CloseFormClick;
         }
+
+        #region 关闭事件
         //按钮关闭窗体
         private void CloseFormClick(object sender, EventArgs e)
         {
@@ -40,5 +41,6 @@ namespace NetBarMS.Views
             this.FindForm().Close();
 
         }
+        #endregion
     }
 }

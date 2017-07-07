@@ -29,13 +29,13 @@
   
   <!--获取锁定列表-->
   <grid type ="LockList">
-    <column name = "姓名" field="EpNumber" type ="C_Text" width ="" height =""/>
-    <column name = "身份证号" field="Area" type ="C_Text" width ="" height =""/>
-    <column name = "性别" field="State" type ="C_Text" width ="" height =""/>
-    <column name = "会员类型" field="IdCard" type ="C_Text" width ="" height =""/>
-    <column name = "上次使用时间" field="CardType" type ="C_Text" width ="" height =""/>
-    <column name = "锁定原因" field="MoneyType" type ="C_Text" width ="" height =""/>
-    <column name = "操作" field="VerifyType" type ="C_Button" width ="" height ="" bnames ="解锁.lock1"/>
+    <column name = "姓名" field="Name" type ="C_Text" width ="" height =""/>
+    <column name = "身份证号" field="Card" type ="C_Text" width ="" height =""/>
+    <column name = "性别" field="Gender" type ="C_Text" width ="" height =""/>
+    <column name = "会员类型" field="Type" type ="C_Text" width ="" height =""/>
+    <column name = "上次使用时间" field="LastTime" type ="C_Text" width ="" height =""/>
+    <column name = "锁定原因" field="Reason" type ="C_Text" width ="" height =""/>
+    <column name = "操作" field="Operation" type ="C_Button" width ="" height ="" bnames ="解锁.lock1"/>
   </grid>
   
   <!--已付款商品订单管理-->

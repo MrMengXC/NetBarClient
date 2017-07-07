@@ -218,28 +218,12 @@ namespace NetBarMS.Views
         //验证会员点击事件
         private void simpleButton4_Click(object sender, EventArgs e)
         {
-            List<int> ids = GetCheckIds();
-            if (ids.Count <= 0)
-            {
-                return;
-            }
-            MemberNetOperation.VerifyMember(VerifyMemberResult, ids);
+            
         }
         //验证会员回调
         private void VerifyMemberResult(ResultModel result)
         {
 
-            if (result.pack.Cmd == Cmd.CMD_MEMBER_VERIFY && result.pack.Content.MessageType == 1)
-            {
-                NetMessageManage.Manage().RemoveResultBlock(VerifyMemberResult);
-                System.Console.WriteLine("VerifyMemberResult:" + result.pack);
-                this.Invoke(new UIHandleBlock(delegate ()
-                {
-                    GetMemberList();
-                }));
-
-
-            }
         }
         #endregion
 

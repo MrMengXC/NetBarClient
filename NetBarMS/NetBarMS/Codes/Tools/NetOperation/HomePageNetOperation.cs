@@ -107,5 +107,30 @@ namespace NetBarMS.Codes.Tools.NetOperation
             NetMessageManage.Manage().SendMsg(pack.Build(), resultBlock);
         }
         #endregion
+
+        #region 管理员操作
+        public static void ManagerCommandOperation(DataResultBlock resultBlock,COMMAND_TYPE type,List<string>pars)
+        {
+            CSCommand.Builder command = new CSCommand.Builder();
+            command.Cmd = (int)type;
+            if(pars.Count > 0)
+            {
+                foreach(string param in pars)
+                {
+                    command.AddParams(param);
+                }
+            }
+            MessageContent.Builder content = new MessageContent.Builder();
+            content.MessageType = 1;
+            content.CsCommand = command.Build();
+
+            MessagePack.Builder pack = new MessagePack.Builder();
+            pack.Cmd = Cmd.CMD_COMMAND;
+            pack.Content = content.Build();
+            NetMessageManage.Manage().SendMsg(pack.Build(), resultBlock);
+        }
+        #endregion
+
+     
     }
 }

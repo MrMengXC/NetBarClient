@@ -15,9 +15,7 @@ namespace NetBarMS.Views
     public partial class RootUserControlView : UserControl
     {
         public event CloseFormHandle CloseForm;
-
-        public DataTable mainDataTable;     //
-
+        protected DataTable mainDataTable;     //
 
         public RootUserControlView()
         {

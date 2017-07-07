@@ -47,9 +47,10 @@ namespace NetBarMS.Views.RateManage
                 dataGridView1.Rows[index].Cells[0].Value = titls[i];
             }
             this.dataGridView1.SelectionChanged += DataGridView1_SelectionChanged;
-           
-            //添加会员
-
+            //隐藏最左侧行头
+            this.dataGridView1.RowHeadersVisible = false;
+            
+            //获取会员类型列表
             List<StructDictItem> types;
             SysManage.Manage().GetMembersTypes(out types);
             for(int i = types.Count()-1;i>=0;i--)
@@ -66,8 +67,8 @@ namespace NetBarMS.Views.RateManage
       
             for (int i = areas.Count() - 1; i >= 0; i--)
             {
-                string name = "area_" + types[i].Code;
-                string text = types[i].ItemList[0];
+                string name = "area_" + areas[i].Code;
+                string text = areas[i].ItemList[0];
 
                 CreateLabel(this.areaPanel, name, text);
             }
@@ -184,9 +185,11 @@ namespace NetBarMS.Views.RateManage
                 Int32 area = Int32.Parse(this.selectAreaLabel.Name.Split('_')[1]);
                 Int32 type = Int32.Parse(this.selectTypeLabel.Name.Split('_')[1]);
                 if (!this.nDurComboBoxEdit.Text.Equals("")
-                    && !this.nDurPrieceTextEdit.Text.Equals("")
+                    && !this.nDurPrieceText.Text.Equals("")
+                    && !this.nMinConsumeText.Text.Equals("")
                     && !this.bDurComboBoxEdit.Text.Equals("")
-                    && !this.bDurPrieceTextEdit.Text.Equals(""))
+                    && !this.bDurPrieceText.Text.Equals("")
+                    && !this.bMinConsumeText.Text.Equals(""))
                 {
 
                     // 判断一下是否与之前的都一样 
@@ -197,9 +200,12 @@ namespace NetBarMS.Views.RateManage
 
                     StructUserArea.Builder currentUserArea = new StructUserArea.Builder();
                     currentUserArea.OrdinaryInterval = Int32.Parse(this.nDurComboBoxEdit.Text);
-                    currentUserArea.OrdinaryPrice = Int32.Parse(this.nDurPrieceTextEdit.Text);
+                    currentUserArea.OrdinaryPrice = Int32.Parse(this.nDurPrieceText.Text);
+                    currentUserArea.OrdinaryMin = Int32.Parse(this.nMinConsumeText.Text);
+
                     currentUserArea.NightInterval = Int32.Parse(this.bDurComboBoxEdit.Text);
-                    currentUserArea.NightPrice = Int32.Parse(this.bDurPrieceTextEdit.Text);
+                    currentUserArea.NightPrice = Int32.Parse(this.bDurPrieceText.Text);
+                    currentUserArea.NightMin = Int32.Parse(this.bMinConsumeText.Text);
                     currentUserArea.Areatype = area;
                     currentUserArea.Usertype = type;
                     currentUserArea.Index = 0;
@@ -261,9 +267,11 @@ namespace NetBarMS.Views.RateManage
             this.dataGridView1.ClearSelection();
 
             this.nDurComboBoxEdit.Text = UserArea.OrdinaryInterval.ToString();
-            this.nDurPrieceTextEdit.Text = UserArea.OrdinaryPrice.ToString();
+            this.nDurPrieceText.Text = UserArea.OrdinaryPrice.ToString();
+            this.nMinConsumeText.Text = UserArea.OrdinaryMin.ToString();
             this.bDurComboBoxEdit.Text = UserArea.NightInterval.ToString();
-            this.bDurPrieceTextEdit.Text = UserArea.NightPrice.ToString();
+            this.bDurPrieceText.Text = UserArea.NightPrice.ToString();
+            this.bMinConsumeText.Text = UserArea.NightMin.ToString();
 
             this.nRateLabel.Text = ((60 / UserArea.OrdinaryInterval) * UserArea.OrdinaryPrice).ToString();
             this.bRateLabel.Text = ((60 / UserArea.NightInterval) * UserArea.NightPrice).ToString();
@@ -498,8 +506,11 @@ namespace NetBarMS.Views.RateManage
             bool userAreaChange = true,settingChange = true;
             if(temuserArea.OrdinaryInterval == userArea.OrdinaryInterval
                 && temuserArea.OrdinaryPrice == userArea.OrdinaryPrice 
+                && temuserArea.OrdinaryMin == userArea.OrdinaryMin
                 && temuserArea.NightInterval == userArea.NightInterval
-                && temuserArea.NightPrice == userArea.NightPrice)
+                && temuserArea.NightPrice == userArea.NightPrice
+                && temuserArea.NightMin == userArea.NightMin
+                )
             {
                 userAreaChange = false;
             }
@@ -542,8 +553,8 @@ namespace NetBarMS.Views.RateManage
         {
             try
             {
-                this.nRateLabel.Text = ((60 / Int32.Parse(this.nDurComboBoxEdit.Text) * Int32.Parse(this.nDurPrieceTextEdit.Text))).ToString();
-                this.bRateLabel.Text = ((60 / Int32.Parse(this.bDurComboBoxEdit.Text) * Int32.Parse(this.bDurPrieceTextEdit.Text))).ToString();
+                this.nRateLabel.Text = ((60 / Int32.Parse(this.nDurComboBoxEdit.Text) * Int32.Parse(this.nDurPrieceText.Text))).ToString();
+                this.bRateLabel.Text = ((60 / Int32.Parse(this.bDurComboBoxEdit.Text) * Int32.Parse(this.bDurPrieceText.Text))).ToString();
                 for (int row = 0; row < 7; row++)
                 {
                     for (int column = 1; column < this.dataGridView1.ColumnCount; column++)

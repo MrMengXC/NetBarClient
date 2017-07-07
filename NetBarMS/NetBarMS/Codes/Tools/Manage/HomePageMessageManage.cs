@@ -20,9 +20,8 @@ namespace NetBarMS.Codes.Tools.Manage
         //更新计算机数据
         public delegate void UpdateComputerDataHandle(int index,StructRealTime com);
         public event UpdateComputerDataHandle UpdateComputerDataEvent;
-        //更新计算机所在区域
+        //更新计算机所在区域信息
         public event UpdateComputerDataHandle UpdateComputerAreaEvent;
-
         #endregion
 
         //电脑数据
@@ -47,7 +46,6 @@ namespace NetBarMS.Codes.Tools.Manage
             this.GetDataResultEvent += result;
             this.UpdateComputerDataEvent += update;
             this.UpdateComputerAreaEvent += updateArea;
-
             //获取上网信息
             HomePageNetOperation.HompageList(HomePageListResult);
         }
@@ -99,8 +97,12 @@ namespace NetBarMS.Codes.Tools.Manage
                 return;
             }
             System.Console.WriteLine("GetSysMessageResult:"+result.pack);
-            SCSysMessage message = result.pack.Content.ScSysMessage;
-            UpdateComputerData(message);
+            if(result.pack.Content.MessageType == 1)
+            {
+                SCSysMessage message = result.pack.Content.ScSysMessage;
+                UpdateComputerData(message);
+            }
+            
 
         }
         #endregion
@@ -151,8 +153,6 @@ namespace NetBarMS.Codes.Tools.Manage
             this.computerDict[int.Parse(comid)] = newCom.Build();
             //更新首页数据
             UpdateHomePage(index, newCom.Build());
-
-
         }
 
         #region 用户上机

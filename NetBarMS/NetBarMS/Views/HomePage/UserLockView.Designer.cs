@@ -49,6 +49,10 @@
             // 
             this.titlePanel.Size = new System.Drawing.Size(459, 50);
             // 
+            // closeBtn
+            // 
+            this.closeBtn.Location = new System.Drawing.Point(407, 0);
+            // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -166,6 +170,7 @@
             this.simpleButton1.Size = new System.Drawing.Size(62, 30);
             this.simpleButton1.TabIndex = 64;
             this.simpleButton1.Text = "锁定";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // UserLockView
             // 

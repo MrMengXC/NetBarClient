@@ -95,18 +95,18 @@ namespace NetBarMS.Codes.Tools.NetOperation
         public static void VerifyMember(DataResultBlock resultBlock, List<int> ids)
         {
 
-            CSMemberVerify.Builder memberVer = new CSMemberVerify.Builder();
-            foreach (int id in ids)
-            {
-                memberVer.AddMemberid(id);
-            }
-            MessageContent.Builder content = new MessageContent.Builder();
-            content.SetMessageType(1);
-            content.SetCsMemberVerify(memberVer);
-            MessagePack.Builder pack = new MessagePack.Builder();
-            pack.SetCmd(Cmd.CMD_MEMBER_VERIFY);
-            pack.SetContent(content);
-            NetMessageManage.Manage().SendMsg(pack.Build(), resultBlock);
+            //CSMemberVerify.Builder memberVer = new CSMemberVerify.Builder();
+            //foreach (int id in ids)
+            //{
+            //    memberVer.AddMemberid(id);
+            //}
+            //MessageContent.Builder content = new MessageContent.Builder();
+            //content.SetMessageType(1);
+            //content.SetCsMemberVerify(memberVer);
+            //MessagePack.Builder pack = new MessagePack.Builder();
+            //pack.SetCmd(Cmd.CMD_MEMBER_VERIFY);
+            //pack.SetContent(content);
+            //NetMessageManage.Manage().SendMsg(pack.Build(), resultBlock);
         }
 
         #endregion

@@ -17,7 +17,7 @@ namespace NetBarMS.Views.RateManage
     public partial class AwardManageView : RootUserControlView
     {
 
-        enum TitleList
+        private enum TitleList
         {
             None,
             Check = 0,
@@ -61,12 +61,13 @@ namespace NetBarMS.Views.RateManage
             SysManage.Manage().GetMembersTypes(out memberTypes);
             foreach(StructDictItem item in memberTypes)
             {
-                if(item.Code != IdTools.TEM_MEMBER_ID)
-                {
-                    string type = item.GetItem(0);
-                    this.comboBoxEdit1.Properties.Items.Add(type);
-                    this.comboBoxEdit3.Properties.Items.Add(type);
-                }
+                //if(item.Code != IdTools.TEM_MEMBER_ID)
+                //{
+
+                //}
+                string type = item.GetItem(0);
+                this.comboBoxEdit1.Properties.Items.Add(type);
+                this.comboBoxEdit3.Properties.Items.Add(type);
             }
             this.comboBoxEdit1.Properties.TextEditStyle = TextEditStyles.DisableTextEditor;
             this.popupContainerEdit1.Properties.TextEditStyle = TextEditStyles.DisableTextEditor;
@@ -91,42 +92,42 @@ namespace NetBarMS.Views.RateManage
         //获取奖励列表结果回调
         private void AwardManageListResult(ResultModel result)
         {
-            System.Console.WriteLine(result.pack);
-            if (result.pack.Content.MessageType != 1)
+            if (result.pack.Cmd != Cmd.CMD_SYS_INFO || !result.pack.Content.ScSysInfo.Parent.Equals(RateManageNetOperation.awardParent))
             {
                 return;
             }
-            if(result.pack.Cmd == Cmd.CMD_SYS_INFO && result.pack.Content.ScSysInfo.Parent.Equals(RateManageNetOperation.awardParent))
+            NetMessageManage.Manage().RemoveResultBlock(AwardManageListResult);
+            System.Console.WriteLine(result.pack);
+            if (result.pack.Content.MessageType == 1)
             {
-
-                NetMessageManage.Manage().RemoveResultBlock(AwardManageListResult);
                 this.Invoke(new UIHandleBlock(delegate
                 {
                     this.nitems = result.pack.Content.ScSysInfo.ChildList;
-                    UpdateGridControlData(result.pack.Content.ScSysInfo,this.table1);
+                    UpdateGridControlData(result.pack.Content.ScSysInfo, this.table1);
 
                 }));
             }
+            
         }
 
         //获取会员日奖励列表结果回调
         private void MemberDayAwardManageListResult(ResultModel result)
         {
-            System.Console.WriteLine(result.pack);
-            if (result.pack.Content.MessageType != 1)
+            if (result.pack.Cmd != Cmd.CMD_SYS_INFO || !result.pack.Content.ScSysInfo.Parent.Equals(RateManageNetOperation.memberDayAwardParent))
             {
                 return;
             }
-            if (result.pack.Cmd == Cmd.CMD_SYS_INFO && result.pack.Content.ScSysInfo.Parent.Equals(RateManageNetOperation.memberDayAwardParent))
+            System.Console.WriteLine(result.pack);
+            NetMessageManage.Manage().RemoveResultBlock(MemberDayAwardManageListResult);
+            if (result.pack.Content.MessageType == 1)
             {
-                NetMessageManage.Manage().RemoveResultBlock(MemberDayAwardManageListResult);
-                
                 this.Invoke(new UIHandleBlock(delegate
                 {
                     this.mitems = result.pack.Content.ScSysInfo.ChildList;
-                    UpdateGridControlData(result.pack.Content.ScSysInfo,this.table2);
+                    UpdateGridControlData(result.pack.Content.ScSysInfo, this.table2);
                 }));
             }
+          
         }
         #endregion
 
@@ -149,7 +150,7 @@ namespace NetBarMS.Views.RateManage
             DataRow row = table.NewRow();
             table.Rows.Add(row);
             row[TitleList.Number.ToString()] = table.Rows.Count;
-            row[TitleList.MemberType.ToString()] = item.GetItem(0);
+            row[TitleList.MemberType.ToString()] = SysManage.Manage().GetMemberTypeName(item.GetItem(0));
             row[TitleList.RechargeMoney.ToString()] = item.GetItem(1);
             row[TitleList.GiveMoney.ToString()] = item.GetItem(2);
             row[TitleList.ValidDay.ToString()] = item.GetItem(3)+"-"+item.GetItem(4);
@@ -184,20 +185,19 @@ namespace NetBarMS.Views.RateManage
         {
             if (sender.Equals(this.nAddButton))
             {
-                StructDictItem item = this.GetAwardSetting(0);
+                StructDictItem item = GetAwardSetting(0);
                 RateManageNetOperation.AddAwardManage(AddAwardResult, item);
             }
             else if(sender.Equals(this.mAddButton))
             {
-                StructDictItem item = this.GetMemberAwardSetting(0);
+                StructDictItem item = GetMemberAwardSetting(0);
                 RateManageNetOperation.AddMemberDayAwardManage(AddMemberDayAwardResult, item);
             }
 
         }
+        //添加奖励结果回调
         private void AddAwardResult(ResultModel result)
-        {
-
-           
+        {  
             if (result.pack.Cmd != Cmd.CMD_SYS_ADD)
             {
                 return;
@@ -216,17 +216,18 @@ namespace NetBarMS.Views.RateManage
             }
             
         }
+        //添加会员日奖励结果回调
         private void AddMemberDayAwardResult(ResultModel result)
         {
-            System.Console.WriteLine(result.pack);
-
-            if (result.pack.Content.MessageType != 1)
+            if (result.pack.Cmd != Cmd.CMD_SYS_ADD)
             {
                 return;
             }
-            if (result.pack.Cmd == Cmd.CMD_SYS_ADD)
+
+            System.Console.WriteLine(result.pack);
+            NetMessageManage.Manage().RemoveResultBlock(AddMemberDayAwardResult);
+            if (result.pack.Content.MessageType == 1)
             {
-                NetMessageManage.Manage().RemoveResultBlock(AddMemberDayAwardResult);
 
                 this.Invoke(new UIHandleBlock(delegate
                 {
@@ -244,20 +245,19 @@ namespace NetBarMS.Views.RateManage
 
             if (sender.Equals(this.nUpdateButton))
             {
-                List<string> ids = this.GetCheckIds(this.gridView1,nitems);
+                List<string> ids = GetCheckIds(this.gridView1,nitems);
                 if(ids.Count > 0)
                 {
-                    StructDictItem item = this.GetAwardSetting(int.Parse(ids[0]));
+                    StructDictItem item = GetAwardSetting(int.Parse(ids[0]));
                     RateManageNetOperation.UpdateAwardManage(UpdateAwardResult, item);
-
                 }
             }
             else if(sender.Equals(this.mUpdateButton))
             {
-                List<string> ids = this.GetCheckIds(this.gridView4, mitems);
+                List<string> ids = GetCheckIds(this.gridView4, mitems);
                 if(ids.Count > 0)
                 {
-                    StructDictItem item = this.GetMemberAwardSetting(int.Parse(ids[0]));
+                    StructDictItem item = GetMemberAwardSetting(int.Parse(ids[0]));
                     RateManageNetOperation.UpdateMemberDayAwardManage(UpdateMemberDayAwardResult,item);
                 }
 
@@ -393,22 +393,22 @@ namespace NetBarMS.Views.RateManage
         //获取费率设置信息
         private StructDictItem GetAwardSetting(int id)
         {
-            string type = this.comboBoxEdit1.Text;
+            int index = this.comboBoxEdit1.SelectedIndex;
             string recharge = this.nRechargeTextEdit.Text;
             string give = this.nGiveTextEdit.Text;
             string start = this.nstartTime;
             string end = this.nendTime;
 
-            if (type.Equals("") || recharge.Equals("") || give.Equals("") || start.Equals("") || end.Equals(""))
+            if (index < 0 || recharge.Equals("") || give.Equals("") || start.Equals("") || end.Equals(""))
             {
                 return null;
             }
-
+            string code = this.memberTypes[index].Code.ToString();
             StructDictItem.Builder item = new StructDictItem.Builder();
             item.Code = 0;
             item.Id = id;
 
-            item.AddItem(type);
+            item.AddItem(code);
             item.AddItem(recharge);
             item.AddItem(give);
             item.AddItem(start);
@@ -419,20 +419,21 @@ namespace NetBarMS.Views.RateManage
         //获取会员日费率设置
         private StructDictItem GetMemberAwardSetting(int id)
         {
-
-            string type = this.comboBoxEdit3.Text;
+            int index = this.comboBoxEdit3.SelectedIndex;
             string recharge = this.mRechargeTextEdit.Text;
             string give = this.mGiveTextEdit.Text;
             string start = this.mstartTime;
             string end = this.mendTime;
-            if (type.Equals("") || recharge.Equals("") || give.Equals("") || start.Equals("") || end.Equals(""))
+            if (index < 0 || recharge.Equals("") || give.Equals("") || start.Equals("") || end.Equals(""))
             {
                 return null;
             }
+
+            string code = this.memberTypes[index].Code.ToString();
             StructDictItem.Builder item = new StructDictItem.Builder();
             item.Code = 0;
             item.Id = id;
-            item.AddItem(type);
+            item.AddItem(code);
             item.AddItem(recharge);
             item.AddItem(give);
             item.AddItem(start);

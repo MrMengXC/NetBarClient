@@ -95,7 +95,7 @@ namespace NetBarMS.Codes.Tools.NetOperation
         #region 修改区域名称
         public static void UpdateArea(DataResultBlock resultBlock, StructDictItem item)
         {
-            SysNetOperation.UpdateSysInfo(resultBlock, productTypeParent, item);
+            SysNetOperation.UpdateSysInfo(resultBlock, areaParent, item);
         }
         #endregion
 

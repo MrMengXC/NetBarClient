@@ -102,57 +102,58 @@ public static partial class BaseStruct {
           "cBgPIAIoCSKhAQoKU3RydWN0Q2FyZBIMCgRuYW1lGAEgAigJEg4KBmdlbmRl", 
           "chgCIAIoBRIOCgZuYXRpb24YAyACKAkSDgoGbnVtYmVyGAQgAigJEhAKCGJp", 
           "cnRoZGF5GAUgAigJEgsKA3ZsZBgGIAIoCRIPCgdhZGRyZXNzGAcgAigJEhQK", 
-          "DG9yZ2FuaXphdGlvbhgIIAIoCRIPCgdoZWFkVXJsGAkgAigJIpsCCgxTdHJ1", 
+          "DG9yZ2FuaXphdGlvbhgIIAIoCRIPCgdoZWFkVXJsGAkgAigJIqsCCgxTdHJ1", 
           "Y3RNZW1iZXISEAoIbWVtYmVyaWQYASACKAUSEgoKY2FyZG51bWJlchgCIAIo", 
           "CRIOCgZnZW5kZXIYAyACKAkSDAoEbmFtZRgEIAIoCRISCgptZW1iZXJ0eXBl", 
           "GAUgAigFEg0KBXBob25lGAYgAigJEhAKCG9wZW50aW1lGAcgAigJEhAKCGxh", 
-          "c3R0aW1lGAggAigJEg8KB2JhbGFuY2UYCSACKAUSFQoNdG90YWxSZWNoYXJn", 
-          "ZRgKIAIoBRISCgp0b3RhbEJvbnVzGAsgAigFEg8KB2ludGVnYWwYDCACKAUS", 
-          "EwoLdXNlZEludGVnYWwYDSACKAUSDgoGc3RhdHVzGA4gAigFEg4KBnZlcmlm", 
-          "eRgPIAIoBSJTCgpTdHJ1Y3RQYWdlEhAKCHBhZ2VzaXplGAEgAigFEhEKCXBh", 
-          "Z2ViZWdpbhgCIAIoBRIRCglmaWVsZG5hbWUYAyACKAUSDQoFb3JkZXIYBCAC", 
-          "KAUinwEKDlN0cnVjdFVzZXJBcmVhEhAKCHVzZXJ0eXBlGAEgAigFEhAKCGFy", 
-          "ZWF0eXBlGAIgAigFEhUKDW9yZGluYXJ5UHJpY2UYAyACKAUSGAoQb3JkaW5h", 
-          "cnlJbnRlcnZhbBgEIAIoBRISCgpuaWdodFByaWNlGAUgAigFEhUKDW5pZ2h0", 
-          "SW50ZXJ2YWwYBiACKAUSDQoFaW5kZXgYByACKAUidQoRU3RydWN0QmlsbFNl", 
-          "dHRpbmcSDAoEZGF5MBgBIAIoBRIMCgRkYXkxGAIgAigFEgwKBGRheTIYAyAC", 
-          "KAUSDAoEZGF5MxgEIAIoBRIMCgRkYXk0GAUgAigFEgwKBGRheTUYBiACKAUS", 
-          "DAoEZGF5NhgHIAIoBSI4Cg5TdHJ1Y3REaWN0SXRlbRIKCgJpZBgBIAIoBRIM", 
-          "CgRjb2RlGAIgAigFEgwKBGl0ZW0YAyADKAkipgEKC1N0cnVjdEdvb2RzEg8K", 
-          "B2dvb2RzSWQYASACKAUSEQoJZ29vZHNOYW1lGAIgAigJEhAKCGdvb2RzSW1n", 
-          "GAMgAigJEhAKCGNhdGVnb3J5GAQgAigFEg0KBXByaWNlGAUgAigJEhIKCnVz", 
-          "ZUludGVnYWwYBiACKAgSDAoEaGlkZRgHIAIoCBIPCgdpbnRlZ2FsGAggAigF", 
-          "Eg0KBWNvdW50GAkgAigFIqYBCgpTdHJ1Y3RTYWxlEg8KB29yZGVyaWQYASAC", 
-          "KAUSEAoIdXNlcm5hbWUYAiACKAkSEgoKY2FyZG51bWJlchgDIAIoCRIQCghh", 
-          "cmVhbmFtZRgEIAIoCRIRCglnb29kc25hbWUYBSACKAkSCwoDbnVtGAYgAigF", 
-          "Eg0KBW1vbmV5GAcgAigFEg8KB2FkZHRpbWUYCCACKAkSDwoHcGF5bW9kZRgJ", 
-          "IAIoCSJQCg1TdHJ1Y3RTYWxlVG9wEhAKCGNhdGVnb3J5GAEgAigFEhEKCWdv", 
-          "b2RzbmFtZRgCIAIoCRILCgNudW0YAyACKAUSDQoFbW9uZXkYBCACKAUiTgoL", 
-          "U3RydWN0U3RvY2sSEQoJZ29vZHNuYW1lGAEgAigJEhAKCGNhdGVnb3J5GAIg", 
-          "AigFEg0KBXByaWNlGAMgAigJEgsKA251bRgEIAIoBSLKAQoLU3RydWN0T3Jk", 
-          "ZXISDwoHb3JkZXJpZBgBIAIoBRIQCgh1c2VybmFtZRgCIAIoCRISCgpjYXJk", 
-          "bnVtYmVyGAMgAigJEhAKCGFyZWFuYW1lGAQgAigJEg0KBW1vbmV5GAUgAigF", 
-          "Eg8KB2FkZHRpbWUYBiACKAkSEAoIcHJvY3RpbWUYByACKAkSEAoIb3BlcmF0", 
-          "b3IYCCACKAkSDgoGc3RhdHVzGAkgAigJEg8KB3BheW1vZGUYCiACKAkSDQoF", 
-          "cGF5aWQYCyACKAkiVAoRU3RydWN0T3JkZXJEZXRhaWwSEQoJZ29vZHNuYW1l", 
-          "GAEgAigJEhAKCGNhdGVnb3J5GAIgAigFEg0KBXByaWNlGAMgAigJEgsKA251", 
-          "bRgEIAIoBSK5AQoNU3RydWN0Q29tbWVudBIPCgdhZGR0aW1lGAEgAigJEhAK", 
-          "CGN1c3RvbWVyGAIgAigJEhIKCmNhcmRudW1iZXIYAyACKAkSDQoFYm9udXMY", 
-          "BCACKAUSDQoFc3RhZmYYBSABKAkSDQoFcG9pbnQYBiABKAUSEwoLZW52aXJv", 
-          "bm1lbnQYByABKAUSDwoHc2VydmljZRgIIAEoBRIOCgZkZXZpY2UYCSABKAUS", 
-          "DgoGZGV0YWlsGAogASgJImoKDVN0cnVjdFBlcmZvcm0SDAoEbmFtZRgBIAIo", 
-          "CRIMCgRyb2xlGAIgAigJEg0KBWhvdXJzGAMgAigFEg4KBmNoYXJnZRgEIAIo", 
-          "BRINCgVzYWxlcxgFIAIoBRIPCgdzYXRpc2Z5GAYgAigFIl0KCVN0cnVjdExv", 
-          "ZxIQCghvcGVyYXRvchgBIAIoCRIRCglvcGVyYXRpb24YAiACKAkSCgoCaXAY", 
-          "AyACKAkSDwoHYWRkdGltZRgEIAIoCRIOCgZzdGF0dXMYBSACKAkiMwoPU3Ry", 
-          "dWN0QXJlYVRvdGFsEhAKCGFyZWFuYW1lGAEgAigJEg4KBmFtb3VudBgCIAIo", 
-          "BSLEAQoKU3RydWN0RWFybhIQCghkYXRldGltZRgBIAIoBRIVCg1hbGlwYXlf", 
-          "Y2hhcmdlGAIgAigFEhMKC2FsaXBheV9zYWxlGAMgAigFEhUKDXRlbnBheV9j", 
-          "aGFyZ2UYBCACKAUSEwoLdGVucGF5X3NhbGUYBSACKAUSEwoLY2FzaF9jaGFy", 
-          "Z2UYBiACKAUSEQoJY2FzaF9zYWxlGAcgAigFEiQKCmFyZWFfdG90YWwYCCAD", 
-          "KAsyEC5TdHJ1Y3RBcmVhVG90YWwqKAoEVHlwZRIICgRJVEVNEAESDAoIQ1VS", 
-          "UkVOQ1kQAhIICgRQQUNLEANCKwodY29tLnNreXNvZnQuY29yZS5hdXRvLm1l", 
-        "c3NhZ2VCCkJhc2VTdHJ1Y3Q="));
+          "c3R0aW1lGAggAigJEg8KB2JhbGFuY2UYCSABKAUSFQoNdG90YWxSZWNoYXJn", 
+          "ZRgKIAEoBRISCgp0b3RhbEJvbnVzGAsgASgFEg8KB2ludGVnYWwYDCABKAUS", 
+          "EwoLdXNlZEludGVnYWwYDSABKAUSDgoGc3RhdHVzGA4gASgFEg4KBnZlcmlm", 
+          "eRgPIAEoBRIOCgZyZWFzb24YECABKAkiUwoKU3RydWN0UGFnZRIQCghwYWdl", 
+          "c2l6ZRgBIAIoBRIRCglwYWdlYmVnaW4YAiACKAUSEQoJZmllbGRuYW1lGAMg", 
+          "AigFEg0KBW9yZGVyGAQgAigFIsYBCg5TdHJ1Y3RVc2VyQXJlYRIQCgh1c2Vy", 
+          "dHlwZRgBIAIoBRIQCghhcmVhdHlwZRgCIAIoBRIVCg1vcmRpbmFyeVByaWNl", 
+          "GAMgAigFEhgKEG9yZGluYXJ5SW50ZXJ2YWwYBCACKAUSEwoLb3JkaW5hcnlN", 
+          "aW4YBSACKAUSEgoKbmlnaHRQcmljZRgGIAIoBRIVCg1uaWdodEludGVydmFs", 
+          "GAcgAigFEhAKCG5pZ2h0TWluGAggAigFEg0KBWluZGV4GAkgAigFInUKEVN0", 
+          "cnVjdEJpbGxTZXR0aW5nEgwKBGRheTAYASACKAUSDAoEZGF5MRgCIAIoBRIM", 
+          "CgRkYXkyGAMgAigFEgwKBGRheTMYBCACKAUSDAoEZGF5NBgFIAIoBRIMCgRk", 
+          "YXk1GAYgAigFEgwKBGRheTYYByACKAUiOAoOU3RydWN0RGljdEl0ZW0SCgoC", 
+          "aWQYASACKAUSDAoEY29kZRgCIAIoBRIMCgRpdGVtGAMgAygJIqYBCgtTdHJ1", 
+          "Y3RHb29kcxIPCgdnb29kc0lkGAEgAigFEhEKCWdvb2RzTmFtZRgCIAIoCRIQ", 
+          "Cghnb29kc0ltZxgDIAIoCRIQCghjYXRlZ29yeRgEIAIoBRINCgVwcmljZRgF", 
+          "IAIoCRISCgp1c2VJbnRlZ2FsGAYgAigIEgwKBGhpZGUYByACKAgSDwoHaW50", 
+          "ZWdhbBgIIAIoBRINCgVjb3VudBgJIAIoBSKmAQoKU3RydWN0U2FsZRIPCgdv", 
+          "cmRlcmlkGAEgAigFEhAKCHVzZXJuYW1lGAIgAigJEhIKCmNhcmRudW1iZXIY", 
+          "AyACKAkSEAoIYXJlYW5hbWUYBCACKAkSEQoJZ29vZHNuYW1lGAUgAigJEgsK", 
+          "A251bRgGIAIoBRINCgVtb25leRgHIAIoBRIPCgdhZGR0aW1lGAggAigJEg8K", 
+          "B3BheW1vZGUYCSACKAkiUAoNU3RydWN0U2FsZVRvcBIQCghjYXRlZ29yeRgB", 
+          "IAIoBRIRCglnb29kc25hbWUYAiACKAkSCwoDbnVtGAMgAigFEg0KBW1vbmV5", 
+          "GAQgAigFIk4KC1N0cnVjdFN0b2NrEhEKCWdvb2RzbmFtZRgBIAIoCRIQCghj", 
+          "YXRlZ29yeRgCIAIoBRINCgVwcmljZRgDIAIoCRILCgNudW0YBCACKAUiygEK", 
+          "C1N0cnVjdE9yZGVyEg8KB29yZGVyaWQYASACKAUSEAoIdXNlcm5hbWUYAiAC", 
+          "KAkSEgoKY2FyZG51bWJlchgDIAIoCRIQCghhcmVhbmFtZRgEIAIoCRINCgVt", 
+          "b25leRgFIAIoBRIPCgdhZGR0aW1lGAYgAigJEhAKCHByb2N0aW1lGAcgAigJ", 
+          "EhAKCG9wZXJhdG9yGAggAigJEg4KBnN0YXR1cxgJIAIoCRIPCgdwYXltb2Rl", 
+          "GAogAigJEg0KBXBheWlkGAsgAigJIlQKEVN0cnVjdE9yZGVyRGV0YWlsEhEK", 
+          "CWdvb2RzbmFtZRgBIAIoCRIQCghjYXRlZ29yeRgCIAIoBRINCgVwcmljZRgD", 
+          "IAIoCRILCgNudW0YBCACKAUiuQEKDVN0cnVjdENvbW1lbnQSDwoHYWRkdGlt", 
+          "ZRgBIAIoCRIQCghjdXN0b21lchgCIAIoCRISCgpjYXJkbnVtYmVyGAMgAigJ", 
+          "Eg0KBWJvbnVzGAQgAigFEg0KBXN0YWZmGAUgASgJEg0KBXBvaW50GAYgASgF", 
+          "EhMKC2Vudmlyb25tZW50GAcgASgFEg8KB3NlcnZpY2UYCCABKAUSDgoGZGV2", 
+          "aWNlGAkgASgFEg4KBmRldGFpbBgKIAEoCSJqCg1TdHJ1Y3RQZXJmb3JtEgwK", 
+          "BG5hbWUYASACKAkSDAoEcm9sZRgCIAIoCRINCgVob3VycxgDIAIoBRIOCgZj", 
+          "aGFyZ2UYBCACKAUSDQoFc2FsZXMYBSACKAUSDwoHc2F0aXNmeRgGIAIoBSJd", 
+          "CglTdHJ1Y3RMb2cSEAoIb3BlcmF0b3IYASACKAkSEQoJb3BlcmF0aW9uGAIg", 
+          "AigJEgoKAmlwGAMgAigJEg8KB2FkZHRpbWUYBCACKAkSDgoGc3RhdHVzGAUg", 
+          "AigJIjMKD1N0cnVjdEFyZWFUb3RhbBIQCghhcmVhbmFtZRgBIAIoCRIOCgZh", 
+          "bW91bnQYAiACKAUixAEKClN0cnVjdEVhcm4SEAoIZGF0ZXRpbWUYASACKAUS", 
+          "FQoNYWxpcGF5X2NoYXJnZRgCIAIoBRITCgthbGlwYXlfc2FsZRgDIAIoBRIV", 
+          "Cg10ZW5wYXlfY2hhcmdlGAQgAigFEhMKC3RlbnBheV9zYWxlGAUgAigFEhMK", 
+          "C2Nhc2hfY2hhcmdlGAYgAigFEhEKCWNhc2hfc2FsZRgHIAIoBRIkCgphcmVh", 
+          "X3RvdGFsGAggAygLMhAuU3RydWN0QXJlYVRvdGFsKigKBFR5cGUSCAoESVRF", 
+          "TRABEgwKCENVUlJFTkNZEAISCAoEUEFDSxADQisKHWNvbS5za3lzb2Z0LmNv", 
+        "cmUuYXV0by5tZXNzYWdlQgpCYXNlU3RydWN0"));
     pbd::FileDescriptor.InternalDescriptorAssigner assigner = delegate(pbd::FileDescriptor root) {
       descriptor = root;
       internal__static_StructErrorTip__Descriptor = Descriptor.MessageTypes[0];
@@ -194,7 +195,7 @@ public static partial class BaseStruct {
       internal__static_StructMember__Descriptor = Descriptor.MessageTypes[9];
       internal__static_StructMember__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructMember, global::StructMember.Builder>(internal__static_StructMember__Descriptor,
-              new string[] { "Memberid", "Cardnumber", "Gender", "Name", "Membertype", "Phone", "Opentime", "Lasttime", "Balance", "TotalRecharge", "TotalBonus", "Integal", "UsedIntegal", "Status", "Verify", });
+              new string[] { "Memberid", "Cardnumber", "Gender", "Name", "Membertype", "Phone", "Opentime", "Lasttime", "Balance", "TotalRecharge", "TotalBonus", "Integal", "UsedIntegal", "Status", "Verify", "Reason", });
       internal__static_StructPage__Descriptor = Descriptor.MessageTypes[10];
       internal__static_StructPage__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructPage, global::StructPage.Builder>(internal__static_StructPage__Descriptor,
@@ -202,7 +203,7 @@ public static partial class BaseStruct {
       internal__static_StructUserArea__Descriptor = Descriptor.MessageTypes[11];
       internal__static_StructUserArea__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructUserArea, global::StructUserArea.Builder>(internal__static_StructUserArea__Descriptor,
-              new string[] { "Usertype", "Areatype", "OrdinaryPrice", "OrdinaryInterval", "NightPrice", "NightInterval", "Index", });
+              new string[] { "Usertype", "Areatype", "OrdinaryPrice", "OrdinaryInterval", "OrdinaryMin", "NightPrice", "NightInterval", "NightMin", "Index", });
       internal__static_StructBillSetting__Descriptor = Descriptor.MessageTypes[12];
       internal__static_StructBillSetting__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructBillSetting, global::StructBillSetting.Builder>(internal__static_StructBillSetting__Descriptor,
@@ -5422,8 +5423,8 @@ public sealed partial class StructCard : pb::GeneratedMessage<StructCard, Struct
 public sealed partial class StructMember : pb::GeneratedMessage<StructMember, StructMember.Builder> {
   private StructMember() { }
   private static readonly StructMember defaultInstance = new StructMember().MakeReadOnly();
-  private static readonly string[] _structMemberFieldNames = new string[] { "balance", "cardnumber", "gender", "integal", "lasttime", "memberid", "membertype", "name", "opentime", "phone", "status", "totalBonus", "totalRecharge", "usedIntegal", "verify" };
-  private static readonly uint[] _structMemberFieldTags = new uint[] { 72, 18, 26, 96, 66, 8, 40, 34, 58, 50, 112, 88, 80, 104, 120 };
+  private static readonly string[] _structMemberFieldNames = new string[] { "balance", "cardnumber", "gender", "integal", "lasttime", "memberid", "membertype", "name", "opentime", "phone", "reason", "status", "totalBonus", "totalRecharge", "usedIntegal", "verify" };
+  private static readonly uint[] _structMemberFieldTags = new uint[] { 72, 18, 26, 96, 66, 8, 40, 34, 58, 50, 130, 112, 88, 80, 104, 120 };
   public static StructMember DefaultInstance {
     get { return defaultInstance; }
   }
@@ -5594,6 +5595,16 @@ public sealed partial class StructMember : pb::GeneratedMessage<StructMember, St
     get { return verify_; }
   }
   
+  public const int ReasonFieldNumber = 16;
+  private bool hasReason;
+  private string reason_ = "";
+  public bool HasReason {
+    get { return hasReason; }
+  }
+  public string Reason {
+    get { return reason_; }
+  }
+  
   public override bool IsInitialized {
     get {
       if (!hasMemberid) return false;
@@ -5604,13 +5615,6 @@ public sealed partial class StructMember : pb::GeneratedMessage<StructMember, St
       if (!hasPhone) return false;
       if (!hasOpentime) return false;
       if (!hasLasttime) return false;
-      if (!hasBalance) return false;
-      if (!hasTotalRecharge) return false;
-      if (!hasTotalBonus) return false;
-      if (!hasIntegal) return false;
-      if (!hasUsedIntegal) return false;
-      if (!hasStatus) return false;
-      if (!hasVerify) return false;
       return true;
     }
   }
@@ -5646,22 +5650,25 @@ public sealed partial class StructMember : pb::GeneratedMessage<StructMember, St
       output.WriteInt32(9, field_names[0], Balance);
     }
     if (hasTotalRecharge) {
-      output.WriteInt32(10, field_names[12], TotalRecharge);
+      output.WriteInt32(10, field_names[13], TotalRecharge);
     }
     if (hasTotalBonus) {
-      output.WriteInt32(11, field_names[11], TotalBonus);
+      output.WriteInt32(11, field_names[12], TotalBonus);
     }
     if (hasIntegal) {
       output.WriteInt32(12, field_names[3], Integal);
     }
     if (hasUsedIntegal) {
-      output.WriteInt32(13, field_names[13], UsedIntegal);
+      output.WriteInt32(13, field_names[14], UsedIntegal);
     }
     if (hasStatus) {
-      output.WriteInt32(14, field_names[10], Status);
+      output.WriteInt32(14, field_names[11], Status);
     }
     if (hasVerify) {
-      output.WriteInt32(15, field_names[14], Verify);
+      output.WriteInt32(15, field_names[15], Verify);
+    }
+    if (hasReason) {
+      output.WriteString(16, field_names[10], Reason);
     }
     UnknownFields.WriteTo(output);
   }
@@ -5724,6 +5731,9 @@ public sealed partial class StructMember : pb::GeneratedMessage<StructMember, St
     }
     if (hasVerify) {
       size += pb::CodedOutputStream.ComputeInt32Size(15, Verify);
+    }
+    if (hasReason) {
+      size += pb::CodedOutputStream.ComputeStringSize(16, Reason);
     }
     size += UnknownFields.SerializedSize;
     memoizedSerializedSize = size;
@@ -5892,6 +5902,9 @@ public sealed partial class StructMember : pb::GeneratedMessage<StructMember, St
       if (other.HasVerify) {
         Verify = other.Verify;
       }
+      if (other.HasReason) {
+        Reason = other.Reason;
+      }
       this.MergeUnknownFields(other.UnknownFields);
       return this;
     }
@@ -5993,6 +6006,10 @@ public sealed partial class StructMember : pb::GeneratedMessage<StructMember, St
           }
           case 120: {
             result.hasVerify = input.ReadInt32(ref result.verify_);
+            break;
+          }
+          case 130: {
+            result.hasReason = input.ReadString(ref result.reason_);
             break;
           }
         }
@@ -6308,6 +6325,27 @@ public sealed partial class StructMember : pb::GeneratedMessage<StructMember, St
       PrepareBuilder();
       result.hasVerify = false;
       result.verify_ = 0;
+      return this;
+    }
+    
+    public bool HasReason {
+      get { return result.hasReason; }
+    }
+    public string Reason {
+      get { return result.Reason; }
+      set { SetReason(value); }
+    }
+    public Builder SetReason(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasReason = true;
+      result.reason_ = value;
+      return this;
+    }
+    public Builder ClearReason() {
+      PrepareBuilder();
+      result.hasReason = false;
+      result.reason_ = "";
       return this;
     }
   }
@@ -6728,8 +6766,8 @@ public sealed partial class StructPage : pb::GeneratedMessage<StructPage, Struct
 public sealed partial class StructUserArea : pb::GeneratedMessage<StructUserArea, StructUserArea.Builder> {
   private StructUserArea() { }
   private static readonly StructUserArea defaultInstance = new StructUserArea().MakeReadOnly();
-  private static readonly string[] _structUserAreaFieldNames = new string[] { "areatype", "index", "nightInterval", "nightPrice", "ordinaryInterval", "ordinaryPrice", "usertype" };
-  private static readonly uint[] _structUserAreaFieldTags = new uint[] { 16, 56, 48, 40, 32, 24, 8 };
+  private static readonly string[] _structUserAreaFieldNames = new string[] { "areatype", "index", "nightInterval", "nightMin", "nightPrice", "ordinaryInterval", "ordinaryMin", "ordinaryPrice", "usertype" };
+  private static readonly uint[] _structUserAreaFieldTags = new uint[] { 16, 72, 56, 64, 48, 32, 40, 24, 8 };
   public static StructUserArea DefaultInstance {
     get { return defaultInstance; }
   }
@@ -6790,7 +6828,17 @@ public sealed partial class StructUserArea : pb::GeneratedMessage<StructUserArea
     get { return ordinaryInterval_; }
   }
   
-  public const int NightPriceFieldNumber = 5;
+  public const int OrdinaryMinFieldNumber = 5;
+  private bool hasOrdinaryMin;
+  private int ordinaryMin_;
+  public bool HasOrdinaryMin {
+    get { return hasOrdinaryMin; }
+  }
+  public int OrdinaryMin {
+    get { return ordinaryMin_; }
+  }
+  
+  public const int NightPriceFieldNumber = 6;
   private bool hasNightPrice;
   private int nightPrice_;
   public bool HasNightPrice {
@@ -6800,7 +6848,7 @@ public sealed partial class StructUserArea : pb::GeneratedMessage<StructUserArea
     get { return nightPrice_; }
   }
   
-  public const int NightIntervalFieldNumber = 6;
+  public const int NightIntervalFieldNumber = 7;
   private bool hasNightInterval;
   private int nightInterval_;
   public bool HasNightInterval {
@@ -6810,7 +6858,17 @@ public sealed partial class StructUserArea : pb::GeneratedMessage<StructUserArea
     get { return nightInterval_; }
   }
   
-  public const int IndexFieldNumber = 7;
+  public const int NightMinFieldNumber = 8;
+  private bool hasNightMin;
+  private int nightMin_;
+  public bool HasNightMin {
+    get { return hasNightMin; }
+  }
+  public int NightMin {
+    get { return nightMin_; }
+  }
+  
+  public const int IndexFieldNumber = 9;
   private bool hasIndex;
   private int index_;
   public bool HasIndex {
@@ -6826,8 +6884,10 @@ public sealed partial class StructUserArea : pb::GeneratedMessage<StructUserArea
       if (!hasAreatype) return false;
       if (!hasOrdinaryPrice) return false;
       if (!hasOrdinaryInterval) return false;
+      if (!hasOrdinaryMin) return false;
       if (!hasNightPrice) return false;
       if (!hasNightInterval) return false;
+      if (!hasNightMin) return false;
       if (!hasIndex) return false;
       return true;
     }
@@ -6837,25 +6897,31 @@ public sealed partial class StructUserArea : pb::GeneratedMessage<StructUserArea
     CalcSerializedSize();
     string[] field_names = _structUserAreaFieldNames;
     if (hasUsertype) {
-      output.WriteInt32(1, field_names[6], Usertype);
+      output.WriteInt32(1, field_names[8], Usertype);
     }
     if (hasAreatype) {
       output.WriteInt32(2, field_names[0], Areatype);
     }
     if (hasOrdinaryPrice) {
-      output.WriteInt32(3, field_names[5], OrdinaryPrice);
+      output.WriteInt32(3, field_names[7], OrdinaryPrice);
     }
     if (hasOrdinaryInterval) {
-      output.WriteInt32(4, field_names[4], OrdinaryInterval);
+      output.WriteInt32(4, field_names[5], OrdinaryInterval);
+    }
+    if (hasOrdinaryMin) {
+      output.WriteInt32(5, field_names[6], OrdinaryMin);
     }
     if (hasNightPrice) {
-      output.WriteInt32(5, field_names[3], NightPrice);
+      output.WriteInt32(6, field_names[4], NightPrice);
     }
     if (hasNightInterval) {
-      output.WriteInt32(6, field_names[2], NightInterval);
+      output.WriteInt32(7, field_names[2], NightInterval);
+    }
+    if (hasNightMin) {
+      output.WriteInt32(8, field_names[3], NightMin);
     }
     if (hasIndex) {
-      output.WriteInt32(7, field_names[1], Index);
+      output.WriteInt32(9, field_names[1], Index);
     }
     UnknownFields.WriteTo(output);
   }
@@ -6886,14 +6952,20 @@ public sealed partial class StructUserArea : pb::GeneratedMessage<StructUserArea
     if (hasOrdinaryInterval) {
       size += pb::CodedOutputStream.ComputeInt32Size(4, OrdinaryInterval);
     }
+    if (hasOrdinaryMin) {
+      size += pb::CodedOutputStream.ComputeInt32Size(5, OrdinaryMin);
+    }
     if (hasNightPrice) {
-      size += pb::CodedOutputStream.ComputeInt32Size(5, NightPrice);
+      size += pb::CodedOutputStream.ComputeInt32Size(6, NightPrice);
     }
     if (hasNightInterval) {
-      size += pb::CodedOutputStream.ComputeInt32Size(6, NightInterval);
+      size += pb::CodedOutputStream.ComputeInt32Size(7, NightInterval);
+    }
+    if (hasNightMin) {
+      size += pb::CodedOutputStream.ComputeInt32Size(8, NightMin);
     }
     if (hasIndex) {
-      size += pb::CodedOutputStream.ComputeInt32Size(7, Index);
+      size += pb::CodedOutputStream.ComputeInt32Size(9, Index);
     }
     size += UnknownFields.SerializedSize;
     memoizedSerializedSize = size;
@@ -7029,11 +7101,17 @@ public sealed partial class StructUserArea : pb::GeneratedMessage<StructUserArea
       if (other.HasOrdinaryInterval) {
         OrdinaryInterval = other.OrdinaryInterval;
       }
+      if (other.HasOrdinaryMin) {
+        OrdinaryMin = other.OrdinaryMin;
+      }
       if (other.HasNightPrice) {
         NightPrice = other.NightPrice;
       }
       if (other.HasNightInterval) {
         NightInterval = other.NightInterval;
+      }
+      if (other.HasNightMin) {
+        NightMin = other.NightMin;
       }
       if (other.HasIndex) {
         Index = other.Index;
@@ -7098,14 +7176,22 @@ public sealed partial class StructUserArea : pb::GeneratedMessage<StructUserArea
             break;
           }
           case 40: {
-            result.hasNightPrice = input.ReadInt32(ref result.nightPrice_);
+            result.hasOrdinaryMin = input.ReadInt32(ref result.ordinaryMin_);
             break;
           }
           case 48: {
-            result.hasNightInterval = input.ReadInt32(ref result.nightInterval_);
+            result.hasNightPrice = input.ReadInt32(ref result.nightPrice_);
             break;
           }
           case 56: {
+            result.hasNightInterval = input.ReadInt32(ref result.nightInterval_);
+            break;
+          }
+          case 64: {
+            result.hasNightMin = input.ReadInt32(ref result.nightMin_);
+            break;
+          }
+          case 72: {
             result.hasIndex = input.ReadInt32(ref result.index_);
             break;
           }
@@ -7199,6 +7285,26 @@ public sealed partial class StructUserArea : pb::GeneratedMessage<StructUserArea
       return this;
     }
     
+    public bool HasOrdinaryMin {
+      get { return result.hasOrdinaryMin; }
+    }
+    public int OrdinaryMin {
+      get { return result.OrdinaryMin; }
+      set { SetOrdinaryMin(value); }
+    }
+    public Builder SetOrdinaryMin(int value) {
+      PrepareBuilder();
+      result.hasOrdinaryMin = true;
+      result.ordinaryMin_ = value;
+      return this;
+    }
+    public Builder ClearOrdinaryMin() {
+      PrepareBuilder();
+      result.hasOrdinaryMin = false;
+      result.ordinaryMin_ = 0;
+      return this;
+    }
+    
     public bool HasNightPrice {
       get { return result.hasNightPrice; }
     }
@@ -7236,6 +7342,26 @@ public sealed partial class StructUserArea : pb::GeneratedMessage<StructUserArea
       PrepareBuilder();
       result.hasNightInterval = false;
       result.nightInterval_ = 0;
+      return this;
+    }
+    
+    public bool HasNightMin {
+      get { return result.hasNightMin; }
+    }
+    public int NightMin {
+      get { return result.NightMin; }
+      set { SetNightMin(value); }
+    }
+    public Builder SetNightMin(int value) {
+      PrepareBuilder();
+      result.hasNightMin = true;
+      result.nightMin_ = value;
+      return this;
+    }
+    public Builder ClearNightMin() {
+      PrepareBuilder();
+      result.hasNightMin = false;
+      result.nightMin_ = 0;
       return this;
     }
     

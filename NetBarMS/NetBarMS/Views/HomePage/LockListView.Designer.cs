@@ -31,10 +31,12 @@
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.buttonEdit1 = new DevExpress.XtraEditors.ButtonEdit();
             this.titlePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // titlePanel
@@ -66,20 +68,33 @@
             this.gridView.GridControl = this.gridControl1;
             this.gridView.Name = "gridView";
             // 
-            // UnLockView
+            // buttonEdit1
+            // 
+            this.buttonEdit1.Location = new System.Drawing.Point(6, 56);
+            this.buttonEdit1.Name = "buttonEdit1";
+            this.buttonEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Search)});
+            this.buttonEdit1.Size = new System.Drawing.Size(151, 20);
+            this.buttonEdit1.TabIndex = 82;
+            this.buttonEdit1.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.ButtonSearch_ButtonClick);
+            // 
+            // LockListView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.buttonEdit1);
             this.Controls.Add(this.gridControl1);
-            this.Name = "UnLockView";
+            this.Name = "LockListView";
             this.Size = new System.Drawing.Size(697, 820);
             this.Controls.SetChildIndex(this.titlePanel, 0);
             this.Controls.SetChildIndex(this.gridControl1, 0);
+            this.Controls.SetChildIndex(this.buttonEdit1, 0);
             this.titlePanel.ResumeLayout(false);
             this.titlePanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -89,5 +104,6 @@
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView;
+        private DevExpress.XtraEditors.ButtonEdit buttonEdit1;
     }
 }

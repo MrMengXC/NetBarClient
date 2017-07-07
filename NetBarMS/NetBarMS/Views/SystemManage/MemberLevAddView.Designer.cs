@@ -53,9 +53,6 @@
             // 
             this.titlePanel.Size = new System.Drawing.Size(366, 50);
             // 
-            // closeButton
-            // 
-            // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.flowLayoutPanel2);

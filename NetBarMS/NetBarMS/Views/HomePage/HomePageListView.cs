@@ -13,6 +13,8 @@ using NetBarMS.Codes.Tools.NetOperation;
 using System.Threading;
 using DevExpress.XtraEditors.Controls;
 using NetBarMS.Codes.Tools.Manage;
+using DevExpress.XtraGrid.Columns;
+using DevExpress.XtraEditors.Repository;
 
 namespace NetBarMS.Views.HomePage
 {
@@ -49,15 +51,23 @@ namespace NetBarMS.Views.HomePage
         #region 初始化UI
         private void InitUI()
         {
-            ToolsManage.SetGridView(this.gridView1, GridControlType.HomePageList, out this.mainDataTable, ButtonEdit_ButtonClick, GridView_CustomColumnSort);
+            ToolsManage.SetGridView(this.gridView1, GridControlType.HomePageList, out this.mainDataTable, ButtonEdit_ButtonClick, GridView_CustomColumnSort,CustomDrawButton);
             this.gridControl1.DataSource = this.mainDataTable;
+            //this.gridView1.cu
+            for (int i = 0; i < 10; i++)
+            {
+
+                DataRow row = this.mainDataTable.NewRow();
+                this.mainDataTable.Rows.Add(row);
+            }
+
             //获取账户信息
             ManagerNetOperation.AccountInfo(AccountInfoBlock);
 
         }
-       
 
-        
+
+
         // 获取账户信息的回调
         public void AccountInfoBlock(ResultModel result)
         {
@@ -150,26 +160,71 @@ namespace NetBarMS.Views.HomePage
             row[TitleList.MacLoc.ToString()] = computer.Mac;
             row[TitleList.IpLoc.ToString()] = computer.Ip;
 
+
+
         }
-
-
         #endregion
+      
 
+        public void CustomDrawButton(object sender, CustomDrawButtonEventArgs arg)
+        {
+            char[] sp = { '_' };
+            string num = arg.Button.Tag.ToString().Split(sp)[1];
+            if (num.Equals("2"))
+            {
+
+                int index = arg.Bounds.Y / arg.Bounds.Height;
+                //this.gridView1.CustomDrawCell
+                System.Console.WriteLine("CustomDrawButton:" + index);
+                arg.Button.Caption = "已关注";
+
+            }
+            //System.Console.WriteLine("CustomDrawButton:"+ (string)arg.Button.Tag);
+
+
+        }
         #region 按钮列点击事件
         private void ButtonEdit_ButtonClick(object sender, ButtonPressedEventArgs e)
         {
             int rowhandle = this.gridView1.FocusedRowHandle;
+            StructRealTime computer = coms[rowhandle];
+            if(computer.Cardnumber.Equals(""))
+            {
+                return;
+            }
+
             DataRow row = this.gridView1.GetDataRow(rowhandle);
             char[] splites = { '_' };
             string [] btnparams = ((string)e.Button.Tag).Split(splites);
-
             //锁定
             if(btnparams[1].Equals("1"))
             {
-                UserLockView view = new UserLockView();
+                UserLockView view = new UserLockView(computer.Cardnumber);
                 ToolsManage.ShowForm(view, false);
             }
-            System.Console.WriteLine("ButtonEdit_ButtonClick" + row[TitleList.EpNumber.ToString()]);
+            //强制下机
+            else if (btnparams[1].Equals("0"))
+            {
+                List<string> cards = new List<string>() { computer.Cardnumber};
+                HomePageNetOperation.ManagerCommandOperation(ManagerCommandOperationResult, COMMAND_TYPE.TICKOFF, cards);       
+            }
+
+        }
+        //管理员操作结果回调
+        private void ManagerCommandOperationResult(ResultModel result)
+        {
+            if(result.pack.Cmd != Cmd.CMD_COMMAND)
+            {
+                return;
+            }
+
+            NetMessageManage.Manage().RemoveResultBlock(ManagerCommandOperationResult);
+            System.Console.WriteLine("ManagerCommandOperationResult:"+result.pack);
+            if(result.pack.Content.MessageType == 1)
+            {
+
+            }
+
         }
         #endregion
 

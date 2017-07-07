@@ -60,7 +60,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.bDurComboBoxEdit = new DevExpress.XtraEditors.ComboBoxEdit();
             this.label10 = new System.Windows.Forms.Label();
-            this.bDurPrieceTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.bDurPrieceText = new DevExpress.XtraEditors.TextEdit();
             this.label12 = new System.Windows.Forms.Label();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.label7 = new System.Windows.Forms.Label();
@@ -68,12 +68,12 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
+            this.bMinConsumeText = new DevExpress.XtraEditors.TextEdit();
             this.label21 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.nDurComboBoxEdit = new DevExpress.XtraEditors.ComboBoxEdit();
             this.label11 = new System.Windows.Forms.Label();
-            this.nDurPrieceTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.nDurPrieceText = new DevExpress.XtraEditors.TextEdit();
             this.label6 = new System.Windows.Forms.Label();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -82,7 +82,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.nMinConsumeText = new DevExpress.XtraEditors.TextEdit();
             this.label17 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -96,13 +96,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bDurComboBoxEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bDurPrieceTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bDurPrieceText.Properties)).BeginInit();
             this.flowLayoutPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bMinConsumeText.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nDurComboBoxEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nDurPrieceTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nDurPrieceText.Properties)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nMinConsumeText.Properties)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -369,16 +369,16 @@
             this.label10.Text = "时段收费单位";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // bDurPrieceTextEdit
+            // bDurPrieceText
             // 
-            this.bDurPrieceTextEdit.Location = new System.Drawing.Point(439, 3);
-            this.bDurPrieceTextEdit.Name = "bDurPrieceTextEdit";
-            this.bDurPrieceTextEdit.Properties.Mask.EditMask = "[0-9]*";
-            this.bDurPrieceTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
-            this.bDurPrieceTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.bDurPrieceTextEdit.Size = new System.Drawing.Size(33, 20);
-            this.bDurPrieceTextEdit.TabIndex = 1;
-            this.bDurPrieceTextEdit.EditValueChanged += new System.EventHandler(this.PrieceTextEdit_EditValueChanged);
+            this.bDurPrieceText.Location = new System.Drawing.Point(439, 3);
+            this.bDurPrieceText.Name = "bDurPrieceText";
+            this.bDurPrieceText.Properties.Mask.EditMask = "[0-9]*";
+            this.bDurPrieceText.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
+            this.bDurPrieceText.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.bDurPrieceText.Size = new System.Drawing.Size(33, 20);
+            this.bDurPrieceText.TabIndex = 1;
+            this.bDurPrieceText.EditValueChanged += new System.EventHandler(this.PrieceTextEdit_EditValueChanged);
             // 
             // label12
             // 
@@ -399,10 +399,10 @@
             this.flowLayoutPanel3.Controls.Add(this.bDurComboBoxEdit);
             this.flowLayoutPanel3.Controls.Add(this.label23);
             this.flowLayoutPanel3.Controls.Add(this.label10);
-            this.flowLayoutPanel3.Controls.Add(this.bDurPrieceTextEdit);
+            this.flowLayoutPanel3.Controls.Add(this.bDurPrieceText);
             this.flowLayoutPanel3.Controls.Add(this.label12);
             this.flowLayoutPanel3.Controls.Add(this.label20);
-            this.flowLayoutPanel3.Controls.Add(this.textEdit2);
+            this.flowLayoutPanel3.Controls.Add(this.bMinConsumeText);
             this.flowLayoutPanel3.Controls.Add(this.label21);
             this.flowLayoutPanel3.Location = new System.Drawing.Point(17, 66);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
@@ -458,15 +458,15 @@
             this.label20.Text = "最低消费";
             this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textEdit2
+            // bMinConsumeText
             // 
-            this.textEdit2.Location = new System.Drawing.Point(578, 3);
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Properties.Mask.EditMask = "[0-9]*";
-            this.textEdit2.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
-            this.textEdit2.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.textEdit2.Size = new System.Drawing.Size(33, 20);
-            this.textEdit2.TabIndex = 10;
+            this.bMinConsumeText.Location = new System.Drawing.Point(578, 3);
+            this.bMinConsumeText.Name = "bMinConsumeText";
+            this.bMinConsumeText.Properties.Mask.EditMask = "[0-9]*";
+            this.bMinConsumeText.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
+            this.bMinConsumeText.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.bMinConsumeText.Size = new System.Drawing.Size(33, 20);
+            this.bMinConsumeText.TabIndex = 10;
             // 
             // label21
             // 
@@ -515,16 +515,16 @@
             this.label11.Text = "时段收费单位";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // nDurPrieceTextEdit
+            // nDurPrieceText
             // 
-            this.nDurPrieceTextEdit.Location = new System.Drawing.Point(439, 3);
-            this.nDurPrieceTextEdit.Name = "nDurPrieceTextEdit";
-            this.nDurPrieceTextEdit.Properties.Mask.EditMask = "[0-9]*";
-            this.nDurPrieceTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
-            this.nDurPrieceTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.nDurPrieceTextEdit.Size = new System.Drawing.Size(33, 20);
-            this.nDurPrieceTextEdit.TabIndex = 1;
-            this.nDurPrieceTextEdit.EditValueChanged += new System.EventHandler(this.PrieceTextEdit_EditValueChanged);
+            this.nDurPrieceText.Location = new System.Drawing.Point(439, 3);
+            this.nDurPrieceText.Name = "nDurPrieceText";
+            this.nDurPrieceText.Properties.Mask.EditMask = "[0-9]*";
+            this.nDurPrieceText.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
+            this.nDurPrieceText.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.nDurPrieceText.Size = new System.Drawing.Size(33, 20);
+            this.nDurPrieceText.TabIndex = 1;
+            this.nDurPrieceText.EditValueChanged += new System.EventHandler(this.PrieceTextEdit_EditValueChanged);
             // 
             // label6
             // 
@@ -554,10 +554,10 @@
             this.flowLayoutPanel1.Controls.Add(this.nDurComboBoxEdit);
             this.flowLayoutPanel1.Controls.Add(this.label6);
             this.flowLayoutPanel1.Controls.Add(this.label11);
-            this.flowLayoutPanel1.Controls.Add(this.nDurPrieceTextEdit);
+            this.flowLayoutPanel1.Controls.Add(this.nDurPrieceText);
             this.flowLayoutPanel1.Controls.Add(this.label15);
             this.flowLayoutPanel1.Controls.Add(this.label16);
-            this.flowLayoutPanel1.Controls.Add(this.textEdit1);
+            this.flowLayoutPanel1.Controls.Add(this.nMinConsumeText);
             this.flowLayoutPanel1.Controls.Add(this.label17);
             this.flowLayoutPanel1.Controls.Add(this.label19);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(17, 20);
@@ -614,15 +614,15 @@
             this.label16.Text = "最低消费";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textEdit1
+            // nMinConsumeText
             // 
-            this.textEdit1.Location = new System.Drawing.Point(578, 3);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Properties.Mask.EditMask = "[0-9]*";
-            this.textEdit1.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
-            this.textEdit1.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.textEdit1.Size = new System.Drawing.Size(33, 20);
-            this.textEdit1.TabIndex = 7;
+            this.nMinConsumeText.Location = new System.Drawing.Point(578, 3);
+            this.nMinConsumeText.Name = "nMinConsumeText";
+            this.nMinConsumeText.Properties.Mask.EditMask = "[0-9]*";
+            this.nMinConsumeText.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
+            this.nMinConsumeText.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.nMinConsumeText.Size = new System.Drawing.Size(33, 20);
+            this.nMinConsumeText.TabIndex = 7;
             // 
             // label17
             // 
@@ -742,14 +742,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bDurComboBoxEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bDurPrieceTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bDurPrieceText.Properties)).EndInit();
             this.flowLayoutPanel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bMinConsumeText.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nDurComboBoxEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nDurPrieceTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nDurPrieceText.Properties)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nMinConsumeText.Properties)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -794,7 +794,7 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
-        private DevExpress.XtraEditors.TextEdit nDurPrieceTextEdit;
+        private DevExpress.XtraEditors.TextEdit nDurPrieceText;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
         private DevExpress.XtraEditors.ComboBoxEdit nDurComboBoxEdit;
@@ -802,7 +802,7 @@
         private System.Windows.Forms.Label label9;
         private DevExpress.XtraEditors.ComboBoxEdit bDurComboBoxEdit;
         private System.Windows.Forms.Label label10;
-        private DevExpress.XtraEditors.TextEdit bDurPrieceTextEdit;
+        private DevExpress.XtraEditors.TextEdit bDurPrieceText;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label14;
@@ -813,12 +813,12 @@
         private System.Windows.Forms.Label nRateLabel;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.TextEdit nMinConsumeText;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label bRateLabel;
         private System.Windows.Forms.Label label20;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
+        private DevExpress.XtraEditors.TextEdit bMinConsumeText;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label23;

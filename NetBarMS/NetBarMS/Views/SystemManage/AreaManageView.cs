@@ -230,19 +230,15 @@ namespace NetBarMS.Views.SystemManage
         //添加区域
         private void addAreaButton_Click(object sender, EventArgs e)
         {
-           
 
-            //StructDictItem.Builder update = new StructDictItem.Builder(this.areas[0]);
-            //update.ItemList.Clear();
-            //string newName = (new Random().Next() % 111) + "区域";
-            //update.AddItem(newName);
-            //System.Console.WriteLine(update);
+            StructDictItem.Builder update = new StructDictItem.Builder(this.areas[0]);
+            update.ItemList.Clear();
+            string newName = (new Random().Next() % 111) + "区域";
+            update.AddItem(newName);
+            System.Console.WriteLine(update);
+            SystemManageNetOperation.UpdateArea(UpdateAreaResult, update.Build());
+            return;
 
-            //SystemManageNetOperation.UpdateArea(UpdateAreaResult, update.Build());
-
-
-
-            //return;
             StructDictItem.Builder item = new StructDictItem.Builder();
             item.Code = 0;
             item.Id = 0;
@@ -262,7 +258,10 @@ namespace NetBarMS.Views.SystemManage
             NetMessageManage.Manage().RemoveResultBlock(UpdateAreaResult);
             if (result.pack.Content.MessageType == 1)
             {
-
+                isChange = true;
+                //重新获取区域列表
+                GetAreaList();
+                MessageBox.Show("修改成功");
             }
         }
         //添加区域结果回调

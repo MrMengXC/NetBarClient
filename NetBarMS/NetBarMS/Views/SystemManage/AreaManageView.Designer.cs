@@ -65,8 +65,6 @@
             // 
             this.titlePanel.Size = new System.Drawing.Size(795, 50);
             // 
-            // closeButton
-            //             // 
             // gridView
             // 
             this.gridView.GridControl = this.gridControl1;

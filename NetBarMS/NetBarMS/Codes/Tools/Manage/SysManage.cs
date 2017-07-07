@@ -177,7 +177,7 @@ namespace NetBarMS.Codes.Tools
             {
 
                 NetMessageManage.Manage().RemoveResultBlock(GetAreaListResult);
-                System.Console.WriteLine("GetAreaList:" + result.pack);
+                //System.Console.WriteLine("GetAreaList:" + result.pack);
                 System.Console.WriteLine("获取区域信息");
                 if (result.pack.Content.MessageType == 1)
                 {

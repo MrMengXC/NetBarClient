@@ -39,11 +39,21 @@ namespace NetBarMS.Codes.Tools
     class ToolsManage
     {
         #region 显示自定义窗体
-        //显示自定义窗体
-        public static void ShowForm(RootUserControlView control,bool showInTaskbar)
+        //
+        /// <summary>
+        /// 显示自定义窗体
+        /// </summary>
+        /// <param name="control">显示的RootFormView Control</param>
+        /// <param name="showInTaskbar">是否显示在任务栏上</param>
+        public static void ShowForm(RootFormView control, bool showInTaskbar)
         {
-            CustomForm newForm = new CustomForm(control,showInTaskbar);
+            CustomForm newForm = new CustomForm(control, showInTaskbar);
         }
+        public static void ShowForm(RootUserControlView control, bool showInTaskbar)
+        {
+            CustomForm newForm = new CustomForm(control, showInTaskbar);
+        }
+       
         public static void ShowForm(RootUserControlView control, bool showInTaskbar,CloseFormHandle close)
         {
             if (close != null)
@@ -77,7 +87,7 @@ namespace NetBarMS.Codes.Tools
             GridControlType type,
             out DataTable table
             ,ButtonPressedEventHandler buttonclik,
-            DevExpress.XtraGrid.Views.Base.CustomColumnSortEventHandler titleHandler)
+            DevExpress.XtraGrid.Views.Base.CustomColumnSortEventHandler titleHandler,CustomDrawButtonEventHandler customDrawButtonEvent)
         {
    
 
@@ -126,7 +136,6 @@ namespace NetBarMS.Codes.Tools
                             column.ColumnEdit = check;
                             column.OptionsColumn.AllowEdit = true;
                             column.Width = 40;
-
                             DataColumn dataColumn = new DataColumn(fieldname);
                             table.Columns.Add(dataColumn);
                             dataColumn.DataType = typeof(bool);
@@ -145,7 +154,11 @@ namespace NetBarMS.Codes.Tools
                             buttonEdit.AppearanceFocused.BackColor = Color.Green;
                             buttonEdit.AppearanceFocused.ForeColor = Color.Green;
                             buttonEdit.Appearance.ForeColor = Color.Green;
-
+                            
+                            if(customDrawButtonEvent != null)
+                            {
+                                buttonEdit.CustomDrawButton += customDrawButtonEvent;
+                            }
                             //buttonEdit.ButtonsStyle = BorderStyles.NoBorder;
                             //buttonEdit.BorderStyle = BorderStyles.NoBorder;
                             //buttonEdit.AutoHeight = false;
@@ -173,7 +186,7 @@ namespace NetBarMS.Codes.Tools
                                 //button.Appearance.BackColor = Color.Red;
                                // Image btnImg = (System.Drawing.Bitmap)Imgs.ResourceManager.GetObject(names[1]);
                                 button.Caption = names[0];
-
+                               
                                 //if (btnImg != null)
                                 //{
                                 //    button.Image =btnImg;
@@ -197,6 +210,10 @@ namespace NetBarMS.Codes.Tools
                             //column.MinWidth = width;
                             column.OptionsColumn.AllowEdit = true;
                             column.UnboundType = DevExpress.Data.UnboundColumnType.String;
+                    
+                            DataColumn dataColumn = new DataColumn(fieldname);
+                            table.Columns.Add(dataColumn);
+                            //dataColumn.DataType = typeof(RepositoryItemButtonEdit);
                         }
                         break;
                     #endregion
@@ -232,13 +249,13 @@ namespace NetBarMS.Codes.Tools
 
         }
 
-        
+
+
+
+
+
+
        
-
-
-
-
-
         /// <summary>
         ///  设置GridControl下的GridView
         /// </summary>
@@ -248,9 +265,16 @@ namespace NetBarMS.Codes.Tools
         public static void SetGridView(GridView gridView, GridControlType type, out DataTable table)
         {
      
-            ToolsManage.SetGridView(gridView, type, out table, null,null);
+            ToolsManage.SetGridView(gridView, type, out table, null,null,null);
         }
-
+        public static void SetGridView(GridView gridView,
+            GridControlType type,
+            out DataTable table
+            , ButtonPressedEventHandler buttonclik,
+            DevExpress.XtraGrid.Views.Base.CustomColumnSortEventHandler titleHandler)
+        {
+            ToolsManage.SetGridView(gridView, type, out table, buttonclik, titleHandler, null);
+        }
         #endregion
 
         #region 判断身份证是否符合标准
