@@ -113,7 +113,7 @@ namespace NetBarMS.Codes.Tools.NetOperation
         {
             CSCommand.Builder command = new CSCommand.Builder();
             command.Cmd = (int)type;
-            if(pars.Count > 0)
+            if(pars != null && pars.Count > 0)
             {
                 foreach(string param in pars)
                 {

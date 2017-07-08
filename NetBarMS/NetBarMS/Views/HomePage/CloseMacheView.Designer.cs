@@ -28,41 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel2.SuspendLayout();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.titlePanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel2
+            // titlePanel
             // 
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Location = new System.Drawing.Point(193, 186);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(139, 30);
-            this.panel2.TabIndex = 7;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Red;
-            this.button2.Location = new System.Drawing.Point(77, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(62, 30);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "取消";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Red;
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(62, 30);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "确定";
-            this.button1.UseVisualStyleBackColor = false;
+            this.titlePanel.Size = new System.Drawing.Size(524, 50);
             // 
             // label2
             // 
@@ -74,24 +48,49 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "您确定要关闭所有闲机么？";
             // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.simpleButton1.Location = new System.Drawing.Point(152, 194);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton1.TabIndex = 62;
+            this.simpleButton1.Text = "确定";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
+            // simpleButton2
+            // 
+            this.simpleButton2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.simpleButton2.Location = new System.Drawing.Point(286, 194);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton2.TabIndex = 63;
+            this.simpleButton2.Text = "取消";
+            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
+            // 
             // CloseMacheView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.simpleButton2);
+            this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.label2);
             this.Name = "CloseMacheView";
             this.Size = new System.Drawing.Size(524, 237);
-            this.panel2.ResumeLayout(false);
+            this.Controls.SetChildIndex(this.label2, 0);
+            this.Controls.SetChildIndex(this.titlePanel, 0);
+            this.Controls.SetChildIndex(this.simpleButton1, 0);
+            this.Controls.SetChildIndex(this.simpleButton2, 0);
+            this.titlePanel.ResumeLayout(false);
+            this.titlePanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label2;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton simpleButton2;
     }
 }

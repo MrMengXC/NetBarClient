@@ -53,13 +53,13 @@ namespace NetBarMS.Views.HomePage
         {
             ToolsManage.SetGridView(this.gridView1, GridControlType.HomePageList, out this.mainDataTable, ButtonEdit_ButtonClick, GridView_CustomColumnSort,CustomDrawButton);
             this.gridControl1.DataSource = this.mainDataTable;
-            //this.gridView1.cu
-            for (int i = 0; i < 10; i++)
-            {
+            ////this.gridView1.cu
+            //for (int i = 0; i < 10; i++)
+            //{
 
-                DataRow row = this.mainDataTable.NewRow();
-                this.mainDataTable.Rows.Add(row);
-            }
+            //    DataRow row = this.mainDataTable.NewRow();
+            //    this.mainDataTable.Rows.Add(row);
+            //}
 
             //获取账户信息
             ManagerNetOperation.AccountInfo(AccountInfoBlock);
@@ -124,7 +124,6 @@ namespace NetBarMS.Views.HomePage
         }
         #endregion
 
-
         #region 更新GridControl 的数据
         private void RefreshGridControl()
         {
@@ -151,7 +150,14 @@ namespace NetBarMS.Views.HomePage
             row[TitleList.IdCard.ToString()] = computer.Cardnumber;
             row[TitleList.CardType.ToString()] = SysManage.Manage().GetMemberTypeName(computer.Usertype);
             row[TitleList.MoneyType.ToString()] = computer.Billing;
-            row[TitleList.VerifyType.ToString()] = computer.Verify;
+            if(computer.Verify.Equals(""))
+            {
+                row[TitleList.VerifyType.ToString()] = "";
+            }
+            else
+            {
+                row[TitleList.VerifyType.ToString()] = computer.Verify.Equals("1") ? "验证" : "未验证";
+            }
             row[TitleList.ResMoney.ToString()] = computer.Balance;
             row[TitleList.ResTime.ToString()] = computer.Remaintime;
             row[TitleList.BeginTime.ToString()] = computer.Starttime;
@@ -164,25 +170,36 @@ namespace NetBarMS.Views.HomePage
 
         }
         #endregion
-      
 
+        #region 绘制按钮列时触发的方法
         public void CustomDrawButton(object sender, CustomDrawButtonEventArgs arg)
         {
             char[] sp = { '_' };
             string num = arg.Button.Tag.ToString().Split(sp)[1];
             if (num.Equals("2"))
             {
-
+                
                 int index = arg.Bounds.Y / arg.Bounds.Height;
-                //this.gridView1.CustomDrawCell
-                System.Console.WriteLine("CustomDrawButton:" + index);
-                arg.Button.Caption = "已关注";
-
+                StructRealTime com = this.coms[index];
+                if(com.Verify.Equals("1"))
+                {
+                    //System.Console.WriteLine("index:"+index);
+                    arg.Button.Caption = "已验证";
+                    arg.Button.Appearance.ForeColor = Color.Gray;
+                    arg.Button.Enabled = false;
+                }
+                else
+                {
+                    arg.Button.Caption = "验证";
+                    arg.Button.Appearance.ForeColor = Color.Blue;
+                    arg.Button.Enabled = true;
+                }               
             }
-            //System.Console.WriteLine("CustomDrawButton:"+ (string)arg.Button.Tag);
 
 
         }
+        #endregion
+
         #region 按钮列点击事件
         private void ButtonEdit_ButtonClick(object sender, ButtonPressedEventArgs e)
         {
@@ -208,6 +225,12 @@ namespace NetBarMS.Views.HomePage
                 List<string> cards = new List<string>() { computer.Cardnumber};
                 HomePageNetOperation.ManagerCommandOperation(ManagerCommandOperationResult, COMMAND_TYPE.TICKOFF, cards);       
             }
+            //验证
+            else if (btnparams[1].Equals("2"))
+            {
+                List<string> cards = new List<string>() { computer.Cardnumber };
+                HomePageNetOperation.ManagerCommandOperation(ManagerCommandOperationResult, COMMAND_TYPE.VERIFY, cards);
+            }
 
         }
         //管理员操作结果回调
@@ -222,7 +245,10 @@ namespace NetBarMS.Views.HomePage
             System.Console.WriteLine("ManagerCommandOperationResult:"+result.pack);
             if(result.pack.Content.MessageType == 1)
             {
+                this.Invoke(new UIHandleBlock(delegate {
 
+                    //MessageBox.Show("验证成功");
+                }));
             }
 
         }

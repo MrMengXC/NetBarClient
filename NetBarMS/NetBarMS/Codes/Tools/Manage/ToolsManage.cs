@@ -173,8 +173,8 @@ namespace NetBarMS.Codes.Tools
                             foreach (string name in columnModel.buttonNames)
                             {
 
-                                char[] splits = { '.' };
-                                string[] names = name.Split(splits);
+                                //char[] splits = { '.' };
+                               // string[] names = name.Split(splits);
 
                                 EditorButton button = new EditorButton();
                                 button.Kind = ButtonPredefines.Glyph;
@@ -185,18 +185,7 @@ namespace NetBarMS.Codes.Tools
                                 button.Tag = fieldname + "_" + num;
                                 //button.Appearance.BackColor = Color.Red;
                                // Image btnImg = (System.Drawing.Bitmap)Imgs.ResourceManager.GetObject(names[1]);
-                                button.Caption = names[0];
-                               
-                                //if (btnImg != null)
-                                //{
-                                //    button.Image =btnImg;
-                                //    width += btnImg.Width+8;
-                                //}
-                                //else
-                                //{
-                                //    button.Caption = names[0];
-                                //    width += 50;
-                                //}
+                                button.Caption = name;
                                 width += 50;
 
                                 //button.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;

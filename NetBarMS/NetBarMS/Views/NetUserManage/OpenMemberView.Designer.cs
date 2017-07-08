@@ -90,9 +90,6 @@
             // 
             this.titlePanel.Size = new System.Drawing.Size(756, 50);
             // 
-            // closeButton
-            // 
-            // 
             // labelControl1
             // 
             this.labelControl1.Appearance.BackColor = System.Drawing.Color.Gray;

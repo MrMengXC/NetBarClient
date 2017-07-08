@@ -58,7 +58,7 @@ namespace NetBarMS.Codes.Tools.Manage
                 return;
             }
             NetMessageManage.Manage().RemoveResultBlock(HomePageListResult);
-           //System.Console.WriteLine("HomePageListResult:" + result.pack);
+         //  System.Console.WriteLine("HomePageListResult:" + result.pack);
             if (result.pack.Content.MessageType == 1)
             {
                 this.computerDict.Clear();
@@ -142,6 +142,10 @@ namespace NetBarMS.Codes.Tools.Manage
 
                     break;
 
+                //更新验证
+                case 8:
+                    UpdateUserVerifyStatus(newCom);
+                    break;
                 default:
 
                     break;
@@ -201,6 +205,12 @@ namespace NetBarMS.Codes.Tools.Manage
         }
         #endregion
 
+        #region 更新用户验证状态
+        private void UpdateUserVerifyStatus(StructRealTime.Builder newCom)
+        {
+            newCom.Verify = "1";
+        }
+        #endregion
         #region 用户下机
         private void UserDownComputer(IList<string> pars, StructRealTime.Builder newCom)
         {
@@ -240,6 +250,25 @@ namespace NetBarMS.Codes.Tools.Manage
             {
                 tem = new List<StructRealTime>();
             }
+        }
+        #endregion
+
+        #region 获取在线电脑
+        public void GetOnlineComputers(out List<StructRealTime> tem)
+        {
+            tem = new List<StructRealTime>();
+
+            if (this.computers != null)
+            {
+                foreach(StructRealTime com in this.computers)
+                {
+                    if (!com.Cardnumber.Equals(""))
+                    {
+                        tem.Add(com);
+                    }
+                }
+            }
+           
         }
         #endregion
 

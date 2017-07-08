@@ -221,7 +221,6 @@ namespace NetBarMS
                         break;
                     case TreeNodeTag.AreaManage:   //区域设置
                         view = new AreaManageView();
-                        closeEvent = new CloseFormHandle(this.RefreshHomePageData);
                         break;
                     case TreeNodeTag.ClientManage:   //客户端设置
                         view = new ClientManageView();
@@ -267,11 +266,6 @@ namespace NetBarMS
 
         #endregion
 
-        //刷新首页数据
-        private void RefreshHomePageData()
-        {
-            //this.homePageListView.GetHomePageList();
-        }
         //列表视图按钮点击事件
         private void simpleButton2_Click(object sender, EventArgs e)
         {
@@ -314,16 +308,6 @@ namespace NetBarMS
         {
             OpenMemberView view = new OpenMemberView();
             ToolsManage.ShowForm(view, false);
-        }
-        /// <summary>
-        /// 用户激活回调
-        /// </summary>
-        /// <param name="model"></param>
-        private void CardCheckInBlock(ResultModel model)
-        {
-            System.Console.WriteLine(model.pack);
-
-
         }
 
         /// <summary>

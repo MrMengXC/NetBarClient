@@ -17,7 +17,7 @@
     <column name = "结束时间" field="EndTime" type ="C_Text" width ="" height =""/>
     <column name = "MAC地址" field="MacLoc" type ="C_Text" width ="" height =""/>
     <column name = "IP地址" field="IpLoc" type ="C_Text" width ="" height =""/>
-    <column name = "操作" field="Operation" type ="C_Button" width ="" height ="" bnames ="强制下机.deplane/锁定.lock1/验证.yz"/>
+    <column name = "操作" field="Operation" type ="C_Button" width ="" height ="" bnames ="强制下机/锁定/验证"/>
   </grid>
   <!--办理会员-->
   <grid type ="OpenMember">
@@ -35,7 +35,7 @@
     <column name = "会员类型" field="Type" type ="C_Text" width ="" height =""/>
     <column name = "上次使用时间" field="LastTime" type ="C_Text" width ="" height =""/>
     <column name = "锁定原因" field="Reason" type ="C_Text" width ="" height =""/>
-    <column name = "操作" field="Operation" type ="C_Button" width ="" height ="" bnames ="解锁.lock1"/>
+    <column name = "操作" field="Operation" type ="C_Button" width ="" height ="" bnames ="解锁"/>
   </grid>
   
   <!--已付款商品订单管理-->
@@ -44,7 +44,7 @@
     <column name = "位置" field="Area" type ="C_Text" width ="" height =""/>
     <column name = "订单金额" field="Money" type ="C_Text" width ="" height =""/>
     <column name = "下单时间" field="Time" type ="C_Text" width ="" height =""/>
-    <column name = "订单详情" field="Detail" type ="C_Button" width ="" height ="" bnames ="查看.look"/>
+    <column name = "订单详情" field="Detail" type ="C_Button" width ="" height ="" bnames ="查看"/>
   </grid>
   <!--上网记录-->
   <grid type ="NetRecord">
@@ -79,9 +79,9 @@
     <column name = "指纹状态" field="LoopsStatus" tag ="7" type ="C_Text" width ="" height =""/>
     <column name = "状态" field="Status" type ="C_Text" width ="" height =""/>
     <column name = "验证" field="Verify" type ="C_Text" width ="" height =""/>
-    <column name = "查看用户身份信息" field="UserMsg" type ="C_Button" width ="" height ="" bnames="查询.search"/>
-    <column name = "消费记录" field="CsRecord" type ="C_Button" width ="" height ="" bnames="查询.search"/>
-    <column name = "上网记录" field="NetRecord" type ="C_Button" width ="" height ="" bnames="查询.search"/>
+    <column name = "查看用户身份信息" field="UserMsg" type ="C_Button" width ="" height ="" bnames="查询"/>
+    <column name = "消费记录" field="CsRecord" type ="C_Button" width ="" height ="" bnames="查询"/>
+    <column name = "上网记录" field="NetRecord" type ="C_Button" width ="" height ="" bnames="查询"/>
 
   </grid>
 
@@ -96,8 +96,8 @@
     <column name = "是否在商城中显示" field="IsShowStore" type ="C_Text" width ="" height =""/>
     <column name = "积分兑换" field="Integral" type ="C_Text" width ="" height =""/>
     <column name = "库存数量" field="Num" type ="C_Text" width ="" height =""/>
-    <column name = "销售记录" field="SellRecord" type ="C_Button" width ="" height ="" bnames="查询.search"/>
-    <column name = "操作" field="Operation" type ="C_Button" width ="" height ="" bnames="修改.xg/删除.delete"/>
+    <column name = "销售记录" field="SellRecord" type ="C_Button" width ="" height ="" bnames="查询"/>
+    <column name = "操作" field="Operation" type ="C_Button" width ="" height ="" bnames="修改/删除"/>
 
   </grid>
   <!--商品库存-->
@@ -134,7 +134,7 @@
     <column name = "订单状态" field="IndetState" type ="C_Text" width ="" height =""/>
     <column name = "付款渠道" field="PayChannel" type ="C_Text" width ="" height =""/>
     <column name = "第三方支付订单号" field="PayNumber" type ="C_Text" width ="" height =""/>
-    <column name = "订单详情" field="Detail" type ="C_Button" width ="" height ="" bnames ="查看.look"/>
+    <column name = "订单详情" field="Detail" type ="C_Button" width ="" height ="" bnames ="查看"/>
 
   </grid>
   
@@ -183,10 +183,10 @@
   </grid>
   
   <grid type ="ChatManage">
-    <column name = "电脑" type ="C_Check" width ="" height =""/>
-    <column name = "姓名" type ="C_Text" width ="" height =""/>
-    <column name = "卡号" type ="C_Text" width ="" height =""/>
-    <column name = "ip地址" type ="C_Text" width ="" height =""/>
+    <column name = "电脑" field="Check" type ="C_Check" width ="" height =""/>
+    <column name = "姓名" field="Name"  type ="C_Text" width ="" height =""/>
+    <column name = "卡号" field="Card"  type ="C_Text" width ="" height =""/>
+    <column name = "ip地址" field="Ip"  type ="C_Text" width ="" height =""/>
   </grid>
   
   <!--绩效考核-->
@@ -327,7 +327,7 @@
     <column name = "充值金额" field="RechargeMoney" type ="C_Text" width ="" height =""/>
     <column name = "所需积分" field="NeedIntegral" type ="C_Text" width ="" height =""/>
 
-    <column name = "操作" field="Operation" type ="C_Button" width ="" height ="" bnames="修改.xg"/>
+    <column name = "操作" field="Operation" type ="C_Button" width ="" height ="" bnames="修改"/>
   </grid>
   
   <!--商品类型-->
@@ -337,19 +337,19 @@
     <column name = "类别" field="Type" type ="C_Text" width ="" height =""/>
     <column name = "子类别" field="ChildType" type ="C_Text" width ="" height =""/>
     
-    <column name = "操作" field="Operation" type ="C_Button" width ="" height ="" bnames="修改.xg"/>
+    <column name = "操作" field="Operation" type ="C_Button" width ="" height ="" bnames="修改"/>
   </grid>
   
   <grid type ="ClientManage">
     <column name = "欢迎词" field="Wecome" type ="C_Text" width ="" height =""/>
-    <column name = "操作" field="Operation" type ="C_Button" width ="" height ="" bnames="使用.use/删除.delete"/>
+    <column name = "操作" field="Operation" type ="C_Button" width ="" height ="" bnames="使用/删除"/>
   </grid>
   
   <grid type ="AreaManage">
     <column name = "设备名称" field="CpName" type ="C_Text" width ="" height =""/>
     <column name = "ip地址" field="Ip" type ="C_Text" width ="" height =""/>
     <column name = "MAC地址" field="Mac" type ="C_Text" width ="" height =""/>
-    <column name = "操作" field="Operation" type ="C_Button" width ="" height ="" bnames="重命名.rename"/>
+    <column name = "操作" field="Operation" type ="C_Button" width ="" height ="" bnames="重命名"/>
   </grid>
   
   <grid type ="BackUpManage">
@@ -371,7 +371,7 @@
     <column name = "勾选" field="Check" type ="C_Check" width ="" height =""/>
     <column name = "序号" field="Number" type ="C_Text" width ="" height =""/>
     <column name = "角色名称" field="ManagerName" type ="C_Text" width ="" height =""/>
-    <column name = "操作" field="Operation" type ="C_Button" width ="" height ="" bnames="修改.xg"/>
+    <column name = "操作" field="Operation" type ="C_Button" width ="" height ="" bnames="修改"/>
   </grid>
   <!--员工列表-->
   <grid type ="StaffList">
@@ -380,7 +380,7 @@
     <column name = "手机号码" field="TelNumber" type ="C_Text" width ="" height =""/>
     <column name = "用户名" field="UserName" type ="C_Text" width ="" height =""/>
     <column name = "角色" field="Role" type ="C_Text" width ="" height =""/>
-    <column name = "操作" field="Operation" type ="C_Button" width ="" height ="" bnames="修改.xg/删除.delete"/>
+    <column name = "操作" field="Operation" type ="C_Button" width ="" height ="" bnames="修改/删除"/>
 
   </grid>
   <!--日志管理-->

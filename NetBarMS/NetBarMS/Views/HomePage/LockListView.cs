@@ -52,7 +52,7 @@ namespace NetBarMS.Views.HomePage
                 Pagebegin = pageBegin,
                 Pagesize = pageSize,
                 Fieldname = 0,
-                Order = 0,
+                Order = 1,
             };
 
             string name = this.buttonEdit1.Text;
@@ -67,14 +67,13 @@ namespace NetBarMS.Views.HomePage
                 return;
             }
             NetMessageManage.Manage().RemoveResultBlock(GetMemberLockListResult);
-            System.Console.WriteLine("GetMemberLockListResult:"+result.pack);
+           // System.Console.WriteLine("GetMemberLockListResult:"+result.pack);
 
             if(result.pack.Content.MessageType == 1)
             {
                 this.Invoke(new UIHandleBlock(delegate {
                     this.locks = result.pack.Content.ScMemberFind.MembersList;
                     RefreshGridControl();
-
                 }));
             }
 
@@ -115,11 +114,10 @@ namespace NetBarMS.Views.HomePage
         {
             int rowhandle = this.gridView1.FocusedRowHandle;
             StructMember member = this.locks[rowhandle];
-
             //解锁
             List<string> cards = new List<string>() { member.Cardnumber};
-            HomePageNetOperation.ManagerCommandOperation(ManagerCommandOperationResult, COMMAND_TYPE.UNLOCK, cards);
 
+            HomePageNetOperation.ManagerCommandOperation(ManagerCommandOperationResult, COMMAND_TYPE.UNLOCK, cards);
         }
 
         //解锁结果回调
@@ -143,10 +141,11 @@ namespace NetBarMS.Views.HomePage
         }
         #endregion
 
-        //身份证搜索事件
+        #region 身份证搜索事件
         private void ButtonSearch_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs args)
         {
             GetLockList();
         }
+        #endregion
     }
 }

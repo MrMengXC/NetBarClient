@@ -6,14 +6,28 @@ using System.Threading.Tasks;
 
 namespace NetBarMS.Codes.Tools
 {
-    //收入类型
+    #region 收入类型
+    /// <summary>
+    /// 收入类型
+    /// </summary>
     public enum IncomeType
     {
-        DAY_INCOME,     //日收入
-        MONTH_INCOME,   //月收入
-        YEAR_INCOME,    //年收入
+       /// <summary>
+       /// 日收入
+       /// </summary>
+        DAY_INCOME,  
+        /// <summary>
+        /// 月收入
+        /// </summary>
+        MONTH_INCOME,
+        /// <summary>
+        /// 年收入
+        /// </summary>
+        YEAR_INCOME,
     }
+    #endregion
 
+    #region 管理员操作
     /// <summary>
     /// 管理员操作
     /// </summary>
@@ -26,7 +40,7 @@ namespace NetBarMS.Codes.Tools
         /// <summary>
         /// 锁定
         /// </summary>     
-        LOCK = 2,           //锁定
+        LOCK = 2,
         /// <summary>
         /// 解锁
         /// </summary>
@@ -34,7 +48,7 @@ namespace NetBarMS.Codes.Tools
         /// <summary>
         /// 验证
         /// </summary>
-        VERIFY = 4,         //验证
+        VERIFY = 4, 
         /// <summary>
         /// 全部结帐
         /// </summary>
@@ -42,6 +56,20 @@ namespace NetBarMS.Codes.Tools
         /// <summary>
         /// 关闭闲机
         /// </summary>
-        IDLEOFF = 6,        //关闭闲机
+        IDLEOFF = 6,
+
+        /// <summary>
+        /// 通知全部用户
+        /// </summary>
+        NOTIFYALL = 7,
+        /// <summary>
+        /// 管理员发消息给用户
+        /// </summary>
+        NOTIFY = 8,
+        /// <summary>
+        /// 用户发消息给管理员
+        /// </summary>
+        CALL = 9,
     }
+    #endregion
 }
