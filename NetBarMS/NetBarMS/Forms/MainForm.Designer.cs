@@ -57,10 +57,10 @@
             this.simpleButton10 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton11 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton12 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton13 = new DevExpress.XtraEditors.SimpleButton();
             this.homePageListPanel = new System.Windows.Forms.Panel();
             this.manageTreeView = new System.Windows.Forms.TreeView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.simpleButton13 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.searchControl1.Properties)).BeginInit();
             this.panel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -399,6 +399,17 @@
             this.simpleButton12.Text = "开卡";
             this.simpleButton12.Click += new System.EventHandler(this.simpleButton12_Click);
             // 
+            // simpleButton13
+            // 
+            this.simpleButton13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.simpleButton13.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.simpleButton13.Location = new System.Drawing.Point(63, 3);
+            this.simpleButton13.Name = "simpleButton13";
+            this.simpleButton13.Size = new System.Drawing.Size(59, 60);
+            this.simpleButton13.TabIndex = 10;
+            this.simpleButton13.Text = "激活";
+            this.simpleButton13.Click += new System.EventHandler(this.simpleButton13_Click);
+            // 
             // homePageListPanel
             // 
             this.homePageListPanel.BackColor = System.Drawing.Color.Transparent;
@@ -427,17 +438,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(195, 890);
             this.panel1.TabIndex = 8;
-            // 
-            // simpleButton13
-            // 
-            this.simpleButton13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButton13.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.simpleButton13.Location = new System.Drawing.Point(63, 3);
-            this.simpleButton13.Name = "simpleButton13";
-            this.simpleButton13.Size = new System.Drawing.Size(59, 60);
-            this.simpleButton13.TabIndex = 10;
-            this.simpleButton13.Text = "激活";
-            this.simpleButton13.Click += new System.EventHandler(this.simpleButton13_Click);
             // 
             // MainForm
             // 

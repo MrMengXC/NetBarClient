@@ -16,12 +16,21 @@ namespace NetBarMS.Codes.Tools.Manage
         #region 代理方法
         //获取首页数据
         public delegate void GetDataResultHandle(bool success);
-        public event GetDataResultHandle GetDataResultEvent;
+        private event GetDataResultHandle GetDataResultEvent;
         //更新计算机数据
         public delegate void UpdateComputerDataHandle(int index,StructRealTime com);
-        public event UpdateComputerDataHandle UpdateComputerDataEvent;
+        private event UpdateComputerDataHandle UpdateComputerDataEvent;
         //更新计算机所在区域信息
-        public event UpdateComputerDataHandle UpdateComputerAreaEvent;
+        private event UpdateComputerDataHandle UpdateComputerAreaEvent;
+        //更新信息个数
+        public delegate void UpdateMsgNumHandle(int num);
+        //更新呼叫服务数
+        private event UpdateMsgNumHandle UpdateCallMsgNumEvent;
+        //更新客户端报错数量
+        private event UpdateMsgNumHandle UpdateExceptionMsgNumEvent;
+        //更新商品订单数量
+        private event UpdateMsgNumHandle UpdateOrderMsgNumEvent;
+
         #endregion
 
         //电脑数据
@@ -53,6 +62,7 @@ namespace NetBarMS.Codes.Tools.Manage
         // 获取首页计算机列表结果回调
         private void HomePageListResult(ResultModel result)
         {
+           
             if (result.pack.Cmd != Cmd.CMD_REALTIME_INFO)
             {
                 return;
@@ -82,6 +92,7 @@ namespace NetBarMS.Codes.Tools.Manage
 
         #endregion
 
+        
         #region 获取系统信息
         private void GetSysMessage()
         {
@@ -100,7 +111,53 @@ namespace NetBarMS.Codes.Tools.Manage
             if(result.pack.Content.MessageType == 1)
             {
                 SCSysMessage message = result.pack.Content.ScSysMessage;
-                UpdateComputerData(message);
+                IList<string> pars = message.ParamsList;
+                SYSMSG_TYPE msg = (SYSMSG_TYPE)message.Cmd;
+
+                switch (msg)
+                {
+                    //上机
+                    case SYSMSG_TYPE.LOGON:
+                        UserUpComputer(pars);
+                        break;
+                    //下机
+                    case SYSMSG_TYPE.LOGOFF:
+                        UserDownComputer(pars);
+                        break;
+                    //更新状态
+                    case SYSMSG_TYPE.UPSTATUS:
+                        UpdateUserStatus(pars);
+                        break;
+
+                    //更新验证
+                    case SYSMSG_TYPE.VERIFY:
+                        UpdateUserVerifyStatus(pars);
+                        break;
+
+                    //有呼叫消息
+                    case SYSMSG_TYPE.CALL:
+                        if (this.UpdateCallMsgNumEvent != null)
+                        {
+                            int num = pars[0].Equals("") ? 0 : int.Parse(pars[0]);
+                            this.UpdateCallMsgNumEvent(num);
+                        }
+                        break;
+
+                    //订单信息
+                    case SYSMSG_TYPE.ORDER:
+
+
+                        break;
+                    //异常信息
+                    case SYSMSG_TYPE.EXCEPTION:
+
+
+                        break;
+                    default:
+
+                        break;
+
+                }
             }
             
 
@@ -108,9 +165,9 @@ namespace NetBarMS.Codes.Tools.Manage
         #endregion
 
         #region 更新电脑数据
-        private void UpdateComputerData(SCSysMessage message)
+        #region 用户上机
+        private void UserUpComputer(IList<string> pars)
         {
-            IList<string> pars = message.ParamsList;
             string comid = pars[0];
             //获取需要修改的电脑数据
             StructRealTime com;
@@ -120,49 +177,7 @@ namespace NetBarMS.Codes.Tools.Manage
             int index = this.computers.IndexOf(com);
             StructRealTime.Builder newCom = new StructRealTime.Builder(com);
 
-            switch (message.Cmd)
-            {
-                //上机
-                case 1:
-                    UserUpComputer(pars,newCom);
-                    break;
-                //下机
-                case 2:
-                    UserDownComputer(pars, newCom);
-                    break;
-                case 3:
 
-                    break;
-                //更新状态
-                case 4:
-                    UpdateUserStatus(pars, newCom);
-                    break;
-
-                case 5:
-
-                    break;
-
-                //更新验证
-                case 8:
-                    UpdateUserVerifyStatus(newCom);
-                    break;
-                default:
-
-                    break;
-
-            }
-
-            //修改数组字典数据
-            this.computers[index] = newCom.Build();
-            this.computerDict[int.Parse(comid)] = newCom.Build();
-            //更新首页数据
-            UpdateHomePage(index, newCom.Build());
-        }
-
-        #region 用户上机
-        private void UserUpComputer(IList<string> pars, StructRealTime.Builder newCom)
-        {
-          
             newCom.Status = "在线";
             
             newCom.Cardnumber = pars[1];
@@ -182,14 +197,27 @@ namespace NetBarMS.Codes.Tools.Manage
             int dateDiffSecond = ts.Days *24 * 60 + ts.Hours * 60+ ts.Minutes;
             newCom.Remaintime = (dateDiffSecond - int.Parse(newCom.Usedtime)) + "";
 
+            //修改数组字典数据
+            this.computers[index] = newCom.Build();
+            this.computerDict[int.Parse(comid)] = newCom.Build();
+            //更新首页数据
+            UpdateHomePage(index, newCom.Build());
 
         }
         #endregion
 
         #region 更新用户状态
-        private void UpdateUserStatus(IList<string> pars, StructRealTime.Builder newCom)
+        private void UpdateUserStatus(IList<string> pars)
         {
-            
+            string comid = pars[0];
+            //获取需要修改的电脑数据
+            StructRealTime com;
+            this.computerDict.TryGetValue(int.Parse(comid), out com);
+
+            //生成新StructRealTime
+            int index = this.computers.IndexOf(com);
+            StructRealTime.Builder newCom = new StructRealTime.Builder(com);
+
             //----// 余额，开始时间。已用时。结束时间
             newCom.Balance = pars[1];
             newCom.Starttime = pars[2];
@@ -202,19 +230,46 @@ namespace NetBarMS.Codes.Tools.Manage
             TimeSpan ts = end.Subtract(start);
             int dateDiffSecond = ts.Days * 24 * 60 + ts.Hours * 60 + ts.Minutes;
             newCom.Remaintime = (dateDiffSecond - int.Parse(newCom.Usedtime)) + "";
+
+            //修改数组字典数据
+            this.computers[index] = newCom.Build();
+            this.computerDict[int.Parse(comid)] = newCom.Build();
+            //更新首页数据
+            UpdateHomePage(index, newCom.Build());
         }
         #endregion
 
         #region 更新用户验证状态
-        private void UpdateUserVerifyStatus(StructRealTime.Builder newCom)
+        private void UpdateUserVerifyStatus(IList<string> pars)
         {
+            string comid = pars[0];
+            //获取需要修改的电脑数据
+            StructRealTime com;
+            this.computerDict.TryGetValue(int.Parse(comid), out com);
+
+            //生成新StructRealTime
+            int index = this.computers.IndexOf(com);
+            StructRealTime.Builder newCom = new StructRealTime.Builder(com);
             newCom.Verify = "1";
+            //修改数组字典数据
+            this.computers[index] = newCom.Build();
+            this.computerDict[int.Parse(comid)] = newCom.Build();
+            //更新首页数据
+            UpdateHomePage(index, newCom.Build());
         }
         #endregion
+
         #region 用户下机
-        private void UserDownComputer(IList<string> pars, StructRealTime.Builder newCom)
+        private void UserDownComputer(IList<string> pars)
         {
-            
+            string comid = pars[0];
+            //获取需要修改的电脑数据
+            StructRealTime com;
+            this.computerDict.TryGetValue(int.Parse(comid), out com);
+
+            //生成新StructRealTime
+            int index = this.computers.IndexOf(com);
+            StructRealTime.Builder newCom = new StructRealTime.Builder(com);
             newCom.Status = "0";
             newCom.Cardnumber = "";
             newCom.Usertype = "";
@@ -226,10 +281,16 @@ namespace NetBarMS.Codes.Tools.Manage
             newCom.Usedtime = "";
             newCom.Remaintime = "";
             newCom.Stoptime = "";
+
+            //修改数组字典数据
+            this.computers[index] = newCom.Build();
+            this.computerDict[int.Parse(comid)] = newCom.Build();
+            //更新首页数据
+            UpdateHomePage(index, newCom.Build());
         }
         #endregion
 
-        //更新首页数据
+        #region 更新首页数据
         private void UpdateHomePage(int index,StructRealTime com)
         {
             if(this.UpdateComputerDataEvent != null)
@@ -237,6 +298,9 @@ namespace NetBarMS.Codes.Tools.Manage
                 this.UpdateComputerDataEvent(index, com);
             }
         }
+
+        #endregion
+
         #endregion
 
         #region 获取区域电脑
@@ -322,5 +386,15 @@ namespace NetBarMS.Codes.Tools.Manage
          
         }
         #endregion
+
+        #region 添加首页信息个数代理
+        public void AddMsgNumDelegate(UpdateMsgNumHandle call, UpdateMsgNumHandle exception, UpdateMsgNumHandle order)
+        {
+            this.UpdateCallMsgNumEvent += call;
+            this.UpdateExceptionMsgNumEvent += exception;
+            this.UpdateOrderMsgNumEvent += order;
+        }
+        #endregion
+
     }
 }

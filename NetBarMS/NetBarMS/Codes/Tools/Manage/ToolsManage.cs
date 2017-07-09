@@ -8,6 +8,8 @@ using NetBarMS.Forms;
 using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraGrid.Views.Base;
+
 using DevExpress.XtraEditors.Controls;
 using DevExpress.XtraEditors.Drawing;
 
@@ -23,19 +25,7 @@ using System.Resources;
 
 namespace NetBarMS.Codes.Tools
 {
-    //流程状态（充值，注册会员）
-    public enum FLOW_STATUS
-    {
-        NONE_STATUS,        //无状态
-        NORMAL_STATUS,      //正常状态，不需要其他操作
-        ACTIVE_STATUS,      //激活状态，返回激活页面，再次激活
-    }
-    //充值类型
-    public enum PRECHARGE_TYPE
-    {
-        NOT_MEMBER = 0,        //不开通会员
-        OPEN_MEMBER,      //开通会员
-    }
+    
     class ToolsManage
     {
         #region 显示自定义窗体
@@ -108,7 +98,7 @@ namespace NetBarMS.Codes.Tools
                 column.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
                 column.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
                 column.OptionsColumn.AllowEdit = false;
-            
+                
                 switch (columnModel.type)
                 {
                    
@@ -151,12 +141,10 @@ namespace NetBarMS.Codes.Tools
                             RepositoryItemButtonEdit buttonEdit = new RepositoryItemButtonEdit();
                             buttonEdit.Buttons.Clear();
                             buttonEdit.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-                            buttonEdit.AppearanceFocused.BackColor = Color.Green;
-                            buttonEdit.AppearanceFocused.ForeColor = Color.Green;
-                            buttonEdit.Appearance.ForeColor = Color.Green;
-                            
                             if(customDrawButtonEvent != null)
                             {
+                               
+                              
                                 buttonEdit.CustomDrawButton += customDrawButtonEvent;
                             }
                             //buttonEdit.ButtonsStyle = BorderStyles.NoBorder;
@@ -199,7 +187,8 @@ namespace NetBarMS.Codes.Tools
                             //column.MinWidth = width;
                             column.OptionsColumn.AllowEdit = true;
                             column.UnboundType = DevExpress.Data.UnboundColumnType.String;
-                    
+                            
+
                             DataColumn dataColumn = new DataColumn(fieldname);
                             table.Columns.Add(dataColumn);
                             //dataColumn.DataType = typeof(RepositoryItemButtonEdit);
@@ -226,6 +215,7 @@ namespace NetBarMS.Codes.Tools
             gridView.OptionsSelection.MultiSelect = true;
             gridView.OptionsSelection.MultiSelectMode = GridMultiSelectMode.RowSelect;
             gridView.RowHeight = 40;
+           
             //关闭最左侧
             gridView.OptionsView.ShowIndicator = false;
             //关闭表头右键快捷键

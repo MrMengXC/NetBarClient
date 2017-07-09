@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using NetBarMS.Codes.Tools;
 using DevExpress.XtraEditors.Controls;
-
+using NetBarMS.Codes.Tools.NetOperation;
 
 namespace NetBarMS.Views.HomePage
 {
@@ -24,9 +24,8 @@ namespace NetBarMS.Views.HomePage
             Time,           //下单时间
             Detail,         //订单详情
         }
-        private int pageBegin = 0;
-        private int pageSize = 15;
-
+        private int pageBegin = 0, pageSize = 15;
+        private IList<StructOrder> orders;
         public PayedProductIndentView()
         {
             InitializeComponent();
@@ -38,6 +37,7 @@ namespace NetBarMS.Views.HomePage
         {
             ToolsManage.SetGridView(this.gridView1, GridControlType.PayedProductIndent, out this.mainDataTable);
             this.gridControl1.DataSource = this.mainDataTable;
+            GetProductIndentList();
         }
         #region 获取销售记录
         //获取销售记录
@@ -51,37 +51,31 @@ namespace NetBarMS.Views.HomePage
                 Order = 0,
             };
 
-            //string keyWords = null;
-            //if (!this.buttonEdit1.Text.Equals(this.buttonEdit1.Properties.NullText))
-            //{
-            //    keyWords = this.buttonEdit1.Text;
-            //}
-            //int status = this.comboBoxEdit1.SelectedIndex + 1;
+            string keyWords = this.buttonEdit1.Text;
 
-            //ProductNetOperation.GetProdcutIndentList(GetProdcutIndentListResult, page.Build(), status, addStart, addEnd, handleStart, handleEnd, keyWords);
+            //1提交 2付款完成 3订单处理完成（发货完成）
+            //"1提交","2完成","3撤销"
+            ProductNetOperation.GetProdcutIndentList(GetProdcutIndentListResult, page.Build(), 2,"","","","", keyWords);
 
 
         }
-        //获取销售记录结果回调
+        //获取已付款商品订单列表
         private void GetProdcutIndentListResult(ResultModel result)
         {
-            if (result.pack.Content.MessageType != 1)
+            if (result.pack.Cmd != Cmd.CMD_GOODS_ORDER)
             {
                 return;
             }
-
-            if (result.pack.Cmd == Cmd.CMD_GOODS_ORDER)
+            NetMessageManage.Manage().RemoveResultBlock(GetProdcutIndentListResult);
+            System.Console.WriteLine("GetProdcutIndentListResult:" + result.pack);
+            if (result.pack.Content.MessageType == 1)
             {
-                NetMessageManage.Manage().RemoveResultBlock(GetProdcutIndentListResult);
-                System.Console.WriteLine("GetProdcutIndentListResult:" + result.pack);
                 this.Invoke(new UIHandleBlock(delegate {
-
-                  
-
+                    this.orders = result.pack.Content.ScOrderList.OrdersList;
+                    RefreshGridControl();
                 }));
-
-
             }
+
         }
         #endregion
 
@@ -89,47 +83,41 @@ namespace NetBarMS.Views.HomePage
         //刷新GridControl
         private void RefreshGridControl()
         {
-            //foreach (StructOrder order in this.orders)
-            //{
-            //    AddNewRow(order);
-            //}
+            this.mainDataTable.Rows.Clear();
+            foreach (StructOrder order in this.orders)
+            {
+                AddNewRow(order);
+            }
 
         }
-
-
-
         //添加新行
         private void AddNewRow(StructOrder order)
         {
 
             DataRow row = this.mainDataTable.NewRow();
             this.mainDataTable.Rows.Add(row);
-            //row[TitleList.IndentNumber.ToString()] = order.Orderid;
-            //row[TitleList.IndentUser.ToString()] = order.Username;
-            //row[TitleList.IdNumber.ToString()] = order.Cardnumber;
-            //row[TitleList.Area.ToString()] = order.Areaname;
-            //row[TitleList.IndentMoney.ToString()] = order.Money;
-            //row[TitleList.IndentTime.ToString()] = order.Addtime;
-            //row[TitleList.HandleTime.ToString()] = order.Proctime;
-            //row[TitleList.Staff.ToString()] = order.Operator;
-            //row[TitleList.IndetState.ToString()] = order.Status;
-            //row[TitleList.PayChannel.ToString()] = order.Paymode;
-            //row[TitleList.PayNumber.ToString()] = order.Payid;
-
-
+            row[TitleList.Name.ToString()] = order.Username;
+            row[TitleList.Area.ToString()] = order.Areaname;
+            row[TitleList.Money.ToString()] = order.Money;
+            row[TitleList.Time.ToString()] = order.Addtime;
         }
         #endregion
-        //按钮列的点击事件
-        public void ColumnButtonClick(object sender, ButtonPressedEventArgs e)
+        //按钮列的点击事件(点击查看)
+        public void ButtonColumn_ButtonClick(object sender, ButtonPressedEventArgs e)
         {
             int rowhandle = this.gridView1.FocusedRowHandle;
-            DataRow row = this.gridView1.GetDataRow(rowhandle);
+            StructOrder order = orders[rowhandle];
 
-            String tag = (String)e.Button.Tag;
-            String[] param = tag.Split('_');
-            
-
+            CloseFormHandle close = new CloseFormHandle(delegate () {
+                GetProductIndentList();
+            });
+            PayedProductIndentDetailView detail = new PayedProductIndentDetailView(order);
+            ToolsManage.ShowForm(detail, false, close);
         }
-
+        //搜索按钮
+        public void SearchButton_ButtonClick(object sender, ButtonPressedEventArgs e)
+        {
+            GetProductIndentList();
+        }
     }
 }

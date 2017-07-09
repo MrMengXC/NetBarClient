@@ -18,31 +18,43 @@ using DevExpress.XtraEditors.Repository;
 
 namespace NetBarMS.Views.HomePage
 {
-    enum TitleList
-    {
-        None,
-        EpNumber=0,         //设备编号
-        Area,               //区域
-        State,              //状态
-        IdCard,             //身份证号
-        CardType,           //卡类型
-        MoneyType,          //计费方式
-        VerifyType,         //验证状态
-        ResMoney,           //剩余金钱
-        ResTime,            //剩余时间
-        BeginTime,          //开始时间
-        UseTime,            //已用时间
-        EndTime,            //结束时间
-        MacLoc,             //Mac地址
-        IpLoc,              //IP地址
-        Operation           //操作（无用）
-
-    }
+    
 
     public partial class HomePageListView : UserControl
     {
+        private enum TitleList
+        {
+            None,
+            EpNumber = 0,         //设备编号
+            Area,               //区域
+            State,              //状态
+            IdCard,             //身份证号
+            CardType,           //卡类型
+            MoneyType,          //计费方式
+            VerifyType,         //验证状态
+            ResMoney,           //剩余金钱
+            ResTime,            //剩余时间
+            BeginTime,          //开始时间
+            UseTime,            //已用时间
+            EndTime,            //结束时间
+            MacLoc,             //Mac地址
+            IpLoc,              //IP地址
+            Operation           //操作（无用）
+
+        }
+
+        private enum BTN_NAME
+        {
+            强制下机 = 1,
+            锁定,
+            验证,
+            已验证,
+
+        }
+
         public DataTable mainDataTable;     //
         private List<StructRealTime> coms;
+        private RepositoryItemButtonEdit normalEdit, verietyEdit;
         public HomePageListView()
         {
             InitializeComponent();
@@ -51,21 +63,72 @@ namespace NetBarMS.Views.HomePage
         #region 初始化UI
         private void InitUI()
         {
-            ToolsManage.SetGridView(this.gridView1, GridControlType.HomePageList, out this.mainDataTable, ButtonEdit_ButtonClick, GridView_CustomColumnSort,CustomDrawButton);
+            //获取两种不同状态的RepositoryItemButtonEdit
+            string[] nor = { BTN_NAME.强制下机.ToString(), BTN_NAME.锁定.ToString(), BTN_NAME.验证.ToString() };
+            string[] ver = { BTN_NAME.强制下机.ToString(), BTN_NAME.锁定.ToString(), BTN_NAME.已验证.ToString() };
+
+            SetButtonItem(out normalEdit, nor);
+            SetButtonItem(out verietyEdit, ver);
+
+            ToolsManage.SetGridView(this.gridView1, GridControlType.HomePageList, out this.mainDataTable, ButtonEdit_ButtonClick, GridView_CustomColumnSort,null);
             this.gridControl1.DataSource = this.mainDataTable;
-            ////this.gridView1.cu
-            //for (int i = 0; i < 10; i++)
-            //{
-
-            //    DataRow row = this.mainDataTable.NewRow();
-            //    this.mainDataTable.Rows.Add(row);
-            //}
-
+            this.gridView1.CustomRowCellEdit += GridView1_CustomRowCellEdit;
             //获取账户信息
             ManagerNetOperation.AccountInfo(AccountInfoBlock);
-
         }
+        //设置RepositoryItemButtonEdit
+        private void SetButtonItem(out RepositoryItemButtonEdit buttonEdit,string[] buttonNames)
+        {
+            buttonEdit = new RepositoryItemButtonEdit();
+            buttonEdit.Buttons.Clear();
+            buttonEdit.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            buttonEdit.ButtonClick += ButtonEdit_ButtonClick;
 
+            int num = 0;
+            //int width = 8;
+            foreach (string name in buttonNames)
+            {
+             
+                EditorButton button = new EditorButton();
+                button.Kind = ButtonPredefines.Glyph;
+                if(name.Equals(BTN_NAME.已验证.ToString()))
+                {
+                    button.Appearance.ForeColor = Color.Gray;
+                    button.Enabled = false;
+                }
+                else
+                {
+                    button.Appearance.ForeColor = Color.Blue;
+                }
+                //按钮显示
+                button.Visible = true;
+                button.Tag = TitleList.Operation.ToString() + "_" + num;
+                button.Caption = name;
+                //width += 50;
+
+                button.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+                buttonEdit.Buttons.Add(button);
+                num++;
+            }
+        }
+        //监听CustomRowCellEdit
+        private void GridView1_CustomRowCellEdit(object sender, DevExpress.XtraGrid.Views.Grid.CustomRowCellEditEventArgs e)
+        {
+            if (!e.Column.FieldName.Equals(TitleList.Operation.ToString()))
+            {
+                return;
+            }
+            //System.Console.WriteLine("GridView1_CustomDrawCell:" + e.RowHandle);
+            StructRealTime com = this.coms[e.RowHandle];
+            if (com.Verify.Equals("1"))
+            {
+                e.RepositoryItem = verietyEdit;
+            }
+            else
+            {
+                e.RepositoryItem = normalEdit;
+            }
+        }
 
 
         // 获取账户信息的回调
@@ -106,6 +169,7 @@ namespace NetBarMS.Views.HomePage
         #region 更新首页数据
         public void UpdateHomePageData(int index ,StructRealTime com)
         {
+            
             this.Invoke(new UIHandleBlock(delegate {
                 this.coms[index] = com;
                 DataRow row = this.mainDataTable.Rows[index];
@@ -128,6 +192,7 @@ namespace NetBarMS.Views.HomePage
         private void RefreshGridControl()
         {
             this.mainDataTable.Clear();
+           
             for (int i = 0; i < this.coms.Count; i++)
             {
                 StructRealTime computer = coms[i];
@@ -137,12 +202,21 @@ namespace NetBarMS.Views.HomePage
         //添加新行
         private void AddNewRow(StructRealTime computer, DataRow row)
         {
-            if(row == null)
+            //this.gridView1.RefreshRow
+            
+            if (row == null)
             {
                 row = this.mainDataTable.NewRow();
                 this.mainDataTable.Rows.Add(row);
             }
-           
+            else
+            {
+                int index = this.mainDataTable.Rows.IndexOf(row);
+                this.mainDataTable.Rows.Remove(row);
+                row = this.mainDataTable.NewRow();
+                this.mainDataTable.Rows.InsertAt(row, index);
+            }
+
             row[TitleList.EpNumber.ToString()] = computer.Computer;
             row[TitleList.Area.ToString()] = SysManage.Manage().GetAreaName(computer.Area);
             //TODO:状态需要判断
@@ -150,13 +224,14 @@ namespace NetBarMS.Views.HomePage
             row[TitleList.IdCard.ToString()] = computer.Cardnumber;
             row[TitleList.CardType.ToString()] = SysManage.Manage().GetMemberTypeName(computer.Usertype);
             row[TitleList.MoneyType.ToString()] = computer.Billing;
+         
             if(computer.Verify.Equals(""))
             {
                 row[TitleList.VerifyType.ToString()] = "";
             }
             else
             {
-                row[TitleList.VerifyType.ToString()] = computer.Verify.Equals("1") ? "验证" : "未验证";
+                row[TitleList.VerifyType.ToString()] = computer.Verify.Equals("1") ? "已验证" : "未验证";
             }
             row[TitleList.ResMoney.ToString()] = computer.Balance;
             row[TitleList.ResTime.ToString()] = computer.Remaintime;
@@ -167,34 +242,43 @@ namespace NetBarMS.Views.HomePage
             row[TitleList.IpLoc.ToString()] = computer.Ip;
 
 
-
         }
         #endregion
 
         #region 绘制按钮列时触发的方法
         public void CustomDrawButton(object sender, CustomDrawButtonEventArgs arg)
         {
+            
+            return;
             char[] sp = { '_' };
             string num = arg.Button.Tag.ToString().Split(sp)[1];
             if (num.Equals("2"))
             {
-                
                 int index = arg.Bounds.Y / arg.Bounds.Height;
                 StructRealTime com = this.coms[index];
-                if(com.Verify.Equals("1"))
+                EditorButton button = arg.Button;
+                if (com.Verify.Equals("1"))
                 {
                     //System.Console.WriteLine("index:"+index);
-                    arg.Button.Caption = "已验证";
-                    arg.Button.Appearance.ForeColor = Color.Gray;
-                    arg.Button.Enabled = false;
+                    //arg.Button.Caption = "已验证";
+                    //arg.Button.Appearance.ForeColor = Color.Gray;
+                    button.Enabled = false;
+                    //System.Console.WriteLine("已验证:" + index);
+
                 }
                 else
                 {
-                    arg.Button.Caption = "验证";
-                    arg.Button.Appearance.ForeColor = Color.Blue;
-                    arg.Button.Enabled = true;
-                }               
+                    button.Caption = "验证";
+                    button.Appearance.ForeColor = Color.Blue;
+                    button.Enabled = true;
+                    // System.Console.WriteLine("验证:" + index);
+
+                }
+
             }
+
+
+
 
 
         }
@@ -203,6 +287,8 @@ namespace NetBarMS.Views.HomePage
         #region 按钮列点击事件
         private void ButtonEdit_ButtonClick(object sender, ButtonPressedEventArgs e)
         {
+            
+
             int rowhandle = this.gridView1.FocusedRowHandle;
             StructRealTime computer = coms[rowhandle];
             if(computer.Cardnumber.Equals(""))

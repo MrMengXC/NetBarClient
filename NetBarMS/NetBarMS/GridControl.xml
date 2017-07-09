@@ -395,11 +395,10 @@
   <!--呼叫服务-->
   <grid type ="CallService">
     <column name = "序号" field="Number" type ="C_Text" width ="" height =""/>
-    <column name = "呼叫人" field="CallPerson" type ="C_Text" width ="" height =""/>
+    <column name = "呼叫人" field="Name" type ="C_Text" width ="" height =""/>
     <column name = "设备编号" field="Area" type ="C_Text" width ="" height =""/>
-    <column name = "呼叫事项" field="CallMatter" type ="C_Text" width ="" height =""/>
-    <column name = "值班人" field="Staff" type ="C_Text" width ="" height =""/>
-    <column name = "操作" field="Operation" type ="C_Button" width ="" height ="" bnames ="已处理"/>
+    <column name = "呼叫信息" field="Message" type ="C_Text" width ="" height =""/>
+    <column name = "操作" field="Operation" type ="C_Button" width ="" height ="" bnames ="处理"/>
   </grid>
 
   <!--日营收-->

@@ -72,4 +72,63 @@ namespace NetBarMS.Codes.Tools
         CALL = 9,
     }
     #endregion
+
+    #region 系统接收信息类别s
+    public enum SYSMSG_TYPE
+    {
+        /// <summary>
+        /// 上机
+        /// </summary>
+        LOGON = 1,
+        /// <summary>
+        /// 下机
+        /// </summary>
+        LOGOFF = 2,
+        /// <summary>
+        /// 更新状态（扣费）
+        /// </summary>
+        UPSTATUS = 4,
+        /// <summary>
+        /// 验证
+        /// </summary>
+        VERIFY = 8,
+        /// <summary>
+        /// 会员呼叫
+        /// </summary>
+        CALL = 10,
+        /// <summary>
+        /// 订单
+        /// </summary>
+        ORDER = 11,
+        /// <summary>
+        /// 客户端异常
+        /// </summary>
+        EXCEPTION = 12,
+    }
+    #endregion
+
+
+    #region 订单类型
+    public enum ORDER_TYPE
+    {
+
+        //1提交 2付款完成 3订单处理完成（发货完成）
+        //"1提交","2完成","3撤销"
+    }
+
+    //流程状态（充值，注册会员）
+    public enum FLOW_STATUS
+    {
+        NONE_STATUS,        //无状态
+        NORMAL_STATUS,      //正常状态，不需要其他操作
+        ACTIVE_STATUS,      //激活状态，返回激活页面，再次激活
+    }
+    //充值类型
+    public enum PRECHARGE_TYPE
+    {
+        NOT_MEMBER = 0,        //不开通会员
+        OPEN_MEMBER,      //开通会员
+    }
+
+    #endregion
 }

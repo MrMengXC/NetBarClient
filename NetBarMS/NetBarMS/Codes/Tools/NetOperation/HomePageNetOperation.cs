@@ -131,6 +131,38 @@ namespace NetBarMS.Codes.Tools.NetOperation
         }
         #endregion
 
-     
+        #region 获取呼叫列表
+        /// <summary>
+        /// 获取呼叫列表
+        /// </summary>
+        /// <param name="resultBlock"></param>
+        public static void GetCallList(DataResultBlock resultBlock)
+        {           
+            MessagePack.Builder pack = new MessagePack.Builder();
+            pack.Cmd = Cmd.CMD_CALL_LIST;
+            NetMessageManage.Manage().SendMsg(pack.Build(), resultBlock);
+        }
+        #endregion
+
+        #region 处理呼叫
+        /// <summary>
+        /// 处理呼叫
+        /// </summary>
+        /// <param name="resultBlock"></param>
+        /// <param name="callid"></param>
+        public static void HandleCall(DataResultBlock resultBlock,int callid)
+        {
+            CSCallProcess.Builder call = new CSCallProcess.Builder();
+            call.Callid = callid;
+            MessageContent.Builder content = new MessageContent.Builder();
+            content.MessageType = 1;
+            content.CsCallProcess = call.Build();
+            
+            MessagePack.Builder pack = new MessagePack.Builder();
+            pack.Cmd = Cmd.CMD_CALL_PROCESS;
+            pack.Content = content.Build();
+            NetMessageManage.Manage().SendMsg(pack.Build(), resultBlock);
+        }
+        #endregion
     }
 }

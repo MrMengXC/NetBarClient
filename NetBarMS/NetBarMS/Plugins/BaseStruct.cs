@@ -64,6 +64,10 @@ public static partial class BaseStruct {
   internal static pb::FieldAccess.FieldAccessorTable<global::StructAreaTotal, global::StructAreaTotal.Builder> internal__static_StructAreaTotal__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_StructEarn__Descriptor;
   internal static pb::FieldAccess.FieldAccessorTable<global::StructEarn, global::StructEarn.Builder> internal__static_StructEarn__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_StructCall__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::StructCall, global::StructCall.Builder> internal__static_StructCall__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_StructShift__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::StructShift, global::StructShift.Builder> internal__static_StructShift__FieldAccessorTable;
   #endregion
   #region Descriptor
   public static pbd::FileDescriptor Descriptor {
@@ -151,9 +155,16 @@ public static partial class BaseStruct {
           "FQoNYWxpcGF5X2NoYXJnZRgCIAIoBRITCgthbGlwYXlfc2FsZRgDIAIoBRIV", 
           "Cg10ZW5wYXlfY2hhcmdlGAQgAigFEhMKC3RlbnBheV9zYWxlGAUgAigFEhMK", 
           "C2Nhc2hfY2hhcmdlGAYgAigFEhEKCWNhc2hfc2FsZRgHIAIoBRIkCgphcmVh", 
-          "X3RvdGFsGAggAygLMhAuU3RydWN0QXJlYVRvdGFsKigKBFR5cGUSCAoESVRF", 
-          "TRABEgwKCENVUlJFTkNZEAISCAoEUEFDSxADQisKHWNvbS5za3lzb2Z0LmNv", 
-        "cmUuYXV0by5tZXNzYWdlQgpCYXNlU3RydWN0"));
+          "X3RvdGFsGAggAygLMhAuU3RydWN0QXJlYVRvdGFsIkoKClN0cnVjdENhbGwS", 
+          "DgoGY2FsbGlkGAEgAigFEg4KBmNhbGxlchgCIAIoCRIOCgZkZXZpY2UYAyAC", 
+          "KAkSDAoEaW5mbxgEIAIoCSLSAQoLU3RydWN0U2hpZnQSDwoHc2hpZnRpZBgB", 
+          "IAIoBRIUCgxkZWxpdmVyZWRfYnkYAiACKAkSEQoJc3RhcnR0aW1lGAMgAigJ", 
+          "EhAKCHN0b3B0aW1lGAQgAigJEhUKDWNoYXJnZV9hbW91bnQYBSACKAUSEwoL", 
+          "c2FsZV9hbW91bnQYBiACKAUSFQoNcmVmdW5kX2Ftb3VudBgHIAIoBRITCgty", 
+          "ZWNlaXZlZF9ieRgIIAIoCRIPCgdpc2NoZWNrGAkgAigFEg4KBnJlbWFyaxgK", 
+          "IAIoCSooCgRUeXBlEggKBElURU0QARIMCghDVVJSRU5DWRACEggKBFBBQ0sQ", 
+          "A0IrCh1jb20uc2t5c29mdC5jb3JlLmF1dG8ubWVzc2FnZUIKQmFzZVN0cnVj", 
+        "dA=="));
     pbd::FileDescriptor.InternalDescriptorAssigner assigner = delegate(pbd::FileDescriptor root) {
       descriptor = root;
       internal__static_StructErrorTip__Descriptor = Descriptor.MessageTypes[0];
@@ -256,6 +267,14 @@ public static partial class BaseStruct {
       internal__static_StructEarn__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructEarn, global::StructEarn.Builder>(internal__static_StructEarn__Descriptor,
               new string[] { "Datetime", "AlipayCharge", "AlipaySale", "TenpayCharge", "TenpaySale", "CashCharge", "CashSale", "AreaTotal", });
+      internal__static_StructCall__Descriptor = Descriptor.MessageTypes[25];
+      internal__static_StructCall__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::StructCall, global::StructCall.Builder>(internal__static_StructCall__Descriptor,
+              new string[] { "Callid", "Caller", "Device", "Info", });
+      internal__static_StructShift__Descriptor = Descriptor.MessageTypes[26];
+      internal__static_StructShift__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::StructShift, global::StructShift.Builder>(internal__static_StructShift__Descriptor,
+              new string[] { "Shiftid", "DeliveredBy", "Starttime", "Stoptime", "ChargeAmount", "SaleAmount", "RefundAmount", "ReceivedBy", "Ischeck", "Remark", });
       return null;
     };
     pbd::FileDescriptor.InternalBuildGeneratedFileFrom(descriptorData,
@@ -14088,6 +14107,1094 @@ public sealed partial class StructEarn : pb::GeneratedMessage<StructEarn, Struct
     }
   }
   static StructEarn() {
+    object.ReferenceEquals(global::BaseStruct.Descriptor, null);
+  }
+}
+
+[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+public sealed partial class StructCall : pb::GeneratedMessage<StructCall, StructCall.Builder> {
+  private StructCall() { }
+  private static readonly StructCall defaultInstance = new StructCall().MakeReadOnly();
+  private static readonly string[] _structCallFieldNames = new string[] { "caller", "callid", "device", "info" };
+  private static readonly uint[] _structCallFieldTags = new uint[] { 18, 8, 26, 34 };
+  public static StructCall DefaultInstance {
+    get { return defaultInstance; }
+  }
+  
+  public override StructCall DefaultInstanceForType {
+    get { return DefaultInstance; }
+  }
+  
+  protected override StructCall ThisMessage {
+    get { return this; }
+  }
+  
+  public static pbd::MessageDescriptor Descriptor {
+    get { return global::BaseStruct.internal__static_StructCall__Descriptor; }
+  }
+  
+  protected override pb::FieldAccess.FieldAccessorTable<StructCall, StructCall.Builder> InternalFieldAccessors {
+    get { return global::BaseStruct.internal__static_StructCall__FieldAccessorTable; }
+  }
+  
+  public const int CallidFieldNumber = 1;
+  private bool hasCallid;
+  private int callid_;
+  public bool HasCallid {
+    get { return hasCallid; }
+  }
+  public int Callid {
+    get { return callid_; }
+  }
+  
+  public const int CallerFieldNumber = 2;
+  private bool hasCaller;
+  private string caller_ = "";
+  public bool HasCaller {
+    get { return hasCaller; }
+  }
+  public string Caller {
+    get { return caller_; }
+  }
+  
+  public const int DeviceFieldNumber = 3;
+  private bool hasDevice;
+  private string device_ = "";
+  public bool HasDevice {
+    get { return hasDevice; }
+  }
+  public string Device {
+    get { return device_; }
+  }
+  
+  public const int InfoFieldNumber = 4;
+  private bool hasInfo;
+  private string info_ = "";
+  public bool HasInfo {
+    get { return hasInfo; }
+  }
+  public string Info {
+    get { return info_; }
+  }
+  
+  public override bool IsInitialized {
+    get {
+      if (!hasCallid) return false;
+      if (!hasCaller) return false;
+      if (!hasDevice) return false;
+      if (!hasInfo) return false;
+      return true;
+    }
+  }
+  
+  public override void WriteTo(pb::ICodedOutputStream output) {
+    CalcSerializedSize();
+    string[] field_names = _structCallFieldNames;
+    if (hasCallid) {
+      output.WriteInt32(1, field_names[1], Callid);
+    }
+    if (hasCaller) {
+      output.WriteString(2, field_names[0], Caller);
+    }
+    if (hasDevice) {
+      output.WriteString(3, field_names[2], Device);
+    }
+    if (hasInfo) {
+      output.WriteString(4, field_names[3], Info);
+    }
+    UnknownFields.WriteTo(output);
+  }
+  
+  private int memoizedSerializedSize = -1;
+  public override int SerializedSize {
+    get {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+      return CalcSerializedSize();
+    }
+  }
+  
+  private int CalcSerializedSize() {
+    int size = memoizedSerializedSize;
+    if (size != -1) return size;
+    
+    size = 0;
+    if (hasCallid) {
+      size += pb::CodedOutputStream.ComputeInt32Size(1, Callid);
+    }
+    if (hasCaller) {
+      size += pb::CodedOutputStream.ComputeStringSize(2, Caller);
+    }
+    if (hasDevice) {
+      size += pb::CodedOutputStream.ComputeStringSize(3, Device);
+    }
+    if (hasInfo) {
+      size += pb::CodedOutputStream.ComputeStringSize(4, Info);
+    }
+    size += UnknownFields.SerializedSize;
+    memoizedSerializedSize = size;
+    return size;
+  }
+  public static StructCall ParseFrom(pb::ByteString data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static StructCall ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static StructCall ParseFrom(byte[] data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static StructCall ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static StructCall ParseFrom(global::System.IO.Stream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static StructCall ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  public static StructCall ParseDelimitedFrom(global::System.IO.Stream input) {
+    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
+  }
+  public static StructCall ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
+  }
+  public static StructCall ParseFrom(pb::ICodedInputStream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static StructCall ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  private StructCall MakeReadOnly() {
+    return this;
+  }
+  
+  public static Builder CreateBuilder() { return new Builder(); }
+  public override Builder ToBuilder() { return CreateBuilder(this); }
+  public override Builder CreateBuilderForType() { return new Builder(); }
+  public static Builder CreateBuilder(StructCall prototype) {
+    return new Builder(prototype);
+  }
+  
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class Builder : pb::GeneratedBuilder<StructCall, Builder> {
+    protected override Builder ThisBuilder {
+      get { return this; }
+    }
+    public Builder() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+    }
+    internal Builder(StructCall cloneFrom) {
+      result = cloneFrom;
+      resultIsReadOnly = true;
+    }
+    
+    private bool resultIsReadOnly;
+    private StructCall result;
+    
+    private StructCall PrepareBuilder() {
+      if (resultIsReadOnly) {
+        StructCall original = result;
+        result = new StructCall();
+        resultIsReadOnly = false;
+        MergeFrom(original);
+      }
+      return result;
+    }
+    
+    public override bool IsInitialized {
+      get { return result.IsInitialized; }
+    }
+    
+    protected override StructCall MessageBeingBuilt {
+      get { return PrepareBuilder(); }
+    }
+    
+    public override Builder Clear() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+      return this;
+    }
+    
+    public override Builder Clone() {
+      if (resultIsReadOnly) {
+        return new Builder(result);
+      } else {
+        return new Builder().MergeFrom(result);
+      }
+    }
+    
+    public override pbd::MessageDescriptor DescriptorForType {
+      get { return global::StructCall.Descriptor; }
+    }
+    
+    public override StructCall DefaultInstanceForType {
+      get { return global::StructCall.DefaultInstance; }
+    }
+    
+    public override StructCall BuildPartial() {
+      if (resultIsReadOnly) {
+        return result;
+      }
+      resultIsReadOnly = true;
+      return result.MakeReadOnly();
+    }
+    
+    public override Builder MergeFrom(pb::IMessage other) {
+      if (other is StructCall) {
+        return MergeFrom((StructCall) other);
+      } else {
+        base.MergeFrom(other);
+        return this;
+      }
+    }
+    
+    public override Builder MergeFrom(StructCall other) {
+      if (other == global::StructCall.DefaultInstance) return this;
+      PrepareBuilder();
+      if (other.HasCallid) {
+        Callid = other.Callid;
+      }
+      if (other.HasCaller) {
+        Caller = other.Caller;
+      }
+      if (other.HasDevice) {
+        Device = other.Device;
+      }
+      if (other.HasInfo) {
+        Info = other.Info;
+      }
+      this.MergeUnknownFields(other.UnknownFields);
+      return this;
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input) {
+      return MergeFrom(input, pb::ExtensionRegistry.Empty);
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+      PrepareBuilder();
+      pb::UnknownFieldSet.Builder unknownFields = null;
+      uint tag;
+      string field_name;
+      while (input.ReadTag(out tag, out field_name)) {
+        if(tag == 0 && field_name != null) {
+          int field_ordinal = global::System.Array.BinarySearch(_structCallFieldNames, field_name, global::System.StringComparer.Ordinal);
+          if(field_ordinal >= 0)
+            tag = _structCallFieldTags[field_ordinal];
+          else {
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            continue;
+          }
+        }
+        switch (tag) {
+          case 0: {
+            throw pb::InvalidProtocolBufferException.InvalidTag();
+          }
+          default: {
+            if (pb::WireFormat.IsEndGroupTag(tag)) {
+              if (unknownFields != null) {
+                this.UnknownFields = unknownFields.Build();
+              }
+              return this;
+            }
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            break;
+          }
+          case 8: {
+            result.hasCallid = input.ReadInt32(ref result.callid_);
+            break;
+          }
+          case 18: {
+            result.hasCaller = input.ReadString(ref result.caller_);
+            break;
+          }
+          case 26: {
+            result.hasDevice = input.ReadString(ref result.device_);
+            break;
+          }
+          case 34: {
+            result.hasInfo = input.ReadString(ref result.info_);
+            break;
+          }
+        }
+      }
+      
+      if (unknownFields != null) {
+        this.UnknownFields = unknownFields.Build();
+      }
+      return this;
+    }
+    
+    
+    public bool HasCallid {
+      get { return result.hasCallid; }
+    }
+    public int Callid {
+      get { return result.Callid; }
+      set { SetCallid(value); }
+    }
+    public Builder SetCallid(int value) {
+      PrepareBuilder();
+      result.hasCallid = true;
+      result.callid_ = value;
+      return this;
+    }
+    public Builder ClearCallid() {
+      PrepareBuilder();
+      result.hasCallid = false;
+      result.callid_ = 0;
+      return this;
+    }
+    
+    public bool HasCaller {
+      get { return result.hasCaller; }
+    }
+    public string Caller {
+      get { return result.Caller; }
+      set { SetCaller(value); }
+    }
+    public Builder SetCaller(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasCaller = true;
+      result.caller_ = value;
+      return this;
+    }
+    public Builder ClearCaller() {
+      PrepareBuilder();
+      result.hasCaller = false;
+      result.caller_ = "";
+      return this;
+    }
+    
+    public bool HasDevice {
+      get { return result.hasDevice; }
+    }
+    public string Device {
+      get { return result.Device; }
+      set { SetDevice(value); }
+    }
+    public Builder SetDevice(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasDevice = true;
+      result.device_ = value;
+      return this;
+    }
+    public Builder ClearDevice() {
+      PrepareBuilder();
+      result.hasDevice = false;
+      result.device_ = "";
+      return this;
+    }
+    
+    public bool HasInfo {
+      get { return result.hasInfo; }
+    }
+    public string Info {
+      get { return result.Info; }
+      set { SetInfo(value); }
+    }
+    public Builder SetInfo(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasInfo = true;
+      result.info_ = value;
+      return this;
+    }
+    public Builder ClearInfo() {
+      PrepareBuilder();
+      result.hasInfo = false;
+      result.info_ = "";
+      return this;
+    }
+  }
+  static StructCall() {
+    object.ReferenceEquals(global::BaseStruct.Descriptor, null);
+  }
+}
+
+[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+public sealed partial class StructShift : pb::GeneratedMessage<StructShift, StructShift.Builder> {
+  private StructShift() { }
+  private static readonly StructShift defaultInstance = new StructShift().MakeReadOnly();
+  private static readonly string[] _structShiftFieldNames = new string[] { "charge_amount", "delivered_by", "ischeck", "received_by", "refund_amount", "remark", "sale_amount", "shiftid", "starttime", "stoptime" };
+  private static readonly uint[] _structShiftFieldTags = new uint[] { 40, 18, 72, 66, 56, 82, 48, 8, 26, 34 };
+  public static StructShift DefaultInstance {
+    get { return defaultInstance; }
+  }
+  
+  public override StructShift DefaultInstanceForType {
+    get { return DefaultInstance; }
+  }
+  
+  protected override StructShift ThisMessage {
+    get { return this; }
+  }
+  
+  public static pbd::MessageDescriptor Descriptor {
+    get { return global::BaseStruct.internal__static_StructShift__Descriptor; }
+  }
+  
+  protected override pb::FieldAccess.FieldAccessorTable<StructShift, StructShift.Builder> InternalFieldAccessors {
+    get { return global::BaseStruct.internal__static_StructShift__FieldAccessorTable; }
+  }
+  
+  public const int ShiftidFieldNumber = 1;
+  private bool hasShiftid;
+  private int shiftid_;
+  public bool HasShiftid {
+    get { return hasShiftid; }
+  }
+  public int Shiftid {
+    get { return shiftid_; }
+  }
+  
+  public const int DeliveredByFieldNumber = 2;
+  private bool hasDeliveredBy;
+  private string deliveredBy_ = "";
+  public bool HasDeliveredBy {
+    get { return hasDeliveredBy; }
+  }
+  public string DeliveredBy {
+    get { return deliveredBy_; }
+  }
+  
+  public const int StarttimeFieldNumber = 3;
+  private bool hasStarttime;
+  private string starttime_ = "";
+  public bool HasStarttime {
+    get { return hasStarttime; }
+  }
+  public string Starttime {
+    get { return starttime_; }
+  }
+  
+  public const int StoptimeFieldNumber = 4;
+  private bool hasStoptime;
+  private string stoptime_ = "";
+  public bool HasStoptime {
+    get { return hasStoptime; }
+  }
+  public string Stoptime {
+    get { return stoptime_; }
+  }
+  
+  public const int ChargeAmountFieldNumber = 5;
+  private bool hasChargeAmount;
+  private int chargeAmount_;
+  public bool HasChargeAmount {
+    get { return hasChargeAmount; }
+  }
+  public int ChargeAmount {
+    get { return chargeAmount_; }
+  }
+  
+  public const int SaleAmountFieldNumber = 6;
+  private bool hasSaleAmount;
+  private int saleAmount_;
+  public bool HasSaleAmount {
+    get { return hasSaleAmount; }
+  }
+  public int SaleAmount {
+    get { return saleAmount_; }
+  }
+  
+  public const int RefundAmountFieldNumber = 7;
+  private bool hasRefundAmount;
+  private int refundAmount_;
+  public bool HasRefundAmount {
+    get { return hasRefundAmount; }
+  }
+  public int RefundAmount {
+    get { return refundAmount_; }
+  }
+  
+  public const int ReceivedByFieldNumber = 8;
+  private bool hasReceivedBy;
+  private string receivedBy_ = "";
+  public bool HasReceivedBy {
+    get { return hasReceivedBy; }
+  }
+  public string ReceivedBy {
+    get { return receivedBy_; }
+  }
+  
+  public const int IscheckFieldNumber = 9;
+  private bool hasIscheck;
+  private int ischeck_;
+  public bool HasIscheck {
+    get { return hasIscheck; }
+  }
+  public int Ischeck {
+    get { return ischeck_; }
+  }
+  
+  public const int RemarkFieldNumber = 10;
+  private bool hasRemark;
+  private string remark_ = "";
+  public bool HasRemark {
+    get { return hasRemark; }
+  }
+  public string Remark {
+    get { return remark_; }
+  }
+  
+  public override bool IsInitialized {
+    get {
+      if (!hasShiftid) return false;
+      if (!hasDeliveredBy) return false;
+      if (!hasStarttime) return false;
+      if (!hasStoptime) return false;
+      if (!hasChargeAmount) return false;
+      if (!hasSaleAmount) return false;
+      if (!hasRefundAmount) return false;
+      if (!hasReceivedBy) return false;
+      if (!hasIscheck) return false;
+      if (!hasRemark) return false;
+      return true;
+    }
+  }
+  
+  public override void WriteTo(pb::ICodedOutputStream output) {
+    CalcSerializedSize();
+    string[] field_names = _structShiftFieldNames;
+    if (hasShiftid) {
+      output.WriteInt32(1, field_names[7], Shiftid);
+    }
+    if (hasDeliveredBy) {
+      output.WriteString(2, field_names[1], DeliveredBy);
+    }
+    if (hasStarttime) {
+      output.WriteString(3, field_names[8], Starttime);
+    }
+    if (hasStoptime) {
+      output.WriteString(4, field_names[9], Stoptime);
+    }
+    if (hasChargeAmount) {
+      output.WriteInt32(5, field_names[0], ChargeAmount);
+    }
+    if (hasSaleAmount) {
+      output.WriteInt32(6, field_names[6], SaleAmount);
+    }
+    if (hasRefundAmount) {
+      output.WriteInt32(7, field_names[4], RefundAmount);
+    }
+    if (hasReceivedBy) {
+      output.WriteString(8, field_names[3], ReceivedBy);
+    }
+    if (hasIscheck) {
+      output.WriteInt32(9, field_names[2], Ischeck);
+    }
+    if (hasRemark) {
+      output.WriteString(10, field_names[5], Remark);
+    }
+    UnknownFields.WriteTo(output);
+  }
+  
+  private int memoizedSerializedSize = -1;
+  public override int SerializedSize {
+    get {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+      return CalcSerializedSize();
+    }
+  }
+  
+  private int CalcSerializedSize() {
+    int size = memoizedSerializedSize;
+    if (size != -1) return size;
+    
+    size = 0;
+    if (hasShiftid) {
+      size += pb::CodedOutputStream.ComputeInt32Size(1, Shiftid);
+    }
+    if (hasDeliveredBy) {
+      size += pb::CodedOutputStream.ComputeStringSize(2, DeliveredBy);
+    }
+    if (hasStarttime) {
+      size += pb::CodedOutputStream.ComputeStringSize(3, Starttime);
+    }
+    if (hasStoptime) {
+      size += pb::CodedOutputStream.ComputeStringSize(4, Stoptime);
+    }
+    if (hasChargeAmount) {
+      size += pb::CodedOutputStream.ComputeInt32Size(5, ChargeAmount);
+    }
+    if (hasSaleAmount) {
+      size += pb::CodedOutputStream.ComputeInt32Size(6, SaleAmount);
+    }
+    if (hasRefundAmount) {
+      size += pb::CodedOutputStream.ComputeInt32Size(7, RefundAmount);
+    }
+    if (hasReceivedBy) {
+      size += pb::CodedOutputStream.ComputeStringSize(8, ReceivedBy);
+    }
+    if (hasIscheck) {
+      size += pb::CodedOutputStream.ComputeInt32Size(9, Ischeck);
+    }
+    if (hasRemark) {
+      size += pb::CodedOutputStream.ComputeStringSize(10, Remark);
+    }
+    size += UnknownFields.SerializedSize;
+    memoizedSerializedSize = size;
+    return size;
+  }
+  public static StructShift ParseFrom(pb::ByteString data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static StructShift ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static StructShift ParseFrom(byte[] data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static StructShift ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static StructShift ParseFrom(global::System.IO.Stream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static StructShift ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  public static StructShift ParseDelimitedFrom(global::System.IO.Stream input) {
+    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
+  }
+  public static StructShift ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
+  }
+  public static StructShift ParseFrom(pb::ICodedInputStream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static StructShift ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  private StructShift MakeReadOnly() {
+    return this;
+  }
+  
+  public static Builder CreateBuilder() { return new Builder(); }
+  public override Builder ToBuilder() { return CreateBuilder(this); }
+  public override Builder CreateBuilderForType() { return new Builder(); }
+  public static Builder CreateBuilder(StructShift prototype) {
+    return new Builder(prototype);
+  }
+  
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class Builder : pb::GeneratedBuilder<StructShift, Builder> {
+    protected override Builder ThisBuilder {
+      get { return this; }
+    }
+    public Builder() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+    }
+    internal Builder(StructShift cloneFrom) {
+      result = cloneFrom;
+      resultIsReadOnly = true;
+    }
+    
+    private bool resultIsReadOnly;
+    private StructShift result;
+    
+    private StructShift PrepareBuilder() {
+      if (resultIsReadOnly) {
+        StructShift original = result;
+        result = new StructShift();
+        resultIsReadOnly = false;
+        MergeFrom(original);
+      }
+      return result;
+    }
+    
+    public override bool IsInitialized {
+      get { return result.IsInitialized; }
+    }
+    
+    protected override StructShift MessageBeingBuilt {
+      get { return PrepareBuilder(); }
+    }
+    
+    public override Builder Clear() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+      return this;
+    }
+    
+    public override Builder Clone() {
+      if (resultIsReadOnly) {
+        return new Builder(result);
+      } else {
+        return new Builder().MergeFrom(result);
+      }
+    }
+    
+    public override pbd::MessageDescriptor DescriptorForType {
+      get { return global::StructShift.Descriptor; }
+    }
+    
+    public override StructShift DefaultInstanceForType {
+      get { return global::StructShift.DefaultInstance; }
+    }
+    
+    public override StructShift BuildPartial() {
+      if (resultIsReadOnly) {
+        return result;
+      }
+      resultIsReadOnly = true;
+      return result.MakeReadOnly();
+    }
+    
+    public override Builder MergeFrom(pb::IMessage other) {
+      if (other is StructShift) {
+        return MergeFrom((StructShift) other);
+      } else {
+        base.MergeFrom(other);
+        return this;
+      }
+    }
+    
+    public override Builder MergeFrom(StructShift other) {
+      if (other == global::StructShift.DefaultInstance) return this;
+      PrepareBuilder();
+      if (other.HasShiftid) {
+        Shiftid = other.Shiftid;
+      }
+      if (other.HasDeliveredBy) {
+        DeliveredBy = other.DeliveredBy;
+      }
+      if (other.HasStarttime) {
+        Starttime = other.Starttime;
+      }
+      if (other.HasStoptime) {
+        Stoptime = other.Stoptime;
+      }
+      if (other.HasChargeAmount) {
+        ChargeAmount = other.ChargeAmount;
+      }
+      if (other.HasSaleAmount) {
+        SaleAmount = other.SaleAmount;
+      }
+      if (other.HasRefundAmount) {
+        RefundAmount = other.RefundAmount;
+      }
+      if (other.HasReceivedBy) {
+        ReceivedBy = other.ReceivedBy;
+      }
+      if (other.HasIscheck) {
+        Ischeck = other.Ischeck;
+      }
+      if (other.HasRemark) {
+        Remark = other.Remark;
+      }
+      this.MergeUnknownFields(other.UnknownFields);
+      return this;
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input) {
+      return MergeFrom(input, pb::ExtensionRegistry.Empty);
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+      PrepareBuilder();
+      pb::UnknownFieldSet.Builder unknownFields = null;
+      uint tag;
+      string field_name;
+      while (input.ReadTag(out tag, out field_name)) {
+        if(tag == 0 && field_name != null) {
+          int field_ordinal = global::System.Array.BinarySearch(_structShiftFieldNames, field_name, global::System.StringComparer.Ordinal);
+          if(field_ordinal >= 0)
+            tag = _structShiftFieldTags[field_ordinal];
+          else {
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            continue;
+          }
+        }
+        switch (tag) {
+          case 0: {
+            throw pb::InvalidProtocolBufferException.InvalidTag();
+          }
+          default: {
+            if (pb::WireFormat.IsEndGroupTag(tag)) {
+              if (unknownFields != null) {
+                this.UnknownFields = unknownFields.Build();
+              }
+              return this;
+            }
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            break;
+          }
+          case 8: {
+            result.hasShiftid = input.ReadInt32(ref result.shiftid_);
+            break;
+          }
+          case 18: {
+            result.hasDeliveredBy = input.ReadString(ref result.deliveredBy_);
+            break;
+          }
+          case 26: {
+            result.hasStarttime = input.ReadString(ref result.starttime_);
+            break;
+          }
+          case 34: {
+            result.hasStoptime = input.ReadString(ref result.stoptime_);
+            break;
+          }
+          case 40: {
+            result.hasChargeAmount = input.ReadInt32(ref result.chargeAmount_);
+            break;
+          }
+          case 48: {
+            result.hasSaleAmount = input.ReadInt32(ref result.saleAmount_);
+            break;
+          }
+          case 56: {
+            result.hasRefundAmount = input.ReadInt32(ref result.refundAmount_);
+            break;
+          }
+          case 66: {
+            result.hasReceivedBy = input.ReadString(ref result.receivedBy_);
+            break;
+          }
+          case 72: {
+            result.hasIscheck = input.ReadInt32(ref result.ischeck_);
+            break;
+          }
+          case 82: {
+            result.hasRemark = input.ReadString(ref result.remark_);
+            break;
+          }
+        }
+      }
+      
+      if (unknownFields != null) {
+        this.UnknownFields = unknownFields.Build();
+      }
+      return this;
+    }
+    
+    
+    public bool HasShiftid {
+      get { return result.hasShiftid; }
+    }
+    public int Shiftid {
+      get { return result.Shiftid; }
+      set { SetShiftid(value); }
+    }
+    public Builder SetShiftid(int value) {
+      PrepareBuilder();
+      result.hasShiftid = true;
+      result.shiftid_ = value;
+      return this;
+    }
+    public Builder ClearShiftid() {
+      PrepareBuilder();
+      result.hasShiftid = false;
+      result.shiftid_ = 0;
+      return this;
+    }
+    
+    public bool HasDeliveredBy {
+      get { return result.hasDeliveredBy; }
+    }
+    public string DeliveredBy {
+      get { return result.DeliveredBy; }
+      set { SetDeliveredBy(value); }
+    }
+    public Builder SetDeliveredBy(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasDeliveredBy = true;
+      result.deliveredBy_ = value;
+      return this;
+    }
+    public Builder ClearDeliveredBy() {
+      PrepareBuilder();
+      result.hasDeliveredBy = false;
+      result.deliveredBy_ = "";
+      return this;
+    }
+    
+    public bool HasStarttime {
+      get { return result.hasStarttime; }
+    }
+    public string Starttime {
+      get { return result.Starttime; }
+      set { SetStarttime(value); }
+    }
+    public Builder SetStarttime(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasStarttime = true;
+      result.starttime_ = value;
+      return this;
+    }
+    public Builder ClearStarttime() {
+      PrepareBuilder();
+      result.hasStarttime = false;
+      result.starttime_ = "";
+      return this;
+    }
+    
+    public bool HasStoptime {
+      get { return result.hasStoptime; }
+    }
+    public string Stoptime {
+      get { return result.Stoptime; }
+      set { SetStoptime(value); }
+    }
+    public Builder SetStoptime(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasStoptime = true;
+      result.stoptime_ = value;
+      return this;
+    }
+    public Builder ClearStoptime() {
+      PrepareBuilder();
+      result.hasStoptime = false;
+      result.stoptime_ = "";
+      return this;
+    }
+    
+    public bool HasChargeAmount {
+      get { return result.hasChargeAmount; }
+    }
+    public int ChargeAmount {
+      get { return result.ChargeAmount; }
+      set { SetChargeAmount(value); }
+    }
+    public Builder SetChargeAmount(int value) {
+      PrepareBuilder();
+      result.hasChargeAmount = true;
+      result.chargeAmount_ = value;
+      return this;
+    }
+    public Builder ClearChargeAmount() {
+      PrepareBuilder();
+      result.hasChargeAmount = false;
+      result.chargeAmount_ = 0;
+      return this;
+    }
+    
+    public bool HasSaleAmount {
+      get { return result.hasSaleAmount; }
+    }
+    public int SaleAmount {
+      get { return result.SaleAmount; }
+      set { SetSaleAmount(value); }
+    }
+    public Builder SetSaleAmount(int value) {
+      PrepareBuilder();
+      result.hasSaleAmount = true;
+      result.saleAmount_ = value;
+      return this;
+    }
+    public Builder ClearSaleAmount() {
+      PrepareBuilder();
+      result.hasSaleAmount = false;
+      result.saleAmount_ = 0;
+      return this;
+    }
+    
+    public bool HasRefundAmount {
+      get { return result.hasRefundAmount; }
+    }
+    public int RefundAmount {
+      get { return result.RefundAmount; }
+      set { SetRefundAmount(value); }
+    }
+    public Builder SetRefundAmount(int value) {
+      PrepareBuilder();
+      result.hasRefundAmount = true;
+      result.refundAmount_ = value;
+      return this;
+    }
+    public Builder ClearRefundAmount() {
+      PrepareBuilder();
+      result.hasRefundAmount = false;
+      result.refundAmount_ = 0;
+      return this;
+    }
+    
+    public bool HasReceivedBy {
+      get { return result.hasReceivedBy; }
+    }
+    public string ReceivedBy {
+      get { return result.ReceivedBy; }
+      set { SetReceivedBy(value); }
+    }
+    public Builder SetReceivedBy(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasReceivedBy = true;
+      result.receivedBy_ = value;
+      return this;
+    }
+    public Builder ClearReceivedBy() {
+      PrepareBuilder();
+      result.hasReceivedBy = false;
+      result.receivedBy_ = "";
+      return this;
+    }
+    
+    public bool HasIscheck {
+      get { return result.hasIscheck; }
+    }
+    public int Ischeck {
+      get { return result.Ischeck; }
+      set { SetIscheck(value); }
+    }
+    public Builder SetIscheck(int value) {
+      PrepareBuilder();
+      result.hasIscheck = true;
+      result.ischeck_ = value;
+      return this;
+    }
+    public Builder ClearIscheck() {
+      PrepareBuilder();
+      result.hasIscheck = false;
+      result.ischeck_ = 0;
+      return this;
+    }
+    
+    public bool HasRemark {
+      get { return result.hasRemark; }
+    }
+    public string Remark {
+      get { return result.Remark; }
+      set { SetRemark(value); }
+    }
+    public Builder SetRemark(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasRemark = true;
+      result.remark_ = value;
+      return this;
+    }
+    public Builder ClearRemark() {
+      PrepareBuilder();
+      result.hasRemark = false;
+      result.remark_ = "";
+      return this;
+    }
+  }
+  static StructShift() {
     object.ReferenceEquals(global::BaseStruct.Descriptor, null);
   }
 }

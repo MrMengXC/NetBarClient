@@ -27,6 +27,7 @@ using NetBarMS.Views.OtherMain;
 using NetBarMS.Views.HomePage;
 using NetBarMS.Codes.Tools.NetOperation;
 using NetBarMS.Views.UserUseCp;
+using NetBarMS.Codes.Tools.Manage;
 
 namespace NetBarMS
 {
@@ -41,14 +42,47 @@ namespace NetBarMS
         public MainForm()
         {
             InitializeComponent();
-
+            
+            //初始化树形菜单
             InitManageTreeView();
-            AddHomePageListView();          
+            //添加首页视图
+            AddHomePageListView();
+
+            //添加系统消息监听
+            AddMsgDelegate();
+           
+
         }
 
-     
-        
+        //添加系统消息监听
+        private void AddMsgDelegate()
+        {
+            HomePageMessageManage.Manage().AddMsgNumDelegate(UpdateCallMsgNumResult,UpdateExceptionMsgNumResult,UpdateOrderMsgNumResult);
+        }
+        //呼叫消息通知回调
+        private void UpdateCallMsgNumResult(int num)
+        {
+            this.Invoke(new UIHandleBlock(delegate {
+                this.simpleButton7.Text = "呼叫服务\n" + num;
+            }));
 
+        }
+        //客户端报错消息通知回调
+        private void UpdateExceptionMsgNumResult(int num)
+        {
+            this.Invoke(new UIHandleBlock(delegate {
+                //this.simpleButton7.Text = "呼叫服务\n" + num;
+            }));
+
+        }
+        //订单消息通知回调
+        private void UpdateOrderMsgNumResult(int num)
+        {
+            this.Invoke(new UIHandleBlock(delegate {
+                //this.simpleButton7.Text = "呼叫服务\n" + num;
+            }));
+
+        }
         //添加首页列表视图
         private void AddHomePageListView()
         {

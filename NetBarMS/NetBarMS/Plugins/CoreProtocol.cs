@@ -40,6 +40,10 @@ public static partial class CoreProtocol {
   internal static pb::FieldAccess.FieldAccessorTable<global::CSLog, global::CSLog.Builder> internal__static_CSLog__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_SCLog__Descriptor;
   internal static pb::FieldAccess.FieldAccessorTable<global::SCLog, global::SCLog.Builder> internal__static_SCLog__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_SCCallList__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::SCCallList, global::SCCallList.Builder> internal__static_SCCallList__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_CSCallProcess__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::CSCallProcess, global::CSCallProcess.Builder> internal__static_CSCallProcess__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_SCRoleList__Descriptor;
   internal static pb::FieldAccess.FieldAccessorTable<global::SCRoleList, global::SCRoleList.Builder> internal__static_SCRoleList__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_CSRoleAdd__Descriptor;
@@ -70,10 +74,6 @@ public static partial class CoreProtocol {
   internal static pb::FieldAccess.FieldAccessorTable<global::CSStaffPerform, global::CSStaffPerform.Builder> internal__static_CSStaffPerform__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_SCStaffPerform__Descriptor;
   internal static pb::FieldAccess.FieldAccessorTable<global::SCStaffPerform, global::SCStaffPerform.Builder> internal__static_SCStaffPerform__FieldAccessorTable;
-  internal static pbd::MessageDescriptor internal__static_CSStaffShift__Descriptor;
-  internal static pb::FieldAccess.FieldAccessorTable<global::CSStaffShift, global::CSStaffShift.Builder> internal__static_CSStaffShift__FieldAccessorTable;
-  internal static pbd::MessageDescriptor internal__static_SCStaffShift__Descriptor;
-  internal static pb::FieldAccess.FieldAccessorTable<global::SCStaffShift, global::SCStaffShift.Builder> internal__static_SCStaffShift__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_CSEarning__Descriptor;
   internal static pb::FieldAccess.FieldAccessorTable<global::CSEarning, global::CSEarning.Builder> internal__static_CSEarning__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_SCEarning__Descriptor;
@@ -180,6 +180,14 @@ public static partial class CoreProtocol {
   internal static pb::FieldAccess.FieldAccessorTable<global::CSOrderDetail, global::CSOrderDetail.Builder> internal__static_CSOrderDetail__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_SCOrderDetail__Descriptor;
   internal static pb::FieldAccess.FieldAccessorTable<global::SCOrderDetail, global::SCOrderDetail.Builder> internal__static_SCOrderDetail__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_CSOrderProcess__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::CSOrderProcess, global::CSOrderProcess.Builder> internal__static_CSOrderProcess__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_CSShiftAdd__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::CSShiftAdd, global::CSShiftAdd.Builder> internal__static_CSShiftAdd__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_CSShiftFind__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::CSShiftFind, global::CSShiftFind.Builder> internal__static_CSShiftFind__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_SCShiftFind__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::SCShiftFind, global::SCShiftFind.Builder> internal__static_SCShiftFind__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_CSReconnect__Descriptor;
   internal static pb::FieldAccess.FieldAccessorTable<global::CSReconnect, global::CSReconnect.Builder> internal__static_CSReconnect__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_SCReconnect__Descriptor;
@@ -218,8 +226,6 @@ public static partial class CoreProtocol {
   internal static pb::FieldAccess.FieldAccessorTable<global::SCToBuy, global::SCToBuy.Builder> internal__static_SCToBuy__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_SCSysMessage__Descriptor;
   internal static pb::FieldAccess.FieldAccessorTable<global::SCSysMessage, global::SCSysMessage.Builder> internal__static_SCSysMessage__FieldAccessorTable;
-  internal static pbd::MessageDescriptor internal__static_CSUserMessage__Descriptor;
-  internal static pb::FieldAccess.FieldAccessorTable<global::CSUserMessage, global::CSUserMessage.Builder> internal__static_CSUserMessage__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_CSEvaluate__Descriptor;
   internal static pb::FieldAccess.FieldAccessorTable<global::CSEvaluate, global::CSEvaluate.Builder> internal__static_CSEvaluate__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_SCEvaluate__Descriptor;
@@ -245,271 +251,281 @@ public static partial class CoreProtocol {
           "ChJDb3JlUHJvdG9jb2wucHJvdG8aEEJhc2VTdHJ1Y3QucHJvdG8iZgoLTWVz", 
           "c2FnZVBhY2sSEQoDY21kGAEgAigOMgQuQ21kEg8KB3ZlcnNpb24YAiABKAUS", 
           "EQoJc2Vzc2lvbklkGAMgASgFEiAKB2NvbnRlbnQYBCABKAsyDy5NZXNzYWdl", 
-          "Q29udGVudCKTHwoOTWVzc2FnZUNvbnRlbnQSEwoLbWVzc2FnZVR5cGUYASAC", 
+          "Q29udGVudCL5HwoOTWVzc2FnZUNvbnRlbnQSEwoLbWVzc2FnZVR5cGUYASAC", 
           "KAUSIQoIZXJyb3JUaXAYAiABKAsyDy5TdHJ1Y3RFcnJvclRpcBIhCgtjbEFz", 
           "a1NlcnZlchgDIAEoCzIMLkNMQXNrU2VydmVyEiEKC2xjUmV0U2VydmVyGAQg", 
           "ASgLMgwuTENSZXRTZXJ2ZXISGwoIY3NBdXRoZW4YBSABKAsyCS5DU0F1dGhl", 
           "bhIbCghzY0F1dGhlbhgGIAEoCzIJLlNDQXV0aGVuEhkKB2NzTG9naW4YByAB", 
-          "KAsyCC5DU0xvZ2luEhkKB3NjTG9naW4YCCABKAsyCC5TQ0xvZ2luEiUKDXNj", 
-          "QWNjb3VudEluZm8YCSABKAsyDi5TQ0FjY291bnRJbmZvEicKDnNjUmVhbHRp", 
-          "bWVJbmZvGAogASgLMg8uU0NSZWFsdGltZUluZm8SHQoJY3NDb21tYW5kGAsg", 
-          "ASgLMgouQ1NDb21tYW5kEhUKBWNzTG9nGAwgASgLMgYuQ1NMb2cSFQoFc2NM", 
-          "b2cYDSABKAsyBi5TQ0xvZxIfCgpzY1JvbGVMaXN0GA4gASgLMgsuU0NSb2xl", 
-          "TGlzdBIdCgljc1JvbGVBZGQYDyABKAsyCi5DU1JvbGVBZGQSHQoJc2NSb2xl", 
-          "QWRkGBAgASgLMgouU0NSb2xlQWRkEh0KCWNzUm9sZURlbBgRIAEoCzIKLkNT", 
-          "Um9sZURlbBIjCgxjc1JvbGVVcGRhdGUYEiABKAsyDS5DU1JvbGVVcGRhdGUS", 
-          "IwoMY3NSb2xlUmlnaHRzGBMgASgLMg0uQ1NSb2xlUmlnaHRzEiUKDXNjQWNj", 
-          "b3VudExpc3QYFCABKAsyDi5TQ0FjY291bnRMaXN0EiMKDGNzQWNjb3VudEFk", 
-          "ZBgVIAEoCzINLkNTQWNjb3VudEFkZBIjCgxjc0FjY291bnREZWwYFiABKAsy", 
-          "DS5DU0FjY291bnREZWwSKQoPY3NBY2NvdW50VXBkYXRlGBcgASgLMhAuQ1NB", 
-          "Y2NvdW50VXBkYXRlEikKD2NzQWNjb3VudFNuc1NldBgYIAEoCzIQLkNTQWNj", 
-          "b3VudFNuc1NldBInCg5jc1N0YWZmQ29tbWVudBgZIAEoCzIPLkNTU3RhZmZD", 
-          "b21tZW50EicKDnNjU3RhZmZDb21tZW50GBogASgLMg8uU0NTdGFmZkNvbW1l", 
-          "bnQSJwoOY3NTdGFmZlBlcmZvcm0YGyABKAsyDy5DU1N0YWZmUGVyZm9ybRIn", 
-          "Cg5zY1N0YWZmUGVyZm9ybRgcIAEoCzIPLlNDU3RhZmZQZXJmb3JtEiMKDGNz", 
-          "U3RhZmZTaGlmdBgdIAEoCzINLkNTU3RhZmZTaGlmdBIjCgxzY1N0YWZmU2hp", 
-          "ZnQYHiABKAsyDS5TQ1N0YWZmU2hpZnQSHQoJY3NFYXJuaW5nGB8gASgLMgou", 
-          "Q1NFYXJuaW5nEh0KCXNjRWFybmluZxggIAEoCzIKLlNDRWFybmluZxInCg5z", 
-          "Y0NvbXB1dGVyTGlzdBghIAEoCzIPLlNDQ29tcHV0ZXJMaXN0EiUKDWNzQ29t", 
-          "cHV0ZXJBZGQYIiABKAsyDi5DU0NvbXB1dGVyQWRkEiUKDWNzQ29tcHV0ZXJE", 
-          "ZWwYIyABKAsyDi5DU0NvbXB1dGVyRGVsEisKEGNzQ29tcHV0ZXJVcGRhdGUY", 
-          "JCABKAsyES5DU0NvbXB1dGVyVXBkYXRlEicKDmNzQ29tcHV0ZXJGaW5kGCUg", 
-          "ASgLMg8uQ1NDb21wdXRlckZpbmQSJwoOc2NDb21wdXRlckZpbmQYJiABKAsy", 
-          "Dy5TQ0NvbXB1dGVyRmluZBIjCgxjc01lbWJlckxpc3QYJyABKAsyDS5DU01l", 
-          "bWJlckxpc3QSIwoMc2NNZW1iZXJMaXN0GCggASgLMg0uU0NNZW1iZXJMaXN0", 
-          "EiEKC2NzTWVtYmVyQWRkGCkgASgLMgwuQ1NNZW1iZXJBZGQSIQoLc2NNZW1i", 
-          "ZXJBZGQYKiABKAsyDC5TQ01lbWJlckFkZBIhCgtjc01lbWJlckRlbBgrIAEo", 
-          "CzIMLkNTTWVtYmVyRGVsEi0KDmNzTWVtYmVyVXBkYXRlGCwgASgLMhUuQ1NN", 
-          "ZW1iZXJVcGRhdGVTdGF0dXMSIwoMY3NNZW1iZXJGaW5kGC0gASgLMg0uQ1NN", 
-          "ZW1iZXJGaW5kEiMKDHNjTWVtYmVyRmluZBguIAEoCzINLlNDTWVtYmVyRmlu", 
-          "ZBIrChBjc01lbWJlckNhcmRJbmZvGC8gASgLMhEuQ1NNZW1iZXJDYXJkSW5m", 
-          "bxIrChBzY01lbWJlckNhcmRJbmZvGDAgASgLMhEuU0NNZW1iZXJDYXJkSW5m", 
-          "bxIzChRjc01lbWJlckNvbnN1bVJlY29yZBgxIAEoCzIVLkNTTWVtYmVyQ29u", 
-          "c3VtUmVjb3JkEjMKFHNjTWVtYmVyQ29uc3VtUmVjb3JkGDIgASgLMhUuU0NN", 
-          "ZW1iZXJDb25zdW1SZWNvcmQSMwoUY3NNZW1iZXJDb25zdW1GaWx0ZXIYMyAB", 
-          "KAsyFS5DU01lbWJlckNvbnN1bUZpbHRlchIzChRzY01lbWJlckNvbnN1bUZp", 
-          "bHRlchg0IAEoCzIVLlNDTWVtYmVyQ29uc3VtRmlsdGVyEiUKDXNjU3lzQmls", 
-          "bExpc3QYNyABKAsyDi5TQ1N5c0JpbGxMaXN0EikKD2NzU3lzQmlsbFVwZGF0", 
-          "ZRg4IAEoCzIQLkNTU3lzQmlsbFVwZGF0ZRIpCg9zY1N5c0JpbGxVcGRhdGUY", 
-          "OSABKAsyEC5TQ1N5c0JpbGxVcGRhdGUSHQoJY3NTeXNJbmZvGDogASgLMgou", 
-          "Q1NTeXNJbnRvEh0KCXNjU3lzSW5mbxg7IAEoCzIKLlNDU3lzSW5mbxIjCgxj", 
-          "c0FkZFN5c0luZm8YPCABKAsyDS5DU0FkZFN5c0luZm8SIwoMY3NEZWxTeXNJ", 
-          "bmZvGD0gASgLMg0uQ1NEZWxTeXNJbmZvEikKD2NzVXBkYXRlU3lzSW5mbxg+", 
-          "IAEoCzIQLkNTVXBkYXRlU3lzSW5mbxIjCgxjc0Vta0NoZWNraW4YPyABKAsy", 
-          "DS5DU0Vta0NoZWNraW4SIwoMc2NFbWtDaGVja2luGEAgASgLMg0uU0NFbWtD", 
-          "aGVja2luEiUKDWNzRW1rQ2hlY2tvdXQYQSABKAsyDi5DU0Vta0NoZWNrb3V0", 
-          "EiUKDXNjRW1rQ2hlY2tvdXQYQiABKAsyDi5TQ0Vta0NoZWNrb3V0EiEKC2Nz", 
-          "RW1rUmVjb3JkGEMgASgLMgwuQ1NFbWtSZWNvcmQSIQoLc2NFbWtSZWNvcmQY", 
-          "RCABKAsyDC5TQ0Vta1JlY29yZBIpCg9jc0Vta1JlY29yZEZpbmQYRSABKAsy", 
-          "EC5DU0Vta1JlY29yZEZpbmQSKQoPc2NFbWtSZWNvcmRGaW5kGEYgASgLMhAu", 
-          "U0NFbWtSZWNvcmRGaW5kEiEKC2NzR29vZHNGaW5kGEcgASgLMgwuQ1NHb29k", 
-          "c0ZpbmQSIQoLc2NHb29kc0ZpbmQYSCABKAsyDC5TQ0dvb2RzRmluZBIfCgpj", 
-          "c0dvb2RzQWRkGEkgASgLMgsuQ1NHb29kc0FkZBIfCgpjc0dvb2RzRGVsGEog", 
-          "ASgLMgsuQ1NHb29kc0RlbBIlCg1jc0dvb2RzVXBkYXRlGEsgASgLMg4uQ1NH", 
-          "b29kc1VwZGF0ZRIjCgxjc0dvb2RzU3RvY2sYTCABKAsyDS5DU0dvb2RzU3Rv", 
-          "Y2sSIwoMc2NHb29kc1N0b2NrGE0gASgLMg0uU0NHb29kc1N0b2NrEiUKDWNz", 
-          "U2FsZXNSZWNvcmQYTiABKAsyDi5DU1NhbGVzUmVjb3JkEiUKDXNjU2FsZXNS", 
-          "ZWNvcmQYTyABKAsyDi5TQ1NhbGVzUmVjb3JkEh8KCmNzU2FsZXNUb3AYUCAB", 
-          "KAsyCy5DU1NhbGVzVG9wEh8KCnNjU2FsZXNUb3AYUSABKAsyCy5TQ1NhbGVz", 
-          "VG9wEiEKC2NzT3JkZXJMaXN0GFIgASgLMgwuQ1NPcmRlckxpc3QSIQoLc2NP", 
-          "cmRlckxpc3QYUyABKAsyDC5TQ09yZGVyTGlzdBIlCg1jc09yZGVyRGV0YWls", 
-          "GFQgASgLMg4uQ1NPcmRlckRldGFpbBIlCg1zY09yZGVyRGV0YWlsGFUgASgL", 
-          "Mg4uU0NPcmRlckRldGFpbBIhCgtjc1JlY29ubmVjdBhWIAEoCzIMLkNTUmVj", 
-          "b25uZWN0EiEKC3NjUmVjb25uZWN0GFcgASgLMgwuU0NSZWNvbm5lY3QSJAoM", 
-          "Y3NDbGllbnRPcGVuGMgBIAEoCzINLkNTQ2xpZW50T3BlbhImCg1jc0NsaWVu", 
-          "dENsb3NlGMkBIAEoCzIOLkNTQ2xpZW50Q2xvc2USGgoHY3NMb2dvbhjKASAB", 
-          "KAsyCC5DU0xvZ29uEhoKB3NjTG9nb24YywEgASgLMgguU0NMb2dvbhIcCghj", 
-          "c0xvZ29mZhjMASABKAsyCS5DU0xvZ29mZhIcCghzY0xvZ29mZhjNASABKAsy", 
-          "CS5TQ0xvZ29mZhIcCghjc0h1bmd1cBjOASABKAsyCS5DU0h1bmd1cBIiCgtj", 
-          "c1ByZUNoYXJnZRjPASABKAsyDC5DU1ByZUNoYXJnZRIiCgtzY1ByZUNoYXJn", 
-          "ZRjQASABKAsyDC5TQ1ByZUNoYXJnZRIgCgpzY1RvQ2hhcmdlGNEBIAEoCzIL", 
-          "LlNDVG9DaGFyZ2USGAoGc2NTaG9wGNIBIAEoCzIHLlNDU2hvcBIeCgljc0Nh", 
-          "cnRBZGQY0wEgASgLMgouQ1NDYXJ0QWRkEh4KCWNzQ2FydERlbBjUASABKAsy", 
-          "Ci5DU0NhcnREZWwSHAoIY3NQcmVCdXkY1QEgASgLMgkuQ1NQcmVCdXkSHAoI", 
-          "c2NQcmVCdXkY1gEgASgLMgkuU0NQcmVCdXkSGgoHc2NUb0J1eRjXASABKAsy", 
-          "CC5TQ1RvQnV5EiQKDHNjU3lzTWVzc2FnZRjYASABKAsyDS5TQ1N5c01lc3Nh", 
-          "Z2USJgoNY3NVc2VyTWVzc2FnZRjZASABKAsyDi5DU1VzZXJNZXNzYWdlEiAK", 
-          "CmNzRXZhbHVhdGUY2gEgASgLMgsuQ1NFdmFsdWF0ZRIgCgpzY0V2YWx1YXRl", 
-          "GNsBIAEoCzILLlNDRXZhbHVhdGUSJAoMY3NWZXJpZnlDb2RlGNwBIAEoCzIN", 
-          "LkNTVmVyaWZ5Q29kZRIkCgxzY1ZlcmlmeUNvZGUY3QEgASgLMg0uU0NWZXJp", 
-          "ZnlDb2RlEiQKDGNzQmluZE1vYmlsZRjeASABKAsyDS5DU0JpbmRNb2JpbGUS", 
-          "JAoMc2NCaW5kTW9iaWxlGN8BIAEoCzINLlNDQmluZE1vYmlsZSIbCgtDTEFz", 
-          "a1NlcnZlchIMCgR1dWlkGAEgAigJIi0KC0xDUmV0U2VydmVyEhAKCHNlcnZl", 
-          "cmlwGAEgASgJEgwKBHBvcnQYAiABKAUiGAoIQ1NBdXRoZW4SDAoEdGV4dBgB", 
-          "IAIoCSIrCghTQ0F1dGhlbhIRCglzZXNzaW9uSWQYASACKAUSDAoEZ3VpZBgC", 
-          "IAEoBSIrCgdDU0xvZ2luEg4KBnVzZXJJZBgBIAEoCRIQCghwYXNzd29yZBgC", 
-          "IAEoCSIqCgdTQ0xvZ2luEhEKCXNlc3Npb25JZBgBIAIoBRIMCgRndWlkGAIg", 
-          "ASgFIksKDVNDQWNjb3VudEluZm8SHwoHYWNjb3VudBgBIAIoCzIOLlN0cnVj", 
-          "dEFjY291bnQSGQoEcm9sZRgCIAIoCzILLlN0cnVjdFJvbGUiNAoOU0NSZWFs", 
-          "dGltZUluZm8SIgoJcmVhbHRpbWVzGAEgAygLMg8uU3RydWN0UmVhbFRpbWUi", 
-          "KAoJQ1NDb21tYW5kEgsKA2NtZBgBIAIoBRIOCgZwYXJhbXMYAiADKAkiaQoF", 
-          "Q1NMb2cSGQoEcGFnZRgBIAIoCzILLlN0cnVjdFBhZ2USEAoIb3BlcmF0b3IY", 
-          "AiABKAkSEQoJc3RhcnR0aW1lGAMgASgJEg8KB2VuZHRpbWUYBCABKAkSDwoH", 
-          "a2V5d29yZBgFIAEoCSIhCgVTQ0xvZxIYCgRsb2dzGAEgAygLMgouU3RydWN0", 
-          "TG9nIigKClNDUm9sZUxpc3QSGgoFcm9sZXMYASADKAsyCy5TdHJ1Y3RSb2xl", 
-          "IhkKCUNTUm9sZUFkZBIMCgRuYW1lGAEgAigJIiYKCVNDUm9sZUFkZBIZCgRy", 
-          "b2xlGAEgAigLMgsuU3RydWN0Um9sZSIbCglDU1JvbGVEZWwSDgoGcm9sZWlk", 
-          "GAEgAigFIiwKDENTUm9sZVVwZGF0ZRIOCgZyb2xlaWQYASACKAUSDAoEbmFt", 
-          "ZRgCIAIoCSJBCgxDU1JvbGVSaWdodHMSDgoGcm9sZWlkGAEgAigFEhEKCXJp", 
-          "Z2h0dHlwZRgCIAIoBRIOCgZyaWdodHMYAyACKAkiMAoNU0NBY2NvdW50TGlz", 
-          "dBIfCgdhY2NvdW50GAEgAygLMg4uU3RydWN0QWNjb3VudCIvCgxDU0FjY291", 
-          "bnRBZGQSHwoHYWNjb3VudBgBIAIoCzIOLlN0cnVjdEFjY291bnQiHwoMQ1NB", 
-          "Y2NvdW50RGVsEg8KB2FkbWluaWQYASACKAkiMgoPQ1NBY2NvdW50VXBkYXRl", 
-          "Eh8KB2FjY291bnQYASACKAsyDi5TdHJ1Y3RBY2NvdW50IjIKD0NTQWNjb3Vu", 
-          "dFNuc1NldBIfCgdhY2NvdW50GAEgAygLMg4uU3RydWN0QWNjb3VudCJ+Cg5D", 
-          "U1N0YWZmQ29tbWVudBIZCgRwYWdlGAEgAigLMgsuU3RydWN0UGFnZRIMCgR0", 
-          "eXBlGAIgAigFEhEKCXN0YXJ0dGltZRgDIAEoCRIPCgdlbmR0aW1lGAQgASgJ", 
-          "Eg0KBXN0YWZmGAUgASgJEhAKCGN1c3RvbWVyGAYgASgJIjIKDlNDU3RhZmZD", 
-          "b21tZW50EiAKCGNvbW1lbnRzGAEgAygLMg4uU3RydWN0Q29tbWVudCItCg5D", 
-          "U1N0YWZmUGVyZm9ybRIMCgR5ZWFyGAEgAigFEg0KBW1vbnRoGAIgAigFIjIK", 
-          "DlNDU3RhZmZQZXJmb3JtEiAKCHBlcmZvcm1zGAEgAygLMg4uU3RydWN0UGVy", 
-          "Zm9ybSIOCgxDU1N0YWZmU2hpZnQiDgoMU0NTdGFmZlNoaWZ0Ii8KCUNTRWFy", 
-          "bmluZxIRCglzdGFydHRpbWUYASACKAkSDwoHZW5kdGltZRgCIAIoCSInCglT", 
-          "Q0Vhcm5pbmcSGgoFZWFybnMYASADKAsyCy5TdHJ1Y3RFYXJuIjQKDlNDQ29t", 
-          "cHV0ZXJMaXN0EiIKCWNvbXB1dGVycxgBIAMoCzIPLlN0cnVjdENvbXB1dGVy", 
-          "IjIKDUNTQ29tcHV0ZXJBZGQSIQoIY29tcHV0ZXIYASACKAsyDy5TdHJ1Y3RD", 
-          "b21wdXRlciIjCg1DU0NvbXB1dGVyRGVsEhIKCmNvbXB1dGVyaWQYASADKAUi", 
-          "NQoQQ1NDb21wdXRlclVwZGF0ZRIhCghjb21wdXRlchgBIAMoCzIPLlN0cnVj", 
-          "dENvbXB1dGVyIh4KDkNTQ29tcHV0ZXJGaW5kEgwKBG5hbWUYASACKAkiNAoO", 
-          "U0NDb21wdXRlckZpbmQSIgoJY29tcHV0ZXJzGAEgAygLMg8uU3RydWN0Q29t", 
-          "cHV0ZXIiKQoMQ1NNZW1iZXJMaXN0EhkKBHBhZ2UYASACKAsyCy5TdHJ1Y3RQ", 
-          "YWdlIi4KDFNDTWVtYmVyTGlzdBIeCgdtZW1iZXJzGAEgAygLMg0uU3RydWN0", 
-          "TWVtYmVyIo0BCgtDU01lbWJlckFkZBIdCghjYXJkaW5mbxgBIAIoCzILLlN0", 
-          "cnVjdENhcmQSEgoKbWVtYmVydHlwZRgCIAIoBRIQCghyZWNoYXJnZRgDIAIo", 
-          "BRINCgVwaG9uZRgEIAEoCRIUCgxmaW5nZXJwcmludDEYBSABKAkSFAoMZmlu", 
-          "Z2VycHJpbnQyGAYgASgJInIKC1NDTWVtYmVyQWRkEgwKBG5hbWUYASACKAkS", 
-          "EgoKY2FyZG51bWJlchgCIAIoCRINCgVyaWdodBgDIAIoCRIQCghyZWNoYXJn", 
-          "ZRgEIAIoBRIPCgdiYWxhbmNlGAUgAigFEg8KB2ludGVnYWwYBiACKAUiHwoL", 
-          "Q1NNZW1iZXJEZWwSEAoIbWVtYmVyaWQYASADKAUiNwoUQ1NNZW1iZXJVcGRh", 
-          "dGVTdGF0dXMSDAoEbWFzaxgBIAIoBRIRCgltZW1iZXJpZHMYAiACKAUiWgoM", 
-          "Q1NNZW1iZXJGaW5kEhkKBHBhZ2UYASACKAsyCy5TdHJ1Y3RQYWdlEg4KBnN0", 
-          "YXR1cxgCIAEoBRINCgVyaWdodBgDIAEoBRIQCghrZXl3b3JkcxgEIAEoCSIu", 
-          "CgxTQ01lbWJlckZpbmQSHgoHbWVtYmVycxgBIAMoCzINLlN0cnVjdE1lbWJl", 
-          "ciIkChBDU01lbWJlckNhcmRJbmZvEhAKCG1lbWJlcmlkGAEgAigFIjEKEFND", 
-          "TWVtYmVyQ2FyZEluZm8SHQoIY2FyZGluZm8YASACKAsyCy5TdHJ1Y3RDYXJk", 
-          "IkMKFENTTWVtYmVyQ29uc3VtUmVjb3JkEhkKBHBhZ2UYASACKAsyCy5TdHJ1", 
-          "Y3RQYWdlEhAKCG1lbWJlcmlkGAIgAigFIjkKFFNDTWVtYmVyQ29uc3VtUmVj", 
-          "b3JkEiEKCmNvbnN1bWluZm8YASADKAsyDS5TdHJ1Y3RDb25zdW0ijAEKFENT", 
-          "TWVtYmVyQ29uc3VtRmlsdGVyEhkKBHBhZ2UYASACKAsyCy5TdHJ1Y3RQYWdl", 
-          "EhAKCG1lbWJlcmlkGAIgAigFEhEKCWJlZ2ludGltZRgDIAEoCRIPCgdlbmR0", 
-          "aW1lGAQgASgJEhIKCmNvbnN1bXR5cGUYBSABKAUSDwoHcGF5bW9kZRgGIAEo", 
-          "BSI5ChRTQ01lbWJlckNvbnN1bUZpbHRlchIhCgpjb25zdW1pbmZvGAEgAygL", 
-          "Mg0uU3RydWN0Q29uc3VtIlcKDVNDU3lzQmlsbExpc3QSIQoIdXNlckFyZWEY", 
-          "ASADKAsyDy5TdHJ1Y3RVc2VyQXJlYRIjCgdzZXR0aW5nGAIgAygLMhIuU3Ry", 
-          "dWN0QmlsbFNldHRpbmciWQoPQ1NTeXNCaWxsVXBkYXRlEiEKCHVzZXJBcmVh", 
-          "GAEgAygLMg8uU3RydWN0VXNlckFyZWESIwoHc2V0dGluZxgCIAMoCzISLlN0", 
-          "cnVjdEJpbGxTZXR0aW5nIlkKD1NDU3lzQmlsbFVwZGF0ZRIhCgh1c2VyQXJl", 
-          "YRgBIAMoCzIPLlN0cnVjdFVzZXJBcmVhEiMKB3NldHRpbmcYAiADKAsyEi5T", 
-          "dHJ1Y3RCaWxsU2V0dGluZyIbCglDU1N5c0ludG8SDgoGcGFyZW50GAEgAigJ", 
-          "IjsKCVNDU3lzSW5mbxIOCgZwYXJlbnQYASACKAkSHgoFY2hpbGQYAiADKAsy", 
-          "Dy5TdHJ1Y3REaWN0SXRlbSI+CgxDU0FkZFN5c0luZm8SDgoGcGFyZW50GAEg", 
-          "AigJEh4KBWNoaWxkGAIgAigLMg8uU3RydWN0RGljdEl0ZW0iLQoMQ1NEZWxT", 
-          "eXNJbmZvEg4KBnBhcmVudBgBIAIoCRINCgVjaGlsZBgCIAMoCSJBCg9DU1Vw", 
-          "ZGF0ZVN5c0luZm8SDgoGcGFyZW50GAEgAigJEh4KBWNoaWxkGAIgAygLMg8u", 
-          "U3RydWN0RGljdEl0ZW0iIgoMQ1NFbWtDaGVja2luEhIKCmNhcmRudW1iZXIY", 
-          "ASACKAkiUAoMU0NFbWtDaGVja2luEgwKBG5hbWUYASACKAkSEgoKY2FyZG51", 
-          "bWJlchgCIAIoCRINCgVyaWdodBgDIAIoCRIPCgdiYWxhbmNlGAQgAigFIiMK", 
-          "DUNTRW1rQ2hlY2tvdXQSEgoKY2FyZG51bWJlchgBIAIoCSJ2Cg1TQ0Vta0No", 
-          "ZWNrb3V0EgwKBG5hbWUYASACKAkSEgoKY2FyZG51bWJlchgCIAIoCRINCgVy", 
-          "aWdodBgDIAIoCRIPCgdiYWxhbmNlGAQgAigFEhEKCXVzZWRtb25leRgFIAIo", 
-          "BRIQCgh1c2VkdGltZRgGIAIoBSI6CgtDU0Vta1JlY29yZBIZCgRwYWdlGAEg", 
-          "AigLMgsuU3RydWN0UGFnZRIQCghtZW1iZXJpZBgCIAIoBSIyCgtTQ0Vta1Jl", 
-          "Y29yZBIjCgdlbWtpbmZvGAEgAygLMhIuU3RydWN0RW1iYXJrYXRpb24iYQoP", 
-          "Q1NFbWtSZWNvcmRGaW5kEhkKBHBhZ2UYASACKAsyCy5TdHJ1Y3RQYWdlEhEK", 
-          "CWJlZ2ludGltZRgCIAEoCRIPCgdlbmR0aW1lGAMgASgJEg8KB2tleXdvcmQY", 
-          "BCABKAkiNgoPU0NFbWtSZWNvcmRGaW5kEiMKB2Vta2luZm8YASADKAsyEi5T", 
-          "dHJ1Y3RFbWJhcmthdGlvbiIpCgpDU0dvb2RzQWRkEhsKBWdvb2RzGAEgAigL", 
-          "MgwuU3RydWN0R29vZHMiGQoKQ1NHb29kc0RlbBILCgNpZHMYASADKAUiLAoN", 
-          "Q1NHb29kc1VwZGF0ZRIbCgVnb29kcxgBIAIoCzIMLlN0cnVjdEdvb2RzIkwK", 
-          "C0NTR29vZHNGaW5kEhkKBHBhZ2UYASACKAsyCy5TdHJ1Y3RQYWdlEhAKCGNh", 
-          "dGVnb3J5GAIgASgFEhAKCGtleXdvcmRzGAQgASgJIioKC1NDR29vZHNGaW5k", 
-          "EhsKBWdvb2RzGAEgAygLMgwuU3RydWN0R29vZHMiKQoMQ1NHb29kc1N0b2Nr", 
-          "EhkKBHBhZ2UYASACKAsyCy5TdHJ1Y3RQYWdlIisKDFNDR29vZHNTdG9jaxIb", 
-          "CgVnb29kcxgBIAMoCzIMLlN0cnVjdFN0b2NrIl8KDUNTU2FsZXNSZWNvcmQS", 
-          "GQoEcGFnZRgBIAIoCzILLlN0cnVjdFBhZ2USDwoHZ29vZHNpZBgCIAIoBRIR", 
-          "CgliZWdpbnRpbWUYAyABKAkSDwoHZW5kdGltZRgEIAEoCSIrCg1TQ1NhbGVz", 
-          "UmVjb3JkEhoKBXNhbGVzGAEgAygLMgsuU3RydWN0U2FsZSIMCgpDU1NhbGVz", 
-          "VG9wIgwKClNDU2FsZXNUb3AipAEKC0NTT3JkZXJMaXN0EhkKBHBhZ2UYASAC", 
-          "KAsyCy5TdHJ1Y3RQYWdlEg4KBnN0YXR1cxgCIAEoBRIVCg1hZGR0aW1lX3N0", 
-          "YXJ0GAMgASgJEhMKC2FkZHRpbWVfZW5kGAQgASgJEhYKDnByb2N0aW1lX3N0", 
-          "YXJ0GAUgASgJEhQKDHByb2N0aW1lX2VuZBgGIAEoCRIQCgh1c2VybmFtZRgH", 
-          "IAEoCSIrCgtTQ09yZGVyTGlzdBIcCgZvcmRlcnMYASADKAsyDC5TdHJ1Y3RP", 
-          "cmRlciIgCg1DU09yZGVyRGV0YWlsEg8KB29yZGVyaWQYASACKAUiNAoNU0NP", 
-          "cmRlckRldGFpbBIjCgdkZXRhaWxzGAEgAygLMhIuU3RydWN0T3JkZXJEZXRh", 
-          "aWwiRAoLQ1NSZWNvbm5lY3QSDgoGdXNlcklkGAEgAigJEhAKCHBhc3N3b3Jk", 
-          "GAIgAigJEhMKC2RldmljZVRva2VuGAMgASgJIi4KC1NDUmVjb25uZWN0EhEK", 
-          "CXNlc3Npb25JZBgBIAIoBRIMCgRndWlkGAIgASgFIhwKDENTQ2xpZW50T3Bl", 
-          "bhIMCgR0ZXh0GAEgAigJIg8KDUNTQ2xpZW50Q2xvc2UiHQoHQ1NMb2dvbhIS", 
-          "CgpjYXJkbnVtYmVyGAEgAigJIm4KB1NDTG9nb24SEAoIbWVtYmVyaWQYASAC", 
-          "KAUSEgoKY2FyZG51bWJlchgCIAIoCRIMCgRuYW1lGAQgAigJEg0KBXJpZ2h0", 
-          "GAUgAigFEg8KB2JhbGFuY2UYCSACKAUSDwoHaW50ZWdhbBgMIAIoBSIeCghD", 
-          "U0xvZ29mZhISCgpjYXJkbnVtYmVyGAEgAigJInEKCFNDTG9nb2ZmEgwKBG5h", 
-          "bWUYASACKAkSEgoKY2FyZG51bWJlchgCIAIoCRINCgVyaWdodBgDIAIoCRIP", 
-          "CgdiYWxhbmNlGAQgAigFEhEKCXVzZWRtb25leRgFIAIoBRIQCgh1c2VkdGlt", 
-          "ZRgGIAIoBSIeCghDU0h1bmd1cBISCgpjYXJkbnVtYmVyGAEgAigJIlMKC0NT", 
-          "UHJlQ2hhcmdlEhIKCmNhcmRudW1iZXIYASACKAkSDgoGYW1vdW50GAIgAigF", 
-          "Eg8KB3BheW1vZGUYAyACKAUSDwoHb2ZmaWNhbBgEIAIoBSIdCgtTQ1ByZUNo", 
-          "YXJnZRIOCgZxcmNvZGUYASACKAkicQoKU0NUb0NoYXJnZRIMCgRuYW1lGAEg", 
-          "AigJEhIKCmNhcmRudW1iZXIYAiACKAkSDQoFcmlnaHQYAyACKAkSEAoIcmVj", 
-          "aGFyZ2UYBCACKAUSDwoHYmFsYW5jZRgFIAIoBRIPCgdpbnRlZ2FsGAYgAigF", 
-          "IiUKBlNDU2hvcBIbCgVnb29kcxgBIAMoCzIMLlN0cnVjdEdvb2RzIi4KCUNT", 
-          "Q2FydEFkZBIPCgdnb29kc2lkGAEgAigFEhAKCGdvb2RzbnVtGAIgAigFIi4K", 
-          "CUNTQ2FydERlbBIPCgdnb29kc2lkGAEgAigFEhAKCGdvb2RzbnVtGAIgAigF", 
-          "Ih4KCENTUHJlQnV5EhIKCmNhcmRudW1iZXIYASACKAkiGgoIU0NQcmVCdXkS", 
-          "DgoGcXJjb2RlGAEgAigJIoQBCgdTQ1RvQnV5EgwKBG5hbWUYASACKAkSEgoK", 
-          "Y2FyZG51bWJlchgCIAIoCRINCgVyaWdodBgDIAIoCRIRCgl1c2VkbW9uZXkY", 
-          "BCACKAUSEwoLdXNlZGludGVnYWwYBSACKAUSDwoHYmFsYW5jZRgGIAIoBRIP", 
-          "CgdpbnRlZ2FsGAcgAigFIisKDFNDU3lzTWVzc2FnZRILCgNjbWQYASACKAUS", 
-          "DgoGcGFyYW1zGAIgAygJIh0KDUNTVXNlck1lc3NhZ2USDAoEdGV4dBgBIAIo", 
-          "CSJPCgpDU0V2YWx1YXRlEhEKCXN0YWZmU3RhchgBIAIoBRIPCgdlbnZTdGFy", 
-          "GAIgAigFEg8KB2RldlN0YXIYAyACKAUSDAoEZXZhbBgEIAEoCSIdCgpTQ0V2", 
-          "YWx1YXRlEg8KB2ludGVnYWwYASACKAUiIwoMQ1NWZXJpZnlDb2RlEhMKC3Bo", 
-          "b25lbnVtYmVyGAEgAigJIiIKDFNDVmVyaWZ5Q29kZRISCgp2ZXJpZnljb2Rl", 
-          "GAEgAigJIjcKDENTQmluZE1vYmlsZRITCgtwaG9uZW51bWJlchgBIAIoCRIS", 
-          "Cgp2ZXJpZnljb2RlGAIgAigJIh8KDFNDQmluZE1vYmlsZRIPCgdpbnRlZ2Fs", 
-          "GAEgAigFKrcOCgNDbWQSEgoNQ01EX0dFVFNFUlZFUhDoBxIPCgpDTURfQVVU", 
-          "SEVOEOkHEg4KCUNNRF9MT0dJThDqBxIVChBDTURfQUNDT1VOVF9JTkZPEOsH", 
-          "EhYKEUNNRF9SRUFMVElNRV9JTkZPEOwHEhAKC0NNRF9DT01NQU5EEO0HEgwK", 
-          "B0NNRF9MT0cQ7gcSEgoNQ01EX1JPTEVfTElTVBDyBxIRCgxDTURfUk9MRV9B", 
-          "REQQ8wcSEQoMQ01EX1JPTEVfREVMEPQHEhQKD0NNRF9ST0xFX1VQREFURRD1", 
-          "BxIUCg9DTURfUk9MRV9SSUdIVFMQ9gcSEwoOQ01EX1NUQUZGX0xJU1QQ/AcS", 
-          "EgoNQ01EX1NUQUZGX0FERBD9BxISCg1DTURfU1RBRkZfREVMEP4HEhUKEENN", 
-          "RF9TVEFGRl9VUERBVEUQ/wcSEwoOQ01EX1NUQUZGX0ZJTkQQgAgSEgoNQ01E", 
-          "X1NUQUZGX1NOUxCBCBIWChFDTURfU1RBRkZfQ09NTUVOVBCCCBIWChFDTURf", 
-          "U1RBRkZfUEVSRk9STRCDCBIUCg9DTURfU1RBRkZfU0hJRlQQhAgSFAoPQ01E", 
-          "X0VBUk5JTkdfREFZEIYIEhYKEUNNRF9FQVJOSU5HX01PTlRIEIcIEhUKEENN", 
-          "RF9FQVJOSU5HX1lFQVIQiAgSFgoRQ01EX0NPTVBVVEVSX0xJU1QQkAgSFQoQ", 
-          "Q01EX0NPTVBVVEVSX0FERBCRCBIVChBDTURfQ09NUFVURVJfREVMEJIIEhgK", 
-          "E0NNRF9DT01QVVRFUl9VUERBVEUQkwgSFgoRQ01EX0NPTVBVVEVSX0ZJTkQQ", 
-          "lAgSFgoRQ01EX0NPTVBVVEVSX09QRU4QlQgSFwoSQ01EX0NPTVBVVEVSX0NM", 
-          "T1NFEJYIEhQKD0NNRF9NRU1CRVJfTElTVBCaCBITCg5DTURfTUVNQkVSX0FE", 
-          "RBCbCBITCg5DTURfTUVNQkVSX0RFTBCcCBIWChFDTURfTUVNQkVSX1VQREFU", 
-          "RRCdCBIUCg9DTURfTUVNQkVSX0ZJTkQQnggSGQoUQ01EX01FTUJFUl9DQVJE", 
-          "X0lORk8QnwgSHQoYQ01EX01FTUJFUl9DT05TVU1fUkVDT1JEEKAIEh0KGENN", 
-          "RF9NRU1CRVJfQ09OU1VNX0ZJTFRFUhChCBIZChRDTURfU1lTX0JJTExJTkdf", 
-          "TElTVBCkCBIbChZDTURfU1lTX0JJTExJTkdfVVBEQVRFEKUIEhEKDENNRF9T", 
-          "WVNfSU5GTxCmCBIQCgtDTURfU1lTX0FERBCnCBIQCgtDTURfU1lTX0RFTBCo", 
-          "CBITCg5DTURfU1lTX1VQREFURRCpCBIUCg9DTURfRU1LX0NIRUNLSU4QrggS", 
-          "FQoQQ01EX0VNS19DSEVDS09VVBCvCBITCg5DTURfRU1LX0NBTkNFTBCyCBIT", 
-          "Cg5DTURfRU1LX1JFQ09SRBCzCBIYChNDTURfRU1LX1JFQ09SRF9GSU5EELQI", 
-          "EhIKDUNNRF9HT09EU19BREQQuQgSEgoNQ01EX0dPT0RTX0RFTBC6CBIVChBD", 
-          "TURfR09PRFNfVVBEQVRFELsIEhMKDkNNRF9HT09EU19GSU5EELwIEhQKD0NN", 
-          "RF9HT09EU19TQUxFUxC9CBIYChNDTURfR09PRFNfU0FMRVNfVE9QEL4IEhQK", 
-          "D0NNRF9HT09EU19TVE9DSxC/CBIUCg9DTURfR09PRFNfT1JERVIQwAgSGwoW", 
-          "Q01EX0dPT0RTX09SREVSX0RFVEFJTBDBCBIUCg9DTURfVVBMT0FEX0hFQUQQ", 
-          "wggSDgoJQ01EX0hFQVJUEMMIEhQKD0NNRF9QTEFZRVJfS0lDSxDECBITCg5D", 
-          "TURfQ0hFQ0tfTkFNRRDFCBIWChFDTURfQ0hFQ0tfQUNDT1VOVBDGCBISCg1D", 
-          "TURfUkVDT05ORUNUEMcIEhQKD0NNRF9DTElFTlRfT1BFThDQDxIVChBDTURf", 
-          "Q0xJRU5UX0NMT1NFENEPEhUKEENNRF9DTElFTlRfTE9HT04Q0g8SFgoRQ01E", 
-          "X0NMSUVOVF9MT0dPRkYQ0w8SFgoRQ01EX0NMSUVOVF9IVU5HVVAQ1A8SEgoN", 
-          "Q01EX1BSRUNIQVJHRRDVDxIRCgxDTURfVE9DSEFSR0UQ1g8SFAoPQ01EX0NM", 
-          "SUVOVF9TSE9QENcPEhgKE0NNRF9DTElFTlRfQ0FSVF9BREQQ2A8SGAoTQ01E", 
-          "X0NMSUVOVF9DQVJUX0RFTBDZDxIPCgpDTURfUFJFQlVZENoPEg4KCUNNRF9U", 
-          "T0JVWRDbDxIaChVDTURfQ0xJRU5UX1NZU01FU1NBR0UQ3A8SGwoWQ01EX0NM", 
-          "SUVOVF9VU0VSTUVTU0FHRRDdDxIYChNDTURfQ0xJRU5UX0VWQUxVQVRFEN4P", 
-          "EhoKFUNNRF9DTElFTlRfVkVSSUZZQ09ERRDfDxIaChVDTURfQ0xJRU5UX0JJ", 
-          "TkRNT0JJTEUQ4A9CLQodY29tLnNreXNvZnQuY29yZS5hdXRvLm1lc3NhZ2VC", 
-        "DENvcmVQcm90b2NvbA=="));
+          "KAsyCC5DU0xvZ2luEhkKB3NjTG9naW4YCCABKAsyCC5TQ0xvZ2luEh8KCnNj", 
+          "Q2FsbExpc3QYCSABKAsyCy5TQ0NhbGxMaXN0EiUKDWNzQ2FsbFByb2Nlc3MY", 
+          "CiABKAsyDi5DU0NhbGxQcm9jZXNzEiUKDXNjQWNjb3VudEluZm8YCyABKAsy", 
+          "Di5TQ0FjY291bnRJbmZvEicKDnNjUmVhbHRpbWVJbmZvGAwgASgLMg8uU0NS", 
+          "ZWFsdGltZUluZm8SHQoJY3NDb21tYW5kGA0gASgLMgouQ1NDb21tYW5kEhUK", 
+          "BWNzTG9nGA4gASgLMgYuQ1NMb2cSFQoFc2NMb2cYDyABKAsyBi5TQ0xvZxIf", 
+          "CgpzY1JvbGVMaXN0GBAgASgLMgsuU0NSb2xlTGlzdBIdCgljc1JvbGVBZGQY", 
+          "ESABKAsyCi5DU1JvbGVBZGQSHQoJc2NSb2xlQWRkGBIgASgLMgouU0NSb2xl", 
+          "QWRkEh0KCWNzUm9sZURlbBgTIAEoCzIKLkNTUm9sZURlbBIjCgxjc1JvbGVV", 
+          "cGRhdGUYFCABKAsyDS5DU1JvbGVVcGRhdGUSIwoMY3NSb2xlUmlnaHRzGBUg", 
+          "ASgLMg0uQ1NSb2xlUmlnaHRzEiUKDXNjQWNjb3VudExpc3QYFiABKAsyDi5T", 
+          "Q0FjY291bnRMaXN0EiMKDGNzQWNjb3VudEFkZBgXIAEoCzINLkNTQWNjb3Vu", 
+          "dEFkZBIjCgxjc0FjY291bnREZWwYGCABKAsyDS5DU0FjY291bnREZWwSKQoP", 
+          "Y3NBY2NvdW50VXBkYXRlGBkgASgLMhAuQ1NBY2NvdW50VXBkYXRlEikKD2Nz", 
+          "QWNjb3VudFNuc1NldBgaIAEoCzIQLkNTQWNjb3VudFNuc1NldBInCg5jc1N0", 
+          "YWZmQ29tbWVudBgbIAEoCzIPLkNTU3RhZmZDb21tZW50EicKDnNjU3RhZmZD", 
+          "b21tZW50GBwgASgLMg8uU0NTdGFmZkNvbW1lbnQSJwoOY3NTdGFmZlBlcmZv", 
+          "cm0YHSABKAsyDy5DU1N0YWZmUGVyZm9ybRInCg5zY1N0YWZmUGVyZm9ybRge", 
+          "IAEoCzIPLlNDU3RhZmZQZXJmb3JtEh0KCWNzRWFybmluZxghIAEoCzIKLkNT", 
+          "RWFybmluZxIdCglzY0Vhcm5pbmcYIiABKAsyCi5TQ0Vhcm5pbmcSJwoOc2ND", 
+          "b21wdXRlckxpc3QYIyABKAsyDy5TQ0NvbXB1dGVyTGlzdBIlCg1jc0NvbXB1", 
+          "dGVyQWRkGCQgASgLMg4uQ1NDb21wdXRlckFkZBIlCg1jc0NvbXB1dGVyRGVs", 
+          "GCUgASgLMg4uQ1NDb21wdXRlckRlbBIrChBjc0NvbXB1dGVyVXBkYXRlGCYg", 
+          "ASgLMhEuQ1NDb21wdXRlclVwZGF0ZRInCg5jc0NvbXB1dGVyRmluZBgnIAEo", 
+          "CzIPLkNTQ29tcHV0ZXJGaW5kEicKDnNjQ29tcHV0ZXJGaW5kGCggASgLMg8u", 
+          "U0NDb21wdXRlckZpbmQSIwoMY3NNZW1iZXJMaXN0GCkgASgLMg0uQ1NNZW1i", 
+          "ZXJMaXN0EiMKDHNjTWVtYmVyTGlzdBgqIAEoCzINLlNDTWVtYmVyTGlzdBIh", 
+          "Cgtjc01lbWJlckFkZBgrIAEoCzIMLkNTTWVtYmVyQWRkEiEKC3NjTWVtYmVy", 
+          "QWRkGCwgASgLMgwuU0NNZW1iZXJBZGQSIQoLY3NNZW1iZXJEZWwYLSABKAsy", 
+          "DC5DU01lbWJlckRlbBItCg5jc01lbWJlclVwZGF0ZRguIAEoCzIVLkNTTWVt", 
+          "YmVyVXBkYXRlU3RhdHVzEiMKDGNzTWVtYmVyRmluZBgvIAEoCzINLkNTTWVt", 
+          "YmVyRmluZBIjCgxzY01lbWJlckZpbmQYMCABKAsyDS5TQ01lbWJlckZpbmQS", 
+          "KwoQY3NNZW1iZXJDYXJkSW5mbxgxIAEoCzIRLkNTTWVtYmVyQ2FyZEluZm8S", 
+          "KwoQc2NNZW1iZXJDYXJkSW5mbxgyIAEoCzIRLlNDTWVtYmVyQ2FyZEluZm8S", 
+          "MwoUY3NNZW1iZXJDb25zdW1SZWNvcmQYMyABKAsyFS5DU01lbWJlckNvbnN1", 
+          "bVJlY29yZBIzChRzY01lbWJlckNvbnN1bVJlY29yZBg0IAEoCzIVLlNDTWVt", 
+          "YmVyQ29uc3VtUmVjb3JkEjMKFGNzTWVtYmVyQ29uc3VtRmlsdGVyGDUgASgL", 
+          "MhUuQ1NNZW1iZXJDb25zdW1GaWx0ZXISMwoUc2NNZW1iZXJDb25zdW1GaWx0", 
+          "ZXIYNiABKAsyFS5TQ01lbWJlckNvbnN1bUZpbHRlchIlCg1zY1N5c0JpbGxM", 
+          "aXN0GDcgASgLMg4uU0NTeXNCaWxsTGlzdBIpCg9jc1N5c0JpbGxVcGRhdGUY", 
+          "OCABKAsyEC5DU1N5c0JpbGxVcGRhdGUSKQoPc2NTeXNCaWxsVXBkYXRlGDkg", 
+          "ASgLMhAuU0NTeXNCaWxsVXBkYXRlEh0KCWNzU3lzSW5mbxg6IAEoCzIKLkNT", 
+          "U3lzSW50bxIdCglzY1N5c0luZm8YOyABKAsyCi5TQ1N5c0luZm8SIwoMY3NB", 
+          "ZGRTeXNJbmZvGDwgASgLMg0uQ1NBZGRTeXNJbmZvEiMKDGNzRGVsU3lzSW5m", 
+          "bxg9IAEoCzINLkNTRGVsU3lzSW5mbxIpCg9jc1VwZGF0ZVN5c0luZm8YPiAB", 
+          "KAsyEC5DU1VwZGF0ZVN5c0luZm8SIwoMY3NFbWtDaGVja2luGD8gASgLMg0u", 
+          "Q1NFbWtDaGVja2luEiMKDHNjRW1rQ2hlY2tpbhhAIAEoCzINLlNDRW1rQ2hl", 
+          "Y2tpbhIlCg1jc0Vta0NoZWNrb3V0GEEgASgLMg4uQ1NFbWtDaGVja291dBIl", 
+          "Cg1zY0Vta0NoZWNrb3V0GEIgASgLMg4uU0NFbWtDaGVja291dBIhCgtjc0Vt", 
+          "a1JlY29yZBhDIAEoCzIMLkNTRW1rUmVjb3JkEiEKC3NjRW1rUmVjb3JkGEQg", 
+          "ASgLMgwuU0NFbWtSZWNvcmQSKQoPY3NFbWtSZWNvcmRGaW5kGEUgASgLMhAu", 
+          "Q1NFbWtSZWNvcmRGaW5kEikKD3NjRW1rUmVjb3JkRmluZBhGIAEoCzIQLlND", 
+          "RW1rUmVjb3JkRmluZBIhCgtjc0dvb2RzRmluZBhHIAEoCzIMLkNTR29vZHNG", 
+          "aW5kEiEKC3NjR29vZHNGaW5kGEggASgLMgwuU0NHb29kc0ZpbmQSHwoKY3NH", 
+          "b29kc0FkZBhJIAEoCzILLkNTR29vZHNBZGQSHwoKY3NHb29kc0RlbBhKIAEo", 
+          "CzILLkNTR29vZHNEZWwSJQoNY3NHb29kc1VwZGF0ZRhLIAEoCzIOLkNTR29v", 
+          "ZHNVcGRhdGUSIwoMY3NHb29kc1N0b2NrGEwgASgLMg0uQ1NHb29kc1N0b2Nr", 
+          "EiMKDHNjR29vZHNTdG9jaxhNIAEoCzINLlNDR29vZHNTdG9jaxIlCg1jc1Nh", 
+          "bGVzUmVjb3JkGE4gASgLMg4uQ1NTYWxlc1JlY29yZBIlCg1zY1NhbGVzUmVj", 
+          "b3JkGE8gASgLMg4uU0NTYWxlc1JlY29yZBIfCgpjc1NhbGVzVG9wGFAgASgL", 
+          "MgsuQ1NTYWxlc1RvcBIfCgpzY1NhbGVzVG9wGFEgASgLMgsuU0NTYWxlc1Rv", 
+          "cBIhCgtjc09yZGVyTGlzdBhSIAEoCzIMLkNTT3JkZXJMaXN0EiEKC3NjT3Jk", 
+          "ZXJMaXN0GFMgASgLMgwuU0NPcmRlckxpc3QSJQoNY3NPcmRlckRldGFpbBhU", 
+          "IAEoCzIOLkNTT3JkZXJEZXRhaWwSJQoNc2NPcmRlckRldGFpbBhVIAEoCzIO", 
+          "LlNDT3JkZXJEZXRhaWwSJwoOY3NPcmRlclByb2Nlc3MYViABKAsyDy5DU09y", 
+          "ZGVyUHJvY2VzcxIfCgpjc1NoaWZ0QWRkGFcgASgLMgsuQ1NTaGlmdEFkZBIh", 
+          "Cgtjc1NoaWZ0RmluZBhYIAEoCzIMLkNTU2hpZnRGaW5kEiEKC3NjU2hpZnRG", 
+          "aW5kGFkgASgLMgwuU0NTaGlmdEZpbmQSIQoLY3NSZWNvbm5lY3QYWiABKAsy", 
+          "DC5DU1JlY29ubmVjdBIhCgtzY1JlY29ubmVjdBhbIAEoCzIMLlNDUmVjb25u", 
+          "ZWN0EiQKDGNzQ2xpZW50T3BlbhjIASABKAsyDS5DU0NsaWVudE9wZW4SJgoN", 
+          "Y3NDbGllbnRDbG9zZRjJASABKAsyDi5DU0NsaWVudENsb3NlEhoKB2NzTG9n", 
+          "b24YygEgASgLMgguQ1NMb2dvbhIaCgdzY0xvZ29uGMsBIAEoCzIILlNDTG9n", 
+          "b24SHAoIY3NMb2dvZmYYzAEgASgLMgkuQ1NMb2dvZmYSHAoIc2NMb2dvZmYY", 
+          "zQEgASgLMgkuU0NMb2dvZmYSHAoIY3NIdW5ndXAYzgEgASgLMgkuQ1NIdW5n", 
+          "dXASIgoLY3NQcmVDaGFyZ2UYzwEgASgLMgwuQ1NQcmVDaGFyZ2USIgoLc2NQ", 
+          "cmVDaGFyZ2UY0AEgASgLMgwuU0NQcmVDaGFyZ2USIAoKc2NUb0NoYXJnZRjR", 
+          "ASABKAsyCy5TQ1RvQ2hhcmdlEhgKBnNjU2hvcBjSASABKAsyBy5TQ1Nob3AS", 
+          "HgoJY3NDYXJ0QWRkGNMBIAEoCzIKLkNTQ2FydEFkZBIeCgljc0NhcnREZWwY", 
+          "1AEgASgLMgouQ1NDYXJ0RGVsEhwKCGNzUHJlQnV5GNUBIAEoCzIJLkNTUHJl", 
+          "QnV5EhwKCHNjUHJlQnV5GNYBIAEoCzIJLlNDUHJlQnV5EhoKB3NjVG9CdXkY", 
+          "1wEgASgLMgguU0NUb0J1eRIkCgxzY1N5c01lc3NhZ2UY2AEgASgLMg0uU0NT", 
+          "eXNNZXNzYWdlEiAKCmNzRXZhbHVhdGUY2gEgASgLMgsuQ1NFdmFsdWF0ZRIg", 
+          "CgpzY0V2YWx1YXRlGNsBIAEoCzILLlNDRXZhbHVhdGUSJAoMY3NWZXJpZnlD", 
+          "b2RlGNwBIAEoCzINLkNTVmVyaWZ5Q29kZRIkCgxzY1ZlcmlmeUNvZGUY3QEg", 
+          "ASgLMg0uU0NWZXJpZnlDb2RlEiQKDGNzQmluZE1vYmlsZRjeASABKAsyDS5D", 
+          "U0JpbmRNb2JpbGUSJAoMc2NCaW5kTW9iaWxlGN8BIAEoCzINLlNDQmluZE1v", 
+          "YmlsZSIbCgtDTEFza1NlcnZlchIMCgR1dWlkGAEgAigJIi0KC0xDUmV0U2Vy", 
+          "dmVyEhAKCHNlcnZlcmlwGAEgASgJEgwKBHBvcnQYAiABKAUiGAoIQ1NBdXRo", 
+          "ZW4SDAoEdGV4dBgBIAIoCSIrCghTQ0F1dGhlbhIRCglzZXNzaW9uSWQYASAC", 
+          "KAUSDAoEZ3VpZBgCIAEoBSIrCgdDU0xvZ2luEg4KBnVzZXJJZBgBIAEoCRIQ", 
+          "CghwYXNzd29yZBgCIAEoCSIqCgdTQ0xvZ2luEhEKCXNlc3Npb25JZBgBIAIo", 
+          "BRIMCgRndWlkGAIgASgFIksKDVNDQWNjb3VudEluZm8SHwoHYWNjb3VudBgB", 
+          "IAIoCzIOLlN0cnVjdEFjY291bnQSGQoEcm9sZRgCIAIoCzILLlN0cnVjdFJv", 
+          "bGUiNAoOU0NSZWFsdGltZUluZm8SIgoJcmVhbHRpbWVzGAEgAygLMg8uU3Ry", 
+          "dWN0UmVhbFRpbWUiKAoJQ1NDb21tYW5kEgsKA2NtZBgBIAIoBRIOCgZwYXJh", 
+          "bXMYAiADKAkiaQoFQ1NMb2cSGQoEcGFnZRgBIAIoCzILLlN0cnVjdFBhZ2US", 
+          "EAoIb3BlcmF0b3IYAiABKAkSEQoJc3RhcnR0aW1lGAMgASgJEg8KB2VuZHRp", 
+          "bWUYBCABKAkSDwoHa2V5d29yZBgFIAEoCSIhCgVTQ0xvZxIYCgRsb2dzGAEg", 
+          "AygLMgouU3RydWN0TG9nIigKClNDQ2FsbExpc3QSGgoFY2FsbHMYASADKAsy", 
+          "Cy5TdHJ1Y3RDYWxsIh8KDUNTQ2FsbFByb2Nlc3MSDgoGY2FsbGlkGAEgAigF", 
+          "IigKClNDUm9sZUxpc3QSGgoFcm9sZXMYASADKAsyCy5TdHJ1Y3RSb2xlIhkK", 
+          "CUNTUm9sZUFkZBIMCgRuYW1lGAEgAigJIiYKCVNDUm9sZUFkZBIZCgRyb2xl", 
+          "GAEgAigLMgsuU3RydWN0Um9sZSIbCglDU1JvbGVEZWwSDgoGcm9sZWlkGAEg", 
+          "AigFIiwKDENTUm9sZVVwZGF0ZRIOCgZyb2xlaWQYASACKAUSDAoEbmFtZRgC", 
+          "IAIoCSJBCgxDU1JvbGVSaWdodHMSDgoGcm9sZWlkGAEgAigFEhEKCXJpZ2h0", 
+          "dHlwZRgCIAIoBRIOCgZyaWdodHMYAyACKAkiMAoNU0NBY2NvdW50TGlzdBIf", 
+          "CgdhY2NvdW50GAEgAygLMg4uU3RydWN0QWNjb3VudCIvCgxDU0FjY291bnRB", 
+          "ZGQSHwoHYWNjb3VudBgBIAIoCzIOLlN0cnVjdEFjY291bnQiHwoMQ1NBY2Nv", 
+          "dW50RGVsEg8KB2FkbWluaWQYASACKAkiMgoPQ1NBY2NvdW50VXBkYXRlEh8K", 
+          "B2FjY291bnQYASACKAsyDi5TdHJ1Y3RBY2NvdW50IjIKD0NTQWNjb3VudFNu", 
+          "c1NldBIfCgdhY2NvdW50GAEgAygLMg4uU3RydWN0QWNjb3VudCJ+Cg5DU1N0", 
+          "YWZmQ29tbWVudBIZCgRwYWdlGAEgAigLMgsuU3RydWN0UGFnZRIMCgR0eXBl", 
+          "GAIgAigFEhEKCXN0YXJ0dGltZRgDIAEoCRIPCgdlbmR0aW1lGAQgASgJEg0K", 
+          "BXN0YWZmGAUgASgJEhAKCGN1c3RvbWVyGAYgASgJIjIKDlNDU3RhZmZDb21t", 
+          "ZW50EiAKCGNvbW1lbnRzGAEgAygLMg4uU3RydWN0Q29tbWVudCItCg5DU1N0", 
+          "YWZmUGVyZm9ybRIMCgR5ZWFyGAEgAigFEg0KBW1vbnRoGAIgAigFIjIKDlND", 
+          "U3RhZmZQZXJmb3JtEiAKCHBlcmZvcm1zGAEgAygLMg4uU3RydWN0UGVyZm9y", 
+          "bSIvCglDU0Vhcm5pbmcSEQoJc3RhcnR0aW1lGAEgAigJEg8KB2VuZHRpbWUY", 
+          "AiACKAkiJwoJU0NFYXJuaW5nEhoKBWVhcm5zGAEgAygLMgsuU3RydWN0RWFy", 
+          "biI0Cg5TQ0NvbXB1dGVyTGlzdBIiCgljb21wdXRlcnMYASADKAsyDy5TdHJ1", 
+          "Y3RDb21wdXRlciIyCg1DU0NvbXB1dGVyQWRkEiEKCGNvbXB1dGVyGAEgAigL", 
+          "Mg8uU3RydWN0Q29tcHV0ZXIiIwoNQ1NDb21wdXRlckRlbBISCgpjb21wdXRl", 
+          "cmlkGAEgAygFIjUKEENTQ29tcHV0ZXJVcGRhdGUSIQoIY29tcHV0ZXIYASAD", 
+          "KAsyDy5TdHJ1Y3RDb21wdXRlciIeCg5DU0NvbXB1dGVyRmluZBIMCgRuYW1l", 
+          "GAEgAigJIjQKDlNDQ29tcHV0ZXJGaW5kEiIKCWNvbXB1dGVycxgBIAMoCzIP", 
+          "LlN0cnVjdENvbXB1dGVyIikKDENTTWVtYmVyTGlzdBIZCgRwYWdlGAEgAigL", 
+          "MgsuU3RydWN0UGFnZSIuCgxTQ01lbWJlckxpc3QSHgoHbWVtYmVycxgBIAMo", 
+          "CzINLlN0cnVjdE1lbWJlciKNAQoLQ1NNZW1iZXJBZGQSHQoIY2FyZGluZm8Y", 
+          "ASACKAsyCy5TdHJ1Y3RDYXJkEhIKCm1lbWJlcnR5cGUYAiACKAUSEAoIcmVj", 
+          "aGFyZ2UYAyACKAUSDQoFcGhvbmUYBCABKAkSFAoMZmluZ2VycHJpbnQxGAUg", 
+          "ASgJEhQKDGZpbmdlcnByaW50MhgGIAEoCSJyCgtTQ01lbWJlckFkZBIMCgRu", 
+          "YW1lGAEgAigJEhIKCmNhcmRudW1iZXIYAiACKAkSDQoFcmlnaHQYAyACKAkS", 
+          "EAoIcmVjaGFyZ2UYBCACKAUSDwoHYmFsYW5jZRgFIAIoBRIPCgdpbnRlZ2Fs", 
+          "GAYgAigFIh8KC0NTTWVtYmVyRGVsEhAKCG1lbWJlcmlkGAEgAygFIjcKFENT", 
+          "TWVtYmVyVXBkYXRlU3RhdHVzEgwKBG1hc2sYASACKAUSEQoJbWVtYmVyaWRz", 
+          "GAIgAigFIloKDENTTWVtYmVyRmluZBIZCgRwYWdlGAEgAigLMgsuU3RydWN0", 
+          "UGFnZRIOCgZzdGF0dXMYAiABKAUSDQoFcmlnaHQYAyABKAUSEAoIa2V5d29y", 
+          "ZHMYBCABKAkiLgoMU0NNZW1iZXJGaW5kEh4KB21lbWJlcnMYASADKAsyDS5T", 
+          "dHJ1Y3RNZW1iZXIiJAoQQ1NNZW1iZXJDYXJkSW5mbxIQCghtZW1iZXJpZBgB", 
+          "IAIoBSIxChBTQ01lbWJlckNhcmRJbmZvEh0KCGNhcmRpbmZvGAEgAigLMgsu", 
+          "U3RydWN0Q2FyZCJDChRDU01lbWJlckNvbnN1bVJlY29yZBIZCgRwYWdlGAEg", 
+          "AigLMgsuU3RydWN0UGFnZRIQCghtZW1iZXJpZBgCIAIoBSI5ChRTQ01lbWJl", 
+          "ckNvbnN1bVJlY29yZBIhCgpjb25zdW1pbmZvGAEgAygLMg0uU3RydWN0Q29u", 
+          "c3VtIowBChRDU01lbWJlckNvbnN1bUZpbHRlchIZCgRwYWdlGAEgAigLMgsu", 
+          "U3RydWN0UGFnZRIQCghtZW1iZXJpZBgCIAIoBRIRCgliZWdpbnRpbWUYAyAB", 
+          "KAkSDwoHZW5kdGltZRgEIAEoCRISCgpjb25zdW10eXBlGAUgASgFEg8KB3Bh", 
+          "eW1vZGUYBiABKAUiOQoUU0NNZW1iZXJDb25zdW1GaWx0ZXISIQoKY29uc3Vt", 
+          "aW5mbxgBIAMoCzINLlN0cnVjdENvbnN1bSJXCg1TQ1N5c0JpbGxMaXN0EiEK", 
+          "CHVzZXJBcmVhGAEgAygLMg8uU3RydWN0VXNlckFyZWESIwoHc2V0dGluZxgC", 
+          "IAMoCzISLlN0cnVjdEJpbGxTZXR0aW5nIlkKD0NTU3lzQmlsbFVwZGF0ZRIh", 
+          "Cgh1c2VyQXJlYRgBIAMoCzIPLlN0cnVjdFVzZXJBcmVhEiMKB3NldHRpbmcY", 
+          "AiADKAsyEi5TdHJ1Y3RCaWxsU2V0dGluZyJZCg9TQ1N5c0JpbGxVcGRhdGUS", 
+          "IQoIdXNlckFyZWEYASADKAsyDy5TdHJ1Y3RVc2VyQXJlYRIjCgdzZXR0aW5n", 
+          "GAIgAygLMhIuU3RydWN0QmlsbFNldHRpbmciGwoJQ1NTeXNJbnRvEg4KBnBh", 
+          "cmVudBgBIAIoCSI7CglTQ1N5c0luZm8SDgoGcGFyZW50GAEgAigJEh4KBWNo", 
+          "aWxkGAIgAygLMg8uU3RydWN0RGljdEl0ZW0iPgoMQ1NBZGRTeXNJbmZvEg4K", 
+          "BnBhcmVudBgBIAIoCRIeCgVjaGlsZBgCIAIoCzIPLlN0cnVjdERpY3RJdGVt", 
+          "Ii0KDENTRGVsU3lzSW5mbxIOCgZwYXJlbnQYASACKAkSDQoFY2hpbGQYAiAD", 
+          "KAkiQQoPQ1NVcGRhdGVTeXNJbmZvEg4KBnBhcmVudBgBIAIoCRIeCgVjaGls", 
+          "ZBgCIAMoCzIPLlN0cnVjdERpY3RJdGVtIiIKDENTRW1rQ2hlY2tpbhISCgpj", 
+          "YXJkbnVtYmVyGAEgAigJIlAKDFNDRW1rQ2hlY2tpbhIMCgRuYW1lGAEgAigJ", 
+          "EhIKCmNhcmRudW1iZXIYAiACKAkSDQoFcmlnaHQYAyACKAkSDwoHYmFsYW5j", 
+          "ZRgEIAIoBSIjCg1DU0Vta0NoZWNrb3V0EhIKCmNhcmRudW1iZXIYASACKAki", 
+          "dgoNU0NFbWtDaGVja291dBIMCgRuYW1lGAEgAigJEhIKCmNhcmRudW1iZXIY", 
+          "AiACKAkSDQoFcmlnaHQYAyACKAkSDwoHYmFsYW5jZRgEIAIoBRIRCgl1c2Vk", 
+          "bW9uZXkYBSACKAUSEAoIdXNlZHRpbWUYBiACKAUiOgoLQ1NFbWtSZWNvcmQS", 
+          "GQoEcGFnZRgBIAIoCzILLlN0cnVjdFBhZ2USEAoIbWVtYmVyaWQYAiACKAUi", 
+          "MgoLU0NFbWtSZWNvcmQSIwoHZW1raW5mbxgBIAMoCzISLlN0cnVjdEVtYmFy", 
+          "a2F0aW9uImEKD0NTRW1rUmVjb3JkRmluZBIZCgRwYWdlGAEgAigLMgsuU3Ry", 
+          "dWN0UGFnZRIRCgliZWdpbnRpbWUYAiABKAkSDwoHZW5kdGltZRgDIAEoCRIP", 
+          "CgdrZXl3b3JkGAQgASgJIjYKD1NDRW1rUmVjb3JkRmluZBIjCgdlbWtpbmZv", 
+          "GAEgAygLMhIuU3RydWN0RW1iYXJrYXRpb24iKQoKQ1NHb29kc0FkZBIbCgVn", 
+          "b29kcxgBIAIoCzIMLlN0cnVjdEdvb2RzIhkKCkNTR29vZHNEZWwSCwoDaWRz", 
+          "GAEgAygFIiwKDUNTR29vZHNVcGRhdGUSGwoFZ29vZHMYASACKAsyDC5TdHJ1", 
+          "Y3RHb29kcyJMCgtDU0dvb2RzRmluZBIZCgRwYWdlGAEgAigLMgsuU3RydWN0", 
+          "UGFnZRIQCghjYXRlZ29yeRgCIAEoBRIQCghrZXl3b3JkcxgEIAEoCSIqCgtT", 
+          "Q0dvb2RzRmluZBIbCgVnb29kcxgBIAMoCzIMLlN0cnVjdEdvb2RzIikKDENT", 
+          "R29vZHNTdG9jaxIZCgRwYWdlGAEgAigLMgsuU3RydWN0UGFnZSIrCgxTQ0dv", 
+          "b2RzU3RvY2sSGwoFZ29vZHMYASADKAsyDC5TdHJ1Y3RTdG9jayJfCg1DU1Nh", 
+          "bGVzUmVjb3JkEhkKBHBhZ2UYASACKAsyCy5TdHJ1Y3RQYWdlEg8KB2dvb2Rz", 
+          "aWQYAiACKAUSEQoJYmVnaW50aW1lGAMgASgJEg8KB2VuZHRpbWUYBCABKAki", 
+          "KwoNU0NTYWxlc1JlY29yZBIaCgVzYWxlcxgBIAMoCzILLlN0cnVjdFNhbGUi", 
+          "DAoKQ1NTYWxlc1RvcCIMCgpTQ1NhbGVzVG9wIqQBCgtDU09yZGVyTGlzdBIZ", 
+          "CgRwYWdlGAEgAigLMgsuU3RydWN0UGFnZRIOCgZzdGF0dXMYAiABKAUSFQoN", 
+          "YWRkdGltZV9zdGFydBgDIAEoCRITCgthZGR0aW1lX2VuZBgEIAEoCRIWCg5w", 
+          "cm9jdGltZV9zdGFydBgFIAEoCRIUCgxwcm9jdGltZV9lbmQYBiABKAkSEAoI", 
+          "dXNlcm5hbWUYByABKAkiKwoLU0NPcmRlckxpc3QSHAoGb3JkZXJzGAEgAygL", 
+          "MgwuU3RydWN0T3JkZXIiIAoNQ1NPcmRlckRldGFpbBIPCgdvcmRlcmlkGAEg", 
+          "AigFIjQKDVNDT3JkZXJEZXRhaWwSIwoHZGV0YWlscxgBIAMoCzISLlN0cnVj", 
+          "dE9yZGVyRGV0YWlsIiEKDkNTT3JkZXJQcm9jZXNzEg8KB29yZGVyaWQYASAC", 
+          "KAUiVAoKQ1NTaGlmdEFkZBITCgtyZWNlaXZlZF9ieRgBIAIoCRIQCghwYXNz", 
+          "d29yZBgCIAIoCRIPCgdpc2NoZWNrGAMgAigFEg4KBnJlbWFyaxgEIAIoCSJN", 
+          "CgtDU1NoaWZ0RmluZBIZCgRwYWdlGAEgAigLMgsuU3RydWN0UGFnZRIRCglz", 
+          "dGFydHRpbWUYAiABKAkSEAoIc3RvcHRpbWUYAyABKAkiKwoLU0NTaGlmdEZp", 
+          "bmQSHAoGc2hpZnRzGAEgAygLMgwuU3RydWN0U2hpZnQiRAoLQ1NSZWNvbm5l", 
+          "Y3QSDgoGdXNlcklkGAEgAigJEhAKCHBhc3N3b3JkGAIgAigJEhMKC2Rldmlj", 
+          "ZVRva2VuGAMgASgJIi4KC1NDUmVjb25uZWN0EhEKCXNlc3Npb25JZBgBIAIo", 
+          "BRIMCgRndWlkGAIgASgFIhwKDENTQ2xpZW50T3BlbhIMCgR0ZXh0GAEgAigJ", 
+          "Ig8KDUNTQ2xpZW50Q2xvc2UiHQoHQ1NMb2dvbhISCgpjYXJkbnVtYmVyGAEg", 
+          "AigJIm4KB1NDTG9nb24SEAoIbWVtYmVyaWQYASACKAUSEgoKY2FyZG51bWJl", 
+          "chgCIAIoCRIMCgRuYW1lGAQgAigJEg0KBXJpZ2h0GAUgAigFEg8KB2JhbGFu", 
+          "Y2UYCSACKAUSDwoHaW50ZWdhbBgMIAIoBSIeCghDU0xvZ29mZhISCgpjYXJk", 
+          "bnVtYmVyGAEgAigJInEKCFNDTG9nb2ZmEgwKBG5hbWUYASACKAkSEgoKY2Fy", 
+          "ZG51bWJlchgCIAIoCRINCgVyaWdodBgDIAIoCRIPCgdiYWxhbmNlGAQgAigF", 
+          "EhEKCXVzZWRtb25leRgFIAIoBRIQCgh1c2VkdGltZRgGIAIoBSIeCghDU0h1", 
+          "bmd1cBISCgpjYXJkbnVtYmVyGAEgAigJIlMKC0NTUHJlQ2hhcmdlEhIKCmNh", 
+          "cmRudW1iZXIYASACKAkSDgoGYW1vdW50GAIgAigFEg8KB3BheW1vZGUYAyAC", 
+          "KAUSDwoHb2ZmaWNhbBgEIAIoBSIdCgtTQ1ByZUNoYXJnZRIOCgZxcmNvZGUY", 
+          "ASACKAkicQoKU0NUb0NoYXJnZRIMCgRuYW1lGAEgAigJEhIKCmNhcmRudW1i", 
+          "ZXIYAiACKAkSDQoFcmlnaHQYAyACKAkSEAoIcmVjaGFyZ2UYBCACKAUSDwoH", 
+          "YmFsYW5jZRgFIAIoBRIPCgdpbnRlZ2FsGAYgAigFIiUKBlNDU2hvcBIbCgVn", 
+          "b29kcxgBIAMoCzIMLlN0cnVjdEdvb2RzIi4KCUNTQ2FydEFkZBIPCgdnb29k", 
+          "c2lkGAEgAigFEhAKCGdvb2RzbnVtGAIgAigFIi4KCUNTQ2FydERlbBIPCgdn", 
+          "b29kc2lkGAEgAigFEhAKCGdvb2RzbnVtGAIgAigFIkEKCENTUHJlQnV5EhIK", 
+          "CmNhcmRudW1iZXIYASACKAkSDwoHZ29vZHNpZBgCIAIoBRIQCghnb29kc251", 
+          "bRgDIAIoBSIaCghTQ1ByZUJ1eRIOCgZxcmNvZGUYASACKAkihAEKB1NDVG9C", 
+          "dXkSDAoEbmFtZRgBIAIoCRISCgpjYXJkbnVtYmVyGAIgAigJEg0KBXJpZ2h0", 
+          "GAMgAigJEhEKCXVzZWRtb25leRgEIAIoBRITCgt1c2VkaW50ZWdhbBgFIAIo", 
+          "BRIPCgdiYWxhbmNlGAYgAigFEg8KB2ludGVnYWwYByACKAUiKwoMU0NTeXNN", 
+          "ZXNzYWdlEgsKA2NtZBgBIAIoBRIOCgZwYXJhbXMYAiADKAkiTwoKQ1NFdmFs", 
+          "dWF0ZRIRCglzdGFmZlN0YXIYASACKAUSDwoHZW52U3RhchgCIAIoBRIPCgdk", 
+          "ZXZTdGFyGAMgAigFEgwKBGV2YWwYBCABKAkiHQoKU0NFdmFsdWF0ZRIPCgdp", 
+          "bnRlZ2FsGAEgAigFIiMKDENTVmVyaWZ5Q29kZRITCgtwaG9uZW51bWJlchgB", 
+          "IAIoCSIiCgxTQ1ZlcmlmeUNvZGUSEgoKdmVyaWZ5Y29kZRgBIAIoCSI3CgxD", 
+          "U0JpbmRNb2JpbGUSEwoLcGhvbmVudW1iZXIYASACKAkSEgoKdmVyaWZ5Y29k", 
+          "ZRgCIAIoCSIfCgxTQ0JpbmRNb2JpbGUSDwoHaW50ZWdhbBgBIAIoBSr2DgoD", 
+          "Q21kEhIKDUNNRF9HRVRTRVJWRVIQ6AcSDwoKQ01EX0FVVEhFThDpBxIOCglD", 
+          "TURfTE9HSU4Q6gcSFQoQQ01EX0FDQ09VTlRfSU5GTxDrBxIWChFDTURfUkVB", 
+          "TFRJTUVfSU5GTxDsBxIQCgtDTURfQ09NTUFORBDtBxIMCgdDTURfTE9HEO4H", 
+          "EhIKDUNNRF9DQUxMX0xJU1QQ7wcSFQoQQ01EX0NBTExfUFJPQ0VTUxDwBxIS", 
+          "Cg1DTURfUk9MRV9MSVNUEPIHEhEKDENNRF9ST0xFX0FERBDzBxIRCgxDTURf", 
+          "Uk9MRV9ERUwQ9AcSFAoPQ01EX1JPTEVfVVBEQVRFEPUHEhQKD0NNRF9ST0xF", 
+          "X1JJR0hUUxD2BxITCg5DTURfU1RBRkZfTElTVBD8BxISCg1DTURfU1RBRkZf", 
+          "QUREEP0HEhIKDUNNRF9TVEFGRl9ERUwQ/gcSFQoQQ01EX1NUQUZGX1VQREFU", 
+          "RRD/BxITCg5DTURfU1RBRkZfRklORBCACBISCg1DTURfU1RBRkZfU05TEIEI", 
+          "EhYKEUNNRF9TVEFGRl9DT01NRU5UEIIIEhYKEUNNRF9TVEFGRl9QRVJGT1JN", 
+          "EIMIEhQKD0NNRF9FQVJOSU5HX0RBWRCGCBIWChFDTURfRUFSTklOR19NT05U", 
+          "SBCHCBIVChBDTURfRUFSTklOR19ZRUFSEIgIEhYKEUNNRF9DT01QVVRFUl9M", 
+          "SVNUEJAIEhUKEENNRF9DT01QVVRFUl9BREQQkQgSFQoQQ01EX0NPTVBVVEVS", 
+          "X0RFTBCSCBIYChNDTURfQ09NUFVURVJfVVBEQVRFEJMIEhYKEUNNRF9DT01Q", 
+          "VVRFUl9GSU5EEJQIEhYKEUNNRF9DT01QVVRFUl9PUEVOEJUIEhcKEkNNRF9D", 
+          "T01QVVRFUl9DTE9TRRCWCBIUCg9DTURfTUVNQkVSX0xJU1QQmggSEwoOQ01E", 
+          "X01FTUJFUl9BREQQmwgSEwoOQ01EX01FTUJFUl9ERUwQnAgSFgoRQ01EX01F", 
+          "TUJFUl9VUERBVEUQnQgSFAoPQ01EX01FTUJFUl9GSU5EEJ4IEhkKFENNRF9N", 
+          "RU1CRVJfQ0FSRF9JTkZPEJ8IEh0KGENNRF9NRU1CRVJfQ09OU1VNX1JFQ09S", 
+          "RBCgCBIdChhDTURfTUVNQkVSX0NPTlNVTV9GSUxURVIQoQgSGQoUQ01EX1NZ", 
+          "U19CSUxMSU5HX0xJU1QQpAgSGwoWQ01EX1NZU19CSUxMSU5HX1VQREFURRCl", 
+          "CBIRCgxDTURfU1lTX0lORk8QpggSEAoLQ01EX1NZU19BREQQpwgSEAoLQ01E", 
+          "X1NZU19ERUwQqAgSEwoOQ01EX1NZU19VUERBVEUQqQgSFAoPQ01EX0VNS19D", 
+          "SEVDS0lOEK4IEhUKEENNRF9FTUtfQ0hFQ0tPVVQQrwgSEwoOQ01EX0VNS19D", 
+          "QU5DRUwQsggSEwoOQ01EX0VNS19SRUNPUkQQswgSGAoTQ01EX0VNS19SRUNP", 
+          "UkRfRklORBC0CBISCg1DTURfR09PRFNfQUREELgIEhIKDUNNRF9HT09EU19E", 
+          "RUwQuQgSFQoQQ01EX0dPT0RTX1VQREFURRC6CBITCg5DTURfR09PRFNfRklO", 
+          "RBC7CBIUCg9DTURfR09PRFNfU0FMRVMQvAgSGAoTQ01EX0dPT0RTX1NBTEVT", 
+          "X1RPUBC9CBIUCg9DTURfR09PRFNfU1RPQ0sQvggSFAoPQ01EX0dPT0RTX09S", 
+          "REVSEL8IEhsKFkNNRF9HT09EU19PUkRFUl9ERVRBSUwQwAgSHAoXQ01EX0dP", 
+          "T0RTX09SREVSX1BST0NFU1MQwQgSEgoNQ01EX1NISUZUX0FERBDCCBITCg5D", 
+          "TURfU0hJRlRfRklORBDDCBIUCg9DTURfVVBMT0FEX0hFQUQQzAgSDgoJQ01E", 
+          "X0hFQVJUEM0IEhQKD0NNRF9QTEFZRVJfS0lDSxDOCBITCg5DTURfQ0hFQ0tf", 
+          "TkFNRRDPCBIWChFDTURfQ0hFQ0tfQUNDT1VOVBDQCBISCg1DTURfUkVDT05O", 
+          "RUNUENEIEhQKD0NNRF9DTElFTlRfT1BFThDQDxIVChBDTURfQ0xJRU5UX0NM", 
+          "T1NFENEPEhUKEENNRF9DTElFTlRfTE9HT04Q0g8SFgoRQ01EX0NMSUVOVF9M", 
+          "T0dPRkYQ0w8SFgoRQ01EX0NMSUVOVF9IVU5HVVAQ1A8SEgoNQ01EX1BSRUNI", 
+          "QVJHRRDVDxIRCgxDTURfVE9DSEFSR0UQ1g8SFAoPQ01EX0NMSUVOVF9TSE9Q", 
+          "ENcPEhgKE0NNRF9DTElFTlRfQ0FSVF9BREQQ2A8SGAoTQ01EX0NMSUVOVF9D", 
+          "QVJUX0RFTBDZDxIPCgpDTURfUFJFQlVZENoPEg4KCUNNRF9UT0JVWRDbDxIa", 
+          "ChVDTURfQ0xJRU5UX1NZU01FU1NBR0UQ3A8SGAoTQ01EX0NMSUVOVF9FVkFM", 
+          "VUFURRDeDxIaChVDTURfQ0xJRU5UX1ZFUklGWUNPREUQ3w8SGgoVQ01EX0NM", 
+          "SUVOVF9CSU5ETU9CSUxFEOAPQi0KHWNvbS5za3lzb2Z0LmNvcmUuYXV0by5t", 
+        "ZXNzYWdlQgxDb3JlUHJvdG9jb2w="));
     pbd::FileDescriptor.InternalDescriptorAssigner assigner = delegate(pbd::FileDescriptor root) {
       descriptor = root;
       internal__static_MessagePack__Descriptor = Descriptor.MessageTypes[0];
@@ -519,7 +535,7 @@ public static partial class CoreProtocol {
       internal__static_MessageContent__Descriptor = Descriptor.MessageTypes[1];
       internal__static_MessageContent__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::MessageContent, global::MessageContent.Builder>(internal__static_MessageContent__Descriptor,
-              new string[] { "MessageType", "ErrorTip", "ClAskServer", "LcRetServer", "CsAuthen", "ScAuthen", "CsLogin", "ScLogin", "ScAccountInfo", "ScRealtimeInfo", "CsCommand", "CsLog", "ScLog", "ScRoleList", "CsRoleAdd", "ScRoleAdd", "CsRoleDel", "CsRoleUpdate", "CsRoleRights", "ScAccountList", "CsAccountAdd", "CsAccountDel", "CsAccountUpdate", "CsAccountSnsSet", "CsStaffComment", "ScStaffComment", "CsStaffPerform", "ScStaffPerform", "CsStaffShift", "ScStaffShift", "CsEarning", "ScEarning", "ScComputerList", "CsComputerAdd", "CsComputerDel", "CsComputerUpdate", "CsComputerFind", "ScComputerFind", "CsMemberList", "ScMemberList", "CsMemberAdd", "ScMemberAdd", "CsMemberDel", "CsMemberUpdate", "CsMemberFind", "ScMemberFind", "CsMemberCardInfo", "ScMemberCardInfo", "CsMemberConsumRecord", "ScMemberConsumRecord", "CsMemberConsumFilter", "ScMemberConsumFilter", "ScSysBillList", "CsSysBillUpdate", "ScSysBillUpdate", "CsSysInfo", "ScSysInfo", "CsAddSysInfo", "CsDelSysInfo", "CsUpdateSysInfo", "CsEmkCheckin", "ScEmkCheckin", "CsEmkCheckout", "ScEmkCheckout", "CsEmkRecord", "ScEmkRecord", "CsEmkRecordFind", "ScEmkRecordFind", "CsGoodsFind", "ScGoodsFind", "CsGoodsAdd", "CsGoodsDel", "CsGoodsUpdate", "CsGoodsStock", "ScGoodsStock", "CsSalesRecord", "ScSalesRecord", "CsSalesTop", "ScSalesTop", "CsOrderList", "ScOrderList", "CsOrderDetail", "ScOrderDetail", "CsReconnect", "ScReconnect", "CsClientOpen", "CsClientClose", "CsLogon", "ScLogon", "CsLogoff", "ScLogoff", "CsHungup", "CsPreCharge", "ScPreCharge", "ScToCharge", "ScShop", "CsCartAdd", "CsCartDel", "CsPreBuy", "ScPreBuy", "ScToBuy", "ScSysMessage", "CsUserMessage", "CsEvaluate", "ScEvaluate", "CsVerifyCode", "ScVerifyCode", "CsBindMobile", "ScBindMobile", });
+              new string[] { "MessageType", "ErrorTip", "ClAskServer", "LcRetServer", "CsAuthen", "ScAuthen", "CsLogin", "ScLogin", "ScCallList", "CsCallProcess", "ScAccountInfo", "ScRealtimeInfo", "CsCommand", "CsLog", "ScLog", "ScRoleList", "CsRoleAdd", "ScRoleAdd", "CsRoleDel", "CsRoleUpdate", "CsRoleRights", "ScAccountList", "CsAccountAdd", "CsAccountDel", "CsAccountUpdate", "CsAccountSnsSet", "CsStaffComment", "ScStaffComment", "CsStaffPerform", "ScStaffPerform", "CsEarning", "ScEarning", "ScComputerList", "CsComputerAdd", "CsComputerDel", "CsComputerUpdate", "CsComputerFind", "ScComputerFind", "CsMemberList", "ScMemberList", "CsMemberAdd", "ScMemberAdd", "CsMemberDel", "CsMemberUpdate", "CsMemberFind", "ScMemberFind", "CsMemberCardInfo", "ScMemberCardInfo", "CsMemberConsumRecord", "ScMemberConsumRecord", "CsMemberConsumFilter", "ScMemberConsumFilter", "ScSysBillList", "CsSysBillUpdate", "ScSysBillUpdate", "CsSysInfo", "ScSysInfo", "CsAddSysInfo", "CsDelSysInfo", "CsUpdateSysInfo", "CsEmkCheckin", "ScEmkCheckin", "CsEmkCheckout", "ScEmkCheckout", "CsEmkRecord", "ScEmkRecord", "CsEmkRecordFind", "ScEmkRecordFind", "CsGoodsFind", "ScGoodsFind", "CsGoodsAdd", "CsGoodsDel", "CsGoodsUpdate", "CsGoodsStock", "ScGoodsStock", "CsSalesRecord", "ScSalesRecord", "CsSalesTop", "ScSalesTop", "CsOrderList", "ScOrderList", "CsOrderDetail", "ScOrderDetail", "CsOrderProcess", "CsShiftAdd", "CsShiftFind", "ScShiftFind", "CsReconnect", "ScReconnect", "CsClientOpen", "CsClientClose", "CsLogon", "ScLogon", "CsLogoff", "ScLogoff", "CsHungup", "CsPreCharge", "ScPreCharge", "ScToCharge", "ScShop", "CsCartAdd", "CsCartDel", "CsPreBuy", "ScPreBuy", "ScToBuy", "ScSysMessage", "CsEvaluate", "ScEvaluate", "CsVerifyCode", "ScVerifyCode", "CsBindMobile", "ScBindMobile", });
       internal__static_CLAskServer__Descriptor = Descriptor.MessageTypes[2];
       internal__static_CLAskServer__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CLAskServer, global::CLAskServer.Builder>(internal__static_CLAskServer__Descriptor,
@@ -564,74 +580,74 @@ public static partial class CoreProtocol {
       internal__static_SCLog__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::SCLog, global::SCLog.Builder>(internal__static_SCLog__Descriptor,
               new string[] { "Logs", });
-      internal__static_SCRoleList__Descriptor = Descriptor.MessageTypes[13];
+      internal__static_SCCallList__Descriptor = Descriptor.MessageTypes[13];
+      internal__static_SCCallList__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::SCCallList, global::SCCallList.Builder>(internal__static_SCCallList__Descriptor,
+              new string[] { "Calls", });
+      internal__static_CSCallProcess__Descriptor = Descriptor.MessageTypes[14];
+      internal__static_CSCallProcess__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::CSCallProcess, global::CSCallProcess.Builder>(internal__static_CSCallProcess__Descriptor,
+              new string[] { "Callid", });
+      internal__static_SCRoleList__Descriptor = Descriptor.MessageTypes[15];
       internal__static_SCRoleList__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::SCRoleList, global::SCRoleList.Builder>(internal__static_SCRoleList__Descriptor,
               new string[] { "Roles", });
-      internal__static_CSRoleAdd__Descriptor = Descriptor.MessageTypes[14];
+      internal__static_CSRoleAdd__Descriptor = Descriptor.MessageTypes[16];
       internal__static_CSRoleAdd__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSRoleAdd, global::CSRoleAdd.Builder>(internal__static_CSRoleAdd__Descriptor,
               new string[] { "Name", });
-      internal__static_SCRoleAdd__Descriptor = Descriptor.MessageTypes[15];
+      internal__static_SCRoleAdd__Descriptor = Descriptor.MessageTypes[17];
       internal__static_SCRoleAdd__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::SCRoleAdd, global::SCRoleAdd.Builder>(internal__static_SCRoleAdd__Descriptor,
               new string[] { "Role", });
-      internal__static_CSRoleDel__Descriptor = Descriptor.MessageTypes[16];
+      internal__static_CSRoleDel__Descriptor = Descriptor.MessageTypes[18];
       internal__static_CSRoleDel__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSRoleDel, global::CSRoleDel.Builder>(internal__static_CSRoleDel__Descriptor,
               new string[] { "Roleid", });
-      internal__static_CSRoleUpdate__Descriptor = Descriptor.MessageTypes[17];
+      internal__static_CSRoleUpdate__Descriptor = Descriptor.MessageTypes[19];
       internal__static_CSRoleUpdate__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSRoleUpdate, global::CSRoleUpdate.Builder>(internal__static_CSRoleUpdate__Descriptor,
               new string[] { "Roleid", "Name", });
-      internal__static_CSRoleRights__Descriptor = Descriptor.MessageTypes[18];
+      internal__static_CSRoleRights__Descriptor = Descriptor.MessageTypes[20];
       internal__static_CSRoleRights__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSRoleRights, global::CSRoleRights.Builder>(internal__static_CSRoleRights__Descriptor,
               new string[] { "Roleid", "Righttype", "Rights", });
-      internal__static_SCAccountList__Descriptor = Descriptor.MessageTypes[19];
+      internal__static_SCAccountList__Descriptor = Descriptor.MessageTypes[21];
       internal__static_SCAccountList__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::SCAccountList, global::SCAccountList.Builder>(internal__static_SCAccountList__Descriptor,
               new string[] { "Account", });
-      internal__static_CSAccountAdd__Descriptor = Descriptor.MessageTypes[20];
+      internal__static_CSAccountAdd__Descriptor = Descriptor.MessageTypes[22];
       internal__static_CSAccountAdd__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSAccountAdd, global::CSAccountAdd.Builder>(internal__static_CSAccountAdd__Descriptor,
               new string[] { "Account", });
-      internal__static_CSAccountDel__Descriptor = Descriptor.MessageTypes[21];
+      internal__static_CSAccountDel__Descriptor = Descriptor.MessageTypes[23];
       internal__static_CSAccountDel__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSAccountDel, global::CSAccountDel.Builder>(internal__static_CSAccountDel__Descriptor,
               new string[] { "Adminid", });
-      internal__static_CSAccountUpdate__Descriptor = Descriptor.MessageTypes[22];
+      internal__static_CSAccountUpdate__Descriptor = Descriptor.MessageTypes[24];
       internal__static_CSAccountUpdate__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSAccountUpdate, global::CSAccountUpdate.Builder>(internal__static_CSAccountUpdate__Descriptor,
               new string[] { "Account", });
-      internal__static_CSAccountSnsSet__Descriptor = Descriptor.MessageTypes[23];
+      internal__static_CSAccountSnsSet__Descriptor = Descriptor.MessageTypes[25];
       internal__static_CSAccountSnsSet__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSAccountSnsSet, global::CSAccountSnsSet.Builder>(internal__static_CSAccountSnsSet__Descriptor,
               new string[] { "Account", });
-      internal__static_CSStaffComment__Descriptor = Descriptor.MessageTypes[24];
+      internal__static_CSStaffComment__Descriptor = Descriptor.MessageTypes[26];
       internal__static_CSStaffComment__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSStaffComment, global::CSStaffComment.Builder>(internal__static_CSStaffComment__Descriptor,
               new string[] { "Page", "Type", "Starttime", "Endtime", "Staff", "Customer", });
-      internal__static_SCStaffComment__Descriptor = Descriptor.MessageTypes[25];
+      internal__static_SCStaffComment__Descriptor = Descriptor.MessageTypes[27];
       internal__static_SCStaffComment__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::SCStaffComment, global::SCStaffComment.Builder>(internal__static_SCStaffComment__Descriptor,
               new string[] { "Comments", });
-      internal__static_CSStaffPerform__Descriptor = Descriptor.MessageTypes[26];
+      internal__static_CSStaffPerform__Descriptor = Descriptor.MessageTypes[28];
       internal__static_CSStaffPerform__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSStaffPerform, global::CSStaffPerform.Builder>(internal__static_CSStaffPerform__Descriptor,
               new string[] { "Year", "Month", });
-      internal__static_SCStaffPerform__Descriptor = Descriptor.MessageTypes[27];
+      internal__static_SCStaffPerform__Descriptor = Descriptor.MessageTypes[29];
       internal__static_SCStaffPerform__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::SCStaffPerform, global::SCStaffPerform.Builder>(internal__static_SCStaffPerform__Descriptor,
               new string[] { "Performs", });
-      internal__static_CSStaffShift__Descriptor = Descriptor.MessageTypes[28];
-      internal__static_CSStaffShift__FieldAccessorTable = 
-          new pb::FieldAccess.FieldAccessorTable<global::CSStaffShift, global::CSStaffShift.Builder>(internal__static_CSStaffShift__Descriptor,
-              new string[] { });
-      internal__static_SCStaffShift__Descriptor = Descriptor.MessageTypes[29];
-      internal__static_SCStaffShift__FieldAccessorTable = 
-          new pb::FieldAccess.FieldAccessorTable<global::SCStaffShift, global::SCStaffShift.Builder>(internal__static_SCStaffShift__Descriptor,
-              new string[] { });
       internal__static_CSEarning__Descriptor = Descriptor.MessageTypes[30];
       internal__static_CSEarning__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSEarning, global::CSEarning.Builder>(internal__static_CSEarning__Descriptor,
@@ -844,107 +860,119 @@ public static partial class CoreProtocol {
       internal__static_SCOrderDetail__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::SCOrderDetail, global::SCOrderDetail.Builder>(internal__static_SCOrderDetail__Descriptor,
               new string[] { "Details", });
-      internal__static_CSReconnect__Descriptor = Descriptor.MessageTypes[83];
+      internal__static_CSOrderProcess__Descriptor = Descriptor.MessageTypes[83];
+      internal__static_CSOrderProcess__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::CSOrderProcess, global::CSOrderProcess.Builder>(internal__static_CSOrderProcess__Descriptor,
+              new string[] { "Orderid", });
+      internal__static_CSShiftAdd__Descriptor = Descriptor.MessageTypes[84];
+      internal__static_CSShiftAdd__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::CSShiftAdd, global::CSShiftAdd.Builder>(internal__static_CSShiftAdd__Descriptor,
+              new string[] { "ReceivedBy", "Password", "Ischeck", "Remark", });
+      internal__static_CSShiftFind__Descriptor = Descriptor.MessageTypes[85];
+      internal__static_CSShiftFind__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::CSShiftFind, global::CSShiftFind.Builder>(internal__static_CSShiftFind__Descriptor,
+              new string[] { "Page", "Starttime", "Stoptime", });
+      internal__static_SCShiftFind__Descriptor = Descriptor.MessageTypes[86];
+      internal__static_SCShiftFind__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::SCShiftFind, global::SCShiftFind.Builder>(internal__static_SCShiftFind__Descriptor,
+              new string[] { "Shifts", });
+      internal__static_CSReconnect__Descriptor = Descriptor.MessageTypes[87];
       internal__static_CSReconnect__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSReconnect, global::CSReconnect.Builder>(internal__static_CSReconnect__Descriptor,
               new string[] { "UserId", "Password", "DeviceToken", });
-      internal__static_SCReconnect__Descriptor = Descriptor.MessageTypes[84];
+      internal__static_SCReconnect__Descriptor = Descriptor.MessageTypes[88];
       internal__static_SCReconnect__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::SCReconnect, global::SCReconnect.Builder>(internal__static_SCReconnect__Descriptor,
               new string[] { "SessionId", "Guid", });
-      internal__static_CSClientOpen__Descriptor = Descriptor.MessageTypes[85];
+      internal__static_CSClientOpen__Descriptor = Descriptor.MessageTypes[89];
       internal__static_CSClientOpen__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSClientOpen, global::CSClientOpen.Builder>(internal__static_CSClientOpen__Descriptor,
               new string[] { "Text", });
-      internal__static_CSClientClose__Descriptor = Descriptor.MessageTypes[86];
+      internal__static_CSClientClose__Descriptor = Descriptor.MessageTypes[90];
       internal__static_CSClientClose__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSClientClose, global::CSClientClose.Builder>(internal__static_CSClientClose__Descriptor,
               new string[] { });
-      internal__static_CSLogon__Descriptor = Descriptor.MessageTypes[87];
+      internal__static_CSLogon__Descriptor = Descriptor.MessageTypes[91];
       internal__static_CSLogon__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSLogon, global::CSLogon.Builder>(internal__static_CSLogon__Descriptor,
               new string[] { "Cardnumber", });
-      internal__static_SCLogon__Descriptor = Descriptor.MessageTypes[88];
+      internal__static_SCLogon__Descriptor = Descriptor.MessageTypes[92];
       internal__static_SCLogon__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::SCLogon, global::SCLogon.Builder>(internal__static_SCLogon__Descriptor,
               new string[] { "Memberid", "Cardnumber", "Name", "Right", "Balance", "Integal", });
-      internal__static_CSLogoff__Descriptor = Descriptor.MessageTypes[89];
+      internal__static_CSLogoff__Descriptor = Descriptor.MessageTypes[93];
       internal__static_CSLogoff__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSLogoff, global::CSLogoff.Builder>(internal__static_CSLogoff__Descriptor,
               new string[] { "Cardnumber", });
-      internal__static_SCLogoff__Descriptor = Descriptor.MessageTypes[90];
+      internal__static_SCLogoff__Descriptor = Descriptor.MessageTypes[94];
       internal__static_SCLogoff__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::SCLogoff, global::SCLogoff.Builder>(internal__static_SCLogoff__Descriptor,
               new string[] { "Name", "Cardnumber", "Right", "Balance", "Usedmoney", "Usedtime", });
-      internal__static_CSHungup__Descriptor = Descriptor.MessageTypes[91];
+      internal__static_CSHungup__Descriptor = Descriptor.MessageTypes[95];
       internal__static_CSHungup__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSHungup, global::CSHungup.Builder>(internal__static_CSHungup__Descriptor,
               new string[] { "Cardnumber", });
-      internal__static_CSPreCharge__Descriptor = Descriptor.MessageTypes[92];
+      internal__static_CSPreCharge__Descriptor = Descriptor.MessageTypes[96];
       internal__static_CSPreCharge__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSPreCharge, global::CSPreCharge.Builder>(internal__static_CSPreCharge__Descriptor,
               new string[] { "Cardnumber", "Amount", "Paymode", "Offical", });
-      internal__static_SCPreCharge__Descriptor = Descriptor.MessageTypes[93];
+      internal__static_SCPreCharge__Descriptor = Descriptor.MessageTypes[97];
       internal__static_SCPreCharge__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::SCPreCharge, global::SCPreCharge.Builder>(internal__static_SCPreCharge__Descriptor,
               new string[] { "Qrcode", });
-      internal__static_SCToCharge__Descriptor = Descriptor.MessageTypes[94];
+      internal__static_SCToCharge__Descriptor = Descriptor.MessageTypes[98];
       internal__static_SCToCharge__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::SCToCharge, global::SCToCharge.Builder>(internal__static_SCToCharge__Descriptor,
               new string[] { "Name", "Cardnumber", "Right", "Recharge", "Balance", "Integal", });
-      internal__static_SCShop__Descriptor = Descriptor.MessageTypes[95];
+      internal__static_SCShop__Descriptor = Descriptor.MessageTypes[99];
       internal__static_SCShop__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::SCShop, global::SCShop.Builder>(internal__static_SCShop__Descriptor,
               new string[] { "Goods", });
-      internal__static_CSCartAdd__Descriptor = Descriptor.MessageTypes[96];
+      internal__static_CSCartAdd__Descriptor = Descriptor.MessageTypes[100];
       internal__static_CSCartAdd__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSCartAdd, global::CSCartAdd.Builder>(internal__static_CSCartAdd__Descriptor,
               new string[] { "Goodsid", "Goodsnum", });
-      internal__static_CSCartDel__Descriptor = Descriptor.MessageTypes[97];
+      internal__static_CSCartDel__Descriptor = Descriptor.MessageTypes[101];
       internal__static_CSCartDel__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSCartDel, global::CSCartDel.Builder>(internal__static_CSCartDel__Descriptor,
               new string[] { "Goodsid", "Goodsnum", });
-      internal__static_CSPreBuy__Descriptor = Descriptor.MessageTypes[98];
+      internal__static_CSPreBuy__Descriptor = Descriptor.MessageTypes[102];
       internal__static_CSPreBuy__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSPreBuy, global::CSPreBuy.Builder>(internal__static_CSPreBuy__Descriptor,
-              new string[] { "Cardnumber", });
-      internal__static_SCPreBuy__Descriptor = Descriptor.MessageTypes[99];
+              new string[] { "Cardnumber", "Goodsid", "Goodsnum", });
+      internal__static_SCPreBuy__Descriptor = Descriptor.MessageTypes[103];
       internal__static_SCPreBuy__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::SCPreBuy, global::SCPreBuy.Builder>(internal__static_SCPreBuy__Descriptor,
               new string[] { "Qrcode", });
-      internal__static_SCToBuy__Descriptor = Descriptor.MessageTypes[100];
+      internal__static_SCToBuy__Descriptor = Descriptor.MessageTypes[104];
       internal__static_SCToBuy__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::SCToBuy, global::SCToBuy.Builder>(internal__static_SCToBuy__Descriptor,
               new string[] { "Name", "Cardnumber", "Right", "Usedmoney", "Usedintegal", "Balance", "Integal", });
-      internal__static_SCSysMessage__Descriptor = Descriptor.MessageTypes[101];
+      internal__static_SCSysMessage__Descriptor = Descriptor.MessageTypes[105];
       internal__static_SCSysMessage__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::SCSysMessage, global::SCSysMessage.Builder>(internal__static_SCSysMessage__Descriptor,
               new string[] { "Cmd", "Params", });
-      internal__static_CSUserMessage__Descriptor = Descriptor.MessageTypes[102];
-      internal__static_CSUserMessage__FieldAccessorTable = 
-          new pb::FieldAccess.FieldAccessorTable<global::CSUserMessage, global::CSUserMessage.Builder>(internal__static_CSUserMessage__Descriptor,
-              new string[] { "Text", });
-      internal__static_CSEvaluate__Descriptor = Descriptor.MessageTypes[103];
+      internal__static_CSEvaluate__Descriptor = Descriptor.MessageTypes[106];
       internal__static_CSEvaluate__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSEvaluate, global::CSEvaluate.Builder>(internal__static_CSEvaluate__Descriptor,
               new string[] { "StaffStar", "EnvStar", "DevStar", "Eval", });
-      internal__static_SCEvaluate__Descriptor = Descriptor.MessageTypes[104];
+      internal__static_SCEvaluate__Descriptor = Descriptor.MessageTypes[107];
       internal__static_SCEvaluate__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::SCEvaluate, global::SCEvaluate.Builder>(internal__static_SCEvaluate__Descriptor,
               new string[] { "Integal", });
-      internal__static_CSVerifyCode__Descriptor = Descriptor.MessageTypes[105];
+      internal__static_CSVerifyCode__Descriptor = Descriptor.MessageTypes[108];
       internal__static_CSVerifyCode__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSVerifyCode, global::CSVerifyCode.Builder>(internal__static_CSVerifyCode__Descriptor,
               new string[] { "Phonenumber", });
-      internal__static_SCVerifyCode__Descriptor = Descriptor.MessageTypes[106];
+      internal__static_SCVerifyCode__Descriptor = Descriptor.MessageTypes[109];
       internal__static_SCVerifyCode__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::SCVerifyCode, global::SCVerifyCode.Builder>(internal__static_SCVerifyCode__Descriptor,
               new string[] { "Verifycode", });
-      internal__static_CSBindMobile__Descriptor = Descriptor.MessageTypes[107];
+      internal__static_CSBindMobile__Descriptor = Descriptor.MessageTypes[110];
       internal__static_CSBindMobile__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSBindMobile, global::CSBindMobile.Builder>(internal__static_CSBindMobile__Descriptor,
               new string[] { "Phonenumber", "Verifycode", });
-      internal__static_SCBindMobile__Descriptor = Descriptor.MessageTypes[108];
+      internal__static_SCBindMobile__Descriptor = Descriptor.MessageTypes[111];
       internal__static_SCBindMobile__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::SCBindMobile, global::SCBindMobile.Builder>(internal__static_SCBindMobile__Descriptor,
               new string[] { "Integal", });
@@ -967,6 +995,8 @@ public enum Cmd {
   CMD_REALTIME_INFO = 1004,
   CMD_COMMAND = 1005,
   CMD_LOG = 1006,
+  CMD_CALL_LIST = 1007,
+  CMD_CALL_PROCESS = 1008,
   CMD_ROLE_LIST = 1010,
   CMD_ROLE_ADD = 1011,
   CMD_ROLE_DEL = 1012,
@@ -980,7 +1010,6 @@ public enum Cmd {
   CMD_STAFF_SNS = 1025,
   CMD_STAFF_COMMENT = 1026,
   CMD_STAFF_PERFORM = 1027,
-  CMD_STAFF_SHIFT = 1028,
   CMD_EARNING_DAY = 1030,
   CMD_EARNING_MONTH = 1031,
   CMD_EARNING_YEAR = 1032,
@@ -1010,21 +1039,24 @@ public enum Cmd {
   CMD_EMK_CANCEL = 1074,
   CMD_EMK_RECORD = 1075,
   CMD_EMK_RECORD_FIND = 1076,
-  CMD_GOODS_ADD = 1081,
-  CMD_GOODS_DEL = 1082,
-  CMD_GOODS_UPDATE = 1083,
-  CMD_GOODS_FIND = 1084,
-  CMD_GOODS_SALES = 1085,
-  CMD_GOODS_SALES_TOP = 1086,
-  CMD_GOODS_STOCK = 1087,
-  CMD_GOODS_ORDER = 1088,
-  CMD_GOODS_ORDER_DETAIL = 1089,
-  CMD_UPLOAD_HEAD = 1090,
-  CMD_HEART = 1091,
-  CMD_PLAYER_KICK = 1092,
-  CMD_CHECK_NAME = 1093,
-  CMD_CHECK_ACCOUNT = 1094,
-  CMD_RECONNECT = 1095,
+  CMD_GOODS_ADD = 1080,
+  CMD_GOODS_DEL = 1081,
+  CMD_GOODS_UPDATE = 1082,
+  CMD_GOODS_FIND = 1083,
+  CMD_GOODS_SALES = 1084,
+  CMD_GOODS_SALES_TOP = 1085,
+  CMD_GOODS_STOCK = 1086,
+  CMD_GOODS_ORDER = 1087,
+  CMD_GOODS_ORDER_DETAIL = 1088,
+  CMD_GOODS_ORDER_PROCESS = 1089,
+  CMD_SHIFT_ADD = 1090,
+  CMD_SHIFT_FIND = 1091,
+  CMD_UPLOAD_HEAD = 1100,
+  CMD_HEART = 1101,
+  CMD_PLAYER_KICK = 1102,
+  CMD_CHECK_NAME = 1103,
+  CMD_CHECK_ACCOUNT = 1104,
+  CMD_RECONNECT = 1105,
   CMD_CLIENT_OPEN = 2000,
   CMD_CLIENT_CLOSE = 2001,
   CMD_CLIENT_LOGON = 2002,
@@ -1038,7 +1070,6 @@ public enum Cmd {
   CMD_PREBUY = 2010,
   CMD_TOBUY = 2011,
   CMD_CLIENT_SYSMESSAGE = 2012,
-  CMD_CLIENT_USERMESSAGE = 2013,
   CMD_CLIENT_EVALUATE = 2014,
   CMD_CLIENT_VERIFYCODE = 2015,
   CMD_CLIENT_BINDMOBILE = 2016,
@@ -1492,8 +1523,8 @@ public sealed partial class MessagePack : pb::GeneratedMessage<MessagePack, Mess
 public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent, MessageContent.Builder> {
   private MessageContent() { }
   private static readonly MessageContent defaultInstance = new MessageContent().MakeReadOnly();
-  private static readonly string[] _messageContentFieldNames = new string[] { "clAskServer", "csAccountAdd", "csAccountDel", "csAccountSnsSet", "csAccountUpdate", "csAddSysInfo", "csAuthen", "csBindMobile", "csCartAdd", "csCartDel", "csClientClose", "csClientOpen", "csCommand", "csComputerAdd", "csComputerDel", "csComputerFind", "csComputerUpdate", "csDelSysInfo", "csEarning", "csEmkCheckin", "csEmkCheckout", "csEmkRecord", "csEmkRecordFind", "csEvaluate", "csGoodsAdd", "csGoodsDel", "csGoodsFind", "csGoodsStock", "csGoodsUpdate", "csHungup", "csLog", "csLogin", "csLogoff", "csLogon", "csMemberAdd", "csMemberCardInfo", "csMemberConsumFilter", "csMemberConsumRecord", "csMemberDel", "csMemberFind", "csMemberList", "csMemberUpdate", "csOrderDetail", "csOrderList", "csPreBuy", "csPreCharge", "csReconnect", "csRoleAdd", "csRoleDel", "csRoleRights", "csRoleUpdate", "csSalesRecord", "csSalesTop", "csStaffComment", "csStaffPerform", "csStaffShift", "csSysBillUpdate", "csSysInfo", "csUpdateSysInfo", "csUserMessage", "csVerifyCode", "errorTip", "lcRetServer", "messageType", "scAccountInfo", "scAccountList", "scAuthen", "scBindMobile", "scComputerFind", "scComputerList", "scEarning", "scEmkCheckin", "scEmkCheckout", "scEmkRecord", "scEmkRecordFind", "scEvaluate", "scGoodsFind", "scGoodsStock", "scLog", "scLogin", "scLogoff", "scLogon", "scMemberAdd", "scMemberCardInfo", "scMemberConsumFilter", "scMemberConsumRecord", "scMemberFind", "scMemberList", "scOrderDetail", "scOrderList", "scPreBuy", "scPreCharge", "scRealtimeInfo", "scReconnect", "scRoleAdd", "scRoleList", "scSalesRecord", "scSalesTop", "scShop", "scStaffComment", "scStaffPerform", "scStaffShift", "scSysBillList", "scSysBillUpdate", "scSysInfo", "scSysMessage", "scToBuy", "scToCharge", "scVerifyCode" };
-  private static readonly uint[] _messageContentFieldTags = new uint[] { 26, 170, 178, 194, 186, 482, 42, 1778, 1690, 1698, 1610, 1602, 90, 274, 282, 298, 290, 490, 250, 506, 522, 538, 554, 1746, 586, 594, 570, 610, 602, 1650, 98, 58, 1634, 1618, 330, 378, 410, 394, 346, 362, 314, 354, 674, 658, 1706, 1658, 690, 122, 138, 154, 146, 626, 642, 202, 218, 234, 450, 466, 498, 1738, 1762, 18, 34, 8, 74, 162, 50, 1786, 306, 266, 258, 514, 530, 546, 562, 1754, 578, 618, 106, 66, 1642, 1626, 338, 386, 418, 402, 370, 322, 682, 666, 1714, 1666, 82, 698, 130, 114, 634, 650, 1682, 210, 226, 242, 442, 458, 474, 1730, 1722, 1674, 1770 };
+  private static readonly string[] _messageContentFieldNames = new string[] { "clAskServer", "csAccountAdd", "csAccountDel", "csAccountSnsSet", "csAccountUpdate", "csAddSysInfo", "csAuthen", "csBindMobile", "csCallProcess", "csCartAdd", "csCartDel", "csClientClose", "csClientOpen", "csCommand", "csComputerAdd", "csComputerDel", "csComputerFind", "csComputerUpdate", "csDelSysInfo", "csEarning", "csEmkCheckin", "csEmkCheckout", "csEmkRecord", "csEmkRecordFind", "csEvaluate", "csGoodsAdd", "csGoodsDel", "csGoodsFind", "csGoodsStock", "csGoodsUpdate", "csHungup", "csLog", "csLogin", "csLogoff", "csLogon", "csMemberAdd", "csMemberCardInfo", "csMemberConsumFilter", "csMemberConsumRecord", "csMemberDel", "csMemberFind", "csMemberList", "csMemberUpdate", "csOrderDetail", "csOrderList", "csOrderProcess", "csPreBuy", "csPreCharge", "csReconnect", "csRoleAdd", "csRoleDel", "csRoleRights", "csRoleUpdate", "csSalesRecord", "csSalesTop", "csShiftAdd", "csShiftFind", "csStaffComment", "csStaffPerform", "csSysBillUpdate", "csSysInfo", "csUpdateSysInfo", "csVerifyCode", "errorTip", "lcRetServer", "messageType", "scAccountInfo", "scAccountList", "scAuthen", "scBindMobile", "scCallList", "scComputerFind", "scComputerList", "scEarning", "scEmkCheckin", "scEmkCheckout", "scEmkRecord", "scEmkRecordFind", "scEvaluate", "scGoodsFind", "scGoodsStock", "scLog", "scLogin", "scLogoff", "scLogon", "scMemberAdd", "scMemberCardInfo", "scMemberConsumFilter", "scMemberConsumRecord", "scMemberFind", "scMemberList", "scOrderDetail", "scOrderList", "scPreBuy", "scPreCharge", "scRealtimeInfo", "scReconnect", "scRoleAdd", "scRoleList", "scSalesRecord", "scSalesTop", "scShiftFind", "scShop", "scStaffComment", "scStaffPerform", "scSysBillList", "scSysBillUpdate", "scSysInfo", "scSysMessage", "scToBuy", "scToCharge", "scVerifyCode" };
+  private static readonly uint[] _messageContentFieldTags = new uint[] { 26, 186, 194, 210, 202, 482, 42, 1778, 82, 1690, 1698, 1610, 1602, 106, 290, 298, 314, 306, 490, 266, 506, 522, 538, 554, 1746, 586, 594, 570, 610, 602, 1650, 114, 58, 1634, 1618, 346, 394, 426, 410, 362, 378, 330, 370, 674, 658, 690, 1706, 1658, 722, 138, 154, 170, 162, 626, 642, 698, 706, 218, 234, 450, 466, 498, 1762, 18, 34, 8, 90, 178, 50, 1786, 74, 322, 282, 274, 514, 530, 546, 562, 1754, 578, 618, 122, 66, 1642, 1626, 354, 402, 434, 418, 386, 338, 682, 666, 1714, 1666, 98, 730, 146, 130, 634, 650, 714, 1682, 226, 242, 442, 458, 474, 1730, 1722, 1674, 1770 };
   public static MessageContent DefaultInstance {
     get { return defaultInstance; }
   }
@@ -1594,7 +1625,27 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return scLogin_ ?? global::SCLogin.DefaultInstance; }
   }
   
-  public const int ScAccountInfoFieldNumber = 9;
+  public const int ScCallListFieldNumber = 9;
+  private bool hasScCallList;
+  private global::SCCallList scCallList_;
+  public bool HasScCallList {
+    get { return hasScCallList; }
+  }
+  public global::SCCallList ScCallList {
+    get { return scCallList_ ?? global::SCCallList.DefaultInstance; }
+  }
+  
+  public const int CsCallProcessFieldNumber = 10;
+  private bool hasCsCallProcess;
+  private global::CSCallProcess csCallProcess_;
+  public bool HasCsCallProcess {
+    get { return hasCsCallProcess; }
+  }
+  public global::CSCallProcess CsCallProcess {
+    get { return csCallProcess_ ?? global::CSCallProcess.DefaultInstance; }
+  }
+  
+  public const int ScAccountInfoFieldNumber = 11;
   private bool hasScAccountInfo;
   private global::SCAccountInfo scAccountInfo_;
   public bool HasScAccountInfo {
@@ -1604,7 +1655,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return scAccountInfo_ ?? global::SCAccountInfo.DefaultInstance; }
   }
   
-  public const int ScRealtimeInfoFieldNumber = 10;
+  public const int ScRealtimeInfoFieldNumber = 12;
   private bool hasScRealtimeInfo;
   private global::SCRealtimeInfo scRealtimeInfo_;
   public bool HasScRealtimeInfo {
@@ -1614,7 +1665,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return scRealtimeInfo_ ?? global::SCRealtimeInfo.DefaultInstance; }
   }
   
-  public const int CsCommandFieldNumber = 11;
+  public const int CsCommandFieldNumber = 13;
   private bool hasCsCommand;
   private global::CSCommand csCommand_;
   public bool HasCsCommand {
@@ -1624,7 +1675,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return csCommand_ ?? global::CSCommand.DefaultInstance; }
   }
   
-  public const int CsLogFieldNumber = 12;
+  public const int CsLogFieldNumber = 14;
   private bool hasCsLog;
   private global::CSLog csLog_;
   public bool HasCsLog {
@@ -1634,7 +1685,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return csLog_ ?? global::CSLog.DefaultInstance; }
   }
   
-  public const int ScLogFieldNumber = 13;
+  public const int ScLogFieldNumber = 15;
   private bool hasScLog;
   private global::SCLog scLog_;
   public bool HasScLog {
@@ -1644,7 +1695,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return scLog_ ?? global::SCLog.DefaultInstance; }
   }
   
-  public const int ScRoleListFieldNumber = 14;
+  public const int ScRoleListFieldNumber = 16;
   private bool hasScRoleList;
   private global::SCRoleList scRoleList_;
   public bool HasScRoleList {
@@ -1654,7 +1705,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return scRoleList_ ?? global::SCRoleList.DefaultInstance; }
   }
   
-  public const int CsRoleAddFieldNumber = 15;
+  public const int CsRoleAddFieldNumber = 17;
   private bool hasCsRoleAdd;
   private global::CSRoleAdd csRoleAdd_;
   public bool HasCsRoleAdd {
@@ -1664,7 +1715,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return csRoleAdd_ ?? global::CSRoleAdd.DefaultInstance; }
   }
   
-  public const int ScRoleAddFieldNumber = 16;
+  public const int ScRoleAddFieldNumber = 18;
   private bool hasScRoleAdd;
   private global::SCRoleAdd scRoleAdd_;
   public bool HasScRoleAdd {
@@ -1674,7 +1725,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return scRoleAdd_ ?? global::SCRoleAdd.DefaultInstance; }
   }
   
-  public const int CsRoleDelFieldNumber = 17;
+  public const int CsRoleDelFieldNumber = 19;
   private bool hasCsRoleDel;
   private global::CSRoleDel csRoleDel_;
   public bool HasCsRoleDel {
@@ -1684,7 +1735,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return csRoleDel_ ?? global::CSRoleDel.DefaultInstance; }
   }
   
-  public const int CsRoleUpdateFieldNumber = 18;
+  public const int CsRoleUpdateFieldNumber = 20;
   private bool hasCsRoleUpdate;
   private global::CSRoleUpdate csRoleUpdate_;
   public bool HasCsRoleUpdate {
@@ -1694,7 +1745,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return csRoleUpdate_ ?? global::CSRoleUpdate.DefaultInstance; }
   }
   
-  public const int CsRoleRightsFieldNumber = 19;
+  public const int CsRoleRightsFieldNumber = 21;
   private bool hasCsRoleRights;
   private global::CSRoleRights csRoleRights_;
   public bool HasCsRoleRights {
@@ -1704,7 +1755,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return csRoleRights_ ?? global::CSRoleRights.DefaultInstance; }
   }
   
-  public const int ScAccountListFieldNumber = 20;
+  public const int ScAccountListFieldNumber = 22;
   private bool hasScAccountList;
   private global::SCAccountList scAccountList_;
   public bool HasScAccountList {
@@ -1714,7 +1765,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return scAccountList_ ?? global::SCAccountList.DefaultInstance; }
   }
   
-  public const int CsAccountAddFieldNumber = 21;
+  public const int CsAccountAddFieldNumber = 23;
   private bool hasCsAccountAdd;
   private global::CSAccountAdd csAccountAdd_;
   public bool HasCsAccountAdd {
@@ -1724,7 +1775,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return csAccountAdd_ ?? global::CSAccountAdd.DefaultInstance; }
   }
   
-  public const int CsAccountDelFieldNumber = 22;
+  public const int CsAccountDelFieldNumber = 24;
   private bool hasCsAccountDel;
   private global::CSAccountDel csAccountDel_;
   public bool HasCsAccountDel {
@@ -1734,7 +1785,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return csAccountDel_ ?? global::CSAccountDel.DefaultInstance; }
   }
   
-  public const int CsAccountUpdateFieldNumber = 23;
+  public const int CsAccountUpdateFieldNumber = 25;
   private bool hasCsAccountUpdate;
   private global::CSAccountUpdate csAccountUpdate_;
   public bool HasCsAccountUpdate {
@@ -1744,7 +1795,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return csAccountUpdate_ ?? global::CSAccountUpdate.DefaultInstance; }
   }
   
-  public const int CsAccountSnsSetFieldNumber = 24;
+  public const int CsAccountSnsSetFieldNumber = 26;
   private bool hasCsAccountSnsSet;
   private global::CSAccountSnsSet csAccountSnsSet_;
   public bool HasCsAccountSnsSet {
@@ -1754,7 +1805,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return csAccountSnsSet_ ?? global::CSAccountSnsSet.DefaultInstance; }
   }
   
-  public const int CsStaffCommentFieldNumber = 25;
+  public const int CsStaffCommentFieldNumber = 27;
   private bool hasCsStaffComment;
   private global::CSStaffComment csStaffComment_;
   public bool HasCsStaffComment {
@@ -1764,7 +1815,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return csStaffComment_ ?? global::CSStaffComment.DefaultInstance; }
   }
   
-  public const int ScStaffCommentFieldNumber = 26;
+  public const int ScStaffCommentFieldNumber = 28;
   private bool hasScStaffComment;
   private global::SCStaffComment scStaffComment_;
   public bool HasScStaffComment {
@@ -1774,7 +1825,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return scStaffComment_ ?? global::SCStaffComment.DefaultInstance; }
   }
   
-  public const int CsStaffPerformFieldNumber = 27;
+  public const int CsStaffPerformFieldNumber = 29;
   private bool hasCsStaffPerform;
   private global::CSStaffPerform csStaffPerform_;
   public bool HasCsStaffPerform {
@@ -1784,7 +1835,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return csStaffPerform_ ?? global::CSStaffPerform.DefaultInstance; }
   }
   
-  public const int ScStaffPerformFieldNumber = 28;
+  public const int ScStaffPerformFieldNumber = 30;
   private bool hasScStaffPerform;
   private global::SCStaffPerform scStaffPerform_;
   public bool HasScStaffPerform {
@@ -1794,27 +1845,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return scStaffPerform_ ?? global::SCStaffPerform.DefaultInstance; }
   }
   
-  public const int CsStaffShiftFieldNumber = 29;
-  private bool hasCsStaffShift;
-  private global::CSStaffShift csStaffShift_;
-  public bool HasCsStaffShift {
-    get { return hasCsStaffShift; }
-  }
-  public global::CSStaffShift CsStaffShift {
-    get { return csStaffShift_ ?? global::CSStaffShift.DefaultInstance; }
-  }
-  
-  public const int ScStaffShiftFieldNumber = 30;
-  private bool hasScStaffShift;
-  private global::SCStaffShift scStaffShift_;
-  public bool HasScStaffShift {
-    get { return hasScStaffShift; }
-  }
-  public global::SCStaffShift ScStaffShift {
-    get { return scStaffShift_ ?? global::SCStaffShift.DefaultInstance; }
-  }
-  
-  public const int CsEarningFieldNumber = 31;
+  public const int CsEarningFieldNumber = 33;
   private bool hasCsEarning;
   private global::CSEarning csEarning_;
   public bool HasCsEarning {
@@ -1824,7 +1855,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return csEarning_ ?? global::CSEarning.DefaultInstance; }
   }
   
-  public const int ScEarningFieldNumber = 32;
+  public const int ScEarningFieldNumber = 34;
   private bool hasScEarning;
   private global::SCEarning scEarning_;
   public bool HasScEarning {
@@ -1834,7 +1865,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return scEarning_ ?? global::SCEarning.DefaultInstance; }
   }
   
-  public const int ScComputerListFieldNumber = 33;
+  public const int ScComputerListFieldNumber = 35;
   private bool hasScComputerList;
   private global::SCComputerList scComputerList_;
   public bool HasScComputerList {
@@ -1844,7 +1875,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return scComputerList_ ?? global::SCComputerList.DefaultInstance; }
   }
   
-  public const int CsComputerAddFieldNumber = 34;
+  public const int CsComputerAddFieldNumber = 36;
   private bool hasCsComputerAdd;
   private global::CSComputerAdd csComputerAdd_;
   public bool HasCsComputerAdd {
@@ -1854,7 +1885,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return csComputerAdd_ ?? global::CSComputerAdd.DefaultInstance; }
   }
   
-  public const int CsComputerDelFieldNumber = 35;
+  public const int CsComputerDelFieldNumber = 37;
   private bool hasCsComputerDel;
   private global::CSComputerDel csComputerDel_;
   public bool HasCsComputerDel {
@@ -1864,7 +1895,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return csComputerDel_ ?? global::CSComputerDel.DefaultInstance; }
   }
   
-  public const int CsComputerUpdateFieldNumber = 36;
+  public const int CsComputerUpdateFieldNumber = 38;
   private bool hasCsComputerUpdate;
   private global::CSComputerUpdate csComputerUpdate_;
   public bool HasCsComputerUpdate {
@@ -1874,7 +1905,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return csComputerUpdate_ ?? global::CSComputerUpdate.DefaultInstance; }
   }
   
-  public const int CsComputerFindFieldNumber = 37;
+  public const int CsComputerFindFieldNumber = 39;
   private bool hasCsComputerFind;
   private global::CSComputerFind csComputerFind_;
   public bool HasCsComputerFind {
@@ -1884,7 +1915,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return csComputerFind_ ?? global::CSComputerFind.DefaultInstance; }
   }
   
-  public const int ScComputerFindFieldNumber = 38;
+  public const int ScComputerFindFieldNumber = 40;
   private bool hasScComputerFind;
   private global::SCComputerFind scComputerFind_;
   public bool HasScComputerFind {
@@ -1894,7 +1925,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return scComputerFind_ ?? global::SCComputerFind.DefaultInstance; }
   }
   
-  public const int CsMemberListFieldNumber = 39;
+  public const int CsMemberListFieldNumber = 41;
   private bool hasCsMemberList;
   private global::CSMemberList csMemberList_;
   public bool HasCsMemberList {
@@ -1904,7 +1935,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return csMemberList_ ?? global::CSMemberList.DefaultInstance; }
   }
   
-  public const int ScMemberListFieldNumber = 40;
+  public const int ScMemberListFieldNumber = 42;
   private bool hasScMemberList;
   private global::SCMemberList scMemberList_;
   public bool HasScMemberList {
@@ -1914,7 +1945,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return scMemberList_ ?? global::SCMemberList.DefaultInstance; }
   }
   
-  public const int CsMemberAddFieldNumber = 41;
+  public const int CsMemberAddFieldNumber = 43;
   private bool hasCsMemberAdd;
   private global::CSMemberAdd csMemberAdd_;
   public bool HasCsMemberAdd {
@@ -1924,7 +1955,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return csMemberAdd_ ?? global::CSMemberAdd.DefaultInstance; }
   }
   
-  public const int ScMemberAddFieldNumber = 42;
+  public const int ScMemberAddFieldNumber = 44;
   private bool hasScMemberAdd;
   private global::SCMemberAdd scMemberAdd_;
   public bool HasScMemberAdd {
@@ -1934,7 +1965,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return scMemberAdd_ ?? global::SCMemberAdd.DefaultInstance; }
   }
   
-  public const int CsMemberDelFieldNumber = 43;
+  public const int CsMemberDelFieldNumber = 45;
   private bool hasCsMemberDel;
   private global::CSMemberDel csMemberDel_;
   public bool HasCsMemberDel {
@@ -1944,7 +1975,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return csMemberDel_ ?? global::CSMemberDel.DefaultInstance; }
   }
   
-  public const int CsMemberUpdateFieldNumber = 44;
+  public const int CsMemberUpdateFieldNumber = 46;
   private bool hasCsMemberUpdate;
   private global::CSMemberUpdateStatus csMemberUpdate_;
   public bool HasCsMemberUpdate {
@@ -1954,7 +1985,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return csMemberUpdate_ ?? global::CSMemberUpdateStatus.DefaultInstance; }
   }
   
-  public const int CsMemberFindFieldNumber = 45;
+  public const int CsMemberFindFieldNumber = 47;
   private bool hasCsMemberFind;
   private global::CSMemberFind csMemberFind_;
   public bool HasCsMemberFind {
@@ -1964,7 +1995,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return csMemberFind_ ?? global::CSMemberFind.DefaultInstance; }
   }
   
-  public const int ScMemberFindFieldNumber = 46;
+  public const int ScMemberFindFieldNumber = 48;
   private bool hasScMemberFind;
   private global::SCMemberFind scMemberFind_;
   public bool HasScMemberFind {
@@ -1974,7 +2005,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return scMemberFind_ ?? global::SCMemberFind.DefaultInstance; }
   }
   
-  public const int CsMemberCardInfoFieldNumber = 47;
+  public const int CsMemberCardInfoFieldNumber = 49;
   private bool hasCsMemberCardInfo;
   private global::CSMemberCardInfo csMemberCardInfo_;
   public bool HasCsMemberCardInfo {
@@ -1984,7 +2015,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return csMemberCardInfo_ ?? global::CSMemberCardInfo.DefaultInstance; }
   }
   
-  public const int ScMemberCardInfoFieldNumber = 48;
+  public const int ScMemberCardInfoFieldNumber = 50;
   private bool hasScMemberCardInfo;
   private global::SCMemberCardInfo scMemberCardInfo_;
   public bool HasScMemberCardInfo {
@@ -1994,7 +2025,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return scMemberCardInfo_ ?? global::SCMemberCardInfo.DefaultInstance; }
   }
   
-  public const int CsMemberConsumRecordFieldNumber = 49;
+  public const int CsMemberConsumRecordFieldNumber = 51;
   private bool hasCsMemberConsumRecord;
   private global::CSMemberConsumRecord csMemberConsumRecord_;
   public bool HasCsMemberConsumRecord {
@@ -2004,7 +2035,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return csMemberConsumRecord_ ?? global::CSMemberConsumRecord.DefaultInstance; }
   }
   
-  public const int ScMemberConsumRecordFieldNumber = 50;
+  public const int ScMemberConsumRecordFieldNumber = 52;
   private bool hasScMemberConsumRecord;
   private global::SCMemberConsumRecord scMemberConsumRecord_;
   public bool HasScMemberConsumRecord {
@@ -2014,7 +2045,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return scMemberConsumRecord_ ?? global::SCMemberConsumRecord.DefaultInstance; }
   }
   
-  public const int CsMemberConsumFilterFieldNumber = 51;
+  public const int CsMemberConsumFilterFieldNumber = 53;
   private bool hasCsMemberConsumFilter;
   private global::CSMemberConsumFilter csMemberConsumFilter_;
   public bool HasCsMemberConsumFilter {
@@ -2024,7 +2055,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return csMemberConsumFilter_ ?? global::CSMemberConsumFilter.DefaultInstance; }
   }
   
-  public const int ScMemberConsumFilterFieldNumber = 52;
+  public const int ScMemberConsumFilterFieldNumber = 54;
   private bool hasScMemberConsumFilter;
   private global::SCMemberConsumFilter scMemberConsumFilter_;
   public bool HasScMemberConsumFilter {
@@ -2344,7 +2375,47 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return scOrderDetail_ ?? global::SCOrderDetail.DefaultInstance; }
   }
   
-  public const int CsReconnectFieldNumber = 86;
+  public const int CsOrderProcessFieldNumber = 86;
+  private bool hasCsOrderProcess;
+  private global::CSOrderProcess csOrderProcess_;
+  public bool HasCsOrderProcess {
+    get { return hasCsOrderProcess; }
+  }
+  public global::CSOrderProcess CsOrderProcess {
+    get { return csOrderProcess_ ?? global::CSOrderProcess.DefaultInstance; }
+  }
+  
+  public const int CsShiftAddFieldNumber = 87;
+  private bool hasCsShiftAdd;
+  private global::CSShiftAdd csShiftAdd_;
+  public bool HasCsShiftAdd {
+    get { return hasCsShiftAdd; }
+  }
+  public global::CSShiftAdd CsShiftAdd {
+    get { return csShiftAdd_ ?? global::CSShiftAdd.DefaultInstance; }
+  }
+  
+  public const int CsShiftFindFieldNumber = 88;
+  private bool hasCsShiftFind;
+  private global::CSShiftFind csShiftFind_;
+  public bool HasCsShiftFind {
+    get { return hasCsShiftFind; }
+  }
+  public global::CSShiftFind CsShiftFind {
+    get { return csShiftFind_ ?? global::CSShiftFind.DefaultInstance; }
+  }
+  
+  public const int ScShiftFindFieldNumber = 89;
+  private bool hasScShiftFind;
+  private global::SCShiftFind scShiftFind_;
+  public bool HasScShiftFind {
+    get { return hasScShiftFind; }
+  }
+  public global::SCShiftFind ScShiftFind {
+    get { return scShiftFind_ ?? global::SCShiftFind.DefaultInstance; }
+  }
+  
+  public const int CsReconnectFieldNumber = 90;
   private bool hasCsReconnect;
   private global::CSReconnect csReconnect_;
   public bool HasCsReconnect {
@@ -2354,7 +2425,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return csReconnect_ ?? global::CSReconnect.DefaultInstance; }
   }
   
-  public const int ScReconnectFieldNumber = 87;
+  public const int ScReconnectFieldNumber = 91;
   private bool hasScReconnect;
   private global::SCReconnect scReconnect_;
   public bool HasScReconnect {
@@ -2534,16 +2605,6 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return scSysMessage_ ?? global::SCSysMessage.DefaultInstance; }
   }
   
-  public const int CsUserMessageFieldNumber = 217;
-  private bool hasCsUserMessage;
-  private global::CSUserMessage csUserMessage_;
-  public bool HasCsUserMessage {
-    get { return hasCsUserMessage; }
-  }
-  public global::CSUserMessage CsUserMessage {
-    get { return csUserMessage_ ?? global::CSUserMessage.DefaultInstance; }
-  }
-  
   public const int CsEvaluateFieldNumber = 218;
   private bool hasCsEvaluate;
   private global::CSEvaluate csEvaluate_;
@@ -2621,6 +2682,12 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
       }
       if (HasScLogin) {
         if (!ScLogin.IsInitialized) return false;
+      }
+      if (HasScCallList) {
+        if (!ScCallList.IsInitialized) return false;
+      }
+      if (HasCsCallProcess) {
+        if (!CsCallProcess.IsInitialized) return false;
       }
       if (HasScAccountInfo) {
         if (!ScAccountInfo.IsInitialized) return false;
@@ -2826,6 +2893,18 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
       if (HasScOrderDetail) {
         if (!ScOrderDetail.IsInitialized) return false;
       }
+      if (HasCsOrderProcess) {
+        if (!CsOrderProcess.IsInitialized) return false;
+      }
+      if (HasCsShiftAdd) {
+        if (!CsShiftAdd.IsInitialized) return false;
+      }
+      if (HasCsShiftFind) {
+        if (!CsShiftFind.IsInitialized) return false;
+      }
+      if (HasScShiftFind) {
+        if (!ScShiftFind.IsInitialized) return false;
+      }
       if (HasCsReconnect) {
         if (!CsReconnect.IsInitialized) return false;
       }
@@ -2880,9 +2959,6 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
       if (HasScSysMessage) {
         if (!ScSysMessage.IsInitialized) return false;
       }
-      if (HasCsUserMessage) {
-        if (!CsUserMessage.IsInitialized) return false;
-      }
       if (HasCsEvaluate) {
         if (!CsEvaluate.IsInitialized) return false;
       }
@@ -2909,331 +2985,340 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     CalcSerializedSize();
     string[] field_names = _messageContentFieldNames;
     if (hasMessageType) {
-      output.WriteInt32(1, field_names[63], MessageType);
+      output.WriteInt32(1, field_names[65], MessageType);
     }
     if (hasErrorTip) {
-      output.WriteMessage(2, field_names[61], ErrorTip);
+      output.WriteMessage(2, field_names[63], ErrorTip);
     }
     if (hasClAskServer) {
       output.WriteMessage(3, field_names[0], ClAskServer);
     }
     if (hasLcRetServer) {
-      output.WriteMessage(4, field_names[62], LcRetServer);
+      output.WriteMessage(4, field_names[64], LcRetServer);
     }
     if (hasCsAuthen) {
       output.WriteMessage(5, field_names[6], CsAuthen);
     }
     if (hasScAuthen) {
-      output.WriteMessage(6, field_names[66], ScAuthen);
+      output.WriteMessage(6, field_names[68], ScAuthen);
     }
     if (hasCsLogin) {
-      output.WriteMessage(7, field_names[31], CsLogin);
+      output.WriteMessage(7, field_names[32], CsLogin);
     }
     if (hasScLogin) {
-      output.WriteMessage(8, field_names[79], ScLogin);
+      output.WriteMessage(8, field_names[82], ScLogin);
+    }
+    if (hasScCallList) {
+      output.WriteMessage(9, field_names[70], ScCallList);
+    }
+    if (hasCsCallProcess) {
+      output.WriteMessage(10, field_names[8], CsCallProcess);
     }
     if (hasScAccountInfo) {
-      output.WriteMessage(9, field_names[64], ScAccountInfo);
+      output.WriteMessage(11, field_names[66], ScAccountInfo);
     }
     if (hasScRealtimeInfo) {
-      output.WriteMessage(10, field_names[92], ScRealtimeInfo);
+      output.WriteMessage(12, field_names[95], ScRealtimeInfo);
     }
     if (hasCsCommand) {
-      output.WriteMessage(11, field_names[12], CsCommand);
+      output.WriteMessage(13, field_names[13], CsCommand);
     }
     if (hasCsLog) {
-      output.WriteMessage(12, field_names[30], CsLog);
+      output.WriteMessage(14, field_names[31], CsLog);
     }
     if (hasScLog) {
-      output.WriteMessage(13, field_names[78], ScLog);
+      output.WriteMessage(15, field_names[81], ScLog);
     }
     if (hasScRoleList) {
-      output.WriteMessage(14, field_names[95], ScRoleList);
+      output.WriteMessage(16, field_names[98], ScRoleList);
     }
     if (hasCsRoleAdd) {
-      output.WriteMessage(15, field_names[47], CsRoleAdd);
+      output.WriteMessage(17, field_names[49], CsRoleAdd);
     }
     if (hasScRoleAdd) {
-      output.WriteMessage(16, field_names[94], ScRoleAdd);
+      output.WriteMessage(18, field_names[97], ScRoleAdd);
     }
     if (hasCsRoleDel) {
-      output.WriteMessage(17, field_names[48], CsRoleDel);
+      output.WriteMessage(19, field_names[50], CsRoleDel);
     }
     if (hasCsRoleUpdate) {
-      output.WriteMessage(18, field_names[50], CsRoleUpdate);
+      output.WriteMessage(20, field_names[52], CsRoleUpdate);
     }
     if (hasCsRoleRights) {
-      output.WriteMessage(19, field_names[49], CsRoleRights);
+      output.WriteMessage(21, field_names[51], CsRoleRights);
     }
     if (hasScAccountList) {
-      output.WriteMessage(20, field_names[65], ScAccountList);
+      output.WriteMessage(22, field_names[67], ScAccountList);
     }
     if (hasCsAccountAdd) {
-      output.WriteMessage(21, field_names[1], CsAccountAdd);
+      output.WriteMessage(23, field_names[1], CsAccountAdd);
     }
     if (hasCsAccountDel) {
-      output.WriteMessage(22, field_names[2], CsAccountDel);
+      output.WriteMessage(24, field_names[2], CsAccountDel);
     }
     if (hasCsAccountUpdate) {
-      output.WriteMessage(23, field_names[4], CsAccountUpdate);
+      output.WriteMessage(25, field_names[4], CsAccountUpdate);
     }
     if (hasCsAccountSnsSet) {
-      output.WriteMessage(24, field_names[3], CsAccountSnsSet);
+      output.WriteMessage(26, field_names[3], CsAccountSnsSet);
     }
     if (hasCsStaffComment) {
-      output.WriteMessage(25, field_names[53], CsStaffComment);
+      output.WriteMessage(27, field_names[57], CsStaffComment);
     }
     if (hasScStaffComment) {
-      output.WriteMessage(26, field_names[99], ScStaffComment);
+      output.WriteMessage(28, field_names[103], ScStaffComment);
     }
     if (hasCsStaffPerform) {
-      output.WriteMessage(27, field_names[54], CsStaffPerform);
+      output.WriteMessage(29, field_names[58], CsStaffPerform);
     }
     if (hasScStaffPerform) {
-      output.WriteMessage(28, field_names[100], ScStaffPerform);
-    }
-    if (hasCsStaffShift) {
-      output.WriteMessage(29, field_names[55], CsStaffShift);
-    }
-    if (hasScStaffShift) {
-      output.WriteMessage(30, field_names[101], ScStaffShift);
+      output.WriteMessage(30, field_names[104], ScStaffPerform);
     }
     if (hasCsEarning) {
-      output.WriteMessage(31, field_names[18], CsEarning);
+      output.WriteMessage(33, field_names[19], CsEarning);
     }
     if (hasScEarning) {
-      output.WriteMessage(32, field_names[70], ScEarning);
+      output.WriteMessage(34, field_names[73], ScEarning);
     }
     if (hasScComputerList) {
-      output.WriteMessage(33, field_names[69], ScComputerList);
+      output.WriteMessage(35, field_names[72], ScComputerList);
     }
     if (hasCsComputerAdd) {
-      output.WriteMessage(34, field_names[13], CsComputerAdd);
+      output.WriteMessage(36, field_names[14], CsComputerAdd);
     }
     if (hasCsComputerDel) {
-      output.WriteMessage(35, field_names[14], CsComputerDel);
+      output.WriteMessage(37, field_names[15], CsComputerDel);
     }
     if (hasCsComputerUpdate) {
-      output.WriteMessage(36, field_names[16], CsComputerUpdate);
+      output.WriteMessage(38, field_names[17], CsComputerUpdate);
     }
     if (hasCsComputerFind) {
-      output.WriteMessage(37, field_names[15], CsComputerFind);
+      output.WriteMessage(39, field_names[16], CsComputerFind);
     }
     if (hasScComputerFind) {
-      output.WriteMessage(38, field_names[68], ScComputerFind);
+      output.WriteMessage(40, field_names[71], ScComputerFind);
     }
     if (hasCsMemberList) {
-      output.WriteMessage(39, field_names[40], CsMemberList);
+      output.WriteMessage(41, field_names[41], CsMemberList);
     }
     if (hasScMemberList) {
-      output.WriteMessage(40, field_names[87], ScMemberList);
+      output.WriteMessage(42, field_names[90], ScMemberList);
     }
     if (hasCsMemberAdd) {
-      output.WriteMessage(41, field_names[34], CsMemberAdd);
+      output.WriteMessage(43, field_names[35], CsMemberAdd);
     }
     if (hasScMemberAdd) {
-      output.WriteMessage(42, field_names[82], ScMemberAdd);
+      output.WriteMessage(44, field_names[85], ScMemberAdd);
     }
     if (hasCsMemberDel) {
-      output.WriteMessage(43, field_names[38], CsMemberDel);
+      output.WriteMessage(45, field_names[39], CsMemberDel);
     }
     if (hasCsMemberUpdate) {
-      output.WriteMessage(44, field_names[41], CsMemberUpdate);
+      output.WriteMessage(46, field_names[42], CsMemberUpdate);
     }
     if (hasCsMemberFind) {
-      output.WriteMessage(45, field_names[39], CsMemberFind);
+      output.WriteMessage(47, field_names[40], CsMemberFind);
     }
     if (hasScMemberFind) {
-      output.WriteMessage(46, field_names[86], ScMemberFind);
+      output.WriteMessage(48, field_names[89], ScMemberFind);
     }
     if (hasCsMemberCardInfo) {
-      output.WriteMessage(47, field_names[35], CsMemberCardInfo);
+      output.WriteMessage(49, field_names[36], CsMemberCardInfo);
     }
     if (hasScMemberCardInfo) {
-      output.WriteMessage(48, field_names[83], ScMemberCardInfo);
+      output.WriteMessage(50, field_names[86], ScMemberCardInfo);
     }
     if (hasCsMemberConsumRecord) {
-      output.WriteMessage(49, field_names[37], CsMemberConsumRecord);
+      output.WriteMessage(51, field_names[38], CsMemberConsumRecord);
     }
     if (hasScMemberConsumRecord) {
-      output.WriteMessage(50, field_names[85], ScMemberConsumRecord);
+      output.WriteMessage(52, field_names[88], ScMemberConsumRecord);
     }
     if (hasCsMemberConsumFilter) {
-      output.WriteMessage(51, field_names[36], CsMemberConsumFilter);
+      output.WriteMessage(53, field_names[37], CsMemberConsumFilter);
     }
     if (hasScMemberConsumFilter) {
-      output.WriteMessage(52, field_names[84], ScMemberConsumFilter);
+      output.WriteMessage(54, field_names[87], ScMemberConsumFilter);
     }
     if (hasScSysBillList) {
-      output.WriteMessage(55, field_names[102], ScSysBillList);
+      output.WriteMessage(55, field_names[105], ScSysBillList);
     }
     if (hasCsSysBillUpdate) {
-      output.WriteMessage(56, field_names[56], CsSysBillUpdate);
+      output.WriteMessage(56, field_names[59], CsSysBillUpdate);
     }
     if (hasScSysBillUpdate) {
-      output.WriteMessage(57, field_names[103], ScSysBillUpdate);
+      output.WriteMessage(57, field_names[106], ScSysBillUpdate);
     }
     if (hasCsSysInfo) {
-      output.WriteMessage(58, field_names[57], CsSysInfo);
+      output.WriteMessage(58, field_names[60], CsSysInfo);
     }
     if (hasScSysInfo) {
-      output.WriteMessage(59, field_names[104], ScSysInfo);
+      output.WriteMessage(59, field_names[107], ScSysInfo);
     }
     if (hasCsAddSysInfo) {
       output.WriteMessage(60, field_names[5], CsAddSysInfo);
     }
     if (hasCsDelSysInfo) {
-      output.WriteMessage(61, field_names[17], CsDelSysInfo);
+      output.WriteMessage(61, field_names[18], CsDelSysInfo);
     }
     if (hasCsUpdateSysInfo) {
-      output.WriteMessage(62, field_names[58], CsUpdateSysInfo);
+      output.WriteMessage(62, field_names[61], CsUpdateSysInfo);
     }
     if (hasCsEmkCheckin) {
-      output.WriteMessage(63, field_names[19], CsEmkCheckin);
+      output.WriteMessage(63, field_names[20], CsEmkCheckin);
     }
     if (hasScEmkCheckin) {
-      output.WriteMessage(64, field_names[71], ScEmkCheckin);
+      output.WriteMessage(64, field_names[74], ScEmkCheckin);
     }
     if (hasCsEmkCheckout) {
-      output.WriteMessage(65, field_names[20], CsEmkCheckout);
+      output.WriteMessage(65, field_names[21], CsEmkCheckout);
     }
     if (hasScEmkCheckout) {
-      output.WriteMessage(66, field_names[72], ScEmkCheckout);
+      output.WriteMessage(66, field_names[75], ScEmkCheckout);
     }
     if (hasCsEmkRecord) {
-      output.WriteMessage(67, field_names[21], CsEmkRecord);
+      output.WriteMessage(67, field_names[22], CsEmkRecord);
     }
     if (hasScEmkRecord) {
-      output.WriteMessage(68, field_names[73], ScEmkRecord);
+      output.WriteMessage(68, field_names[76], ScEmkRecord);
     }
     if (hasCsEmkRecordFind) {
-      output.WriteMessage(69, field_names[22], CsEmkRecordFind);
+      output.WriteMessage(69, field_names[23], CsEmkRecordFind);
     }
     if (hasScEmkRecordFind) {
-      output.WriteMessage(70, field_names[74], ScEmkRecordFind);
+      output.WriteMessage(70, field_names[77], ScEmkRecordFind);
     }
     if (hasCsGoodsFind) {
-      output.WriteMessage(71, field_names[26], CsGoodsFind);
+      output.WriteMessage(71, field_names[27], CsGoodsFind);
     }
     if (hasScGoodsFind) {
-      output.WriteMessage(72, field_names[76], ScGoodsFind);
+      output.WriteMessage(72, field_names[79], ScGoodsFind);
     }
     if (hasCsGoodsAdd) {
-      output.WriteMessage(73, field_names[24], CsGoodsAdd);
+      output.WriteMessage(73, field_names[25], CsGoodsAdd);
     }
     if (hasCsGoodsDel) {
-      output.WriteMessage(74, field_names[25], CsGoodsDel);
+      output.WriteMessage(74, field_names[26], CsGoodsDel);
     }
     if (hasCsGoodsUpdate) {
-      output.WriteMessage(75, field_names[28], CsGoodsUpdate);
+      output.WriteMessage(75, field_names[29], CsGoodsUpdate);
     }
     if (hasCsGoodsStock) {
-      output.WriteMessage(76, field_names[27], CsGoodsStock);
+      output.WriteMessage(76, field_names[28], CsGoodsStock);
     }
     if (hasScGoodsStock) {
-      output.WriteMessage(77, field_names[77], ScGoodsStock);
+      output.WriteMessage(77, field_names[80], ScGoodsStock);
     }
     if (hasCsSalesRecord) {
-      output.WriteMessage(78, field_names[51], CsSalesRecord);
+      output.WriteMessage(78, field_names[53], CsSalesRecord);
     }
     if (hasScSalesRecord) {
-      output.WriteMessage(79, field_names[96], ScSalesRecord);
+      output.WriteMessage(79, field_names[99], ScSalesRecord);
     }
     if (hasCsSalesTop) {
-      output.WriteMessage(80, field_names[52], CsSalesTop);
+      output.WriteMessage(80, field_names[54], CsSalesTop);
     }
     if (hasScSalesTop) {
-      output.WriteMessage(81, field_names[97], ScSalesTop);
+      output.WriteMessage(81, field_names[100], ScSalesTop);
     }
     if (hasCsOrderList) {
-      output.WriteMessage(82, field_names[43], CsOrderList);
+      output.WriteMessage(82, field_names[44], CsOrderList);
     }
     if (hasScOrderList) {
-      output.WriteMessage(83, field_names[89], ScOrderList);
+      output.WriteMessage(83, field_names[92], ScOrderList);
     }
     if (hasCsOrderDetail) {
-      output.WriteMessage(84, field_names[42], CsOrderDetail);
+      output.WriteMessage(84, field_names[43], CsOrderDetail);
     }
     if (hasScOrderDetail) {
-      output.WriteMessage(85, field_names[88], ScOrderDetail);
+      output.WriteMessage(85, field_names[91], ScOrderDetail);
+    }
+    if (hasCsOrderProcess) {
+      output.WriteMessage(86, field_names[45], CsOrderProcess);
+    }
+    if (hasCsShiftAdd) {
+      output.WriteMessage(87, field_names[55], CsShiftAdd);
+    }
+    if (hasCsShiftFind) {
+      output.WriteMessage(88, field_names[56], CsShiftFind);
+    }
+    if (hasScShiftFind) {
+      output.WriteMessage(89, field_names[101], ScShiftFind);
     }
     if (hasCsReconnect) {
-      output.WriteMessage(86, field_names[46], CsReconnect);
+      output.WriteMessage(90, field_names[48], CsReconnect);
     }
     if (hasScReconnect) {
-      output.WriteMessage(87, field_names[93], ScReconnect);
+      output.WriteMessage(91, field_names[96], ScReconnect);
     }
     if (hasCsClientOpen) {
-      output.WriteMessage(200, field_names[11], CsClientOpen);
+      output.WriteMessage(200, field_names[12], CsClientOpen);
     }
     if (hasCsClientClose) {
-      output.WriteMessage(201, field_names[10], CsClientClose);
+      output.WriteMessage(201, field_names[11], CsClientClose);
     }
     if (hasCsLogon) {
-      output.WriteMessage(202, field_names[33], CsLogon);
+      output.WriteMessage(202, field_names[34], CsLogon);
     }
     if (hasScLogon) {
-      output.WriteMessage(203, field_names[81], ScLogon);
+      output.WriteMessage(203, field_names[84], ScLogon);
     }
     if (hasCsLogoff) {
-      output.WriteMessage(204, field_names[32], CsLogoff);
+      output.WriteMessage(204, field_names[33], CsLogoff);
     }
     if (hasScLogoff) {
-      output.WriteMessage(205, field_names[80], ScLogoff);
+      output.WriteMessage(205, field_names[83], ScLogoff);
     }
     if (hasCsHungup) {
-      output.WriteMessage(206, field_names[29], CsHungup);
+      output.WriteMessage(206, field_names[30], CsHungup);
     }
     if (hasCsPreCharge) {
-      output.WriteMessage(207, field_names[45], CsPreCharge);
+      output.WriteMessage(207, field_names[47], CsPreCharge);
     }
     if (hasScPreCharge) {
-      output.WriteMessage(208, field_names[91], ScPreCharge);
+      output.WriteMessage(208, field_names[94], ScPreCharge);
     }
     if (hasScToCharge) {
-      output.WriteMessage(209, field_names[107], ScToCharge);
+      output.WriteMessage(209, field_names[110], ScToCharge);
     }
     if (hasScShop) {
-      output.WriteMessage(210, field_names[98], ScShop);
+      output.WriteMessage(210, field_names[102], ScShop);
     }
     if (hasCsCartAdd) {
-      output.WriteMessage(211, field_names[8], CsCartAdd);
+      output.WriteMessage(211, field_names[9], CsCartAdd);
     }
     if (hasCsCartDel) {
-      output.WriteMessage(212, field_names[9], CsCartDel);
+      output.WriteMessage(212, field_names[10], CsCartDel);
     }
     if (hasCsPreBuy) {
-      output.WriteMessage(213, field_names[44], CsPreBuy);
+      output.WriteMessage(213, field_names[46], CsPreBuy);
     }
     if (hasScPreBuy) {
-      output.WriteMessage(214, field_names[90], ScPreBuy);
+      output.WriteMessage(214, field_names[93], ScPreBuy);
     }
     if (hasScToBuy) {
-      output.WriteMessage(215, field_names[106], ScToBuy);
+      output.WriteMessage(215, field_names[109], ScToBuy);
     }
     if (hasScSysMessage) {
-      output.WriteMessage(216, field_names[105], ScSysMessage);
-    }
-    if (hasCsUserMessage) {
-      output.WriteMessage(217, field_names[59], CsUserMessage);
+      output.WriteMessage(216, field_names[108], ScSysMessage);
     }
     if (hasCsEvaluate) {
-      output.WriteMessage(218, field_names[23], CsEvaluate);
+      output.WriteMessage(218, field_names[24], CsEvaluate);
     }
     if (hasScEvaluate) {
-      output.WriteMessage(219, field_names[75], ScEvaluate);
+      output.WriteMessage(219, field_names[78], ScEvaluate);
     }
     if (hasCsVerifyCode) {
-      output.WriteMessage(220, field_names[60], CsVerifyCode);
+      output.WriteMessage(220, field_names[62], CsVerifyCode);
     }
     if (hasScVerifyCode) {
-      output.WriteMessage(221, field_names[108], ScVerifyCode);
+      output.WriteMessage(221, field_names[111], ScVerifyCode);
     }
     if (hasCsBindMobile) {
       output.WriteMessage(222, field_names[7], CsBindMobile);
     }
     if (hasScBindMobile) {
-      output.WriteMessage(223, field_names[67], ScBindMobile);
+      output.WriteMessage(223, field_names[69], ScBindMobile);
     }
     UnknownFields.WriteTo(output);
   }
@@ -3276,137 +3361,137 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     if (hasScLogin) {
       size += pb::CodedOutputStream.ComputeMessageSize(8, ScLogin);
     }
+    if (hasScCallList) {
+      size += pb::CodedOutputStream.ComputeMessageSize(9, ScCallList);
+    }
+    if (hasCsCallProcess) {
+      size += pb::CodedOutputStream.ComputeMessageSize(10, CsCallProcess);
+    }
     if (hasScAccountInfo) {
-      size += pb::CodedOutputStream.ComputeMessageSize(9, ScAccountInfo);
+      size += pb::CodedOutputStream.ComputeMessageSize(11, ScAccountInfo);
     }
     if (hasScRealtimeInfo) {
-      size += pb::CodedOutputStream.ComputeMessageSize(10, ScRealtimeInfo);
+      size += pb::CodedOutputStream.ComputeMessageSize(12, ScRealtimeInfo);
     }
     if (hasCsCommand) {
-      size += pb::CodedOutputStream.ComputeMessageSize(11, CsCommand);
+      size += pb::CodedOutputStream.ComputeMessageSize(13, CsCommand);
     }
     if (hasCsLog) {
-      size += pb::CodedOutputStream.ComputeMessageSize(12, CsLog);
+      size += pb::CodedOutputStream.ComputeMessageSize(14, CsLog);
     }
     if (hasScLog) {
-      size += pb::CodedOutputStream.ComputeMessageSize(13, ScLog);
+      size += pb::CodedOutputStream.ComputeMessageSize(15, ScLog);
     }
     if (hasScRoleList) {
-      size += pb::CodedOutputStream.ComputeMessageSize(14, ScRoleList);
+      size += pb::CodedOutputStream.ComputeMessageSize(16, ScRoleList);
     }
     if (hasCsRoleAdd) {
-      size += pb::CodedOutputStream.ComputeMessageSize(15, CsRoleAdd);
+      size += pb::CodedOutputStream.ComputeMessageSize(17, CsRoleAdd);
     }
     if (hasScRoleAdd) {
-      size += pb::CodedOutputStream.ComputeMessageSize(16, ScRoleAdd);
+      size += pb::CodedOutputStream.ComputeMessageSize(18, ScRoleAdd);
     }
     if (hasCsRoleDel) {
-      size += pb::CodedOutputStream.ComputeMessageSize(17, CsRoleDel);
+      size += pb::CodedOutputStream.ComputeMessageSize(19, CsRoleDel);
     }
     if (hasCsRoleUpdate) {
-      size += pb::CodedOutputStream.ComputeMessageSize(18, CsRoleUpdate);
+      size += pb::CodedOutputStream.ComputeMessageSize(20, CsRoleUpdate);
     }
     if (hasCsRoleRights) {
-      size += pb::CodedOutputStream.ComputeMessageSize(19, CsRoleRights);
+      size += pb::CodedOutputStream.ComputeMessageSize(21, CsRoleRights);
     }
     if (hasScAccountList) {
-      size += pb::CodedOutputStream.ComputeMessageSize(20, ScAccountList);
+      size += pb::CodedOutputStream.ComputeMessageSize(22, ScAccountList);
     }
     if (hasCsAccountAdd) {
-      size += pb::CodedOutputStream.ComputeMessageSize(21, CsAccountAdd);
+      size += pb::CodedOutputStream.ComputeMessageSize(23, CsAccountAdd);
     }
     if (hasCsAccountDel) {
-      size += pb::CodedOutputStream.ComputeMessageSize(22, CsAccountDel);
+      size += pb::CodedOutputStream.ComputeMessageSize(24, CsAccountDel);
     }
     if (hasCsAccountUpdate) {
-      size += pb::CodedOutputStream.ComputeMessageSize(23, CsAccountUpdate);
+      size += pb::CodedOutputStream.ComputeMessageSize(25, CsAccountUpdate);
     }
     if (hasCsAccountSnsSet) {
-      size += pb::CodedOutputStream.ComputeMessageSize(24, CsAccountSnsSet);
+      size += pb::CodedOutputStream.ComputeMessageSize(26, CsAccountSnsSet);
     }
     if (hasCsStaffComment) {
-      size += pb::CodedOutputStream.ComputeMessageSize(25, CsStaffComment);
+      size += pb::CodedOutputStream.ComputeMessageSize(27, CsStaffComment);
     }
     if (hasScStaffComment) {
-      size += pb::CodedOutputStream.ComputeMessageSize(26, ScStaffComment);
+      size += pb::CodedOutputStream.ComputeMessageSize(28, ScStaffComment);
     }
     if (hasCsStaffPerform) {
-      size += pb::CodedOutputStream.ComputeMessageSize(27, CsStaffPerform);
+      size += pb::CodedOutputStream.ComputeMessageSize(29, CsStaffPerform);
     }
     if (hasScStaffPerform) {
-      size += pb::CodedOutputStream.ComputeMessageSize(28, ScStaffPerform);
-    }
-    if (hasCsStaffShift) {
-      size += pb::CodedOutputStream.ComputeMessageSize(29, CsStaffShift);
-    }
-    if (hasScStaffShift) {
-      size += pb::CodedOutputStream.ComputeMessageSize(30, ScStaffShift);
+      size += pb::CodedOutputStream.ComputeMessageSize(30, ScStaffPerform);
     }
     if (hasCsEarning) {
-      size += pb::CodedOutputStream.ComputeMessageSize(31, CsEarning);
+      size += pb::CodedOutputStream.ComputeMessageSize(33, CsEarning);
     }
     if (hasScEarning) {
-      size += pb::CodedOutputStream.ComputeMessageSize(32, ScEarning);
+      size += pb::CodedOutputStream.ComputeMessageSize(34, ScEarning);
     }
     if (hasScComputerList) {
-      size += pb::CodedOutputStream.ComputeMessageSize(33, ScComputerList);
+      size += pb::CodedOutputStream.ComputeMessageSize(35, ScComputerList);
     }
     if (hasCsComputerAdd) {
-      size += pb::CodedOutputStream.ComputeMessageSize(34, CsComputerAdd);
+      size += pb::CodedOutputStream.ComputeMessageSize(36, CsComputerAdd);
     }
     if (hasCsComputerDel) {
-      size += pb::CodedOutputStream.ComputeMessageSize(35, CsComputerDel);
+      size += pb::CodedOutputStream.ComputeMessageSize(37, CsComputerDel);
     }
     if (hasCsComputerUpdate) {
-      size += pb::CodedOutputStream.ComputeMessageSize(36, CsComputerUpdate);
+      size += pb::CodedOutputStream.ComputeMessageSize(38, CsComputerUpdate);
     }
     if (hasCsComputerFind) {
-      size += pb::CodedOutputStream.ComputeMessageSize(37, CsComputerFind);
+      size += pb::CodedOutputStream.ComputeMessageSize(39, CsComputerFind);
     }
     if (hasScComputerFind) {
-      size += pb::CodedOutputStream.ComputeMessageSize(38, ScComputerFind);
+      size += pb::CodedOutputStream.ComputeMessageSize(40, ScComputerFind);
     }
     if (hasCsMemberList) {
-      size += pb::CodedOutputStream.ComputeMessageSize(39, CsMemberList);
+      size += pb::CodedOutputStream.ComputeMessageSize(41, CsMemberList);
     }
     if (hasScMemberList) {
-      size += pb::CodedOutputStream.ComputeMessageSize(40, ScMemberList);
+      size += pb::CodedOutputStream.ComputeMessageSize(42, ScMemberList);
     }
     if (hasCsMemberAdd) {
-      size += pb::CodedOutputStream.ComputeMessageSize(41, CsMemberAdd);
+      size += pb::CodedOutputStream.ComputeMessageSize(43, CsMemberAdd);
     }
     if (hasScMemberAdd) {
-      size += pb::CodedOutputStream.ComputeMessageSize(42, ScMemberAdd);
+      size += pb::CodedOutputStream.ComputeMessageSize(44, ScMemberAdd);
     }
     if (hasCsMemberDel) {
-      size += pb::CodedOutputStream.ComputeMessageSize(43, CsMemberDel);
+      size += pb::CodedOutputStream.ComputeMessageSize(45, CsMemberDel);
     }
     if (hasCsMemberUpdate) {
-      size += pb::CodedOutputStream.ComputeMessageSize(44, CsMemberUpdate);
+      size += pb::CodedOutputStream.ComputeMessageSize(46, CsMemberUpdate);
     }
     if (hasCsMemberFind) {
-      size += pb::CodedOutputStream.ComputeMessageSize(45, CsMemberFind);
+      size += pb::CodedOutputStream.ComputeMessageSize(47, CsMemberFind);
     }
     if (hasScMemberFind) {
-      size += pb::CodedOutputStream.ComputeMessageSize(46, ScMemberFind);
+      size += pb::CodedOutputStream.ComputeMessageSize(48, ScMemberFind);
     }
     if (hasCsMemberCardInfo) {
-      size += pb::CodedOutputStream.ComputeMessageSize(47, CsMemberCardInfo);
+      size += pb::CodedOutputStream.ComputeMessageSize(49, CsMemberCardInfo);
     }
     if (hasScMemberCardInfo) {
-      size += pb::CodedOutputStream.ComputeMessageSize(48, ScMemberCardInfo);
+      size += pb::CodedOutputStream.ComputeMessageSize(50, ScMemberCardInfo);
     }
     if (hasCsMemberConsumRecord) {
-      size += pb::CodedOutputStream.ComputeMessageSize(49, CsMemberConsumRecord);
+      size += pb::CodedOutputStream.ComputeMessageSize(51, CsMemberConsumRecord);
     }
     if (hasScMemberConsumRecord) {
-      size += pb::CodedOutputStream.ComputeMessageSize(50, ScMemberConsumRecord);
+      size += pb::CodedOutputStream.ComputeMessageSize(52, ScMemberConsumRecord);
     }
     if (hasCsMemberConsumFilter) {
-      size += pb::CodedOutputStream.ComputeMessageSize(51, CsMemberConsumFilter);
+      size += pb::CodedOutputStream.ComputeMessageSize(53, CsMemberConsumFilter);
     }
     if (hasScMemberConsumFilter) {
-      size += pb::CodedOutputStream.ComputeMessageSize(52, ScMemberConsumFilter);
+      size += pb::CodedOutputStream.ComputeMessageSize(54, ScMemberConsumFilter);
     }
     if (hasScSysBillList) {
       size += pb::CodedOutputStream.ComputeMessageSize(55, ScSysBillList);
@@ -3501,11 +3586,23 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     if (hasScOrderDetail) {
       size += pb::CodedOutputStream.ComputeMessageSize(85, ScOrderDetail);
     }
+    if (hasCsOrderProcess) {
+      size += pb::CodedOutputStream.ComputeMessageSize(86, CsOrderProcess);
+    }
+    if (hasCsShiftAdd) {
+      size += pb::CodedOutputStream.ComputeMessageSize(87, CsShiftAdd);
+    }
+    if (hasCsShiftFind) {
+      size += pb::CodedOutputStream.ComputeMessageSize(88, CsShiftFind);
+    }
+    if (hasScShiftFind) {
+      size += pb::CodedOutputStream.ComputeMessageSize(89, ScShiftFind);
+    }
     if (hasCsReconnect) {
-      size += pb::CodedOutputStream.ComputeMessageSize(86, CsReconnect);
+      size += pb::CodedOutputStream.ComputeMessageSize(90, CsReconnect);
     }
     if (hasScReconnect) {
-      size += pb::CodedOutputStream.ComputeMessageSize(87, ScReconnect);
+      size += pb::CodedOutputStream.ComputeMessageSize(91, ScReconnect);
     }
     if (hasCsClientOpen) {
       size += pb::CodedOutputStream.ComputeMessageSize(200, CsClientOpen);
@@ -3557,9 +3654,6 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     }
     if (hasScSysMessage) {
       size += pb::CodedOutputStream.ComputeMessageSize(216, ScSysMessage);
-    }
-    if (hasCsUserMessage) {
-      size += pb::CodedOutputStream.ComputeMessageSize(217, CsUserMessage);
     }
     if (hasCsEvaluate) {
       size += pb::CodedOutputStream.ComputeMessageSize(218, CsEvaluate);
@@ -3725,6 +3819,12 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
       if (other.HasScLogin) {
         MergeScLogin(other.ScLogin);
       }
+      if (other.HasScCallList) {
+        MergeScCallList(other.ScCallList);
+      }
+      if (other.HasCsCallProcess) {
+        MergeCsCallProcess(other.CsCallProcess);
+      }
       if (other.HasScAccountInfo) {
         MergeScAccountInfo(other.ScAccountInfo);
       }
@@ -3784,12 +3884,6 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
       }
       if (other.HasScStaffPerform) {
         MergeScStaffPerform(other.ScStaffPerform);
-      }
-      if (other.HasCsStaffShift) {
-        MergeCsStaffShift(other.CsStaffShift);
-      }
-      if (other.HasScStaffShift) {
-        MergeScStaffShift(other.ScStaffShift);
       }
       if (other.HasCsEarning) {
         MergeCsEarning(other.CsEarning);
@@ -3950,6 +4044,18 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
       if (other.HasScOrderDetail) {
         MergeScOrderDetail(other.ScOrderDetail);
       }
+      if (other.HasCsOrderProcess) {
+        MergeCsOrderProcess(other.CsOrderProcess);
+      }
+      if (other.HasCsShiftAdd) {
+        MergeCsShiftAdd(other.CsShiftAdd);
+      }
+      if (other.HasCsShiftFind) {
+        MergeCsShiftFind(other.CsShiftFind);
+      }
+      if (other.HasScShiftFind) {
+        MergeScShiftFind(other.ScShiftFind);
+      }
       if (other.HasCsReconnect) {
         MergeCsReconnect(other.CsReconnect);
       }
@@ -4006,9 +4112,6 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
       }
       if (other.HasScSysMessage) {
         MergeScSysMessage(other.ScSysMessage);
-      }
-      if (other.HasCsUserMessage) {
-        MergeCsUserMessage(other.CsUserMessage);
       }
       if (other.HasCsEvaluate) {
         MergeCsEvaluate(other.CsEvaluate);
@@ -4139,6 +4242,24 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             break;
           }
           case 74: {
+            global::SCCallList.Builder subBuilder = global::SCCallList.CreateBuilder();
+            if (result.hasScCallList) {
+              subBuilder.MergeFrom(ScCallList);
+            }
+            input.ReadMessage(subBuilder, extensionRegistry);
+            ScCallList = subBuilder.BuildPartial();
+            break;
+          }
+          case 82: {
+            global::CSCallProcess.Builder subBuilder = global::CSCallProcess.CreateBuilder();
+            if (result.hasCsCallProcess) {
+              subBuilder.MergeFrom(CsCallProcess);
+            }
+            input.ReadMessage(subBuilder, extensionRegistry);
+            CsCallProcess = subBuilder.BuildPartial();
+            break;
+          }
+          case 90: {
             global::SCAccountInfo.Builder subBuilder = global::SCAccountInfo.CreateBuilder();
             if (result.hasScAccountInfo) {
               subBuilder.MergeFrom(ScAccountInfo);
@@ -4147,7 +4268,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             ScAccountInfo = subBuilder.BuildPartial();
             break;
           }
-          case 82: {
+          case 98: {
             global::SCRealtimeInfo.Builder subBuilder = global::SCRealtimeInfo.CreateBuilder();
             if (result.hasScRealtimeInfo) {
               subBuilder.MergeFrom(ScRealtimeInfo);
@@ -4156,7 +4277,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             ScRealtimeInfo = subBuilder.BuildPartial();
             break;
           }
-          case 90: {
+          case 106: {
             global::CSCommand.Builder subBuilder = global::CSCommand.CreateBuilder();
             if (result.hasCsCommand) {
               subBuilder.MergeFrom(CsCommand);
@@ -4165,7 +4286,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             CsCommand = subBuilder.BuildPartial();
             break;
           }
-          case 98: {
+          case 114: {
             global::CSLog.Builder subBuilder = global::CSLog.CreateBuilder();
             if (result.hasCsLog) {
               subBuilder.MergeFrom(CsLog);
@@ -4174,7 +4295,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             CsLog = subBuilder.BuildPartial();
             break;
           }
-          case 106: {
+          case 122: {
             global::SCLog.Builder subBuilder = global::SCLog.CreateBuilder();
             if (result.hasScLog) {
               subBuilder.MergeFrom(ScLog);
@@ -4183,7 +4304,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             ScLog = subBuilder.BuildPartial();
             break;
           }
-          case 114: {
+          case 130: {
             global::SCRoleList.Builder subBuilder = global::SCRoleList.CreateBuilder();
             if (result.hasScRoleList) {
               subBuilder.MergeFrom(ScRoleList);
@@ -4192,7 +4313,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             ScRoleList = subBuilder.BuildPartial();
             break;
           }
-          case 122: {
+          case 138: {
             global::CSRoleAdd.Builder subBuilder = global::CSRoleAdd.CreateBuilder();
             if (result.hasCsRoleAdd) {
               subBuilder.MergeFrom(CsRoleAdd);
@@ -4201,7 +4322,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             CsRoleAdd = subBuilder.BuildPartial();
             break;
           }
-          case 130: {
+          case 146: {
             global::SCRoleAdd.Builder subBuilder = global::SCRoleAdd.CreateBuilder();
             if (result.hasScRoleAdd) {
               subBuilder.MergeFrom(ScRoleAdd);
@@ -4210,7 +4331,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             ScRoleAdd = subBuilder.BuildPartial();
             break;
           }
-          case 138: {
+          case 154: {
             global::CSRoleDel.Builder subBuilder = global::CSRoleDel.CreateBuilder();
             if (result.hasCsRoleDel) {
               subBuilder.MergeFrom(CsRoleDel);
@@ -4219,7 +4340,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             CsRoleDel = subBuilder.BuildPartial();
             break;
           }
-          case 146: {
+          case 162: {
             global::CSRoleUpdate.Builder subBuilder = global::CSRoleUpdate.CreateBuilder();
             if (result.hasCsRoleUpdate) {
               subBuilder.MergeFrom(CsRoleUpdate);
@@ -4228,7 +4349,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             CsRoleUpdate = subBuilder.BuildPartial();
             break;
           }
-          case 154: {
+          case 170: {
             global::CSRoleRights.Builder subBuilder = global::CSRoleRights.CreateBuilder();
             if (result.hasCsRoleRights) {
               subBuilder.MergeFrom(CsRoleRights);
@@ -4237,7 +4358,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             CsRoleRights = subBuilder.BuildPartial();
             break;
           }
-          case 162: {
+          case 178: {
             global::SCAccountList.Builder subBuilder = global::SCAccountList.CreateBuilder();
             if (result.hasScAccountList) {
               subBuilder.MergeFrom(ScAccountList);
@@ -4246,7 +4367,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             ScAccountList = subBuilder.BuildPartial();
             break;
           }
-          case 170: {
+          case 186: {
             global::CSAccountAdd.Builder subBuilder = global::CSAccountAdd.CreateBuilder();
             if (result.hasCsAccountAdd) {
               subBuilder.MergeFrom(CsAccountAdd);
@@ -4255,7 +4376,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             CsAccountAdd = subBuilder.BuildPartial();
             break;
           }
-          case 178: {
+          case 194: {
             global::CSAccountDel.Builder subBuilder = global::CSAccountDel.CreateBuilder();
             if (result.hasCsAccountDel) {
               subBuilder.MergeFrom(CsAccountDel);
@@ -4264,7 +4385,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             CsAccountDel = subBuilder.BuildPartial();
             break;
           }
-          case 186: {
+          case 202: {
             global::CSAccountUpdate.Builder subBuilder = global::CSAccountUpdate.CreateBuilder();
             if (result.hasCsAccountUpdate) {
               subBuilder.MergeFrom(CsAccountUpdate);
@@ -4273,7 +4394,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             CsAccountUpdate = subBuilder.BuildPartial();
             break;
           }
-          case 194: {
+          case 210: {
             global::CSAccountSnsSet.Builder subBuilder = global::CSAccountSnsSet.CreateBuilder();
             if (result.hasCsAccountSnsSet) {
               subBuilder.MergeFrom(CsAccountSnsSet);
@@ -4282,7 +4403,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             CsAccountSnsSet = subBuilder.BuildPartial();
             break;
           }
-          case 202: {
+          case 218: {
             global::CSStaffComment.Builder subBuilder = global::CSStaffComment.CreateBuilder();
             if (result.hasCsStaffComment) {
               subBuilder.MergeFrom(CsStaffComment);
@@ -4291,7 +4412,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             CsStaffComment = subBuilder.BuildPartial();
             break;
           }
-          case 210: {
+          case 226: {
             global::SCStaffComment.Builder subBuilder = global::SCStaffComment.CreateBuilder();
             if (result.hasScStaffComment) {
               subBuilder.MergeFrom(ScStaffComment);
@@ -4300,7 +4421,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             ScStaffComment = subBuilder.BuildPartial();
             break;
           }
-          case 218: {
+          case 234: {
             global::CSStaffPerform.Builder subBuilder = global::CSStaffPerform.CreateBuilder();
             if (result.hasCsStaffPerform) {
               subBuilder.MergeFrom(CsStaffPerform);
@@ -4309,7 +4430,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             CsStaffPerform = subBuilder.BuildPartial();
             break;
           }
-          case 226: {
+          case 242: {
             global::SCStaffPerform.Builder subBuilder = global::SCStaffPerform.CreateBuilder();
             if (result.hasScStaffPerform) {
               subBuilder.MergeFrom(ScStaffPerform);
@@ -4318,25 +4439,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             ScStaffPerform = subBuilder.BuildPartial();
             break;
           }
-          case 234: {
-            global::CSStaffShift.Builder subBuilder = global::CSStaffShift.CreateBuilder();
-            if (result.hasCsStaffShift) {
-              subBuilder.MergeFrom(CsStaffShift);
-            }
-            input.ReadMessage(subBuilder, extensionRegistry);
-            CsStaffShift = subBuilder.BuildPartial();
-            break;
-          }
-          case 242: {
-            global::SCStaffShift.Builder subBuilder = global::SCStaffShift.CreateBuilder();
-            if (result.hasScStaffShift) {
-              subBuilder.MergeFrom(ScStaffShift);
-            }
-            input.ReadMessage(subBuilder, extensionRegistry);
-            ScStaffShift = subBuilder.BuildPartial();
-            break;
-          }
-          case 250: {
+          case 266: {
             global::CSEarning.Builder subBuilder = global::CSEarning.CreateBuilder();
             if (result.hasCsEarning) {
               subBuilder.MergeFrom(CsEarning);
@@ -4345,7 +4448,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             CsEarning = subBuilder.BuildPartial();
             break;
           }
-          case 258: {
+          case 274: {
             global::SCEarning.Builder subBuilder = global::SCEarning.CreateBuilder();
             if (result.hasScEarning) {
               subBuilder.MergeFrom(ScEarning);
@@ -4354,7 +4457,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             ScEarning = subBuilder.BuildPartial();
             break;
           }
-          case 266: {
+          case 282: {
             global::SCComputerList.Builder subBuilder = global::SCComputerList.CreateBuilder();
             if (result.hasScComputerList) {
               subBuilder.MergeFrom(ScComputerList);
@@ -4363,7 +4466,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             ScComputerList = subBuilder.BuildPartial();
             break;
           }
-          case 274: {
+          case 290: {
             global::CSComputerAdd.Builder subBuilder = global::CSComputerAdd.CreateBuilder();
             if (result.hasCsComputerAdd) {
               subBuilder.MergeFrom(CsComputerAdd);
@@ -4372,7 +4475,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             CsComputerAdd = subBuilder.BuildPartial();
             break;
           }
-          case 282: {
+          case 298: {
             global::CSComputerDel.Builder subBuilder = global::CSComputerDel.CreateBuilder();
             if (result.hasCsComputerDel) {
               subBuilder.MergeFrom(CsComputerDel);
@@ -4381,7 +4484,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             CsComputerDel = subBuilder.BuildPartial();
             break;
           }
-          case 290: {
+          case 306: {
             global::CSComputerUpdate.Builder subBuilder = global::CSComputerUpdate.CreateBuilder();
             if (result.hasCsComputerUpdate) {
               subBuilder.MergeFrom(CsComputerUpdate);
@@ -4390,7 +4493,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             CsComputerUpdate = subBuilder.BuildPartial();
             break;
           }
-          case 298: {
+          case 314: {
             global::CSComputerFind.Builder subBuilder = global::CSComputerFind.CreateBuilder();
             if (result.hasCsComputerFind) {
               subBuilder.MergeFrom(CsComputerFind);
@@ -4399,7 +4502,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             CsComputerFind = subBuilder.BuildPartial();
             break;
           }
-          case 306: {
+          case 322: {
             global::SCComputerFind.Builder subBuilder = global::SCComputerFind.CreateBuilder();
             if (result.hasScComputerFind) {
               subBuilder.MergeFrom(ScComputerFind);
@@ -4408,7 +4511,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             ScComputerFind = subBuilder.BuildPartial();
             break;
           }
-          case 314: {
+          case 330: {
             global::CSMemberList.Builder subBuilder = global::CSMemberList.CreateBuilder();
             if (result.hasCsMemberList) {
               subBuilder.MergeFrom(CsMemberList);
@@ -4417,7 +4520,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             CsMemberList = subBuilder.BuildPartial();
             break;
           }
-          case 322: {
+          case 338: {
             global::SCMemberList.Builder subBuilder = global::SCMemberList.CreateBuilder();
             if (result.hasScMemberList) {
               subBuilder.MergeFrom(ScMemberList);
@@ -4426,7 +4529,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             ScMemberList = subBuilder.BuildPartial();
             break;
           }
-          case 330: {
+          case 346: {
             global::CSMemberAdd.Builder subBuilder = global::CSMemberAdd.CreateBuilder();
             if (result.hasCsMemberAdd) {
               subBuilder.MergeFrom(CsMemberAdd);
@@ -4435,7 +4538,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             CsMemberAdd = subBuilder.BuildPartial();
             break;
           }
-          case 338: {
+          case 354: {
             global::SCMemberAdd.Builder subBuilder = global::SCMemberAdd.CreateBuilder();
             if (result.hasScMemberAdd) {
               subBuilder.MergeFrom(ScMemberAdd);
@@ -4444,7 +4547,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             ScMemberAdd = subBuilder.BuildPartial();
             break;
           }
-          case 346: {
+          case 362: {
             global::CSMemberDel.Builder subBuilder = global::CSMemberDel.CreateBuilder();
             if (result.hasCsMemberDel) {
               subBuilder.MergeFrom(CsMemberDel);
@@ -4453,7 +4556,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             CsMemberDel = subBuilder.BuildPartial();
             break;
           }
-          case 354: {
+          case 370: {
             global::CSMemberUpdateStatus.Builder subBuilder = global::CSMemberUpdateStatus.CreateBuilder();
             if (result.hasCsMemberUpdate) {
               subBuilder.MergeFrom(CsMemberUpdate);
@@ -4462,7 +4565,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             CsMemberUpdate = subBuilder.BuildPartial();
             break;
           }
-          case 362: {
+          case 378: {
             global::CSMemberFind.Builder subBuilder = global::CSMemberFind.CreateBuilder();
             if (result.hasCsMemberFind) {
               subBuilder.MergeFrom(CsMemberFind);
@@ -4471,7 +4574,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             CsMemberFind = subBuilder.BuildPartial();
             break;
           }
-          case 370: {
+          case 386: {
             global::SCMemberFind.Builder subBuilder = global::SCMemberFind.CreateBuilder();
             if (result.hasScMemberFind) {
               subBuilder.MergeFrom(ScMemberFind);
@@ -4480,7 +4583,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             ScMemberFind = subBuilder.BuildPartial();
             break;
           }
-          case 378: {
+          case 394: {
             global::CSMemberCardInfo.Builder subBuilder = global::CSMemberCardInfo.CreateBuilder();
             if (result.hasCsMemberCardInfo) {
               subBuilder.MergeFrom(CsMemberCardInfo);
@@ -4489,7 +4592,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             CsMemberCardInfo = subBuilder.BuildPartial();
             break;
           }
-          case 386: {
+          case 402: {
             global::SCMemberCardInfo.Builder subBuilder = global::SCMemberCardInfo.CreateBuilder();
             if (result.hasScMemberCardInfo) {
               subBuilder.MergeFrom(ScMemberCardInfo);
@@ -4498,7 +4601,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             ScMemberCardInfo = subBuilder.BuildPartial();
             break;
           }
-          case 394: {
+          case 410: {
             global::CSMemberConsumRecord.Builder subBuilder = global::CSMemberConsumRecord.CreateBuilder();
             if (result.hasCsMemberConsumRecord) {
               subBuilder.MergeFrom(CsMemberConsumRecord);
@@ -4507,7 +4610,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             CsMemberConsumRecord = subBuilder.BuildPartial();
             break;
           }
-          case 402: {
+          case 418: {
             global::SCMemberConsumRecord.Builder subBuilder = global::SCMemberConsumRecord.CreateBuilder();
             if (result.hasScMemberConsumRecord) {
               subBuilder.MergeFrom(ScMemberConsumRecord);
@@ -4516,7 +4619,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             ScMemberConsumRecord = subBuilder.BuildPartial();
             break;
           }
-          case 410: {
+          case 426: {
             global::CSMemberConsumFilter.Builder subBuilder = global::CSMemberConsumFilter.CreateBuilder();
             if (result.hasCsMemberConsumFilter) {
               subBuilder.MergeFrom(CsMemberConsumFilter);
@@ -4525,7 +4628,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             CsMemberConsumFilter = subBuilder.BuildPartial();
             break;
           }
-          case 418: {
+          case 434: {
             global::SCMemberConsumFilter.Builder subBuilder = global::SCMemberConsumFilter.CreateBuilder();
             if (result.hasScMemberConsumFilter) {
               subBuilder.MergeFrom(ScMemberConsumFilter);
@@ -4814,6 +4917,42 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             break;
           }
           case 690: {
+            global::CSOrderProcess.Builder subBuilder = global::CSOrderProcess.CreateBuilder();
+            if (result.hasCsOrderProcess) {
+              subBuilder.MergeFrom(CsOrderProcess);
+            }
+            input.ReadMessage(subBuilder, extensionRegistry);
+            CsOrderProcess = subBuilder.BuildPartial();
+            break;
+          }
+          case 698: {
+            global::CSShiftAdd.Builder subBuilder = global::CSShiftAdd.CreateBuilder();
+            if (result.hasCsShiftAdd) {
+              subBuilder.MergeFrom(CsShiftAdd);
+            }
+            input.ReadMessage(subBuilder, extensionRegistry);
+            CsShiftAdd = subBuilder.BuildPartial();
+            break;
+          }
+          case 706: {
+            global::CSShiftFind.Builder subBuilder = global::CSShiftFind.CreateBuilder();
+            if (result.hasCsShiftFind) {
+              subBuilder.MergeFrom(CsShiftFind);
+            }
+            input.ReadMessage(subBuilder, extensionRegistry);
+            CsShiftFind = subBuilder.BuildPartial();
+            break;
+          }
+          case 714: {
+            global::SCShiftFind.Builder subBuilder = global::SCShiftFind.CreateBuilder();
+            if (result.hasScShiftFind) {
+              subBuilder.MergeFrom(ScShiftFind);
+            }
+            input.ReadMessage(subBuilder, extensionRegistry);
+            ScShiftFind = subBuilder.BuildPartial();
+            break;
+          }
+          case 722: {
             global::CSReconnect.Builder subBuilder = global::CSReconnect.CreateBuilder();
             if (result.hasCsReconnect) {
               subBuilder.MergeFrom(CsReconnect);
@@ -4822,7 +4961,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             CsReconnect = subBuilder.BuildPartial();
             break;
           }
-          case 698: {
+          case 730: {
             global::SCReconnect.Builder subBuilder = global::SCReconnect.CreateBuilder();
             if (result.hasScReconnect) {
               subBuilder.MergeFrom(ScReconnect);
@@ -4982,15 +5121,6 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             }
             input.ReadMessage(subBuilder, extensionRegistry);
             ScSysMessage = subBuilder.BuildPartial();
-            break;
-          }
-          case 1738: {
-            global::CSUserMessage.Builder subBuilder = global::CSUserMessage.CreateBuilder();
-            if (result.hasCsUserMessage) {
-              subBuilder.MergeFrom(CsUserMessage);
-            }
-            input.ReadMessage(subBuilder, extensionRegistry);
-            CsUserMessage = subBuilder.BuildPartial();
             break;
           }
           case 1746: {
@@ -5354,6 +5484,86 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
       PrepareBuilder();
       result.hasScLogin = false;
       result.scLogin_ = null;
+      return this;
+    }
+    
+    public bool HasScCallList {
+     get { return result.hasScCallList; }
+    }
+    public global::SCCallList ScCallList {
+      get { return result.ScCallList; }
+      set { SetScCallList(value); }
+    }
+    public Builder SetScCallList(global::SCCallList value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasScCallList = true;
+      result.scCallList_ = value;
+      return this;
+    }
+    public Builder SetScCallList(global::SCCallList.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
+      PrepareBuilder();
+      result.hasScCallList = true;
+      result.scCallList_ = builderForValue.Build();
+      return this;
+    }
+    public Builder MergeScCallList(global::SCCallList value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      if (result.hasScCallList &&
+          result.scCallList_ != global::SCCallList.DefaultInstance) {
+          result.scCallList_ = global::SCCallList.CreateBuilder(result.scCallList_).MergeFrom(value).BuildPartial();
+      } else {
+        result.scCallList_ = value;
+      }
+      result.hasScCallList = true;
+      return this;
+    }
+    public Builder ClearScCallList() {
+      PrepareBuilder();
+      result.hasScCallList = false;
+      result.scCallList_ = null;
+      return this;
+    }
+    
+    public bool HasCsCallProcess {
+     get { return result.hasCsCallProcess; }
+    }
+    public global::CSCallProcess CsCallProcess {
+      get { return result.CsCallProcess; }
+      set { SetCsCallProcess(value); }
+    }
+    public Builder SetCsCallProcess(global::CSCallProcess value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasCsCallProcess = true;
+      result.csCallProcess_ = value;
+      return this;
+    }
+    public Builder SetCsCallProcess(global::CSCallProcess.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
+      PrepareBuilder();
+      result.hasCsCallProcess = true;
+      result.csCallProcess_ = builderForValue.Build();
+      return this;
+    }
+    public Builder MergeCsCallProcess(global::CSCallProcess value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      if (result.hasCsCallProcess &&
+          result.csCallProcess_ != global::CSCallProcess.DefaultInstance) {
+          result.csCallProcess_ = global::CSCallProcess.CreateBuilder(result.csCallProcess_).MergeFrom(value).BuildPartial();
+      } else {
+        result.csCallProcess_ = value;
+      }
+      result.hasCsCallProcess = true;
+      return this;
+    }
+    public Builder ClearCsCallProcess() {
+      PrepareBuilder();
+      result.hasCsCallProcess = false;
+      result.csCallProcess_ = null;
       return this;
     }
     
@@ -6154,86 +6364,6 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
       PrepareBuilder();
       result.hasScStaffPerform = false;
       result.scStaffPerform_ = null;
-      return this;
-    }
-    
-    public bool HasCsStaffShift {
-     get { return result.hasCsStaffShift; }
-    }
-    public global::CSStaffShift CsStaffShift {
-      get { return result.CsStaffShift; }
-      set { SetCsStaffShift(value); }
-    }
-    public Builder SetCsStaffShift(global::CSStaffShift value) {
-      pb::ThrowHelper.ThrowIfNull(value, "value");
-      PrepareBuilder();
-      result.hasCsStaffShift = true;
-      result.csStaffShift_ = value;
-      return this;
-    }
-    public Builder SetCsStaffShift(global::CSStaffShift.Builder builderForValue) {
-      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
-      PrepareBuilder();
-      result.hasCsStaffShift = true;
-      result.csStaffShift_ = builderForValue.Build();
-      return this;
-    }
-    public Builder MergeCsStaffShift(global::CSStaffShift value) {
-      pb::ThrowHelper.ThrowIfNull(value, "value");
-      PrepareBuilder();
-      if (result.hasCsStaffShift &&
-          result.csStaffShift_ != global::CSStaffShift.DefaultInstance) {
-          result.csStaffShift_ = global::CSStaffShift.CreateBuilder(result.csStaffShift_).MergeFrom(value).BuildPartial();
-      } else {
-        result.csStaffShift_ = value;
-      }
-      result.hasCsStaffShift = true;
-      return this;
-    }
-    public Builder ClearCsStaffShift() {
-      PrepareBuilder();
-      result.hasCsStaffShift = false;
-      result.csStaffShift_ = null;
-      return this;
-    }
-    
-    public bool HasScStaffShift {
-     get { return result.hasScStaffShift; }
-    }
-    public global::SCStaffShift ScStaffShift {
-      get { return result.ScStaffShift; }
-      set { SetScStaffShift(value); }
-    }
-    public Builder SetScStaffShift(global::SCStaffShift value) {
-      pb::ThrowHelper.ThrowIfNull(value, "value");
-      PrepareBuilder();
-      result.hasScStaffShift = true;
-      result.scStaffShift_ = value;
-      return this;
-    }
-    public Builder SetScStaffShift(global::SCStaffShift.Builder builderForValue) {
-      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
-      PrepareBuilder();
-      result.hasScStaffShift = true;
-      result.scStaffShift_ = builderForValue.Build();
-      return this;
-    }
-    public Builder MergeScStaffShift(global::SCStaffShift value) {
-      pb::ThrowHelper.ThrowIfNull(value, "value");
-      PrepareBuilder();
-      if (result.hasScStaffShift &&
-          result.scStaffShift_ != global::SCStaffShift.DefaultInstance) {
-          result.scStaffShift_ = global::SCStaffShift.CreateBuilder(result.scStaffShift_).MergeFrom(value).BuildPartial();
-      } else {
-        result.scStaffShift_ = value;
-      }
-      result.hasScStaffShift = true;
-      return this;
-    }
-    public Builder ClearScStaffShift() {
-      PrepareBuilder();
-      result.hasScStaffShift = false;
-      result.scStaffShift_ = null;
       return this;
     }
     
@@ -8357,6 +8487,166 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
       return this;
     }
     
+    public bool HasCsOrderProcess {
+     get { return result.hasCsOrderProcess; }
+    }
+    public global::CSOrderProcess CsOrderProcess {
+      get { return result.CsOrderProcess; }
+      set { SetCsOrderProcess(value); }
+    }
+    public Builder SetCsOrderProcess(global::CSOrderProcess value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasCsOrderProcess = true;
+      result.csOrderProcess_ = value;
+      return this;
+    }
+    public Builder SetCsOrderProcess(global::CSOrderProcess.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
+      PrepareBuilder();
+      result.hasCsOrderProcess = true;
+      result.csOrderProcess_ = builderForValue.Build();
+      return this;
+    }
+    public Builder MergeCsOrderProcess(global::CSOrderProcess value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      if (result.hasCsOrderProcess &&
+          result.csOrderProcess_ != global::CSOrderProcess.DefaultInstance) {
+          result.csOrderProcess_ = global::CSOrderProcess.CreateBuilder(result.csOrderProcess_).MergeFrom(value).BuildPartial();
+      } else {
+        result.csOrderProcess_ = value;
+      }
+      result.hasCsOrderProcess = true;
+      return this;
+    }
+    public Builder ClearCsOrderProcess() {
+      PrepareBuilder();
+      result.hasCsOrderProcess = false;
+      result.csOrderProcess_ = null;
+      return this;
+    }
+    
+    public bool HasCsShiftAdd {
+     get { return result.hasCsShiftAdd; }
+    }
+    public global::CSShiftAdd CsShiftAdd {
+      get { return result.CsShiftAdd; }
+      set { SetCsShiftAdd(value); }
+    }
+    public Builder SetCsShiftAdd(global::CSShiftAdd value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasCsShiftAdd = true;
+      result.csShiftAdd_ = value;
+      return this;
+    }
+    public Builder SetCsShiftAdd(global::CSShiftAdd.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
+      PrepareBuilder();
+      result.hasCsShiftAdd = true;
+      result.csShiftAdd_ = builderForValue.Build();
+      return this;
+    }
+    public Builder MergeCsShiftAdd(global::CSShiftAdd value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      if (result.hasCsShiftAdd &&
+          result.csShiftAdd_ != global::CSShiftAdd.DefaultInstance) {
+          result.csShiftAdd_ = global::CSShiftAdd.CreateBuilder(result.csShiftAdd_).MergeFrom(value).BuildPartial();
+      } else {
+        result.csShiftAdd_ = value;
+      }
+      result.hasCsShiftAdd = true;
+      return this;
+    }
+    public Builder ClearCsShiftAdd() {
+      PrepareBuilder();
+      result.hasCsShiftAdd = false;
+      result.csShiftAdd_ = null;
+      return this;
+    }
+    
+    public bool HasCsShiftFind {
+     get { return result.hasCsShiftFind; }
+    }
+    public global::CSShiftFind CsShiftFind {
+      get { return result.CsShiftFind; }
+      set { SetCsShiftFind(value); }
+    }
+    public Builder SetCsShiftFind(global::CSShiftFind value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasCsShiftFind = true;
+      result.csShiftFind_ = value;
+      return this;
+    }
+    public Builder SetCsShiftFind(global::CSShiftFind.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
+      PrepareBuilder();
+      result.hasCsShiftFind = true;
+      result.csShiftFind_ = builderForValue.Build();
+      return this;
+    }
+    public Builder MergeCsShiftFind(global::CSShiftFind value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      if (result.hasCsShiftFind &&
+          result.csShiftFind_ != global::CSShiftFind.DefaultInstance) {
+          result.csShiftFind_ = global::CSShiftFind.CreateBuilder(result.csShiftFind_).MergeFrom(value).BuildPartial();
+      } else {
+        result.csShiftFind_ = value;
+      }
+      result.hasCsShiftFind = true;
+      return this;
+    }
+    public Builder ClearCsShiftFind() {
+      PrepareBuilder();
+      result.hasCsShiftFind = false;
+      result.csShiftFind_ = null;
+      return this;
+    }
+    
+    public bool HasScShiftFind {
+     get { return result.hasScShiftFind; }
+    }
+    public global::SCShiftFind ScShiftFind {
+      get { return result.ScShiftFind; }
+      set { SetScShiftFind(value); }
+    }
+    public Builder SetScShiftFind(global::SCShiftFind value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasScShiftFind = true;
+      result.scShiftFind_ = value;
+      return this;
+    }
+    public Builder SetScShiftFind(global::SCShiftFind.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
+      PrepareBuilder();
+      result.hasScShiftFind = true;
+      result.scShiftFind_ = builderForValue.Build();
+      return this;
+    }
+    public Builder MergeScShiftFind(global::SCShiftFind value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      if (result.hasScShiftFind &&
+          result.scShiftFind_ != global::SCShiftFind.DefaultInstance) {
+          result.scShiftFind_ = global::SCShiftFind.CreateBuilder(result.scShiftFind_).MergeFrom(value).BuildPartial();
+      } else {
+        result.scShiftFind_ = value;
+      }
+      result.hasScShiftFind = true;
+      return this;
+    }
+    public Builder ClearScShiftFind() {
+      PrepareBuilder();
+      result.hasScShiftFind = false;
+      result.scShiftFind_ = null;
+      return this;
+    }
+    
     public bool HasCsReconnect {
      get { return result.hasCsReconnect; }
     }
@@ -9114,46 +9404,6 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
       PrepareBuilder();
       result.hasScSysMessage = false;
       result.scSysMessage_ = null;
-      return this;
-    }
-    
-    public bool HasCsUserMessage {
-     get { return result.hasCsUserMessage; }
-    }
-    public global::CSUserMessage CsUserMessage {
-      get { return result.CsUserMessage; }
-      set { SetCsUserMessage(value); }
-    }
-    public Builder SetCsUserMessage(global::CSUserMessage value) {
-      pb::ThrowHelper.ThrowIfNull(value, "value");
-      PrepareBuilder();
-      result.hasCsUserMessage = true;
-      result.csUserMessage_ = value;
-      return this;
-    }
-    public Builder SetCsUserMessage(global::CSUserMessage.Builder builderForValue) {
-      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
-      PrepareBuilder();
-      result.hasCsUserMessage = true;
-      result.csUserMessage_ = builderForValue.Build();
-      return this;
-    }
-    public Builder MergeCsUserMessage(global::CSUserMessage value) {
-      pb::ThrowHelper.ThrowIfNull(value, "value");
-      PrepareBuilder();
-      if (result.hasCsUserMessage &&
-          result.csUserMessage_ != global::CSUserMessage.DefaultInstance) {
-          result.csUserMessage_ = global::CSUserMessage.CreateBuilder(result.csUserMessage_).MergeFrom(value).BuildPartial();
-      } else {
-        result.csUserMessage_ = value;
-      }
-      result.hasCsUserMessage = true;
-      return this;
-    }
-    public Builder ClearCsUserMessage() {
-      PrepareBuilder();
-      result.hasCsUserMessage = false;
-      result.csUserMessage_ = null;
       return this;
     }
     
@@ -13028,6 +13278,587 @@ public sealed partial class SCLog : pb::GeneratedMessage<SCLog, SCLog.Builder> {
     }
   }
   static SCLog() {
+    object.ReferenceEquals(global::CoreProtocol.Descriptor, null);
+  }
+}
+
+[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+public sealed partial class SCCallList : pb::GeneratedMessage<SCCallList, SCCallList.Builder> {
+  private SCCallList() { }
+  private static readonly SCCallList defaultInstance = new SCCallList().MakeReadOnly();
+  private static readonly string[] _sCCallListFieldNames = new string[] { "calls" };
+  private static readonly uint[] _sCCallListFieldTags = new uint[] { 10 };
+  public static SCCallList DefaultInstance {
+    get { return defaultInstance; }
+  }
+  
+  public override SCCallList DefaultInstanceForType {
+    get { return DefaultInstance; }
+  }
+  
+  protected override SCCallList ThisMessage {
+    get { return this; }
+  }
+  
+  public static pbd::MessageDescriptor Descriptor {
+    get { return global::CoreProtocol.internal__static_SCCallList__Descriptor; }
+  }
+  
+  protected override pb::FieldAccess.FieldAccessorTable<SCCallList, SCCallList.Builder> InternalFieldAccessors {
+    get { return global::CoreProtocol.internal__static_SCCallList__FieldAccessorTable; }
+  }
+  
+  public const int CallsFieldNumber = 1;
+  private pbc::PopsicleList<global::StructCall> calls_ = new pbc::PopsicleList<global::StructCall>();
+  public scg::IList<global::StructCall> CallsList {
+    get { return calls_; }
+  }
+  public int CallsCount {
+    get { return calls_.Count; }
+  }
+  public global::StructCall GetCalls(int index) {
+    return calls_[index];
+  }
+  
+  public override bool IsInitialized {
+    get {
+      foreach (global::StructCall element in CallsList) {
+        if (!element.IsInitialized) return false;
+      }
+      return true;
+    }
+  }
+  
+  public override void WriteTo(pb::ICodedOutputStream output) {
+    CalcSerializedSize();
+    string[] field_names = _sCCallListFieldNames;
+    if (calls_.Count > 0) {
+      output.WriteMessageArray(1, field_names[0], calls_);
+    }
+    UnknownFields.WriteTo(output);
+  }
+  
+  private int memoizedSerializedSize = -1;
+  public override int SerializedSize {
+    get {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+      return CalcSerializedSize();
+    }
+  }
+  
+  private int CalcSerializedSize() {
+    int size = memoizedSerializedSize;
+    if (size != -1) return size;
+    
+    size = 0;
+    foreach (global::StructCall element in CallsList) {
+      size += pb::CodedOutputStream.ComputeMessageSize(1, element);
+    }
+    size += UnknownFields.SerializedSize;
+    memoizedSerializedSize = size;
+    return size;
+  }
+  public static SCCallList ParseFrom(pb::ByteString data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static SCCallList ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static SCCallList ParseFrom(byte[] data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static SCCallList ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static SCCallList ParseFrom(global::System.IO.Stream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static SCCallList ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  public static SCCallList ParseDelimitedFrom(global::System.IO.Stream input) {
+    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
+  }
+  public static SCCallList ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
+  }
+  public static SCCallList ParseFrom(pb::ICodedInputStream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static SCCallList ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  private SCCallList MakeReadOnly() {
+    calls_.MakeReadOnly();
+    return this;
+  }
+  
+  public static Builder CreateBuilder() { return new Builder(); }
+  public override Builder ToBuilder() { return CreateBuilder(this); }
+  public override Builder CreateBuilderForType() { return new Builder(); }
+  public static Builder CreateBuilder(SCCallList prototype) {
+    return new Builder(prototype);
+  }
+  
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class Builder : pb::GeneratedBuilder<SCCallList, Builder> {
+    protected override Builder ThisBuilder {
+      get { return this; }
+    }
+    public Builder() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+    }
+    internal Builder(SCCallList cloneFrom) {
+      result = cloneFrom;
+      resultIsReadOnly = true;
+    }
+    
+    private bool resultIsReadOnly;
+    private SCCallList result;
+    
+    private SCCallList PrepareBuilder() {
+      if (resultIsReadOnly) {
+        SCCallList original = result;
+        result = new SCCallList();
+        resultIsReadOnly = false;
+        MergeFrom(original);
+      }
+      return result;
+    }
+    
+    public override bool IsInitialized {
+      get { return result.IsInitialized; }
+    }
+    
+    protected override SCCallList MessageBeingBuilt {
+      get { return PrepareBuilder(); }
+    }
+    
+    public override Builder Clear() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+      return this;
+    }
+    
+    public override Builder Clone() {
+      if (resultIsReadOnly) {
+        return new Builder(result);
+      } else {
+        return new Builder().MergeFrom(result);
+      }
+    }
+    
+    public override pbd::MessageDescriptor DescriptorForType {
+      get { return global::SCCallList.Descriptor; }
+    }
+    
+    public override SCCallList DefaultInstanceForType {
+      get { return global::SCCallList.DefaultInstance; }
+    }
+    
+    public override SCCallList BuildPartial() {
+      if (resultIsReadOnly) {
+        return result;
+      }
+      resultIsReadOnly = true;
+      return result.MakeReadOnly();
+    }
+    
+    public override Builder MergeFrom(pb::IMessage other) {
+      if (other is SCCallList) {
+        return MergeFrom((SCCallList) other);
+      } else {
+        base.MergeFrom(other);
+        return this;
+      }
+    }
+    
+    public override Builder MergeFrom(SCCallList other) {
+      if (other == global::SCCallList.DefaultInstance) return this;
+      PrepareBuilder();
+      if (other.calls_.Count != 0) {
+        result.calls_.Add(other.calls_);
+      }
+      this.MergeUnknownFields(other.UnknownFields);
+      return this;
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input) {
+      return MergeFrom(input, pb::ExtensionRegistry.Empty);
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+      PrepareBuilder();
+      pb::UnknownFieldSet.Builder unknownFields = null;
+      uint tag;
+      string field_name;
+      while (input.ReadTag(out tag, out field_name)) {
+        if(tag == 0 && field_name != null) {
+          int field_ordinal = global::System.Array.BinarySearch(_sCCallListFieldNames, field_name, global::System.StringComparer.Ordinal);
+          if(field_ordinal >= 0)
+            tag = _sCCallListFieldTags[field_ordinal];
+          else {
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            continue;
+          }
+        }
+        switch (tag) {
+          case 0: {
+            throw pb::InvalidProtocolBufferException.InvalidTag();
+          }
+          default: {
+            if (pb::WireFormat.IsEndGroupTag(tag)) {
+              if (unknownFields != null) {
+                this.UnknownFields = unknownFields.Build();
+              }
+              return this;
+            }
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            break;
+          }
+          case 10: {
+            input.ReadMessageArray(tag, field_name, result.calls_, global::StructCall.DefaultInstance, extensionRegistry);
+            break;
+          }
+        }
+      }
+      
+      if (unknownFields != null) {
+        this.UnknownFields = unknownFields.Build();
+      }
+      return this;
+    }
+    
+    
+    public pbc::IPopsicleList<global::StructCall> CallsList {
+      get { return PrepareBuilder().calls_; }
+    }
+    public int CallsCount {
+      get { return result.CallsCount; }
+    }
+    public global::StructCall GetCalls(int index) {
+      return result.GetCalls(index);
+    }
+    public Builder SetCalls(int index, global::StructCall value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.calls_[index] = value;
+      return this;
+    }
+    public Builder SetCalls(int index, global::StructCall.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
+      PrepareBuilder();
+      result.calls_[index] = builderForValue.Build();
+      return this;
+    }
+    public Builder AddCalls(global::StructCall value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.calls_.Add(value);
+      return this;
+    }
+    public Builder AddCalls(global::StructCall.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
+      PrepareBuilder();
+      result.calls_.Add(builderForValue.Build());
+      return this;
+    }
+    public Builder AddRangeCalls(scg::IEnumerable<global::StructCall> values) {
+      PrepareBuilder();
+      result.calls_.Add(values);
+      return this;
+    }
+    public Builder ClearCalls() {
+      PrepareBuilder();
+      result.calls_.Clear();
+      return this;
+    }
+  }
+  static SCCallList() {
+    object.ReferenceEquals(global::CoreProtocol.Descriptor, null);
+  }
+}
+
+[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+public sealed partial class CSCallProcess : pb::GeneratedMessage<CSCallProcess, CSCallProcess.Builder> {
+  private CSCallProcess() { }
+  private static readonly CSCallProcess defaultInstance = new CSCallProcess().MakeReadOnly();
+  private static readonly string[] _cSCallProcessFieldNames = new string[] { "callid" };
+  private static readonly uint[] _cSCallProcessFieldTags = new uint[] { 8 };
+  public static CSCallProcess DefaultInstance {
+    get { return defaultInstance; }
+  }
+  
+  public override CSCallProcess DefaultInstanceForType {
+    get { return DefaultInstance; }
+  }
+  
+  protected override CSCallProcess ThisMessage {
+    get { return this; }
+  }
+  
+  public static pbd::MessageDescriptor Descriptor {
+    get { return global::CoreProtocol.internal__static_CSCallProcess__Descriptor; }
+  }
+  
+  protected override pb::FieldAccess.FieldAccessorTable<CSCallProcess, CSCallProcess.Builder> InternalFieldAccessors {
+    get { return global::CoreProtocol.internal__static_CSCallProcess__FieldAccessorTable; }
+  }
+  
+  public const int CallidFieldNumber = 1;
+  private bool hasCallid;
+  private int callid_;
+  public bool HasCallid {
+    get { return hasCallid; }
+  }
+  public int Callid {
+    get { return callid_; }
+  }
+  
+  public override bool IsInitialized {
+    get {
+      if (!hasCallid) return false;
+      return true;
+    }
+  }
+  
+  public override void WriteTo(pb::ICodedOutputStream output) {
+    CalcSerializedSize();
+    string[] field_names = _cSCallProcessFieldNames;
+    if (hasCallid) {
+      output.WriteInt32(1, field_names[0], Callid);
+    }
+    UnknownFields.WriteTo(output);
+  }
+  
+  private int memoizedSerializedSize = -1;
+  public override int SerializedSize {
+    get {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+      return CalcSerializedSize();
+    }
+  }
+  
+  private int CalcSerializedSize() {
+    int size = memoizedSerializedSize;
+    if (size != -1) return size;
+    
+    size = 0;
+    if (hasCallid) {
+      size += pb::CodedOutputStream.ComputeInt32Size(1, Callid);
+    }
+    size += UnknownFields.SerializedSize;
+    memoizedSerializedSize = size;
+    return size;
+  }
+  public static CSCallProcess ParseFrom(pb::ByteString data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static CSCallProcess ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static CSCallProcess ParseFrom(byte[] data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static CSCallProcess ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static CSCallProcess ParseFrom(global::System.IO.Stream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static CSCallProcess ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  public static CSCallProcess ParseDelimitedFrom(global::System.IO.Stream input) {
+    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
+  }
+  public static CSCallProcess ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
+  }
+  public static CSCallProcess ParseFrom(pb::ICodedInputStream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static CSCallProcess ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  private CSCallProcess MakeReadOnly() {
+    return this;
+  }
+  
+  public static Builder CreateBuilder() { return new Builder(); }
+  public override Builder ToBuilder() { return CreateBuilder(this); }
+  public override Builder CreateBuilderForType() { return new Builder(); }
+  public static Builder CreateBuilder(CSCallProcess prototype) {
+    return new Builder(prototype);
+  }
+  
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class Builder : pb::GeneratedBuilder<CSCallProcess, Builder> {
+    protected override Builder ThisBuilder {
+      get { return this; }
+    }
+    public Builder() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+    }
+    internal Builder(CSCallProcess cloneFrom) {
+      result = cloneFrom;
+      resultIsReadOnly = true;
+    }
+    
+    private bool resultIsReadOnly;
+    private CSCallProcess result;
+    
+    private CSCallProcess PrepareBuilder() {
+      if (resultIsReadOnly) {
+        CSCallProcess original = result;
+        result = new CSCallProcess();
+        resultIsReadOnly = false;
+        MergeFrom(original);
+      }
+      return result;
+    }
+    
+    public override bool IsInitialized {
+      get { return result.IsInitialized; }
+    }
+    
+    protected override CSCallProcess MessageBeingBuilt {
+      get { return PrepareBuilder(); }
+    }
+    
+    public override Builder Clear() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+      return this;
+    }
+    
+    public override Builder Clone() {
+      if (resultIsReadOnly) {
+        return new Builder(result);
+      } else {
+        return new Builder().MergeFrom(result);
+      }
+    }
+    
+    public override pbd::MessageDescriptor DescriptorForType {
+      get { return global::CSCallProcess.Descriptor; }
+    }
+    
+    public override CSCallProcess DefaultInstanceForType {
+      get { return global::CSCallProcess.DefaultInstance; }
+    }
+    
+    public override CSCallProcess BuildPartial() {
+      if (resultIsReadOnly) {
+        return result;
+      }
+      resultIsReadOnly = true;
+      return result.MakeReadOnly();
+    }
+    
+    public override Builder MergeFrom(pb::IMessage other) {
+      if (other is CSCallProcess) {
+        return MergeFrom((CSCallProcess) other);
+      } else {
+        base.MergeFrom(other);
+        return this;
+      }
+    }
+    
+    public override Builder MergeFrom(CSCallProcess other) {
+      if (other == global::CSCallProcess.DefaultInstance) return this;
+      PrepareBuilder();
+      if (other.HasCallid) {
+        Callid = other.Callid;
+      }
+      this.MergeUnknownFields(other.UnknownFields);
+      return this;
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input) {
+      return MergeFrom(input, pb::ExtensionRegistry.Empty);
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+      PrepareBuilder();
+      pb::UnknownFieldSet.Builder unknownFields = null;
+      uint tag;
+      string field_name;
+      while (input.ReadTag(out tag, out field_name)) {
+        if(tag == 0 && field_name != null) {
+          int field_ordinal = global::System.Array.BinarySearch(_cSCallProcessFieldNames, field_name, global::System.StringComparer.Ordinal);
+          if(field_ordinal >= 0)
+            tag = _cSCallProcessFieldTags[field_ordinal];
+          else {
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            continue;
+          }
+        }
+        switch (tag) {
+          case 0: {
+            throw pb::InvalidProtocolBufferException.InvalidTag();
+          }
+          default: {
+            if (pb::WireFormat.IsEndGroupTag(tag)) {
+              if (unknownFields != null) {
+                this.UnknownFields = unknownFields.Build();
+              }
+              return this;
+            }
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            break;
+          }
+          case 8: {
+            result.hasCallid = input.ReadInt32(ref result.callid_);
+            break;
+          }
+        }
+      }
+      
+      if (unknownFields != null) {
+        this.UnknownFields = unknownFields.Build();
+      }
+      return this;
+    }
+    
+    
+    public bool HasCallid {
+      get { return result.hasCallid; }
+    }
+    public int Callid {
+      get { return result.Callid; }
+      set { SetCallid(value); }
+    }
+    public Builder SetCallid(int value) {
+      PrepareBuilder();
+      result.hasCallid = true;
+      result.callid_ = value;
+      return this;
+    }
+    public Builder ClearCallid() {
+      PrepareBuilder();
+      result.hasCallid = false;
+      result.callid_ = 0;
+      return this;
+    }
+  }
+  static CSCallProcess() {
     object.ReferenceEquals(global::CoreProtocol.Descriptor, null);
   }
 }
@@ -17817,470 +18648,6 @@ public sealed partial class SCStaffPerform : pb::GeneratedMessage<SCStaffPerform
     }
   }
   static SCStaffPerform() {
-    object.ReferenceEquals(global::CoreProtocol.Descriptor, null);
-  }
-}
-
-[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-public sealed partial class CSStaffShift : pb::GeneratedMessage<CSStaffShift, CSStaffShift.Builder> {
-  private CSStaffShift() { }
-  private static readonly CSStaffShift defaultInstance = new CSStaffShift().MakeReadOnly();
-  private static readonly string[] _cSStaffShiftFieldNames = new string[] {  };
-  private static readonly uint[] _cSStaffShiftFieldTags = new uint[] {  };
-  public static CSStaffShift DefaultInstance {
-    get { return defaultInstance; }
-  }
-  
-  public override CSStaffShift DefaultInstanceForType {
-    get { return DefaultInstance; }
-  }
-  
-  protected override CSStaffShift ThisMessage {
-    get { return this; }
-  }
-  
-  public static pbd::MessageDescriptor Descriptor {
-    get { return global::CoreProtocol.internal__static_CSStaffShift__Descriptor; }
-  }
-  
-  protected override pb::FieldAccess.FieldAccessorTable<CSStaffShift, CSStaffShift.Builder> InternalFieldAccessors {
-    get { return global::CoreProtocol.internal__static_CSStaffShift__FieldAccessorTable; }
-  }
-  
-  public override bool IsInitialized {
-    get {
-      return true;
-    }
-  }
-  
-  public override void WriteTo(pb::ICodedOutputStream output) {
-    CalcSerializedSize();
-    string[] field_names = _cSStaffShiftFieldNames;
-    UnknownFields.WriteTo(output);
-  }
-  
-  private int memoizedSerializedSize = -1;
-  public override int SerializedSize {
-    get {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-      return CalcSerializedSize();
-    }
-  }
-  
-  private int CalcSerializedSize() {
-    int size = memoizedSerializedSize;
-    if (size != -1) return size;
-    
-    size = 0;
-    size += UnknownFields.SerializedSize;
-    memoizedSerializedSize = size;
-    return size;
-  }
-  public static CSStaffShift ParseFrom(pb::ByteString data) {
-    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
-  }
-  public static CSStaffShift ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
-  }
-  public static CSStaffShift ParseFrom(byte[] data) {
-    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
-  }
-  public static CSStaffShift ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
-  }
-  public static CSStaffShift ParseFrom(global::System.IO.Stream input) {
-    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
-  }
-  public static CSStaffShift ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
-  }
-  public static CSStaffShift ParseDelimitedFrom(global::System.IO.Stream input) {
-    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
-  }
-  public static CSStaffShift ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
-    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
-  }
-  public static CSStaffShift ParseFrom(pb::ICodedInputStream input) {
-    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
-  }
-  public static CSStaffShift ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
-  }
-  private CSStaffShift MakeReadOnly() {
-    return this;
-  }
-  
-  public static Builder CreateBuilder() { return new Builder(); }
-  public override Builder ToBuilder() { return CreateBuilder(this); }
-  public override Builder CreateBuilderForType() { return new Builder(); }
-  public static Builder CreateBuilder(CSStaffShift prototype) {
-    return new Builder(prototype);
-  }
-  
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-  public sealed partial class Builder : pb::GeneratedBuilder<CSStaffShift, Builder> {
-    protected override Builder ThisBuilder {
-      get { return this; }
-    }
-    public Builder() {
-      result = DefaultInstance;
-      resultIsReadOnly = true;
-    }
-    internal Builder(CSStaffShift cloneFrom) {
-      result = cloneFrom;
-      resultIsReadOnly = true;
-    }
-    
-    private bool resultIsReadOnly;
-    private CSStaffShift result;
-    
-    private CSStaffShift PrepareBuilder() {
-      if (resultIsReadOnly) {
-        CSStaffShift original = result;
-        result = new CSStaffShift();
-        resultIsReadOnly = false;
-        MergeFrom(original);
-      }
-      return result;
-    }
-    
-    public override bool IsInitialized {
-      get { return result.IsInitialized; }
-    }
-    
-    protected override CSStaffShift MessageBeingBuilt {
-      get { return PrepareBuilder(); }
-    }
-    
-    public override Builder Clear() {
-      result = DefaultInstance;
-      resultIsReadOnly = true;
-      return this;
-    }
-    
-    public override Builder Clone() {
-      if (resultIsReadOnly) {
-        return new Builder(result);
-      } else {
-        return new Builder().MergeFrom(result);
-      }
-    }
-    
-    public override pbd::MessageDescriptor DescriptorForType {
-      get { return global::CSStaffShift.Descriptor; }
-    }
-    
-    public override CSStaffShift DefaultInstanceForType {
-      get { return global::CSStaffShift.DefaultInstance; }
-    }
-    
-    public override CSStaffShift BuildPartial() {
-      if (resultIsReadOnly) {
-        return result;
-      }
-      resultIsReadOnly = true;
-      return result.MakeReadOnly();
-    }
-    
-    public override Builder MergeFrom(pb::IMessage other) {
-      if (other is CSStaffShift) {
-        return MergeFrom((CSStaffShift) other);
-      } else {
-        base.MergeFrom(other);
-        return this;
-      }
-    }
-    
-    public override Builder MergeFrom(CSStaffShift other) {
-      if (other == global::CSStaffShift.DefaultInstance) return this;
-      PrepareBuilder();
-      this.MergeUnknownFields(other.UnknownFields);
-      return this;
-    }
-    
-    public override Builder MergeFrom(pb::ICodedInputStream input) {
-      return MergeFrom(input, pb::ExtensionRegistry.Empty);
-    }
-    
-    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
-      PrepareBuilder();
-      pb::UnknownFieldSet.Builder unknownFields = null;
-      uint tag;
-      string field_name;
-      while (input.ReadTag(out tag, out field_name)) {
-        if(tag == 0 && field_name != null) {
-          int field_ordinal = global::System.Array.BinarySearch(_cSStaffShiftFieldNames, field_name, global::System.StringComparer.Ordinal);
-          if(field_ordinal >= 0)
-            tag = _cSStaffShiftFieldTags[field_ordinal];
-          else {
-            if (unknownFields == null) {
-              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
-            }
-            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
-            continue;
-          }
-        }
-        switch (tag) {
-          case 0: {
-            throw pb::InvalidProtocolBufferException.InvalidTag();
-          }
-          default: {
-            if (pb::WireFormat.IsEndGroupTag(tag)) {
-              if (unknownFields != null) {
-                this.UnknownFields = unknownFields.Build();
-              }
-              return this;
-            }
-            if (unknownFields == null) {
-              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
-            }
-            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
-            break;
-          }
-        }
-      }
-      
-      if (unknownFields != null) {
-        this.UnknownFields = unknownFields.Build();
-      }
-      return this;
-    }
-    
-  }
-  static CSStaffShift() {
-    object.ReferenceEquals(global::CoreProtocol.Descriptor, null);
-  }
-}
-
-[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-public sealed partial class SCStaffShift : pb::GeneratedMessage<SCStaffShift, SCStaffShift.Builder> {
-  private SCStaffShift() { }
-  private static readonly SCStaffShift defaultInstance = new SCStaffShift().MakeReadOnly();
-  private static readonly string[] _sCStaffShiftFieldNames = new string[] {  };
-  private static readonly uint[] _sCStaffShiftFieldTags = new uint[] {  };
-  public static SCStaffShift DefaultInstance {
-    get { return defaultInstance; }
-  }
-  
-  public override SCStaffShift DefaultInstanceForType {
-    get { return DefaultInstance; }
-  }
-  
-  protected override SCStaffShift ThisMessage {
-    get { return this; }
-  }
-  
-  public static pbd::MessageDescriptor Descriptor {
-    get { return global::CoreProtocol.internal__static_SCStaffShift__Descriptor; }
-  }
-  
-  protected override pb::FieldAccess.FieldAccessorTable<SCStaffShift, SCStaffShift.Builder> InternalFieldAccessors {
-    get { return global::CoreProtocol.internal__static_SCStaffShift__FieldAccessorTable; }
-  }
-  
-  public override bool IsInitialized {
-    get {
-      return true;
-    }
-  }
-  
-  public override void WriteTo(pb::ICodedOutputStream output) {
-    CalcSerializedSize();
-    string[] field_names = _sCStaffShiftFieldNames;
-    UnknownFields.WriteTo(output);
-  }
-  
-  private int memoizedSerializedSize = -1;
-  public override int SerializedSize {
-    get {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-      return CalcSerializedSize();
-    }
-  }
-  
-  private int CalcSerializedSize() {
-    int size = memoizedSerializedSize;
-    if (size != -1) return size;
-    
-    size = 0;
-    size += UnknownFields.SerializedSize;
-    memoizedSerializedSize = size;
-    return size;
-  }
-  public static SCStaffShift ParseFrom(pb::ByteString data) {
-    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
-  }
-  public static SCStaffShift ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
-  }
-  public static SCStaffShift ParseFrom(byte[] data) {
-    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
-  }
-  public static SCStaffShift ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
-  }
-  public static SCStaffShift ParseFrom(global::System.IO.Stream input) {
-    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
-  }
-  public static SCStaffShift ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
-  }
-  public static SCStaffShift ParseDelimitedFrom(global::System.IO.Stream input) {
-    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
-  }
-  public static SCStaffShift ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
-    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
-  }
-  public static SCStaffShift ParseFrom(pb::ICodedInputStream input) {
-    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
-  }
-  public static SCStaffShift ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
-  }
-  private SCStaffShift MakeReadOnly() {
-    return this;
-  }
-  
-  public static Builder CreateBuilder() { return new Builder(); }
-  public override Builder ToBuilder() { return CreateBuilder(this); }
-  public override Builder CreateBuilderForType() { return new Builder(); }
-  public static Builder CreateBuilder(SCStaffShift prototype) {
-    return new Builder(prototype);
-  }
-  
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-  public sealed partial class Builder : pb::GeneratedBuilder<SCStaffShift, Builder> {
-    protected override Builder ThisBuilder {
-      get { return this; }
-    }
-    public Builder() {
-      result = DefaultInstance;
-      resultIsReadOnly = true;
-    }
-    internal Builder(SCStaffShift cloneFrom) {
-      result = cloneFrom;
-      resultIsReadOnly = true;
-    }
-    
-    private bool resultIsReadOnly;
-    private SCStaffShift result;
-    
-    private SCStaffShift PrepareBuilder() {
-      if (resultIsReadOnly) {
-        SCStaffShift original = result;
-        result = new SCStaffShift();
-        resultIsReadOnly = false;
-        MergeFrom(original);
-      }
-      return result;
-    }
-    
-    public override bool IsInitialized {
-      get { return result.IsInitialized; }
-    }
-    
-    protected override SCStaffShift MessageBeingBuilt {
-      get { return PrepareBuilder(); }
-    }
-    
-    public override Builder Clear() {
-      result = DefaultInstance;
-      resultIsReadOnly = true;
-      return this;
-    }
-    
-    public override Builder Clone() {
-      if (resultIsReadOnly) {
-        return new Builder(result);
-      } else {
-        return new Builder().MergeFrom(result);
-      }
-    }
-    
-    public override pbd::MessageDescriptor DescriptorForType {
-      get { return global::SCStaffShift.Descriptor; }
-    }
-    
-    public override SCStaffShift DefaultInstanceForType {
-      get { return global::SCStaffShift.DefaultInstance; }
-    }
-    
-    public override SCStaffShift BuildPartial() {
-      if (resultIsReadOnly) {
-        return result;
-      }
-      resultIsReadOnly = true;
-      return result.MakeReadOnly();
-    }
-    
-    public override Builder MergeFrom(pb::IMessage other) {
-      if (other is SCStaffShift) {
-        return MergeFrom((SCStaffShift) other);
-      } else {
-        base.MergeFrom(other);
-        return this;
-      }
-    }
-    
-    public override Builder MergeFrom(SCStaffShift other) {
-      if (other == global::SCStaffShift.DefaultInstance) return this;
-      PrepareBuilder();
-      this.MergeUnknownFields(other.UnknownFields);
-      return this;
-    }
-    
-    public override Builder MergeFrom(pb::ICodedInputStream input) {
-      return MergeFrom(input, pb::ExtensionRegistry.Empty);
-    }
-    
-    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
-      PrepareBuilder();
-      pb::UnknownFieldSet.Builder unknownFields = null;
-      uint tag;
-      string field_name;
-      while (input.ReadTag(out tag, out field_name)) {
-        if(tag == 0 && field_name != null) {
-          int field_ordinal = global::System.Array.BinarySearch(_sCStaffShiftFieldNames, field_name, global::System.StringComparer.Ordinal);
-          if(field_ordinal >= 0)
-            tag = _sCStaffShiftFieldTags[field_ordinal];
-          else {
-            if (unknownFields == null) {
-              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
-            }
-            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
-            continue;
-          }
-        }
-        switch (tag) {
-          case 0: {
-            throw pb::InvalidProtocolBufferException.InvalidTag();
-          }
-          default: {
-            if (pb::WireFormat.IsEndGroupTag(tag)) {
-              if (unknownFields != null) {
-                this.UnknownFields = unknownFields.Build();
-              }
-              return this;
-            }
-            if (unknownFields == null) {
-              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
-            }
-            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
-            break;
-          }
-        }
-      }
-      
-      if (unknownFields != null) {
-        this.UnknownFields = unknownFields.Build();
-      }
-      return this;
-    }
-    
-  }
-  static SCStaffShift() {
     object.ReferenceEquals(global::CoreProtocol.Descriptor, null);
   }
 }
@@ -36239,6 +36606,1388 @@ public sealed partial class SCOrderDetail : pb::GeneratedMessage<SCOrderDetail, 
 }
 
 [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+public sealed partial class CSOrderProcess : pb::GeneratedMessage<CSOrderProcess, CSOrderProcess.Builder> {
+  private CSOrderProcess() { }
+  private static readonly CSOrderProcess defaultInstance = new CSOrderProcess().MakeReadOnly();
+  private static readonly string[] _cSOrderProcessFieldNames = new string[] { "orderid" };
+  private static readonly uint[] _cSOrderProcessFieldTags = new uint[] { 8 };
+  public static CSOrderProcess DefaultInstance {
+    get { return defaultInstance; }
+  }
+  
+  public override CSOrderProcess DefaultInstanceForType {
+    get { return DefaultInstance; }
+  }
+  
+  protected override CSOrderProcess ThisMessage {
+    get { return this; }
+  }
+  
+  public static pbd::MessageDescriptor Descriptor {
+    get { return global::CoreProtocol.internal__static_CSOrderProcess__Descriptor; }
+  }
+  
+  protected override pb::FieldAccess.FieldAccessorTable<CSOrderProcess, CSOrderProcess.Builder> InternalFieldAccessors {
+    get { return global::CoreProtocol.internal__static_CSOrderProcess__FieldAccessorTable; }
+  }
+  
+  public const int OrderidFieldNumber = 1;
+  private bool hasOrderid;
+  private int orderid_;
+  public bool HasOrderid {
+    get { return hasOrderid; }
+  }
+  public int Orderid {
+    get { return orderid_; }
+  }
+  
+  public override bool IsInitialized {
+    get {
+      if (!hasOrderid) return false;
+      return true;
+    }
+  }
+  
+  public override void WriteTo(pb::ICodedOutputStream output) {
+    CalcSerializedSize();
+    string[] field_names = _cSOrderProcessFieldNames;
+    if (hasOrderid) {
+      output.WriteInt32(1, field_names[0], Orderid);
+    }
+    UnknownFields.WriteTo(output);
+  }
+  
+  private int memoizedSerializedSize = -1;
+  public override int SerializedSize {
+    get {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+      return CalcSerializedSize();
+    }
+  }
+  
+  private int CalcSerializedSize() {
+    int size = memoizedSerializedSize;
+    if (size != -1) return size;
+    
+    size = 0;
+    if (hasOrderid) {
+      size += pb::CodedOutputStream.ComputeInt32Size(1, Orderid);
+    }
+    size += UnknownFields.SerializedSize;
+    memoizedSerializedSize = size;
+    return size;
+  }
+  public static CSOrderProcess ParseFrom(pb::ByteString data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static CSOrderProcess ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static CSOrderProcess ParseFrom(byte[] data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static CSOrderProcess ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static CSOrderProcess ParseFrom(global::System.IO.Stream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static CSOrderProcess ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  public static CSOrderProcess ParseDelimitedFrom(global::System.IO.Stream input) {
+    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
+  }
+  public static CSOrderProcess ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
+  }
+  public static CSOrderProcess ParseFrom(pb::ICodedInputStream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static CSOrderProcess ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  private CSOrderProcess MakeReadOnly() {
+    return this;
+  }
+  
+  public static Builder CreateBuilder() { return new Builder(); }
+  public override Builder ToBuilder() { return CreateBuilder(this); }
+  public override Builder CreateBuilderForType() { return new Builder(); }
+  public static Builder CreateBuilder(CSOrderProcess prototype) {
+    return new Builder(prototype);
+  }
+  
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class Builder : pb::GeneratedBuilder<CSOrderProcess, Builder> {
+    protected override Builder ThisBuilder {
+      get { return this; }
+    }
+    public Builder() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+    }
+    internal Builder(CSOrderProcess cloneFrom) {
+      result = cloneFrom;
+      resultIsReadOnly = true;
+    }
+    
+    private bool resultIsReadOnly;
+    private CSOrderProcess result;
+    
+    private CSOrderProcess PrepareBuilder() {
+      if (resultIsReadOnly) {
+        CSOrderProcess original = result;
+        result = new CSOrderProcess();
+        resultIsReadOnly = false;
+        MergeFrom(original);
+      }
+      return result;
+    }
+    
+    public override bool IsInitialized {
+      get { return result.IsInitialized; }
+    }
+    
+    protected override CSOrderProcess MessageBeingBuilt {
+      get { return PrepareBuilder(); }
+    }
+    
+    public override Builder Clear() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+      return this;
+    }
+    
+    public override Builder Clone() {
+      if (resultIsReadOnly) {
+        return new Builder(result);
+      } else {
+        return new Builder().MergeFrom(result);
+      }
+    }
+    
+    public override pbd::MessageDescriptor DescriptorForType {
+      get { return global::CSOrderProcess.Descriptor; }
+    }
+    
+    public override CSOrderProcess DefaultInstanceForType {
+      get { return global::CSOrderProcess.DefaultInstance; }
+    }
+    
+    public override CSOrderProcess BuildPartial() {
+      if (resultIsReadOnly) {
+        return result;
+      }
+      resultIsReadOnly = true;
+      return result.MakeReadOnly();
+    }
+    
+    public override Builder MergeFrom(pb::IMessage other) {
+      if (other is CSOrderProcess) {
+        return MergeFrom((CSOrderProcess) other);
+      } else {
+        base.MergeFrom(other);
+        return this;
+      }
+    }
+    
+    public override Builder MergeFrom(CSOrderProcess other) {
+      if (other == global::CSOrderProcess.DefaultInstance) return this;
+      PrepareBuilder();
+      if (other.HasOrderid) {
+        Orderid = other.Orderid;
+      }
+      this.MergeUnknownFields(other.UnknownFields);
+      return this;
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input) {
+      return MergeFrom(input, pb::ExtensionRegistry.Empty);
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+      PrepareBuilder();
+      pb::UnknownFieldSet.Builder unknownFields = null;
+      uint tag;
+      string field_name;
+      while (input.ReadTag(out tag, out field_name)) {
+        if(tag == 0 && field_name != null) {
+          int field_ordinal = global::System.Array.BinarySearch(_cSOrderProcessFieldNames, field_name, global::System.StringComparer.Ordinal);
+          if(field_ordinal >= 0)
+            tag = _cSOrderProcessFieldTags[field_ordinal];
+          else {
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            continue;
+          }
+        }
+        switch (tag) {
+          case 0: {
+            throw pb::InvalidProtocolBufferException.InvalidTag();
+          }
+          default: {
+            if (pb::WireFormat.IsEndGroupTag(tag)) {
+              if (unknownFields != null) {
+                this.UnknownFields = unknownFields.Build();
+              }
+              return this;
+            }
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            break;
+          }
+          case 8: {
+            result.hasOrderid = input.ReadInt32(ref result.orderid_);
+            break;
+          }
+        }
+      }
+      
+      if (unknownFields != null) {
+        this.UnknownFields = unknownFields.Build();
+      }
+      return this;
+    }
+    
+    
+    public bool HasOrderid {
+      get { return result.hasOrderid; }
+    }
+    public int Orderid {
+      get { return result.Orderid; }
+      set { SetOrderid(value); }
+    }
+    public Builder SetOrderid(int value) {
+      PrepareBuilder();
+      result.hasOrderid = true;
+      result.orderid_ = value;
+      return this;
+    }
+    public Builder ClearOrderid() {
+      PrepareBuilder();
+      result.hasOrderid = false;
+      result.orderid_ = 0;
+      return this;
+    }
+  }
+  static CSOrderProcess() {
+    object.ReferenceEquals(global::CoreProtocol.Descriptor, null);
+  }
+}
+
+[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+public sealed partial class CSShiftAdd : pb::GeneratedMessage<CSShiftAdd, CSShiftAdd.Builder> {
+  private CSShiftAdd() { }
+  private static readonly CSShiftAdd defaultInstance = new CSShiftAdd().MakeReadOnly();
+  private static readonly string[] _cSShiftAddFieldNames = new string[] { "ischeck", "password", "received_by", "remark" };
+  private static readonly uint[] _cSShiftAddFieldTags = new uint[] { 24, 18, 10, 34 };
+  public static CSShiftAdd DefaultInstance {
+    get { return defaultInstance; }
+  }
+  
+  public override CSShiftAdd DefaultInstanceForType {
+    get { return DefaultInstance; }
+  }
+  
+  protected override CSShiftAdd ThisMessage {
+    get { return this; }
+  }
+  
+  public static pbd::MessageDescriptor Descriptor {
+    get { return global::CoreProtocol.internal__static_CSShiftAdd__Descriptor; }
+  }
+  
+  protected override pb::FieldAccess.FieldAccessorTable<CSShiftAdd, CSShiftAdd.Builder> InternalFieldAccessors {
+    get { return global::CoreProtocol.internal__static_CSShiftAdd__FieldAccessorTable; }
+  }
+  
+  public const int ReceivedByFieldNumber = 1;
+  private bool hasReceivedBy;
+  private string receivedBy_ = "";
+  public bool HasReceivedBy {
+    get { return hasReceivedBy; }
+  }
+  public string ReceivedBy {
+    get { return receivedBy_; }
+  }
+  
+  public const int PasswordFieldNumber = 2;
+  private bool hasPassword;
+  private string password_ = "";
+  public bool HasPassword {
+    get { return hasPassword; }
+  }
+  public string Password {
+    get { return password_; }
+  }
+  
+  public const int IscheckFieldNumber = 3;
+  private bool hasIscheck;
+  private int ischeck_;
+  public bool HasIscheck {
+    get { return hasIscheck; }
+  }
+  public int Ischeck {
+    get { return ischeck_; }
+  }
+  
+  public const int RemarkFieldNumber = 4;
+  private bool hasRemark;
+  private string remark_ = "";
+  public bool HasRemark {
+    get { return hasRemark; }
+  }
+  public string Remark {
+    get { return remark_; }
+  }
+  
+  public override bool IsInitialized {
+    get {
+      if (!hasReceivedBy) return false;
+      if (!hasPassword) return false;
+      if (!hasIscheck) return false;
+      if (!hasRemark) return false;
+      return true;
+    }
+  }
+  
+  public override void WriteTo(pb::ICodedOutputStream output) {
+    CalcSerializedSize();
+    string[] field_names = _cSShiftAddFieldNames;
+    if (hasReceivedBy) {
+      output.WriteString(1, field_names[2], ReceivedBy);
+    }
+    if (hasPassword) {
+      output.WriteString(2, field_names[1], Password);
+    }
+    if (hasIscheck) {
+      output.WriteInt32(3, field_names[0], Ischeck);
+    }
+    if (hasRemark) {
+      output.WriteString(4, field_names[3], Remark);
+    }
+    UnknownFields.WriteTo(output);
+  }
+  
+  private int memoizedSerializedSize = -1;
+  public override int SerializedSize {
+    get {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+      return CalcSerializedSize();
+    }
+  }
+  
+  private int CalcSerializedSize() {
+    int size = memoizedSerializedSize;
+    if (size != -1) return size;
+    
+    size = 0;
+    if (hasReceivedBy) {
+      size += pb::CodedOutputStream.ComputeStringSize(1, ReceivedBy);
+    }
+    if (hasPassword) {
+      size += pb::CodedOutputStream.ComputeStringSize(2, Password);
+    }
+    if (hasIscheck) {
+      size += pb::CodedOutputStream.ComputeInt32Size(3, Ischeck);
+    }
+    if (hasRemark) {
+      size += pb::CodedOutputStream.ComputeStringSize(4, Remark);
+    }
+    size += UnknownFields.SerializedSize;
+    memoizedSerializedSize = size;
+    return size;
+  }
+  public static CSShiftAdd ParseFrom(pb::ByteString data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static CSShiftAdd ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static CSShiftAdd ParseFrom(byte[] data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static CSShiftAdd ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static CSShiftAdd ParseFrom(global::System.IO.Stream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static CSShiftAdd ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  public static CSShiftAdd ParseDelimitedFrom(global::System.IO.Stream input) {
+    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
+  }
+  public static CSShiftAdd ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
+  }
+  public static CSShiftAdd ParseFrom(pb::ICodedInputStream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static CSShiftAdd ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  private CSShiftAdd MakeReadOnly() {
+    return this;
+  }
+  
+  public static Builder CreateBuilder() { return new Builder(); }
+  public override Builder ToBuilder() { return CreateBuilder(this); }
+  public override Builder CreateBuilderForType() { return new Builder(); }
+  public static Builder CreateBuilder(CSShiftAdd prototype) {
+    return new Builder(prototype);
+  }
+  
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class Builder : pb::GeneratedBuilder<CSShiftAdd, Builder> {
+    protected override Builder ThisBuilder {
+      get { return this; }
+    }
+    public Builder() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+    }
+    internal Builder(CSShiftAdd cloneFrom) {
+      result = cloneFrom;
+      resultIsReadOnly = true;
+    }
+    
+    private bool resultIsReadOnly;
+    private CSShiftAdd result;
+    
+    private CSShiftAdd PrepareBuilder() {
+      if (resultIsReadOnly) {
+        CSShiftAdd original = result;
+        result = new CSShiftAdd();
+        resultIsReadOnly = false;
+        MergeFrom(original);
+      }
+      return result;
+    }
+    
+    public override bool IsInitialized {
+      get { return result.IsInitialized; }
+    }
+    
+    protected override CSShiftAdd MessageBeingBuilt {
+      get { return PrepareBuilder(); }
+    }
+    
+    public override Builder Clear() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+      return this;
+    }
+    
+    public override Builder Clone() {
+      if (resultIsReadOnly) {
+        return new Builder(result);
+      } else {
+        return new Builder().MergeFrom(result);
+      }
+    }
+    
+    public override pbd::MessageDescriptor DescriptorForType {
+      get { return global::CSShiftAdd.Descriptor; }
+    }
+    
+    public override CSShiftAdd DefaultInstanceForType {
+      get { return global::CSShiftAdd.DefaultInstance; }
+    }
+    
+    public override CSShiftAdd BuildPartial() {
+      if (resultIsReadOnly) {
+        return result;
+      }
+      resultIsReadOnly = true;
+      return result.MakeReadOnly();
+    }
+    
+    public override Builder MergeFrom(pb::IMessage other) {
+      if (other is CSShiftAdd) {
+        return MergeFrom((CSShiftAdd) other);
+      } else {
+        base.MergeFrom(other);
+        return this;
+      }
+    }
+    
+    public override Builder MergeFrom(CSShiftAdd other) {
+      if (other == global::CSShiftAdd.DefaultInstance) return this;
+      PrepareBuilder();
+      if (other.HasReceivedBy) {
+        ReceivedBy = other.ReceivedBy;
+      }
+      if (other.HasPassword) {
+        Password = other.Password;
+      }
+      if (other.HasIscheck) {
+        Ischeck = other.Ischeck;
+      }
+      if (other.HasRemark) {
+        Remark = other.Remark;
+      }
+      this.MergeUnknownFields(other.UnknownFields);
+      return this;
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input) {
+      return MergeFrom(input, pb::ExtensionRegistry.Empty);
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+      PrepareBuilder();
+      pb::UnknownFieldSet.Builder unknownFields = null;
+      uint tag;
+      string field_name;
+      while (input.ReadTag(out tag, out field_name)) {
+        if(tag == 0 && field_name != null) {
+          int field_ordinal = global::System.Array.BinarySearch(_cSShiftAddFieldNames, field_name, global::System.StringComparer.Ordinal);
+          if(field_ordinal >= 0)
+            tag = _cSShiftAddFieldTags[field_ordinal];
+          else {
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            continue;
+          }
+        }
+        switch (tag) {
+          case 0: {
+            throw pb::InvalidProtocolBufferException.InvalidTag();
+          }
+          default: {
+            if (pb::WireFormat.IsEndGroupTag(tag)) {
+              if (unknownFields != null) {
+                this.UnknownFields = unknownFields.Build();
+              }
+              return this;
+            }
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            break;
+          }
+          case 10: {
+            result.hasReceivedBy = input.ReadString(ref result.receivedBy_);
+            break;
+          }
+          case 18: {
+            result.hasPassword = input.ReadString(ref result.password_);
+            break;
+          }
+          case 24: {
+            result.hasIscheck = input.ReadInt32(ref result.ischeck_);
+            break;
+          }
+          case 34: {
+            result.hasRemark = input.ReadString(ref result.remark_);
+            break;
+          }
+        }
+      }
+      
+      if (unknownFields != null) {
+        this.UnknownFields = unknownFields.Build();
+      }
+      return this;
+    }
+    
+    
+    public bool HasReceivedBy {
+      get { return result.hasReceivedBy; }
+    }
+    public string ReceivedBy {
+      get { return result.ReceivedBy; }
+      set { SetReceivedBy(value); }
+    }
+    public Builder SetReceivedBy(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasReceivedBy = true;
+      result.receivedBy_ = value;
+      return this;
+    }
+    public Builder ClearReceivedBy() {
+      PrepareBuilder();
+      result.hasReceivedBy = false;
+      result.receivedBy_ = "";
+      return this;
+    }
+    
+    public bool HasPassword {
+      get { return result.hasPassword; }
+    }
+    public string Password {
+      get { return result.Password; }
+      set { SetPassword(value); }
+    }
+    public Builder SetPassword(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasPassword = true;
+      result.password_ = value;
+      return this;
+    }
+    public Builder ClearPassword() {
+      PrepareBuilder();
+      result.hasPassword = false;
+      result.password_ = "";
+      return this;
+    }
+    
+    public bool HasIscheck {
+      get { return result.hasIscheck; }
+    }
+    public int Ischeck {
+      get { return result.Ischeck; }
+      set { SetIscheck(value); }
+    }
+    public Builder SetIscheck(int value) {
+      PrepareBuilder();
+      result.hasIscheck = true;
+      result.ischeck_ = value;
+      return this;
+    }
+    public Builder ClearIscheck() {
+      PrepareBuilder();
+      result.hasIscheck = false;
+      result.ischeck_ = 0;
+      return this;
+    }
+    
+    public bool HasRemark {
+      get { return result.hasRemark; }
+    }
+    public string Remark {
+      get { return result.Remark; }
+      set { SetRemark(value); }
+    }
+    public Builder SetRemark(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasRemark = true;
+      result.remark_ = value;
+      return this;
+    }
+    public Builder ClearRemark() {
+      PrepareBuilder();
+      result.hasRemark = false;
+      result.remark_ = "";
+      return this;
+    }
+  }
+  static CSShiftAdd() {
+    object.ReferenceEquals(global::CoreProtocol.Descriptor, null);
+  }
+}
+
+[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+public sealed partial class CSShiftFind : pb::GeneratedMessage<CSShiftFind, CSShiftFind.Builder> {
+  private CSShiftFind() { }
+  private static readonly CSShiftFind defaultInstance = new CSShiftFind().MakeReadOnly();
+  private static readonly string[] _cSShiftFindFieldNames = new string[] { "page", "starttime", "stoptime" };
+  private static readonly uint[] _cSShiftFindFieldTags = new uint[] { 10, 18, 26 };
+  public static CSShiftFind DefaultInstance {
+    get { return defaultInstance; }
+  }
+  
+  public override CSShiftFind DefaultInstanceForType {
+    get { return DefaultInstance; }
+  }
+  
+  protected override CSShiftFind ThisMessage {
+    get { return this; }
+  }
+  
+  public static pbd::MessageDescriptor Descriptor {
+    get { return global::CoreProtocol.internal__static_CSShiftFind__Descriptor; }
+  }
+  
+  protected override pb::FieldAccess.FieldAccessorTable<CSShiftFind, CSShiftFind.Builder> InternalFieldAccessors {
+    get { return global::CoreProtocol.internal__static_CSShiftFind__FieldAccessorTable; }
+  }
+  
+  public const int PageFieldNumber = 1;
+  private bool hasPage;
+  private global::StructPage page_;
+  public bool HasPage {
+    get { return hasPage; }
+  }
+  public global::StructPage Page {
+    get { return page_ ?? global::StructPage.DefaultInstance; }
+  }
+  
+  public const int StarttimeFieldNumber = 2;
+  private bool hasStarttime;
+  private string starttime_ = "";
+  public bool HasStarttime {
+    get { return hasStarttime; }
+  }
+  public string Starttime {
+    get { return starttime_; }
+  }
+  
+  public const int StoptimeFieldNumber = 3;
+  private bool hasStoptime;
+  private string stoptime_ = "";
+  public bool HasStoptime {
+    get { return hasStoptime; }
+  }
+  public string Stoptime {
+    get { return stoptime_; }
+  }
+  
+  public override bool IsInitialized {
+    get {
+      if (!hasPage) return false;
+      if (!Page.IsInitialized) return false;
+      return true;
+    }
+  }
+  
+  public override void WriteTo(pb::ICodedOutputStream output) {
+    CalcSerializedSize();
+    string[] field_names = _cSShiftFindFieldNames;
+    if (hasPage) {
+      output.WriteMessage(1, field_names[0], Page);
+    }
+    if (hasStarttime) {
+      output.WriteString(2, field_names[1], Starttime);
+    }
+    if (hasStoptime) {
+      output.WriteString(3, field_names[2], Stoptime);
+    }
+    UnknownFields.WriteTo(output);
+  }
+  
+  private int memoizedSerializedSize = -1;
+  public override int SerializedSize {
+    get {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+      return CalcSerializedSize();
+    }
+  }
+  
+  private int CalcSerializedSize() {
+    int size = memoizedSerializedSize;
+    if (size != -1) return size;
+    
+    size = 0;
+    if (hasPage) {
+      size += pb::CodedOutputStream.ComputeMessageSize(1, Page);
+    }
+    if (hasStarttime) {
+      size += pb::CodedOutputStream.ComputeStringSize(2, Starttime);
+    }
+    if (hasStoptime) {
+      size += pb::CodedOutputStream.ComputeStringSize(3, Stoptime);
+    }
+    size += UnknownFields.SerializedSize;
+    memoizedSerializedSize = size;
+    return size;
+  }
+  public static CSShiftFind ParseFrom(pb::ByteString data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static CSShiftFind ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static CSShiftFind ParseFrom(byte[] data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static CSShiftFind ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static CSShiftFind ParseFrom(global::System.IO.Stream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static CSShiftFind ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  public static CSShiftFind ParseDelimitedFrom(global::System.IO.Stream input) {
+    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
+  }
+  public static CSShiftFind ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
+  }
+  public static CSShiftFind ParseFrom(pb::ICodedInputStream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static CSShiftFind ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  private CSShiftFind MakeReadOnly() {
+    return this;
+  }
+  
+  public static Builder CreateBuilder() { return new Builder(); }
+  public override Builder ToBuilder() { return CreateBuilder(this); }
+  public override Builder CreateBuilderForType() { return new Builder(); }
+  public static Builder CreateBuilder(CSShiftFind prototype) {
+    return new Builder(prototype);
+  }
+  
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class Builder : pb::GeneratedBuilder<CSShiftFind, Builder> {
+    protected override Builder ThisBuilder {
+      get { return this; }
+    }
+    public Builder() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+    }
+    internal Builder(CSShiftFind cloneFrom) {
+      result = cloneFrom;
+      resultIsReadOnly = true;
+    }
+    
+    private bool resultIsReadOnly;
+    private CSShiftFind result;
+    
+    private CSShiftFind PrepareBuilder() {
+      if (resultIsReadOnly) {
+        CSShiftFind original = result;
+        result = new CSShiftFind();
+        resultIsReadOnly = false;
+        MergeFrom(original);
+      }
+      return result;
+    }
+    
+    public override bool IsInitialized {
+      get { return result.IsInitialized; }
+    }
+    
+    protected override CSShiftFind MessageBeingBuilt {
+      get { return PrepareBuilder(); }
+    }
+    
+    public override Builder Clear() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+      return this;
+    }
+    
+    public override Builder Clone() {
+      if (resultIsReadOnly) {
+        return new Builder(result);
+      } else {
+        return new Builder().MergeFrom(result);
+      }
+    }
+    
+    public override pbd::MessageDescriptor DescriptorForType {
+      get { return global::CSShiftFind.Descriptor; }
+    }
+    
+    public override CSShiftFind DefaultInstanceForType {
+      get { return global::CSShiftFind.DefaultInstance; }
+    }
+    
+    public override CSShiftFind BuildPartial() {
+      if (resultIsReadOnly) {
+        return result;
+      }
+      resultIsReadOnly = true;
+      return result.MakeReadOnly();
+    }
+    
+    public override Builder MergeFrom(pb::IMessage other) {
+      if (other is CSShiftFind) {
+        return MergeFrom((CSShiftFind) other);
+      } else {
+        base.MergeFrom(other);
+        return this;
+      }
+    }
+    
+    public override Builder MergeFrom(CSShiftFind other) {
+      if (other == global::CSShiftFind.DefaultInstance) return this;
+      PrepareBuilder();
+      if (other.HasPage) {
+        MergePage(other.Page);
+      }
+      if (other.HasStarttime) {
+        Starttime = other.Starttime;
+      }
+      if (other.HasStoptime) {
+        Stoptime = other.Stoptime;
+      }
+      this.MergeUnknownFields(other.UnknownFields);
+      return this;
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input) {
+      return MergeFrom(input, pb::ExtensionRegistry.Empty);
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+      PrepareBuilder();
+      pb::UnknownFieldSet.Builder unknownFields = null;
+      uint tag;
+      string field_name;
+      while (input.ReadTag(out tag, out field_name)) {
+        if(tag == 0 && field_name != null) {
+          int field_ordinal = global::System.Array.BinarySearch(_cSShiftFindFieldNames, field_name, global::System.StringComparer.Ordinal);
+          if(field_ordinal >= 0)
+            tag = _cSShiftFindFieldTags[field_ordinal];
+          else {
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            continue;
+          }
+        }
+        switch (tag) {
+          case 0: {
+            throw pb::InvalidProtocolBufferException.InvalidTag();
+          }
+          default: {
+            if (pb::WireFormat.IsEndGroupTag(tag)) {
+              if (unknownFields != null) {
+                this.UnknownFields = unknownFields.Build();
+              }
+              return this;
+            }
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            break;
+          }
+          case 10: {
+            global::StructPage.Builder subBuilder = global::StructPage.CreateBuilder();
+            if (result.hasPage) {
+              subBuilder.MergeFrom(Page);
+            }
+            input.ReadMessage(subBuilder, extensionRegistry);
+            Page = subBuilder.BuildPartial();
+            break;
+          }
+          case 18: {
+            result.hasStarttime = input.ReadString(ref result.starttime_);
+            break;
+          }
+          case 26: {
+            result.hasStoptime = input.ReadString(ref result.stoptime_);
+            break;
+          }
+        }
+      }
+      
+      if (unknownFields != null) {
+        this.UnknownFields = unknownFields.Build();
+      }
+      return this;
+    }
+    
+    
+    public bool HasPage {
+     get { return result.hasPage; }
+    }
+    public global::StructPage Page {
+      get { return result.Page; }
+      set { SetPage(value); }
+    }
+    public Builder SetPage(global::StructPage value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasPage = true;
+      result.page_ = value;
+      return this;
+    }
+    public Builder SetPage(global::StructPage.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
+      PrepareBuilder();
+      result.hasPage = true;
+      result.page_ = builderForValue.Build();
+      return this;
+    }
+    public Builder MergePage(global::StructPage value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      if (result.hasPage &&
+          result.page_ != global::StructPage.DefaultInstance) {
+          result.page_ = global::StructPage.CreateBuilder(result.page_).MergeFrom(value).BuildPartial();
+      } else {
+        result.page_ = value;
+      }
+      result.hasPage = true;
+      return this;
+    }
+    public Builder ClearPage() {
+      PrepareBuilder();
+      result.hasPage = false;
+      result.page_ = null;
+      return this;
+    }
+    
+    public bool HasStarttime {
+      get { return result.hasStarttime; }
+    }
+    public string Starttime {
+      get { return result.Starttime; }
+      set { SetStarttime(value); }
+    }
+    public Builder SetStarttime(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasStarttime = true;
+      result.starttime_ = value;
+      return this;
+    }
+    public Builder ClearStarttime() {
+      PrepareBuilder();
+      result.hasStarttime = false;
+      result.starttime_ = "";
+      return this;
+    }
+    
+    public bool HasStoptime {
+      get { return result.hasStoptime; }
+    }
+    public string Stoptime {
+      get { return result.Stoptime; }
+      set { SetStoptime(value); }
+    }
+    public Builder SetStoptime(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasStoptime = true;
+      result.stoptime_ = value;
+      return this;
+    }
+    public Builder ClearStoptime() {
+      PrepareBuilder();
+      result.hasStoptime = false;
+      result.stoptime_ = "";
+      return this;
+    }
+  }
+  static CSShiftFind() {
+    object.ReferenceEquals(global::CoreProtocol.Descriptor, null);
+  }
+}
+
+[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+public sealed partial class SCShiftFind : pb::GeneratedMessage<SCShiftFind, SCShiftFind.Builder> {
+  private SCShiftFind() { }
+  private static readonly SCShiftFind defaultInstance = new SCShiftFind().MakeReadOnly();
+  private static readonly string[] _sCShiftFindFieldNames = new string[] { "shifts" };
+  private static readonly uint[] _sCShiftFindFieldTags = new uint[] { 10 };
+  public static SCShiftFind DefaultInstance {
+    get { return defaultInstance; }
+  }
+  
+  public override SCShiftFind DefaultInstanceForType {
+    get { return DefaultInstance; }
+  }
+  
+  protected override SCShiftFind ThisMessage {
+    get { return this; }
+  }
+  
+  public static pbd::MessageDescriptor Descriptor {
+    get { return global::CoreProtocol.internal__static_SCShiftFind__Descriptor; }
+  }
+  
+  protected override pb::FieldAccess.FieldAccessorTable<SCShiftFind, SCShiftFind.Builder> InternalFieldAccessors {
+    get { return global::CoreProtocol.internal__static_SCShiftFind__FieldAccessorTable; }
+  }
+  
+  public const int ShiftsFieldNumber = 1;
+  private pbc::PopsicleList<global::StructShift> shifts_ = new pbc::PopsicleList<global::StructShift>();
+  public scg::IList<global::StructShift> ShiftsList {
+    get { return shifts_; }
+  }
+  public int ShiftsCount {
+    get { return shifts_.Count; }
+  }
+  public global::StructShift GetShifts(int index) {
+    return shifts_[index];
+  }
+  
+  public override bool IsInitialized {
+    get {
+      foreach (global::StructShift element in ShiftsList) {
+        if (!element.IsInitialized) return false;
+      }
+      return true;
+    }
+  }
+  
+  public override void WriteTo(pb::ICodedOutputStream output) {
+    CalcSerializedSize();
+    string[] field_names = _sCShiftFindFieldNames;
+    if (shifts_.Count > 0) {
+      output.WriteMessageArray(1, field_names[0], shifts_);
+    }
+    UnknownFields.WriteTo(output);
+  }
+  
+  private int memoizedSerializedSize = -1;
+  public override int SerializedSize {
+    get {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+      return CalcSerializedSize();
+    }
+  }
+  
+  private int CalcSerializedSize() {
+    int size = memoizedSerializedSize;
+    if (size != -1) return size;
+    
+    size = 0;
+    foreach (global::StructShift element in ShiftsList) {
+      size += pb::CodedOutputStream.ComputeMessageSize(1, element);
+    }
+    size += UnknownFields.SerializedSize;
+    memoizedSerializedSize = size;
+    return size;
+  }
+  public static SCShiftFind ParseFrom(pb::ByteString data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static SCShiftFind ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static SCShiftFind ParseFrom(byte[] data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static SCShiftFind ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static SCShiftFind ParseFrom(global::System.IO.Stream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static SCShiftFind ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  public static SCShiftFind ParseDelimitedFrom(global::System.IO.Stream input) {
+    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
+  }
+  public static SCShiftFind ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
+  }
+  public static SCShiftFind ParseFrom(pb::ICodedInputStream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static SCShiftFind ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  private SCShiftFind MakeReadOnly() {
+    shifts_.MakeReadOnly();
+    return this;
+  }
+  
+  public static Builder CreateBuilder() { return new Builder(); }
+  public override Builder ToBuilder() { return CreateBuilder(this); }
+  public override Builder CreateBuilderForType() { return new Builder(); }
+  public static Builder CreateBuilder(SCShiftFind prototype) {
+    return new Builder(prototype);
+  }
+  
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class Builder : pb::GeneratedBuilder<SCShiftFind, Builder> {
+    protected override Builder ThisBuilder {
+      get { return this; }
+    }
+    public Builder() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+    }
+    internal Builder(SCShiftFind cloneFrom) {
+      result = cloneFrom;
+      resultIsReadOnly = true;
+    }
+    
+    private bool resultIsReadOnly;
+    private SCShiftFind result;
+    
+    private SCShiftFind PrepareBuilder() {
+      if (resultIsReadOnly) {
+        SCShiftFind original = result;
+        result = new SCShiftFind();
+        resultIsReadOnly = false;
+        MergeFrom(original);
+      }
+      return result;
+    }
+    
+    public override bool IsInitialized {
+      get { return result.IsInitialized; }
+    }
+    
+    protected override SCShiftFind MessageBeingBuilt {
+      get { return PrepareBuilder(); }
+    }
+    
+    public override Builder Clear() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+      return this;
+    }
+    
+    public override Builder Clone() {
+      if (resultIsReadOnly) {
+        return new Builder(result);
+      } else {
+        return new Builder().MergeFrom(result);
+      }
+    }
+    
+    public override pbd::MessageDescriptor DescriptorForType {
+      get { return global::SCShiftFind.Descriptor; }
+    }
+    
+    public override SCShiftFind DefaultInstanceForType {
+      get { return global::SCShiftFind.DefaultInstance; }
+    }
+    
+    public override SCShiftFind BuildPartial() {
+      if (resultIsReadOnly) {
+        return result;
+      }
+      resultIsReadOnly = true;
+      return result.MakeReadOnly();
+    }
+    
+    public override Builder MergeFrom(pb::IMessage other) {
+      if (other is SCShiftFind) {
+        return MergeFrom((SCShiftFind) other);
+      } else {
+        base.MergeFrom(other);
+        return this;
+      }
+    }
+    
+    public override Builder MergeFrom(SCShiftFind other) {
+      if (other == global::SCShiftFind.DefaultInstance) return this;
+      PrepareBuilder();
+      if (other.shifts_.Count != 0) {
+        result.shifts_.Add(other.shifts_);
+      }
+      this.MergeUnknownFields(other.UnknownFields);
+      return this;
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input) {
+      return MergeFrom(input, pb::ExtensionRegistry.Empty);
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+      PrepareBuilder();
+      pb::UnknownFieldSet.Builder unknownFields = null;
+      uint tag;
+      string field_name;
+      while (input.ReadTag(out tag, out field_name)) {
+        if(tag == 0 && field_name != null) {
+          int field_ordinal = global::System.Array.BinarySearch(_sCShiftFindFieldNames, field_name, global::System.StringComparer.Ordinal);
+          if(field_ordinal >= 0)
+            tag = _sCShiftFindFieldTags[field_ordinal];
+          else {
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            continue;
+          }
+        }
+        switch (tag) {
+          case 0: {
+            throw pb::InvalidProtocolBufferException.InvalidTag();
+          }
+          default: {
+            if (pb::WireFormat.IsEndGroupTag(tag)) {
+              if (unknownFields != null) {
+                this.UnknownFields = unknownFields.Build();
+              }
+              return this;
+            }
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            break;
+          }
+          case 10: {
+            input.ReadMessageArray(tag, field_name, result.shifts_, global::StructShift.DefaultInstance, extensionRegistry);
+            break;
+          }
+        }
+      }
+      
+      if (unknownFields != null) {
+        this.UnknownFields = unknownFields.Build();
+      }
+      return this;
+    }
+    
+    
+    public pbc::IPopsicleList<global::StructShift> ShiftsList {
+      get { return PrepareBuilder().shifts_; }
+    }
+    public int ShiftsCount {
+      get { return result.ShiftsCount; }
+    }
+    public global::StructShift GetShifts(int index) {
+      return result.GetShifts(index);
+    }
+    public Builder SetShifts(int index, global::StructShift value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.shifts_[index] = value;
+      return this;
+    }
+    public Builder SetShifts(int index, global::StructShift.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
+      PrepareBuilder();
+      result.shifts_[index] = builderForValue.Build();
+      return this;
+    }
+    public Builder AddShifts(global::StructShift value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.shifts_.Add(value);
+      return this;
+    }
+    public Builder AddShifts(global::StructShift.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
+      PrepareBuilder();
+      result.shifts_.Add(builderForValue.Build());
+      return this;
+    }
+    public Builder AddRangeShifts(scg::IEnumerable<global::StructShift> values) {
+      PrepareBuilder();
+      result.shifts_.Add(values);
+      return this;
+    }
+    public Builder ClearShifts() {
+      PrepareBuilder();
+      result.shifts_.Clear();
+      return this;
+    }
+  }
+  static SCShiftFind() {
+    object.ReferenceEquals(global::CoreProtocol.Descriptor, null);
+  }
+}
+
+[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 public sealed partial class CSReconnect : pb::GeneratedMessage<CSReconnect, CSReconnect.Builder> {
   private CSReconnect() { }
   private static readonly CSReconnect defaultInstance = new CSReconnect().MakeReadOnly();
@@ -41394,8 +43143,8 @@ public sealed partial class CSCartDel : pb::GeneratedMessage<CSCartDel, CSCartDe
 public sealed partial class CSPreBuy : pb::GeneratedMessage<CSPreBuy, CSPreBuy.Builder> {
   private CSPreBuy() { }
   private static readonly CSPreBuy defaultInstance = new CSPreBuy().MakeReadOnly();
-  private static readonly string[] _cSPreBuyFieldNames = new string[] { "cardnumber" };
-  private static readonly uint[] _cSPreBuyFieldTags = new uint[] { 10 };
+  private static readonly string[] _cSPreBuyFieldNames = new string[] { "cardnumber", "goodsid", "goodsnum" };
+  private static readonly uint[] _cSPreBuyFieldTags = new uint[] { 10, 16, 24 };
   public static CSPreBuy DefaultInstance {
     get { return defaultInstance; }
   }
@@ -41426,9 +43175,31 @@ public sealed partial class CSPreBuy : pb::GeneratedMessage<CSPreBuy, CSPreBuy.B
     get { return cardnumber_; }
   }
   
+  public const int GoodsidFieldNumber = 2;
+  private bool hasGoodsid;
+  private int goodsid_;
+  public bool HasGoodsid {
+    get { return hasGoodsid; }
+  }
+  public int Goodsid {
+    get { return goodsid_; }
+  }
+  
+  public const int GoodsnumFieldNumber = 3;
+  private bool hasGoodsnum;
+  private int goodsnum_;
+  public bool HasGoodsnum {
+    get { return hasGoodsnum; }
+  }
+  public int Goodsnum {
+    get { return goodsnum_; }
+  }
+  
   public override bool IsInitialized {
     get {
       if (!hasCardnumber) return false;
+      if (!hasGoodsid) return false;
+      if (!hasGoodsnum) return false;
       return true;
     }
   }
@@ -41438,6 +43209,12 @@ public sealed partial class CSPreBuy : pb::GeneratedMessage<CSPreBuy, CSPreBuy.B
     string[] field_names = _cSPreBuyFieldNames;
     if (hasCardnumber) {
       output.WriteString(1, field_names[0], Cardnumber);
+    }
+    if (hasGoodsid) {
+      output.WriteInt32(2, field_names[1], Goodsid);
+    }
+    if (hasGoodsnum) {
+      output.WriteInt32(3, field_names[2], Goodsnum);
     }
     UnknownFields.WriteTo(output);
   }
@@ -41458,6 +43235,12 @@ public sealed partial class CSPreBuy : pb::GeneratedMessage<CSPreBuy, CSPreBuy.B
     size = 0;
     if (hasCardnumber) {
       size += pb::CodedOutputStream.ComputeStringSize(1, Cardnumber);
+    }
+    if (hasGoodsid) {
+      size += pb::CodedOutputStream.ComputeInt32Size(2, Goodsid);
+    }
+    if (hasGoodsnum) {
+      size += pb::CodedOutputStream.ComputeInt32Size(3, Goodsnum);
     }
     size += UnknownFields.SerializedSize;
     memoizedSerializedSize = size;
@@ -41584,6 +43367,12 @@ public sealed partial class CSPreBuy : pb::GeneratedMessage<CSPreBuy, CSPreBuy.B
       if (other.HasCardnumber) {
         Cardnumber = other.Cardnumber;
       }
+      if (other.HasGoodsid) {
+        Goodsid = other.Goodsid;
+      }
+      if (other.HasGoodsnum) {
+        Goodsnum = other.Goodsnum;
+      }
       this.MergeUnknownFields(other.UnknownFields);
       return this;
     }
@@ -41631,6 +43420,14 @@ public sealed partial class CSPreBuy : pb::GeneratedMessage<CSPreBuy, CSPreBuy.B
             result.hasCardnumber = input.ReadString(ref result.cardnumber_);
             break;
           }
+          case 16: {
+            result.hasGoodsid = input.ReadInt32(ref result.goodsid_);
+            break;
+          }
+          case 24: {
+            result.hasGoodsnum = input.ReadInt32(ref result.goodsnum_);
+            break;
+          }
         }
       }
       
@@ -41659,6 +43456,46 @@ public sealed partial class CSPreBuy : pb::GeneratedMessage<CSPreBuy, CSPreBuy.B
       PrepareBuilder();
       result.hasCardnumber = false;
       result.cardnumber_ = "";
+      return this;
+    }
+    
+    public bool HasGoodsid {
+      get { return result.hasGoodsid; }
+    }
+    public int Goodsid {
+      get { return result.Goodsid; }
+      set { SetGoodsid(value); }
+    }
+    public Builder SetGoodsid(int value) {
+      PrepareBuilder();
+      result.hasGoodsid = true;
+      result.goodsid_ = value;
+      return this;
+    }
+    public Builder ClearGoodsid() {
+      PrepareBuilder();
+      result.hasGoodsid = false;
+      result.goodsid_ = 0;
+      return this;
+    }
+    
+    public bool HasGoodsnum {
+      get { return result.hasGoodsnum; }
+    }
+    public int Goodsnum {
+      get { return result.Goodsnum; }
+      set { SetGoodsnum(value); }
+    }
+    public Builder SetGoodsnum(int value) {
+      PrepareBuilder();
+      result.hasGoodsnum = true;
+      result.goodsnum_ = value;
+      return this;
+    }
+    public Builder ClearGoodsnum() {
+      PrepareBuilder();
+      result.hasGoodsnum = false;
+      result.goodsnum_ = 0;
       return this;
     }
   }
@@ -42822,283 +44659,6 @@ public sealed partial class SCSysMessage : pb::GeneratedMessage<SCSysMessage, SC
     }
   }
   static SCSysMessage() {
-    object.ReferenceEquals(global::CoreProtocol.Descriptor, null);
-  }
-}
-
-[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-public sealed partial class CSUserMessage : pb::GeneratedMessage<CSUserMessage, CSUserMessage.Builder> {
-  private CSUserMessage() { }
-  private static readonly CSUserMessage defaultInstance = new CSUserMessage().MakeReadOnly();
-  private static readonly string[] _cSUserMessageFieldNames = new string[] { "text" };
-  private static readonly uint[] _cSUserMessageFieldTags = new uint[] { 10 };
-  public static CSUserMessage DefaultInstance {
-    get { return defaultInstance; }
-  }
-  
-  public override CSUserMessage DefaultInstanceForType {
-    get { return DefaultInstance; }
-  }
-  
-  protected override CSUserMessage ThisMessage {
-    get { return this; }
-  }
-  
-  public static pbd::MessageDescriptor Descriptor {
-    get { return global::CoreProtocol.internal__static_CSUserMessage__Descriptor; }
-  }
-  
-  protected override pb::FieldAccess.FieldAccessorTable<CSUserMessage, CSUserMessage.Builder> InternalFieldAccessors {
-    get { return global::CoreProtocol.internal__static_CSUserMessage__FieldAccessorTable; }
-  }
-  
-  public const int TextFieldNumber = 1;
-  private bool hasText;
-  private string text_ = "";
-  public bool HasText {
-    get { return hasText; }
-  }
-  public string Text {
-    get { return text_; }
-  }
-  
-  public override bool IsInitialized {
-    get {
-      if (!hasText) return false;
-      return true;
-    }
-  }
-  
-  public override void WriteTo(pb::ICodedOutputStream output) {
-    CalcSerializedSize();
-    string[] field_names = _cSUserMessageFieldNames;
-    if (hasText) {
-      output.WriteString(1, field_names[0], Text);
-    }
-    UnknownFields.WriteTo(output);
-  }
-  
-  private int memoizedSerializedSize = -1;
-  public override int SerializedSize {
-    get {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-      return CalcSerializedSize();
-    }
-  }
-  
-  private int CalcSerializedSize() {
-    int size = memoizedSerializedSize;
-    if (size != -1) return size;
-    
-    size = 0;
-    if (hasText) {
-      size += pb::CodedOutputStream.ComputeStringSize(1, Text);
-    }
-    size += UnknownFields.SerializedSize;
-    memoizedSerializedSize = size;
-    return size;
-  }
-  public static CSUserMessage ParseFrom(pb::ByteString data) {
-    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
-  }
-  public static CSUserMessage ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
-  }
-  public static CSUserMessage ParseFrom(byte[] data) {
-    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
-  }
-  public static CSUserMessage ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
-  }
-  public static CSUserMessage ParseFrom(global::System.IO.Stream input) {
-    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
-  }
-  public static CSUserMessage ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
-  }
-  public static CSUserMessage ParseDelimitedFrom(global::System.IO.Stream input) {
-    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
-  }
-  public static CSUserMessage ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
-    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
-  }
-  public static CSUserMessage ParseFrom(pb::ICodedInputStream input) {
-    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
-  }
-  public static CSUserMessage ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
-  }
-  private CSUserMessage MakeReadOnly() {
-    return this;
-  }
-  
-  public static Builder CreateBuilder() { return new Builder(); }
-  public override Builder ToBuilder() { return CreateBuilder(this); }
-  public override Builder CreateBuilderForType() { return new Builder(); }
-  public static Builder CreateBuilder(CSUserMessage prototype) {
-    return new Builder(prototype);
-  }
-  
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-  public sealed partial class Builder : pb::GeneratedBuilder<CSUserMessage, Builder> {
-    protected override Builder ThisBuilder {
-      get { return this; }
-    }
-    public Builder() {
-      result = DefaultInstance;
-      resultIsReadOnly = true;
-    }
-    internal Builder(CSUserMessage cloneFrom) {
-      result = cloneFrom;
-      resultIsReadOnly = true;
-    }
-    
-    private bool resultIsReadOnly;
-    private CSUserMessage result;
-    
-    private CSUserMessage PrepareBuilder() {
-      if (resultIsReadOnly) {
-        CSUserMessage original = result;
-        result = new CSUserMessage();
-        resultIsReadOnly = false;
-        MergeFrom(original);
-      }
-      return result;
-    }
-    
-    public override bool IsInitialized {
-      get { return result.IsInitialized; }
-    }
-    
-    protected override CSUserMessage MessageBeingBuilt {
-      get { return PrepareBuilder(); }
-    }
-    
-    public override Builder Clear() {
-      result = DefaultInstance;
-      resultIsReadOnly = true;
-      return this;
-    }
-    
-    public override Builder Clone() {
-      if (resultIsReadOnly) {
-        return new Builder(result);
-      } else {
-        return new Builder().MergeFrom(result);
-      }
-    }
-    
-    public override pbd::MessageDescriptor DescriptorForType {
-      get { return global::CSUserMessage.Descriptor; }
-    }
-    
-    public override CSUserMessage DefaultInstanceForType {
-      get { return global::CSUserMessage.DefaultInstance; }
-    }
-    
-    public override CSUserMessage BuildPartial() {
-      if (resultIsReadOnly) {
-        return result;
-      }
-      resultIsReadOnly = true;
-      return result.MakeReadOnly();
-    }
-    
-    public override Builder MergeFrom(pb::IMessage other) {
-      if (other is CSUserMessage) {
-        return MergeFrom((CSUserMessage) other);
-      } else {
-        base.MergeFrom(other);
-        return this;
-      }
-    }
-    
-    public override Builder MergeFrom(CSUserMessage other) {
-      if (other == global::CSUserMessage.DefaultInstance) return this;
-      PrepareBuilder();
-      if (other.HasText) {
-        Text = other.Text;
-      }
-      this.MergeUnknownFields(other.UnknownFields);
-      return this;
-    }
-    
-    public override Builder MergeFrom(pb::ICodedInputStream input) {
-      return MergeFrom(input, pb::ExtensionRegistry.Empty);
-    }
-    
-    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
-      PrepareBuilder();
-      pb::UnknownFieldSet.Builder unknownFields = null;
-      uint tag;
-      string field_name;
-      while (input.ReadTag(out tag, out field_name)) {
-        if(tag == 0 && field_name != null) {
-          int field_ordinal = global::System.Array.BinarySearch(_cSUserMessageFieldNames, field_name, global::System.StringComparer.Ordinal);
-          if(field_ordinal >= 0)
-            tag = _cSUserMessageFieldTags[field_ordinal];
-          else {
-            if (unknownFields == null) {
-              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
-            }
-            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
-            continue;
-          }
-        }
-        switch (tag) {
-          case 0: {
-            throw pb::InvalidProtocolBufferException.InvalidTag();
-          }
-          default: {
-            if (pb::WireFormat.IsEndGroupTag(tag)) {
-              if (unknownFields != null) {
-                this.UnknownFields = unknownFields.Build();
-              }
-              return this;
-            }
-            if (unknownFields == null) {
-              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
-            }
-            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
-            break;
-          }
-          case 10: {
-            result.hasText = input.ReadString(ref result.text_);
-            break;
-          }
-        }
-      }
-      
-      if (unknownFields != null) {
-        this.UnknownFields = unknownFields.Build();
-      }
-      return this;
-    }
-    
-    
-    public bool HasText {
-      get { return result.hasText; }
-    }
-    public string Text {
-      get { return result.Text; }
-      set { SetText(value); }
-    }
-    public Builder SetText(string value) {
-      pb::ThrowHelper.ThrowIfNull(value, "value");
-      PrepareBuilder();
-      result.hasText = true;
-      result.text_ = value;
-      return this;
-    }
-    public Builder ClearText() {
-      PrepareBuilder();
-      result.hasText = false;
-      result.text_ = "";
-      return this;
-    }
-  }
-  static CSUserMessage() {
     object.ReferenceEquals(global::CoreProtocol.Descriptor, null);
   }
 }

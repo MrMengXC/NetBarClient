@@ -19,12 +19,12 @@ namespace NetBarMS.Codes.Tools.NetOperation
             {
                 products.SetCategory(category);
             }
-            if(keywords != null)
+            if(keywords != null&& !keywords.Equals(""))
             {
                 products.SetKeywords(keywords);
             }
 
-            System.Console.WriteLine(products); ;
+            //System.Console.WriteLine(products); ;
             MessageContent.Builder content = new MessageContent.Builder();
             content.SetMessageType(1);
             content.SetCsGoodsFind(products);
@@ -188,7 +188,7 @@ namespace NetBarMS.Codes.Tools.NetOperation
                 order.ProctimeStart = handleStart;
                 order.ProctimeEnd = handleEnd;
             }
-            if(keyWrods != null)
+            if(keyWrods != null && !keyWrods.Equals(""))
             {
                 order.Username = keyWrods;
             }
@@ -204,6 +204,11 @@ namespace NetBarMS.Codes.Tools.NetOperation
         #endregion
 
         #region 获取商品订单详情
+        /// <summary>
+        /// 获取商品订单详情
+        /// </summary>
+        /// <param name="resultBlock"></param>
+        /// <param name="orderid"></param>
         public static void GetProdcutIndentDetail(DataResultBlock resultBlock,Int32 orderid)
         {
 
@@ -218,6 +223,29 @@ namespace NetBarMS.Codes.Tools.NetOperation
 
             MessagePack.Builder pack = new MessagePack.Builder();
             pack.SetCmd(Cmd.CMD_GOODS_ORDER_DETAIL);
+            pack.SetContent(content);
+            NetMessageManage.Manage().SendMsg(pack.Build(), resultBlock);
+        }
+        #endregion
+
+        #region 处理商品订单
+        /// <summary>
+        /// 处理商品订单
+        /// </summary>
+        /// <param name="resultBlock"></param>
+        /// <param name="orderid"></param>
+        public static void HandleProductIndent(DataResultBlock resultBlock, Int32 orderid)
+        {
+
+            CSOrderProcess.Builder process = new CSOrderProcess.Builder();
+            process.Orderid = orderid;
+
+            MessageContent.Builder content = new MessageContent.Builder();
+            content.SetMessageType(1);
+            content.SetCsOrderProcess(process);
+
+            MessagePack.Builder pack = new MessagePack.Builder();
+            pack.SetCmd(Cmd.CMD_GOODS_ORDER_PROCESS);
             pack.SetContent(content);
             NetMessageManage.Manage().SendMsg(pack.Build(), resultBlock);
         }

@@ -19,7 +19,7 @@ namespace NetBarMS.Views.HomePage
             InitializeComponent();
             this.titleLabel.Text = "关闭闲机";
         }
-
+        #region 确定关闭闲机
         //确定关闭闲着的机子
         private void simpleButton1_Click(object sender, EventArgs e)
         {
@@ -45,10 +45,14 @@ namespace NetBarMS.Views.HomePage
                 }));
             }
         }
+        #endregion
+
+        #region 取消
         //取消
         private void simpleButton2_Click(object sender, EventArgs e)
         {
             this.CloseFormClick();
         }
+        #endregion
     }
 }
