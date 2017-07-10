@@ -111,16 +111,14 @@
     <Compile Include="Codes\Keys.cs" />
     <Compile Include="Codes\Model\GridControlModel.cs" />
     <Compile Include="Codes\Model\HomePageNodeModel.cs" />
-    <Compile Include="Codes\Model\ManagerModel.cs" />
-    <Compile Include="Codes\Model\ProductModel.cs" />
-    <Compile Include="Codes\Model\TestModel.cs" />
-    <Compile Include="Codes\Model\UserModel.cs" />
+    <Compile Include="Codes\Model\SysTypeModel.cs" />
     <Compile Include="Codes\Tools\Manage\AreaSettingManage.cs" />
     <Compile Include="Codes\Tools\Manage\DelegateManage.cs" />
     <Compile Include="Codes\Tools\Manage\EnumManage.cs" />
     <Compile Include="Codes\Tools\Manage\HomePageMessageManage.cs" />
     <Compile Include="Codes\Tools\NetOperation\EvaluateNetOperation.cs" />
     <Compile Include="Codes\Tools\NetOperation\OtherMainNetOperation.cs" />
+    <Compile Include="Codes\Tools\NetOperation\RecordNetOperation.cs" />
     <Compile Include="Plugins\BigInteger.cs" />
     <Compile Include="Codes\Tools\Manage\CurrentStaffManage.cs" />
     <Compile Include="Codes\Tools\FlowManage\ActiveFlowManage.cs" />
@@ -287,11 +285,11 @@
     <Compile Include="Views\RootFormView.Designer.cs">
       <DependentUpon>RootFormView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\SystemSearch\MemberRechargeView.cs">
+    <Compile Include="Views\SystemSearch\MemberRechargeRecordView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\SystemSearch\MemberRechargeView.Designer.cs">
-      <DependentUpon>MemberRechargeView.cs</DependentUpon>
+    <Compile Include="Views\SystemSearch\MemberRechargeRecordView.Designer.cs">
+      <DependentUpon>MemberRechargeRecordView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\SystemSearch\AttendanceSearchView.cs">
       <SubType>UserControl</SubType>
@@ -587,12 +585,6 @@
     <Compile Include="Views\SystemSearch\ChangeShiftsRecordView.Designer.cs">
       <DependentUpon>ChangeShiftsRecordView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\SystemSearch\OpenCardRecordView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\SystemSearch\OpenCardRecordView.Designer.cs">
-      <DependentUpon>OpenCardRecordView.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\ProductManage\ProductSellRecordView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -716,8 +708,8 @@
     <EmbeddedResource Include="Views\SystemSearch\AttendanceSearchView.resx">
       <DependentUpon>AttendanceSearchView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\SystemSearch\MemberRechargeView.resx">
-      <DependentUpon>MemberRechargeView.cs</DependentUpon>
+    <EmbeddedResource Include="Views\SystemSearch\MemberRechargeRecordView.resx">
+      <DependentUpon>MemberRechargeRecordView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\SystemSearch\OpenMemberRecordView.resx">
       <DependentUpon>OpenMemberRecordView.cs</DependentUpon>
@@ -862,9 +854,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\SystemSearch\ChangeShiftsRecordView.resx">
       <DependentUpon>ChangeShiftsRecordView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\SystemSearch\OpenCardRecordView.resx">
-      <DependentUpon>OpenCardRecordView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ProductManage\ProductSellRecordView.resx">
       <DependentUpon>ProductSellRecordView.cs</DependentUpon>

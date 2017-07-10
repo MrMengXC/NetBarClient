@@ -24,31 +24,6 @@ namespace NetBarMS.Forms
         public const int HTCAPTION = 0x0002;
 
         #region 初始化窗体
-        private void InitForm(RootUserControlView control, bool showInTaskbar,bool isShow)
-        {
-            InitializeComponent();
-            this.FormBorderStyle = FormBorderStyle.None;
-            this.ControlBox = false;
-
-            control.BackColor = Color.White;
-            control.Location = new Point(2, 2);
-            control.titlePanel.MouseDown += panel1_MouseDown;
-            this.Controls.Add(control);
-
-
-            //newForm.TopMost = true;           //是否显示最前面
-            //newForm.Focus();
-            this.Size = new Size(control.Size.Width + 4, control.Size.Height + 4);
-            control.Anchor = AnchorStyles.Right | AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Bottom;
-            this.BackColor = Color.Wheat;
-            this.ShowInTaskbar = showInTaskbar;      //是否在任务栏显示
-            if(isShow)
-            {
-                this.ShowDialog();               //是否需要关闭才能使用其他
-            }
-
-
-        }
 
         /// <summary>
         /// 显示窗体
@@ -56,7 +31,7 @@ namespace NetBarMS.Forms
         /// <param name="control">添加到窗体的Control</param>
         /// <param name="showInTaskbar">是否在任务栏显示</param>
         /// <param name="isShow">是否需要关闭才能使用其他</param>
-        private void InitForm(RootFormView control, bool showInTaskbar, bool isShow)
+        private void InitForm(RootFormView control, bool showInTaskbar)
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
@@ -74,10 +49,7 @@ namespace NetBarMS.Forms
             control.Anchor = AnchorStyles.Right | AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Bottom;
             this.BackColor = Color.Wheat;
             this.ShowInTaskbar = showInTaskbar;      //是否在任务栏显示
-            if (isShow)
-            {
-                this.ShowDialog();               //是否需要关闭才能使用其他
-            }
+     
         }
 
         private void InitForm(UserControl control, bool showInTaskbar)
@@ -98,9 +70,6 @@ namespace NetBarMS.Forms
             control.Anchor = AnchorStyles.Right | AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Bottom;
             this.BackColor = Color.Wheat;
             this.ShowInTaskbar = showInTaskbar;      //是否在任务栏显示
-            this.Show();
-
-
         }
         #endregion
 
@@ -112,16 +81,30 @@ namespace NetBarMS.Forms
         /// <param name="showInTaskbar">是否在任务栏显示</param>
         public CustomForm(RootFormView control, bool showInTaskbar)
         {
-            this.InitForm(control, showInTaskbar, true);
+            this.InitForm(control, showInTaskbar);
         }
+
         public CustomForm(RootUserControlView control,bool showInTaskbar)
         {
-            this.InitForm(control, showInTaskbar, true);
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.ControlBox = false;
+
+            control.BackColor = Color.White;
+            control.Location = new Point(2, 2);
+            control.titlePanel.MouseDown += panel1_MouseDown;
+
+            this.Controls.Add(control);
+            this.Size = new Size(control.Size.Width + 4, control.Size.Height + 4);
+            control.Anchor = AnchorStyles.Right | AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Bottom;
+            this.BackColor = Color.Wheat;
+            this.ShowInTaskbar = showInTaskbar;      //是否在任务栏显示
         }
-        public CustomForm(RootUserControlView control, bool showInTaskbar,bool isShow)
-        {
-            this.InitForm(control, showInTaskbar, isShow);
-        }
+       
+        /// <summary>
+        /// 显示窗体
+        /// </summary>
+        /// <param name="control"></param>
+        /// <param name="showInTaskbar"></param>
         public CustomForm(UserControl control, bool showInTaskbar)
         {
             this.InitForm(control, showInTaskbar);

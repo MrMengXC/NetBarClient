@@ -28,26 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.changeLabel = new DevExpress.XtraEditors.LabelControl();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.payMoneyLabel = new DevExpress.XtraEditors.LabelControl();
+            this.sellMoneyLabel = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.checkEdit1 = new DevExpress.XtraEditors.CheckEdit();
             this.checkEdit2 = new DevExpress.XtraEditors.CheckEdit();
             this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
+            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
             this.panel1 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.titlePanel.SuspendLayout();
@@ -55,12 +58,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -69,13 +73,13 @@
             // 
             this.titlePanel.Size = new System.Drawing.Size(450, 50);
             // 
-            // labelControl1
+            // changeLabel
             // 
-            this.labelControl1.Location = new System.Drawing.Point(3, 3);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(48, 14);
-            this.labelControl1.TabIndex = 66;
-            this.labelControl1.Text = "交班人：";
+            this.changeLabel.Location = new System.Drawing.Point(3, 3);
+            this.changeLabel.Name = "changeLabel";
+            this.changeLabel.Size = new System.Drawing.Size(48, 14);
+            this.changeLabel.TabIndex = 66;
+            this.changeLabel.Text = "交班人：";
             // 
             // simpleButton1
             // 
@@ -108,21 +112,21 @@
             this.labelControl2.TabIndex = 70;
             this.labelControl2.Text = "提示：请接班人清点上架商品剩余数量是否正确后再进行交接班";
             // 
-            // labelControl7
+            // payMoneyLabel
             // 
-            this.labelControl7.Location = new System.Drawing.Point(3, 23);
-            this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(84, 14);
-            this.labelControl7.TabIndex = 64;
-            this.labelControl7.Text = "当班充值金额：";
+            this.payMoneyLabel.Location = new System.Drawing.Point(3, 23);
+            this.payMoneyLabel.Name = "payMoneyLabel";
+            this.payMoneyLabel.Size = new System.Drawing.Size(84, 14);
+            this.payMoneyLabel.TabIndex = 64;
+            this.payMoneyLabel.Text = "当班充值金额：";
             // 
-            // labelControl6
+            // sellMoneyLabel
             // 
-            this.labelControl6.Location = new System.Drawing.Point(3, 43);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(108, 14);
-            this.labelControl6.TabIndex = 65;
-            this.labelControl6.Text = "当班商品销售金额：";
+            this.sellMoneyLabel.Location = new System.Drawing.Point(3, 43);
+            this.sellMoneyLabel.Name = "sellMoneyLabel";
+            this.sellMoneyLabel.Size = new System.Drawing.Size(108, 14);
+            this.sellMoneyLabel.TabIndex = 65;
+            this.sellMoneyLabel.Text = "当班商品销售金额：";
             // 
             // labelControl3
             // 
@@ -147,6 +151,7 @@
             this.checkEdit1.Properties.Caption = "正确";
             this.checkEdit1.Size = new System.Drawing.Size(75, 19);
             this.checkEdit1.TabIndex = 73;
+            this.checkEdit1.CheckedChanged += new System.EventHandler(this.checkEdit_CheckedChanged);
             // 
             // checkEdit2
             // 
@@ -155,6 +160,7 @@
             this.checkEdit2.Properties.Caption = "不正确";
             this.checkEdit2.Size = new System.Drawing.Size(75, 19);
             this.checkEdit2.TabIndex = 74;
+            this.checkEdit2.CheckedChanged += new System.EventHandler(this.checkEdit_CheckedChanged);
             // 
             // comboBoxEdit1
             // 
@@ -172,18 +178,6 @@
             this.textEdit1.Size = new System.Drawing.Size(169, 20);
             this.textEdit1.TabIndex = 76;
             // 
-            // textEdit2
-            // 
-            this.textEdit2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textEdit2.Location = new System.Drawing.Point(3, 85);
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Properties.AutoHeight = false;
-            this.textEdit2.Properties.NullText = "请具体描述不正确商品及数量，并说明不正确原因";
-            this.textEdit2.Size = new System.Drawing.Size(438, 81);
-            this.textEdit2.TabIndex = 77;
-            this.textEdit2.EditValueChanged += new System.EventHandler(this.textEdit2_EditValueChanged);
-            // 
             // simpleButton3
             // 
             this.simpleButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -195,17 +189,19 @@
             this.simpleButton3.Size = new System.Drawing.Size(88, 30);
             this.simpleButton3.TabIndex = 69;
             this.simpleButton3.Text = "打印库存清单";
+            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
             // simpleButton5
             // 
             this.simpleButton5.Appearance.BackColor = System.Drawing.Color.Aqua;
             this.simpleButton5.Appearance.Options.UseBackColor = true;
             this.simpleButton5.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.simpleButton5.Location = new System.Drawing.Point(172, 255);
+            this.simpleButton5.Location = new System.Drawing.Point(154, 510);
             this.simpleButton5.Name = "simpleButton5";
             this.simpleButton5.Size = new System.Drawing.Size(88, 30);
             this.simpleButton5.TabIndex = 78;
             this.simpleButton5.Text = "登录";
+            this.simpleButton5.Click += new System.EventHandler(this.simpleButton5_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -218,33 +214,41 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 27.81955F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 72.18045F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(444, 399);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(444, 440);
             this.tableLayoutPanel1.TabIndex = 79;
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.textBox1);
             this.panel2.Controls.Add(this.flowLayoutPanel2);
-            this.panel2.Controls.Add(this.simpleButton5);
             this.panel2.Controls.Add(this.simpleButton2);
             this.panel2.Controls.Add(this.simpleButton3);
             this.panel2.Controls.Add(this.labelControl2);
-            this.panel2.Controls.Add(this.textEdit2);
             this.panel2.Controls.Add(this.checkEdit1);
             this.panel2.Controls.Add(this.checkEdit2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 111);
+            this.panel2.Location = new System.Drawing.Point(0, 122);
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(444, 288);
+            this.panel2.Size = new System.Drawing.Size(444, 318);
             this.panel2.TabIndex = 1;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(3, 85);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(438, 81);
+            this.textBox1.TabIndex = 79;
             // 
             // flowLayoutPanel2
             // 
             this.flowLayoutPanel2.Controls.Add(this.tableLayoutPanel2);
             this.flowLayoutPanel2.Controls.Add(this.tableLayoutPanel3);
+            this.flowLayoutPanel2.Controls.Add(this.tableLayoutPanel5);
             this.flowLayoutPanel2.Location = new System.Drawing.Point(68, 172);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(310, 70);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(310, 143);
             this.flowLayoutPanel2.TabIndex = 78;
             // 
             // tableLayoutPanel2
@@ -275,6 +279,35 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(248, 28);
             this.tableLayoutPanel3.TabIndex = 81;
             // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 2;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.62903F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.37096F));
+            this.tableLayoutPanel5.Controls.Add(this.labelControl8, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.textEdit3, 1, 0);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 71);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 1;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(248, 28);
+            this.tableLayoutPanel5.TabIndex = 83;
+            // 
+            // labelControl8
+            // 
+            this.labelControl8.Location = new System.Drawing.Point(3, 3);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(60, 14);
+            this.labelControl8.TabIndex = 72;
+            this.labelControl8.Text = "交班人密码";
+            // 
+            // textEdit3
+            // 
+            this.textEdit3.Location = new System.Drawing.Point(74, 3);
+            this.textEdit3.Name = "textEdit3";
+            this.textEdit3.Size = new System.Drawing.Size(169, 20);
+            this.textEdit3.TabIndex = 76;
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.flowLayoutPanel1);
@@ -283,14 +316,14 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(444, 111);
+            this.panel1.Size = new System.Drawing.Size(444, 122);
             this.panel1.TabIndex = 0;
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Controls.Add(this.labelControl1);
-            this.flowLayoutPanel1.Controls.Add(this.labelControl7);
-            this.flowLayoutPanel1.Controls.Add(this.labelControl6);
+            this.flowLayoutPanel1.Controls.Add(this.changeLabel);
+            this.flowLayoutPanel1.Controls.Add(this.payMoneyLabel);
+            this.flowLayoutPanel1.Controls.Add(this.sellMoneyLabel);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 40);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -302,8 +335,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.simpleButton5);
             this.Name = "ChangeShiftsView";
-            this.Size = new System.Drawing.Size(450, 455);
+            this.Size = new System.Drawing.Size(450, 556);
+            this.Controls.SetChildIndex(this.simpleButton5, 0);
             this.Controls.SetChildIndex(this.titlePanel, 0);
             this.Controls.SetChildIndex(this.tableLayoutPanel1, 0);
             this.titlePanel.ResumeLayout(false);
@@ -312,7 +347,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -321,6 +355,9 @@
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
             this.panel1.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
@@ -330,19 +367,18 @@
 
         #endregion
 
-        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.LabelControl changeLabel;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.LabelControl labelControl7;
-        private DevExpress.XtraEditors.LabelControl labelControl6;
+        private DevExpress.XtraEditors.LabelControl payMoneyLabel;
+        private DevExpress.XtraEditors.LabelControl sellMoneyLabel;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.CheckEdit checkEdit1;
         private DevExpress.XtraEditors.CheckEdit checkEdit2;
         private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
         private DevExpress.XtraEditors.TextEdit textEdit1;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
         private DevExpress.XtraEditors.SimpleButton simpleButton3;
         private DevExpress.XtraEditors.SimpleButton simpleButton5;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
@@ -352,5 +388,9 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private DevExpress.XtraEditors.LabelControl labelControl8;
+        private DevExpress.XtraEditors.TextEdit textEdit3;
     }
 }

@@ -14,6 +14,7 @@ using NetBarMS.Views.ResultManage;
 using NetBarMS.Forms;
 using NetBarMS.Views.HomePage;
 using NetBarMS.Codes.Tools.FlowManage;
+using NetBarMS.Codes.Model;
 
 namespace NetBarMS.Views.NetUserManage
 {
@@ -26,7 +27,7 @@ namespace NetBarMS.Views.NetUserManage
             GiveMoney,
         }
        
-        private List<StructDictItem> memberTypes;       //会员类别数组
+        private List<MemberTypeModel> memberTypes;       //会员类别数组
         private int memberIndex = -1;                   //当前会员类别索引
         private FLOW_STATUS flowstatus = FLOW_STATUS.NONE_STATUS;                 //判断返回的状态
         private char[] sp = { '：', ':' };
@@ -140,12 +141,12 @@ namespace NetBarMS.Views.NetUserManage
         private void RefreshGridControl()
         {
             this.mainDataTable.Clear();
-            foreach(StructDictItem item in this.memberTypes)
+            foreach(MemberTypeModel model in this.memberTypes)
             {
                 DataRow row = this.mainDataTable.NewRow();
                 this.mainDataTable.Rows.Add(row);
-                row[TitleList.Type.ToString()] = item.GetItem(0);
-                row[TitleList.PayMoney.ToString()] = item.GetItem(1);
+                row[TitleList.Type.ToString()] = model.typeName;
+                row[TitleList.PayMoney.ToString()] = model.payMoney;
             }
         }
         #endregion
@@ -183,13 +184,13 @@ namespace NetBarMS.Views.NetUserManage
 
                 memberIndex = -1;
 
-                foreach(StructDictItem item in this.memberTypes)
+                foreach(MemberTypeModel model in this.memberTypes)
                 {
-                    int tem = int.Parse(item.GetItem(1));
+                    int tem = int.Parse(model.payMoney);
 
-                    if (money >= tem && tem > need && item.Code != IdTools.TEM_MEMBER_ID)
+                    if (money >= tem && tem > need && model.typeId != IdTools.TEM_MEMBER_ID)
                     {
-                        memberIndex = this.memberTypes.IndexOf(item);
+                        memberIndex = this.memberTypes.IndexOf(model);
                         need = tem;
                         //System.Console("");
                     }
@@ -207,7 +208,7 @@ namespace NetBarMS.Views.NetUserManage
             }
             else
             {
-                this.memberTypeTextEdit.Text = memberTypes[memberIndex].GetItem(0);
+                this.memberTypeTextEdit.Text = memberTypes[memberIndex].typeName;
             }
         }
         #endregion

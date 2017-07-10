@@ -167,7 +167,6 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Search)});
             this.buttonEdit1.Size = new System.Drawing.Size(129, 20);
             this.buttonEdit1.TabIndex = 1;
-            this.buttonEdit1.ButtonClick += ButtonEdit1_ButtonClick;
             // 
             // flowLayoutPanel1
             // 

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using NetBarMS.Codes.Tools.NetOperation;
 using NetBarMS.Codes.Tools;
 using DevExpress.XtraEditors.Controls;
+using NetBarMS.Codes.Model;
 
 namespace NetBarMS.Views.ProductManage
 {
@@ -17,7 +18,7 @@ namespace NetBarMS.Views.ProductManage
     {
 
         private StructGoods product;
-        private List<StructDictItem> productTypes;
+        private List<ProductTypeModel> productTypes;
         public ProductAddView(StructGoods updateProduct)
         {
             InitializeComponent();
@@ -40,8 +41,8 @@ namespace NetBarMS.Views.ProductManage
             //初始化ComboBoxEdit
             for (int i = 0; i < productTypes.Count(); i++)
             {
-                StructDictItem item = this.productTypes[i];
-                this.comboBoxEdit1.Properties.Items.Add(item.GetItem(0));
+                ProductTypeModel item = this.productTypes[i];
+                this.comboBoxEdit1.Properties.Items.Add(item.typeName);
             }
         }
         //刷新UI
@@ -88,7 +89,7 @@ namespace NetBarMS.Views.ProductManage
                 newProduct.GoodsId = 0;
             }
             newProduct.GoodsName = pname;
-            newProduct.Category = this.productTypes[index].Code;
+            newProduct.Category = this.productTypes[index].typeId;
             newProduct.Count = int.Parse(num);
             newProduct.Price = price;
             newProduct.Integal = int.Parse(integal);

@@ -14,7 +14,7 @@ using NetBarMS.Codes;
 
 namespace NetBarMS.Views.OtherMain
 {
-    public partial class ManagerLoginView : RootUserControlView
+    public partial class ManagerLoginView : RootFormView
     {
 
         private int num = 5;
@@ -70,6 +70,13 @@ namespace NetBarMS.Views.OtherMain
                 this.Invoke(new UIHandleBlock(delegate {
                     SysManage.Manage().RemoveRequestSysInfo(RequestSysInfoResult);
                     this.loginButton.Enabled = true;
+                    //设置用户名列表
+                    List<StructAccount> staffs;
+                    SysManage.Manage().GetStaffs(out staffs);
+                    foreach (StructAccount staff in staffs)
+                    {
+                        this.comboBoxEdit1.Properties.Items.Add(staff.Username);
+                    }
                 }));
             }
         }
@@ -79,8 +86,15 @@ namespace NetBarMS.Views.OtherMain
         //进行登录
         private void LoginButtonClick(object sender, EventArgs e)
         {
+            string userName = this.comboBoxEdit1.Text;
+            string ps = this.textEdit2.Text;
 
-            ManagerNetOperation.ManagerLogin(ManagerLoginBlock);
+            if(userName.Equals("") || ps.Equals(""))
+            {
+                MessageBox.Show("请输入用户名或密码");
+                return;
+            }
+            ManagerNetOperation.ManagerLogin(ManagerLoginBlock,userName,ps);
         }
 
         // 管理员登录回调

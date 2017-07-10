@@ -78,7 +78,7 @@
             this.gridControl1.Location = new System.Drawing.Point(15, 38);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(339, 305);
+            this.gridControl1.Size = new System.Drawing.Size(339, 348);
             this.gridControl1.TabIndex = 82;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1,
@@ -110,7 +110,7 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(6, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(359, 365);
+            this.panel2.Size = new System.Drawing.Size(359, 408);
             this.panel2.TabIndex = 51;
             // 
             // simpleButton2
@@ -119,7 +119,7 @@
             this.simpleButton2.Appearance.BackColor = System.Drawing.Color.Aqua;
             this.simpleButton2.Appearance.Options.UseBackColor = true;
             this.simpleButton2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.simpleButton2.Location = new System.Drawing.Point(336, 430);
+            this.simpleButton2.Location = new System.Drawing.Point(336, 473);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(112, 30);
             this.simpleButton2.TabIndex = 53;
@@ -144,7 +144,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(350, 365);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(350, 408);
             this.tableLayoutPanel1.TabIndex = 62;
             // 
             // label1
@@ -177,7 +177,7 @@
             this.areaPanel.Location = new System.Drawing.Point(1, 36);
             this.areaPanel.Margin = new System.Windows.Forms.Padding(0);
             this.areaPanel.Name = "areaPanel";
-            this.areaPanel.Size = new System.Drawing.Size(100, 328);
+            this.areaPanel.Size = new System.Drawing.Size(100, 371);
             this.areaPanel.TabIndex = 2;
             // 
             // deleteAreaButton
@@ -222,7 +222,7 @@
             this.currentComsPanel.Location = new System.Drawing.Point(102, 36);
             this.currentComsPanel.Margin = new System.Windows.Forms.Padding(0);
             this.currentComsPanel.Name = "currentComsPanel";
-            this.currentComsPanel.Size = new System.Drawing.Size(247, 328);
+            this.currentComsPanel.Size = new System.Drawing.Size(247, 371);
             this.currentComsPanel.TabIndex = 3;
             // 
             // simpleButton1
@@ -260,7 +260,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(793, 374);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(793, 417);
             this.tableLayoutPanel2.TabIndex = 65;
             // 
             // panel5
@@ -270,7 +270,7 @@
             this.panel5.Location = new System.Drawing.Point(424, 0);
             this.panel5.Margin = new System.Windows.Forms.Padding(0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(369, 374);
+            this.panel5.Size = new System.Drawing.Size(369, 417);
             this.panel5.TabIndex = 2;
             // 
             // panel4
@@ -281,7 +281,7 @@
             this.panel4.Location = new System.Drawing.Point(369, 0);
             this.panel4.Margin = new System.Windows.Forms.Padding(0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(55, 374);
+            this.panel4.Size = new System.Drawing.Size(55, 417);
             this.panel4.TabIndex = 1;
             // 
             // panel3
@@ -291,7 +291,7 @@
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(369, 374);
+            this.panel3.Size = new System.Drawing.Size(369, 417);
             this.panel3.TabIndex = 0;
             // 
             // AreaManageView
@@ -303,7 +303,7 @@
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.simpleButton2);
             this.Name = "AreaManageView";
-            this.Size = new System.Drawing.Size(795, 461);
+            this.Size = new System.Drawing.Size(795, 504);
             this.Controls.SetChildIndex(this.simpleButton2, 0);
             this.Controls.SetChildIndex(this.titlePanel, 0);
             this.Controls.SetChildIndex(this.tableLayoutPanel2, 0);

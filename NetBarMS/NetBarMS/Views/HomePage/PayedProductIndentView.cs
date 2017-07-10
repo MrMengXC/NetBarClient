@@ -32,13 +32,15 @@ namespace NetBarMS.Views.HomePage
             this.titleLabel.Text = "已付款商品订单管理";
             InitUI();
         }
-        //初始化UI
+        #region 初始化UI
         private void InitUI()
         {
-            ToolsManage.SetGridView(this.gridView1, GridControlType.PayedProductIndent, out this.mainDataTable);
+            ToolsManage.SetGridView(this.gridView1, GridControlType.PayedProductIndent, out this.mainDataTable,ButtonColumn_ButtonClick);
             this.gridControl1.DataSource = this.mainDataTable;
             GetProductIndentList();
         }
+        #endregion
+
         #region 获取销售记录
         //获取销售记录
         private void GetProductIndentList()
@@ -55,9 +57,7 @@ namespace NetBarMS.Views.HomePage
 
             //1提交 2付款完成 3订单处理完成（发货完成）
             //"1提交","2完成","3撤销"
-            ProductNetOperation.GetProdcutIndentList(GetProdcutIndentListResult, page.Build(), 2,"","","","", keyWords);
-
-
+            ProductNetOperation.GetProdcutIndentList(GetProdcutIndentListResult, page.Build(), 1,"","","","", keyWords);
         }
         //获取已付款商品订单列表
         private void GetProdcutIndentListResult(ResultModel result)
@@ -102,7 +102,8 @@ namespace NetBarMS.Views.HomePage
             row[TitleList.Time.ToString()] = order.Addtime;
         }
         #endregion
-        //按钮列的点击事件(点击查看)
+
+        #region 按钮列的点击事件(点击查看)
         public void ButtonColumn_ButtonClick(object sender, ButtonPressedEventArgs e)
         {
             int rowhandle = this.gridView1.FocusedRowHandle;
@@ -114,10 +115,14 @@ namespace NetBarMS.Views.HomePage
             PayedProductIndentDetailView detail = new PayedProductIndentDetailView(order);
             ToolsManage.ShowForm(detail, false, close);
         }
+        #endregion
+
+        #region 搜索按钮点击事件
         //搜索按钮
         public void SearchButton_ButtonClick(object sender, ButtonPressedEventArgs e)
         {
             GetProductIndentList();
         }
+        #endregion
     }
 }

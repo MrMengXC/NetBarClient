@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using NetBarMS.Codes.Tools;
 using DevExpress.XtraEditors.Controls;
 using NetBarMS.Codes.Tools.NetOperation;
-
+using NetBarMS.Codes.Model;
 
 namespace NetBarMS.Views.ProductManage
 {
@@ -56,7 +56,7 @@ namespace NetBarMS.Views.ProductManage
 
         }
 
-        private List<StructDictItem> productTypes;
+        private List<ProductTypeModel> productTypes;
         private IList<StructGoods> products;
         private int pageBegin = 0;
         private int pageSize = 15;
@@ -83,8 +83,8 @@ namespace NetBarMS.Views.ProductManage
             //初始化ComboBoxEdit
             for (int i = 0; i < productTypes.Count(); i++)
             {
-                StructDictItem item = productTypes[i];
-                this.comboBoxEdit1.Properties.Items.Add(item.GetItem(0));
+                ProductTypeModel item = productTypes[i];
+                this.comboBoxEdit1.Properties.Items.Add(item.typeName);
             }
             GetProductList();
 
@@ -97,8 +97,10 @@ namespace NetBarMS.Views.ProductManage
             Int32 category = -1;
             if(this.comboBoxEdit1.SelectedIndex >= 0)
             {
-                category = this.productTypes[this.comboBoxEdit1.SelectedIndex].Id;
+                category = this.productTypes[this.comboBoxEdit1.SelectedIndex].typeId;
             }
+            
+
             string keyWords = this.buttonEdit1.Text;
             if(keyWords.Equals(""))
             {

@@ -3,17 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NetBarMS.Codes.Tools;
 
 namespace NetBarMS.Codes.Model
 {
 
-    public enum ColumnType
-    {
-        C_Text = 0,
-        C_Button,       //按钮
-        C_Check,        //复选框
-        C_Custom
-    }
+   
     class GridControlModel
     {
         public List<ColumnModel> columns;

@@ -70,7 +70,7 @@ namespace NetBarMS.Views.HomePage
             SetButtonItem(out normalEdit, nor);
             SetButtonItem(out verietyEdit, ver);
 
-            ToolsManage.SetGridView(this.gridView1, GridControlType.HomePageList, out this.mainDataTable, ButtonEdit_ButtonClick, GridView_CustomColumnSort,null);
+            ToolsManage.SetGridView(this.gridView1, GridControlType.HomePageList, out this.mainDataTable, ButtonEdit_ButtonClick, GridView_CustomColumnSort);
             this.gridControl1.DataSource = this.mainDataTable;
             this.gridView1.CustomRowCellEdit += GridView1_CustomRowCellEdit;
             //获取账户信息
@@ -244,51 +244,11 @@ namespace NetBarMS.Views.HomePage
 
         }
         #endregion
-
-        #region 绘制按钮列时触发的方法
-        public void CustomDrawButton(object sender, CustomDrawButtonEventArgs arg)
-        {
-            
-            return;
-            char[] sp = { '_' };
-            string num = arg.Button.Tag.ToString().Split(sp)[1];
-            if (num.Equals("2"))
-            {
-                int index = arg.Bounds.Y / arg.Bounds.Height;
-                StructRealTime com = this.coms[index];
-                EditorButton button = arg.Button;
-                if (com.Verify.Equals("1"))
-                {
-                    //System.Console.WriteLine("index:"+index);
-                    //arg.Button.Caption = "已验证";
-                    //arg.Button.Appearance.ForeColor = Color.Gray;
-                    button.Enabled = false;
-                    //System.Console.WriteLine("已验证:" + index);
-
-                }
-                else
-                {
-                    button.Caption = "验证";
-                    button.Appearance.ForeColor = Color.Blue;
-                    button.Enabled = true;
-                    // System.Console.WriteLine("验证:" + index);
-
-                }
-
-            }
-
-
-
-
-
-        }
-        #endregion
+       
 
         #region 按钮列点击事件
         private void ButtonEdit_ButtonClick(object sender, ButtonPressedEventArgs e)
         {
-            
-
             int rowhandle = this.gridView1.FocusedRowHandle;
             StructRealTime computer = coms[rowhandle];
             if(computer.Cardnumber.Equals(""))

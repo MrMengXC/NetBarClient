@@ -486,7 +486,6 @@ C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\obj\Debug\NetBarMS
 C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\obj\Debug\NetBarMS.Views.SystemManage.SmsManageView.resources
 C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\obj\Debug\NetBarMS.Views.SystemManage.StaffMoneyView.resources
 C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\obj\Debug\NetBarMS.Views.SystemSearch.ChangeShiftsRecordView.resources
-C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\obj\Debug\NetBarMS.Views.SystemSearch.OpenCardRecordView.resources
 C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\obj\Debug\NetBarMS.Views.ProductManage.ProductSellRecordView.resources
 C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\obj\Debug\NetBarMS.Views.NetUserManage.UserConsumeRecordView.resources
 C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\obj\Debug\NetBarMS.Views.NetUserManage.UserNetRecordView.resources

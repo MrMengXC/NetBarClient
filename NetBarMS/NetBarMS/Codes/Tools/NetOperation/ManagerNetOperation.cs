@@ -34,13 +34,13 @@ namespace NetBarMS.Codes.Tools.NetOperation
         /// <summary>
         /// 管理员登录
         /// </summary>
-        public static void ManagerLogin(DataResultBlock resultBlock)
+        public static void ManagerLogin(DataResultBlock resultBlock,string userName,string ps)
         {
 
             CSLogin.Builder login = new CSLogin.Builder()
             {
-                UserId = "lyc",
-                Password = "123",
+                UserId = userName,
+                Password = ps,
 
             };
 

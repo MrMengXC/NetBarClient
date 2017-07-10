@@ -26,21 +26,16 @@ namespace NetBarMS.Views.HomePage
 {
     public partial class HomePageView : UserControl
     {
-        private Panel funPanel;     //功能菜单
         public HomePageView()
         {
             InitializeComponent();
             InitUI();
         }
 
+        //初始化UI
         private void InitUI()
         {
             //添加按钮列
-            //添加点击事件
-            //this.manageTreeView.NodeMouseClick += ManageTreeViewNodeMouseClick;
-            //this.manageTreeView.ShowLines = false;
-            //this.manageTreeView.ImageIndex
-
             List<HomePageNodeModel> modelList = XMLDataManage.GetNodesXML();
            
             for (int i = modelList.Count-1; i>=0; i--)
@@ -56,8 +51,6 @@ namespace NetBarMS.Views.HomePage
                 button.Tag = nodeModel.nodeid;
                 this.functionPanel.Controls.Add(button);
             }
-
-
         }
 
         //按钮单击事件
@@ -65,7 +58,6 @@ namespace NetBarMS.Views.HomePage
         {
             int nodeId = (int)((SimpleButton)sender).Tag;
             HomePageNodeModel nodeModel = XMLDataManage.GetHomePageNodeModel(nodeId);
-
             ShowView(nodeModel);
         }
 
@@ -80,7 +72,6 @@ namespace NetBarMS.Views.HomePage
                 HomePageNodeModel nodeModel = XMLDataManage.GetHomePageNodeModel(nodeId);
 
                 //设置右键弹出框
-
                 if (nodeModel.childNodes.Count > 0)
                 {
                     this.popupMenu1.ClearLinks();
@@ -95,12 +86,7 @@ namespace NetBarMS.Views.HomePage
 
                     Point screenPoint = button.PointToScreen(new Point(button.Width, 0));
                    popupMenu1.ShowPopup(screenPoint);
-
-
                 }
-
-
-
             }
 
         }
@@ -113,13 +99,10 @@ namespace NetBarMS.Views.HomePage
             BarButtonItem item = (BarButtonItem)e.Item;
             int nodeId = (int)item.Tag;
             HomePageNodeModel nodeModel = XMLDataManage.GetHomePageNodeModel(nodeId);
-
             ShowView(nodeModel);
 
-
-
         }
-
+       
         //点击显示视图
         private void ShowView(HomePageNodeModel nodeModel)
         {
@@ -266,7 +249,13 @@ namespace NetBarMS.Views.HomePage
 
             if (view != null)
             {
-                this.contentBgPanel.Controls.Clear();
+                foreach(UserControl control in this.contentBgPanel.Controls)
+                {
+                    if(!control.GetType().Equals(typeof(HomePageListView)))
+                    {
+                        this.contentBgPanel.Controls.Remove(control);
+                    }
+                }
 
                 view.Dock = DockStyle.Fill;
                 this.contentBgPanel.Controls.Add(view);

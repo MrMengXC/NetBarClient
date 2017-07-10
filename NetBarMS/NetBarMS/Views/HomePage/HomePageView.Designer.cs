@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.functionPanel = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
@@ -60,14 +59,14 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.bar3 = new DevExpress.XtraBars.Bar();
-            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
             this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
             this.barSubItem2 = new DevExpress.XtraBars.BarSubItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
-            this.panel1.SuspendLayout();
+            this.bar3 = new DevExpress.XtraBars.Bar();
+            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel3.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -76,23 +75,15 @@
             this.flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panel1.Controls.Add(this.functionPanel);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(195, 943);
-            this.panel1.TabIndex = 9;
             // 
             // functionPanel
             // 
-            this.functionPanel.Location = new System.Drawing.Point(51, 70);
+            this.functionPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.functionPanel.Location = new System.Drawing.Point(3, 3);
             this.functionPanel.Name = "functionPanel";
-            this.functionPanel.Size = new System.Drawing.Size(144, 870);
+            this.functionPanel.Size = new System.Drawing.Size(146, 864);
             this.functionPanel.TabIndex = 0;
             // 
             // panel3
@@ -102,9 +93,9 @@
             this.panel3.Controls.Add(this.flowLayoutPanel2);
             this.panel3.Controls.Add(this.labelControl5);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(195, 0);
+            this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1545, 70);
+            this.panel3.Size = new System.Drawing.Size(1740, 70);
             this.panel3.TabIndex = 42;
             // 
             // flowLayoutPanel3
@@ -114,7 +105,7 @@
             this.flowLayoutPanel3.Controls.Add(this.panel4);
             this.flowLayoutPanel3.Controls.Add(this.panel5);
             this.flowLayoutPanel3.Controls.Add(this.panel6);
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(276, 1);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(471, 1);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.flowLayoutPanel3.Size = new System.Drawing.Size(590, 69);
@@ -231,7 +222,7 @@
             this.flowLayoutPanel2.Controls.Add(this.simpleButton10);
             this.flowLayoutPanel2.Controls.Add(this.simpleButton11);
             this.flowLayoutPanel2.Controls.Add(this.simpleButton12);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(872, 1);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(1067, 1);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.flowLayoutPanel2.Size = new System.Drawing.Size(673, 69);
@@ -351,9 +342,9 @@
             // 
             this.contentBgPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.contentBgPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.contentBgPanel.Location = new System.Drawing.Point(195, 70);
+            this.contentBgPanel.Location = new System.Drawing.Point(155, 3);
             this.contentBgPanel.Name = "contentBgPanel";
-            this.contentBgPanel.Size = new System.Drawing.Size(1545, 873);
+            this.contentBgPanel.Size = new System.Drawing.Size(1533, 864);
             this.contentBgPanel.TabIndex = 44;
             // 
             // barManager1
@@ -399,24 +390,6 @@
             this.barDockControlRight.Location = new System.Drawing.Point(1740, 0);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 943);
             // 
-            // bar3
-            // 
-            this.bar3.BarName = "Status bar";
-            this.bar3.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Bottom;
-            this.bar3.DockCol = 0;
-            this.bar3.DockRow = 0;
-            this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
-            this.bar3.OptionsBar.AllowQuickCustomization = false;
-            this.bar3.OptionsBar.DrawDragBorder = false;
-            this.bar3.OptionsBar.UseWholeRow = true;
-            this.bar3.Text = "Status bar";
-            this.bar3.Visible = false;
-            // 
-            // popupMenu1
-            // 
-            this.popupMenu1.Manager = this.barManager1;
-            this.popupMenu1.Name = "popupMenu1";
-            // 
             // barSubItem1
             // 
             this.barSubItem1.Caption = "barSubItem1";
@@ -447,21 +420,52 @@
             this.barButtonItem3.Id = 4;
             this.barButtonItem3.Name = "barButtonItem3";
             // 
+            // bar3
+            // 
+            this.bar3.BarName = "Status bar";
+            this.bar3.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Bottom;
+            this.bar3.DockCol = 0;
+            this.bar3.DockRow = 0;
+            this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
+            this.bar3.OptionsBar.AllowQuickCustomization = false;
+            this.bar3.OptionsBar.DrawDragBorder = false;
+            this.bar3.OptionsBar.UseWholeRow = true;
+            this.bar3.Text = "Status bar";
+            this.bar3.Visible = false;
+            // 
+            // popupMenu1
+            // 
+            this.popupMenu1.Manager = this.barManager1;
+            this.popupMenu1.Name = "popupMenu1";
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.0479F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 90.9521F));
+            this.tableLayoutPanel2.Controls.Add(this.contentBgPanel, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.functionPanel, 0, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(33, 70);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1691, 870);
+            this.tableLayoutPanel2.TabIndex = 2;
+            // 
             // HomePageView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.contentBgPanel);
+            this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "HomePageView";
             this.Size = new System.Drawing.Size(1740, 943);
-            this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.flowLayoutPanel3.ResumeLayout(false);
@@ -474,14 +478,13 @@
             this.flowLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
+            this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
         private System.Windows.Forms.Panel panel4;
@@ -519,5 +522,6 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
     }
 }

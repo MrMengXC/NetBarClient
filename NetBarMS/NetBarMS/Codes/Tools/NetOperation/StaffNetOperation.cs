@@ -111,5 +111,30 @@ namespace NetBarMS.Codes.Tools.NetOperation
             NetMessageManage.Manage().SendMsg(pack.Build(), resultBlock);
         }
         #endregion
+
+        #region 获取员工交接班记录
+        /// <summary>
+        /// 获取员工交接班记录
+        /// </summary>
+        /// <param name="resultBlock"></param>
+        public static void GetStaffShiftsRecordList(DataResultBlock resultBlock,StructPage page,string start,string end)
+        {
+            CSShiftFind.Builder find = new CSShiftFind.Builder();
+            find.Page = page;
+            if(start != null && !start.Equals(""))
+            {
+                find.Starttime = start;
+                find.Stoptime = end;
+            }
+            MessageContent.Builder content = new MessageContent.Builder();
+            content.MessageType = 1;
+            content.CsShiftFind = find.Build();
+
+            MessagePack.Builder pack = new MessagePack.Builder();
+            pack.SetCmd(Cmd.CMD_SHIFT_FIND);
+            pack.SetContent(content.Build());
+            NetMessageManage.Manage().SendMsg(pack.Build(), resultBlock);
+        }
+        #endregion
     }
 }

@@ -164,5 +164,46 @@ namespace NetBarMS.Codes.Tools.NetOperation
             NetMessageManage.Manage().SendMsg(pack.Build(), resultBlock);
         }
         #endregion
+
+
+        #region 添加交接班
+        /// <summary>
+        /// 添加交接班
+        /// </summary>
+        /// <param name="resultBlock">结果回调</param>
+        /// <param name="giveps">交班人密码</param>
+        /// <param name="received">接班人</param>
+        /// <param name="ps">密码</param>
+        /// <param name="isCheck">是否正确</param>
+        /// <param name="remark">备注</param>
+        public static void AddChangeStaff(DataResultBlock resultBlock, string giveps,string receive,string ps,int isCheck,string remark)
+        {
+            CSShiftAdd.Builder add = new CSShiftAdd.Builder();
+            add.DeliveredPwd = giveps;
+            add.ReceivedBy = receive;
+            add.ReceivedPwd = ps;
+            add.Ischeck = isCheck;
+            add.Remark = remark;
+            MessageContent.Builder content = new MessageContent.Builder();
+            content.MessageType = 1;
+            content.CsShiftAdd = add.Build();
+
+            MessagePack.Builder pack = new MessagePack.Builder();
+            pack.Cmd = Cmd.CMD_SHIFT_ADD;
+            pack.Content = content.Build();
+            NetMessageManage.Manage().SendMsg(pack.Build(), resultBlock);
+        }
+        #endregion
+
+        #region 获取交班人信息
+        public static void GetGiveStaffInfo(DataResultBlock resultBlock)
+        {
+            MessagePack.Builder pack = new MessagePack.Builder();
+            pack.Cmd = Cmd.CMD_SHIFT_DELIVEREDBY;
+            NetMessageManage.Manage().SendMsg(pack.Build(), resultBlock);
+        }
+
+        #endregion
+
     }
 }

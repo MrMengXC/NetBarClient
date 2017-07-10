@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using NetBarMS.Codes.Tools.NetOperation;
 using NetBarMS.Codes.Tools;
+using NetBarMS.Codes.Model;
 
 namespace NetBarMS.Views.RateManage
 {
@@ -51,24 +52,24 @@ namespace NetBarMS.Views.RateManage
             this.dataGridView1.RowHeadersVisible = false;
             
             //获取会员类型列表
-            List<StructDictItem> types;
+            List<MemberTypeModel> types;
             SysManage.Manage().GetMembersTypes(out types);
             for(int i = types.Count()-1;i>=0;i--)
             {
-                string name = "type_" + types[i].Code;
-                string text = types[i].ItemList[0];
+                string name = "type_" + types[i].typeId;
+                string text = types[i].typeName;
 
                 CreateLabel(this.memberTypePanel,name,text);
             }
             this.memberTypePanel.AutoScroll = true;
             //添加区域
-            List<StructDictItem> areas;
+            List<AreaTypeModel> areas;
             SysManage.Manage().GetAreasList(out areas);
       
             for (int i = areas.Count() - 1; i >= 0; i--)
             {
-                string name = "area_" + areas[i].Code;
-                string text = areas[i].ItemList[0];
+                string name = "area_" + areas[i].areaId;
+                string text = areas[i].areaName;
 
                 CreateLabel(this.areaPanel, name, text);
             }

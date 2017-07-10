@@ -46,9 +46,12 @@ namespace NetBarMS
 
             ManagerLoginView view = new ManagerLoginView();
             CustomForm newForm = new CustomForm(view, true);
+            newForm.ShowDialog();
             if (newForm.DialogResult == DialogResult.OK)
             {
                 MainForm form = new MainForm();
+                //HomePageView homePage = new HomePageView();
+                //CustomForm form = new CustomForm(homePage, true);
                 Application.Run(form);
             }
             else

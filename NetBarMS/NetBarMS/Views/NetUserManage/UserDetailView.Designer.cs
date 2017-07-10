@@ -53,6 +53,15 @@
             // 
             this.titlePanel.Size = new System.Drawing.Size(450, 50);
             // 
+            // titleLabel
+            // 
+            this.titleLabel.Size = new System.Drawing.Size(110, 17);
+            this.titleLabel.Text = "上网用户信息";
+            // 
+            // closeBtn
+            // 
+            this.closeBtn.Location = new System.Drawing.Point(398, 0);
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveBorder;

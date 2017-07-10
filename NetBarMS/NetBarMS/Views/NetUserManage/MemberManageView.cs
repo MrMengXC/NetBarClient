@@ -14,6 +14,7 @@ using DevExpress.XtraEditors.Controls;
 using NetBarMS.Views.OtherMain;
 using NetBarMS.Views.NetUserManage;
 using DevExpress.XtraEditors;
+using NetBarMS.Codes.Model;
 
 namespace NetBarMS.Views
 {
@@ -50,7 +51,7 @@ namespace NetBarMS.Views
         private Int32 field = 0;            //需要按照排序的字段
         private Int32 order = 1;            //升序还是降序
         private IList<StructMember> members;
-        private List<StructDictItem> memberTypes;
+        private List<MemberTypeModel> memberTypes;
 
         public MemberManageView()
         {
@@ -64,13 +65,10 @@ namespace NetBarMS.Views
         private void InitUI()
         {
 
-           
-
-            String[] memberStatus = {"无","锁定","激活","在线","离线"};
             //初始化ComboBoxEdit
-            for (int i = 0;i< memberStatus.Count();i++)
+            foreach(string status in Enum.GetNames(typeof(MEMBERSTATUS)))
             {
-                this.statusComboBoxEdit.Properties.Items.Add(memberStatus[i]);
+                this.statusComboBoxEdit.Properties.Items.Add(status);
             }
 
             SysManage.Manage().GetMembersTypes(out memberTypes);
@@ -78,8 +76,9 @@ namespace NetBarMS.Views
             this.memberTypeComboBoxEdit.Properties.Items.Add("无");
             for (int i = 0; i < this.memberTypes.Count(); i++)
             {
-                this.memberTypeComboBoxEdit.Properties.Items.Add(memberTypes[i].ItemList[0]);
+                this.memberTypeComboBoxEdit.Properties.Items.Add(memberTypes[i].typeName);
             }
+
             // 设置 comboBox的文本值不能被编辑
             this.statusComboBoxEdit.Properties.TextEditStyle = TextEditStyles.DisableTextEditor;   
             this.memberTypeComboBoxEdit.Properties.TextEditStyle = TextEditStyles.DisableTextEditor;
@@ -252,16 +251,23 @@ namespace NetBarMS.Views
         private void SearchMember()
         {
             int index = Math.Max(0, this.memberTypeComboBoxEdit.SelectedIndex);
-            int status = Math.Max(0, this.statusComboBoxEdit.SelectedIndex);
+            int statusIndex = this.statusComboBoxEdit.SelectedIndex;
             string key = this.searchButtonEdit.Text;
 
-
-            int type = 0;
+            //会员类型
+            int type = 0,status = 0;
             if(index - 1>=0)
             {
-                StructDictItem item = this.memberTypes[index - 1];
-                type = item.Code;
+                MemberTypeModel item = this.memberTypes[index - 1];
+                type = item.typeId;
             }
+
+            MEMBERSTATUS ms;
+            if(Enum.TryParse<MEMBERSTATUS>(this.statusComboBoxEdit.Text,out ms))
+            {
+                status = (int)ms;
+            }
+
 
             System.Console.WriteLine("type:" + type + "\nstatus:" + status + "\nkey:" + key);
             //测试多条件查询

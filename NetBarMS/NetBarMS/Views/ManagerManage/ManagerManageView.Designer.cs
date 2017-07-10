@@ -43,10 +43,6 @@
             // 
             this.titlePanel.Size = new System.Drawing.Size(455, 46);
             // 
-            // closeButton
-            // 
-   
-            // 
             // gridControl1
             // 
             this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 

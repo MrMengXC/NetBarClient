@@ -71,7 +71,8 @@ namespace NetBarMS
         private void UpdateExceptionMsgNumResult(int num)
         {
             this.Invoke(new UIHandleBlock(delegate {
-                //this.simpleButton7.Text = "呼叫服务\n" + num;
+                this.simpleButton8.Text = "客户端异常\n" + num;
+
             }));
 
         }
@@ -79,7 +80,7 @@ namespace NetBarMS
         private void UpdateOrderMsgNumResult(int num)
         {
             this.Invoke(new UIHandleBlock(delegate {
-                //this.simpleButton7.Text = "呼叫服务\n" + num;
+                this.simpleButton6.Text = "商品订单\n" + num;
             }));
 
         }

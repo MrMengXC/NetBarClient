@@ -38,7 +38,7 @@ namespace NetBarMS.Views.HomePage
             }
         }
      
-        #region 赋值UI
+        #region 初始化UI
         //初始化UI
         private void InitUI()
         {

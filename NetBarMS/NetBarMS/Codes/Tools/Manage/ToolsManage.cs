@@ -33,15 +33,27 @@ namespace NetBarMS.Codes.Tools
         /// <summary>
         /// 显示自定义窗体
         /// </summary>
-        /// <param name="control">显示的RootFormView Control</param>
+        /// <param name="control">显示的RootFormView类型 Control</param>
         /// <param name="showInTaskbar">是否显示在任务栏上</param>
         public static void ShowForm(RootFormView control, bool showInTaskbar)
         {
             CustomForm newForm = new CustomForm(control, showInTaskbar);
+            newForm.ShowDialog();
+        }
+        /// <summary>
+        /// 显示自定义窗体
+        /// </summary>
+        /// <param name="control">UserControl 类型</param>
+        /// <param name="showInTaskbar">是否显示在任务栏上</param>
+        public static void ShowForm(UserControl control, bool showInTaskbar)
+        {
+            CustomForm newForm = new CustomForm(control, showInTaskbar);
+            newForm.ShowDialog(); 
         }
         public static void ShowForm(RootUserControlView control, bool showInTaskbar)
         {
             CustomForm newForm = new CustomForm(control, showInTaskbar);
+            newForm.ShowDialog();
         }
        
         public static void ShowForm(RootUserControlView control, bool showInTaskbar,CloseFormHandle close)
@@ -51,6 +63,7 @@ namespace NetBarMS.Codes.Tools
                 control.CloseForm += close;
             }
             CustomForm newForm = new CustomForm(control, showInTaskbar);
+            newForm.ShowDialog();
 
         }
         public static void ShowMessageView(RootUserControlView control, bool showInTaskbar, CloseFormHandle close)
@@ -61,63 +74,91 @@ namespace NetBarMS.Codes.Tools
                 control.CloseForm += close;
             }
             CustomForm newForm = new CustomForm(control, showInTaskbar);
-
+            newForm.ShowDialog();
         }
         #endregion
 
         #region 设置GridControl ，创建标题
         /// <summary>
+        ///  设置GridControl下的GridView
+        /// </summary>
+        /// <param name="gridView">被设置的GridView</param>
+        /// <param name="type">GridControl 的类型</param>
+        /// <param name="table">数据源DataTable</param>
+        public static void SetGridView(GridView gridView, GridControlType type, out DataTable table)
+        {
+     
+            ToolsManage.SetGridView(gridView, type, out table, null,null);
+        }
+        /// <summary>
         /// 设置GridControl下的GridView
         /// </summary>
-        /// <param name="gridView"></param>
-        /// <param name="type"></param>
-        /// <param name="table"></param>
-        /// <param name="buttonclik"></param>
-        public static void SetGridView(GridView gridView, 
+        /// <param name="gridView">被设置的GridView</param>
+        /// <param name="type">GridControl 的类型</param>
+        /// <param name="table">数据源DataTable</param>
+        /// <param name="buttonclik">按钮列按钮点击事件</param>
+        public static void SetGridView(GridView gridView,
             GridControlType type,
             out DataTable table
-            ,ButtonPressedEventHandler buttonclik,
-            DevExpress.XtraGrid.Views.Base.CustomColumnSortEventHandler titleHandler,CustomDrawButtonEventHandler customDrawButtonEvent)
+            , ButtonPressedEventHandler buttonclik)
         {
-   
+            ToolsManage.SetGridView(gridView, type, out table, buttonclik, null);
 
+        }
+        /// <summary>
+        ///  设置GridControl下的GridView
+        /// </summary>
+        /// <param name="gridView">被设置的GridView</param>
+        /// <param name="type">GridControl 的类型</param>
+        /// <param name="table">数据源DataTable</param>
+        /// <param name="buttonclik">按钮列按钮点击事件</param>
+        /// <param name="titleHandler">点击标题列点击事件</param>
+        public static void SetGridView(GridView gridView,
+            GridControlType type,
+            out DataTable table
+            , ButtonPressedEventHandler buttonclik,
+            DevExpress.XtraGrid.Views.Base.CustomColumnSortEventHandler titleHandler)
+        {
             GridControlModel model = XMLDataManage.GetGridControlModel(type.ToString());
             table = new DataTable();
 
             int i = 0;
             foreach (ColumnModel columnModel in model.columns)
             {
-               
+
                 string fieldname = "column_" + i;
-                if(columnModel.field != "None")
+                if (columnModel.field != "None")
                 {
                     fieldname = columnModel.field;
                 }
-                
-                GridColumn column = gridView.Columns.AddVisible(fieldname, columnModel.name);                
+
+                GridColumn column = gridView.Columns.AddVisible(fieldname, columnModel.name);
                 column.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
                 column.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
                 column.OptionsColumn.AllowEdit = false;
-                
+
                 switch (columnModel.type)
                 {
-                   
-                    case ColumnType.C_Custom:
+                    #region 添加链接
+                    case ColumnType.C_LineLink:
                         {
                             RepositoryItemHyperLinkEdit link = new RepositoryItemHyperLinkEdit();
-                            link.LinkColor = Color.Gray;
-                       
-                            //link.Buttons.Add()
-                            link.Caption = fieldname;
+                            link.LinkColor = Color.Blue;
 
                             column.ColumnEdit = link;
                             column.OptionsColumn.AllowEdit = true;
+
                             DataColumn dataColumn = new DataColumn(fieldname);
                             table.Columns.Add(dataColumn);
+                           // dataColumn.DataType = typeof(string);
+
                         }
-                       
+
 
                         break;
+
+                    #endregion
+
                     #region 添加复选框
                     case ColumnType.C_Check:        //添加复选框
                         {
@@ -126,11 +167,12 @@ namespace NetBarMS.Codes.Tools
                             column.ColumnEdit = check;
                             column.OptionsColumn.AllowEdit = true;
                             column.Width = 40;
+
                             DataColumn dataColumn = new DataColumn(fieldname);
                             table.Columns.Add(dataColumn);
                             dataColumn.DataType = typeof(bool);
                         }
-                   
+
 
                         break;
                     #endregion
@@ -141,12 +183,6 @@ namespace NetBarMS.Codes.Tools
                             RepositoryItemButtonEdit buttonEdit = new RepositoryItemButtonEdit();
                             buttonEdit.Buttons.Clear();
                             buttonEdit.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-                            if(customDrawButtonEvent != null)
-                            {
-                               
-                              
-                                buttonEdit.CustomDrawButton += customDrawButtonEvent;
-                            }
                             //buttonEdit.ButtonsStyle = BorderStyles.NoBorder;
                             //buttonEdit.BorderStyle = BorderStyles.NoBorder;
                             //buttonEdit.AutoHeight = false;
@@ -154,7 +190,7 @@ namespace NetBarMS.Codes.Tools
                             {
                                 buttonEdit.ButtonClick += buttonclik;
                             }
-                           
+
                             #region 添加按钮
                             int num = 0;
                             int width = 8;
@@ -162,17 +198,17 @@ namespace NetBarMS.Codes.Tools
                             {
 
                                 //char[] splits = { '.' };
-                               // string[] names = name.Split(splits);
+                                // string[] names = name.Split(splits);
 
                                 EditorButton button = new EditorButton();
                                 button.Kind = ButtonPredefines.Glyph;
                                 button.Appearance.ForeColor = Color.Blue;
-                                
+
                                 //按钮显示
                                 button.Visible = true;
                                 button.Tag = fieldname + "_" + num;
                                 //button.Appearance.BackColor = Color.Red;
-                               // Image btnImg = (System.Drawing.Bitmap)Imgs.ResourceManager.GetObject(names[1]);
+                                // Image btnImg = (System.Drawing.Bitmap)Imgs.ResourceManager.GetObject(names[1]);
                                 button.Caption = name;
                                 width += 50;
 
@@ -187,7 +223,7 @@ namespace NetBarMS.Codes.Tools
                             //column.MinWidth = width;
                             column.OptionsColumn.AllowEdit = true;
                             column.UnboundType = DevExpress.Data.UnboundColumnType.String;
-                            
+
 
                             DataColumn dataColumn = new DataColumn(fieldname);
                             table.Columns.Add(dataColumn);
@@ -215,44 +251,16 @@ namespace NetBarMS.Codes.Tools
             gridView.OptionsSelection.MultiSelect = true;
             gridView.OptionsSelection.MultiSelectMode = GridMultiSelectMode.RowSelect;
             gridView.RowHeight = 40;
-           
+
             //关闭最左侧
             gridView.OptionsView.ShowIndicator = false;
             //关闭表头右键快捷键
             gridView.OptionsMenu.EnableColumnMenu = false;
-            if (titleHandler!=null)
+            if (titleHandler != null)
             {
                 gridView.CustomColumnSort += titleHandler;
             }
 
-
-        }
-
-
-
-
-
-
-
-       
-        /// <summary>
-        ///  设置GridControl下的GridView
-        /// </summary>
-        /// <param name="gridView"></param>
-        /// <param name="type"></param>
-        /// <param name="table"></param>
-        public static void SetGridView(GridView gridView, GridControlType type, out DataTable table)
-        {
-     
-            ToolsManage.SetGridView(gridView, type, out table, null,null,null);
-        }
-        public static void SetGridView(GridView gridView,
-            GridControlType type,
-            out DataTable table
-            , ButtonPressedEventHandler buttonclik,
-            DevExpress.XtraGrid.Views.Base.CustomColumnSortEventHandler titleHandler)
-        {
-            ToolsManage.SetGridView(gridView, type, out table, buttonclik, titleHandler, null);
         }
         #endregion
 

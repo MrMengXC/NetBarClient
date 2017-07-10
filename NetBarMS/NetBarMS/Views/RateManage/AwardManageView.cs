@@ -11,6 +11,7 @@ using NetBarMS.Codes.Tools;
 using NetBarMS.Codes.Tools.NetOperation;
 using DevExpress.XtraEditors.Controls;
 using DevExpress.XtraGrid.Views.Grid;
+using NetBarMS.Codes.Model;
 
 namespace NetBarMS.Views.RateManage
 {
@@ -37,7 +38,7 @@ namespace NetBarMS.Views.RateManage
         private DateTime nlastDate = DateTime.MinValue,mlastDate = DateTime.MinValue;
         private string nstartTime = "", nendTime = "", mstartTime = "", mendTime = "";
 
-        private List<StructDictItem> memberTypes;
+        private List<MemberTypeModel> memberTypes;
 
 
 
@@ -59,13 +60,13 @@ namespace NetBarMS.Views.RateManage
 
             //设置两个ComboBox
             SysManage.Manage().GetMembersTypes(out memberTypes);
-            foreach(StructDictItem item in memberTypes)
+            foreach(MemberTypeModel item in memberTypes)
             {
                 //if(item.Code != IdTools.TEM_MEMBER_ID)
                 //{
 
                 //}
-                string type = item.GetItem(0);
+                string type = item.typeName;
                 this.comboBoxEdit1.Properties.Items.Add(type);
                 this.comboBoxEdit3.Properties.Items.Add(type);
             }
@@ -403,7 +404,7 @@ namespace NetBarMS.Views.RateManage
             {
                 return null;
             }
-            string code = this.memberTypes[index].Code.ToString();
+            string code = this.memberTypes[index].typeId.ToString();
             StructDictItem.Builder item = new StructDictItem.Builder();
             item.Code = 0;
             item.Id = id;
@@ -429,7 +430,7 @@ namespace NetBarMS.Views.RateManage
                 return null;
             }
 
-            string code = this.memberTypes[index].Code.ToString();
+            string code = this.memberTypes[index].typeId.ToString();
             StructDictItem.Builder item = new StructDictItem.Builder();
             item.Code = 0;
             item.Id = id;

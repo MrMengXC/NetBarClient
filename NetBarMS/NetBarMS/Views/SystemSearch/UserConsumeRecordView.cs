@@ -46,12 +46,13 @@ namespace NetBarMS.Views.NetUserManage
             MemberConsumeRecord();
 
         }
+
         public UserConsumeRecordView()
         {
             InitializeComponent();
             this.titleLabel.Text = "会员消费记录查询";
             InitUI();
-                        MemberConsumeRecord();
+            MemberConsumeRecord();
 
         }
         #region 初始化UI
@@ -62,15 +63,15 @@ namespace NetBarMS.Views.NetUserManage
             //购物1 充值2
             //初始化ComboBoxEdit
 
-            string[] uses = {"无","购物","充值"};
-            string[] paychannels = { "无", "支付宝", "微信", "积分兑换", "现金" };
-            for (int i = 0; i < uses.Count(); i++)
+            //string[] uses = {"无","购物","充值"};
+            //string[] paychannels = { "无", "支付宝", "微信", "积分兑换", "现金" };
+            foreach(string use in Enum.GetNames(typeof(CONSUMEUSE)))
             {
-                this.useComboBoxEdit.Properties.Items.Add(uses[i]);
+                this.useComboBoxEdit.Properties.Items.Add(use);
             }
-            for (int i = 0; i < paychannels.Count(); i++)
+            foreach (string pay in Enum.GetNames(typeof(PAYCHANNEL)))
             {
-                this.payChannelComboBoxEdit.Properties.Items.Add(paychannels[i]);
+                this.payChannelComboBoxEdit.Properties.Items.Add(pay);
             }
             // 设置 comboBox的文本值不能被编辑
             this.useComboBoxEdit.Properties.TextEditStyle = TextEditStyles.DisableTextEditor;
@@ -105,15 +106,27 @@ namespace NetBarMS.Views.NetUserManage
         //会员消费记录查询过滤
         private void MemberConsumeFilterRecord()
         {
-            int use = this.useComboBoxEdit.SelectedIndex;
-            int paychannel = this.payChannelComboBoxEdit.SelectedIndex;
+            
+            int use = 0, pay = 0;
+            CONSUMEUSE consume;
+            if(Enum.TryParse<CONSUMEUSE>(this.useComboBoxEdit.Text, out consume))
+            {
+                use = (int)consume;
+            }
+            PAYCHANNEL paychannel;
+            if (Enum.TryParse<PAYCHANNEL>(this.payChannelComboBoxEdit.Text, out paychannel))
+            {
+                pay = (int)paychannel;
+            }
+
+
             StructPage.Builder page = new StructPage.Builder() {
                 Pagesize = 15,
                 Pagebegin = 0,
                 Fieldname = 0,
                 Order = 0,
             };
-            MemberNetOperation.MemberConsumeRecordFilter(MemberConsumeRecordResult, page.Build(),mid,startTime, endTime, use, paychannel);
+            MemberNetOperation.MemberConsumeRecordFilter(MemberConsumeRecordResult, page.Build(),mid,startTime, endTime, use, pay);
 
         }
 

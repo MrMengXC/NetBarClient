@@ -247,14 +247,18 @@
     <column name = "办理人" type ="C_Text" width ="" height =""/>
     <column name = "办理时间" type ="C_Text" width ="" height =""/>
   </grid>
-  <!--交接班记录查询-->
-  <grid type ="ChangeShiftsRecord">
+  <!--交班记录查询-->
+  <grid type ="GiveShiftsRecord">
     <column name = "交班人" field="GiveShift" type ="C_Text" width ="" height =""/>
     <column name = "上班时间" field="WorkTime" type ="C_Text" width ="" height =""/>
     <column name = "交班时间" field="GiveTime" type ="C_Text" width ="" height =""/>
-    <column name = "当班期间充值金额" field="WorkRechargeMoney" type ="C_Text" width ="" height =""/>
-    <column name = "当班期间商品销售金额" field="WorkSellMoney" type ="C_Text" width ="" height =""/>
-    <column name = "当班期间商品撤销金额" field="WorkBackMoney" type ="C_Text" width ="" height =""/>
+    <column name = "当班期间充值金额" field="WorkRechargeMoney" type ="C_LineLink" width ="" height =""/>
+    <column name = "当班期间商品销售金额" field="WorkSellMoney" type ="C_LineLink" width ="" height =""/>
+    <column name = "当班期间商品撤销金额" field="WorkBackMoney" type ="C_LineLink" width ="" height =""/>
+
+  </grid>
+  <!--接班人记录-->
+  <grid type ="ReceiveShiftsRecord">
     <column name = "接班人" field="ConnectShift" type ="C_Text" width ="" height =""/>
     <column name = "接班时间" field="ConnectTime" type ="C_Text" width ="" height =""/>
     <column name = "商品剩余数量是否正确" field="NumCorrect" type ="C_Text" width ="" height =""/>

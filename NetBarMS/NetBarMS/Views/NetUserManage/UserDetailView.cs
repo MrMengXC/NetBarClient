@@ -12,13 +12,11 @@ using NetBarMS.Codes.Tools;
 
 namespace NetBarMS.Views
 {
-    public partial class UserIdDetailView : RootUserControlView
+    public partial class UserIdDetailView : RootFormView
     {
         public UserIdDetailView(int mid)
         {
             InitializeComponent();
-            this.titleLabel.Text = "上网用户信息";
-            System.Console.WriteLine("Mid:" + mid);
             MemberNetOperation.MemberInfo(MemberInfoResult, mid);
         }
         //会员信息查询结果

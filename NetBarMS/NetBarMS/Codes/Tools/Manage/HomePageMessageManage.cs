@@ -146,12 +146,19 @@ namespace NetBarMS.Codes.Tools.Manage
                     //订单信息
                     case SYSMSG_TYPE.ORDER:
 
-
+                        if(this.UpdateOrderMsgNumEvent != null)
+                        {
+                            int num = pars[0].Equals("") ? 0 : int.Parse(pars[0]);
+                            this.UpdateOrderMsgNumEvent(num);
+                        }
                         break;
                     //异常信息
                     case SYSMSG_TYPE.EXCEPTION:
-
-
+                        if(this.UpdateExceptionMsgNumEvent != null)
+                        {
+                            int num = pars[0].Equals("") ? 0 : int.Parse(pars[0]);
+                            this.UpdateExceptionMsgNumEvent(num);
+                        }
                         break;
                     default:
 
