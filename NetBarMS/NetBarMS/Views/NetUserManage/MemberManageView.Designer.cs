@@ -1,4 +1,4 @@
-﻿namespace NetBarMS.Views
+﻿namespace NetBarMS.Views.NetUserManage
 {
     partial class MemberManageView
     {

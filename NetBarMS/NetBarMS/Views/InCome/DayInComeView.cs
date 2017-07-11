@@ -95,7 +95,6 @@ namespace NetBarMS.Views.InCome
             
             for (int i = 1; i <= this.earns.Count; i++)
             {
-
                 StructEarn earn = this.earns[i - 1];
                 dt.Rows.Add(i + "", earn.CashCharge + earn.CashSale + earn.TenpaySale + earn.TenpayCharge + earn.AlipaySale + earn.AlipayCharge);
             }

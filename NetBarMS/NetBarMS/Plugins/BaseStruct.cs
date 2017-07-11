@@ -24,12 +24,16 @@ public static partial class BaseStruct {
   internal static pb::FieldAccess.FieldAccessorTable<global::StructComputer, global::StructComputer.Builder> internal__static_StructComputer__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_StructArea__Descriptor;
   internal static pb::FieldAccess.FieldAccessorTable<global::StructArea, global::StructArea.Builder> internal__static_StructArea__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_StructCharge__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::StructCharge, global::StructCharge.Builder> internal__static_StructCharge__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_StructConsum__Descriptor;
   internal static pb::FieldAccess.FieldAccessorTable<global::StructConsum, global::StructConsum.Builder> internal__static_StructConsum__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_StructEmbarkation__Descriptor;
   internal static pb::FieldAccess.FieldAccessorTable<global::StructEmbarkation, global::StructEmbarkation.Builder> internal__static_StructEmbarkation__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_StructRealTime__Descriptor;
   internal static pb::FieldAccess.FieldAccessorTable<global::StructRealTime, global::StructRealTime.Builder> internal__static_StructRealTime__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_StructApply__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::StructApply, global::StructApply.Builder> internal__static_StructApply__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_StructCard__Descriptor;
   internal static pb::FieldAccess.FieldAccessorTable<global::StructCard, global::StructCard.Builder> internal__static_StructCard__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_StructMember__Descriptor;
@@ -89,82 +93,91 @@ public static partial class BaseStruct {
           "aXRfcXgYByACKAkSEAoIcXVlcnlfcXgYCCACKAkiQAoOU3RydWN0Q29tcHV0", 
           "ZXISEgoKY29tcHV0ZXJpZBgBIAIoBRIMCgRuYW1lGAIgASgJEgwKBGFyZWEY", 
           "AyABKAkiKgoKU3RydWN0QXJlYRIOCgZhcmVhaWQYASACKAUSDAoEbmFtZRgC", 
-          "IAIoCSKWAQoMU3RydWN0Q29uc3VtEhAKCGNvbnN1bWlkGAEgAigFEhAKCHVz", 
-          "ZXJuYW1lGAIgAigJEhIKCmNhcmRudW1iZXIYAyACKAkSDAoEYXJlYRgEIAIo", 
-          "BRISCgpjb25zdW10eXBlGAUgAigFEg0KBW1vbmV5GAYgAigFEgwKBHRpbWUY", 
-          "ByACKAkSDwoHcGF5bW9kZRgIIAIoBSLKAQoRU3RydWN0RW1iYXJrYXRpb24S", 
-          "EAoIY29tcHV0ZXIYASACKAkSEgoKY2FyZG51bWJlchgCIAIoCRIQCgh1c2Vy", 
-          "bmFtZRgDIAIoCRIQCgh1c2VydHlwZRgEIAIoCRIRCglzdGFydHRpbWUYBSAC", 
-          "KAkSEAoIc3RvcHRpbWUYBiACKAkSDAoEYXJlYRgHIAIoCRIQCgh1c2VkdGlt", 
-          "ZRgIIAIoBRINCgVtb25leRgJIAIoBRILCgNtYWMYCiACKAkSCgoCaXAYCyAC", 
-          "KAkikAIKDlN0cnVjdFJlYWxUaW1lEhIKCmNvbXB1dGVyaWQYASACKAUSEAoI", 
-          "Y29tcHV0ZXIYAiACKAkSDAoEYXJlYRgDIAIoCRIOCgZzdGF0dXMYBCACKAkS", 
-          "EgoKY2FyZG51bWJlchgFIAIoCRIQCgh1c2VydHlwZRgGIAIoCRIPCgdiaWxs", 
-          "aW5nGAcgAigJEg4KBnZlcmlmeRgIIAIoCRIPCgdiYWxhbmNlGAkgAigJEhIK", 
-          "CnJlbWFpbnRpbWUYCiACKAkSEQoJc3RhcnR0aW1lGAsgAigJEhAKCHVzZWR0", 
-          "aW1lGAwgAigJEhAKCHN0b3B0aW1lGA0gAigJEgsKA21hYxgOIAIoCRIKCgJp", 
-          "cBgPIAIoCSKhAQoKU3RydWN0Q2FyZBIMCgRuYW1lGAEgAigJEg4KBmdlbmRl", 
-          "chgCIAIoBRIOCgZuYXRpb24YAyACKAkSDgoGbnVtYmVyGAQgAigJEhAKCGJp", 
-          "cnRoZGF5GAUgAigJEgsKA3ZsZBgGIAIoCRIPCgdhZGRyZXNzGAcgAigJEhQK", 
-          "DG9yZ2FuaXphdGlvbhgIIAIoCRIPCgdoZWFkVXJsGAkgAigJIqsCCgxTdHJ1", 
-          "Y3RNZW1iZXISEAoIbWVtYmVyaWQYASACKAUSEgoKY2FyZG51bWJlchgCIAIo", 
-          "CRIOCgZnZW5kZXIYAyACKAkSDAoEbmFtZRgEIAIoCRISCgptZW1iZXJ0eXBl", 
-          "GAUgAigFEg0KBXBob25lGAYgAigJEhAKCG9wZW50aW1lGAcgAigJEhAKCGxh", 
-          "c3R0aW1lGAggAigJEg8KB2JhbGFuY2UYCSABKAUSFQoNdG90YWxSZWNoYXJn", 
-          "ZRgKIAEoBRISCgp0b3RhbEJvbnVzGAsgASgFEg8KB2ludGVnYWwYDCABKAUS", 
-          "EwoLdXNlZEludGVnYWwYDSABKAUSDgoGc3RhdHVzGA4gASgFEg4KBnZlcmlm", 
-          "eRgPIAEoBRIOCgZyZWFzb24YECABKAkiUwoKU3RydWN0UGFnZRIQCghwYWdl", 
-          "c2l6ZRgBIAIoBRIRCglwYWdlYmVnaW4YAiACKAUSEQoJZmllbGRuYW1lGAMg", 
-          "AigFEg0KBW9yZGVyGAQgAigFIsYBCg5TdHJ1Y3RVc2VyQXJlYRIQCgh1c2Vy", 
-          "dHlwZRgBIAIoBRIQCghhcmVhdHlwZRgCIAIoBRIVCg1vcmRpbmFyeVByaWNl", 
-          "GAMgAigFEhgKEG9yZGluYXJ5SW50ZXJ2YWwYBCACKAUSEwoLb3JkaW5hcnlN", 
-          "aW4YBSACKAUSEgoKbmlnaHRQcmljZRgGIAIoBRIVCg1uaWdodEludGVydmFs", 
-          "GAcgAigFEhAKCG5pZ2h0TWluGAggAigFEg0KBWluZGV4GAkgAigFInUKEVN0", 
-          "cnVjdEJpbGxTZXR0aW5nEgwKBGRheTAYASACKAUSDAoEZGF5MRgCIAIoBRIM", 
-          "CgRkYXkyGAMgAigFEgwKBGRheTMYBCACKAUSDAoEZGF5NBgFIAIoBRIMCgRk", 
-          "YXk1GAYgAigFEgwKBGRheTYYByACKAUiOAoOU3RydWN0RGljdEl0ZW0SCgoC", 
-          "aWQYASACKAUSDAoEY29kZRgCIAIoBRIMCgRpdGVtGAMgAygJIqYBCgtTdHJ1", 
-          "Y3RHb29kcxIPCgdnb29kc0lkGAEgAigFEhEKCWdvb2RzTmFtZRgCIAIoCRIQ", 
-          "Cghnb29kc0ltZxgDIAIoCRIQCghjYXRlZ29yeRgEIAIoBRINCgVwcmljZRgF", 
-          "IAIoCRISCgp1c2VJbnRlZ2FsGAYgAigIEgwKBGhpZGUYByACKAgSDwoHaW50", 
-          "ZWdhbBgIIAIoBRINCgVjb3VudBgJIAIoBSKmAQoKU3RydWN0U2FsZRIPCgdv", 
-          "cmRlcmlkGAEgAigFEhAKCHVzZXJuYW1lGAIgAigJEhIKCmNhcmRudW1iZXIY", 
-          "AyACKAkSEAoIYXJlYW5hbWUYBCACKAkSEQoJZ29vZHNuYW1lGAUgAigJEgsK", 
-          "A251bRgGIAIoBRINCgVtb25leRgHIAIoBRIPCgdhZGR0aW1lGAggAigJEg8K", 
-          "B3BheW1vZGUYCSACKAkiUAoNU3RydWN0U2FsZVRvcBIQCghjYXRlZ29yeRgB", 
-          "IAIoBRIRCglnb29kc25hbWUYAiACKAkSCwoDbnVtGAMgAigFEg0KBW1vbmV5", 
-          "GAQgAigFIk4KC1N0cnVjdFN0b2NrEhEKCWdvb2RzbmFtZRgBIAIoCRIQCghj", 
-          "YXRlZ29yeRgCIAIoBRINCgVwcmljZRgDIAIoCRILCgNudW0YBCACKAUiygEK", 
-          "C1N0cnVjdE9yZGVyEg8KB29yZGVyaWQYASACKAUSEAoIdXNlcm5hbWUYAiAC", 
-          "KAkSEgoKY2FyZG51bWJlchgDIAIoCRIQCghhcmVhbmFtZRgEIAIoCRINCgVt", 
-          "b25leRgFIAIoBRIPCgdhZGR0aW1lGAYgAigJEhAKCHByb2N0aW1lGAcgAigJ", 
-          "EhAKCG9wZXJhdG9yGAggAigJEg4KBnN0YXR1cxgJIAIoCRIPCgdwYXltb2Rl", 
-          "GAogAigJEg0KBXBheWlkGAsgAigJIlQKEVN0cnVjdE9yZGVyRGV0YWlsEhEK", 
-          "CWdvb2RzbmFtZRgBIAIoCRIQCghjYXRlZ29yeRgCIAIoBRINCgVwcmljZRgD", 
-          "IAIoCRILCgNudW0YBCACKAUiuQEKDVN0cnVjdENvbW1lbnQSDwoHYWRkdGlt", 
-          "ZRgBIAIoCRIQCghjdXN0b21lchgCIAIoCRISCgpjYXJkbnVtYmVyGAMgAigJ", 
-          "Eg0KBWJvbnVzGAQgAigFEg0KBXN0YWZmGAUgASgJEg0KBXBvaW50GAYgASgF", 
-          "EhMKC2Vudmlyb25tZW50GAcgASgFEg8KB3NlcnZpY2UYCCABKAUSDgoGZGV2", 
-          "aWNlGAkgASgFEg4KBmRldGFpbBgKIAEoCSJqCg1TdHJ1Y3RQZXJmb3JtEgwK", 
-          "BG5hbWUYASACKAkSDAoEcm9sZRgCIAIoCRINCgVob3VycxgDIAIoBRIOCgZj", 
-          "aGFyZ2UYBCACKAUSDQoFc2FsZXMYBSACKAUSDwoHc2F0aXNmeRgGIAIoBSJd", 
-          "CglTdHJ1Y3RMb2cSEAoIb3BlcmF0b3IYASACKAkSEQoJb3BlcmF0aW9uGAIg", 
-          "AigJEgoKAmlwGAMgAigJEg8KB2FkZHRpbWUYBCACKAkSDgoGc3RhdHVzGAUg", 
-          "AigJIjMKD1N0cnVjdEFyZWFUb3RhbBIQCghhcmVhbmFtZRgBIAIoCRIOCgZh", 
-          "bW91bnQYAiACKAUixAEKClN0cnVjdEVhcm4SEAoIZGF0ZXRpbWUYASACKAUS", 
-          "FQoNYWxpcGF5X2NoYXJnZRgCIAIoBRITCgthbGlwYXlfc2FsZRgDIAIoBRIV", 
-          "Cg10ZW5wYXlfY2hhcmdlGAQgAigFEhMKC3RlbnBheV9zYWxlGAUgAigFEhMK", 
-          "C2Nhc2hfY2hhcmdlGAYgAigFEhEKCWNhc2hfc2FsZRgHIAIoBRIkCgphcmVh", 
-          "X3RvdGFsGAggAygLMhAuU3RydWN0QXJlYVRvdGFsIkoKClN0cnVjdENhbGwS", 
-          "DgoGY2FsbGlkGAEgAigFEg4KBmNhbGxlchgCIAIoCRIOCgZkZXZpY2UYAyAC", 
-          "KAkSDAoEaW5mbxgEIAIoCSLSAQoLU3RydWN0U2hpZnQSDwoHc2hpZnRpZBgB", 
-          "IAIoBRIUCgxkZWxpdmVyZWRfYnkYAiACKAkSEQoJc3RhcnR0aW1lGAMgAigJ", 
-          "EhAKCHN0b3B0aW1lGAQgAigJEhUKDWNoYXJnZV9hbW91bnQYBSACKAUSEwoL", 
-          "c2FsZV9hbW91bnQYBiACKAUSFQoNcmVmdW5kX2Ftb3VudBgHIAIoBRITCgty", 
-          "ZWNlaXZlZF9ieRgIIAIoCRIPCgdpc2NoZWNrGAkgAigFEg4KBnJlbWFyaxgK", 
-          "IAIoCSooCgRUeXBlEggKBElURU0QARIMCghDVVJSRU5DWRACEggKBFBBQ0sQ", 
-          "A0IrCh1jb20uc2t5c29mdC5jb3JlLmF1dG8ubWVzc2FnZUIKQmFzZVN0cnVj", 
-        "dA=="));
+          "IAIoCSLWAQoMU3RydWN0Q2hhcmdlEhEKCXByb2R1Y3RpZBgBIAIoCRIMCgRu", 
+          "YW1lGAIgAigJEg8KB3JpZ2h0aWQYAyACKAUSEgoKY2FyZG51bWJlchgEIAIo", 
+          "CRIOCgZhcmVhaWQYBSACKAUSFQoNY2hhcmdlX2Ftb3VudBgGIAIoBRIUCgxi", 
+          "b251c19hbW91bnQYByACKAUSDwoHYWRkdGltZRgIIAIoCRIPCgdwYXltb2Rl", 
+          "GAkgAigFEhEKCXJlY2VpcHRpZBgKIAIoCRIOCgZzdGF0dXMYCyACKAUilgEK", 
+          "DFN0cnVjdENvbnN1bRIQCghjb25zdW1pZBgBIAIoBRIQCgh1c2VybmFtZRgC", 
+          "IAIoCRISCgpjYXJkbnVtYmVyGAMgAigJEgwKBGFyZWEYBCACKAUSEgoKY29u", 
+          "c3VtdHlwZRgFIAIoBRINCgVtb25leRgGIAIoBRIMCgR0aW1lGAcgAigJEg8K", 
+          "B3BheW1vZGUYCCACKAUiygEKEVN0cnVjdEVtYmFya2F0aW9uEhAKCGNvbXB1", 
+          "dGVyGAEgAigJEhIKCmNhcmRudW1iZXIYAiACKAkSEAoIdXNlcm5hbWUYAyAC", 
+          "KAkSEAoIdXNlcnR5cGUYBCACKAkSEQoJc3RhcnR0aW1lGAUgAigJEhAKCHN0", 
+          "b3B0aW1lGAYgAigJEgwKBGFyZWEYByACKAkSEAoIdXNlZHRpbWUYCCACKAUS", 
+          "DQoFbW9uZXkYCSACKAUSCwoDbWFjGAogAigJEgoKAmlwGAsgAigJIpACCg5T", 
+          "dHJ1Y3RSZWFsVGltZRISCgpjb21wdXRlcmlkGAEgAigFEhAKCGNvbXB1dGVy", 
+          "GAIgAigJEgwKBGFyZWEYAyACKAkSDgoGc3RhdHVzGAQgAigJEhIKCmNhcmRu", 
+          "dW1iZXIYBSACKAkSEAoIdXNlcnR5cGUYBiACKAkSDwoHYmlsbGluZxgHIAIo", 
+          "CRIOCgZ2ZXJpZnkYCCACKAkSDwoHYmFsYW5jZRgJIAIoCRISCgpyZW1haW50", 
+          "aW1lGAogAigJEhEKCXN0YXJ0dGltZRgLIAIoCRIQCgh1c2VkdGltZRgMIAIo", 
+          "CRIQCghzdG9wdGltZRgNIAIoCRILCgNtYWMYDiACKAkSCgoCaXAYDyACKAki", 
+          "xQEKC1N0cnVjdEFwcGx5EgwKBG5hbWUYASACKAkSDwoHcmlnaHRpZBgCIAIo", 
+          "BRISCgpjYXJkbnVtYmVyGAMgAigJEhUKDWNoYXJnZV9hbW91bnQYBCACKAUS", 
+          "FAoMYm9udXNfYW1vdW50GAUgAigFEhAKCG9wZXJhdG9yGAYgAigJEg8KB2Fk", 
+          "ZHRpbWUYByACKAkSDwoHcGF5bW9kZRgIIAIoBRIRCglyZWNlaXB0aWQYCSAC", 
+          "KAkSDwoHYXBwbHlpZBgKIAIoBSKhAQoKU3RydWN0Q2FyZBIMCgRuYW1lGAEg", 
+          "AigJEg4KBmdlbmRlchgCIAIoBRIOCgZuYXRpb24YAyACKAkSDgoGbnVtYmVy", 
+          "GAQgAigJEhAKCGJpcnRoZGF5GAUgAigJEgsKA3ZsZBgGIAIoCRIPCgdhZGRy", 
+          "ZXNzGAcgAigJEhQKDG9yZ2FuaXphdGlvbhgIIAIoCRIPCgdoZWFkVXJsGAkg", 
+          "AigJIqsCCgxTdHJ1Y3RNZW1iZXISEAoIbWVtYmVyaWQYASACKAUSEgoKY2Fy", 
+          "ZG51bWJlchgCIAIoCRIOCgZnZW5kZXIYAyACKAkSDAoEbmFtZRgEIAIoCRIS", 
+          "CgptZW1iZXJ0eXBlGAUgAigFEg0KBXBob25lGAYgAigJEhAKCG9wZW50aW1l", 
+          "GAcgAigJEhAKCGxhc3R0aW1lGAggAigJEg8KB2JhbGFuY2UYCSABKAUSFQoN", 
+          "dG90YWxSZWNoYXJnZRgKIAEoBRISCgp0b3RhbEJvbnVzGAsgASgFEg8KB2lu", 
+          "dGVnYWwYDCABKAUSEwoLdXNlZEludGVnYWwYDSABKAUSDgoGc3RhdHVzGA4g", 
+          "ASgFEg4KBnZlcmlmeRgPIAEoBRIOCgZyZWFzb24YECABKAkiUwoKU3RydWN0", 
+          "UGFnZRIQCghwYWdlc2l6ZRgBIAIoBRIRCglwYWdlYmVnaW4YAiACKAUSEQoJ", 
+          "ZmllbGRuYW1lGAMgAigFEg0KBW9yZGVyGAQgAigFIsYBCg5TdHJ1Y3RVc2Vy", 
+          "QXJlYRIQCgh1c2VydHlwZRgBIAIoBRIQCghhcmVhdHlwZRgCIAIoBRIVCg1v", 
+          "cmRpbmFyeVByaWNlGAMgAigFEhgKEG9yZGluYXJ5SW50ZXJ2YWwYBCACKAUS", 
+          "EwoLb3JkaW5hcnlNaW4YBSACKAUSEgoKbmlnaHRQcmljZRgGIAIoBRIVCg1u", 
+          "aWdodEludGVydmFsGAcgAigFEhAKCG5pZ2h0TWluGAggAigFEg0KBWluZGV4", 
+          "GAkgAigFInUKEVN0cnVjdEJpbGxTZXR0aW5nEgwKBGRheTAYASACKAUSDAoE", 
+          "ZGF5MRgCIAIoBRIMCgRkYXkyGAMgAigFEgwKBGRheTMYBCACKAUSDAoEZGF5", 
+          "NBgFIAIoBRIMCgRkYXk1GAYgAigFEgwKBGRheTYYByACKAUiOAoOU3RydWN0", 
+          "RGljdEl0ZW0SCgoCaWQYASACKAUSDAoEY29kZRgCIAIoBRIMCgRpdGVtGAMg", 
+          "AygJIqYBCgtTdHJ1Y3RHb29kcxIPCgdnb29kc0lkGAEgAigFEhEKCWdvb2Rz", 
+          "TmFtZRgCIAIoCRIQCghnb29kc0ltZxgDIAIoCRIQCghjYXRlZ29yeRgEIAIo", 
+          "BRINCgVwcmljZRgFIAIoCRISCgp1c2VJbnRlZ2FsGAYgAigIEgwKBGhpZGUY", 
+          "ByACKAgSDwoHaW50ZWdhbBgIIAIoBRINCgVjb3VudBgJIAIoBSKmAQoKU3Ry", 
+          "dWN0U2FsZRIPCgdvcmRlcmlkGAEgAigFEhAKCHVzZXJuYW1lGAIgAigJEhIK", 
+          "CmNhcmRudW1iZXIYAyACKAkSEAoIYXJlYW5hbWUYBCACKAkSEQoJZ29vZHNu", 
+          "YW1lGAUgAigJEgsKA251bRgGIAIoBRINCgVtb25leRgHIAIoBRIPCgdhZGR0", 
+          "aW1lGAggAigJEg8KB3BheW1vZGUYCSACKAkiUAoNU3RydWN0U2FsZVRvcBIQ", 
+          "CghjYXRlZ29yeRgBIAIoBRIRCglnb29kc25hbWUYAiACKAkSCwoDbnVtGAMg", 
+          "AigFEg0KBW1vbmV5GAQgAigFIk4KC1N0cnVjdFN0b2NrEhEKCWdvb2RzbmFt", 
+          "ZRgBIAIoCRIQCghjYXRlZ29yeRgCIAIoBRINCgVwcmljZRgDIAIoCRILCgNu", 
+          "dW0YBCACKAUiygEKC1N0cnVjdE9yZGVyEg8KB29yZGVyaWQYASACKAUSEAoI", 
+          "dXNlcm5hbWUYAiACKAkSEgoKY2FyZG51bWJlchgDIAIoCRIQCghhcmVhbmFt", 
+          "ZRgEIAIoCRINCgVtb25leRgFIAIoBRIPCgdhZGR0aW1lGAYgAigJEhAKCHBy", 
+          "b2N0aW1lGAcgAigJEhAKCG9wZXJhdG9yGAggAigJEg4KBnN0YXR1cxgJIAIo", 
+          "CRIPCgdwYXltb2RlGAogAigJEg0KBXBheWlkGAsgAigJIlQKEVN0cnVjdE9y", 
+          "ZGVyRGV0YWlsEhEKCWdvb2RzbmFtZRgBIAIoCRIQCghjYXRlZ29yeRgCIAIo", 
+          "BRINCgVwcmljZRgDIAIoCRILCgNudW0YBCACKAUiuQEKDVN0cnVjdENvbW1l", 
+          "bnQSDwoHYWRkdGltZRgBIAIoCRIQCghjdXN0b21lchgCIAIoCRISCgpjYXJk", 
+          "bnVtYmVyGAMgAigJEg0KBWJvbnVzGAQgAigFEg0KBXN0YWZmGAUgASgJEg0K", 
+          "BXBvaW50GAYgASgFEhMKC2Vudmlyb25tZW50GAcgASgFEg8KB3NlcnZpY2UY", 
+          "CCABKAUSDgoGZGV2aWNlGAkgASgFEg4KBmRldGFpbBgKIAEoCSJqCg1TdHJ1", 
+          "Y3RQZXJmb3JtEgwKBG5hbWUYASACKAkSDAoEcm9sZRgCIAIoCRINCgVob3Vy", 
+          "cxgDIAIoBRIOCgZjaGFyZ2UYBCACKAUSDQoFc2FsZXMYBSACKAUSDwoHc2F0", 
+          "aXNmeRgGIAIoBSJdCglTdHJ1Y3RMb2cSEAoIb3BlcmF0b3IYASACKAkSEQoJ", 
+          "b3BlcmF0aW9uGAIgAigJEgoKAmlwGAMgAigJEg8KB2FkZHRpbWUYBCACKAkS", 
+          "DgoGc3RhdHVzGAUgAigJIjMKD1N0cnVjdEFyZWFUb3RhbBIQCghhcmVhbmFt", 
+          "ZRgBIAIoCRIOCgZhbW91bnQYAiACKAUixAEKClN0cnVjdEVhcm4SEAoIZGF0", 
+          "ZXRpbWUYASACKAUSFQoNYWxpcGF5X2NoYXJnZRgCIAIoBRITCgthbGlwYXlf", 
+          "c2FsZRgDIAIoBRIVCg10ZW5wYXlfY2hhcmdlGAQgAigFEhMKC3RlbnBheV9z", 
+          "YWxlGAUgAigFEhMKC2Nhc2hfY2hhcmdlGAYgAigFEhEKCWNhc2hfc2FsZRgH", 
+          "IAIoBRIkCgphcmVhX3RvdGFsGAggAygLMhAuU3RydWN0QXJlYVRvdGFsIkoK", 
+          "ClN0cnVjdENhbGwSDgoGY2FsbGlkGAEgAigFEg4KBmNhbGxlchgCIAIoCRIO", 
+          "CgZkZXZpY2UYAyACKAkSDAoEaW5mbxgEIAIoCSLSAQoLU3RydWN0U2hpZnQS", 
+          "DwoHc2hpZnRpZBgBIAIoBRIUCgxkZWxpdmVyZWRfYnkYAiACKAkSEQoJc3Rh", 
+          "cnR0aW1lGAMgAigJEhAKCHN0b3B0aW1lGAQgAigJEhUKDWNoYXJnZV9hbW91", 
+          "bnQYBSACKAUSEwoLc2FsZV9hbW91bnQYBiACKAUSFQoNcmVmdW5kX2Ftb3Vu", 
+          "dBgHIAIoBRITCgtyZWNlaXZlZF9ieRgIIAIoCRIPCgdpc2NoZWNrGAkgAigF", 
+          "Eg4KBnJlbWFyaxgKIAIoCSooCgRUeXBlEggKBElURU0QARIMCghDVVJSRU5D", 
+          "WRACEggKBFBBQ0sQA0IrCh1jb20uc2t5c29mdC5jb3JlLmF1dG8ubWVzc2Fn", 
+        "ZUIKQmFzZVN0cnVjdA=="));
     pbd::FileDescriptor.InternalDescriptorAssigner assigner = delegate(pbd::FileDescriptor root) {
       descriptor = root;
       internal__static_StructErrorTip__Descriptor = Descriptor.MessageTypes[0];
@@ -187,91 +200,99 @@ public static partial class BaseStruct {
       internal__static_StructArea__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructArea, global::StructArea.Builder>(internal__static_StructArea__Descriptor,
               new string[] { "Areaid", "Name", });
-      internal__static_StructConsum__Descriptor = Descriptor.MessageTypes[5];
+      internal__static_StructCharge__Descriptor = Descriptor.MessageTypes[5];
+      internal__static_StructCharge__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::StructCharge, global::StructCharge.Builder>(internal__static_StructCharge__Descriptor,
+              new string[] { "Productid", "Name", "Rightid", "Cardnumber", "Areaid", "ChargeAmount", "BonusAmount", "Addtime", "Paymode", "Receiptid", "Status", });
+      internal__static_StructConsum__Descriptor = Descriptor.MessageTypes[6];
       internal__static_StructConsum__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructConsum, global::StructConsum.Builder>(internal__static_StructConsum__Descriptor,
               new string[] { "Consumid", "Username", "Cardnumber", "Area", "Consumtype", "Money", "Time", "Paymode", });
-      internal__static_StructEmbarkation__Descriptor = Descriptor.MessageTypes[6];
+      internal__static_StructEmbarkation__Descriptor = Descriptor.MessageTypes[7];
       internal__static_StructEmbarkation__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructEmbarkation, global::StructEmbarkation.Builder>(internal__static_StructEmbarkation__Descriptor,
               new string[] { "Computer", "Cardnumber", "Username", "Usertype", "Starttime", "Stoptime", "Area", "Usedtime", "Money", "Mac", "Ip", });
-      internal__static_StructRealTime__Descriptor = Descriptor.MessageTypes[7];
+      internal__static_StructRealTime__Descriptor = Descriptor.MessageTypes[8];
       internal__static_StructRealTime__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructRealTime, global::StructRealTime.Builder>(internal__static_StructRealTime__Descriptor,
               new string[] { "Computerid", "Computer", "Area", "Status", "Cardnumber", "Usertype", "Billing", "Verify", "Balance", "Remaintime", "Starttime", "Usedtime", "Stoptime", "Mac", "Ip", });
-      internal__static_StructCard__Descriptor = Descriptor.MessageTypes[8];
+      internal__static_StructApply__Descriptor = Descriptor.MessageTypes[9];
+      internal__static_StructApply__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::StructApply, global::StructApply.Builder>(internal__static_StructApply__Descriptor,
+              new string[] { "Name", "Rightid", "Cardnumber", "ChargeAmount", "BonusAmount", "Operator", "Addtime", "Paymode", "Receiptid", "Applyid", });
+      internal__static_StructCard__Descriptor = Descriptor.MessageTypes[10];
       internal__static_StructCard__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructCard, global::StructCard.Builder>(internal__static_StructCard__Descriptor,
               new string[] { "Name", "Gender", "Nation", "Number", "Birthday", "Vld", "Address", "Organization", "HeadUrl", });
-      internal__static_StructMember__Descriptor = Descriptor.MessageTypes[9];
+      internal__static_StructMember__Descriptor = Descriptor.MessageTypes[11];
       internal__static_StructMember__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructMember, global::StructMember.Builder>(internal__static_StructMember__Descriptor,
               new string[] { "Memberid", "Cardnumber", "Gender", "Name", "Membertype", "Phone", "Opentime", "Lasttime", "Balance", "TotalRecharge", "TotalBonus", "Integal", "UsedIntegal", "Status", "Verify", "Reason", });
-      internal__static_StructPage__Descriptor = Descriptor.MessageTypes[10];
+      internal__static_StructPage__Descriptor = Descriptor.MessageTypes[12];
       internal__static_StructPage__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructPage, global::StructPage.Builder>(internal__static_StructPage__Descriptor,
               new string[] { "Pagesize", "Pagebegin", "Fieldname", "Order", });
-      internal__static_StructUserArea__Descriptor = Descriptor.MessageTypes[11];
+      internal__static_StructUserArea__Descriptor = Descriptor.MessageTypes[13];
       internal__static_StructUserArea__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructUserArea, global::StructUserArea.Builder>(internal__static_StructUserArea__Descriptor,
               new string[] { "Usertype", "Areatype", "OrdinaryPrice", "OrdinaryInterval", "OrdinaryMin", "NightPrice", "NightInterval", "NightMin", "Index", });
-      internal__static_StructBillSetting__Descriptor = Descriptor.MessageTypes[12];
+      internal__static_StructBillSetting__Descriptor = Descriptor.MessageTypes[14];
       internal__static_StructBillSetting__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructBillSetting, global::StructBillSetting.Builder>(internal__static_StructBillSetting__Descriptor,
               new string[] { "Day0", "Day1", "Day2", "Day3", "Day4", "Day5", "Day6", });
-      internal__static_StructDictItem__Descriptor = Descriptor.MessageTypes[13];
+      internal__static_StructDictItem__Descriptor = Descriptor.MessageTypes[15];
       internal__static_StructDictItem__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructDictItem, global::StructDictItem.Builder>(internal__static_StructDictItem__Descriptor,
               new string[] { "Id", "Code", "Item", });
-      internal__static_StructGoods__Descriptor = Descriptor.MessageTypes[14];
+      internal__static_StructGoods__Descriptor = Descriptor.MessageTypes[16];
       internal__static_StructGoods__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructGoods, global::StructGoods.Builder>(internal__static_StructGoods__Descriptor,
               new string[] { "GoodsId", "GoodsName", "GoodsImg", "Category", "Price", "UseIntegal", "Hide", "Integal", "Count", });
-      internal__static_StructSale__Descriptor = Descriptor.MessageTypes[15];
+      internal__static_StructSale__Descriptor = Descriptor.MessageTypes[17];
       internal__static_StructSale__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructSale, global::StructSale.Builder>(internal__static_StructSale__Descriptor,
               new string[] { "Orderid", "Username", "Cardnumber", "Areaname", "Goodsname", "Num", "Money", "Addtime", "Paymode", });
-      internal__static_StructSaleTop__Descriptor = Descriptor.MessageTypes[16];
+      internal__static_StructSaleTop__Descriptor = Descriptor.MessageTypes[18];
       internal__static_StructSaleTop__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructSaleTop, global::StructSaleTop.Builder>(internal__static_StructSaleTop__Descriptor,
               new string[] { "Category", "Goodsname", "Num", "Money", });
-      internal__static_StructStock__Descriptor = Descriptor.MessageTypes[17];
+      internal__static_StructStock__Descriptor = Descriptor.MessageTypes[19];
       internal__static_StructStock__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructStock, global::StructStock.Builder>(internal__static_StructStock__Descriptor,
               new string[] { "Goodsname", "Category", "Price", "Num", });
-      internal__static_StructOrder__Descriptor = Descriptor.MessageTypes[18];
+      internal__static_StructOrder__Descriptor = Descriptor.MessageTypes[20];
       internal__static_StructOrder__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructOrder, global::StructOrder.Builder>(internal__static_StructOrder__Descriptor,
               new string[] { "Orderid", "Username", "Cardnumber", "Areaname", "Money", "Addtime", "Proctime", "Operator", "Status", "Paymode", "Payid", });
-      internal__static_StructOrderDetail__Descriptor = Descriptor.MessageTypes[19];
+      internal__static_StructOrderDetail__Descriptor = Descriptor.MessageTypes[21];
       internal__static_StructOrderDetail__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructOrderDetail, global::StructOrderDetail.Builder>(internal__static_StructOrderDetail__Descriptor,
               new string[] { "Goodsname", "Category", "Price", "Num", });
-      internal__static_StructComment__Descriptor = Descriptor.MessageTypes[20];
+      internal__static_StructComment__Descriptor = Descriptor.MessageTypes[22];
       internal__static_StructComment__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructComment, global::StructComment.Builder>(internal__static_StructComment__Descriptor,
               new string[] { "Addtime", "Customer", "Cardnumber", "Bonus", "Staff", "Point", "Environment", "Service", "Device", "Detail", });
-      internal__static_StructPerform__Descriptor = Descriptor.MessageTypes[21];
+      internal__static_StructPerform__Descriptor = Descriptor.MessageTypes[23];
       internal__static_StructPerform__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructPerform, global::StructPerform.Builder>(internal__static_StructPerform__Descriptor,
               new string[] { "Name", "Role", "Hours", "Charge", "Sales", "Satisfy", });
-      internal__static_StructLog__Descriptor = Descriptor.MessageTypes[22];
+      internal__static_StructLog__Descriptor = Descriptor.MessageTypes[24];
       internal__static_StructLog__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructLog, global::StructLog.Builder>(internal__static_StructLog__Descriptor,
               new string[] { "Operator", "Operation", "Ip", "Addtime", "Status", });
-      internal__static_StructAreaTotal__Descriptor = Descriptor.MessageTypes[23];
+      internal__static_StructAreaTotal__Descriptor = Descriptor.MessageTypes[25];
       internal__static_StructAreaTotal__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructAreaTotal, global::StructAreaTotal.Builder>(internal__static_StructAreaTotal__Descriptor,
               new string[] { "Areaname", "Amount", });
-      internal__static_StructEarn__Descriptor = Descriptor.MessageTypes[24];
+      internal__static_StructEarn__Descriptor = Descriptor.MessageTypes[26];
       internal__static_StructEarn__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructEarn, global::StructEarn.Builder>(internal__static_StructEarn__Descriptor,
               new string[] { "Datetime", "AlipayCharge", "AlipaySale", "TenpayCharge", "TenpaySale", "CashCharge", "CashSale", "AreaTotal", });
-      internal__static_StructCall__Descriptor = Descriptor.MessageTypes[25];
+      internal__static_StructCall__Descriptor = Descriptor.MessageTypes[27];
       internal__static_StructCall__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructCall, global::StructCall.Builder>(internal__static_StructCall__Descriptor,
               new string[] { "Callid", "Caller", "Device", "Info", });
-      internal__static_StructShift__Descriptor = Descriptor.MessageTypes[26];
+      internal__static_StructShift__Descriptor = Descriptor.MessageTypes[28];
       internal__static_StructShift__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructShift, global::StructShift.Builder>(internal__static_StructShift__Descriptor,
               new string[] { "Shiftid", "DeliveredBy", "Starttime", "Stoptime", "ChargeAmount", "SaleAmount", "RefundAmount", "ReceivedBy", "Ischeck", "Remark", });
@@ -2585,6 +2606,727 @@ public sealed partial class StructArea : pb::GeneratedMessage<StructArea, Struct
 }
 
 [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+public sealed partial class StructCharge : pb::GeneratedMessage<StructCharge, StructCharge.Builder> {
+  private StructCharge() { }
+  private static readonly StructCharge defaultInstance = new StructCharge().MakeReadOnly();
+  private static readonly string[] _structChargeFieldNames = new string[] { "addtime", "areaid", "bonus_amount", "cardnumber", "charge_amount", "name", "paymode", "productid", "receiptid", "rightid", "status" };
+  private static readonly uint[] _structChargeFieldTags = new uint[] { 66, 40, 56, 34, 48, 18, 72, 10, 82, 24, 88 };
+  public static StructCharge DefaultInstance {
+    get { return defaultInstance; }
+  }
+  
+  public override StructCharge DefaultInstanceForType {
+    get { return DefaultInstance; }
+  }
+  
+  protected override StructCharge ThisMessage {
+    get { return this; }
+  }
+  
+  public static pbd::MessageDescriptor Descriptor {
+    get { return global::BaseStruct.internal__static_StructCharge__Descriptor; }
+  }
+  
+  protected override pb::FieldAccess.FieldAccessorTable<StructCharge, StructCharge.Builder> InternalFieldAccessors {
+    get { return global::BaseStruct.internal__static_StructCharge__FieldAccessorTable; }
+  }
+  
+  public const int ProductidFieldNumber = 1;
+  private bool hasProductid;
+  private string productid_ = "";
+  public bool HasProductid {
+    get { return hasProductid; }
+  }
+  public string Productid {
+    get { return productid_; }
+  }
+  
+  public const int NameFieldNumber = 2;
+  private bool hasName;
+  private string name_ = "";
+  public bool HasName {
+    get { return hasName; }
+  }
+  public string Name {
+    get { return name_; }
+  }
+  
+  public const int RightidFieldNumber = 3;
+  private bool hasRightid;
+  private int rightid_;
+  public bool HasRightid {
+    get { return hasRightid; }
+  }
+  public int Rightid {
+    get { return rightid_; }
+  }
+  
+  public const int CardnumberFieldNumber = 4;
+  private bool hasCardnumber;
+  private string cardnumber_ = "";
+  public bool HasCardnumber {
+    get { return hasCardnumber; }
+  }
+  public string Cardnumber {
+    get { return cardnumber_; }
+  }
+  
+  public const int AreaidFieldNumber = 5;
+  private bool hasAreaid;
+  private int areaid_;
+  public bool HasAreaid {
+    get { return hasAreaid; }
+  }
+  public int Areaid {
+    get { return areaid_; }
+  }
+  
+  public const int ChargeAmountFieldNumber = 6;
+  private bool hasChargeAmount;
+  private int chargeAmount_;
+  public bool HasChargeAmount {
+    get { return hasChargeAmount; }
+  }
+  public int ChargeAmount {
+    get { return chargeAmount_; }
+  }
+  
+  public const int BonusAmountFieldNumber = 7;
+  private bool hasBonusAmount;
+  private int bonusAmount_;
+  public bool HasBonusAmount {
+    get { return hasBonusAmount; }
+  }
+  public int BonusAmount {
+    get { return bonusAmount_; }
+  }
+  
+  public const int AddtimeFieldNumber = 8;
+  private bool hasAddtime;
+  private string addtime_ = "";
+  public bool HasAddtime {
+    get { return hasAddtime; }
+  }
+  public string Addtime {
+    get { return addtime_; }
+  }
+  
+  public const int PaymodeFieldNumber = 9;
+  private bool hasPaymode;
+  private int paymode_;
+  public bool HasPaymode {
+    get { return hasPaymode; }
+  }
+  public int Paymode {
+    get { return paymode_; }
+  }
+  
+  public const int ReceiptidFieldNumber = 10;
+  private bool hasReceiptid;
+  private string receiptid_ = "";
+  public bool HasReceiptid {
+    get { return hasReceiptid; }
+  }
+  public string Receiptid {
+    get { return receiptid_; }
+  }
+  
+  public const int StatusFieldNumber = 11;
+  private bool hasStatus;
+  private int status_;
+  public bool HasStatus {
+    get { return hasStatus; }
+  }
+  public int Status {
+    get { return status_; }
+  }
+  
+  public override bool IsInitialized {
+    get {
+      if (!hasProductid) return false;
+      if (!hasName) return false;
+      if (!hasRightid) return false;
+      if (!hasCardnumber) return false;
+      if (!hasAreaid) return false;
+      if (!hasChargeAmount) return false;
+      if (!hasBonusAmount) return false;
+      if (!hasAddtime) return false;
+      if (!hasPaymode) return false;
+      if (!hasReceiptid) return false;
+      if (!hasStatus) return false;
+      return true;
+    }
+  }
+  
+  public override void WriteTo(pb::ICodedOutputStream output) {
+    CalcSerializedSize();
+    string[] field_names = _structChargeFieldNames;
+    if (hasProductid) {
+      output.WriteString(1, field_names[7], Productid);
+    }
+    if (hasName) {
+      output.WriteString(2, field_names[5], Name);
+    }
+    if (hasRightid) {
+      output.WriteInt32(3, field_names[9], Rightid);
+    }
+    if (hasCardnumber) {
+      output.WriteString(4, field_names[3], Cardnumber);
+    }
+    if (hasAreaid) {
+      output.WriteInt32(5, field_names[1], Areaid);
+    }
+    if (hasChargeAmount) {
+      output.WriteInt32(6, field_names[4], ChargeAmount);
+    }
+    if (hasBonusAmount) {
+      output.WriteInt32(7, field_names[2], BonusAmount);
+    }
+    if (hasAddtime) {
+      output.WriteString(8, field_names[0], Addtime);
+    }
+    if (hasPaymode) {
+      output.WriteInt32(9, field_names[6], Paymode);
+    }
+    if (hasReceiptid) {
+      output.WriteString(10, field_names[8], Receiptid);
+    }
+    if (hasStatus) {
+      output.WriteInt32(11, field_names[10], Status);
+    }
+    UnknownFields.WriteTo(output);
+  }
+  
+  private int memoizedSerializedSize = -1;
+  public override int SerializedSize {
+    get {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+      return CalcSerializedSize();
+    }
+  }
+  
+  private int CalcSerializedSize() {
+    int size = memoizedSerializedSize;
+    if (size != -1) return size;
+    
+    size = 0;
+    if (hasProductid) {
+      size += pb::CodedOutputStream.ComputeStringSize(1, Productid);
+    }
+    if (hasName) {
+      size += pb::CodedOutputStream.ComputeStringSize(2, Name);
+    }
+    if (hasRightid) {
+      size += pb::CodedOutputStream.ComputeInt32Size(3, Rightid);
+    }
+    if (hasCardnumber) {
+      size += pb::CodedOutputStream.ComputeStringSize(4, Cardnumber);
+    }
+    if (hasAreaid) {
+      size += pb::CodedOutputStream.ComputeInt32Size(5, Areaid);
+    }
+    if (hasChargeAmount) {
+      size += pb::CodedOutputStream.ComputeInt32Size(6, ChargeAmount);
+    }
+    if (hasBonusAmount) {
+      size += pb::CodedOutputStream.ComputeInt32Size(7, BonusAmount);
+    }
+    if (hasAddtime) {
+      size += pb::CodedOutputStream.ComputeStringSize(8, Addtime);
+    }
+    if (hasPaymode) {
+      size += pb::CodedOutputStream.ComputeInt32Size(9, Paymode);
+    }
+    if (hasReceiptid) {
+      size += pb::CodedOutputStream.ComputeStringSize(10, Receiptid);
+    }
+    if (hasStatus) {
+      size += pb::CodedOutputStream.ComputeInt32Size(11, Status);
+    }
+    size += UnknownFields.SerializedSize;
+    memoizedSerializedSize = size;
+    return size;
+  }
+  public static StructCharge ParseFrom(pb::ByteString data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static StructCharge ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static StructCharge ParseFrom(byte[] data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static StructCharge ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static StructCharge ParseFrom(global::System.IO.Stream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static StructCharge ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  public static StructCharge ParseDelimitedFrom(global::System.IO.Stream input) {
+    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
+  }
+  public static StructCharge ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
+  }
+  public static StructCharge ParseFrom(pb::ICodedInputStream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static StructCharge ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  private StructCharge MakeReadOnly() {
+    return this;
+  }
+  
+  public static Builder CreateBuilder() { return new Builder(); }
+  public override Builder ToBuilder() { return CreateBuilder(this); }
+  public override Builder CreateBuilderForType() { return new Builder(); }
+  public static Builder CreateBuilder(StructCharge prototype) {
+    return new Builder(prototype);
+  }
+  
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class Builder : pb::GeneratedBuilder<StructCharge, Builder> {
+    protected override Builder ThisBuilder {
+      get { return this; }
+    }
+    public Builder() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+    }
+    internal Builder(StructCharge cloneFrom) {
+      result = cloneFrom;
+      resultIsReadOnly = true;
+    }
+    
+    private bool resultIsReadOnly;
+    private StructCharge result;
+    
+    private StructCharge PrepareBuilder() {
+      if (resultIsReadOnly) {
+        StructCharge original = result;
+        result = new StructCharge();
+        resultIsReadOnly = false;
+        MergeFrom(original);
+      }
+      return result;
+    }
+    
+    public override bool IsInitialized {
+      get { return result.IsInitialized; }
+    }
+    
+    protected override StructCharge MessageBeingBuilt {
+      get { return PrepareBuilder(); }
+    }
+    
+    public override Builder Clear() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+      return this;
+    }
+    
+    public override Builder Clone() {
+      if (resultIsReadOnly) {
+        return new Builder(result);
+      } else {
+        return new Builder().MergeFrom(result);
+      }
+    }
+    
+    public override pbd::MessageDescriptor DescriptorForType {
+      get { return global::StructCharge.Descriptor; }
+    }
+    
+    public override StructCharge DefaultInstanceForType {
+      get { return global::StructCharge.DefaultInstance; }
+    }
+    
+    public override StructCharge BuildPartial() {
+      if (resultIsReadOnly) {
+        return result;
+      }
+      resultIsReadOnly = true;
+      return result.MakeReadOnly();
+    }
+    
+    public override Builder MergeFrom(pb::IMessage other) {
+      if (other is StructCharge) {
+        return MergeFrom((StructCharge) other);
+      } else {
+        base.MergeFrom(other);
+        return this;
+      }
+    }
+    
+    public override Builder MergeFrom(StructCharge other) {
+      if (other == global::StructCharge.DefaultInstance) return this;
+      PrepareBuilder();
+      if (other.HasProductid) {
+        Productid = other.Productid;
+      }
+      if (other.HasName) {
+        Name = other.Name;
+      }
+      if (other.HasRightid) {
+        Rightid = other.Rightid;
+      }
+      if (other.HasCardnumber) {
+        Cardnumber = other.Cardnumber;
+      }
+      if (other.HasAreaid) {
+        Areaid = other.Areaid;
+      }
+      if (other.HasChargeAmount) {
+        ChargeAmount = other.ChargeAmount;
+      }
+      if (other.HasBonusAmount) {
+        BonusAmount = other.BonusAmount;
+      }
+      if (other.HasAddtime) {
+        Addtime = other.Addtime;
+      }
+      if (other.HasPaymode) {
+        Paymode = other.Paymode;
+      }
+      if (other.HasReceiptid) {
+        Receiptid = other.Receiptid;
+      }
+      if (other.HasStatus) {
+        Status = other.Status;
+      }
+      this.MergeUnknownFields(other.UnknownFields);
+      return this;
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input) {
+      return MergeFrom(input, pb::ExtensionRegistry.Empty);
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+      PrepareBuilder();
+      pb::UnknownFieldSet.Builder unknownFields = null;
+      uint tag;
+      string field_name;
+      while (input.ReadTag(out tag, out field_name)) {
+        if(tag == 0 && field_name != null) {
+          int field_ordinal = global::System.Array.BinarySearch(_structChargeFieldNames, field_name, global::System.StringComparer.Ordinal);
+          if(field_ordinal >= 0)
+            tag = _structChargeFieldTags[field_ordinal];
+          else {
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            continue;
+          }
+        }
+        switch (tag) {
+          case 0: {
+            throw pb::InvalidProtocolBufferException.InvalidTag();
+          }
+          default: {
+            if (pb::WireFormat.IsEndGroupTag(tag)) {
+              if (unknownFields != null) {
+                this.UnknownFields = unknownFields.Build();
+              }
+              return this;
+            }
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            break;
+          }
+          case 10: {
+            result.hasProductid = input.ReadString(ref result.productid_);
+            break;
+          }
+          case 18: {
+            result.hasName = input.ReadString(ref result.name_);
+            break;
+          }
+          case 24: {
+            result.hasRightid = input.ReadInt32(ref result.rightid_);
+            break;
+          }
+          case 34: {
+            result.hasCardnumber = input.ReadString(ref result.cardnumber_);
+            break;
+          }
+          case 40: {
+            result.hasAreaid = input.ReadInt32(ref result.areaid_);
+            break;
+          }
+          case 48: {
+            result.hasChargeAmount = input.ReadInt32(ref result.chargeAmount_);
+            break;
+          }
+          case 56: {
+            result.hasBonusAmount = input.ReadInt32(ref result.bonusAmount_);
+            break;
+          }
+          case 66: {
+            result.hasAddtime = input.ReadString(ref result.addtime_);
+            break;
+          }
+          case 72: {
+            result.hasPaymode = input.ReadInt32(ref result.paymode_);
+            break;
+          }
+          case 82: {
+            result.hasReceiptid = input.ReadString(ref result.receiptid_);
+            break;
+          }
+          case 88: {
+            result.hasStatus = input.ReadInt32(ref result.status_);
+            break;
+          }
+        }
+      }
+      
+      if (unknownFields != null) {
+        this.UnknownFields = unknownFields.Build();
+      }
+      return this;
+    }
+    
+    
+    public bool HasProductid {
+      get { return result.hasProductid; }
+    }
+    public string Productid {
+      get { return result.Productid; }
+      set { SetProductid(value); }
+    }
+    public Builder SetProductid(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasProductid = true;
+      result.productid_ = value;
+      return this;
+    }
+    public Builder ClearProductid() {
+      PrepareBuilder();
+      result.hasProductid = false;
+      result.productid_ = "";
+      return this;
+    }
+    
+    public bool HasName {
+      get { return result.hasName; }
+    }
+    public string Name {
+      get { return result.Name; }
+      set { SetName(value); }
+    }
+    public Builder SetName(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasName = true;
+      result.name_ = value;
+      return this;
+    }
+    public Builder ClearName() {
+      PrepareBuilder();
+      result.hasName = false;
+      result.name_ = "";
+      return this;
+    }
+    
+    public bool HasRightid {
+      get { return result.hasRightid; }
+    }
+    public int Rightid {
+      get { return result.Rightid; }
+      set { SetRightid(value); }
+    }
+    public Builder SetRightid(int value) {
+      PrepareBuilder();
+      result.hasRightid = true;
+      result.rightid_ = value;
+      return this;
+    }
+    public Builder ClearRightid() {
+      PrepareBuilder();
+      result.hasRightid = false;
+      result.rightid_ = 0;
+      return this;
+    }
+    
+    public bool HasCardnumber {
+      get { return result.hasCardnumber; }
+    }
+    public string Cardnumber {
+      get { return result.Cardnumber; }
+      set { SetCardnumber(value); }
+    }
+    public Builder SetCardnumber(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasCardnumber = true;
+      result.cardnumber_ = value;
+      return this;
+    }
+    public Builder ClearCardnumber() {
+      PrepareBuilder();
+      result.hasCardnumber = false;
+      result.cardnumber_ = "";
+      return this;
+    }
+    
+    public bool HasAreaid {
+      get { return result.hasAreaid; }
+    }
+    public int Areaid {
+      get { return result.Areaid; }
+      set { SetAreaid(value); }
+    }
+    public Builder SetAreaid(int value) {
+      PrepareBuilder();
+      result.hasAreaid = true;
+      result.areaid_ = value;
+      return this;
+    }
+    public Builder ClearAreaid() {
+      PrepareBuilder();
+      result.hasAreaid = false;
+      result.areaid_ = 0;
+      return this;
+    }
+    
+    public bool HasChargeAmount {
+      get { return result.hasChargeAmount; }
+    }
+    public int ChargeAmount {
+      get { return result.ChargeAmount; }
+      set { SetChargeAmount(value); }
+    }
+    public Builder SetChargeAmount(int value) {
+      PrepareBuilder();
+      result.hasChargeAmount = true;
+      result.chargeAmount_ = value;
+      return this;
+    }
+    public Builder ClearChargeAmount() {
+      PrepareBuilder();
+      result.hasChargeAmount = false;
+      result.chargeAmount_ = 0;
+      return this;
+    }
+    
+    public bool HasBonusAmount {
+      get { return result.hasBonusAmount; }
+    }
+    public int BonusAmount {
+      get { return result.BonusAmount; }
+      set { SetBonusAmount(value); }
+    }
+    public Builder SetBonusAmount(int value) {
+      PrepareBuilder();
+      result.hasBonusAmount = true;
+      result.bonusAmount_ = value;
+      return this;
+    }
+    public Builder ClearBonusAmount() {
+      PrepareBuilder();
+      result.hasBonusAmount = false;
+      result.bonusAmount_ = 0;
+      return this;
+    }
+    
+    public bool HasAddtime {
+      get { return result.hasAddtime; }
+    }
+    public string Addtime {
+      get { return result.Addtime; }
+      set { SetAddtime(value); }
+    }
+    public Builder SetAddtime(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasAddtime = true;
+      result.addtime_ = value;
+      return this;
+    }
+    public Builder ClearAddtime() {
+      PrepareBuilder();
+      result.hasAddtime = false;
+      result.addtime_ = "";
+      return this;
+    }
+    
+    public bool HasPaymode {
+      get { return result.hasPaymode; }
+    }
+    public int Paymode {
+      get { return result.Paymode; }
+      set { SetPaymode(value); }
+    }
+    public Builder SetPaymode(int value) {
+      PrepareBuilder();
+      result.hasPaymode = true;
+      result.paymode_ = value;
+      return this;
+    }
+    public Builder ClearPaymode() {
+      PrepareBuilder();
+      result.hasPaymode = false;
+      result.paymode_ = 0;
+      return this;
+    }
+    
+    public bool HasReceiptid {
+      get { return result.hasReceiptid; }
+    }
+    public string Receiptid {
+      get { return result.Receiptid; }
+      set { SetReceiptid(value); }
+    }
+    public Builder SetReceiptid(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasReceiptid = true;
+      result.receiptid_ = value;
+      return this;
+    }
+    public Builder ClearReceiptid() {
+      PrepareBuilder();
+      result.hasReceiptid = false;
+      result.receiptid_ = "";
+      return this;
+    }
+    
+    public bool HasStatus {
+      get { return result.hasStatus; }
+    }
+    public int Status {
+      get { return result.Status; }
+      set { SetStatus(value); }
+    }
+    public Builder SetStatus(int value) {
+      PrepareBuilder();
+      result.hasStatus = true;
+      result.status_ = value;
+      return this;
+    }
+    public Builder ClearStatus() {
+      PrepareBuilder();
+      result.hasStatus = false;
+      result.status_ = 0;
+      return this;
+    }
+  }
+  static StructCharge() {
+    object.ReferenceEquals(global::BaseStruct.Descriptor, null);
+  }
+}
+
+[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 public sealed partial class StructConsum : pb::GeneratedMessage<StructConsum, StructConsum.Builder> {
   private StructConsum() { }
   private static readonly StructConsum defaultInstance = new StructConsum().MakeReadOnly();
@@ -4798,6 +5540,683 @@ public sealed partial class StructRealTime : pb::GeneratedMessage<StructRealTime
     }
   }
   static StructRealTime() {
+    object.ReferenceEquals(global::BaseStruct.Descriptor, null);
+  }
+}
+
+[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+public sealed partial class StructApply : pb::GeneratedMessage<StructApply, StructApply.Builder> {
+  private StructApply() { }
+  private static readonly StructApply defaultInstance = new StructApply().MakeReadOnly();
+  private static readonly string[] _structApplyFieldNames = new string[] { "addtime", "applyid", "bonus_amount", "cardnumber", "charge_amount", "name", "operator", "paymode", "receiptid", "rightid" };
+  private static readonly uint[] _structApplyFieldTags = new uint[] { 58, 80, 40, 26, 32, 10, 50, 64, 74, 16 };
+  public static StructApply DefaultInstance {
+    get { return defaultInstance; }
+  }
+  
+  public override StructApply DefaultInstanceForType {
+    get { return DefaultInstance; }
+  }
+  
+  protected override StructApply ThisMessage {
+    get { return this; }
+  }
+  
+  public static pbd::MessageDescriptor Descriptor {
+    get { return global::BaseStruct.internal__static_StructApply__Descriptor; }
+  }
+  
+  protected override pb::FieldAccess.FieldAccessorTable<StructApply, StructApply.Builder> InternalFieldAccessors {
+    get { return global::BaseStruct.internal__static_StructApply__FieldAccessorTable; }
+  }
+  
+  public const int NameFieldNumber = 1;
+  private bool hasName;
+  private string name_ = "";
+  public bool HasName {
+    get { return hasName; }
+  }
+  public string Name {
+    get { return name_; }
+  }
+  
+  public const int RightidFieldNumber = 2;
+  private bool hasRightid;
+  private int rightid_;
+  public bool HasRightid {
+    get { return hasRightid; }
+  }
+  public int Rightid {
+    get { return rightid_; }
+  }
+  
+  public const int CardnumberFieldNumber = 3;
+  private bool hasCardnumber;
+  private string cardnumber_ = "";
+  public bool HasCardnumber {
+    get { return hasCardnumber; }
+  }
+  public string Cardnumber {
+    get { return cardnumber_; }
+  }
+  
+  public const int ChargeAmountFieldNumber = 4;
+  private bool hasChargeAmount;
+  private int chargeAmount_;
+  public bool HasChargeAmount {
+    get { return hasChargeAmount; }
+  }
+  public int ChargeAmount {
+    get { return chargeAmount_; }
+  }
+  
+  public const int BonusAmountFieldNumber = 5;
+  private bool hasBonusAmount;
+  private int bonusAmount_;
+  public bool HasBonusAmount {
+    get { return hasBonusAmount; }
+  }
+  public int BonusAmount {
+    get { return bonusAmount_; }
+  }
+  
+  public const int OperatorFieldNumber = 6;
+  private bool hasOperator;
+  private string operator_ = "";
+  public bool HasOperator {
+    get { return hasOperator; }
+  }
+  public string Operator {
+    get { return operator_; }
+  }
+  
+  public const int AddtimeFieldNumber = 7;
+  private bool hasAddtime;
+  private string addtime_ = "";
+  public bool HasAddtime {
+    get { return hasAddtime; }
+  }
+  public string Addtime {
+    get { return addtime_; }
+  }
+  
+  public const int PaymodeFieldNumber = 8;
+  private bool hasPaymode;
+  private int paymode_;
+  public bool HasPaymode {
+    get { return hasPaymode; }
+  }
+  public int Paymode {
+    get { return paymode_; }
+  }
+  
+  public const int ReceiptidFieldNumber = 9;
+  private bool hasReceiptid;
+  private string receiptid_ = "";
+  public bool HasReceiptid {
+    get { return hasReceiptid; }
+  }
+  public string Receiptid {
+    get { return receiptid_; }
+  }
+  
+  public const int ApplyidFieldNumber = 10;
+  private bool hasApplyid;
+  private int applyid_;
+  public bool HasApplyid {
+    get { return hasApplyid; }
+  }
+  public int Applyid {
+    get { return applyid_; }
+  }
+  
+  public override bool IsInitialized {
+    get {
+      if (!hasName) return false;
+      if (!hasRightid) return false;
+      if (!hasCardnumber) return false;
+      if (!hasChargeAmount) return false;
+      if (!hasBonusAmount) return false;
+      if (!hasOperator) return false;
+      if (!hasAddtime) return false;
+      if (!hasPaymode) return false;
+      if (!hasReceiptid) return false;
+      if (!hasApplyid) return false;
+      return true;
+    }
+  }
+  
+  public override void WriteTo(pb::ICodedOutputStream output) {
+    CalcSerializedSize();
+    string[] field_names = _structApplyFieldNames;
+    if (hasName) {
+      output.WriteString(1, field_names[5], Name);
+    }
+    if (hasRightid) {
+      output.WriteInt32(2, field_names[9], Rightid);
+    }
+    if (hasCardnumber) {
+      output.WriteString(3, field_names[3], Cardnumber);
+    }
+    if (hasChargeAmount) {
+      output.WriteInt32(4, field_names[4], ChargeAmount);
+    }
+    if (hasBonusAmount) {
+      output.WriteInt32(5, field_names[2], BonusAmount);
+    }
+    if (hasOperator) {
+      output.WriteString(6, field_names[6], Operator);
+    }
+    if (hasAddtime) {
+      output.WriteString(7, field_names[0], Addtime);
+    }
+    if (hasPaymode) {
+      output.WriteInt32(8, field_names[7], Paymode);
+    }
+    if (hasReceiptid) {
+      output.WriteString(9, field_names[8], Receiptid);
+    }
+    if (hasApplyid) {
+      output.WriteInt32(10, field_names[1], Applyid);
+    }
+    UnknownFields.WriteTo(output);
+  }
+  
+  private int memoizedSerializedSize = -1;
+  public override int SerializedSize {
+    get {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+      return CalcSerializedSize();
+    }
+  }
+  
+  private int CalcSerializedSize() {
+    int size = memoizedSerializedSize;
+    if (size != -1) return size;
+    
+    size = 0;
+    if (hasName) {
+      size += pb::CodedOutputStream.ComputeStringSize(1, Name);
+    }
+    if (hasRightid) {
+      size += pb::CodedOutputStream.ComputeInt32Size(2, Rightid);
+    }
+    if (hasCardnumber) {
+      size += pb::CodedOutputStream.ComputeStringSize(3, Cardnumber);
+    }
+    if (hasChargeAmount) {
+      size += pb::CodedOutputStream.ComputeInt32Size(4, ChargeAmount);
+    }
+    if (hasBonusAmount) {
+      size += pb::CodedOutputStream.ComputeInt32Size(5, BonusAmount);
+    }
+    if (hasOperator) {
+      size += pb::CodedOutputStream.ComputeStringSize(6, Operator);
+    }
+    if (hasAddtime) {
+      size += pb::CodedOutputStream.ComputeStringSize(7, Addtime);
+    }
+    if (hasPaymode) {
+      size += pb::CodedOutputStream.ComputeInt32Size(8, Paymode);
+    }
+    if (hasReceiptid) {
+      size += pb::CodedOutputStream.ComputeStringSize(9, Receiptid);
+    }
+    if (hasApplyid) {
+      size += pb::CodedOutputStream.ComputeInt32Size(10, Applyid);
+    }
+    size += UnknownFields.SerializedSize;
+    memoizedSerializedSize = size;
+    return size;
+  }
+  public static StructApply ParseFrom(pb::ByteString data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static StructApply ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static StructApply ParseFrom(byte[] data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static StructApply ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static StructApply ParseFrom(global::System.IO.Stream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static StructApply ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  public static StructApply ParseDelimitedFrom(global::System.IO.Stream input) {
+    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
+  }
+  public static StructApply ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
+  }
+  public static StructApply ParseFrom(pb::ICodedInputStream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static StructApply ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  private StructApply MakeReadOnly() {
+    return this;
+  }
+  
+  public static Builder CreateBuilder() { return new Builder(); }
+  public override Builder ToBuilder() { return CreateBuilder(this); }
+  public override Builder CreateBuilderForType() { return new Builder(); }
+  public static Builder CreateBuilder(StructApply prototype) {
+    return new Builder(prototype);
+  }
+  
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class Builder : pb::GeneratedBuilder<StructApply, Builder> {
+    protected override Builder ThisBuilder {
+      get { return this; }
+    }
+    public Builder() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+    }
+    internal Builder(StructApply cloneFrom) {
+      result = cloneFrom;
+      resultIsReadOnly = true;
+    }
+    
+    private bool resultIsReadOnly;
+    private StructApply result;
+    
+    private StructApply PrepareBuilder() {
+      if (resultIsReadOnly) {
+        StructApply original = result;
+        result = new StructApply();
+        resultIsReadOnly = false;
+        MergeFrom(original);
+      }
+      return result;
+    }
+    
+    public override bool IsInitialized {
+      get { return result.IsInitialized; }
+    }
+    
+    protected override StructApply MessageBeingBuilt {
+      get { return PrepareBuilder(); }
+    }
+    
+    public override Builder Clear() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+      return this;
+    }
+    
+    public override Builder Clone() {
+      if (resultIsReadOnly) {
+        return new Builder(result);
+      } else {
+        return new Builder().MergeFrom(result);
+      }
+    }
+    
+    public override pbd::MessageDescriptor DescriptorForType {
+      get { return global::StructApply.Descriptor; }
+    }
+    
+    public override StructApply DefaultInstanceForType {
+      get { return global::StructApply.DefaultInstance; }
+    }
+    
+    public override StructApply BuildPartial() {
+      if (resultIsReadOnly) {
+        return result;
+      }
+      resultIsReadOnly = true;
+      return result.MakeReadOnly();
+    }
+    
+    public override Builder MergeFrom(pb::IMessage other) {
+      if (other is StructApply) {
+        return MergeFrom((StructApply) other);
+      } else {
+        base.MergeFrom(other);
+        return this;
+      }
+    }
+    
+    public override Builder MergeFrom(StructApply other) {
+      if (other == global::StructApply.DefaultInstance) return this;
+      PrepareBuilder();
+      if (other.HasName) {
+        Name = other.Name;
+      }
+      if (other.HasRightid) {
+        Rightid = other.Rightid;
+      }
+      if (other.HasCardnumber) {
+        Cardnumber = other.Cardnumber;
+      }
+      if (other.HasChargeAmount) {
+        ChargeAmount = other.ChargeAmount;
+      }
+      if (other.HasBonusAmount) {
+        BonusAmount = other.BonusAmount;
+      }
+      if (other.HasOperator) {
+        Operator = other.Operator;
+      }
+      if (other.HasAddtime) {
+        Addtime = other.Addtime;
+      }
+      if (other.HasPaymode) {
+        Paymode = other.Paymode;
+      }
+      if (other.HasReceiptid) {
+        Receiptid = other.Receiptid;
+      }
+      if (other.HasApplyid) {
+        Applyid = other.Applyid;
+      }
+      this.MergeUnknownFields(other.UnknownFields);
+      return this;
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input) {
+      return MergeFrom(input, pb::ExtensionRegistry.Empty);
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+      PrepareBuilder();
+      pb::UnknownFieldSet.Builder unknownFields = null;
+      uint tag;
+      string field_name;
+      while (input.ReadTag(out tag, out field_name)) {
+        if(tag == 0 && field_name != null) {
+          int field_ordinal = global::System.Array.BinarySearch(_structApplyFieldNames, field_name, global::System.StringComparer.Ordinal);
+          if(field_ordinal >= 0)
+            tag = _structApplyFieldTags[field_ordinal];
+          else {
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            continue;
+          }
+        }
+        switch (tag) {
+          case 0: {
+            throw pb::InvalidProtocolBufferException.InvalidTag();
+          }
+          default: {
+            if (pb::WireFormat.IsEndGroupTag(tag)) {
+              if (unknownFields != null) {
+                this.UnknownFields = unknownFields.Build();
+              }
+              return this;
+            }
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            break;
+          }
+          case 10: {
+            result.hasName = input.ReadString(ref result.name_);
+            break;
+          }
+          case 16: {
+            result.hasRightid = input.ReadInt32(ref result.rightid_);
+            break;
+          }
+          case 26: {
+            result.hasCardnumber = input.ReadString(ref result.cardnumber_);
+            break;
+          }
+          case 32: {
+            result.hasChargeAmount = input.ReadInt32(ref result.chargeAmount_);
+            break;
+          }
+          case 40: {
+            result.hasBonusAmount = input.ReadInt32(ref result.bonusAmount_);
+            break;
+          }
+          case 50: {
+            result.hasOperator = input.ReadString(ref result.operator_);
+            break;
+          }
+          case 58: {
+            result.hasAddtime = input.ReadString(ref result.addtime_);
+            break;
+          }
+          case 64: {
+            result.hasPaymode = input.ReadInt32(ref result.paymode_);
+            break;
+          }
+          case 74: {
+            result.hasReceiptid = input.ReadString(ref result.receiptid_);
+            break;
+          }
+          case 80: {
+            result.hasApplyid = input.ReadInt32(ref result.applyid_);
+            break;
+          }
+        }
+      }
+      
+      if (unknownFields != null) {
+        this.UnknownFields = unknownFields.Build();
+      }
+      return this;
+    }
+    
+    
+    public bool HasName {
+      get { return result.hasName; }
+    }
+    public string Name {
+      get { return result.Name; }
+      set { SetName(value); }
+    }
+    public Builder SetName(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasName = true;
+      result.name_ = value;
+      return this;
+    }
+    public Builder ClearName() {
+      PrepareBuilder();
+      result.hasName = false;
+      result.name_ = "";
+      return this;
+    }
+    
+    public bool HasRightid {
+      get { return result.hasRightid; }
+    }
+    public int Rightid {
+      get { return result.Rightid; }
+      set { SetRightid(value); }
+    }
+    public Builder SetRightid(int value) {
+      PrepareBuilder();
+      result.hasRightid = true;
+      result.rightid_ = value;
+      return this;
+    }
+    public Builder ClearRightid() {
+      PrepareBuilder();
+      result.hasRightid = false;
+      result.rightid_ = 0;
+      return this;
+    }
+    
+    public bool HasCardnumber {
+      get { return result.hasCardnumber; }
+    }
+    public string Cardnumber {
+      get { return result.Cardnumber; }
+      set { SetCardnumber(value); }
+    }
+    public Builder SetCardnumber(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasCardnumber = true;
+      result.cardnumber_ = value;
+      return this;
+    }
+    public Builder ClearCardnumber() {
+      PrepareBuilder();
+      result.hasCardnumber = false;
+      result.cardnumber_ = "";
+      return this;
+    }
+    
+    public bool HasChargeAmount {
+      get { return result.hasChargeAmount; }
+    }
+    public int ChargeAmount {
+      get { return result.ChargeAmount; }
+      set { SetChargeAmount(value); }
+    }
+    public Builder SetChargeAmount(int value) {
+      PrepareBuilder();
+      result.hasChargeAmount = true;
+      result.chargeAmount_ = value;
+      return this;
+    }
+    public Builder ClearChargeAmount() {
+      PrepareBuilder();
+      result.hasChargeAmount = false;
+      result.chargeAmount_ = 0;
+      return this;
+    }
+    
+    public bool HasBonusAmount {
+      get { return result.hasBonusAmount; }
+    }
+    public int BonusAmount {
+      get { return result.BonusAmount; }
+      set { SetBonusAmount(value); }
+    }
+    public Builder SetBonusAmount(int value) {
+      PrepareBuilder();
+      result.hasBonusAmount = true;
+      result.bonusAmount_ = value;
+      return this;
+    }
+    public Builder ClearBonusAmount() {
+      PrepareBuilder();
+      result.hasBonusAmount = false;
+      result.bonusAmount_ = 0;
+      return this;
+    }
+    
+    public bool HasOperator {
+      get { return result.hasOperator; }
+    }
+    public string Operator {
+      get { return result.Operator; }
+      set { SetOperator(value); }
+    }
+    public Builder SetOperator(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasOperator = true;
+      result.operator_ = value;
+      return this;
+    }
+    public Builder ClearOperator() {
+      PrepareBuilder();
+      result.hasOperator = false;
+      result.operator_ = "";
+      return this;
+    }
+    
+    public bool HasAddtime {
+      get { return result.hasAddtime; }
+    }
+    public string Addtime {
+      get { return result.Addtime; }
+      set { SetAddtime(value); }
+    }
+    public Builder SetAddtime(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasAddtime = true;
+      result.addtime_ = value;
+      return this;
+    }
+    public Builder ClearAddtime() {
+      PrepareBuilder();
+      result.hasAddtime = false;
+      result.addtime_ = "";
+      return this;
+    }
+    
+    public bool HasPaymode {
+      get { return result.hasPaymode; }
+    }
+    public int Paymode {
+      get { return result.Paymode; }
+      set { SetPaymode(value); }
+    }
+    public Builder SetPaymode(int value) {
+      PrepareBuilder();
+      result.hasPaymode = true;
+      result.paymode_ = value;
+      return this;
+    }
+    public Builder ClearPaymode() {
+      PrepareBuilder();
+      result.hasPaymode = false;
+      result.paymode_ = 0;
+      return this;
+    }
+    
+    public bool HasReceiptid {
+      get { return result.hasReceiptid; }
+    }
+    public string Receiptid {
+      get { return result.Receiptid; }
+      set { SetReceiptid(value); }
+    }
+    public Builder SetReceiptid(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasReceiptid = true;
+      result.receiptid_ = value;
+      return this;
+    }
+    public Builder ClearReceiptid() {
+      PrepareBuilder();
+      result.hasReceiptid = false;
+      result.receiptid_ = "";
+      return this;
+    }
+    
+    public bool HasApplyid {
+      get { return result.hasApplyid; }
+    }
+    public int Applyid {
+      get { return result.Applyid; }
+      set { SetApplyid(value); }
+    }
+    public Builder SetApplyid(int value) {
+      PrepareBuilder();
+      result.hasApplyid = true;
+      result.applyid_ = value;
+      return this;
+    }
+    public Builder ClearApplyid() {
+      PrepareBuilder();
+      result.hasApplyid = false;
+      result.applyid_ = 0;
+      return this;
+    }
+  }
+  static StructApply() {
     object.ReferenceEquals(global::BaseStruct.Descriptor, null);
   }
 }

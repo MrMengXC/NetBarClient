@@ -307,6 +307,7 @@
     <column name = "办理时间" field="OpenTime" type ="C_Text" width ="" height =""/>
     <column name = "付款渠道" field="PayChannel" type ="C_Text" width ="" height =""/>
     <column name = "第三方支付订单号" field="IndentNumber" type ="C_Text" width ="" height =""/>
+    <column name = "办理渠道" field="Channel" type ="C_Text" width ="" height =""/>
 
   </grid>
   <!--会员充值记录-->
@@ -318,9 +319,11 @@
     <column name = "位置" field="Area" type ="C_Text" width ="" height =""/>
     <column name = "充值金额" field="RechargeMoney" type ="C_Text" width ="" height =""/>
     <column name = "赠送金额" field="GiveMoney" type ="C_Text" width ="" height =""/>
+    <column name = "添加时间" field="AddTime" type ="C_Text" width ="" height =""/>
+
     <column name = "付款渠道" field="PayChannel" type ="C_Text" width ="" height =""/>
     <column name = "第三方支付订单号" field="PayIndentNumber" type ="C_Text" width ="" height =""/>
-    <column name = "订单到帐状态" field="PayIndentState" type ="C_Text" width ="" height =""/>
+    <column name = "订单到帐状态" field="IndentStatus" type ="C_Text" width ="" height =""/>
 
   </grid>
   <!--会员等级管理-->

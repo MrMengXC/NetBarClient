@@ -419,5 +419,18 @@ namespace NetBarMS.Codes.Tools
             return big.ToString().Equals(sum);
         }
         #endregion
+
+
+        #region 回调线程进行UI显示
+        public static void Invoke(UserControl control,Delegate method)
+        {
+            //while (!control.FindForm().IsHandleCreated)
+            //{
+            //    ;
+            //}
+            control.Invoke(method);
+        }
+
+        #endregion
     }
 }

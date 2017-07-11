@@ -434,4 +434,13 @@ namespace NetBarMS.Codes.Tools
     }
 
     #endregion
+
+    #region 办理渠道
+    public enum MANAGECHANNEL {
+        无 = 0,
+        终端,
+        系统后台,
+    }
+    #endregion
+
 }

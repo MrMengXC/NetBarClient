@@ -207,7 +207,7 @@ namespace NetBarMS
                         view = new ChangeShiftsRecordView();
                         break;
                     case TreeNodeTag.UserPayedRecord:   //用户充值记录查询
-                        view = new MemberRechargeView();
+                        view = new UserRechargeView();
                         break;
                     case TreeNodeTag.UserNetRecord:   //用户上网记录查询
                         view = new UserNetRecordView();

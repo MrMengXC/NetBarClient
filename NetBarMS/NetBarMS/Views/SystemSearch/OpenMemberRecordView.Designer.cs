@@ -91,6 +91,7 @@
             this.popupContainerEdit1.Properties.PopupControl = this.popupContainerControl1;
             this.popupContainerEdit1.Size = new System.Drawing.Size(158, 20);
             this.popupContainerEdit1.TabIndex = 6;
+            this.popupContainerEdit1.Closed += new DevExpress.XtraEditors.Controls.ClosedEventHandler(this.ComboBoxEdit1_Closed);
             // 
             // popupContainerControl1
             // 
@@ -115,6 +116,7 @@
             this.dateNavigator.SyncSelectionWithEditValue = false;
             this.dateNavigator.TabIndex = 0;
             this.dateNavigator.UpdateDateTimeWhenNavigating = false;
+            this.dateNavigator.Click += new System.EventHandler(this.DateNavigator_Click);
             // 
             // comboBoxEdit1
             // 
@@ -125,6 +127,7 @@
             this.comboBoxEdit1.Properties.NullText = "按当班人进行查询";
             this.comboBoxEdit1.Size = new System.Drawing.Size(137, 20);
             this.comboBoxEdit1.TabIndex = 0;
+            this.comboBoxEdit1.SelectedIndexChanged += new System.EventHandler(this.comboBoxEdit1_SelectedIndexChanged);
             // 
             // comboBoxEdit2
             // 
@@ -135,6 +138,7 @@
             this.comboBoxEdit2.Properties.NullText = "按会员类型进行查询";
             this.comboBoxEdit2.Size = new System.Drawing.Size(137, 20);
             this.comboBoxEdit2.TabIndex = 1;
+            this.comboBoxEdit2.SelectedIndexChanged += new System.EventHandler(this.comboBoxEdit2_SelectedIndexChanged);
             // 
             // buttonEdit1
             // 
@@ -145,6 +149,7 @@
             this.buttonEdit1.Properties.NullText = "输入会员名称、卡号进行查询";
             this.buttonEdit1.Size = new System.Drawing.Size(206, 20);
             this.buttonEdit1.TabIndex = 2;
+            this.buttonEdit1.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.SearchButton_ButtonClick);
             // 
             // gridControl1
             // 

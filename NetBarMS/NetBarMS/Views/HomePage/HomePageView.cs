@@ -166,10 +166,10 @@ namespace NetBarMS.Views.HomePage
                     view = new ChangeShiftsRecordView();
                     break;
                 case TreeNodeTag.UserPayedRecord:   //用户充值记录查询
-                    view = new MemberRechargeView();
+                    view = new UserRechargeView();
                     break;
                 case TreeNodeTag.UserNetRecord:   //用户上网记录查询
-                    view = new UserNetRecordView();
+                    //view = new UserNetRecordView();
                     break;
                 case TreeNodeTag.UserConsumeRecord:   //用户消费记录查询
                     view = new UserConsumeRecordView();

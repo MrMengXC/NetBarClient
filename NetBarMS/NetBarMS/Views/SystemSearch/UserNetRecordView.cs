@@ -10,13 +10,12 @@ using System.Windows.Forms;
 using NetBarMS.Codes.Tools;
 using NetBarMS.Codes.Tools.NetOperation;
 
-namespace NetBarMS.Views.NetUserManage
+namespace NetBarMS.Views.SystemSearch
 {
-   
     public partial class UserNetRecordView : RootUserControlView
     {
         #region Title　ENUM
-        enum TitleList
+        private enum TitleList
         {
             None,
             IdNumber,               //身份证号
@@ -33,26 +32,15 @@ namespace NetBarMS.Views.NetUserManage
         }
         #endregion
 
-        private Int32 mid;
         private DateTime lastDate = DateTime.MinValue;
         private string startTime = "", endTime = "";
-
-        public UserNetRecordView(Int32 tem)
-        {
-            InitializeComponent();
-            this.titleLabel.Text = "上网记录查询";
-            mid = tem;
-            InitUI();
-            MemberNetRecord();
-
-        }
+        private int pageBegin = 0, pageSize = 15;
+        private IList<StructEmbarkation> records;
         public UserNetRecordView()
         {
             InitializeComponent();
             this.titleLabel.Text = "上网记录查询";
             InitUI();
-            //MemberNetRecord();
-
 
         }
         //初始化UI
@@ -63,84 +51,82 @@ namespace NetBarMS.Views.NetUserManage
             this.dateNavigator.UpdateDateTimeWhenNavigating = false;
             this.dateNavigator.UpdateSelectionWhenNavigating = false;
             this.dateNavigator.SyncSelectionWithEditValue = false;
+            GetUserNetRecord();
+
         }
 
         #region 会员上网记录查询/条件过滤查询
         //会员上网记录查询
-        private void MemberNetRecord()
+        private void GetUserNetRecord()
         {
 
             StructPage.Builder page = new StructPage.Builder()
             {
-                Pagesize = 15,
-                Pagebegin = 0,
+                Pagesize = this.pageSize,
+                Pagebegin = this.pageBegin,
                 Fieldname = 0,
                 Order = 0,
             };
-            MemberNetOperation.MemberNetRecord(MemberNetRecordResult, this.mid, page.Build());
 
-        }
-        //会员上网记录过滤查询
-        private void MemberNetFilterRecord()
-        {
-            StructPage.Builder page = new StructPage.Builder()
+            string name = "";
+            if(!this.searchButtonEdit.Text.Equals(this.searchButtonEdit.Properties.NullText))
             {
-                Pagesize = 15,
-                Pagebegin = 0,
-                Fieldname = 0,
-                Order = 0,
-            };
-           // MemberNetOperation.MemberConsumeRecordFilter()
-
+                name = this.searchButtonEdit.Text;
+            }
+            RecordNetOperation.GetUserNetRecord(GetUserNetRecordResult, page.Build(),this.startTime, this.endTime, name);
 
         }
-        //会员上网记录查询结果回调
-        private void MemberNetRecordResult(ResultModel result)
+        //上网记录查询结果回调
+        private void GetUserNetRecordResult(ResultModel result)
         {
 
-            
-            if(result.pack.Cmd != Cmd.CMD_EMK_RECORD)
+            if (result.pack.Cmd != Cmd.CMD_QUERY_EMBARKATION)
             {
                 return;
             }
 
-            System.Console.WriteLine("MemberNetRecordResult:" + result.pack);
-            NetMessageManage.Manage().RemoveResultBlock(MemberNetRecordResult);
+            System.Console.WriteLine("GetUserNetRecordResult:" + result.pack);
+            NetMessageManage.Manage().RemoveResultBlock(GetUserNetRecordResult);
             if (result.pack.Content.MessageType == 1)
             {
-                 this.Invoke(new UIHandleBlock(delegate {
-                    UpdateGridControl(result.pack.Content.ScEmkRecord.EmkinfoList);
+                ToolsManage.Invoke(this,new UIHandleBlock(delegate
+                {
+                    this.records = result.pack.Content.ScQueryEmk.EmksList;
+
+                    RefreshGridControl();
                 }));
             }
 
         }
+        
         #endregion
 
         #region 更新GridControl 数据
         //更新GridControl列表数据
-        private void UpdateGridControl(IList<StructEmbarkation> list)
+        private void RefreshGridControl()
         {
-            foreach (StructEmbarkation realTime in list)
+            this.mainDataTable.Rows.Clear();
+            foreach (StructEmbarkation emk in this.records)
             {
-                AddGridControlNewRow(realTime);
+                AddNewRow(emk);
             }
         }
         //添加新行
-        private void AddGridControlNewRow(StructEmbarkation consum)
+        private void AddNewRow(StructEmbarkation emk)
         {
 
             DataRow row = this.mainDataTable.NewRow();
             this.mainDataTable.Rows.Add(row);
-            row[TitleList.IdNumber.ToString()] = consum.Cardnumber;
-            row[TitleList.Name.ToString()] = consum.Username;
-            row[TitleList.MemberType.ToString()] = consum.Usertype;
-            row[TitleList.StartTime.ToString()] = consum.Starttime;
-            row[TitleList.EndTime.ToString()] = consum.Stoptime;
-            row[TitleList.Area.ToString()] = consum.Area;
-            row[TitleList.UseTime.ToString()] = consum.Usedtime;
-            row[TitleList.UseMoney.ToString()] = consum.Money;
-            row[TitleList.Mac.ToString()] = consum.Mac;
-            row[TitleList.Ip.ToString()] = consum.Ip;
+            row[TitleList.IdNumber.ToString()] = emk.Cardnumber;
+            row[TitleList.Name.ToString()] = emk.Username;
+            row[TitleList.MemberType.ToString()] = emk.Usertype;
+            row[TitleList.StartTime.ToString()] = emk.Starttime;
+            row[TitleList.EndTime.ToString()] = emk.Stoptime;
+            row[TitleList.Area.ToString()] = emk.Area;
+            row[TitleList.UseTime.ToString()] = emk.Usedtime;
+            row[TitleList.UseMoney.ToString()] = emk.Money;
+            row[TitleList.Mac.ToString()] = emk.Mac;
+            row[TitleList.Ip.ToString()] = emk.Ip;
         }
         #endregion
 
@@ -149,7 +135,7 @@ namespace NetBarMS.Views.NetUserManage
         //关闭日期选择菜单
         private void PopupContainerEdit1_Closed(object sender, DevExpress.XtraEditors.Controls.ClosedEventArgs e)
         {
-            MemberNetFilterRecord();
+            GetUserNetRecord();
         }
 
         //日期选择触发
@@ -159,7 +145,7 @@ namespace NetBarMS.Views.NetUserManage
         }
         private void SearchButtonEdit_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            MemberNetFilterRecord();
+            GetUserNetRecord();
         }
 
         #endregion

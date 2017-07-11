@@ -285,11 +285,11 @@
     <Compile Include="Views\RootFormView.Designer.cs">
       <DependentUpon>RootFormView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\SystemSearch\MemberRechargeRecordView.cs">
+    <Compile Include="Views\SystemSearch\UserRechargeRecordView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\SystemSearch\MemberRechargeRecordView.Designer.cs">
-      <DependentUpon>MemberRechargeRecordView.cs</DependentUpon>
+    <Compile Include="Views\SystemSearch\UserRechargeRecordView.Designer.cs">
+      <DependentUpon>UserRechargeRecordView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\SystemSearch\AttendanceSearchView.cs">
       <SubType>UserControl</SubType>
@@ -591,6 +591,18 @@
     <Compile Include="Views\ProductManage\ProductSellRecordView.Designer.cs">
       <DependentUpon>ProductSellRecordView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\NetUserManage\MemberConsumeRecordView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\NetUserManage\MemberConsumeRecordView.Designer.cs">
+      <DependentUpon>MemberConsumeRecordView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NetUserManage\MemberNetRecordView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\NetUserManage\MemberNetRecordView.Designer.cs">
+      <DependentUpon>MemberNetRecordView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\SystemSearch\UserConsumeRecordView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -708,8 +720,8 @@
     <EmbeddedResource Include="Views\SystemSearch\AttendanceSearchView.resx">
       <DependentUpon>AttendanceSearchView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\SystemSearch\MemberRechargeRecordView.resx">
-      <DependentUpon>MemberRechargeRecordView.cs</DependentUpon>
+    <EmbeddedResource Include="Views\SystemSearch\UserRechargeRecordView.resx">
+      <DependentUpon>UserRechargeRecordView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\SystemSearch\OpenMemberRecordView.resx">
       <DependentUpon>OpenMemberRecordView.cs</DependentUpon>
@@ -857,6 +869,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ProductManage\ProductSellRecordView.resx">
       <DependentUpon>ProductSellRecordView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\NetUserManage\MemberConsumeRecordView.resx">
+      <DependentUpon>MemberConsumeRecordView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\NetUserManage\MemberNetRecordView.resx">
+      <DependentUpon>MemberNetRecordView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\SystemSearch\UserConsumeRecordView.resx">
       <DependentUpon>UserConsumeRecordView.cs</DependentUpon>

@@ -12,11 +12,10 @@ using NetBarMS.Codes.Tools;
 using NetBarMS.Codes.Tools.NetOperation;
 using DevExpress.XtraEditors.Controls;
 using NetBarMS.Views.OtherMain;
-using NetBarMS.Views.NetUserManage;
 using DevExpress.XtraEditors;
 using NetBarMS.Codes.Model;
 
-namespace NetBarMS.Views
+namespace NetBarMS.Views.NetUserManage
 {
     
     public partial class MemberManageView : RootUserControlView
@@ -341,13 +340,13 @@ namespace NetBarMS.Views
             //消费记录
             else if(param[0].Equals(TitleList.CsRecord.ToString())) 
             {
-                UserConsumeRecordView view = new UserConsumeRecordView(member.Memberid);
+                MemberConsumeRecordView view = new MemberConsumeRecordView(member.Memberid);
                 ToolsManage.ShowForm(view, false);
             }
             //上网记录
             else if(param[0].Equals(TitleList.NetRecord.ToString()))
             {
-                UserNetRecordView view = new UserNetRecordView(member.Memberid);
+                MemberNetRecordView view = new MemberNetRecordView(member.Memberid);
                 ToolsManage.ShowForm(view, false);
             }
             System.Console.WriteLine("button.Tag:"+ e.Button.Tag);
