@@ -36,6 +36,7 @@ namespace NetBarMS.Views.NetUserManage
         private Int32 mid;
         private DateTime lastDate = DateTime.MinValue;
         private string startTime = "", endTime = "";
+        IList<StructEmbarkation> records;
 
         public MemberNetRecordView(Int32 tem)
         {
@@ -43,64 +44,57 @@ namespace NetBarMS.Views.NetUserManage
             this.titleLabel.Text = "上网记录查询";
             mid = tem;
             InitUI();
-            MemberNetRecord();
 
         }
         //初始化UI
         private void InitUI()
         {
-            ToolsManage.SetGridView(this.gridView1, GridControlType.UserNetRecord, out this.mainDataTable);
-            this.gridControl1.DataSource = this.mainDataTable;
             this.dateNavigator.UpdateDateTimeWhenNavigating = false;
             this.dateNavigator.UpdateSelectionWhenNavigating = false;
             this.dateNavigator.SyncSelectionWithEditValue = false;
-        }
 
-        #region 会员上网记录查询/条件过滤查询
+            ToolsManage.SetGridView(this.gridView1, GridControlType.UserNetRecord, out this.mainDataTable);
+            this.gridControl1.DataSource = this.mainDataTable;
+            GetMemberNetRecord(false);
+        }
+      
+        #region 会员上网记录查询
         //会员上网记录查询
-        private void MemberNetRecord()
+        private void GetMemberNetRecord(bool isFilter)
         {
+            if(isFilter)
+            {
+                this.pageView1.InitPageViewData();
+            }
 
             StructPage.Builder page = new StructPage.Builder()
             {
-                Pagesize = 15,
-                Pagebegin = 0,
+                Pagesize = pageView1.PageSize,
+                Pagebegin = pageView1.PageBegin,
                 Fieldname = 0,
                 Order = 0,
             };
-            MemberNetOperation.MemberNetRecord(MemberNetRecordResult, this.mid, page.Build());
-
-        }
-        //会员上网记录过滤查询
-        private void MemberNetFilterRecord()
-        {
-            StructPage.Builder page = new StructPage.Builder()
-            {
-                Pagesize = 15,
-                Pagebegin = 0,
-                Fieldname = 0,
-                Order = 0,
-            };
-           // MemberNetOperation.MemberConsumeRecordFilter()
+            RecordNetOperation.GetUserNetRecord(MemberNetRecordResult, page.Build(), this.startTime, this.endTime, "",mid,-1);
 
 
         }
+       
         //会员上网记录查询结果回调
         private void MemberNetRecordResult(ResultModel result)
         {
-
-            
-            if(result.pack.Cmd != Cmd.CMD_EMK_RECORD)
+            if (result.pack.Cmd != Cmd.CMD_QUERY_EMBARKATION)
             {
                 return;
             }
-
             System.Console.WriteLine("MemberNetRecordResult:" + result.pack);
             NetMessageManage.Manage().RemoveResultBlock(MemberNetRecordResult);
             if (result.pack.Content.MessageType == 1)
             {
-                 this.Invoke(new UIHandleBlock(delegate {
-                    UpdateGridControl(result.pack.Content.ScEmkRecord.EmkinfoList);
+                ToolsManage.Invoke(this, new UIHandleBlock(delegate
+                {
+                    this.pageView1.RefreshPageView(result.pack.Content.ScQueryEmk.Pagecount);
+                    this.records = result.pack.Content.ScQueryEmk.EmksList;
+                    RefreshGridControl();
                 }));
             }
 
@@ -109,29 +103,30 @@ namespace NetBarMS.Views.NetUserManage
 
         #region 更新GridControl 数据
         //更新GridControl列表数据
-        private void UpdateGridControl(IList<StructEmbarkation> list)
+        private void RefreshGridControl()
         {
-            foreach (StructEmbarkation realTime in list)
+            this.mainDataTable.Rows.Clear();
+            foreach (StructEmbarkation realTime in this.records)
             {
                 AddGridControlNewRow(realTime);
             }
         }
         //添加新行
-        private void AddGridControlNewRow(StructEmbarkation consum)
+        private void AddGridControlNewRow(StructEmbarkation emb)
         {
 
             DataRow row = this.mainDataTable.NewRow();
             this.mainDataTable.Rows.Add(row);
-            row[TitleList.IdNumber.ToString()] = consum.Cardnumber;
-            row[TitleList.Name.ToString()] = consum.Username;
-            row[TitleList.MemberType.ToString()] = consum.Usertype;
-            row[TitleList.StartTime.ToString()] = consum.Starttime;
-            row[TitleList.EndTime.ToString()] = consum.Stoptime;
-            row[TitleList.Area.ToString()] = consum.Area;
-            row[TitleList.UseTime.ToString()] = consum.Usedtime;
-            row[TitleList.UseMoney.ToString()] = consum.Money;
-            row[TitleList.Mac.ToString()] = consum.Mac;
-            row[TitleList.Ip.ToString()] = consum.Ip;
+            row[TitleList.IdNumber.ToString()] = emb.Cardnumber;
+            row[TitleList.Name.ToString()] = emb.Username;
+            row[TitleList.MemberType.ToString()] = emb.Usertype;
+            row[TitleList.StartTime.ToString()] = emb.Starttime;
+            row[TitleList.EndTime.ToString()] = emb.Stoptime;
+            row[TitleList.Area.ToString()] = emb.Area;
+            row[TitleList.UseTime.ToString()] = emb.Usedtime;
+            row[TitleList.UseMoney.ToString()] = emb.Money;
+            row[TitleList.Mac.ToString()] = emb.Mac;
+            row[TitleList.Ip.ToString()] = emb.Ip;
         }
         #endregion
 
@@ -140,7 +135,7 @@ namespace NetBarMS.Views.NetUserManage
         //关闭日期选择菜单
         private void PopupContainerEdit1_Closed(object sender, DevExpress.XtraEditors.Controls.ClosedEventArgs e)
         {
-            MemberNetFilterRecord();
+            GetMemberNetRecord(true);
         }
 
         //日期选择触发
@@ -148,11 +143,13 @@ namespace NetBarMS.Views.NetUserManage
         {
             lastDate = ToolsManage.GetDateNavigatorRangeTime(this.dateNavigator, lastDate, out this.startTime, out this.endTime);
         }
-        private void SearchButtonEdit_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        #endregion
+
+        //
+        private void PageView_PageChanged(int current)
         {
-            MemberNetFilterRecord();
+            GetMemberNetRecord(false);
         }
 
-        #endregion
     }
 }

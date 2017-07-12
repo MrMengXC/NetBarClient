@@ -39,6 +39,7 @@
             this.dateNavigator = new DevExpress.XtraScheduler.DateNavigator();
             this.useComboBoxEdit = new DevExpress.XtraEditors.ComboBoxEdit();
             this.payChannelComboBoxEdit = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.pageView1 = new NetBarMS.Views.CustomView.PageView();
             this.titlePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -66,7 +67,7 @@
             this.gridControl1.Location = new System.Drawing.Point(6, 95);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1091, 680);
+            this.gridControl1.Size = new System.Drawing.Size(1091, 664);
             this.gridControl1.TabIndex = 78;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1,
@@ -173,10 +174,21 @@
             this.payChannelComboBoxEdit.TabIndex = 2;
             this.payChannelComboBoxEdit.SelectedIndexChanged += new System.EventHandler(this.payChannelComboBoxEdit_SelectedIndexChanged);
             // 
+            // pageView1
+            // 
+            this.pageView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.pageView1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pageView1.Location = new System.Drawing.Point(0, 775);
+            this.pageView1.Name = "pageView1";
+            this.pageView1.Size = new System.Drawing.Size(1100, 30);
+            this.pageView1.TabIndex = 80;
+            this.pageView1.PageChangedEvent += new NetBarMS.Codes.Tools.PageChangedHandle(this.PageView_PageChanged);
+            // 
             // MemberConsumeRecordView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.pageView1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.gridControl1);
             this.Name = "MemberConsumeRecordView";
@@ -184,6 +196,7 @@
             this.Controls.SetChildIndex(this.gridControl1, 0);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.titlePanel, 0);
+            this.Controls.SetChildIndex(this.pageView1, 0);
             this.titlePanel.ResumeLayout(false);
             this.titlePanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
@@ -218,5 +231,6 @@
         private DevExpress.XtraEditors.PopupContainerEdit popupContainerEdit1;
         private DevExpress.XtraEditors.PopupContainerControl popupContainerControl1;
         private DevExpress.XtraScheduler.DateNavigator dateNavigator;
+        private CustomView.PageView pageView1;
     }
 }

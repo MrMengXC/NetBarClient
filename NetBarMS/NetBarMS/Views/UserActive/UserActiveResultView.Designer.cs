@@ -56,12 +56,12 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "激活成功，祝您愉快！";
             // 
-            // UserActiveMsgView
+            // UserActivResultView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
-            this.Name = "UserActiveMsgView";
+            this.Name = "UserActivResultView";
             this.Size = new System.Drawing.Size(524, 192);
             this.Controls.SetChildIndex(this.titlePanel, 0);
             this.Controls.SetChildIndex(this.panel1, 0);

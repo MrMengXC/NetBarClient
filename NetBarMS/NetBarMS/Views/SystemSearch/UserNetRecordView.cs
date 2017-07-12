@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using NetBarMS.Codes.Tools;
 using NetBarMS.Codes.Tools.NetOperation;
+using NetBarMS.Codes.Tools.Manage;
+using System.Reflection;
 
 namespace NetBarMS.Views.SystemSearch
 {
@@ -34,7 +36,8 @@ namespace NetBarMS.Views.SystemSearch
 
         private DateTime lastDate = DateTime.MinValue;
         private string startTime = "", endTime = "";
-        private int pageBegin = 0, pageSize = 15;
+
+        private List<StructRealTime> computers;
         private IList<StructEmbarkation> records;
         public UserNetRecordView()
         {
@@ -43,27 +46,44 @@ namespace NetBarMS.Views.SystemSearch
             InitUI();
 
         }
-        //初始化UI
+        
+        #region 初始化UI
         private void InitUI()
         {
+
+
             ToolsManage.SetGridView(this.gridView1, GridControlType.UserNetRecord, out this.mainDataTable);
             this.gridControl1.DataSource = this.mainDataTable;
             this.dateNavigator.UpdateDateTimeWhenNavigating = false;
             this.dateNavigator.UpdateSelectionWhenNavigating = false;
             this.dateNavigator.SyncSelectionWithEditValue = false;
-            GetUserNetRecord();
+
+            //获取设备编号
+            this.comboBoxEdit1.Properties.Items.Add("无");
+            HomePageMessageManage.Manage().GetComputers(out this.computers);
+            foreach(StructRealTime com in this.computers)
+            {
+                this.comboBoxEdit1.Properties.Items.Add(com.Computer);
+            }
+
+            GetUserNetRecord(false);
 
         }
+        #endregion
 
         #region 会员上网记录查询/条件过滤查询
         //会员上网记录查询
-        private void GetUserNetRecord()
+        private void GetUserNetRecord(bool isFilter)
         {
+            if(isFilter)
+            {
+                this.pageView1.InitPageViewData();
+            }
 
             StructPage.Builder page = new StructPage.Builder()
             {
-                Pagesize = this.pageSize,
-                Pagebegin = this.pageBegin,
+                Pagesize = pageView1.PageSize,
+                Pagebegin = pageView1.PageBegin,
                 Fieldname = 0,
                 Order = 0,
             };
@@ -73,7 +93,13 @@ namespace NetBarMS.Views.SystemSearch
             {
                 name = this.searchButtonEdit.Text;
             }
-            RecordNetOperation.GetUserNetRecord(GetUserNetRecordResult, page.Build(),this.startTime, this.endTime, name);
+
+            int comId = -1;
+            if(this.comboBoxEdit1.SelectedIndex > 0)
+            {
+                comId = this.computers[this.comboBoxEdit1.SelectedIndex - 1].Computerid;
+            }
+            RecordNetOperation.GetUserNetRecord(GetUserNetRecordResult, page.Build(),this.startTime, this.endTime, name,-1,comId);
 
         }
         //上网记录查询结果回调
@@ -91,8 +117,8 @@ namespace NetBarMS.Views.SystemSearch
             {
                 ToolsManage.Invoke(this,new UIHandleBlock(delegate
                 {
+                    this.pageView1.RefreshPageView(result.pack.Content.ScQueryEmk.Pagecount);
                     this.records = result.pack.Content.ScQueryEmk.EmksList;
-
                     RefreshGridControl();
                 }));
             }
@@ -135,7 +161,7 @@ namespace NetBarMS.Views.SystemSearch
         //关闭日期选择菜单
         private void PopupContainerEdit1_Closed(object sender, DevExpress.XtraEditors.Controls.ClosedEventArgs e)
         {
-            GetUserNetRecord();
+            GetUserNetRecord(true);
         }
 
         //日期选择触发
@@ -143,11 +169,29 @@ namespace NetBarMS.Views.SystemSearch
         {
             lastDate = ToolsManage.GetDateNavigatorRangeTime(this.dateNavigator, lastDate, out this.startTime, out this.endTime);
         }
+
+      
         private void SearchButtonEdit_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            GetUserNetRecord();
+            GetUserNetRecord(true);
         }
 
+
+
         #endregion
+
+        #region 选择电脑设备
+        private void comboBoxEdit1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            GetUserNetRecord(true);
+
+        }
+        #endregion
+        //进行页数通知
+        private void PageView_PageChanged(int current)
+        {
+            GetUserNetRecord(false);
+        }
+
     }
 }

@@ -116,11 +116,11 @@
     <Compile Include="Codes\Tools\Manage\DelegateManage.cs" />
     <Compile Include="Codes\Tools\Manage\EnumManage.cs" />
     <Compile Include="Codes\Tools\Manage\HomePageMessageManage.cs" />
+    <Compile Include="Codes\Tools\Manage\ManagerManage.cs" />
     <Compile Include="Codes\Tools\NetOperation\EvaluateNetOperation.cs" />
     <Compile Include="Codes\Tools\NetOperation\OtherMainNetOperation.cs" />
     <Compile Include="Codes\Tools\NetOperation\RecordNetOperation.cs" />
     <Compile Include="Plugins\BigInteger.cs" />
-    <Compile Include="Codes\Tools\Manage\CurrentStaffManage.cs" />
     <Compile Include="Codes\Tools\FlowManage\ActiveFlowManage.cs" />
     <Compile Include="Codes\Tools\Manage\IdTools.cs" />
     <Compile Include="Codes\Tools\Manage\NetBarException.cs" />
@@ -261,16 +261,16 @@
     <Compile Include="Views\InCome\YearInComeView.Designer.cs">
       <DependentUpon>YearInComeView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\ManagerManage\StaffAddView.cs">
+    <Compile Include="Views\ManagersManage\StaffAddView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\ManagerManage\StaffAddView.Designer.cs">
+    <Compile Include="Views\ManagersManage\StaffAddView.Designer.cs">
       <DependentUpon>StaffAddView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\ManagerManage\StaffListView.cs">
+    <Compile Include="Views\ManagersManage\StaffListView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\ManagerManage\StaffListView.Designer.cs">
+    <Compile Include="Views\ManagersManage\StaffListView.Designer.cs">
       <DependentUpon>StaffListView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Message\UserPayResultView.cs">
@@ -393,16 +393,16 @@
     <Compile Include="Views\OtherMain\ManagerLoginView.Designer.cs">
       <DependentUpon>ManagerLoginView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\ManagerManage\ManagerAddView.cs">
+    <Compile Include="Views\ManagersManage\ManagerAddView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\ManagerManage\ManagerAddView.Designer.cs">
+    <Compile Include="Views\ManagersManage\ManagerAddView.Designer.cs">
       <DependentUpon>ManagerAddView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\ManagerManage\ManagerManageView.cs">
+    <Compile Include="Views\ManagersManage\ManagerManageView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\ManagerManage\ManagerManageView.Designer.cs">
+    <Compile Include="Views\ManagersManage\ManagerManageView.Designer.cs">
       <DependentUpon>ManagerManageView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\NetUserManage\MemberManageView.cs">
@@ -705,10 +705,10 @@
     <EmbeddedResource Include="Views\InCome\MonthInComeView.resx">
       <DependentUpon>MonthInComeView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\ManagerManage\StaffAddView.resx">
+    <EmbeddedResource Include="Views\ManagersManage\StaffAddView.resx">
       <DependentUpon>StaffAddView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\ManagerManage\StaffListView.resx">
+    <EmbeddedResource Include="Views\ManagersManage\StaffListView.resx">
       <DependentUpon>StaffListView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Message\UserPayResultView.resx">
@@ -771,10 +771,10 @@
     <EmbeddedResource Include="Views\OtherMain\ManagerLoginView.resx">
       <DependentUpon>ManagerLoginView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\ManagerManage\ManagerAddView.resx">
+    <EmbeddedResource Include="Views\ManagersManage\ManagerAddView.resx">
       <DependentUpon>ManagerAddView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\ManagerManage\ManagerManageView.resx">
+    <EmbeddedResource Include="Views\ManagersManage\ManagerManageView.resx">
       <DependentUpon>ManagerManageView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\NetUserManage\MemberManageView.resx">

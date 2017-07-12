@@ -19,7 +19,7 @@ using NetBarMS.Views.RateManage;
 using NetBarMS.Views.NetUserManage;
 using NetBarMS.Views.ProductManage;
 using NetBarMS.Views.InCome;
-using NetBarMS.Views.ManagerManage;
+using NetBarMS.Views.ManagersManage;
 using NetBarMS.Views.SystemManage;
 using NetBarMS.Views.SystemSearch;
 using NetBarMS.Views.EvaluateManage;

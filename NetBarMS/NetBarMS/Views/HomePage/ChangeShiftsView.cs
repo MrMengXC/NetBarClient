@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using NetBarMS.Codes.Tools;
 using NetBarMS.Codes.Tools.NetOperation;
+using NetBarMS.Codes.Tools.Manage;
+using NetBarMS.Views.ProductManage;
 
 namespace NetBarMS.Views.HomePage
 {
@@ -35,7 +37,7 @@ namespace NetBarMS.Views.HomePage
         }
         #endregion
 
-        //获取交班人信息
+        #region 获取交班人信息
         private void GetGiveStaffInfo()
         {
             HomePageNetOperation.GetGiveStaffInfo(GetGiveStaffInfoResult);
@@ -56,14 +58,17 @@ namespace NetBarMS.Views.HomePage
                     this.changeLabel.Text += give.DeliveredBy;
                     this.payMoneyLabel.Text += give.ChargeAmount;
                     this.sellMoneyLabel.Text += give.SaleAmount;
-
-
                 }));
+            }
+            else
+            {
+
             }
 
         }
+        #endregion
 
-        //登录（添加交接班记录）
+        #region 登录（添加交接班记录）
         private void simpleButton5_Click(object sender, EventArgs e)
         {
             //接班人
@@ -79,6 +84,10 @@ namespace NetBarMS.Views.HomePage
             }
             int ischecked = this.checkEdit1.Checked ? 1 : 0;
             string remark = this.textBox1.Text;
+            if (this.comboBoxEdit1.SelectedIndex >= 0)
+            {
+                ManagerManage.Manage().AccountId = this.staffs[this.comboBoxEdit1.SelectedIndex].Guid;
+            }
             HomePageNetOperation.AddChangeStaff(AddChangeStaffResult, ps2, receive, ps1, ischecked, remark);
         }
 
@@ -95,16 +104,32 @@ namespace NetBarMS.Views.HomePage
 
             if(result.pack.Content.MessageType == 1)
             {
+                NetBarMS.Codes.Tools.Manage.ManagerManage.Manage().GetAccountInfo(GetAccountInfoResult);
+            }
+            else
+            {
+                //获取首页数据
                 this.Invoke(new UIHandleBlock(delegate
                 {
-                    MessageBox.Show("交接班成功");
-                    this.CloseFormClick();
+                    MessageBox.Show("交接班失败,请检查提交的信息是否正确！");
                 }));
             }
-
-
         }
 
+        // 获取账户信息的回调
+        public void GetAccountInfoResult(ResultModel result)
+        {
+            NetBarMS.Codes.Tools.Manage.ManagerManage.Manage().RemoveAccountInfoResultBlock(GetAccountInfoResult);
+            //获取首页数据
+            this.Invoke(new UIHandleBlock(delegate
+            {
+                MessageBox.Show("交接班成功");
+                this.CloseFormClick();
+            }));
+        }
+        #endregion
+        
+        #region 进行结果选择
         private void checkEdit_CheckedChanged(object sender, EventArgs e)
         {
             //选择正确
@@ -124,11 +149,13 @@ namespace NetBarMS.Views.HomePage
                 }
             }
         }
+        #endregion
 
         //进行打印库存清单
         private void simpleButton3_Click(object sender, EventArgs e)
         {
-            //TODO:
+            ProductStockListView view = new ProductStockListView();
+            ToolsManage.ShowForm(view, false);
         }
     }
 }

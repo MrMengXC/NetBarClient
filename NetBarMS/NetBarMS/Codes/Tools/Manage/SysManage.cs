@@ -335,7 +335,7 @@ namespace NetBarMS.Codes.Tools
         //获取管理员列表
         private void GetManagerList()
         {
-            ManagerNetOperation.GetManagerList(GetManagerListResult, CurrentStaffManage.Manage().GetCurrentStaffId());
+            ManagerNetOperation.GetManagerList(GetManagerListResult);
         }
         //获取管理员列表结果回调
         private void GetManagerListResult(ResultModel result)

@@ -36,7 +36,7 @@
             this.popupContainerEdit1 = new DevExpress.XtraEditors.PopupContainerEdit();
             this.popupContainerControl1 = new DevExpress.XtraEditors.PopupContainerControl();
             this.dateNavigator = new DevExpress.XtraScheduler.DateNavigator();
-            this.searchButtonEdit = new DevExpress.XtraEditors.ButtonEdit();
+            this.pageView1 = new NetBarMS.Views.CustomView.PageView();
             this.titlePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -48,7 +48,6 @@
             this.popupContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateNavigator)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNavigator.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchButtonEdit.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // titlePanel
@@ -92,7 +91,6 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.popupContainerEdit1);
-            this.flowLayoutPanel1.Controls.Add(this.searchButtonEdit);
             this.flowLayoutPanel1.Controls.Add(this.popupContainerControl1);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(10, 6);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -109,6 +107,7 @@
             this.popupContainerEdit1.Properties.PopupControl = this.popupContainerControl1;
             this.popupContainerEdit1.Size = new System.Drawing.Size(155, 20);
             this.popupContainerEdit1.TabIndex = 4;
+            this.popupContainerEdit1.Closed += new DevExpress.XtraEditors.Controls.ClosedEventHandler(this.PopupContainerEdit1_Closed);
             // 
             // popupContainerControl1
             // 
@@ -131,20 +130,23 @@
             this.dateNavigator.Name = "dateNavigator";
             this.dateNavigator.Size = new System.Drawing.Size(283, 258);
             this.dateNavigator.TabIndex = 0;
+            this.dateNavigator.Click += new System.EventHandler(this.DateNavigator_Click);
             // 
-            // searchButtonEdit
+            // pageView1
             // 
-            this.searchButtonEdit.Location = new System.Drawing.Point(164, 3);
-            this.searchButtonEdit.Name = "searchButtonEdit";
-            this.searchButtonEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Search)});
-            this.searchButtonEdit.Size = new System.Drawing.Size(136, 20);
-            this.searchButtonEdit.TabIndex = 5;
+            this.pageView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.pageView1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pageView1.Location = new System.Drawing.Point(0, 743);
+            this.pageView1.Name = "pageView1";
+            this.pageView1.Size = new System.Drawing.Size(1050, 30);
+            this.pageView1.TabIndex = 78;
+            this.pageView1.PageChangedEvent += new NetBarMS.Codes.Tools.PageChangedHandle(this.PageView_PageChanged);
             // 
             // MemberNetRecordView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.pageView1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.gridControl1);
             this.Name = "MemberNetRecordView";
@@ -152,6 +154,7 @@
             this.Controls.SetChildIndex(this.gridControl1, 0);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.titlePanel, 0);
+            this.Controls.SetChildIndex(this.pageView1, 0);
             this.titlePanel.ResumeLayout(false);
             this.titlePanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
@@ -164,7 +167,6 @@
             this.popupContainerControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dateNavigator.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNavigator)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchButtonEdit.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -178,8 +180,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private DevExpress.XtraEditors.PopupContainerEdit popupContainerEdit1;
-        private DevExpress.XtraEditors.ButtonEdit searchButtonEdit;
         private DevExpress.XtraEditors.PopupContainerControl popupContainerControl1;
         private DevExpress.XtraScheduler.DateNavigator dateNavigator;
+        private CustomView.PageView pageView1;
     }
 }

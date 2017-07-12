@@ -22,12 +22,15 @@ using System.Text.RegularExpressions;
 using System.IO;
 using DevExpress.XtraScheduler;
 using System.Resources;
+using DevExpress.XtraPrinting;
 
 namespace NetBarMS.Codes.Tools
 {
     
     class ToolsManage
     {
+
+
         #region 显示自定义窗体
         //
         /// <summary>
@@ -38,7 +41,10 @@ namespace NetBarMS.Codes.Tools
         public static void ShowForm(RootFormView control, bool showInTaskbar)
         {
             CustomForm newForm = new CustomForm(control, showInTaskbar);
-            newForm.ShowDialog();
+            if (newForm.ShowDialog() == DialogResult.OK)
+            {
+                newForm.Dispose();
+            }
         }
         /// <summary>
         /// 显示自定义窗体
@@ -48,12 +54,18 @@ namespace NetBarMS.Codes.Tools
         public static void ShowForm(UserControl control, bool showInTaskbar)
         {
             CustomForm newForm = new CustomForm(control, showInTaskbar);
-            newForm.ShowDialog(); 
+            if (newForm.ShowDialog() == DialogResult.OK)
+            {
+                newForm.Dispose();
+            }
         }
         public static void ShowForm(RootUserControlView control, bool showInTaskbar)
         {
             CustomForm newForm = new CustomForm(control, showInTaskbar);
-            newForm.ShowDialog();
+            if (newForm.ShowDialog() == DialogResult.OK)
+            {
+                newForm.Dispose();
+            }
         }
        
         public static void ShowForm(RootUserControlView control, bool showInTaskbar,CloseFormHandle close)
@@ -63,7 +75,10 @@ namespace NetBarMS.Codes.Tools
                 control.CloseForm += close;
             }
             CustomForm newForm = new CustomForm(control, showInTaskbar);
-            newForm.ShowDialog();
+            if (newForm.ShowDialog() == DialogResult.OK)
+            {
+                newForm.Dispose();
+            }
 
         }
         public static void ShowMessageView(RootUserControlView control, bool showInTaskbar, CloseFormHandle close)
@@ -74,7 +89,10 @@ namespace NetBarMS.Codes.Tools
                 control.CloseForm += close;
             }
             CustomForm newForm = new CustomForm(control, showInTaskbar);
-            newForm.ShowDialog();
+            if (newForm.ShowDialog() == DialogResult.OK)
+            {
+                newForm.Dispose();
+            }
         }
         #endregion
 
@@ -420,7 +438,6 @@ namespace NetBarMS.Codes.Tools
         }
         #endregion
 
-
         #region 回调线程进行UI显示
         public static void Invoke(UserControl control,Delegate method)
         {
@@ -432,5 +449,46 @@ namespace NetBarMS.Codes.Tools
         }
 
         #endregion
+
+
+        /// <summary>
+        /// 打印GridControl
+        /// </summary>
+        /// <param name="control">需要被打印的GridControl</param>
+        public static void PrintGridControl(GridControl control)
+        {
+            DevExpress.XtraPrintingLinks.CompositeLink compositeLink = new DevExpress.XtraPrintingLinks.CompositeLink();
+            DevExpress.XtraPrinting.PrintingSystem ps = new DevExpress.XtraPrinting.PrintingSystem();
+
+            compositeLink.PrintingSystem = ps;
+            compositeLink.Landscape = true;
+            compositeLink.PaperKind = System.Drawing.Printing.PaperKind.A4;
+           
+            DevExpress.XtraPrinting.PrintableComponentLink link = new DevExpress.XtraPrinting.PrintableComponentLink(ps);
+            ps.PageSettings.Landscape = true;
+
+
+         //   PageHeaderFooter phf = compositeLink.PageHeaderFooter as PageHeaderFooter;
+
+            //设置页眉 
+            //phf.Header.Content.Clear();
+            //phf.Header.Content.AddRange(new string[] { "", _PrintHeader, "" });
+            //phf.Header.Font = new System.Drawing.Font("宋体", 14, System.Drawing.FontStyle.Bold);
+            //phf.Header.LineAlignment = BrickAlignment.Center;
+
+            //设置页脚 
+            //phf.Footer.Content.Clear();
+            //phf.Footer.Content.AddRange(new string[] { "", "", "1" });
+            //phf.Footer.Font = new System.Drawing.Font("宋体", 9, System.Drawing.FontStyle.Regular);
+            //phf.Footer.LineAlignment = BrickAlignment.Center;
+
+
+            link.Component = control;
+        
+            compositeLink.Links.Add(link);
+
+            link.CreateDocument();  //建立文档
+            ps.PreviewFormEx.Show();//进行预览  
+        }
     }
 }

@@ -434,8 +434,6 @@ C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\obj\Debug\NetBarMS
 C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\obj\Debug\NetBarMS.Views.InCome.AreaIncomeView.resources
 C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\obj\Debug\NetBarMS.Views.InCome.IncomeManageView.resources
 C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\obj\Debug\NetBarMS.Views.InCome.MonthInComeView.resources
-C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\obj\Debug\NetBarMS.Views.ManagerManage.StaffAddView.resources
-C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\obj\Debug\NetBarMS.Views.ManagerManage.StaffListView.resources
 C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\obj\Debug\NetBarMS.Views.SystemSearch.AttendanceSearchView.resources
 C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\obj\Debug\NetBarMS.Views.NetUserManage.OpenMemberRecordView.resources
 C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\obj\Debug\NetBarMS.Views.HomePage.CallServiceView.resources
@@ -453,8 +451,6 @@ C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\obj\Debug\NetBarMS
 C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\obj\Debug\NetBarMS.Views.OtherMain.JXInspectView.resources
 C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\obj\Debug\NetBarMS.Views.LogManageView.resources
 C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\obj\Debug\NetBarMS.Views.OtherMain.ManagerLoginView.resources
-C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\obj\Debug\NetBarMS.Views.ManagerManage.ManagerAddView.resources
-C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\obj\Debug\NetBarMS.Views.ManagerManage.ManagerManageView.resources
 C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\obj\Debug\NetBarMS.Views.NetRecordView.resources
 C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\obj\Debug\NetBarMS.Views.UserIdDetailView.resources
 C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\obj\Debug\NetBarMS.Views.HomePage.ChangeShiftsView.resources
@@ -467,7 +463,6 @@ C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\obj\Debug\NetBarMS
 C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\obj\Debug\NetBarMS.Views.ProductManage.ProductManageView.resources
 C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\obj\Debug\NetBarMS.Views.SoftwareMsgManageView.resources
 C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\obj\Debug\NetBarMS.Views.ProductManage.ProductSellRankView.resources
-C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\obj\Debug\NetBarMS.Views.ProductManage.ProductStoreList.resources
 C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\obj\Debug\NetBarMS.Views.RateManage.AwardManageView.resources
 C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\obj\Debug\NetBarMS.Views.RateManage.IntegralManageView.resources
 C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\obj\Debug\NetBarMS.Views.RateManage.OtherCostView.resources
@@ -505,3 +500,8 @@ C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\obj\Debug\NetBarMS
 C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\obj\Debug\NetBarMS.Views.SystemSearch.UserRechargeView.resources
 C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\obj\Debug\NetBarMS.Views.NetUserManage.MemberManageView.resources
 C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\obj\Debug\NetBarMS.Views.SystemSearch.UserNetRecordView.resources
+C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\obj\Debug\NetBarMS.Views.ManagersManage.StaffAddView.resources
+C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\obj\Debug\NetBarMS.Views.ManagersManage.StaffListView.resources
+C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\obj\Debug\NetBarMS.Views.ManagersManage.ManagerAddView.resources
+C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\obj\Debug\NetBarMS.Views.ManagersManage.ManagerManageView.resources
+C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\obj\Debug\NetBarMS.Views.ProductManage.ProductStockListView.resources

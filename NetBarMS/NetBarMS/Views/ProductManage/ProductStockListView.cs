@@ -13,14 +13,14 @@ using NetBarMS.Codes.Tools.NetOperation;
 
 namespace NetBarMS.Views.ProductManage
 {
-    public partial class ProductStoreList : RootUserControlView
+    public partial class ProductStockListView : RootUserControlView
     {
 
-        enum TitleList
+        private enum TitleList
         {
-            None,
+            None = 0,
 
-            Number = 0,             //序号
+            Number,             //序号
             ProductName,            //商品名称
             Type,                   //类别
             ChildType,              //子类别
@@ -29,18 +29,17 @@ namespace NetBarMS.Views.ProductManage
             StockInventory,         //库存盘点
             Remarks,                //备注
         }
-        private Int32 pageBegin = 0;
-        private Int32 pageSize = 15;
+        private Int32 pageBegin = 0,  pageSize = 15;
         private IList<StructStock> products;
 
-        public ProductStoreList()
+        public ProductStockListView()
         {
             InitializeComponent();
             titleLabel.Text = "库存清单";
             InitUI();
         }
 
-        //初始化UI
+        #region 初始化UI
         private void InitUI()
         {
             ToolsManage.SetGridView(this.gridView1, GridControlType.ProductStockList, out this.mainDataTable);
@@ -49,6 +48,8 @@ namespace NetBarMS.Views.ProductManage
             GetStoreList();
 
         }
+        #endregion
+
         #region 获取库存清单
         //获取库存清单
         private void GetStoreList()
@@ -85,7 +86,6 @@ namespace NetBarMS.Views.ProductManage
         #endregion
 
         #region 刷新GridControl
-
         //刷新GridControl
         private void RefreshGridControl()
         {
@@ -94,6 +94,9 @@ namespace NetBarMS.Views.ProductManage
                 AddNewRow(stock);
             }
         }
+
+      
+
         //添加新行
         private void AddNewRow(StructStock product)
         {
@@ -109,5 +112,10 @@ namespace NetBarMS.Views.ProductManage
 
         #endregion
 
+        //进行打印
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            ToolsManage.PrintGridControl(this.gridControl1);
+        }
     }
 }

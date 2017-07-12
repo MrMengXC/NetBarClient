@@ -38,6 +38,7 @@
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.pageView1 = new NetBarMS.Views.CustomView.PageView();
             this.titlePanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -146,7 +147,7 @@
             this.gridControl1.Location = new System.Drawing.Point(9, 100);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1088, 680);
+            this.gridControl1.Size = new System.Drawing.Size(1088, 656);
             this.gridControl1.TabIndex = 81;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1,
@@ -163,10 +164,21 @@
             this.gridView.GridControl = this.gridControl1;
             this.gridView.Name = "gridView";
             // 
+            // pageView1
+            // 
+            this.pageView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.pageView1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pageView1.Location = new System.Drawing.Point(0, 775);
+            this.pageView1.Name = "pageView1";
+            this.pageView1.Size = new System.Drawing.Size(1100, 30);
+            this.pageView1.TabIndex = 82;
+            this.pageView1.PageChangedEvent += new NetBarMS.Codes.Tools.PageChangedHandle(this.PageView_PageChanged);
+            // 
             // UserConsumeRecordView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.pageView1);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.panel1);
             this.Name = "UserConsumeRecordView";
@@ -174,6 +186,7 @@
             this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.titlePanel, 0);
             this.Controls.SetChildIndex(this.gridControl1, 0);
+            this.Controls.SetChildIndex(this.pageView1, 0);
             this.titlePanel.ResumeLayout(false);
             this.titlePanel.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -204,5 +217,6 @@
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView;
+        private CustomView.PageView pageView1;
     }
 }

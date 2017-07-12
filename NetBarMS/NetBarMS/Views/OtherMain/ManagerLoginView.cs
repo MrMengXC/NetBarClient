@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using NetBarMS.Codes.Tools;
 using NetBarMS.Codes.Tools.NetOperation;
 using NetBarMS.Codes;
-
+using NetBarMS.Codes.Tools.Manage;
 
 namespace NetBarMS.Views.OtherMain
 {
@@ -18,6 +18,7 @@ namespace NetBarMS.Views.OtherMain
     {
 
         private int num = 5;
+        private List<StructAccount> staffs;
         public ManagerLoginView()
         {
             InitializeComponent();
@@ -71,7 +72,7 @@ namespace NetBarMS.Views.OtherMain
                     SysManage.Manage().RemoveRequestSysInfo(RequestSysInfoResult);
                     this.loginButton.Enabled = true;
                     //设置用户名列表
-                    List<StructAccount> staffs;
+                  
                     SysManage.Manage().GetStaffs(out staffs);
                     foreach (StructAccount staff in staffs)
                     {
@@ -93,6 +94,11 @@ namespace NetBarMS.Views.OtherMain
             {
                 MessageBox.Show("请输入用户名或密码");
                 return;
+            }
+
+            if(this.comboBoxEdit1.SelectedIndex >= 0)
+            {
+                ManagerManage.Manage().AccountId = this.staffs[this.comboBoxEdit1.SelectedIndex].Guid;
             }
             ManagerNetOperation.ManagerLogin(ManagerLoginBlock,userName,ps);
         }

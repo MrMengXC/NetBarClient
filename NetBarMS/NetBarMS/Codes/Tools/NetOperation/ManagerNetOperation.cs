@@ -59,10 +59,19 @@ namespace NetBarMS.Codes.Tools.NetOperation
         /// <summary>
         /// 账户信息
         /// </summary>
-        public static void AccountInfo(DataResultBlock resultBlock)
+        public static void AccountInfo(DataResultBlock resultBlock,string aid)
         {
+            CSAccountInfo.Builder info = new CSAccountInfo.Builder()
+            {
+                Accountid = aid
+            };
+            MessageContent.Builder content = new MessageContent.Builder();
+            content.MessageType = 1;
+            content.CsAccountInfo = info.Build();
+
             MessagePack.Builder pack = new MessagePack.Builder();
-            pack.SetCmd(Cmd.CMD_ACCOUNT_INFO);
+            pack.Cmd = Cmd.CMD_ACCOUNT_INFO;
+            pack.Content = content.Build();
             NetMessageManage.Manage().SendMsg(pack.Build(), resultBlock);
         }
         #endregion
@@ -71,7 +80,7 @@ namespace NetBarMS.Codes.Tools.NetOperation
         /// <summary>
         /// 获取管理员角色列表
         /// </summary>
-        public static void GetManagerList(DataResultBlock resultBlock,Int32 roleId)
+        public static void GetManagerList(DataResultBlock resultBlock)
         {
             MessagePack.Builder pack = new MessagePack.Builder();
             pack.SetCmd(Cmd.CMD_ROLE_LIST);

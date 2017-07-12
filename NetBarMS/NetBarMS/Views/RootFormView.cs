@@ -22,8 +22,14 @@ namespace NetBarMS.Views
         {
             InitializeComponent();
             this.closeBtn.Click += CloseFormClick;
+            this.Disposed += RootUserControlView_Disposed;
         }
+        public virtual void RootUserControlView_Disposed(object sender, EventArgs e)
+        {
 
+
+
+        }
         #region 关闭事件
         //按钮关闭窗体
         private void CloseFormClick(object sender, EventArgs e)

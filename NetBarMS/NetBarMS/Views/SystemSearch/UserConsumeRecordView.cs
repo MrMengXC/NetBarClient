@@ -32,10 +32,8 @@ namespace NetBarMS.Views.SystemSearch
 
         }
         #endregion
-        private Int32 mid;
         private DateTime lastDate = DateTime.MinValue;
         private string startTime = "", endTime = "";
-        private int pageBegin = 0,pageSize = 15;
         private IList<StructConsum> records;
         public UserConsumeRecordView()
         {
@@ -68,7 +66,7 @@ namespace NetBarMS.Views.SystemSearch
             ToolsManage.SetGridView(this.gridView1, GridControlType.UserConsumeRecord, out this.mainDataTable);
             this.gridControl1.DataSource = this.mainDataTable;
             //获取记录
-            GetUserConsumeRecord();
+            GetUserConsumeRecord(false);
 
 
         }
@@ -76,8 +74,12 @@ namespace NetBarMS.Views.SystemSearch
 
         #region 用户消费记录查询/过滤
         //用户消费记录查询
-        private void GetUserConsumeRecord()
+        private void GetUserConsumeRecord(bool isFilter)
         {
+            if(isFilter)
+            {
+                this.pageView1.InitPageViewData();
+            }
             CONSUMEUSE consume = CONSUMEUSE.无;
             Enum.TryParse<CONSUMEUSE>(this.useComboBoxEdit.Text, out consume);
 
@@ -86,12 +88,12 @@ namespace NetBarMS.Views.SystemSearch
 
             StructPage.Builder page = new StructPage.Builder()
             {
-                Pagesize = pageSize,
-                Pagebegin = pageBegin,
+                Pagesize = pageView1.PageSize,
+                Pagebegin = pageView1.PageBegin,
                 Fieldname = 0,
                 Order = 0,
             };
-            RecordNetOperation.GetUserConsumeRecord(GetUserConsumeRecordResult, page.Build(), this.startTime, this.endTime, (int)consume, (int)paychannel);
+            RecordNetOperation.GetUserConsumeRecord(GetUserConsumeRecordResult, page.Build(), this.startTime, this.endTime, (int)consume, (int)paychannel,-1);
 
         }
         //会员消费记录查询过滤
@@ -108,7 +110,7 @@ namespace NetBarMS.Views.SystemSearch
             if (result.pack.Content.MessageType == 1)
             {
                 this.Invoke(new UIHandleBlock(delegate {
-
+                    this.pageView1.RefreshPageView(result.pack.Content.ScQueryConsum.Pagecount);
                     records = result.pack.Content.ScQueryConsum.ConsumsList;
                     RefreshGridControl();
 
@@ -155,7 +157,7 @@ namespace NetBarMS.Views.SystemSearch
         //关闭日期选择菜单
         private void PopupContainerEdit1_Closed(object sender, DevExpress.XtraEditors.Controls.ClosedEventArgs e)
         {
-            GetUserConsumeRecord();
+            GetUserConsumeRecord(true);
         }
 
         //日期选择触发
@@ -167,13 +169,22 @@ namespace NetBarMS.Views.SystemSearch
         //用途搜索
         private void useComboBoxEdit_SelectedIndexChanged(object sender, EventArgs e)
         {
-            GetUserConsumeRecord();
+            GetUserConsumeRecord(true);
+
         }
         //支付渠道搜索
         private void payChannelComboBoxEdit_SelectedIndexChanged(object sender, EventArgs e)
         {
-            GetUserConsumeRecord();
+            GetUserConsumeRecord(true);
+
         }
         #endregion
+        #region 翻页
+        private void PageView_PageChanged(int current)
+        {
+            GetUserConsumeRecord(false);
+        }
+        #endregion
+
     }
 }

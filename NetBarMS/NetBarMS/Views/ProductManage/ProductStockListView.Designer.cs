@@ -1,6 +1,6 @@
 ﻿namespace NetBarMS.Views.ProductManage
 {
-    partial class ProductStoreList
+    partial class ProductStockListView
     {
         /// <summary> 
         /// 必需的设计器变量。
@@ -86,15 +86,16 @@
             this.simpleButton1.Size = new System.Drawing.Size(92, 33);
             this.simpleButton1.TabIndex = 78;
             this.simpleButton1.Text = "打印库存清单";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
-            // ProductStoreList
+            // ProductStockListView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.gridControl1);
-            this.Name = "ProductStoreList";
+            this.Name = "ProductStockListView";
             this.Size = new System.Drawing.Size(775, 781);
             this.Controls.SetChildIndex(this.gridControl1, 0);
             this.Controls.SetChildIndex(this.titlePanel, 0);

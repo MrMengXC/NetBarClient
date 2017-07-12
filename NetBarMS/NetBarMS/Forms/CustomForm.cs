@@ -49,7 +49,14 @@ namespace NetBarMS.Forms
             control.Anchor = AnchorStyles.Right | AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Bottom;
             this.BackColor = Color.Wheat;
             this.ShowInTaskbar = showInTaskbar;      //是否在任务栏显示
+            this.FormClosed += CustomForm_FormClosed;
      
+        }
+
+        private void CustomForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            System.Console.WriteLine("CustomForm_FormClosed");
+            this.DialogResult = DialogResult.OK;
         }
 
         private void InitForm(UserControl control, bool showInTaskbar)
@@ -70,6 +77,8 @@ namespace NetBarMS.Forms
             control.Anchor = AnchorStyles.Right | AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Bottom;
             this.BackColor = Color.Wheat;
             this.ShowInTaskbar = showInTaskbar;      //是否在任务栏显示
+            this.FormClosed += CustomForm_FormClosed;
+
         }
         #endregion
 
@@ -86,6 +95,7 @@ namespace NetBarMS.Forms
 
         public CustomForm(RootUserControlView control,bool showInTaskbar)
         {
+            InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             this.ControlBox = false;
 
@@ -98,8 +108,10 @@ namespace NetBarMS.Forms
             control.Anchor = AnchorStyles.Right | AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Bottom;
             this.BackColor = Color.Wheat;
             this.ShowInTaskbar = showInTaskbar;      //是否在任务栏显示
+            this.FormClosed += CustomForm_FormClosed;
+
         }
-       
+
         /// <summary>
         /// 显示窗体
         /// </summary>

@@ -74,7 +74,7 @@ namespace NetBarMS.Views.HomePage
             this.gridControl1.DataSource = this.mainDataTable;
             this.gridView1.CustomRowCellEdit += GridView1_CustomRowCellEdit;
             //获取账户信息
-            ManagerNetOperation.AccountInfo(AccountInfoBlock);
+            NetBarMS.Codes.Tools.Manage.ManagerManage.Manage().GetAccountInfo(GetAccountInfoResult);
         }
         //设置RepositoryItemButtonEdit
         private void SetButtonItem(out RepositoryItemButtonEdit buttonEdit,string[] buttonNames)
@@ -132,22 +132,10 @@ namespace NetBarMS.Views.HomePage
 
 
         // 获取账户信息的回调
-        public void AccountInfoBlock(ResultModel result)
+        public void GetAccountInfoResult(ResultModel result)
         {
-        
-            if(result.pack.Cmd != Cmd.CMD_ACCOUNT_INFO)
-            {
-                return;
-            }
-            NetMessageManage.Manage().RemoveResultBlock(AccountInfoBlock);
-            System.Console.WriteLine("AccountInfoBlock:" + result.pack);
-            if (result.pack.Content.MessageType == 1)
-            {
-                //进行管理员管理
-                CurrentStaffManage.Manage().UpdateStaffInfo(result.pack.Content.ScAccountInfo);
-                //获取首页数据
-                HomePageMessageManage.Manage().GetHomePageList(GetHomePageListResult,UpdateHomePageData,UpdateHomePageArea);
-            }
+            //获取首页数据
+            HomePageMessageManage.Manage().GetHomePageList(GetHomePageListResult, UpdateHomePageData, UpdateHomePageArea);
         }
         #endregion
 

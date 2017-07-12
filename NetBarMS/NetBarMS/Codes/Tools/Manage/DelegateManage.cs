@@ -9,6 +9,7 @@ namespace NetBarMS.Codes.Tools
     #region Delegate
     // 接受服务器数据回调代理
     public delegate void DataResultBlock(ResultModel result);
+
     //UI回调代理
     public delegate void UIHandleBlock();
     // 连接结果回调
@@ -16,6 +17,12 @@ namespace NetBarMS.Codes.Tools
     //关闭窗体回调
     public delegate void CloseFormHandle();
 
+    /// <summary>
+    /// 页书改变处理
+    /// </summary>
+    /// <param name="current">当前的页数</param>
+    /// <param name="pageSize">页显示个数</param>
+    public delegate void PageChangedHandle(int current);
 
     #endregion
 }

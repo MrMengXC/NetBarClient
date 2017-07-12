@@ -17,7 +17,7 @@ namespace NetBarMS.Views.SystemSearch
     public partial class AttendanceSearchView : RootUserControlView
     {
 
-        private string start, end;
+        private string start;
         private List<AreaTypeModel> areas;
         private IList<int> ratedatas;
 
@@ -28,9 +28,21 @@ namespace NetBarMS.Views.SystemSearch
             InitUI();
         }
 
-        //初始化UI
+        #region 初始化UI
         private void InitUI()
         {
+
+
+            this.mainDataTable = new DataTable();
+            this.mainDataTable.Columns.Add("time", typeof(string));
+            this.mainDataTable.Columns.Add("rate", typeof(int));
+
+            Series lineseries = this.chartControl1.Series[0];
+            lineseries.ArgumentDataMember = "time";
+            lineseries.ValueDataMembers[0] = "rate";
+            lineseries.DataSource = this.mainDataTable;
+
+
             this.dateNavigator1.UpdateDateTimeWhenNavigating = false;
             this.dateNavigator1.UpdateSelectionWhenNavigating = false;
             this.dateNavigator1.SyncSelectionWithEditValue = false;
@@ -43,19 +55,23 @@ namespace NetBarMS.Views.SystemSearch
             }
 
             DateTime date = DateTime.Now.AddDays(-1);
-            start = date.ToString("yyyy-MM-dd") + " 00:00:00";
-            end = date.ToString("yyyy-MM-dd") + " 23:59:59";
-        }
+            start = date.ToString("yyyy-MM-dd");
+            //end = date.ToString("yyyy-MM-dd") + " 23:59:59";
+            //+" 00:00:00";
 
-        //获取上座率
+            GetAttendanceSearch();
+        }
+        #endregion
+
+        #region 获取上座率
         private void GetAttendanceSearch()
         {
             int areaId = -1;
             if(this.comboBoxEdit1.SelectedIndex > 0)
             {
-                areaId = this.areas[this.comboBoxEdit1.SelectedIndex].areaId;
+                areaId = this.areas[this.comboBoxEdit1.SelectedIndex-1].areaId;
             }
-            RecordNetOperation.GetAttendanceSearch(GetAttendanceSearchResult, areaId, "");
+            RecordNetOperation.GetAttendanceSearch(GetAttendanceSearchResult, areaId, start);
         }
         //获取上座率结果回调
         private void GetAttendanceSearchResult(ResultModel result)
@@ -68,39 +84,48 @@ namespace NetBarMS.Views.SystemSearch
             NetMessageManage.Manage().RemoveResultBlock(GetAttendanceSearchResult);
             if(result.pack.Content.MessageType == 1)
             {
+                this.Invoke(new UIHandleBlock(delegate {
 
+                    ratedatas = result.pack.Content.ScQueryOccup.OccupsList;
+
+                    ShowAttendance();
+
+                }));
 
             }
         }
-        //显示占座率条形图
+        #endregion
 
+        #region 显示占座率条形图
         private void ShowAttendance()
         {
+            this.mainDataTable.Clear();
 
-            DataTable dt = new DataTable();
-            dt.Columns.Add("time", typeof(string));
-            dt.Columns.Add("money", typeof(int));
-
-            Series lineseries = this.chartControl1.Series[0];
-            lineseries.ArgumentDataMember = "time";
-            lineseries.ValueDataMembers[0] = "money";
-            lineseries.DataSource = dt;
-
-            //for (int i = 1; i <= this.earns.Count; i++)
-            //{
-            //    StructEarn earn = this.earns[i - 1];
-            //    dt.Rows.Add(i + "", earn.CashCharge + earn.CashSale + earn.TenpaySale + earn.TenpayCharge + earn.AlipaySale + earn.AlipayCharge);
-            //}
+            for (int i = 1; i <= this.ratedatas.Count; i++)
+            {
+                string time = string.Format("{0:D2}", i)+":00";
+                this.mainDataTable.Rows.Add(time, this.ratedatas[i-1]);
+            }
 
 
         }
-        #region 关闭日期菜单s
+        #endregion
+
+        #region 关闭日期菜单
         private void ComboBoxEdit1_Closed(object sender, DevExpress.XtraEditors.Controls.ClosedEventArgs e)
         {
 
             DateTime date = this.dateNavigator1.SelectionStart;
-            start = date.ToString("yyyy-MM-dd") + " 00:00:00";
-            end = date.ToString("yyyy-MM-dd") + " 23:59:59";
+            start = date.ToString("yyyy-MM-dd"); //+" 00:00:00"
+            //end = date.ToString("yyyy-MM-dd") + " 23:59:59";
+            GetAttendanceSearch();
+        }
+        #endregion
+
+        #region 筛选区域
+        private void comboBoxEdit1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            GetAttendanceSearch();
         }
         #endregion
     }

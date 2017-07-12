@@ -33,10 +33,12 @@
             this.popupContainerEdit1 = new DevExpress.XtraEditors.PopupContainerEdit();
             this.popupContainerControl1 = new DevExpress.XtraEditors.PopupContainerControl();
             this.dateNavigator = new DevExpress.XtraScheduler.DateNavigator();
+            this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
             this.searchButtonEdit = new DevExpress.XtraEditors.ButtonEdit();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.pageView1 = new NetBarMS.Views.CustomView.PageView();
             this.titlePanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -45,6 +47,7 @@
             this.popupContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateNavigator)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNavigator.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchButtonEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -67,6 +70,7 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.popupContainerEdit1);
+            this.flowLayoutPanel1.Controls.Add(this.comboBoxEdit1);
             this.flowLayoutPanel1.Controls.Add(this.searchButtonEdit);
             this.flowLayoutPanel1.Controls.Add(this.popupContainerControl1);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(10, 6);
@@ -109,9 +113,20 @@
             this.dateNavigator.TabIndex = 0;
             this.dateNavigator.Click += new System.EventHandler(this.DateNavigator_Click);
             // 
+            // comboBoxEdit1
+            // 
+            this.comboBoxEdit1.Location = new System.Drawing.Point(164, 3);
+            this.comboBoxEdit1.Name = "comboBoxEdit1";
+            this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.comboBoxEdit1.Properties.NullText = "请选择设备编号";
+            this.comboBoxEdit1.Size = new System.Drawing.Size(146, 20);
+            this.comboBoxEdit1.TabIndex = 7;
+            this.comboBoxEdit1.SelectedIndexChanged += new System.EventHandler(this.comboBoxEdit1_SelectedIndexChanged);
+            // 
             // searchButtonEdit
             // 
-            this.searchButtonEdit.Location = new System.Drawing.Point(164, 3);
+            this.searchButtonEdit.Location = new System.Drawing.Point(316, 3);
             this.searchButtonEdit.Name = "searchButtonEdit";
             this.searchButtonEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Search)});
@@ -128,7 +143,7 @@
             this.gridControl1.Location = new System.Drawing.Point(3, 102);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1047, 640);
+            this.gridControl1.Size = new System.Drawing.Size(1047, 635);
             this.gridControl1.TabIndex = 79;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1,
@@ -145,10 +160,21 @@
             this.gridView.GridControl = this.gridControl1;
             this.gridView.Name = "gridView";
             // 
+            // pageView1
+            // 
+            this.pageView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.pageView1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pageView1.Location = new System.Drawing.Point(0, 743);
+            this.pageView1.Name = "pageView1";
+            this.pageView1.Size = new System.Drawing.Size(1050, 30);
+            this.pageView1.TabIndex = 80;
+            this.pageView1.PageChangedEvent += new NetBarMS.Codes.Tools.PageChangedHandle(this.PageView_PageChanged);
+            // 
             // UserNetRecordView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.pageView1);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.panel1);
             this.Name = "UserNetRecordView";
@@ -156,6 +182,7 @@
             this.Controls.SetChildIndex(this.titlePanel, 0);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.gridControl1, 0);
+            this.Controls.SetChildIndex(this.pageView1, 0);
             this.titlePanel.ResumeLayout(false);
             this.titlePanel.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -165,6 +192,7 @@
             this.popupContainerControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dateNavigator.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNavigator)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchButtonEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
@@ -184,5 +212,7 @@
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView;
+        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
+        private CustomView.PageView pageView1;
     }
 }

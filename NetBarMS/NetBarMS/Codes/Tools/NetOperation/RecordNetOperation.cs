@@ -108,7 +108,10 @@ namespace NetBarMS.Codes.Tools.NetOperation
         /// <param name="start">开始时间</param>
         /// <param name="end">结束时间</param>
         /// <param name="name">姓名或卡号</param>
-        public static void GetUserNetRecord(DataResultBlock resultBlock, StructPage page, string start, string end,string name)
+        /// <param name="mid">会员id，个人搜索记录使用</param>
+        /// <param name="comId">电脑id</param>
+
+        public static void GetUserNetRecord(DataResultBlock resultBlock, StructPage page, string start, string end,string name,int mid,int comId)
         {
             CSQueryEmk.Builder emk = new CSQueryEmk.Builder();
             emk.Page = page;
@@ -122,6 +125,14 @@ namespace NetBarMS.Codes.Tools.NetOperation
             {
                 emk.Name = name;
             }
+            if(mid >= 0)
+            {
+                emk.Memberid = mid;
+            }
+            if(comId >= 0)
+            {
+                emk.Computerid = comId;
+            }
             System.Console.WriteLine(emk);
             MessageContent.Builder content = new MessageContent.Builder();
             content.MessageType = 1;
@@ -134,7 +145,6 @@ namespace NetBarMS.Codes.Tools.NetOperation
         }
         #endregion
 
-
         #region 用户消费记录
         /// <summary>
         /// 用户消费记录
@@ -145,7 +155,9 @@ namespace NetBarMS.Codes.Tools.NetOperation
         /// <param name="end">结束时间</param>
         /// <param name="use">用途</param>
         /// <param name="pay">支付方式</param>
-        public static void GetUserConsumeRecord(DataResultBlock resultBlock, StructPage page, string start, string end, int use,int pay)
+        /// <param name="mid">会员id，个人消费记录查询</param>
+
+        public static void GetUserConsumeRecord(DataResultBlock resultBlock, StructPage page, string start, string end, int use,int pay,int mid)
         {
             CSQueryConsum.Builder consume = new CSQueryConsum.Builder();
             consume.Page = page;
@@ -163,7 +175,10 @@ namespace NetBarMS.Codes.Tools.NetOperation
             {
                 consume.Paymode = pay;
             }
-
+            if(mid >= 0)
+            {
+                consume.Memberid = mid;
+            }
             MessageContent.Builder content = new MessageContent.Builder();
             content.MessageType = 1;
             content.CsQueryConsum = consume.Build();

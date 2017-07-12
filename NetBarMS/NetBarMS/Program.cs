@@ -10,7 +10,7 @@ using NetBarMS.Codes.Tools;
 using NetBarMS.Views.NetUserManage;
 using NetBarMS.Views.ProductManage;
 using NetBarMS.Views.InCome;
-using NetBarMS.Views.ManagerManage;
+using NetBarMS.Views.ManagersManage;
 using NetBarMS.Views.SystemManage;
 using NetBarMS.Views.SystemSearch;
 using NetBarMS.Views.EvaluateManage;
@@ -47,6 +47,7 @@ namespace NetBarMS
             ManagerLoginView view = new ManagerLoginView();
             CustomForm newForm = new CustomForm(view, true);
             newForm.ShowDialog();
+            //等待点击关闭
             if (newForm.DialogResult == DialogResult.OK)
             {
                 MainForm form = new MainForm();

@@ -17,7 +17,7 @@ using NetBarMS.Views.NetUserManage;
 using NetBarMS.Views.EvaluateManage;
 using NetBarMS.Views.OtherMain;
 using NetBarMS.Views.SystemManage;
-using NetBarMS.Views.ManagerManage;
+using NetBarMS.Views.ManagersManage;
 using NetBarMS.Codes.Tools.NetOperation;
 using DevExpress.XtraEditors;
 using DevExpress.XtraBars;

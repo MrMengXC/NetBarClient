@@ -8,6 +8,8 @@ using System.Net.Sockets;
 using System.Net;
 using System.IO;
 using Google.ProtocolBuffers;
+using System.Windows.Forms;
+using NetBarMS.Views;
 
 namespace NetBarMS.Codes.Tools
 {
@@ -22,7 +24,7 @@ namespace NetBarMS.Codes.Tools
         private const int port = 8465;
 
         //结果
-        public event DataResultBlock ResultBlockHandle;
+        private event DataResultBlock ResultBlockEvent;
         //连接结果
         public event ConnectResultBlock ConnectBlockHandle;
 
@@ -217,9 +219,25 @@ namespace NetBarMS.Codes.Tools
                 byte[] body = inputStream.ReadRawBytes(varint32);
                 MessagePack pack = MessagePack.ParseFrom(body);
               //  System.Console.WriteLine("pack:"+ pack);
-                if (ResultBlockHandle != null)
+                if (ResultBlockEvent != null)
                 {
-                    ResultBlockHandle(new ResultModel()
+                    //移除已经不应该存在的方法
+                    Delegate[] list = ResultBlockEvent.GetInvocationList();
+                    foreach (Delegate de in list)
+                    {
+                        // System.Console.WriteLine("delegate:" + de.Method.Name + "target:" + de.Target.GetType().ToString());
+
+                        if (de.Target.GetType().IsSubclassOf(typeof(UserControl)))
+                        {
+                            UserControl control = de.Target as UserControl;
+                            if (control.IsDisposed)
+                            {
+                                ResultBlockEvent -= (de as DataResultBlock);
+                            }
+
+                        }
+                    }
+                    ResultBlockEvent(new ResultModel()
                     {
                         pack = pack,
                         error = 0,
@@ -287,7 +305,7 @@ namespace NetBarMS.Codes.Tools
         /// <param name="resultBlock">Result block.</param>
         public void SendMsg(IMessageLite value, DataResultBlock resultBlock)
         {
-            ResultBlockHandle += resultBlock;
+            ResultBlockEvent += resultBlock;
             SendMsg(value);
         }
 
@@ -329,14 +347,14 @@ namespace NetBarMS.Codes.Tools
         /// </summary>
         public void RemoveResultBlock(DataResultBlock result)
         {
-            this.ResultBlockHandle -= result;
+            this.ResultBlockEvent -= result;
         }
         /// <summary>
         /// 添加结果回调
         /// </summary>
         public void AddResultBlock(DataResultBlock result)
         {
-            this.ResultBlockHandle += result;
+            this.ResultBlockEvent += result;
         }
         #endregion
 

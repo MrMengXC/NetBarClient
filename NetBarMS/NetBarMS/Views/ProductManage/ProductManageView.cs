@@ -179,7 +179,7 @@ namespace NetBarMS.Views.ProductManage
         #region 打印库存清单
         private void simpleButton4_Click(object sender, EventArgs e)
         {
-            ProductStoreList view = new ProductStoreList();
+            ProductStockListView view = new ProductStockListView();
             ToolsManage.ShowForm(view, false);
         }
         #endregion
