@@ -86,7 +86,7 @@ namespace NetBarMS.Views.SystemManage
                 return;
             }
 
-            NetMessageManage.Manage().RemoveResultBlock(AddMemberLvResult);
+            NetMessageManage.RemoveResultBlock(AddMemberLvResult);
             System.Console.WriteLine("AddMemberLvResult:" + result.pack);
 
             if (result.pack.Content.MessageType == 1)
@@ -105,7 +105,7 @@ namespace NetBarMS.Views.SystemManage
             {
                 return;
             }
-            NetMessageManage.Manage().RemoveResultBlock(UpdateMemberLvResult);
+            NetMessageManage.RemoveResultBlock(UpdateMemberLvResult);
             System.Console.WriteLine("UpdateMemberLvResult:" + result.pack);
             if (result.pack.Content.MessageType == 1)
             {

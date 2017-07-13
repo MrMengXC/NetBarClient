@@ -87,10 +87,10 @@ namespace NetBarMS.Views.NetUserManage
                 return;
             }
             System.Console.WriteLine("MemberNetRecordResult:" + result.pack);
-            NetMessageManage.Manage().RemoveResultBlock(MemberNetRecordResult);
+            NetMessageManage.RemoveResultBlock(MemberNetRecordResult);
             if (result.pack.Content.MessageType == 1)
             {
-                ToolsManage.Invoke(this, new UIHandleBlock(delegate
+                this.Invoke( new UIHandleBlock(delegate
                 {
                     this.pageView1.RefreshPageView(result.pack.Content.ScQueryEmk.Pagecount);
                     this.records = result.pack.Content.ScQueryEmk.EmksList;

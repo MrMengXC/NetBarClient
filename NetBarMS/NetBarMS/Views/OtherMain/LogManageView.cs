@@ -49,8 +49,8 @@ namespace NetBarMS.Views
             this.dateNavigator1.SyncSelectionWithEditValue = false;
 
             //获取员工
-            SysManage.Manage().GetStaffs(out staffs);
-            foreach(StructAccount staff in this.staffs)
+            this.staffs = SysManage.Staffs;
+            foreach (StructAccount staff in this.staffs)
             {
                 this.comboBoxEdit1.Properties.Items.Add(staff.Nickname);
             }
@@ -85,7 +85,7 @@ namespace NetBarMS.Views
             {
                 return;
             }
-            NetMessageManage.Manage().RemoveResultBlock(GetLogListResult);
+            NetMessageManage.RemoveResultBlock(GetLogListResult);
          //   System.Console.WriteLine("GetLogListResult:" + result.pack);
 
             if (result.pack.Content.MessageType == 1)

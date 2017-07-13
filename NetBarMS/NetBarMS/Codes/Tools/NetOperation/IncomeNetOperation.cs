@@ -37,7 +37,7 @@ namespace NetBarMS.Codes.Tools.NetOperation
                 pack.SetCmd(Cmd.CMD_EARNING_YEAR);
             }
             pack.SetContent(content);
-            NetMessageManage.Manage().SendMsg(pack.Build(), resultBlock);
+            NetMessageManage.SendMsg(pack.Build(), resultBlock);
 
         }
         #endregion

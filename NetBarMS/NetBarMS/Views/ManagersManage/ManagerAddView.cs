@@ -144,7 +144,7 @@ namespace NetBarMS.Views.ManagersManage
             {
                 return;
             }
-            NetMessageManage.Manage().RemoveResultBlock(UpdateManagerNameResult);
+            NetMessageManage.RemoveResultBlock(UpdateManagerNameResult);
             System.Console.WriteLine("UpdateManagerNameResult：" + result.pack);
 
             if (result.pack.Content.MessageType == 1)
@@ -161,7 +161,7 @@ namespace NetBarMS.Views.ManagersManage
             {
                 return;
             }
-            NetMessageManage.Manage().RemoveResultBlock(UpdateManagerRightsResult);
+            NetMessageManage.RemoveResultBlock(UpdateManagerRightsResult);
             System.Console.WriteLine("UpdateManagerRightsResult：" + result.pack);
 
             if (result.pack.Content.MessageType == 1)
@@ -189,7 +189,7 @@ namespace NetBarMS.Views.ManagersManage
             {
                 return;
             }
-            NetMessageManage.Manage().RemoveResultBlock(AddManagerResult);
+            NetMessageManage.RemoveResultBlock(AddManagerResult);
             System.Console.WriteLine("AddManagerResult："+result.pack);
 
             if(result.pack.Content.MessageType == 1)

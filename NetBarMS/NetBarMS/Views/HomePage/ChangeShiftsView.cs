@@ -28,7 +28,7 @@ namespace NetBarMS.Views.HomePage
         private void InitUI()
         {
             GetGiveStaffInfo();
-            SysManage.Manage().GetStaffs(out staffs);
+            this.staffs = SysManage.Staffs;
             foreach (StructAccount staff in this.staffs)
             {
                 this.comboBoxEdit1.Properties.Items.Add(staff.Username);
@@ -49,7 +49,7 @@ namespace NetBarMS.Views.HomePage
             {
                 return;
             }
-            NetMessageManage.Manage().RemoveResultBlock(GetGiveStaffInfoResult);
+            NetMessageManage.RemoveResultBlock(GetGiveStaffInfoResult);
             System.Console.WriteLine("GetGiveStaffInfoResult:" + result.pack);
             if(result.pack.Content.MessageType == 1)
             {
@@ -100,7 +100,7 @@ namespace NetBarMS.Views.HomePage
             }
 
             System.Console.WriteLine("AddChangeStaffResult:" + result.pack);
-            NetMessageManage.Manage().RemoveResultBlock(AddChangeStaffResult);
+            NetMessageManage.RemoveResultBlock(AddChangeStaffResult);
 
             if(result.pack.Content.MessageType == 1)
             {
@@ -151,11 +151,12 @@ namespace NetBarMS.Views.HomePage
         }
         #endregion
 
-        //进行打印库存清单
+        #region 进行打印库存清单
         private void simpleButton3_Click(object sender, EventArgs e)
         {
             ProductStockListView view = new ProductStockListView();
             ToolsManage.ShowForm(view, false);
         }
+        #endregion
     }
 }

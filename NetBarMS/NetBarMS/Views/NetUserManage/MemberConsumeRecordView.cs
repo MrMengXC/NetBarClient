@@ -114,7 +114,7 @@ namespace NetBarMS.Views.NetUserManage
                 return;
             }
 
-            NetMessageManage.Manage().RemoveResultBlock(MemberConsumeRecordResult);
+            NetMessageManage.RemoveResultBlock(MemberConsumeRecordResult);
             System.Console.WriteLine("MemberConsumeRecordResult:" + result.pack);
             if (result.pack.Content.MessageType == 1)
             {
@@ -148,7 +148,7 @@ namespace NetBarMS.Views.NetUserManage
             row[TitleList.Name.ToString()] = consum.Username;
             row[TitleList.IdNumber.ToString()] = consum.Cardnumber;
 
-            row[TitleList.Area.ToString()] = SysManage.Manage().GetAreaName(consum.Area.ToString());
+            row[TitleList.Area.ToString()] = SysManage.GetAreaName(consum.Area.ToString());
             row[TitleList.Use.ToString()] = Enum.GetName(typeof(CONSUMEUSE), consum.Consumtype);
             row[TitleList.Money.ToString()] = consum.Money;
             row[TitleList.Time.ToString()] = consum.Time;

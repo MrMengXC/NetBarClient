@@ -24,7 +24,7 @@ namespace NetBarMS.Codes.Tools.NetOperation
             MessagePack.Builder pack = new MessagePack.Builder();
             pack.SetCmd(Cmd.CMD_MEMBER_LIST);
             pack.SetContent(content);
-            NetMessageManage.Manage().SendMsg(pack.Build(), resultBlock);
+            NetMessageManage.SendMsg(pack.Build(), resultBlock);
 
         }
         #endregion
@@ -33,35 +33,45 @@ namespace NetBarMS.Codes.Tools.NetOperation
         /// <summary>
         /// 添加会员
         /// </summary>
-        public static void AddMember(DataResultBlock resultBlock, CSMemberAdd.Builder member)
+        /// <param name="resultBlock">反馈结果回调</param>
+        /// <param name="card">身份证号</param>
+        public static void AddMember(DataResultBlock resultBlock,string card)
         {
+            CSEmkApplyMember.Builder member = new CSEmkApplyMember.Builder();
+            member.Cardnumber = card;
+
             MessageContent.Builder content = new MessageContent.Builder();
-            content.SetMessageType(1);
-            content.SetCsMemberAdd(member);
+            content.MessageType = 1;
+            content.CsEmkApplyMember = member.Build();
 
             MessagePack.Builder pack = new MessagePack.Builder();
-            pack.SetCmd(Cmd.CMD_MEMBER_ADD);
-            pack.SetContent(content);
+            pack.Cmd = Cmd.CMD_EMK_APPLY_MEMBER;
+            pack.Content = content.Build();
 
-            NetMessageManage.Manage().SendMsg(pack.Build(), resultBlock);
+            NetMessageManage.SendMsg(pack.Build(), resultBlock);
         }
         #endregion
 
-        #region 更新会员
+        #region 添加身份证信息
         /// <summary>
-        /// 更新会员
+        /// 添加身份证信息（添加临时会员）
         /// </summary>
-        public static void UpdateMember(DataResultBlock resultBlock, CSMemberAdd.Builder member)
+        /// <param name="resultBlock">结果反馈</param>
+        /// <param name="card">身份证信息</param>
+        public static void AddCardInfo(DataResultBlock resultBlock,StructCard card)
         {
-            //MessageContent.Builder content = new MessageContent.Builder();
-            //content.SetMessageType(1);
-            //content.SetCsMemberAdd(member);
+            CSEmkAddCardInfo.Builder info = new CSEmkAddCardInfo.Builder();
+            info.Card = card;
 
-            //MessagePack.Builder pack = new MessagePack.Builder();
-            //pack.SetCmd(Cmd.CMD_MEMBER_ADD);
-            //pack.SetContent(content);
+            MessageContent.Builder content = new MessageContent.Builder();
+            content.MessageType = 1;
+            content.CsEmkAddCardInfo = info.Build();
 
-            //NetMessageManage.Manage().SendMsg(pack.Build(), resultBlock);
+            MessagePack.Builder pack = new MessagePack.Builder();
+            pack.Cmd = Cmd.CMD_EMK_ADD_CARDINFO;
+            pack.Content = content.Build();
+
+            NetMessageManage.SendMsg(pack.Build(), resultBlock);
         }
         #endregion
 
@@ -84,7 +94,7 @@ namespace NetBarMS.Codes.Tools.NetOperation
             MessagePack.Builder pack = new MessagePack.Builder();
             pack.SetCmd(Cmd.CMD_MEMBER_DEL);
             pack.SetContent(content);
-            NetMessageManage.Manage().SendMsg(pack.Build(), resultBlock);
+            NetMessageManage.SendMsg(pack.Build(), resultBlock);
         }
         #endregion
 
@@ -106,7 +116,7 @@ namespace NetBarMS.Codes.Tools.NetOperation
             //MessagePack.Builder pack = new MessagePack.Builder();
             //pack.SetCmd(Cmd.CMD_MEMBER_VERIFY);
             //pack.SetContent(content);
-            //NetMessageManage.Manage().SendMsg(pack.Build(), resultBlock);
+            //NetMessageManage.SendMsg(pack.Build(), resultBlock);
         }
 
         #endregion
@@ -146,7 +156,7 @@ namespace NetBarMS.Codes.Tools.NetOperation
             MessagePack.Builder pack = new MessagePack.Builder();
             pack.SetCmd(Cmd.CMD_MEMBER_FIND);
             pack.SetContent(content);
-            NetMessageManage.Manage().SendMsg(pack.Build(), resultBlock);
+            NetMessageManage.SendMsg(pack.Build(), resultBlock);
         }
 
         #endregion
@@ -167,11 +177,33 @@ namespace NetBarMS.Codes.Tools.NetOperation
             MessagePack.Builder pack = new MessagePack.Builder();
             pack.SetCmd(Cmd.CMD_MEMBER_CARD_INFO);
             pack.SetContent(content);
-            NetMessageManage.Manage().SendMsg(pack.Build(), resultBlock);
+            NetMessageManage.SendMsg(pack.Build(), resultBlock);
         }
         #endregion
 
-        
+        #region 通过身份证号查询会员信息
+        /// <summary>
+        /// 通过身份证号查询用户信息
+        /// </summary>
+        /// <param name="resultBlock">查询结果反馈</param>
+        /// <param name="card">身份证号</param>
+        public static void MemberInfo(DataResultBlock resultBlock, string card)
+        {
+            CSEmkUserInfo.Builder info = new CSEmkUserInfo.Builder()
+            {
+                Cardnumber = card,
+
+            };
+            MessageContent.Builder content = new MessageContent.Builder();
+            content.MessageType = 1;
+            content.CsEmkUserInfo = info.Build();
+
+            MessagePack.Builder pack = new MessagePack.Builder();
+            pack.Cmd = Cmd.CMD_EMK_USERINFO;
+            pack.Content = content.Build();
+            NetMessageManage.SendMsg(pack.Build(), resultBlock);
+        }
+        #endregion
 
     }
 }

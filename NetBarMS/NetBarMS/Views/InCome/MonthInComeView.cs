@@ -55,7 +55,7 @@ namespace NetBarMS.Views.InCome
             {
                 return;
             }
-            NetMessageManage.Manage().RemoveResultBlock(GetIncomeDetailResult);
+            NetMessageManage.RemoveResultBlock(GetIncomeDetailResult);
             System.Console.WriteLine("GetIncomeDetailResult:" + result.pack);
             if (result.pack.Content.MessageType == 1)
             {

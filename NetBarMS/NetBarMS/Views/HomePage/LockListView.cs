@@ -66,7 +66,7 @@ namespace NetBarMS.Views.HomePage
             {
                 return;
             }
-            NetMessageManage.Manage().RemoveResultBlock(GetMemberLockListResult);
+            NetMessageManage.RemoveResultBlock(GetMemberLockListResult);
            // System.Console.WriteLine("GetMemberLockListResult:"+result.pack);
 
             if(result.pack.Content.MessageType == 1)
@@ -128,7 +128,7 @@ namespace NetBarMS.Views.HomePage
                 return;
             }
           
-            NetMessageManage.Manage().RemoveResultBlock(ManagerCommandOperationResult);
+            NetMessageManage.RemoveResultBlock(ManagerCommandOperationResult);
             System.Console.WriteLine("ManagerCommandOperationResult:" + result.pack);
             if (result.pack.Content.MessageType == 1)
             {

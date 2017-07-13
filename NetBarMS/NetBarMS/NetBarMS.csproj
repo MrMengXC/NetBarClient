@@ -120,6 +120,7 @@
     <Compile Include="Codes\Tools\NetOperation\EvaluateNetOperation.cs" />
     <Compile Include="Codes\Tools\NetOperation\OtherMainNetOperation.cs" />
     <Compile Include="Codes\Tools\NetOperation\RecordNetOperation.cs" />
+    <Compile Include="Plugins\Background.cs" />
     <Compile Include="Plugins\BigInteger.cs" />
     <Compile Include="Codes\Tools\FlowManage\ActiveFlowManage.cs" />
     <Compile Include="Codes\Tools\Manage\IdTools.cs" />
@@ -167,7 +168,10 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Plugins\BaseStruct.cs" />
+    <Compile Include="Plugins\Client.cs" />
+    <Compile Include="Plugins\Common.cs" />
     <Compile Include="Plugins\CoreProtocol.cs" />
+    <Compile Include="Plugins\Embark.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Codes\Tools\Manage\XMLDataManage.cs" />
@@ -194,12 +198,6 @@
     </Compile>
     <Compile Include="Views\InCome\IncomeDetail.Designer.cs">
       <DependentUpon>IncomeDetail.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Message\ReminderOpenMemberView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\Message\ReminderOpenMemberView.Designer.cs">
-      <DependentUpon>ReminderOpenMemberView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\HomePage\PayedProductIndentDetailView.cs">
       <SubType>UserControl</SubType>
@@ -674,9 +672,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\InCome\YearInComeView.resx">
       <DependentUpon>YearInComeView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\Message\ReminderOpenMemberView.resx">
-      <DependentUpon>ReminderOpenMemberView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\HomePage\PayedProductIndentDetailView.resx">
       <DependentUpon>PayedProductIndentDetailView.cs</DependentUpon>

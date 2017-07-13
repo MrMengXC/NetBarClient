@@ -58,9 +58,9 @@
             // titleLabel
             // 
             this.titleLabel.AutoSize = true;
-            this.titleLabel.Dock = System.Windows.Forms.DockStyle.Left;
             this.titleLabel.Font = new System.Drawing.Font("宋体", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.titleLabel.Location = new System.Drawing.Point(0, 0);
+            this.titleLabel.ForeColor = System.Drawing.Color.Blue;
+            this.titleLabel.Location = new System.Drawing.Point(10, 20);
             this.titleLabel.Name = "titleLabel";
             this.titleLabel.Size = new System.Drawing.Size(0, 17);
             this.titleLabel.TabIndex = 1;

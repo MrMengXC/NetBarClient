@@ -56,12 +56,12 @@ namespace NetBarMS.Views.ManagersManage
             {
                 return;
             }
-            NetMessageManage.Manage().RemoveResultBlock(GetManagerListResult);
+            NetMessageManage.RemoveResultBlock(GetManagerListResult);
             System.Console.WriteLine("GetManagerListResult:"+result.pack);
             if(result.pack.Content.MessageType == 1)
             {
                 this.Invoke(new UIHandleBlock(delegate {
-                    SysManage.Manage().UpdateManagerData(result.pack.Content.ScRoleList.RolesList);
+                    SysManage.UpdateManagerData(result.pack.Content.ScRoleList.RolesList);
                     managers = result.pack.Content.ScRoleList.RolesList;
                     RefreshGridControl();
 
@@ -146,7 +146,7 @@ namespace NetBarMS.Views.ManagersManage
                 return;
             }
             this.delNum -= 1;
-            NetMessageManage.Manage().RemoveResultBlock(DeleteManagerResult);
+            NetMessageManage.RemoveResultBlock(DeleteManagerResult);
             System.Console.WriteLine("DeleteManagerResult" + result.pack);
             if(delNum == 0)
             {

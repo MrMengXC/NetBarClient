@@ -78,7 +78,7 @@ namespace NetBarMS.Views.EvaluateManage
             {
                 return;
             }
-            NetMessageManage.Manage().RemoveResultBlock(GetNetBarEvaluateListResult);
+            NetMessageManage.RemoveResultBlock(GetNetBarEvaluateListResult);
             System.Console.WriteLine("GetNetBarEvaluateListResult:" + result.pack);
             if (result.pack.Content.MessageType == 1)
             {

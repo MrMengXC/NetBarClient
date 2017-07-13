@@ -91,15 +91,37 @@ namespace NetBarMS.Views.HomePage
              
                 EditorButton button = new EditorButton();
                 button.Kind = ButtonPredefines.Glyph;
-                if(name.Equals(BTN_NAME.已验证.ToString()))
+                button.Enabled = true;
+
+                BTN_NAME btnname = (BTN_NAME)Enum.Parse(typeof(BTN_NAME), name);
+                switch (btnname)
                 {
-                    button.Appearance.ForeColor = Color.Gray;
-                    button.Enabled = false;
+                    case BTN_NAME.已验证:
+                        {
+                            button.Appearance.ForeColor = Color.Gray;
+                            button.Enabled = false;
+                        }
+                        break;
+                    case BTN_NAME.验证:
+                        {
+                            button.Appearance.ForeColor = Color.Blue;
+
+                        }
+                        break;
+                    case BTN_NAME.强制下机:
+                        button.Appearance.ForeColor = Color.FromArgb(255, 192, 128);
+
+                        break;
+                    case BTN_NAME.锁定:
+                        button.Appearance.ForeColor = Color.FromArgb(255, 128, 128);
+
+                        break;
+
+                    default:
+                        break;
                 }
-                else
-                {
-                    button.Appearance.ForeColor = Color.Blue;
-                }
+
+
                 //按钮显示
                 button.Visible = true;
                 button.Tag = TitleList.Operation.ToString() + "_" + num;
@@ -170,7 +192,7 @@ namespace NetBarMS.Views.HomePage
             this.Invoke(new UIHandleBlock(delegate {
                 this.coms[index] = com;
                 DataRow row = this.mainDataTable.Rows[index];
-                row[TitleList.Area.ToString()] = SysManage.Manage().GetAreaName(com.Area);
+                row[TitleList.Area.ToString()] = SysManage.GetAreaName(com.Area);
             }));
 
         }
@@ -206,11 +228,11 @@ namespace NetBarMS.Views.HomePage
             }
 
             row[TitleList.EpNumber.ToString()] = computer.Computer;
-            row[TitleList.Area.ToString()] = SysManage.Manage().GetAreaName(computer.Area);
+            row[TitleList.Area.ToString()] = SysManage.GetAreaName(computer.Area);
             //TODO:状态需要判断
             row[TitleList.State.ToString()] = computer.Status;
             row[TitleList.IdCard.ToString()] = computer.Cardnumber;
-            row[TitleList.CardType.ToString()] = SysManage.Manage().GetMemberTypeName(computer.Usertype);
+            row[TitleList.CardType.ToString()] = SysManage.GetMemberTypeName(computer.Usertype);
             row[TitleList.MoneyType.ToString()] = computer.Billing;
          
             if(computer.Verify.Equals(""))
@@ -275,7 +297,7 @@ namespace NetBarMS.Views.HomePage
                 return;
             }
 
-            NetMessageManage.Manage().RemoveResultBlock(ManagerCommandOperationResult);
+            NetMessageManage.RemoveResultBlock(ManagerCommandOperationResult);
             System.Console.WriteLine("ManagerCommandOperationResult:"+result.pack);
             if(result.pack.Content.MessageType == 1)
             {

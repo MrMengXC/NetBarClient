@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using NetBarMS.Views.HomePage.Message;
 using NetBarMS.Views.HomePage;
 using NetBarMS.Views.UserActive;
 namespace NetBarMS.Codes.Tools.FlowManage
@@ -47,7 +46,7 @@ namespace NetBarMS.Codes.Tools.FlowManage
                 return;
             }
             System.Console.WriteLine("CardCheckInResult:" + result.pack);
-            NetMessageManage.Manage().RemoveResultBlock(ActiveFlowResult);
+            NetMessageManage.RemoveResultBlock(ActiveFlowResult);
             if (result.pack.Content.MessageType != 1)
             {
 
@@ -61,8 +60,8 @@ namespace NetBarMS.Codes.Tools.FlowManage
                         break;
                     //需要注册
                     case NEED_REGIST:
-                        ReminderOpenMemberView view = new ReminderOpenMemberView();
-                        ToolsManage.ShowForm(view, false);
+                        //ReminderOpenMemberView view = new ReminderOpenMemberView();
+                        //ToolsManage.ShowForm(view, false);
                         break;
                 }
                 return;

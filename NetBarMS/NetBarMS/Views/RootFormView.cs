@@ -24,6 +24,7 @@ namespace NetBarMS.Views
             this.closeBtn.Click += CloseFormClick;
             this.Disposed += RootUserControlView_Disposed;
         }
+   
         public virtual void RootUserControlView_Disposed(object sender, EventArgs e)
         {
 

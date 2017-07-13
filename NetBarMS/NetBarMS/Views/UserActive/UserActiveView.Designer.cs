@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
@@ -48,8 +45,6 @@
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             this.titlePanel.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.flowLayoutPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             this.flowLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
@@ -62,7 +57,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.panel1.Controls.Add(this.flowLayoutPanel3);
             this.panel1.Controls.Add(this.flowLayoutPanel2);
             this.panel1.Controls.Add(this.flowLayoutPanel1);
             this.panel1.Controls.Add(this.pictureEdit1);
@@ -70,31 +64,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(431, 404);
             this.panel1.TabIndex = 62;
-            // 
-            // flowLayoutPanel3
-            // 
-            this.flowLayoutPanel3.Controls.Add(this.label9);
-            this.flowLayoutPanel3.Controls.Add(this.textEdit1);
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(94, 332);
-            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(300, 32);
-            this.flowLayoutPanel3.TabIndex = 4;
-            // 
-            // label9
-            // 
-            this.label9.Location = new System.Drawing.Point(3, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(100, 32);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "临时输入身份证号：";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // textEdit1
-            // 
-            this.textEdit1.Location = new System.Drawing.Point(109, 3);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(174, 20);
-            this.textEdit1.TabIndex = 1;
             // 
             // flowLayoutPanel2
             // 
@@ -241,8 +210,6 @@
             this.titlePanel.ResumeLayout(false);
             this.titlePanel.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.flowLayoutPanel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             this.flowLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
@@ -267,8 +234,5 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraEditors.SimpleButton simpleButton3;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
-        private System.Windows.Forms.Label label9;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
     }
 }

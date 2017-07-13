@@ -53,12 +53,12 @@ namespace NetBarMS.Views.SystemManage
 
             if (result.pack.Cmd == Cmd.CMD_SYS_INFO && result.pack.Content.ScSysInfo.Parent.Equals(SystemManageNetOperation.productTypeParent))
             {
-                NetMessageManage.Manage().RemoveResultBlock(ProductTypeInfoResult);
+                NetMessageManage.RemoveResultBlock(ProductTypeInfoResult);
                 System.Console.WriteLine("ProductTypeInfoResult:" + result.pack);
 
                 this.Invoke(new UIHandleBlock(delegate {
                     //更新系统管理
-                    SysManage.Manage().UpdateProductData(result.pack.Content.ScSysInfo.ChildList);
+                    SysManage.UpdateProductData(result.pack.Content.ScSysInfo.ChildList);
                     this.items = result.pack.Content.ScSysInfo.ChildList;
                     RefreshGridControl();
                 }));
@@ -122,7 +122,7 @@ namespace NetBarMS.Views.SystemManage
 
             if (result.pack.Cmd == Cmd.CMD_SYS_UPDATE )
             {
-                NetMessageManage.Manage().RemoveResultBlock(UpdateProductTypeResult);
+                NetMessageManage.RemoveResultBlock(UpdateProductTypeResult);
                 this.Invoke(new UIHandleBlock(delegate {
                     SystemManageNetOperation.ProductTypeInfo(ProductTypeInfoResult);
                 }));
@@ -172,7 +172,7 @@ namespace NetBarMS.Views.SystemManage
 
             if (result.pack.Cmd == Cmd.CMD_SYS_ADD)
             {
-                NetMessageManage.Manage().RemoveResultBlock(AddProductTypeResult);
+                NetMessageManage.RemoveResultBlock(AddProductTypeResult);
                 System.Console.WriteLine("AddProductTypeInfoResult:" + result.pack);
 
                 this.Invoke(new UIHandleBlock(delegate {
@@ -206,7 +206,7 @@ namespace NetBarMS.Views.SystemManage
 
             if (result.pack.Cmd == Cmd.CMD_SYS_DEL)
             {
-                NetMessageManage.Manage().RemoveResultBlock(DeleteProductTypeResult);
+                NetMessageManage.RemoveResultBlock(DeleteProductTypeResult);
                 this.Invoke(new UIHandleBlock(delegate {
                     SystemManageNetOperation.ProductTypeInfo(ProductTypeInfoResult);
                 }));

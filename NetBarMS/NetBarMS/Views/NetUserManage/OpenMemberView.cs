@@ -1,4 +1,5 @@
-﻿using System;
+﻿#region using
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -15,6 +16,7 @@ using NetBarMS.Forms;
 using NetBarMS.Views.HomePage;
 using NetBarMS.Codes.Tools.FlowManage;
 using NetBarMS.Codes.Model;
+#endregion
 
 namespace NetBarMS.Views.NetUserManage
 {
@@ -31,15 +33,14 @@ namespace NetBarMS.Views.NetUserManage
         private int memberIndex = -1;                   //当前会员类别索引
         private FLOW_STATUS flowstatus = FLOW_STATUS.NONE_STATUS;                 //判断返回的状态
         private char[] sp = { '：', ':' };
-        private Color activeColor = Color.FromArgb(0, 192, 192);
-        private Color notActiveColor = Color.Gray;
 
         #region 初始化方法
         public OpenMemberView()
         {
             InitializeComponent();
             this.titleLabel.Text = "会员办理";
-            string idNum = new Random().Next(1000, 90000000).ToString();
+            string idNum = ToolsManage.RandomCard;
+
             InitUI(idNum);
         }
         //临时使用
@@ -57,15 +58,7 @@ namespace NetBarMS.Views.NetUserManage
         private void InitUI(string card)
         {
             //先接受数据
-            SysManage.Manage().GetMembersTypes(out this.memberTypes);
-            //隐藏按钮可点击
-            this.simpleButton1.Enabled = false;
-            this.simpleButton1.Appearance.BackColor = notActiveColor;
-            this.simpleButton2.Enabled = false;
-            this.simpleButton2.Appearance.BackColor = notActiveColor;
-
-
-
+            this.memberTypes = SysManage.MemberTypes;
             //初始化Label
             this.nameLabel.Text += "xx22";          //姓名
             this.genderLabel.Text += "男";        //性别
@@ -83,12 +76,43 @@ namespace NetBarMS.Views.NetUserManage
             this.gridControl1.DataSource = this.mainDataTable;
             RefreshGridControl();
 
-            //先开通临时会员
-            AddTemMemeber();
-        }
 
+
+            //隐藏按钮可点击
+            this.simpleButton1.Enabled = this.flowstatus == FLOW_STATUS.ACTIVE_STATUS;
+            this.simpleButton2.Enabled = this.flowstatus == FLOW_STATUS.ACTIVE_STATUS;
+            if (this.flowstatus != FLOW_STATUS.ACTIVE_STATUS)
+            {
+                //判断会员信息。是否是会员。是的话进行
+                MemberNetOperation.MemberInfo(MemberInfoResult, card);
+            }
+
+        }
+        //查询会员信息结果反馈
+        private void MemberInfoResult(ResultModel result)
+        {
+            if(result.pack.Cmd != Cmd.CMD_EMK_USERINFO)
+            {
+                return;
+            }
+            System.Console.WriteLine("MemberInfoResult" + result.pack);
+            NetMessageManage.RemoveResultBlock(MemberInfoResult);
+            if(result.pack.Content.MessageType == 1)
+            {
+                this.Invoke(new UIHandleBlock(delegate ()
+                {
+                    //将按钮回复可以点击
+                    this.simpleButton1.Enabled = true;
+                    this.simpleButton2.Enabled = true;
+                }));
+            }
+            else
+            {
+                AddCardInfo();
+            }
+        }
         //添加临时会员
-        private void AddTemMemeber()
+        private void AddCardInfo()
         {
             StructCard.Builder card = new StructCard.Builder()
             {
@@ -102,36 +126,27 @@ namespace NetBarMS.Views.NetUserManage
                 HeadUrl = "#dasdasd#",
                 Vld = cardValidityLabel.Text.Split(sp)[1],
             };
-            CSMemberAdd.Builder member = new CSMemberAdd.Builder()
-            {
-                Cardinfo = card.Build(),
-                Membertype = IdTools.TEM_MEMBER_ID,
-                Recharge = 0,
-            };
-            MemberNetOperation.AddMember(AddMemberBlock, member);
+           
+            MemberNetOperation.AddCardInfo(AddCardInfoResult, card.Build());
 
         }
-        //添加会员回调
-        private void AddMemberBlock(ResultModel result)
+        //添加身份证信息回调
+        private void AddCardInfoResult(ResultModel result)
         {
 
-            if (result.pack.Cmd != Cmd.CMD_MEMBER_ADD)
+            if (result.pack.Cmd != Cmd.CMD_EMK_ADD_CARDINFO)
             {
                 return;
             }
-            System.Console.WriteLine("AddMemberBlock:" + result.pack);
-            NetMessageManage.Manage().RemoveResultBlock(AddMemberBlock);
+            System.Console.WriteLine("AddCardInfoResult:" + result.pack);
+            NetMessageManage.RemoveResultBlock(AddCardInfoResult);
             if (result.pack.Content.MessageType == 1)
             {
                 this.Invoke(new UIHandleBlock(delegate ()
                 {
                     //将按钮回复可以点击
                     this.simpleButton1.Enabled = true;
-                    this.simpleButton1.Appearance.BackColor = activeColor;
                     this.simpleButton2.Enabled = true;
-                    this.simpleButton2.Appearance.BackColor = activeColor;
-
-
                 }));
             }
 
@@ -157,14 +172,7 @@ namespace NetBarMS.Views.NetUserManage
         {
             CloseFormHandle closeHandle = new CloseFormHandle(delegate
             {
-                if (this.flowstatus == FLOW_STATUS.ACTIVE_STATUS)
-                {
-                    //System.Console.WriteLine("点击关闭会员注册成功");
-                    ActiveFlowManage.ActiveFlow().MemberRegistSuccess();
-                }
-                this.CloseFormClick();
-        
-                
+                this.CloseFormClick();   
             });
             //显示提示
             OpenMemberResultView view = new OpenMemberResultView();

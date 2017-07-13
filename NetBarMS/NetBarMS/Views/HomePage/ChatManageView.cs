@@ -120,7 +120,7 @@ namespace NetBarMS.Views.HomePage
                 return;
             }
             System.Console.WriteLine("ManagerCommandOperationResult:" + result.pack);
-            NetMessageManage.Manage().RemoveResultBlock(ManagerCommandOperationResult);
+            NetMessageManage.RemoveResultBlock(ManagerCommandOperationResult);
 
             if (result.pack.Content.MessageType == 1)
             {

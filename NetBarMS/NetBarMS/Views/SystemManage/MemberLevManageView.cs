@@ -57,14 +57,14 @@ namespace NetBarMS.Views.SystemManage
             }
 
             //System.Console.WriteLine("GetMemberLvSetting:" + result.pack);
-            NetMessageManage.Manage().RemoveResultBlock(GetMemberLvSettingResult);
+            NetMessageManage.RemoveResultBlock(GetMemberLvSettingResult);
 
             if (result.pack.Content.MessageType == 1 && result.pack.Content.ScSysInfo.Parent.Equals(SystemManageNetOperation.lvParent))
             {
                 this.Invoke(new UIHandleBlock(delegate 
                 {
                     //更新系统管理数据
-                    SysManage.Manage().UpdateMemberTypeData(result.pack.Content.ScSysInfo.ChildList);
+                    SysManage.UpdateMemberTypeData(result.pack.Content.ScSysInfo.ChildList);
                     //更新界面
                     items = result.pack.Content.ScSysInfo.ChildList;
                     UpdateGridControlData();
@@ -174,7 +174,7 @@ namespace NetBarMS.Views.SystemManage
             }
 
             System.Console.WriteLine("DeleteMemberLvResult:" + result.pack);
-            NetMessageManage.Manage().RemoveResultBlock(DeleteMemberLvResult);
+            NetMessageManage.RemoveResultBlock(DeleteMemberLvResult);
 
             if (result.pack.Content.MessageType == 1)
             {

@@ -95,7 +95,7 @@ namespace NetBarMS.Views.SystemSearch
             }
 
             System.Console.WriteLine("GetUserRechargeRecordResult:" + result.pack);
-            NetMessageManage.Manage().RemoveResultBlock(GetUserRechargeRecordResult);
+            NetMessageManage.RemoveResultBlock(GetUserRechargeRecordResult);
             if (result.pack.Content.MessageType == 1)
             {
                 this.Invoke(new UIHandleBlock(delegate
@@ -130,9 +130,9 @@ namespace NetBarMS.Views.SystemSearch
             this.mainDataTable.Rows.Add(row);
             row[TitleList.IndentNumber.ToString()] = charge.Productid;
             row[TitleList.MemberName.ToString()] = charge.Name;
-            row[TitleList.MemberType.ToString()] = SysManage.Manage().GetMemberTypeName(charge.Rightid.ToString());
+            row[TitleList.MemberType.ToString()] = SysManage.GetMemberTypeName(charge.Rightid.ToString());
             row[TitleList.IdNumber.ToString()] = charge.Cardnumber;
-            row[TitleList.Area.ToString()] = SysManage.Manage().GetAreaName(charge.Areaid.ToString());
+            row[TitleList.Area.ToString()] = SysManage.GetAreaName(charge.Areaid.ToString());
             row[TitleList.RechargeMoney.ToString()] = charge.ChargeAmount;
             row[TitleList.GiveMoney.ToString()] = charge.BonusAmount;
             row[TitleList.PayChannel.ToString()] = Enum.GetName(typeof(PAYCHANNEL),charge.Paymode);

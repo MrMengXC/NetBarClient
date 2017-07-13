@@ -48,8 +48,8 @@ namespace NetBarMS.Views.SystemSearch
             this.dateNavigator1.SyncSelectionWithEditValue = false;
 
             this.comboBoxEdit1.Properties.Items.Add("无");
-            SysManage.Manage().GetAreasList(out this.areas);
-            foreach(AreaTypeModel model in this.areas)
+            this.areas = SysManage.Areas;
+            foreach (AreaTypeModel model in this.areas)
             {
                 this.comboBoxEdit1.Properties.Items.Add(model.areaName);
             }
@@ -81,7 +81,7 @@ namespace NetBarMS.Views.SystemSearch
                 return;
             }
             System.Console.WriteLine("GetAttendanceSearchResult:" + result.pack);
-            NetMessageManage.Manage().RemoveResultBlock(GetAttendanceSearchResult);
+            NetMessageManage.RemoveResultBlock(GetAttendanceSearchResult);
             if(result.pack.Content.MessageType == 1)
             {
                 this.Invoke(new UIHandleBlock(delegate {

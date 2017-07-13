@@ -22,7 +22,8 @@ namespace NetBarMS.Views.OtherMain
         public ManagerLoginView()
         {
             InitializeComponent();
-            NetMessageManage.Manage(ConnectResultBlock);
+            //连接服务器
+            NetMessageManage.ConnectServer(ConnectServerResult);
             this.loginButton.Click += LoginButtonClick;
             this.loginButton.Enabled = false;
 
@@ -32,11 +33,11 @@ namespace NetBarMS.Views.OtherMain
         #region 进行准备工作连接服务器进行服务器认证
 
         // 连接服务器的回调
-        public void ConnectResultBlock()
+        public void ConnectServerResult()
         {
+            NetMessageManage.RemoveConnetServer(ConnectServerResult);
             //进行客户端认证
             ManagerNetOperation.ClientAuthen(ClientAuthenBlock);
-         
         }
 
        
@@ -48,12 +49,12 @@ namespace NetBarMS.Views.OtherMain
                 return;
             }
 
-            NetMessageManage.Manage().RemoveResultBlock(ClientAuthenBlock);
+            NetMessageManage.RemoveResultBlock(ClientAuthenBlock);
            // System.Console.WriteLine(result.pack);
             if (result.pack.Content.MessageType == 1)
             {
                 //获取提前预知信息
-                SysManage.Manage().RequestSysInfo(RequestSysInfoResult);
+                SysManage.RequestSysInfo(RequestSysInfoResult);
             }
             else
             {
@@ -69,11 +70,10 @@ namespace NetBarMS.Views.OtherMain
             if(this.num == 0)
             {
                 this.Invoke(new UIHandleBlock(delegate {
-                    SysManage.Manage().RemoveRequestSysInfo(RequestSysInfoResult);
+                    SysManage.RemoveRequestSysInfo(RequestSysInfoResult);
                     this.loginButton.Enabled = true;
                     //设置用户名列表
-                  
-                    SysManage.Manage().GetStaffs(out staffs);
+                    this.staffs = SysManage.Staffs;
                     foreach (StructAccount staff in staffs)
                     {
                         this.comboBoxEdit1.Properties.Items.Add(staff.Username);
@@ -110,7 +110,7 @@ namespace NetBarMS.Views.OtherMain
             {
 
             }
-            NetMessageManage.Manage().RemoveResultBlock(ManagerLoginBlock);
+            NetMessageManage.RemoveResultBlock(ManagerLoginBlock);
             System.Console.WriteLine("ManagerLoginBlock:" + result.pack);
             if (result.pack.Content.MessageType == 1)
             {               

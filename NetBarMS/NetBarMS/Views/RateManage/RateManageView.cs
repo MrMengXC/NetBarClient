@@ -50,10 +50,9 @@ namespace NetBarMS.Views.RateManage
             this.dataGridView1.SelectionChanged += DataGridView1_SelectionChanged;
             //隐藏最左侧行头
             this.dataGridView1.RowHeadersVisible = false;
-            
+
             //获取会员类型列表
-            List<MemberTypeModel> types;
-            SysManage.Manage().GetMembersTypes(out types);
+            List<MemberTypeModel> types = SysManage.MemberTypes ;
             for(int i = types.Count()-1;i>=0;i--)
             {
                 string name = "type_" + types[i].typeId;
@@ -63,8 +62,7 @@ namespace NetBarMS.Views.RateManage
             }
             this.memberTypePanel.AutoScroll = true;
             //添加区域
-            List<AreaTypeModel> areas;
-            SysManage.Manage().GetAreasList(out areas);
+            List<AreaTypeModel> areas = SysManage.Areas;
       
             for (int i = areas.Count() - 1; i >= 0; i--)
             {
@@ -116,7 +114,7 @@ namespace NetBarMS.Views.RateManage
                 return;
             }
 
-            NetMessageManage.Manage().RemoveResultBlock(RateManageListResult);
+            NetMessageManage.RemoveResultBlock(RateManageListResult);
             System.Console.WriteLine("RateManageListResult:" + result.pack);
             if (result.pack.Content.MessageType == 1)
             {
@@ -365,7 +363,7 @@ namespace NetBarMS.Views.RateManage
             }
 
             System.Console.WriteLine("RateManageUpdateResult:" + result.pack);
-            NetMessageManage.Manage().RemoveResultBlock(RateManageUpdateResult);
+            NetMessageManage.RemoveResultBlock(RateManageUpdateResult);
             if (result.pack.Content.MessageType == 1)
             {
                 this.userAreas = result.pack.Content.ScSysBillUpdate.UserAreaList;

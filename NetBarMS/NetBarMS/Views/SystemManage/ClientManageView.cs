@@ -81,7 +81,7 @@ namespace NetBarMS.Views.SystemManage
 
             if (result.pack.Cmd == Cmd.CMD_SYS_INFO && result.pack.Content.ScSysInfo.Parent.Equals(SystemManageNetOperation.client))
             {
-                NetMessageManage.Manage().RemoveResultBlock(ClientInfoResult);
+                NetMessageManage.RemoveResultBlock(ClientInfoResult);
                 this.Invoke(new UIHandleBlock(delegate {
                     this.clientItem = result.pack.Content.ScSysInfo.GetChild(0);
                     RefreshClientUI();
@@ -100,7 +100,7 @@ namespace NetBarMS.Views.SystemManage
 
             if (result.pack.Cmd == Cmd.CMD_SYS_INFO && result.pack.Content.ScSysInfo.Parent.Equals(SystemManageNetOperation.clientWelcome))
             {
-                NetMessageManage.Manage().RemoveResultBlock(ClientWecomeInfoResult);
+                NetMessageManage.RemoveResultBlock(ClientWecomeInfoResult);
                 this.Invoke(new UIHandleBlock(delegate {
 
                     this.wecomeitems = result.pack.Content.ScSysInfo.ChildList.ToList<StructDictItem>();
@@ -145,7 +145,7 @@ namespace NetBarMS.Views.SystemManage
 
             if (result.pack.Cmd == Cmd.CMD_SYS_UPDATE)
             {
-                NetMessageManage.Manage().RemoveResultBlock(UpdateClientResult);
+                NetMessageManage.RemoveResultBlock(UpdateClientResult);
                 this.Invoke(new UIHandleBlock(delegate
                 {
                     MessageBox.Show("设置成功");
@@ -182,7 +182,7 @@ namespace NetBarMS.Views.SystemManage
             }
             if (result.pack.Cmd == Cmd.CMD_SYS_ADD)
             {
-                NetMessageManage.Manage().RemoveResultBlock(AddClientWecomeResult);
+                NetMessageManage.RemoveResultBlock(AddClientWecomeResult);
                 this.Invoke(new UIHandleBlock(delegate
                 {
                     MessageBox.Show("保存成功");
@@ -235,7 +235,7 @@ namespace NetBarMS.Views.SystemManage
 
             if (result.pack.Cmd == Cmd.CMD_SYS_DEL)
             {
-                NetMessageManage.Manage().RemoveResultBlock(DeletelientWecomeResult);
+                NetMessageManage.RemoveResultBlock(DeletelientWecomeResult);
                 this.Invoke(new UIHandleBlock(delegate
                 {
 

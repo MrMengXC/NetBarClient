@@ -55,7 +55,7 @@ namespace NetBarMS.Views.HomePage
             {
                 return;
             }
-            NetMessageManage.Manage().RemoveResultBlock(GetCallListResult);
+            NetMessageManage.RemoveResultBlock(GetCallListResult);
             System.Console.WriteLine("GetCallListResult："+result.pack);
             if(result.pack.Content.MessageType == 1)
             {
@@ -112,7 +112,7 @@ namespace NetBarMS.Views.HomePage
             {
                 return;
             }
-            NetMessageManage.Manage().RemoveResultBlock(HandleCallResult);
+            NetMessageManage.RemoveResultBlock(HandleCallResult);
             System.Console.WriteLine("HandleCallResult：" + result.pack);
             if (result.pack.Content.MessageType == 1)
             {

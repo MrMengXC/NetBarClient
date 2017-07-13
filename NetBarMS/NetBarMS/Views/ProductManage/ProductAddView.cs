@@ -34,7 +34,7 @@ namespace NetBarMS.Views.ProductManage
         private void InitUI()
         {
             //首先要获取产品列表数组
-            SysManage.Manage().GetProductTypes(out this.productTypes);
+            this.productTypes = SysManage.ProductTypes;
             // 设置 comboBox的文本值不能被编辑
             this.comboBoxEdit1.Properties.TextEditStyle = TextEditStyles.DisableTextEditor;
             this.comboBoxEdit1.Properties.TextEditStyle = TextEditStyles.DisableTextEditor;
@@ -54,7 +54,7 @@ namespace NetBarMS.Views.ProductManage
             this.textEdit4.Text = this.product.Integal + "";
             if(this.productTypes!=null)
             {
-                this.comboBoxEdit1.Text = SysManage.Manage().GetProductTypeName(this.product.Category);
+                this.comboBoxEdit1.Text = SysManage.GetProductTypeName(this.product.Category);
             }
 
             this.checkedListBoxControl1.Items[0].CheckState = this.product.UseIntegal ? CheckState.Checked : CheckState.Unchecked;
@@ -121,7 +121,7 @@ namespace NetBarMS.Views.ProductManage
 
             if (result.pack.Cmd == Cmd.CMD_GOODS_ADD)
             {
-                NetMessageManage.Manage().RemoveResultBlock(ProductResult);
+                NetMessageManage.RemoveResultBlock(ProductResult);
                 System.Console.WriteLine("ProductResult:" + result.pack);
                 this.Invoke(new UIHandleBlock(delegate
                 {
@@ -130,7 +130,7 @@ namespace NetBarMS.Views.ProductManage
             }
             else if (result.pack.Cmd == Cmd.CMD_GOODS_UPDATE)
             {
-                NetMessageManage.Manage().RemoveResultBlock(ProductResult);
+                NetMessageManage.RemoveResultBlock(ProductResult);
                 System.Console.WriteLine("ProductResult:" + result.pack);
                 this.Invoke(new UIHandleBlock(delegate
                 {

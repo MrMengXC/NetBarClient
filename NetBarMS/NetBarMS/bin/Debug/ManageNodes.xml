@@ -1,6 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ManageNode>
 
+  <Node name ="首页" tag="HomePage" id="5">
+  </Node>
+  
   <Node name ="会员管理" tag="MemberManage" id="11">
   </Node>
 

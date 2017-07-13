@@ -121,8 +121,14 @@
             // 
             // chartControl1
             // 
+            xyDiagram1.AxisX.Color = System.Drawing.Color.Black;
+            xyDiagram1.AxisX.Tickmarks.MinorVisible = false;
+            xyDiagram1.AxisX.Tickmarks.Visible = false;
             xyDiagram1.AxisX.VisibleInPanesSerializable = "-1";
             xyDiagram1.AxisY.Alignment = DevExpress.XtraCharts.AxisAlignment.Far;
+            xyDiagram1.AxisY.Tickmarks.MinorVisible = false;
+            xyDiagram1.AxisY.Tickmarks.Visible = false;
+            xyDiagram1.AxisY.Visibility = DevExpress.Utils.DefaultBoolean.True;
             xyDiagram1.AxisY.VisibleInPanesSerializable = "-1";
             xyDiagram1.Rotated = true;
             this.chartControl1.Diagram = xyDiagram1;

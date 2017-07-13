@@ -62,7 +62,7 @@ namespace NetBarMS.Views.ProductManage
 
             if (result.pack.Cmd == Cmd.CMD_GOODS_SALES_TOP)
             {
-                NetMessageManage.Manage().RemoveResultBlock(GetSellRankListResult);
+                NetMessageManage.RemoveResultBlock(GetSellRankListResult);
                 System.Console.WriteLine("GetSellRankListResult:" + result.pack);
             }
         }

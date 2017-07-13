@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using NetBarMS.Views;
+using NetBarMS.Codes.Tools;
 
 namespace NetBarMS.Forms
 {
@@ -25,21 +26,25 @@ namespace NetBarMS.Forms
 
         #region 初始化窗体
 
-        /// <summary>
-        /// 显示窗体
+         /// <summary>
+        /// 进行数据初始化
         /// </summary>
-        /// <param name="control">添加到窗体的Control</param>
-        /// <param name="showInTaskbar">是否在任务栏显示</param>
-        /// <param name="isShow">是否需要关闭才能使用其他</param>
-        private void InitForm(RootFormView control, bool showInTaskbar)
+        /// <param name="control">显示的视图</param>
+        /// <param name="showInTaskbar">是否显示在任务栏上</param>
+        /// <param name="movePanel">拖得Panel</param>
+        private void CommonInit(UserControl control, bool showInTaskbar,Panel movePanel)
         {
             InitializeComponent();
+
             this.FormBorderStyle = FormBorderStyle.None;
             this.ControlBox = false;
 
             control.BackColor = Color.White;
             control.Location = new Point(2, 2);
-            control.titlePanel.MouseDown += panel1_MouseDown;
+            if(movePanel != null)
+            {
+                movePanel.MouseDown += panel1_MouseDown;
+            }
             this.Controls.Add(control);
 
 
@@ -50,76 +55,49 @@ namespace NetBarMS.Forms
             this.BackColor = Color.Wheat;
             this.ShowInTaskbar = showInTaskbar;      //是否在任务栏显示
             this.FormClosed += CustomForm_FormClosed;
-     
+            this.MinimumSize = this.Size;
         }
+        #endregion
 
+        #region 监听窗体关闭
         private void CustomForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            System.Console.WriteLine("CustomForm_FormClosed");
-            this.DialogResult = DialogResult.OK;
-        }
-
-        private void InitForm(UserControl control, bool showInTaskbar)
-        {
-            InitializeComponent();
-
-            this.FormBorderStyle = FormBorderStyle.None;
-            this.ControlBox = false;
-
-            control.BackColor = Color.White;
-            control.Location = new Point(2, 2);
-            this.Controls.Add(control);
-
-
-            //newForm.TopMost = true;           //是否显示最前面
-            //newForm.Focus();
-            this.Size = new Size(control.Size.Width + 4, control.Size.Height + 4);
-            control.Anchor = AnchorStyles.Right | AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Bottom;
-            this.BackColor = Color.Wheat;
-            this.ShowInTaskbar = showInTaskbar;      //是否在任务栏显示
-            this.FormClosed += CustomForm_FormClosed;
-
+            this.DialogResult = DialogResult.Cancel;
         }
         #endregion
 
         #region 声明窗体的方法
         /// <summary>
-        /// 初始化窗体
-        /// </summary>
-        /// <param name="control">需要显示在窗体上的Control</param>
-        /// <param name="showInTaskbar">是否在任务栏显示</param>
-        public CustomForm(RootFormView control, bool showInTaskbar)
-        {
-            this.InitForm(control, showInTaskbar);
-        }
-
-        public CustomForm(RootUserControlView control,bool showInTaskbar)
-        {
-            InitializeComponent();
-            this.FormBorderStyle = FormBorderStyle.None;
-            this.ControlBox = false;
-
-            control.BackColor = Color.White;
-            control.Location = new Point(2, 2);
-            control.titlePanel.MouseDown += panel1_MouseDown;
-
-            this.Controls.Add(control);
-            this.Size = new Size(control.Size.Width + 4, control.Size.Height + 4);
-            control.Anchor = AnchorStyles.Right | AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Bottom;
-            this.BackColor = Color.Wheat;
-            this.ShowInTaskbar = showInTaskbar;      //是否在任务栏显示
-            this.FormClosed += CustomForm_FormClosed;
-
-        }
-
-        /// <summary>
         /// 显示窗体
         /// </summary>
-        /// <param name="control"></param>
+        /// <param name="control">添加的视图</param>
         /// <param name="showInTaskbar"></param>
-        public CustomForm(UserControl control, bool showInTaskbar)
+        /// <param name="close">关闭的回调</param>
+
+        public CustomForm(UserControl control, bool showInTaskbar, CloseFormHandle close)
         {
-            this.InitForm(control, showInTaskbar);
+            if(control.GetType().IsSubclassOf(typeof(RootUserControlView)))
+            {
+                RootUserControlView view = control as RootUserControlView;
+                if (close != null)
+                {
+                    view.CloseForm += close;
+                }
+                CommonInit(control, showInTaskbar, view.titlePanel);
+            }
+            else if (control.GetType().IsSubclassOf(typeof(RootFormView)))
+            {
+                RootFormView view = control as RootFormView;
+                if (close != null)
+                {
+                    view.CloseForm += close;
+                }
+                CommonInit(control, showInTaskbar, view.titlePanel);
+            }
+            else
+            {
+                CommonInit(control, showInTaskbar, null);
+            }
         }
         #endregion
 

@@ -59,7 +59,7 @@ namespace NetBarMS.Views.RateManage
             this.gridControl2.DataSource = this.table2;
 
             //设置两个ComboBox
-            SysManage.Manage().GetMembersTypes(out memberTypes);
+            this.memberTypes = SysManage.MemberTypes;
             foreach(MemberTypeModel item in memberTypes)
             {
                 //if(item.Code != IdTools.TEM_MEMBER_ID)
@@ -97,7 +97,7 @@ namespace NetBarMS.Views.RateManage
             {
                 return;
             }
-            NetMessageManage.Manage().RemoveResultBlock(AwardManageListResult);
+            NetMessageManage.RemoveResultBlock(AwardManageListResult);
             System.Console.WriteLine(result.pack);
             if (result.pack.Content.MessageType == 1)
             {
@@ -119,7 +119,7 @@ namespace NetBarMS.Views.RateManage
                 return;
             }
             System.Console.WriteLine(result.pack);
-            NetMessageManage.Manage().RemoveResultBlock(MemberDayAwardManageListResult);
+            NetMessageManage.RemoveResultBlock(MemberDayAwardManageListResult);
             if (result.pack.Content.MessageType == 1)
             {
                 this.Invoke(new UIHandleBlock(delegate
@@ -151,7 +151,7 @@ namespace NetBarMS.Views.RateManage
             DataRow row = table.NewRow();
             table.Rows.Add(row);
             row[TitleList.Number.ToString()] = table.Rows.Count;
-            row[TitleList.MemberType.ToString()] = SysManage.Manage().GetMemberTypeName(item.GetItem(0));
+            row[TitleList.MemberType.ToString()] = SysManage.GetMemberTypeName(item.GetItem(0));
             row[TitleList.RechargeMoney.ToString()] = item.GetItem(1);
             row[TitleList.GiveMoney.ToString()] = item.GetItem(2);
             row[TitleList.ValidDay.ToString()] = item.GetItem(3)+"-"+item.GetItem(4);
@@ -205,7 +205,7 @@ namespace NetBarMS.Views.RateManage
             }
 
             System.Console.WriteLine(result.pack);
-            NetMessageManage.Manage().RemoveResultBlock(AddAwardResult);
+            NetMessageManage.RemoveResultBlock(AddAwardResult);
 
             if (result.pack.Content.MessageType == 1)
             {
@@ -226,7 +226,7 @@ namespace NetBarMS.Views.RateManage
             }
 
             System.Console.WriteLine(result.pack);
-            NetMessageManage.Manage().RemoveResultBlock(AddMemberDayAwardResult);
+            NetMessageManage.RemoveResultBlock(AddMemberDayAwardResult);
             if (result.pack.Content.MessageType == 1)
             {
 
@@ -275,7 +275,7 @@ namespace NetBarMS.Views.RateManage
             }
             if (result.pack.Cmd == Cmd.CMD_SYS_UPDATE)
             {
-                NetMessageManage.Manage().RemoveResultBlock(UpdateAwardResult);
+                NetMessageManage.RemoveResultBlock(UpdateAwardResult);
                 this.Invoke(new UIHandleBlock(delegate
                 {
                     //获取数据
@@ -295,7 +295,7 @@ namespace NetBarMS.Views.RateManage
             }
             if (result.pack.Cmd == Cmd.CMD_SYS_UPDATE)
             {
-                NetMessageManage.Manage().RemoveResultBlock(UpdateMemberDayAwardResult);
+                NetMessageManage.RemoveResultBlock(UpdateMemberDayAwardResult);
 
                 this.Invoke(new UIHandleBlock(delegate
                 {
@@ -339,7 +339,7 @@ namespace NetBarMS.Views.RateManage
             }
             if (result.pack.Cmd == Cmd.CMD_SYS_DEL)
             {
-                NetMessageManage.Manage().RemoveResultBlock(DeleteAwardResult);
+                NetMessageManage.RemoveResultBlock(DeleteAwardResult);
                 this.Invoke(new UIHandleBlock(delegate
                 {
                     //获取数据
@@ -358,7 +358,7 @@ namespace NetBarMS.Views.RateManage
             }
             if (result.pack.Cmd == Cmd.CMD_SYS_DEL)
             {
-                NetMessageManage.Manage().RemoveResultBlock(DeleteMemberDayAwardResult);
+                NetMessageManage.RemoveResultBlock(DeleteMemberDayAwardResult);
 
                 this.Invoke(new UIHandleBlock(delegate
                 {

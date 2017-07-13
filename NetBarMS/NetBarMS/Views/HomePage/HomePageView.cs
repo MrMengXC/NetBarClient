@@ -1,4 +1,5 @@
-﻿using System;
+﻿#region using
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -21,6 +22,8 @@ using NetBarMS.Views.ManagersManage;
 using NetBarMS.Codes.Tools.NetOperation;
 using DevExpress.XtraEditors;
 using DevExpress.XtraBars;
+using NetBarMS.Views.UserUseCp;
+#endregion
 
 namespace NetBarMS.Views.HomePage
 {
@@ -115,6 +118,15 @@ namespace NetBarMS.Views.HomePage
                 case TreeNodeTag.None:
 
                     break;
+
+                #region 首页
+                case TreeNodeTag.HomePage:
+                    {
+
+                    }
+                    break;
+                #endregion
+
                 #region 上网用户
                 case TreeNodeTag.MemberManage:     //会员管理
                     view = new MemberManageView();
@@ -247,20 +259,91 @@ namespace NetBarMS.Views.HomePage
                     break;
             }
 
-            if (view != null)
+            foreach (UserControl control in this.contentBgPanel.Controls)
             {
-                foreach(UserControl control in this.contentBgPanel.Controls)
+                if (!control.GetType().Equals(typeof(HomePageListView)))
                 {
-                    if(!control.GetType().Equals(typeof(HomePageListView)))
-                    {
-                        this.contentBgPanel.Controls.Remove(control);
-                    }
+                    this.contentBgPanel.Controls.Remove(control);
                 }
+            }
 
+            if (view != null)
+            {                
                 view.Dock = DockStyle.Fill;
                 this.contentBgPanel.Controls.Add(view);
             }
         }
+
+
+
+        #region 顶部菜单的按钮功能
+
+        //关闭闲机
+        private void CloseMache_ButtonClick(object sender, EventArgs e)
+        {
+            CloseMacheView view = new CloseMacheView();
+            ToolsManage.ShowForm(view, false);
+        }
+        //全部结帐
+        private void CheckOut_ButtonClick(object sender, EventArgs e)
+        {
+            CheckOutView view = new CheckOutView();
+            ToolsManage.ShowForm(view, false);
+        }
+        //交班
+        private void ChangeShifts_ButtonClick(object sender, EventArgs e)
+        {
+            ChangeShiftsView view = new ChangeShiftsView();
+            ToolsManage.ShowForm(view, false);
+        }
+
+        //商品订单
+        private void PayedIndent_ButtonClick(object sender, EventArgs e)
+        {
+            PayedProductIndentView view = new PayedProductIndentView();
+            ToolsManage.ShowForm(view, false);
+        }
+
+        //呼叫服务
+        private void CallServer_ButtonClick(object sender, EventArgs e)
+        {
+            CallServiceView view = new CallServiceView();
+            ToolsManage.ShowForm(view, false);
+        }
+        //客户端异常
+        private void ClientExpection_ButtonClick(object sender, EventArgs e)
+        {
+
+
+
+
+        }
+        //消息发送
+        private void ChatManage_ButtonClick(object sender, EventArgs e)
+        {
+            ChatManageView view = new ChatManageView();
+            ToolsManage.ShowForm(view, false);
+        }
+        //解锁
+        private void LockList_ButtonClick(object sender, EventArgs e)
+        {
+            LockListView view = new LockListView();
+            ToolsManage.ShowForm(view, false);
+        }
+        //开卡
+        private void OpenMember_ButtonClick(object sender, EventArgs e)
+        {
+            ReminderScanView view = new ReminderScanView();
+            ToolsManage.ShowForm(view, false);
+        }
+
+        //上网
+        private void UserAcitve_ButtonClick(object sender, EventArgs e)
+        {
+            UserActiveView view = new UserActiveView();
+            ToolsManage.ShowForm(view, false);
+        }
+        #endregion
     }
 
 }

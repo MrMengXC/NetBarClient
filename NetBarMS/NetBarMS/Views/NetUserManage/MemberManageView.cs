@@ -65,23 +65,19 @@ namespace NetBarMS.Views.NetUserManage
         {
 
             //初始化ComboBoxEdit
+            //会员状态
             foreach(string status in Enum.GetNames(typeof(MEMBERSTATUS)))
             {
                 this.statusComboBoxEdit.Properties.Items.Add(status);
             }
 
-            SysManage.Manage().GetMembersTypes(out memberTypes);
-            //锁定1 激活2 在线3 离线4
+            //会员类型
+            this.memberTypes = SysManage.MemberTypes;
             this.memberTypeComboBoxEdit.Properties.Items.Add("无");
             for (int i = 0; i < this.memberTypes.Count(); i++)
             {
                 this.memberTypeComboBoxEdit.Properties.Items.Add(memberTypes[i].typeName);
             }
-
-            // 设置 comboBox的文本值不能被编辑
-            this.statusComboBoxEdit.Properties.TextEditStyle = TextEditStyles.DisableTextEditor;   
-            this.memberTypeComboBoxEdit.Properties.TextEditStyle = TextEditStyles.DisableTextEditor;
-
             //初始化GridControl
             ToolsManage.SetGridView(this.gridView1, GridControlType.MemberManage, out this.mainDataTable,ColumnButtonClick,null);
             this.gridControl1.DataSource = this.mainDataTable;
@@ -113,7 +109,7 @@ namespace NetBarMS.Views.NetUserManage
             {
                 return;
             }
-            NetMessageManage.Manage().RemoveResultBlock(MemberListResult);
+            NetMessageManage.RemoveResultBlock(MemberListResult);
             //System.Console.WriteLine("MemberListBlock:" + result.pack);
             if (result.pack.Content.MessageType == 1)
             {           
@@ -200,7 +196,7 @@ namespace NetBarMS.Views.NetUserManage
            
             if (result.pack.Cmd == Cmd.CMD_MEMBER_DEL && result.pack.Content.MessageType == 1)
             {
-                NetMessageManage.Manage().RemoveResultBlock(DeleteMemberResult);
+                NetMessageManage.RemoveResultBlock(DeleteMemberResult);
                 System.Console.WriteLine("DeleteMemberResult:" + result.pack);
                 this.Invoke(new UIHandleBlock(delegate ()
                 {
@@ -211,19 +207,7 @@ namespace NetBarMS.Views.NetUserManage
             }
         }
         #endregion
-        
-        #region 验证会员以及验证会员回调
-        //验证会员点击事件
-        private void simpleButton4_Click(object sender, EventArgs e)
-        {
-            
-        }
-        //验证会员回调
-        private void VerifyMemberResult(ResultModel result)
-        {
-
-        }
-        #endregion
+      
 
         #region 多条件查询会员
         //按照会员状态查询
@@ -238,37 +222,32 @@ namespace NetBarMS.Views.NetUserManage
             SearchMember();
         }
         //输入卡号或者姓名查询
-
-        private void searchButtonEdit_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        private void SearchButtonEdit_ButtonClick(object sender, ButtonPressedEventArgs e)
         {
             SearchMember();
-
         }
-
 
         //通过条件查询会员
         private void SearchMember()
         {
-            int index = Math.Max(0, this.memberTypeComboBoxEdit.SelectedIndex);
-            int statusIndex = this.statusComboBoxEdit.SelectedIndex;
-            string key = this.searchButtonEdit.Text;
-
             //会员类型
-            int type = 0,status = 0;
-            if(index - 1>=0)
+            int type = 0;
+            if(this.memberTypeComboBoxEdit.SelectedIndex > 0)
             {
-                MemberTypeModel item = this.memberTypes[index - 1];
+                MemberTypeModel item = this.memberTypes[this.memberTypeComboBoxEdit.SelectedIndex - 1];
                 type = item.typeId;
             }
 
-            MEMBERSTATUS ms;
-            if(Enum.TryParse<MEMBERSTATUS>(this.statusComboBoxEdit.Text,out ms))
+            MEMBERSTATUS status = MEMBERSTATUS.无;
+            Enum.TryParse<MEMBERSTATUS>(this.statusComboBoxEdit.Text, out status);
+
+            string key = "";
+            if (!this.searchButtonEdit.Text.Equals(this.searchButtonEdit.Properties.NullText))
             {
-                status = (int)ms;
+                key = this.searchButtonEdit.Text;
             }
 
-
-            System.Console.WriteLine("type:" + type + "\nstatus:" + status + "\nkey:" + key);
+            //System.Console.WriteLine("type:" + type + "\nstatus:" + status + "\nkey:" + key);
             //测试多条件查询
             StructPage.Builder page = new StructPage.Builder()
             {
@@ -278,7 +257,7 @@ namespace NetBarMS.Views.NetUserManage
                 Order = order,      //
             };
 
-            MemberNetOperation.SearchConditionMember(SearchMemberResult, page.Build(), status, type, key);
+            MemberNetOperation.SearchConditionMember(SearchMemberResult, page.Build(), (int)status, type, key);
         }
         //按条件查询会员的回调
         private void SearchMemberResult(ResultModel result)
@@ -290,7 +269,7 @@ namespace NetBarMS.Views.NetUserManage
             if (result.pack.Content.MessageType == 1)
             {
                 //锁定0 激活1 在线2 离线3
-                NetMessageManage.Manage().RemoveResultBlock(SearchMemberResult);
+                NetMessageManage.RemoveResultBlock(SearchMemberResult);
                 //System.Console.WriteLine("SearchMemberResult:" + result.pack);
                 this.Invoke(new UIHandleBlock(delegate ()
                 {
@@ -320,6 +299,8 @@ namespace NetBarMS.Views.NetUserManage
             }
             return ids;
         }
+
+     
 
         //按钮列的点击事件
         public void ColumnButtonClick(object sender, ButtonPressedEventArgs e)
@@ -358,13 +339,6 @@ namespace NetBarMS.Views.NetUserManage
         }
         #endregion
 
-        //锁定
-        private void simpleButton5_Click(object sender, EventArgs e)
-        {
-
-           
-
-        }
      
 
     }

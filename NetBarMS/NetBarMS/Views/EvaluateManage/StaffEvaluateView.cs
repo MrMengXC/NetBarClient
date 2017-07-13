@@ -51,8 +51,10 @@ namespace NetBarMS.Views.EvaluateManage
             this.dateNavigator1.UpdateDateTimeWhenNavigating = false;
             this.dateNavigator1.UpdateSelectionWhenNavigating = false;
             this.dateNavigator1.SyncSelectionWithEditValue = false;
-            SysManage.Manage().GetStaffs(out this.staffs);
+
+
             //先获取员工列表
+            this.staffs = SysManage.Staffs;
             foreach (StructAccount staff in this.staffs)
             {
                 this.comboBoxEdit1.Properties.Items.Add(staff.Nickname);
@@ -85,7 +87,7 @@ namespace NetBarMS.Views.EvaluateManage
             {
                 return;
             }
-            NetMessageManage.Manage().RemoveResultBlock(GetStaffEvaluateListResult);
+            NetMessageManage.RemoveResultBlock(GetStaffEvaluateListResult);
             if(result.pack.Content.MessageType == 1)
             {
                 this.Invoke(new UIHandleBlock(delegate {

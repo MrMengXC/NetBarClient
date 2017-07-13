@@ -43,7 +43,7 @@ namespace NetBarMS.Codes.Tools.Manage
             {
                 return;
             }
-            NetMessageManage.Manage().RemoveResultBlock(AccountInfoBlock);
+            NetMessageManage.RemoveResultBlock(AccountInfoBlock);
             System.Console.WriteLine("AccountInfoBlock:" + result.pack);
             if (result.pack.Content.MessageType == 1)
             {

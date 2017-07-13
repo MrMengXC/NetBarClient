@@ -43,7 +43,7 @@ namespace NetBarMS.Views.HomePage
                 return;
             }
 
-            NetMessageManage.Manage().RemoveResultBlock(ManagerCommandOperationResult);
+            NetMessageManage.RemoveResultBlock(ManagerCommandOperationResult);
             System.Console.WriteLine("ManagerCommandOperationResult:" + result.pack);
             if (result.pack.Content.MessageType == 1)
             {

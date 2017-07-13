@@ -73,7 +73,7 @@ namespace NetBarMS.Views.ProductManage
         private void InitUI()
         {
             //首先要获取产品列表数组
-            SysManage.Manage().GetProductTypes(out this.productTypes);
+            this.productTypes = SysManage.ProductTypes;
 
             // 设置 comboBox的文本值不能被编辑
             this.comboBoxEdit1.Properties.TextEditStyle = TextEditStyles.DisableTextEditor;
@@ -127,7 +127,7 @@ namespace NetBarMS.Views.ProductManage
             }
             if(result.pack.Cmd == Cmd.CMD_GOODS_FIND)
             {
-                NetMessageManage.Manage().RemoveResultBlock(GetProductListResult);
+                NetMessageManage.RemoveResultBlock(GetProductListResult);
                 System.Console.WriteLine("GetProductListResult:"+result.pack);
                 this.Invoke(new UIHandleBlock(delegate
                 {
@@ -154,7 +154,7 @@ namespace NetBarMS.Views.ProductManage
             this.mainDataTable.Rows.Add(row);
             row[TitleList.Number.ToString()] = this.mainDataTable.Rows.Count + "";
             row[TitleList.Name.ToString()] = product.GoodsName;
-            row[TitleList.Type.ToString()] =SysManage.Manage().GetProductTypeName(product.Category);
+            row[TitleList.Type.ToString()] =SysManage.GetProductTypeName(product.Category);
             row[TitleList.Price.ToString()] = product.Price;
             row[TitleList.IsIntegral.ToString()] = product.UseIntegal;
             row[TitleList.IsShowStore.ToString()] = product.Hide;
@@ -258,7 +258,7 @@ namespace NetBarMS.Views.ProductManage
             }
             if (result.pack.Cmd == Cmd.CMD_GOODS_DEL)
             {
-                NetMessageManage.Manage().RemoveResultBlock(DeleteProductResult);
+                NetMessageManage.RemoveResultBlock(DeleteProductResult);
                 System.Console.WriteLine("DeleteProductResult:" + result.pack);
                 this.Invoke(new UIHandleBlock(delegate
                 {

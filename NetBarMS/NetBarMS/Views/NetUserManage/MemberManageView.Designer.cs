@@ -41,10 +41,6 @@
             this.searchButtonEdit = new DevExpress.XtraEditors.ButtonEdit();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
             this.titlePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -138,16 +134,22 @@
             this.flowLayoutPanel2.Controls.Add(this.searchButtonEdit);
             this.flowLayoutPanel2.Location = new System.Drawing.Point(6, 10);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(451, 34);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(494, 34);
             this.flowLayoutPanel2.TabIndex = 79;
             // 
             // statusComboBoxEdit
             // 
             this.statusComboBoxEdit.Location = new System.Drawing.Point(3, 3);
             this.statusComboBoxEdit.Name = "statusComboBoxEdit";
+            this.statusComboBoxEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.statusComboBoxEdit.Properties.Appearance.ForeColor = System.Drawing.Color.Blue;
+            this.statusComboBoxEdit.Properties.Appearance.Options.UseFont = true;
+            this.statusComboBoxEdit.Properties.Appearance.Options.UseForeColor = true;
             this.statusComboBoxEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.statusComboBoxEdit.Size = new System.Drawing.Size(131, 20);
+            this.statusComboBoxEdit.Properties.NullText = "按状态查询";
+            this.statusComboBoxEdit.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.statusComboBoxEdit.Size = new System.Drawing.Size(131, 24);
             this.statusComboBoxEdit.TabIndex = 0;
             this.statusComboBoxEdit.SelectedIndexChanged += new System.EventHandler(this.statusComboBoxEdit_SelectedIndexChanged);
             // 
@@ -155,9 +157,15 @@
             // 
             this.memberTypeComboBoxEdit.Location = new System.Drawing.Point(140, 3);
             this.memberTypeComboBoxEdit.Name = "memberTypeComboBoxEdit";
+            this.memberTypeComboBoxEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.memberTypeComboBoxEdit.Properties.Appearance.ForeColor = System.Drawing.Color.Blue;
+            this.memberTypeComboBoxEdit.Properties.Appearance.Options.UseFont = true;
+            this.memberTypeComboBoxEdit.Properties.Appearance.Options.UseForeColor = true;
             this.memberTypeComboBoxEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.memberTypeComboBoxEdit.Size = new System.Drawing.Size(131, 20);
+            this.memberTypeComboBoxEdit.Properties.NullText = "按会员等级查询";
+            this.memberTypeComboBoxEdit.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.memberTypeComboBoxEdit.Size = new System.Drawing.Size(131, 24);
             this.memberTypeComboBoxEdit.TabIndex = 1;
             this.memberTypeComboBoxEdit.SelectedIndexChanged += new System.EventHandler(this.memberTypeComboBoxEdit_SelectedIndexChanged);
             // 
@@ -165,20 +173,19 @@
             // 
             this.searchButtonEdit.Location = new System.Drawing.Point(277, 3);
             this.searchButtonEdit.Name = "searchButtonEdit";
+            this.searchButtonEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.searchButtonEdit.Properties.Appearance.Options.UseFont = true;
             this.searchButtonEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Search)});
-            this.searchButtonEdit.Size = new System.Drawing.Size(136, 20);
+            this.searchButtonEdit.Properties.NullText = "按卡号、姓名查询";
+            this.searchButtonEdit.Size = new System.Drawing.Size(162, 24);
             this.searchButtonEdit.TabIndex = 2;
-            this.searchButtonEdit.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.searchButtonEdit_ButtonClick);
+            this.searchButtonEdit.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.SearchButtonEdit_ButtonClick);
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel1.Controls.Add(this.simpleButton2);
-            this.flowLayoutPanel1.Controls.Add(this.simpleButton3);
-            this.flowLayoutPanel1.Controls.Add(this.simpleButton5);
-            this.flowLayoutPanel1.Controls.Add(this.simpleButton4);
-            this.flowLayoutPanel1.Controls.Add(this.simpleButton6);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(625, 7);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -199,65 +206,6 @@
             this.simpleButton2.TabIndex = 1;
             this.simpleButton2.Text = "删除";
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
-            // 
-            // simpleButton3
-            // 
-            this.simpleButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButton3.Appearance.BackColor = System.Drawing.Color.Red;
-            this.simpleButton3.Appearance.ForeColor = System.Drawing.Color.White;
-            this.simpleButton3.Appearance.Options.UseBackColor = true;
-            this.simpleButton3.Appearance.Options.UseForeColor = true;
-            this.simpleButton3.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.simpleButton3.Location = new System.Drawing.Point(371, 3);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton3.TabIndex = 2;
-            this.simpleButton3.Text = "解锁";
-            // 
-            // simpleButton5
-            // 
-            this.simpleButton5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButton5.Appearance.BackColor = System.Drawing.Color.Red;
-            this.simpleButton5.Appearance.ForeColor = System.Drawing.Color.White;
-            this.simpleButton5.Appearance.Options.UseBackColor = true;
-            this.simpleButton5.Appearance.Options.UseForeColor = true;
-            this.simpleButton5.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.simpleButton5.Location = new System.Drawing.Point(290, 3);
-            this.simpleButton5.Name = "simpleButton5";
-            this.simpleButton5.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton5.TabIndex = 77;
-            this.simpleButton5.Text = "锁定";
-            this.simpleButton5.Click += new System.EventHandler(this.simpleButton5_Click);
-            // 
-            // simpleButton4
-            // 
-            this.simpleButton4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButton4.Appearance.BackColor = System.Drawing.Color.Red;
-            this.simpleButton4.Appearance.ForeColor = System.Drawing.Color.White;
-            this.simpleButton4.Appearance.Options.UseBackColor = true;
-            this.simpleButton4.Appearance.Options.UseForeColor = true;
-            this.simpleButton4.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.simpleButton4.Location = new System.Drawing.Point(209, 3);
-            this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton4.TabIndex = 76;
-            this.simpleButton4.Text = "验证";
-            this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
-            // 
-            // simpleButton6
-            // 
-            this.simpleButton6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButton6.Appearance.BackColor = System.Drawing.Color.Red;
-            this.simpleButton6.Appearance.ForeColor = System.Drawing.Color.White;
-            this.simpleButton6.Appearance.Options.UseBackColor = true;
-            this.simpleButton6.Appearance.Options.UseForeColor = true;
-            this.simpleButton6.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.simpleButton6.Location = new System.Drawing.Point(128, 3);
-            this.simpleButton6.Name = "simpleButton6";
-            this.simpleButton6.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton6.TabIndex = 75;
-            this.simpleButton6.Text = "添加";
-            this.simpleButton6.Click += new System.EventHandler(this.simpleButton6_Click);
             // 
             // MemberManageView
             // 
@@ -299,10 +247,6 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView;
         private System.Windows.Forms.Panel panel1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton5;
-        private DevExpress.XtraEditors.SimpleButton simpleButton4;
-        private DevExpress.XtraEditors.SimpleButton simpleButton6;
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;

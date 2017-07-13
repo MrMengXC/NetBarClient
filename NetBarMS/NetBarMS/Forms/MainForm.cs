@@ -72,7 +72,6 @@ namespace NetBarMS
         {
             this.Invoke(new UIHandleBlock(delegate {
                 this.simpleButton8.Text = "客户端异常\n" + num;
-
             }));
 
         }

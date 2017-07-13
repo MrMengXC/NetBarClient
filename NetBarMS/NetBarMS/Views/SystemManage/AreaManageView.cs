@@ -85,12 +85,12 @@ namespace NetBarMS.Views.SystemManage
 
             if (result.pack.Cmd == Cmd.CMD_SYS_INFO && result.pack.Content.ScSysInfo.Parent.Equals(SystemManageNetOperation.areaParent))
             {
-                NetMessageManage.Manage().RemoveResultBlock(GetAreaListResult);
+                NetMessageManage.RemoveResultBlock(GetAreaListResult);
                 this.Invoke(new UIHandleBlock(delegate
                 {
 
                     System.Console.WriteLine("GetAreaList:" + result.pack);
-                    SysManage.Manage().UpdateAreaData(result.pack.Content.ScSysInfo.ChildList);
+                    SysManage.UpdateAreaData(result.pack.Content.ScSysInfo.ChildList);
                     areas = result.pack.Content.ScSysInfo.ChildList;
                     areaCodes.Clear();
                     foreach (StructDictItem item in areas)
@@ -255,7 +255,7 @@ namespace NetBarMS.Views.SystemManage
                 return;
             }
             System.Console.WriteLine("UpdateAreaResult:" + result.pack);
-            NetMessageManage.Manage().RemoveResultBlock(UpdateAreaResult);
+            NetMessageManage.RemoveResultBlock(UpdateAreaResult);
             if (result.pack.Content.MessageType == 1)
             {
                 isChange = true;
@@ -273,7 +273,7 @@ namespace NetBarMS.Views.SystemManage
                 return;   
             }
 
-            NetMessageManage.Manage().RemoveResultBlock(AddAreaResult);
+            NetMessageManage.RemoveResultBlock(AddAreaResult);
             System.Console.WriteLine("AddAreaResult:" + result.pack);
 
             if (result.pack.Content.MessageType == 1)
@@ -370,7 +370,7 @@ namespace NetBarMS.Views.SystemManage
                 return;
             }
             System.Console.WriteLine("UpdateAreaComputerResult:" + result.pack);
-            NetMessageManage.Manage().RemoveResultBlock(UpdateAreaComputerResult);
+            NetMessageManage.RemoveResultBlock(UpdateAreaComputerResult);
 
             if (result.pack.Content.MessageType == 1)
             {
@@ -423,7 +423,7 @@ namespace NetBarMS.Views.SystemManage
                 return;
             }
             System.Console.WriteLine("DeleteAreaResult:" + result.pack);
-            NetMessageManage.Manage().RemoveResultBlock(DeleteAreaResult);
+            NetMessageManage.RemoveResultBlock(DeleteAreaResult);
             if (result.pack.Content.MessageType == 1)
             {
                 isChange = true;

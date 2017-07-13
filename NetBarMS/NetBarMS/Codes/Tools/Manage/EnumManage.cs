@@ -10,6 +10,10 @@ namespace NetBarMS.Codes.Tools
     public enum TreeNodeTag
     {
         None = 1,
+        /// <summary>
+        /// 首页
+        /// </summary>
+        HomePage,
         NetRecord,              //上网记录
         MemberManage,           //会员管理
 

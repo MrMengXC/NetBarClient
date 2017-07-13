@@ -76,13 +76,13 @@ namespace NetBarMS.Views.SystemManage
             {
                 return;
             }
-            NetMessageManage.Manage().RemoveResultBlock(GetStaffListResult);
+            NetMessageManage.RemoveResultBlock(GetStaffListResult);
             if (result.pack.Content.MessageType == 1)
             {
                 
                 this.Invoke(new UIHandleBlock(delegate
                 {
-                    SysManage.Manage().UpdateStaffData(result.pack.Content.ScAccountList.AccountList);
+                    SysManage.UpdateStaffData(result.pack.Content.ScAccountList.AccountList);
                     this.oriStaffs = result.pack.Content.ScAccountList.AccountList.ToList<StructAccount>();
                     this.showStaffs = this.oriStaffs.ToList<StructAccount>();
                     RefreshGridControl();
@@ -125,7 +125,7 @@ namespace NetBarMS.Views.SystemManage
                 return;
             }
 
-            NetMessageManage.Manage().RemoveResultBlock(SmsPushMessageInfoResult);
+            NetMessageManage.RemoveResultBlock(SmsPushMessageInfoResult);
             if ( result.pack.Content.MessageType == 1)
             {
              
@@ -256,7 +256,7 @@ namespace NetBarMS.Views.SystemManage
                 return;
             }
 
-            NetMessageManage.Manage().RemoveResultBlock(AddSmsPushMessage);
+            NetMessageManage.RemoveResultBlock(AddSmsPushMessage);
             if (result.pack.Content.MessageType == 1)
             {
                 //重新获取短信列表
@@ -276,7 +276,7 @@ namespace NetBarMS.Views.SystemManage
             }
 
             System.Console.WriteLine("DeleteSmsPushMessage:" + result.pack);
-            NetMessageManage.Manage().RemoveResultBlock(DeleteSmsPushMessage);
+            NetMessageManage.RemoveResultBlock(DeleteSmsPushMessage);
             if (result.pack.Content.MessageType == 1)
             {
                 this.Invoke(new UIHandleBlock(delegate {
@@ -335,7 +335,7 @@ namespace NetBarMS.Views.SystemManage
             }
 
             System.Console.WriteLine("UpdateSmsPushMessage:" + result.pack);
-            NetMessageManage.Manage().RemoveResultBlock(UpdateSmsPushMessage);
+            NetMessageManage.RemoveResultBlock(UpdateSmsPushMessage);
             if (result.pack.Content.MessageType == 1)
             {
                 // this.oriPushItems = new IList<StructDictItem>();
@@ -354,7 +354,7 @@ namespace NetBarMS.Views.SystemManage
                 return;
             }
             System.Console.WriteLine("UpdateStaffSnsResult:" + result.pack);
-            NetMessageManage.Manage().RemoveResultBlock(UpdateStaffSnsResult);
+            NetMessageManage.RemoveResultBlock(UpdateStaffSnsResult);
             if (result.pack.Content.MessageType == 1)
             {
            

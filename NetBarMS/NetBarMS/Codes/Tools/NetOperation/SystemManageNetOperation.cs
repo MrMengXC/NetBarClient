@@ -109,7 +109,7 @@ namespace NetBarMS.Codes.Tools.NetOperation
             MessagePack.Builder pack = new MessagePack.Builder();
             pack.SetCmd(Cmd.CMD_COMPUTER_UPDATE);
             pack.SetContent(content);
-            NetMessageManage.Manage().SendMsg(pack.Build(), resultBlock);
+            NetMessageManage.SendMsg(pack.Build(), resultBlock);
 
 
         }

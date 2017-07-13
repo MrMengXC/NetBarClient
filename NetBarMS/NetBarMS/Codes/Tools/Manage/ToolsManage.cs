@@ -32,67 +32,44 @@ namespace NetBarMS.Codes.Tools
 
 
         #region 显示自定义窗体
-        //
         /// <summary>
         /// 显示自定义窗体
         /// </summary>
-        /// <param name="control">显示的RootFormView类型 Control</param>
-        /// <param name="showInTaskbar">是否显示在任务栏上</param>
-        public static void ShowForm(RootFormView control, bool showInTaskbar)
+        /// <param name="control">显示的视图</param>
+        /// <param name="showInTaskbar">是否在任务栏上显示图标</param>
+        /// <returns>返回DialogResult</returns>
+        public static DialogResult ShowForm(UserControl control, bool showInTaskbar)
         {
-            CustomForm newForm = new CustomForm(control, showInTaskbar);
-            if (newForm.ShowDialog() == DialogResult.OK)
-            {
-                newForm.Dispose();
-            }
+            DialogResult res = ToolsManage.ShowForm(control,showInTaskbar,null);
+            return res;
         }
         /// <summary>
         /// 显示自定义窗体
         /// </summary>
-        /// <param name="control">UserControl 类型</param>
-        /// <param name="showInTaskbar">是否显示在任务栏上</param>
-        public static void ShowForm(UserControl control, bool showInTaskbar)
+        /// <param name="control">显示的视图</param>
+        /// <param name="showInTaskbar">是否在任务栏上显示图标</param>
+        /// <param name="close">关闭窗口的回调</param>
+        /// <returns>返回DialogResult</returns>
+        public static DialogResult ShowForm(UserControl control, bool showInTaskbar,CloseFormHandle close)
         {
-            CustomForm newForm = new CustomForm(control, showInTaskbar);
-            if (newForm.ShowDialog() == DialogResult.OK)
+            CustomForm newForm = new CustomForm(control, showInTaskbar,close);
+            DialogResult res = newForm.ShowDialog();
+            //如过关闭窗口释放资源
+            if (res == DialogResult.Cancel)
             {
                 newForm.Dispose();
             }
+            return res;
         }
-        public static void ShowForm(RootUserControlView control, bool showInTaskbar)
+        /// <summary>
+        /// 显示自定义窗体
+        /// </summary>
+        /// <param name="control">显示的视图</param>
+        /// <returns>返回窗口</returns>
+        public static CustomForm ShowForm(UserControl control)
         {
-            CustomForm newForm = new CustomForm(control, showInTaskbar);
-            if (newForm.ShowDialog() == DialogResult.OK)
-            {
-                newForm.Dispose();
-            }
-        }
-       
-        public static void ShowForm(RootUserControlView control, bool showInTaskbar,CloseFormHandle close)
-        {
-            if (close != null)
-            {
-                control.CloseForm += close;
-            }
-            CustomForm newForm = new CustomForm(control, showInTaskbar);
-            if (newForm.ShowDialog() == DialogResult.OK)
-            {
-                newForm.Dispose();
-            }
-
-        }
-        public static void ShowMessageView(RootUserControlView control, bool showInTaskbar, CloseFormHandle close)
-        {
-            //添加背景图片，显示中间输入
-            if (close != null)
-            {
-                control.CloseForm += close;
-            }
-            CustomForm newForm = new CustomForm(control, showInTaskbar);
-            if (newForm.ShowDialog() == DialogResult.OK)
-            {
-                newForm.Dispose();
-            }
+            CustomForm newForm = new CustomForm(control, true, null);
+            return newForm;
         }
         #endregion
 
@@ -215,19 +192,28 @@ namespace NetBarMS.Codes.Tools
                             foreach (string name in columnModel.buttonNames)
                             {
 
-                                //char[] splits = { '.' };
-                                // string[] names = name.Split(splits);
+                                char[] splits = { '(',')' };
+                                string[] names = name.Split(splits);
 
                                 EditorButton button = new EditorButton();
                                 button.Kind = ButtonPredefines.Glyph;
-                                button.Appearance.ForeColor = Color.Blue;
 
                                 //按钮显示
                                 button.Visible = true;
                                 button.Tag = fieldname + "_" + num;
-                                //button.Appearance.BackColor = Color.Red;
-                                // Image btnImg = (System.Drawing.Bitmap)Imgs.ResourceManager.GetObject(names[1]);
-                                button.Caption = name;
+                               
+                                if(names.Count() > 1)
+                                {
+                                    char[] color_sp = { ','};
+                                    string[] colors = names[1].Split(color_sp);
+                                    button.Appearance.ForeColor = Color.FromArgb(int.Parse(colors[0]), int.Parse(colors[1]), int.Parse(colors[2]));
+                                }
+                                else
+                                {
+                                    button.Appearance.ForeColor = Color.Blue;
+
+                                }
+                                button.Caption = names[0];
                                 width += 50;
 
                                 //button.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
@@ -438,19 +424,7 @@ namespace NetBarMS.Codes.Tools
         }
         #endregion
 
-        #region 回调线程进行UI显示
-        public static void Invoke(UserControl control,Delegate method)
-        {
-            //while (!control.FindForm().IsHandleCreated)
-            //{
-            //    ;
-            //}
-            control.Invoke(method);
-        }
-
-        #endregion
-
-
+        #region 打印GridControl
         /// <summary>
         /// 打印GridControl
         /// </summary>
@@ -490,5 +464,26 @@ namespace NetBarMS.Codes.Tools
             link.CreateDocument();  //建立文档
             ps.PreviewFormEx.Show();//进行预览  
         }
+        #endregion
+
+        #region 随机获取身份证号
+        /// <summary>
+        /// 获取随机身份证号
+        /// </summary>
+        public static string RandomCard
+        {
+            get
+            {
+                string card = "1";
+                for(int i = 0;i<17;i++)
+                {
+                    string idNum = new Random().Next(0, 9).ToString();
+                    card += idNum;
+                }
+                return card;
+            }
+        }
+        #endregion
+
     }
 }

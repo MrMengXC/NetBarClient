@@ -17,7 +17,7 @@
     <column name = "结束时间" field="EndTime" type ="C_Text" width ="" height =""/>
     <column name = "MAC地址" field="MacLoc" type ="C_Text" width ="" height =""/>
     <column name = "IP地址" field="IpLoc" type ="C_Text" width ="" height =""/>
-    <column name = "操作" field="Operation" type ="C_Button" width ="" height ="" bnames ="强制下机/锁定/验证"/>
+    <column name = "操作" field="Operation" type ="C_Button" width ="" height ="" bnames ="强制下机(255,192,128)/锁定(255, 128, 128)/验证"/>
   </grid>
   <!--办理会员-->
   <grid type ="OpenMember">

@@ -23,24 +23,46 @@ namespace NetBarMS.Codes.Tools
         private const string ipString = "jorkenw.gnway.org";
         private const int port = 8465;
 
+        #region Event
         //结果
         private event DataResultBlock ResultBlockEvent;
         //连接结果
-        public event ConnectResultBlock ConnectBlockHandle;
+        public event ConnectResultBlock ConnectBlockEvent;
+        #endregion
 
+        #region 连接服务器
+        /// <summary>
+        /// 连接服务器
+        /// </summary>
+        /// <param name="connect">连接回调</param>
+        public static void ConnectServer(ConnectResultBlock connect)
+        {
+            if(connect != null)
+            {
+                NetMessageManage.Manage(connect);
+            }
+            else
+            {
+                NetMessageManage.Manage();
+            }
+        }
+
+        #endregion
 
         #region 静态方法
-        public static NetMessageManage Manage(ConnectResultBlock connect)
+        private static NetMessageManage Manage(ConnectResultBlock connect)
         {
+
+
             if (_instance == null)
             {
                 _instance = new NetMessageManage();
                 _instance.ConnectSever();
-                _instance.ConnectBlockHandle += connect;
+                _instance.ConnectBlockEvent += connect;
             }
             return _instance;
         }
-        public static NetMessageManage Manage()
+        private static NetMessageManage Manage()
         {
             if(_instance == null)
             {
@@ -60,21 +82,6 @@ namespace NetBarMS.Codes.Tools
         {
             clientSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             clientSocket.BeginConnect(ipString, port, new AsyncCallback(ConnectCallback), clientSocket);
-
-        }
-        private void ReceiveResult(System.IAsyncResult res)
-        {
-
-            int len = clientSocket.EndReceive(res);
-            res.AsyncWaitHandle.Close();
-
-            
-            clientSocket.BeginReceive(receiveBytes, 0, 1024, 0, new AsyncCallback(ReceiveResult), clientSocket);
-            HandleReceveBytes(receiveBytes, len);
-
-          //  System.Console.WriteLine("ReceiveResult");
-
-
 
         }
         /// <summary>
@@ -97,9 +104,9 @@ namespace NetBarMS.Codes.Tools
                 Thread thread = new Thread(ReceiveData);
                 thread.Start();
                 //发送连接成功回调
-                if (this.ConnectBlockHandle!=null)
+                if (this.ConnectBlockEvent != null)
                 {
-                    this.ConnectBlockHandle();
+                    this.ConnectBlockEvent();
                 }
             }
         }
@@ -303,10 +310,10 @@ namespace NetBarMS.Codes.Tools
         /// </summary>
         /// <param name="value">Value.</param>
         /// <param name="resultBlock">Result block.</param>
-        public void SendMsg(IMessageLite value, DataResultBlock resultBlock)
+        public static void SendMsg(IMessageLite value, DataResultBlock resultBlock)
         {
-            ResultBlockEvent += resultBlock;
-            SendMsg(value);
+            NetMessageManage.Manage().ResultBlockEvent += resultBlock;
+            NetMessageManage.Manage().SendMsg(value);
         }
 
         //发送数据结果回调
@@ -334,7 +341,6 @@ namespace NetBarMS.Codes.Tools
         {
             return clientSocket.Connected;
         }
-
         //再次连接服务器
         public void AgainConnect()
         {
@@ -345,16 +351,24 @@ namespace NetBarMS.Codes.Tools
         /// <summary>
         /// 移除结果回调
         /// </summary>
-        public void RemoveResultBlock(DataResultBlock result)
+        public static void RemoveResultBlock(DataResultBlock result)
         {
-            this.ResultBlockEvent -= result;
+            NetMessageManage.Manage().ResultBlockEvent -= result;
         }
         /// <summary>
         /// 添加结果回调
         /// </summary>
-        public void AddResultBlock(DataResultBlock result)
+        public static void AddResultBlock(DataResultBlock result)
         {
-            this.ResultBlockEvent += result;
+            NetMessageManage.Manage().ResultBlockEvent += result;
+        }
+
+        /// <summary>
+        /// 移除连接服务器结果回调
+        /// </summary>
+        public static void RemoveConnetServer(ConnectResultBlock result)
+        {
+            NetMessageManage.Manage().ConnectBlockEvent -= result;
         }
         #endregion
 

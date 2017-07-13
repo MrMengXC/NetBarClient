@@ -58,13 +58,14 @@ namespace NetBarMS.Views.ManagersManage
             {
                 return;
             }
-            NetMessageManage.Manage().RemoveResultBlock(GetStaffListResult);
+            NetMessageManage.RemoveResultBlock(GetStaffListResult);
             System.Console.WriteLine("GetStaffListResult:" + result.pack);
 
             if(result.pack.Content.MessageType == 1)
             {
                 this.Invoke(new UIHandleBlock(delegate {
-                    SysManage.Manage().UpdateStaffData(result.pack.Content.ScAccountList.AccountList);
+
+                    SysManage.UpdateStaffData(result.pack.Content.ScAccountList.AccountList);
                     this.staffs = result.pack.Content.ScAccountList.AccountList;
                     RefreshGridControle();
                 }));
@@ -92,7 +93,7 @@ namespace NetBarMS.Views.ManagersManage
             row[TitleList.StaffName.ToString()] = staff.Nickname;
             row[TitleList.TelNumber.ToString()] = staff.Phone;
             row[TitleList.UserName.ToString()] = staff.Username;
-            row[TitleList.Role.ToString()] = SysManage.Manage().GetManagerName(staff.Roleid);
+            row[TitleList.Role.ToString()] = SysManage.GetManagerName(staff.Roleid);
         }
         #endregion
 
@@ -131,7 +132,7 @@ namespace NetBarMS.Views.ManagersManage
             {
                 return;
             }
-            NetMessageManage.Manage().RemoveResultBlock(DeleteStaffsResult);
+            NetMessageManage.RemoveResultBlock(DeleteStaffsResult);
             System.Console.WriteLine("DeleteStaffsResult:" + result.pack);
 
             if (result.pack.Content.MessageType == 1)

@@ -102,7 +102,7 @@ namespace NetBarMS.Views.SystemSearch
                 return;
             }
 
-            NetMessageManage.Manage().RemoveResultBlock(GetProdcutIndentListResult);
+            NetMessageManage.RemoveResultBlock(GetProdcutIndentListResult);
             System.Console.WriteLine("GetProdcutIndentListResult:" + result.pack);
             if (result.pack.Content.MessageType == 1)
             {

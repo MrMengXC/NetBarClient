@@ -47,14 +47,14 @@ namespace NetBarMS.Views.NetUserManage
         // 初始化UI
         private void InitUI()
         {
-            SysManage.Manage().GetStaffs(out this.staffs);
+            this.staffs = SysManage.Staffs;
             this.comboBoxEdit1.Properties.Items.Add("无");
             foreach (StructAccount staff in this.staffs)
             {
                 this.comboBoxEdit1.Properties.Items.Add(staff.Nickname);
             }
 
-            SysManage.Manage().GetMembersTypes(out this.memberTypes);
+            this.memberTypes = SysManage.MemberTypes;
             this.comboBoxEdit2.Properties.Items.Add("无");
             foreach (MemberTypeModel model in this.memberTypes)
             {
@@ -106,10 +106,10 @@ namespace NetBarMS.Views.NetUserManage
             }
 
             System.Console.WriteLine("GetOpenMemberRecordResult:" + result.pack);
-            NetMessageManage.Manage().RemoveResultBlock(GetOpenMemberRecordResult);
+            NetMessageManage.RemoveResultBlock(GetOpenMemberRecordResult);
             if (result.pack.Content.MessageType == 1)
             {
-                ToolsManage.Invoke(this,new UIHandleBlock(delegate
+                this.Invoke(new UIHandleBlock(delegate
                 {
                     records = result.pack.Content.ScQueryApply.ApplysList;
                     RefreshGridControl();
@@ -141,7 +141,7 @@ namespace NetBarMS.Views.NetUserManage
             DataRow row = this.mainDataTable.NewRow();
             this.mainDataTable.Rows.Add(row);
             row[TitleList.MemberName.ToString()] = apply.Name;
-            row[TitleList.MemberType.ToString()] = SysManage.Manage().GetMemberTypeName(apply.Rightid.ToString());
+            row[TitleList.MemberType.ToString()] = SysManage.GetMemberTypeName(apply.Rightid.ToString());
             row[TitleList.IdNumber.ToString()] = apply.Cardnumber;
             row[TitleList.RechargeMoney.ToString()] = apply.ChargeAmount;
             row[TitleList.GiveMoney.ToString()] = apply.BonusAmount;

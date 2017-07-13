@@ -45,7 +45,7 @@ namespace NetBarMS.Codes.Tools
         #endregion
 
         #region 单例
-        public static SysManage Manage()
+        private static SysManage Manage()
         {
             if(_manage == null)
             {
@@ -58,21 +58,21 @@ namespace NetBarMS.Codes.Tools
         #region 获取应提前知道的信息（会员类型。区域。商品类型）
 
         //获取系统信息（会员类型，区域,商品类型）
-        public void RequestSysInfo(DataResultBlock result)
+        public static void RequestSysInfo(DataResultBlock result)
         {
-            this.RequestSysEvent += result;
-            GetAreaList();
-            GetProductTypes();
-            GetMemberLvList();
-            GetManagerList();
-            GetStaffList();
+            SysManage.Manage().RequestSysEvent += result;
+            SysManage.Manage().GetAreaList();
+            SysManage.Manage().GetProductTypes();
+            SysManage.Manage().GetMemberLvList();
+            SysManage.Manage().GetManagerList();
+            SysManage.Manage().GetStaffList();
         }
         #endregion
 
         #region 移除请求系统信息
-        public void RemoveRequestSysInfo(DataResultBlock result)
+        public static void RemoveRequestSysInfo(DataResultBlock result)
         {
-            this.RequestSysEvent -= result;
+            SysManage.Manage().RequestSysEvent -= result;
         }
         #endregion
 
@@ -89,7 +89,7 @@ namespace NetBarMS.Codes.Tools
                 return;
             }
 
-            NetMessageManage.Manage().RemoveResultBlock(GetMemberLvSettingResult);
+            NetMessageManage.RemoveResultBlock(GetMemberLvSettingResult);
             //System.Console.WriteLine("GetMemberLvSettingResult:" + result.pack);
             System.Console.WriteLine("获取会员等级信息");
             if (result.pack.Content.MessageType == 1)
@@ -113,27 +113,27 @@ namespace NetBarMS.Codes.Tools
 
         }
         //更新会员数据（会员等级设定使用）
-        public void UpdateMemberTypeData(IList<StructDictItem> newMemberTypes)
+        public static void UpdateMemberTypeData(IList<StructDictItem> newMemberTypes)
         {
 
-            this.memberTypes.Clear();
-            this.memberDict.Clear();
+            SysManage.Manage().memberTypes.Clear();
+            SysManage.Manage().memberDict.Clear();
 
             foreach (StructDictItem item in newMemberTypes)
             {
                 MemberTypeModel model = new MemberTypeModel(item);
-                this.memberDict.Add(item.Code, model);
-                this.memberTypes.Add(model);
+                SysManage.Manage().memberDict.Add(item.Code, model);
+                SysManage.Manage().memberTypes.Add(model);
             }
         }
         //获取会员类型名称
-        public string GetMemberTypeName(string temId)
+        public static string GetMemberTypeName(string temId)
         {
             try
             {
                 int id = int.Parse(temId);
                 MemberTypeModel model;
-                this.memberDict.TryGetValue(id, out model);
+                SysManage.Manage().memberDict.TryGetValue(id, out model);
                 if (model == null)
                 {
                     //if(id == IdTools.TEM_MEMBER_ID)
@@ -154,17 +154,21 @@ namespace NetBarMS.Codes.Tools
            
         }
         //获取会员类型
-        public void GetMembersTypes(out List<MemberTypeModel>items)
+        public static List<MemberTypeModel> MemberTypes
         {
-            //如果存在应该直接返回
-            if(this.memberTypes != null)
+            get
             {
-                items = this.memberTypes.ToList<MemberTypeModel>();
+                //如果存在应该直接返回
+                if (SysManage.Manage().memberTypes != null)
+                {
+                    return SysManage.Manage().memberTypes.ToList<MemberTypeModel>();
+                }
+                else
+                {
+                    return new List<MemberTypeModel>();
+                }
             }
-            else
-            {
-                items = new List<MemberTypeModel>();
-            }
+           
         }
         #endregion
 
@@ -182,7 +186,7 @@ namespace NetBarMS.Codes.Tools
             if (result.pack.Cmd == Cmd.CMD_SYS_INFO && result.pack.Content.ScSysInfo.Parent.Equals(SystemManageNetOperation.areaParent))
             {
 
-                NetMessageManage.Manage().RemoveResultBlock(GetAreaListResult);
+                NetMessageManage.RemoveResultBlock(GetAreaListResult);
                 //System.Console.WriteLine("GetAreaList:" + result.pack);
                 System.Console.WriteLine("获取区域信息");
                 if (result.pack.Content.MessageType == 1)
@@ -209,10 +213,10 @@ namespace NetBarMS.Codes.Tools
 
         }
         //获取区域名称
-        public string GetAreaName(string code)
+        public static string GetAreaName(string code)
         {
             AreaTypeModel item = null;
-            this.areaDict.TryGetValue(code, out item);
+            SysManage.Manage().areaDict.TryGetValue(code, out item);
             if(item == null)
             {
                 return "未标注区域";
@@ -223,29 +227,34 @@ namespace NetBarMS.Codes.Tools
             }
         }
         //获取区域列表
-        public void GetAreasList(out List<AreaTypeModel>items)
+        public static List<AreaTypeModel> Areas
         {
-            //如果存在应该直接返回
-            if (this.areas != null)
+            get
             {
-                items = this.areas.ToList<AreaTypeModel>();
+                //如果存在应该直接返回
+                if (SysManage.Manage().areas != null)
+                {
+                    return SysManage.Manage().areas.ToList<AreaTypeModel>();
+                }
+                else
+                {
+                    return new List<AreaTypeModel>();
+                }
             }
-            else
-            {
-                items = new List<AreaTypeModel>();
-            }
+           
         }
 
         // 更新区域数据
-        public void UpdateAreaData(IList<StructDictItem> items)
+        public static void UpdateAreaData(IList<StructDictItem> items)
         {
-            this.areas.Clear();
-            this.areaDict.Clear();
+            SysManage.Manage().areas.Clear();
+            SysManage.Manage().areaDict.Clear();
+
             foreach (StructDictItem item in items)
             {
                 AreaTypeModel model = new AreaTypeModel(item);
-                areaDict.Add(item.Code.ToString(), model);
-                this.areas.Add(model);
+                SysManage.Manage().areaDict.Add(item.Code.ToString(), model);
+                SysManage.Manage().areas.Add(model);
             }
         }
         #endregion
@@ -265,7 +274,7 @@ namespace NetBarMS.Codes.Tools
             }
 
             //System.Console.WriteLine("ProductTypeInfoResult:" + result.pack);
-            NetMessageManage.Manage().RemoveResultBlock(ProductTypeInfoResult);
+            NetMessageManage.RemoveResultBlock(ProductTypeInfoResult);
             System.Console.WriteLine("获取商品类别信息");
             if (result.pack.Content.MessageType == 1)
             {
@@ -285,25 +294,26 @@ namespace NetBarMS.Codes.Tools
             }
         }
         //更新商品类别
-        public void UpdateProductData(IList<StructDictItem> newProductTypes)
+        public static void UpdateProductData(IList<StructDictItem> newProductTypes)
         {
 
-            this.productTypes.Clear();
-            this.productDict.Clear();
+            SysManage.Manage().productTypes.Clear();
+            SysManage.Manage().productDict.Clear();
+
             foreach (StructDictItem item in newProductTypes)
             {
                 ProductTypeModel model = new ProductTypeModel(item);
-                this.productTypes.Add(model);
-                productDict.Add(item.Code, model);
+                SysManage.Manage().productTypes.Add(model);
+                SysManage.Manage().productDict.Add(item.Code, model);
             }
         }
         
         // 获取产品类型名称
-        public string GetProductTypeName(int code)
+        public static string GetProductTypeName(int code)
         {
 
             ProductTypeModel item;
-            this.productDict.TryGetValue(code, out item);
+            SysManage.Manage().productDict.TryGetValue(code, out item);
 
             if(item == null)
             {
@@ -317,17 +327,21 @@ namespace NetBarMS.Codes.Tools
         }
         
         // 获取产品的类型
-        public void GetProductTypes(out List<ProductTypeModel> items)
+        public static List<ProductTypeModel> ProductTypes
         {
-            if(this.productTypes != null)
+            get
             {
-                items = this.productTypes.ToList<ProductTypeModel>();
-            }
-            else
-            {
-                items = new List<ProductTypeModel>();
+                if (SysManage.Manage().productTypes != null)
+                {
+                    return SysManage.Manage().productTypes.ToList<ProductTypeModel>();
+                }
+                else
+                {
+                    return new List<ProductTypeModel>();
 
+                }
             }
+           
         }
         #endregion
 
@@ -345,7 +359,7 @@ namespace NetBarMS.Codes.Tools
             {
                 return;
             }
-            NetMessageManage.Manage().RemoveResultBlock(GetManagerListResult);
+            NetMessageManage.RemoveResultBlock(GetManagerListResult);
             //System.Console.WriteLine("GetManagerListResult:" + result.pack);
             System.Console.WriteLine("获取管理员");
 
@@ -367,23 +381,24 @@ namespace NetBarMS.Codes.Tools
         }
        
         //更新管理员数据（管理员管理界面使用）
-        public void UpdateManagerData(IList<StructRole> temmanagers)
+        public static void UpdateManagerData(IList<StructRole> temmanagers)
         {
 
-            this.managers = temmanagers.ToList<StructRole>();
+            SysManage.Manage().managers.Clear();
+            SysManage.Manage().managerDict.Clear();
 
-            managerDict.Clear();
-            foreach (StructRole role in this.managers)
+            foreach (StructRole role in temmanagers)
             {
-                managerDict.Add(role.Roleid, role);
+                SysManage.Manage().managerDict.Add(role.Roleid, role);
+                SysManage.Manage().managers.Add(role);
             }
         }
         //获取管理员名称
-        public string GetManagerName(string id)
+        public static string GetManagerName(string id)
         {
 
             StructRole role;
-            this.managerDict.TryGetValue(id, out role);
+            SysManage.Manage().managerDict.TryGetValue(id, out role);
             if (role == null)
             {
                 return "该管理员角色已移除";
@@ -394,17 +409,21 @@ namespace NetBarMS.Codes.Tools
             }
         }
         //获取管理员数据
-        public void GetManagers(out List<StructRole> items)
+        public static List<StructRole> Managers
         {
-            //如果存在应该直接返回
-            if (this.managers != null)
+            get
             {
-                items = this.managers.ToList<StructRole>();
+                //如果存在应该直接返回
+                if (SysManage.Manage().managers != null)
+                {
+                    return SysManage.Manage().managers.ToList<StructRole>();
+                }
+                else
+                {
+                    return new List<StructRole>();
+                }
             }
-            else
-            {
-                items = new List<StructRole>();
-            }
+           
         }
         #endregion
 
@@ -422,7 +441,7 @@ namespace NetBarMS.Codes.Tools
             {
                 return;
             }
-            NetMessageManage.Manage().RemoveResultBlock(GetStaffListResult);
+            NetMessageManage.RemoveResultBlock(GetStaffListResult);
            // System.Console.WriteLine("GetStaffListResult:" + result.pack);
 
             if (result.pack.Content.MessageType == 1)
@@ -448,23 +467,24 @@ namespace NetBarMS.Codes.Tools
        
 
         //更新员工数据（修改短信推送，修改员工信息）
-        public void UpdateStaffData(IList<StructAccount> tem)
+        public static void UpdateStaffData(IList<StructAccount> tem)
         {
 
-            this.staffs = tem.ToList<StructAccount>();
+            SysManage.Manage().staffs.Clear();
+            SysManage.Manage().staffDict.Clear();
 
-            this.staffDict.Clear();
-            foreach (StructAccount staff in this.staffs)
+            foreach (StructAccount staff in tem)
             {
-                this.staffDict.Add(staff.Guid, staff);
+                SysManage.Manage().staffDict.Add(staff.Guid, staff);
+                SysManage.Manage().staffs.Add(staff);
             }
         }
         //获取员工姓名
-        public string GetStaffName(string id)
+        public static string GetStaffName(string id)
         {
 
             StructAccount staff;
-            this.staffDict.TryGetValue(id, out staff);
+            SysManage.Manage().staffDict.TryGetValue(id, out staff);
             if (staff == null)
             {
                 return "该员工已移除";
@@ -475,17 +495,21 @@ namespace NetBarMS.Codes.Tools
             }
         }
         //获取员工数据
-        public void GetStaffs(out List<StructAccount> items)
+        public static List<StructAccount> Staffs
         {
-            //如果存在应该直接返回
-            if (this.staffs != null)
+            get
             {
-                items = this.staffs.ToList<StructAccount>();
+                //如果存在应该直接返回
+                if (SysManage.Manage().staffs != null)
+                {
+                    return SysManage.Manage().staffs.ToList<StructAccount>();
+                }
+                else
+                {
+                    return new List<StructAccount>();
+                }
             }
-            else
-            {
-                items = new List<StructAccount>();
-            }
+           
         }
         #endregion
     }

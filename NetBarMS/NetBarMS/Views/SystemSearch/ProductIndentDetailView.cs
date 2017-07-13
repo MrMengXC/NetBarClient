@@ -71,7 +71,7 @@ namespace NetBarMS.Views.SystemSearch
 
             if (result.pack.Cmd == Cmd.CMD_GOODS_ORDER_DETAIL)
             {
-                NetMessageManage.Manage().RemoveResultBlock(GetProdcutIndentDetailResult);
+                NetMessageManage.RemoveResultBlock(GetProdcutIndentDetailResult);
                 System.Console.WriteLine("GetProdcutIndentDetailResult:" + result.pack);
                 this.Invoke(new UIHandleBlock(delegate {
                     this.details = result.pack.Content.ScOrderDetail.DetailsList;
@@ -100,7 +100,7 @@ namespace NetBarMS.Views.SystemSearch
         {
             DataRow row = this.mainDataTable.NewRow();
             this.mainDataTable.Rows.Add(row);
-            row[TitleList.Type.ToString()] = SysManage.Manage().GetProductTypeName(detail.Category);
+            row[TitleList.Type.ToString()] = SysManage.GetProductTypeName(detail.Category);
             row[TitleList.Name.ToString()] = detail.Goodsname;
             row[TitleList.Price.ToString()] = detail.Price;
             row[TitleList.Num.ToString()] = detail.Num;

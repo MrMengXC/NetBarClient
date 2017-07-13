@@ -67,6 +67,7 @@
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.panel3.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -105,7 +106,7 @@
             this.flowLayoutPanel3.Controls.Add(this.panel4);
             this.flowLayoutPanel3.Controls.Add(this.panel5);
             this.flowLayoutPanel3.Controls.Add(this.panel6);
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(471, 1);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(315, 1);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.flowLayoutPanel3.Size = new System.Drawing.Size(590, 69);
@@ -222,17 +223,18 @@
             this.flowLayoutPanel2.Controls.Add(this.simpleButton10);
             this.flowLayoutPanel2.Controls.Add(this.simpleButton11);
             this.flowLayoutPanel2.Controls.Add(this.simpleButton12);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(1067, 1);
+            this.flowLayoutPanel2.Controls.Add(this.simpleButton1);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(1008, 1);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(673, 69);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(732, 69);
             this.flowLayoutPanel2.TabIndex = 56;
             // 
             // simpleButton3
             // 
             this.simpleButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton3.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.simpleButton3.Location = new System.Drawing.Point(611, 3);
+            this.simpleButton3.Location = new System.Drawing.Point(670, 3);
             this.simpleButton3.Name = "simpleButton3";
             this.simpleButton3.Size = new System.Drawing.Size(59, 60);
             this.simpleButton3.TabIndex = 0;
@@ -242,91 +244,100 @@
             // 
             this.simpleButton4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton4.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.simpleButton4.Location = new System.Drawing.Point(546, 3);
+            this.simpleButton4.Location = new System.Drawing.Point(605, 3);
             this.simpleButton4.Name = "simpleButton4";
             this.simpleButton4.Size = new System.Drawing.Size(59, 60);
             this.simpleButton4.TabIndex = 1;
             this.simpleButton4.Text = "关闭闲机";
+            this.simpleButton4.Click += new System.EventHandler(this.CloseMache_ButtonClick);
             // 
             // simpleButton5
             // 
             this.simpleButton5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton5.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.simpleButton5.Location = new System.Drawing.Point(481, 3);
+            this.simpleButton5.Location = new System.Drawing.Point(540, 3);
             this.simpleButton5.Name = "simpleButton5";
             this.simpleButton5.Size = new System.Drawing.Size(59, 60);
             this.simpleButton5.TabIndex = 2;
             this.simpleButton5.Text = "全部结帐";
+            this.simpleButton5.Click += new System.EventHandler(this.CheckOut_ButtonClick);
             // 
             // simpleButton6
             // 
             this.simpleButton6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton6.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.simpleButton6.Location = new System.Drawing.Point(416, 3);
+            this.simpleButton6.Location = new System.Drawing.Point(475, 3);
             this.simpleButton6.Name = "simpleButton6";
             this.simpleButton6.Size = new System.Drawing.Size(59, 60);
             this.simpleButton6.TabIndex = 3;
             this.simpleButton6.Text = "商品订单";
+            this.simpleButton6.Click += new System.EventHandler(this.PayedIndent_ButtonClick);
             // 
             // simpleButton7
             // 
             this.simpleButton7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton7.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.simpleButton7.Location = new System.Drawing.Point(351, 3);
+            this.simpleButton7.Location = new System.Drawing.Point(410, 3);
             this.simpleButton7.Name = "simpleButton7";
             this.simpleButton7.Size = new System.Drawing.Size(59, 60);
             this.simpleButton7.TabIndex = 4;
             this.simpleButton7.Text = "呼叫服务";
+            this.simpleButton7.Click += new System.EventHandler(this.CallServer_ButtonClick);
             // 
             // simpleButton8
             // 
             this.simpleButton8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton8.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.simpleButton8.Location = new System.Drawing.Point(286, 3);
+            this.simpleButton8.Location = new System.Drawing.Point(345, 3);
             this.simpleButton8.Name = "simpleButton8";
             this.simpleButton8.Size = new System.Drawing.Size(59, 60);
             this.simpleButton8.TabIndex = 5;
             this.simpleButton8.Text = "客户端异常";
+            this.simpleButton8.Click += new System.EventHandler(this.ClientExpection_ButtonClick);
             // 
             // simpleButton9
             // 
             this.simpleButton9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton9.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.simpleButton9.Location = new System.Drawing.Point(221, 3);
+            this.simpleButton9.Location = new System.Drawing.Point(280, 3);
             this.simpleButton9.Name = "simpleButton9";
             this.simpleButton9.Size = new System.Drawing.Size(59, 60);
             this.simpleButton9.TabIndex = 6;
             this.simpleButton9.Text = "消息发送";
+            this.simpleButton9.Click += new System.EventHandler(this.ChatManage_ButtonClick);
             // 
             // simpleButton10
             // 
             this.simpleButton10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton10.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.simpleButton10.Location = new System.Drawing.Point(156, 3);
+            this.simpleButton10.Location = new System.Drawing.Point(215, 3);
             this.simpleButton10.Name = "simpleButton10";
             this.simpleButton10.Size = new System.Drawing.Size(59, 60);
             this.simpleButton10.TabIndex = 7;
             this.simpleButton10.Text = "解锁";
+            this.simpleButton10.Click += new System.EventHandler(this.LockList_ButtonClick);
             // 
             // simpleButton11
             // 
             this.simpleButton11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton11.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.simpleButton11.Location = new System.Drawing.Point(91, 3);
+            this.simpleButton11.Location = new System.Drawing.Point(150, 3);
             this.simpleButton11.Name = "simpleButton11";
             this.simpleButton11.Size = new System.Drawing.Size(59, 60);
             this.simpleButton11.TabIndex = 8;
             this.simpleButton11.Text = "交班";
+            this.simpleButton11.Click += new System.EventHandler(this.ChangeShifts_ButtonClick);
             // 
             // simpleButton12
             // 
             this.simpleButton12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton12.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.simpleButton12.Location = new System.Drawing.Point(26, 3);
+            this.simpleButton12.Location = new System.Drawing.Point(85, 3);
             this.simpleButton12.Name = "simpleButton12";
             this.simpleButton12.Size = new System.Drawing.Size(59, 60);
             this.simpleButton12.TabIndex = 9;
             this.simpleButton12.Text = "开卡";
+            this.simpleButton12.Click += new System.EventHandler(this.OpenMember_ButtonClick);
             // 
             // labelControl5
             // 
@@ -453,6 +464,17 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1691, 870);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.simpleButton1.Location = new System.Drawing.Point(20, 3);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(59, 60);
+            this.simpleButton1.TabIndex = 10;
+            this.simpleButton1.Text = "激活";
+            this.simpleButton1.Click += new System.EventHandler(this.UserAcitve_ButtonClick);
+            // 
             // HomePageView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -523,5 +545,6 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }

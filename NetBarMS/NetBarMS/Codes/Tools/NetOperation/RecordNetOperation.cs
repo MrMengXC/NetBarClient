@@ -48,7 +48,7 @@ namespace NetBarMS.Codes.Tools.NetOperation
             MessagePack.Builder pack = new MessagePack.Builder();
             pack.SetCmd(Cmd.CMD_QUERY_CHARGE);
             pack.SetContent(content.Build());
-            NetMessageManage.Manage().SendMsg(pack.Build(), resultBlock);
+            NetMessageManage.SendMsg(pack.Build(), resultBlock);
         }
         #endregion
 
@@ -95,7 +95,7 @@ namespace NetBarMS.Codes.Tools.NetOperation
             MessagePack.Builder pack = new MessagePack.Builder();
             pack.SetCmd(Cmd.CMD_QUERY_APPLY);
             pack.SetContent(content.Build());
-            NetMessageManage.Manage().SendMsg(pack.Build(), resultBlock);
+            NetMessageManage.SendMsg(pack.Build(), resultBlock);
         }
         #endregion
 
@@ -141,7 +141,7 @@ namespace NetBarMS.Codes.Tools.NetOperation
             MessagePack.Builder pack = new MessagePack.Builder();
             pack.SetCmd(Cmd.CMD_QUERY_EMBARKATION);
             pack.SetContent(content.Build());
-            NetMessageManage.Manage().SendMsg(pack.Build(), resultBlock);
+            NetMessageManage.SendMsg(pack.Build(), resultBlock);
         }
         #endregion
 
@@ -186,7 +186,7 @@ namespace NetBarMS.Codes.Tools.NetOperation
             MessagePack.Builder pack = new MessagePack.Builder();
             pack.SetCmd(Cmd.CMD_QUERY_CONSUM);
             pack.SetContent(content.Build());
-            NetMessageManage.Manage().SendMsg(pack.Build(), resultBlock);
+            NetMessageManage.SendMsg(pack.Build(), resultBlock);
         }
         #endregion
 
@@ -214,7 +214,7 @@ namespace NetBarMS.Codes.Tools.NetOperation
             MessagePack.Builder pack = new MessagePack.Builder();
             pack.SetCmd(Cmd.CMD_QUERY_OCCUPANCY);
             pack.SetContent(content.Build());
-            NetMessageManage.Manage().SendMsg(pack.Build(), resultBlock);
+            NetMessageManage.SendMsg(pack.Build(), resultBlock);
         }
         #endregion
 

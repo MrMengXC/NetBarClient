@@ -26,7 +26,7 @@ namespace NetBarMS.Views
 
             if (result.pack.Cmd == Cmd.CMD_MEMBER_CARD_INFO && result.pack.Content.MessageType == 1)
             {
-                NetMessageManage.Manage().RemoveResultBlock(MemberInfoResult);
+                NetMessageManage.RemoveResultBlock(MemberInfoResult);
                 System.Console.WriteLine("MemberInfoResult:" + result.pack);
 
                 //赋值

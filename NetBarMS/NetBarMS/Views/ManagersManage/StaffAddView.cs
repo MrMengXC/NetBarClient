@@ -32,8 +32,7 @@ namespace NetBarMS.Views.ManagersManage
         //初始化UI
         private void InitUI()
         {
-            SysManage.Manage().GetManagers(out this.managers);
-
+            this.managers = SysManage.Managers;
             for (int index = 0; index < this.managers.Count;index ++)
             {
                 StructRole role = this.managers[index];
@@ -103,7 +102,7 @@ namespace NetBarMS.Views.ManagersManage
                 return;
             }
 
-            NetMessageManage.Manage().RemoveResultBlock(AddStaffResult);
+            NetMessageManage.RemoveResultBlock(AddStaffResult);
             System.Console.WriteLine("AddStaffResult:" + result.pack);
 
             if(result.pack.Content.MessageType == 1)
@@ -141,7 +140,7 @@ namespace NetBarMS.Views.ManagersManage
                 return;
             }
 
-            NetMessageManage.Manage().RemoveResultBlock(UpdateStaffResult);
+            NetMessageManage.RemoveResultBlock(UpdateStaffResult);
             System.Console.WriteLine("UpdateStaffResult:" + result.pack);
 
             if (result.pack.Content.MessageType == 1)

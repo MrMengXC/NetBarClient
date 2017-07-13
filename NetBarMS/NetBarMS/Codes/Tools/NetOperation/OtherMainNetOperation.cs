@@ -23,7 +23,7 @@ namespace NetBarMS.Codes.Tools.NetOperation
             MessagePack.Builder pack = new MessagePack.Builder();
             pack.Cmd = Cmd.CMD_STAFF_PERFORM;
             pack.Content = content.Build();
-            NetMessageManage.Manage().SendMsg(pack.Build(), resultBlock);
+            NetMessageManage.SendMsg(pack.Build(), resultBlock);
         }
         #endregion
 
@@ -53,7 +53,7 @@ namespace NetBarMS.Codes.Tools.NetOperation
             MessagePack.Builder pack = new MessagePack.Builder();
             pack.Cmd = Cmd.CMD_LOG;
             pack.Content = content.Build();
-            NetMessageManage.Manage().SendMsg(pack.Build(), resultBlock);
+            NetMessageManage.SendMsg(pack.Build(), resultBlock);
         }
         #endregion
 

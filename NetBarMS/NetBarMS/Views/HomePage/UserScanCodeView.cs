@@ -75,7 +75,7 @@ namespace NetBarMS.Views.HomePage
             {
                 return;
             }
-            NetMessageManage.Manage().RemoveResultBlock(GetRechargeCodeResult);
+            NetMessageManage.RemoveResultBlock(GetRechargeCodeResult);
             if (result.pack.Content.MessageType == 1)
             {
                 this.Invoke(new UIHandleBlock(delegate {
@@ -121,7 +121,7 @@ namespace NetBarMS.Views.HomePage
                 return;
             }
             System.Console.WriteLine("GetRechargeResult:" + result.pack);
-            NetMessageManage.Manage().RemoveResultBlock(GetRechargeResult);
+            NetMessageManage.RemoveResultBlock(GetRechargeResult);
             if (result.pack.Content.MessageType == 1)
             {
                 this.Invoke(new UIHandleBlock(delegate 

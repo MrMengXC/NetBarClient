@@ -17,7 +17,7 @@ namespace NetBarMS.Views.ResultManage
             InitializeComponent();
             this.titleLabel.Text = "会员办理";
         }
-
+     
        
     }
 }

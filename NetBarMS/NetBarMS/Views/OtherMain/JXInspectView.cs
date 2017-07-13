@@ -57,7 +57,7 @@ namespace NetBarMS.Views.OtherMain
             {
                 return;
             }
-            NetMessageManage.Manage().RemoveResultBlock(GetJXListResult);
+            NetMessageManage.RemoveResultBlock(GetJXListResult);
             if (result.pack.Content.MessageType == 1)
             {
                 this.Invoke(new UIHandleBlock(delegate {

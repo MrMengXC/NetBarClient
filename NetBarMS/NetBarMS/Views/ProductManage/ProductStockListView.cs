@@ -74,7 +74,7 @@ namespace NetBarMS.Views.ProductManage
             }
             if (result.pack.Cmd == Cmd.CMD_GOODS_STOCK)
             {
-                NetMessageManage.Manage().RemoveResultBlock(GetStoreListResult);
+                NetMessageManage.RemoveResultBlock(GetStoreListResult);
                 System.Console.WriteLine("GetStoreListResult:" + result.pack);
                 this.Invoke(new UIHandleBlock(delegate
                 {
@@ -104,7 +104,7 @@ namespace NetBarMS.Views.ProductManage
             this.mainDataTable.Rows.Add(row);         
             row[TitleList.Number.ToString()] = this.mainDataTable.Rows.Count + "";
             row[TitleList.ProductName.ToString()] = product.Goodsname;
-            row[TitleList.Type.ToString()] = SysManage.Manage().GetProductTypeName(product.Category);
+            row[TitleList.Type.ToString()] = SysManage.GetProductTypeName(product.Category);
             row[TitleList.StockNum.ToString()] = product.Num;
             row[TitleList.UnitPrice.ToString()] = product.Price;
 

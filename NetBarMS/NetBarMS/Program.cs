@@ -43,12 +43,11 @@ namespace NetBarMS
             //Application.Run(newForm2);
 
             //return;
+       
 
             ManagerLoginView view = new ManagerLoginView();
-            CustomForm newForm = new CustomForm(view, true);
-            newForm.ShowDialog();
             //等待点击关闭
-            if (newForm.DialogResult == DialogResult.OK)
+            if (ToolsManage.ShowForm(view, true) == DialogResult.OK)
             {
                 MainForm form = new MainForm();
                 //HomePageView homePage = new HomePageView();
@@ -57,7 +56,9 @@ namespace NetBarMS
             }
             else
             {
-
+                HomePageView homePage = new HomePageView();
+                
+                Application.Run(ToolsManage.ShowForm(homePage));
             }
         }
 

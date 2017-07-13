@@ -112,10 +112,10 @@ namespace NetBarMS.Views.SystemSearch
             }
 
             System.Console.WriteLine("GetUserNetRecordResult:" + result.pack);
-            NetMessageManage.Manage().RemoveResultBlock(GetUserNetRecordResult);
+            NetMessageManage.RemoveResultBlock(GetUserNetRecordResult);
             if (result.pack.Content.MessageType == 1)
             {
-                ToolsManage.Invoke(this,new UIHandleBlock(delegate
+                this.Invoke(new UIHandleBlock(delegate
                 {
                     this.pageView1.RefreshPageView(result.pack.Content.ScQueryEmk.Pagecount);
                     this.records = result.pack.Content.ScQueryEmk.EmksList;

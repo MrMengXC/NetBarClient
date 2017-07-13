@@ -67,7 +67,7 @@ namespace NetBarMS.Codes.Tools.Manage
             {
                 return;
             }
-            NetMessageManage.Manage().RemoveResultBlock(HomePageListResult);
+            NetMessageManage.RemoveResultBlock(HomePageListResult);
          //  System.Console.WriteLine("HomePageListResult:" + result.pack);
             if (result.pack.Content.MessageType == 1)
             {
@@ -97,20 +97,20 @@ namespace NetBarMS.Codes.Tools.Manage
         private void GetSysMessage()
         {
             //获取上网信息
-            NetMessageManage.Manage().AddResultBlock(GetSysMessageResult);
+            NetMessageManage.AddResultBlock(GetSysMessageResult);
             
         }
         //获取系统信息反馈回调
         private void GetSysMessageResult(ResultModel result)
         {
-            if (result.pack.Cmd != Cmd.CMD_CLIENT_SYSMESSAGE)
+            if (result.pack.Cmd != Cmd.CMD_MESSAGE)
             {
                 return;
             }
             System.Console.WriteLine("GetSysMessageResult:"+result.pack);
             if(result.pack.Content.MessageType == 1)
             {
-                SCSysMessage message = result.pack.Content.ScSysMessage;
+                SCMessage message = result.pack.Content.ScMessage;
                 IList<string> pars = message.ParamsList;
                 SYSMSG_TYPE msg = (SYSMSG_TYPE)message.Cmd;
 
