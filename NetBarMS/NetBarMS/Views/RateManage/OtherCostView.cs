@@ -33,9 +33,9 @@ namespace NetBarMS.Views.RateManage
         {
             StructDictItem item = this.items[0];
             this.memberCheckEdit.Checked = int.Parse(item.GetItem(0)) == 1;
-            this.memberMinuteTextEdit.Text = item.GetItem(1);
+            this.memberMinuteText.Text = item.GetItem(1);
             this.temCheckEdit.Checked = int.Parse(item.GetItem(2)) == 1;
-            this.temMinuteTextEdit.Text = item.GetItem(3);
+            this.temMinuteText.Text = item.GetItem(3);
 
         }
         #endregion
@@ -88,9 +88,9 @@ namespace NetBarMS.Views.RateManage
                 StructDictItem.Builder item = new StructDictItem.Builder(items[0]);
                 item.ClearItem();
                 string item1 = this.memberCheckEdit.Checked?"1":"0";
-                string item2 = this.memberMinuteTextEdit.Text.Equals("") ? "0" : this.memberMinuteTextEdit.Text;
+                string item2 = this.memberMinuteText.Text.Equals("") ? "0" : this.memberMinuteText.Text;
                 string item3 = this.temCheckEdit.Checked ? "1" : "0";
-                string item4 = this.temMinuteTextEdit.Text.Equals("") ? "0" : this.temMinuteTextEdit.Text;
+                string item4 = this.temMinuteText.Text.Equals("") ? "0" : this.temMinuteText.Text;
 
                 item.AddItem(item1);
                 item.AddItem(item2);
@@ -107,6 +107,10 @@ namespace NetBarMS.Views.RateManage
         }
         #endregion
 
+        protected override void Control_Paint(object sender, PaintEventArgs e)
+        {
+            base.Control_Paint(sender, e);
+        }
     }
 }
 

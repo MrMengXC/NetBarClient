@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using NetBarMS.Codes.Tools;
 using DevExpress.XtraEditors.Controls;
+using NetBarMS.Codes.Tools.Manage;
 
 namespace NetBarMS.Views
 {
@@ -29,7 +30,7 @@ namespace NetBarMS.Views
 
         }
         #region 按钮关闭窗体
-        private void CloseFormClick(object sender, EventArgs e)
+        protected virtual void CloseFormClick(object sender, EventArgs e)
         {
             this.CloseFormClick();
         }
@@ -45,6 +46,14 @@ namespace NetBarMS.Views
             this.FindForm().Close();
         }
         #endregion
+        protected virtual void Control_Paint(object sender, PaintEventArgs e)
+        {
+            //System.Console.WriteLine("sender:" + sender.GetType().ToString());
 
+            if (sender.GetType().Equals(typeof(DevExpress.XtraEditors.TextEdit)))
+            {
+                BorderManage.DrawBorder(e.Graphics, e.ClipRectangle, BORDER_TYPE.TEXTEDIT_BORDER);
+            }
+        }
     }
 }

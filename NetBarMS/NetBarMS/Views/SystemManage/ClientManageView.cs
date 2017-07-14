@@ -247,5 +247,10 @@ namespace NetBarMS.Views.SystemManage
             }
         }
         #endregion
+
+        protected override void Control_Paint(object sender, PaintEventArgs e)
+        {
+            base.Control_Paint(sender, e);
+        }
     }
 }

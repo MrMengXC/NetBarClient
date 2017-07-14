@@ -31,11 +31,11 @@ namespace NetBarMS.Codes.Tools.NetOperation
 
         #region 添加会员
         /// <summary>
-        /// 添加会员
+        /// 添加会员入口
         /// </summary>
         /// <param name="resultBlock">反馈结果回调</param>
         /// <param name="card">身份证号</param>
-        public static void AddMember(DataResultBlock resultBlock,string card)
+        public static void OpenMember(DataResultBlock resultBlock,string card)
         {
             CSEmkApplyMember.Builder member = new CSEmkApplyMember.Builder();
             member.Cardnumber = card;
@@ -46,6 +46,29 @@ namespace NetBarMS.Codes.Tools.NetOperation
 
             MessagePack.Builder pack = new MessagePack.Builder();
             pack.Cmd = Cmd.CMD_EMK_APPLY_MEMBER;
+            pack.Content = content.Build();
+
+            NetMessageManage.SendMsg(pack.Build(), resultBlock);
+        }
+        #endregion
+        
+        #region 进入充值入口
+        /// <summary>
+        /// 进入充值入口
+        /// </summary>
+        /// <param name="resultBlock">反馈结果回调</param>
+        /// <param name="card">身份证号</param>
+        public static void BeiginRecharge(DataResultBlock resultBlock, string card)
+        {
+            CSEmkCharge.Builder charge = new CSEmkCharge.Builder();
+            charge.Cardnumber = card;
+
+            MessageContent.Builder content = new MessageContent.Builder();
+            content.MessageType = 1;
+            content.CsEmkCharge = charge.Build();
+
+            MessagePack.Builder pack = new MessagePack.Builder();
+            pack.Cmd = Cmd.CMD_EMK_RECHARGE;
             pack.Content = content.Build();
 
             NetMessageManage.SendMsg(pack.Build(), resultBlock);
@@ -203,6 +226,17 @@ namespace NetBarMS.Codes.Tools.NetOperation
             pack.Content = content.Build();
             NetMessageManage.SendMsg(pack.Build(), resultBlock);
         }
+        #endregion
+
+        #region 取消操作
+        public static void CancelOperation(DataResultBlock resultBlock)
+        {
+            MessagePack.Builder pack = new MessagePack.Builder();
+            pack.Cmd = Cmd.CMD_EMK_CANCEL;
+            NetMessageManage.SendMsg(pack.Build(), resultBlock);
+        }
+
+
         #endregion
 
     }

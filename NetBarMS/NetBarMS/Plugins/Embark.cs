@@ -66,25 +66,26 @@ public static partial class Embark {
           "SW5mbxISCgpjYXJkbnVtYmVyGAEgASgJEhIKCmZpbmdlcmNvZGUYAiABKAki", 
           "TwoNU0NFbWtVc2VySW5mbxIfCgdhY2NvdW50GAEgASgLMg4uU3RydWN0QWNj", 
           "b3VudBIdCgZtZW1iZXIYAiABKAsyDS5TdHJ1Y3RNZW1iZXIiLQoQQ1NFbWtB", 
-          "ZGRDYXJkSW5mbxIZCgRjYXJkGAEgAigLMgsuU3RydWN0Q2FyZCIpChJDU0Vt", 
-          "a0FkZEZpbmdlckluZm8SEwoLZmluZ2VyY29kZXMYASADKAkiJgoQQ1NFbWtB", 
-          "cHBseU1lbWJlchISCgpjYXJkbnVtYmVyGAEgAigJIncKEFNDRW1rQXBwbHlN", 
-          "ZW1iZXISDAoEbmFtZRgBIAIoCRISCgpjYXJkbnVtYmVyGAIgAigJEg0KBXJp", 
-          "Z2h0GAMgAigJEhAKCHJlY2hhcmdlGAQgAigFEg8KB2JhbGFuY2UYBSACKAUS", 
-          "DwoHaW50ZWdhbBgGIAIoBSIhCgtDU0Vta0NoYXJnZRISCgpjYXJkbnVtYmVy", 
-          "GAEgAigJIk8KC1NDRW1rQ2hhcmdlEgwKBG5hbWUYASACKAkSEgoKY2FyZG51", 
-          "bWJlchgCIAIoCRINCgVyaWdodBgDIAIoCRIPCgdiYWxhbmNlGAQgAigFIiIK", 
-          "DENTRW1rQ2hlY2tpbhISCgpjYXJkbnVtYmVyGAEgAigJIlAKDFNDRW1rQ2hl", 
-          "Y2tpbhIMCgRuYW1lGAEgAigJEhIKCmNhcmRudW1iZXIYAiACKAkSDQoFcmln", 
-          "aHQYAyACKAkSDwoHYmFsYW5jZRgEIAIoBSIjCg1DU0Vta0NoZWNrb3V0EhIK", 
-          "CmNhcmRudW1iZXIYASACKAkidgoNU0NFbWtDaGVja291dBIMCgRuYW1lGAEg", 
-          "AigJEhIKCmNhcmRudW1iZXIYAiACKAkSDQoFcmlnaHQYAyACKAkSDwoHYmFs", 
-          "YW5jZRgEIAIoBRIRCgl1c2VkbW9uZXkYBSACKAUSEAoIdXNlZHRpbWUYBiAC", 
-          "KAUiDQoLQ1NFbWtDYW5jZWwiEQoPQ1NFbWtWZXJpZnlMaXN0IhEKD1NDRW1r", 
-          "VmVyaWZ5TGlzdCIlCg9DU0Vta1ZlcmlmeVByb2MSEgoKY2FyZG51bWJlchgB", 
-          "IAIoCSIQCg5DU0Vta09yZGVyTGlzdCIQCg5TQ0Vta09yZGVyTGlzdCIhCg5D", 
-          "U0Vta09yZGVyUHJvYxIPCgdvcmRlcmlkGAEgAigFQi8KHWNvbS5za3lzb2Z0", 
-        "LmNvcmUuYXV0by5tZXNzYWdlQg5FbWJhcmtQcm90b2NvbA=="));
+          "ZGRDYXJkSW5mbxIZCgRjYXJkGAEgAigLMgsuU3RydWN0Q2FyZCI9ChJDU0Vt", 
+          "a0FkZEZpbmdlckluZm8SEgoKY2FyZG51bWJlchgBIAIoCRITCgtmaW5nZXJj", 
+          "b2RlcxgCIAMoCSImChBDU0Vta0FwcGx5TWVtYmVyEhIKCmNhcmRudW1iZXIY", 
+          "ASACKAkidwoQU0NFbWtBcHBseU1lbWJlchIMCgRuYW1lGAEgAigJEhIKCmNh", 
+          "cmRudW1iZXIYAiACKAkSDQoFcmlnaHQYAyACKAkSEAoIcmVjaGFyZ2UYBCAC", 
+          "KAUSDwoHYmFsYW5jZRgFIAIoBRIPCgdpbnRlZ2FsGAYgAigFIiEKC0NTRW1r", 
+          "Q2hhcmdlEhIKCmNhcmRudW1iZXIYASACKAkiTwoLU0NFbWtDaGFyZ2USDAoE", 
+          "bmFtZRgBIAIoCRISCgpjYXJkbnVtYmVyGAIgAigJEg0KBXJpZ2h0GAMgAigJ", 
+          "Eg8KB2JhbGFuY2UYBCACKAUiIgoMQ1NFbWtDaGVja2luEhIKCmNhcmRudW1i", 
+          "ZXIYASACKAkiUAoMU0NFbWtDaGVja2luEgwKBG5hbWUYASACKAkSEgoKY2Fy", 
+          "ZG51bWJlchgCIAIoCRINCgVyaWdodBgDIAIoCRIPCgdiYWxhbmNlGAQgAigF", 
+          "IiMKDUNTRW1rQ2hlY2tvdXQSEgoKY2FyZG51bWJlchgBIAIoCSJ2Cg1TQ0Vt", 
+          "a0NoZWNrb3V0EgwKBG5hbWUYASACKAkSEgoKY2FyZG51bWJlchgCIAIoCRIN", 
+          "CgVyaWdodBgDIAIoCRIPCgdiYWxhbmNlGAQgAigFEhEKCXVzZWRtb25leRgF", 
+          "IAIoBRIQCgh1c2VkdGltZRgGIAIoBSINCgtDU0Vta0NhbmNlbCIRCg9DU0Vt", 
+          "a1ZlcmlmeUxpc3QiEQoPU0NFbWtWZXJpZnlMaXN0IiUKD0NTRW1rVmVyaWZ5", 
+          "UHJvYxISCgpjYXJkbnVtYmVyGAEgAigJIhAKDkNTRW1rT3JkZXJMaXN0IhAK", 
+          "DlNDRW1rT3JkZXJMaXN0IiEKDkNTRW1rT3JkZXJQcm9jEg8KB29yZGVyaWQY", 
+          "ASACKAVCLwodY29tLnNreXNvZnQuY29yZS5hdXRvLm1lc3NhZ2VCDkVtYmFy", 
+        "a1Byb3RvY29s"));
     pbd::FileDescriptor.InternalDescriptorAssigner assigner = delegate(pbd::FileDescriptor root) {
       descriptor = root;
       internal__static_CSEmkUserInfo__Descriptor = Descriptor.MessageTypes[0];
@@ -102,7 +103,7 @@ public static partial class Embark {
       internal__static_CSEmkAddFingerInfo__Descriptor = Descriptor.MessageTypes[3];
       internal__static_CSEmkAddFingerInfo__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSEmkAddFingerInfo, global::CSEmkAddFingerInfo.Builder>(internal__static_CSEmkAddFingerInfo__Descriptor,
-              new string[] { "Fingercodes", });
+              new string[] { "Cardnumber", "Fingercodes", });
       internal__static_CSEmkApplyMember__Descriptor = Descriptor.MessageTypes[4];
       internal__static_CSEmkApplyMember__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSEmkApplyMember, global::CSEmkApplyMember.Builder>(internal__static_CSEmkApplyMember__Descriptor,
@@ -1174,8 +1175,8 @@ public sealed partial class CSEmkAddCardInfo : pb::GeneratedMessage<CSEmkAddCard
 public sealed partial class CSEmkAddFingerInfo : pb::GeneratedMessage<CSEmkAddFingerInfo, CSEmkAddFingerInfo.Builder> {
   private CSEmkAddFingerInfo() { }
   private static readonly CSEmkAddFingerInfo defaultInstance = new CSEmkAddFingerInfo().MakeReadOnly();
-  private static readonly string[] _cSEmkAddFingerInfoFieldNames = new string[] { "fingercodes" };
-  private static readonly uint[] _cSEmkAddFingerInfoFieldTags = new uint[] { 10 };
+  private static readonly string[] _cSEmkAddFingerInfoFieldNames = new string[] { "cardnumber", "fingercodes" };
+  private static readonly uint[] _cSEmkAddFingerInfoFieldTags = new uint[] { 10, 18 };
   public static CSEmkAddFingerInfo DefaultInstance {
     get { return defaultInstance; }
   }
@@ -1196,7 +1197,17 @@ public sealed partial class CSEmkAddFingerInfo : pb::GeneratedMessage<CSEmkAddFi
     get { return global::Embark.internal__static_CSEmkAddFingerInfo__FieldAccessorTable; }
   }
   
-  public const int FingercodesFieldNumber = 1;
+  public const int CardnumberFieldNumber = 1;
+  private bool hasCardnumber;
+  private string cardnumber_ = "";
+  public bool HasCardnumber {
+    get { return hasCardnumber; }
+  }
+  public string Cardnumber {
+    get { return cardnumber_; }
+  }
+  
+  public const int FingercodesFieldNumber = 2;
   private pbc::PopsicleList<string> fingercodes_ = new pbc::PopsicleList<string>();
   public scg::IList<string> FingercodesList {
     get { return pbc::Lists.AsReadOnly(fingercodes_); }
@@ -1210,6 +1221,7 @@ public sealed partial class CSEmkAddFingerInfo : pb::GeneratedMessage<CSEmkAddFi
   
   public override bool IsInitialized {
     get {
+      if (!hasCardnumber) return false;
       return true;
     }
   }
@@ -1217,8 +1229,11 @@ public sealed partial class CSEmkAddFingerInfo : pb::GeneratedMessage<CSEmkAddFi
   public override void WriteTo(pb::ICodedOutputStream output) {
     CalcSerializedSize();
     string[] field_names = _cSEmkAddFingerInfoFieldNames;
+    if (hasCardnumber) {
+      output.WriteString(1, field_names[0], Cardnumber);
+    }
     if (fingercodes_.Count > 0) {
-      output.WriteStringArray(1, field_names[0], fingercodes_);
+      output.WriteStringArray(2, field_names[1], fingercodes_);
     }
     UnknownFields.WriteTo(output);
   }
@@ -1237,6 +1252,9 @@ public sealed partial class CSEmkAddFingerInfo : pb::GeneratedMessage<CSEmkAddFi
     if (size != -1) return size;
     
     size = 0;
+    if (hasCardnumber) {
+      size += pb::CodedOutputStream.ComputeStringSize(1, Cardnumber);
+    }
     {
       int dataSize = 0;
       foreach (string element in FingercodesList) {
@@ -1368,6 +1386,9 @@ public sealed partial class CSEmkAddFingerInfo : pb::GeneratedMessage<CSEmkAddFi
     public override Builder MergeFrom(CSEmkAddFingerInfo other) {
       if (other == global::CSEmkAddFingerInfo.DefaultInstance) return this;
       PrepareBuilder();
+      if (other.HasCardnumber) {
+        Cardnumber = other.Cardnumber;
+      }
       if (other.fingercodes_.Count != 0) {
         result.fingercodes_.Add(other.fingercodes_);
       }
@@ -1415,6 +1436,10 @@ public sealed partial class CSEmkAddFingerInfo : pb::GeneratedMessage<CSEmkAddFi
             break;
           }
           case 10: {
+            result.hasCardnumber = input.ReadString(ref result.cardnumber_);
+            break;
+          }
+          case 18: {
             input.ReadStringArray(tag, field_name, result.fingercodes_);
             break;
           }
@@ -1427,6 +1452,27 @@ public sealed partial class CSEmkAddFingerInfo : pb::GeneratedMessage<CSEmkAddFi
       return this;
     }
     
+    
+    public bool HasCardnumber {
+      get { return result.hasCardnumber; }
+    }
+    public string Cardnumber {
+      get { return result.Cardnumber; }
+      set { SetCardnumber(value); }
+    }
+    public Builder SetCardnumber(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasCardnumber = true;
+      result.cardnumber_ = value;
+      return this;
+    }
+    public Builder ClearCardnumber() {
+      PrepareBuilder();
+      result.hasCardnumber = false;
+      result.cardnumber_ = "";
+      return this;
+    }
     
     public pbc::IPopsicleList<string> FingercodesList {
       get { return PrepareBuilder().fingercodes_; }

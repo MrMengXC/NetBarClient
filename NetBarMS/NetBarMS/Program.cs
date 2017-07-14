@@ -35,19 +35,18 @@ namespace NetBarMS
             //初始化XML
             XMLDataManage.Init();
 
-            //HomePageListView newview2 = new HomePageListView();
-            //CustomForm newForm2 = new CustomForm(newview2, true);
+            //IntegralManageView newview2 = new IntegralManageView();
             ////MainForm newForm2 = new MainForm
             ////DayInComeView newview2 = new DayInComeView();
             ////CustomForm newForm2 = new CustomForm(newview2, true, false);
-            //Application.Run(newForm2);
+            //ToolsManage.ShowForm(newview2, true);
 
             //return;
-       
+
 
             ManagerLoginView view = new ManagerLoginView();
             //等待点击关闭
-            if (ToolsManage.ShowForm(view, true) == DialogResult.OK)
+            if (ToolsManage.ShowForm(view, true,null,false) == DialogResult.OK)
             {
                 MainForm form = new MainForm();
                 //HomePageView homePage = new HomePageView();
@@ -56,9 +55,8 @@ namespace NetBarMS
             }
             else
             {
-                HomePageView homePage = new HomePageView();
-                
-                Application.Run(ToolsManage.ShowForm(homePage));
+                //HomePageView homePage = new HomePageView();
+                //Application.Run(ToolsManage.ShowForm(homePage));
             }
         }
 

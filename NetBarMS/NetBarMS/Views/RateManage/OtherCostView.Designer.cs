@@ -28,42 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.memberCheckEdit = new DevExpress.XtraEditors.CheckEdit();
             this.temCheckEdit = new DevExpress.XtraEditors.CheckEdit();
             this.saveButton = new DevExpress.XtraEditors.SimpleButton();
-            this.memberMinuteTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.temMinuteTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.labelControl24 = new DevExpress.XtraEditors.LabelControl();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
+            this.memberMinuteText = new DevExpress.XtraEditors.TextEdit();
+            this.memberCheckEdit = new DevExpress.XtraEditors.CheckEdit();
+            this.label14 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
+            this.temMinuteText = new DevExpress.XtraEditors.TextEdit();
+            this.label24 = new System.Windows.Forms.Label();
             this.titlePanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.memberCheckEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.temCheckEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.memberMinuteTextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.temMinuteTextEdit.Properties)).BeginInit();
-            this.flowLayoutPanel1.SuspendLayout();
-            this.flowLayoutPanel2.SuspendLayout();
-            this.flowLayoutPanel4.SuspendLayout();
+            this.flowLayoutPanel3.SuspendLayout();
+            this.tableLayoutPanel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.memberMinuteText.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.memberCheckEdit.Properties)).BeginInit();
+            this.tableLayoutPanel13.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.temMinuteText.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // titlePanel
             // 
             this.titlePanel.Size = new System.Drawing.Size(524, 50);
             // 
-            // memberCheckEdit
-            // 
-            this.memberCheckEdit.Location = new System.Drawing.Point(3, 3);
-            this.memberCheckEdit.Name = "memberCheckEdit";
-            this.memberCheckEdit.Properties.Caption = "会员用户上机第一个小时超过";
-            this.memberCheckEdit.Size = new System.Drawing.Size(178, 19);
-            this.memberCheckEdit.TabIndex = 62;
-            // 
             // temCheckEdit
             // 
-            this.temCheckEdit.Location = new System.Drawing.Point(3, 3);
+            this.temCheckEdit.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.temCheckEdit.Location = new System.Drawing.Point(3, 6);
             this.temCheckEdit.Name = "temCheckEdit";
             this.temCheckEdit.Properties.Caption = "临时会员用户上机第一个小时超过";
             this.temCheckEdit.Size = new System.Drawing.Size(202, 19);
@@ -78,117 +70,141 @@
             this.saveButton.Text = "保存";
             this.saveButton.Click += new System.EventHandler(this.SaveSetting_Click);
             // 
-            // memberMinuteTextEdit
+            // flowLayoutPanel3
             // 
-            this.memberMinuteTextEdit.Location = new System.Drawing.Point(187, 3);
-            this.memberMinuteTextEdit.Name = "memberMinuteTextEdit";
-            this.memberMinuteTextEdit.Properties.Mask.EditMask = "[0-9]*";
-            this.memberMinuteTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
-            this.memberMinuteTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.memberMinuteTextEdit.Size = new System.Drawing.Size(27, 20);
-            this.memberMinuteTextEdit.TabIndex = 65;
+            this.flowLayoutPanel3.AutoSize = true;
+            this.flowLayoutPanel3.Controls.Add(this.tableLayoutPanel8);
+            this.flowLayoutPanel3.Controls.Add(this.tableLayoutPanel13);
+            this.flowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(13, 56);
+            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(500, 94);
+            this.flowLayoutPanel3.TabIndex = 118;
             // 
-            // labelControl1
+            // tableLayoutPanel8
             // 
-            this.labelControl1.Location = new System.Drawing.Point(220, 3);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(108, 14);
-            this.labelControl1.TabIndex = 67;
-            this.labelControl1.Text = "分钟按正常费率收费";
+            this.tableLayoutPanel8.AutoSize = true;
+            this.tableLayoutPanel8.ColumnCount = 3;
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel8.Controls.Add(this.memberMinuteText, 0, 0);
+            this.tableLayoutPanel8.Controls.Add(this.memberCheckEdit, 0, 0);
+            this.tableLayoutPanel8.Controls.Add(this.label14, 2, 0);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
+            this.tableLayoutPanel8.RowCount = 1;
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(346, 31);
+            this.tableLayoutPanel8.TabIndex = 118;
             // 
-            // labelControl2
+            // memberMinuteText
             // 
-            this.labelControl2.Location = new System.Drawing.Point(244, 3);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(108, 14);
-            this.labelControl2.TabIndex = 68;
-            this.labelControl2.Text = "分钟按正常费率收费";
+            this.memberMinuteText.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.memberMinuteText.Location = new System.Drawing.Point(187, 3);
+            this.memberMinuteText.Name = "memberMinuteText";
+            this.memberMinuteText.Properties.AutoHeight = false;
+            this.memberMinuteText.Size = new System.Drawing.Size(25, 25);
+            this.memberMinuteText.TabIndex = 63;
+            this.memberMinuteText.Paint += new System.Windows.Forms.PaintEventHandler(this.Control_Paint);
             // 
-            // temMinuteTextEdit
+            // memberCheckEdit
             // 
-            this.temMinuteTextEdit.Location = new System.Drawing.Point(211, 3);
-            this.temMinuteTextEdit.Name = "temMinuteTextEdit";
-            this.temMinuteTextEdit.Size = new System.Drawing.Size(27, 20);
-            this.temMinuteTextEdit.TabIndex = 69;
+            this.memberCheckEdit.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.memberCheckEdit.Location = new System.Drawing.Point(3, 6);
+            this.memberCheckEdit.Name = "memberCheckEdit";
+            this.memberCheckEdit.Properties.Caption = "会员用户上机第一个小时超过";
+            this.memberCheckEdit.Size = new System.Drawing.Size(178, 19);
+            this.memberCheckEdit.TabIndex = 62;
             // 
-            // flowLayoutPanel1
+            // label14
             // 
-            this.flowLayoutPanel1.Controls.Add(this.labelControl24);
-            this.flowLayoutPanel1.Controls.Add(this.flowLayoutPanel2);
-            this.flowLayoutPanel1.Controls.Add(this.flowLayoutPanel4);
-            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(11, 56);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(510, 106);
-            this.flowLayoutPanel1.TabIndex = 117;
+            this.label14.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(218, 9);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(125, 12);
+            this.label14.TabIndex = 5;
+            this.label14.Text = "分钟按正常费率收费。";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // labelControl24
+            // tableLayoutPanel13
             // 
-            this.labelControl24.Location = new System.Drawing.Point(3, 3);
-            this.labelControl24.Name = "labelControl24";
-            this.labelControl24.Size = new System.Drawing.Size(48, 14);
-            this.labelControl24.TabIndex = 89;
-            this.labelControl24.Text = "活动配置";
+            this.tableLayoutPanel13.AutoSize = true;
+            this.tableLayoutPanel13.ColumnCount = 3;
+            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel13.Controls.Add(this.temMinuteText, 0, 0);
+            this.tableLayoutPanel13.Controls.Add(this.temCheckEdit, 0, 0);
+            this.tableLayoutPanel13.Controls.Add(this.label24, 2, 0);
+            this.tableLayoutPanel13.Location = new System.Drawing.Point(3, 40);
+            this.tableLayoutPanel13.Name = "tableLayoutPanel13";
+            this.tableLayoutPanel13.RowCount = 1;
+            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel13.Size = new System.Drawing.Size(370, 31);
+            this.tableLayoutPanel13.TabIndex = 120;
             // 
-            // flowLayoutPanel2
+            // temMinuteText
             // 
-            this.flowLayoutPanel2.Controls.Add(this.memberCheckEdit);
-            this.flowLayoutPanel2.Controls.Add(this.memberMinuteTextEdit);
-            this.flowLayoutPanel2.Controls.Add(this.labelControl1);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 23);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(380, 28);
-            this.flowLayoutPanel2.TabIndex = 90;
+            this.temMinuteText.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.temMinuteText.Location = new System.Drawing.Point(211, 3);
+            this.temMinuteText.Name = "temMinuteText";
+            this.temMinuteText.Properties.AutoHeight = false;
+            this.temMinuteText.Size = new System.Drawing.Size(25, 25);
+            this.temMinuteText.TabIndex = 64;
+            this.temMinuteText.Paint += new System.Windows.Forms.PaintEventHandler(this.Control_Paint);
             // 
-            // flowLayoutPanel4
+            // label24
             // 
-            this.flowLayoutPanel4.Controls.Add(this.temCheckEdit);
-            this.flowLayoutPanel4.Controls.Add(this.temMinuteTextEdit);
-            this.flowLayoutPanel4.Controls.Add(this.labelControl2);
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(3, 57);
-            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(495, 28);
-            this.flowLayoutPanel4.TabIndex = 91;
+            this.label24.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(242, 9);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(125, 12);
+            this.label24.TabIndex = 7;
+            this.label24.Text = "分钟按正常费率收费。";
+            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // OtherCostView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.flowLayoutPanel3);
             this.Controls.Add(this.saveButton);
             this.Name = "OtherCostView";
-            this.Size = new System.Drawing.Size(524, 193);
+            this.Size = new System.Drawing.Size(524, 222);
             this.Controls.SetChildIndex(this.titlePanel, 0);
             this.Controls.SetChildIndex(this.saveButton, 0);
-            this.Controls.SetChildIndex(this.flowLayoutPanel1, 0);
+            this.Controls.SetChildIndex(this.flowLayoutPanel3, 0);
             this.titlePanel.ResumeLayout(false);
             this.titlePanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.memberCheckEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.temCheckEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.memberMinuteTextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.temMinuteTextEdit.Properties)).EndInit();
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel1.PerformLayout();
-            this.flowLayoutPanel2.ResumeLayout(false);
-            this.flowLayoutPanel2.PerformLayout();
-            this.flowLayoutPanel4.ResumeLayout(false);
-            this.flowLayoutPanel4.PerformLayout();
+            this.flowLayoutPanel3.ResumeLayout(false);
+            this.flowLayoutPanel3.PerformLayout();
+            this.tableLayoutPanel8.ResumeLayout(false);
+            this.tableLayoutPanel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.memberMinuteText.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.memberCheckEdit.Properties)).EndInit();
+            this.tableLayoutPanel13.ResumeLayout(false);
+            this.tableLayoutPanel13.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.temMinuteText.Properties)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private DevExpress.XtraEditors.CheckEdit memberCheckEdit;
         private DevExpress.XtraEditors.CheckEdit temCheckEdit;
         private DevExpress.XtraEditors.SimpleButton saveButton;
-        private DevExpress.XtraEditors.TextEdit memberMinuteTextEdit;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.TextEdit temMinuteTextEdit;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private DevExpress.XtraEditors.LabelControl labelControl24;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel13;
+        private System.Windows.Forms.Label label24;
+        private DevExpress.XtraEditors.CheckEdit memberCheckEdit;
+        private DevExpress.XtraEditors.TextEdit memberMinuteText;
+        private DevExpress.XtraEditors.TextEdit temMinuteText;
     }
 }

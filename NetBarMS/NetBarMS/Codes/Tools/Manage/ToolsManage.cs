@@ -40,7 +40,7 @@ namespace NetBarMS.Codes.Tools
         /// <returns>返回DialogResult</returns>
         public static DialogResult ShowForm(UserControl control, bool showInTaskbar)
         {
-            DialogResult res = ToolsManage.ShowForm(control,showInTaskbar,null);
+            DialogResult res = ToolsManage.ShowForm(control,showInTaskbar,null,true);
             return res;
         }
         /// <summary>
@@ -52,7 +52,21 @@ namespace NetBarMS.Codes.Tools
         /// <returns>返回DialogResult</returns>
         public static DialogResult ShowForm(UserControl control, bool showInTaskbar,CloseFormHandle close)
         {
-            CustomForm newForm = new CustomForm(control, showInTaskbar,close);
+            DialogResult res = ToolsManage.ShowForm(control, showInTaskbar, close, true);
+            return res;
+        }
+        /// <summary>
+        /// 显示自定义窗体
+        /// </summary>
+        /// <param name="control">显示的视图</param>
+        /// <param name="showInTaskbar">是否在任务栏上显示图标</param>
+        /// <param name="close">关闭窗口的回调</param>
+        /// <param name="isClosed">是否监听窗口关闭</param>
+
+        /// <returns>返回DialogResult</returns>
+        public static DialogResult ShowForm(UserControl control, bool showInTaskbar, CloseFormHandle close,bool isClosed)
+        {
+            CustomForm newForm = new CustomForm(control, showInTaskbar, close,isClosed);
             DialogResult res = newForm.ShowDialog();
             //如过关闭窗口释放资源
             if (res == DialogResult.Cancel)
@@ -68,7 +82,7 @@ namespace NetBarMS.Codes.Tools
         /// <returns>返回窗口</returns>
         public static CustomForm ShowForm(UserControl control)
         {
-            CustomForm newForm = new CustomForm(control, true, null);
+            CustomForm newForm = new CustomForm(control, true, null,true);
             return newForm;
         }
         #endregion
@@ -128,8 +142,13 @@ namespace NetBarMS.Codes.Tools
                 }
 
                 GridColumn column = gridView.Columns.AddVisible(fieldname, columnModel.name);
+                //表头文本水平位置
                 column.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-                column.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+                //表头文本自动换行
+                column.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+              
+             
+              
                 column.OptionsColumn.AllowEdit = false;
 
                 switch (columnModel.type)
@@ -175,6 +194,7 @@ namespace NetBarMS.Codes.Tools
                     #region 添加按钮
                     case ColumnType.C_Button:        //添加按钮
                         {
+                           
                             RepositoryItemButtonEdit buttonEdit = new RepositoryItemButtonEdit();
                             buttonEdit.Buttons.Clear();
                             buttonEdit.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
@@ -185,7 +205,7 @@ namespace NetBarMS.Codes.Tools
                             {
                                 buttonEdit.ButtonClick += buttonclik;
                             }
-
+                           
                             #region 添加按钮
                             int num = 0;
                             int width = 8;
@@ -237,13 +257,19 @@ namespace NetBarMS.Codes.Tools
                     #endregion
                     default:
                         {
+
+                            RepositoryItemMemoEdit edit = new RepositoryItemMemoEdit();
                             column.SortMode = ColumnSortMode.Custom;
                             column.Width = 100;//columnModel.width;
+                            column.ColumnEdit = edit;
+                            //表头下文本自动换行
+                            column.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+                            //表头下文本书平内容
+                            column.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+                            column.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
 
                             DataColumn dataColumn = new DataColumn(fieldname);
                             table.Columns.Add(dataColumn);
-                            //dataColumn.DataType = typeof(Int32);
-
                         }
 
                         break;
@@ -255,7 +281,10 @@ namespace NetBarMS.Codes.Tools
             gridView.OptionsSelection.MultiSelect = true;
             gridView.OptionsSelection.MultiSelectMode = GridMultiSelectMode.RowSelect;
             gridView.RowHeight = 40;
-
+          
+            //表头高度
+            gridView.ColumnPanelRowHeight = 50;
+          
             //关闭最左侧
             gridView.OptionsView.ShowIndicator = false;
             //关闭表头右键快捷键
@@ -475,9 +504,11 @@ namespace NetBarMS.Codes.Tools
             get
             {
                 string card = "1";
+                Random random = new Random();
                 for(int i = 0;i<17;i++)
                 {
-                    string idNum = new Random().Next(0, 9).ToString();
+                    string idNum = (random.Next() % 10).ToString();
+                    
                     card += idNum;
                 }
                 return card;

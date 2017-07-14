@@ -35,13 +35,21 @@ namespace NetBarMS.Views.NetUserManage
         private char[] sp = { '：', ':' };
 
         #region 初始化方法
-        public OpenMemberView()
+        public OpenMemberView(string card)
         {
             InitializeComponent();
             this.titleLabel.Text = "会员办理";
-            string idNum = ToolsManage.RandomCard;
-
+            string idNum = "";
+            if(card.Equals(""))
+            {
+                idNum = ToolsManage.RandomCard;
+            }
+            else
+            {
+                idNum = card;
+            }
             InitUI(idNum);
+
         }
         //临时使用
         public OpenMemberView(FLOW_STATUS status,String card)
@@ -79,39 +87,28 @@ namespace NetBarMS.Views.NetUserManage
 
 
             //隐藏按钮可点击
-            this.simpleButton1.Enabled = this.flowstatus == FLOW_STATUS.ACTIVE_STATUS;
-            this.simpleButton2.Enabled = this.flowstatus == FLOW_STATUS.ACTIVE_STATUS;
-            if (this.flowstatus != FLOW_STATUS.ACTIVE_STATUS)
-            {
-                //判断会员信息。是否是会员。是的话进行
-                MemberNetOperation.MemberInfo(MemberInfoResult, card);
-            }
+            this.simpleButton1.Enabled = false;
+            this.simpleButton2.Enabled = false;
 
+            //开通会员入口
+            OpenMember();
         }
-        //查询会员信息结果反馈
-        private void MemberInfoResult(ResultModel result)
+
+        //刷新GridControl
+        private void RefreshGridControl()
         {
-            if(result.pack.Cmd != Cmd.CMD_EMK_USERINFO)
+            this.mainDataTable.Clear();
+            foreach (MemberTypeModel model in this.memberTypes)
             {
-                return;
-            }
-            System.Console.WriteLine("MemberInfoResult" + result.pack);
-            NetMessageManage.RemoveResultBlock(MemberInfoResult);
-            if(result.pack.Content.MessageType == 1)
-            {
-                this.Invoke(new UIHandleBlock(delegate ()
-                {
-                    //将按钮回复可以点击
-                    this.simpleButton1.Enabled = true;
-                    this.simpleButton2.Enabled = true;
-                }));
-            }
-            else
-            {
-                AddCardInfo();
+                DataRow row = this.mainDataTable.NewRow();
+                this.mainDataTable.Rows.Add(row);
+                row[TitleList.Type.ToString()] = model.typeName;
+                row[TitleList.PayMoney.ToString()] = model.payMoney;
             }
         }
-        //添加临时会员
+        #endregion
+
+        #region 添加身份证信息。（临时会员）
         private void AddCardInfo()
         {
             StructCard.Builder card = new StructCard.Builder()
@@ -142,6 +139,32 @@ namespace NetBarMS.Views.NetUserManage
             NetMessageManage.RemoveResultBlock(AddCardInfoResult);
             if (result.pack.Content.MessageType == 1)
             {
+                OpenMember();
+            }
+
+        }
+        #endregion
+
+        #region 开通会员入口-进行充值
+        private void OpenMember()
+        {
+            MemberNetOperation.OpenMember(OpenMemberResult, cardNumLabel.Text.Split(sp)[1]);
+        }
+
+        //开通会员入口回调
+        private void OpenMemberResult(ResultModel result)
+        {
+            if(result.pack.Cmd != Cmd.CMD_EMK_APPLY_MEMBER)
+            {
+                return;
+            }
+            System.Console.WriteLine("OpenMemberResult:" + result.pack);
+            NetMessageManage.RemoveResultBlock(OpenMemberResult);
+            //int key = int.Parse(result.pack.Content.ErrorTip.Key);
+            FLOW_ERROR error = FLOW_ERROR.OTHER;
+            Enum.TryParse<FLOW_ERROR>(result.pack.Content.ErrorTip.Key, out error);
+            if (result.pack.Content.MessageType == 1 || error == FLOW_ERROR.NEED_RECHARGE)
+            {
                 this.Invoke(new UIHandleBlock(delegate ()
                 {
                     //将按钮回复可以点击
@@ -149,22 +172,22 @@ namespace NetBarMS.Views.NetUserManage
                     this.simpleButton2.Enabled = true;
                 }));
             }
-
-        }
-
-        //刷新GridControl
-        private void RefreshGridControl()
-        {
-            this.mainDataTable.Clear();
-            foreach(MemberTypeModel model in this.memberTypes)
+            else
             {
-                DataRow row = this.mainDataTable.NewRow();
-                this.mainDataTable.Rows.Add(row);
-                row[TitleList.Type.ToString()] = model.typeName;
-                row[TitleList.PayMoney.ToString()] = model.payMoney;
+                switch (error)
+                {
+                    case FLOW_ERROR.NEED_ADD_CARD:
+                        AddCardInfo();
+
+                        break;
+
+                    default:
+                        break;
+                }
             }
+
         }
-        #endregion
+#endregion
 
         #region 添加会员以及回调方法
         //保存(更新会员)
@@ -173,6 +196,11 @@ namespace NetBarMS.Views.NetUserManage
             CloseFormHandle closeHandle = new CloseFormHandle(delegate
             {
                 this.CloseFormClick();   
+                //如果流程属于激活流程
+                if(this.flowstatus == FLOW_STATUS.ACTIVE_STATUS)
+                {
+                    ActiveFlowManage.ActiveFlow().MemberRegistSuccess();
+                }
             });
             //显示提示
             OpenMemberResultView view = new OpenMemberResultView();
@@ -225,7 +253,7 @@ namespace NetBarMS.Views.NetUserManage
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             int money = int.Parse(this.moneyTextEdit.Text);
-            UserScanCodeView view = new UserScanCodeView(cardNumLabel.Text.Split(sp)[1], money, (int)PRECHARGE_TYPE.OPEN_MEMBER);
+            UserScanCodeView view = new UserScanCodeView(cardNumLabel.Text.Split(sp)[1], money,FLOW_STATUS.MEMBER_STATUS, PRECHARGE_TYPE.OPEN_MEMBER);
             ToolsManage.ShowForm(view, false);
         }
         #endregion

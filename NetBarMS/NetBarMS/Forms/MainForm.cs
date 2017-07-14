@@ -333,17 +333,7 @@ namespace NetBarMS
             this.homePageComputerView.BringToFront();
         }
 
-        /// <summary>
-        /// 用户开卡
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void button3_Click(object sender, EventArgs e)
-        {
-            OpenMemberView view = new OpenMemberView();
-            ToolsManage.ShowForm(view, false);
-        }
-
+       
         /// <summary>
         /// 用户充值
         /// </summary>

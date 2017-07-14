@@ -30,7 +30,7 @@ namespace NetBarMS.Views.HomePage
             this.FindForm().Close();
 
             //进入开卡界面
-            OpenMemberView open = new OpenMemberView();
+            OpenMemberView open = new OpenMemberView(this.textEdit1.Text);
             ToolsManage.ShowForm(open, false);
         }
 

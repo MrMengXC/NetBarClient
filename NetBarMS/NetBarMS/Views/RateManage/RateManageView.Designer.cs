@@ -57,55 +57,48 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.bDurComboBoxEdit = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.label10 = new System.Windows.Forms.Label();
-            this.bDurPrieceText = new DevExpress.XtraEditors.TextEdit();
-            this.label12 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.bRateLabel = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.bMinConsumeText = new DevExpress.XtraEditors.TextEdit();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.nDurComboBoxEdit = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.label11 = new System.Windows.Forms.Label();
-            this.nDurPrieceText = new DevExpress.XtraEditors.TextEdit();
-            this.label6 = new System.Windows.Forms.Label();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.nRateLabel = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.nMinConsumeText = new DevExpress.XtraEditors.TextEdit();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.areaPanel = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.memberTypePanel = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.label30 = new System.Windows.Forms.Label();
+            this.nRateLabel = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.label31 = new System.Windows.Forms.Label();
+            this.bRateLabel = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.nDurPrieceText = new DevExpress.XtraEditors.TextEdit();
+            this.nMinConsumeText = new DevExpress.XtraEditors.TextEdit();
+            this.bDurPrieceText = new DevExpress.XtraEditors.TextEdit();
+            this.bMinConsumeText = new DevExpress.XtraEditors.TextEdit();
             this.titlePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bDurComboBoxEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bDurPrieceText.Properties)).BeginInit();
-            this.flowLayoutPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bMinConsumeText.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nDurComboBoxEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nDurPrieceText.Properties)).BeginInit();
-            this.flowLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nMinConsumeText.Properties)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nDurPrieceText.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nMinConsumeText.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bDurPrieceText.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bMinConsumeText.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // titlePanel
@@ -332,19 +325,9 @@
             this.label1.Text = "正常上网时段";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label9
-            // 
-            this.label9.Font = new System.Drawing.Font("宋体", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label9.Location = new System.Drawing.Point(169, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(85, 30);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "收费最小时段";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // bDurComboBoxEdit
             // 
-            this.bDurComboBoxEdit.Location = new System.Drawing.Point(260, 3);
+            this.bDurComboBoxEdit.Location = new System.Drawing.Point(224, 3);
             this.bDurComboBoxEdit.Name = "bDurComboBoxEdit";
             this.bDurComboBoxEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -359,138 +342,9 @@
             this.bDurComboBoxEdit.TabIndex = 3;
             this.bDurComboBoxEdit.SelectedIndexChanged += new System.EventHandler(this.ComboBoxEdit_SelectedIndexChanged);
             // 
-            // label10
-            // 
-            this.label10.Font = new System.Drawing.Font("宋体", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label10.Location = new System.Drawing.Point(348, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(85, 30);
-            this.label10.TabIndex = 4;
-            this.label10.Text = "时段收费单位";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // bDurPrieceText
-            // 
-            this.bDurPrieceText.Location = new System.Drawing.Point(439, 3);
-            this.bDurPrieceText.Name = "bDurPrieceText";
-            this.bDurPrieceText.Properties.Mask.EditMask = "[0-9]*";
-            this.bDurPrieceText.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
-            this.bDurPrieceText.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.bDurPrieceText.Size = new System.Drawing.Size(33, 20);
-            this.bDurPrieceText.TabIndex = 1;
-            this.bDurPrieceText.EditValueChanged += new System.EventHandler(this.PrieceTextEdit_EditValueChanged);
-            // 
-            // label12
-            // 
-            this.label12.Font = new System.Drawing.Font("宋体", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label12.Location = new System.Drawing.Point(478, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(20, 30);
-            this.label12.TabIndex = 2;
-            this.label12.Text = "元";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // flowLayoutPanel3
-            // 
-            this.flowLayoutPanel3.Controls.Add(this.label7);
-            this.flowLayoutPanel3.Controls.Add(this.bRateLabel);
-            this.flowLayoutPanel3.Controls.Add(this.label8);
-            this.flowLayoutPanel3.Controls.Add(this.label9);
-            this.flowLayoutPanel3.Controls.Add(this.bDurComboBoxEdit);
-            this.flowLayoutPanel3.Controls.Add(this.label23);
-            this.flowLayoutPanel3.Controls.Add(this.label10);
-            this.flowLayoutPanel3.Controls.Add(this.bDurPrieceText);
-            this.flowLayoutPanel3.Controls.Add(this.label12);
-            this.flowLayoutPanel3.Controls.Add(this.label20);
-            this.flowLayoutPanel3.Controls.Add(this.bMinConsumeText);
-            this.flowLayoutPanel3.Controls.Add(this.label21);
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(17, 66);
-            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(688, 30);
-            this.flowLayoutPanel3.TabIndex = 15;
-            // 
-            // label7
-            // 
-            this.label7.Font = new System.Drawing.Font("宋体", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label7.Location = new System.Drawing.Point(3, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(59, 30);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "包夜费率";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // bRateLabel
-            // 
-            this.bRateLabel.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.bRateLabel.Location = new System.Drawing.Point(68, 0);
-            this.bRateLabel.Name = "bRateLabel";
-            this.bRateLabel.Size = new System.Drawing.Size(43, 30);
-            this.bRateLabel.TabIndex = 12;
-            this.bRateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label8
-            // 
-            this.label8.Font = new System.Drawing.Font("宋体", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label8.Location = new System.Drawing.Point(117, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(46, 30);
-            this.label8.TabIndex = 3;
-            this.label8.Text = "元小时";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label23
-            // 
-            this.label23.Font = new System.Drawing.Font("宋体", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label23.Location = new System.Drawing.Point(309, 0);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(33, 30);
-            this.label23.TabIndex = 13;
-            this.label23.Text = "分钟";
-            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label20
-            // 
-            this.label20.Font = new System.Drawing.Font("宋体", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label20.Location = new System.Drawing.Point(504, 0);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(68, 30);
-            this.label20.TabIndex = 9;
-            this.label20.Text = "最低消费";
-            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // bMinConsumeText
-            // 
-            this.bMinConsumeText.Location = new System.Drawing.Point(578, 3);
-            this.bMinConsumeText.Name = "bMinConsumeText";
-            this.bMinConsumeText.Properties.Mask.EditMask = "[0-9]*";
-            this.bMinConsumeText.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
-            this.bMinConsumeText.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.bMinConsumeText.Size = new System.Drawing.Size(33, 20);
-            this.bMinConsumeText.TabIndex = 10;
-            // 
-            // label21
-            // 
-            this.label21.Font = new System.Drawing.Font("宋体", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label21.Location = new System.Drawing.Point(617, 0);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(20, 30);
-            this.label21.TabIndex = 11;
-            this.label21.Text = "元";
-            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label5
-            // 
-            this.label5.Font = new System.Drawing.Font("宋体", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label5.Location = new System.Drawing.Point(169, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(85, 30);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "收费最小时段";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // nDurComboBoxEdit
             // 
-            this.nDurComboBoxEdit.Location = new System.Drawing.Point(260, 3);
+            this.nDurComboBoxEdit.Location = new System.Drawing.Point(224, 3);
             this.nDurComboBoxEdit.Name = "nDurComboBoxEdit";
             this.nDurComboBoxEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -505,144 +359,14 @@
             this.nDurComboBoxEdit.TabIndex = 3;
             this.nDurComboBoxEdit.SelectedIndexChanged += new System.EventHandler(this.ComboBoxEdit_SelectedIndexChanged);
             // 
-            // label11
-            // 
-            this.label11.Font = new System.Drawing.Font("宋体", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label11.Location = new System.Drawing.Point(348, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(85, 30);
-            this.label11.TabIndex = 4;
-            this.label11.Text = "时段收费单位";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // nDurPrieceText
-            // 
-            this.nDurPrieceText.Location = new System.Drawing.Point(439, 3);
-            this.nDurPrieceText.Name = "nDurPrieceText";
-            this.nDurPrieceText.Properties.Mask.EditMask = "[0-9]*";
-            this.nDurPrieceText.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
-            this.nDurPrieceText.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.nDurPrieceText.Size = new System.Drawing.Size(33, 20);
-            this.nDurPrieceText.TabIndex = 1;
-            this.nDurPrieceText.EditValueChanged += new System.EventHandler(this.PrieceTextEdit_EditValueChanged);
-            // 
-            // label6
-            // 
-            this.label6.Font = new System.Drawing.Font("宋体", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label6.Location = new System.Drawing.Point(309, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(33, 30);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "分钟";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // simpleButton1
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(341, 91);
+            this.simpleButton1.Location = new System.Drawing.Point(5, 296);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(75, 23);
             this.simpleButton1.TabIndex = 13;
             this.simpleButton1.Text = "保存";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.label3);
-            this.flowLayoutPanel1.Controls.Add(this.nRateLabel);
-            this.flowLayoutPanel1.Controls.Add(this.label4);
-            this.flowLayoutPanel1.Controls.Add(this.label5);
-            this.flowLayoutPanel1.Controls.Add(this.nDurComboBoxEdit);
-            this.flowLayoutPanel1.Controls.Add(this.label6);
-            this.flowLayoutPanel1.Controls.Add(this.label11);
-            this.flowLayoutPanel1.Controls.Add(this.nDurPrieceText);
-            this.flowLayoutPanel1.Controls.Add(this.label15);
-            this.flowLayoutPanel1.Controls.Add(this.label16);
-            this.flowLayoutPanel1.Controls.Add(this.nMinConsumeText);
-            this.flowLayoutPanel1.Controls.Add(this.label17);
-            this.flowLayoutPanel1.Controls.Add(this.label19);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(17, 20);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(656, 30);
-            this.flowLayoutPanel1.TabIndex = 9;
-            // 
-            // label3
-            // 
-            this.label3.Font = new System.Drawing.Font("宋体", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.Location = new System.Drawing.Point(3, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 30);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "正常费率";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // nRateLabel
-            // 
-            this.nRateLabel.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.nRateLabel.Location = new System.Drawing.Point(68, 0);
-            this.nRateLabel.Name = "nRateLabel";
-            this.nRateLabel.Size = new System.Drawing.Size(43, 30);
-            this.nRateLabel.TabIndex = 9;
-            this.nRateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label4
-            // 
-            this.label4.Font = new System.Drawing.Font("宋体", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label4.Location = new System.Drawing.Point(117, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 30);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "元小时";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label15
-            // 
-            this.label15.Font = new System.Drawing.Font("宋体", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label15.Location = new System.Drawing.Point(478, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(20, 30);
-            this.label15.TabIndex = 5;
-            this.label15.Text = "元";
-            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label16
-            // 
-            this.label16.Font = new System.Drawing.Font("宋体", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label16.Location = new System.Drawing.Point(504, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(68, 30);
-            this.label16.TabIndex = 6;
-            this.label16.Text = "最低消费";
-            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // nMinConsumeText
-            // 
-            this.nMinConsumeText.Location = new System.Drawing.Point(578, 3);
-            this.nMinConsumeText.Name = "nMinConsumeText";
-            this.nMinConsumeText.Properties.Mask.EditMask = "[0-9]*";
-            this.nMinConsumeText.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
-            this.nMinConsumeText.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.nMinConsumeText.Size = new System.Drawing.Size(33, 20);
-            this.nMinConsumeText.TabIndex = 7;
-            // 
-            // label17
-            // 
-            this.label17.Font = new System.Drawing.Font("宋体", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label17.Location = new System.Drawing.Point(617, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(20, 30);
-            this.label17.TabIndex = 8;
-            this.label17.Text = "元";
-            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("宋体", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label19.Location = new System.Drawing.Point(3, 30);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(20, 13);
-            this.label19.TabIndex = 10;
-            this.label19.Text = "元";
             // 
             // tableLayoutPanel1
             // 
@@ -710,7 +434,8 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.panel2);
+            this.panel3.Controls.Add(this.simpleButton1);
+            this.panel3.Controls.Add(this.flowLayoutPanel1);
             this.panel3.Controls.Add(this.tableLayoutPanel1);
             this.panel3.Controls.Add(this.panel1);
             this.panel3.Location = new System.Drawing.Point(11, 69);
@@ -718,15 +443,238 @@
             this.panel3.Size = new System.Drawing.Size(839, 322);
             this.panel3.TabIndex = 64;
             // 
-            // panel2
+            // flowLayoutPanel1
             // 
-            this.panel2.Controls.Add(this.simpleButton1);
-            this.panel2.Controls.Add(this.flowLayoutPanel3);
-            this.panel2.Controls.Add(this.flowLayoutPanel1);
-            this.panel2.Location = new System.Drawing.Point(120, 208);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(716, 111);
-            this.panel2.TabIndex = 64;
+            this.flowLayoutPanel1.Controls.Add(this.tableLayoutPanel2);
+            this.flowLayoutPanel1.Controls.Add(this.tableLayoutPanel3);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(5, 208);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(834, 84);
+            this.flowLayoutPanel1.TabIndex = 64;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.AutoSize = true;
+            this.tableLayoutPanel2.ColumnCount = 9;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.Controls.Add(this.nMinConsumeText, 7, 0);
+            this.tableLayoutPanel2.Controls.Add(this.nDurPrieceText, 5, 0);
+            this.tableLayoutPanel2.Controls.Add(this.label26, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.nDurComboBoxEdit, 3, 0);
+            this.tableLayoutPanel2.Controls.Add(this.label27, 6, 0);
+            this.tableLayoutPanel2.Controls.Add(this.label29, 4, 0);
+            this.tableLayoutPanel2.Controls.Add(this.label28, 8, 0);
+            this.tableLayoutPanel2.Controls.Add(this.label30, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.nRateLabel, 1, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(570, 31);
+            this.tableLayoutPanel2.TabIndex = 120;
+            // 
+            // label30
+            // 
+            this.label30.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(93, 9);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(125, 12);
+            this.label30.TabIndex = 9;
+            this.label30.Text = "元小时，收费最小时段";
+            this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // nRateLabel
+            // 
+            this.nRateLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.nRateLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.nRateLabel.Location = new System.Drawing.Point(62, 3);
+            this.nRateLabel.Name = "nRateLabel";
+            this.nRateLabel.Size = new System.Drawing.Size(25, 25);
+            this.nRateLabel.TabIndex = 1;
+            this.nRateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label26
+            // 
+            this.label26.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(3, 9);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(53, 12);
+            this.label26.TabIndex = 0;
+            this.label26.Text = "正常费率";
+            this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label27
+            // 
+            this.label27.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(424, 9);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(77, 12);
+            this.label27.TabIndex = 2;
+            this.label27.Text = "元，最低消费";
+            this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label29
+            // 
+            this.label29.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(274, 9);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(113, 12);
+            this.label29.TabIndex = 7;
+            this.label29.Text = "分钟，时段收费单位";
+            this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label28
+            // 
+            this.label28.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(538, 9);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(29, 12);
+            this.label28.TabIndex = 5;
+            this.label28.Text = "元。";
+            this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.AutoSize = true;
+            this.tableLayoutPanel3.ColumnCount = 9;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel3.Controls.Add(this.label31, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.bRateLabel, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.label33, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.bDurComboBoxEdit, 3, 0);
+            this.tableLayoutPanel3.Controls.Add(this.label34, 6, 0);
+            this.tableLayoutPanel3.Controls.Add(this.label35, 4, 0);
+            this.tableLayoutPanel3.Controls.Add(this.label36, 8, 0);
+            this.tableLayoutPanel3.Controls.Add(this.bDurPrieceText, 5, 0);
+            this.tableLayoutPanel3.Controls.Add(this.bMinConsumeText, 7, 0);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 40);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(570, 31);
+            this.tableLayoutPanel3.TabIndex = 121;
+            // 
+            // label31
+            // 
+            this.label31.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(93, 9);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(125, 12);
+            this.label31.TabIndex = 9;
+            this.label31.Text = "元小时，收费最小时段";
+            this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // bRateLabel
+            // 
+            this.bRateLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bRateLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.bRateLabel.Location = new System.Drawing.Point(62, 3);
+            this.bRateLabel.Name = "bRateLabel";
+            this.bRateLabel.Size = new System.Drawing.Size(25, 25);
+            this.bRateLabel.TabIndex = 1;
+            this.bRateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label33
+            // 
+            this.label33.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(3, 9);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(53, 12);
+            this.label33.TabIndex = 0;
+            this.label33.Text = "包夜费率";
+            this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label34
+            // 
+            this.label34.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(424, 9);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(77, 12);
+            this.label34.TabIndex = 2;
+            this.label34.Text = "元，最低消费";
+            this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label35
+            // 
+            this.label35.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(274, 9);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(113, 12);
+            this.label35.TabIndex = 7;
+            this.label35.Text = "分钟，时段收费单位";
+            this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label36
+            // 
+            this.label36.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(538, 9);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(29, 12);
+            this.label36.TabIndex = 5;
+            this.label36.Text = "元。";
+            this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // nDurPrieceText
+            // 
+            this.nDurPrieceText.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.nDurPrieceText.Location = new System.Drawing.Point(393, 3);
+            this.nDurPrieceText.Name = "nDurPrieceText";
+            this.nDurPrieceText.Properties.AutoHeight = false;
+            this.nDurPrieceText.Size = new System.Drawing.Size(25, 25);
+            this.nDurPrieceText.TabIndex = 65;
+            // 
+            // nMinConsumeText
+            // 
+            this.nMinConsumeText.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.nMinConsumeText.Location = new System.Drawing.Point(507, 3);
+            this.nMinConsumeText.Name = "nMinConsumeText";
+            this.nMinConsumeText.Properties.AutoHeight = false;
+            this.nMinConsumeText.Size = new System.Drawing.Size(25, 25);
+            this.nMinConsumeText.TabIndex = 66;
+            // 
+            // bDurPrieceText
+            // 
+            this.bDurPrieceText.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bDurPrieceText.Location = new System.Drawing.Point(393, 3);
+            this.bDurPrieceText.Name = "bDurPrieceText";
+            this.bDurPrieceText.Properties.AutoHeight = false;
+            this.bDurPrieceText.Size = new System.Drawing.Size(25, 25);
+            this.bDurPrieceText.TabIndex = 66;
+            // 
+            // bMinConsumeText
+            // 
+            this.bMinConsumeText.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bMinConsumeText.Location = new System.Drawing.Point(507, 3);
+            this.bMinConsumeText.Name = "bMinConsumeText";
+            this.bMinConsumeText.Properties.AutoHeight = false;
+            this.bMinConsumeText.Size = new System.Drawing.Size(25, 25);
+            this.bMinConsumeText.TabIndex = 67;
             // 
             // RateManageView
             // 
@@ -734,7 +682,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel3);
             this.Name = "RateManageView";
-            this.Size = new System.Drawing.Size(850, 394);
+            this.Size = new System.Drawing.Size(850, 644);
             this.Controls.SetChildIndex(this.panel3, 0);
             this.Controls.SetChildIndex(this.titlePanel, 0);
             this.titlePanel.ResumeLayout(false);
@@ -742,17 +690,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bDurComboBoxEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bDurPrieceText.Properties)).EndInit();
-            this.flowLayoutPanel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bMinConsumeText.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nDurComboBoxEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nDurPrieceText.Properties)).EndInit();
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nMinConsumeText.Properties)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nDurPrieceText.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nMinConsumeText.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bDurPrieceText.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bMinConsumeText.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -787,40 +737,33 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Label label3;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label5;
-        private DevExpress.XtraEditors.TextEdit nDurPrieceText;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label8;
         private DevExpress.XtraEditors.ComboBoxEdit nDurComboBoxEdit;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label9;
         private DevExpress.XtraEditors.ComboBoxEdit bDurComboBoxEdit;
-        private System.Windows.Forms.Label label10;
-        private DevExpress.XtraEditors.TextEdit bDurPrieceText;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel areaPanel;
         private System.Windows.Forms.Panel memberTypePanel;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label nRateLabel;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
-        private DevExpress.XtraEditors.TextEdit nMinConsumeText;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label bRateLabel;
-        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private DevExpress.XtraEditors.TextEdit nMinConsumeText;
+        private DevExpress.XtraEditors.TextEdit nDurPrieceText;
+        private DevExpress.XtraEditors.TextEdit bDurPrieceText;
         private DevExpress.XtraEditors.TextEdit bMinConsumeText;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label23;
     }
 }

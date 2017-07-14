@@ -23,19 +23,19 @@ namespace NetBarMS.Views.HomePage
     {
 
         private string cardNum = "";        //身份证号
-        private int recharge;               //充值的今晚
+        private int recharge;               //充值的金额
+        PRECHARGE_TYPE prechargeType;           //充值类型（是否办理会员）
         private FLOW_STATUS flowstatus = FLOW_STATUS.NONE_STATUS;     //流程状态判断返回的状态
 
         #region 初始化方法
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="card">神锋证号</param>
+        /// <param name="card">身份证号</param>
         /// <param name="money">充值金额</param>
         /// <param name="offical">是否办理会员</param>
-        public UserScanCodeView(string card,int money,int offical)
+        public UserScanCodeView(string card,int money, PRECHARGE_TYPE offical)
         {
-            InitializeComponent();
             InitUI(card, money, FLOW_STATUS.NORMAL_STATUS,offical);
         }
         /// <summary>
@@ -45,25 +45,112 @@ namespace NetBarMS.Views.HomePage
         /// <param name="money">充值金额</param>
         /// <param name="status">流程状态</param>
         /// <param name="offical">是否办理会员</param>
-        public UserScanCodeView(string card, int money,FLOW_STATUS status, int offical)
+        public UserScanCodeView(string card, int money,FLOW_STATUS status, PRECHARGE_TYPE offical)
         {
-            InitializeComponent();
             InitUI(card,money,status,offical);
         }
         //初始化UI
-        private void InitUI(string card, int money, FLOW_STATUS status, int offical)
+        private void InitUI(string card, int money, FLOW_STATUS status, PRECHARGE_TYPE offical)
         {
+            InitializeComponent();
             this.titleLabel.Text = "用户充值";
-            cardNum = card;
-            recharge = money;
+            this.cardNum = card;
+            this.recharge = money;
+            this.prechargeType = offical;
+
             this.flowstatus = status;
-            //获取二维码
-            HomePageNetOperation.GetRechargeCode(GetRechargeCodeResult, cardNum, recharge,0, offical);
-            //获取充值结果
-            //HomePageNetOperation.GetRecharge(GetRechargeResult);
+
+            //如果进入充值。进入充值入口
+            if(status == FLOW_STATUS.NORMAL_STATUS)
+            {
+                BeginRecharge();
+
+            }
+            else
+            {
+                GetRechargeCode();
+                //获取充值结果
+                //HomePageNetOperation.GetRecharge(GetRechargeResult);
+            }
+
+
 
         }
 
+        #endregion
+        //获取二维码
+        private void GetRechargeCode()
+        {
+            HomePageNetOperation.GetRechargeCode(GetRechargeCodeResult, cardNum, recharge, 0, (int)this.prechargeType);
+        }
+        private void BeginRecharge()
+        {
+            MemberNetOperation.BeiginRecharge(BeginRechargeResult, this.cardNum);
+        }
+        private void BeginRechargeResult(ResultModel result)
+        {
+            if(result.pack.Cmd != Cmd.CMD_EMK_RECHARGE)
+            {
+                return;
+            }
+            System.Console.WriteLine("BeginRechargeResult:"+result.pack);
+            NetMessageManage.RemoveResultBlock(BeginRechargeResult);
+
+            FLOW_ERROR error = FLOW_ERROR.OTHER;
+            Enum.TryParse<FLOW_ERROR>(result.pack.Content.ErrorTip.Key, out error);
+
+            if (result.pack.Content.MessageType == 1 || error == FLOW_ERROR.NEED_RECHARGE)
+            {
+                GetRechargeCode();
+            }
+            else
+            {
+              
+                switch (error)
+                {
+                    case FLOW_ERROR.NEED_ADD_CARD:
+                        AddCardInfo();
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+        #region 添加身份证信息（添加临时会员）
+        private void AddCardInfo()
+        {
+            string cardNum = this.cardNum;
+            StructCard.Builder structcard = new StructCard.Builder()
+            {
+                Name = "xx22",
+                Gender = 1,
+                Nation = "2112",
+                Number = cardNum,
+                Birthday = "2012-09-01",
+                Address = "海南省",
+                Organization = "海南",
+                HeadUrl = "#dasdasd#",
+                Vld = "",
+            };
+
+            MemberNetOperation.AddCardInfo(AddCardInfoResult, structcard.Build());
+
+        }
+        //添加身份证信息回调
+        private void AddCardInfoResult(ResultModel result)
+        {
+
+            if (result.pack.Cmd != Cmd.CMD_EMK_ADD_CARDINFO)
+            {
+                return;
+            }
+            System.Console.WriteLine("AddCardInfoResult:" + result.pack);
+            NetMessageManage.RemoveResultBlock(AddCardInfoResult);
+            if (result.pack.Content.MessageType == 1)
+            {
+                BeginRecharge();
+            }
+        }
         #endregion
 
         #region 获取充值二维码和充值结果的回调
@@ -95,7 +182,7 @@ namespace NetBarMS.Views.HomePage
                             {
                                 ActiveFlowManage.ActiveFlow().MemberPaySuccess();
                             }
-                            this.FindForm().Close();
+                            this.CloseFormClick();
                         });
                         UserPayResultView view = new UserPayResultView();
                         ToolsManage.ShowForm(view, false, handle);

@@ -308,7 +308,6 @@ namespace NetBarMS.Codes.Tools
     }
     #endregion
 
-
     #region 付款渠道
     /// <summary>
     /// 付款渠道
@@ -422,21 +421,33 @@ namespace NetBarMS.Codes.Tools
         //1提交 2付款完成 3订单处理完成（发货完成）
         //"1提交","2完成","3撤销"
     }
+    #endregion
 
-    //流程状态（充值，注册会员）
+    #region 流程状态（充值，注册会员）
     public enum FLOW_STATUS
     {
         NONE_STATUS,        //无状态
-        NORMAL_STATUS,      //正常状态，不需要其他操作
-        ACTIVE_STATUS,      //激活状态，返回激活页面，再次激活
+        /// <summary>
+        /// 正常状态，不需要其他操作
+        /// </summary>
+        NORMAL_STATUS,
+        /// <summary>
+        /// 办理会员状态
+        /// </summary>
+        MEMBER_STATUS,
+        /// <summary>
+        /// 激活状态，返回激活页面，再次激活
+        /// </summary>
+        ACTIVE_STATUS,      
     }
-    //充值类型
+    #endregion
+
+    #region 充值类型
     public enum PRECHARGE_TYPE
     {
         NOT_MEMBER = 0,        //不开通会员
         OPEN_MEMBER,      //开通会员
     }
-
     #endregion
 
     #region 办理渠道
@@ -445,6 +456,41 @@ namespace NetBarMS.Codes.Tools
         终端,
         系统后台,
     }
+    #endregion
+
+    #region UI 的边框
+    /// <summary>
+    /// 边框类型
+    /// </summary>
+    public enum BORDER_TYPE
+    {
+        /// <summary>
+        /// 输入框边框
+        /// </summary>
+        TEXTEDIT_BORDER,
+
+    }
+    #endregion
+
+
+    #region 进行激活、开通会员、充值的错误信息
+    public enum FLOW_ERROR
+    {
+        /// <summary>
+        /// 其他
+        /// </summary>
+        OTHER = 0,
+        /// <summary>
+        /// 需要添加身份证信息（临时会员）
+        /// </summary>
+        NEED_ADD_CARD = 207, 
+        /// <summary>
+        /// 需要充值
+        /// </summary>
+        NEED_RECHARGE = 208,
+
+    }
+
     #endregion
 
 }

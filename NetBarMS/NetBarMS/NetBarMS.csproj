@@ -113,6 +113,8 @@
     <Compile Include="Codes\Model\HomePageNodeModel.cs" />
     <Compile Include="Codes\Model\SysTypeModel.cs" />
     <Compile Include="Codes\Tools\Manage\AreaSettingManage.cs" />
+    <Compile Include="Codes\Tools\Manage\BorderManage.cs" />
+    <Compile Include="Codes\Tools\Manage\CommonOperation.cs" />
     <Compile Include="Codes\Tools\Manage\DelegateManage.cs" />
     <Compile Include="Codes\Tools\Manage\EnumManage.cs" />
     <Compile Include="Codes\Tools\Manage\HomePageMessageManage.cs" />

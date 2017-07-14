@@ -14,6 +14,7 @@ using DevExpress.XtraEditors.Controls;
 using NetBarMS.Views.OtherMain;
 using DevExpress.XtraEditors;
 using NetBarMS.Codes.Model;
+using System.Drawing.Drawing2D;
 
 namespace NetBarMS.Views.NetUserManage
 {
@@ -48,14 +49,13 @@ namespace NetBarMS.Views.NetUserManage
         }
         private Int32 pageBegin = 0,pageSize = 15;        //页面开始的页数,开始的Size
         private Int32 field = 0;            //需要按照排序的字段
-        private Int32 order = 1;            //升序还是降序
+        private Int32 order = 0;            //升序还是降序
         private IList<StructMember> members;
         private List<MemberTypeModel> memberTypes;
 
         public MemberManageView()
         {
             InitializeComponent();
-            this.titleLabel.Text = "会员管理";
             InitUI();
         }
 
@@ -63,10 +63,13 @@ namespace NetBarMS.Views.NetUserManage
         // 初始化UI
         private void InitUI()
         {
+            this.statusComboBoxEdit.Paint += Control_Paint;
+            this.memberTypeComboBoxEdit.Paint += Control_Paint;
+
 
             //初始化ComboBoxEdit
             //会员状态
-            foreach(string status in Enum.GetNames(typeof(MEMBERSTATUS)))
+            foreach (string status in Enum.GetNames(typeof(MEMBERSTATUS)))
             {
                 this.statusComboBoxEdit.Properties.Items.Add(status);
             }
@@ -84,6 +87,71 @@ namespace NetBarMS.Views.NetUserManage
 
             GetMemberList();
 
+        }
+
+        //重绘控件
+        private void Control_Paint(object sender, PaintEventArgs e)
+        {
+
+
+
+            //GraphicsPath path = new GraphicsPath();
+
+            //int thisWidth = e.ClipRectangle.Width;
+            //int thisHeight = e.ClipRectangle.Height;
+            //int angle = 5;
+            //Pen linePen = Pens.Blue;
+            //int ArcWidth = angle;
+            //int ArcHeight = angle;
+            //int ArcX1 = 1;
+            //int ArcX2 =  thisWidth - (ArcWidth + 1);
+            //int ArcY1 = 1;
+            //int ArcY2 = thisHeight - (ArcHeight + 1);
+            if (e.ClipRectangle.X == 0)
+            {
+
+                //画出图形  
+                //                4个int分别表示矩形的左上角X，Y坐标，矩形的宽和高，C#里面画的椭圆的大小是用矩形来定义的，你定义矩形后，绘制的就是矩形的内切椭圆，后面两个为起始角度和终止角度与起始角度的夹角。
+                //考虑边线宽度
+                //path.AddArc(ArcX1, ArcY1, angle, angle, 180, 90);
+                //path.AddArc(ArcX2, ArcY1, angle, angle, 270, 90);
+                //path.AddArc(ArcX2, ArcY2, angle, angle, 360, 90);
+                //path.AddArc(ArcX1, ArcY2, angle, angle, 90, 90);
+                //path.CloseAllFigures();
+                //e.Graphics.DrawPath(linePen, path);
+                //e.Graphics.pa(Brushes.White, path);
+
+                ControlPaint.DrawBorder(e.Graphics, e.ClipRectangle, Color.Blue, ButtonBorderStyle.Solid);
+
+
+            }
+            else
+            {
+
+                //oPath.AddArc(thisWidth - angle, y, angle, angle, 270, 90);                 // 右上角
+                //oPath.AddArc(thisWidth - angle, thisHeight - angle, angle, angle, 0, 90);  // 右下角
+                //oPath.CloseAllFigures();
+                ////e.Graphics.DrawPath(Pens.Blue, oPath);
+                //   e.Graphics.DrawArc(Brushes.Blue, oPath);
+
+                ControlPaint.DrawBorder(e.Graphics, e.ClipRectangle,
+                    Color.Transparent, 0, ButtonBorderStyle.Solid,
+                    Color.Blue, 1, ButtonBorderStyle.Solid,
+                    Color.Blue, 1, ButtonBorderStyle.Solid,
+                    Color.Blue, 1, ButtonBorderStyle.Solid);
+
+            }
+
+        }
+        public static GraphicsPath DrawRoundRect(int x, int y, int width, int height, int radius)
+        {
+            GraphicsPath gp = new GraphicsPath();
+            gp.AddArc(x, y, radius, radius, 180, 90);
+            gp.AddArc(width - radius, y, radius, radius, 270, 90);
+            gp.AddArc(width - radius, height - radius, radius, radius, 0, 90);
+            gp.AddArc(x, height - radius, radius, radius, 90, 90);
+            gp.CloseAllFigures();
+            return gp;
         }
         #endregion
 
@@ -114,7 +182,8 @@ namespace NetBarMS.Views.NetUserManage
             if (result.pack.Content.MessageType == 1)
             {           
                 this.Invoke(new UIHandleBlock(delegate () {
-                    this.UpdateGridControl(result.pack.Content.ScMemberList.MembersList);
+                    this.members = result.pack.Content.ScMemberList.MembersList;
+                   RefreshGridControl();
                 }));
             }
         }
@@ -122,10 +191,9 @@ namespace NetBarMS.Views.NetUserManage
 
         #region 更新GridControl
         //更新GridControl
-        private void UpdateGridControl(IList<StructMember> tem)
+        private void RefreshGridControl()
         {
             this.mainDataTable.Clear();
-            this.members = tem;
             for (int i = 0; i < this.members.Count; i++)
             {
                 StructMember member = this.members[i];
@@ -143,7 +211,7 @@ namespace NetBarMS.Views.NetUserManage
             row[TitleList.IdNumber.ToString()] = member.Cardnumber;
             row[TitleList.Gender.ToString()] = member.Gender;
             row[TitleList.Name.ToString()] = member.Name;
-            row[TitleList.MemberType.ToString()] = member.Membertype;
+            row[TitleList.MemberType.ToString()] = SysManage.GetMemberTypeName(member.Membertype.ToString());
             row[TitleList.PhoneNumber.ToString()] = member.Phone;
             row[TitleList.OpenCardTime.ToString()] = member.Opentime;
             row[TitleList.LastUseTime.ToString()] = member.Lasttime;
@@ -152,31 +220,13 @@ namespace NetBarMS.Views.NetUserManage
             row[TitleList.AccGvMoney.ToString()] = member.TotalBonus;
             row[TitleList.Integral.ToString()] = member.Integal;
             row[TitleList.UseIntegral.ToString()] = member.UsedIntegal;
-            row[TitleList.Status.ToString()] = member.Status;
-            row[TitleList.Verify.ToString()] = member.Verify;
+            row[TitleList.Status.ToString()] = Enum.GetName(typeof(MEMBERSTATUS), member.Status);
+            row[TitleList.Verify.ToString()] = member.Verify == 0?"未验证":"已验证";
 
         }
         #endregion
 
-        #region 添加会员及回调方法
-        /// <summary>
-        /// 添加用户
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void simpleButton6_Click(object sender, EventArgs e)
-        {
-           //进入开卡页面
-            OpenMemberView view = new OpenMemberView();
-            ToolsManage.ShowForm(view, false, OpenMemberView_FormClose);
-        }
-        //会员办理窗体关闭回调事件
-        public void OpenMemberView_FormClose()
-        {
-      
-            GetMemberList();
-        }
-        #endregion
+  
 
         #region 会员删除以及回调
         //删除
@@ -273,7 +323,9 @@ namespace NetBarMS.Views.NetUserManage
                 //System.Console.WriteLine("SearchMemberResult:" + result.pack);
                 this.Invoke(new UIHandleBlock(delegate ()
                 {
-                    UpdateGridControl(result.pack.Content.ScMemberFind.MembersList);
+                    this.members = result.pack.Content.ScMemberFind.MembersList;
+
+                    RefreshGridControl();
                 }));
 
             }
@@ -339,8 +391,68 @@ namespace NetBarMS.Views.NetUserManage
         }
         #endregion
 
-     
 
+
+        private Region GetRoundedRectPath(Rectangle rect, int radius)
+        {
+            GraphicsPath oPath = new GraphicsPath();
+           
+            int x = 0;
+            int y = 0;
+            int thisWidth = rect.Width;
+            int thisHeight = rect.Height;
+            int angle = radius;
+            System.Drawing.Graphics g = CreateGraphics();
+            oPath.AddArc(x, y, angle, angle, 180, 90);                                 // 左上角
+            oPath.AddArc(thisWidth - angle, y, angle, angle, 270, 90);                 // 右上角
+            oPath.AddArc(thisWidth - angle, thisHeight - angle, angle, angle, 0, 90);  // 右下角
+            oPath.AddArc(x, thisHeight - angle, angle, angle, 90, 90);                 // 左下角
+            oPath.CloseAllFigures();
+            Region region = new Region(oPath);
+          
+            return region;
+
+
+
+
+
+            //int diameter = radius;
+
+            //Rectangle arcRect = new Rectangle(rect.Location, new Size(diameter, diameter));
+
+            //GraphicsPath path = new GraphicsPath();
+
+            ////   左上角   
+
+            //path.AddArc(arcRect, 180, 90);
+
+            ////   右上角   
+
+            //arcRect.X = rect.Right - diameter;
+
+            //path.AddArc(arcRect, 270, 90);
+
+            ////   右下角   
+
+            //arcRect.Y = rect.Bottom - diameter;
+
+            //path.AddArc(arcRect, 0, 90);
+
+
+            ////   左下角   
+
+            //arcRect.X = rect.Left;
+
+            //path.AddArc(arcRect, 90, 90);
+
+            //path.CloseFigure();
+
+
+
+
+            //return path;
+
+        }
     }
 
 }

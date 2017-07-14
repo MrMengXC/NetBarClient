@@ -90,7 +90,7 @@ namespace NetBarMS.Codes.Tools
             }
 
             NetMessageManage.RemoveResultBlock(GetMemberLvSettingResult);
-            //System.Console.WriteLine("GetMemberLvSettingResult:" + result.pack);
+            System.Console.WriteLine("GetMemberLvSettingResult:" + result.pack);
             System.Console.WriteLine("获取会员等级信息");
             if (result.pack.Content.MessageType == 1)
             {

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using NetBarMS.Codes.Tools.NetOperation;
 using NetBarMS.Codes.Tools;
+using NetBarMS.Codes.Tools.Manage;
 
 namespace NetBarMS.Views.RateManage
 {
@@ -20,7 +21,7 @@ namespace NetBarMS.Views.RateManage
         {
             InitializeComponent();
             this.titleLabel.Text = "积分管理";
-
+            //this.textEdit1.Paint
             InitUI();
         }
         #region 初始化UI
@@ -36,15 +37,15 @@ namespace NetBarMS.Views.RateManage
             StructDictItem defaultItem = this.items[0];
             StructDictItem activeItem = this.items[1];
 
-            this.dRechargeTextEdit.Text = defaultItem.GetItem(0);
-            this.dRechargeItTextEdit.Text = defaultItem.GetItem(1);
-            this.staffPjItTextEdit.Text = defaultItem.GetItem(2);
-            this.netBarPjItTextEdit.Text = defaultItem.GetItem(3);
-            this.logItTextEdit.Text = defaultItem.GetItem(4);
-            this.bindingItTextEdit.Text = defaultItem.GetItem(5);
+            this.dRechargeItText.Text = defaultItem.GetItem(0);
+            this.dRechargeItText.Text = defaultItem.GetItem(1);
+            this.staffPjItText.Text = defaultItem.GetItem(2);
+            this.netBarPjItText.Text = defaultItem.GetItem(3);
+            this.logItText.Text = defaultItem.GetItem(4);
+            this.bingingItText.Text = defaultItem.GetItem(5);
 
-            this.aRechargeTextEdit.Text = activeItem.GetItem(0);
-            this.aRechargeItTextEdit.Text = activeItem.GetItem(1);
+            this.aRechargeText.Text = activeItem.GetItem(0);
+            this.aRechargItText.Text = activeItem.GetItem(1);
 
             endComboBoxEdit.Text = activeItem.GetItem(3);
             startComboBoxEdit.Text = activeItem.GetItem(2);
@@ -102,12 +103,12 @@ namespace NetBarMS.Views.RateManage
                 {
                     StructDictItem.Builder item = new StructDictItem.Builder(this.items[0]);
                     item.ClearItem();
-                    string item1 = this.dRechargeTextEdit.Text.Equals("") ? "0" : this.dRechargeTextEdit.Text;
-                    string item2 = this.dRechargeItTextEdit.Text.Equals("") ? "0" : this.dRechargeItTextEdit.Text;
-                    string item3 = this.staffPjItTextEdit.Text.Equals("") ? "0" : this.staffPjItTextEdit.Text;
-                    string item4 = this.netBarPjItTextEdit.Text.Equals("") ? "0" : this.netBarPjItTextEdit.Text;
-                    string item5 = this.logItTextEdit.Text.Equals("") ? "0" : this.logItTextEdit.Text;
-                    string item6 = this.bindingItTextEdit.Text.Equals("") ? "0" : this.bindingItTextEdit.Text;
+                    string item1 = this.dRechargeItText.Text.Equals("") ? "0" : this.dRechargeItText.Text;
+                    string item2 = this.dRechargeItText.Text.Equals("") ? "0" : this.dRechargeItText.Text;
+                    string item3 = this.staffPjItText.Text.Equals("") ? "0" : this.staffPjItText.Text;
+                    string item4 = this.netBarPjItText.Text.Equals("") ? "0" : this.netBarPjItText.Text;
+                    string item5 = this.logItText.Text.Equals("") ? "0" : this.logItText.Text;
+                    string item6 = this.bingingItText.Text.Equals("") ? "0" : this.bingingItText.Text;
 
                     item.AddItem(item1);
                     item.AddItem(item2);
@@ -122,8 +123,8 @@ namespace NetBarMS.Views.RateManage
                     StructDictItem.Builder item = new StructDictItem.Builder(items[1]);
                     item.ClearItem();
 
-                    string item1 = this.aRechargeTextEdit.Text.Equals("") ? "0" : this.aRechargeTextEdit.Text;
-                    string item2 = this.aRechargeItTextEdit.Text.Equals("") ? "0" : this.aRechargeItTextEdit.Text;
+                    string item1 = this.aRechargeText.Text.Equals("") ? "0" : this.aRechargeText.Text;
+                    string item2 = this.aRechargItText.Text.Equals("") ? "0" : this.aRechargItText.Text;
 
                     string item3 = this.startComboBoxEdit.DateTime.ToString("yyyy-MM-dd");
                     string item4 = this.endComboBoxEdit.DateTime.ToString("yyyy-MM-dd");
@@ -146,6 +147,13 @@ namespace NetBarMS.Views.RateManage
             
         }
         #endregion
+        protected override void Control_Paint(object sender, PaintEventArgs e)
+        {
+            base.Control_Paint(sender, e);
+        }
+
+
+
 
     }
 }
