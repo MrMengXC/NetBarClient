@@ -60,7 +60,7 @@ namespace NetBarMS.Views.InCome
             if (result.pack.Content.MessageType == 1)
             {
                 this.earns = result.pack.Content.ScEarning.EarnsList;
-                this.Invoke(new UIHandleBlock(delegate {
+                this.Invoke(new RefreshUIHandle(delegate {
                     if(this.earns != null && this.earns.Count > 0)
                     {
                         IncomeDetail();

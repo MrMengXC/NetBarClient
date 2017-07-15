@@ -30,6 +30,8 @@ namespace NetBarMS.Codes.Tools.Manage
         private event UpdateMsgNumHandle UpdateExceptionMsgNumEvent;
         //更新商品订单数量
         private event UpdateMsgNumHandle UpdateOrderMsgNumEvent;
+        //刷新UI数据
+        private event RefreshUIHandle RefreshStatusNumEvent;
 
         #endregion
 
@@ -40,6 +42,7 @@ namespace NetBarMS.Codes.Tools.Manage
 
         private static HomePageMessageManage _manage = null;
 
+        private int idleNum = 0, onLineNum = 0, expectionNum = 0, onookNum = 0;
         //单例方法
         public static HomePageMessageManage Manage()
         {
@@ -50,11 +53,12 @@ namespace NetBarMS.Codes.Tools.Manage
             return _manage;
         }
         #region 获取首页数据列表
-        public void GetHomePageList(GetDataResultHandle result,UpdateComputerDataHandle update, UpdateComputerDataHandle updateArea)
+        public void GetHomePageList(GetDataResultHandle result,UpdateComputerDataHandle update, UpdateComputerDataHandle updateArea,RefreshUIHandle refreshStauts)
         {
             this.GetDataResultEvent += result;
             this.UpdateComputerDataEvent += update;
             this.UpdateComputerAreaEvent += updateArea;
+            this.RefreshStatusNumEvent += refreshStauts;
             //获取上网信息
             HomePageNetOperation.HompageList(HomePageListResult);
         }
@@ -77,6 +81,8 @@ namespace NetBarMS.Codes.Tools.Manage
                 {
                     this.computerDict[com.Computerid] = com;
                 }
+
+               
                 //获取回调
                 GetSysMessage();
             }
@@ -175,6 +181,7 @@ namespace NetBarMS.Codes.Tools.Manage
         #region 用户上机
         private void UserUpComputer(IList<string> pars)
         {
+            onLineNum++;
             string comid = pars[0];
             //获取需要修改的电脑数据
             StructRealTime com;
@@ -185,7 +192,7 @@ namespace NetBarMS.Codes.Tools.Manage
             StructRealTime.Builder newCom = new StructRealTime.Builder(com);
 
 
-            newCom.Status = "在线";
+            newCom.Status = ((int)COMPUTERSTATUS.在线).ToString();
             
             newCom.Cardnumber = pars[1];
             newCom.Usertype = pars[2];
@@ -269,6 +276,7 @@ namespace NetBarMS.Codes.Tools.Manage
         #region 用户下机
         private void UserDownComputer(IList<string> pars)
         {
+            this.idleNum--;
             string comid = pars[0];
             //获取需要修改的电脑数据
             StructRealTime com;
@@ -277,7 +285,7 @@ namespace NetBarMS.Codes.Tools.Manage
             //生成新StructRealTime
             int index = this.computers.IndexOf(com);
             StructRealTime.Builder newCom = new StructRealTime.Builder(com);
-            newCom.Status = "0";
+            newCom.Status = ((int)COMPUTERSTATUS.空闲).ToString();
             newCom.Cardnumber = "";
             newCom.Usertype = "";
             newCom.Billing = "";
@@ -400,6 +408,35 @@ namespace NetBarMS.Codes.Tools.Manage
             this.UpdateCallMsgNumEvent += call;
             this.UpdateExceptionMsgNumEvent += exception;
             this.UpdateOrderMsgNumEvent += order;
+        }
+        #endregion
+
+        #region 获取设备数量
+        /// <summary>
+        ///获取空闲设备数量
+        /// </summary>
+        public static int IdleNum
+        {
+            get
+            {
+            
+                string status = ((int)COMPUTERSTATUS.空闲).ToString();
+                IEnumerable<StructRealTime> num1 = from StructRealTime tem in Manage().computers where tem.Status.Equals(status) select tem;
+                return num1.Count<StructRealTime>();
+            }
+        }
+
+        /// <summary>
+        /// 获取在线设备数量
+        /// </summary>
+        public static int OnlineNum
+        {
+            get
+            {
+                string status = ((int)COMPUTERSTATUS.在线).ToString();
+                IEnumerable<StructRealTime> num1 = from StructRealTime tem in Manage().computers where tem.Status.Equals(status) select tem;
+                return num1.Count<StructRealTime>();
+            }
         }
         #endregion
 

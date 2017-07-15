@@ -63,7 +63,7 @@ namespace NetBarMS.Views.ManagersManage
 
             if(result.pack.Content.MessageType == 1)
             {
-                this.Invoke(new UIHandleBlock(delegate {
+                this.Invoke(new RefreshUIHandle(delegate {
 
                     SysManage.UpdateStaffData(result.pack.Content.ScAccountList.AccountList);
                     this.staffs = result.pack.Content.ScAccountList.AccountList;

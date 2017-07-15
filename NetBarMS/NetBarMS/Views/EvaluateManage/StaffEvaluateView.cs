@@ -90,7 +90,7 @@ namespace NetBarMS.Views.EvaluateManage
             NetMessageManage.RemoveResultBlock(GetStaffEvaluateListResult);
             if(result.pack.Content.MessageType == 1)
             {
-                this.Invoke(new UIHandleBlock(delegate {
+                this.Invoke(new RefreshUIHandle(delegate {
 
                     this.comments = result.pack.Content.ScStaffComment.CommentsList;
                     RefreshGridControl();

@@ -59,7 +59,7 @@ namespace NetBarMS.Views.HomePage
             System.Console.WriteLine("GetCallListResult："+result.pack);
             if(result.pack.Content.MessageType == 1)
             {
-                this.Invoke(new UIHandleBlock(delegate {
+                this.Invoke(new RefreshUIHandle(delegate {
                     this.calls = result.pack.Content.ScCallList.CallsList;
                     RefreshGridControl();
                 }));

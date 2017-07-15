@@ -115,7 +115,7 @@ namespace NetBarMS.Views.SystemSearch
             NetMessageManage.RemoveResultBlock(GetUserNetRecordResult);
             if (result.pack.Content.MessageType == 1)
             {
-                this.Invoke(new UIHandleBlock(delegate
+                this.Invoke(new RefreshUIHandle(delegate
                 {
                     this.pageView1.RefreshPageView(result.pack.Content.ScQueryEmk.Pagecount);
                     this.records = result.pack.Content.ScQueryEmk.EmksList;
@@ -145,7 +145,7 @@ namespace NetBarMS.Views.SystemSearch
             this.mainDataTable.Rows.Add(row);
             row[TitleList.IdNumber.ToString()] = emk.Cardnumber;
             row[TitleList.Name.ToString()] = emk.Username;
-            row[TitleList.MemberType.ToString()] = emk.Usertype;
+            row[TitleList.MemberType.ToString()] = SysManage.GetMemberTypeName(emk.Usertype);
             row[TitleList.StartTime.ToString()] = emk.Starttime;
             row[TitleList.EndTime.ToString()] = emk.Stoptime;
             row[TitleList.Area.ToString()] = emk.Area;

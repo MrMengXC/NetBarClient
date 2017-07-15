@@ -18,10 +18,6 @@ public static partial class Common {
   internal static pb::FieldAccess.FieldAccessorTable<global::CSUploadPicture, global::CSUploadPicture.Builder> internal__static_CSUploadPicture__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_SCUploadPicture__Descriptor;
   internal static pb::FieldAccess.FieldAccessorTable<global::SCUploadPicture, global::SCUploadPicture.Builder> internal__static_SCUploadPicture__FieldAccessorTable;
-  internal static pbd::MessageDescriptor internal__static_CSDownloadPicture__Descriptor;
-  internal static pb::FieldAccess.FieldAccessorTable<global::CSDownloadPicture, global::CSDownloadPicture.Builder> internal__static_CSDownloadPicture__FieldAccessorTable;
-  internal static pbd::MessageDescriptor internal__static_SCDownloadPicture__Descriptor;
-  internal static pb::FieldAccess.FieldAccessorTable<global::SCDownloadPicture, global::SCDownloadPicture.Builder> internal__static_SCDownloadPicture__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_CSHeart__Descriptor;
   internal static pb::FieldAccess.FieldAccessorTable<global::CSHeart, global::CSHeart.Builder> internal__static_CSHeart__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_SCHeart__Descriptor;
@@ -64,107 +60,100 @@ public static partial class Common {
   static Common() {
     byte[] descriptorData = global::System.Convert.FromBase64String(
         string.Concat(
-          "CgxDb21tb24ucHJvdG8aEEJhc2VTdHJ1Y3QucHJvdG8iEQoPQ1NVcGxvYWRQ", 
-          "aWN0dXJlIhEKD1NDVXBsb2FkUGljdHVyZSITChFDU0Rvd25sb2FkUGljdHVy", 
-          "ZSITChFTQ0Rvd25sb2FkUGljdHVyZSIJCgdDU0hlYXJ0IgkKB1NDSGVhcnQi", 
-          "CAoGQ1NLaWNrIggKBlNDS2ljayJECgtDU1JlY29ubmVjdBIOCgZ1c2VySWQY", 
-          "ASACKAkSEAoIcGFzc3dvcmQYAiACKAkSEwoLZGV2aWNlVG9rZW4YAyABKAki", 
-          "LgoLU0NSZWNvbm5lY3QSEQoJc2Vzc2lvbklkGAEgAigFEgwKBGd1aWQYAiAB", 
-          "KAUiUwoLQ1NQcmVDaGFyZ2USEgoKY2FyZG51bWJlchgBIAIoCRIOCgZhbW91", 
-          "bnQYAiACKAUSDwoHcGF5bW9kZRgDIAIoBRIPCgdvZmZpY2FsGAQgAigFIh0K", 
-          "C1NDUHJlQ2hhcmdlEg4KBnFyY29kZRgBIAIoCSJxCgpTQ1RvQ2hhcmdlEgwK", 
-          "BG5hbWUYASACKAkSEgoKY2FyZG51bWJlchgCIAIoCRINCgVyaWdodBgDIAIo", 
-          "CRIQCghyZWNoYXJnZRgEIAIoBRIPCgdiYWxhbmNlGAUgAigFEg8KB2ludGVn", 
-          "YWwYBiACKAUiQQoIQ1NQcmVCdXkSEgoKY2FyZG51bWJlchgBIAIoCRIPCgdn", 
-          "b29kc2lkGAIgAigFEhAKCGdvb2RzbnVtGAMgAigFIhoKCFNDUHJlQnV5Eg4K", 
-          "BnFyY29kZRgBIAIoCSKEAQoHU0NUb0J1eRIMCgRuYW1lGAEgAigJEhIKCmNh", 
-          "cmRudW1iZXIYAiACKAkSDQoFcmlnaHQYAyACKAkSEQoJdXNlZG1vbmV5GAQg", 
-          "AigFEhMKC3VzZWRpbnRlZ2FsGAUgAigFEg8KB2JhbGFuY2UYBiACKAUSDwoH", 
-          "aW50ZWdhbBgHIAIoBSIoCglTQ01lc3NhZ2USCwoDY21kGAEgAigFEg4KBnBh", 
-          "cmFtcxgCIAMoCSIoCglDU0NvbW1hbmQSCwoDY21kGAEgAigFEg4KBnBhcmFt", 
-          "cxgCIAMoCSJMCgtDU0dvb2RzRmluZBIZCgRwYWdlGAEgAigLMgsuU3RydWN0", 
-          "UGFnZRIQCghjYXRlZ29yeRgCIAEoBRIQCghrZXl3b3JkcxgEIAEoCSIqCgtT", 
-          "Q0dvb2RzRmluZBIbCgVnb29kcxgBIAMoCzIMLlN0cnVjdEdvb2RzQi8KHWNv", 
-        "bS5za3lzb2Z0LmNvcmUuYXV0by5tZXNzYWdlQg5Db21tb25Qcm90b2NvbA=="));
+          "CgxDb21tb24ucHJvdG8aEEJhc2VTdHJ1Y3QucHJvdG8iLQoPQ1NVcGxvYWRQ", 
+          "aWN0dXJlEgwKBG5hbWUYASACKAkSDAoEZGF0YRgCIAIoCSIsCg9TQ1VwbG9h", 
+          "ZFBpY3R1cmUSDAoEbmFtZRgBIAIoCRILCgN1cmwYAiACKAkiCQoHQ1NIZWFy", 
+          "dCIJCgdTQ0hlYXJ0IggKBkNTS2ljayIICgZTQ0tpY2siRAoLQ1NSZWNvbm5l", 
+          "Y3QSDgoGdXNlcklkGAEgAigJEhAKCHBhc3N3b3JkGAIgAigJEhMKC2Rldmlj", 
+          "ZVRva2VuGAMgASgJIi4KC1NDUmVjb25uZWN0EhEKCXNlc3Npb25JZBgBIAIo", 
+          "BRIMCgRndWlkGAIgASgFIlMKC0NTUHJlQ2hhcmdlEhIKCmNhcmRudW1iZXIY", 
+          "ASACKAkSDgoGYW1vdW50GAIgAigFEg8KB3BheW1vZGUYAyACKAUSDwoHb2Zm", 
+          "aWNhbBgEIAIoBSIdCgtTQ1ByZUNoYXJnZRIOCgZxcmNvZGUYASACKAkicQoK", 
+          "U0NUb0NoYXJnZRIMCgRuYW1lGAEgAigJEhIKCmNhcmRudW1iZXIYAiACKAkS", 
+          "DQoFcmlnaHQYAyACKAkSEAoIcmVjaGFyZ2UYBCACKAUSDwoHYmFsYW5jZRgF", 
+          "IAIoBRIPCgdpbnRlZ2FsGAYgAigFIkEKCENTUHJlQnV5EhIKCmNhcmRudW1i", 
+          "ZXIYASACKAkSDwoHZ29vZHNpZBgCIAIoBRIQCghnb29kc251bRgDIAIoBSIa", 
+          "CghTQ1ByZUJ1eRIOCgZxcmNvZGUYASACKAkihAEKB1NDVG9CdXkSDAoEbmFt", 
+          "ZRgBIAIoCRISCgpjYXJkbnVtYmVyGAIgAigJEg0KBXJpZ2h0GAMgAigJEhEK", 
+          "CXVzZWRtb25leRgEIAIoBRITCgt1c2VkaW50ZWdhbBgFIAIoBRIPCgdiYWxh", 
+          "bmNlGAYgAigFEg8KB2ludGVnYWwYByACKAUiKAoJU0NNZXNzYWdlEgsKA2Nt", 
+          "ZBgBIAIoBRIOCgZwYXJhbXMYAiADKAkiKAoJQ1NDb21tYW5kEgsKA2NtZBgB", 
+          "IAIoBRIOCgZwYXJhbXMYAiADKAkiTAoLQ1NHb29kc0ZpbmQSGQoEcGFnZRgB", 
+          "IAIoCzILLlN0cnVjdFBhZ2USEAoIY2F0ZWdvcnkYAiABKAUSEAoIa2V5d29y", 
+          "ZHMYBCABKAkiKgoLU0NHb29kc0ZpbmQSGwoFZ29vZHMYASADKAsyDC5TdHJ1", 
+          "Y3RHb29kc0IvCh1jb20uc2t5c29mdC5jb3JlLmF1dG8ubWVzc2FnZUIOQ29t", 
+        "bW9uUHJvdG9jb2w="));
     pbd::FileDescriptor.InternalDescriptorAssigner assigner = delegate(pbd::FileDescriptor root) {
       descriptor = root;
       internal__static_CSUploadPicture__Descriptor = Descriptor.MessageTypes[0];
       internal__static_CSUploadPicture__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSUploadPicture, global::CSUploadPicture.Builder>(internal__static_CSUploadPicture__Descriptor,
-              new string[] { });
+              new string[] { "Name", "Data", });
       internal__static_SCUploadPicture__Descriptor = Descriptor.MessageTypes[1];
       internal__static_SCUploadPicture__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::SCUploadPicture, global::SCUploadPicture.Builder>(internal__static_SCUploadPicture__Descriptor,
-              new string[] { });
-      internal__static_CSDownloadPicture__Descriptor = Descriptor.MessageTypes[2];
-      internal__static_CSDownloadPicture__FieldAccessorTable = 
-          new pb::FieldAccess.FieldAccessorTable<global::CSDownloadPicture, global::CSDownloadPicture.Builder>(internal__static_CSDownloadPicture__Descriptor,
-              new string[] { });
-      internal__static_SCDownloadPicture__Descriptor = Descriptor.MessageTypes[3];
-      internal__static_SCDownloadPicture__FieldAccessorTable = 
-          new pb::FieldAccess.FieldAccessorTable<global::SCDownloadPicture, global::SCDownloadPicture.Builder>(internal__static_SCDownloadPicture__Descriptor,
-              new string[] { });
-      internal__static_CSHeart__Descriptor = Descriptor.MessageTypes[4];
+              new string[] { "Name", "Url", });
+      internal__static_CSHeart__Descriptor = Descriptor.MessageTypes[2];
       internal__static_CSHeart__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSHeart, global::CSHeart.Builder>(internal__static_CSHeart__Descriptor,
               new string[] { });
-      internal__static_SCHeart__Descriptor = Descriptor.MessageTypes[5];
+      internal__static_SCHeart__Descriptor = Descriptor.MessageTypes[3];
       internal__static_SCHeart__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::SCHeart, global::SCHeart.Builder>(internal__static_SCHeart__Descriptor,
               new string[] { });
-      internal__static_CSKick__Descriptor = Descriptor.MessageTypes[6];
+      internal__static_CSKick__Descriptor = Descriptor.MessageTypes[4];
       internal__static_CSKick__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSKick, global::CSKick.Builder>(internal__static_CSKick__Descriptor,
               new string[] { });
-      internal__static_SCKick__Descriptor = Descriptor.MessageTypes[7];
+      internal__static_SCKick__Descriptor = Descriptor.MessageTypes[5];
       internal__static_SCKick__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::SCKick, global::SCKick.Builder>(internal__static_SCKick__Descriptor,
               new string[] { });
-      internal__static_CSReconnect__Descriptor = Descriptor.MessageTypes[8];
+      internal__static_CSReconnect__Descriptor = Descriptor.MessageTypes[6];
       internal__static_CSReconnect__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSReconnect, global::CSReconnect.Builder>(internal__static_CSReconnect__Descriptor,
               new string[] { "UserId", "Password", "DeviceToken", });
-      internal__static_SCReconnect__Descriptor = Descriptor.MessageTypes[9];
+      internal__static_SCReconnect__Descriptor = Descriptor.MessageTypes[7];
       internal__static_SCReconnect__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::SCReconnect, global::SCReconnect.Builder>(internal__static_SCReconnect__Descriptor,
               new string[] { "SessionId", "Guid", });
-      internal__static_CSPreCharge__Descriptor = Descriptor.MessageTypes[10];
+      internal__static_CSPreCharge__Descriptor = Descriptor.MessageTypes[8];
       internal__static_CSPreCharge__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSPreCharge, global::CSPreCharge.Builder>(internal__static_CSPreCharge__Descriptor,
               new string[] { "Cardnumber", "Amount", "Paymode", "Offical", });
-      internal__static_SCPreCharge__Descriptor = Descriptor.MessageTypes[11];
+      internal__static_SCPreCharge__Descriptor = Descriptor.MessageTypes[9];
       internal__static_SCPreCharge__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::SCPreCharge, global::SCPreCharge.Builder>(internal__static_SCPreCharge__Descriptor,
               new string[] { "Qrcode", });
-      internal__static_SCToCharge__Descriptor = Descriptor.MessageTypes[12];
+      internal__static_SCToCharge__Descriptor = Descriptor.MessageTypes[10];
       internal__static_SCToCharge__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::SCToCharge, global::SCToCharge.Builder>(internal__static_SCToCharge__Descriptor,
               new string[] { "Name", "Cardnumber", "Right", "Recharge", "Balance", "Integal", });
-      internal__static_CSPreBuy__Descriptor = Descriptor.MessageTypes[13];
+      internal__static_CSPreBuy__Descriptor = Descriptor.MessageTypes[11];
       internal__static_CSPreBuy__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSPreBuy, global::CSPreBuy.Builder>(internal__static_CSPreBuy__Descriptor,
               new string[] { "Cardnumber", "Goodsid", "Goodsnum", });
-      internal__static_SCPreBuy__Descriptor = Descriptor.MessageTypes[14];
+      internal__static_SCPreBuy__Descriptor = Descriptor.MessageTypes[12];
       internal__static_SCPreBuy__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::SCPreBuy, global::SCPreBuy.Builder>(internal__static_SCPreBuy__Descriptor,
               new string[] { "Qrcode", });
-      internal__static_SCToBuy__Descriptor = Descriptor.MessageTypes[15];
+      internal__static_SCToBuy__Descriptor = Descriptor.MessageTypes[13];
       internal__static_SCToBuy__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::SCToBuy, global::SCToBuy.Builder>(internal__static_SCToBuy__Descriptor,
               new string[] { "Name", "Cardnumber", "Right", "Usedmoney", "Usedintegal", "Balance", "Integal", });
-      internal__static_SCMessage__Descriptor = Descriptor.MessageTypes[16];
+      internal__static_SCMessage__Descriptor = Descriptor.MessageTypes[14];
       internal__static_SCMessage__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::SCMessage, global::SCMessage.Builder>(internal__static_SCMessage__Descriptor,
               new string[] { "Cmd", "Params", });
-      internal__static_CSCommand__Descriptor = Descriptor.MessageTypes[17];
+      internal__static_CSCommand__Descriptor = Descriptor.MessageTypes[15];
       internal__static_CSCommand__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSCommand, global::CSCommand.Builder>(internal__static_CSCommand__Descriptor,
               new string[] { "Cmd", "Params", });
-      internal__static_CSGoodsFind__Descriptor = Descriptor.MessageTypes[18];
+      internal__static_CSGoodsFind__Descriptor = Descriptor.MessageTypes[16];
       internal__static_CSGoodsFind__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSGoodsFind, global::CSGoodsFind.Builder>(internal__static_CSGoodsFind__Descriptor,
               new string[] { "Page", "Category", "Keywords", });
-      internal__static_SCGoodsFind__Descriptor = Descriptor.MessageTypes[19];
+      internal__static_SCGoodsFind__Descriptor = Descriptor.MessageTypes[17];
       internal__static_SCGoodsFind__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::SCGoodsFind, global::SCGoodsFind.Builder>(internal__static_SCGoodsFind__Descriptor,
               new string[] { "Goods", });
@@ -183,8 +172,8 @@ public static partial class Common {
 public sealed partial class CSUploadPicture : pb::GeneratedMessage<CSUploadPicture, CSUploadPicture.Builder> {
   private CSUploadPicture() { }
   private static readonly CSUploadPicture defaultInstance = new CSUploadPicture().MakeReadOnly();
-  private static readonly string[] _cSUploadPictureFieldNames = new string[] {  };
-  private static readonly uint[] _cSUploadPictureFieldTags = new uint[] {  };
+  private static readonly string[] _cSUploadPictureFieldNames = new string[] { "data", "name" };
+  private static readonly uint[] _cSUploadPictureFieldTags = new uint[] { 18, 10 };
   public static CSUploadPicture DefaultInstance {
     get { return defaultInstance; }
   }
@@ -205,8 +194,30 @@ public sealed partial class CSUploadPicture : pb::GeneratedMessage<CSUploadPictu
     get { return global::Common.internal__static_CSUploadPicture__FieldAccessorTable; }
   }
   
+  public const int NameFieldNumber = 1;
+  private bool hasName;
+  private string name_ = "";
+  public bool HasName {
+    get { return hasName; }
+  }
+  public string Name {
+    get { return name_; }
+  }
+  
+  public const int DataFieldNumber = 2;
+  private bool hasData;
+  private string data_ = "";
+  public bool HasData {
+    get { return hasData; }
+  }
+  public string Data {
+    get { return data_; }
+  }
+  
   public override bool IsInitialized {
     get {
+      if (!hasName) return false;
+      if (!hasData) return false;
       return true;
     }
   }
@@ -214,6 +225,12 @@ public sealed partial class CSUploadPicture : pb::GeneratedMessage<CSUploadPictu
   public override void WriteTo(pb::ICodedOutputStream output) {
     CalcSerializedSize();
     string[] field_names = _cSUploadPictureFieldNames;
+    if (hasName) {
+      output.WriteString(1, field_names[1], Name);
+    }
+    if (hasData) {
+      output.WriteString(2, field_names[0], Data);
+    }
     UnknownFields.WriteTo(output);
   }
   
@@ -231,6 +248,12 @@ public sealed partial class CSUploadPicture : pb::GeneratedMessage<CSUploadPictu
     if (size != -1) return size;
     
     size = 0;
+    if (hasName) {
+      size += pb::CodedOutputStream.ComputeStringSize(1, Name);
+    }
+    if (hasData) {
+      size += pb::CodedOutputStream.ComputeStringSize(2, Data);
+    }
     size += UnknownFields.SerializedSize;
     memoizedSerializedSize = size;
     return size;
@@ -353,6 +376,12 @@ public sealed partial class CSUploadPicture : pb::GeneratedMessage<CSUploadPictu
     public override Builder MergeFrom(CSUploadPicture other) {
       if (other == global::CSUploadPicture.DefaultInstance) return this;
       PrepareBuilder();
+      if (other.HasName) {
+        Name = other.Name;
+      }
+      if (other.HasData) {
+        Data = other.Data;
+      }
       this.MergeUnknownFields(other.UnknownFields);
       return this;
     }
@@ -396,6 +425,14 @@ public sealed partial class CSUploadPicture : pb::GeneratedMessage<CSUploadPictu
             ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
             break;
           }
+          case 10: {
+            result.hasName = input.ReadString(ref result.name_);
+            break;
+          }
+          case 18: {
+            result.hasData = input.ReadString(ref result.data_);
+            break;
+          }
         }
       }
       
@@ -405,6 +442,48 @@ public sealed partial class CSUploadPicture : pb::GeneratedMessage<CSUploadPictu
       return this;
     }
     
+    
+    public bool HasName {
+      get { return result.hasName; }
+    }
+    public string Name {
+      get { return result.Name; }
+      set { SetName(value); }
+    }
+    public Builder SetName(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasName = true;
+      result.name_ = value;
+      return this;
+    }
+    public Builder ClearName() {
+      PrepareBuilder();
+      result.hasName = false;
+      result.name_ = "";
+      return this;
+    }
+    
+    public bool HasData {
+      get { return result.hasData; }
+    }
+    public string Data {
+      get { return result.Data; }
+      set { SetData(value); }
+    }
+    public Builder SetData(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasData = true;
+      result.data_ = value;
+      return this;
+    }
+    public Builder ClearData() {
+      PrepareBuilder();
+      result.hasData = false;
+      result.data_ = "";
+      return this;
+    }
   }
   static CSUploadPicture() {
     object.ReferenceEquals(global::Common.Descriptor, null);
@@ -415,8 +494,8 @@ public sealed partial class CSUploadPicture : pb::GeneratedMessage<CSUploadPictu
 public sealed partial class SCUploadPicture : pb::GeneratedMessage<SCUploadPicture, SCUploadPicture.Builder> {
   private SCUploadPicture() { }
   private static readonly SCUploadPicture defaultInstance = new SCUploadPicture().MakeReadOnly();
-  private static readonly string[] _sCUploadPictureFieldNames = new string[] {  };
-  private static readonly uint[] _sCUploadPictureFieldTags = new uint[] {  };
+  private static readonly string[] _sCUploadPictureFieldNames = new string[] { "name", "url" };
+  private static readonly uint[] _sCUploadPictureFieldTags = new uint[] { 10, 18 };
   public static SCUploadPicture DefaultInstance {
     get { return defaultInstance; }
   }
@@ -437,8 +516,30 @@ public sealed partial class SCUploadPicture : pb::GeneratedMessage<SCUploadPictu
     get { return global::Common.internal__static_SCUploadPicture__FieldAccessorTable; }
   }
   
+  public const int NameFieldNumber = 1;
+  private bool hasName;
+  private string name_ = "";
+  public bool HasName {
+    get { return hasName; }
+  }
+  public string Name {
+    get { return name_; }
+  }
+  
+  public const int UrlFieldNumber = 2;
+  private bool hasUrl;
+  private string url_ = "";
+  public bool HasUrl {
+    get { return hasUrl; }
+  }
+  public string Url {
+    get { return url_; }
+  }
+  
   public override bool IsInitialized {
     get {
+      if (!hasName) return false;
+      if (!hasUrl) return false;
       return true;
     }
   }
@@ -446,6 +547,12 @@ public sealed partial class SCUploadPicture : pb::GeneratedMessage<SCUploadPictu
   public override void WriteTo(pb::ICodedOutputStream output) {
     CalcSerializedSize();
     string[] field_names = _sCUploadPictureFieldNames;
+    if (hasName) {
+      output.WriteString(1, field_names[0], Name);
+    }
+    if (hasUrl) {
+      output.WriteString(2, field_names[1], Url);
+    }
     UnknownFields.WriteTo(output);
   }
   
@@ -463,6 +570,12 @@ public sealed partial class SCUploadPicture : pb::GeneratedMessage<SCUploadPictu
     if (size != -1) return size;
     
     size = 0;
+    if (hasName) {
+      size += pb::CodedOutputStream.ComputeStringSize(1, Name);
+    }
+    if (hasUrl) {
+      size += pb::CodedOutputStream.ComputeStringSize(2, Url);
+    }
     size += UnknownFields.SerializedSize;
     memoizedSerializedSize = size;
     return size;
@@ -585,6 +698,12 @@ public sealed partial class SCUploadPicture : pb::GeneratedMessage<SCUploadPictu
     public override Builder MergeFrom(SCUploadPicture other) {
       if (other == global::SCUploadPicture.DefaultInstance) return this;
       PrepareBuilder();
+      if (other.HasName) {
+        Name = other.Name;
+      }
+      if (other.HasUrl) {
+        Url = other.Url;
+      }
       this.MergeUnknownFields(other.UnknownFields);
       return this;
     }
@@ -628,6 +747,14 @@ public sealed partial class SCUploadPicture : pb::GeneratedMessage<SCUploadPictu
             ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
             break;
           }
+          case 10: {
+            result.hasName = input.ReadString(ref result.name_);
+            break;
+          }
+          case 18: {
+            result.hasUrl = input.ReadString(ref result.url_);
+            break;
+          }
         }
       }
       
@@ -637,472 +764,50 @@ public sealed partial class SCUploadPicture : pb::GeneratedMessage<SCUploadPictu
       return this;
     }
     
+    
+    public bool HasName {
+      get { return result.hasName; }
+    }
+    public string Name {
+      get { return result.Name; }
+      set { SetName(value); }
+    }
+    public Builder SetName(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasName = true;
+      result.name_ = value;
+      return this;
+    }
+    public Builder ClearName() {
+      PrepareBuilder();
+      result.hasName = false;
+      result.name_ = "";
+      return this;
+    }
+    
+    public bool HasUrl {
+      get { return result.hasUrl; }
+    }
+    public string Url {
+      get { return result.Url; }
+      set { SetUrl(value); }
+    }
+    public Builder SetUrl(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasUrl = true;
+      result.url_ = value;
+      return this;
+    }
+    public Builder ClearUrl() {
+      PrepareBuilder();
+      result.hasUrl = false;
+      result.url_ = "";
+      return this;
+    }
   }
   static SCUploadPicture() {
-    object.ReferenceEquals(global::Common.Descriptor, null);
-  }
-}
-
-[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-public sealed partial class CSDownloadPicture : pb::GeneratedMessage<CSDownloadPicture, CSDownloadPicture.Builder> {
-  private CSDownloadPicture() { }
-  private static readonly CSDownloadPicture defaultInstance = new CSDownloadPicture().MakeReadOnly();
-  private static readonly string[] _cSDownloadPictureFieldNames = new string[] {  };
-  private static readonly uint[] _cSDownloadPictureFieldTags = new uint[] {  };
-  public static CSDownloadPicture DefaultInstance {
-    get { return defaultInstance; }
-  }
-  
-  public override CSDownloadPicture DefaultInstanceForType {
-    get { return DefaultInstance; }
-  }
-  
-  protected override CSDownloadPicture ThisMessage {
-    get { return this; }
-  }
-  
-  public static pbd::MessageDescriptor Descriptor {
-    get { return global::Common.internal__static_CSDownloadPicture__Descriptor; }
-  }
-  
-  protected override pb::FieldAccess.FieldAccessorTable<CSDownloadPicture, CSDownloadPicture.Builder> InternalFieldAccessors {
-    get { return global::Common.internal__static_CSDownloadPicture__FieldAccessorTable; }
-  }
-  
-  public override bool IsInitialized {
-    get {
-      return true;
-    }
-  }
-  
-  public override void WriteTo(pb::ICodedOutputStream output) {
-    CalcSerializedSize();
-    string[] field_names = _cSDownloadPictureFieldNames;
-    UnknownFields.WriteTo(output);
-  }
-  
-  private int memoizedSerializedSize = -1;
-  public override int SerializedSize {
-    get {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-      return CalcSerializedSize();
-    }
-  }
-  
-  private int CalcSerializedSize() {
-    int size = memoizedSerializedSize;
-    if (size != -1) return size;
-    
-    size = 0;
-    size += UnknownFields.SerializedSize;
-    memoizedSerializedSize = size;
-    return size;
-  }
-  public static CSDownloadPicture ParseFrom(pb::ByteString data) {
-    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
-  }
-  public static CSDownloadPicture ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
-  }
-  public static CSDownloadPicture ParseFrom(byte[] data) {
-    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
-  }
-  public static CSDownloadPicture ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
-  }
-  public static CSDownloadPicture ParseFrom(global::System.IO.Stream input) {
-    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
-  }
-  public static CSDownloadPicture ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
-  }
-  public static CSDownloadPicture ParseDelimitedFrom(global::System.IO.Stream input) {
-    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
-  }
-  public static CSDownloadPicture ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
-    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
-  }
-  public static CSDownloadPicture ParseFrom(pb::ICodedInputStream input) {
-    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
-  }
-  public static CSDownloadPicture ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
-  }
-  private CSDownloadPicture MakeReadOnly() {
-    return this;
-  }
-  
-  public static Builder CreateBuilder() { return new Builder(); }
-  public override Builder ToBuilder() { return CreateBuilder(this); }
-  public override Builder CreateBuilderForType() { return new Builder(); }
-  public static Builder CreateBuilder(CSDownloadPicture prototype) {
-    return new Builder(prototype);
-  }
-  
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-  public sealed partial class Builder : pb::GeneratedBuilder<CSDownloadPicture, Builder> {
-    protected override Builder ThisBuilder {
-      get { return this; }
-    }
-    public Builder() {
-      result = DefaultInstance;
-      resultIsReadOnly = true;
-    }
-    internal Builder(CSDownloadPicture cloneFrom) {
-      result = cloneFrom;
-      resultIsReadOnly = true;
-    }
-    
-    private bool resultIsReadOnly;
-    private CSDownloadPicture result;
-    
-    private CSDownloadPicture PrepareBuilder() {
-      if (resultIsReadOnly) {
-        CSDownloadPicture original = result;
-        result = new CSDownloadPicture();
-        resultIsReadOnly = false;
-        MergeFrom(original);
-      }
-      return result;
-    }
-    
-    public override bool IsInitialized {
-      get { return result.IsInitialized; }
-    }
-    
-    protected override CSDownloadPicture MessageBeingBuilt {
-      get { return PrepareBuilder(); }
-    }
-    
-    public override Builder Clear() {
-      result = DefaultInstance;
-      resultIsReadOnly = true;
-      return this;
-    }
-    
-    public override Builder Clone() {
-      if (resultIsReadOnly) {
-        return new Builder(result);
-      } else {
-        return new Builder().MergeFrom(result);
-      }
-    }
-    
-    public override pbd::MessageDescriptor DescriptorForType {
-      get { return global::CSDownloadPicture.Descriptor; }
-    }
-    
-    public override CSDownloadPicture DefaultInstanceForType {
-      get { return global::CSDownloadPicture.DefaultInstance; }
-    }
-    
-    public override CSDownloadPicture BuildPartial() {
-      if (resultIsReadOnly) {
-        return result;
-      }
-      resultIsReadOnly = true;
-      return result.MakeReadOnly();
-    }
-    
-    public override Builder MergeFrom(pb::IMessage other) {
-      if (other is CSDownloadPicture) {
-        return MergeFrom((CSDownloadPicture) other);
-      } else {
-        base.MergeFrom(other);
-        return this;
-      }
-    }
-    
-    public override Builder MergeFrom(CSDownloadPicture other) {
-      if (other == global::CSDownloadPicture.DefaultInstance) return this;
-      PrepareBuilder();
-      this.MergeUnknownFields(other.UnknownFields);
-      return this;
-    }
-    
-    public override Builder MergeFrom(pb::ICodedInputStream input) {
-      return MergeFrom(input, pb::ExtensionRegistry.Empty);
-    }
-    
-    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
-      PrepareBuilder();
-      pb::UnknownFieldSet.Builder unknownFields = null;
-      uint tag;
-      string field_name;
-      while (input.ReadTag(out tag, out field_name)) {
-        if(tag == 0 && field_name != null) {
-          int field_ordinal = global::System.Array.BinarySearch(_cSDownloadPictureFieldNames, field_name, global::System.StringComparer.Ordinal);
-          if(field_ordinal >= 0)
-            tag = _cSDownloadPictureFieldTags[field_ordinal];
-          else {
-            if (unknownFields == null) {
-              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
-            }
-            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
-            continue;
-          }
-        }
-        switch (tag) {
-          case 0: {
-            throw pb::InvalidProtocolBufferException.InvalidTag();
-          }
-          default: {
-            if (pb::WireFormat.IsEndGroupTag(tag)) {
-              if (unknownFields != null) {
-                this.UnknownFields = unknownFields.Build();
-              }
-              return this;
-            }
-            if (unknownFields == null) {
-              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
-            }
-            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
-            break;
-          }
-        }
-      }
-      
-      if (unknownFields != null) {
-        this.UnknownFields = unknownFields.Build();
-      }
-      return this;
-    }
-    
-  }
-  static CSDownloadPicture() {
-    object.ReferenceEquals(global::Common.Descriptor, null);
-  }
-}
-
-[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-public sealed partial class SCDownloadPicture : pb::GeneratedMessage<SCDownloadPicture, SCDownloadPicture.Builder> {
-  private SCDownloadPicture() { }
-  private static readonly SCDownloadPicture defaultInstance = new SCDownloadPicture().MakeReadOnly();
-  private static readonly string[] _sCDownloadPictureFieldNames = new string[] {  };
-  private static readonly uint[] _sCDownloadPictureFieldTags = new uint[] {  };
-  public static SCDownloadPicture DefaultInstance {
-    get { return defaultInstance; }
-  }
-  
-  public override SCDownloadPicture DefaultInstanceForType {
-    get { return DefaultInstance; }
-  }
-  
-  protected override SCDownloadPicture ThisMessage {
-    get { return this; }
-  }
-  
-  public static pbd::MessageDescriptor Descriptor {
-    get { return global::Common.internal__static_SCDownloadPicture__Descriptor; }
-  }
-  
-  protected override pb::FieldAccess.FieldAccessorTable<SCDownloadPicture, SCDownloadPicture.Builder> InternalFieldAccessors {
-    get { return global::Common.internal__static_SCDownloadPicture__FieldAccessorTable; }
-  }
-  
-  public override bool IsInitialized {
-    get {
-      return true;
-    }
-  }
-  
-  public override void WriteTo(pb::ICodedOutputStream output) {
-    CalcSerializedSize();
-    string[] field_names = _sCDownloadPictureFieldNames;
-    UnknownFields.WriteTo(output);
-  }
-  
-  private int memoizedSerializedSize = -1;
-  public override int SerializedSize {
-    get {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-      return CalcSerializedSize();
-    }
-  }
-  
-  private int CalcSerializedSize() {
-    int size = memoizedSerializedSize;
-    if (size != -1) return size;
-    
-    size = 0;
-    size += UnknownFields.SerializedSize;
-    memoizedSerializedSize = size;
-    return size;
-  }
-  public static SCDownloadPicture ParseFrom(pb::ByteString data) {
-    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
-  }
-  public static SCDownloadPicture ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
-  }
-  public static SCDownloadPicture ParseFrom(byte[] data) {
-    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
-  }
-  public static SCDownloadPicture ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
-  }
-  public static SCDownloadPicture ParseFrom(global::System.IO.Stream input) {
-    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
-  }
-  public static SCDownloadPicture ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
-  }
-  public static SCDownloadPicture ParseDelimitedFrom(global::System.IO.Stream input) {
-    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
-  }
-  public static SCDownloadPicture ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
-    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
-  }
-  public static SCDownloadPicture ParseFrom(pb::ICodedInputStream input) {
-    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
-  }
-  public static SCDownloadPicture ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
-  }
-  private SCDownloadPicture MakeReadOnly() {
-    return this;
-  }
-  
-  public static Builder CreateBuilder() { return new Builder(); }
-  public override Builder ToBuilder() { return CreateBuilder(this); }
-  public override Builder CreateBuilderForType() { return new Builder(); }
-  public static Builder CreateBuilder(SCDownloadPicture prototype) {
-    return new Builder(prototype);
-  }
-  
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-  public sealed partial class Builder : pb::GeneratedBuilder<SCDownloadPicture, Builder> {
-    protected override Builder ThisBuilder {
-      get { return this; }
-    }
-    public Builder() {
-      result = DefaultInstance;
-      resultIsReadOnly = true;
-    }
-    internal Builder(SCDownloadPicture cloneFrom) {
-      result = cloneFrom;
-      resultIsReadOnly = true;
-    }
-    
-    private bool resultIsReadOnly;
-    private SCDownloadPicture result;
-    
-    private SCDownloadPicture PrepareBuilder() {
-      if (resultIsReadOnly) {
-        SCDownloadPicture original = result;
-        result = new SCDownloadPicture();
-        resultIsReadOnly = false;
-        MergeFrom(original);
-      }
-      return result;
-    }
-    
-    public override bool IsInitialized {
-      get { return result.IsInitialized; }
-    }
-    
-    protected override SCDownloadPicture MessageBeingBuilt {
-      get { return PrepareBuilder(); }
-    }
-    
-    public override Builder Clear() {
-      result = DefaultInstance;
-      resultIsReadOnly = true;
-      return this;
-    }
-    
-    public override Builder Clone() {
-      if (resultIsReadOnly) {
-        return new Builder(result);
-      } else {
-        return new Builder().MergeFrom(result);
-      }
-    }
-    
-    public override pbd::MessageDescriptor DescriptorForType {
-      get { return global::SCDownloadPicture.Descriptor; }
-    }
-    
-    public override SCDownloadPicture DefaultInstanceForType {
-      get { return global::SCDownloadPicture.DefaultInstance; }
-    }
-    
-    public override SCDownloadPicture BuildPartial() {
-      if (resultIsReadOnly) {
-        return result;
-      }
-      resultIsReadOnly = true;
-      return result.MakeReadOnly();
-    }
-    
-    public override Builder MergeFrom(pb::IMessage other) {
-      if (other is SCDownloadPicture) {
-        return MergeFrom((SCDownloadPicture) other);
-      } else {
-        base.MergeFrom(other);
-        return this;
-      }
-    }
-    
-    public override Builder MergeFrom(SCDownloadPicture other) {
-      if (other == global::SCDownloadPicture.DefaultInstance) return this;
-      PrepareBuilder();
-      this.MergeUnknownFields(other.UnknownFields);
-      return this;
-    }
-    
-    public override Builder MergeFrom(pb::ICodedInputStream input) {
-      return MergeFrom(input, pb::ExtensionRegistry.Empty);
-    }
-    
-    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
-      PrepareBuilder();
-      pb::UnknownFieldSet.Builder unknownFields = null;
-      uint tag;
-      string field_name;
-      while (input.ReadTag(out tag, out field_name)) {
-        if(tag == 0 && field_name != null) {
-          int field_ordinal = global::System.Array.BinarySearch(_sCDownloadPictureFieldNames, field_name, global::System.StringComparer.Ordinal);
-          if(field_ordinal >= 0)
-            tag = _sCDownloadPictureFieldTags[field_ordinal];
-          else {
-            if (unknownFields == null) {
-              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
-            }
-            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
-            continue;
-          }
-        }
-        switch (tag) {
-          case 0: {
-            throw pb::InvalidProtocolBufferException.InvalidTag();
-          }
-          default: {
-            if (pb::WireFormat.IsEndGroupTag(tag)) {
-              if (unknownFields != null) {
-                this.UnknownFields = unknownFields.Build();
-              }
-              return this;
-            }
-            if (unknownFields == null) {
-              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
-            }
-            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
-            break;
-          }
-        }
-      }
-      
-      if (unknownFields != null) {
-        this.UnknownFields = unknownFields.Build();
-      }
-      return this;
-    }
-    
-  }
-  static SCDownloadPicture() {
     object.ReferenceEquals(global::Common.Descriptor, null);
   }
 }

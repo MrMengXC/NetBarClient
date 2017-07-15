@@ -178,10 +178,10 @@ namespace NetBarMS.Views.NetUserManage
                 return;
             }
             NetMessageManage.RemoveResultBlock(MemberListResult);
-            //System.Console.WriteLine("MemberListBlock:" + result.pack);
+           // System.Console.WriteLine("MemberListBlock:" + result.pack);
             if (result.pack.Content.MessageType == 1)
             {           
-                this.Invoke(new UIHandleBlock(delegate () {
+                this.Invoke(new RefreshUIHandle(delegate () {
                     this.members = result.pack.Content.ScMemberList.MembersList;
                    RefreshGridControl();
                 }));
@@ -226,8 +226,6 @@ namespace NetBarMS.Views.NetUserManage
         }
         #endregion
 
-  
-
         #region 会员删除以及回调
         //删除
         private void simpleButton2_Click(object sender, EventArgs e)
@@ -248,7 +246,7 @@ namespace NetBarMS.Views.NetUserManage
             {
                 NetMessageManage.RemoveResultBlock(DeleteMemberResult);
                 System.Console.WriteLine("DeleteMemberResult:" + result.pack);
-                this.Invoke(new UIHandleBlock(delegate ()
+                this.Invoke(new RefreshUIHandle(delegate ()
                 {
                     GetMemberList();
                 }));
@@ -258,7 +256,6 @@ namespace NetBarMS.Views.NetUserManage
         }
         #endregion
       
-
         #region 多条件查询会员
         //按照会员状态查询
         private void statusComboBoxEdit_SelectedIndexChanged(object sender, EventArgs e)
@@ -321,7 +318,7 @@ namespace NetBarMS.Views.NetUserManage
                 //锁定0 激活1 在线2 离线3
                 NetMessageManage.RemoveResultBlock(SearchMemberResult);
                 //System.Console.WriteLine("SearchMemberResult:" + result.pack);
-                this.Invoke(new UIHandleBlock(delegate ()
+                this.Invoke(new RefreshUIHandle(delegate ()
                 {
                     this.members = result.pack.Content.ScMemberFind.MembersList;
 
@@ -367,6 +364,7 @@ namespace NetBarMS.Views.NetUserManage
             //查看用户身份信息
             if(param[0].Equals(TitleList.UserMsg.ToString()))
             {
+              //  System.Console.WriteLine("member.Memberid:"+ member.Memberid);
                 UserIdDetailView view = new UserIdDetailView(member.Memberid);
                 ToolsManage.ShowForm(view, false);
             }
@@ -382,12 +380,6 @@ namespace NetBarMS.Views.NetUserManage
                 MemberNetRecordView view = new MemberNetRecordView(member.Memberid);
                 ToolsManage.ShowForm(view, false);
             }
-            System.Console.WriteLine("button.Tag:"+ e.Button.Tag);
-          
-
-
-
-
         }
         #endregion
 

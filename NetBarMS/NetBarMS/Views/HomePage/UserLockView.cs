@@ -47,7 +47,7 @@ namespace NetBarMS.Views.HomePage
             System.Console.WriteLine("ManagerCommandOperationResult:" + result.pack);
             if (result.pack.Content.MessageType == 1)
             {
-                this.Invoke(new UIHandleBlock(delegate {
+                this.Invoke(new RefreshUIHandle(delegate {
                     MessageBox.Show("锁定用户" + card + "成功");
                     this.CloseFormClick();
                 }));

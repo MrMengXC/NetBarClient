@@ -119,6 +119,7 @@
     <Compile Include="Codes\Tools\Manage\EnumManage.cs" />
     <Compile Include="Codes\Tools\Manage\HomePageMessageManage.cs" />
     <Compile Include="Codes\Tools\Manage\ManagerManage.cs" />
+    <Compile Include="Codes\Tools\NetOperation\CommonNetOperation.cs" />
     <Compile Include="Codes\Tools\NetOperation\EvaluateNetOperation.cs" />
     <Compile Include="Codes\Tools\NetOperation\OtherMainNetOperation.cs" />
     <Compile Include="Codes\Tools\NetOperation\RecordNetOperation.cs" />
@@ -188,6 +189,12 @@
     </Compile>
     <Compile Include="Views\CustomView\PageView.Designer.cs">
       <DependentUpon>PageView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CustomView\ProductPicture.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\CustomView\ProductPicture.Designer.cs">
+      <DependentUpon>ProductPicture.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\HomePage\HomePageView.cs">
       <SubType>UserControl</SubType>
@@ -666,6 +673,9 @@
     <EmbeddedResource Include="Views\CustomView\PageView.resx">
       <DependentUpon>PageView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\CustomView\ProductPicture.resx">
+      <DependentUpon>ProductPicture.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\HomePage\HomePageView.resx">
       <DependentUpon>HomePageView.cs</DependentUpon>
     </EmbeddedResource>
@@ -927,6 +937,7 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Plugins\Google.ProtocolBuffers.dll" />
+    <None Include="Resources\test.png" />
     <None Include="Resources\use.png" />
     <None Include="Resources\yz.png" />
     <None Include="Resources\lock.png" />

@@ -197,6 +197,7 @@ namespace NetBarMS.Codes.Tools.NetOperation
             MessageContent.Builder content = new MessageContent.Builder();
             content.SetMessageType(1);
             content.SetCsMemberCardInfo(info);
+
             MessagePack.Builder pack = new MessagePack.Builder();
             pack.SetCmd(Cmd.CMD_MEMBER_CARD_INFO);
             pack.SetContent(content);

@@ -61,7 +61,7 @@ namespace NetBarMS.Views.SystemManage
 
             if (result.pack.Content.MessageType == 1 && result.pack.Content.ScSysInfo.Parent.Equals(SystemManageNetOperation.lvParent))
             {
-                this.Invoke(new UIHandleBlock(delegate 
+                this.Invoke(new RefreshUIHandle(delegate 
                 {
                     //更新系统管理数据
                     SysManage.UpdateMemberTypeData(result.pack.Content.ScSysInfo.ChildList);
@@ -178,7 +178,7 @@ namespace NetBarMS.Views.SystemManage
 
             if (result.pack.Content.MessageType == 1)
             {
-                this.Invoke(new UIHandleBlock(delegate
+                this.Invoke(new RefreshUIHandle(delegate
                 {
                     this.GetMemberLvList();
                     MessageBox.Show("删除成功");

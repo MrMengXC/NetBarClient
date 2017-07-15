@@ -76,7 +76,7 @@ namespace NetBarMS.Views.ProductManage
             {
                 NetMessageManage.RemoveResultBlock(GetStoreListResult);
                 System.Console.WriteLine("GetStoreListResult:" + result.pack);
-                this.Invoke(new UIHandleBlock(delegate
+                this.Invoke(new RefreshUIHandle(delegate
                 {
                     products = result.pack.Content.ScGoodsStock.GoodsList;
                     RefreshGridControl();

@@ -493,4 +493,19 @@ namespace NetBarMS.Codes.Tools
 
     #endregion
 
+
+    #region 电脑设备状态
+    public enum COMPUTERSTATUS
+    {
+        空闲 = 0,
+        在线 = 1,
+        挂机 = 2,
+        异常 = 3,
+    }
+
+
+
+
+    #endregion
+
 }

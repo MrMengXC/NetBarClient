@@ -35,7 +35,7 @@ namespace NetBarMS.Views.HomePage
             this.titleLabel.Text = "锁定用户列表";
             InitUI();
         }
-        //初始化UI
+        #region 初始化UI
         private void InitUI()
         {
             
@@ -43,6 +43,8 @@ namespace NetBarMS.Views.HomePage
             this.gridControl1.DataSource = this.mainDataTable;
             GetLockList();
         }
+        #endregion
+
         #region 获取锁定的会员列表
         //获取锁定的会员列表
         private void GetLockList()
@@ -56,7 +58,8 @@ namespace NetBarMS.Views.HomePage
             };
 
             string name = this.buttonEdit1.Text;
-            MemberNetOperation.SearchConditionMember(GetMemberLockListResult, page.Build(), 1,-1, name);
+           
+            MemberNetOperation.SearchConditionMember(GetMemberLockListResult, page.Build(), (int)MEMBERSTATUS.锁定, -1, name);
 
         }
         //获取锁定列表结果回调
@@ -71,7 +74,7 @@ namespace NetBarMS.Views.HomePage
 
             if(result.pack.Content.MessageType == 1)
             {
-                this.Invoke(new UIHandleBlock(delegate {
+                this.Invoke(new RefreshUIHandle(delegate {
                     this.locks = result.pack.Content.ScMemberFind.MembersList;
                     RefreshGridControl();
                 }));
@@ -101,7 +104,7 @@ namespace NetBarMS.Views.HomePage
             row[TitleList.Name.ToString()] = member.Name;
             row[TitleList.Card.ToString()] = member.Cardnumber;
             row[TitleList.Gender.ToString()] = member.Gender;
-            row[TitleList.Type.ToString()] = member.Membertype;
+            row[TitleList.Type.ToString()] = SysManage.GetMemberTypeName(member.Membertype.ToString());
             row[TitleList.LastTime.ToString()] = member.Lasttime;
             row[TitleList.Reason.ToString()] = member.Reason;
 
@@ -132,7 +135,7 @@ namespace NetBarMS.Views.HomePage
             System.Console.WriteLine("ManagerCommandOperationResult:" + result.pack);
             if (result.pack.Content.MessageType == 1)
             {
-                this.Invoke(new UIHandleBlock(delegate {
+                this.Invoke(new RefreshUIHandle(delegate {
                     GetLockList();
                     MessageBox.Show("解锁成功");
                 }));

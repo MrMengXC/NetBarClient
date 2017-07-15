@@ -31,7 +31,7 @@ namespace NetBarMS.Forms
         /// <param name="control">显示的视图</param>
         /// <param name="showInTaskbar">是否显示在任务栏上</param>
         /// <param name="movePanel">拖得Panel</param>
-        private void CommonInit(UserControl control, bool showInTaskbar,Panel movePanel,bool isClosed)
+        private void CommonInit(UserControl control, bool showInTaskbar,Panel movePanel)
         {
             InitializeComponent();
 
@@ -53,10 +53,8 @@ namespace NetBarMS.Forms
             control.Anchor = AnchorStyles.Right | AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Bottom;
             this.BackColor = Color.Wheat;
             this.ShowInTaskbar = showInTaskbar;      //是否在任务栏显示
-            if(isClosed)
-            {
-                this.FormClosed += CustomForm_FormClosed;
-            }
+            this.FormClosed += CustomForm_FormClosed;
+
             this.MinimumSize = this.Size;
         }
         #endregion
@@ -64,7 +62,8 @@ namespace NetBarMS.Forms
         #region 监听窗体关闭
         private void CustomForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            this.DialogResult = DialogResult.OK;
+
+
        
         }
         #endregion
@@ -77,7 +76,7 @@ namespace NetBarMS.Forms
         /// <param name="showInTaskbar"></param>
         /// <param name="close">关闭的回调</param>
 
-        public CustomForm(UserControl control, bool showInTaskbar, CloseFormHandle close,bool isClosed)
+        public CustomForm(UserControl control, bool showInTaskbar, CloseFormHandle close)
         {
             if(control.GetType().IsSubclassOf(typeof(RootUserControlView)))
             {
@@ -86,7 +85,7 @@ namespace NetBarMS.Forms
                 {
                     view.CloseForm += close;
                 }
-                CommonInit(control, showInTaskbar, view.titlePanel,isClosed);
+                CommonInit(control, showInTaskbar, view.titlePanel);
             }
             else if (control.GetType().IsSubclassOf(typeof(RootFormView)))
             {
@@ -95,11 +94,11 @@ namespace NetBarMS.Forms
                 {
                     view.CloseForm += close;
                 }
-                CommonInit(control, showInTaskbar, view.titlePanel, isClosed);
+                CommonInit(control, showInTaskbar, view.titlePanel);
             }
             else
             {
-                CommonInit(control, showInTaskbar, null, isClosed);
+                CommonInit(control, showInTaskbar, null);
             }
         }
         #endregion

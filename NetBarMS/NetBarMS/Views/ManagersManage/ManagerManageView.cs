@@ -60,7 +60,7 @@ namespace NetBarMS.Views.ManagersManage
             System.Console.WriteLine("GetManagerListResult:"+result.pack);
             if(result.pack.Content.MessageType == 1)
             {
-                this.Invoke(new UIHandleBlock(delegate {
+                this.Invoke(new RefreshUIHandle(delegate {
                     SysManage.UpdateManagerData(result.pack.Content.ScRoleList.RolesList);
                     managers = result.pack.Content.ScRoleList.RolesList;
                     RefreshGridControl();
@@ -150,7 +150,7 @@ namespace NetBarMS.Views.ManagersManage
             System.Console.WriteLine("DeleteManagerResult" + result.pack);
             if(delNum == 0)
             {
-                this.Invoke(new UIHandleBlock(delegate
+                this.Invoke(new RefreshUIHandle(delegate
                 {
                     GetManagerList();
                 }));

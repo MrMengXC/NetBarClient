@@ -86,7 +86,7 @@ namespace NetBarMS.Views.SystemManage
             if (result.pack.Cmd == Cmd.CMD_SYS_INFO && result.pack.Content.ScSysInfo.Parent.Equals(SystemManageNetOperation.areaParent))
             {
                 NetMessageManage.RemoveResultBlock(GetAreaListResult);
-                this.Invoke(new UIHandleBlock(delegate
+                this.Invoke(new RefreshUIHandle(delegate
                 {
 
                     System.Console.WriteLine("GetAreaList:" + result.pack);
@@ -374,7 +374,7 @@ namespace NetBarMS.Views.SystemManage
 
             if (result.pack.Content.MessageType == 1)
             {
-                this.Invoke(new UIHandleBlock(delegate
+                this.Invoke(new RefreshUIHandle(delegate
                 {
                     //修改首页
                     this.areaManage.UpateHomePageComputerArea();

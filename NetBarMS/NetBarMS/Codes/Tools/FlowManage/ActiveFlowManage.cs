@@ -8,6 +8,7 @@ using NetBarMS.Views.HomePage;
 using NetBarMS.Views.UserActive;
 using System.Windows.Forms;
 using NetBarMS.Views.NetUserManage;
+using NetBarMS.Codes.Tools.Manage;
 
 namespace NetBarMS.Codes.Tools.FlowManage
 {
@@ -100,7 +101,7 @@ namespace NetBarMS.Codes.Tools.FlowManage
                 Vld = "",
             };
 
-            MemberNetOperation.AddCardInfo(AddCardInfoResult, structcard.Build());
+            CommonOperation.AddCardInfo(AddCardInfoResult, structcard);
 
         }
         //添加身份证信息回调

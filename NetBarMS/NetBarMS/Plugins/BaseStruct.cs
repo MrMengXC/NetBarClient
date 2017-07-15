@@ -137,47 +137,48 @@ public static partial class BaseStruct {
           "ZGF5MRgCIAIoBRIMCgRkYXkyGAMgAigFEgwKBGRheTMYBCACKAUSDAoEZGF5", 
           "NBgFIAIoBRIMCgRkYXk1GAYgAigFEgwKBGRheTYYByACKAUiOAoOU3RydWN0", 
           "RGljdEl0ZW0SCgoCaWQYASACKAUSDAoEY29kZRgCIAIoBRIMCgRpdGVtGAMg", 
-          "AygJIqYBCgtTdHJ1Y3RHb29kcxIPCgdnb29kc0lkGAEgAigFEhEKCWdvb2Rz", 
-          "TmFtZRgCIAIoCRIQCghnb29kc0ltZxgDIAIoCRIQCghjYXRlZ29yeRgEIAIo", 
-          "BRINCgVwcmljZRgFIAIoCRISCgp1c2VJbnRlZ2FsGAYgAigIEgwKBGhpZGUY", 
-          "ByACKAgSDwoHaW50ZWdhbBgIIAIoBRINCgVjb3VudBgJIAIoBSKmAQoKU3Ry", 
-          "dWN0U2FsZRIPCgdvcmRlcmlkGAEgAigFEhAKCHVzZXJuYW1lGAIgAigJEhIK", 
-          "CmNhcmRudW1iZXIYAyACKAkSEAoIYXJlYW5hbWUYBCACKAkSEQoJZ29vZHNu", 
-          "YW1lGAUgAigJEgsKA251bRgGIAIoBRINCgVtb25leRgHIAIoBRIPCgdhZGR0", 
-          "aW1lGAggAigJEg8KB3BheW1vZGUYCSACKAkiUAoNU3RydWN0U2FsZVRvcBIQ", 
-          "CghjYXRlZ29yeRgBIAIoBRIRCglnb29kc25hbWUYAiACKAkSCwoDbnVtGAMg", 
-          "AigFEg0KBW1vbmV5GAQgAigFIk4KC1N0cnVjdFN0b2NrEhEKCWdvb2RzbmFt", 
-          "ZRgBIAIoCRIQCghjYXRlZ29yeRgCIAIoBRINCgVwcmljZRgDIAIoCRILCgNu", 
-          "dW0YBCACKAUiygEKC1N0cnVjdE9yZGVyEg8KB29yZGVyaWQYASACKAUSEAoI", 
-          "dXNlcm5hbWUYAiACKAkSEgoKY2FyZG51bWJlchgDIAIoCRIQCghhcmVhbmFt", 
-          "ZRgEIAIoCRINCgVtb25leRgFIAIoBRIPCgdhZGR0aW1lGAYgAigJEhAKCHBy", 
-          "b2N0aW1lGAcgAigJEhAKCG9wZXJhdG9yGAggAigJEg4KBnN0YXR1cxgJIAIo", 
-          "CRIPCgdwYXltb2RlGAogAigJEg0KBXBheWlkGAsgAigJIlQKEVN0cnVjdE9y", 
-          "ZGVyRGV0YWlsEhEKCWdvb2RzbmFtZRgBIAIoCRIQCghjYXRlZ29yeRgCIAIo", 
-          "BRINCgVwcmljZRgDIAIoCRILCgNudW0YBCACKAUiuQEKDVN0cnVjdENvbW1l", 
-          "bnQSDwoHYWRkdGltZRgBIAIoCRIQCghjdXN0b21lchgCIAIoCRISCgpjYXJk", 
-          "bnVtYmVyGAMgAigJEg0KBWJvbnVzGAQgAigFEg0KBXN0YWZmGAUgASgJEg0K", 
-          "BXBvaW50GAYgASgFEhMKC2Vudmlyb25tZW50GAcgASgFEg8KB3NlcnZpY2UY", 
-          "CCABKAUSDgoGZGV2aWNlGAkgASgFEg4KBmRldGFpbBgKIAEoCSJqCg1TdHJ1", 
-          "Y3RQZXJmb3JtEgwKBG5hbWUYASACKAkSDAoEcm9sZRgCIAIoCRINCgVob3Vy", 
-          "cxgDIAIoBRIOCgZjaGFyZ2UYBCACKAUSDQoFc2FsZXMYBSACKAUSDwoHc2F0", 
-          "aXNmeRgGIAIoBSJdCglTdHJ1Y3RMb2cSEAoIb3BlcmF0b3IYASACKAkSEQoJ", 
-          "b3BlcmF0aW9uGAIgAigJEgoKAmlwGAMgAigJEg8KB2FkZHRpbWUYBCACKAkS", 
-          "DgoGc3RhdHVzGAUgAigJIjMKD1N0cnVjdEFyZWFUb3RhbBIQCghhcmVhbmFt", 
-          "ZRgBIAIoCRIOCgZhbW91bnQYAiACKAUixAEKClN0cnVjdEVhcm4SEAoIZGF0", 
-          "ZXRpbWUYASACKAUSFQoNYWxpcGF5X2NoYXJnZRgCIAIoBRITCgthbGlwYXlf", 
-          "c2FsZRgDIAIoBRIVCg10ZW5wYXlfY2hhcmdlGAQgAigFEhMKC3RlbnBheV9z", 
-          "YWxlGAUgAigFEhMKC2Nhc2hfY2hhcmdlGAYgAigFEhEKCWNhc2hfc2FsZRgH", 
-          "IAIoBRIkCgphcmVhX3RvdGFsGAggAygLMhAuU3RydWN0QXJlYVRvdGFsIkoK", 
-          "ClN0cnVjdENhbGwSDgoGY2FsbGlkGAEgAigFEg4KBmNhbGxlchgCIAIoCRIO", 
-          "CgZkZXZpY2UYAyACKAkSDAoEaW5mbxgEIAIoCSLSAQoLU3RydWN0U2hpZnQS", 
-          "DwoHc2hpZnRpZBgBIAIoBRIUCgxkZWxpdmVyZWRfYnkYAiACKAkSEQoJc3Rh", 
-          "cnR0aW1lGAMgAigJEhAKCHN0b3B0aW1lGAQgAigJEhUKDWNoYXJnZV9hbW91", 
-          "bnQYBSACKAUSEwoLc2FsZV9hbW91bnQYBiACKAUSFQoNcmVmdW5kX2Ftb3Vu", 
-          "dBgHIAIoBRITCgtyZWNlaXZlZF9ieRgIIAIoCRIPCgdpc2NoZWNrGAkgAigF", 
-          "Eg4KBnJlbWFyaxgKIAIoCSooCgRUeXBlEggKBElURU0QARIMCghDVVJSRU5D", 
-          "WRACEggKBFBBQ0sQA0IrCh1jb20uc2t5c29mdC5jb3JlLmF1dG8ubWVzc2Fn", 
-        "ZUIKQmFzZVN0cnVjdA=="));
+          "AygJIs0BCgtTdHJ1Y3RHb29kcxIPCgdnb29kc0lkGAEgAigFEhEKCWdvb2Rz", 
+          "TmFtZRgCIAIoCRIRCglnb29kc0ltZzEYAyACKAkSEQoJZ29vZHNJbWcyGAQg", 
+          "AigJEhEKCWdvb2RzSW1nMxgFIAIoCRIQCghjYXRlZ29yeRgGIAIoBRINCgVw", 
+          "cmljZRgHIAIoCRISCgp1c2VJbnRlZ2FsGAggAigIEgwKBGhpZGUYCSACKAgS", 
+          "DwoHaW50ZWdhbBgKIAIoBRINCgVjb3VudBgLIAIoBSKmAQoKU3RydWN0U2Fs", 
+          "ZRIPCgdvcmRlcmlkGAEgAigFEhAKCHVzZXJuYW1lGAIgAigJEhIKCmNhcmRu", 
+          "dW1iZXIYAyACKAkSEAoIYXJlYW5hbWUYBCACKAkSEQoJZ29vZHNuYW1lGAUg", 
+          "AigJEgsKA251bRgGIAIoBRINCgVtb25leRgHIAIoBRIPCgdhZGR0aW1lGAgg", 
+          "AigJEg8KB3BheW1vZGUYCSACKAkiUAoNU3RydWN0U2FsZVRvcBIQCghjYXRl", 
+          "Z29yeRgBIAIoBRIRCglnb29kc25hbWUYAiACKAkSCwoDbnVtGAMgAigFEg0K", 
+          "BW1vbmV5GAQgAigFIk4KC1N0cnVjdFN0b2NrEhEKCWdvb2RzbmFtZRgBIAIo", 
+          "CRIQCghjYXRlZ29yeRgCIAIoBRINCgVwcmljZRgDIAIoCRILCgNudW0YBCAC", 
+          "KAUiygEKC1N0cnVjdE9yZGVyEg8KB29yZGVyaWQYASACKAUSEAoIdXNlcm5h", 
+          "bWUYAiACKAkSEgoKY2FyZG51bWJlchgDIAIoCRIQCghhcmVhbmFtZRgEIAIo", 
+          "CRINCgVtb25leRgFIAIoBRIPCgdhZGR0aW1lGAYgAigJEhAKCHByb2N0aW1l", 
+          "GAcgAigJEhAKCG9wZXJhdG9yGAggAigJEg4KBnN0YXR1cxgJIAIoCRIPCgdw", 
+          "YXltb2RlGAogAigJEg0KBXBheWlkGAsgAigJIlQKEVN0cnVjdE9yZGVyRGV0", 
+          "YWlsEhEKCWdvb2RzbmFtZRgBIAIoCRIQCghjYXRlZ29yeRgCIAIoBRINCgVw", 
+          "cmljZRgDIAIoCRILCgNudW0YBCACKAUiuQEKDVN0cnVjdENvbW1lbnQSDwoH", 
+          "YWRkdGltZRgBIAIoCRIQCghjdXN0b21lchgCIAIoCRISCgpjYXJkbnVtYmVy", 
+          "GAMgAigJEg0KBWJvbnVzGAQgAigFEg0KBXN0YWZmGAUgASgJEg0KBXBvaW50", 
+          "GAYgASgFEhMKC2Vudmlyb25tZW50GAcgASgFEg8KB3NlcnZpY2UYCCABKAUS", 
+          "DgoGZGV2aWNlGAkgASgFEg4KBmRldGFpbBgKIAEoCSJqCg1TdHJ1Y3RQZXJm", 
+          "b3JtEgwKBG5hbWUYASACKAkSDAoEcm9sZRgCIAIoCRINCgVob3VycxgDIAIo", 
+          "BRIOCgZjaGFyZ2UYBCACKAUSDQoFc2FsZXMYBSACKAUSDwoHc2F0aXNmeRgG", 
+          "IAIoBSJdCglTdHJ1Y3RMb2cSEAoIb3BlcmF0b3IYASACKAkSEQoJb3BlcmF0", 
+          "aW9uGAIgAigJEgoKAmlwGAMgAigJEg8KB2FkZHRpbWUYBCACKAkSDgoGc3Rh", 
+          "dHVzGAUgAigJIjMKD1N0cnVjdEFyZWFUb3RhbBIQCghhcmVhbmFtZRgBIAIo", 
+          "CRIOCgZhbW91bnQYAiACKAUixAEKClN0cnVjdEVhcm4SEAoIZGF0ZXRpbWUY", 
+          "ASACKAUSFQoNYWxpcGF5X2NoYXJnZRgCIAIoBRITCgthbGlwYXlfc2FsZRgD", 
+          "IAIoBRIVCg10ZW5wYXlfY2hhcmdlGAQgAigFEhMKC3RlbnBheV9zYWxlGAUg", 
+          "AigFEhMKC2Nhc2hfY2hhcmdlGAYgAigFEhEKCWNhc2hfc2FsZRgHIAIoBRIk", 
+          "CgphcmVhX3RvdGFsGAggAygLMhAuU3RydWN0QXJlYVRvdGFsIkoKClN0cnVj", 
+          "dENhbGwSDgoGY2FsbGlkGAEgAigFEg4KBmNhbGxlchgCIAIoCRIOCgZkZXZp", 
+          "Y2UYAyACKAkSDAoEaW5mbxgEIAIoCSLSAQoLU3RydWN0U2hpZnQSDwoHc2hp", 
+          "ZnRpZBgBIAIoBRIUCgxkZWxpdmVyZWRfYnkYAiACKAkSEQoJc3RhcnR0aW1l", 
+          "GAMgAigJEhAKCHN0b3B0aW1lGAQgAigJEhUKDWNoYXJnZV9hbW91bnQYBSAC", 
+          "KAUSEwoLc2FsZV9hbW91bnQYBiACKAUSFQoNcmVmdW5kX2Ftb3VudBgHIAIo", 
+          "BRITCgtyZWNlaXZlZF9ieRgIIAIoCRIPCgdpc2NoZWNrGAkgAigFEg4KBnJl", 
+          "bWFyaxgKIAIoCSooCgRUeXBlEggKBElURU0QARIMCghDVVJSRU5DWRACEggK", 
+          "BFBBQ0sQA0IrCh1jb20uc2t5c29mdC5jb3JlLmF1dG8ubWVzc2FnZUIKQmFz", 
+        "ZVN0cnVjdA=="));
     pbd::FileDescriptor.InternalDescriptorAssigner assigner = delegate(pbd::FileDescriptor root) {
       descriptor = root;
       internal__static_StructErrorTip__Descriptor = Descriptor.MessageTypes[0];
@@ -247,7 +248,7 @@ public static partial class BaseStruct {
       internal__static_StructGoods__Descriptor = Descriptor.MessageTypes[16];
       internal__static_StructGoods__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructGoods, global::StructGoods.Builder>(internal__static_StructGoods__Descriptor,
-              new string[] { "GoodsId", "GoodsName", "GoodsImg", "Category", "Price", "UseIntegal", "Hide", "Integal", "Count", });
+              new string[] { "GoodsId", "GoodsName", "GoodsImg1", "GoodsImg2", "GoodsImg3", "Category", "Price", "UseIntegal", "Hide", "Integal", "Count", });
       internal__static_StructSale__Descriptor = Descriptor.MessageTypes[17];
       internal__static_StructSale__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructSale, global::StructSale.Builder>(internal__static_StructSale__Descriptor,
@@ -9755,8 +9756,8 @@ public sealed partial class StructDictItem : pb::GeneratedMessage<StructDictItem
 public sealed partial class StructGoods : pb::GeneratedMessage<StructGoods, StructGoods.Builder> {
   private StructGoods() { }
   private static readonly StructGoods defaultInstance = new StructGoods().MakeReadOnly();
-  private static readonly string[] _structGoodsFieldNames = new string[] { "category", "count", "goodsId", "goodsImg", "goodsName", "hide", "integal", "price", "useIntegal" };
-  private static readonly uint[] _structGoodsFieldTags = new uint[] { 32, 72, 8, 26, 18, 56, 64, 42, 48 };
+  private static readonly string[] _structGoodsFieldNames = new string[] { "category", "count", "goodsId", "goodsImg1", "goodsImg2", "goodsImg3", "goodsName", "hide", "integal", "price", "useIntegal" };
+  private static readonly uint[] _structGoodsFieldTags = new uint[] { 48, 88, 8, 26, 34, 42, 18, 72, 80, 58, 64 };
   public static StructGoods DefaultInstance {
     get { return defaultInstance; }
   }
@@ -9797,17 +9798,37 @@ public sealed partial class StructGoods : pb::GeneratedMessage<StructGoods, Stru
     get { return goodsName_; }
   }
   
-  public const int GoodsImgFieldNumber = 3;
-  private bool hasGoodsImg;
-  private string goodsImg_ = "";
-  public bool HasGoodsImg {
-    get { return hasGoodsImg; }
+  public const int GoodsImg1FieldNumber = 3;
+  private bool hasGoodsImg1;
+  private string goodsImg1_ = "";
+  public bool HasGoodsImg1 {
+    get { return hasGoodsImg1; }
   }
-  public string GoodsImg {
-    get { return goodsImg_; }
+  public string GoodsImg1 {
+    get { return goodsImg1_; }
   }
   
-  public const int CategoryFieldNumber = 4;
+  public const int GoodsImg2FieldNumber = 4;
+  private bool hasGoodsImg2;
+  private string goodsImg2_ = "";
+  public bool HasGoodsImg2 {
+    get { return hasGoodsImg2; }
+  }
+  public string GoodsImg2 {
+    get { return goodsImg2_; }
+  }
+  
+  public const int GoodsImg3FieldNumber = 5;
+  private bool hasGoodsImg3;
+  private string goodsImg3_ = "";
+  public bool HasGoodsImg3 {
+    get { return hasGoodsImg3; }
+  }
+  public string GoodsImg3 {
+    get { return goodsImg3_; }
+  }
+  
+  public const int CategoryFieldNumber = 6;
   private bool hasCategory;
   private int category_;
   public bool HasCategory {
@@ -9817,7 +9838,7 @@ public sealed partial class StructGoods : pb::GeneratedMessage<StructGoods, Stru
     get { return category_; }
   }
   
-  public const int PriceFieldNumber = 5;
+  public const int PriceFieldNumber = 7;
   private bool hasPrice;
   private string price_ = "";
   public bool HasPrice {
@@ -9827,7 +9848,7 @@ public sealed partial class StructGoods : pb::GeneratedMessage<StructGoods, Stru
     get { return price_; }
   }
   
-  public const int UseIntegalFieldNumber = 6;
+  public const int UseIntegalFieldNumber = 8;
   private bool hasUseIntegal;
   private bool useIntegal_;
   public bool HasUseIntegal {
@@ -9837,7 +9858,7 @@ public sealed partial class StructGoods : pb::GeneratedMessage<StructGoods, Stru
     get { return useIntegal_; }
   }
   
-  public const int HideFieldNumber = 7;
+  public const int HideFieldNumber = 9;
   private bool hasHide;
   private bool hide_;
   public bool HasHide {
@@ -9847,7 +9868,7 @@ public sealed partial class StructGoods : pb::GeneratedMessage<StructGoods, Stru
     get { return hide_; }
   }
   
-  public const int IntegalFieldNumber = 8;
+  public const int IntegalFieldNumber = 10;
   private bool hasIntegal;
   private int integal_;
   public bool HasIntegal {
@@ -9857,7 +9878,7 @@ public sealed partial class StructGoods : pb::GeneratedMessage<StructGoods, Stru
     get { return integal_; }
   }
   
-  public const int CountFieldNumber = 9;
+  public const int CountFieldNumber = 11;
   private bool hasCount;
   private int count_;
   public bool HasCount {
@@ -9871,7 +9892,9 @@ public sealed partial class StructGoods : pb::GeneratedMessage<StructGoods, Stru
     get {
       if (!hasGoodsId) return false;
       if (!hasGoodsName) return false;
-      if (!hasGoodsImg) return false;
+      if (!hasGoodsImg1) return false;
+      if (!hasGoodsImg2) return false;
+      if (!hasGoodsImg3) return false;
       if (!hasCategory) return false;
       if (!hasPrice) return false;
       if (!hasUseIntegal) return false;
@@ -9889,28 +9912,34 @@ public sealed partial class StructGoods : pb::GeneratedMessage<StructGoods, Stru
       output.WriteInt32(1, field_names[2], GoodsId);
     }
     if (hasGoodsName) {
-      output.WriteString(2, field_names[4], GoodsName);
+      output.WriteString(2, field_names[6], GoodsName);
     }
-    if (hasGoodsImg) {
-      output.WriteString(3, field_names[3], GoodsImg);
+    if (hasGoodsImg1) {
+      output.WriteString(3, field_names[3], GoodsImg1);
+    }
+    if (hasGoodsImg2) {
+      output.WriteString(4, field_names[4], GoodsImg2);
+    }
+    if (hasGoodsImg3) {
+      output.WriteString(5, field_names[5], GoodsImg3);
     }
     if (hasCategory) {
-      output.WriteInt32(4, field_names[0], Category);
+      output.WriteInt32(6, field_names[0], Category);
     }
     if (hasPrice) {
-      output.WriteString(5, field_names[7], Price);
+      output.WriteString(7, field_names[9], Price);
     }
     if (hasUseIntegal) {
-      output.WriteBool(6, field_names[8], UseIntegal);
+      output.WriteBool(8, field_names[10], UseIntegal);
     }
     if (hasHide) {
-      output.WriteBool(7, field_names[5], Hide);
+      output.WriteBool(9, field_names[7], Hide);
     }
     if (hasIntegal) {
-      output.WriteInt32(8, field_names[6], Integal);
+      output.WriteInt32(10, field_names[8], Integal);
     }
     if (hasCount) {
-      output.WriteInt32(9, field_names[1], Count);
+      output.WriteInt32(11, field_names[1], Count);
     }
     UnknownFields.WriteTo(output);
   }
@@ -9935,26 +9964,32 @@ public sealed partial class StructGoods : pb::GeneratedMessage<StructGoods, Stru
     if (hasGoodsName) {
       size += pb::CodedOutputStream.ComputeStringSize(2, GoodsName);
     }
-    if (hasGoodsImg) {
-      size += pb::CodedOutputStream.ComputeStringSize(3, GoodsImg);
+    if (hasGoodsImg1) {
+      size += pb::CodedOutputStream.ComputeStringSize(3, GoodsImg1);
+    }
+    if (hasGoodsImg2) {
+      size += pb::CodedOutputStream.ComputeStringSize(4, GoodsImg2);
+    }
+    if (hasGoodsImg3) {
+      size += pb::CodedOutputStream.ComputeStringSize(5, GoodsImg3);
     }
     if (hasCategory) {
-      size += pb::CodedOutputStream.ComputeInt32Size(4, Category);
+      size += pb::CodedOutputStream.ComputeInt32Size(6, Category);
     }
     if (hasPrice) {
-      size += pb::CodedOutputStream.ComputeStringSize(5, Price);
+      size += pb::CodedOutputStream.ComputeStringSize(7, Price);
     }
     if (hasUseIntegal) {
-      size += pb::CodedOutputStream.ComputeBoolSize(6, UseIntegal);
+      size += pb::CodedOutputStream.ComputeBoolSize(8, UseIntegal);
     }
     if (hasHide) {
-      size += pb::CodedOutputStream.ComputeBoolSize(7, Hide);
+      size += pb::CodedOutputStream.ComputeBoolSize(9, Hide);
     }
     if (hasIntegal) {
-      size += pb::CodedOutputStream.ComputeInt32Size(8, Integal);
+      size += pb::CodedOutputStream.ComputeInt32Size(10, Integal);
     }
     if (hasCount) {
-      size += pb::CodedOutputStream.ComputeInt32Size(9, Count);
+      size += pb::CodedOutputStream.ComputeInt32Size(11, Count);
     }
     size += UnknownFields.SerializedSize;
     memoizedSerializedSize = size;
@@ -10084,8 +10119,14 @@ public sealed partial class StructGoods : pb::GeneratedMessage<StructGoods, Stru
       if (other.HasGoodsName) {
         GoodsName = other.GoodsName;
       }
-      if (other.HasGoodsImg) {
-        GoodsImg = other.GoodsImg;
+      if (other.HasGoodsImg1) {
+        GoodsImg1 = other.GoodsImg1;
+      }
+      if (other.HasGoodsImg2) {
+        GoodsImg2 = other.GoodsImg2;
+      }
+      if (other.HasGoodsImg3) {
+        GoodsImg3 = other.GoodsImg3;
       }
       if (other.HasCategory) {
         Category = other.Category;
@@ -10157,30 +10198,38 @@ public sealed partial class StructGoods : pb::GeneratedMessage<StructGoods, Stru
             break;
           }
           case 26: {
-            result.hasGoodsImg = input.ReadString(ref result.goodsImg_);
+            result.hasGoodsImg1 = input.ReadString(ref result.goodsImg1_);
             break;
           }
-          case 32: {
-            result.hasCategory = input.ReadInt32(ref result.category_);
+          case 34: {
+            result.hasGoodsImg2 = input.ReadString(ref result.goodsImg2_);
             break;
           }
           case 42: {
-            result.hasPrice = input.ReadString(ref result.price_);
+            result.hasGoodsImg3 = input.ReadString(ref result.goodsImg3_);
             break;
           }
           case 48: {
-            result.hasUseIntegal = input.ReadBool(ref result.useIntegal_);
+            result.hasCategory = input.ReadInt32(ref result.category_);
             break;
           }
-          case 56: {
-            result.hasHide = input.ReadBool(ref result.hide_);
+          case 58: {
+            result.hasPrice = input.ReadString(ref result.price_);
             break;
           }
           case 64: {
-            result.hasIntegal = input.ReadInt32(ref result.integal_);
+            result.hasUseIntegal = input.ReadBool(ref result.useIntegal_);
             break;
           }
           case 72: {
+            result.hasHide = input.ReadBool(ref result.hide_);
+            break;
+          }
+          case 80: {
+            result.hasIntegal = input.ReadInt32(ref result.integal_);
+            break;
+          }
+          case 88: {
             result.hasCount = input.ReadInt32(ref result.count_);
             break;
           }
@@ -10235,24 +10284,66 @@ public sealed partial class StructGoods : pb::GeneratedMessage<StructGoods, Stru
       return this;
     }
     
-    public bool HasGoodsImg {
-      get { return result.hasGoodsImg; }
+    public bool HasGoodsImg1 {
+      get { return result.hasGoodsImg1; }
     }
-    public string GoodsImg {
-      get { return result.GoodsImg; }
-      set { SetGoodsImg(value); }
+    public string GoodsImg1 {
+      get { return result.GoodsImg1; }
+      set { SetGoodsImg1(value); }
     }
-    public Builder SetGoodsImg(string value) {
+    public Builder SetGoodsImg1(string value) {
       pb::ThrowHelper.ThrowIfNull(value, "value");
       PrepareBuilder();
-      result.hasGoodsImg = true;
-      result.goodsImg_ = value;
+      result.hasGoodsImg1 = true;
+      result.goodsImg1_ = value;
       return this;
     }
-    public Builder ClearGoodsImg() {
+    public Builder ClearGoodsImg1() {
       PrepareBuilder();
-      result.hasGoodsImg = false;
-      result.goodsImg_ = "";
+      result.hasGoodsImg1 = false;
+      result.goodsImg1_ = "";
+      return this;
+    }
+    
+    public bool HasGoodsImg2 {
+      get { return result.hasGoodsImg2; }
+    }
+    public string GoodsImg2 {
+      get { return result.GoodsImg2; }
+      set { SetGoodsImg2(value); }
+    }
+    public Builder SetGoodsImg2(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasGoodsImg2 = true;
+      result.goodsImg2_ = value;
+      return this;
+    }
+    public Builder ClearGoodsImg2() {
+      PrepareBuilder();
+      result.hasGoodsImg2 = false;
+      result.goodsImg2_ = "";
+      return this;
+    }
+    
+    public bool HasGoodsImg3 {
+      get { return result.hasGoodsImg3; }
+    }
+    public string GoodsImg3 {
+      get { return result.GoodsImg3; }
+      set { SetGoodsImg3(value); }
+    }
+    public Builder SetGoodsImg3(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasGoodsImg3 = true;
+      result.goodsImg3_ = value;
+      return this;
+    }
+    public Builder ClearGoodsImg3() {
+      PrepareBuilder();
+      result.hasGoodsImg3 = false;
+      result.goodsImg3_ = "";
       return this;
     }
     

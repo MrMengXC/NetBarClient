@@ -73,7 +73,7 @@ namespace NetBarMS.Views.SystemSearch
             {
                 NetMessageManage.RemoveResultBlock(GetProdcutIndentDetailResult);
                 System.Console.WriteLine("GetProdcutIndentDetailResult:" + result.pack);
-                this.Invoke(new UIHandleBlock(delegate {
+                this.Invoke(new RefreshUIHandle(delegate {
                     this.details = result.pack.Content.ScOrderDetail.DetailsList;
 
                     RefreshGridControl();

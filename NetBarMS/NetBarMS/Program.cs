@@ -46,7 +46,7 @@ namespace NetBarMS
 
             ManagerLoginView view = new ManagerLoginView();
             //等待点击关闭
-            if (ToolsManage.ShowForm(view, true,null,false) == DialogResult.OK)
+            if (ToolsManage.ShowForm(view, true,null) == DialogResult.OK)
             {
                 MainForm form = new MainForm();
                 //HomePageView homePage = new HomePageView();

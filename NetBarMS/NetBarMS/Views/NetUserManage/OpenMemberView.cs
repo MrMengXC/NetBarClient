@@ -16,6 +16,7 @@ using NetBarMS.Forms;
 using NetBarMS.Views.HomePage;
 using NetBarMS.Codes.Tools.FlowManage;
 using NetBarMS.Codes.Model;
+using NetBarMS.Codes.Tools.Manage;
 #endregion
 
 namespace NetBarMS.Views.NetUserManage
@@ -123,8 +124,8 @@ namespace NetBarMS.Views.NetUserManage
                 HeadUrl = "#dasdasd#",
                 Vld = cardValidityLabel.Text.Split(sp)[1],
             };
-           
-            MemberNetOperation.AddCardInfo(AddCardInfoResult, card.Build());
+
+            CommonOperation.AddCardInfo(AddCardInfoResult, card);
 
         }
         //添加身份证信息回调
@@ -165,7 +166,7 @@ namespace NetBarMS.Views.NetUserManage
             Enum.TryParse<FLOW_ERROR>(result.pack.Content.ErrorTip.Key, out error);
             if (result.pack.Content.MessageType == 1 || error == FLOW_ERROR.NEED_RECHARGE)
             {
-                this.Invoke(new UIHandleBlock(delegate ()
+                this.Invoke(new RefreshUIHandle(delegate ()
                 {
                     //将按钮回复可以点击
                     this.simpleButton1.Enabled = true;

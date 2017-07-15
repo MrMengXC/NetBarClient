@@ -32,7 +32,7 @@ namespace NetBarMS.Views.UserUseCp
         {
             label1.Text += card;
             //判断会员信息。是否是会员。是的话进行
-            MemberNetOperation.MemberInfo(MemberInfoResult, card);
+          //  MemberNetOperation.MemberInfo(MemberInfoResult, card);
         }
         //查询会员信息结果反馈
         private void MemberInfoResult(ResultModel result)
@@ -45,7 +45,7 @@ namespace NetBarMS.Views.UserUseCp
             NetMessageManage.RemoveResultBlock(MemberInfoResult);
             if (result.pack.Content.MessageType == 1)
             {
-                this.Invoke(new UIHandleBlock(delegate ()
+                this.Invoke(new RefreshUIHandle(delegate ()
                 {
                    
 
@@ -68,14 +68,24 @@ namespace NetBarMS.Views.UserUseCp
         //激活
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-             ActiveFlowManage.ActiveFlow().CardCheckIn(this.card);
+            string tem = this.card;
+            if(!this.textEdit1.Text.Equals(""))
+            {
+                tem = this.textEdit1.Text;
+            }
+             ActiveFlowManage.ActiveFlow().CardCheckIn(tem);
         }
         #endregion
         
         #region 充值
         private void simpleButton2_Click(object sender, EventArgs e)
         {
-            UserScanCodeView view = new UserScanCodeView(this.card, 50, PRECHARGE_TYPE.NOT_MEMBER);
+            string tem = this.card;
+            if (!this.textEdit1.Text.Equals(""))
+            {
+                tem = this.textEdit1.Text;
+            }
+            UserScanCodeView view = new UserScanCodeView(tem, 50, PRECHARGE_TYPE.NOT_MEMBER);
             ToolsManage.ShowForm(view, false);
         }
         #endregion
@@ -83,7 +93,12 @@ namespace NetBarMS.Views.UserUseCp
         #region 下机
         private void simpleButton3_Click(object sender, EventArgs e)
         {
-            HomePageNetOperation.CardCheckOut(CardCheckOutResult, this.card);  
+            string tem = this.card;
+            if (!this.textEdit1.Text.Equals(""))
+            {
+                tem = this.textEdit1.Text;
+            }
+            HomePageNetOperation.CardCheckOut(CardCheckOutResult, tem);  
         }
         private void CardCheckOutResult(ResultModel result)
         {
@@ -96,7 +111,7 @@ namespace NetBarMS.Views.UserUseCp
             System.Console.WriteLine("CardCheckOutResult:" + result.pack);
             if(result.pack.Content.MessageType == 1)
             {
-                this.Invoke(new UIHandleBlock (delegate {
+                this.Invoke(new RefreshUIHandle (delegate {
                     this.CloseFormClick();
                     UserCloseCpView view = new UserCloseCpView();
                     ToolsManage.ShowForm(view, false);

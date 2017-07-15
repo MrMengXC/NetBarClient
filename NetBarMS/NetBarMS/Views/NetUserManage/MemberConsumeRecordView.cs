@@ -118,7 +118,7 @@ namespace NetBarMS.Views.NetUserManage
             System.Console.WriteLine("MemberConsumeRecordResult:" + result.pack);
             if (result.pack.Content.MessageType == 1)
             {
-                this.Invoke(new UIHandleBlock(delegate {
+                this.Invoke(new RefreshUIHandle(delegate {
                     this.pageView1.RefreshPageView(result.pack.Content.ScQueryConsum.Pagecount);
                     records = result.pack.Content.ScQueryConsum.ConsumsList;
                     RefreshGridControl();

@@ -62,7 +62,7 @@ namespace NetBarMS
         //呼叫消息通知回调
         private void UpdateCallMsgNumResult(int num)
         {
-            this.Invoke(new UIHandleBlock(delegate {
+            this.Invoke(new RefreshUIHandle(delegate {
                 this.simpleButton7.Text = "呼叫服务\n" + num;
             }));
 
@@ -70,7 +70,7 @@ namespace NetBarMS
         //客户端报错消息通知回调
         private void UpdateExceptionMsgNumResult(int num)
         {
-            this.Invoke(new UIHandleBlock(delegate {
+            this.Invoke(new RefreshUIHandle(delegate {
                 this.simpleButton8.Text = "客户端异常\n" + num;
             }));
 
@@ -78,7 +78,7 @@ namespace NetBarMS
         //订单消息通知回调
         private void UpdateOrderMsgNumResult(int num)
         {
-            this.Invoke(new UIHandleBlock(delegate {
+            this.Invoke(new RefreshUIHandle(delegate {
                 this.simpleButton6.Text = "商品订单\n" + num;
             }));
 

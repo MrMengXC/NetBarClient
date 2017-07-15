@@ -90,7 +90,7 @@ namespace NetBarMS.Views.NetUserManage
             NetMessageManage.RemoveResultBlock(MemberNetRecordResult);
             if (result.pack.Content.MessageType == 1)
             {
-                this.Invoke( new UIHandleBlock(delegate
+                this.Invoke( new RefreshUIHandle(delegate
                 {
                     this.pageView1.RefreshPageView(result.pack.Content.ScQueryEmk.Pagecount);
                     this.records = result.pack.Content.ScQueryEmk.EmksList;
@@ -119,7 +119,7 @@ namespace NetBarMS.Views.NetUserManage
             this.mainDataTable.Rows.Add(row);
             row[TitleList.IdNumber.ToString()] = emb.Cardnumber;
             row[TitleList.Name.ToString()] = emb.Username;
-            row[TitleList.MemberType.ToString()] = emb.Usertype;
+            row[TitleList.MemberType.ToString()] = SysManage.GetMemberTypeName(emb.Usertype);
             row[TitleList.StartTime.ToString()] = emb.Starttime;
             row[TitleList.EndTime.ToString()] = emb.Stoptime;
             row[TitleList.Area.ToString()] = emb.Area;

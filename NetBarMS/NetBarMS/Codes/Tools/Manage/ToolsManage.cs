@@ -23,6 +23,8 @@ using System.IO;
 using DevExpress.XtraScheduler;
 using System.Resources;
 using DevExpress.XtraPrinting;
+using System.Security.Cryptography;
+using System.Web.Security;
 
 namespace NetBarMS.Codes.Tools
 {
@@ -40,7 +42,7 @@ namespace NetBarMS.Codes.Tools
         /// <returns>返回DialogResult</returns>
         public static DialogResult ShowForm(UserControl control, bool showInTaskbar)
         {
-            DialogResult res = ToolsManage.ShowForm(control,showInTaskbar,null,true);
+            DialogResult res = ToolsManage.ShowForm(control,showInTaskbar,null);
             return res;
         }
         /// <summary>
@@ -52,29 +54,18 @@ namespace NetBarMS.Codes.Tools
         /// <returns>返回DialogResult</returns>
         public static DialogResult ShowForm(UserControl control, bool showInTaskbar,CloseFormHandle close)
         {
-            DialogResult res = ToolsManage.ShowForm(control, showInTaskbar, close, true);
-            return res;
-        }
-        /// <summary>
-        /// 显示自定义窗体
-        /// </summary>
-        /// <param name="control">显示的视图</param>
-        /// <param name="showInTaskbar">是否在任务栏上显示图标</param>
-        /// <param name="close">关闭窗口的回调</param>
-        /// <param name="isClosed">是否监听窗口关闭</param>
-
-        /// <returns>返回DialogResult</returns>
-        public static DialogResult ShowForm(UserControl control, bool showInTaskbar, CloseFormHandle close,bool isClosed)
-        {
-            CustomForm newForm = new CustomForm(control, showInTaskbar, close,isClosed);
-            DialogResult res = newForm.ShowDialog();
-            //如过关闭窗口释放资源
-            if (res == DialogResult.Cancel)
+            using (CustomForm newForm = new CustomForm(control, showInTaskbar, close))
             {
-                newForm.Dispose();
+                DialogResult res = newForm.ShowDialog();
+                ////如过关闭窗口释放资源
+                //if (res == DialogResult.Cancel)
+                //{
+                //    newForm.Dispose();
+                //}
+                return res;
             }
-            return res;
         }
+       
         /// <summary>
         /// 显示自定义窗体
         /// </summary>
@@ -82,7 +73,7 @@ namespace NetBarMS.Codes.Tools
         /// <returns>返回窗口</returns>
         public static CustomForm ShowForm(UserControl control)
         {
-            CustomForm newForm = new CustomForm(control, true, null,true);
+            CustomForm newForm = new CustomForm(control, true, null);
             return newForm;
         }
         #endregion
@@ -516,5 +507,45 @@ namespace NetBarMS.Codes.Tools
         }
         #endregion
 
+        #region 字符串MD5加密
+        /// <summary>  
+        /// MD5 加密字符串  
+        /// </summary>  
+        /// <param name="rawPass">源字符串</param>  
+        /// <returns>加密后字符串</returns>  
+        public static string MD5Encoding(string rawPass)
+        {
+            // 创建MD5类的默认实例：MD5CryptoServiceProvider  
+            MD5 md5 = MD5.Create();
+            byte[] bs = Encoding.UTF8.GetBytes(rawPass);
+            byte[] hs = md5.ComputeHash(bs);
+            StringBuilder sb = new StringBuilder();
+            foreach (byte b in hs)
+            {
+                // 以十六进制格式格式化  
+                sb.Append(b.ToString("x2"));
+            }
+            return sb.ToString();
+        }
+        #endregion
+
+        #region Bitmap To String
+        /// <summary>
+        /// BitMap 转 DataString
+        /// </summary>
+        /// <param name="bit">BitMap</param>
+        /// <returns></returns>
+        public static string BitmapToDataSring(Bitmap bit)
+        {
+          
+            MemoryStream ms = new MemoryStream();
+            bit.Save(ms, System.Drawing.Imaging.ImageFormat.Bmp);
+            byte[] bytes = ms.GetBuffer();  //byte[]   bytes=   ms.ToArray(); 这两句都可以，至于区别么，下面有解释
+            ms.Close();
+            string inputString = System.Convert.ToBase64String(bytes);
+            return inputString;
+
+        }
+        #endregion
     }
 }

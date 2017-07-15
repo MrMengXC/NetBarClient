@@ -11,6 +11,9 @@ using NetBarMS.Codes.Tools.NetOperation;
 using NetBarMS.Codes.Tools;
 using DevExpress.XtraEditors.Controls;
 using NetBarMS.Codes.Model;
+using System.IO;
+using NetBarMS.Codes.Tools.Manage;
+using DevExpress.XtraEditors;
 
 namespace NetBarMS.Views.ProductManage
 {
@@ -19,6 +22,8 @@ namespace NetBarMS.Views.ProductManage
 
         private StructGoods product;
         private List<ProductTypeModel> productTypes;
+        private string[] pictures =  new string[3];
+
         public ProductAddView(StructGoods updateProduct)
         {
             InitializeComponent();
@@ -30,7 +35,7 @@ namespace NetBarMS.Views.ProductManage
                 RefreshUI();
             }
         }
-        //初始化UI
+        #region 初始化UI
         private void InitUI()
         {
             //首先要获取产品列表数组
@@ -57,11 +62,16 @@ namespace NetBarMS.Views.ProductManage
                 this.comboBoxEdit1.Text = SysManage.GetProductTypeName(this.product.Category);
             }
 
+            this.productPicture1.NetPath = this.product.GoodsImg1;
+            this.productPicture2.NetPath = this.product.GoodsImg2;
+            this.productPicture3.NetPath = this.product.GoodsImg3;
+
             this.checkedListBoxControl1.Items[0].CheckState = this.product.UseIntegal ? CheckState.Checked : CheckState.Unchecked;
             this.checkedListBoxControl1.Items[2].CheckState = this.product.Hide ? CheckState.Checked : CheckState.Unchecked;
 
 
         }
+        #endregion
         //保存/修改
         private void simpleButton2_Click(object sender, EventArgs e)
         {
@@ -93,7 +103,10 @@ namespace NetBarMS.Views.ProductManage
             newProduct.Count = int.Parse(num);
             newProduct.Price = price;
             newProduct.Integal = int.Parse(integal);
-            newProduct.GoodsImg = "xxxxx";
+            newProduct.GoodsImg1 = this.productPicture1.NetPath;
+            newProduct.GoodsImg2 = this.productPicture2.NetPath;
+            newProduct.GoodsImg3 = this.productPicture3.NetPath;
+
             newProduct.UseIntegal = this.checkedListBoxControl1.Items[0].CheckState == CheckState.Checked;
             newProduct.Hide = this.checkedListBoxControl1.Items[2].CheckState == CheckState.Checked;
             //
@@ -123,7 +136,7 @@ namespace NetBarMS.Views.ProductManage
             {
                 NetMessageManage.RemoveResultBlock(ProductResult);
                 System.Console.WriteLine("ProductResult:" + result.pack);
-                this.Invoke(new UIHandleBlock(delegate
+                this.Invoke(new RefreshUIHandle(delegate
                 {
                     MessageBox.Show("添加成功");
                 }));
@@ -132,16 +145,18 @@ namespace NetBarMS.Views.ProductManage
             {
                 NetMessageManage.RemoveResultBlock(ProductResult);
                 System.Console.WriteLine("ProductResult:" + result.pack);
-                this.Invoke(new UIHandleBlock(delegate
+                this.Invoke(new RefreshUIHandle(delegate
                 {
                     MessageBox.Show("修改成功");
                 }));
             }
         }
 
-        private void ProductAddView_Load(object sender, EventArgs e)
+        private void simpleButton1_Click(object sender, EventArgs e)
         {
 
         }
+
+      
     }
 }

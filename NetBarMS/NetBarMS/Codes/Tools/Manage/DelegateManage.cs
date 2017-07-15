@@ -11,11 +11,12 @@ namespace NetBarMS.Codes.Tools
     public delegate void DataResultBlock(ResultModel result);
 
     //UI回调代理
-    public delegate void UIHandleBlock();
+    public delegate void RefreshUIHandle();
     // 连接结果回调
     public delegate void ConnectResultBlock();
     //关闭窗体回调
     public delegate void CloseFormHandle();
+    //关闭窗体回调
 
     /// <summary>
     /// 页书改变处理

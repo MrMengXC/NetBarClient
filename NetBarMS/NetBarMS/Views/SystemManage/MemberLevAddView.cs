@@ -91,7 +91,7 @@ namespace NetBarMS.Views.SystemManage
 
             if (result.pack.Content.MessageType == 1)
             {
-                this.Invoke(new UIHandleBlock(delegate {
+                this.Invoke(new RefreshUIHandle(delegate {
 
                     MessageBox.Show("添加成功");
                 }));
@@ -109,7 +109,7 @@ namespace NetBarMS.Views.SystemManage
             System.Console.WriteLine("UpdateMemberLvResult:" + result.pack);
             if (result.pack.Content.MessageType == 1)
             {
-                this.Invoke(new UIHandleBlock(delegate {
+                this.Invoke(new RefreshUIHandle(delegate {
                     MessageBox.Show("修改成功");
                 }));
 

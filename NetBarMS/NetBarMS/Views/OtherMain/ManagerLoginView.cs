@@ -69,7 +69,7 @@ namespace NetBarMS.Views.OtherMain
             this.num--;
             if(this.num == 0)
             {
-                this.Invoke(new UIHandleBlock(delegate {
+                this.Invoke(new RefreshUIHandle(delegate {
                     SysManage.RemoveRequestSysInfo(RequestSysInfoResult);
                     this.loginButton.Enabled = true;
                     //设置用户名列表
@@ -114,7 +114,7 @@ namespace NetBarMS.Views.OtherMain
             System.Console.WriteLine("ManagerLoginBlock:" + result.pack);
             if (result.pack.Content.MessageType == 1)
             {               
-                this.Invoke(new UIHandleBlock(delegate () {
+                this.Invoke(new RefreshUIHandle(delegate () {
                     this.FindForm().DialogResult = DialogResult.OK;
                     this.FindForm().Close();
                 }));

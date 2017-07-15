@@ -27,7 +27,7 @@ namespace NetBarMS.Views
 
         public virtual void RootUserControlView_Disposed(object sender, EventArgs e)
         {
-
+            //System.Console.WriteLine("RootUserControlView_Disposed");
         }
         #region 按钮关闭窗体
         protected virtual void CloseFormClick(object sender, EventArgs e)

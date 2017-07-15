@@ -82,7 +82,7 @@ namespace NetBarMS.Views.EvaluateManage
             System.Console.WriteLine("GetNetBarEvaluateListResult:" + result.pack);
             if (result.pack.Content.MessageType == 1)
             {
-                this.Invoke(new UIHandleBlock(delegate {
+                this.Invoke(new RefreshUIHandle(delegate {
 
                     this.comments = result.pack.Content.ScStaffComment.CommentsList;
                     RefreshGridControl();

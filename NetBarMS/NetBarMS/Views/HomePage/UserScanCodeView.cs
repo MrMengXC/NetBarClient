@@ -13,6 +13,7 @@ using System.IO;
 using NetBarMS.Codes.Tools.FlowManage;
 using NetBarMS.Views.Message;
 using System.Net;
+using NetBarMS.Codes.Tools.Manage;
 
 namespace NetBarMS.Views.HomePage
 {
@@ -133,7 +134,7 @@ namespace NetBarMS.Views.HomePage
                 Vld = "",
             };
 
-            MemberNetOperation.AddCardInfo(AddCardInfoResult, structcard.Build());
+            CommonOperation.AddCardInfo(AddCardInfoResult, structcard);
 
         }
         //添加身份证信息回调
@@ -163,39 +164,35 @@ namespace NetBarMS.Views.HomePage
                 return;
             }
             NetMessageManage.RemoveResultBlock(GetRechargeCodeResult);
+            System.Console.WriteLine("GetRechargeCodeResult:" + result.pack);
+
             if (result.pack.Content.MessageType == 1)
             {
-                this.Invoke(new UIHandleBlock(delegate {
+                this.Invoke(new RefreshUIHandle(delegate {
+                    string wxCode = result.pack.Content.ScPreCharge.Qrcode;
                     try
                     {
-                        System.Console.WriteLine("GetRechargeCodeResult:" + result.pack);
-                        string wxCode = result.pack.Content.ScPreCharge.Qrcode;
-                        string url = IdTools.IMG_HEADER + wxCode;
-                        //TODO:服务器没开引起崩溃
-                        Stream stream = WebRequest.Create(url).GetResponse().GetResponseStream();
-                        this.pictureEdit1.Image = Image.FromStream(stream);
-
-                        //TODO:暂时显示充值成功
-                        //充值成功，显示充值成功的界面9
-                        CloseFormHandle handle = new CloseFormHandle(delegate {
-                            if (this.flowstatus == FLOW_STATUS.ACTIVE_STATUS)
-                            {
-                                ActiveFlowManage.ActiveFlow().MemberPaySuccess();
-                            }
-                            this.CloseFormClick();
-                        });
-                        UserPayResultView view = new UserPayResultView();
-                        ToolsManage.ShowForm(view, false, handle);
-
+                        using (Stream stream = WebRequest.Create(wxCode).GetResponse().GetResponseStream())
+                        {
+                            this.pictureEdit1.Image = Image.FromStream(stream);
+                            //TODO:暂时显示充值成功
+                            //充值成功，显示充值成功的界面9
+                            CloseFormHandle handle = new CloseFormHandle(delegate {
+                                if (this.flowstatus == FLOW_STATUS.ACTIVE_STATUS)
+                                {
+                                    ActiveFlowManage.ActiveFlow().MemberPaySuccess();
+                                }
+                                this.CloseFormClick();
+                            });
+                            UserPayResultView view = new UserPayResultView();
+                            ToolsManage.ShowForm(view, false, handle);
+                        }
                     }
-                    catch (System.ArgumentException exc)
+                    catch(Exception ex)
                     {
-                        System.Console.WriteLine("exc:"+exc.ToString());
-
+                        System.Console.WriteLine("图片链接出错");
                     }
-            
-
-
+                    
                 }));
             }
 
@@ -211,7 +208,7 @@ namespace NetBarMS.Views.HomePage
             NetMessageManage.RemoveResultBlock(GetRechargeResult);
             if (result.pack.Content.MessageType == 1)
             {
-                this.Invoke(new UIHandleBlock(delegate 
+                this.Invoke(new RefreshUIHandle(delegate 
                 {
                     //充值成功，显示充值成功的界面9
                     CloseFormHandle handle = new CloseFormHandle(delegate {                      

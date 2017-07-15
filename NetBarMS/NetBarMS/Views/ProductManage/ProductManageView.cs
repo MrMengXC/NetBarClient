@@ -129,7 +129,7 @@ namespace NetBarMS.Views.ProductManage
             {
                 NetMessageManage.RemoveResultBlock(GetProductListResult);
                 System.Console.WriteLine("GetProductListResult:"+result.pack);
-                this.Invoke(new UIHandleBlock(delegate
+                this.Invoke(new RefreshUIHandle(delegate
                 {
                     products = result.pack.Content.ScGoodsFind.GoodsList;
                     RefreshGridControl();
@@ -260,7 +260,7 @@ namespace NetBarMS.Views.ProductManage
             {
                 NetMessageManage.RemoveResultBlock(DeleteProductResult);
                 System.Console.WriteLine("DeleteProductResult:" + result.pack);
-                this.Invoke(new UIHandleBlock(delegate
+                this.Invoke(new RefreshUIHandle(delegate
                 {
                     MessageBox.Show("删除成功");
                     this.mainDataTable.Clear();

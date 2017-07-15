@@ -84,7 +84,7 @@ namespace NetBarMS.Views.SystemSearch
             NetMessageManage.RemoveResultBlock(GetAttendanceSearchResult);
             if(result.pack.Content.MessageType == 1)
             {
-                this.Invoke(new UIHandleBlock(delegate {
+                this.Invoke(new RefreshUIHandle(delegate {
 
                     ratedatas = result.pack.Content.ScQueryOccup.OccupsList;
 

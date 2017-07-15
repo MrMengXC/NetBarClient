@@ -31,7 +31,6 @@
             DevExpress.Utils.SimpleContextButton simpleContextButton1 = new DevExpress.Utils.SimpleContextButton();
             DevExpress.Utils.SimpleContextButton simpleContextButton2 = new DevExpress.Utils.SimpleContextButton();
             DevExpress.Utils.SimpleContextButton simpleContextButton3 = new DevExpress.Utils.SimpleContextButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.label2 = new System.Windows.Forms.Label();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
@@ -39,8 +38,10 @@
             this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
             this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
             this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit5 = new DevExpress.XtraEditors.TextEdit();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.productPicture2 = new NetBarMS.Views.CustomView.ProductPicture();
+            this.productPicture3 = new NetBarMS.Views.CustomView.ProductPicture();
+            this.productPicture1 = new NetBarMS.Views.CustomView.ProductPicture();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -51,8 +52,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.label10 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.label11 = new System.Windows.Forms.Label();
             this.checkedListBoxControl1 = new DevExpress.XtraEditors.CheckedListBoxControl();
             this.titlePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
@@ -60,7 +59,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).BeginInit();
             this.panel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -68,21 +66,12 @@
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
-            this.tableLayoutPanel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checkedListBoxControl1)).BeginInit();
             this.SuspendLayout();
             // 
             // titlePanel
             // 
             this.titlePanel.Size = new System.Drawing.Size(360, 50);
-            // 
-            // simpleButton1
-            // 
-            this.simpleButton1.Location = new System.Drawing.Point(261, 3);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(60, 22);
-            this.simpleButton1.TabIndex = 13;
-            this.simpleButton1.Text = "上传";
             // 
             // simpleButton2
             // 
@@ -148,16 +137,11 @@
             this.textEdit4.Size = new System.Drawing.Size(178, 20);
             this.textEdit4.TabIndex = 7;
             // 
-            // textEdit5
-            // 
-            this.textEdit5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textEdit5.Location = new System.Drawing.Point(74, 3);
-            this.textEdit5.Name = "textEdit5";
-            this.textEdit5.Size = new System.Drawing.Size(181, 20);
-            this.textEdit5.TabIndex = 7;
-            // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.productPicture2);
+            this.panel2.Controls.Add(this.productPicture3);
+            this.panel2.Controls.Add(this.productPicture1);
             this.panel2.Controls.Add(this.flowLayoutPanel1);
             this.panel2.Controls.Add(this.checkedListBoxControl1);
             this.panel2.Controls.Add(this.simpleButton2);
@@ -167,6 +151,30 @@
             this.panel2.Size = new System.Drawing.Size(340, 389);
             this.panel2.TabIndex = 2;
             // 
+            // productPicture2
+            // 
+            this.productPicture2.Location = new System.Drawing.Point(116, 176);
+            this.productPicture2.Name = "productPicture2";
+            this.productPicture2.NetPath = "";
+            this.productPicture2.Size = new System.Drawing.Size(94, 93);
+            this.productPicture2.TabIndex = 121;
+            // 
+            // productPicture3
+            // 
+            this.productPicture3.Location = new System.Drawing.Point(226, 176);
+            this.productPicture3.Name = "productPicture3";
+            this.productPicture3.NetPath = "";
+            this.productPicture3.Size = new System.Drawing.Size(94, 93);
+            this.productPicture3.TabIndex = 121;
+            // 
+            // productPicture1
+            // 
+            this.productPicture1.Location = new System.Drawing.Point(5, 176);
+            this.productPicture1.Name = "productPicture1";
+            this.productPicture1.NetPath = "";
+            this.productPicture1.Size = new System.Drawing.Size(94, 93);
+            this.productPicture1.TabIndex = 121;
+            // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoSize = true;
@@ -175,11 +183,10 @@
             this.flowLayoutPanel1.Controls.Add(this.tableLayoutPanel3);
             this.flowLayoutPanel1.Controls.Add(this.tableLayoutPanel4);
             this.flowLayoutPanel1.Controls.Add(this.tableLayoutPanel5);
-            this.flowLayoutPanel1.Controls.Add(this.tableLayoutPanel6);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(330, 208);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(330, 174);
             this.flowLayoutPanel1.TabIndex = 120;
             // 
             // tableLayoutPanel1
@@ -292,32 +299,6 @@
             this.label10.Text = "兑换积分：";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // tableLayoutPanel6
-            // 
-            this.tableLayoutPanel6.ColumnCount = 3;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel6.Controls.Add(this.label11, 0, 0);
-            this.tableLayoutPanel6.Controls.Add(this.textEdit5, 1, 0);
-            this.tableLayoutPanel6.Controls.Add(this.simpleButton1, 2, 0);
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 173);
-            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
-            this.tableLayoutPanel6.RowCount = 1;
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(324, 28);
-            this.tableLayoutPanel6.TabIndex = 67;
-            // 
-            // label11
-            // 
-            this.label11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label11.Location = new System.Drawing.Point(3, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(65, 28);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "商品图片：";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // checkedListBoxControl1
             // 
             simpleContextButton1.Id = new System.Guid("7a5f8276-fd1b-4c5d-a151-dd81f8f8d42c");
@@ -348,7 +329,6 @@
             this.Controls.Add(this.panel2);
             this.Name = "ProductAddView";
             this.Size = new System.Drawing.Size(360, 474);
-            this.Load += new System.EventHandler(this.ProductAddView_Load);
             this.Controls.SetChildIndex(this.panel2, 0);
             this.Controls.SetChildIndex(this.titlePanel, 0);
             this.titlePanel.ResumeLayout(false);
@@ -358,7 +338,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
@@ -367,21 +346,18 @@
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
-            this.tableLayoutPanel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.checkedListBoxControl1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private System.Windows.Forms.Label label2;
         private DevExpress.XtraEditors.TextEdit textEdit1;
         private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
         private DevExpress.XtraEditors.TextEdit textEdit3;
         private DevExpress.XtraEditors.TextEdit textEdit4;
-        private DevExpress.XtraEditors.TextEdit textEdit5;
         private System.Windows.Forms.Panel panel2;
         private DevExpress.XtraEditors.TextEdit textEdit2;
         private DevExpress.XtraEditors.CheckedListBoxControl checkedListBoxControl1;
@@ -395,7 +371,8 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
-        private System.Windows.Forms.Label label11;
+        private CustomView.ProductPicture productPicture1;
+        private CustomView.ProductPicture productPicture3;
+        private CustomView.ProductPicture productPicture2;
     }
 }

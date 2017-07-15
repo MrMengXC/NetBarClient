@@ -53,7 +53,7 @@ namespace NetBarMS.Views.HomePage
             System.Console.WriteLine("GetGiveStaffInfoResult:" + result.pack);
             if(result.pack.Content.MessageType == 1)
             {
-                this.Invoke(new UIHandleBlock(delegate {
+                this.Invoke(new RefreshUIHandle(delegate {
                     SCShiftDeliveredBy give = result.pack.Content.ScShiftDeliveredBy;
                     this.changeLabel.Text += give.DeliveredBy;
                     this.payMoneyLabel.Text += give.ChargeAmount;
@@ -109,7 +109,7 @@ namespace NetBarMS.Views.HomePage
             else
             {
                 //获取首页数据
-                this.Invoke(new UIHandleBlock(delegate
+                this.Invoke(new RefreshUIHandle(delegate
                 {
                     MessageBox.Show("交接班失败,请检查提交的信息是否正确！");
                 }));
@@ -121,7 +121,7 @@ namespace NetBarMS.Views.HomePage
         {
             NetBarMS.Codes.Tools.Manage.ManagerManage.Manage().RemoveAccountInfoResultBlock(GetAccountInfoResult);
             //获取首页数据
-            this.Invoke(new UIHandleBlock(delegate
+            this.Invoke(new RefreshUIHandle(delegate
             {
                 MessageBox.Show("交接班成功");
                 this.CloseFormClick();

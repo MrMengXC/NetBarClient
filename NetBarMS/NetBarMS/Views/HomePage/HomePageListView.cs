@@ -157,7 +157,7 @@ namespace NetBarMS.Views.HomePage
         public void GetAccountInfoResult(ResultModel result)
         {
             //获取首页数据
-            HomePageMessageManage.Manage().GetHomePageList(GetHomePageListResult, UpdateHomePageData, UpdateHomePageArea);
+            HomePageMessageManage.Manage().GetHomePageList(GetHomePageListResult, UpdateHomePageData, UpdateHomePageArea, RefreshStatusNum);
         }
         #endregion
 
@@ -168,7 +168,7 @@ namespace NetBarMS.Views.HomePage
             if (success)
             {
                 HomePageMessageManage.Manage().GetComputers(out this.coms);
-                this.Invoke(new UIHandleBlock(delegate ()
+                this.Invoke(new RefreshUIHandle(delegate ()
                 {
                     RefreshGridControl();
                 }));
@@ -177,10 +177,21 @@ namespace NetBarMS.Views.HomePage
         #endregion
 
         #region 更新首页数据
+        private void RefreshStatusNum()
+        {
+
+            this.Invoke(new RefreshUIHandle(delegate {
+                char[] sp = { ':', '：' };
+                this.idleLabel.Text = this.idleLabel.Text.Split(sp)[0] + HomePageMessageManage.IdleNum;
+                this.onlineLabel.Text = this.onlineLabel.Text.Split(sp)[0] + HomePageMessageManage.OnlineNum;
+
+            }));
+
+        }
         public void UpdateHomePageData(int index ,StructRealTime com)
         {
             
-            this.Invoke(new UIHandleBlock(delegate {
+            this.Invoke(new RefreshUIHandle(delegate {
                 this.coms[index] = com;
                 DataRow row = this.mainDataTable.Rows[index];
                 AddNewRow(com, row);
@@ -189,7 +200,7 @@ namespace NetBarMS.Views.HomePage
         }
         public void UpdateHomePageArea(int index, StructRealTime com)
         {
-            this.Invoke(new UIHandleBlock(delegate {
+            this.Invoke(new RefreshUIHandle(delegate {
                 this.coms[index] = com;
                 DataRow row = this.mainDataTable.Rows[index];
                 row[TitleList.Area.ToString()] = SysManage.GetAreaName(com.Area);
@@ -229,8 +240,11 @@ namespace NetBarMS.Views.HomePage
 
             row[TitleList.EpNumber.ToString()] = computer.Computer;
             row[TitleList.Area.ToString()] = SysManage.GetAreaName(computer.Area);
+
+            COMPUTERSTATUS status = COMPUTERSTATUS.在线;
+            Enum.TryParse<COMPUTERSTATUS>(computer.Status, out status);
             //TODO:状态需要判断
-            row[TitleList.State.ToString()] = computer.Status;
+            row[TitleList.State.ToString()] = Enum.GetName(typeof(COMPUTERSTATUS),status);
             row[TitleList.IdCard.ToString()] = computer.Cardnumber;
             row[TitleList.CardType.ToString()] = SysManage.GetMemberTypeName(computer.Usertype);
             row[TitleList.MoneyType.ToString()] = computer.Billing;
@@ -255,7 +269,6 @@ namespace NetBarMS.Views.HomePage
         }
         #endregion
        
-
         #region 按钮列点击事件
         private void ButtonEdit_ButtonClick(object sender, ButtonPressedEventArgs e)
         {
@@ -301,7 +314,7 @@ namespace NetBarMS.Views.HomePage
             System.Console.WriteLine("ManagerCommandOperationResult:"+result.pack);
             if(result.pack.Content.MessageType == 1)
             {
-                this.Invoke(new UIHandleBlock(delegate {
+                this.Invoke(new RefreshUIHandle(delegate {
 
                     //MessageBox.Show("验证成功");
                 }));

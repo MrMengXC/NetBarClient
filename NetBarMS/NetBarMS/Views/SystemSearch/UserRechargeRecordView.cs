@@ -98,7 +98,7 @@ namespace NetBarMS.Views.SystemSearch
             NetMessageManage.RemoveResultBlock(GetUserRechargeRecordResult);
             if (result.pack.Content.MessageType == 1)
             {
-                this.Invoke(new UIHandleBlock(delegate
+                this.Invoke(new RefreshUIHandle(delegate
                 {
                     this.chargeRecords = result.pack.Content.ScQueryCharge.ChargesList;
                     RefreshGridControl();

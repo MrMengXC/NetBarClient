@@ -37,7 +37,7 @@ namespace NetBarMS.Views.HomePage
 
             if (result.pack.Content.MessageType == 1)
             {
-                this.Invoke(new UIHandleBlock(delegate
+                this.Invoke(new RefreshUIHandle(delegate
                 {
                     MessageBox.Show("发送成功");
                     this.CloseFormClick();

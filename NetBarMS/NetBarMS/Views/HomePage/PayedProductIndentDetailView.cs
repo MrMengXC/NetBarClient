@@ -74,7 +74,7 @@ namespace NetBarMS.Views.HomePage
             {
                 NetMessageManage.RemoveResultBlock(GetProdcutIndentDetailResult);
                 System.Console.WriteLine("GetProdcutIndentDetailResult:" + result.pack);
-                this.Invoke(new UIHandleBlock(delegate {
+                this.Invoke(new RefreshUIHandle(delegate {
                     this.details = result.pack.Content.ScOrderDetail.DetailsList;
 
                     RefreshGridControl();
@@ -128,7 +128,7 @@ namespace NetBarMS.Views.HomePage
             System.Console.WriteLine("HandleProductIndentResult:"+result.pack);
             if(result.pack.Content.MessageType == 1)
             {
-                this.Invoke(new UIHandleBlock(delegate {
+                this.Invoke(new RefreshUIHandle(delegate {
                     MessageBox.Show("处理完成");
                     this.CloseFormClick();
                 }));

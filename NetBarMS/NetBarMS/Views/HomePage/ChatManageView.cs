@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using NetBarMS.Codes.Tools;
 using NetBarMS.Codes.Tools.NetOperation;
 using NetBarMS.Codes.Tools.Manage;
+using DevExpress.XtraGrid.Columns;
+using DevExpress.XtraEditors.Repository;
 
 namespace NetBarMS.Views.HomePage
 {
@@ -31,13 +33,36 @@ namespace NetBarMS.Views.HomePage
         }
         private List<StructRealTime> onlines;
         private Int32 pageBegin = 0, pageSize = 15;
-        //初始化UI
+
+        #region 初始化UI
         private void InitUI()
         {
             ToolsManage.SetGridView(this.gridView1, GridControlType.ChatManage, out this.mainDataTable);
             this.gridControl1.DataSource = this.mainDataTable;
+            //监听勾选
+            GridColumn column = this.gridView1.Columns[TitleList.Check.ToString()];
+            RepositoryItemCheckEdit edit = (RepositoryItemCheckEdit)column.ColumnEdit;
+        
+            edit.CheckedChanged += Edit_CheckedChanged;
             GetOnLineList();
+
+            //for (int i = 0;i< 5;i++)
+            //{
+            //    DataRow row = this.mainDataTable.NewRow();
+            //    this.mainDataTable.Rows.Add(row);
+
+            //}
+
+
+
         }
+        //监听勾选
+        private void Edit_CheckedChanged(object sender, EventArgs e)
+        {
+            this.checkBox1.Checked = false;
+        }
+        #endregion
+
         #region 获取锁定的会员列表
         private void GetOnLineList()
         {
@@ -124,7 +149,7 @@ namespace NetBarMS.Views.HomePage
 
             if (result.pack.Content.MessageType == 1)
             {
-                this.Invoke(new UIHandleBlock(delegate
+                this.Invoke(new RefreshUIHandle(delegate
                 {
                     MessageBox.Show("发送成功");
                 }));

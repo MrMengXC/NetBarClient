@@ -80,7 +80,7 @@ namespace NetBarMS.Views.SystemManage
             if (result.pack.Content.MessageType == 1)
             {
                 
-                this.Invoke(new UIHandleBlock(delegate
+                this.Invoke(new RefreshUIHandle(delegate
                 {
                     SysManage.UpdateStaffData(result.pack.Content.ScAccountList.AccountList);
                     this.oriStaffs = result.pack.Content.ScAccountList.AccountList.ToList<StructAccount>();
@@ -129,7 +129,7 @@ namespace NetBarMS.Views.SystemManage
             if ( result.pack.Content.MessageType == 1)
             {
              
-                this.Invoke(new UIHandleBlock(delegate
+                this.Invoke(new RefreshUIHandle(delegate
                 {
                     List<StructDictItem> temShow = this.showPushItems;
                     this.oriPushItems = result.pack.Content.ScSysInfo.ChildList.ToList<StructDictItem>();
@@ -279,7 +279,7 @@ namespace NetBarMS.Views.SystemManage
             NetMessageManage.RemoveResultBlock(DeleteSmsPushMessage);
             if (result.pack.Content.MessageType == 1)
             {
-                this.Invoke(new UIHandleBlock(delegate {
+                this.Invoke(new RefreshUIHandle(delegate {
                  
                 }));
               

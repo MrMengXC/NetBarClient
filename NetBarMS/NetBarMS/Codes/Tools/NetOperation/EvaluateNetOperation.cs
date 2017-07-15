@@ -87,5 +87,6 @@ namespace NetBarMS.Codes.Tools.NetOperation
             NetMessageManage.SendMsg(pack.Build(), resultBlock);
         }
         #endregion
+
     }
 }

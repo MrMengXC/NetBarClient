@@ -84,7 +84,7 @@ namespace NetBarMS.Views.ProductManage
             {
                 NetMessageManage.RemoveResultBlock(GetSellRecordListResult);
                 System.Console.WriteLine("GetSellRecordListResult:" + result.pack);
-                this.Invoke(new UIHandleBlock(delegate{
+                this.Invoke(new RefreshUIHandle(delegate{
                     sales = result.pack.Content.ScSalesRecord.SalesList;
                     RefreshGridControl();
                 }));

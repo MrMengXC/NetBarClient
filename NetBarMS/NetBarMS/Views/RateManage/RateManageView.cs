@@ -369,7 +369,7 @@ namespace NetBarMS.Views.RateManage
                 this.userAreas = result.pack.Content.ScSysBillUpdate.UserAreaList;
                 this.settings = result.pack.Content.ScSysBillUpdate.SettingList;
                 this.updateRateMange.Clear();
-                this.Invoke(new UIHandleBlock(delegate {
+                this.Invoke(new RefreshUIHandle(delegate {
                     MessageBox.Show("保存费率设置成功");
                 }));
             }

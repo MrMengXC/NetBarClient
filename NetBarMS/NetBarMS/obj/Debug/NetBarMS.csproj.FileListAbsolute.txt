@@ -504,3 +504,4 @@ C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\obj\Debug\NetBarMS
 C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\obj\Debug\NetBarMS.Views.ManagersManage.ManagerAddView.resources
 C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\obj\Debug\NetBarMS.Views.ManagersManage.ManagerManageView.resources
 C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\obj\Debug\NetBarMS.Views.ProductManage.ProductStockListView.resources
+C:\Users\Administrator\Desktop\NetBarClient\NetBarMS\NetBarMS\obj\Debug\NetBarMS.Views.CustomView.ProductPicture.resources

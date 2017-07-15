@@ -60,7 +60,7 @@ namespace NetBarMS.Views.OtherMain
             NetMessageManage.RemoveResultBlock(GetJXListResult);
             if (result.pack.Content.MessageType == 1)
             {
-                this.Invoke(new UIHandleBlock(delegate {
+                this.Invoke(new RefreshUIHandle(delegate {
                     this.performs = result.pack.Content.ScStaffPerform.PerformsList;
                     RefreshGridControl();
                 }));
