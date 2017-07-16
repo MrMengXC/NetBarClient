@@ -80,7 +80,7 @@ namespace NetBarMS.Codes.Tools.Manage
         {
             Bitmap b = Imgs.test;
             string inputString = ToolsManage.BitmapToDataSring(b);
-            card.HeadUrl = inputString;
+            card.Head = inputString;
             MemberNetOperation.AddCardInfo(result, card.Build());
         }
         #endregion

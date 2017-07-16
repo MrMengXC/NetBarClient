@@ -45,16 +45,6 @@ namespace NetBarMS.Views.HomePage
         
             edit.CheckedChanged += Edit_CheckedChanged;
             GetOnLineList();
-
-            //for (int i = 0;i< 5;i++)
-            //{
-            //    DataRow row = this.mainDataTable.NewRow();
-            //    this.mainDataTable.Rows.Add(row);
-
-            //}
-
-
-
         }
         //监听勾选
         private void Edit_CheckedChanged(object sender, EventArgs e)
@@ -66,13 +56,7 @@ namespace NetBarMS.Views.HomePage
         #region 获取锁定的会员列表
         private void GetOnLineList()
         {
-            //for(int i = 0;i<8;i++)
-            //{
-            //    DataRow row = this.mainDataTable.NewRow();
-            //    this.mainDataTable.Rows.Add(row);
-            //}
-            //return;
-            HomePageMessageManage.Manage().GetOnlineComputers(out onlines);
+            HomePageMessageManage.GetStatusComputers(out onlines,COMPUTERSTATUS.在线);
             RefreshGridControl();
 
         }
@@ -82,7 +66,7 @@ namespace NetBarMS.Views.HomePage
         //刷新GridControl
         private void RefreshGridControl()
         {
-            this.mainDataTable.Clear();
+            this.mainDataTable.Rows.Clear();
             foreach (StructRealTime com in this.onlines)
             {
                 AddNewRow(com);
@@ -97,10 +81,12 @@ namespace NetBarMS.Views.HomePage
             DataRow row = this.mainDataTable.NewRow();
             this.mainDataTable.Rows.Add(row);
             //row[TitleList.Check.ToString()] = "";
-            row[TitleList.Name.ToString()] = "xxx";
+            row[TitleList.Name.ToString()] = com.Name;
             row[TitleList.Card.ToString()] = com.Cardnumber;
             row[TitleList.Ip.ToString()] = com.Ip;
-    
+            row[TitleList.Check.ToString()] = this.checkBox1.Checked;
+
+
 
         }
         #endregion
@@ -156,6 +142,7 @@ namespace NetBarMS.Views.HomePage
             }
         }
 
+      
         #endregion
 
         #region 进行全选
@@ -178,6 +165,24 @@ namespace NetBarMS.Views.HomePage
 
 
 
+        }
+        #endregion
+
+        #region 进行关键字搜索过滤
+        private void SearchButton_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+
+            //获取所有在线设备
+            HomePageMessageManage.GetStatusComputers(out onlines, COMPUTERSTATUS.在线);
+            if (!this.buttonEdit1.Text.Equals(buttonEdit1.Properties.NullText))
+            {
+                string key = this.buttonEdit1.Text;
+
+                //进行过滤
+                this.onlines = this.onlines.Where(com => com.Ip.Contains(key) || com.Computer.Contains(key) || com.Mac.Contains(key)).ToList<StructRealTime>();
+
+            }
+            RefreshGridControl();
         }
         #endregion
     }

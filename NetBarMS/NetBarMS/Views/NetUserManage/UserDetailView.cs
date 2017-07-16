@@ -56,7 +56,7 @@ namespace NetBarMS.Views
             this.lssAuthLabel.Text += card.Organization;
             this.genderLabel.Text += card.Gender;
             this.nationalLabel.Text += "中国";
-            using (Stream stream = WebRequest.Create(card.HeadUrl).GetResponse().GetResponseStream())
+            using (Stream stream = WebRequest.Create(card.Head).GetResponse().GetResponseStream())
             {
                 this.pictureEdit1.Image = Image.FromStream(stream);               
             }

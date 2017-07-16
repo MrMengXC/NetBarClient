@@ -47,7 +47,7 @@ namespace NetBarMS.Views.SystemManage
 
             this.panel1.AutoSize = true;
             this.panel1.AutoScroll = true;
-            this.panel1.MaximumSize = new Size(MaximumSize.Width, this.pushBgPanel.Height - this.addPushButton.Height);
+            this.panel1.MaximumSize = new Size(this.pushBgPanel.Width-this.addPushButton.Width, this.pushBgPanel.Height);
             this.pushBgPanel.SizeChanged += Panel1_SizeChanged;
 
             GetPushMessageList();
@@ -57,7 +57,7 @@ namespace NetBarMS.Views.SystemManage
         //SizeChange
         private void Panel1_SizeChanged(object sender, EventArgs e)
         {
-            this.panel1.MaximumSize = new Size(MaximumSize.Width, this.pushBgPanel.Height - this.addPushButton.Height);
+            this.panel1.MaximumSize = new Size(this.pushBgPanel.Width - this.addPushButton.Width, this.pushBgPanel.Height);
 
         }
         #endregion
@@ -116,11 +116,7 @@ namespace NetBarMS.Views.SystemManage
         //获取推送信息列表的结果回调
         private void SmsPushMessageInfoResult(ResultModel result)
         {
-            if (result.pack.Cmd != Cmd.CMD_SYS_INFO)
-            {
-                return;
-            }
-            if(!result.pack.Content.ScSysInfo.Parent.Equals(SystemManageNetOperation.smspush))
+            if (result.pack.Cmd != Cmd.CMD_SYS_INFO || !result.pack.Content.ScSysInfo.Parent.Equals(SystemManageNetOperation.smspush))
             {
                 return;
             }
@@ -147,6 +143,7 @@ namespace NetBarMS.Views.SystemManage
         #endregion
 
         #region 初始化推送事项UI
+        const int PUSHBUTTON_W = 10;
         private void InitPushMsgUI(List<StructDictItem> temPushItems)
         {
             this.panel1.Controls.Clear();
@@ -158,36 +155,40 @@ namespace NetBarMS.Views.SystemManage
                 DataRow row = this.gridView1.GetDataRow(i);
                 row[TitleList.Check.ToString()] = false;
             }
-
-            for (int i = 0; i < this.showPushItems.Count; i++)
+            using (Graphics graphics = CreateGraphics())
             {
-                StructDictItem item = this.showPushItems[i];
-                SimpleButton button = new SimpleButton();
-                button.AutoSize = false;
-                button.Size = new Size(this.panel1.Size.Width, 34);
-                button.Dock = DockStyle.Top;
-                button.Appearance.BackColor = Color.White;
-                button.Text = item.GetItem(0);
-                button.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-                this.panel1.Controls.Add(button);
-                button.Click += Text_Click;
-                button.Tag = i.ToString();
-                button.Margin = new Padding(0);
-
-                //判断之前是否改过内容
-                if(temPushItems != null)
+                for (int i = 0; i < this.showPushItems.Count; i++)
                 {
-                    foreach(StructDictItem temItem in temPushItems)
+                    StructDictItem item = this.showPushItems[i];
+                    SimpleButton button = new SimpleButton();
+                    button.AutoSize = false;
+                    button.Dock = DockStyle.Left;
+                    button.Appearance.BackColor = Color.White;
+                    button.Text = item.GetItem(0);
+                    button.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+                    this.panel1.Controls.Add(button);
+                    button.Click += Text_Click;
+                    button.Tag = i.ToString();
+                    button.Margin = new Padding(0);
+                    SizeF sizeF = graphics.MeasureString(button.Text, button.Font);
+                    button.Size = new Size((int)sizeF.Width + PUSHBUTTON_W, this.panel1.Size.Height);
+                    //判断之前是否改过内容
+                    if (temPushItems != null)
                     {
-                        if(temItem.Id == item.Id && !temItem.GetItem(1).Equals(item.GetItem(1)))
+                        foreach (StructDictItem temItem in temPushItems)
                         {
-                            this.showPushItems[i] = temItem;
-                            break;
+                            if (temItem.Id == item.Id && !temItem.GetItem(1).Equals(item.GetItem(1)))
+                            {
+                                this.showPushItems[i] = temItem;
+                                break;
+                            }
                         }
                     }
+
                 }
 
             }
+            
         }
 
         //标签点击
@@ -356,9 +357,9 @@ namespace NetBarMS.Views.SystemManage
             System.Console.WriteLine("UpdateStaffSnsResult:" + result.pack);
             NetMessageManage.RemoveResultBlock(UpdateStaffSnsResult);
             if (result.pack.Content.MessageType == 1)
-            {
-           
+            {           
                 this.oriStaffs = this.showStaffs.ToList<StructAccount>();
+                MessageBox.Show("更新成功");
             }
         }
         #endregion

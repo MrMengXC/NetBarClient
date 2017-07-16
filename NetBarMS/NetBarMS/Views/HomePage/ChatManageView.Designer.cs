@@ -34,22 +34,22 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.searchControl1 = new DevExpress.XtraEditors.SearchControl();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.buttonEdit1 = new DevExpress.XtraEditors.ButtonEdit();
             this.titlePanel.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchControl1.Properties)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // titlePanel
@@ -59,9 +59,9 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.buttonEdit1);
             this.panel2.Controls.Add(this.gridControl1);
             this.panel2.Controls.Add(this.checkBox1);
-            this.panel2.Controls.Add(this.searchControl1);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(8, 57);
             this.panel2.Name = "panel2";
@@ -101,16 +101,6 @@
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
-            // searchControl1
-            // 
-            this.searchControl1.Location = new System.Drawing.Point(204, 6);
-            this.searchControl1.Name = "searchControl1";
-            this.searchControl1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Repository.ClearButton(),
-            new DevExpress.XtraEditors.Repository.SearchButton()});
-            this.searchControl1.Size = new System.Drawing.Size(241, 20);
-            this.searchControl1.TabIndex = 1;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -133,6 +123,23 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(467, 512);
             this.panel3.TabIndex = 52;
+            // 
+            // simpleButton2
+            // 
+            this.simpleButton2.Location = new System.Drawing.Point(179, 471);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(121, 30);
+            this.simpleButton2.TabIndex = 8;
+            this.simpleButton2.Text = "编辑快捷用语";
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Location = new System.Drawing.Point(375, 108);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton1.TabIndex = 7;
+            this.simpleButton1.Text = "发送";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // label4
             // 
@@ -165,22 +172,16 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // simpleButton1
+            // buttonEdit1
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(375, 108);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton1.TabIndex = 7;
-            this.simpleButton1.Text = "发送";
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
-            // 
-            // simpleButton2
-            // 
-            this.simpleButton2.Location = new System.Drawing.Point(179, 471);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(121, 30);
-            this.simpleButton2.TabIndex = 8;
-            this.simpleButton2.Text = "编辑快捷用语";
+            this.buttonEdit1.Location = new System.Drawing.Point(205, 14);
+            this.buttonEdit1.Name = "buttonEdit1";
+            this.buttonEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Search)});
+            this.buttonEdit1.Properties.NullText = "按电脑编号、mac、ip查询";
+            this.buttonEdit1.Size = new System.Drawing.Size(170, 20);
+            this.buttonEdit1.TabIndex = 50;
+            this.buttonEdit1.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.SearchButton_ButtonClick);
             // 
             // ChatManageView
             // 
@@ -200,9 +201,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchControl1.Properties)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -211,7 +212,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label2;
-        private DevExpress.XtraEditors.SearchControl searchControl1;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox1;
@@ -222,5 +222,6 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.ButtonEdit buttonEdit1;
     }
 }

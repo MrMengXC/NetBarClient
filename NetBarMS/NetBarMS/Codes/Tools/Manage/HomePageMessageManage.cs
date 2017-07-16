@@ -18,7 +18,7 @@ namespace NetBarMS.Codes.Tools.Manage
         public delegate void GetDataResultHandle(bool success);
         private event GetDataResultHandle GetDataResultEvent;
         //更新计算机数据
-        public delegate void UpdateComputerDataHandle(int index,StructRealTime com);
+        public delegate void UpdateComputerDataHandle(StructRealTime com);
         private event UpdateComputerDataHandle UpdateComputerDataEvent;
         //更新计算机所在区域信息
         private event UpdateComputerDataHandle UpdateComputerAreaEvent;
@@ -30,19 +30,21 @@ namespace NetBarMS.Codes.Tools.Manage
         private event UpdateMsgNumHandle UpdateExceptionMsgNumEvent;
         //更新商品订单数量
         private event UpdateMsgNumHandle UpdateOrderMsgNumEvent;
-        //刷新UI数据
+        //刷新显示当日上机数量UI
+        private event UpdateMsgNumHandle UpdateDailyOnlineCountEvent;
+        //刷新状态数量UI
         private event RefreshUIHandle RefreshStatusNumEvent;
 
+      
         #endregion
 
         //电脑数据
         private List<StructRealTime> computers = new List<StructRealTime>();
-        //电脑数据字典
-        private Dictionary<Int32, StructRealTime> computerDict = new Dictionary<int, StructRealTime>();
 
         private static HomePageMessageManage _manage = null;
 
-        private int idleNum = 0, onLineNum = 0, expectionNum = 0, onookNum = 0;
+        private int dailyOnlineCount = 0;
+
         //单例方法
         public static HomePageMessageManage Manage()
         {
@@ -52,8 +54,12 @@ namespace NetBarMS.Codes.Tools.Manage
             }
             return _manage;
         }
+
         #region 获取首页数据列表
-        public void GetHomePageList(GetDataResultHandle result,UpdateComputerDataHandle update, UpdateComputerDataHandle updateArea,RefreshUIHandle refreshStauts)
+        public void GetHomePageList(GetDataResultHandle result,
+            UpdateComputerDataHandle update,
+            UpdateComputerDataHandle updateArea,
+            RefreshUIHandle refreshStauts)
         {
             this.GetDataResultEvent += result;
             this.UpdateComputerDataEvent += update;
@@ -75,15 +81,14 @@ namespace NetBarMS.Codes.Tools.Manage
          //  System.Console.WriteLine("HomePageListResult:" + result.pack);
             if (result.pack.Content.MessageType == 1)
             {
-                this.computerDict.Clear();
                 this.computers = result.pack.Content.ScRealtimeInfo.RealtimesList.ToList<StructRealTime>();
-                foreach(StructRealTime com in this.computers)
-                {
-                    this.computerDict[com.Computerid] = com;
-                }
 
-               
-                //获取回调
+                //发送刷新设备状态信息的个数
+                if(this.RefreshStatusNumEvent != null)
+                {
+                    this.RefreshStatusNumEvent();
+                }
+                //获取系统消息回调
                 GetSysMessage();
             }
             else
@@ -98,7 +103,6 @@ namespace NetBarMS.Codes.Tools.Manage
 
         #endregion
 
-        
         #region 获取系统信息
         private void GetSysMessage()
         {
@@ -166,6 +170,17 @@ namespace NetBarMS.Codes.Tools.Manage
                             this.UpdateExceptionMsgNumEvent(num);
                         }
                         break;
+
+                    //当日上网人数
+                    case SYSMSG_TYPE.DAILY_ONLINE_COUNT:
+                        if(this.UpdateDailyOnlineCountEvent != null)
+                        {
+                            int num = pars[0].Equals("") ? 0 : int.Parse(pars[0]);
+
+                            this.UpdateDailyOnlineCountEvent(num);
+                        }
+
+                        break;
                     default:
 
                         break;
@@ -181,29 +196,25 @@ namespace NetBarMS.Codes.Tools.Manage
         #region 用户上机
         private void UserUpComputer(IList<string> pars)
         {
-            onLineNum++;
             string comid = pars[0];
             //获取需要修改的电脑数据
-            StructRealTime com;
-            this.computerDict.TryGetValue(int.Parse(comid), out com);
+            int index = GetComputerIndex(int.Parse(comid));
+            StructRealTime com = this.computers[index];
 
             //生成新StructRealTime
-            int index = this.computers.IndexOf(com);
             StructRealTime.Builder newCom = new StructRealTime.Builder(com);
-
-
             newCom.Status = ((int)COMPUTERSTATUS.在线).ToString();
-            
-            newCom.Cardnumber = pars[1];
-            newCom.Usertype = pars[2];
-            newCom.Billing = pars[3];
-            newCom.Verify = pars[4];
+            newCom.Name = pars[1];
+            newCom.Cardnumber = pars[2];
+            newCom.Usertype = pars[3];
+            newCom.Billing = pars[4];
+            newCom.Verify = pars[5];
 
             //----// 余额，余时。开始时间。已用时。结束时间
-            newCom.Balance = pars[5];
-            newCom.Starttime = pars[6];
-            newCom.Usedtime = pars[7];
-            newCom.Stoptime = pars[8];
+            newCom.Balance = pars[6];
+            newCom.Starttime = pars[7];
+            newCom.Usedtime = pars[8];
+            newCom.Stoptime = pars[9];
             //计算剩余时间
             DateTime start = DateTime.Parse(newCom.Starttime);
             DateTime end = DateTime.Parse(newCom.Stoptime);
@@ -213,10 +224,11 @@ namespace NetBarMS.Codes.Tools.Manage
 
             //修改数组字典数据
             this.computers[index] = newCom.Build();
-            this.computerDict[int.Parse(comid)] = newCom.Build();
+            //this.computerDict[int.Parse(comid)] = newCom.Build();
             //更新首页数据
             UpdateHomePage(index, newCom.Build());
-
+            //刷新首页状态数量
+            RefreshStatusNumEvent();
         }
         #endregion
 
@@ -225,11 +237,9 @@ namespace NetBarMS.Codes.Tools.Manage
         {
             string comid = pars[0];
             //获取需要修改的电脑数据
-            StructRealTime com;
-            this.computerDict.TryGetValue(int.Parse(comid), out com);
-
+            int index = GetComputerIndex(int.Parse(comid));
+            StructRealTime com = this.computers[index];
             //生成新StructRealTime
-            int index = this.computers.IndexOf(com);
             StructRealTime.Builder newCom = new StructRealTime.Builder(com);
 
             //----// 余额，开始时间。已用时。结束时间
@@ -247,7 +257,6 @@ namespace NetBarMS.Codes.Tools.Manage
 
             //修改数组字典数据
             this.computers[index] = newCom.Build();
-            this.computerDict[int.Parse(comid)] = newCom.Build();
             //更新首页数据
             UpdateHomePage(index, newCom.Build());
         }
@@ -258,16 +267,14 @@ namespace NetBarMS.Codes.Tools.Manage
         {
             string comid = pars[0];
             //获取需要修改的电脑数据
-            StructRealTime com;
-            this.computerDict.TryGetValue(int.Parse(comid), out com);
+            int index = GetComputerIndex(int.Parse(comid));
+            StructRealTime com = this.computers[index];
 
             //生成新StructRealTime
-            int index = this.computers.IndexOf(com);
             StructRealTime.Builder newCom = new StructRealTime.Builder(com);
             newCom.Verify = "1";
             //修改数组字典数据
             this.computers[index] = newCom.Build();
-            this.computerDict[int.Parse(comid)] = newCom.Build();
             //更新首页数据
             UpdateHomePage(index, newCom.Build());
         }
@@ -276,16 +283,15 @@ namespace NetBarMS.Codes.Tools.Manage
         #region 用户下机
         private void UserDownComputer(IList<string> pars)
         {
-            this.idleNum--;
             string comid = pars[0];
+            int index = GetComputerIndex(int.Parse(comid));
             //获取需要修改的电脑数据
-            StructRealTime com;
-            this.computerDict.TryGetValue(int.Parse(comid), out com);
+            StructRealTime com = this.computers[index];
 
             //生成新StructRealTime
-            int index = this.computers.IndexOf(com);
             StructRealTime.Builder newCom = new StructRealTime.Builder(com);
             newCom.Status = ((int)COMPUTERSTATUS.空闲).ToString();
+            newCom.Name = "";
             newCom.Cardnumber = "";
             newCom.Usertype = "";
             newCom.Billing = "";
@@ -299,9 +305,11 @@ namespace NetBarMS.Codes.Tools.Manage
 
             //修改数组字典数据
             this.computers[index] = newCom.Build();
-            this.computerDict[int.Parse(comid)] = newCom.Build();
             //更新首页数据
             UpdateHomePage(index, newCom.Build());
+            //刷新首页状态数量
+            RefreshStatusNumEvent();
+
         }
         #endregion
 
@@ -310,7 +318,7 @@ namespace NetBarMS.Codes.Tools.Manage
         {
             if(this.UpdateComputerDataEvent != null)
             {
-                this.UpdateComputerDataEvent(index, com);
+                this.UpdateComputerDataEvent(com);
             }
         }
 
@@ -333,19 +341,14 @@ namespace NetBarMS.Codes.Tools.Manage
         #endregion
 
         #region 获取在线电脑
-        public void GetOnlineComputers(out List<StructRealTime> tem)
+        public static void GetStatusComputers(out List<StructRealTime> tem,COMPUTERSTATUS status)
         {
             tem = new List<StructRealTime>();
 
-            if (this.computers != null)
+            if (HomePageMessageManage.Manage().computers != null)
             {
-                foreach(StructRealTime com in this.computers)
-                {
-                    if (!com.Cardnumber.Equals(""))
-                    {
-                        tem.Add(com);
-                    }
-                }
+                IEnumerable<StructRealTime> onlines = from StructRealTime com in Manage().computers where com.Status.Equals(((int)status).ToString()) select com;
+                tem = onlines.ToList<StructRealTime>();
             }
            
         }
@@ -363,17 +366,16 @@ namespace NetBarMS.Codes.Tools.Manage
                     StructRealTime.Builder newCom = new StructRealTime.Builder(ori);
                     newCom.Area = change.Area;
                     this.computers[i] = newCom.Build();
-                    this.computerDict[newCom.Computerid] = newCom.Build();
                     if (this.UpdateComputerAreaEvent != null)
                     {
-                        this.UpdateComputerAreaEvent(i, newCom.Build());
+                        this.UpdateComputerAreaEvent(newCom.Build());
                     }
                 }
                 else
                 {
                     if (this.UpdateComputerAreaEvent != null)
                     {
-                        this.UpdateComputerAreaEvent(i, ori);
+                        this.UpdateComputerAreaEvent(ori);
                     }
                 }
             }
@@ -388,7 +390,7 @@ namespace NetBarMS.Codes.Tools.Manage
                 StructRealTime ori = this.computers[i];
                 if (this.UpdateComputerAreaEvent != null)
                 {
-                    this.UpdateComputerAreaEvent(i, ori);
+                    this.UpdateComputerAreaEvent(ori);
                 }
             }
         }
@@ -403,42 +405,94 @@ namespace NetBarMS.Codes.Tools.Manage
         #endregion
 
         #region 添加首页信息个数代理
-        public void AddMsgNumDelegate(UpdateMsgNumHandle call, UpdateMsgNumHandle exception, UpdateMsgNumHandle order)
+        public void AddMsgNumDelegate(UpdateMsgNumHandle call, 
+            UpdateMsgNumHandle exception,
+            UpdateMsgNumHandle order,
+            UpdateMsgNumHandle onlineCount,
+            RefreshUIHandle statusUI)
         {
             this.UpdateCallMsgNumEvent += call;
             this.UpdateExceptionMsgNumEvent += exception;
             this.UpdateOrderMsgNumEvent += order;
+            this.UpdateDailyOnlineCountEvent += onlineCount;
+            this.RefreshStatusNumEvent += statusUI;
         }
         #endregion
 
         #region 获取设备数量
-        /// <summary>
-        ///获取空闲设备数量
-        /// </summary>
-        public static int IdleNum
-        {
-            get
-            {
-            
-                string status = ((int)COMPUTERSTATUS.空闲).ToString();
-                IEnumerable<StructRealTime> num1 = from StructRealTime tem in Manage().computers where tem.Status.Equals(status) select tem;
-                return num1.Count<StructRealTime>();
-            }
-        }
+        
 
         /// <summary>
         /// 获取在线设备数量
         /// </summary>
-        public static int OnlineNum
+        public static int OnLineNum
         {
             get
             {
                 string status = ((int)COMPUTERSTATUS.在线).ToString();
                 IEnumerable<StructRealTime> num1 = from StructRealTime tem in Manage().computers where tem.Status.Equals(status) select tem;
                 return num1.Count<StructRealTime>();
+   
+            }
+        }
+
+        /// <summary>
+        /// 获取设备数量
+        /// </summary>
+        public static Dictionary<string,int> StatusNum
+        {
+            get
+            {
+                IEnumerable<IGrouping<string, StructRealTime>> comps = Manage().computers.GroupBy(com => com.Status);
+                Dictionary<string, int> dict = comps.ToDictionary(tem => tem.Key, tem2 => tem2.Count());
+                return dict;
             }
         }
         #endregion
+
+        #region 通过电脑id获取电脑所在数组索引
+        private int GetComputerIndex(int comid)
+        {
+            return HomePageMessageManage.GetComputerIndex(comid,Manage().computers);
+        }
+        public static int GetComputerIndex(int comid,List<StructRealTime> coms)
+        {
+            try
+            {
+                int comIndex = coms.Select((StructRealTime com, int
+              index) => new { com, index }).Where(a => a.com.Computerid == comid).First().index;
+                return comIndex;
+            }
+            catch(Exception exc)
+            {
+                return -1;
+            }
+          
+        }
+
+        #endregion
+
+        #region 过滤条件获取数组
+        public static  void GetFilterComputers(COMPUTERSTATUS status, int areaId, string key,out List<StructRealTime> coms)
+        {
+           coms = Manage().computers.ToList<StructRealTime>();
+            if(status != COMPUTERSTATUS.无)
+            {
+                coms = coms.Where(tem => tem.Status.Equals(((int)status).ToString())).ToList<StructRealTime>();
+            }
+            if (areaId >= 0)
+            {
+                coms = coms.Where(tem => tem.Area.Equals(areaId.ToString())).ToList<StructRealTime>();
+            }
+            if(key != null && !key.Equals(""))
+            {
+                
+                coms = coms.Where(tem => (tem.Ip.Contains(key) || tem.Mac.Contains(key) || tem.Computer.Contains(key))).ToList<StructRealTime>();
+            }
+        }
+        #endregion
+
+      
 
     }
 }

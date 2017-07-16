@@ -32,7 +32,7 @@ public static partial class CoreProtocol {
           "bi5wcm90bxoQQmFja2dyb3VuZC5wcm90bxoMQ2xpZW50LnByb3RvGgxFbWJh", 
           "cmsucHJvdG8iZgoLTWVzc2FnZVBhY2sSEQoDY21kGAEgAigOMgQuQ21kEg8K", 
           "B3ZlcnNpb24YAiABKAUSEQoJc2Vzc2lvbklkGAMgASgFEiAKB2NvbnRlbnQY", 
-          "BCABKAsyDy5NZXNzYWdlQ29udGVudCLlJAoOTWVzc2FnZUNvbnRlbnQSEwoL", 
+          "BCABKAsyDy5NZXNzYWdlQ29udGVudCLhJAoOTWVzc2FnZUNvbnRlbnQSEwoL", 
           "bWVzc2FnZVR5cGUYASACKAUSIQoIZXJyb3JUaXAYAiABKAsyDy5TdHJ1Y3RF", 
           "cnJvclRpcBIiCghjc1VwbG9hZBgDIAEoCzIQLkNTVXBsb2FkUGljdHVyZRIi", 
           "CghzY1VwbG9hZBgEIAEoCzIQLlNDVXBsb2FkUGljdHVyZRIZCgdjc0hlYXJ0", 
@@ -104,86 +104,86 @@ public static partial class CoreProtocol {
           "dEZpbmQYWyABKAsyDC5TQ1NoaWZ0RmluZBIlCg1jc1F1ZXJ5Q2hhcmdlGFwg", 
           "ASgLMg4uQ1NRdWVyeUNoYXJnZRIlCg1zY1F1ZXJ5Q2hhcmdlGF0gASgLMg4u", 
           "U0NRdWVyeUNoYXJnZRIfCgpjc1F1ZXJ5RW1rGF4gASgLMgsuQ1NRdWVyeUVt", 
-          "axIfCgpzY1F1ZXJ5RW1rGF8gASgLMgsuU0NRdWVyeUVtaxIlCg1jc1F1ZXJ5", 
-          "Q29uc3VtGGAgASgLMg4uQ1NRdWVyeUNvbnN1bRIlCg1zY1F1ZXJ5Q29uc3Vt", 
-          "GGEgASgLMg4uU0NRdWVyeUNvbnN1bRIjCgxjc1F1ZXJ5QXBwbHkYYiABKAsy", 
-          "DS5DU1F1ZXJ5QXBwbHkSIwoMc2NRdWVyeUFwcGx5GGMgASgLMg0uU0NRdWVy", 
-          "eUFwcGx5EiMKDGNzUXVlcnlPY2N1cBhkIAEoCzINLkNTUXVlcnlPY2N1cBIj", 
-          "CgxzY1F1ZXJ5T2NjdXAYZSABKAsyDS5TQ1F1ZXJ5T2NjdXASJAoMY3NDbGll", 
-          "bnRPcGVuGMgBIAEoCzINLkNTQ2xpZW50T3BlbhImCg1jc0NsaWVudENsb3Nl", 
-          "GMkBIAEoCzIOLkNTQ2xpZW50Q2xvc2USGgoHY3NMb2dvbhjKASABKAsyCC5D", 
-          "U0xvZ29uEhoKB3NjTG9nb24YywEgASgLMgguU0NMb2dvbhIcCghjc0xvZ29m", 
-          "ZhjMASABKAsyCS5DU0xvZ29mZhIcCghzY0xvZ29mZhjNASABKAsyCS5TQ0xv", 
-          "Z29mZhIcCghjc0h1bmd1cBjOASABKAsyCS5DU0h1bmd1cBIgCgpjc0V2YWx1", 
-          "YXRlGNoBIAEoCzILLkNTRXZhbHVhdGUSIAoKc2NFdmFsdWF0ZRjbASABKAsy", 
-          "Cy5TQ0V2YWx1YXRlEiQKDGNzVmVyaWZ5Q29kZRjcASABKAsyDS5DU1Zlcmlm", 
-          "eUNvZGUSJAoMc2NWZXJpZnlDb2RlGN0BIAEoCzINLlNDVmVyaWZ5Q29kZRIk", 
-          "Cgxjc0JpbmRNb2JpbGUY3gEgASgLMg0uQ1NCaW5kTW9iaWxlEiQKDHNjQmlu", 
-          "ZE1vYmlsZRjfASABKAsyDS5TQ0JpbmRNb2JpbGUSJgoNY3NFbWtVc2VySW5m", 
-          "bxisAiABKAsyDi5DU0Vta1VzZXJJbmZvEiYKDXNjRW1rVXNlckluZm8YrQIg", 
-          "ASgLMg4uU0NFbWtVc2VySW5mbxIsChBjc0Vta0FkZENhcmRJbmZvGK4CIAEo", 
-          "CzIRLkNTRW1rQWRkQ2FyZEluZm8SMAoSY3NFbWtBZGRGaW5nZXJJbmZvGK8C", 
-          "IAEoCzITLkNTRW1rQWRkRmluZ2VySW5mbxIsChBjc0Vta0FwcGx5TWVtYmVy", 
-          "GLACIAEoCzIRLkNTRW1rQXBwbHlNZW1iZXISLAoQc2NFbWtBcHBseU1lbWJl", 
-          "chixAiABKAsyES5TQ0Vta0FwcGx5TWVtYmVyEiIKC2NzRW1rQ2hhcmdlGLIC", 
-          "IAEoCzIMLkNTRW1rQ2hhcmdlEiIKC3NjRW1rQ2hhcmdlGLMCIAEoCzIMLlND", 
-          "RW1rQ2hhcmdlEiQKDGNzRW1rQ2hlY2tpbhi0AiABKAsyDS5DU0Vta0NoZWNr", 
-          "aW4SJAoMc2NFbWtDaGVja2luGLUCIAEoCzINLlNDRW1rQ2hlY2tpbhImCg1j", 
-          "c0Vta0NoZWNrb3V0GLYCIAEoCzIOLkNTRW1rQ2hlY2tvdXQSJgoNc2NFbWtD", 
-          "aGVja291dBi3AiABKAsyDi5TQ0Vta0NoZWNrb3V0EiIKC2NzRW1rQ2FuY2Vs", 
-          "GLgCIAEoCzIMLkNTRW1rQ2FuY2VsEioKD2NzRW1rVmVyaWZ5TGlzdBi5AiAB", 
-          "KAsyEC5DU0Vta1ZlcmlmeUxpc3QSKgoPc2NFbWtWZXJpZnlMaXN0GLoCIAEo", 
-          "CzIQLlNDRW1rVmVyaWZ5TGlzdBIqCg9jc0Vta1ZlcmlmeVByb2MYuwIgASgL", 
-          "MhAuQ1NFbWtWZXJpZnlQcm9jEigKDmNzRW1rT3JkZXJMaXN0GLwCIAEoCzIP", 
-          "LkNTRW1rT3JkZXJMaXN0EigKDnNjRW1rT3JkZXJMaXN0GL0CIAEoCzIPLlND", 
-          "RW1rT3JkZXJMaXN0EigKDmNzRW1rT3JkZXJQcm9jGL4CIAEoCzIPLkNTRW1r", 
-          "T3JkZXJQcm9jKoMQCgNDbWQSFgoSQ01EX1VQTE9BRF9QSUNUVVJFEAESGAoU", 
-          "Q01EX0RPV05MT0FEX1BJQ1RVUkUQAhINCglDTURfSEVBUlQQAxITCg9DTURf", 
-          "UExBWUVSX0tJQ0sQBBIRCg1DTURfUkVDT05ORUNUEAUSEQoNQ01EX1BSRUNI", 
-          "QVJHRRAGEhAKDENNRF9UT0NIQVJHRRAHEg4KCkNNRF9QUkVCVVkQCBINCglD", 
-          "TURfVE9CVVkQCRIPCgtDTURfTUVTU0FHRRAKEg8KC0NNRF9DT01NQU5EEAsS", 
-          "EgoOQ01EX0dPT0RTX0xJU1QQDBIPCgpDTURfQVVUSEVOEOgHEg4KCUNNRF9M", 
-          "T0dJThDpBxIVChBDTURfQUNDT1VOVF9JTkZPEOoHEhYKEUNNRF9SRUFMVElN", 
-          "RV9JTkZPEOsHEgwKB0NNRF9MT0cQ7AcSEgoNQ01EX0NBTExfTElTVBDtBxIV", 
-          "ChBDTURfQ0FMTF9QUk9DRVNTEO4HEhIKDUNNRF9ST0xFX0xJU1QQ8gcSEQoM", 
-          "Q01EX1JPTEVfQUREEPMHEhEKDENNRF9ST0xFX0RFTBD0BxIUCg9DTURfUk9M", 
-          "RV9VUERBVEUQ9QcSFAoPQ01EX1JPTEVfUklHSFRTEPYHEhMKDkNNRF9TVEFG", 
-          "Rl9MSVNUEPwHEhIKDUNNRF9TVEFGRl9BREQQ/QcSEgoNQ01EX1NUQUZGX0RF", 
-          "TBD+BxIVChBDTURfU1RBRkZfVVBEQVRFEP8HEhMKDkNNRF9TVEFGRl9GSU5E", 
-          "EIAIEhIKDUNNRF9TVEFGRl9TTlMQgQgSFgoRQ01EX1NUQUZGX0NPTU1FTlQQ", 
-          "gggSFgoRQ01EX1NUQUZGX1BFUkZPUk0QgwgSFAoPQ01EX0VBUk5JTkdfREFZ", 
-          "EIYIEhYKEUNNRF9FQVJOSU5HX01PTlRIEIcIEhUKEENNRF9FQVJOSU5HX1lF", 
-          "QVIQiAgSFgoRQ01EX0NPTVBVVEVSX0xJU1QQkAgSFQoQQ01EX0NPTVBVVEVS", 
-          "X0FERBCRCBIVChBDTURfQ09NUFVURVJfREVMEJIIEhgKE0NNRF9DT01QVVRF", 
-          "Ul9VUERBVEUQkwgSFgoRQ01EX0NPTVBVVEVSX0ZJTkQQlAgSFgoRQ01EX0NP", 
-          "TVBVVEVSX09QRU4QlQgSFwoSQ01EX0NPTVBVVEVSX0NMT1NFEJYIEhQKD0NN", 
-          "RF9NRU1CRVJfTElTVBCaCBITCg5DTURfTUVNQkVSX0RFTBCbCBIWChFDTURf", 
-          "TUVNQkVSX1VQREFURRCcCBIUCg9DTURfTUVNQkVSX0ZJTkQQnQgSGQoUQ01E", 
-          "X01FTUJFUl9DQVJEX0lORk8QnggSGQoUQ01EX1NZU19CSUxMSU5HX0xJU1QQ", 
-          "pAgSGwoWQ01EX1NZU19CSUxMSU5HX1VQREFURRClCBIRCgxDTURfU1lTX0lO", 
-          "Rk8QpggSEAoLQ01EX1NZU19BREQQpwgSEAoLQ01EX1NZU19ERUwQqAgSEwoO", 
-          "Q01EX1NZU19VUERBVEUQqQgSEgoNQ01EX0dPT0RTX0FERBCuCBISCg1DTURf", 
-          "R09PRFNfREVMEK8IEhUKEENNRF9HT09EU19VUERBVEUQsAgSEwoOQ01EX0dP", 
-          "T0RTX0ZJTkQQsQgSFAoPQ01EX0dPT0RTX1NBTEVTELIIEhgKE0NNRF9HT09E", 
-          "U19TQUxFU19UT1AQswgSFAoPQ01EX0dPT0RTX1NUT0NLELQIEhQKD0NNRF9H", 
-          "T09EU19PUkRFUhC1CBIbChZDTURfR09PRFNfT1JERVJfREVUQUlMELYIEhwK", 
-          "F0NNRF9HT09EU19PUkRFUl9QUk9DRVNTELcIEhoKFUNNRF9TSElGVF9ERUxJ", 
-          "VkVSRURCWRC4CBISCg1DTURfU0hJRlRfQUREELkIEhMKDkNNRF9TSElGVF9G", 
-          "SU5EELoIEhUKEENNRF9RVUVSWV9DSEFSR0UQwggSGgoVQ01EX1FVRVJZX0VN", 
-          "QkFSS0FUSU9OEMMIEhUKEENNRF9RVUVSWV9DT05TVU0QxAgSFAoPQ01EX1FV", 
-          "RVJZX0FQUExZEMUIEhgKE0NNRF9RVUVSWV9PQ0NVUEFOQ1kQxggSFAoPQ01E", 
-          "X0NMSUVOVF9PUEVOENAPEhUKEENNRF9DTElFTlRfQ0xPU0UQ0Q8SFQoQQ01E", 
-          "X0NMSUVOVF9MT0dPThDSDxIWChFDTURfQ0xJRU5UX0xPR09GRhDTDxIWChFD", 
-          "TURfQ0xJRU5UX0hVTkdVUBDUDxIYChNDTURfQ0xJRU5UX0VWQUxVQVRFEN4P", 
-          "EhoKFUNNRF9DTElFTlRfVkVSSUZZQ09ERRDfDxIaChVDTURfQ0xJRU5UX0JJ", 
-          "TkRNT0JJTEUQ4A8SFQoQQ01EX0VNS19VU0VSSU5GTxC4FxIZChRDTURfRU1L", 
-          "X0FERF9DQVJESU5GTxC5FxIbChZDTURfRU1LX0FERF9GSU5HRVJJTkZPELoX", 
-          "EhkKFENNRF9FTUtfQVBQTFlfTUVNQkVSELsXEhUKEENNRF9FTUtfUkVDSEFS", 
-          "R0UQvBcSFAoPQ01EX0VNS19DSEVDS0lOEL0XEhUKEENNRF9FTUtfQ0hFQ0tP", 
-          "VVQQvhcSEwoOQ01EX0VNS19DQU5DRUwQvxcSGAoTQ01EX0VNS19WRVJJRllf", 
-          "TElTVBDAFxIYChNDTURfRU1LX1ZFUklGWV9QUk9DEMEXEhcKEkNNRF9FTUtf", 
-          "T1JERVJfTElTVBDEFxIXChJDTURfRU1LX09SREVSX1BST0MQxRdCLQodY29t", 
-        "LnNreXNvZnQuY29yZS5hdXRvLm1lc3NhZ2VCDENvcmVQcm90b2NvbA=="));
+          "axIfCgpzY1F1ZXJ5RW1rGF8gASgLMgsuU0NRdWVyeUVtaxIjCgxjc1F1ZXJ5", 
+          "VHJhZGUYYCABKAsyDS5DU1F1ZXJ5VHJhZGUSIwoMc2NRdWVyeVRyYWRlGGEg", 
+          "ASgLMg0uU0NRdWVyeVRyYWRlEiMKDGNzUXVlcnlBcHBseRhiIAEoCzINLkNT", 
+          "UXVlcnlBcHBseRIjCgxzY1F1ZXJ5QXBwbHkYYyABKAsyDS5TQ1F1ZXJ5QXBw", 
+          "bHkSIwoMY3NRdWVyeU9jY3VwGGQgASgLMg0uQ1NRdWVyeU9jY3VwEiMKDHNj", 
+          "UXVlcnlPY2N1cBhlIAEoCzINLlNDUXVlcnlPY2N1cBIkCgxjc0NsaWVudE9w", 
+          "ZW4YyAEgASgLMg0uQ1NDbGllbnRPcGVuEiYKDWNzQ2xpZW50Q2xvc2UYyQEg", 
+          "ASgLMg4uQ1NDbGllbnRDbG9zZRIaCgdjc0xvZ29uGMoBIAEoCzIILkNTTG9n", 
+          "b24SGgoHc2NMb2dvbhjLASABKAsyCC5TQ0xvZ29uEhwKCGNzTG9nb2ZmGMwB", 
+          "IAEoCzIJLkNTTG9nb2ZmEhwKCHNjTG9nb2ZmGM0BIAEoCzIJLlNDTG9nb2Zm", 
+          "EhwKCGNzSHVuZ3VwGM4BIAEoCzIJLkNTSHVuZ3VwEiAKCmNzRXZhbHVhdGUY", 
+          "2gEgASgLMgsuQ1NFdmFsdWF0ZRIgCgpzY0V2YWx1YXRlGNsBIAEoCzILLlND", 
+          "RXZhbHVhdGUSJAoMY3NWZXJpZnlDb2RlGNwBIAEoCzINLkNTVmVyaWZ5Q29k", 
+          "ZRIkCgxzY1ZlcmlmeUNvZGUY3QEgASgLMg0uU0NWZXJpZnlDb2RlEiQKDGNz", 
+          "QmluZE1vYmlsZRjeASABKAsyDS5DU0JpbmRNb2JpbGUSJAoMc2NCaW5kTW9i", 
+          "aWxlGN8BIAEoCzINLlNDQmluZE1vYmlsZRImCg1jc0Vta1VzZXJJbmZvGKwC", 
+          "IAEoCzIOLkNTRW1rVXNlckluZm8SJgoNc2NFbWtVc2VySW5mbxitAiABKAsy", 
+          "Di5TQ0Vta1VzZXJJbmZvEiwKEGNzRW1rQWRkQ2FyZEluZm8YrgIgASgLMhEu", 
+          "Q1NFbWtBZGRDYXJkSW5mbxIwChJjc0Vta0FkZEZpbmdlckluZm8YrwIgASgL", 
+          "MhMuQ1NFbWtBZGRGaW5nZXJJbmZvEiwKEGNzRW1rQXBwbHlNZW1iZXIYsAIg", 
+          "ASgLMhEuQ1NFbWtBcHBseU1lbWJlchIsChBzY0Vta0FwcGx5TWVtYmVyGLEC", 
+          "IAEoCzIRLlNDRW1rQXBwbHlNZW1iZXISIgoLY3NFbWtDaGFyZ2UYsgIgASgL", 
+          "MgwuQ1NFbWtDaGFyZ2USIgoLc2NFbWtDaGFyZ2UYswIgASgLMgwuU0NFbWtD", 
+          "aGFyZ2USJAoMY3NFbWtDaGVja2luGLQCIAEoCzINLkNTRW1rQ2hlY2tpbhIk", 
+          "CgxzY0Vta0NoZWNraW4YtQIgASgLMg0uU0NFbWtDaGVja2luEiYKDWNzRW1r", 
+          "Q2hlY2tvdXQYtgIgASgLMg4uQ1NFbWtDaGVja291dBImCg1zY0Vta0NoZWNr", 
+          "b3V0GLcCIAEoCzIOLlNDRW1rQ2hlY2tvdXQSIgoLY3NFbWtDYW5jZWwYuAIg", 
+          "ASgLMgwuQ1NFbWtDYW5jZWwSKgoPY3NFbWtWZXJpZnlMaXN0GLkCIAEoCzIQ", 
+          "LkNTRW1rVmVyaWZ5TGlzdBIqCg9zY0Vta1ZlcmlmeUxpc3QYugIgASgLMhAu", 
+          "U0NFbWtWZXJpZnlMaXN0EioKD2NzRW1rVmVyaWZ5UHJvYxi7AiABKAsyEC5D", 
+          "U0Vta1ZlcmlmeVByb2MSKAoOY3NFbWtPcmRlckxpc3QYvAIgASgLMg8uQ1NF", 
+          "bWtPcmRlckxpc3QSKAoOc2NFbWtPcmRlckxpc3QYvQIgASgLMg8uU0NFbWtP", 
+          "cmRlckxpc3QSKAoOY3NFbWtPcmRlclByb2MYvgIgASgLMg8uQ1NFbWtPcmRl", 
+          "clByb2MqgxAKA0NtZBIWChJDTURfVVBMT0FEX1BJQ1RVUkUQARIYChRDTURf", 
+          "RE9XTkxPQURfUElDVFVSRRACEg0KCUNNRF9IRUFSVBADEhMKD0NNRF9QTEFZ", 
+          "RVJfS0lDSxAEEhEKDUNNRF9SRUNPTk5FQ1QQBRIRCg1DTURfUFJFQ0hBUkdF", 
+          "EAYSEAoMQ01EX1RPQ0hBUkdFEAcSDgoKQ01EX1BSRUJVWRAIEg0KCUNNRF9U", 
+          "T0JVWRAJEg8KC0NNRF9NRVNTQUdFEAoSDwoLQ01EX0NPTU1BTkQQCxISCg5D", 
+          "TURfR09PRFNfTElTVBAMEg8KCkNNRF9BVVRIRU4Q6AcSDgoJQ01EX0xPR0lO", 
+          "EOkHEhUKEENNRF9BQ0NPVU5UX0lORk8Q6gcSFgoRQ01EX1JFQUxUSU1FX0lO", 
+          "Rk8Q6wcSDAoHQ01EX0xPRxDsBxISCg1DTURfQ0FMTF9MSVNUEO0HEhUKEENN", 
+          "RF9DQUxMX1BST0NFU1MQ7gcSEgoNQ01EX1JPTEVfTElTVBDyBxIRCgxDTURf", 
+          "Uk9MRV9BREQQ8wcSEQoMQ01EX1JPTEVfREVMEPQHEhQKD0NNRF9ST0xFX1VQ", 
+          "REFURRD1BxIUCg9DTURfUk9MRV9SSUdIVFMQ9gcSEwoOQ01EX1NUQUZGX0xJ", 
+          "U1QQ/AcSEgoNQ01EX1NUQUZGX0FERBD9BxISCg1DTURfU1RBRkZfREVMEP4H", 
+          "EhUKEENNRF9TVEFGRl9VUERBVEUQ/wcSEwoOQ01EX1NUQUZGX0ZJTkQQgAgS", 
+          "EgoNQ01EX1NUQUZGX1NOUxCBCBIWChFDTURfU1RBRkZfQ09NTUVOVBCCCBIW", 
+          "ChFDTURfU1RBRkZfUEVSRk9STRCDCBIUCg9DTURfRUFSTklOR19EQVkQhggS", 
+          "FgoRQ01EX0VBUk5JTkdfTU9OVEgQhwgSFQoQQ01EX0VBUk5JTkdfWUVBUhCI", 
+          "CBIWChFDTURfQ09NUFVURVJfTElTVBCQCBIVChBDTURfQ09NUFVURVJfQURE", 
+          "EJEIEhUKEENNRF9DT01QVVRFUl9ERUwQkggSGAoTQ01EX0NPTVBVVEVSX1VQ", 
+          "REFURRCTCBIWChFDTURfQ09NUFVURVJfRklORBCUCBIWChFDTURfQ09NUFVU", 
+          "RVJfT1BFThCVCBIXChJDTURfQ09NUFVURVJfQ0xPU0UQlggSFAoPQ01EX01F", 
+          "TUJFUl9MSVNUEJoIEhMKDkNNRF9NRU1CRVJfREVMEJsIEhYKEUNNRF9NRU1C", 
+          "RVJfVVBEQVRFEJwIEhQKD0NNRF9NRU1CRVJfRklORBCdCBIZChRDTURfTUVN", 
+          "QkVSX0NBUkRfSU5GTxCeCBIZChRDTURfU1lTX0JJTExJTkdfTElTVBCkCBIb", 
+          "ChZDTURfU1lTX0JJTExJTkdfVVBEQVRFEKUIEhEKDENNRF9TWVNfSU5GTxCm", 
+          "CBIQCgtDTURfU1lTX0FERBCnCBIQCgtDTURfU1lTX0RFTBCoCBITCg5DTURf", 
+          "U1lTX1VQREFURRCpCBISCg1DTURfR09PRFNfQUREEK4IEhIKDUNNRF9HT09E", 
+          "U19ERUwQrwgSFQoQQ01EX0dPT0RTX1VQREFURRCwCBITCg5DTURfR09PRFNf", 
+          "RklORBCxCBIUCg9DTURfR09PRFNfU0FMRVMQsggSGAoTQ01EX0dPT0RTX1NB", 
+          "TEVTX1RPUBCzCBIUCg9DTURfR09PRFNfU1RPQ0sQtAgSFAoPQ01EX0dPT0RT", 
+          "X09SREVSELUIEhsKFkNNRF9HT09EU19PUkRFUl9ERVRBSUwQtggSHAoXQ01E", 
+          "X0dPT0RTX09SREVSX1BST0NFU1MQtwgSGgoVQ01EX1NISUZUX0RFTElWRVJF", 
+          "REJZELgIEhIKDUNNRF9TSElGVF9BREQQuQgSEwoOQ01EX1NISUZUX0ZJTkQQ", 
+          "uggSFQoQQ01EX1FVRVJZX0NIQVJHRRDCCBIaChVDTURfUVVFUllfRU1CQVJL", 
+          "QVRJT04QwwgSFQoQQ01EX1FVRVJZX0NPTlNVTRDECBIUCg9DTURfUVVFUllf", 
+          "QVBQTFkQxQgSGAoTQ01EX1FVRVJZX09DQ1VQQU5DWRDGCBIUCg9DTURfQ0xJ", 
+          "RU5UX09QRU4Q0A8SFQoQQ01EX0NMSUVOVF9DTE9TRRDRDxIVChBDTURfQ0xJ", 
+          "RU5UX0xPR09OENIPEhYKEUNNRF9DTElFTlRfTE9HT0ZGENMPEhYKEUNNRF9D", 
+          "TElFTlRfSFVOR1VQENQPEhgKE0NNRF9DTElFTlRfRVZBTFVBVEUQ3g8SGgoV", 
+          "Q01EX0NMSUVOVF9WRVJJRllDT0RFEN8PEhoKFUNNRF9DTElFTlRfQklORE1P", 
+          "QklMRRDgDxIVChBDTURfRU1LX1VTRVJJTkZPELgXEhkKFENNRF9FTUtfQURE", 
+          "X0NBUkRJTkZPELkXEhsKFkNNRF9FTUtfQUREX0ZJTkdFUklORk8QuhcSGQoU", 
+          "Q01EX0VNS19BUFBMWV9NRU1CRVIQuxcSFQoQQ01EX0VNS19SRUNIQVJHRRC8", 
+          "FxIUCg9DTURfRU1LX0NIRUNLSU4QvRcSFQoQQ01EX0VNS19DSEVDS09VVBC+", 
+          "FxITCg5DTURfRU1LX0NBTkNFTBC/FxIYChNDTURfRU1LX1ZFUklGWV9MSVNU", 
+          "EMAXEhgKE0NNRF9FTUtfVkVSSUZZX1BST0MQwRcSFwoSQ01EX0VNS19PUkRF", 
+          "Ul9MSVNUEMQXEhcKEkNNRF9FTUtfT1JERVJfUFJPQxDFF0ItCh1jb20uc2t5", 
+        "c29mdC5jb3JlLmF1dG8ubWVzc2FnZUIMQ29yZVByb3RvY29s"));
     pbd::FileDescriptor.InternalDescriptorAssigner assigner = delegate(pbd::FileDescriptor root) {
       descriptor = root;
       internal__static_MessagePack__Descriptor = Descriptor.MessageTypes[0];
@@ -193,7 +193,7 @@ public static partial class CoreProtocol {
       internal__static_MessageContent__Descriptor = Descriptor.MessageTypes[1];
       internal__static_MessageContent__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::MessageContent, global::MessageContent.Builder>(internal__static_MessageContent__Descriptor,
-              new string[] { "MessageType", "ErrorTip", "CsUpload", "ScUpload", "CsHeart", "ScHeart", "CsKick", "ScKick", "CsReconnect", "ScReconnect", "CsPreCharge", "ScPreCharge", "CsToCharge", "CsPreBuy", "ScPreBuy", "ScToBuy", "ScMessage", "CsCommand", "CsGoodsFind", "ScGoodsFind", "CsAuthen", "ScAuthen", "CsLogin", "ScLogin", "ScCallList", "CsCallProcess", "CsAccountInfo", "ScAccountInfo", "ScRealtimeInfo", "CsLog", "ScLog", "ScRoleList", "CsRoleAdd", "ScRoleAdd", "CsRoleDel", "CsRoleUpdate", "CsRoleRights", "ScAccountList", "CsAccountAdd", "CsAccountDel", "CsAccountUpdate", "CsAccountSnsSet", "CsStaffComment", "ScStaffComment", "CsStaffPerform", "ScStaffPerform", "CsEarning", "ScEarning", "ScComputerList", "CsComputerAdd", "CsComputerDel", "CsComputerUpdate", "CsComputerFind", "ScComputerFind", "CsMemberList", "ScMemberList", "CsMemberDel", "CsMemberUpdate", "CsMemberFind", "ScMemberFind", "CsMemberCardInfo", "ScMemberCardInfo", "ScSysBillList", "CsSysBillUpdate", "ScSysBillUpdate", "CsSysInfo", "ScSysInfo", "CsAddSysInfo", "CsDelSysInfo", "CsUpdateSysInfo", "CsGoodsAdd", "CsGoodsDel", "CsGoodsUpdate", "CsGoodsStock", "ScGoodsStock", "CsSalesRecord", "ScSalesRecord", "CsSalesTop", "ScSalesTop", "CsOrderList", "ScOrderList", "CsOrderDetail", "ScOrderDetail", "ScShiftDeliveredBy", "CsShiftAdd", "CsShiftFind", "ScShiftFind", "CsQueryCharge", "ScQueryCharge", "CsQueryEmk", "ScQueryEmk", "CsQueryConsum", "ScQueryConsum", "CsQueryApply", "ScQueryApply", "CsQueryOccup", "ScQueryOccup", "CsClientOpen", "CsClientClose", "CsLogon", "ScLogon", "CsLogoff", "ScLogoff", "CsHungup", "CsEvaluate", "ScEvaluate", "CsVerifyCode", "ScVerifyCode", "CsBindMobile", "ScBindMobile", "CsEmkUserInfo", "ScEmkUserInfo", "CsEmkAddCardInfo", "CsEmkAddFingerInfo", "CsEmkApplyMember", "ScEmkApplyMember", "CsEmkCharge", "ScEmkCharge", "CsEmkCheckin", "ScEmkCheckin", "CsEmkCheckout", "ScEmkCheckout", "CsEmkCancel", "CsEmkVerifyList", "ScEmkVerifyList", "CsEmkVerifyProc", "CsEmkOrderList", "ScEmkOrderList", "CsEmkOrderProc", });
+              new string[] { "MessageType", "ErrorTip", "CsUpload", "ScUpload", "CsHeart", "ScHeart", "CsKick", "ScKick", "CsReconnect", "ScReconnect", "CsPreCharge", "ScPreCharge", "CsToCharge", "CsPreBuy", "ScPreBuy", "ScToBuy", "ScMessage", "CsCommand", "CsGoodsFind", "ScGoodsFind", "CsAuthen", "ScAuthen", "CsLogin", "ScLogin", "ScCallList", "CsCallProcess", "CsAccountInfo", "ScAccountInfo", "ScRealtimeInfo", "CsLog", "ScLog", "ScRoleList", "CsRoleAdd", "ScRoleAdd", "CsRoleDel", "CsRoleUpdate", "CsRoleRights", "ScAccountList", "CsAccountAdd", "CsAccountDel", "CsAccountUpdate", "CsAccountSnsSet", "CsStaffComment", "ScStaffComment", "CsStaffPerform", "ScStaffPerform", "CsEarning", "ScEarning", "ScComputerList", "CsComputerAdd", "CsComputerDel", "CsComputerUpdate", "CsComputerFind", "ScComputerFind", "CsMemberList", "ScMemberList", "CsMemberDel", "CsMemberUpdate", "CsMemberFind", "ScMemberFind", "CsMemberCardInfo", "ScMemberCardInfo", "ScSysBillList", "CsSysBillUpdate", "ScSysBillUpdate", "CsSysInfo", "ScSysInfo", "CsAddSysInfo", "CsDelSysInfo", "CsUpdateSysInfo", "CsGoodsAdd", "CsGoodsDel", "CsGoodsUpdate", "CsGoodsStock", "ScGoodsStock", "CsSalesRecord", "ScSalesRecord", "CsSalesTop", "ScSalesTop", "CsOrderList", "ScOrderList", "CsOrderDetail", "ScOrderDetail", "ScShiftDeliveredBy", "CsShiftAdd", "CsShiftFind", "ScShiftFind", "CsQueryCharge", "ScQueryCharge", "CsQueryEmk", "ScQueryEmk", "CsQueryTrade", "ScQueryTrade", "CsQueryApply", "ScQueryApply", "CsQueryOccup", "ScQueryOccup", "CsClientOpen", "CsClientClose", "CsLogon", "ScLogon", "CsLogoff", "ScLogoff", "CsHungup", "CsEvaluate", "ScEvaluate", "CsVerifyCode", "ScVerifyCode", "CsBindMobile", "ScBindMobile", "CsEmkUserInfo", "ScEmkUserInfo", "CsEmkAddCardInfo", "CsEmkAddFingerInfo", "CsEmkApplyMember", "ScEmkApplyMember", "CsEmkCharge", "ScEmkCharge", "CsEmkCheckin", "ScEmkCheckin", "CsEmkCheckout", "ScEmkCheckout", "CsEmkCancel", "CsEmkVerifyList", "ScEmkVerifyList", "CsEmkVerifyProc", "CsEmkOrderList", "ScEmkOrderList", "CsEmkOrderProc", });
       return null;
     };
     pbd::FileDescriptor.InternalBuildGeneratedFileFrom(descriptorData,
@@ -751,8 +751,8 @@ public sealed partial class MessagePack : pb::GeneratedMessage<MessagePack, Mess
 public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent, MessageContent.Builder> {
   private MessageContent() { }
   private static readonly MessageContent defaultInstance = new MessageContent().MakeReadOnly();
-  private static readonly string[] _messageContentFieldNames = new string[] { "csAccountAdd", "csAccountDel", "csAccountInfo", "csAccountSnsSet", "csAccountUpdate", "csAddSysInfo", "csAuthen", "csBindMobile", "csCallProcess", "csClientClose", "csClientOpen", "csCommand", "csComputerAdd", "csComputerDel", "csComputerFind", "csComputerUpdate", "csDelSysInfo", "csEarning", "csEmkAddCardInfo", "csEmkAddFingerInfo", "csEmkApplyMember", "csEmkCancel", "csEmkCharge", "csEmkCheckin", "csEmkCheckout", "csEmkOrderList", "csEmkOrderProc", "csEmkUserInfo", "csEmkVerifyList", "csEmkVerifyProc", "csEvaluate", "csGoodsAdd", "csGoodsDel", "csGoodsFind", "csGoodsStock", "csGoodsUpdate", "csHeart", "csHungup", "csKick", "csLog", "csLogin", "csLogoff", "csLogon", "csMemberCardInfo", "csMemberDel", "csMemberFind", "csMemberList", "csMemberUpdate", "csOrderDetail", "csOrderList", "csPreBuy", "csPreCharge", "csQueryApply", "csQueryCharge", "csQueryConsum", "csQueryEmk", "csQueryOccup", "csReconnect", "csRoleAdd", "csRoleDel", "csRoleRights", "csRoleUpdate", "csSalesRecord", "csSalesTop", "csShiftAdd", "csShiftFind", "csStaffComment", "csStaffPerform", "csSysBillUpdate", "csSysInfo", "csToCharge", "csUpdateSysInfo", "csUpload", "csVerifyCode", "errorTip", "messageType", "scAccountInfo", "scAccountList", "scAuthen", "scBindMobile", "scCallList", "scComputerFind", "scComputerList", "scEarning", "scEmkApplyMember", "scEmkCharge", "scEmkCheckin", "scEmkCheckout", "scEmkOrderList", "scEmkUserInfo", "scEmkVerifyList", "scEvaluate", "scGoodsFind", "scGoodsStock", "scHeart", "scKick", "scLog", "scLogin", "scLogoff", "scLogon", "scMemberCardInfo", "scMemberFind", "scMemberList", "scMessage", "scOrderDetail", "scOrderList", "scPreBuy", "scPreCharge", "scQueryApply", "scQueryCharge", "scQueryConsum", "scQueryEmk", "scQueryOccup", "scRealtimeInfo", "scReconnect", "scRoleAdd", "scRoleList", "scSalesRecord", "scSalesTop", "scShiftDeliveredBy", "scShiftFind", "scStaffComment", "scStaffPerform", "scSysBillList", "scSysBillUpdate", "scSysInfo", "scToBuy", "scUpload", "scVerifyCode" };
-  private static readonly uint[] _messageContentFieldTags = new uint[] { 330, 338, 234, 354, 346, 578, 186, 1778, 226, 1610, 1602, 146, 418, 426, 442, 434, 586, 394, 2418, 2426, 2434, 2498, 2450, 2466, 2482, 2530, 2546, 2402, 2506, 2522, 1746, 602, 610, 154, 626, 618, 42, 1650, 58, 258, 202, 1634, 1618, 522, 490, 506, 458, 498, 690, 674, 114, 90, 786, 738, 770, 754, 802, 74, 282, 298, 314, 306, 642, 658, 714, 722, 362, 378, 546, 562, 106, 594, 26, 1762, 18, 8, 242, 322, 194, 1786, 218, 450, 410, 402, 2442, 2458, 2474, 2490, 2538, 2410, 2514, 1754, 162, 634, 50, 66, 266, 210, 1642, 1626, 530, 514, 466, 138, 698, 682, 122, 98, 794, 746, 778, 762, 810, 250, 82, 290, 274, 650, 666, 706, 730, 370, 386, 538, 554, 570, 130, 34, 1770 };
+  private static readonly string[] _messageContentFieldNames = new string[] { "csAccountAdd", "csAccountDel", "csAccountInfo", "csAccountSnsSet", "csAccountUpdate", "csAddSysInfo", "csAuthen", "csBindMobile", "csCallProcess", "csClientClose", "csClientOpen", "csCommand", "csComputerAdd", "csComputerDel", "csComputerFind", "csComputerUpdate", "csDelSysInfo", "csEarning", "csEmkAddCardInfo", "csEmkAddFingerInfo", "csEmkApplyMember", "csEmkCancel", "csEmkCharge", "csEmkCheckin", "csEmkCheckout", "csEmkOrderList", "csEmkOrderProc", "csEmkUserInfo", "csEmkVerifyList", "csEmkVerifyProc", "csEvaluate", "csGoodsAdd", "csGoodsDel", "csGoodsFind", "csGoodsStock", "csGoodsUpdate", "csHeart", "csHungup", "csKick", "csLog", "csLogin", "csLogoff", "csLogon", "csMemberCardInfo", "csMemberDel", "csMemberFind", "csMemberList", "csMemberUpdate", "csOrderDetail", "csOrderList", "csPreBuy", "csPreCharge", "csQueryApply", "csQueryCharge", "csQueryEmk", "csQueryOccup", "csQueryTrade", "csReconnect", "csRoleAdd", "csRoleDel", "csRoleRights", "csRoleUpdate", "csSalesRecord", "csSalesTop", "csShiftAdd", "csShiftFind", "csStaffComment", "csStaffPerform", "csSysBillUpdate", "csSysInfo", "csToCharge", "csUpdateSysInfo", "csUpload", "csVerifyCode", "errorTip", "messageType", "scAccountInfo", "scAccountList", "scAuthen", "scBindMobile", "scCallList", "scComputerFind", "scComputerList", "scEarning", "scEmkApplyMember", "scEmkCharge", "scEmkCheckin", "scEmkCheckout", "scEmkOrderList", "scEmkUserInfo", "scEmkVerifyList", "scEvaluate", "scGoodsFind", "scGoodsStock", "scHeart", "scKick", "scLog", "scLogin", "scLogoff", "scLogon", "scMemberCardInfo", "scMemberFind", "scMemberList", "scMessage", "scOrderDetail", "scOrderList", "scPreBuy", "scPreCharge", "scQueryApply", "scQueryCharge", "scQueryEmk", "scQueryOccup", "scQueryTrade", "scRealtimeInfo", "scReconnect", "scRoleAdd", "scRoleList", "scSalesRecord", "scSalesTop", "scShiftDeliveredBy", "scShiftFind", "scStaffComment", "scStaffPerform", "scSysBillList", "scSysBillUpdate", "scSysInfo", "scToBuy", "scUpload", "scVerifyCode" };
+  private static readonly uint[] _messageContentFieldTags = new uint[] { 330, 338, 234, 354, 346, 578, 186, 1778, 226, 1610, 1602, 146, 418, 426, 442, 434, 586, 394, 2418, 2426, 2434, 2498, 2450, 2466, 2482, 2530, 2546, 2402, 2506, 2522, 1746, 602, 610, 154, 626, 618, 42, 1650, 58, 258, 202, 1634, 1618, 522, 490, 506, 458, 498, 690, 674, 114, 90, 786, 738, 754, 802, 770, 74, 282, 298, 314, 306, 642, 658, 714, 722, 362, 378, 546, 562, 106, 594, 26, 1762, 18, 8, 242, 322, 194, 1786, 218, 450, 410, 402, 2442, 2458, 2474, 2490, 2538, 2410, 2514, 1754, 162, 634, 50, 66, 266, 210, 1642, 1626, 530, 514, 466, 138, 698, 682, 122, 98, 794, 746, 762, 810, 778, 250, 82, 290, 274, 650, 666, 706, 730, 370, 386, 538, 554, 570, 130, 34, 1770 };
   public static MessageContent DefaultInstance {
     get { return defaultInstance; }
   }
@@ -1683,24 +1683,24 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return scQueryEmk_ ?? global::SCQueryEmk.DefaultInstance; }
   }
   
-  public const int CsQueryConsumFieldNumber = 96;
-  private bool hasCsQueryConsum;
-  private global::CSQueryConsum csQueryConsum_;
-  public bool HasCsQueryConsum {
-    get { return hasCsQueryConsum; }
+  public const int CsQueryTradeFieldNumber = 96;
+  private bool hasCsQueryTrade;
+  private global::CSQueryTrade csQueryTrade_;
+  public bool HasCsQueryTrade {
+    get { return hasCsQueryTrade; }
   }
-  public global::CSQueryConsum CsQueryConsum {
-    get { return csQueryConsum_ ?? global::CSQueryConsum.DefaultInstance; }
+  public global::CSQueryTrade CsQueryTrade {
+    get { return csQueryTrade_ ?? global::CSQueryTrade.DefaultInstance; }
   }
   
-  public const int ScQueryConsumFieldNumber = 97;
-  private bool hasScQueryConsum;
-  private global::SCQueryConsum scQueryConsum_;
-  public bool HasScQueryConsum {
-    get { return hasScQueryConsum; }
+  public const int ScQueryTradeFieldNumber = 97;
+  private bool hasScQueryTrade;
+  private global::SCQueryTrade scQueryTrade_;
+  public bool HasScQueryTrade {
+    get { return hasScQueryTrade; }
   }
-  public global::SCQueryConsum ScQueryConsum {
-    get { return scQueryConsum_ ?? global::SCQueryConsum.DefaultInstance; }
+  public global::SCQueryTrade ScQueryTrade {
+    get { return scQueryTrade_ ?? global::SCQueryTrade.DefaultInstance; }
   }
   
   public const int CsQueryApplyFieldNumber = 98;
@@ -2069,6 +2069,12 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
       if (HasErrorTip) {
         if (!ErrorTip.IsInitialized) return false;
       }
+      if (HasCsUpload) {
+        if (!CsUpload.IsInitialized) return false;
+      }
+      if (HasScUpload) {
+        if (!ScUpload.IsInitialized) return false;
+      }
       if (HasCsReconnect) {
         if (!CsReconnect.IsInitialized) return false;
       }
@@ -2300,11 +2306,11 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
       if (HasScQueryEmk) {
         if (!ScQueryEmk.IsInitialized) return false;
       }
-      if (HasCsQueryConsum) {
-        if (!CsQueryConsum.IsInitialized) return false;
+      if (HasCsQueryTrade) {
+        if (!CsQueryTrade.IsInitialized) return false;
       }
-      if (HasScQueryConsum) {
-        if (!ScQueryConsum.IsInitialized) return false;
+      if (HasScQueryTrade) {
+        if (!ScQueryTrade.IsInitialized) return false;
       }
       if (HasCsQueryApply) {
         if (!CsQueryApply.IsInitialized) return false;
@@ -2662,16 +2668,16 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
       output.WriteMessage(93, field_names[109], ScQueryCharge);
     }
     if (hasCsQueryEmk) {
-      output.WriteMessage(94, field_names[55], CsQueryEmk);
+      output.WriteMessage(94, field_names[54], CsQueryEmk);
     }
     if (hasScQueryEmk) {
-      output.WriteMessage(95, field_names[111], ScQueryEmk);
+      output.WriteMessage(95, field_names[110], ScQueryEmk);
     }
-    if (hasCsQueryConsum) {
-      output.WriteMessage(96, field_names[54], CsQueryConsum);
+    if (hasCsQueryTrade) {
+      output.WriteMessage(96, field_names[56], CsQueryTrade);
     }
-    if (hasScQueryConsum) {
-      output.WriteMessage(97, field_names[110], ScQueryConsum);
+    if (hasScQueryTrade) {
+      output.WriteMessage(97, field_names[112], ScQueryTrade);
     }
     if (hasCsQueryApply) {
       output.WriteMessage(98, field_names[52], CsQueryApply);
@@ -2680,10 +2686,10 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
       output.WriteMessage(99, field_names[108], ScQueryApply);
     }
     if (hasCsQueryOccup) {
-      output.WriteMessage(100, field_names[56], CsQueryOccup);
+      output.WriteMessage(100, field_names[55], CsQueryOccup);
     }
     if (hasScQueryOccup) {
-      output.WriteMessage(101, field_names[112], ScQueryOccup);
+      output.WriteMessage(101, field_names[111], ScQueryOccup);
     }
     if (hasCsClientOpen) {
       output.WriteMessage(200, field_names[10], CsClientOpen);
@@ -3071,11 +3077,11 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     if (hasScQueryEmk) {
       size += pb::CodedOutputStream.ComputeMessageSize(95, ScQueryEmk);
     }
-    if (hasCsQueryConsum) {
-      size += pb::CodedOutputStream.ComputeMessageSize(96, CsQueryConsum);
+    if (hasCsQueryTrade) {
+      size += pb::CodedOutputStream.ComputeMessageSize(96, CsQueryTrade);
     }
-    if (hasScQueryConsum) {
-      size += pb::CodedOutputStream.ComputeMessageSize(97, ScQueryConsum);
+    if (hasScQueryTrade) {
+      size += pb::CodedOutputStream.ComputeMessageSize(97, ScQueryTrade);
     }
     if (hasCsQueryApply) {
       size += pb::CodedOutputStream.ComputeMessageSize(98, CsQueryApply);
@@ -3580,11 +3586,11 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
       if (other.HasScQueryEmk) {
         MergeScQueryEmk(other.ScQueryEmk);
       }
-      if (other.HasCsQueryConsum) {
-        MergeCsQueryConsum(other.CsQueryConsum);
+      if (other.HasCsQueryTrade) {
+        MergeCsQueryTrade(other.CsQueryTrade);
       }
-      if (other.HasScQueryConsum) {
-        MergeScQueryConsum(other.ScQueryConsum);
+      if (other.HasScQueryTrade) {
+        MergeScQueryTrade(other.ScQueryTrade);
       }
       if (other.HasCsQueryApply) {
         MergeCsQueryApply(other.CsQueryApply);
@@ -4552,21 +4558,21 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             break;
           }
           case 770: {
-            global::CSQueryConsum.Builder subBuilder = global::CSQueryConsum.CreateBuilder();
-            if (result.hasCsQueryConsum) {
-              subBuilder.MergeFrom(CsQueryConsum);
+            global::CSQueryTrade.Builder subBuilder = global::CSQueryTrade.CreateBuilder();
+            if (result.hasCsQueryTrade) {
+              subBuilder.MergeFrom(CsQueryTrade);
             }
             input.ReadMessage(subBuilder, extensionRegistry);
-            CsQueryConsum = subBuilder.BuildPartial();
+            CsQueryTrade = subBuilder.BuildPartial();
             break;
           }
           case 778: {
-            global::SCQueryConsum.Builder subBuilder = global::SCQueryConsum.CreateBuilder();
-            if (result.hasScQueryConsum) {
-              subBuilder.MergeFrom(ScQueryConsum);
+            global::SCQueryTrade.Builder subBuilder = global::SCQueryTrade.CreateBuilder();
+            if (result.hasScQueryTrade) {
+              subBuilder.MergeFrom(ScQueryTrade);
             }
             input.ReadMessage(subBuilder, extensionRegistry);
-            ScQueryConsum = subBuilder.BuildPartial();
+            ScQueryTrade = subBuilder.BuildPartial();
             break;
           }
           case 786: {
@@ -8523,83 +8529,83 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
       return this;
     }
     
-    public bool HasCsQueryConsum {
-     get { return result.hasCsQueryConsum; }
+    public bool HasCsQueryTrade {
+     get { return result.hasCsQueryTrade; }
     }
-    public global::CSQueryConsum CsQueryConsum {
-      get { return result.CsQueryConsum; }
-      set { SetCsQueryConsum(value); }
+    public global::CSQueryTrade CsQueryTrade {
+      get { return result.CsQueryTrade; }
+      set { SetCsQueryTrade(value); }
     }
-    public Builder SetCsQueryConsum(global::CSQueryConsum value) {
+    public Builder SetCsQueryTrade(global::CSQueryTrade value) {
       pb::ThrowHelper.ThrowIfNull(value, "value");
       PrepareBuilder();
-      result.hasCsQueryConsum = true;
-      result.csQueryConsum_ = value;
+      result.hasCsQueryTrade = true;
+      result.csQueryTrade_ = value;
       return this;
     }
-    public Builder SetCsQueryConsum(global::CSQueryConsum.Builder builderForValue) {
+    public Builder SetCsQueryTrade(global::CSQueryTrade.Builder builderForValue) {
       pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
       PrepareBuilder();
-      result.hasCsQueryConsum = true;
-      result.csQueryConsum_ = builderForValue.Build();
+      result.hasCsQueryTrade = true;
+      result.csQueryTrade_ = builderForValue.Build();
       return this;
     }
-    public Builder MergeCsQueryConsum(global::CSQueryConsum value) {
+    public Builder MergeCsQueryTrade(global::CSQueryTrade value) {
       pb::ThrowHelper.ThrowIfNull(value, "value");
       PrepareBuilder();
-      if (result.hasCsQueryConsum &&
-          result.csQueryConsum_ != global::CSQueryConsum.DefaultInstance) {
-          result.csQueryConsum_ = global::CSQueryConsum.CreateBuilder(result.csQueryConsum_).MergeFrom(value).BuildPartial();
+      if (result.hasCsQueryTrade &&
+          result.csQueryTrade_ != global::CSQueryTrade.DefaultInstance) {
+          result.csQueryTrade_ = global::CSQueryTrade.CreateBuilder(result.csQueryTrade_).MergeFrom(value).BuildPartial();
       } else {
-        result.csQueryConsum_ = value;
+        result.csQueryTrade_ = value;
       }
-      result.hasCsQueryConsum = true;
+      result.hasCsQueryTrade = true;
       return this;
     }
-    public Builder ClearCsQueryConsum() {
+    public Builder ClearCsQueryTrade() {
       PrepareBuilder();
-      result.hasCsQueryConsum = false;
-      result.csQueryConsum_ = null;
+      result.hasCsQueryTrade = false;
+      result.csQueryTrade_ = null;
       return this;
     }
     
-    public bool HasScQueryConsum {
-     get { return result.hasScQueryConsum; }
+    public bool HasScQueryTrade {
+     get { return result.hasScQueryTrade; }
     }
-    public global::SCQueryConsum ScQueryConsum {
-      get { return result.ScQueryConsum; }
-      set { SetScQueryConsum(value); }
+    public global::SCQueryTrade ScQueryTrade {
+      get { return result.ScQueryTrade; }
+      set { SetScQueryTrade(value); }
     }
-    public Builder SetScQueryConsum(global::SCQueryConsum value) {
+    public Builder SetScQueryTrade(global::SCQueryTrade value) {
       pb::ThrowHelper.ThrowIfNull(value, "value");
       PrepareBuilder();
-      result.hasScQueryConsum = true;
-      result.scQueryConsum_ = value;
+      result.hasScQueryTrade = true;
+      result.scQueryTrade_ = value;
       return this;
     }
-    public Builder SetScQueryConsum(global::SCQueryConsum.Builder builderForValue) {
+    public Builder SetScQueryTrade(global::SCQueryTrade.Builder builderForValue) {
       pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
       PrepareBuilder();
-      result.hasScQueryConsum = true;
-      result.scQueryConsum_ = builderForValue.Build();
+      result.hasScQueryTrade = true;
+      result.scQueryTrade_ = builderForValue.Build();
       return this;
     }
-    public Builder MergeScQueryConsum(global::SCQueryConsum value) {
+    public Builder MergeScQueryTrade(global::SCQueryTrade value) {
       pb::ThrowHelper.ThrowIfNull(value, "value");
       PrepareBuilder();
-      if (result.hasScQueryConsum &&
-          result.scQueryConsum_ != global::SCQueryConsum.DefaultInstance) {
-          result.scQueryConsum_ = global::SCQueryConsum.CreateBuilder(result.scQueryConsum_).MergeFrom(value).BuildPartial();
+      if (result.hasScQueryTrade &&
+          result.scQueryTrade_ != global::SCQueryTrade.DefaultInstance) {
+          result.scQueryTrade_ = global::SCQueryTrade.CreateBuilder(result.scQueryTrade_).MergeFrom(value).BuildPartial();
       } else {
-        result.scQueryConsum_ = value;
+        result.scQueryTrade_ = value;
       }
-      result.hasScQueryConsum = true;
+      result.hasScQueryTrade = true;
       return this;
     }
-    public Builder ClearScQueryConsum() {
+    public Builder ClearScQueryTrade() {
       PrepareBuilder();
-      result.hasScQueryConsum = false;
-      result.scQueryConsum_ = null;
+      result.hasScQueryTrade = false;
+      result.scQueryTrade_ = null;
       return this;
     }
     

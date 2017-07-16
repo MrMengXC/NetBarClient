@@ -159,7 +159,7 @@ namespace NetBarMS.Codes.Tools.NetOperation
 
         public static void GetUserConsumeRecord(DataResultBlock resultBlock, StructPage page, string start, string end, int use,int pay,int mid)
         {
-            CSQueryConsum.Builder consume = new CSQueryConsum.Builder();
+            CSQueryTrade.Builder consume = new CSQueryTrade.Builder();
             consume.Page = page;
             if (start != null && !start.Equals(""))
             {
@@ -181,7 +181,7 @@ namespace NetBarMS.Codes.Tools.NetOperation
             }
             MessageContent.Builder content = new MessageContent.Builder();
             content.MessageType = 1;
-            content.CsQueryConsum = consume.Build();
+            content.CsQueryTrade = consume.Build();
 
             MessagePack.Builder pack = new MessagePack.Builder();
             pack.SetCmd(Cmd.CMD_QUERY_CONSUM);

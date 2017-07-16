@@ -60,13 +60,20 @@ namespace NetBarMS.Codes.Tools.FlowManage
                 {
                     //需要充值
                     case FLOW_ERROR.NEED_RECHARGE:
-                        UserScanCodeView codeView = new UserScanCodeView(this.card,50,FLOW_STATUS.ACTIVE_STATUS,(int)PRECHARGE_TYPE.NOT_MEMBER);
+                        UserScanCodeView codeView = new UserScanCodeView(this.card,10,FLOW_STATUS.ACTIVE_STATUS,(int)PRECHARGE_TYPE.NOT_MEMBER);
                         ToolsManage.ShowForm(codeView, false);
                         break;
                     //提醒是否开通会员
                     case FLOW_ERROR.NEED_ADD_CARD:
                         {
                             RemindIsOpenMember();
+                        }
+                        break;
+                    //用户锁定
+                    case FLOW_ERROR.USER_LOCK:
+                        {
+                            MessageBox.Show("该用户已经被锁");
+
                         }
                         break;
                 }
@@ -97,7 +104,7 @@ namespace NetBarMS.Codes.Tools.FlowManage
                 Birthday = "2012-09-01",
                 Address = "海南省",
                 Organization = "海南",
-                HeadUrl = "#dasdasd#",
+                Head = "#dasdasd#",
                 Vld = "",
             };
 

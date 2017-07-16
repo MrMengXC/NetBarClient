@@ -268,6 +268,7 @@ namespace NetBarMS.Views.RateManage
             this.nDurComboBoxEdit.Text = UserArea.OrdinaryInterval.ToString();
             this.nDurPrieceText.Text = UserArea.OrdinaryPrice.ToString();
             this.nMinConsumeText.Text = UserArea.OrdinaryMin.ToString();
+
             this.bDurComboBoxEdit.Text = UserArea.NightInterval.ToString();
             this.bDurPrieceText.Text = UserArea.NightPrice.ToString();
             this.bMinConsumeText.Text = UserArea.NightMin.ToString();

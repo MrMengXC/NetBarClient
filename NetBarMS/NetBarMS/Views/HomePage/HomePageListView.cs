@@ -15,6 +15,7 @@ using DevExpress.XtraEditors.Controls;
 using NetBarMS.Codes.Tools.Manage;
 using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraEditors.Repository;
+using NetBarMS.Codes.Model;
 
 namespace NetBarMS.Views.HomePage
 {
@@ -54,6 +55,8 @@ namespace NetBarMS.Views.HomePage
 
         public DataTable mainDataTable;     //
         private List<StructRealTime> coms;
+        private List<AreaTypeModel> areas;
+
         private RepositoryItemButtonEdit normalEdit, verietyEdit;
         public HomePageListView()
         {
@@ -69,7 +72,19 @@ namespace NetBarMS.Views.HomePage
 
             SetButtonItem(out normalEdit, nor);
             SetButtonItem(out verietyEdit, ver);
+            //设置Combox
+            foreach(string name in Enum.GetNames(typeof(COMPUTERSTATUS)))
+            {
+                this.comboBoxEdit1.Properties.Items.Add(name);
+            }
+            this.comboBoxEdit2.Properties.Items.Add("无");
+            this.areas = SysManage.Areas;
+            foreach (AreaTypeModel model in areas)
+            {
+                this.comboBoxEdit2.Properties.Items.Add(model.areaName);
+            }
 
+            //设置GridControl
             ToolsManage.SetGridView(this.gridView1, GridControlType.HomePageList, out this.mainDataTable, ButtonEdit_ButtonClick, GridView_CustomColumnSort);
             this.gridControl1.DataSource = this.mainDataTable;
             this.gridView1.CustomRowCellEdit += GridView1_CustomRowCellEdit;
@@ -177,30 +192,46 @@ namespace NetBarMS.Views.HomePage
         #endregion
 
         #region 更新首页数据
+        //刷新状态数量显示
         private void RefreshStatusNum()
         {
 
             this.Invoke(new RefreshUIHandle(delegate {
                 char[] sp = { ':', '：' };
-                this.idleLabel.Text = this.idleLabel.Text.Split(sp)[0] + HomePageMessageManage.IdleNum;
-                this.onlineLabel.Text = this.onlineLabel.Text.Split(sp)[0] + HomePageMessageManage.OnlineNum;
+                Dictionary<string, int> dict = HomePageMessageManage.StatusNum;
+                int idle = 0,online = 0;
 
+                dict.TryGetValue(((int)COMPUTERSTATUS.空闲).ToString(), out idle);
+                dict.TryGetValue(((int)COMPUTERSTATUS.在线).ToString(), out online);
+
+                this.idleLabel.Text = 
+                this.onlineLabel.Text = string.Format("{0}：{1}", this.onlineLabel.Text.Split(sp)[0], online);
             }));
 
         }
-        public void UpdateHomePageData(int index ,StructRealTime com)
+        public void UpdateHomePageData(StructRealTime com)
         {
             
             this.Invoke(new RefreshUIHandle(delegate {
+                int index = HomePageMessageManage.GetComputerIndex(com.Computerid, this.coms);
+                if(index < 0)
+                {
+                    return;
+                }
                 this.coms[index] = com;
                 DataRow row = this.mainDataTable.Rows[index];
                 AddNewRow(com, row);
             }));
            
         }
-        public void UpdateHomePageArea(int index, StructRealTime com)
+        public void UpdateHomePageArea(StructRealTime com)
         {
             this.Invoke(new RefreshUIHandle(delegate {
+                int index = HomePageMessageManage.GetComputerIndex(com.Computerid, this.coms);
+                if (index < 0)
+                {
+                    return;
+                }
                 this.coms[index] = com;
                 DataRow row = this.mainDataTable.Rows[index];
                 row[TitleList.Area.ToString()] = SysManage.GetAreaName(com.Area);
@@ -212,7 +243,7 @@ namespace NetBarMS.Views.HomePage
         #region 更新GridControl 的数据
         private void RefreshGridControl()
         {
-            this.mainDataTable.Clear();
+            this.mainDataTable.Rows.Clear();
            
             for (int i = 0; i < this.coms.Count; i++)
             {
@@ -321,8 +352,56 @@ namespace NetBarMS.Views.HomePage
             }
 
         }
+
+
         #endregion
 
+        #region 按照条件筛选获取设备
+        //按照设备查询
+        private void comboBoxEdit1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FilterSearchComputers();
+        }
+        //按照区域查询
+        private void comboBoxEdit2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FilterSearchComputers();
+        }
+
+        //按照关键字搜索
+        private void SearchButton_ButtonClick(object sender, ButtonPressedEventArgs e)
+        {
+            FilterSearchComputers();
+        }
+
+        private void FilterSearchComputers()
+        {
+
+            string key = "";
+            if(!this.buttonEdit1.Text.Equals(this.buttonEdit1.Properties.NullText))
+            {
+                key = this.buttonEdit1.Text;
+            }
+
+            COMPUTERSTATUS status = COMPUTERSTATUS.无;
+            Enum.TryParse<COMPUTERSTATUS>(this.comboBoxEdit1.Text, out status);
+
+            int areaId = -1;
+            if(this.comboBoxEdit2.SelectedIndex > 0)
+            {
+                AreaTypeModel model = this.areas[this.comboBoxEdit2.SelectedIndex - 1];
+                areaId = model.areaId;
+            }
+
+            HomePageMessageManage.GetFilterComputers(status, areaId, key, out this.coms);
+            RefreshGridControl();
+
+
+
+
+        }
+
+        #endregion
         #region 按钮标题进行点击排序
         private void GridView_CustomColumnSort(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnSortEventArgs e)
       

@@ -149,7 +149,7 @@
             this.nAddButton.Appearance.BackColor = System.Drawing.Color.Red;
             this.nAddButton.Appearance.Options.UseBackColor = true;
             this.nAddButton.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.nAddButton.Location = new System.Drawing.Point(471, 3);
+            this.nAddButton.Location = new System.Drawing.Point(495, 3);
             this.nAddButton.Name = "nAddButton";
             this.nAddButton.Size = new System.Drawing.Size(75, 23);
             this.nAddButton.TabIndex = 4;
@@ -158,15 +158,17 @@
             // 
             // nGiveTextEdit
             // 
-            this.nGiveTextEdit.Location = new System.Drawing.Point(215, 3);
+            this.nGiveTextEdit.Location = new System.Drawing.Point(239, 3);
             this.nGiveTextEdit.Name = "nGiveTextEdit";
+            this.nGiveTextEdit.Properties.NullText = "请输入赠送金额";
             this.nGiveTextEdit.Size = new System.Drawing.Size(100, 20);
             this.nGiveTextEdit.TabIndex = 3;
             // 
             // nRechargeTextEdit
             // 
-            this.nRechargeTextEdit.Location = new System.Drawing.Point(109, 3);
+            this.nRechargeTextEdit.Location = new System.Drawing.Point(133, 3);
             this.nRechargeTextEdit.Name = "nRechargeTextEdit";
+            this.nRechargeTextEdit.Properties.NullText = "请输入充值金额";
             this.nRechargeTextEdit.Size = new System.Drawing.Size(100, 20);
             this.nRechargeTextEdit.TabIndex = 2;
             // 
@@ -176,7 +178,8 @@
             this.comboBoxEdit1.Name = "comboBoxEdit1";
             this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit1.Size = new System.Drawing.Size(100, 20);
+            this.comboBoxEdit1.Properties.NullText = "请选择会员类型";
+            this.comboBoxEdit1.Size = new System.Drawing.Size(124, 20);
             this.comboBoxEdit1.TabIndex = 0;
             // 
             // flowLayoutPanel1
@@ -189,12 +192,12 @@
             this.flowLayoutPanel1.Controls.Add(this.popupContainerControl1);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(14, 8);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(578, 37);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(617, 37);
             this.flowLayoutPanel1.TabIndex = 83;
             // 
             // popupContainerEdit1
             // 
-            this.popupContainerEdit1.Location = new System.Drawing.Point(321, 3);
+            this.popupContainerEdit1.Location = new System.Drawing.Point(345, 3);
             this.popupContainerEdit1.Name = "popupContainerEdit1";
             this.popupContainerEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -312,26 +315,29 @@
             this.comboBoxEdit3.Name = "comboBoxEdit3";
             this.comboBoxEdit3.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit3.Size = new System.Drawing.Size(100, 20);
+            this.comboBoxEdit3.Properties.NullText = "请选择会员类型";
+            this.comboBoxEdit3.Size = new System.Drawing.Size(121, 20);
             this.comboBoxEdit3.TabIndex = 0;
             // 
             // mRechargeTextEdit
             // 
-            this.mRechargeTextEdit.Location = new System.Drawing.Point(109, 3);
+            this.mRechargeTextEdit.Location = new System.Drawing.Point(130, 3);
             this.mRechargeTextEdit.Name = "mRechargeTextEdit";
+            this.mRechargeTextEdit.Properties.NullText = "请输入充值金额";
             this.mRechargeTextEdit.Size = new System.Drawing.Size(100, 20);
             this.mRechargeTextEdit.TabIndex = 2;
             // 
             // mGiveTextEdit
             // 
-            this.mGiveTextEdit.Location = new System.Drawing.Point(215, 3);
+            this.mGiveTextEdit.Location = new System.Drawing.Point(236, 3);
             this.mGiveTextEdit.Name = "mGiveTextEdit";
+            this.mGiveTextEdit.Properties.NullText = "请输入赠送金额";
             this.mGiveTextEdit.Size = new System.Drawing.Size(100, 20);
             this.mGiveTextEdit.TabIndex = 3;
             // 
             // popupContainerEdit2
             // 
-            this.popupContainerEdit2.Location = new System.Drawing.Point(321, 3);
+            this.popupContainerEdit2.Location = new System.Drawing.Point(342, 3);
             this.popupContainerEdit2.Name = "popupContainerEdit2";
             this.popupContainerEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -369,7 +375,7 @@
             this.mAddButton.Appearance.BackColor = System.Drawing.Color.Red;
             this.mAddButton.Appearance.Options.UseBackColor = true;
             this.mAddButton.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.mAddButton.Location = new System.Drawing.Point(471, 3);
+            this.mAddButton.Location = new System.Drawing.Point(492, 3);
             this.mAddButton.Name = "mAddButton";
             this.mAddButton.Size = new System.Drawing.Size(75, 23);
             this.mAddButton.TabIndex = 4;

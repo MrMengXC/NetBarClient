@@ -121,7 +121,7 @@ namespace NetBarMS.Views.NetUserManage
                 Birthday = birthdayLabel.Text.Split(sp)[1],
                 Address = addressLabel.Text.Split(sp)[1],
                 Organization = organLabel.Text.Split(sp)[1],
-                HeadUrl = "#dasdasd#",
+                Head = "#dasdasd#",
                 Vld = cardValidityLabel.Text.Split(sp)[1],
             };
 
@@ -181,7 +181,12 @@ namespace NetBarMS.Views.NetUserManage
                         AddCardInfo();
 
                         break;
+                    case FLOW_ERROR.USER_LOCK:
+                        {
+                            MessageBox.Show("该用户已经被锁");
 
+                        }
+                        break;
                     default:
                         break;
                 }

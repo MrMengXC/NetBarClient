@@ -34,7 +34,7 @@ namespace NetBarMS.Views.SystemSearch
         #endregion
         private DateTime lastDate = DateTime.MinValue;
         private string startTime = "", endTime = "";
-        private IList<StructConsum> records;
+        private IList<StructTrade> records;
         public UserConsumeRecordView()
         {
             InitializeComponent();
@@ -110,8 +110,8 @@ namespace NetBarMS.Views.SystemSearch
             if (result.pack.Content.MessageType == 1)
             {
                 this.Invoke(new RefreshUIHandle(delegate {
-                    this.pageView1.RefreshPageView(result.pack.Content.ScQueryConsum.Pagecount);
-                    records = result.pack.Content.ScQueryConsum.ConsumsList;
+                    this.pageView1.RefreshPageView(result.pack.Content.ScQueryTrade.Pagecount);
+                    records = result.pack.Content.ScQueryTrade.TradesList;
                     RefreshGridControl();
 
                 }));
@@ -128,25 +128,25 @@ namespace NetBarMS.Views.SystemSearch
         private void RefreshGridControl()
         {
             this.mainDataTable.Rows.Clear();
-            foreach (StructConsum consum in records)
+            foreach (StructTrade consum in records)
             {
                 AddNewRow(consum);
             }
         }
         //添加新行
-        private void AddNewRow(StructConsum consum)
+        private void AddNewRow(StructTrade consum)
         {
 
             DataRow row = this.mainDataTable.NewRow();
             this.mainDataTable.Rows.Add(row);
-            row[TitleList.IndentNumber.ToString()] = consum.Consumid;
+            row[TitleList.IndentNumber.ToString()] = consum.Tradeid;
             row[TitleList.Name.ToString()] = consum.Username;
             row[TitleList.IdNumber.ToString()] = consum.Cardnumber;
 
             row[TitleList.Area.ToString()] = SysManage.GetAreaName(consum.Area.ToString());
-            row[TitleList.Use.ToString()] = Enum.GetName(typeof(CONSUMEUSE), consum.Consumtype);
-            row[TitleList.Money.ToString()] = consum.Money;
-            row[TitleList.Time.ToString()] = consum.Time;
+            row[TitleList.Use.ToString()] = Enum.GetName(typeof(CONSUMEUSE), consum.Tradetype);
+            row[TitleList.Money.ToString()] = consum.Amount;
+            row[TitleList.Time.ToString()] = consum.Addtime;
             row[TitleList.PayChannel.ToString()] = Enum.GetName(typeof(PAYCHANNEL), consum.Paymode); ;
 
 

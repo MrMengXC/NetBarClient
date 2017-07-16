@@ -54,7 +54,7 @@ namespace NetBarMS.Views.SystemManage
             this.gridControl1.DataSource = this.mainDataTable;
 
 
-            this.panel1.MaximumSize = new Size(this.areaPanel.Width, this.areaPanel.Height - this.addAreaButton.Height - this.deleteAreaButton.Height);
+            this.panel1.MaximumSize = new Size(this.areaPanel.Width-this.addAreaButton.Width - this.deleteAreaButton.Width, this.areaPanel.Height);
             this.panel1.AutoSize = true;
             this.panel1.AutoScroll = true;
             this.MouseWheel += AreaFlowPanel_MouseWheel;
@@ -66,7 +66,7 @@ namespace NetBarMS.Views.SystemManage
         //bgSize change
         private void AreaPanel_SizeChanged(object sender, EventArgs e)
         {
-            this.panel1.MaximumSize = new Size(this.areaPanel.Width, this.areaPanel.Height - this.addAreaButton.Height- this.deleteAreaButton.Height);
+            this.panel1.MaximumSize = new Size(this.areaPanel.Width - this.addAreaButton.Width - this.deleteAreaButton.Width, this.areaPanel.Height);
         }
         #endregion
 
@@ -78,6 +78,30 @@ namespace NetBarMS.Views.SystemManage
         //获取区域列表
         private void GetAreaListResult(ResultModel result)
         {
+            if (result.pack.Cmd != Cmd.CMD_SYS_INFO)
+            {
+                NetMessageManage.RemoveResultBlock(GetAreaListResult);
+                this.Invoke(new RefreshUIHandle(delegate
+                {
+
+                    System.Console.WriteLine("GetAreaList:" + result.pack);
+                    SysManage.UpdateAreaData(result.pack.Content.ScSysInfo.ChildList);
+                    areas = result.pack.Content.ScSysInfo.ChildList;
+                    areaCodes.Clear();
+                    foreach (StructDictItem item in areas)
+                    {
+                        areaCodes.Add(item.Code.ToString());
+                    }
+
+                    if (isChange)
+                    {
+                        isChange = false;
+                        //修改首页
+                        this.areaManage.ChangeAreaUpateHomePageComputerArea();
+                    }
+                    InitAreaUI();
+                }));
+            }
             if (result.pack.Content.MessageType != 1)
             {
                 return;
@@ -115,6 +139,7 @@ namespace NetBarMS.Views.SystemManage
         #endregion
 
         #region 初始化区域UI
+        const int AREABTN_WITH = 10;
         private void InitAreaUI()
         {
 
@@ -123,23 +148,27 @@ namespace NetBarMS.Views.SystemManage
             this.selectArea = null;
             this.selectButtons.Clear();
             this.panel1.Controls.Clear();
-
-            for (int i = 0;i<this.areas.Count;i++)
+            using (Graphics gra = CreateGraphics())
             {
-                StructDictItem item = this.areas[i];
-                SimpleButton button = new SimpleButton();
-                button.AutoSize = false;
-                button.Size = new Size(this.panel1.Size.Width, 40);
-                button.Appearance.BackColor = Color.White;
-                button.Text = item.GetItem(0);
-                button.Dock = DockStyle.Top;
-                this.panel1.Controls.Add(button);
-                button.Click += Text_Click;
-                button.Tag = item.Code.ToString();
-                button.Margin = new Padding(0);
-                button.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+                for (int i = 0; i < this.areas.Count; i++)
+                {
+                    StructDictItem item = this.areas[i];
+                    SimpleButton button = new SimpleButton();
+                    
+                    button.Appearance.BackColor = Color.White;
+                    button.Text = item.GetItem(0);
+                    button.Dock = DockStyle.Left;
+                    this.panel1.Controls.Add(button);
+                    button.Click += Text_Click;
+                    button.Tag = item.Code.ToString();
+                    button.Margin = new Padding(0);
+                    button.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
 
+                    SizeF size = gra.MeasureString(button.Text, button.Font);
+                    button.Size = new Size((int)size.Width + AREABTN_WITH, this.panel1.Size.Height);
+                }
             }
+                
         }
 
         //标签点击
@@ -388,21 +417,21 @@ namespace NetBarMS.Views.SystemManage
         private void AreaFlowPanel_MouseWheel(object sender, MouseEventArgs e)
         {
 
-            //获取鼠标位于本页面的文职
-            Point aPoint = new Point(e.X, e.Y); 
-            //AreaPanel 所在父视图的坐标
-            Rectangle r = new Rectangle(this.areaPanel.Location.X+this.tableLayoutPanel1.Location.X, this.areaPanel.Location.Y+ this.tableLayoutPanel1.Location.Y, this.areaPanel.Width, this.areaPanel.Height);
-            //判断鼠标是不是在flowLayoutPanel1区域内
-            if (r.Contains(aPoint))
-            {
-                //设置鼠标滚动幅度的大小
-                //flowLayoutPanel1.AutoScrollPosition = new Point(0, flowLayoutPanel1.VerticalScroll.Value - e.Delta / 2);
-                System.Console.WriteLine("滚动中");
-                Point loc = this.panel1.Location;
-                loc .Y-= 1;
-                this.panel1.Location = loc;
+            ////获取鼠标位于本页面的文职
+            //Point aPoint = new Point(e.X, e.Y); 
+            ////AreaPanel 所在父视图的坐标
+            //Rectangle r = new Rectangle(this.areaPanel.Location.X+this.tableLayoutPanel1.Location.X, this.areaPanel.Location.Y+ this.tableLayoutPanel1.Location.Y, this.areaPanel.Width, this.areaPanel.Height);
+            ////判断鼠标是不是在flowLayoutPanel1区域内
+            //if (r.Contains(aPoint))
+            //{
+            //    //设置鼠标滚动幅度的大小
+            //    //flowLayoutPanel1.AutoScrollPosition = new Point(0, flowLayoutPanel1.VerticalScroll.Value - e.Delta / 2);
+            //    System.Console.WriteLine("滚动中");
+            //    Point loc = this.panel1.Location;
+            //    loc .Y-= 1;
+            //    this.panel1.Location = loc;
 
-            }
+            //}
 
 
         }

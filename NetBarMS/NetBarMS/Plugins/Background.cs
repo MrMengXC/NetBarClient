@@ -156,10 +156,10 @@ public static partial class Background {
   internal static pb::FieldAccess.FieldAccessorTable<global::CSQueryEmk, global::CSQueryEmk.Builder> internal__static_CSQueryEmk__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_SCQueryEmk__Descriptor;
   internal static pb::FieldAccess.FieldAccessorTable<global::SCQueryEmk, global::SCQueryEmk.Builder> internal__static_SCQueryEmk__FieldAccessorTable;
-  internal static pbd::MessageDescriptor internal__static_CSQueryConsum__Descriptor;
-  internal static pb::FieldAccess.FieldAccessorTable<global::CSQueryConsum, global::CSQueryConsum.Builder> internal__static_CSQueryConsum__FieldAccessorTable;
-  internal static pbd::MessageDescriptor internal__static_SCQueryConsum__Descriptor;
-  internal static pb::FieldAccess.FieldAccessorTable<global::SCQueryConsum, global::SCQueryConsum.Builder> internal__static_SCQueryConsum__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_CSQueryTrade__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::CSQueryTrade, global::CSQueryTrade.Builder> internal__static_CSQueryTrade__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_SCQueryTrade__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::SCQueryTrade, global::SCQueryTrade.Builder> internal__static_SCQueryTrade__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_CSQueryApply__Descriptor;
   internal static pb::FieldAccess.FieldAccessorTable<global::CSQueryApply, global::CSQueryApply.Builder> internal__static_CSQueryApply__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_SCQueryApply__Descriptor;
@@ -267,19 +267,19 @@ public static partial class Background {
           "ZRgBIAIoCzILLlN0cnVjdFBhZ2USEQoJc3RhcnR0aW1lGAIgASgJEhAKCHN0", 
           "b3B0aW1lGAMgASgJEgwKBG5hbWUYBCABKAkSEAoIbWVtYmVyaWQYBSABKAUS", 
           "EgoKY29tcHV0ZXJpZBgGIAEoBSJBCgpTQ1F1ZXJ5RW1rEhEKCXBhZ2Vjb3Vu", 
-          "dBgBIAIoBRIgCgRlbWtzGAIgAygLMhIuU3RydWN0RW1iYXJrYXRpb24igQEK", 
-          "DUNTUXVlcnlDb25zdW0SGQoEcGFnZRgBIAIoCzILLlN0cnVjdFBhZ2USEQoJ", 
-          "c3RhcnR0aW1lGAIgASgJEhAKCHN0b3B0aW1lGAMgASgJEg0KBXVzYWdlGAQg", 
-          "ASgFEg8KB3BheW1vZGUYBSABKAUSEAoIbWVtYmVyaWQYBiABKAUiQgoNU0NR", 
-          "dWVyeUNvbnN1bRIRCglwYWdlY291bnQYASACKAUSHgoHY29uc3VtcxgCIAMo", 
-          "CzINLlN0cnVjdENvbnN1bSJ/CgxDU1F1ZXJ5QXBwbHkSGQoEcGFnZRgBIAIo", 
-          "CzILLlN0cnVjdFBhZ2USEQoJc3RhcnR0aW1lGAIgASgJEhAKCHN0b3B0aW1l", 
-          "GAMgASgJEhAKCG9wZXJhdG9yGAQgASgJEg8KB3JpZ2h0aWQYBSABKAUSDAoE", 
-          "bmFtZRgGIAEoCSI/CgxTQ1F1ZXJ5QXBwbHkSEQoJcGFnZWNvdW50GAEgAigF", 
-          "EhwKBmFwcGx5cxgCIAMoCzIMLlN0cnVjdEFwcGx5IiwKDENTUXVlcnlPY2N1", 
-          "cBIOCgZhcmVhaWQYASABKAUSDAoEZGF0ZRgCIAEoCSIeCgxTQ1F1ZXJ5T2Nj", 
-          "dXASDgoGb2NjdXBzGAEgAygFQjMKHWNvbS5za3lzb2Z0LmNvcmUuYXV0by5t", 
-        "ZXNzYWdlQhJCYWNrZ3JvdW5kUHJvdG9jb2w="));
+          "dBgBIAIoBRIgCgRlbWtzGAIgAygLMhIuU3RydWN0RW1iYXJrYXRpb24igAEK", 
+          "DENTUXVlcnlUcmFkZRIZCgRwYWdlGAEgAigLMgsuU3RydWN0UGFnZRIRCglz", 
+          "dGFydHRpbWUYAiABKAkSEAoIc3RvcHRpbWUYAyABKAkSDQoFdXNhZ2UYBCAB", 
+          "KAUSDwoHcGF5bW9kZRgFIAEoBRIQCghtZW1iZXJpZBgGIAEoBSI/CgxTQ1F1", 
+          "ZXJ5VHJhZGUSEQoJcGFnZWNvdW50GAEgAigFEhwKBnRyYWRlcxgCIAMoCzIM", 
+          "LlN0cnVjdFRyYWRlIn8KDENTUXVlcnlBcHBseRIZCgRwYWdlGAEgAigLMgsu", 
+          "U3RydWN0UGFnZRIRCglzdGFydHRpbWUYAiABKAkSEAoIc3RvcHRpbWUYAyAB", 
+          "KAkSEAoIb3BlcmF0b3IYBCABKAkSDwoHcmlnaHRpZBgFIAEoBRIMCgRuYW1l", 
+          "GAYgASgJIj8KDFNDUXVlcnlBcHBseRIRCglwYWdlY291bnQYASACKAUSHAoG", 
+          "YXBwbHlzGAIgAygLMgwuU3RydWN0QXBwbHkiLAoMQ1NRdWVyeU9jY3VwEg4K", 
+          "BmFyZWFpZBgBIAEoBRIMCgRkYXRlGAIgASgJIh4KDFNDUXVlcnlPY2N1cBIO", 
+          "CgZvY2N1cHMYASADKAVCMwodY29tLnNreXNvZnQuY29yZS5hdXRvLm1lc3Nh", 
+        "Z2VCEkJhY2tncm91bmRQcm90b2NvbA=="));
     pbd::FileDescriptor.InternalDescriptorAssigner assigner = delegate(pbd::FileDescriptor root) {
       descriptor = root;
       internal__static_CSAuthen__Descriptor = Descriptor.MessageTypes[0];
@@ -566,14 +566,14 @@ public static partial class Background {
       internal__static_SCQueryEmk__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::SCQueryEmk, global::SCQueryEmk.Builder>(internal__static_SCQueryEmk__Descriptor,
               new string[] { "Pagecount", "Emks", });
-      internal__static_CSQueryConsum__Descriptor = Descriptor.MessageTypes[71];
-      internal__static_CSQueryConsum__FieldAccessorTable = 
-          new pb::FieldAccess.FieldAccessorTable<global::CSQueryConsum, global::CSQueryConsum.Builder>(internal__static_CSQueryConsum__Descriptor,
+      internal__static_CSQueryTrade__Descriptor = Descriptor.MessageTypes[71];
+      internal__static_CSQueryTrade__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::CSQueryTrade, global::CSQueryTrade.Builder>(internal__static_CSQueryTrade__Descriptor,
               new string[] { "Page", "Starttime", "Stoptime", "Usage", "Paymode", "Memberid", });
-      internal__static_SCQueryConsum__Descriptor = Descriptor.MessageTypes[72];
-      internal__static_SCQueryConsum__FieldAccessorTable = 
-          new pb::FieldAccess.FieldAccessorTable<global::SCQueryConsum, global::SCQueryConsum.Builder>(internal__static_SCQueryConsum__Descriptor,
-              new string[] { "Pagecount", "Consums", });
+      internal__static_SCQueryTrade__Descriptor = Descriptor.MessageTypes[72];
+      internal__static_SCQueryTrade__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::SCQueryTrade, global::SCQueryTrade.Builder>(internal__static_SCQueryTrade__Descriptor,
+              new string[] { "Pagecount", "Trades", });
       internal__static_CSQueryApply__Descriptor = Descriptor.MessageTypes[73];
       internal__static_CSQueryApply__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSQueryApply, global::CSQueryApply.Builder>(internal__static_CSQueryApply__Descriptor,
@@ -24063,29 +24063,29 @@ public sealed partial class SCQueryEmk : pb::GeneratedMessage<SCQueryEmk, SCQuer
 }
 
 [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-public sealed partial class CSQueryConsum : pb::GeneratedMessage<CSQueryConsum, CSQueryConsum.Builder> {
-  private CSQueryConsum() { }
-  private static readonly CSQueryConsum defaultInstance = new CSQueryConsum().MakeReadOnly();
-  private static readonly string[] _cSQueryConsumFieldNames = new string[] { "memberid", "page", "paymode", "starttime", "stoptime", "usage" };
-  private static readonly uint[] _cSQueryConsumFieldTags = new uint[] { 48, 10, 40, 18, 26, 32 };
-  public static CSQueryConsum DefaultInstance {
+public sealed partial class CSQueryTrade : pb::GeneratedMessage<CSQueryTrade, CSQueryTrade.Builder> {
+  private CSQueryTrade() { }
+  private static readonly CSQueryTrade defaultInstance = new CSQueryTrade().MakeReadOnly();
+  private static readonly string[] _cSQueryTradeFieldNames = new string[] { "memberid", "page", "paymode", "starttime", "stoptime", "usage" };
+  private static readonly uint[] _cSQueryTradeFieldTags = new uint[] { 48, 10, 40, 18, 26, 32 };
+  public static CSQueryTrade DefaultInstance {
     get { return defaultInstance; }
   }
   
-  public override CSQueryConsum DefaultInstanceForType {
+  public override CSQueryTrade DefaultInstanceForType {
     get { return DefaultInstance; }
   }
   
-  protected override CSQueryConsum ThisMessage {
+  protected override CSQueryTrade ThisMessage {
     get { return this; }
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Background.internal__static_CSQueryConsum__Descriptor; }
+    get { return global::Background.internal__static_CSQueryTrade__Descriptor; }
   }
   
-  protected override pb::FieldAccess.FieldAccessorTable<CSQueryConsum, CSQueryConsum.Builder> InternalFieldAccessors {
-    get { return global::Background.internal__static_CSQueryConsum__FieldAccessorTable; }
+  protected override pb::FieldAccess.FieldAccessorTable<CSQueryTrade, CSQueryTrade.Builder> InternalFieldAccessors {
+    get { return global::Background.internal__static_CSQueryTrade__FieldAccessorTable; }
   }
   
   public const int PageFieldNumber = 1;
@@ -24158,7 +24158,7 @@ public sealed partial class CSQueryConsum : pb::GeneratedMessage<CSQueryConsum, 
   
   public override void WriteTo(pb::ICodedOutputStream output) {
     CalcSerializedSize();
-    string[] field_names = _cSQueryConsumFieldNames;
+    string[] field_names = _cSQueryTradeFieldNames;
     if (hasPage) {
       output.WriteMessage(1, field_names[1], Page);
     }
@@ -24216,49 +24216,49 @@ public sealed partial class CSQueryConsum : pb::GeneratedMessage<CSQueryConsum, 
     memoizedSerializedSize = size;
     return size;
   }
-  public static CSQueryConsum ParseFrom(pb::ByteString data) {
+  public static CSQueryTrade ParseFrom(pb::ByteString data) {
     return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
   }
-  public static CSQueryConsum ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+  public static CSQueryTrade ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
     return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
   }
-  public static CSQueryConsum ParseFrom(byte[] data) {
+  public static CSQueryTrade ParseFrom(byte[] data) {
     return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
   }
-  public static CSQueryConsum ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+  public static CSQueryTrade ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
     return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
   }
-  public static CSQueryConsum ParseFrom(global::System.IO.Stream input) {
+  public static CSQueryTrade ParseFrom(global::System.IO.Stream input) {
     return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
   }
-  public static CSQueryConsum ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+  public static CSQueryTrade ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
     return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
   }
-  public static CSQueryConsum ParseDelimitedFrom(global::System.IO.Stream input) {
+  public static CSQueryTrade ParseDelimitedFrom(global::System.IO.Stream input) {
     return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
   }
-  public static CSQueryConsum ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+  public static CSQueryTrade ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
     return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
   }
-  public static CSQueryConsum ParseFrom(pb::ICodedInputStream input) {
+  public static CSQueryTrade ParseFrom(pb::ICodedInputStream input) {
     return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
   }
-  public static CSQueryConsum ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+  public static CSQueryTrade ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
     return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
   }
-  private CSQueryConsum MakeReadOnly() {
+  private CSQueryTrade MakeReadOnly() {
     return this;
   }
   
   public static Builder CreateBuilder() { return new Builder(); }
   public override Builder ToBuilder() { return CreateBuilder(this); }
   public override Builder CreateBuilderForType() { return new Builder(); }
-  public static Builder CreateBuilder(CSQueryConsum prototype) {
+  public static Builder CreateBuilder(CSQueryTrade prototype) {
     return new Builder(prototype);
   }
   
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-  public sealed partial class Builder : pb::GeneratedBuilder<CSQueryConsum, Builder> {
+  public sealed partial class Builder : pb::GeneratedBuilder<CSQueryTrade, Builder> {
     protected override Builder ThisBuilder {
       get { return this; }
     }
@@ -24266,18 +24266,18 @@ public sealed partial class CSQueryConsum : pb::GeneratedMessage<CSQueryConsum, 
       result = DefaultInstance;
       resultIsReadOnly = true;
     }
-    internal Builder(CSQueryConsum cloneFrom) {
+    internal Builder(CSQueryTrade cloneFrom) {
       result = cloneFrom;
       resultIsReadOnly = true;
     }
     
     private bool resultIsReadOnly;
-    private CSQueryConsum result;
+    private CSQueryTrade result;
     
-    private CSQueryConsum PrepareBuilder() {
+    private CSQueryTrade PrepareBuilder() {
       if (resultIsReadOnly) {
-        CSQueryConsum original = result;
-        result = new CSQueryConsum();
+        CSQueryTrade original = result;
+        result = new CSQueryTrade();
         resultIsReadOnly = false;
         MergeFrom(original);
       }
@@ -24288,7 +24288,7 @@ public sealed partial class CSQueryConsum : pb::GeneratedMessage<CSQueryConsum, 
       get { return result.IsInitialized; }
     }
     
-    protected override CSQueryConsum MessageBeingBuilt {
+    protected override CSQueryTrade MessageBeingBuilt {
       get { return PrepareBuilder(); }
     }
     
@@ -24307,14 +24307,14 @@ public sealed partial class CSQueryConsum : pb::GeneratedMessage<CSQueryConsum, 
     }
     
     public override pbd::MessageDescriptor DescriptorForType {
-      get { return global::CSQueryConsum.Descriptor; }
+      get { return global::CSQueryTrade.Descriptor; }
     }
     
-    public override CSQueryConsum DefaultInstanceForType {
-      get { return global::CSQueryConsum.DefaultInstance; }
+    public override CSQueryTrade DefaultInstanceForType {
+      get { return global::CSQueryTrade.DefaultInstance; }
     }
     
-    public override CSQueryConsum BuildPartial() {
+    public override CSQueryTrade BuildPartial() {
       if (resultIsReadOnly) {
         return result;
       }
@@ -24323,16 +24323,16 @@ public sealed partial class CSQueryConsum : pb::GeneratedMessage<CSQueryConsum, 
     }
     
     public override Builder MergeFrom(pb::IMessage other) {
-      if (other is CSQueryConsum) {
-        return MergeFrom((CSQueryConsum) other);
+      if (other is CSQueryTrade) {
+        return MergeFrom((CSQueryTrade) other);
       } else {
         base.MergeFrom(other);
         return this;
       }
     }
     
-    public override Builder MergeFrom(CSQueryConsum other) {
-      if (other == global::CSQueryConsum.DefaultInstance) return this;
+    public override Builder MergeFrom(CSQueryTrade other) {
+      if (other == global::CSQueryTrade.DefaultInstance) return this;
       PrepareBuilder();
       if (other.HasPage) {
         MergePage(other.Page);
@@ -24367,9 +24367,9 @@ public sealed partial class CSQueryConsum : pb::GeneratedMessage<CSQueryConsum, 
       string field_name;
       while (input.ReadTag(out tag, out field_name)) {
         if(tag == 0 && field_name != null) {
-          int field_ordinal = global::System.Array.BinarySearch(_cSQueryConsumFieldNames, field_name, global::System.StringComparer.Ordinal);
+          int field_ordinal = global::System.Array.BinarySearch(_cSQueryTradeFieldNames, field_name, global::System.StringComparer.Ordinal);
           if(field_ordinal >= 0)
-            tag = _cSQueryConsumFieldTags[field_ordinal];
+            tag = _cSQueryTradeFieldTags[field_ordinal];
           else {
             if (unknownFields == null) {
               unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
@@ -24576,35 +24576,35 @@ public sealed partial class CSQueryConsum : pb::GeneratedMessage<CSQueryConsum, 
       return this;
     }
   }
-  static CSQueryConsum() {
+  static CSQueryTrade() {
     object.ReferenceEquals(global::Background.Descriptor, null);
   }
 }
 
 [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-public sealed partial class SCQueryConsum : pb::GeneratedMessage<SCQueryConsum, SCQueryConsum.Builder> {
-  private SCQueryConsum() { }
-  private static readonly SCQueryConsum defaultInstance = new SCQueryConsum().MakeReadOnly();
-  private static readonly string[] _sCQueryConsumFieldNames = new string[] { "consums", "pagecount" };
-  private static readonly uint[] _sCQueryConsumFieldTags = new uint[] { 18, 8 };
-  public static SCQueryConsum DefaultInstance {
+public sealed partial class SCQueryTrade : pb::GeneratedMessage<SCQueryTrade, SCQueryTrade.Builder> {
+  private SCQueryTrade() { }
+  private static readonly SCQueryTrade defaultInstance = new SCQueryTrade().MakeReadOnly();
+  private static readonly string[] _sCQueryTradeFieldNames = new string[] { "pagecount", "trades" };
+  private static readonly uint[] _sCQueryTradeFieldTags = new uint[] { 8, 18 };
+  public static SCQueryTrade DefaultInstance {
     get { return defaultInstance; }
   }
   
-  public override SCQueryConsum DefaultInstanceForType {
+  public override SCQueryTrade DefaultInstanceForType {
     get { return DefaultInstance; }
   }
   
-  protected override SCQueryConsum ThisMessage {
+  protected override SCQueryTrade ThisMessage {
     get { return this; }
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::Background.internal__static_SCQueryConsum__Descriptor; }
+    get { return global::Background.internal__static_SCQueryTrade__Descriptor; }
   }
   
-  protected override pb::FieldAccess.FieldAccessorTable<SCQueryConsum, SCQueryConsum.Builder> InternalFieldAccessors {
-    get { return global::Background.internal__static_SCQueryConsum__FieldAccessorTable; }
+  protected override pb::FieldAccess.FieldAccessorTable<SCQueryTrade, SCQueryTrade.Builder> InternalFieldAccessors {
+    get { return global::Background.internal__static_SCQueryTrade__FieldAccessorTable; }
   }
   
   public const int PagecountFieldNumber = 1;
@@ -24617,22 +24617,22 @@ public sealed partial class SCQueryConsum : pb::GeneratedMessage<SCQueryConsum, 
     get { return pagecount_; }
   }
   
-  public const int ConsumsFieldNumber = 2;
-  private pbc::PopsicleList<global::StructConsum> consums_ = new pbc::PopsicleList<global::StructConsum>();
-  public scg::IList<global::StructConsum> ConsumsList {
-    get { return consums_; }
+  public const int TradesFieldNumber = 2;
+  private pbc::PopsicleList<global::StructTrade> trades_ = new pbc::PopsicleList<global::StructTrade>();
+  public scg::IList<global::StructTrade> TradesList {
+    get { return trades_; }
   }
-  public int ConsumsCount {
-    get { return consums_.Count; }
+  public int TradesCount {
+    get { return trades_.Count; }
   }
-  public global::StructConsum GetConsums(int index) {
-    return consums_[index];
+  public global::StructTrade GetTrades(int index) {
+    return trades_[index];
   }
   
   public override bool IsInitialized {
     get {
       if (!hasPagecount) return false;
-      foreach (global::StructConsum element in ConsumsList) {
+      foreach (global::StructTrade element in TradesList) {
         if (!element.IsInitialized) return false;
       }
       return true;
@@ -24641,12 +24641,12 @@ public sealed partial class SCQueryConsum : pb::GeneratedMessage<SCQueryConsum, 
   
   public override void WriteTo(pb::ICodedOutputStream output) {
     CalcSerializedSize();
-    string[] field_names = _sCQueryConsumFieldNames;
+    string[] field_names = _sCQueryTradeFieldNames;
     if (hasPagecount) {
-      output.WriteInt32(1, field_names[1], Pagecount);
+      output.WriteInt32(1, field_names[0], Pagecount);
     }
-    if (consums_.Count > 0) {
-      output.WriteMessageArray(2, field_names[0], consums_);
+    if (trades_.Count > 0) {
+      output.WriteMessageArray(2, field_names[1], trades_);
     }
     UnknownFields.WriteTo(output);
   }
@@ -24668,57 +24668,57 @@ public sealed partial class SCQueryConsum : pb::GeneratedMessage<SCQueryConsum, 
     if (hasPagecount) {
       size += pb::CodedOutputStream.ComputeInt32Size(1, Pagecount);
     }
-    foreach (global::StructConsum element in ConsumsList) {
+    foreach (global::StructTrade element in TradesList) {
       size += pb::CodedOutputStream.ComputeMessageSize(2, element);
     }
     size += UnknownFields.SerializedSize;
     memoizedSerializedSize = size;
     return size;
   }
-  public static SCQueryConsum ParseFrom(pb::ByteString data) {
+  public static SCQueryTrade ParseFrom(pb::ByteString data) {
     return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
   }
-  public static SCQueryConsum ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+  public static SCQueryTrade ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
     return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
   }
-  public static SCQueryConsum ParseFrom(byte[] data) {
+  public static SCQueryTrade ParseFrom(byte[] data) {
     return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
   }
-  public static SCQueryConsum ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+  public static SCQueryTrade ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
     return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
   }
-  public static SCQueryConsum ParseFrom(global::System.IO.Stream input) {
+  public static SCQueryTrade ParseFrom(global::System.IO.Stream input) {
     return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
   }
-  public static SCQueryConsum ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+  public static SCQueryTrade ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
     return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
   }
-  public static SCQueryConsum ParseDelimitedFrom(global::System.IO.Stream input) {
+  public static SCQueryTrade ParseDelimitedFrom(global::System.IO.Stream input) {
     return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
   }
-  public static SCQueryConsum ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+  public static SCQueryTrade ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
     return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
   }
-  public static SCQueryConsum ParseFrom(pb::ICodedInputStream input) {
+  public static SCQueryTrade ParseFrom(pb::ICodedInputStream input) {
     return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
   }
-  public static SCQueryConsum ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+  public static SCQueryTrade ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
     return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
   }
-  private SCQueryConsum MakeReadOnly() {
-    consums_.MakeReadOnly();
+  private SCQueryTrade MakeReadOnly() {
+    trades_.MakeReadOnly();
     return this;
   }
   
   public static Builder CreateBuilder() { return new Builder(); }
   public override Builder ToBuilder() { return CreateBuilder(this); }
   public override Builder CreateBuilderForType() { return new Builder(); }
-  public static Builder CreateBuilder(SCQueryConsum prototype) {
+  public static Builder CreateBuilder(SCQueryTrade prototype) {
     return new Builder(prototype);
   }
   
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-  public sealed partial class Builder : pb::GeneratedBuilder<SCQueryConsum, Builder> {
+  public sealed partial class Builder : pb::GeneratedBuilder<SCQueryTrade, Builder> {
     protected override Builder ThisBuilder {
       get { return this; }
     }
@@ -24726,18 +24726,18 @@ public sealed partial class SCQueryConsum : pb::GeneratedMessage<SCQueryConsum, 
       result = DefaultInstance;
       resultIsReadOnly = true;
     }
-    internal Builder(SCQueryConsum cloneFrom) {
+    internal Builder(SCQueryTrade cloneFrom) {
       result = cloneFrom;
       resultIsReadOnly = true;
     }
     
     private bool resultIsReadOnly;
-    private SCQueryConsum result;
+    private SCQueryTrade result;
     
-    private SCQueryConsum PrepareBuilder() {
+    private SCQueryTrade PrepareBuilder() {
       if (resultIsReadOnly) {
-        SCQueryConsum original = result;
-        result = new SCQueryConsum();
+        SCQueryTrade original = result;
+        result = new SCQueryTrade();
         resultIsReadOnly = false;
         MergeFrom(original);
       }
@@ -24748,7 +24748,7 @@ public sealed partial class SCQueryConsum : pb::GeneratedMessage<SCQueryConsum, 
       get { return result.IsInitialized; }
     }
     
-    protected override SCQueryConsum MessageBeingBuilt {
+    protected override SCQueryTrade MessageBeingBuilt {
       get { return PrepareBuilder(); }
     }
     
@@ -24767,14 +24767,14 @@ public sealed partial class SCQueryConsum : pb::GeneratedMessage<SCQueryConsum, 
     }
     
     public override pbd::MessageDescriptor DescriptorForType {
-      get { return global::SCQueryConsum.Descriptor; }
+      get { return global::SCQueryTrade.Descriptor; }
     }
     
-    public override SCQueryConsum DefaultInstanceForType {
-      get { return global::SCQueryConsum.DefaultInstance; }
+    public override SCQueryTrade DefaultInstanceForType {
+      get { return global::SCQueryTrade.DefaultInstance; }
     }
     
-    public override SCQueryConsum BuildPartial() {
+    public override SCQueryTrade BuildPartial() {
       if (resultIsReadOnly) {
         return result;
       }
@@ -24783,22 +24783,22 @@ public sealed partial class SCQueryConsum : pb::GeneratedMessage<SCQueryConsum, 
     }
     
     public override Builder MergeFrom(pb::IMessage other) {
-      if (other is SCQueryConsum) {
-        return MergeFrom((SCQueryConsum) other);
+      if (other is SCQueryTrade) {
+        return MergeFrom((SCQueryTrade) other);
       } else {
         base.MergeFrom(other);
         return this;
       }
     }
     
-    public override Builder MergeFrom(SCQueryConsum other) {
-      if (other == global::SCQueryConsum.DefaultInstance) return this;
+    public override Builder MergeFrom(SCQueryTrade other) {
+      if (other == global::SCQueryTrade.DefaultInstance) return this;
       PrepareBuilder();
       if (other.HasPagecount) {
         Pagecount = other.Pagecount;
       }
-      if (other.consums_.Count != 0) {
-        result.consums_.Add(other.consums_);
+      if (other.trades_.Count != 0) {
+        result.trades_.Add(other.trades_);
       }
       this.MergeUnknownFields(other.UnknownFields);
       return this;
@@ -24815,9 +24815,9 @@ public sealed partial class SCQueryConsum : pb::GeneratedMessage<SCQueryConsum, 
       string field_name;
       while (input.ReadTag(out tag, out field_name)) {
         if(tag == 0 && field_name != null) {
-          int field_ordinal = global::System.Array.BinarySearch(_sCQueryConsumFieldNames, field_name, global::System.StringComparer.Ordinal);
+          int field_ordinal = global::System.Array.BinarySearch(_sCQueryTradeFieldNames, field_name, global::System.StringComparer.Ordinal);
           if(field_ordinal >= 0)
-            tag = _sCQueryConsumFieldTags[field_ordinal];
+            tag = _sCQueryTradeFieldTags[field_ordinal];
           else {
             if (unknownFields == null) {
               unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
@@ -24848,7 +24848,7 @@ public sealed partial class SCQueryConsum : pb::GeneratedMessage<SCQueryConsum, 
             break;
           }
           case 18: {
-            input.ReadMessageArray(tag, field_name, result.consums_, global::StructConsum.DefaultInstance, extensionRegistry);
+            input.ReadMessageArray(tag, field_name, result.trades_, global::StructTrade.DefaultInstance, extensionRegistry);
             break;
           }
         }
@@ -24881,51 +24881,51 @@ public sealed partial class SCQueryConsum : pb::GeneratedMessage<SCQueryConsum, 
       return this;
     }
     
-    public pbc::IPopsicleList<global::StructConsum> ConsumsList {
-      get { return PrepareBuilder().consums_; }
+    public pbc::IPopsicleList<global::StructTrade> TradesList {
+      get { return PrepareBuilder().trades_; }
     }
-    public int ConsumsCount {
-      get { return result.ConsumsCount; }
+    public int TradesCount {
+      get { return result.TradesCount; }
     }
-    public global::StructConsum GetConsums(int index) {
-      return result.GetConsums(index);
+    public global::StructTrade GetTrades(int index) {
+      return result.GetTrades(index);
     }
-    public Builder SetConsums(int index, global::StructConsum value) {
+    public Builder SetTrades(int index, global::StructTrade value) {
       pb::ThrowHelper.ThrowIfNull(value, "value");
       PrepareBuilder();
-      result.consums_[index] = value;
+      result.trades_[index] = value;
       return this;
     }
-    public Builder SetConsums(int index, global::StructConsum.Builder builderForValue) {
+    public Builder SetTrades(int index, global::StructTrade.Builder builderForValue) {
       pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
       PrepareBuilder();
-      result.consums_[index] = builderForValue.Build();
+      result.trades_[index] = builderForValue.Build();
       return this;
     }
-    public Builder AddConsums(global::StructConsum value) {
+    public Builder AddTrades(global::StructTrade value) {
       pb::ThrowHelper.ThrowIfNull(value, "value");
       PrepareBuilder();
-      result.consums_.Add(value);
+      result.trades_.Add(value);
       return this;
     }
-    public Builder AddConsums(global::StructConsum.Builder builderForValue) {
+    public Builder AddTrades(global::StructTrade.Builder builderForValue) {
       pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
       PrepareBuilder();
-      result.consums_.Add(builderForValue.Build());
+      result.trades_.Add(builderForValue.Build());
       return this;
     }
-    public Builder AddRangeConsums(scg::IEnumerable<global::StructConsum> values) {
+    public Builder AddRangeTrades(scg::IEnumerable<global::StructTrade> values) {
       PrepareBuilder();
-      result.consums_.Add(values);
+      result.trades_.Add(values);
       return this;
     }
-    public Builder ClearConsums() {
+    public Builder ClearTrades() {
       PrepareBuilder();
-      result.consums_.Clear();
+      result.trades_.Clear();
       return this;
     }
   }
-  static SCQueryConsum() {
+  static SCQueryTrade() {
     object.ReferenceEquals(global::Background.Descriptor, null);
   }
 }

@@ -112,6 +112,13 @@ namespace NetBarMS.Views.HomePage
                     case FLOW_ERROR.NEED_ADD_CARD:
                         AddCardInfo();
                         break;
+                    //用户锁定
+                    case FLOW_ERROR.USER_LOCK:
+                        {
+                            MessageBox.Show("该用户已经被锁");
+
+                        }
+                        break;
                     default:
                         break;
                 }
@@ -130,7 +137,7 @@ namespace NetBarMS.Views.HomePage
                 Birthday = "2012-09-01",
                 Address = "海南省",
                 Organization = "海南",
-                HeadUrl = "#dasdasd#",
+                Head = "#dasdasd#",
                 Vld = "",
             };
 

@@ -37,7 +37,7 @@ namespace NetBarMS.Views.RateManage
             StructDictItem defaultItem = this.items[0];
             StructDictItem activeItem = this.items[1];
 
-            this.dRechargeItText.Text = defaultItem.GetItem(0);
+            this.dRechargeText.Text = defaultItem.GetItem(0);
             this.dRechargeItText.Text = defaultItem.GetItem(1);
             this.staffPjItText.Text = defaultItem.GetItem(2);
             this.netBarPjItText.Text = defaultItem.GetItem(3);
@@ -103,7 +103,7 @@ namespace NetBarMS.Views.RateManage
                 {
                     StructDictItem.Builder item = new StructDictItem.Builder(this.items[0]);
                     item.ClearItem();
-                    string item1 = this.dRechargeItText.Text.Equals("") ? "0" : this.dRechargeItText.Text;
+                    string item1 = this.dRechargeText.Text.Equals("") ? "0" : this.dRechargeText.Text;
                     string item2 = this.dRechargeItText.Text.Equals("") ? "0" : this.dRechargeItText.Text;
                     string item3 = this.staffPjItText.Text.Equals("") ? "0" : this.staffPjItText.Text;
                     string item4 = this.netBarPjItText.Text.Equals("") ? "0" : this.netBarPjItText.Text;

@@ -187,12 +187,18 @@ namespace NetBarMS.Views.RateManage
             if (sender.Equals(this.nAddButton))
             {
                 StructDictItem item = GetAwardSetting(0);
-                RateManageNetOperation.AddAwardManage(AddAwardResult, item);
+                if(item != null)
+                {
+                    RateManageNetOperation.AddAwardManage(AddAwardResult, item);
+                }
             }
             else if(sender.Equals(this.mAddButton))
             {
                 StructDictItem item = GetMemberAwardSetting(0);
-                RateManageNetOperation.AddMemberDayAwardManage(AddMemberDayAwardResult, item);
+                if(item != null)
+                {
+                    RateManageNetOperation.AddMemberDayAwardManage(AddMemberDayAwardResult, item);
+                }
             }
 
         }
@@ -250,7 +256,10 @@ namespace NetBarMS.Views.RateManage
                 if(ids.Count > 0)
                 {
                     StructDictItem item = GetAwardSetting(int.Parse(ids[0]));
-                    RateManageNetOperation.UpdateAwardManage(UpdateAwardResult, item);
+                    if(item != null)
+                    {
+                        RateManageNetOperation.UpdateAwardManage(UpdateAwardResult, item);
+                    }
                 }
             }
             else if(sender.Equals(this.mUpdateButton))
@@ -259,7 +268,10 @@ namespace NetBarMS.Views.RateManage
                 if(ids.Count > 0)
                 {
                     StructDictItem item = GetMemberAwardSetting(int.Parse(ids[0]));
-                    RateManageNetOperation.UpdateMemberDayAwardManage(UpdateMemberDayAwardResult,item);
+                    if(item != null)
+                    {
+                        RateManageNetOperation.UpdateMemberDayAwardManage(UpdateMemberDayAwardResult, item);
+                    }
                 }
 
             }
@@ -395,15 +407,20 @@ namespace NetBarMS.Views.RateManage
         private StructDictItem GetAwardSetting(int id)
         {
             int index = this.comboBoxEdit1.SelectedIndex;
-            string recharge = this.nRechargeTextEdit.Text;
-            string give = this.nGiveTextEdit.Text;
             string start = this.nstartTime;
             string end = this.nendTime;
+            string recharge = this.nRechargeTextEdit.Text;
+            string give = this.nGiveTextEdit.Text;
 
-            if (index < 0 || recharge.Equals("") || give.Equals("") || start.Equals("") || end.Equals(""))
+            if (index < 0 
+                || start.Equals("") 
+                || end.Equals("") 
+                || recharge.Equals(this.nRechargeTextEdit.Properties.NullText)
+                || give.Equals(this.nGiveTextEdit.Properties.NullText))
             {
                 return null;
             }
+
             string code = this.memberTypes[index].typeId.ToString();
             StructDictItem.Builder item = new StructDictItem.Builder();
             item.Code = 0;
@@ -416,6 +433,8 @@ namespace NetBarMS.Views.RateManage
             item.AddItem(end);
 
             return item.Build();
+            
+            
         }
         //获取会员日费率设置
         private StructDictItem GetMemberAwardSetting(int id)
@@ -425,7 +444,11 @@ namespace NetBarMS.Views.RateManage
             string give = this.mGiveTextEdit.Text;
             string start = this.mstartTime;
             string end = this.mendTime;
-            if (index < 0 || recharge.Equals("") || give.Equals("") || start.Equals("") || end.Equals(""))
+            if (index < 0 
+                || recharge.Equals(this.mRechargeTextEdit.Properties.NullText) 
+                || give.Equals(this.mGiveTextEdit.Properties.NullText) 
+                || start.Equals("") 
+                || end.Equals(""))
             {
                 return null;
             }

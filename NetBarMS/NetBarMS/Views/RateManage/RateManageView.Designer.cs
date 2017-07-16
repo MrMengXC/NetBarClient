@@ -68,12 +68,14 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.label30 = new System.Windows.Forms.Label();
-            this.nRateLabel = new System.Windows.Forms.Label();
+            this.nMinConsumeText = new DevExpress.XtraEditors.TextEdit();
+            this.nDurPrieceText = new DevExpress.XtraEditors.TextEdit();
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.nRateLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label31 = new System.Windows.Forms.Label();
             this.bRateLabel = new System.Windows.Forms.Label();
@@ -81,8 +83,6 @@
             this.label34 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
-            this.nDurPrieceText = new DevExpress.XtraEditors.TextEdit();
-            this.nMinConsumeText = new DevExpress.XtraEditors.TextEdit();
             this.bDurPrieceText = new DevExpress.XtraEditors.TextEdit();
             this.bMinConsumeText = new DevExpress.XtraEditors.TextEdit();
             this.titlePanel.SuspendLayout();
@@ -94,9 +94,9 @@
             this.panel3.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nDurPrieceText.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nMinConsumeText.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nDurPrieceText.Properties)).BeginInit();
+            this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bDurPrieceText.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bMinConsumeText.Properties)).BeginInit();
             this.SuspendLayout();
@@ -481,26 +481,23 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(570, 31);
             this.tableLayoutPanel2.TabIndex = 120;
             // 
-            // label30
+            // nMinConsumeText
             // 
-            this.label30.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(93, 9);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(125, 12);
-            this.label30.TabIndex = 9;
-            this.label30.Text = "元小时，收费最小时段";
-            this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.nMinConsumeText.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.nMinConsumeText.Location = new System.Drawing.Point(507, 3);
+            this.nMinConsumeText.Name = "nMinConsumeText";
+            this.nMinConsumeText.Properties.AutoHeight = false;
+            this.nMinConsumeText.Size = new System.Drawing.Size(25, 25);
+            this.nMinConsumeText.TabIndex = 66;
             // 
-            // nRateLabel
+            // nDurPrieceText
             // 
-            this.nRateLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.nRateLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.nRateLabel.Location = new System.Drawing.Point(62, 3);
-            this.nRateLabel.Name = "nRateLabel";
-            this.nRateLabel.Size = new System.Drawing.Size(25, 25);
-            this.nRateLabel.TabIndex = 1;
-            this.nRateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.nDurPrieceText.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.nDurPrieceText.Location = new System.Drawing.Point(393, 3);
+            this.nDurPrieceText.Name = "nDurPrieceText";
+            this.nDurPrieceText.Properties.AutoHeight = false;
+            this.nDurPrieceText.Size = new System.Drawing.Size(25, 25);
+            this.nDurPrieceText.TabIndex = 65;
             // 
             // label26
             // 
@@ -545,6 +542,27 @@
             this.label28.TabIndex = 5;
             this.label28.Text = "元。";
             this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label30
+            // 
+            this.label30.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(93, 9);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(125, 12);
+            this.label30.TabIndex = 9;
+            this.label30.Text = "元小时，收费最小时段";
+            this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // nRateLabel
+            // 
+            this.nRateLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.nRateLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.nRateLabel.Location = new System.Drawing.Point(62, 3);
+            this.nRateLabel.Name = "nRateLabel";
+            this.nRateLabel.Size = new System.Drawing.Size(25, 25);
+            this.nRateLabel.TabIndex = 1;
+            this.nRateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel3
             // 
@@ -640,24 +658,6 @@
             this.label36.Text = "元。";
             this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // nDurPrieceText
-            // 
-            this.nDurPrieceText.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.nDurPrieceText.Location = new System.Drawing.Point(393, 3);
-            this.nDurPrieceText.Name = "nDurPrieceText";
-            this.nDurPrieceText.Properties.AutoHeight = false;
-            this.nDurPrieceText.Size = new System.Drawing.Size(25, 25);
-            this.nDurPrieceText.TabIndex = 65;
-            // 
-            // nMinConsumeText
-            // 
-            this.nMinConsumeText.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.nMinConsumeText.Location = new System.Drawing.Point(507, 3);
-            this.nMinConsumeText.Name = "nMinConsumeText";
-            this.nMinConsumeText.Properties.AutoHeight = false;
-            this.nMinConsumeText.Size = new System.Drawing.Size(25, 25);
-            this.nMinConsumeText.TabIndex = 66;
-            // 
             // bDurPrieceText
             // 
             this.bDurPrieceText.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -682,7 +682,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel3);
             this.Name = "RateManageView";
-            this.Size = new System.Drawing.Size(850, 644);
+            this.Size = new System.Drawing.Size(850, 406);
             this.Controls.SetChildIndex(this.panel3, 0);
             this.Controls.SetChildIndex(this.titlePanel, 0);
             this.titlePanel.ResumeLayout(false);
@@ -697,10 +697,10 @@
             this.flowLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nMinConsumeText.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nDurPrieceText.Properties)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nDurPrieceText.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nMinConsumeText.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bDurPrieceText.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bMinConsumeText.Properties)).EndInit();
             this.ResumeLayout(false);

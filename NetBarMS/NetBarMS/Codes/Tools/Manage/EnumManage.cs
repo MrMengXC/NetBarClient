@@ -411,6 +411,15 @@ namespace NetBarMS.Codes.Tools
         /// 客户端异常
         /// </summary>
         EXCEPTION = 12,
+        /// <summary>
+        /// 当日营收金额
+        /// </summary>
+        DAILY_TRADE_AMOUNT = 14,
+
+        /// <summary>
+        /// 当日上机数量
+        /// </summary>
+        DAILY_ONLINE_COUNT = 15,
     }
     #endregion
 
@@ -472,7 +481,6 @@ namespace NetBarMS.Codes.Tools
     }
     #endregion
 
-
     #region 进行激活、开通会员、充值的错误信息
     public enum FLOW_ERROR
     {
@@ -489,14 +497,19 @@ namespace NetBarMS.Codes.Tools
         /// </summary>
         NEED_RECHARGE = 208,
 
+        /// <summary>
+        /// 用户已锁定
+        /// </summary>
+        USER_LOCK = 205,
+
     }
 
     #endregion
 
-
     #region 电脑设备状态
     public enum COMPUTERSTATUS
     {
+        无 = -1,
         空闲 = 0,
         在线 = 1,
         挂机 = 2,

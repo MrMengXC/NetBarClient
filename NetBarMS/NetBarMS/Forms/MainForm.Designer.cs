@@ -28,24 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.searchControl1 = new DevExpress.XtraEditors.SearchControl();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.panel3 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.dailyOnlineCountLabel = new System.Windows.Forms.Label();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
@@ -61,145 +47,14 @@
             this.homePageListPanel = new System.Windows.Forms.Panel();
             this.manageTreeView = new System.Windows.Forms.TreeView();
             this.panel1 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.searchControl1.Properties)).BeginInit();
-            this.panel2.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel4.SuspendLayout();
+            this.label1 = new System.Windows.Forms.Label();
+            this.attenDanceLabel = new System.Windows.Forms.Label();
+            this.netUserLabel = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
-            this.panel6.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // searchControl1
-            // 
-            this.searchControl1.Location = new System.Drawing.Point(136, 9);
-            this.searchControl1.Name = "searchControl1";
-            this.searchControl1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Repository.ClearButton(),
-            new DevExpress.XtraEditors.Repository.SearchButton()});
-            this.searchControl1.Size = new System.Drawing.Size(100, 20);
-            this.searchControl1.TabIndex = 37;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(9, 9);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 20);
-            this.comboBox1.TabIndex = 36;
-            // 
-            // simpleButton1
-            // 
-            this.simpleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButton1.Appearance.BackColor = System.Drawing.Color.Red;
-            this.simpleButton1.Appearance.Options.UseBackColor = true;
-            this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.simpleButton1.Location = new System.Drawing.Point(80, 3);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton1.TabIndex = 38;
-            this.simpleButton1.Text = "电脑视图";
-            // 
-            // simpleButton2
-            // 
-            this.simpleButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButton2.Appearance.BackColor = System.Drawing.Color.Red;
-            this.simpleButton2.Appearance.Options.UseBackColor = true;
-            this.simpleButton2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.simpleButton2.Location = new System.Drawing.Point(161, 3);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton2.TabIndex = 39;
-            this.simpleButton2.Text = "列表视图";
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.flowLayoutPanel1);
-            this.panel2.Controls.Add(this.comboBox1);
-            this.panel2.Controls.Add(this.searchControl1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(195, 70);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1523, 42);
-            this.panel2.TabIndex = 42;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanel1.Controls.Add(this.simpleButton2);
-            this.flowLayoutPanel1.Controls.Add(this.simpleButton1);
-            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(1278, 5);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(239, 34);
-            this.flowLayoutPanel1.TabIndex = 40;
-            // 
-            // panel5
-            // 
-            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel5.BackColor = System.Drawing.Color.Red;
-            this.panel5.Controls.Add(this.labelControl3);
-            this.panel5.Controls.Add(this.labelControl4);
-            this.panel5.Location = new System.Drawing.Point(213, 3);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(160, 60);
-            this.panel5.TabIndex = 54;
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.labelControl3.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.labelControl3.Location = new System.Drawing.Point(40, 33);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(120, 24);
-            this.labelControl3.TabIndex = 1;
-            this.labelControl3.Text = "当前上网用户";
-            // 
-            // labelControl4
-            // 
-            this.labelControl4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 20F);
-            this.labelControl4.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.labelControl4.Location = new System.Drawing.Point(67, 3);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(90, 33);
-            this.labelControl4.TabIndex = 0;
-            this.labelControl4.Text = "100000";
-            // 
-            // panel4
-            // 
-            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel4.BackColor = System.Drawing.Color.Yellow;
-            this.panel4.Controls.Add(this.labelControl2);
-            this.panel4.Controls.Add(this.labelControl1);
-            this.panel4.Location = new System.Drawing.Point(379, 3);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(160, 60);
-            this.panel4.TabIndex = 53;
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.labelControl2.Location = new System.Drawing.Point(77, 33);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(80, 24);
-            this.labelControl2.TabIndex = 1;
-            this.labelControl2.Text = "今日营收";
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 20F);
-            this.labelControl1.Location = new System.Drawing.Point(67, 3);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(90, 33);
-            this.labelControl1.TabIndex = 0;
-            this.labelControl1.Text = "100000";
             // 
             // labelControl5
             // 
@@ -227,47 +82,26 @@
             // 
             this.flowLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.flowLayoutPanel3.Controls.Add(this.panel4);
-            this.flowLayoutPanel3.Controls.Add(this.panel5);
-            this.flowLayoutPanel3.Controls.Add(this.panel6);
+            this.flowLayoutPanel3.Controls.Add(this.label1);
+            this.flowLayoutPanel3.Controls.Add(this.netUserLabel);
+            this.flowLayoutPanel3.Controls.Add(this.dailyOnlineCountLabel);
+            this.flowLayoutPanel3.Controls.Add(this.attenDanceLabel);
             this.flowLayoutPanel3.Location = new System.Drawing.Point(200, 1);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.flowLayoutPanel3.Size = new System.Drawing.Size(542, 69);
             this.flowLayoutPanel3.TabIndex = 57;
             // 
-            // panel6
+            // dailyOnlineCountLabel
             // 
-            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel6.BackColor = System.Drawing.Color.Red;
-            this.panel6.Controls.Add(this.labelControl6);
-            this.panel6.Controls.Add(this.labelControl7);
-            this.panel6.Location = new System.Drawing.Point(47, 3);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(160, 60);
-            this.panel6.TabIndex = 55;
-            // 
-            // labelControl6
-            // 
-            this.labelControl6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.labelControl6.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.labelControl6.Location = new System.Drawing.Point(40, 33);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(120, 24);
-            this.labelControl6.TabIndex = 1;
-            this.labelControl6.Text = "当日上机人数";
-            // 
-            // labelControl7
-            // 
-            this.labelControl7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 20F);
-            this.labelControl7.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.labelControl7.Location = new System.Drawing.Point(67, 3);
-            this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(90, 33);
-            this.labelControl7.TabIndex = 0;
-            this.labelControl7.Text = "100000";
+            this.dailyOnlineCountLabel.BackColor = System.Drawing.Color.Red;
+            this.dailyOnlineCountLabel.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dailyOnlineCountLabel.Location = new System.Drawing.Point(192, 0);
+            this.dailyOnlineCountLabel.Name = "dailyOnlineCountLabel";
+            this.dailyOnlineCountLabel.Size = new System.Drawing.Size(115, 67);
+            this.dailyOnlineCountLabel.TabIndex = 55;
+            this.dailyOnlineCountLabel.Text = "0\r\n当日上机人次";
+            this.dailyOnlineCountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // flowLayoutPanel2
             // 
@@ -414,9 +248,9 @@
             // 
             this.homePageListPanel.BackColor = System.Drawing.Color.Transparent;
             this.homePageListPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.homePageListPanel.Location = new System.Drawing.Point(195, 112);
+            this.homePageListPanel.Location = new System.Drawing.Point(195, 70);
             this.homePageListPanel.Name = "homePageListPanel";
-            this.homePageListPanel.Size = new System.Drawing.Size(1523, 778);
+            this.homePageListPanel.Size = new System.Drawing.Size(1523, 820);
             this.homePageListPanel.TabIndex = 40;
             // 
             // manageTreeView
@@ -439,29 +273,52 @@
             this.panel1.Size = new System.Drawing.Size(195, 890);
             this.panel1.TabIndex = 8;
             // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.Red;
+            this.label1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(443, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(96, 67);
+            this.label1.TabIndex = 56;
+            this.label1.Text = "0\r\n今日营收";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // attenDanceLabel
+            // 
+            this.attenDanceLabel.BackColor = System.Drawing.Color.Red;
+            this.attenDanceLabel.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.attenDanceLabel.Location = new System.Drawing.Point(62, 0);
+            this.attenDanceLabel.Name = "attenDanceLabel";
+            this.attenDanceLabel.Size = new System.Drawing.Size(124, 67);
+            this.attenDanceLabel.TabIndex = 57;
+            this.attenDanceLabel.Text = "0\r\n当前上座率";
+            this.attenDanceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // netUserLabel
+            // 
+            this.netUserLabel.BackColor = System.Drawing.Color.Red;
+            this.netUserLabel.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.netUserLabel.Location = new System.Drawing.Point(313, 0);
+            this.netUserLabel.Name = "netUserLabel";
+            this.netUserLabel.Size = new System.Drawing.Size(124, 67);
+            this.netUserLabel.TabIndex = 57;
+            this.netUserLabel.Text = "0\r\n当前上网用户";
+            this.netUserLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1718, 890);
             this.Controls.Add(this.homePageListPanel);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Name = "MainForm";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.searchControl1.Properties)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.flowLayoutPanel3.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -469,23 +326,11 @@
         }
 
         #endregion
-        private DevExpress.XtraEditors.SearchControl searchControl1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel5;
-        private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.LabelControl labelControl4;
-        private System.Windows.Forms.Panel panel4;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel homePageListPanel;
         private System.Windows.Forms.TreeView manageTreeView;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private DevExpress.XtraEditors.SimpleButton simpleButton3;
@@ -498,10 +343,11 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton10;
         private DevExpress.XtraEditors.SimpleButton simpleButton11;
         private DevExpress.XtraEditors.SimpleButton simpleButton12;
-        private System.Windows.Forms.Panel panel6;
-        private DevExpress.XtraEditors.LabelControl labelControl6;
-        private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.SimpleButton simpleButton13;
+        private System.Windows.Forms.Label dailyOnlineCountLabel;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label attenDanceLabel;
+        private System.Windows.Forms.Label netUserLabel;
     }
 }
 
