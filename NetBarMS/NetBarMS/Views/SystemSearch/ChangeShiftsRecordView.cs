@@ -156,7 +156,10 @@ namespace NetBarMS.Views.SystemSearch
         #region 关闭日期选择菜单
         private void ComboBoxEdit1_Closed(object sender, DevExpress.XtraEditors.Controls.ClosedEventArgs e)
         {
-
+            if(!this.startTime.Equals("") && !this.endTime.Equals(""))
+            {
+                this.popupContainerEdit1.Text = string.Format("{0}-{1}", this.startTime, this.endTime);
+            }
             GetStaffShiftsRecord();
         }
         #endregion

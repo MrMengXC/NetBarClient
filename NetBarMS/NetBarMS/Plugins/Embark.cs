@@ -68,24 +68,24 @@ public static partial class Embark {
           "b3VudBIdCgZtZW1iZXIYAiABKAsyDS5TdHJ1Y3RNZW1iZXIiLQoQQ1NFbWtB", 
           "ZGRDYXJkSW5mbxIZCgRjYXJkGAEgAigLMgsuU3RydWN0Q2FyZCI9ChJDU0Vt", 
           "a0FkZEZpbmdlckluZm8SEgoKY2FyZG51bWJlchgBIAIoCRITCgtmaW5nZXJj", 
-          "b2RlcxgCIAMoCSImChBDU0Vta0FwcGx5TWVtYmVyEhIKCmNhcmRudW1iZXIY", 
-          "ASACKAkidwoQU0NFbWtBcHBseU1lbWJlchIMCgRuYW1lGAEgAigJEhIKCmNh", 
-          "cmRudW1iZXIYAiACKAkSDQoFcmlnaHQYAyACKAkSEAoIcmVjaGFyZ2UYBCAC", 
-          "KAUSDwoHYmFsYW5jZRgFIAIoBRIPCgdpbnRlZ2FsGAYgAigFIiEKC0NTRW1r", 
-          "Q2hhcmdlEhIKCmNhcmRudW1iZXIYASACKAkiTwoLU0NFbWtDaGFyZ2USDAoE", 
+          "b2RlcxgCIAMoCSI3ChBDU0Vta0FwcGx5TWVtYmVyEhIKCmNhcmRudW1iZXIY", 
+          "ASACKAkSDwoHY2hhbm5lbBgCIAIoBSJ3ChBTQ0Vta0FwcGx5TWVtYmVyEgwK", 
+          "BG5hbWUYASACKAkSEgoKY2FyZG51bWJlchgCIAIoCRINCgVyaWdodBgDIAIo", 
+          "CRIQCghyZWNoYXJnZRgEIAIoBRIPCgdiYWxhbmNlGAUgAigFEg8KB2ludGVn", 
+          "YWwYBiACKAUiIQoLQ1NFbWtDaGFyZ2USEgoKY2FyZG51bWJlchgBIAIoCSJP", 
+          "CgtTQ0Vta0NoYXJnZRIMCgRuYW1lGAEgAigJEhIKCmNhcmRudW1iZXIYAiAC", 
+          "KAkSDQoFcmlnaHQYAyACKAkSDwoHYmFsYW5jZRgEIAIoBSIiCgxDU0Vta0No", 
+          "ZWNraW4SEgoKY2FyZG51bWJlchgBIAIoCSJQCgxTQ0Vta0NoZWNraW4SDAoE", 
           "bmFtZRgBIAIoCRISCgpjYXJkbnVtYmVyGAIgAigJEg0KBXJpZ2h0GAMgAigJ", 
-          "Eg8KB2JhbGFuY2UYBCACKAUiIgoMQ1NFbWtDaGVja2luEhIKCmNhcmRudW1i", 
-          "ZXIYASACKAkiUAoMU0NFbWtDaGVja2luEgwKBG5hbWUYASACKAkSEgoKY2Fy", 
-          "ZG51bWJlchgCIAIoCRINCgVyaWdodBgDIAIoCRIPCgdiYWxhbmNlGAQgAigF", 
-          "IiMKDUNTRW1rQ2hlY2tvdXQSEgoKY2FyZG51bWJlchgBIAIoCSJ2Cg1TQ0Vt", 
-          "a0NoZWNrb3V0EgwKBG5hbWUYASACKAkSEgoKY2FyZG51bWJlchgCIAIoCRIN", 
-          "CgVyaWdodBgDIAIoCRIPCgdiYWxhbmNlGAQgAigFEhEKCXVzZWRtb25leRgF", 
-          "IAIoBRIQCgh1c2VkdGltZRgGIAIoBSINCgtDU0Vta0NhbmNlbCIRCg9DU0Vt", 
-          "a1ZlcmlmeUxpc3QiEQoPU0NFbWtWZXJpZnlMaXN0IiUKD0NTRW1rVmVyaWZ5", 
-          "UHJvYxISCgpjYXJkbnVtYmVyGAEgAigJIhAKDkNTRW1rT3JkZXJMaXN0IhAK", 
-          "DlNDRW1rT3JkZXJMaXN0IiEKDkNTRW1rT3JkZXJQcm9jEg8KB29yZGVyaWQY", 
-          "ASACKAVCLwodY29tLnNreXNvZnQuY29yZS5hdXRvLm1lc3NhZ2VCDkVtYmFy", 
-        "a1Byb3RvY29s"));
+          "Eg8KB2JhbGFuY2UYBCACKAUiIwoNQ1NFbWtDaGVja291dBISCgpjYXJkbnVt", 
+          "YmVyGAEgAigJInYKDVNDRW1rQ2hlY2tvdXQSDAoEbmFtZRgBIAIoCRISCgpj", 
+          "YXJkbnVtYmVyGAIgAigJEg0KBXJpZ2h0GAMgAigJEg8KB2JhbGFuY2UYBCAC", 
+          "KAUSEQoJdXNlZG1vbmV5GAUgAigFEhAKCHVzZWR0aW1lGAYgAigFIg0KC0NT", 
+          "RW1rQ2FuY2VsIhEKD0NTRW1rVmVyaWZ5TGlzdCIRCg9TQ0Vta1ZlcmlmeUxp", 
+          "c3QiJQoPQ1NFbWtWZXJpZnlQcm9jEhIKCmNhcmRudW1iZXIYASACKAkiEAoO", 
+          "Q1NFbWtPcmRlckxpc3QiEAoOU0NFbWtPcmRlckxpc3QiIQoOQ1NFbWtPcmRl", 
+          "clByb2MSDwoHb3JkZXJpZBgBIAIoBUIvCh1jb20uc2t5c29mdC5jb3JlLmF1", 
+        "dG8ubWVzc2FnZUIORW1iYXJrUHJvdG9jb2w="));
     pbd::FileDescriptor.InternalDescriptorAssigner assigner = delegate(pbd::FileDescriptor root) {
       descriptor = root;
       internal__static_CSEmkUserInfo__Descriptor = Descriptor.MessageTypes[0];
@@ -107,7 +107,7 @@ public static partial class Embark {
       internal__static_CSEmkApplyMember__Descriptor = Descriptor.MessageTypes[4];
       internal__static_CSEmkApplyMember__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSEmkApplyMember, global::CSEmkApplyMember.Builder>(internal__static_CSEmkApplyMember__Descriptor,
-              new string[] { "Cardnumber", });
+              new string[] { "Cardnumber", "Channel", });
       internal__static_SCEmkApplyMember__Descriptor = Descriptor.MessageTypes[5];
       internal__static_SCEmkApplyMember__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::SCEmkApplyMember, global::SCEmkApplyMember.Builder>(internal__static_SCEmkApplyMember__Descriptor,
@@ -1515,8 +1515,8 @@ public sealed partial class CSEmkAddFingerInfo : pb::GeneratedMessage<CSEmkAddFi
 public sealed partial class CSEmkApplyMember : pb::GeneratedMessage<CSEmkApplyMember, CSEmkApplyMember.Builder> {
   private CSEmkApplyMember() { }
   private static readonly CSEmkApplyMember defaultInstance = new CSEmkApplyMember().MakeReadOnly();
-  private static readonly string[] _cSEmkApplyMemberFieldNames = new string[] { "cardnumber" };
-  private static readonly uint[] _cSEmkApplyMemberFieldTags = new uint[] { 10 };
+  private static readonly string[] _cSEmkApplyMemberFieldNames = new string[] { "cardnumber", "channel" };
+  private static readonly uint[] _cSEmkApplyMemberFieldTags = new uint[] { 10, 16 };
   public static CSEmkApplyMember DefaultInstance {
     get { return defaultInstance; }
   }
@@ -1547,9 +1547,20 @@ public sealed partial class CSEmkApplyMember : pb::GeneratedMessage<CSEmkApplyMe
     get { return cardnumber_; }
   }
   
+  public const int ChannelFieldNumber = 2;
+  private bool hasChannel;
+  private int channel_;
+  public bool HasChannel {
+    get { return hasChannel; }
+  }
+  public int Channel {
+    get { return channel_; }
+  }
+  
   public override bool IsInitialized {
     get {
       if (!hasCardnumber) return false;
+      if (!hasChannel) return false;
       return true;
     }
   }
@@ -1559,6 +1570,9 @@ public sealed partial class CSEmkApplyMember : pb::GeneratedMessage<CSEmkApplyMe
     string[] field_names = _cSEmkApplyMemberFieldNames;
     if (hasCardnumber) {
       output.WriteString(1, field_names[0], Cardnumber);
+    }
+    if (hasChannel) {
+      output.WriteInt32(2, field_names[1], Channel);
     }
     UnknownFields.WriteTo(output);
   }
@@ -1579,6 +1593,9 @@ public sealed partial class CSEmkApplyMember : pb::GeneratedMessage<CSEmkApplyMe
     size = 0;
     if (hasCardnumber) {
       size += pb::CodedOutputStream.ComputeStringSize(1, Cardnumber);
+    }
+    if (hasChannel) {
+      size += pb::CodedOutputStream.ComputeInt32Size(2, Channel);
     }
     size += UnknownFields.SerializedSize;
     memoizedSerializedSize = size;
@@ -1705,6 +1722,9 @@ public sealed partial class CSEmkApplyMember : pb::GeneratedMessage<CSEmkApplyMe
       if (other.HasCardnumber) {
         Cardnumber = other.Cardnumber;
       }
+      if (other.HasChannel) {
+        Channel = other.Channel;
+      }
       this.MergeUnknownFields(other.UnknownFields);
       return this;
     }
@@ -1752,6 +1772,10 @@ public sealed partial class CSEmkApplyMember : pb::GeneratedMessage<CSEmkApplyMe
             result.hasCardnumber = input.ReadString(ref result.cardnumber_);
             break;
           }
+          case 16: {
+            result.hasChannel = input.ReadInt32(ref result.channel_);
+            break;
+          }
         }
       }
       
@@ -1780,6 +1804,26 @@ public sealed partial class CSEmkApplyMember : pb::GeneratedMessage<CSEmkApplyMe
       PrepareBuilder();
       result.hasCardnumber = false;
       result.cardnumber_ = "";
+      return this;
+    }
+    
+    public bool HasChannel {
+      get { return result.hasChannel; }
+    }
+    public int Channel {
+      get { return result.Channel; }
+      set { SetChannel(value); }
+    }
+    public Builder SetChannel(int value) {
+      PrepareBuilder();
+      result.hasChannel = true;
+      result.channel_ = value;
+      return this;
+    }
+    public Builder ClearChannel() {
+      PrepareBuilder();
+      result.hasChannel = false;
+      result.channel_ = 0;
       return this;
     }
   }

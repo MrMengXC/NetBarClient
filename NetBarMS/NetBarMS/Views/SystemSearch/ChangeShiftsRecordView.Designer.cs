@@ -85,7 +85,7 @@
             // popupContainerControl1
             // 
             this.popupContainerControl1.Controls.Add(this.dateNavigator);
-            this.popupContainerControl1.Location = new System.Drawing.Point(423, 0);
+            this.popupContainerControl1.Location = new System.Drawing.Point(396, 6);
             this.popupContainerControl1.Name = "popupContainerControl1";
             this.popupContainerControl1.Size = new System.Drawing.Size(288, 261);
             this.popupContainerControl1.TabIndex = 7;
@@ -96,8 +96,8 @@
             this.dateNavigator.CalendarAppearance.DayCellSpecial.Options.UseFont = true;
             this.dateNavigator.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateNavigator.DateTime = new System.DateTime(2017, 6, 18, 10, 23, 20, 107);
-            this.dateNavigator.EditValue = new System.DateTime(2017, 6, 18, 10, 23, 20, 107);
+            this.dateNavigator.DateTime = new System.DateTime(2017, 7, 17, 23, 3, 19, 808);
+            this.dateNavigator.EditValue = new System.DateTime(2017, 7, 17, 23, 3, 19, 808);
             this.dateNavigator.FirstDayOfWeek = System.DayOfWeek.Sunday;
             this.dateNavigator.Location = new System.Drawing.Point(3, 3);
             this.dateNavigator.Name = "dateNavigator";
@@ -113,6 +113,7 @@
             this.popupContainerEdit1.Name = "popupContainerEdit1";
             this.popupContainerEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.popupContainerEdit1.Properties.NullText = "按时间段查询";
             this.popupContainerEdit1.Properties.PopupControl = this.popupContainerControl1;
             this.popupContainerEdit1.Size = new System.Drawing.Size(141, 20);
             this.popupContainerEdit1.TabIndex = 5;

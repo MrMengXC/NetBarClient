@@ -75,21 +75,19 @@ namespace NetBarMS.Views.ProductManage
         //获取销售记录结果回调
         private void GetSellRecordListResult(ResultModel result)
         {
-            if(result.pack.Content.MessageType != 1)
+            if(result.pack.Cmd != Cmd.CMD_GOODS_SALES)
             {
                 return;
             }
-
-            if (result.pack.Cmd == Cmd.CMD_GOODS_SALES)
+            NetMessageManage.RemoveResultBlock(GetSellRecordListResult);
+            System.Console.WriteLine("GetSellRecordListResult:" + result.pack);
+            if (result.pack.Content.MessageType == 1)
             {
-                NetMessageManage.RemoveResultBlock(GetSellRecordListResult);
-                System.Console.WriteLine("GetSellRecordListResult:" + result.pack);
-                this.Invoke(new RefreshUIHandle(delegate{
+               
+                this.Invoke(new RefreshUIHandle(delegate {
                     sales = result.pack.Content.ScSalesRecord.SalesList;
                     RefreshGridControl();
                 }));
-
-
             }
         }
         #endregion

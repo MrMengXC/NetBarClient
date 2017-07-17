@@ -14,7 +14,7 @@ namespace NetBarMS.Views.ProductManage
 {
     public partial class ProductSellRankView : RootUserControlView
     {
-        enum TitleList
+        private enum TitleList
         {
             None = 0,
 

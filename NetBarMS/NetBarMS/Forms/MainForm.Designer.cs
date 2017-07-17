@@ -31,7 +31,10 @@
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.panel3 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.amountLabel = new System.Windows.Forms.Label();
+            this.netUserLabel = new System.Windows.Forms.Label();
             this.dailyOnlineCountLabel = new System.Windows.Forms.Label();
+            this.attenDanceLabel = new System.Windows.Forms.Label();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
@@ -47,9 +50,6 @@
             this.homePageListPanel = new System.Windows.Forms.Panel();
             this.manageTreeView = new System.Windows.Forms.TreeView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.attenDanceLabel = new System.Windows.Forms.Label();
-            this.netUserLabel = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
@@ -82,7 +82,7 @@
             // 
             this.flowLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.flowLayoutPanel3.Controls.Add(this.label1);
+            this.flowLayoutPanel3.Controls.Add(this.amountLabel);
             this.flowLayoutPanel3.Controls.Add(this.netUserLabel);
             this.flowLayoutPanel3.Controls.Add(this.dailyOnlineCountLabel);
             this.flowLayoutPanel3.Controls.Add(this.attenDanceLabel);
@@ -91,6 +91,28 @@
             this.flowLayoutPanel3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.flowLayoutPanel3.Size = new System.Drawing.Size(542, 69);
             this.flowLayoutPanel3.TabIndex = 57;
+            // 
+            // amountLabel
+            // 
+            this.amountLabel.BackColor = System.Drawing.Color.Red;
+            this.amountLabel.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.amountLabel.Location = new System.Drawing.Point(443, 0);
+            this.amountLabel.Name = "amountLabel";
+            this.amountLabel.Size = new System.Drawing.Size(96, 67);
+            this.amountLabel.TabIndex = 56;
+            this.amountLabel.Text = "0\r\n今日营收";
+            this.amountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // netUserLabel
+            // 
+            this.netUserLabel.BackColor = System.Drawing.Color.Red;
+            this.netUserLabel.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.netUserLabel.Location = new System.Drawing.Point(313, 0);
+            this.netUserLabel.Name = "netUserLabel";
+            this.netUserLabel.Size = new System.Drawing.Size(124, 67);
+            this.netUserLabel.TabIndex = 57;
+            this.netUserLabel.Text = "0\r\n当前上网用户";
+            this.netUserLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dailyOnlineCountLabel
             // 
@@ -102,6 +124,17 @@
             this.dailyOnlineCountLabel.TabIndex = 55;
             this.dailyOnlineCountLabel.Text = "0\r\n当日上机人次";
             this.dailyOnlineCountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // attenDanceLabel
+            // 
+            this.attenDanceLabel.BackColor = System.Drawing.Color.Red;
+            this.attenDanceLabel.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.attenDanceLabel.Location = new System.Drawing.Point(62, 0);
+            this.attenDanceLabel.Name = "attenDanceLabel";
+            this.attenDanceLabel.Size = new System.Drawing.Size(124, 67);
+            this.attenDanceLabel.TabIndex = 57;
+            this.attenDanceLabel.Text = "0\r\n当前上座率";
+            this.attenDanceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // flowLayoutPanel2
             // 
@@ -273,39 +306,6 @@
             this.panel1.Size = new System.Drawing.Size(195, 890);
             this.panel1.TabIndex = 8;
             // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.Color.Red;
-            this.label1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(443, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(96, 67);
-            this.label1.TabIndex = 56;
-            this.label1.Text = "0\r\n今日营收";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // attenDanceLabel
-            // 
-            this.attenDanceLabel.BackColor = System.Drawing.Color.Red;
-            this.attenDanceLabel.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.attenDanceLabel.Location = new System.Drawing.Point(62, 0);
-            this.attenDanceLabel.Name = "attenDanceLabel";
-            this.attenDanceLabel.Size = new System.Drawing.Size(124, 67);
-            this.attenDanceLabel.TabIndex = 57;
-            this.attenDanceLabel.Text = "0\r\n当前上座率";
-            this.attenDanceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // netUserLabel
-            // 
-            this.netUserLabel.BackColor = System.Drawing.Color.Red;
-            this.netUserLabel.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.netUserLabel.Location = new System.Drawing.Point(313, 0);
-            this.netUserLabel.Name = "netUserLabel";
-            this.netUserLabel.Size = new System.Drawing.Size(124, 67);
-            this.netUserLabel.TabIndex = 57;
-            this.netUserLabel.Text = "0\r\n当前上网用户";
-            this.netUserLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -345,7 +345,7 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton12;
         private DevExpress.XtraEditors.SimpleButton simpleButton13;
         private System.Windows.Forms.Label dailyOnlineCountLabel;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label amountLabel;
         private System.Windows.Forms.Label attenDanceLabel;
         private System.Windows.Forms.Label netUserLabel;
     }

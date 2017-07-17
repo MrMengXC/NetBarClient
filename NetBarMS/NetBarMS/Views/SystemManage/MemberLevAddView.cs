@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using NetBarMS.Codes.Tools.NetOperation;
 using NetBarMS.Codes.Tools;
+using DevExpress.XtraEditors;
 
 namespace NetBarMS.Views.SystemManage
 {
@@ -28,14 +29,25 @@ namespace NetBarMS.Views.SystemManage
         {
             InitializeComponent();
             this.titleLabel.Text = "会员等级增改";
+            InitUI();
+
         }
         #region 初始化UI
         //初始化UI
         private void InitUI()
         {
-            this.typeTextEdit.Text = this.item.GetItem(0);
-            this.rechargeTextEdit.Text = this.item.GetItem(1);
-            this.integralTextEdit.Text = this.item.GetItem(2);
+            TextEdit[] edits = {
+                this.integralTextEdit,this.rechargeTextEdit
+            };
+            InitTextEdit(edits);
+
+            if(this.item != null)
+            {
+                this.typeTextEdit.Text = this.item.GetItem(0);
+                this.rechargeTextEdit.Text = this.item.GetItem(1);
+                this.integralTextEdit.Text = this.item.GetItem(2);
+            }
+          
         }
         #endregion
 

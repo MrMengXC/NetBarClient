@@ -157,6 +157,10 @@ namespace NetBarMS.Views.SystemSearch
         //关闭日期选择菜单
         private void PopupContainerEdit1_Closed(object sender, DevExpress.XtraEditors.Controls.ClosedEventArgs e)
         {
+            if(!this.startTime.Equals("") && !this.endTime.Equals(""))
+            {
+                this.popupContainerEdit1.Text = string.Format("{0}-{1}", this.startTime, this.endTime);
+            }
             GetUserConsumeRecord(true);
         }
 
@@ -179,6 +183,7 @@ namespace NetBarMS.Views.SystemSearch
 
         }
         #endregion
+
         #region 翻页
         private void PageView_PageChanged(int current)
         {

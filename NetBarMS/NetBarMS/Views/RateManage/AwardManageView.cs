@@ -359,6 +359,27 @@ namespace NetBarMS.Views.RateManage
                 }));
             }
         }
+
+        #region 关闭日期回调
+        private void ContainerEdit_Closed(object sender, ClosedEventArgs e)
+        {
+            if(sender.Equals(this.popupContainerEdit1))
+            {
+                if (!this.nstartTime.Equals("") && !this.nendTime.Equals(""))
+                {
+                    this.popupContainerEdit1.Text = string.Format("{0}-{1}", this.nstartTime, this.nendTime);
+                }
+            }
+            if (sender.Equals(this.popupContainerEdit2))
+            {
+                if (!this.mstartTime.Equals("") && !this.mendTime.Equals(""))
+                {
+                    this.popupContainerEdit1.Text = string.Format("{0}-{1}", this.mstartTime, this.mendTime);
+                }
+            }
+        }
+        #endregion
+
         //删除会员日奖励结果回调
         private void DeleteMemberDayAwardResult(ResultModel result)
         {

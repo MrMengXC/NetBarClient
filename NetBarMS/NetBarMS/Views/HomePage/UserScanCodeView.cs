@@ -84,6 +84,7 @@ namespace NetBarMS.Views.HomePage
         {
             HomePageNetOperation.GetRechargeCode(GetRechargeCodeResult, cardNum, recharge, 0, (int)this.prechargeType);
         }
+        //开始充值的入口
         private void BeginRecharge()
         {
             MemberNetOperation.BeiginRecharge(BeginRechargeResult, this.cardNum);
@@ -231,5 +232,8 @@ namespace NetBarMS.Views.HomePage
             }
         }
         #endregion
+
+
+
     }
 }

@@ -15,7 +15,7 @@ namespace NetBarMS.Views.SystemSearch
 {
     public partial class UserRechargeView : RootUserControlView
     {
-        enum TitleList
+        private enum TitleList
         {
             None = 0,
 
@@ -64,7 +64,6 @@ namespace NetBarMS.Views.SystemSearch
             GetUserRechargeRecord();
         }
         #endregion
-
 
         #region 会员充值记录
         private void GetUserRechargeRecord()
@@ -137,7 +136,9 @@ namespace NetBarMS.Views.SystemSearch
             row[TitleList.GiveMoney.ToString()] = charge.BonusAmount;
             row[TitleList.PayChannel.ToString()] = Enum.GetName(typeof(PAYCHANNEL),charge.Paymode);
             row[TitleList.PayIndentNumber.ToString()] = charge.Receiptid;
-            row[TitleList.IndentStatus.ToString()] = charge.Status;
+            INDENT_FINISH_STATUS status = INDENT_FINISH_STATUS.无;
+            Enum.TryParse<INDENT_FINISH_STATUS>(charge.Status.ToString(), out status);
+            row[TitleList.IndentStatus.ToString()] = Enum.GetName(typeof(INDENT_FINISH_STATUS),status);
             row[TitleList.AddTime.ToString()] = charge.Addtime;
 
 
@@ -148,6 +149,10 @@ namespace NetBarMS.Views.SystemSearch
         //关闭日期选择菜单
         private void PopupContainerEdit1_Closed(object sender, DevExpress.XtraEditors.Controls.ClosedEventArgs e)
         {
+            if(!this.startTime.Equals("") && !this.endTime.Equals(""))
+            {
+                this.popupContainerEdit1.Text = string.Format("{0}-{1}", this.startTime, this.endTime);
+            }
             GetUserRechargeRecord();
         }
         //日期选择触发

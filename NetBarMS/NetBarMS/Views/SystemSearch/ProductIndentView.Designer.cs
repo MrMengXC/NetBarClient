@@ -130,6 +130,7 @@
             this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.comboBoxEdit1.Properties.NullText = "按状态查询";
+            this.comboBoxEdit1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.comboBoxEdit1.Size = new System.Drawing.Size(108, 20);
             this.comboBoxEdit1.TabIndex = 3;
             this.comboBoxEdit1.SelectedIndexChanged += new System.EventHandler(this.comboBoxEdit1_SelectedIndexChanged);
@@ -165,7 +166,10 @@
             this.dateNavigator1.Name = "dateNavigator1";
             this.dateNavigator1.Size = new System.Drawing.Size(255, 214);
             this.dateNavigator1.TabIndex = 0;
-            this.dateNavigator1.DateTimeChanged += new System.EventHandler(this.DateNavigator_EditValueChanged);
+            this.dateNavigator1.DateTime = System.DateTime.Now;
+            this.dateNavigator1.EditValue = System.DateTime.Now;
+
+            this.dateNavigator1.Click += new System.EventHandler(this.DateNavigator_EditValueChanged);
             // 
             // popupContainerEdit3
             // 
@@ -198,7 +202,10 @@
             this.dateNavigator2.Name = "dateNavigator2";
             this.dateNavigator2.Size = new System.Drawing.Size(255, 214);
             this.dateNavigator2.TabIndex = 0;
-            this.dateNavigator2.DateTimeChanged += new System.EventHandler(this.DateNavigator_EditValueChanged);
+            this.dateNavigator2.DateTime = System.DateTime.Now;
+            this.dateNavigator2.EditValue = System.DateTime.Now;
+
+            this.dateNavigator2.Click += new System.EventHandler(this.DateNavigator_EditValueChanged);
             // 
             // buttonEdit1
             // 
@@ -206,7 +213,9 @@
             this.buttonEdit1.Name = "buttonEdit1";
             this.buttonEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Search)});
-            this.buttonEdit1.Size = new System.Drawing.Size(145, 20);
+            this.buttonEdit1.Properties.NullText = "输入会员名称、身份证号查询";
+            this.buttonEdit1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.buttonEdit1.Size = new System.Drawing.Size(200, 20);
             this.buttonEdit1.TabIndex = 4;
             this.buttonEdit1.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.ButtonEdit1_ButtonClick);
             // 

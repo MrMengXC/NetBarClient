@@ -48,6 +48,8 @@ public static partial class BaseStruct {
   internal static pb::FieldAccess.FieldAccessorTable<global::StructDictItem, global::StructDictItem.Builder> internal__static_StructDictItem__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_StructGoods__Descriptor;
   internal static pb::FieldAccess.FieldAccessorTable<global::StructGoods, global::StructGoods.Builder> internal__static_StructGoods__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_StructCartGoods__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::StructCartGoods, global::StructCartGoods.Builder> internal__static_StructCartGoods__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_StructSale__Descriptor;
   internal static pb::FieldAccess.FieldAccessorTable<global::StructSale, global::StructSale.Builder> internal__static_StructSale__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_StructSaleTop__Descriptor;
@@ -142,43 +144,44 @@ public static partial class BaseStruct {
           "Cglnb29kc05hbWUYAiACKAkSEQoJZ29vZHNJbWcxGAMgAigJEhEKCWdvb2Rz", 
           "SW1nMhgEIAIoCRIRCglnb29kc0ltZzMYBSACKAkSEAoIY2F0ZWdvcnkYBiAC", 
           "KAUSDQoFcHJpY2UYByACKAkSEgoKdXNlSW50ZWdhbBgIIAIoCBIMCgRoaWRl", 
-          "GAkgAigIEg8KB2ludGVnYWwYCiACKAUSDQoFY291bnQYCyACKAUipgEKClN0", 
-          "cnVjdFNhbGUSDwoHb3JkZXJpZBgBIAIoBRIQCgh1c2VybmFtZRgCIAIoCRIS", 
-          "CgpjYXJkbnVtYmVyGAMgAigJEhAKCGFyZWFuYW1lGAQgAigJEhEKCWdvb2Rz", 
-          "bmFtZRgFIAIoCRILCgNudW0YBiACKAUSDQoFbW9uZXkYByACKAUSDwoHYWRk", 
-          "dGltZRgIIAIoCRIPCgdwYXltb2RlGAkgAigJIlAKDVN0cnVjdFNhbGVUb3AS", 
-          "EAoIY2F0ZWdvcnkYASACKAUSEQoJZ29vZHNuYW1lGAIgAigJEgsKA251bRgD", 
-          "IAIoBRINCgVtb25leRgEIAIoBSJOCgtTdHJ1Y3RTdG9jaxIRCglnb29kc25h", 
-          "bWUYASACKAkSEAoIY2F0ZWdvcnkYAiACKAUSDQoFcHJpY2UYAyACKAkSCwoD", 
-          "bnVtGAQgAigFIsoBCgtTdHJ1Y3RPcmRlchIPCgdvcmRlcmlkGAEgAigFEhAK", 
-          "CHVzZXJuYW1lGAIgAigJEhIKCmNhcmRudW1iZXIYAyACKAkSEAoIYXJlYW5h", 
-          "bWUYBCACKAkSDQoFbW9uZXkYBSACKAUSDwoHYWRkdGltZRgGIAIoCRIQCghw", 
-          "cm9jdGltZRgHIAIoCRIQCghvcGVyYXRvchgIIAIoCRIOCgZzdGF0dXMYCSAC", 
-          "KAkSDwoHcGF5bW9kZRgKIAIoCRINCgVwYXlpZBgLIAIoCSJUChFTdHJ1Y3RP", 
-          "cmRlckRldGFpbBIRCglnb29kc25hbWUYASACKAkSEAoIY2F0ZWdvcnkYAiAC", 
-          "KAUSDQoFcHJpY2UYAyACKAkSCwoDbnVtGAQgAigFIrkBCg1TdHJ1Y3RDb21t", 
-          "ZW50Eg8KB2FkZHRpbWUYASACKAkSEAoIY3VzdG9tZXIYAiACKAkSEgoKY2Fy", 
-          "ZG51bWJlchgDIAIoCRINCgVib251cxgEIAIoBRINCgVzdGFmZhgFIAEoCRIN", 
-          "CgVwb2ludBgGIAEoBRITCgtlbnZpcm9ubWVudBgHIAEoBRIPCgdzZXJ2aWNl", 
-          "GAggASgFEg4KBmRldmljZRgJIAEoBRIOCgZkZXRhaWwYCiABKAkiagoNU3Ry", 
-          "dWN0UGVyZm9ybRIMCgRuYW1lGAEgAigJEgwKBHJvbGUYAiACKAkSDQoFaG91", 
-          "cnMYAyACKAUSDgoGY2hhcmdlGAQgAigFEg0KBXNhbGVzGAUgAigFEg8KB3Nh", 
-          "dGlzZnkYBiACKAUiXQoJU3RydWN0TG9nEhAKCG9wZXJhdG9yGAEgAigJEhEK", 
-          "CW9wZXJhdGlvbhgCIAIoCRIKCgJpcBgDIAIoCRIPCgdhZGR0aW1lGAQgAigJ", 
-          "Eg4KBnN0YXR1cxgFIAIoCSIzCg9TdHJ1Y3RBcmVhVG90YWwSEAoIYXJlYW5h", 
-          "bWUYASACKAkSDgoGYW1vdW50GAIgAigFIsQBCgpTdHJ1Y3RFYXJuEhAKCGRh", 
-          "dGV0aW1lGAEgAigFEhUKDWFsaXBheV9jaGFyZ2UYAiACKAUSEwoLYWxpcGF5", 
-          "X3NhbGUYAyACKAUSFQoNdGVucGF5X2NoYXJnZRgEIAIoBRITCgt0ZW5wYXlf", 
-          "c2FsZRgFIAIoBRITCgtjYXNoX2NoYXJnZRgGIAIoBRIRCgljYXNoX3NhbGUY", 
-          "ByACKAUSJAoKYXJlYV90b3RhbBgIIAMoCzIQLlN0cnVjdEFyZWFUb3RhbCJK", 
-          "CgpTdHJ1Y3RDYWxsEg4KBmNhbGxpZBgBIAIoBRIOCgZjYWxsZXIYAiACKAkS", 
-          "DgoGZGV2aWNlGAMgAigJEgwKBGluZm8YBCACKAki0gEKC1N0cnVjdFNoaWZ0", 
-          "Eg8KB3NoaWZ0aWQYASACKAUSFAoMZGVsaXZlcmVkX2J5GAIgAigJEhEKCXN0", 
-          "YXJ0dGltZRgDIAIoCRIQCghzdG9wdGltZRgEIAIoCRIVCg1jaGFyZ2VfYW1v", 
-          "dW50GAUgAigFEhMKC3NhbGVfYW1vdW50GAYgAigFEhUKDXJlZnVuZF9hbW91", 
-          "bnQYByACKAUSEwoLcmVjZWl2ZWRfYnkYCCACKAkSDwoHaXNjaGVjaxgJIAIo", 
-          "BRIOCgZyZW1hcmsYCiACKAlCKwodY29tLnNreXNvZnQuY29yZS5hdXRvLm1l", 
-        "c3NhZ2VCCkJhc2VTdHJ1Y3Q="));
+          "GAkgAigIEg8KB2ludGVnYWwYCiACKAUSDQoFY291bnQYCyACKAUiNAoPU3Ry", 
+          "dWN0Q2FydEdvb2RzEg8KB2dvb2RzaWQYASACKAUSEAoIZ29vZHNudW0YAiAC", 
+          "KAUipgEKClN0cnVjdFNhbGUSDwoHb3JkZXJpZBgBIAIoBRIQCgh1c2VybmFt", 
+          "ZRgCIAIoCRISCgpjYXJkbnVtYmVyGAMgAigJEhAKCGFyZWFuYW1lGAQgAigJ", 
+          "EhEKCWdvb2RzbmFtZRgFIAIoCRILCgNudW0YBiACKAUSDQoFbW9uZXkYByAC", 
+          "KAUSDwoHYWRkdGltZRgIIAIoCRIPCgdwYXltb2RlGAkgAigJIlAKDVN0cnVj", 
+          "dFNhbGVUb3ASEAoIY2F0ZWdvcnkYASACKAUSEQoJZ29vZHNuYW1lGAIgAigJ", 
+          "EgsKA251bRgDIAIoBRINCgVtb25leRgEIAIoBSJOCgtTdHJ1Y3RTdG9jaxIR", 
+          "Cglnb29kc25hbWUYASACKAkSEAoIY2F0ZWdvcnkYAiACKAUSDQoFcHJpY2UY", 
+          "AyACKAkSCwoDbnVtGAQgAigFIsoBCgtTdHJ1Y3RPcmRlchIPCgdvcmRlcmlk", 
+          "GAEgAigFEhAKCHVzZXJuYW1lGAIgAigJEhIKCmNhcmRudW1iZXIYAyACKAkS", 
+          "EAoIYXJlYW5hbWUYBCACKAkSDQoFbW9uZXkYBSACKAUSDwoHYWRkdGltZRgG", 
+          "IAIoCRIQCghwcm9jdGltZRgHIAIoCRIQCghvcGVyYXRvchgIIAIoCRIOCgZz", 
+          "dGF0dXMYCSACKAkSDwoHcGF5bW9kZRgKIAIoCRINCgVwYXlpZBgLIAIoCSJU", 
+          "ChFTdHJ1Y3RPcmRlckRldGFpbBIRCglnb29kc25hbWUYASACKAkSEAoIY2F0", 
+          "ZWdvcnkYAiACKAUSDQoFcHJpY2UYAyACKAkSCwoDbnVtGAQgAigFIrkBCg1T", 
+          "dHJ1Y3RDb21tZW50Eg8KB2FkZHRpbWUYASACKAkSEAoIY3VzdG9tZXIYAiAC", 
+          "KAkSEgoKY2FyZG51bWJlchgDIAIoCRINCgVib251cxgEIAIoBRINCgVzdGFm", 
+          "ZhgFIAEoCRINCgVwb2ludBgGIAEoBRITCgtlbnZpcm9ubWVudBgHIAEoBRIP", 
+          "CgdzZXJ2aWNlGAggASgFEg4KBmRldmljZRgJIAEoBRIOCgZkZXRhaWwYCiAB", 
+          "KAkiagoNU3RydWN0UGVyZm9ybRIMCgRuYW1lGAEgAigJEgwKBHJvbGUYAiAC", 
+          "KAkSDQoFaG91cnMYAyACKAUSDgoGY2hhcmdlGAQgAigFEg0KBXNhbGVzGAUg", 
+          "AigFEg8KB3NhdGlzZnkYBiACKAUiXQoJU3RydWN0TG9nEhAKCG9wZXJhdG9y", 
+          "GAEgAigJEhEKCW9wZXJhdGlvbhgCIAIoCRIKCgJpcBgDIAIoCRIPCgdhZGR0", 
+          "aW1lGAQgAigJEg4KBnN0YXR1cxgFIAIoCSIzCg9TdHJ1Y3RBcmVhVG90YWwS", 
+          "EAoIYXJlYW5hbWUYASACKAkSDgoGYW1vdW50GAIgAigFIsQBCgpTdHJ1Y3RF", 
+          "YXJuEhAKCGRhdGV0aW1lGAEgAigFEhUKDWFsaXBheV9jaGFyZ2UYAiACKAUS", 
+          "EwoLYWxpcGF5X3NhbGUYAyACKAUSFQoNdGVucGF5X2NoYXJnZRgEIAIoBRIT", 
+          "Cgt0ZW5wYXlfc2FsZRgFIAIoBRITCgtjYXNoX2NoYXJnZRgGIAIoBRIRCglj", 
+          "YXNoX3NhbGUYByACKAUSJAoKYXJlYV90b3RhbBgIIAMoCzIQLlN0cnVjdEFy", 
+          "ZWFUb3RhbCJKCgpTdHJ1Y3RDYWxsEg4KBmNhbGxpZBgBIAIoBRIOCgZjYWxs", 
+          "ZXIYAiACKAkSDgoGZGV2aWNlGAMgAigJEgwKBGluZm8YBCACKAki0gEKC1N0", 
+          "cnVjdFNoaWZ0Eg8KB3NoaWZ0aWQYASACKAUSFAoMZGVsaXZlcmVkX2J5GAIg", 
+          "AigJEhEKCXN0YXJ0dGltZRgDIAIoCRIQCghzdG9wdGltZRgEIAIoCRIVCg1j", 
+          "aGFyZ2VfYW1vdW50GAUgAigFEhMKC3NhbGVfYW1vdW50GAYgAigFEhUKDXJl", 
+          "ZnVuZF9hbW91bnQYByACKAUSEwoLcmVjZWl2ZWRfYnkYCCACKAkSDwoHaXNj", 
+          "aGVjaxgJIAIoBRIOCgZyZW1hcmsYCiACKAlCKwodY29tLnNreXNvZnQuY29y", 
+        "ZS5hdXRvLm1lc3NhZ2VCCkJhc2VTdHJ1Y3Q="));
     pbd::FileDescriptor.InternalDescriptorAssigner assigner = delegate(pbd::FileDescriptor root) {
       descriptor = root;
       internal__static_StructErrorTip__Descriptor = Descriptor.MessageTypes[0];
@@ -249,51 +252,55 @@ public static partial class BaseStruct {
       internal__static_StructGoods__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructGoods, global::StructGoods.Builder>(internal__static_StructGoods__Descriptor,
               new string[] { "GoodsId", "GoodsName", "GoodsImg1", "GoodsImg2", "GoodsImg3", "Category", "Price", "UseIntegal", "Hide", "Integal", "Count", });
-      internal__static_StructSale__Descriptor = Descriptor.MessageTypes[17];
+      internal__static_StructCartGoods__Descriptor = Descriptor.MessageTypes[17];
+      internal__static_StructCartGoods__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::StructCartGoods, global::StructCartGoods.Builder>(internal__static_StructCartGoods__Descriptor,
+              new string[] { "Goodsid", "Goodsnum", });
+      internal__static_StructSale__Descriptor = Descriptor.MessageTypes[18];
       internal__static_StructSale__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructSale, global::StructSale.Builder>(internal__static_StructSale__Descriptor,
               new string[] { "Orderid", "Username", "Cardnumber", "Areaname", "Goodsname", "Num", "Money", "Addtime", "Paymode", });
-      internal__static_StructSaleTop__Descriptor = Descriptor.MessageTypes[18];
+      internal__static_StructSaleTop__Descriptor = Descriptor.MessageTypes[19];
       internal__static_StructSaleTop__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructSaleTop, global::StructSaleTop.Builder>(internal__static_StructSaleTop__Descriptor,
               new string[] { "Category", "Goodsname", "Num", "Money", });
-      internal__static_StructStock__Descriptor = Descriptor.MessageTypes[19];
+      internal__static_StructStock__Descriptor = Descriptor.MessageTypes[20];
       internal__static_StructStock__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructStock, global::StructStock.Builder>(internal__static_StructStock__Descriptor,
               new string[] { "Goodsname", "Category", "Price", "Num", });
-      internal__static_StructOrder__Descriptor = Descriptor.MessageTypes[20];
+      internal__static_StructOrder__Descriptor = Descriptor.MessageTypes[21];
       internal__static_StructOrder__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructOrder, global::StructOrder.Builder>(internal__static_StructOrder__Descriptor,
               new string[] { "Orderid", "Username", "Cardnumber", "Areaname", "Money", "Addtime", "Proctime", "Operator", "Status", "Paymode", "Payid", });
-      internal__static_StructOrderDetail__Descriptor = Descriptor.MessageTypes[21];
+      internal__static_StructOrderDetail__Descriptor = Descriptor.MessageTypes[22];
       internal__static_StructOrderDetail__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructOrderDetail, global::StructOrderDetail.Builder>(internal__static_StructOrderDetail__Descriptor,
               new string[] { "Goodsname", "Category", "Price", "Num", });
-      internal__static_StructComment__Descriptor = Descriptor.MessageTypes[22];
+      internal__static_StructComment__Descriptor = Descriptor.MessageTypes[23];
       internal__static_StructComment__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructComment, global::StructComment.Builder>(internal__static_StructComment__Descriptor,
               new string[] { "Addtime", "Customer", "Cardnumber", "Bonus", "Staff", "Point", "Environment", "Service", "Device", "Detail", });
-      internal__static_StructPerform__Descriptor = Descriptor.MessageTypes[23];
+      internal__static_StructPerform__Descriptor = Descriptor.MessageTypes[24];
       internal__static_StructPerform__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructPerform, global::StructPerform.Builder>(internal__static_StructPerform__Descriptor,
               new string[] { "Name", "Role", "Hours", "Charge", "Sales", "Satisfy", });
-      internal__static_StructLog__Descriptor = Descriptor.MessageTypes[24];
+      internal__static_StructLog__Descriptor = Descriptor.MessageTypes[25];
       internal__static_StructLog__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructLog, global::StructLog.Builder>(internal__static_StructLog__Descriptor,
               new string[] { "Operator", "Operation", "Ip", "Addtime", "Status", });
-      internal__static_StructAreaTotal__Descriptor = Descriptor.MessageTypes[25];
+      internal__static_StructAreaTotal__Descriptor = Descriptor.MessageTypes[26];
       internal__static_StructAreaTotal__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructAreaTotal, global::StructAreaTotal.Builder>(internal__static_StructAreaTotal__Descriptor,
               new string[] { "Areaname", "Amount", });
-      internal__static_StructEarn__Descriptor = Descriptor.MessageTypes[26];
+      internal__static_StructEarn__Descriptor = Descriptor.MessageTypes[27];
       internal__static_StructEarn__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructEarn, global::StructEarn.Builder>(internal__static_StructEarn__Descriptor,
               new string[] { "Datetime", "AlipayCharge", "AlipaySale", "TenpayCharge", "TenpaySale", "CashCharge", "CashSale", "AreaTotal", });
-      internal__static_StructCall__Descriptor = Descriptor.MessageTypes[27];
+      internal__static_StructCall__Descriptor = Descriptor.MessageTypes[28];
       internal__static_StructCall__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructCall, global::StructCall.Builder>(internal__static_StructCall__Descriptor,
               new string[] { "Callid", "Caller", "Device", "Info", });
-      internal__static_StructShift__Descriptor = Descriptor.MessageTypes[28];
+      internal__static_StructShift__Descriptor = Descriptor.MessageTypes[29];
       internal__static_StructShift__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructShift, global::StructShift.Builder>(internal__static_StructShift__Descriptor,
               new string[] { "Shiftid", "DeliveredBy", "Starttime", "Stoptime", "ChargeAmount", "SaleAmount", "RefundAmount", "ReceivedBy", "Ischeck", "Remark", });
@@ -10595,6 +10602,326 @@ public sealed partial class StructGoods : pb::GeneratedMessage<StructGoods, Stru
     }
   }
   static StructGoods() {
+    object.ReferenceEquals(global::BaseStruct.Descriptor, null);
+  }
+}
+
+[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+public sealed partial class StructCartGoods : pb::GeneratedMessage<StructCartGoods, StructCartGoods.Builder> {
+  private StructCartGoods() { }
+  private static readonly StructCartGoods defaultInstance = new StructCartGoods().MakeReadOnly();
+  private static readonly string[] _structCartGoodsFieldNames = new string[] { "goodsid", "goodsnum" };
+  private static readonly uint[] _structCartGoodsFieldTags = new uint[] { 8, 16 };
+  public static StructCartGoods DefaultInstance {
+    get { return defaultInstance; }
+  }
+  
+  public override StructCartGoods DefaultInstanceForType {
+    get { return DefaultInstance; }
+  }
+  
+  protected override StructCartGoods ThisMessage {
+    get { return this; }
+  }
+  
+  public static pbd::MessageDescriptor Descriptor {
+    get { return global::BaseStruct.internal__static_StructCartGoods__Descriptor; }
+  }
+  
+  protected override pb::FieldAccess.FieldAccessorTable<StructCartGoods, StructCartGoods.Builder> InternalFieldAccessors {
+    get { return global::BaseStruct.internal__static_StructCartGoods__FieldAccessorTable; }
+  }
+  
+  public const int GoodsidFieldNumber = 1;
+  private bool hasGoodsid;
+  private int goodsid_;
+  public bool HasGoodsid {
+    get { return hasGoodsid; }
+  }
+  public int Goodsid {
+    get { return goodsid_; }
+  }
+  
+  public const int GoodsnumFieldNumber = 2;
+  private bool hasGoodsnum;
+  private int goodsnum_;
+  public bool HasGoodsnum {
+    get { return hasGoodsnum; }
+  }
+  public int Goodsnum {
+    get { return goodsnum_; }
+  }
+  
+  public override bool IsInitialized {
+    get {
+      if (!hasGoodsid) return false;
+      if (!hasGoodsnum) return false;
+      return true;
+    }
+  }
+  
+  public override void WriteTo(pb::ICodedOutputStream output) {
+    CalcSerializedSize();
+    string[] field_names = _structCartGoodsFieldNames;
+    if (hasGoodsid) {
+      output.WriteInt32(1, field_names[0], Goodsid);
+    }
+    if (hasGoodsnum) {
+      output.WriteInt32(2, field_names[1], Goodsnum);
+    }
+    UnknownFields.WriteTo(output);
+  }
+  
+  private int memoizedSerializedSize = -1;
+  public override int SerializedSize {
+    get {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+      return CalcSerializedSize();
+    }
+  }
+  
+  private int CalcSerializedSize() {
+    int size = memoizedSerializedSize;
+    if (size != -1) return size;
+    
+    size = 0;
+    if (hasGoodsid) {
+      size += pb::CodedOutputStream.ComputeInt32Size(1, Goodsid);
+    }
+    if (hasGoodsnum) {
+      size += pb::CodedOutputStream.ComputeInt32Size(2, Goodsnum);
+    }
+    size += UnknownFields.SerializedSize;
+    memoizedSerializedSize = size;
+    return size;
+  }
+  public static StructCartGoods ParseFrom(pb::ByteString data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static StructCartGoods ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static StructCartGoods ParseFrom(byte[] data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static StructCartGoods ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static StructCartGoods ParseFrom(global::System.IO.Stream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static StructCartGoods ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  public static StructCartGoods ParseDelimitedFrom(global::System.IO.Stream input) {
+    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
+  }
+  public static StructCartGoods ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
+  }
+  public static StructCartGoods ParseFrom(pb::ICodedInputStream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static StructCartGoods ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  private StructCartGoods MakeReadOnly() {
+    return this;
+  }
+  
+  public static Builder CreateBuilder() { return new Builder(); }
+  public override Builder ToBuilder() { return CreateBuilder(this); }
+  public override Builder CreateBuilderForType() { return new Builder(); }
+  public static Builder CreateBuilder(StructCartGoods prototype) {
+    return new Builder(prototype);
+  }
+  
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class Builder : pb::GeneratedBuilder<StructCartGoods, Builder> {
+    protected override Builder ThisBuilder {
+      get { return this; }
+    }
+    public Builder() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+    }
+    internal Builder(StructCartGoods cloneFrom) {
+      result = cloneFrom;
+      resultIsReadOnly = true;
+    }
+    
+    private bool resultIsReadOnly;
+    private StructCartGoods result;
+    
+    private StructCartGoods PrepareBuilder() {
+      if (resultIsReadOnly) {
+        StructCartGoods original = result;
+        result = new StructCartGoods();
+        resultIsReadOnly = false;
+        MergeFrom(original);
+      }
+      return result;
+    }
+    
+    public override bool IsInitialized {
+      get { return result.IsInitialized; }
+    }
+    
+    protected override StructCartGoods MessageBeingBuilt {
+      get { return PrepareBuilder(); }
+    }
+    
+    public override Builder Clear() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+      return this;
+    }
+    
+    public override Builder Clone() {
+      if (resultIsReadOnly) {
+        return new Builder(result);
+      } else {
+        return new Builder().MergeFrom(result);
+      }
+    }
+    
+    public override pbd::MessageDescriptor DescriptorForType {
+      get { return global::StructCartGoods.Descriptor; }
+    }
+    
+    public override StructCartGoods DefaultInstanceForType {
+      get { return global::StructCartGoods.DefaultInstance; }
+    }
+    
+    public override StructCartGoods BuildPartial() {
+      if (resultIsReadOnly) {
+        return result;
+      }
+      resultIsReadOnly = true;
+      return result.MakeReadOnly();
+    }
+    
+    public override Builder MergeFrom(pb::IMessage other) {
+      if (other is StructCartGoods) {
+        return MergeFrom((StructCartGoods) other);
+      } else {
+        base.MergeFrom(other);
+        return this;
+      }
+    }
+    
+    public override Builder MergeFrom(StructCartGoods other) {
+      if (other == global::StructCartGoods.DefaultInstance) return this;
+      PrepareBuilder();
+      if (other.HasGoodsid) {
+        Goodsid = other.Goodsid;
+      }
+      if (other.HasGoodsnum) {
+        Goodsnum = other.Goodsnum;
+      }
+      this.MergeUnknownFields(other.UnknownFields);
+      return this;
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input) {
+      return MergeFrom(input, pb::ExtensionRegistry.Empty);
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+      PrepareBuilder();
+      pb::UnknownFieldSet.Builder unknownFields = null;
+      uint tag;
+      string field_name;
+      while (input.ReadTag(out tag, out field_name)) {
+        if(tag == 0 && field_name != null) {
+          int field_ordinal = global::System.Array.BinarySearch(_structCartGoodsFieldNames, field_name, global::System.StringComparer.Ordinal);
+          if(field_ordinal >= 0)
+            tag = _structCartGoodsFieldTags[field_ordinal];
+          else {
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            continue;
+          }
+        }
+        switch (tag) {
+          case 0: {
+            throw pb::InvalidProtocolBufferException.InvalidTag();
+          }
+          default: {
+            if (pb::WireFormat.IsEndGroupTag(tag)) {
+              if (unknownFields != null) {
+                this.UnknownFields = unknownFields.Build();
+              }
+              return this;
+            }
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            break;
+          }
+          case 8: {
+            result.hasGoodsid = input.ReadInt32(ref result.goodsid_);
+            break;
+          }
+          case 16: {
+            result.hasGoodsnum = input.ReadInt32(ref result.goodsnum_);
+            break;
+          }
+        }
+      }
+      
+      if (unknownFields != null) {
+        this.UnknownFields = unknownFields.Build();
+      }
+      return this;
+    }
+    
+    
+    public bool HasGoodsid {
+      get { return result.hasGoodsid; }
+    }
+    public int Goodsid {
+      get { return result.Goodsid; }
+      set { SetGoodsid(value); }
+    }
+    public Builder SetGoodsid(int value) {
+      PrepareBuilder();
+      result.hasGoodsid = true;
+      result.goodsid_ = value;
+      return this;
+    }
+    public Builder ClearGoodsid() {
+      PrepareBuilder();
+      result.hasGoodsid = false;
+      result.goodsid_ = 0;
+      return this;
+    }
+    
+    public bool HasGoodsnum {
+      get { return result.hasGoodsnum; }
+    }
+    public int Goodsnum {
+      get { return result.Goodsnum; }
+      set { SetGoodsnum(value); }
+    }
+    public Builder SetGoodsnum(int value) {
+      PrepareBuilder();
+      result.hasGoodsnum = true;
+      result.goodsnum_ = value;
+      return this;
+    }
+    public Builder ClearGoodsnum() {
+      PrepareBuilder();
+      result.hasGoodsnum = false;
+      result.goodsnum_ = 0;
+      return this;
+    }
+  }
+  static StructCartGoods() {
     object.ReferenceEquals(global::BaseStruct.Descriptor, null);
   }
 }

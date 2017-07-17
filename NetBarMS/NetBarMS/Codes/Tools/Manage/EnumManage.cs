@@ -462,8 +462,9 @@ namespace NetBarMS.Codes.Tools
     #region 办理渠道
     public enum MANAGECHANNEL {
         无 = 0,
-        终端,
-        系统后台,
+        智能终端 = 1,
+        电脑客户端 = 2,
+        系统后台 = 3,
     }
     #endregion
 
@@ -518,6 +519,20 @@ namespace NetBarMS.Codes.Tools
 
 
 
+
+    #endregion
+
+    #region 订单到帐状态
+    /// <summary>
+    /// 订单到帐状态
+    /// </summary>
+    public enum INDENT_FINISH_STATUS
+    {
+        无 = 0,
+        提交订单,
+        付款成功,
+        处理完成
+    }
 
     #endregion
 

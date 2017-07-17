@@ -37,6 +37,7 @@ namespace NetBarMS.Views.InCome
             int days = DateTime.DaysInMonth(year, month);
             start = year+"-"+string.Format("{0:D2}",month)+ "-01 00:00:00";
             end = year + "-" + string.Format("{0:D2}", month) + "-" + days + " 23:59:59";
+            this.popupContainerEdit1.Text = string.Format("{0}/{1:D2}", year, month);
 
             GetMonthIncomeDetail();
         }
@@ -193,10 +194,11 @@ namespace NetBarMS.Views.InCome
 
             int year, month;
             this.customMonthDate1.GetCurrentTimeDur(out year, out month);
-
             int days = DateTime.DaysInMonth(year, month);
             start = year + "-" + string.Format("{0:D2}", month) + "-01 00:00:00";
             end = year + "-" + string.Format("{0:D2}", month) + "-" + days + " 23:59:59";
+            this.popupContainerEdit1.Text = string.Format("{0}/{1:D2}", year, month);
+
             GetMonthIncomeDetail();
         }
         #endregion

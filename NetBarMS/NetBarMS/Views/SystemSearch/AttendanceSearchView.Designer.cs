@@ -1,4 +1,5 @@
-﻿namespace NetBarMS.Views.SystemSearch
+﻿
+namespace NetBarMS.Views.SystemSearch
 {
     partial class AttendanceSearchView
     {
@@ -105,6 +106,8 @@
             this.dateNavigator1.CalendarAppearance.DayCellSpecial.Options.UseFont = true;
             this.dateNavigator1.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateNavigator1.DateTime = new System.DateTime(2017, 7, 17, 22, 56, 38, 864);
+            this.dateNavigator1.EditValue = new System.DateTime(2017, 7, 17, 22, 56, 38, 864);
             this.dateNavigator1.FirstDayOfWeek = System.DayOfWeek.Sunday;
             this.dateNavigator1.Location = new System.Drawing.Point(3, 3);
             this.dateNavigator1.Name = "dateNavigator1";

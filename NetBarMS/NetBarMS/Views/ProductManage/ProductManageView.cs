@@ -74,18 +74,20 @@ namespace NetBarMS.Views.ProductManage
         {
             //首先要获取产品列表数组
             this.productTypes = SysManage.ProductTypes;
-
-            // 设置 comboBox的文本值不能被编辑
-            this.comboBoxEdit1.Properties.TextEditStyle = TextEditStyles.DisableTextEditor;
-            ToolsManage.SetGridView(this.gridView1, GridControlType.ProductManage, out this.mainDataTable, ColumnButtonClick, null);
-            this.gridControl1.DataSource = this.mainDataTable;
-          
+            this.comboBoxEdit1.Properties.Items.Add("无");
             //初始化ComboBoxEdit
             for (int i = 0; i < productTypes.Count(); i++)
             {
                 ProductTypeModel item = productTypes[i];
                 this.comboBoxEdit1.Properties.Items.Add(item.typeName);
             }
+
+
+            // 设置 comboBox的文本值不能被编辑
+            ToolsManage.SetGridView(this.gridView1, GridControlType.ProductManage, out this.mainDataTable, ColumnButtonClick, null);
+            this.gridControl1.DataSource = this.mainDataTable;
+          
+        
             GetProductList();
 
         }
@@ -95,16 +97,15 @@ namespace NetBarMS.Views.ProductManage
         private void GetProductList()
         {
             Int32 category = -1;
-            if(this.comboBoxEdit1.SelectedIndex >= 0)
+            if(this.comboBoxEdit1.SelectedIndex >0)
             {
-                category = this.productTypes[this.comboBoxEdit1.SelectedIndex].typeId;
+                category = this.productTypes[this.comboBoxEdit1.SelectedIndex-1].typeId;
             }
             
-
-            string keyWords = this.buttonEdit1.Text;
-            if(keyWords.Equals(""))
+            string keyWords = "";
+            if(!this.buttonEdit1.Text.Equals(this.buttonEdit1.Properties.NullText))
             {
-                keyWords = null;
+                keyWords = this.buttonEdit1.Text;
             }
             StructPage.Builder page = new StructPage.Builder()
             {
@@ -120,21 +121,27 @@ namespace NetBarMS.Views.ProductManage
         //获取商品列表结果回调
         private void GetProductListResult(ResultModel result)
         {
-
-            if (result.pack.Content.MessageType != 1)
+            if (result.pack.Cmd != Cmd.CMD_GOODS_FIND)
             {
                 return;
             }
-            if(result.pack.Cmd == Cmd.CMD_GOODS_FIND)
+
+            System.Console.WriteLine("GetProductListResult");
+            NetMessageManage.RemoveResultBlock(GetProductListResult);
+            if (result.pack.Content.MessageType == 1)
             {
-                NetMessageManage.RemoveResultBlock(GetProductListResult);
-                System.Console.WriteLine("GetProductListResult:"+result.pack);
                 this.Invoke(new RefreshUIHandle(delegate
                 {
                     products = result.pack.Content.ScGoodsFind.GoodsList;
                     RefreshGridControl();
                 }));
             }
+            else
+            {
+                System.Console.WriteLine("GetProductListResult:" + result.pack);
+
+            }
+
         }
         #endregion
 
@@ -142,7 +149,8 @@ namespace NetBarMS.Views.ProductManage
         //刷新GridControl
         private void RefreshGridControl()
         {
-            foreach(StructGoods product in this.products)
+            this.mainDataTable.Rows.Clear();
+            foreach (StructGoods product in this.products)
             {
                 AddNewRow(product);
             }
@@ -273,7 +281,6 @@ namespace NetBarMS.Views.ProductManage
         #region 进行搜索
         private void ButtonEdit1_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            this.mainDataTable.Clear();
             GetProductList();
         }
         #endregion

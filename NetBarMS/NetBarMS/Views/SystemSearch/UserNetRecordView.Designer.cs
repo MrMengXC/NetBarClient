@@ -104,13 +104,15 @@
             this.dateNavigator.CalendarAppearance.DayCellSpecial.Options.UseFont = true;
             this.dateNavigator.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateNavigator.DateTime = new System.DateTime(2017, 6, 13, 18, 13, 56, 0);
-            this.dateNavigator.EditValue = new System.DateTime(2017, 6, 13, 18, 13, 56, 0);
+    
             this.dateNavigator.FirstDayOfWeek = System.DayOfWeek.Sunday;
             this.dateNavigator.Location = new System.Drawing.Point(3, 3);
             this.dateNavigator.Name = "dateNavigator";
             this.dateNavigator.Size = new System.Drawing.Size(283, 258);
             this.dateNavigator.TabIndex = 0;
+            this.dateNavigator.DateTime = System.DateTime.Now;
+            this.dateNavigator.EditValue = System.DateTime.Now;
+
             this.dateNavigator.Click += new System.EventHandler(this.DateNavigator_Click);
             // 
             // comboBoxEdit1

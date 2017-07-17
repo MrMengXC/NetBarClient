@@ -100,9 +100,6 @@ namespace NetBarMS.Views.NetUserManage
                 Order = 0,
             };
             RecordNetOperation.GetUserConsumeRecord(MemberConsumeRecordResult, page.Build(), this.startTime, this.endTime, (int)consume, (int)paychannel,mid);
-
-
-
         }
 
 

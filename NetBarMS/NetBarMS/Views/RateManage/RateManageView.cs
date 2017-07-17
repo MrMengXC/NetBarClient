@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using NetBarMS.Codes.Tools.NetOperation;
 using NetBarMS.Codes.Tools;
 using NetBarMS.Codes.Model;
+using DevExpress.XtraEditors;
 
 namespace NetBarMS.Views.RateManage
 {
@@ -34,9 +35,17 @@ namespace NetBarMS.Views.RateManage
         }
 
         #region 初始化UI
+        const int LABEL_WIDTH = 112;
+
         //初始化UI
         private void InitUI()
         {
+            //初始化TextEdit
+            TextEdit[] edits = {
+                this.nDurPrieceText,this.nMinConsumeText,this.bDurPrieceText,this.bMinConsumeText
+            };
+            InitTextEdit(edits);
+            //初始化星期表单
             string[] titls = {
                 "星期日","星期一", "星期二", "星期三", "星期四", "星期五", "星期六", 
             };
@@ -58,43 +67,56 @@ namespace NetBarMS.Views.RateManage
                 string name = "type_" + types[i].typeId;
                 string text = types[i].typeName;
 
-                CreateLabel(this.memberTypePanel,name,text);
+                CreateLabel(this.memberTypePanel,name,text, DockStyle.Left);
             }
             this.memberTypePanel.AutoScroll = true;
+
+
+           
             //添加区域
             List<AreaTypeModel> areas = SysManage.Areas;
-      
-            for (int i = areas.Count() - 1; i >= 0; i--)
+            this.areaTableLayoutPanel.ColumnCount = areas.Count;
+            for (int i = 0; i < areas.Count; i++)
+            {
+            }
+
+            for (int i = 0; i < areas.Count; i++)
             {
                 string name = "area_" + areas[i].areaId;
                 string text = areas[i].areaName;
+            
+                //CreateLabel(this.areaPanel, name, text, DockStyle.Fill);
 
-                CreateLabel(this.areaPanel, name, text);
+                this.areaTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, LABEL_WIDTH));
+                Label areaL = CreateLabel(this.areaTableLayoutPanel, name, text, DockStyle.Fill);
+                this.areaTableLayoutPanel.SetRow(areaL, 0);
+                this.areaTableLayoutPanel.SetColumn(areaL, i);
+
             }
-            this.areaPanel.AutoScroll = true;
+            this.areaTableLayoutPanel.AutoSize = true;
             //获取费率列表数据
             RateManageList();
 
         }
 
 
-        const int LABEL_HEIGHT = 34;
         //创建Label
-        private void CreateLabel(Panel parent,string name,string text)
+        private Label CreateLabel(Panel parent,string name,string text,DockStyle dock)
         {
-
             Label newLabel = new Label();
             newLabel.AutoSize = false;
-            newLabel.Size = new Size(112, LABEL_HEIGHT);
+            newLabel.Size = new Size(LABEL_WIDTH, this.areaTableLayoutPanel.Height);
             newLabel.BackColor = Color.White;
             newLabel.Text = text;
             newLabel.TextAlign = ContentAlignment.MiddleCenter;
             newLabel.ForeColor = Color.Black;
-            newLabel.BorderStyle = BorderStyle.FixedSingle;
             newLabel.Name = name;
             newLabel.Click += NewLabel_Click;
+            newLabel.Margin = new Padding(0);
             parent.Controls.Add(newLabel);
-            newLabel.Dock = DockStyle.Top;
+            newLabel.Dock = dock;
+            return newLabel;
+
         }
         #endregion
 
@@ -115,7 +137,7 @@ namespace NetBarMS.Views.RateManage
             }
 
             NetMessageManage.RemoveResultBlock(RateManageListResult);
-            System.Console.WriteLine("RateManageListResult:" + result.pack);
+            //System.Console.WriteLine("RateManageListResult:" + result.pack);
             if (result.pack.Content.MessageType == 1)
             {
                 this.userAreas = result.pack.Content.ScSysBillList.UserAreaList;
@@ -363,7 +385,7 @@ namespace NetBarMS.Views.RateManage
                 return;
             }
 
-            System.Console.WriteLine("RateManageUpdateResult:" + result.pack);
+            //System.Console.WriteLine("RateManageUpdateResult:" + result.pack);
             NetMessageManage.RemoveResultBlock(RateManageUpdateResult);
             if (result.pack.Content.MessageType == 1)
             {

@@ -30,12 +30,14 @@ namespace NetBarMS.Codes.Tools.Manage
         private event UpdateMsgNumHandle UpdateExceptionMsgNumEvent;
         //更新商品订单数量
         private event UpdateMsgNumHandle UpdateOrderMsgNumEvent;
-        //刷新显示当日上机数量UI
-        private event UpdateMsgNumHandle UpdateDailyOnlineCountEvent;
+
+
         //刷新状态数量UI
         private event RefreshUIHandle RefreshStatusNumEvent;
+        //刷新显示当日上机数量UI 刷新显示当日金额UI
+        private event RefreshUIHandle RefreshDailyCountEvent;
 
-      
+
         #endregion
 
         //电脑数据
@@ -43,7 +45,7 @@ namespace NetBarMS.Codes.Tools.Manage
 
         private static HomePageMessageManage _manage = null;
 
-        private int dailyOnlineCount = 0;
+        private int dailyOnlineCount = 0, dailyTradeAmount = 0;
 
         //单例方法
         public static HomePageMessageManage Manage()
@@ -173,11 +175,21 @@ namespace NetBarMS.Codes.Tools.Manage
 
                     //当日上网人数
                     case SYSMSG_TYPE.DAILY_ONLINE_COUNT:
-                        if(this.UpdateDailyOnlineCountEvent != null)
+                        if(this.RefreshDailyCountEvent != null)
                         {
                             int num = pars[0].Equals("") ? 0 : int.Parse(pars[0]);
+                            this.dailyOnlineCount = num;
+                            this.RefreshDailyCountEvent();
+                        }
 
-                            this.UpdateDailyOnlineCountEvent(num);
+                        break;
+                    //当日营收金额
+                    case SYSMSG_TYPE.DAILY_TRADE_AMOUNT:
+                        if (this.RefreshDailyCountEvent != null)
+                        {
+                            int num = pars[0].Equals("") ? 0 : int.Parse(pars[0]);
+                            this.dailyTradeAmount = num;
+                            this.RefreshDailyCountEvent();
                         }
 
                         break;
@@ -408,13 +420,13 @@ namespace NetBarMS.Codes.Tools.Manage
         public void AddMsgNumDelegate(UpdateMsgNumHandle call, 
             UpdateMsgNumHandle exception,
             UpdateMsgNumHandle order,
-            UpdateMsgNumHandle onlineCount,
+            RefreshUIHandle dailyCount,
             RefreshUIHandle statusUI)
         {
             this.UpdateCallMsgNumEvent += call;
             this.UpdateExceptionMsgNumEvent += exception;
             this.UpdateOrderMsgNumEvent += order;
-            this.UpdateDailyOnlineCountEvent += onlineCount;
+            this.RefreshDailyCountEvent += dailyCount;
             this.RefreshStatusNumEvent += statusUI;
         }
         #endregion
@@ -492,7 +504,27 @@ namespace NetBarMS.Codes.Tools.Manage
         }
         #endregion
 
-      
+        
+        /// <summary>
+        /// 获取当日营收金额
+        /// </summary>
+        public static int DailyTradeAmount
+        {
+            get
+            {
+                return Manage().dailyTradeAmount;
+            }
+        }
+        /// <summary>
+        /// 获取当日在线人数
+        /// </summary>
+        public static int DailyOnlineCount {
+            get
+            {
+                return Manage().dailyOnlineCount;
+            }
+
+        }
 
     }
 }

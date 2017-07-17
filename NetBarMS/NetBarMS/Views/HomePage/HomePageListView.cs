@@ -204,7 +204,7 @@ namespace NetBarMS.Views.HomePage
                 dict.TryGetValue(((int)COMPUTERSTATUS.空闲).ToString(), out idle);
                 dict.TryGetValue(((int)COMPUTERSTATUS.在线).ToString(), out online);
 
-                this.idleLabel.Text = 
+                this.idleLabel.Text = string.Format("{0}：{1}", this.idleLabel.Text.Split(sp)[0], idle);
                 this.onlineLabel.Text = string.Format("{0}：{1}", this.onlineLabel.Text.Split(sp)[0], online);
             }));
 

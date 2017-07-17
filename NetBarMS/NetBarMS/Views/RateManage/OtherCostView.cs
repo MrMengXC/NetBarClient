@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using NetBarMS.Codes.Tools.NetOperation;
 using NetBarMS.Codes.Tools;
+using DevExpress.XtraEditors;
 
 namespace NetBarMS.Views.RateManage
 {
@@ -26,6 +27,11 @@ namespace NetBarMS.Views.RateManage
         //初始化UI
         private void InitUI()
         {
+            //初始化TextEdit
+            TextEdit[] edits = {
+                this.memberMinuteText,this.temMinuteText
+            };
+            InitTextEdit(edits);
             RateManageNetOperation.GetOtherSetting(GetOthertSettingResult);
         }
         //设置界面

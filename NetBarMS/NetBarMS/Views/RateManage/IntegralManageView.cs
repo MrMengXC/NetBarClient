@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using NetBarMS.Codes.Tools.NetOperation;
 using NetBarMS.Codes.Tools;
 using NetBarMS.Codes.Tools.Manage;
+using DevExpress.XtraEditors;
 
 namespace NetBarMS.Views.RateManage
 {
@@ -21,13 +22,20 @@ namespace NetBarMS.Views.RateManage
         {
             InitializeComponent();
             this.titleLabel.Text = "积分管理";
-            //this.textEdit1.Paint
             InitUI();
         }
+
+       
         #region 初始化UI
         //初始化UI
         private void InitUI()
         {
+            //初始化TextEdit
+            TextEdit[] edits = {
+                this.dRechargeText,this.dRechargeItText,this.staffPjItText,this.netBarPjItText,this.bingingItText,this.logItText,this.aRechargeText,this.aRechargItText
+            };
+            InitTextEdit(edits);
+            //初始化ComboxEdit
             this.startComboBoxEdit.Properties.DisplayFormat.FormatString = "yyyy-MM-dd";
             this.endComboBoxEdit.Properties.DisplayFormat.FormatString = "yyyy-MM-dd";
             RateManageNetOperation.GetIntegralDefaultSetting(GetIntegralDefaultSettingResult);
@@ -151,9 +159,5 @@ namespace NetBarMS.Views.RateManage
         {
             base.Control_Paint(sender, e);
         }
-
-
-
-
     }
 }

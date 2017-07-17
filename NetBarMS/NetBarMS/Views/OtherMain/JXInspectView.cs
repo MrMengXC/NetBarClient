@@ -48,6 +48,7 @@ namespace NetBarMS.Views.OtherMain
         {
             int year, month;
             this.customMonthDate1.GetCurrentTimeDur(out year, out month);
+            this.popupContainerEdit1.Text = string.Format("{0}-{1:D2}", year, month);
             OtherMainNetOperation.GetJXList(GetJXListResult, year, month);
         }
         //获取绩效数据列表结果回调

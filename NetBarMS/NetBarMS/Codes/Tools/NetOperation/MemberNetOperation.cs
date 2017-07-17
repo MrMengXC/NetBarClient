@@ -39,6 +39,7 @@ namespace NetBarMS.Codes.Tools.NetOperation
         {
             CSEmkApplyMember.Builder member = new CSEmkApplyMember.Builder();
             member.Cardnumber = card;
+            member.Channel = (int)MANAGECHANNEL.系统后台;
 
             MessageContent.Builder content = new MessageContent.Builder();
             content.MessageType = 1;

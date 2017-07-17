@@ -72,6 +72,9 @@
             // 
             this.pwTextEdit.Location = new System.Drawing.Point(204, 3);
             this.pwTextEdit.Name = "pwTextEdit";
+            this.pwTextEdit.Properties.Mask.EditMask = "[0-9]*";
+            this.pwTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
+            this.pwTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.pwTextEdit.Size = new System.Drawing.Size(100, 20);
             this.pwTextEdit.TabIndex = 1;
             // 

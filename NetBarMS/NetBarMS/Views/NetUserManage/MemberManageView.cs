@@ -228,7 +228,7 @@ namespace NetBarMS.Views.NetUserManage
 
         #region 会员删除以及回调
         //删除
-        private void simpleButton2_Click(object sender, EventArgs e)
+        private void DeleteButton_ButtonClick(object sender, EventArgs e)
         {
             List<int> ids = GetCheckIds();
             if(ids.Count <= 0)

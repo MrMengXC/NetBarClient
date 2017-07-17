@@ -205,6 +205,7 @@
             this.popupContainerEdit1.Properties.PopupControl = this.popupContainerControl1;
             this.popupContainerEdit1.Size = new System.Drawing.Size(144, 20);
             this.popupContainerEdit1.TabIndex = 5;
+            this.popupContainerEdit1.Closed += new DevExpress.XtraEditors.Controls.ClosedEventHandler(this.ContainerEdit_Closed);
             // 
             // popupContainerControl1
             // 
@@ -220,8 +221,8 @@
             this.dateNavigator.CalendarAppearance.DayCellSpecial.Options.UseFont = true;
             this.dateNavigator.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateNavigator.DateTime = new System.DateTime(2017, 6, 18, 10, 23, 20, 107);
-            this.dateNavigator.EditValue = new System.DateTime(2017, 6, 18, 10, 23, 20, 107);
+            this.dateNavigator.DateTime = new System.DateTime(2017, 7, 17, 21, 52, 9, 908);
+            this.dateNavigator.EditValue = new System.DateTime(2017, 7, 17, 21, 52, 9, 908);
             this.dateNavigator.FirstDayOfWeek = System.DayOfWeek.Sunday;
             this.dateNavigator.Location = new System.Drawing.Point(3, 3);
             this.dateNavigator.Name = "dateNavigator";
@@ -229,7 +230,7 @@
             this.dateNavigator.SyncSelectionWithEditValue = false;
             this.dateNavigator.TabIndex = 0;
             this.dateNavigator.UpdateDateTimeWhenNavigating = false;
-            this.dateNavigator.DateTimeChanged += new System.EventHandler(this.DateNavigator_Click);
+            this.dateNavigator.Click += new System.EventHandler(this.DateNavigator_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -345,6 +346,7 @@
             this.popupContainerEdit2.Properties.PopupControl = this.popupContainerControl2;
             this.popupContainerEdit2.Size = new System.Drawing.Size(144, 20);
             this.popupContainerEdit2.TabIndex = 6;
+            this.popupContainerEdit2.Closed += new DevExpress.XtraEditors.Controls.ClosedEventHandler(this.ContainerEdit_Closed);
             // 
             // popupContainerControl2
             // 
@@ -360,15 +362,15 @@
             this.dateNavigator1.CalendarAppearance.DayCellSpecial.Options.UseFont = true;
             this.dateNavigator1.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateNavigator1.DateTime = new System.DateTime(2017, 6, 18, 10, 23, 20, 241);
-            this.dateNavigator1.EditValue = new System.DateTime(2017, 6, 18, 10, 23, 20, 241);
+            this.dateNavigator1.DateTime = new System.DateTime(2017, 7, 17, 21, 52, 10, 2);
+            this.dateNavigator1.EditValue = new System.DateTime(2017, 7, 17, 21, 52, 10, 2);
             this.dateNavigator1.FirstDayOfWeek = System.DayOfWeek.Sunday;
             this.dateNavigator1.Location = new System.Drawing.Point(0, 3);
             this.dateNavigator1.Name = "dateNavigator1";
             this.dateNavigator1.Size = new System.Drawing.Size(283, 258);
             this.dateNavigator1.TabIndex = 0;
             this.dateNavigator1.UpdateDateTimeWhenNavigating = false;
-            this.dateNavigator1.DateTimeChanged += new System.EventHandler(this.DateNavigator_Click);
+            this.dateNavigator1.Click += new System.EventHandler(this.DateNavigator_Click);
             // 
             // mAddButton
             // 

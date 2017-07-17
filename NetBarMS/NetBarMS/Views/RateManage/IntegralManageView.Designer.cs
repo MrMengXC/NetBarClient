@@ -307,6 +307,9 @@ namespace NetBarMS.Views.RateManage
             this.dRechargeText.Location = new System.Drawing.Point(98, 3);
             this.dRechargeText.Name = "dRechargeText";
             this.dRechargeText.Properties.AutoHeight = false;
+            this.dRechargeText.Properties.Mask.EditMask = "[0-9]*";
+            this.dRechargeText.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
+            this.dRechargeText.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.dRechargeText.Size = new System.Drawing.Size(25, 25);
             this.dRechargeText.TabIndex = 8;
             this.dRechargeText.Paint += new System.Windows.Forms.PaintEventHandler(this.Control_Paint);

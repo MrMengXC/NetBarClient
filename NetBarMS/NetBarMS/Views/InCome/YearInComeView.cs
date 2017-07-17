@@ -31,7 +31,7 @@ namespace NetBarMS.Views.InCome
         {
 
             this.chartControl1.RuntimeHitTesting = true;
-
+            this.dateEdit1.Properties.DisplayFormat.FormatString = "yyyy";
             //this.dateNavigator1.UpdateDateTimeWhenNavigating = false;
             //this.dateNavigator1.UpdateSelectionWhenNavigating = false;
             //this.dateNavigator1.SyncSelectionWithEditValue = false;
@@ -39,7 +39,7 @@ namespace NetBarMS.Views.InCome
             int year = DateTime.Now.Year-1;
             start = year + "-01-01 00:00:00";
             end = year + "-12-31 23:59:59";
-
+            this.dateEdit1.DateTime = DateTime.Now.AddYears(-1);
             GetYearIncomeDetail();
         }
         #endregion
@@ -197,7 +197,7 @@ namespace NetBarMS.Views.InCome
 
             start = year + "-01-01 00:00:00";
             end = year + "-12-31 23:59:59";
-
+            
             GetYearIncomeDetail();
         }
         #endregion

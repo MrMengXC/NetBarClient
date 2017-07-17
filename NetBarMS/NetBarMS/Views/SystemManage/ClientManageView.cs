@@ -13,6 +13,7 @@ using NetBarMS.Codes.Model;
 using DevExpress.XtraGrid.Views.Base;
 using NetBarMS.Codes.Tools.NetOperation;
 using DevExpress.XtraEditors.Controls;
+using DevExpress.XtraEditors;
 
 namespace NetBarMS.Views.SystemManage
 {
@@ -37,6 +38,12 @@ namespace NetBarMS.Views.SystemManage
         #region 初始化UI
         private void InitUI()
         {
+            TextEdit[] edits = {
+                this.textEdit1,this.textEdit2,this.textEdit3,this.textEdit4,this.textEdit5
+            };
+            InitTextEdit(edits);
+
+            //初始化GridControl
             ToolsManage.SetGridView(this.gridView1, GridControlType.ClientManage,out this.mainDataTable, ColumnButtonClick,null);
             this.gridControl1.DataSource = this.mainDataTable;
 

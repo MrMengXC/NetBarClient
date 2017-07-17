@@ -38,6 +38,12 @@ namespace NetBarMS.Views.ProductManage
         #region 初始化UI
         private void InitUI()
         {
+            //初始化TextEdit
+            TextEdit[] edits = {
+                this.textEdit2,this.textEdit4
+            };
+            InitTextEdit(edits);
+
             //首先要获取产品列表数组
             this.productTypes = SysManage.ProductTypes;
             // 设置 comboBox的文本值不能被编辑

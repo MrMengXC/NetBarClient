@@ -56,9 +56,7 @@ namespace NetBarMS.Views.SystemSearch
 
             DateTime date = DateTime.Now.AddDays(-1);
             start = date.ToString("yyyy-MM-dd");
-            //end = date.ToString("yyyy-MM-dd") + " 23:59:59";
-            //+" 00:00:00";
-
+            this.popupContainerEdit1.Text = start;
             GetAttendanceSearch();
         }
         #endregion
@@ -116,8 +114,8 @@ namespace NetBarMS.Views.SystemSearch
         {
 
             DateTime date = this.dateNavigator1.SelectionStart;
-            start = date.ToString("yyyy-MM-dd"); //+" 00:00:00"
-            //end = date.ToString("yyyy-MM-dd") + " 23:59:59";
+            start = date.ToString("yyyy-MM-dd");
+            this.popupContainerEdit1.Text = start;
             GetAttendanceSearch();
         }
         #endregion

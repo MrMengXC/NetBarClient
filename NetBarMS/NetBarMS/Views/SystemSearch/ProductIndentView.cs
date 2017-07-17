@@ -182,6 +182,20 @@ namespace NetBarMS.Views.SystemSearch
         private void PopupContainerEdit1_Closed(object sender, DevExpress.XtraEditors.Controls.ClosedEventArgs e)
         {
             //进行查询
+            if(sender.Equals(this.popupContainerEdit2))
+            {
+                if (!this.addStart.Equals("") && !this.addEnd.Equals(""))
+                {
+                    this.popupContainerEdit2.Text = string.Format("{0}-{1}", this.addStart, this.addEnd);
+                }
+            }
+            if(sender.Equals(this.popupContainerEdit3))
+            {
+                if (!this.handleStart.Equals("") && !this.handleEnd.Equals(""))
+                {
+                    this.popupContainerEdit3.Text = string.Format("{0}-{1}", this.handleStart, this.handleEnd);
+                }
+            }
             this.mainDataTable.Clear();
             GetProductIndentList();
         }

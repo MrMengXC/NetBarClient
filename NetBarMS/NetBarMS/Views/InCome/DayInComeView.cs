@@ -35,7 +35,7 @@ namespace NetBarMS.Views.InCome
             this.dateNavigator1.UpdateDateTimeWhenNavigating = false;
             this.dateNavigator1.UpdateSelectionWhenNavigating = false;
             this.dateNavigator1.SyncSelectionWithEditValue = false;
-
+            this.dateNavigator1.SelectionMode = DevExpress.XtraEditors.Repository.CalendarSelectionMode.Single;
             this.chartControl1.RuntimeHitTesting = true;
 
          
@@ -43,6 +43,8 @@ namespace NetBarMS.Views.InCome
             DateTime date = DateTime.Now.AddDays(-1);
             start = date.ToString("yyyy-MM-dd") + " 00:00:00";
             end = date.ToString("yyyy-MM-dd") + " 23:59:59";
+            this.dateNavigator1.EditValue = date;
+            this.popupContainerEdit1.Text = date.ToString("yyyy/MM/dd");
             GetDayIncomeDetail();
         }
         #endregion
@@ -199,6 +201,7 @@ namespace NetBarMS.Views.InCome
             DateTime date = this.dateNavigator1.SelectionStart;
             start = date.ToString("yyyy-MM-dd") + " 00:00:00";
             end = date.ToString("yyyy-MM-dd") + " 23:59:59";
+            this.popupContainerEdit1.Text = date.ToString("yyyy/MM/dd");
             GetDayIncomeDetail();
         }
         #endregion

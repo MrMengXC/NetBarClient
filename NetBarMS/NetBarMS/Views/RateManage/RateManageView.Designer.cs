@@ -60,12 +60,7 @@
             this.bDurComboBoxEdit = new DevExpress.XtraEditors.ComboBoxEdit();
             this.nDurComboBoxEdit = new DevExpress.XtraEditors.ComboBoxEdit();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.areaPanel = new System.Windows.Forms.Panel();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.memberTypePanel = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.nMinConsumeText = new DevExpress.XtraEditors.TextEdit();
@@ -85,13 +80,12 @@
             this.label36 = new System.Windows.Forms.Label();
             this.bDurPrieceText = new DevExpress.XtraEditors.TextEdit();
             this.bMinConsumeText = new DevExpress.XtraEditors.TextEdit();
+            this.areaTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.titlePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bDurComboBoxEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nDurComboBoxEdit.Properties)).BeginInit();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nMinConsumeText.Properties)).BeginInit();
@@ -103,7 +97,7 @@
             // 
             // titlePanel
             // 
-            this.titlePanel.Size = new System.Drawing.Size(850, 50);
+            this.titlePanel.Size = new System.Drawing.Size(746, 50);
             // 
             // dataGridView1
             // 
@@ -296,7 +290,7 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Location = new System.Drawing.Point(180, 5);
+            this.panel1.Location = new System.Drawing.Point(16, 137);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(656, 206);
             this.panel1.TabIndex = 62;
@@ -361,95 +355,31 @@
             // 
             // simpleButton1
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(5, 296);
+            this.simpleButton1.Location = new System.Drawing.Point(16, 452);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(75, 23);
             this.simpleButton1.TabIndex = 13;
             this.simpleButton1.Text = "保存";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.BackColor = System.Drawing.Color.White;
-            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.areaPanel, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label14, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label13, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.memberTypePanel, 0, 1);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 5);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.94118F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 87.05882F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(177, 181);
-            this.tableLayoutPanel1.TabIndex = 63;
-            // 
-            // areaPanel
-            // 
-            this.areaPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.areaPanel.Location = new System.Drawing.Point(89, 25);
-            this.areaPanel.Margin = new System.Windows.Forms.Padding(0);
-            this.areaPanel.Name = "areaPanel";
-            this.areaPanel.Size = new System.Drawing.Size(87, 155);
-            this.areaPanel.TabIndex = 12;
-            // 
-            // label14
-            // 
-            this.label14.BackColor = System.Drawing.Color.White;
-            this.label14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label14.ForeColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(89, 1);
-            this.label14.Margin = new System.Windows.Forms.Padding(0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(87, 23);
-            this.label14.TabIndex = 10;
-            this.label14.Text = "区域";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label13
-            // 
-            this.label13.BackColor = System.Drawing.Color.White;
-            this.label13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(1, 1);
-            this.label13.Margin = new System.Windows.Forms.Padding(0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(87, 23);
-            this.label13.TabIndex = 9;
-            this.label13.Text = "会员类型";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // memberTypePanel
             // 
-            this.memberTypePanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.memberTypePanel.Location = new System.Drawing.Point(1, 25);
+            this.memberTypePanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.memberTypePanel.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.memberTypePanel.Location = new System.Drawing.Point(0, 51);
             this.memberTypePanel.Margin = new System.Windows.Forms.Padding(0);
             this.memberTypePanel.Name = "memberTypePanel";
-            this.memberTypePanel.Size = new System.Drawing.Size(87, 155);
+            this.memberTypePanel.Size = new System.Drawing.Size(746, 50);
             this.memberTypePanel.TabIndex = 11;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.simpleButton1);
-            this.panel3.Controls.Add(this.flowLayoutPanel1);
-            this.panel3.Controls.Add(this.tableLayoutPanel1);
-            this.panel3.Controls.Add(this.panel1);
-            this.panel3.Location = new System.Drawing.Point(11, 69);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(839, 322);
-            this.panel3.TabIndex = 64;
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.tableLayoutPanel2);
             this.flowLayoutPanel1.Controls.Add(this.tableLayoutPanel3);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(5, 208);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(16, 349);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(834, 84);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(656, 84);
             this.flowLayoutPanel1.TabIndex = 64;
             // 
             // tableLayoutPanel2
@@ -498,6 +428,7 @@
             this.nDurPrieceText.Properties.AutoHeight = false;
             this.nDurPrieceText.Size = new System.Drawing.Size(25, 25);
             this.nDurPrieceText.TabIndex = 65;
+            this.nDurPrieceText.TextChanged += new System.EventHandler(this.PrieceTextEdit_EditValueChanged);
             // 
             // label26
             // 
@@ -666,6 +597,7 @@
             this.bDurPrieceText.Properties.AutoHeight = false;
             this.bDurPrieceText.Size = new System.Drawing.Size(25, 25);
             this.bDurPrieceText.TabIndex = 66;
+            this.bDurPrieceText.TextChanged += new System.EventHandler(this.PrieceTextEdit_EditValueChanged);
             // 
             // bMinConsumeText
             // 
@@ -676,23 +608,41 @@
             this.bMinConsumeText.Size = new System.Drawing.Size(25, 25);
             this.bMinConsumeText.TabIndex = 67;
             // 
+            // areaTableLayoutPanel
+            // 
+            this.areaTableLayoutPanel.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.areaTableLayoutPanel.ColumnCount = 1;
+            this.areaTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.areaTableLayoutPanel.Location = new System.Drawing.Point(16, 108);
+            this.areaTableLayoutPanel.Name = "areaTableLayoutPanel";
+            this.areaTableLayoutPanel.RowCount = 1;
+            this.areaTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.areaTableLayoutPanel.Size = new System.Drawing.Size(275, 23);
+            this.areaTableLayoutPanel.TabIndex = 65;
+            // 
             // RateManageView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.areaTableLayoutPanel);
+            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.simpleButton1);
+            this.Controls.Add(this.memberTypePanel);
             this.Name = "RateManageView";
-            this.Size = new System.Drawing.Size(850, 406);
-            this.Controls.SetChildIndex(this.panel3, 0);
+            this.Size = new System.Drawing.Size(746, 499);
+            this.Controls.SetChildIndex(this.memberTypePanel, 0);
             this.Controls.SetChildIndex(this.titlePanel, 0);
+            this.Controls.SetChildIndex(this.simpleButton1, 0);
+            this.Controls.SetChildIndex(this.flowLayoutPanel1, 0);
+            this.Controls.SetChildIndex(this.areaTableLayoutPanel, 0);
+            this.Controls.SetChildIndex(this.panel1, 0);
             this.titlePanel.ResumeLayout(false);
             this.titlePanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bDurComboBoxEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nDurComboBoxEdit.Properties)).EndInit();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -740,11 +690,6 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.ComboBoxEdit nDurComboBoxEdit;
         private DevExpress.XtraEditors.ComboBoxEdit bDurComboBoxEdit;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel areaPanel;
         private System.Windows.Forms.Panel memberTypePanel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label label30;
@@ -765,5 +710,6 @@
         private DevExpress.XtraEditors.TextEdit nDurPrieceText;
         private DevExpress.XtraEditors.TextEdit bDurPrieceText;
         private DevExpress.XtraEditors.TextEdit bMinConsumeText;
+        private System.Windows.Forms.TableLayoutPanel areaTableLayoutPanel;
     }
 }

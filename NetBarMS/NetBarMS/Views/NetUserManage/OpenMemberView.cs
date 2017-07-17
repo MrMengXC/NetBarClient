@@ -164,7 +164,7 @@ namespace NetBarMS.Views.NetUserManage
             //int key = int.Parse(result.pack.Content.ErrorTip.Key);
             FLOW_ERROR error = FLOW_ERROR.OTHER;
             Enum.TryParse<FLOW_ERROR>(result.pack.Content.ErrorTip.Key, out error);
-            if (result.pack.Content.MessageType == 1 || error == FLOW_ERROR.NEED_RECHARGE)
+            if (result.pack.Content.MessageType == 1)
             {
                 this.Invoke(new RefreshUIHandle(delegate ()
                 {
@@ -177,14 +177,26 @@ namespace NetBarMS.Views.NetUserManage
             {
                 switch (error)
                 {
+                    //需要添加身份证信息
                     case FLOW_ERROR.NEED_ADD_CARD:
                         AddCardInfo();
 
                         break;
+                        //被锁
                     case FLOW_ERROR.USER_LOCK:
                         {
                             MessageBox.Show("该用户已经被锁");
 
+                        }
+                        break;
+                        //需要充值
+                    case FLOW_ERROR.NEED_RECHARGE:
+                        {
+                            this.Invoke(new RefreshUIHandle(delegate ()
+                            {
+                                //将按钮回复可以点击
+                                this.simpleButton1.Enabled = true;
+                            }));
                         }
                         break;
                     default:
@@ -258,9 +270,13 @@ namespace NetBarMS.Views.NetUserManage
         #region 进行充值
         private void simpleButton1_Click(object sender, EventArgs e)
         {
+            CloseFormHandle close = new CloseFormHandle(delegate () {
+                OpenMember();
+            });
+
             int money = int.Parse(this.moneyTextEdit.Text);
             UserScanCodeView view = new UserScanCodeView(cardNumLabel.Text.Split(sp)[1], money,FLOW_STATUS.MEMBER_STATUS, PRECHARGE_TYPE.OPEN_MEMBER);
-            ToolsManage.ShowForm(view, false);
+            ToolsManage.ShowForm(view, false,close);
         }
         #endregion
 

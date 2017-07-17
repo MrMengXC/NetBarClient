@@ -15,7 +15,7 @@ namespace NetBarMS.Views.EvaluateManage
 {
     public partial class NetBarEvaluateView : RootUserControlView
     {
-        enum TitleList
+        private enum TitleList
         {
             None,
 
@@ -131,7 +131,11 @@ namespace NetBarMS.Views.EvaluateManage
         private void PopupContainerEdit1_Closed(object sender, DevExpress.XtraEditors.Controls.ClosedEventArgs e)
         {
             //进行查询
-            System.Console.WriteLine("start:"+startTime +"end:"+endTime);
+            //System.Console.WriteLine("start:"+startTime +"end:"+endTime);
+            if(!this.startTime.Equals("") && !this.endTime.Equals(""))
+            {
+                this.popupContainerEdit1.Text = string.Format("{0}-{1}", this.startTime, this.endTime);
+            }
             this.GetNetBarEvaluateList();
 
         }

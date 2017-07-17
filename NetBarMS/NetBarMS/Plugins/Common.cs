@@ -71,18 +71,18 @@ public static partial class Common {
           "aWNhbBgEIAIoBSIdCgtTQ1ByZUNoYXJnZRIOCgZxcmNvZGUYASACKAkicQoK", 
           "U0NUb0NoYXJnZRIMCgRuYW1lGAEgAigJEhIKCmNhcmRudW1iZXIYAiACKAkS", 
           "DQoFcmlnaHQYAyACKAkSEAoIcmVjaGFyZ2UYBCACKAUSDwoHYmFsYW5jZRgF", 
-          "IAIoBRIPCgdpbnRlZ2FsGAYgAigFIkEKCENTUHJlQnV5EhIKCmNhcmRudW1i", 
-          "ZXIYASACKAkSDwoHZ29vZHNpZBgCIAIoBRIQCghnb29kc251bRgDIAIoBSIa", 
-          "CghTQ1ByZUJ1eRIOCgZxcmNvZGUYASACKAkihAEKB1NDVG9CdXkSDAoEbmFt", 
-          "ZRgBIAIoCRISCgpjYXJkbnVtYmVyGAIgAigJEg0KBXJpZ2h0GAMgAigJEhEK", 
-          "CXVzZWRtb25leRgEIAIoBRITCgt1c2VkaW50ZWdhbBgFIAIoBRIPCgdiYWxh", 
-          "bmNlGAYgAigFEg8KB2ludGVnYWwYByACKAUiKAoJU0NNZXNzYWdlEgsKA2Nt", 
-          "ZBgBIAIoBRIOCgZwYXJhbXMYAiADKAkiKAoJQ1NDb21tYW5kEgsKA2NtZBgB", 
-          "IAIoBRIOCgZwYXJhbXMYAiADKAkiTAoLQ1NHb29kc0ZpbmQSGQoEcGFnZRgB", 
-          "IAIoCzILLlN0cnVjdFBhZ2USEAoIY2F0ZWdvcnkYAiABKAUSEAoIa2V5d29y", 
-          "ZHMYBCABKAkiKgoLU0NHb29kc0ZpbmQSGwoFZ29vZHMYASADKAsyDC5TdHJ1", 
-          "Y3RHb29kc0IvCh1jb20uc2t5c29mdC5jb3JlLmF1dG8ubWVzc2FnZUIOQ29t", 
-        "bW9uUHJvdG9jb2w="));
+          "IAIoBRIPCgdpbnRlZ2FsGAYgAigFIj8KCENTUHJlQnV5EhIKCmNhcmRudW1i", 
+          "ZXIYASACKAkSHwoFZ29vZHMYAiADKAsyEC5TdHJ1Y3RDYXJ0R29vZHMiGgoI", 
+          "U0NQcmVCdXkSDgoGcXJjb2RlGAEgAigJIoQBCgdTQ1RvQnV5EgwKBG5hbWUY", 
+          "ASACKAkSEgoKY2FyZG51bWJlchgCIAIoCRINCgVyaWdodBgDIAIoCRIRCgl1", 
+          "c2VkbW9uZXkYBCACKAUSEwoLdXNlZGludGVnYWwYBSACKAUSDwoHYmFsYW5j", 
+          "ZRgGIAIoBRIPCgdpbnRlZ2FsGAcgAigFIigKCVNDTWVzc2FnZRILCgNjbWQY", 
+          "ASACKAUSDgoGcGFyYW1zGAIgAygJIigKCUNTQ29tbWFuZBILCgNjbWQYASAC", 
+          "KAUSDgoGcGFyYW1zGAIgAygJIkwKC0NTR29vZHNGaW5kEhkKBHBhZ2UYASAC", 
+          "KAsyCy5TdHJ1Y3RQYWdlEhAKCGNhdGVnb3J5GAIgASgFEhAKCGtleXdvcmRz", 
+          "GAQgASgJIioKC1NDR29vZHNGaW5kEhsKBWdvb2RzGAEgAygLMgwuU3RydWN0", 
+          "R29vZHNCLwodY29tLnNreXNvZnQuY29yZS5hdXRvLm1lc3NhZ2VCDkNvbW1v", 
+        "blByb3RvY29s"));
     pbd::FileDescriptor.InternalDescriptorAssigner assigner = delegate(pbd::FileDescriptor root) {
       descriptor = root;
       internal__static_CSUploadPicture__Descriptor = Descriptor.MessageTypes[0];
@@ -132,7 +132,7 @@ public static partial class Common {
       internal__static_CSPreBuy__Descriptor = Descriptor.MessageTypes[11];
       internal__static_CSPreBuy__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSPreBuy, global::CSPreBuy.Builder>(internal__static_CSPreBuy__Descriptor,
-              new string[] { "Cardnumber", "Goodsid", "Goodsnum", });
+              new string[] { "Cardnumber", "Goods", });
       internal__static_SCPreBuy__Descriptor = Descriptor.MessageTypes[12];
       internal__static_SCPreBuy__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::SCPreBuy, global::SCPreBuy.Builder>(internal__static_SCPreBuy__Descriptor,
@@ -3614,8 +3614,8 @@ public sealed partial class SCToCharge : pb::GeneratedMessage<SCToCharge, SCToCh
 public sealed partial class CSPreBuy : pb::GeneratedMessage<CSPreBuy, CSPreBuy.Builder> {
   private CSPreBuy() { }
   private static readonly CSPreBuy defaultInstance = new CSPreBuy().MakeReadOnly();
-  private static readonly string[] _cSPreBuyFieldNames = new string[] { "cardnumber", "goodsid", "goodsnum" };
-  private static readonly uint[] _cSPreBuyFieldTags = new uint[] { 10, 16, 24 };
+  private static readonly string[] _cSPreBuyFieldNames = new string[] { "cardnumber", "goods" };
+  private static readonly uint[] _cSPreBuyFieldTags = new uint[] { 10, 18 };
   public static CSPreBuy DefaultInstance {
     get { return defaultInstance; }
   }
@@ -3646,31 +3646,24 @@ public sealed partial class CSPreBuy : pb::GeneratedMessage<CSPreBuy, CSPreBuy.B
     get { return cardnumber_; }
   }
   
-  public const int GoodsidFieldNumber = 2;
-  private bool hasGoodsid;
-  private int goodsid_;
-  public bool HasGoodsid {
-    get { return hasGoodsid; }
+  public const int GoodsFieldNumber = 2;
+  private pbc::PopsicleList<global::StructCartGoods> goods_ = new pbc::PopsicleList<global::StructCartGoods>();
+  public scg::IList<global::StructCartGoods> GoodsList {
+    get { return goods_; }
   }
-  public int Goodsid {
-    get { return goodsid_; }
+  public int GoodsCount {
+    get { return goods_.Count; }
   }
-  
-  public const int GoodsnumFieldNumber = 3;
-  private bool hasGoodsnum;
-  private int goodsnum_;
-  public bool HasGoodsnum {
-    get { return hasGoodsnum; }
-  }
-  public int Goodsnum {
-    get { return goodsnum_; }
+  public global::StructCartGoods GetGoods(int index) {
+    return goods_[index];
   }
   
   public override bool IsInitialized {
     get {
       if (!hasCardnumber) return false;
-      if (!hasGoodsid) return false;
-      if (!hasGoodsnum) return false;
+      foreach (global::StructCartGoods element in GoodsList) {
+        if (!element.IsInitialized) return false;
+      }
       return true;
     }
   }
@@ -3681,11 +3674,8 @@ public sealed partial class CSPreBuy : pb::GeneratedMessage<CSPreBuy, CSPreBuy.B
     if (hasCardnumber) {
       output.WriteString(1, field_names[0], Cardnumber);
     }
-    if (hasGoodsid) {
-      output.WriteInt32(2, field_names[1], Goodsid);
-    }
-    if (hasGoodsnum) {
-      output.WriteInt32(3, field_names[2], Goodsnum);
+    if (goods_.Count > 0) {
+      output.WriteMessageArray(2, field_names[1], goods_);
     }
     UnknownFields.WriteTo(output);
   }
@@ -3707,11 +3697,8 @@ public sealed partial class CSPreBuy : pb::GeneratedMessage<CSPreBuy, CSPreBuy.B
     if (hasCardnumber) {
       size += pb::CodedOutputStream.ComputeStringSize(1, Cardnumber);
     }
-    if (hasGoodsid) {
-      size += pb::CodedOutputStream.ComputeInt32Size(2, Goodsid);
-    }
-    if (hasGoodsnum) {
-      size += pb::CodedOutputStream.ComputeInt32Size(3, Goodsnum);
+    foreach (global::StructCartGoods element in GoodsList) {
+      size += pb::CodedOutputStream.ComputeMessageSize(2, element);
     }
     size += UnknownFields.SerializedSize;
     memoizedSerializedSize = size;
@@ -3748,6 +3735,7 @@ public sealed partial class CSPreBuy : pb::GeneratedMessage<CSPreBuy, CSPreBuy.B
     return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
   }
   private CSPreBuy MakeReadOnly() {
+    goods_.MakeReadOnly();
     return this;
   }
   
@@ -3838,11 +3826,8 @@ public sealed partial class CSPreBuy : pb::GeneratedMessage<CSPreBuy, CSPreBuy.B
       if (other.HasCardnumber) {
         Cardnumber = other.Cardnumber;
       }
-      if (other.HasGoodsid) {
-        Goodsid = other.Goodsid;
-      }
-      if (other.HasGoodsnum) {
-        Goodsnum = other.Goodsnum;
+      if (other.goods_.Count != 0) {
+        result.goods_.Add(other.goods_);
       }
       this.MergeUnknownFields(other.UnknownFields);
       return this;
@@ -3891,12 +3876,8 @@ public sealed partial class CSPreBuy : pb::GeneratedMessage<CSPreBuy, CSPreBuy.B
             result.hasCardnumber = input.ReadString(ref result.cardnumber_);
             break;
           }
-          case 16: {
-            result.hasGoodsid = input.ReadInt32(ref result.goodsid_);
-            break;
-          }
-          case 24: {
-            result.hasGoodsnum = input.ReadInt32(ref result.goodsnum_);
+          case 18: {
+            input.ReadMessageArray(tag, field_name, result.goods_, global::StructCartGoods.DefaultInstance, extensionRegistry);
             break;
           }
         }
@@ -3930,43 +3911,47 @@ public sealed partial class CSPreBuy : pb::GeneratedMessage<CSPreBuy, CSPreBuy.B
       return this;
     }
     
-    public bool HasGoodsid {
-      get { return result.hasGoodsid; }
+    public pbc::IPopsicleList<global::StructCartGoods> GoodsList {
+      get { return PrepareBuilder().goods_; }
     }
-    public int Goodsid {
-      get { return result.Goodsid; }
-      set { SetGoodsid(value); }
+    public int GoodsCount {
+      get { return result.GoodsCount; }
     }
-    public Builder SetGoodsid(int value) {
+    public global::StructCartGoods GetGoods(int index) {
+      return result.GetGoods(index);
+    }
+    public Builder SetGoods(int index, global::StructCartGoods value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
       PrepareBuilder();
-      result.hasGoodsid = true;
-      result.goodsid_ = value;
+      result.goods_[index] = value;
       return this;
     }
-    public Builder ClearGoodsid() {
+    public Builder SetGoods(int index, global::StructCartGoods.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
       PrepareBuilder();
-      result.hasGoodsid = false;
-      result.goodsid_ = 0;
+      result.goods_[index] = builderForValue.Build();
       return this;
     }
-    
-    public bool HasGoodsnum {
-      get { return result.hasGoodsnum; }
-    }
-    public int Goodsnum {
-      get { return result.Goodsnum; }
-      set { SetGoodsnum(value); }
-    }
-    public Builder SetGoodsnum(int value) {
+    public Builder AddGoods(global::StructCartGoods value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
       PrepareBuilder();
-      result.hasGoodsnum = true;
-      result.goodsnum_ = value;
+      result.goods_.Add(value);
       return this;
     }
-    public Builder ClearGoodsnum() {
+    public Builder AddGoods(global::StructCartGoods.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
       PrepareBuilder();
-      result.hasGoodsnum = false;
-      result.goodsnum_ = 0;
+      result.goods_.Add(builderForValue.Build());
+      return this;
+    }
+    public Builder AddRangeGoods(scg::IEnumerable<global::StructCartGoods> values) {
+      PrepareBuilder();
+      result.goods_.Add(values);
+      return this;
+    }
+    public Builder ClearGoods() {
+      PrepareBuilder();
+      result.goods_.Clear();
       return this;
     }
   }

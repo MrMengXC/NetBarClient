@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using NetBarMS.Codes.Tools;
 using DevExpress.XtraEditors.Controls;
 using NetBarMS.Codes.Tools.Manage;
+using DevExpress.XtraEditors;
 
 namespace NetBarMS.Views
 {
@@ -53,6 +54,31 @@ namespace NetBarMS.Views
             if (sender.GetType().Equals(typeof(DevExpress.XtraEditors.TextEdit)))
             {
                 BorderManage.DrawBorder(e.Graphics, e.ClipRectangle, BORDER_TYPE.TEXTEDIT_BORDER);
+            }
+        }
+
+
+        protected void DRechargeText_LostFocus(object sender, EventArgs e)
+        {
+            if (sender.GetType().Equals(typeof(TextEdit)))
+            {
+                TextEdit text = sender as TextEdit;
+                if (!text.Equals(""))
+                {
+                    text.Text = string.Format("{0}", int.Parse(text.Text));
+                }
+            }
+        
+
+        }
+        protected void InitTextEdit(TextEdit[] textEdits)
+        {
+            foreach(TextEdit textEdit in textEdits)
+            {
+                textEdit.LostFocus += DRechargeText_LostFocus;
+                textEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
+                textEdit.Properties.Mask.EditMask = "[0-9]*";
+                textEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
             }
         }
     }

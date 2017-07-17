@@ -58,7 +58,7 @@ namespace NetBarMS
         //添加系统消息监听
         private void AddMsgDelegate()
         {
-            HomePageMessageManage.Manage().AddMsgNumDelegate(UpdateCallMsgNumResult,UpdateExceptionMsgNumResult,UpdateOrderMsgNumResult,UpdateDailyOnlineCountResult, RefreshStatusNum);
+            HomePageMessageManage.Manage().AddMsgNumDelegate(UpdateCallMsgNumResult,UpdateExceptionMsgNumResult,UpdateOrderMsgNumResult, RefreshDailyDataResult, RefreshStatusNum);
         }
 
         //刷新状态数量显示
@@ -66,10 +66,9 @@ namespace NetBarMS
         {
 
             this.Invoke(new RefreshUIHandle(delegate {
-                char[] sp = { ':', '：' };
+
                 Dictionary<string, int> dict = HomePageMessageManage.StatusNum;
                 int idle = 0, online = 0,hangup = 0,exception = 0;
-
                 dict.TryGetValue(((int)COMPUTERSTATUS.空闲).ToString(), out idle);
                 dict.TryGetValue(((int)COMPUTERSTATUS.在线).ToString(), out online);
                 dict.TryGetValue(((int)COMPUTERSTATUS.挂机).ToString(), out hangup);
@@ -77,7 +76,7 @@ namespace NetBarMS
 
                 //当前上网
                 this.netUserLabel.Text = string.Format("{0}\n{1}", (online + hangup), this.netUserLabel.Text.Split(sp)[1]);
-                this.attenDanceLabel.Text = string.Format("{0}%\n{1}", (online + hangup)/ (online + hangup+exception+idle), this.attenDanceLabel.Text.Split(sp)[1]);
+                this.attenDanceLabel.Text = string.Format("{0}%\n{1}", (online + hangup)*100/ (online + hangup+exception+idle), this.attenDanceLabel.Text.Split(sp)[1]);
 
 
             }));
@@ -92,11 +91,11 @@ namespace NetBarMS
 
         }
         //日上机用户消息通知回调
-        private void UpdateDailyOnlineCountResult(int num)
+        private void RefreshDailyDataResult()
         {
             this.Invoke(new RefreshUIHandle(delegate {
-                this.dailyOnlineCountLabel.Text = string.Format("{0}\n{1}", num, this.dailyOnlineCountLabel.Text.Split(sp)[1]);
-
+                this.dailyOnlineCountLabel.Text = string.Format("{0}\n{1}", HomePageMessageManage.DailyOnlineCount, this.dailyOnlineCountLabel.Text.Split(sp)[1]);
+                this.amountLabel.Text = string.Format("{0}\n{1}", HomePageMessageManage.DailyTradeAmount, this.amountLabel.Text.Split(sp)[1]);
             }));
 
         }
