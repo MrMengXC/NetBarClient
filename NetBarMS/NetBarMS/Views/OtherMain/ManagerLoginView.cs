@@ -67,7 +67,8 @@ namespace NetBarMS.Views.OtherMain
         private void RequestSysInfoResult(ResultModel result)
         {
             this.num--;
-            if(this.num == 0)
+            //System.Console.WriteLine("num:"+this.num);
+            if (this.num == 0)
             {
                 this.Invoke(new RefreshUIHandle(delegate {
                     SysManage.RemoveRequestSysInfo(RequestSysInfoResult);

@@ -39,7 +39,6 @@ namespace NetBarMS.Views.ProductManage
         public ProductSellRecordView(Int32 id)
         {
             InitializeComponent();
-            this.titleLabel.Text = "商品销售记录查询";
             productId = id;
 
             InitUI();

@@ -37,11 +37,10 @@ namespace NetBarMS.Views.EvaluateManage
         public StaffEvaluateView()
         {
             InitializeComponent();
-            this.titleLabel.Text = "员工评价";
             InitUI();
         }
 
-        //初始化UI
+        #region 初始化UI
         private void InitUI()
         {
            
@@ -61,6 +60,8 @@ namespace NetBarMS.Views.EvaluateManage
             }
             GetStaffEvaluateList();
         }
+        #endregion
+
         #region 获取员工评价列表
         //获取员工评价列表
         private void GetStaffEvaluateList()

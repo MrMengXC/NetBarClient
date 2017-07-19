@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.popupContainerEdit1 = new DevExpress.XtraEditors.PopupContainerEdit();
             this.popupContainerControl1 = new DevExpress.XtraEditors.PopupContainerControl();
@@ -40,7 +39,6 @@
             this.gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.pageView1 = new NetBarMS.Views.CustomView.PageView();
             this.titlePanel.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.popupContainerEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupContainerControl1)).BeginInit();
@@ -56,16 +54,15 @@
             // 
             // titlePanel
             // 
+            this.titlePanel.Controls.Add(this.flowLayoutPanel1);
             this.titlePanel.Size = new System.Drawing.Size(1050, 50);
+            this.titlePanel.Controls.SetChildIndex(this.titleLabel, 0);
+            this.titlePanel.Controls.SetChildIndex(this.flowLayoutPanel1, 0);
             // 
-            // panel1
+            // titleLabel
             // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.flowLayoutPanel1);
-            this.panel1.Location = new System.Drawing.Point(3, 56);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1050, 40);
-            this.panel1.TabIndex = 78;
+            this.titleLabel.Size = new System.Drawing.Size(110, 17);
+            this.titleLabel.Text = "上网记录查询";
             // 
             // flowLayoutPanel1
             // 
@@ -73,7 +70,7 @@
             this.flowLayoutPanel1.Controls.Add(this.comboBoxEdit1);
             this.flowLayoutPanel1.Controls.Add(this.searchButtonEdit);
             this.flowLayoutPanel1.Controls.Add(this.popupContainerControl1);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(10, 6);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(126, 16);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(735, 31);
             this.flowLayoutPanel1.TabIndex = 0;
@@ -104,15 +101,13 @@
             this.dateNavigator.CalendarAppearance.DayCellSpecial.Options.UseFont = true;
             this.dateNavigator.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-    
+            this.dateNavigator.DateTime = new System.DateTime(2017, 7, 18, 14, 12, 53, 211);
+            this.dateNavigator.EditValue = new System.DateTime(2017, 7, 18, 14, 12, 53, 211);
             this.dateNavigator.FirstDayOfWeek = System.DayOfWeek.Sunday;
             this.dateNavigator.Location = new System.Drawing.Point(3, 3);
             this.dateNavigator.Name = "dateNavigator";
             this.dateNavigator.Size = new System.Drawing.Size(283, 258);
             this.dateNavigator.TabIndex = 0;
-            this.dateNavigator.DateTime = System.DateTime.Now;
-            this.dateNavigator.EditValue = System.DateTime.Now;
-
             this.dateNavigator.Click += new System.EventHandler(this.DateNavigator_Click);
             // 
             // comboBoxEdit1
@@ -142,10 +137,10 @@
             this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridControl1.Location = new System.Drawing.Point(3, 102);
+            this.gridControl1.Location = new System.Drawing.Point(0, 53);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1047, 635);
+            this.gridControl1.Size = new System.Drawing.Size(1047, 684);
             this.gridControl1.TabIndex = 79;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1,
@@ -178,16 +173,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pageView1);
             this.Controls.Add(this.gridControl1);
-            this.Controls.Add(this.panel1);
             this.Name = "UserNetRecordView";
             this.Size = new System.Drawing.Size(1050, 773);
             this.Controls.SetChildIndex(this.titlePanel, 0);
-            this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.gridControl1, 0);
             this.Controls.SetChildIndex(this.pageView1, 0);
             this.titlePanel.ResumeLayout(false);
             this.titlePanel.PerformLayout();
-            this.panel1.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.popupContainerEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupContainerControl1)).EndInit();
@@ -204,8 +196,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private DevExpress.XtraEditors.PopupContainerEdit popupContainerEdit1;
         private DevExpress.XtraEditors.PopupContainerControl popupContainerControl1;

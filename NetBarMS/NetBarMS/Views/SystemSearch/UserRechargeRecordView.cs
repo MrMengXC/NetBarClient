@@ -40,7 +40,6 @@ namespace NetBarMS.Views.SystemSearch
         public UserRechargeView()
         {
             InitializeComponent();
-            this.titleLabel.Text = "用户充值记录查询";
             InitUI();
         }
         #region 初始化UI

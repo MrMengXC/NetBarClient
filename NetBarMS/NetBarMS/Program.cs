@@ -35,7 +35,7 @@ namespace NetBarMS
             //初始化XML
             XMLDataManage.Init();
 
-            //IntegralManageView newview2 = new IntegralManageView();
+            //HomePageView newview2 = new HomePageView();
             ////MainForm newForm2 = new MainForm
             ////DayInComeView newview2 = new DayInComeView();
             ////CustomForm newForm2 = new CustomForm(newview2, true, false);

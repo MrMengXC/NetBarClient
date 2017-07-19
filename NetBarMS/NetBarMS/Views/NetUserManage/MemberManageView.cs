@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using XPTable.Models;
 using NetBarMS.Codes.Tools;
 using NetBarMS.Codes.Tools.NetOperation;
 using DevExpress.XtraEditors.Controls;

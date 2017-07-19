@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NetBarMS.Codes.Tools;
+using NetBarMS.Codes.Tools.Manage;
 
 namespace NetBarMS.Codes.Model
 {

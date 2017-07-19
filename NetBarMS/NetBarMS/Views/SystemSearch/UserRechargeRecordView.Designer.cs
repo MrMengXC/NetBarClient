@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.popupContainerEdit1 = new DevExpress.XtraEditors.PopupContainerEdit();
             this.popupContainerControl1 = new DevExpress.XtraEditors.PopupContainerControl();
@@ -38,8 +37,8 @@
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.pageView1 = new NetBarMS.Views.CustomView.PageView();
             this.titlePanel.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.popupContainerEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupContainerControl1)).BeginInit();
@@ -55,25 +54,22 @@
             // 
             // titlePanel
             // 
+            this.titlePanel.Controls.Add(this.flowLayoutPanel2);
             this.titlePanel.Size = new System.Drawing.Size(1183, 50);
+            this.titlePanel.Controls.SetChildIndex(this.titleLabel, 0);
+            this.titlePanel.Controls.SetChildIndex(this.flowLayoutPanel2, 0);
             // 
-            // panel1
+            // titleLabel
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.flowLayoutPanel2);
-            this.panel1.Location = new System.Drawing.Point(3, 56);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1177, 40);
-            this.panel1.TabIndex = 79;
+            this.titleLabel.Size = new System.Drawing.Size(144, 17);
+            this.titleLabel.Text = "用户充值记录查询";
             // 
             // flowLayoutPanel2
             // 
             this.flowLayoutPanel2.Controls.Add(this.popupContainerEdit1);
             this.flowLayoutPanel2.Controls.Add(this.comboBoxEdit1);
             this.flowLayoutPanel2.Controls.Add(this.buttonEdit1);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(160, 16);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(593, 34);
             this.flowLayoutPanel2.TabIndex = 79;
@@ -93,7 +89,7 @@
             // popupContainerControl1
             // 
             this.popupContainerControl1.Controls.Add(this.dateNavigator);
-            this.popupContainerControl1.Location = new System.Drawing.Point(663, 56);
+            this.popupContainerControl1.Location = new System.Drawing.Point(612, 77);
             this.popupContainerControl1.Name = "popupContainerControl1";
             this.popupContainerControl1.Size = new System.Drawing.Size(288, 261);
             this.popupContainerControl1.TabIndex = 81;
@@ -104,7 +100,8 @@
             this.dateNavigator.CalendarAppearance.DayCellSpecial.Options.UseFont = true;
             this.dateNavigator.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-
+            this.dateNavigator.DateTime = new System.DateTime(2017, 7, 18, 14, 14, 3, 58);
+            this.dateNavigator.EditValue = new System.DateTime(2017, 7, 18, 14, 14, 3, 58);
             this.dateNavigator.FirstDayOfWeek = System.DayOfWeek.Sunday;
             this.dateNavigator.Location = new System.Drawing.Point(3, 3);
             this.dateNavigator.Name = "dateNavigator";
@@ -112,8 +109,6 @@
             this.dateNavigator.SyncSelectionWithEditValue = false;
             this.dateNavigator.TabIndex = 0;
             this.dateNavigator.UpdateDateTimeWhenNavigating = false;
-            this.dateNavigator.DateTime = System.DateTime.Now;
-            this.dateNavigator.EditValue = System.DateTime.Now;
             this.dateNavigator.Click += new System.EventHandler(this.DateNavigator_EditValueChanged);
             // 
             // comboBoxEdit1
@@ -144,7 +139,7 @@
             this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridControl1.Location = new System.Drawing.Point(0, 102);
+            this.gridControl1.Location = new System.Drawing.Point(-3, 56);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.Size = new System.Drawing.Size(1183, 700);
@@ -164,22 +159,30 @@
             this.gridView.GridControl = this.gridControl1;
             this.gridView.Name = "gridView";
             // 
+            // pageView1
+            // 
+            this.pageView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.pageView1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pageView1.Location = new System.Drawing.Point(0, 775);
+            this.pageView1.Name = "pageView1";
+            this.pageView1.Size = new System.Drawing.Size(1183, 30);
+            this.pageView1.TabIndex = 82;
+            // 
             // UserRechargeView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.pageView1);
             this.Controls.Add(this.popupContainerControl1);
             this.Controls.Add(this.gridControl1);
-            this.Controls.Add(this.panel1);
             this.Name = "UserRechargeView";
             this.Size = new System.Drawing.Size(1183, 805);
             this.Controls.SetChildIndex(this.titlePanel, 0);
-            this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.gridControl1, 0);
             this.Controls.SetChildIndex(this.popupContainerControl1, 0);
+            this.Controls.SetChildIndex(this.pageView1, 0);
             this.titlePanel.ResumeLayout(false);
             this.titlePanel.PerformLayout();
-            this.panel1.ResumeLayout(false);
             this.flowLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.popupContainerEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupContainerControl1)).EndInit();
@@ -196,8 +199,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
@@ -207,5 +208,6 @@
         private DevExpress.XtraScheduler.DateNavigator dateNavigator;
         private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
         private DevExpress.XtraEditors.ButtonEdit buttonEdit1;
+        private CustomView.PageView pageView1;
     }
 }

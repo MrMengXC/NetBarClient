@@ -1,4 +1,5 @@
-﻿using NetBarMS.Codes.Tools.NetOperation;
+﻿using NetBarMS.Codes.Model;
+using NetBarMS.Codes.Tools.NetOperation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,40 +15,84 @@ namespace NetBarMS.Codes.Tools.Manage
     class HomePageMessageManage
     {
         #region 代理方法
-        //获取首页数据
+ 
         public delegate void GetDataResultHandle(bool success);
+        /// <summary>
+        /// 获取首页数据
+        /// </summary>
         private event GetDataResultHandle GetDataResultEvent;
-        //更新计算机数据
+
+
+        /// <summary>
+        /// 更新单个计算机数据的委托
+        /// </summary>
+        /// <param name="com">所更新的计算机</param>
         public delegate void UpdateComputerDataHandle(StructRealTime com);
+        
+        /// <summary>
+        /// 更新单个计算机信息（上机。下机。认证）（通用）
+        /// </summary>
         private event UpdateComputerDataHandle UpdateComputerDataEvent;
-        //更新计算机所在区域信息
+
+        /// <summary>
+        /// 更新单个计算机所在区域信息（列表视图使用）
+        /// </summary>
         private event UpdateComputerDataHandle UpdateComputerAreaEvent;
-        //更新信息个数
-        public delegate void UpdateMsgNumHandle(int num);
-        //更新呼叫服务数
-        private event UpdateMsgNumHandle UpdateCallMsgNumEvent;
-        //更新客户端报错数量
-        private event UpdateMsgNumHandle UpdateExceptionMsgNumEvent;
-        //更新商品订单数量
-        private event UpdateMsgNumHandle UpdateOrderMsgNumEvent;
+
+        /// <summary>
+        /// 更新区域回调方法（电脑视图时使用）
+        /// </summary>
+        private event RefreshUIHandle UpdateAreaEvent;
 
 
-        //刷新状态数量UI
-        private event RefreshUIHandle RefreshStatusNumEvent;
-        //刷新显示当日上机数量UI 刷新显示当日金额UI
-        private event RefreshUIHandle RefreshDailyCountEvent;
+        /// <summary>
+        /// 更新首页提醒信息的数量委托（呼叫服务/客户端报错/商品订单）
+        /// </summary>
+        private event RefreshUIHandle UpdateMsgNumEvent;
 
+        /// <summary>
+        /// 更新各状态数量UI 的回调方法
+        /// </summary>
+        private event RefreshUIHandle UpdateStatusNumEvent;
+        /// <summary>
+        /// 刷新显示当日上机数量UI 刷新显示当日金额UI
+        /// </summary>
+        private event RefreshUIHandle UpdateDailyCountEvent;
+
+        /// <summary>
+        /// 过滤电脑数据回调方法
+        /// </summary>
+        private event RefreshUIHandle FilterComputersEvent;
+
+        /// <summary>
+        /// 刷新区域ComBox
+        /// </summary>
+        private event RefreshUIHandle RefreshAreaComBox;
 
         #endregion
 
+        #region property
+        //单例
+        private static HomePageMessageManage _manage = null;
         //电脑数据
         private List<StructRealTime> computers = new List<StructRealTime>();
 
-        private static HomePageMessageManage _manage = null;
+        //过滤后的电脑数据
+        private List<StructRealTime> filterComs = new List<StructRealTime>();
+        private bool isFilter = false;
+        //搜所条件
 
+        private COMPUTERSTATUS s_status;
+        private int s_areaId;
+        private string s_key;
+
+        //日上机数量，日营收金额
         private int dailyOnlineCount = 0, dailyTradeAmount = 0;
+        //呼叫服务数量/客户端报错数量/商品订单数量
+        private int callMsgNum = 0, exceptionMsgNum = 0, orderMsgNum = 0;
+        #endregion
 
-        //单例方法
+        #region 单例方法
         public static HomePageMessageManage Manage()
         {
             if(_manage == null)
@@ -56,17 +101,91 @@ namespace NetBarMS.Codes.Tools.Manage
             }
             return _manage;
         }
+        #endregion
+
+        #region 添加首页信息个数代理
+        /// <summary>
+        /// 添加首页信息个数代理
+        /// </summary>
+        /// <param name="msg">提醒消息回调</param>
+        /// <param name="dailyCount">日常数据回调</param>
+        /// <param name="statusUI">计算机状态数量回调</param>
+        public void AddMsgNumDelegate(
+            RefreshUIHandle msg,
+            RefreshUIHandle dailyCount,
+            RefreshUIHandle statusUI)
+        {
+            this.UpdateMsgNumEvent += msg;
+            this.UpdateDailyCountEvent += dailyCount;
+            this.UpdateStatusNumEvent += statusUI;
+        }
+        #endregion
+
+        #region 添加修改区域下拉列表的回调
+        /// <summary>
+        /// 添加刷新区域下拉菜单的回调
+        /// </summary>
+        /// <param name="area">回调方法</param>
+        public static void AddRefreshAreaComBox(RefreshUIHandle area)
+        {
+            Manage().RefreshAreaComBox += area;
+        }
+        #endregion
+
+        #region 添加/ 移除更新数据回调
+        public static void AddUpdateDataEvent(
+            UpdateComputerDataHandle update,
+            UpdateComputerDataHandle updateComArea,
+            RefreshUIHandle updateArea,
+            RefreshUIHandle filter)
+        {
+            if (update != null)
+            {
+                Manage().UpdateComputerDataEvent += update;
+            }
+            if (updateComArea != null)
+            {
+                Manage().UpdateComputerAreaEvent += updateComArea;
+            }
+            if (updateArea != null)
+            {
+                Manage().UpdateAreaEvent += updateArea;
+            }
+            if (filter != null)
+            {
+                Manage().FilterComputersEvent += filter;
+            }
+        }
+        public static void RemoveUpdateDataEvent(
+           UpdateComputerDataHandle update,
+           UpdateComputerDataHandle updateComArea,
+           RefreshUIHandle updateArea,
+             RefreshUIHandle filter)
+        {
+            if (update != null)
+            {
+                Manage().UpdateComputerDataEvent -= update;
+            }
+            if (updateComArea != null)
+            {
+                Manage().UpdateComputerAreaEvent -= updateComArea;
+            }
+            if (updateArea != null)
+            {
+                Manage().UpdateAreaEvent -= updateArea;
+            }
+            if(filter != null)
+            {
+                Manage().FilterComputersEvent -= filter;
+            }
+        }
+        #endregion
 
         #region 获取首页数据列表
-        public void GetHomePageList(GetDataResultHandle result,
-            UpdateComputerDataHandle update,
-            UpdateComputerDataHandle updateArea,
-            RefreshUIHandle refreshStauts)
+        public void GetHomePageList(
+            GetDataResultHandle result)
         {
             this.GetDataResultEvent += result;
-            this.UpdateComputerDataEvent += update;
-            this.UpdateComputerAreaEvent += updateArea;
-            this.RefreshStatusNumEvent += refreshStauts;
             //获取上网信息
             HomePageNetOperation.HompageList(HomePageListResult);
         }
@@ -84,11 +203,15 @@ namespace NetBarMS.Codes.Tools.Manage
             if (result.pack.Content.MessageType == 1)
             {
                 this.computers = result.pack.Content.ScRealtimeInfo.RealtimesList.ToList<StructRealTime>();
-
+                this.filterComs = this.computers.ToList<StructRealTime>();
                 //发送刷新设备状态信息的个数
-                if(this.RefreshStatusNumEvent != null)
+                if (this.UpdateStatusNumEvent != null)
                 {
-                    this.RefreshStatusNumEvent();
+                    this.UpdateStatusNumEvent();
+                }
+                if (this.FilterComputersEvent != null)
+                {
+                    this.FilterComputersEvent();
                 }
                 //获取系统消息回调
                 GetSysMessage();
@@ -148,48 +271,48 @@ namespace NetBarMS.Codes.Tools.Manage
 
                     //有呼叫消息
                     case SYSMSG_TYPE.CALL:
-                        if (this.UpdateCallMsgNumEvent != null)
+                        if (this.UpdateMsgNumEvent != null)
                         {
-                            int num = pars[0].Equals("") ? 0 : int.Parse(pars[0]);
-                            this.UpdateCallMsgNumEvent(num);
+                            this.callMsgNum = pars[0].Equals("") ? 0 : int.Parse(pars[0]);
+                            this.UpdateMsgNumEvent();
                         }
                         break;
 
                     //订单信息
                     case SYSMSG_TYPE.ORDER:
 
-                        if(this.UpdateOrderMsgNumEvent != null)
+                        if(this.UpdateMsgNumEvent != null)
                         {
-                            int num = pars[0].Equals("") ? 0 : int.Parse(pars[0]);
-                            this.UpdateOrderMsgNumEvent(num);
+                            this.orderMsgNum = pars[0].Equals("") ? 0 : int.Parse(pars[0]);
+                            this.UpdateMsgNumEvent();
                         }
                         break;
                     //异常信息
                     case SYSMSG_TYPE.EXCEPTION:
-                        if(this.UpdateExceptionMsgNumEvent != null)
+                        if(this.UpdateMsgNumEvent != null)
                         {
-                            int num = pars[0].Equals("") ? 0 : int.Parse(pars[0]);
-                            this.UpdateExceptionMsgNumEvent(num);
+                            this.exceptionMsgNum = pars[0].Equals("") ? 0 : int.Parse(pars[0]);
+                            this.UpdateMsgNumEvent();
                         }
                         break;
 
                     //当日上网人数
                     case SYSMSG_TYPE.DAILY_ONLINE_COUNT:
-                        if(this.RefreshDailyCountEvent != null)
+                        if(this.UpdateDailyCountEvent != null)
                         {
                             int num = pars[0].Equals("") ? 0 : int.Parse(pars[0]);
                             this.dailyOnlineCount = num;
-                            this.RefreshDailyCountEvent();
+                            this.UpdateDailyCountEvent();
                         }
 
                         break;
                     //当日营收金额
                     case SYSMSG_TYPE.DAILY_TRADE_AMOUNT:
-                        if (this.RefreshDailyCountEvent != null)
+                        if (this.UpdateDailyCountEvent != null)
                         {
                             int num = pars[0].Equals("") ? 0 : int.Parse(pars[0]);
                             this.dailyTradeAmount = num;
-                            this.RefreshDailyCountEvent();
+                            this.UpdateDailyCountEvent();
                         }
 
                         break;
@@ -240,7 +363,7 @@ namespace NetBarMS.Codes.Tools.Manage
             //更新首页数据
             UpdateHomePage(index, newCom.Build());
             //刷新首页状态数量
-            RefreshStatusNumEvent();
+            UpdateStatusNumEvent();
         }
         #endregion
 
@@ -320,18 +443,29 @@ namespace NetBarMS.Codes.Tools.Manage
             //更新首页数据
             UpdateHomePage(index, newCom.Build());
             //刷新首页状态数量
-            RefreshStatusNumEvent();
+            UpdateStatusNumEvent();
 
         }
         #endregion
 
         #region 更新首页数据
-        private void UpdateHomePage(int index,StructRealTime com)
+        private void UpdateHomePage(int index,StructRealTime newcom)
         {
-            if(this.UpdateComputerDataEvent != null)
+            //如果当前在过滤条件下以及电脑状态也在过滤条件下则重新搜索过滤数据
+            if(IsFilter && this.s_status != COMPUTERSTATUS.无)
             {
-                this.UpdateComputerDataEvent(com);
+                //判断是否影响当前搜索
+                HomePageMessageManage.GetFilterComputers(this.s_status, this.s_areaId, this.s_key);
             }
+            //否则更新单个电脑状态
+            else
+            {
+                if (this.UpdateComputerDataEvent != null)
+                {
+                    this.UpdateComputerDataEvent(newcom);
+                }
+            }
+            
         }
 
         #endregion
@@ -356,7 +490,6 @@ namespace NetBarMS.Codes.Tools.Manage
         public static void GetStatusComputers(out List<StructRealTime> tem,COMPUTERSTATUS status)
         {
             tem = new List<StructRealTime>();
-
             if (HomePageMessageManage.Manage().computers != null)
             {
                 IEnumerable<StructRealTime> onlines = from StructRealTime com in Manage().computers where com.Status.Equals(((int)status).ToString()) select com;
@@ -366,44 +499,98 @@ namespace NetBarMS.Codes.Tools.Manage
         }
         #endregion
 
-        #region 更新首页电脑所在区域与名称
-        public void UpdateHomePageComputerArea(List<StructRealTime> tem)
+        #region 更新首页电脑所在区域与名称（区域设置调用点击最后完成时）
+        public static  void UpdateHomePageComputerArea(List<StructRealTime> tem)
         {
             for(int i = 0;i<tem.Count;i++)
             {
-                StructRealTime ori = this.computers[i];
+                StructRealTime ori = Manage().computers[i];
                 StructRealTime change = tem[i];
+
                 if (!ori.Area.Equals(change.Area))
                 {
                     StructRealTime.Builder newCom = new StructRealTime.Builder(ori);
                     newCom.Area = change.Area;
-                    this.computers[i] = newCom.Build();
-                    if (this.UpdateComputerAreaEvent != null)
+                    Manage().computers[i] = newCom.Build();
+                    if (Manage().UpdateComputerAreaEvent != null && Manage().s_areaId < 0)
                     {
-                        this.UpdateComputerAreaEvent(newCom.Build());
+                        Manage().UpdateComputerAreaEvent(newCom.Build());
                     }
                 }
                 else
                 {
-                    if (this.UpdateComputerAreaEvent != null)
+                    //被移除了
+                    if (Manage().UpdateComputerAreaEvent != null && Manage().s_areaId < 0)
                     {
-                        this.UpdateComputerAreaEvent(ori);
+                        Manage().UpdateComputerAreaEvent(ori);
                     }
                 }
+            }
+
+            if(Manage().UpdateAreaEvent != null)
+            {
+                Manage().UpdateAreaEvent();
+                if(Manage().s_areaId >= 0)
+                {
+                    //需要更新一下
+                    GetFilterComputers(Manage().s_status, Manage().s_areaId, Manage().s_key);
+                }
+            }
+
+         
+
+            else
+            {
+                GetFilterComputers(Manage().s_status, Manage().s_areaId, Manage().s_key);
             }
         }
         #endregion
 
-        #region 删除/修改区域后更新电脑区域
-        public void ChangeAreaUpdateComputerArea()
+        #region 删除/修改/添加区域后更新电脑区域
+        /// <summary>
+        /// 删除或修改区域后进行更新电脑区域
+        /// </summary>
+        public static void ChangeAreaUpdateComputerArea()
         {
-            for (int i = 0; i < this.computers.Count; i++)
+            //当电脑视图时修改了区域进行调用
+            if (Manage().UpdateAreaEvent != null)
             {
-                StructRealTime ori = this.computers[i];
-                if (this.UpdateComputerAreaEvent != null)
+                Manage().UpdateAreaEvent();
+            }
+            //列表视图
+            else
+            {
+                //没有将区域作为筛选添加
+                if(Manage().s_areaId < 0)
                 {
-                    this.UpdateComputerAreaEvent(ori);
+                    //更新了每一台电脑
+                    for (int i = 0; i < Manage().computers.Count; i++)
+                    {
+                        StructRealTime ori = Manage().computers[i];
+
+                        if (Manage().UpdateComputerAreaEvent != null)
+                        {
+                            Manage().UpdateComputerAreaEvent(ori);
+                        }
+                    }
                 }
+                else
+                {
+                    GetFilterComputers(Manage().s_status, Manage().s_areaId, Manage().s_key);
+                }
+                
+            }
+
+        }
+        /// <summary>
+        /// 增删改之后区域列表进行更新（更新区域下拉菜单）
+        /// </summary>
+        public static void ChangeComputerArea()
+        {
+
+            if(Manage().RefreshAreaComBox != null)
+            {
+                Manage().RefreshAreaComBox();
             }
         }
         #endregion
@@ -413,21 +600,6 @@ namespace NetBarMS.Codes.Tools.Manage
         {
             this.GetDataResultEvent -= result;
          
-        }
-        #endregion
-
-        #region 添加首页信息个数代理
-        public void AddMsgNumDelegate(UpdateMsgNumHandle call, 
-            UpdateMsgNumHandle exception,
-            UpdateMsgNumHandle order,
-            RefreshUIHandle dailyCount,
-            RefreshUIHandle statusUI)
-        {
-            this.UpdateCallMsgNumEvent += call;
-            this.UpdateExceptionMsgNumEvent += exception;
-            this.UpdateOrderMsgNumEvent += order;
-            this.RefreshDailyCountEvent += dailyCount;
-            this.RefreshStatusNumEvent += statusUI;
         }
         #endregion
 
@@ -485,26 +657,80 @@ namespace NetBarMS.Codes.Tools.Manage
         #endregion
 
         #region 过滤条件获取数组
-        public static  void GetFilterComputers(COMPUTERSTATUS status, int areaId, string key,out List<StructRealTime> coms)
+        public static  void GetFilterComputers(COMPUTERSTATUS status, int areaId, string key)
         {
-           coms = Manage().computers.ToList<StructRealTime>();
+            Manage().filterComs  = Manage().computers.ToList<StructRealTime>();
+            //是否是过滤状态
+            Manage().isFilter = false;
+            Manage().s_status = COMPUTERSTATUS.无;
+            Manage().s_areaId = -1;
+            Manage().s_key = "";
+
             if(status != COMPUTERSTATUS.无)
             {
-                coms = coms.Where(tem => tem.Status.Equals(((int)status).ToString())).ToList<StructRealTime>();
+                Manage().filterComs = Manage().filterComs.Where(tem => tem.Status.Equals(((int)status).ToString())).ToList<StructRealTime>();
+                Manage().isFilter = true;
+                Manage().s_status = status;
+
             }
             if (areaId >= 0)
             {
-                coms = coms.Where(tem => tem.Area.Equals(areaId.ToString())).ToList<StructRealTime>();
+                Manage().filterComs = Manage().filterComs.Where(tem => tem.Area.Equals(areaId.ToString())).ToList<StructRealTime>();
+                Manage().isFilter = true;
+                Manage().s_areaId = areaId;
             }
-            if(key != null && !key.Equals(""))
+            if (key != null && !key.Equals(""))
             {
-                
-                coms = coms.Where(tem => (tem.Ip.Contains(key) || tem.Mac.Contains(key) || tem.Computer.Contains(key))).ToList<StructRealTime>();
+                Manage().filterComs = Manage().filterComs.Where(tem => (tem.Ip.Contains(key) || tem.Mac.Contains(key) || tem.Computer.Contains(key))).ToList<StructRealTime>();
+                Manage().isFilter = true;
+                Manage().s_key = key;
             }
+            if (Manage().FilterComputersEvent != null)
+            {
+                Manage().FilterComputersEvent();
+            }
+
         }
         #endregion
 
-        
+        #region 获取区域字典（首页电脑视图使用）
+        public static Dictionary<string, List<StructRealTime>> GetAreaComsDict()
+        {
+            //获取已有区域
+            List<AreaTypeModel> areas = SysManage.Areas;
+            //以区域划分
+            IEnumerable<IGrouping<string, StructRealTime>> comps = Manage().computers.GroupBy(com => com.Area);
+            Dictionary<string, List<StructRealTime>> dict = new Dictionary<string, List<StructRealTime>>();
+
+            List<StructRealTime> noArea = new List<StructRealTime>();
+            foreach (IGrouping<string, StructRealTime> tem in comps)
+            {
+                string areaId = tem.Key;
+                int num = areas.Where(areaModel => areaModel.areaId == int.Parse(areaId)).Count();
+                //添加到无名的区域
+                if (num == 0)
+                {
+                    noArea.AddRange(tem.ToList<StructRealTime>());
+                }
+                else
+                {
+                    dict[areaId] = tem.ToList<StructRealTime>();
+                }
+
+
+            }
+            //将无名的区域添加到字典中
+            if(noArea.Count > 0)
+            {
+                dict["-1"] = noArea.OrderBy(com => com.Computerid).ToList<StructRealTime>();
+            }
+            return dict;
+        }
+
+
+        #endregion
+
+        #region 获取当日营收等信息
         /// <summary>
         /// 获取当日营收金额
         /// </summary>
@@ -525,6 +751,63 @@ namespace NetBarMS.Codes.Tools.Manage
             }
 
         }
+        #endregion
+
+        #region 获取首页提醒数量（呼叫服务/客户端报错/商品订单）
+        /// <summary>
+        /// 呼叫服务提醒数量
+        /// </summary>
+        public static int CallMsgNum
+        {
+            get
+            {
+                return Manage().callMsgNum;
+            }
+        }
+        /// <summary>
+        /// 客户端报错提醒数量
+        /// </summary>
+        public static int ExceptionMsgNum
+        {
+            get
+            {
+                return Manage().exceptionMsgNum;
+            }
+        }
+        /// <summary>
+        /// 商品订单提醒数量
+        /// </summary>
+        public static int OrderMsgNum
+        {
+            get
+            {
+                return Manage().orderMsgNum;
+            }
+        }
+        #endregion
+
+        #region 获取过滤后的电脑数据
+        public static List<StructRealTime> FilterComputers
+        {
+            get
+            {
+                return Manage().filterComs;
+            }
+        }
+
+
+        #endregion
+
+        #region 获取当前数据是否是过滤过得(电脑视图使用)
+        public static bool IsFilter
+        {
+            get
+            {
+                return Manage().isFilter;
+            }
+        }
+        #endregion
+
 
     }
 }

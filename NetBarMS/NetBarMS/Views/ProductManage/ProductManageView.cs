@@ -64,7 +64,6 @@ namespace NetBarMS.Views.ProductManage
         public ProductManageView()
         {
             InitializeComponent();
-            this.titleLabel.Text = "上架商品管理";
             InitUI();
             
         }

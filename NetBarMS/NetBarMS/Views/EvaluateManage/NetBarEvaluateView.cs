@@ -38,8 +38,6 @@ namespace NetBarMS.Views.EvaluateManage
         public NetBarEvaluateView()
         {
             InitializeComponent();
-            this.titleLabel.Text = "网吧评价";
-
             InitUI();
 
         }

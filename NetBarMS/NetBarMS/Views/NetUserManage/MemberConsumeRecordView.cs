@@ -41,7 +41,6 @@ namespace NetBarMS.Views.NetUserManage
         public MemberConsumeRecordView(int temmid)
         {
             InitializeComponent();
-            this.titleLabel.Text = "会员消费记录查询";
             this.mid = temmid;
             InitUI();
         }

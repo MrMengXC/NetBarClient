@@ -98,7 +98,7 @@ namespace NetBarMS.Codes.Tools.NetOperation
         }
         #endregion
 
-        #region 充值
+        #region 充值结果
         // 获取充值结果
         public static void GetRecharge(DataResultBlock resultBlock)
         {
@@ -164,7 +164,6 @@ namespace NetBarMS.Codes.Tools.NetOperation
             NetMessageManage.SendMsg(pack.Build(), resultBlock);
         }
         #endregion
-
 
         #region 添加交接班
         /// <summary>

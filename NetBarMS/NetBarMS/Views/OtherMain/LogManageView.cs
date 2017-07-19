@@ -34,8 +34,6 @@ namespace NetBarMS.Views
         public LogManageView()
         {
             InitializeComponent();
-            this.titleLabel.Text = "日志管理";
-
             InitUI();
         }
 

@@ -18,7 +18,7 @@ namespace NetBarMS.Views
     {
         public event CloseFormHandle CloseForm;
         protected DataTable mainDataTable;     //
-
+        
         public RootUserControlView()
         {
             InitializeComponent();
@@ -30,6 +30,7 @@ namespace NetBarMS.Views
         {
             //System.Console.WriteLine("RootUserControlView_Disposed");
         }
+
         #region 按钮关闭窗体
         protected virtual void CloseFormClick(object sender, EventArgs e)
         {
@@ -47,6 +48,8 @@ namespace NetBarMS.Views
             this.FindForm().Close();
         }
         #endregion
+
+        #region 控件绘制时触发的方法
         protected virtual void Control_Paint(object sender, PaintEventArgs e)
         {
             //System.Console.WriteLine("sender:" + sender.GetType().ToString());
@@ -56,21 +59,13 @@ namespace NetBarMS.Views
                 BorderManage.DrawBorder(e.Graphics, e.ClipRectangle, BORDER_TYPE.TEXTEDIT_BORDER);
             }
         }
+        #endregion
 
-
-        protected void DRechargeText_LostFocus(object sender, EventArgs e)
-        {
-            if (sender.GetType().Equals(typeof(TextEdit)))
-            {
-                TextEdit text = sender as TextEdit;
-                if (!text.Equals(""))
-                {
-                    text.Text = string.Format("{0}", int.Parse(text.Text));
-                }
-            }
-        
-
-        }
+        #region 初始化TextEdit
+        /// <summary>
+        /// 初始化TextEdit，使其只能进行数字输入
+        /// </summary>
+        /// <param name="textEdits"></param>
         protected void InitTextEdit(TextEdit[] textEdits)
         {
             foreach(TextEdit textEdit in textEdits)
@@ -81,5 +76,20 @@ namespace NetBarMS.Views
                 textEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
             }
         }
+        #endregion
+
+        #region TextEdit 失去光标焦点
+        protected void DRechargeText_LostFocus(object sender, EventArgs e)
+        {
+            if (sender.GetType().Equals(typeof(TextEdit)))
+            {
+                TextEdit text = sender as TextEdit;
+                if (!text.Equals(""))
+                {
+                    text.Text = string.Format("{0}", int.Parse(text.Text));
+                }
+            }
+        }
+        #endregion
     }
 }

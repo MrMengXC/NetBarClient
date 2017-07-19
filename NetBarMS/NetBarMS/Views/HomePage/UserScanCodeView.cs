@@ -70,8 +70,6 @@ namespace NetBarMS.Views.HomePage
             else
             {
                 GetRechargeCode();
-                //获取充值结果
-                //HomePageNetOperation.GetRecharge(GetRechargeResult);
             }
 
 
@@ -79,10 +77,14 @@ namespace NetBarMS.Views.HomePage
         }
 
         #endregion
+
         //获取二维码
         private void GetRechargeCode()
         {
             HomePageNetOperation.GetRechargeCode(GetRechargeCodeResult, cardNum, recharge, 0, (int)this.prechargeType);
+            // HomePageNetOperation.GetRecharge(GetRechargeResult);
+            NetMessageManage.AddResultBlock(GetRechargeResult);
+
         }
         //开始充值的入口
         private void BeginRecharge()
@@ -176,6 +178,7 @@ namespace NetBarMS.Views.HomePage
 
             if (result.pack.Content.MessageType == 1)
             {
+                //获取充值结果
                 this.Invoke(new RefreshUIHandle(delegate {
                     string wxCode = result.pack.Content.ScPreCharge.Qrcode;
                     try
@@ -183,17 +186,6 @@ namespace NetBarMS.Views.HomePage
                         using (Stream stream = WebRequest.Create(wxCode).GetResponse().GetResponseStream())
                         {
                             this.pictureEdit1.Image = Image.FromStream(stream);
-                            //TODO:暂时显示充值成功
-                            //充值成功，显示充值成功的界面9
-                            CloseFormHandle handle = new CloseFormHandle(delegate {
-                                if (this.flowstatus == FLOW_STATUS.ACTIVE_STATUS)
-                                {
-                                    ActiveFlowManage.ActiveFlow().MemberPaySuccess();
-                                }
-                                this.CloseFormClick();
-                            });
-                            UserPayResultView view = new UserPayResultView();
-                            ToolsManage.ShowForm(view, false, handle);
                         }
                     }
                     catch(Exception ex)
@@ -203,12 +195,20 @@ namespace NetBarMS.Views.HomePage
                     
                 }));
             }
+            else
+            {
+                //获取充值结果
+                this.Invoke(new RefreshUIHandle(delegate {
+                    MessageBox.Show("获取二维码失败");
+                    this.CloseFormClick();
+                }));
+            }
 
         }
         //获取充值结果
         private void GetRechargeResult(ResultModel result)
         {
-            if (result.pack.Cmd != Cmd.CMD_PREBUY)
+            if (result.pack.Cmd != Cmd.CMD_TOCHARGE)
             {
                 return;
             }
@@ -218,16 +218,48 @@ namespace NetBarMS.Views.HomePage
             {
                 this.Invoke(new RefreshUIHandle(delegate 
                 {
+                    //TODO:暂时显示充值成功
                     //充值成功，显示充值成功的界面9
-                    CloseFormHandle handle = new CloseFormHandle(delegate {                      
-                        if(this.flowstatus == FLOW_STATUS.ACTIVE_STATUS)
-                        {
-                            ActiveFlowManage.ActiveFlow().MemberPaySuccess();
-                        }
-                        this.FindForm().Close();
-                    });
-                    UserPayResultView view = new UserPayResultView();
-                    ToolsManage.ShowForm(view,false,handle);
+                    //CloseFormHandle handle = new CloseFormHandle(delegate {
+                    //    if (this.flowstatus == FLOW_STATUS.ACTIVE_STATUS)
+                    //    {
+                    //        ActiveFlowManage.ActiveFlow().MemberPaySuccess();
+                    //    }
+                    //    this.CloseFormClick();
+                    //});
+                    //UserPayResultView view = new UserPayResultView();
+                    //ToolsManage.ShowForm(view, false, handle);
+
+                    MessageBox.Show("充值成功");
+                    if (this.flowstatus == FLOW_STATUS.ACTIVE_STATUS)
+                    {
+                        ActiveFlowManage.ActiveFlow().MemberPaySuccess();
+                    }
+                    this.CloseFormClick();
+                }));
+            }
+            else
+            {
+                this.Invoke(new RefreshUIHandle(delegate
+                {
+                    //TODO:暂时显示充值成功
+                    //充值成功，显示充值成功的界面9
+                    //CloseFormHandle handle = new CloseFormHandle(delegate {
+                    //    if (this.flowstatus == FLOW_STATUS.ACTIVE_STATUS)
+                    //    {
+                    //        ActiveFlowManage.ActiveFlow().MemberPaySuccess();
+                    //    }
+                    //    this.CloseFormClick();
+                    //});
+                    //UserPayResultView view = new UserPayResultView();
+                    //ToolsManage.ShowForm(view, false, handle
+
+                    MessageBox.Show("充值失败");
+                    if (this.flowstatus == FLOW_STATUS.ACTIVE_STATUS)
+                    {
+                        ActiveFlowManage.ActiveFlow().MemberPaySuccess();
+                    }
+                    this.CloseFormClick();
                 }));
             }
         }

@@ -33,7 +33,6 @@ namespace NetBarMS.Views.ProductManage
         public ProductSellRankView()
         {
             InitializeComponent();
-            this.titleLabel.Text = "销售排行";
             InitUI();
         }
         //初始化UI

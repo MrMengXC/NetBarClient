@@ -10,10 +10,8 @@ using System.Windows.Forms;
 using NetBarMS.Forms;
 using System.Xml;
 using System.IO;
-using XPTable.Models;
 using NetBarMS.Codes.Model;
 using NetBarMS.Codes.Tools;
-
 using NetBarMS.Views;
 using NetBarMS.Views.RateManage;
 using NetBarMS.Views.NetUserManage;
@@ -36,9 +34,7 @@ namespace NetBarMS
     public partial class MainForm : Form
     {
 
-        private HomePageListView homePageListView = null;
-        private HomePageComputerView homePageComputerView = null;
-        private char[] sp = { '\n' };
+        private char[] sp = { '\n' , ':', '：' };
 
         public MainForm()
         {
@@ -46,23 +42,21 @@ namespace NetBarMS
             
             //初始化树形菜单
             InitManageTreeView();
-            //添加首页视图
-            AddHomePageListView();
-
+            ////添加首页视图
+            AddHomePageView();
             //添加系统消息监听
             AddMsgDelegate();
            
 
         }
 
-        //添加系统消息监听
+        #region 添加系统消息监听
         private void AddMsgDelegate()
         {
-            HomePageMessageManage.Manage().AddMsgNumDelegate(UpdateCallMsgNumResult,UpdateExceptionMsgNumResult,UpdateOrderMsgNumResult, RefreshDailyDataResult, RefreshStatusNum);
+            HomePageMessageManage.Manage().AddMsgNumDelegate(UpdateMsgNumResult, UpdateDailyDataResult, UpdateStatusNum);
         }
-
         //刷新状态数量显示
-        private void RefreshStatusNum()
+        private void UpdateStatusNum()
         {
 
             this.Invoke(new RefreshUIHandle(delegate {
@@ -73,9 +67,12 @@ namespace NetBarMS
                 dict.TryGetValue(((int)COMPUTERSTATUS.在线).ToString(), out online);
                 dict.TryGetValue(((int)COMPUTERSTATUS.挂机).ToString(), out hangup);
                 dict.TryGetValue(((int)COMPUTERSTATUS.异常).ToString(), out exception);
-
-                //当前上网
+                //各状态数量
+                this.idleLabel.Text = string.Format("{0}：{1}", this.idleLabel.Text.Split(sp)[0], idle);
+                this.onlineLabel.Text = string.Format("{0}：{1}", this.onlineLabel.Text.Split(sp)[0], online);
+                //当前上网上网人数（在线+关机）
                 this.netUserLabel.Text = string.Format("{0}\n{1}", (online + hangup), this.netUserLabel.Text.Split(sp)[1]);
+                //当前占座率
                 this.attenDanceLabel.Text = string.Format("{0}%\n{1}", (online + hangup)*100/ (online + hangup+exception+idle), this.attenDanceLabel.Text.Split(sp)[1]);
 
 
@@ -83,15 +80,19 @@ namespace NetBarMS
 
         }
         //呼叫消息通知回调
-        private void UpdateCallMsgNumResult(int num)
+        private void UpdateMsgNumResult()
         {
             this.Invoke(new RefreshUIHandle(delegate {
-                this.simpleButton7.Text = "呼叫服务\n" + num;
+
+                this.simpleButton7.Text = string.Format("{0}%\n{1}", this.simpleButton7.Text.Split(sp)[1], HomePageMessageManage.CallMsgNum);
+                this.simpleButton6.Text = string.Format("{0}%\n{1}", this.simpleButton6.Text.Split(sp)[1],HomePageMessageManage.OrderMsgNum);
+                this.simpleButton8.Text = string.Format("{0}%\n{1}", this.simpleButton8.Text.Split(sp)[1], HomePageMessageManage.ExceptionMsgNum);
+
             }));
 
         }
         //日上机用户消息通知回调
-        private void RefreshDailyDataResult()
+        private void UpdateDailyDataResult()
         {
             this.Invoke(new RefreshUIHandle(delegate {
                 this.dailyOnlineCountLabel.Text = string.Format("{0}\n{1}", HomePageMessageManage.DailyOnlineCount, this.dailyOnlineCountLabel.Text.Split(sp)[1]);
@@ -99,45 +100,24 @@ namespace NetBarMS
             }));
 
         }
-        //客户端报错消息通知回调
-        private void UpdateExceptionMsgNumResult(int num)
+        #endregion
+
+        #region 添加首页列表视图
+        private void AddHomePageView()
         {
-            this.Invoke(new RefreshUIHandle(delegate {
-                this.simpleButton8.Text = "客户端异常\n" + num;
-            }));
+
+            HomePageView homePage = new HomePageView();
+            this.homePageListPanel.Controls.Add(homePage);
+            homePage.Location = new Point(0, 0);
+            homePage.Size = this.homePageListPanel.Size;
+            homePage.Dock = DockStyle.Fill;
+            homePage.BringToFront();
+
+
+
 
         }
-        //订单消息通知回调
-        private void UpdateOrderMsgNumResult(int num)
-        {
-            this.Invoke(new RefreshUIHandle(delegate {
-                this.simpleButton6.Text = "商品订单\n" + num;
-            }));
-
-        }
-        //添加首页列表视图
-        private void AddHomePageListView()
-        {
-            if (this.homePageListPanel.Controls.Contains(this.homePageListView) == true)
-            {
-                return;
-            }
-
-            if (this.homePageListView == null)
-            {
-                this.homePageListView = new HomePageListView();
-            }
-            if(this.homePageComputerView != null)
-            {
-                this.Controls.Remove(this.homePageComputerView);
-            }
-            this.homePageListPanel.Controls.Add(this.homePageListView);
-            this.homePageListView.Location = new Point(0,0);
-            this.homePageListView.Size = this.homePageListPanel.Size;
-            //this.homePageListView.Anchor = AnchorStyles.Bottom | AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            this.homePageListView.Dock = DockStyle.Fill;//AnchorStyles.Bottom | AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            this.homePageListView.BringToFront();
-        }
+        #endregion
 
         #region 初始化TreeView
         private void InitManageTreeView()
@@ -331,62 +311,7 @@ namespace NetBarMS
         }
 
         #endregion
-
-        //列表视图按钮点击事件
-        private void simpleButton2_Click(object sender, EventArgs e)
-        {
-
-            AddHomePageListView();
-
-        }
-        //电脑视图点击事件 
-        private void simpleButton1_Click(object sender, EventArgs e)
-        {
-
-            if (this.homePageListPanel.Controls.Contains(this.homePageComputerView) == true)
-            {
-                return;
-            }
-
-            if (this.homePageComputerView == null)
-            {
-                this.homePageComputerView = new HomePageComputerView();
-            }
-            if (this.homePageListView != null)
-            {
-                this.homePageListPanel.Controls.Remove(this.homePageListView);
-
-            }
-
-            this.homePageListPanel.Controls.Add(this.homePageComputerView);
-            this.homePageComputerView.Location = new Point(0, 0);
-            this.homePageComputerView.Size = this.homePageListPanel.Size;
-            this.homePageComputerView.Dock = DockStyle.Fill;//AnchorStyles.Bottom | AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            this.homePageComputerView.BringToFront();
-        }
-
        
-        /// <summary>
-        /// 用户充值
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void button2_Click(object sender, EventArgs e)
-        {
-            UserPayView view = new UserPayView();
-            ToolsManage.ShowForm(view, false);
-        }
-        /// <summary>
-        /// 用户结算回调
-        /// </summary>
-        /// <param name="model"></param>
-        private void CardCheckOutBlock(ResultModel model)
-        {
-            System.Console.WriteLine(model.pack);
-
-
-        }
-
         #region 顶部菜单的按钮功能
 
         //关闭闲机
@@ -457,7 +382,7 @@ namespace NetBarMS
         }
         #endregion
 
-
+       
     }
 }
 

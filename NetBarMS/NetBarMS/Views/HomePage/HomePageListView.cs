@@ -23,6 +23,7 @@ namespace NetBarMS.Views.HomePage
 
     public partial class HomePageListView : UserControl
     {
+        #region Enum
         private enum TitleList
         {
             None,
@@ -52,44 +53,36 @@ namespace NetBarMS.Views.HomePage
             已验证,
 
         }
+        #endregion
 
-        public DataTable mainDataTable;     //
+        //数据源DataTable
+        private DataTable mainDataTable;
+        //电脑列表
         private List<StructRealTime> coms;
-        private List<AreaTypeModel> areas;
-
+        //GridControl 的正常Edit列 和 已 验证列
         private RepositoryItemButtonEdit normalEdit, verietyEdit;
+
         public HomePageListView()
         {
             InitializeComponent();
             InitUI();
         }
+
+      
         #region 初始化UI
         private void InitUI()
         {
             //获取两种不同状态的RepositoryItemButtonEdit
             string[] nor = { BTN_NAME.强制下机.ToString(), BTN_NAME.锁定.ToString(), BTN_NAME.验证.ToString() };
             string[] ver = { BTN_NAME.强制下机.ToString(), BTN_NAME.锁定.ToString(), BTN_NAME.已验证.ToString() };
-
             SetButtonItem(out normalEdit, nor);
             SetButtonItem(out verietyEdit, ver);
-            //设置Combox
-            foreach(string name in Enum.GetNames(typeof(COMPUTERSTATUS)))
-            {
-                this.comboBoxEdit1.Properties.Items.Add(name);
-            }
-            this.comboBoxEdit2.Properties.Items.Add("无");
-            this.areas = SysManage.Areas;
-            foreach (AreaTypeModel model in areas)
-            {
-                this.comboBoxEdit2.Properties.Items.Add(model.areaName);
-            }
 
             //设置GridControl
-            ToolsManage.SetGridView(this.gridView1, GridControlType.HomePageList, out this.mainDataTable, ButtonEdit_ButtonClick, GridView_CustomColumnSort);
+            ToolsManage.SetGridView(this.gridView1, GridControlType.HomePageList, out this.mainDataTable, ButtonEdit_ButtonClick);
             this.gridControl1.DataSource = this.mainDataTable;
             this.gridView1.CustomRowCellEdit += GridView1_CustomRowCellEdit;
-            //获取账户信息
-            NetBarMS.Codes.Tools.Manage.ManagerManage.Manage().GetAccountInfo(GetAccountInfoResult);
+   
         }
         //设置RepositoryItemButtonEdit
         private void SetButtonItem(out RepositoryItemButtonEdit buttonEdit,string[] buttonNames)
@@ -165,50 +158,11 @@ namespace NetBarMS.Views.HomePage
             {
                 e.RepositoryItem = normalEdit;
             }
-        }
-
-
-        // 获取账户信息的回调
-        public void GetAccountInfoResult(ResultModel result)
-        {
-            //获取首页数据
-            HomePageMessageManage.Manage().GetHomePageList(GetHomePageListResult, UpdateHomePageData, UpdateHomePageArea, RefreshStatusNum);
-        }
-        #endregion
-
-        #region 获取首页数据列表
-        public void GetHomePageListResult(bool success)
-        {
-            HomePageMessageManage.Manage().RemoveResultHandel(GetHomePageListResult);
-            if (success)
-            {
-                HomePageMessageManage.Manage().GetComputers(out this.coms);
-                this.Invoke(new RefreshUIHandle(delegate ()
-                {
-                    RefreshGridControl();
-                }));
-            }
-        }
+        }       
         #endregion
 
         #region 更新首页数据
-        //刷新状态数量显示
-        private void RefreshStatusNum()
-        {
-
-            this.Invoke(new RefreshUIHandle(delegate {
-                char[] sp = { ':', '：' };
-                Dictionary<string, int> dict = HomePageMessageManage.StatusNum;
-                int idle = 0,online = 0;
-
-                dict.TryGetValue(((int)COMPUTERSTATUS.空闲).ToString(), out idle);
-                dict.TryGetValue(((int)COMPUTERSTATUS.在线).ToString(), out online);
-
-                this.idleLabel.Text = string.Format("{0}：{1}", this.idleLabel.Text.Split(sp)[0], idle);
-                this.onlineLabel.Text = string.Format("{0}：{1}", this.onlineLabel.Text.Split(sp)[0], online);
-            }));
-
-        }
+        //更新电脑显示数据
         public void UpdateHomePageData(StructRealTime com)
         {
             
@@ -224,6 +178,7 @@ namespace NetBarMS.Views.HomePage
             }));
            
         }
+        //更新单个电脑区域数据
         public void UpdateHomePageArea(StructRealTime com)
         {
             this.Invoke(new RefreshUIHandle(delegate {
@@ -232,19 +187,39 @@ namespace NetBarMS.Views.HomePage
                 {
                     return;
                 }
-                this.coms[index] = com;
+                //判断一下区域id和获取的名称是否相同
+                StructRealTime ori = this.coms[index];
                 DataRow row = this.mainDataTable.Rows[index];
-                row[TitleList.Area.ToString()] = SysManage.GetAreaName(com.Area);
+                string areaName = row[TitleList.Area.ToString()] as string;
+                string newAreaName = SysManage.GetAreaName(com.Area);
+
+                if (com.Area.Equals(ori.Area) && newAreaName.Equals(areaName))
+                {
+                    System.Console.WriteLine ("更新的电脑没有改变");
+                    return;
+                }
+                this.coms[index] = com;
+                row[TitleList.Area.ToString()] = newAreaName;
             }));
 
+        }
+        #endregion
+
+        #region 获取过滤数据
+        public void FilterComputers()
+        {
+            this.Invoke(new RefreshUIHandle(delegate {
+                RefreshGridControl();
+            }));
+  
         }
         #endregion
 
         #region 更新GridControl 的数据
         private void RefreshGridControl()
         {
+            this.coms = HomePageMessageManage.FilterComputers;
             this.mainDataTable.Rows.Clear();
-           
             for (int i = 0; i < this.coms.Count; i++)
             {
                 StructRealTime computer = coms[i];
@@ -356,75 +331,5 @@ namespace NetBarMS.Views.HomePage
 
         #endregion
 
-        #region 按照条件筛选获取设备
-        //按照设备查询
-        private void comboBoxEdit1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            FilterSearchComputers();
-        }
-        //按照区域查询
-        private void comboBoxEdit2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            FilterSearchComputers();
-        }
-
-        //按照关键字搜索
-        private void SearchButton_ButtonClick(object sender, ButtonPressedEventArgs e)
-        {
-            FilterSearchComputers();
-        }
-
-        private void FilterSearchComputers()
-        {
-
-            string key = "";
-            if(!this.buttonEdit1.Text.Equals(this.buttonEdit1.Properties.NullText))
-            {
-                key = this.buttonEdit1.Text;
-            }
-
-            COMPUTERSTATUS status = COMPUTERSTATUS.无;
-            Enum.TryParse<COMPUTERSTATUS>(this.comboBoxEdit1.Text, out status);
-
-            int areaId = -1;
-            if(this.comboBoxEdit2.SelectedIndex > 0)
-            {
-                AreaTypeModel model = this.areas[this.comboBoxEdit2.SelectedIndex - 1];
-                areaId = model.areaId;
-            }
-
-            HomePageMessageManage.GetFilterComputers(status, areaId, key, out this.coms);
-            RefreshGridControl();
-
-
-
-
-        }
-
-        #endregion
-        #region 按钮标题进行点击排序
-        private void GridView_CustomColumnSort(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnSortEventArgs e)
-      
-        {
-
-            System.Console.WriteLine("d点击了猎头");
-            //GridView view = sender as GridView;
-            //if (view == null) return;
-            //try
-            //{
-            //    if (e.Column.FieldName == "ItemFolderDescription")
-            //    {
-            //        object val1 = view.GetListSourceRowCellValue(e.ListSourceRowIndex1, "IsEmptyRow");
-            //        object val2 = view.GetListSourceRowCellValue(e.ListSourceRowIndex2, "IsEmptyRow");
-            //        e.Handled = true;
-            //        e.Result = System.Collections.Comparer.Default.Compare(val1, val2);
-            //    }
-            //}
-            //catch (Exception ee)
-            //{
-            //    //...
-            //}
-        }
-        #endregion
     }
 }

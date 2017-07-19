@@ -20,10 +20,8 @@ namespace NetBarMS.Views.SystemSearch
 {
     public partial class ChangeShiftsRecordView : RootUserControlView
     {
-        private DataTable giveTable;
-        private DataTable receiveTable;
-
-        enum TitleList
+       
+         private  enum TitleList
         {
             None,
             GiveShift = 1,               //交班人
@@ -39,6 +37,8 @@ namespace NetBarMS.Views.SystemSearch
 
         }
 
+        private DataTable giveTable;
+        private DataTable receiveTable;
         private IList<StructShift> records;
         private DateTime lastDate = DateTime.MinValue;
         private string startTime = "", endTime = "";
@@ -46,7 +46,6 @@ namespace NetBarMS.Views.SystemSearch
         public ChangeShiftsRecordView()
         {
             InitializeComponent();
-            this.titleLabel.Text = "交接班记录";
             InitUI();
         }
         #region 初始化UI

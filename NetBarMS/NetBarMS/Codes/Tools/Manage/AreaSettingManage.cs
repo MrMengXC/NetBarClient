@@ -94,15 +94,9 @@ namespace NetBarMS.Codes.Tools
         public void UpateHomePageComputerArea()
         {
             this.changeComDict.Clear(); 
-            HomePageMessageManage.Manage().UpdateHomePageComputerArea(this.allComputers);
+            HomePageMessageManage.UpdateHomePageComputerArea(this.allComputers);
         }
         #endregion
 
-        #region 修改区域信息成功-更新首页区域数据
-        public void ChangeAreaUpateHomePageComputerArea()
-        {
-            HomePageMessageManage.Manage().ChangeAreaUpdateComputerArea();
-        }
-        #endregion
     }
 }

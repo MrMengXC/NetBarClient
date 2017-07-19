@@ -103,9 +103,6 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="XPTable">
-      <HintPath>..\..\..\..\XTable\dll\XPTable.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Codes\Keys.cs" />
@@ -116,13 +113,19 @@
     <Compile Include="Codes\Tools\Manage\BorderManage.cs" />
     <Compile Include="Codes\Tools\Manage\CommonOperation.cs" />
     <Compile Include="Codes\Tools\Manage\DelegateManage.cs" />
-    <Compile Include="Codes\Tools\Manage\EnumManage.cs" />
+    <Compile Include="Codes\Tools\EnumManage.cs" />
     <Compile Include="Codes\Tools\Manage\HomePageMessageManage.cs" />
     <Compile Include="Codes\Tools\Manage\ManagerManage.cs" />
     <Compile Include="Codes\Tools\NetOperation\CommonNetOperation.cs" />
     <Compile Include="Codes\Tools\NetOperation\EvaluateNetOperation.cs" />
     <Compile Include="Codes\Tools\NetOperation\OtherMainNetOperation.cs" />
     <Compile Include="Codes\Tools\NetOperation\RecordNetOperation.cs" />
+    <Compile Include="Forms\MessageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MessageForm.Designer.cs">
+      <DependentUpon>MessageForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Plugins\Background.cs" />
     <Compile Include="Plugins\BigInteger.cs" />
     <Compile Include="Codes\Tools\FlowManage\ActiveFlowManage.cs" />
@@ -201,6 +204,12 @@
     </Compile>
     <Compile Include="Views\HomePage\HomePageView.Designer.cs">
       <DependentUpon>HomePageView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HomePage\MainView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\HomePage\MainView.Designer.cs">
+      <DependentUpon>MainView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\InCome\IncomeDetail.cs">
       <SubType>UserControl</SubType>
@@ -646,6 +655,9 @@
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MessageForm.resx">
+      <DependentUpon>MessageForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\NewForm.resx">
       <DependentUpon>NewForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -678,6 +690,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\HomePage\HomePageView.resx">
       <DependentUpon>HomePageView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\HomePage\MainView.resx">
+      <DependentUpon>MainView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\InCome\IncomeDetail.resx">
       <DependentUpon>IncomeDetail.cs</DependentUpon>

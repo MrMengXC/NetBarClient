@@ -38,7 +38,6 @@ namespace NetBarMS.Views.NetUserManage
         public OpenMemberRecordView()
         {
             InitializeComponent();
-            this.titleLabel.Text = "会员办理记录";
             InitUI();
         }
 

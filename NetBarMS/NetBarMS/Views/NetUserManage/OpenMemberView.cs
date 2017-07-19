@@ -199,6 +199,17 @@ namespace NetBarMS.Views.NetUserManage
                             }));
                         }
                         break;
+                        //已经是会员
+                    case FLOW_ERROR.IS_MEMBER:
+                        {
+                            this.Invoke(new RefreshUIHandle(delegate ()
+                            {
+                                //将按钮回复可以点击
+                                this.simpleButton1.Enabled = false;
+                                this.simpleButton2.Enabled = true;
+                            }));
+                        }
+                        break;
                     default:
                         break;
                 }
@@ -270,6 +281,7 @@ namespace NetBarMS.Views.NetUserManage
         #region 进行充值
         private void simpleButton1_Click(object sender, EventArgs e)
         {
+            //关闭后再获取入口
             CloseFormHandle close = new CloseFormHandle(delegate () {
                 OpenMember();
             });

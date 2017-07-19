@@ -36,8 +36,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.currentComsPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.areaPanel = new System.Windows.Forms.Panel();
-            this.deleteAreaButton = new DevExpress.XtraEditors.SimpleButton();
-            this.addAreaButton = new DevExpress.XtraEditors.SimpleButton();
+            this.updateLabel = new System.Windows.Forms.Label();
+            this.deleteAreaLabel = new System.Windows.Forms.Label();
+            this.addAreaLabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
@@ -127,8 +128,9 @@
             this.areaPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.areaPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.areaPanel.Controls.Add(this.deleteAreaButton);
-            this.areaPanel.Controls.Add(this.addAreaButton);
+            this.areaPanel.Controls.Add(this.updateLabel);
+            this.areaPanel.Controls.Add(this.deleteAreaLabel);
+            this.areaPanel.Controls.Add(this.addAreaLabel);
             this.areaPanel.Controls.Add(this.panel1);
             this.areaPanel.Location = new System.Drawing.Point(0, 53);
             this.areaPanel.Margin = new System.Windows.Forms.Padding(0);
@@ -136,33 +138,38 @@
             this.areaPanel.Size = new System.Drawing.Size(683, 43);
             this.areaPanel.TabIndex = 2;
             // 
-            // deleteAreaButton
+            // updateLabel
             // 
-            this.deleteAreaButton.Appearance.BackColor = System.Drawing.Color.Cyan;
-            this.deleteAreaButton.Appearance.Options.UseBackColor = true;
-            this.deleteAreaButton.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.deleteAreaButton.Dock = System.Windows.Forms.DockStyle.Left;
-            this.deleteAreaButton.Location = new System.Drawing.Point(200, 0);
-            this.deleteAreaButton.Margin = new System.Windows.Forms.Padding(0);
-            this.deleteAreaButton.Name = "deleteAreaButton";
-            this.deleteAreaButton.Size = new System.Drawing.Size(100, 43);
-            this.deleteAreaButton.TabIndex = 3;
-            this.deleteAreaButton.Text = "删除区域";
-            this.deleteAreaButton.Click += new System.EventHandler(this.deleteAreaButton_Click);
+            this.updateLabel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.updateLabel.Location = new System.Drawing.Point(240, 0);
+            this.updateLabel.Name = "updateLabel";
+            this.updateLabel.Size = new System.Drawing.Size(66, 43);
+            this.updateLabel.TabIndex = 6;
+            this.updateLabel.Text = "更新区域";
+            this.updateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.updateLabel.Click += new System.EventHandler(this.UpdateArea_ButtonClick);
             // 
-            // addAreaButton
+            // deleteAreaLabel
             // 
-            this.addAreaButton.Appearance.BackColor = System.Drawing.Color.Cyan;
-            this.addAreaButton.Appearance.Options.UseBackColor = true;
-            this.addAreaButton.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.addAreaButton.Dock = System.Windows.Forms.DockStyle.Left;
-            this.addAreaButton.Location = new System.Drawing.Point(100, 0);
-            this.addAreaButton.Margin = new System.Windows.Forms.Padding(0);
-            this.addAreaButton.Name = "addAreaButton";
-            this.addAreaButton.Size = new System.Drawing.Size(100, 43);
-            this.addAreaButton.TabIndex = 1;
-            this.addAreaButton.Text = "添加区域";
-            this.addAreaButton.Click += new System.EventHandler(this.addAreaButton_Click);
+            this.deleteAreaLabel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.deleteAreaLabel.Location = new System.Drawing.Point(169, 0);
+            this.deleteAreaLabel.Name = "deleteAreaLabel";
+            this.deleteAreaLabel.Size = new System.Drawing.Size(71, 43);
+            this.deleteAreaLabel.TabIndex = 5;
+            this.deleteAreaLabel.Text = "-删除区域";
+            this.deleteAreaLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.deleteAreaLabel.Click += new System.EventHandler(this.DeleteArea_ButtonClick);
+            // 
+            // addAreaLabel
+            // 
+            this.addAreaLabel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.addAreaLabel.Location = new System.Drawing.Point(100, 0);
+            this.addAreaLabel.Name = "addAreaLabel";
+            this.addAreaLabel.Size = new System.Drawing.Size(69, 43);
+            this.addAreaLabel.TabIndex = 4;
+            this.addAreaLabel.Text = "+添加区域";
+            this.addAreaLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.addAreaLabel.Click += new System.EventHandler(this.AddArea_ButtonClick);
             // 
             // panel1
             // 
@@ -264,13 +271,14 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel areaPanel;
-        private DevExpress.XtraEditors.SimpleButton addAreaButton;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.SimpleButton simpleButton3;
         private System.Windows.Forms.FlowLayoutPanel currentComsPanel;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel4;
-        private DevExpress.XtraEditors.SimpleButton deleteAreaButton;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.Label deleteAreaLabel;
+        private System.Windows.Forms.Label addAreaLabel;
+        private System.Windows.Forms.Label updateLabel;
     }
 }

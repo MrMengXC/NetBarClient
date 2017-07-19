@@ -24,7 +24,6 @@ namespace NetBarMS.Views.SystemSearch
         public AttendanceSearchView()
         {
             InitializeComponent();
-            this.titleLabel.Text = "上座率查询";
             InitUI();
         }
 

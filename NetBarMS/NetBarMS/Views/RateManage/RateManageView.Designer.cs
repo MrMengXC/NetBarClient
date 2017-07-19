@@ -80,7 +80,7 @@
             this.label36 = new System.Windows.Forms.Label();
             this.bDurPrieceText = new DevExpress.XtraEditors.TextEdit();
             this.bMinConsumeText = new DevExpress.XtraEditors.TextEdit();
-            this.areaTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.areaPanel = new System.Windows.Forms.Panel();
             this.titlePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -608,24 +608,19 @@
             this.bMinConsumeText.Size = new System.Drawing.Size(25, 25);
             this.bMinConsumeText.TabIndex = 67;
             // 
-            // areaTableLayoutPanel
+            // areaPanel
             // 
-            this.areaTableLayoutPanel.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.areaTableLayoutPanel.ColumnCount = 1;
-            this.areaTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.areaTableLayoutPanel.Location = new System.Drawing.Point(16, 108);
-            this.areaTableLayoutPanel.Name = "areaTableLayoutPanel";
-            this.areaTableLayoutPanel.RowCount = 1;
-            this.areaTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.areaTableLayoutPanel.Size = new System.Drawing.Size(275, 23);
-            this.areaTableLayoutPanel.TabIndex = 65;
+            this.areaPanel.Location = new System.Drawing.Point(16, 104);
+            this.areaPanel.Name = "areaPanel";
+            this.areaPanel.Size = new System.Drawing.Size(372, 30);
+            this.areaPanel.TabIndex = 65;
             // 
             // RateManageView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.areaPanel);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.areaTableLayoutPanel);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.memberTypePanel);
@@ -635,8 +630,8 @@
             this.Controls.SetChildIndex(this.titlePanel, 0);
             this.Controls.SetChildIndex(this.simpleButton1, 0);
             this.Controls.SetChildIndex(this.flowLayoutPanel1, 0);
-            this.Controls.SetChildIndex(this.areaTableLayoutPanel, 0);
             this.Controls.SetChildIndex(this.panel1, 0);
+            this.Controls.SetChildIndex(this.areaPanel, 0);
             this.titlePanel.ResumeLayout(false);
             this.titlePanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -710,6 +705,6 @@
         private DevExpress.XtraEditors.TextEdit nDurPrieceText;
         private DevExpress.XtraEditors.TextEdit bDurPrieceText;
         private DevExpress.XtraEditors.TextEdit bMinConsumeText;
-        private System.Windows.Forms.TableLayoutPanel areaTableLayoutPanel;
+        private System.Windows.Forms.Panel areaPanel;
     }
 }

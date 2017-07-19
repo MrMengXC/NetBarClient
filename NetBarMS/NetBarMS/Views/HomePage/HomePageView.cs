@@ -1,5 +1,4 @@
-﻿#region using
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -8,342 +7,219 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.XtraEditors.Controls;
 using NetBarMS.Codes.Tools;
-using NetBarMS.Views.ProductManage;
 using NetBarMS.Codes.Model;
-using NetBarMS.Views.RateManage;
-using NetBarMS.Views.InCome;
-using NetBarMS.Views.SystemSearch;
-using NetBarMS.Views.NetUserManage;
-using NetBarMS.Views.EvaluateManage;
-using NetBarMS.Views.OtherMain;
-using NetBarMS.Views.SystemManage;
-using NetBarMS.Views.ManagersManage;
-using NetBarMS.Codes.Tools.NetOperation;
-using DevExpress.XtraEditors;
-using DevExpress.XtraBars;
-using NetBarMS.Views.UserUseCp;
-#endregion
+using NetBarMS.Codes.Tools.Manage;
 
 namespace NetBarMS.Views.HomePage
 {
-    public partial class HomePageView : UserControl
+    public partial class HomePageView : RootUserControlView
     {
+        //区域列表
+        private List<AreaTypeModel> areas;
+        //首页列表视图
+        private HomePageListView homePageListView = null;
+        //首页电脑视图
+        private HomePageComputerView homePageComputerView = null;
+
         public HomePageView()
         {
             InitializeComponent();
             InitUI();
         }
+        #region 初始化UI
 
-        //初始化UI
         private void InitUI()
-        {
-            //添加按钮列
-            List<HomePageNodeModel> modelList = XMLDataManage.GetNodesXML();
-           
-            for (int i = modelList.Count-1; i>=0; i--)
+        {            
+            //设置电脑状态Combox
+            foreach (string name in Enum.GetNames(typeof(COMPUTERSTATUS)))
             {
-                HomePageNodeModel nodeModel = modelList[i];
-                SimpleButton button = new SimpleButton();
-                button.Text = nodeModel.nodeName;
-                button.Size = new Size(50, 50);
-                button.Dock = DockStyle.Top;
-                button.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-                button.Click += Button_Click ;
-                button.MouseDown += Button_MouseDown;
-                button.Tag = nodeModel.nodeid;
-                this.functionPanel.Controls.Add(button);
+                this.comboBoxEdit1.Properties.Items.Add(name);
+            }
+            //刷新区域
+            RefreshAreaCombox();
+            //添加视图UI
+            AddHomePageListView();
+            HomePageMessageManage.AddRefreshAreaComBox(RefreshAreaCombox);
+            //获取账户信息
+            ManagerManage.Manage().GetAccountInfo(GetAccountInfoResult);
+        }   
+        //刷新区域ComBox
+        private void RefreshAreaCombox()
+        {
+            this.comboBoxEdit2.Properties.Items.Clear();
+            //设置区域combox
+            this.comboBoxEdit2.Properties.Items.Add("无");
+            this.areas = SysManage.Areas;
+            foreach (AreaTypeModel model in areas)
+            {
+                int index = this.comboBoxEdit2.Properties.Items.Add(model.areaName);
             }
         }
-
-        //按钮单击事件
-        private void Button_Click(object sender, EventArgs e)
+          
+        // 获取账户信息的回调
+        public void GetAccountInfoResult(ResultModel result)
         {
-            int nodeId = (int)((SimpleButton)sender).Tag;
-            HomePageNodeModel nodeModel = XMLDataManage.GetHomePageNodeModel(nodeId);
-            ShowView(nodeModel);
-        }
-
-        //鼠标右键点击
-        private void Button_MouseDown(object sender, MouseEventArgs e)
-        {
-           
-            SimpleButton button = (SimpleButton)sender;
-            if (e.Button == MouseButtons.Right)
+            if(result.pack.Cmd != Cmd.CMD_ACCOUNT_INFO)
             {
-                int nodeId = (int)button.Tag;
-                HomePageNodeModel nodeModel = XMLDataManage.GetHomePageNodeModel(nodeId);
-
-                //设置右键弹出框
-                if (nodeModel.childNodes.Count > 0)
-                {
-                    this.popupMenu1.ClearLinks();
-                    foreach (HomePageNodeModel model in nodeModel.childNodes)
-                    {
-                        BarButtonItem item = new BarButtonItem();
-                        item.Caption = model.nodeName;
-                        item.Tag = model.nodeid;
-                        item.ItemClick += Item_ItemClick;
-                        this.popupMenu1.AddItem(item);
-                    }
-
-                    Point screenPoint = button.PointToScreen(new Point(button.Width, 0));
-                   popupMenu1.ShowPopup(screenPoint);
-                }
+                return;
             }
 
-        }
+            NetMessageManage.RemoveResultBlock(GetAccountInfoResult);
+            if(result.pack.Content.MessageType == 1)
+            {
+                //获取首页数据
+                HomePageMessageManage.Manage().GetHomePageList(GetHomePageListResult);
+            }
         
-
-        //右键弹出框点击时间
-        private void Item_ItemClick(object sender, ItemClickEventArgs e)
-        {
-
-            BarButtonItem item = (BarButtonItem)e.Item;
-            int nodeId = (int)item.Tag;
-            HomePageNodeModel nodeModel = XMLDataManage.GetHomePageNodeModel(nodeId);
-            ShowView(nodeModel);
-
         }
-       
-        //点击显示视图
-        private void ShowView(HomePageNodeModel nodeModel)
+        #endregion
+
+        #region 获取首页数据列表
+        public void GetHomePageListResult(bool success)
         {
-
-            RootUserControlView view = null;
-            TreeNodeTag tag = (TreeNodeTag)Enum.Parse(typeof(TreeNodeTag), nodeModel.nodeTag);
-
-            switch (tag)
+            HomePageMessageManage.Manage().RemoveResultHandel(GetHomePageListResult);
+            if (success)
             {
-                case TreeNodeTag.None:
+              
 
-                    break;
-
-                #region 首页
-                case TreeNodeTag.HomePage:
-                    {
-
-                    }
-                    break;
-                #endregion
-
-                #region 上网用户
-                case TreeNodeTag.MemberManage:     //会员管理
-                    view = new MemberManageView();
-                    break;
-                #endregion
-
-                #region 商品管理
-                case TreeNodeTag.ProductManage:     //商品管理
-                    view = new ProductManageView();
-                    break;
-                case TreeNodeTag.ProductSellRank:   //商品销售排行
-                    view = new ProductSellRankView();
-                    break;
-                #endregion
-
-                #region 费率管理管理
-                case TreeNodeTag.RataManage:     //费率管理
-                    view = new RateManageView();
-                    break;
-                case TreeNodeTag.OtherCostManage:     //其他费用管理
-                    view = new OtherCostView();
-                    break;
-                case TreeNodeTag.IntegralManage:   //积分管理
-                    view = new IntegralManageView();
-                    break;
-                case TreeNodeTag.AwardManage:   //奖励管理
-                    view = new AwardManageView();
-                    break;
-                #endregion
-
-                #region 营收管理
-                case TreeNodeTag.InComeManage:   //营收管理
-                    view = new DayInComeView();
-                    break;
-                case TreeNodeTag.DayInCome:   //日营收
-                    view = new DayInComeView();
-                    break;
-                case TreeNodeTag.MonthInCome:   //月营收
-                    view = new MonthInComeView();
-                    break;
-                case TreeNodeTag.YearInCome:   //年营收
-                    view = new YearInComeView();
-                    break;
-                #endregion
-
-                #region 系统查询
-
-                case TreeNodeTag.ChangeShiftsRecord:   //交接班记录查询
-                    view = new ChangeShiftsRecordView();
-                    break;
-                case TreeNodeTag.UserPayedRecord:   //用户充值记录查询
-                    view = new UserRechargeView();
-                    break;
-                case TreeNodeTag.UserNetRecord:   //用户上网记录查询
-                    //view = new UserNetRecordView();
-                    break;
-                case TreeNodeTag.UserConsumeRecord:   //用户消费记录查询
-                    view = new UserConsumeRecordView();
-                    break;
-                case TreeNodeTag.OpenMemberRecord:   //会员办理查询
-                    view = new OpenMemberRecordView();
-                    break;
-                case TreeNodeTag.ProductIndent:   //商品订单查询
-                    view = new ProductIndentView();
-                    break;
-                case TreeNodeTag.AttendanceSearch:   //上座率查询
-                    view = new AttendanceSearchView();
-                    break;
-                #endregion
-
-                #region 绩效考核
-                case TreeNodeTag.JXInspect:   //绩效考核
-                    view = new JXInspectView();
-                    break;
-                #endregion
-
-                #region 评价管理
-                case TreeNodeTag.NetBarEvaluate:        //管理人员添加
-                    view = new NetBarEvaluateView();
-                    break;
-                case TreeNodeTag.StaffEvaluate:     //管理人员
-                    view = new StaffEvaluateView();
-                    break;
-                #endregion
-
-                #region 系统管理
-                case TreeNodeTag.NetPassWord:   //上网密码设置
-                    view = new NetPassWordView();
-                    break;
-                case TreeNodeTag.StaffMoney:   //员工提成
-                    view = new StaffMoneyView();
-                    break;
-                case TreeNodeTag.MemberLevManage:   //会员等级
-                    view = new MemberLevManageView();
-                    break;
-                case TreeNodeTag.ProductType:   //商品类别
-                    view = new ProductTypeManageView();
-                    break;
-                case TreeNodeTag.AreaManage:   //区域设置
-                    view = new AreaManageView();
-                    break;
-                case TreeNodeTag.ClientManage:   //客户端设置
-                    view = new ClientManageView();
-                    break;
-                case TreeNodeTag.BackUpManage:   //备份设置
-                    view = new BackUpManageView();
-                    break;
-                case TreeNodeTag.SmsManage:   //短信设置
-                    view = new SmsManageView();
-                    break;
-                #endregion
-
-                #region 员工账号管理
-                case TreeNodeTag.StaffList:        //管理人员添加
-                    view = new StaffListView();
-                    break;
-                case TreeNodeTag.ManagerManage:     //管理人员
-                    view = new ManagerManageView();
-                    break;
-                #endregion
-
-                #region 日志管理
-                case TreeNodeTag.LogManage:     //日志管理
-                    view = new LogManageView();
-                    break;
-                #endregion
-
-
-                default:
-                    break;
             }
+        }
+        #endregion
 
-            foreach (UserControl control in this.contentBgPanel.Controls)
+        #region 添加首页列表视图
+        private void AddHomePageListView()
+        {
+            if (this.panel1.Controls.Contains(this.homePageListView))
             {
-                if (!control.GetType().Equals(typeof(HomePageListView)))
-                {
-                    this.contentBgPanel.Controls.Remove(control);
-                }
+                return;
+            }
+            //移除代理
+            if(this.panel1.Controls.Contains(this.homePageComputerView))
+            {
+                HomePageMessageManage.RemoveUpdateDataEvent(this.homePageComputerView.UpdateHomePageData,
+                    null, 
+                    this.homePageComputerView.UpdateHomePageArea, 
+                    this.homePageComputerView.FilterComputers);
+                this.panel1.Controls.Remove(this.homePageComputerView);
+            }
+            if (this.homePageListView == null)
+            {
+                this.homePageListView = new HomePageListView();
+            }
+            else
+            {
+                this.homePageListView.FilterComputers();
+            }
+            this.panel1.Controls.Add(this.homePageListView);
+            this.homePageListView.Location = new Point(0, 0);
+            this.homePageListView.Size = this.panel1.Size;
+            this.homePageListView.Dock = DockStyle.Fill;
+            this.homePageListView.BringToFront();
+            HomePageMessageManage.AddUpdateDataEvent(this.homePageListView.UpdateHomePageData, 
+                this.homePageListView.UpdateHomePageArea,
+                null,
+                this.homePageListView.FilterComputers);
+
+
+
+        }
+        #endregion
+
+        #region 添加首页电脑视图
+        private void AddHomePageComputerView()
+        {
+            if (this.panel1.Controls.Contains(this.homePageComputerView))
+            {
+                return;
+            }
+            //移除代理
+            if (this.panel1.Controls.Contains(this.homePageListView))
+            {
+                HomePageMessageManage.RemoveUpdateDataEvent(this.homePageListView.UpdateHomePageData,
+                    this.homePageListView.UpdateHomePageArea, 
+                    null, 
+                    this.homePageListView.FilterComputers);
+                this.panel1.Controls.Remove(this.homePageListView);
             }
 
-            if (view != null)
-            {                
-                view.Dock = DockStyle.Fill;
-                this.contentBgPanel.Controls.Add(view);
+            if (this.homePageComputerView == null)
+            {
+                this.homePageComputerView = new HomePageComputerView();
             }
-        }
-
-
-
-        #region 顶部菜单的按钮功能
-
-        //关闭闲机
-        private void CloseMache_ButtonClick(object sender, EventArgs e)
-        {
-            CloseMacheView view = new CloseMacheView();
-            ToolsManage.ShowForm(view, false);
-        }
-        //全部结帐
-        private void CheckOut_ButtonClick(object sender, EventArgs e)
-        {
-            CheckOutView view = new CheckOutView();
-            ToolsManage.ShowForm(view, false);
-        }
-        //交班
-        private void ChangeShifts_ButtonClick(object sender, EventArgs e)
-        {
-            ChangeShiftsView view = new ChangeShiftsView();
-            ToolsManage.ShowForm(view, false);
-        }
-
-        //商品订单
-        private void PayedIndent_ButtonClick(object sender, EventArgs e)
-        {
-            PayedProductIndentView view = new PayedProductIndentView();
-            ToolsManage.ShowForm(view, false);
-        }
-
-        //呼叫服务
-        private void CallServer_ButtonClick(object sender, EventArgs e)
-        {
-            CallServiceView view = new CallServiceView();
-            ToolsManage.ShowForm(view, false);
-        }
-        //客户端异常
-        private void ClientExpection_ButtonClick(object sender, EventArgs e)
-        {
-
+            else
+            {
+                this.homePageComputerView.FilterComputers();
+            }
+            this.panel1.Controls.Add(this.homePageComputerView);
+            this.homePageComputerView.Location = new Point(0, 0);
+            this.homePageComputerView.Size = this.panel1.Size;
+            this.homePageComputerView.Dock = DockStyle.Fill;
+            this.homePageComputerView.BringToFront();
+            HomePageMessageManage.AddUpdateDataEvent(this.homePageComputerView.UpdateHomePageData,
+                null , 
+                this.homePageComputerView.UpdateHomePageArea,
+                this.homePageComputerView.FilterComputers);
 
 
 
         }
-        //消息发送
-        private void ChatManage_ButtonClick(object sender, EventArgs e)
+        #endregion
+
+        #region 按照条件筛选获取设备
+        //按照设备查询
+        private void comboBoxEdit1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ChatManageView view = new ChatManageView();
-            ToolsManage.ShowForm(view, false);
+            FilterSearchComputers();
         }
-        //解锁
-        private void LockList_ButtonClick(object sender, EventArgs e)
+        //按照区域查询
+        private void comboBoxEdit2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LockListView view = new LockListView();
-            ToolsManage.ShowForm(view, false);
-        }
-        //开卡
-        private void OpenMember_ButtonClick(object sender, EventArgs e)
-        {
-            ReminderScanView view = new ReminderScanView();
-            ToolsManage.ShowForm(view, false);
+            FilterSearchComputers();
         }
 
-        //上网
-        private void UserAcitve_ButtonClick(object sender, EventArgs e)
+        //按照关键字搜索
+        private void SearchButton_ButtonClick(object sender, ButtonPressedEventArgs e)
         {
-            UserActiveView view = new UserActiveView();
-            ToolsManage.ShowForm(view, false);
+            FilterSearchComputers();
+        }
+
+        private void FilterSearchComputers()
+        {
+
+            string key = "";
+            if (!this.buttonEdit1.Text.Equals(this.buttonEdit1.Properties.NullText))
+            {
+                key = this.buttonEdit1.Text;
+            }
+
+            COMPUTERSTATUS status = COMPUTERSTATUS.无;
+            Enum.TryParse<COMPUTERSTATUS>(this.comboBoxEdit1.Text, out status);
+
+            int areaId = -1;
+            if (this.comboBoxEdit2.SelectedIndex > 0)
+            {
+                AreaTypeModel model = this.areas[this.comboBoxEdit2.SelectedIndex - 1];
+                areaId = model.areaId;
+            }
+            HomePageMessageManage.GetFilterComputers(status, areaId, key);
+        }
+
+        #endregion
+
+        #region 修改显示视图
+        private void ChangeView_ButtonClick(object sender, EventArgs e)
+        {
+            if(sender.Equals(this.ComViewButton))
+            {
+                AddHomePageComputerView();
+
+            } else if(sender.Equals(this.ListViewButton))
+            {
+                AddHomePageListView();
+            }
         }
         #endregion
     }
-
 }

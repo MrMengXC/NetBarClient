@@ -7,79 +7,267 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using XPTable.Models;
+using NetBarMS.Codes.Tools.Manage;
+using NetBarMS.Codes.Tools;
 
 namespace NetBarMS.Views.HomePage
 {
     public partial class HomePageComputerView : UserControl
     {
-
-        private const int width = 580;
-        private const int height = 301;
-
-
+        /// <summary>
+        /// 空闲机子颜色
+        /// </summary>
+        private Color IDLE_COLOR = Color.Gray;
+        /// <summary>
+        /// 在线机子颜色
+        /// </summary>
+        private Color ONLINE_COLOR = Color.Orange;
+      
+        //显示的数据字典
+        private Dictionary<string, List<StructRealTime>> areaComsDict;
+        private List<StructRealTime> filterComs;
 
 
         public HomePageComputerView()
         {
             InitializeComponent();
-            AddData();
+            InitUI();
+        }
+
+        #region 初始化UI
+        private void InitUI()
+        {
+            this.panel1.Controls.Clear();
+            //获取数据字典
+            areaComsDict = HomePageMessageManage.GetAreaComsDict();
+            //获取过滤数据数组
+            if (HomePageMessageManage.IsFilter)
+            {
+                this.filterComs = HomePageMessageManage.FilterComputers;
+            }
+            else
+            {
+                this.filterComs = new List<StructRealTime>();
+            }
+
+            int i = 0;
+            foreach (string area in areaComsDict.Keys)
+            {
+                AddAreaComsPanel(area, i);
+                i++;
+            }
 
         }
-       
-        private void AddData()
+
+        
+        //添加区域电脑Panel
+        private void AddAreaComsPanel(string areaName, int index)
         {
-            this.bgPanel.AutoScroll = true;
-            //this.Location
+            int width = this.panel1.Width / 2;
+            int height = this.panel1.Height / 2;
+            TableLayoutPanel areaPanel = new TableLayoutPanel();
+            areaPanel.Location = new Point(20 * (index % 2 + 1) + index % 2 * width, 20 * (index / 2 + 1) + index / 2 * height);
+            areaPanel.Size = new Size(width, height);
+            areaPanel.Margin = new Padding(70);
+            areaPanel.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
+            this.panel1.Controls.Add(areaPanel);
+            areaPanel.Name = areaName;
 
-            for(int i = 0;i<10;i++)
+            areaPanel.RowCount = 2;
+            areaPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(SizeType.Percent, 90));
+            areaPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(SizeType.Percent, 10));
+
+            //创建coms 的panel
+            FlowLayoutPanel coms = new FlowLayoutPanel();
+            areaPanel.Controls.Add(coms);
+            coms.Dock = DockStyle.Fill;
+            coms.Padding = coms.Margin = new Padding(0);
+            areaPanel.SetRow(coms, 0);
+            //添加电脑图标
+            AddComs(areaComsDict[areaName],coms);
+           
+
+            //创建显示的Label
+            Label areaNameLabel = new Label();
+            areaNameLabel.BackColor = Color.Blue;
+            areaNameLabel.Text = SysManage.GetAreaName(areaName);
+            areaPanel.Controls.Add(areaNameLabel);
+            areaNameLabel.Dock = DockStyle.Fill;
+            areaNameLabel.AutoSize = false;
+            areaNameLabel.TextAlign = ContentAlignment.MiddleCenter;
+            areaNameLabel.ForeColor = Color.White;
+            areaNameLabel.Margin = new Padding(0);
+            areaPanel.SetRow(areaNameLabel, 1);
+
+        }
+        //添加电脑
+        private void AddComs(List<StructRealTime> coms,FlowLayoutPanel parent)
+        {
+            int width = parent.Width / 7;
+            int height = parent.Height / 3;
+            foreach (StructRealTime com in coms)
             {
-                int x = 10 * (i % 2 + 1) + i%2 * width;
-                int y = 10 * (i / 2 + 1) + i/2 * height;
-
-                this.AddArea(new Point(x, y));
+                //创建显示的Label
+                Label comLabel = new Label();
+                comLabel.Text = com.Computer; ;
+                parent.Controls.Add(comLabel);
+                comLabel.AutoSize = false;
+                comLabel.Size = new Size(width, height);
+                comLabel.TextAlign = ContentAlignment.MiddleCenter;
+                comLabel.ForeColor = Color.White;
+                comLabel.Padding = new Padding(0);
+                comLabel.Margin = new Padding(10);
+                comLabel.Name = string.Format("name_{0}", com.Computerid);
+                comLabel.Paint += ComLabel_Paint;
+                COMPUTERSTATUS status = COMPUTERSTATUS.无;
+                Enum.TryParse<COMPUTERSTATUS>(com.Status, out status);
+                switch(status)
+                {
+                    case COMPUTERSTATUS.空闲:
+                        comLabel.BackColor = IDLE_COLOR;
+                        break;
+                    case COMPUTERSTATUS.在线:
+                        comLabel.BackColor = ONLINE_COLOR;
+                        break;
+                    default:
+                        break;
+                }
+     
 
             }
 
+        }
+        //电脑Label重绘
+        private void ComLabel_Paint(object sender, PaintEventArgs e)
+        {
+            char[] sp = { '_' };
+            //电脑id
+            string cid = ((Label)sender).Name.Split(sp)[1];
+            DrawComLabelBorder(int.Parse(cid), e.Graphics, e.ClipRectangle);
+        }
+        #endregion
+
+        #region 刷新电脑数据
+        // 刷新电脑状态（开机。下机。认证）
+        public void UpdateHomePageData(StructRealTime com)
+        {
+            this.Invoke(new RefreshUIHandle(delegate {
+                
+                //获取所对应的电脑
+                List<StructRealTime> coms = new List<StructRealTime>();
+                if (areaComsDict.Keys.Contains(com.Area))
+                {
+                    coms = areaComsDict[com.Area];                    
+                }
+                else
+                {
+                    coms = areaComsDict["-1"];
+                }
+                //获取电脑所在数组的索引
+                int comIndex = -1;
+                try
+                {
+                    comIndex = coms.Select((StructRealTime tem, int
+                  index) => new { tem, index }).Where(a => a.tem.Computerid == com.Computerid).First().index;
+                }
+                catch (Exception exc)
+                {
+                    comIndex = -1;
+                }
+
+                //通过索引获取电脑
+                if(comIndex < 0)
+                {
+                    return;
+                }
+                Control[] res = this.panel1.Controls.Find(string.Format("name_{0}", com.Computerid), true);
+                if(res.Count()>0)
+                {
+                    coms[comIndex] = com;
+                    Label updateComLabel = res.First() as Label;
+                    COMPUTERSTATUS status = COMPUTERSTATUS.无;
+                    Enum.TryParse<COMPUTERSTATUS>(com.Status, out status);
+                    switch (status)
+                    {
+                        case COMPUTERSTATUS.空闲:
+                            updateComLabel.BackColor = IDLE_COLOR;
+                            break;
+                        case COMPUTERSTATUS.在线:
+                            updateComLabel.BackColor = ONLINE_COLOR;
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                //修改过滤数组的值
+                int comindex = HomePageMessageManage.GetComputerIndex(com.Computerid, this.filterComs);
+                if (comindex < 0)
+                {
+                    return;
+                }
+                this.filterComs[comindex] = com;
+
+            }));
 
         }
-        private void AddArea(Point location)
+
+
+        #endregion
+
+        #region（修改区域后）重新获取电脑数据进行排列
+        public void UpdateHomePageArea()
         {
 
-            Panel area = new Panel();
-            area.Location = location;
-            area.Size = new Size(width, height);
-            this.bgPanel.Controls.Add(area);
-
-            //添加电脑小图标
-            Panel cpbg = new Panel();
-            cpbg.BorderStyle = BorderStyle.FixedSingle;
-            cpbg.Location = new Point(0,21);
-            cpbg.Size = new Size(width, height - 21);
-            cpbg.AutoScroll = true;
-            area.Controls.Add(cpbg);
-
-            for(int i = 0;i<50;i++)
-            {
-                Button cp = new Button();
-                int cp_w = 60;
-                int cp_h = 53;
-                int x = 6 + 10 * (i % 8) + (i % 8) * cp_w;
-                int y = 25 + (10 * i) / 8 + (i / 8) * cp_h;
-
-                cp.Location = new Point(x,y);
-                cp.Size = new Size(cp_w, cp_h);
-                cp.BackColor = Color.Green;
-                cpbg.Controls.Add(cp);
-
-
-
-            }
-
-
+            this.Invoke(new RefreshUIHandle(delegate {
+                InitUI();
+            }));
 
         }
+        #endregion
 
+        #region 获取过滤数据
+        public void FilterComputers()
+        {
+            this.Invoke(new RefreshUIHandle(delegate {
 
+                //获取过滤数据数组
+                if (HomePageMessageManage.IsFilter)
+                {
+                    this.filterComs = HomePageMessageManage.FilterComputers;
+                }
+                else
+                {
+                    this.filterComs = new List<StructRealTime>();
+                }
+                this.panel1.Refresh();
+                
+            }));
+
+        }
+        #endregion
+
+        #region 重绘LableBorder
+        private void DrawComLabelBorder(int comId,Graphics gra,Rectangle rec)
+        {
+            if (this.filterComs.Where(com => com.Computerid == comId).Count() > 0)
+            {
+                ControlPaint.DrawBorder(gra, rec,
+                    Color.Transparent, 0, ButtonBorderStyle.None,
+                     Color.Transparent, 0, ButtonBorderStyle.None,
+                      Color.Transparent, 0, ButtonBorderStyle.None,
+                       Color.Blue, 2, ButtonBorderStyle.Solid);
+            }
+            else
+            {
+               
+                ControlPaint.DrawBorder(gra,rec,
+                    Color.Transparent, 0, ButtonBorderStyle.None,
+                     Color.Transparent, 0, ButtonBorderStyle.None,
+                      Color.Transparent, 0, ButtonBorderStyle.None,
+                       Color.Transparent, 0, ButtonBorderStyle.None);
+            }
+        }
+        #endregion
     }
+
 }

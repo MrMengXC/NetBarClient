@@ -38,7 +38,6 @@ namespace NetBarMS.Views.SystemSearch
         public UserConsumeRecordView()
         {
             InitializeComponent();
-            this.titleLabel.Text = "会员消费记录查询";
             InitUI();
 
         }

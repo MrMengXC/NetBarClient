@@ -41,12 +41,11 @@ namespace NetBarMS.Views.NetUserManage
         public MemberNetRecordView(Int32 tem)
         {
             InitializeComponent();
-            this.titleLabel.Text = "上网记录查询";
             mid = tem;
             InitUI();
 
         }
-        //初始化UI
+        #region 初始化UI
         private void InitUI()
         {
             this.dateNavigator.UpdateDateTimeWhenNavigating = false;
@@ -57,7 +56,8 @@ namespace NetBarMS.Views.NetUserManage
             this.gridControl1.DataSource = this.mainDataTable;
             GetMemberNetRecord(false);
         }
-      
+        #endregion
+
         #region 会员上网记录查询
         //会员上网记录查询
         private void GetMemberNetRecord(bool isFilter)

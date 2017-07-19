@@ -42,7 +42,6 @@ namespace NetBarMS.Views.SystemSearch
         public UserNetRecordView()
         {
             InitializeComponent();
-            this.titleLabel.Text = "上网记录查询";
             InitUI();
 
         }

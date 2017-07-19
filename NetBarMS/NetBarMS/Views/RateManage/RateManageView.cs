@@ -26,6 +26,20 @@ namespace NetBarMS.Views.RateManage
         //更新
         private CSSysBillUpdate.Builder updateRateMange = new CSSysBillUpdate.Builder();          //更新
 
+        //选中的会员类型文字color
+        private Color S_TYPE_F_COLOR = Color.Black;
+        //正常状态会员类型文字color
+        private Color N_TYPE_F_COLOR = Color.Gray;
+
+        //选中的区域文字color
+        private Color S_AREA_F_COLOR = Color.White;
+        //正常状态区域文字color
+        private Color N_AREA_F_COLOR = Color.Blue;
+        //选中的区域背景颜色
+        private Color S_AREA_B_COLOR = Color.Blue;
+        //正常状态区域文字color
+        private Color N_AREA_B_COLOR = Color.Transparent;
+
 
         public RateManageView()
         {
@@ -67,7 +81,11 @@ namespace NetBarMS.Views.RateManage
                 string name = "type_" + types[i].typeId;
                 string text = types[i].typeName;
 
-                CreateLabel(this.memberTypePanel,name,text, DockStyle.Left);
+                 Label type =  CreateLabel(this.memberTypePanel,name,text, DockStyle.Left);
+                type.ForeColor = N_TYPE_F_COLOR;
+                type.Paint += Type_Paint;
+
+
             }
             this.memberTypePanel.AutoScroll = true;
 
@@ -75,29 +93,61 @@ namespace NetBarMS.Views.RateManage
            
             //添加区域
             List<AreaTypeModel> areas = SysManage.Areas;
-            this.areaTableLayoutPanel.ColumnCount = areas.Count;
-            for (int i = 0; i < areas.Count; i++)
-            {
-            }
+            this.areaPanel.AutoScroll = true;
 
             for (int i = 0; i < areas.Count; i++)
             {
                 string name = "area_" + areas[i].areaId;
                 string text = areas[i].areaName;
-            
-                //CreateLabel(this.areaPanel, name, text, DockStyle.Fill);
-
-                this.areaTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, LABEL_WIDTH));
-                Label areaL = CreateLabel(this.areaTableLayoutPanel, name, text, DockStyle.Fill);
-                this.areaTableLayoutPanel.SetRow(areaL, 0);
-                this.areaTableLayoutPanel.SetColumn(areaL, i);
-
+                Label areaL = CreateLabel(this.areaPanel, name, text, DockStyle.Left);
+                areaL.Tag = i;
+                areaL.Paint += AreaLabel_Paint;
+                areaL.ForeColor = N_AREA_F_COLOR;
+                areaL.BackColor = N_AREA_B_COLOR;
             }
-            this.areaTableLayoutPanel.AutoSize = true;
             //获取费率列表数据
             RateManageList();
 
         }
+        
+        //TableLayoutPanel 重绘触发的方法
+        private void AreaLabel_Paint(object sender, PaintEventArgs e)
+        {
+            System.Console.WriteLine("X:{0} Y:{1}",e.ClipRectangle.X,e.ClipRectangle.Y);
+            int tag = (int)((Label)sender).Tag;
+            if(tag == 0)
+            {
+                ControlPaint.DrawBorder(e.Graphics, e.ClipRectangle,
+                    Color.Blue, 1, ButtonBorderStyle.Solid,
+                    Color.Blue, 1, ButtonBorderStyle.Solid,
+                    Color.Blue, 1, ButtonBorderStyle.Solid,
+                    Color.Blue, 1, ButtonBorderStyle.Solid);
+            }
+            else
+            {
+                ControlPaint.DrawBorder(e.Graphics, e.ClipRectangle,
+                   Color.Blue, 1, ButtonBorderStyle.Solid,
+                   Color.Blue, 1, ButtonBorderStyle.Solid,
+                   Color.Blue, 1, ButtonBorderStyle.Solid,
+                   Color.Transparent, 0, ButtonBorderStyle.None);
+            }
+
+        }
+
+        //会员类型重绘控件触发的方法
+        private void Type_Paint(object sender, PaintEventArgs e)
+        {
+
+            if(sender.GetType() == typeof(Label)&&this.selectTypeLabel != null && this.selectTypeLabel.Equals(sender))
+            {
+                ControlPaint.DrawBorder(e.Graphics, e.ClipRectangle,
+                    Color.Transparent, 0, ButtonBorderStyle.None,
+                    Color.Transparent, 0, ButtonBorderStyle.None,
+                    Color.Transparent, 0, ButtonBorderStyle.None,
+                    Color.Blue, 2, ButtonBorderStyle.Solid);
+            }
+        }
+
 
 
         //创建Label
@@ -105,11 +155,10 @@ namespace NetBarMS.Views.RateManage
         {
             Label newLabel = new Label();
             newLabel.AutoSize = false;
-            newLabel.Size = new Size(LABEL_WIDTH, this.areaTableLayoutPanel.Height);
-            newLabel.BackColor = Color.White;
+            newLabel.Size = new Size(LABEL_WIDTH, parent.Height);
+            newLabel.BackColor = Color.Transparent;
             newLabel.Text = text;
             newLabel.TextAlign = ContentAlignment.MiddleCenter;
-            newLabel.ForeColor = Color.Black;
             newLabel.Name = name;
             newLabel.Click += NewLabel_Click;
             newLabel.Margin = new Padding(0);
@@ -153,32 +202,33 @@ namespace NetBarMS.Views.RateManage
         {
 
             //保存当前
-            this.SaveCurrentAreaSetting();
+            SaveCurrentAreaSetting();
 
             //设置选择的Label
-            Label select = (Label)sender;
-            select.BackColor = Color.Blue;
-            select.ForeColor = Color.White;
-
+            Label select = (Label)sender;       
             string[] splits = select.Name.Split('_');
+           
+            //这是会员类型点击
             if(splits[0].Equals("type"))
             {
                 if(this.selectTypeLabel != null && !this.selectTypeLabel.Equals(select))
                 {
-                    this.selectTypeLabel.BackColor = Color.White;
-                    this.selectTypeLabel.ForeColor = Color.Black;
+                    this.selectTypeLabel.ForeColor = N_TYPE_F_COLOR;
                 }
                 this.selectTypeLabel = select;
-
+                select.ForeColor = S_TYPE_F_COLOR;
             }
             else if(splits[0].Equals("area") )
             {
                 if( this.selectAreaLabel != null&& !this.selectAreaLabel.Equals(select))
                 {
-                    this.selectAreaLabel.BackColor = Color.White;
-                    this.selectAreaLabel.ForeColor = Color.Black;
+                    this.selectAreaLabel.ForeColor = N_AREA_F_COLOR;
+                    this.selectAreaLabel.BackColor = N_AREA_B_COLOR;
                 }
                 this.selectAreaLabel = select;
+                this.selectAreaLabel.ForeColor = S_AREA_F_COLOR;
+                this.selectAreaLabel.BackColor = S_AREA_B_COLOR;
+
             }
 
             //显示最新的

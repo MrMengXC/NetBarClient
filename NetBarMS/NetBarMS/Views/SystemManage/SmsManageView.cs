@@ -29,7 +29,7 @@ namespace NetBarMS.Views.SystemManage
         private List<StructAccount> oriStaffs;             //原版员工
         private List<StructAccount> showStaffs;            //显示版员工
 
-        private SimpleButton selectPush = null;                //当前选择的区域
+        private Label selectPush = null;                //当前选择的区域
 
         public SmsManageView()
         {
@@ -160,18 +160,22 @@ namespace NetBarMS.Views.SystemManage
                 for (int i = 0; i < this.showPushItems.Count; i++)
                 {
                     StructDictItem item = this.showPushItems[i];
-                    SimpleButton button = new SimpleButton();
-                    button.AutoSize = false;
-                    button.Dock = DockStyle.Left;
-                    button.Appearance.BackColor = Color.White;
-                    button.Text = item.GetItem(0);
-                    button.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-                    this.panel1.Controls.Add(button);
-                    button.Click += Text_Click;
-                    button.Tag = i.ToString();
-                    button.Margin = new Padding(0);
-                    SizeF sizeF = graphics.MeasureString(button.Text, button.Font);
-                    button.Size = new Size((int)sizeF.Width + PUSHBUTTON_W, this.panel1.Size.Height);
+
+                    Label pushLabel = new Label();
+                    pushLabel.AutoSize = false;
+                    pushLabel.Dock = DockStyle.Left;
+                    pushLabel.BackColor = Color.Transparent;
+                    pushLabel.ForeColor = Color.Gray;
+                    pushLabel.Text = item.GetItem(0);
+                    pushLabel.Click += PushButton_ButtonClick;
+                    pushLabel.Tag = i.ToString();
+                    pushLabel.Margin = new Padding(0);
+                    pushLabel.Paint += Button_Paint;
+                    pushLabel.TextAlign = ContentAlignment.MiddleCenter;
+                    SizeF sizeF = graphics.MeasureString(pushLabel.Text, pushLabel.Font);
+                    pushLabel.Size = new Size((int)sizeF.Width + PUSHBUTTON_W, this.panel1.Size.Height);
+                    this.panel1.Controls.Add(pushLabel);
+
                     //判断之前是否改过内容
                     if (temPushItems != null)
                     {
@@ -190,26 +194,46 @@ namespace NetBarMS.Views.SystemManage
             }
             
         }
+        //重绘推送事件的Label
+        private void Button_Paint(object sender, PaintEventArgs e)
+        {
+            Label button = (Label)sender;
+            if (this.selectPush != null && this.selectPush.Equals(button))
+            {
+                //e.Graphics.DrawRectangle(Pens.Red,)
+                ControlPaint.DrawBorder(e.Graphics, e.ClipRectangle,
+                    Color.Transparent,0,ButtonBorderStyle.None,
+                    Color.Transparent, 0, ButtonBorderStyle.None,
+                    Color.Transparent, 0, ButtonBorderStyle.None,
+                    Color.Blue, 2, ButtonBorderStyle.Solid);
+
+
+            }
+
+        }
 
         //标签点击
-        private void Text_Click(object sender, EventArgs e)
+        private void PushButton_ButtonClick(object sender, EventArgs e)
         {
+            Label push = (Label)sender;
+            push.Focus();
 
-           //保存当前勾选的状态
+            //保存当前勾选的状态
             this.SaveCurrentSetting();
-           
-            //设置选中按钮状态
-            SimpleButton button = (SimpleButton)sender;
-            if (this.selectPush != null && this.selectPush.Equals(button))
+            //设置选中按钮/前一个选中按钮的状态
+            if (this.selectPush != null && this.selectPush.Equals(push))
             {
                 return;
             }
-            if (selectPush != null)
+
+            Label tem = this.selectPush;
+            this.selectPush = push;
+
+            if (tem != null)
             {
-                this.selectPush.Appearance.BackColor = Color.White;
+                tem.ForeColor = Color.Gray;
             }
-            button.Appearance.BackColor = Color.Blue;
-            this.selectPush = button;
+            this.selectPush.ForeColor = Color.Black;
 
             //获取输入短信内容
             int index = int.Parse((string)this.selectPush.Tag);

@@ -56,16 +56,24 @@ namespace NetBarMS.Views.SystemSearch
             // 
             // titlePanel
             // 
+            this.titlePanel.Controls.Add(this.flowLayoutPanel1);
             this.titlePanel.Size = new System.Drawing.Size(880, 50);
+            this.titlePanel.Controls.SetChildIndex(this.flowLayoutPanel1, 0);
+            this.titlePanel.Controls.SetChildIndex(this.titleLabel, 0);
+            // 
+            // titleLabel
+            // 
+            this.titleLabel.Size = new System.Drawing.Size(93, 17);
+            this.titleLabel.Text = "上座率查询";
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.comboBoxEdit1);
             this.flowLayoutPanel1.Controls.Add(this.popupContainerEdit1);
             this.flowLayoutPanel1.Controls.Add(this.simpleButton1);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 56);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(109, 10);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(426, 40);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(426, 27);
             this.flowLayoutPanel1.TabIndex = 62;
             // 
             // comboBoxEdit1
@@ -136,14 +144,14 @@ namespace NetBarMS.Views.SystemSearch
             xyDiagram1.Rotated = true;
             this.chartControl1.Diagram = xyDiagram1;
             this.chartControl1.Legend.Visibility = DevExpress.Utils.DefaultBoolean.False;
-            this.chartControl1.Location = new System.Drawing.Point(10, 107);
+            this.chartControl1.Location = new System.Drawing.Point(10, 56);
             this.chartControl1.Name = "chartControl1";
             series1.Name = "Series 1";
             stackedBarSeriesView1.BarWidth = 0.1D;
             series1.View = stackedBarSeriesView1;
             this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
         series1};
-            this.chartControl1.Size = new System.Drawing.Size(860, 455);
+            this.chartControl1.Size = new System.Drawing.Size(860, 491);
             this.chartControl1.TabIndex = 63;
             chartTitle1.Text = "上座率";
             this.chartControl1.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
@@ -155,11 +163,9 @@ namespace NetBarMS.Views.SystemSearch
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.popupContainerControl1);
             this.Controls.Add(this.chartControl1);
-            this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "AttendanceSearchView";
             this.Size = new System.Drawing.Size(880, 562);
             this.Controls.SetChildIndex(this.titlePanel, 0);
-            this.Controls.SetChildIndex(this.flowLayoutPanel1, 0);
             this.Controls.SetChildIndex(this.chartControl1, 0);
             this.Controls.SetChildIndex(this.popupContainerControl1, 0);
             this.titlePanel.ResumeLayout(false);

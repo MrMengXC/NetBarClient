@@ -111,15 +111,18 @@
             // 
             // addPushButton
             // 
-            this.addPushButton.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.addPushButton.Appearance.ForeColor = System.Drawing.Color.White;
+            this.addPushButton.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.False;
+            this.addPushButton.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.addPushButton.Appearance.ForeColor = System.Drawing.Color.Gray;
             this.addPushButton.Appearance.Options.UseBackColor = true;
             this.addPushButton.Appearance.Options.UseForeColor = true;
-            this.addPushButton.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.addPushButton.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.addPushButton.Dock = System.Windows.Forms.DockStyle.Left;
             this.addPushButton.Location = new System.Drawing.Point(185, 0);
+            this.addPushButton.Margin = new System.Windows.Forms.Padding(0);
             this.addPushButton.Name = "addPushButton";
-            this.addPushButton.Size = new System.Drawing.Size(94, 42);
+            this.addPushButton.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
+            this.addPushButton.Size = new System.Drawing.Size(95, 42);
             this.addPushButton.TabIndex = 1;
             this.addPushButton.Text = "+添加推送事项";
             this.addPushButton.Click += new System.EventHandler(this.addPushButton_Click);

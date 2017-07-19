@@ -54,7 +54,15 @@
             // 
             // titlePanel
             // 
+            this.titlePanel.Controls.Add(this.flowLayoutPanel2);
             this.titlePanel.Size = new System.Drawing.Size(880, 50);
+            this.titlePanel.Controls.SetChildIndex(this.titleLabel, 0);
+            this.titlePanel.Controls.SetChildIndex(this.flowLayoutPanel2, 0);
+            // 
+            // titleLabel
+            // 
+            this.titleLabel.Size = new System.Drawing.Size(110, 17);
+            this.titleLabel.Text = "上架商品管理";
             // 
             // closeButton
             // 
@@ -135,7 +143,6 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.flowLayoutPanel2);
             this.panel1.Controls.Add(this.flowLayoutPanel1);
             this.panel1.Location = new System.Drawing.Point(0, 50);
             this.panel1.Name = "panel1";
@@ -146,7 +153,7 @@
             // 
             this.flowLayoutPanel2.Controls.Add(this.comboBoxEdit1);
             this.flowLayoutPanel2.Controls.Add(this.buttonEdit1);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 7);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(126, 15);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(277, 32);
             this.flowLayoutPanel2.TabIndex = 76;

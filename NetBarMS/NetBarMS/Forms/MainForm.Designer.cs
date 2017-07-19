@@ -50,10 +50,16 @@
             this.homePageListPanel = new System.Windows.Forms.Panel();
             this.manageTreeView = new System.Windows.Forms.TreeView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.onlineLabel = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.idleLabel = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelControl5
@@ -197,7 +203,7 @@
             this.simpleButton6.Name = "simpleButton6";
             this.simpleButton6.Size = new System.Drawing.Size(59, 60);
             this.simpleButton6.TabIndex = 3;
-            this.simpleButton6.Text = "商品订单";
+            this.simpleButton6.Text = "商品订单\r\n0";
             this.simpleButton6.Click += new System.EventHandler(this.simpleButton6_Click);
             // 
             // simpleButton7
@@ -208,7 +214,7 @@
             this.simpleButton7.Name = "simpleButton7";
             this.simpleButton7.Size = new System.Drawing.Size(59, 60);
             this.simpleButton7.TabIndex = 4;
-            this.simpleButton7.Text = "呼叫服务";
+            this.simpleButton7.Text = "呼叫服务\r\n0";
             this.simpleButton7.Click += new System.EventHandler(this.simpleButton7_Click);
             // 
             // simpleButton8
@@ -219,7 +225,7 @@
             this.simpleButton8.Name = "simpleButton8";
             this.simpleButton8.Size = new System.Drawing.Size(59, 60);
             this.simpleButton8.TabIndex = 5;
-            this.simpleButton8.Text = "客户端异常";
+            this.simpleButton8.Text = "客户端异常\r\n0";
             this.simpleButton8.Click += new System.EventHandler(this.simpleButton8_Click);
             // 
             // simpleButton9
@@ -279,11 +285,13 @@
             // 
             // homePageListPanel
             // 
+            this.homePageListPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.homePageListPanel.BackColor = System.Drawing.Color.Transparent;
-            this.homePageListPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.homePageListPanel.Location = new System.Drawing.Point(195, 70);
             this.homePageListPanel.Name = "homePageListPanel";
-            this.homePageListPanel.Size = new System.Drawing.Size(1523, 820);
+            this.homePageListPanel.Size = new System.Drawing.Size(1523, 757);
             this.homePageListPanel.TabIndex = 40;
             // 
             // manageTreeView
@@ -306,11 +314,69 @@
             this.panel1.Size = new System.Drawing.Size(195, 890);
             this.panel1.TabIndex = 8;
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.flowLayoutPanel1.Controls.Add(this.onlineLabel);
+            this.flowLayoutPanel1.Controls.Add(this.label9);
+            this.flowLayoutPanel1.Controls.Add(this.label8);
+            this.flowLayoutPanel1.Controls.Add(this.idleLabel);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(195, 830);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1523, 60);
+            this.flowLayoutPanel1.TabIndex = 50;
+            // 
+            // onlineLabel
+            // 
+            this.onlineLabel.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.onlineLabel.ForeColor = System.Drawing.Color.White;
+            this.onlineLabel.Location = new System.Drawing.Point(3, 0);
+            this.onlineLabel.Name = "onlineLabel";
+            this.onlineLabel.Size = new System.Drawing.Size(136, 50);
+            this.onlineLabel.TabIndex = 47;
+            this.onlineLabel.Text = "当前在线客户端：100";
+            this.onlineLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label9
+            // 
+            this.label9.BackColor = System.Drawing.Color.Blue;
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(145, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(136, 50);
+            this.label9.TabIndex = 50;
+            this.label9.Text = "当前挂机客户端：100";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label8
+            // 
+            this.label8.BackColor = System.Drawing.Color.Red;
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(287, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(136, 50);
+            this.label8.TabIndex = 49;
+            this.label8.Text = "当前异常客户端：100";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // idleLabel
+            // 
+            this.idleLabel.BackColor = System.Drawing.Color.Yellow;
+            this.idleLabel.ForeColor = System.Drawing.Color.Black;
+            this.idleLabel.Location = new System.Drawing.Point(429, 0);
+            this.idleLabel.Name = "idleLabel";
+            this.idleLabel.Size = new System.Drawing.Size(136, 50);
+            this.idleLabel.TabIndex = 48;
+            this.idleLabel.Text = "当前空闲客户端：100";
+            this.idleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1718, 890);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.homePageListPanel);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
@@ -321,6 +387,7 @@
             this.flowLayoutPanel3.ResumeLayout(false);
             this.flowLayoutPanel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -348,6 +415,11 @@
         private System.Windows.Forms.Label amountLabel;
         private System.Windows.Forms.Label attenDanceLabel;
         private System.Windows.Forms.Label netUserLabel;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Label onlineLabel;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label idleLabel;
     }
 }
 
