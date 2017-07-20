@@ -115,6 +115,7 @@
     <Compile Include="Codes\Tools\Manage\DelegateManage.cs" />
     <Compile Include="Codes\Tools\EnumManage.cs" />
     <Compile Include="Codes\Tools\Manage\HomePageMessageManage.cs" />
+    <Compile Include="Codes\Tools\Manage\IdCardReaderManage.cs" />
     <Compile Include="Codes\Tools\Manage\ManagerManage.cs" />
     <Compile Include="Codes\Tools\NetOperation\CommonNetOperation.cs" />
     <Compile Include="Codes\Tools\NetOperation\EvaluateNetOperation.cs" />

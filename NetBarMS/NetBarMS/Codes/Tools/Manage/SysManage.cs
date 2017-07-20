@@ -442,7 +442,7 @@ namespace NetBarMS.Codes.Tools
                 return;
             }
             NetMessageManage.RemoveResultBlock(GetStaffListResult);
-           System.Console.WriteLine("GetStaffListResult:" + result.pack);
+           //System.Console.WriteLine("GetStaffListResult:" + result.pack);
 
             if (result.pack.Content.MessageType == 1)
             {

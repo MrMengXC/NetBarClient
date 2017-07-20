@@ -85,7 +85,7 @@ namespace NetBarMS.Views.UserUseCp
             {
                 tem = this.textEdit1.Text;
             }
-            UserScanCodeView view = new UserScanCodeView(tem, 50, PRECHARGE_TYPE.NOT_MEMBER);
+            UserScanCodeView view = new UserScanCodeView(tem, 200, PRECHARGE_TYPE.NOT_MEMBER);
             ToolsManage.ShowForm(view, false);
         }
         #endregion

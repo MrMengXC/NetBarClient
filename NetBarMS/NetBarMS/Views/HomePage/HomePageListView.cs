@@ -55,20 +55,23 @@ namespace NetBarMS.Views.HomePage
         }
         #endregion
 
+        #region property
         //数据源DataTable
         private DataTable mainDataTable;
         //电脑列表
         private List<StructRealTime> coms;
         //GridControl 的正常Edit列 和 已 验证列
         private RepositoryItemButtonEdit normalEdit, verietyEdit;
+        #endregion
 
+        #region 初始化
         public HomePageListView()
         {
             InitializeComponent();
             InitUI();
         }
+        #endregion
 
-      
         #region 初始化UI
         private void InitUI()
         {

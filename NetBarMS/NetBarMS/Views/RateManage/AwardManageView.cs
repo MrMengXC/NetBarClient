@@ -98,7 +98,7 @@ namespace NetBarMS.Views.RateManage
                 return;
             }
             NetMessageManage.RemoveResultBlock(AwardManageListResult);
-            System.Console.WriteLine(result.pack);
+            System.Console.WriteLine("AwardManageListResult:"+result.pack);
             if (result.pack.Content.MessageType == 1)
             {
                 this.Invoke(new RefreshUIHandle(delegate
@@ -118,7 +118,7 @@ namespace NetBarMS.Views.RateManage
             {
                 return;
             }
-            System.Console.WriteLine(result.pack);
+            System.Console.WriteLine("MemberDayAwardManageListResult:"+result.pack);
             NetMessageManage.RemoveResultBlock(MemberDayAwardManageListResult);
             if (result.pack.Content.MessageType == 1)
             {
@@ -324,7 +324,7 @@ namespace NetBarMS.Views.RateManage
         {
             if(sender.Equals(this.nDeleteButton))
             {
-                List<string> ids = this.GetCheckIds(this.gridView1, nitems);
+                List<string> ids = GetCheckIds(this.gridView1, nitems);
                 if(ids.Count >0)
                 {
                     RateManageNetOperation.DeleteAwardManage(DeleteAwardResult, ids);
@@ -333,7 +333,7 @@ namespace NetBarMS.Views.RateManage
 
             }else if(sender.Equals(this.mDeleteButton))
             {
-                List<string> ids = this.GetCheckIds(this.gridView4, mitems);
+                List<string> ids = GetCheckIds(this.gridView4, mitems);
                 if (ids.Count > 0)
                 {
                     RateManageNetOperation.DeleteMemberDayAwardManage(DeleteMemberDayAwardResult, ids);
@@ -359,27 +359,6 @@ namespace NetBarMS.Views.RateManage
                 }));
             }
         }
-
-        #region 关闭日期回调
-        private void ContainerEdit_Closed(object sender, ClosedEventArgs e)
-        {
-            if(sender.Equals(this.popupContainerEdit1))
-            {
-                if (!this.nstartTime.Equals("") && !this.nendTime.Equals(""))
-                {
-                    this.popupContainerEdit1.Text = string.Format("{0}-{1}", this.nstartTime, this.nendTime);
-                }
-            }
-            if (sender.Equals(this.popupContainerEdit2))
-            {
-                if (!this.mstartTime.Equals("") && !this.mendTime.Equals(""))
-                {
-                    this.popupContainerEdit1.Text = string.Format("{0}-{1}", this.mstartTime, this.mendTime);
-                }
-            }
-        }
-        #endregion
-
         //删除会员日奖励结果回调
         private void DeleteMemberDayAwardResult(ResultModel result)
         {
@@ -400,7 +379,27 @@ namespace NetBarMS.Views.RateManage
                 }));
             }
         }
-#endregion
+        #endregion
+
+        #region 关闭日期回调
+        private void ContainerEdit_Closed(object sender, ClosedEventArgs e)
+        {
+            if(sender.Equals(this.popupContainerEdit1))
+            {
+                if (!this.nstartTime.Equals("") && !this.nendTime.Equals(""))
+                {
+                    this.popupContainerEdit1.Text = string.Format("{0}-{1}", this.nstartTime, this.nendTime);
+                }
+            }
+            if (sender.Equals(this.popupContainerEdit2))
+            {
+                if (!this.mstartTime.Equals("") && !this.mendTime.Equals(""))
+                {
+                    this.popupContainerEdit2.Text = string.Format("{0}-{1}", this.mstartTime, this.mendTime);
+                }
+            }
+        }
+        #endregion
 
         #region 获取所有勾选的ID
         //获取所有勾选的id

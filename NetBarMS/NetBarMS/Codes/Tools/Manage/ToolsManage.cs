@@ -537,7 +537,9 @@ namespace NetBarMS.Codes.Tools
         /// <returns></returns>
         public static string BitmapToDataSring(Bitmap bit)
         {
-          
+
+
+            
             MemoryStream ms = new MemoryStream();
             bit.Save(ms, System.Drawing.Imaging.ImageFormat.Bmp);
             byte[] bytes = ms.GetBuffer();  //byte[]   bytes=   ms.ToArray(); 这两句都可以，至于区别么，下面有解释

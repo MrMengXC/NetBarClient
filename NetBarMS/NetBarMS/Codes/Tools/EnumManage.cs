@@ -541,4 +541,30 @@ namespace NetBarMS.Codes.Tools
 
     #endregion
 
+
+    #region 区域设置
+    enum AREA_SETTING {
+        /// <summary>
+        /// 无
+        /// </summary>
+        NONE = 0,
+        /// <summary>
+        /// 添加区域
+        /// </summary>
+        ADD,
+        /// <summary>
+        /// 删除区域
+        /// </summary>
+        DELETE,
+        /// <summary>
+        /// 修改区域
+        /// </summary>
+        UPDATE,
+
+
+    }
+
+
+    #endregion
+
 }

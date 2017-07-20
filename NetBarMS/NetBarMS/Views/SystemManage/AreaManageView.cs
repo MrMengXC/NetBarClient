@@ -30,20 +30,13 @@ namespace NetBarMS.Views.SystemManage
 
         #region property
         //所有的区域
-        private IList<StructDictItem> areas;             
-        //所有的区域编码         
-        private List<string> areaCodes = new List<string>();
-
+        private IList<StructDictItem> areas;
         //当前选择的区域
         private Label selectArea = null;
         //当前选择的按钮            
         private List<SimpleButton> selectButtons = new List<SimpleButton>();
         //区域管理
         AreaSettingManage areaManage = new AreaSettingManage();
-        //是否是修改删除后获取列表
-        bool isChange = false;
-        bool isAdd = false;
-
         #endregion
 
         #region 声明方法
@@ -91,46 +84,25 @@ namespace NetBarMS.Views.SystemManage
                 return;
             }
             NetMessageManage.RemoveResultBlock(GetAreaListResult);
-            System.Console.WriteLine("GetAreaList:" + result.pack);
+            //System.Console.WriteLine("GetAreaList:" + result.pack);
 
             if (result.pack.Content.MessageType == 1)
             {
                 this.Invoke(new RefreshUIHandle(delegate
                 {
-
-                    SysManage.UpdateAreaData(result.pack.Content.ScSysInfo.ChildList);
-                    areas = result.pack.Content.ScSysInfo.ChildList;
-                    areaCodes.Clear();
-                    //TODO
-                    foreach (StructDictItem item in areas)
-                    {
-                        areaCodes.Add(item.Code.ToString());
-                    }
-
-                    if (isChange)
-                    {
-                        isChange = false;
-                        //修改首页
-                        HomePageMessageManage.ChangeAreaUpdateComputerArea();
-                        HomePageMessageManage.ChangeComputerArea();
-
-                    }
-                    if(isAdd)
-                    {
-                        isAdd = false;
-                        HomePageMessageManage.ChangeComputerArea();
-                    }
-
-                    InitAreaUI();
+                    UpdateAreaUI(result.pack.Content.ScSysInfo);
                 }));
             }
-
-            
-
         }
+        #endregion
 
-
-
+        #region 更新区域UI
+        private void UpdateAreaUI(SCSysInfo info)
+        {
+            SysManage.UpdateAreaData(info.ChildList);
+            areas = info.ChildList;
+            InitAreaUI();
+        }
         #endregion
 
         #region 初始化区域UI
@@ -218,7 +190,7 @@ namespace NetBarMS.Views.SystemManage
 
             int index  = (int)this.selectArea.Tag;
             string code = this.areas[index].Code.ToString();
-            this.areaManage.GetOtherComputers(code,this.areaCodes);
+            this.areaManage.GetOtherComputers(code);
             RefreshGridControl();
             RefreshAreaComsPanel();
 
@@ -302,19 +274,22 @@ namespace NetBarMS.Views.SystemManage
         private void AddAreaResult(ResultModel result)
         {
 
-            if (result.pack.Cmd != Cmd.CMD_SYS_ADD)
+            if (result.pack.Cmd != Cmd.CMD_SYS_ADD || !result.pack.Content.ScSysInfo.Parent.Equals(SystemManageNetOperation.areaParent))
             {
                 return;   
             }
 
             NetMessageManage.RemoveResultBlock(AddAreaResult);
-            System.Console.WriteLine("AddAreaResult:" + result.pack);
+            //System.Console.WriteLine("AddAreaResult:" + result.pack);
 
             if (result.pack.Content.MessageType == 1)
             {
                 //重新获取区域列表
-                isAdd = true;
-                GetAreaList();
+                this.Invoke(new RefreshUIHandle(delegate {
+                    UpdateAreaUI(result.pack.Content.ScSysInfo);
+                    areaManage.UpateHomePageComputerArea(0, AREA_SETTING.ADD);
+                }));
+              
             }
 
         }
@@ -322,7 +297,6 @@ namespace NetBarMS.Views.SystemManage
         #endregion
 
         #region 删除区域
-
         private void DeleteArea_ButtonClick(object sender, EventArgs e)
         {
             if(this.selectArea == null)
@@ -330,7 +304,7 @@ namespace NetBarMS.Views.SystemManage
                 return;
             }
             int index = (int)this.selectArea.Tag;
-            List<string> ids = new List<string>() { this.areas[index].Code.ToString() };
+            List<string> ids = new List<string>() { this.areas[index].Id.ToString() };
             SystemManageNetOperation.DeleteArea(DeleteAreaResult, ids);
         }
         //删除区域结果回调
@@ -340,14 +314,22 @@ namespace NetBarMS.Views.SystemManage
             {
                 return;
             }
-            System.Console.WriteLine("DeleteAreaResult:" + result.pack);
+            //System.Console.WriteLine("DeleteAreaResult:" + result.pack);
             NetMessageManage.RemoveResultBlock(DeleteAreaResult);
             if (result.pack.Content.MessageType == 1)
             {
-                isChange = true;
                 //重新获取区域列表
-                GetAreaList();
-                MessageBox.Show("删除成功");
+                this.Invoke(new RefreshUIHandle(delegate {
+                    //获取区域id
+                    int index = (int)this.selectArea.Tag;
+                    int areaId = this.areas[index].Code;
+                    //更新区域UI
+                    UpdateAreaUI(result.pack.Content.ScSysInfo);
+                    //修改首页
+                    areaManage.UpateHomePageComputerArea(areaId, AREA_SETTING.DELETE);
+                    MessageBox.Show("删除成功");
+                }));
+          
             }
         }
         #endregion
@@ -379,7 +361,6 @@ namespace NetBarMS.Views.SystemManage
             StructDictItem.Builder update = new StructDictItem.Builder(this.areas[index]);
             update.ItemList.Clear();
             update.AddItem(areaName);
-            System.Console.WriteLine(update);
             SystemManageNetOperation.UpdateArea(UpdateAreaResult, update.Build());
         }
         //更新结果回调
@@ -389,14 +370,21 @@ namespace NetBarMS.Views.SystemManage
             {
                 return;
             }
-            System.Console.WriteLine("UpdateAreaResult:" + result.pack);
+            //System.Console.WriteLine("UpdateAreaResult:" + result.pack);
             NetMessageManage.RemoveResultBlock(UpdateAreaResult);
             if (result.pack.Content.MessageType == 1)
             {
-                isChange = true;
-                //重新获取区域列表
-                GetAreaList();
-                MessageBox.Show("修改成功");
+                this.Invoke(new RefreshUIHandle(delegate {
+                    //获取区域id
+                    int index = (int)this.selectArea.Tag;
+                    int areaId = this.areas[index].Code;
+
+                    UpdateAreaUI(result.pack.Content.ScSysInfo);
+                    //修改首页
+                    areaManage.UpateHomePageComputerArea(areaId, AREA_SETTING.UPDATE);
+                    MessageBox.Show("修改成功");
+                }));
+              
             }
         }
         #endregion
@@ -412,19 +400,19 @@ namespace NetBarMS.Views.SystemManage
             {
                 return;
             }
-            Dictionary<int, StructRealTime> changeComDict = new Dictionary<int, StructRealTime>();//已经改变的字典
 
+            List<StructRealTime> changeComs = new List<StructRealTime>();
             int index = (int)this.selectArea.Tag;
             //3.改变管理工具电脑数组
             foreach (int row in rows)
             {
                 StructRealTime.Builder com = new StructRealTime.Builder(this.areaManage.otherComs[row]);
                 com.Area = this.areas[index].Code.ToString();
-                changeComDict.Add(com.Computerid, com.Build());
+                changeComs.Add(com.Build());
             }
-            this.areaManage.UpdateComputersCode(changeComDict);
+            this.areaManage.UpdateComputersCode(changeComs);
             //重新赋值
-            this.areaManage.GetOtherComputers(this.areas[index].Code.ToString(), this.areaCodes);
+            this.areaManage.GetOtherComputers(this.areas[index].Code.ToString());
             //5.删除选中行
             this.gridView1.DeleteSelectedRows();
 
@@ -443,23 +431,27 @@ namespace NetBarMS.Views.SystemManage
             {
                 return;
             }
-            Dictionary<int, StructRealTime> changeComDict = new Dictionary<int, StructRealTime>();//已经改变的字典
+
+            List<StructRealTime> changeComs = new List<StructRealTime>();
+
+            //Dictionary<int, StructRealTime> changeComDict = new Dictionary<int, StructRealTime>();//已经改变的字典
             //改变管理工具电脑数组
             foreach (SimpleButton button in selectButtons)
             {
                 int btnIndex = int.Parse((string)button.Tag);
                 StructRealTime.Builder com = new StructRealTime.Builder(this.areaManage.currentComs[btnIndex]);
                 com.Area = "-1";
-                changeComDict.Add(com.Computerid, com.Build());
+                changeComs.Add(com.Build());
                 //移除按钮
                 this.currentComsPanel.Controls.Remove(button);
+               
             }
-
-            this.areaManage.UpdateComputersCode(changeComDict);
+            //更新电脑数据
+            this.areaManage.UpdateComputersCode(changeComs);
             //重新赋值
             int index = (int)this.selectArea.Tag;
 
-            this.areaManage.GetOtherComputers(this.areas[index].Code.ToString(),this.areaCodes);
+            this.areaManage.GetOtherComputers(this.areas[index].Code.ToString());
             
             //删除选中的电脑
             this.selectButtons.Clear();
@@ -478,7 +470,7 @@ namespace NetBarMS.Views.SystemManage
             {
                 return;
             }
-            System.Console.WriteLine("update:" + update);
+            //System.Console.WriteLine("update:" + update);
             SystemManageNetOperation.UpdateAreaComputer(UpdateAreaComputerResult, update);
         }
         //更新区域电脑结果回调
@@ -488,7 +480,7 @@ namespace NetBarMS.Views.SystemManage
             {
                 return;
             }
-            System.Console.WriteLine("UpdateAreaComputerResult:" + result.pack);
+            //System.Console.WriteLine("UpdateAreaComputerResult:" + result.pack);
             NetMessageManage.RemoveResultBlock(UpdateAreaComputerResult);
 
             if (result.pack.Content.MessageType == 1)

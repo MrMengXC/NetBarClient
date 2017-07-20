@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.Utils.SimpleContextButton simpleContextButton4 = new DevExpress.Utils.SimpleContextButton();
-            DevExpress.Utils.SimpleContextButton simpleContextButton5 = new DevExpress.Utils.SimpleContextButton();
-            DevExpress.Utils.SimpleContextButton simpleContextButton6 = new DevExpress.Utils.SimpleContextButton();
+            DevExpress.Utils.SimpleContextButton simpleContextButton1 = new DevExpress.Utils.SimpleContextButton();
+            DevExpress.Utils.SimpleContextButton simpleContextButton2 = new DevExpress.Utils.SimpleContextButton();
+            DevExpress.Utils.SimpleContextButton simpleContextButton3 = new DevExpress.Utils.SimpleContextButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.label2 = new System.Windows.Forms.Label();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
@@ -299,18 +299,18 @@
             // 
             // checkedListBoxControl1
             // 
-            simpleContextButton4.Id = new System.Guid("7a5f8276-fd1b-4c5d-a151-dd81f8f8d42c");
-            simpleContextButton4.Name = "SimpleContextButton";
-            simpleContextButton4.Visibility = DevExpress.Utils.ContextItemVisibility.Visible;
-            simpleContextButton5.Id = new System.Guid("579ee131-84bb-45a8-8bf3-05fc40a4bd2e");
-            simpleContextButton5.Name = "SimpleContextButton";
-            simpleContextButton5.Visibility = DevExpress.Utils.ContextItemVisibility.Visible;
-            simpleContextButton6.Id = new System.Guid("761e5cbd-5db8-4a97-b370-9adb799db086");
-            simpleContextButton6.Name = "SimpleContextButton";
-            simpleContextButton6.Visibility = DevExpress.Utils.ContextItemVisibility.Visible;
-            this.checkedListBoxControl1.ContextButtons.Add(simpleContextButton4);
-            this.checkedListBoxControl1.ContextButtons.Add(simpleContextButton5);
-            this.checkedListBoxControl1.ContextButtons.Add(simpleContextButton6);
+            simpleContextButton1.Id = new System.Guid("7a5f8276-fd1b-4c5d-a151-dd81f8f8d42c");
+            simpleContextButton1.Name = "SimpleContextButton";
+            simpleContextButton1.Visibility = DevExpress.Utils.ContextItemVisibility.Visible;
+            simpleContextButton2.Id = new System.Guid("579ee131-84bb-45a8-8bf3-05fc40a4bd2e");
+            simpleContextButton2.Name = "SimpleContextButton";
+            simpleContextButton2.Visibility = DevExpress.Utils.ContextItemVisibility.Visible;
+            simpleContextButton3.Id = new System.Guid("761e5cbd-5db8-4a97-b370-9adb799db086");
+            simpleContextButton3.Name = "SimpleContextButton";
+            simpleContextButton3.Visibility = DevExpress.Utils.ContextItemVisibility.Visible;
+            this.checkedListBoxControl1.ContextButtons.Add(simpleContextButton1);
+            this.checkedListBoxControl1.ContextButtons.Add(simpleContextButton2);
+            this.checkedListBoxControl1.ContextButtons.Add(simpleContextButton3);
             this.checkedListBoxControl1.Items.AddRange(new DevExpress.XtraEditors.Controls.CheckedListBoxItem[] {
             new DevExpress.XtraEditors.Controls.CheckedListBoxItem(null, "允许使用积分购买"),
             new DevExpress.XtraEditors.Controls.CheckedListBoxItem(null, "允许第三方购买"),

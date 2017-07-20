@@ -59,7 +59,7 @@ namespace NetBarMS.Views.SystemSearch
 
             //获取设备编号
             this.comboBoxEdit1.Properties.Items.Add("无");
-            HomePageMessageManage.Manage().GetComputers(out this.computers);
+            HomePageMessageManage.GetComputers(out this.computers);
             foreach(StructRealTime com in this.computers)
             {
                 this.comboBoxEdit1.Properties.Items.Add(com.Computer);

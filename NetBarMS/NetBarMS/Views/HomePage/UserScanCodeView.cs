@@ -73,7 +73,6 @@ namespace NetBarMS.Views.HomePage
             }
 
 
-
         }
 
         #endregion
@@ -82,9 +81,6 @@ namespace NetBarMS.Views.HomePage
         private void GetRechargeCode()
         {
             HomePageNetOperation.GetRechargeCode(GetRechargeCodeResult, cardNum, recharge, 0, (int)this.prechargeType);
-            // HomePageNetOperation.GetRecharge(GetRechargeResult);
-            NetMessageManage.AddResultBlock(GetRechargeResult);
-
         }
         //开始充值的入口
         private void BeginRecharge()
@@ -180,6 +176,8 @@ namespace NetBarMS.Views.HomePage
             {
                 //获取充值结果
                 this.Invoke(new RefreshUIHandle(delegate {
+                    //获取充值结果
+                    NetMessageManage.AddResultBlock(GetRechargeResult);
                     string wxCode = result.pack.Content.ScPreCharge.Qrcode;
                     try
                     {
@@ -229,8 +227,9 @@ namespace NetBarMS.Views.HomePage
                     //});
                     //UserPayResultView view = new UserPayResultView();
                     //ToolsManage.ShowForm(view, false, handle);
-
-                    MessageBox.Show("充值成功");
+                    SCToCharge charge = result.pack.Content.CsToCharge;
+                    string msg = string.Format("充值成功！\n本次充值{0}元，赠送{1}元，赠送{2}积分", charge.Recharge, charge.Bonus, charge.Bonus);
+                    MessageBox.Show(msg);
                     if (this.flowstatus == FLOW_STATUS.ACTIVE_STATUS)
                     {
                         ActiveFlowManage.ActiveFlow().MemberPaySuccess();

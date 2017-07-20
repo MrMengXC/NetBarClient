@@ -68,21 +68,21 @@ public static partial class Common {
           "ZVRva2VuGAMgASgJIi4KC1NDUmVjb25uZWN0EhEKCXNlc3Npb25JZBgBIAIo", 
           "BRIMCgRndWlkGAIgASgFIlMKC0NTUHJlQ2hhcmdlEhIKCmNhcmRudW1iZXIY", 
           "ASACKAkSDgoGYW1vdW50GAIgAigFEg8KB3BheW1vZGUYAyACKAUSDwoHb2Zm", 
-          "aWNhbBgEIAIoBSIdCgtTQ1ByZUNoYXJnZRIOCgZxcmNvZGUYASACKAkicQoK", 
-          "U0NUb0NoYXJnZRIMCgRuYW1lGAEgAigJEhIKCmNhcmRudW1iZXIYAiACKAkS", 
-          "DQoFcmlnaHQYAyACKAkSEAoIcmVjaGFyZ2UYBCACKAUSDwoHYmFsYW5jZRgF", 
-          "IAIoBRIPCgdpbnRlZ2FsGAYgAigFIj8KCENTUHJlQnV5EhIKCmNhcmRudW1i", 
-          "ZXIYASACKAkSHwoFZ29vZHMYAiADKAsyEC5TdHJ1Y3RDYXJ0R29vZHMiGgoI", 
-          "U0NQcmVCdXkSDgoGcXJjb2RlGAEgAigJIoQBCgdTQ1RvQnV5EgwKBG5hbWUY", 
-          "ASACKAkSEgoKY2FyZG51bWJlchgCIAIoCRINCgVyaWdodBgDIAIoCRIRCgl1", 
-          "c2VkbW9uZXkYBCACKAUSEwoLdXNlZGludGVnYWwYBSACKAUSDwoHYmFsYW5j", 
-          "ZRgGIAIoBRIPCgdpbnRlZ2FsGAcgAigFIigKCVNDTWVzc2FnZRILCgNjbWQY", 
-          "ASACKAUSDgoGcGFyYW1zGAIgAygJIigKCUNTQ29tbWFuZBILCgNjbWQYASAC", 
-          "KAUSDgoGcGFyYW1zGAIgAygJIkwKC0NTR29vZHNGaW5kEhkKBHBhZ2UYASAC", 
-          "KAsyCy5TdHJ1Y3RQYWdlEhAKCGNhdGVnb3J5GAIgASgFEhAKCGtleXdvcmRz", 
-          "GAQgASgJIioKC1NDR29vZHNGaW5kEhsKBWdvb2RzGAEgAygLMgwuU3RydWN0", 
-          "R29vZHNCLwodY29tLnNreXNvZnQuY29yZS5hdXRvLm1lc3NhZ2VCDkNvbW1v", 
-        "blByb3RvY29s"));
+          "aWNhbBgEIAIoBSIdCgtTQ1ByZUNoYXJnZRIOCgZxcmNvZGUYASACKAkigAEK", 
+          "ClNDVG9DaGFyZ2USDAoEbmFtZRgBIAIoCRISCgpjYXJkbnVtYmVyGAIgAigJ", 
+          "Eg0KBXJpZ2h0GAMgAigJEhAKCHJlY2hhcmdlGAQgAigFEg0KBWJvbnVzGAUg", 
+          "AigFEg8KB2JhbGFuY2UYBiACKAUSDwoHaW50ZWdhbBgHIAIoBSI/CghDU1By", 
+          "ZUJ1eRISCgpjYXJkbnVtYmVyGAEgAigJEh8KBWdvb2RzGAIgAygLMhAuU3Ry", 
+          "dWN0Q2FydEdvb2RzIhoKCFNDUHJlQnV5Eg4KBnFyY29kZRgBIAIoCSKEAQoH", 
+          "U0NUb0J1eRIMCgRuYW1lGAEgAigJEhIKCmNhcmRudW1iZXIYAiACKAkSDQoF", 
+          "cmlnaHQYAyACKAkSEQoJdXNlZG1vbmV5GAQgAigFEhMKC3VzZWRpbnRlZ2Fs", 
+          "GAUgAigFEg8KB2JhbGFuY2UYBiACKAUSDwoHaW50ZWdhbBgHIAIoBSIoCglT", 
+          "Q01lc3NhZ2USCwoDY21kGAEgAigFEg4KBnBhcmFtcxgCIAMoCSIoCglDU0Nv", 
+          "bW1hbmQSCwoDY21kGAEgAigFEg4KBnBhcmFtcxgCIAMoCSJMCgtDU0dvb2Rz", 
+          "RmluZBIZCgRwYWdlGAEgAigLMgsuU3RydWN0UGFnZRIQCghjYXRlZ29yeRgC", 
+          "IAEoBRIQCghrZXl3b3JkcxgEIAEoCSIqCgtTQ0dvb2RzRmluZBIbCgVnb29k", 
+          "cxgBIAMoCzIMLlN0cnVjdEdvb2RzQi8KHWNvbS5za3lzb2Z0LmNvcmUuYXV0", 
+        "by5tZXNzYWdlQg5Db21tb25Qcm90b2NvbA=="));
     pbd::FileDescriptor.InternalDescriptorAssigner assigner = delegate(pbd::FileDescriptor root) {
       descriptor = root;
       internal__static_CSUploadPicture__Descriptor = Descriptor.MessageTypes[0];
@@ -128,7 +128,7 @@ public static partial class Common {
       internal__static_SCToCharge__Descriptor = Descriptor.MessageTypes[10];
       internal__static_SCToCharge__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::SCToCharge, global::SCToCharge.Builder>(internal__static_SCToCharge__Descriptor,
-              new string[] { "Name", "Cardnumber", "Right", "Recharge", "Balance", "Integal", });
+              new string[] { "Name", "Cardnumber", "Right", "Recharge", "Bonus", "Balance", "Integal", });
       internal__static_CSPreBuy__Descriptor = Descriptor.MessageTypes[11];
       internal__static_CSPreBuy__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSPreBuy, global::CSPreBuy.Builder>(internal__static_CSPreBuy__Descriptor,
@@ -3115,8 +3115,8 @@ public sealed partial class SCPreCharge : pb::GeneratedMessage<SCPreCharge, SCPr
 public sealed partial class SCToCharge : pb::GeneratedMessage<SCToCharge, SCToCharge.Builder> {
   private SCToCharge() { }
   private static readonly SCToCharge defaultInstance = new SCToCharge().MakeReadOnly();
-  private static readonly string[] _sCToChargeFieldNames = new string[] { "balance", "cardnumber", "integal", "name", "recharge", "right" };
-  private static readonly uint[] _sCToChargeFieldTags = new uint[] { 40, 18, 48, 10, 32, 26 };
+  private static readonly string[] _sCToChargeFieldNames = new string[] { "balance", "bonus", "cardnumber", "integal", "name", "recharge", "right" };
+  private static readonly uint[] _sCToChargeFieldTags = new uint[] { 48, 40, 18, 56, 10, 32, 26 };
   public static SCToCharge DefaultInstance {
     get { return defaultInstance; }
   }
@@ -3177,7 +3177,17 @@ public sealed partial class SCToCharge : pb::GeneratedMessage<SCToCharge, SCToCh
     get { return recharge_; }
   }
   
-  public const int BalanceFieldNumber = 5;
+  public const int BonusFieldNumber = 5;
+  private bool hasBonus;
+  private int bonus_;
+  public bool HasBonus {
+    get { return hasBonus; }
+  }
+  public int Bonus {
+    get { return bonus_; }
+  }
+  
+  public const int BalanceFieldNumber = 6;
   private bool hasBalance;
   private int balance_;
   public bool HasBalance {
@@ -3187,7 +3197,7 @@ public sealed partial class SCToCharge : pb::GeneratedMessage<SCToCharge, SCToCh
     get { return balance_; }
   }
   
-  public const int IntegalFieldNumber = 6;
+  public const int IntegalFieldNumber = 7;
   private bool hasIntegal;
   private int integal_;
   public bool HasIntegal {
@@ -3203,6 +3213,7 @@ public sealed partial class SCToCharge : pb::GeneratedMessage<SCToCharge, SCToCh
       if (!hasCardnumber) return false;
       if (!hasRight) return false;
       if (!hasRecharge) return false;
+      if (!hasBonus) return false;
       if (!hasBalance) return false;
       if (!hasIntegal) return false;
       return true;
@@ -3213,22 +3224,25 @@ public sealed partial class SCToCharge : pb::GeneratedMessage<SCToCharge, SCToCh
     CalcSerializedSize();
     string[] field_names = _sCToChargeFieldNames;
     if (hasName) {
-      output.WriteString(1, field_names[3], Name);
+      output.WriteString(1, field_names[4], Name);
     }
     if (hasCardnumber) {
-      output.WriteString(2, field_names[1], Cardnumber);
+      output.WriteString(2, field_names[2], Cardnumber);
     }
     if (hasRight) {
-      output.WriteString(3, field_names[5], Right);
+      output.WriteString(3, field_names[6], Right);
     }
     if (hasRecharge) {
-      output.WriteInt32(4, field_names[4], Recharge);
+      output.WriteInt32(4, field_names[5], Recharge);
+    }
+    if (hasBonus) {
+      output.WriteInt32(5, field_names[1], Bonus);
     }
     if (hasBalance) {
-      output.WriteInt32(5, field_names[0], Balance);
+      output.WriteInt32(6, field_names[0], Balance);
     }
     if (hasIntegal) {
-      output.WriteInt32(6, field_names[2], Integal);
+      output.WriteInt32(7, field_names[3], Integal);
     }
     UnknownFields.WriteTo(output);
   }
@@ -3259,11 +3273,14 @@ public sealed partial class SCToCharge : pb::GeneratedMessage<SCToCharge, SCToCh
     if (hasRecharge) {
       size += pb::CodedOutputStream.ComputeInt32Size(4, Recharge);
     }
+    if (hasBonus) {
+      size += pb::CodedOutputStream.ComputeInt32Size(5, Bonus);
+    }
     if (hasBalance) {
-      size += pb::CodedOutputStream.ComputeInt32Size(5, Balance);
+      size += pb::CodedOutputStream.ComputeInt32Size(6, Balance);
     }
     if (hasIntegal) {
-      size += pb::CodedOutputStream.ComputeInt32Size(6, Integal);
+      size += pb::CodedOutputStream.ComputeInt32Size(7, Integal);
     }
     size += UnknownFields.SerializedSize;
     memoizedSerializedSize = size;
@@ -3399,6 +3416,9 @@ public sealed partial class SCToCharge : pb::GeneratedMessage<SCToCharge, SCToCh
       if (other.HasRecharge) {
         Recharge = other.Recharge;
       }
+      if (other.HasBonus) {
+        Bonus = other.Bonus;
+      }
       if (other.HasBalance) {
         Balance = other.Balance;
       }
@@ -3465,10 +3485,14 @@ public sealed partial class SCToCharge : pb::GeneratedMessage<SCToCharge, SCToCh
             break;
           }
           case 40: {
-            result.hasBalance = input.ReadInt32(ref result.balance_);
+            result.hasBonus = input.ReadInt32(ref result.bonus_);
             break;
           }
           case 48: {
+            result.hasBalance = input.ReadInt32(ref result.balance_);
+            break;
+          }
+          case 56: {
             result.hasIntegal = input.ReadInt32(ref result.integal_);
             break;
           }
@@ -3562,6 +3586,26 @@ public sealed partial class SCToCharge : pb::GeneratedMessage<SCToCharge, SCToCh
       PrepareBuilder();
       result.hasRecharge = false;
       result.recharge_ = 0;
+      return this;
+    }
+    
+    public bool HasBonus {
+      get { return result.hasBonus; }
+    }
+    public int Bonus {
+      get { return result.Bonus; }
+      set { SetBonus(value); }
+    }
+    public Builder SetBonus(int value) {
+      PrepareBuilder();
+      result.hasBonus = true;
+      result.bonus_ = value;
+      return this;
+    }
+    public Builder ClearBonus() {
+      PrepareBuilder();
+      result.hasBonus = false;
+      result.bonus_ = 0;
       return this;
     }
     

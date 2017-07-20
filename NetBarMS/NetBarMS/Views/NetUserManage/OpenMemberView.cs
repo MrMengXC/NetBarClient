@@ -17,6 +17,7 @@ using NetBarMS.Views.HomePage;
 using NetBarMS.Codes.Tools.FlowManage;
 using NetBarMS.Codes.Model;
 using NetBarMS.Codes.Tools.Manage;
+using System.IO;
 #endregion
 
 namespace NetBarMS.Views.NetUserManage
@@ -36,20 +37,23 @@ namespace NetBarMS.Views.NetUserManage
         private char[] sp = { '：', ':' };
 
         #region 初始化方法
-        public OpenMemberView(string card)
+        public OpenMemberView(string tem)
         {
             InitializeComponent();
             this.titleLabel.Text = "会员办理";
-            string idNum = "";
-            if(card.Equals(""))
-            {
-                idNum = ToolsManage.RandomCard;
-            }
-            else
-            {
-                idNum = card;
-            }
-            InitUI(idNum);
+            //string idNum = "";
+            //if(card.Equals(""))
+            //{
+            //    idNum = ToolsManage.RandomCard;
+            //}
+            //else
+            //{
+            //    idNum = card;
+            //}
+
+            StructCard card = IdCardReaderManage.ReadCard();
+
+            InitUI(card);
 
         }
         //临时使用
@@ -58,27 +62,34 @@ namespace NetBarMS.Views.NetUserManage
             InitializeComponent();
             this.titleLabel.Text = "会员办理";
             this.flowstatus = status;
-            InitUI(card);
+            //InitUI(card);
         }
         #endregion
 
         #region 初始化UI
         //初始化UI
-        private void InitUI(string card)
+        private void InitUI(StructCard card)
         {
             //先接受数据
             this.memberTypes = SysManage.MemberTypes;
             //初始化Label
-            this.nameLabel.Text += "xx22";          //姓名
-            this.genderLabel.Text += "男";        //性别
-            this.nationLabel.Text += "2112";        //民族
-            this.cardTypeLabel.Text += "";      //卡类型
-            this.cardNumLabel.Text += card;       //卡号
-            this.cardValidityLabel.Text += "1992-05-01";  //有效期
-            this.addressLabel.Text += "海南省";           //地址
-            this.organLabel.Text += "海南";             //发证机关
-            this.countryLabel.Text += "";              //国籍
-            this.birthdayLabel.Text += "1992-05-01";              //出生日期
+            this.nameLabel.Text += card.Name;          //姓名
+            this.genderLabel.Text += card.Gender;        //性别
+            this.nationLabel.Text +=card.Nation;        //民族
+            this.cardTypeLabel.Text += "身份证";      //卡类型
+            this.cardNumLabel.Text += card.Number;       //卡号
+            this.cardValidityLabel.Text += card.Vld;  //有效期
+            this.addressLabel.Text += card.Address;           //地址
+            this.organLabel.Text += card.Organization;             //发证机关
+            this.countryLabel.Text += "中国";              //国籍
+            this.birthdayLabel.Text += card.Birthday;              //出生日期
+
+           
+            MemoryStream ms = new MemoryStream(System.Convert.FromBase64String(card.Head));
+            this.pictureEdit1.Image = Image.FromStream(ms);
+
+          
+
 
             //初始化GridControl
             ToolsManage.SetGridView(this.gridView1, GridControlType.OpenMember, out this.mainDataTable);
