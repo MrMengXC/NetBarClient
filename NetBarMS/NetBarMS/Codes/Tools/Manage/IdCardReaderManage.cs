@@ -10,7 +10,24 @@ namespace NetBarMS.Codes.Tools.Manage
 {
     class IdCardReaderManage
     {
+        /// <summary>
+        /// 读取身份证委托
+        /// </summary>
+        /// <param name="readCard">结果信息</param>
+        public delegate void ReadCardHandle(StructCard readCard);
+        /// <summary>
+        /// 结果委托
+        /// </summary>
+        /// <param name="isSuccess">是否成功</param>
+        public delegate void ResultHandle(bool isSuccess);
+
+        
+
+
         private static IdCardReaderManage manage = null;
+
+        private System.Timers.Timer timer = null;
+
         //是否连接中
         private bool IsConnected = false;
         //是否认证成功
@@ -18,9 +35,23 @@ namespace NetBarMS.Codes.Tools.Manage
         private bool IsRead_Content = false;
         //机器设备端口号
         private int port = 0;
-        private int ComPort = 0;
         private const int cbDataSize = 128;
         private const int GphotoSize = 256 * 1024;
+        private StructCard currentCard = null;
+        /// <summary>
+        /// 读取卡片结果
+        /// </summary>
+        private ReadCardHandle ReadCardEvent;
+        /// <summary>
+        /// 确认卡片是否放置
+        /// </summary>
+        private ResultHandle AuthenticateCardEvent;
+        /// <summary>
+        /// 连接读卡设备
+        /// </summary>
+        private ResultHandle ConnectIDMEvent;
+
+
         #region Termb.dll
         [DllImport("termb.dll")]
         static extern int InitCommExt();//自动搜索身份证阅读器并连接身份证阅读器 
@@ -157,9 +188,9 @@ namespace NetBarMS.Codes.Tools.Manage
             {
                 manage = new IdCardReaderManage();
             }
-
             return manage;
         }
+
         /// <summary>
         /// 连接读卡器
         /// </summary>
@@ -182,56 +213,91 @@ namespace NetBarMS.Codes.Tools.Manage
         /// <summary>
         /// 读取身份证
         /// </summary>
-        public static StructCard ReadCard()
+        public static void ReadCard(ReadCardHandle readCard, 
+            ResultHandle connectIDM,
+            ResultHandle authenticateCard)
         {
+            if(readCard != null)
+            {
+                Manage().ReadCardEvent += readCard;
+            }
+            if(connectIDM != null)
+            {
+                Manage().ConnectIDMEvent += connectIDM;
+            }
+            if(authenticateCard != null)
+            {
+                Manage().AuthenticateCardEvent += authenticateCard;
+            }
+
             if (!Manage().ConnectIDM())
             {
-                return null;
+                if(Manage().ConnectIDMEvent != null)
+                {
+                    Manage().ConnectIDMEvent(false);
+                }
+                return;
             }
-            //卡认证，本函数用于读卡器和卡片之间的合法身份确认
+            if (Manage().ConnectIDMEvent != null)
+            {
+                Manage().ConnectIDMEvent(true);
+                Manage().AuthenticateCard();
+            }
 
-            bool isRes = false;
+        }
+
+        /// <summary>
+        /// 确认身份证是否重新放置
+        /// </summary>
+        private void AuthenticateCard()
+        {
+           
+            //卡认证，本函数用于读卡器和卡片之间的合法身份确认
             int FindCard = Authenticate();
             switch (FindCard)
             {
                 case 1:
-                  //  Manage().IsAuthenticate = true;
-                    isRes = true;
+                    {
+                        if (AuthenticateCardEvent != null)
+                        {
+                            AuthenticateCardEvent(true);
+                        }
+                        //读取内容
+                        ReadContent();
+                    }
                     break;
-                //case -1:
-                //    Manage().IsAuthenticate = false;
-                //    break;
-                //case -2:
-                //    Manage().IsAuthenticate = false;
-                //    break;
-                //case 0:
-                //    Manage().IsAuthenticate = false;
-                //    break;
+
                 default:
-                    isRes = false;
+                    {
+                        if (Manage().AuthenticateCardEvent != null)
+                        {
+                            Manage().AuthenticateCardEvent(false);
+                        }
+                       
+                       // MessageBox.Show("请放置身份证");
+                    }
                     break;
             }
-            if (isRes)
-            {
-                return Manage().DoRead_Content();
-            }
-            else
-            {
-                MessageBox.Show("请将身份证重新放置");
-                CloseComm();
-                return null;
-            }
-
-
+            ////读取成功
+            //if (isRes)
+            //{
+                
+            //}
+            //else
+            //{
+               
+            //    //CloseComm();
+            //}
         }
-        //自动读取内容
-        private StructCard DoRead_Content()
+        /// <summary>
+        /// 自动读取内容
+        /// </summary>
+        private void ReadContent()
         {
+            StringBuilder sb = new StringBuilder(cbDataSize);
             //1  读基本信息，形成文字信息文件WZ.TXT、相片文件XP.WLT、ZP.BMP，如果有指纹信息形成指纹信息文件FP.DAT
             //2  只读文字信息，形成文字信息文件WZ.TXT和相片文件XP.WLT
             //3  读最新住址信息，形成最新住址文件NEWADD.TXT
-
-            StringBuilder sb = new StringBuilder(cbDataSize);
             int rs = Read_Content(1);
             if (rs == 1)
             {
@@ -242,7 +308,7 @@ namespace NetBarMS.Codes.Tools.Manage
               //  Manage().IsRead_Content = false;
                
                 MessageBox.Show("读取内容失败");
-                return null;
+                return;
             }
 
             //index(0)  获取姓名
@@ -258,7 +324,6 @@ namespace NetBarMS.Codes.Tools.Manage
             object[] message = new object[10];
             StructCard.Builder card = new StructCard.Builder();
 
-            string name = "", gender = "", mz = "", bir = "", address = "", id = "", jg = "", yx = "", jz = "";
             for (int i = 0; i < 8; i++)
             {
                 GetCardInfo(i, sb);
@@ -278,25 +343,6 @@ namespace NetBarMS.Codes.Tools.Manage
                         break;
                 }
             }
-
-
-
-            //string message = string.Format("获取姓名:{0}\n获取性别:{1}\n获取民族:{2}\n获取出生日期:{3}\n获取地址:{4}\n获取身份证号:{5}\n签发机关:{6}\n有效期起始日期:{7}\n有效期截止日期:{8}",
-            //    name, gender, mz, bir, address, id, jg, yx, jz
-            //    );
-            //MessageBox.Show(message);
-
-
-            //if (IsAuthenticate && IsRead_Content)
-            //{
-
-
-            //    //MemoryStream ms = new MemoryStream(data);
-            //    //Image a = Image.FromStream(ms);
-
-            //    //pictureBox1.Image = a;
-
-            //}
             GetBmpPhotoExt();
             string PhotoPath = "";
             if (File.Exists("zp.jpg"))
@@ -314,12 +360,65 @@ namespace NetBarMS.Codes.Tools.Manage
             fs.Read(data, 0, data.Length);
             fs.Close();
             string inputString = System.Convert.ToBase64String(data);
-            //return inputString;
             card.Head = inputString;
-            CloseComm();
+            //CloseComm();
 
-            return card.Build();
+            if (Manage().ReadCardEvent != null )
+            {
+                if(currentCard == null || (currentCard != null && !currentCard.Number.Equals(card.Number)))
+                {
+                    Manage().currentCard = card.Build();
+                    Manage().ReadCardEvent(Manage().currentCard);
+                }
+            }
+            //
+            if (timer == null)
+            {
+                timer = new System.Timers.Timer();
+                timer.Elapsed += Timer_Elapsed;
+                timer.Interval = 1000;
+                timer.Enabled = true;
+                timer.Start();
+            }
+        }
+        //时间间隔达到1000s
+        private void Timer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
+        {
+            System.Console.WriteLine("Timer_Elapsed");
+            AuthenticateCard();
 
         }
+
+        //移除读卡
+        public static void RemoveReadCard(
+            ReadCardHandle readCard,
+            ResultHandle connectIDM,
+            ResultHandle authenticateCard)
+        {
+            if (readCard != null)
+            {
+                Manage().ReadCardEvent -= readCard;
+            }
+            if (connectIDM != null)
+            {
+                Manage().ConnectIDMEvent -= connectIDM;
+            }
+            if (authenticateCard != null)
+            {
+                Manage().AuthenticateCardEvent -= authenticateCard;
+            }
+
+            if(Manage().timer != null)
+            {
+                Manage().timer.Dispose();
+            }
+            Manage().timer = null;
+            Manage().currentCard = null;
+            //关闭IDM连接
+            CloseComm();
+
+        }
+
+
     }
 }

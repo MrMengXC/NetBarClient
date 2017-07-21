@@ -45,19 +45,7 @@ namespace NetBarMS.Views.HomePage
             //获取账户信息
             ManagerManage.Manage().GetAccountInfo(GetAccountInfoResult);
         }   
-        //刷新区域ComBox
-        private void RefreshAreaCombox()
-        {
-            this.comboBoxEdit2.Properties.Items.Clear();
-            //设置区域combox
-            this.comboBoxEdit2.Properties.Items.Add("无");
-            this.areas = SysManage.Areas;
-            foreach (AreaTypeModel model in areas)
-            {
-                int index = this.comboBoxEdit2.Properties.Items.Add(model.areaName);
-            }
-        }
-          
+      
         // 获取账户信息的回调
         public void GetAccountInfoResult(ResultModel result)
         {
@@ -73,6 +61,33 @@ namespace NetBarMS.Views.HomePage
                 HomePageMessageManage.Manage().GetHomePageList(GetHomePageListResult);
             }
         
+        }
+        #endregion
+
+        #region 刷新区域ComBox
+        private void RefreshAreaCombox()
+        {
+            this.comboBoxEdit2.SelectedIndexChanged -= comboBoxEdit2_SelectedIndexChanged;
+            int areaid = -1;
+            if (this.comboBoxEdit2.SelectedIndex > 0)
+            {
+                areaid = this.areas[this.comboBoxEdit2.SelectedIndex - 1].areaId;
+            }
+            this.comboBoxEdit2.Text = null;
+            this.comboBoxEdit2.Properties.Items.Clear();
+            //设置区域combox
+            this.comboBoxEdit2.Properties.Items.Add("无");
+            this.areas = SysManage.Areas;
+            foreach (AreaTypeModel model in areas)
+            {
+                int index = this.comboBoxEdit2.Properties.Items.Add(model.areaName);
+                if (areaid == model.areaId)
+                {
+                    this.comboBoxEdit2.Text = model.areaName;
+                }
+            }
+            this.comboBoxEdit2.SelectedIndexChanged += comboBoxEdit2_SelectedIndexChanged;
+
         }
         #endregion
 
@@ -195,7 +210,10 @@ namespace NetBarMS.Views.HomePage
             }
 
             COMPUTERSTATUS status = COMPUTERSTATUS.无;
-            Enum.TryParse<COMPUTERSTATUS>(this.comboBoxEdit1.Text, out status);
+            if(this.comboBoxEdit1.SelectedIndex > 0)
+            {
+                Enum.TryParse<COMPUTERSTATUS>(this.comboBoxEdit1.Text, out status);
+            }
 
             int areaId = -1;
             if (this.comboBoxEdit2.SelectedIndex > 0)

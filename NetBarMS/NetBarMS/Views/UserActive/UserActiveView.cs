@@ -12,27 +12,48 @@ using NetBarMS.Codes.Tools;
 using NetBarMS.Codes.Tools.FlowManage;
 using NetBarMS.Views.HomePage;
 using NetBarMS.Views.NetUserManage;
+using NetBarMS.Codes.Tools.Manage;
+using System.Diagnostics;
+using System.IO;
 
 namespace NetBarMS.Views.UserUseCp
 {
 
     public partial class UserActiveView : RootUserControlView
     {
-        private string card;
+        private string cardNumber;
+        private StructCard card;
         public UserActiveView()
         {
             InitializeComponent();
             this.titleLabel.Text = "用户上机";
-            card = ToolsManage.RandomCard;
             InitUI();
         }
 
         #region 初始化UI
         private void InitUI()
         {
-            label1.Text += card;
+
+#if RELEASE
+            cardNumber = ToolsManage.RandomCard;
+            label1.Text += cardNumber;
+#else
+            simpleButton2.Enabled =simpleButton3.Enabled = simpleButton1.Enabled = false;
+            IdCardReaderManage.ReadCard(ReadCardResult,ConnectIDMResult,AuthenticateCardResult);
+
+#endif
+
+
             //判断会员信息。是否是会员。是的话进行
-          //  MemberNetOperation.MemberInfo(MemberInfoResult, card);
+            //  MemberNetOperation.MemberInfo(MemberInfoResult, card);
+        }
+        //关闭重写
+        protected override void CloseFormClick(object sender, EventArgs e)
+        {
+#if DEBUG
+            IdCardReaderManage.RemoveReadCard(ReadCardResult, ConnectIDMResult, AuthenticateCardResult);
+#endif
+            base.CloseFormClick(sender, e);
         }
         //查询会员信息结果反馈
         private void MemberInfoResult(ResultModel result)
@@ -61,6 +82,7 @@ namespace NetBarMS.Views.UserUseCp
             {
                // AddCardInfo();
             }
+
         }
         #endregion
 
@@ -68,7 +90,7 @@ namespace NetBarMS.Views.UserUseCp
         //激活
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            string tem = this.card;
+            string tem = this.cardNumber;
             if(!this.textEdit1.Text.Equals(""))
             {
                 tem = this.textEdit1.Text;
@@ -80,12 +102,12 @@ namespace NetBarMS.Views.UserUseCp
         #region 充值
         private void simpleButton2_Click(object sender, EventArgs e)
         {
-            string tem = this.card;
+            string tem = this.cardNumber;
             if (!this.textEdit1.Text.Equals(""))
             {
                 tem = this.textEdit1.Text;
             }
-            UserScanCodeView view = new UserScanCodeView(tem, 200, PRECHARGE_TYPE.NOT_MEMBER);
+            UserScanCodeView view = new UserScanCodeView(tem, 100, PRECHARGE_TYPE.NOT_MEMBER);
             ToolsManage.ShowForm(view, false);
         }
         #endregion
@@ -93,7 +115,7 @@ namespace NetBarMS.Views.UserUseCp
         #region 下机
         private void simpleButton3_Click(object sender, EventArgs e)
         {
-            string tem = this.card;
+            string tem = this.cardNumber;
             if (!this.textEdit1.Text.Equals(""))
             {
                 tem = this.textEdit1.Text;
@@ -108,7 +130,9 @@ namespace NetBarMS.Views.UserUseCp
                 return;
             }
             NetMessageManage.RemoveResultBlock(CardCheckOutResult);
+#if DEBUG
             System.Console.WriteLine("CardCheckOutResult:" + result.pack);
+#endif
             if(result.pack.Content.MessageType == 1)
             {
                 this.Invoke(new RefreshUIHandle (delegate {
@@ -121,5 +145,48 @@ namespace NetBarMS.Views.UserUseCp
 
         }
         #endregion
+
+        private void ReadCardResult(StructCard readCard)
+        {
+            if(this.InvokeRequired)
+            {
+                this.Invoke(new RefreshUIHandle(delegate {
+                    InitUI(readCard);
+
+
+                }));
+            }
+            else
+             InitUI(readCard);
+
+        }
+
+        private void AuthenticateCardResult(bool isSuccess)
+        {
+
+
+
+        }
+
+        private void ConnectIDMResult(bool isSuccess)
+        {
+
+
+
+        }
+     
+        private void InitUI(StructCard showcard)
+        {
+           
+            char[] sp = { ':', '：' };
+            simpleButton3.Enabled = simpleButton2.Enabled = simpleButton1.Enabled = true;
+
+            label1.Text = string.Format("{0}:{1}", label1.Text.Split(sp)[0], showcard.Number);
+            label2.Text = string.Format("{0}:{1}", label2.Text.Split(sp)[0], showcard.Name);
+            MemoryStream ms = new MemoryStream(System.Convert.FromBase64String(showcard.Head));
+            this.pictureEdit1.Image = Image.FromStream(ms);
+        }
+
+
     }
 }

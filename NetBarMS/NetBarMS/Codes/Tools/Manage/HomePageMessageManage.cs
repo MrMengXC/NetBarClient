@@ -218,7 +218,7 @@ namespace NetBarMS.Codes.Tools.Manage
                 return;
             }
             NetMessageManage.RemoveResultBlock(HomePageListResult);
-         //  System.Console.WriteLine("HomePageListResult:" + result.pack);
+            // System.Console.WriteLine("HomePageListResult:" + result.pack);
             if (result.pack.Content.MessageType == 1)
             {
                 this.computers = result.pack.Content.ScRealtimeInfo.RealtimesList.ToList<StructRealTime>();
@@ -563,7 +563,7 @@ namespace NetBarMS.Codes.Tools.Manage
                     case AREA_SETTING.DELETE:
                         {
                             StructRealTime.Builder newCom = new StructRealTime.Builder(ori);
-                            newCom.Area = "-1";
+                            newCom.Area = "0";
                             Manage().computers[index] = newCom.Build();
                             if (Manage().UpdateComputerAreaEvent != null && Manage().s_areaId < 0)
                             {

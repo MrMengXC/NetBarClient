@@ -130,7 +130,7 @@ namespace NetBarMS.Codes.Tools
 
                     int index = this.allComputers.FindIndex(com => com.Computerid == changeCom.Computerid);
                     StructRealTime.Builder newCom = new StructRealTime.Builder(this.allComputers[index]);
-                    newCom.Area = "-1";
+                    newCom.Area = "0";
                     this.allComputers[index] = newCom.Build();
                 }
 
@@ -138,7 +138,7 @@ namespace NetBarMS.Codes.Tools
                 foreach(StructRealTime changed in changeds)
                 {
                     StructRealTime.Builder newChanged = new StructRealTime.Builder(changed);
-                    newChanged.Area = "-1";
+                    newChanged.Area = "0";
                     this.changeComDict[newChanged.Computerid] = newChanged.Build();
                 }
 

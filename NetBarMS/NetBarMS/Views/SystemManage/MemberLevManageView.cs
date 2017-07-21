@@ -24,7 +24,7 @@ namespace NetBarMS.Views.SystemManage
             Number,                     //序号
             Type,                       //类别
             RechargeMoney,                   //充值金额
-            NeedIntegral,                      //所需积分
+            GiveIntegral,                      //赠送积分
             Operation,                     //操作
         }
         public MemberLevManageView()
@@ -95,7 +95,7 @@ namespace NetBarMS.Views.SystemManage
             row[TitleList.Number.ToString()] = this.mainDataTable.Rows.Count+"";
             row[TitleList.Type.ToString()] = item.GetItem(0);
             row[TitleList.RechargeMoney.ToString()] = item.GetItem(1);
-            row[TitleList.NeedIntegral.ToString()] = item.GetItem(2);
+            row[TitleList.GiveIntegral.ToString()] = item.GetItem(2);
         }
 
 

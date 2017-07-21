@@ -35,25 +35,24 @@ namespace NetBarMS.Views.NetUserManage
         private int memberIndex = -1;                   //当前会员类别索引
         private FLOW_STATUS flowstatus = FLOW_STATUS.NONE_STATUS;                 //判断返回的状态
         private char[] sp = { '：', ':' };
-
         #region 初始化方法
-        public OpenMemberView(string tem)
+        public OpenMemberView(string card)
         {
             InitializeComponent();
             this.titleLabel.Text = "会员办理";
-            //string idNum = "";
-            //if(card.Equals(""))
-            //{
-            //    idNum = ToolsManage.RandomCard;
-            //}
-            //else
-            //{
-            //    idNum = card;
-            //}
+            string idNum = "";
+            if (card.Equals(""))
+            {
+                idNum = ToolsManage.RandomCard;
+            }
+            else
+            {
+                idNum = card;
+            }
 
-            StructCard card = IdCardReaderManage.ReadCard();
+            //StructCard card = IdCardReaderManage.ReadCard();
 
-            InitUI(card);
+            InitUI(idNum);
 
         }
         //临时使用
@@ -68,35 +67,44 @@ namespace NetBarMS.Views.NetUserManage
 
         #region 初始化UI
         //初始化UI
-        private void InitUI(StructCard card)
+        private void InitUI(string card)
         {
             //先接受数据
             this.memberTypes = SysManage.MemberTypes;
             //初始化Label
-            this.nameLabel.Text += card.Name;          //姓名
-            this.genderLabel.Text += card.Gender;        //性别
-            this.nationLabel.Text +=card.Nation;        //民族
+            //this.nameLabel.Text += card.Name;          //姓名
+            //this.genderLabel.Text += card.Gender;        //性别
+            //this.nationLabel.Text +=card.Nation;        //民族
+            //this.cardTypeLabel.Text += "身份证";      //卡类型
+            //this.cardNumLabel.Text += card.Number;       //卡号
+            //this.cardValidityLabel.Text += card.Vld;  //有效期
+            //this.addressLabel.Text += card.Address;           //地址
+            //this.organLabel.Text += card.Organization;             //发证机关
+            //this.countryLabel.Text += "中国";              //国籍
+            //this.birthdayLabel.Text += card.Birthday;              //出生日期
+
+
+            //MemoryStream ms = new MemoryStream(System.Convert.FromBase64String(card.Head));
+            //this.pictureEdit1.Image = Image.FromStream(ms);
+
+            this.nameLabel.Text += "2333";          //姓名
+            this.genderLabel.Text += "男";        //性别
+            this.nationLabel.Text += "汉族";        //民族
             this.cardTypeLabel.Text += "身份证";      //卡类型
-            this.cardNumLabel.Text += card.Number;       //卡号
-            this.cardValidityLabel.Text += card.Vld;  //有效期
-            this.addressLabel.Text += card.Address;           //地址
-            this.organLabel.Text += card.Organization;             //发证机关
+            this.cardNumLabel.Text += card;       //卡号
+            this.cardValidityLabel.Text += "";  //有效期
+            this.addressLabel.Text += "dddd";           //地址
+            this.organLabel.Text += "dad";             //发证机关
             this.countryLabel.Text += "中国";              //国籍
-            this.birthdayLabel.Text += card.Birthday;              //出生日期
+            this.birthdayLabel.Text += "2012-12-10";              //出生日期
 
-           
-            MemoryStream ms = new MemoryStream(System.Convert.FromBase64String(card.Head));
-            this.pictureEdit1.Image = Image.FromStream(ms);
-
-          
-
+            //MemoryStream ms = new MemoryStream(System.Convert.FromBase64String(card.Head));
+            //this.pictureEdit1.Image = Image.FromStream(ms);
 
             //初始化GridControl
             ToolsManage.SetGridView(this.gridView1, GridControlType.OpenMember, out this.mainDataTable);
             this.gridControl1.DataSource = this.mainDataTable;
             RefreshGridControl();
-
-
 
             //隐藏按钮可点击
             this.simpleButton1.Enabled = false;
@@ -147,7 +155,9 @@ namespace NetBarMS.Views.NetUserManage
             {
                 return;
             }
+#if DEBUG
             System.Console.WriteLine("AddCardInfoResult:" + result.pack);
+#endif
             NetMessageManage.RemoveResultBlock(AddCardInfoResult);
             if (result.pack.Content.MessageType == 1)
             {
@@ -170,17 +180,21 @@ namespace NetBarMS.Views.NetUserManage
             {
                 return;
             }
+#if DEBUG
             System.Console.WriteLine("OpenMemberResult:" + result.pack);
+#endif
             NetMessageManage.RemoveResultBlock(OpenMemberResult);
-            //int key = int.Parse(result.pack.Content.ErrorTip.Key);
+
             FLOW_ERROR error = FLOW_ERROR.OTHER;
             Enum.TryParse<FLOW_ERROR>(result.pack.Content.ErrorTip.Key, out error);
+
+            //办理完成
             if (result.pack.Content.MessageType == 1)
             {
                 this.Invoke(new RefreshUIHandle(delegate ()
                 {
                     //将按钮回复可以点击
-                    this.simpleButton1.Enabled = true;
+                    this.simpleButton1.Enabled = false;
                     this.simpleButton2.Enabled = true;
                 }));
             }

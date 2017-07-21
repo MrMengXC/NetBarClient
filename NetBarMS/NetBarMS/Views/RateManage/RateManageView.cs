@@ -113,7 +113,7 @@ namespace NetBarMS.Views.RateManage
         //TableLayoutPanel 重绘触发的方法
         private void AreaLabel_Paint(object sender, PaintEventArgs e)
         {
-            System.Console.WriteLine("X:{0} Y:{1}",e.ClipRectangle.X,e.ClipRectangle.Y);
+            //System.Console.WriteLine("X:{0} Y:{1}",e.ClipRectangle.X,e.ClipRectangle.Y);
             int tag = (int)((Label)sender).Tag;
             if(tag == 0)
             {

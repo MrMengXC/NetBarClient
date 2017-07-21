@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using NetBarMS.Codes.Tools.Manage;
 using NetBarMS.Codes.Tools;
+using NetBarMS.Views.CustomView;
 
 namespace NetBarMS.Views.HomePage
 {
@@ -26,11 +27,15 @@ namespace NetBarMS.Views.HomePage
         //显示的数据字典
         private Dictionary<string, List<StructRealTime>> areaComsDict;
         private List<StructRealTime> filterComs;
+        private Dictionary<string, Label> LabelDict = new Dictionary<string, Label>();
 
+        private int width = 0, height = 0;
 
         public HomePageComputerView()
         {
             InitializeComponent();
+            width = this.panel1.Width / 2;
+            height = this.panel1.Height / 2;
             InitUI();
         }
 
@@ -61,82 +66,16 @@ namespace NetBarMS.Views.HomePage
 
         
         //添加区域电脑Panel
-        private void AddAreaComsPanel(string areaName, int index)
+        private void AddAreaComsPanel(string areaId, int index)
         {
-            int width = this.panel1.Width / 2;
-            int height = this.panel1.Height / 2;
-            TableLayoutPanel areaPanel = new TableLayoutPanel();
-            areaPanel.Location = new Point(20 * (index % 2 + 1) + index % 2 * width, 20 * (index / 2 + 1) + index / 2 * height);
-            areaPanel.Size = new Size(width, height);
-            areaPanel.Margin = new Padding(70);
-            areaPanel.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
-            this.panel1.Controls.Add(areaPanel);
-            areaPanel.Name = areaName;
-
-            areaPanel.RowCount = 2;
-            areaPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(SizeType.Percent, 90));
-            areaPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(SizeType.Percent, 10));
-
-            //创建coms 的panel
-            FlowLayoutPanel coms = new FlowLayoutPanel();
-            areaPanel.Controls.Add(coms);
-            coms.Dock = DockStyle.Fill;
-            coms.Padding = coms.Margin = new Padding(0);
-            areaPanel.SetRow(coms, 0);
-            //添加电脑图标
-            AddComs(areaComsDict[areaName],coms);
            
-
-            //创建显示的Label
-            Label areaNameLabel = new Label();
-            areaNameLabel.BackColor = Color.Blue;
-            areaNameLabel.Text = SysManage.GetAreaName(areaName);
-            areaPanel.Controls.Add(areaNameLabel);
-            areaNameLabel.Dock = DockStyle.Fill;
-            areaNameLabel.AutoSize = false;
-            areaNameLabel.TextAlign = ContentAlignment.MiddleCenter;
-            areaNameLabel.ForeColor = Color.White;
-            areaNameLabel.Margin = new Padding(0);
-            areaPanel.SetRow(areaNameLabel, 1);
+            AreaComsView areaComsView = new AreaComsView(areaComsDict[areaId], SysManage.GetAreaName(areaId),ComLabel_Paint);
+            areaComsView.Location = new Point(20 * (index % 2 + 1) + index % 2 * width, 20 * (index / 2 + 1) + index / 2 * height);
+            areaComsView.Size = new Size(width, height);
+            this.panel1.Controls.Add(areaComsView);
 
         }
-        //添加电脑
-        private void AddComs(List<StructRealTime> coms,FlowLayoutPanel parent)
-        {
-            int width = parent.Width / 7;
-            int height = parent.Height / 3;
-            foreach (StructRealTime com in coms)
-            {
-                //创建显示的Label
-                Label comLabel = new Label();
-                comLabel.Text = com.Computer; ;
-                parent.Controls.Add(comLabel);
-                comLabel.AutoSize = false;
-                comLabel.Size = new Size(width, height);
-                comLabel.TextAlign = ContentAlignment.MiddleCenter;
-                comLabel.ForeColor = Color.White;
-                comLabel.Padding = new Padding(0);
-                comLabel.Margin = new Padding(10);
-                comLabel.Name = string.Format("name_{0}", com.Computerid);
-                comLabel.Paint += ComLabel_Paint;
-                COMPUTERSTATUS status = COMPUTERSTATUS.无;
-                Enum.TryParse<COMPUTERSTATUS>(com.Status, out status);
-                switch(status)
-                {
-                    case COMPUTERSTATUS.空闲:
-                        comLabel.BackColor = IDLE_COLOR;
-                        break;
-                    case COMPUTERSTATUS.在线:
-                        comLabel.BackColor = ONLINE_COLOR;
-                        break;
-                    default:
-                        break;
-                }
-     
-
-            }
-
-        }
+        
         //电脑Label重绘
         private void ComLabel_Paint(object sender, PaintEventArgs e)
         {
@@ -249,7 +188,8 @@ namespace NetBarMS.Views.HomePage
         #region 重绘LableBorder
         private void DrawComLabelBorder(int comId,Graphics gra,Rectangle rec)
         {
-            if (this.filterComs.Where(com => com.Computerid == comId).Count() > 0)
+
+            if (this.filterComs.Where(com => com.Computerid == comId).Count() > 0 && HomePageMessageManage.IsFilter)
             {
                 ControlPaint.DrawBorder(gra, rec,
                     Color.Transparent, 0, ButtonBorderStyle.None,

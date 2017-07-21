@@ -182,6 +182,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Codes\Tools\Manage\XMLDataManage.cs" />
+    <Compile Include="Views\CustomView\AreaComsView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\CustomView\AreaComsView.Designer.cs">
+      <DependentUpon>AreaComsView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\CustomView\CustomMonthDate.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -680,6 +686,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\CustomView\AreaComsView.resx">
+      <DependentUpon>AreaComsView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\CustomView\CustomMonthDate.resx">
       <DependentUpon>CustomMonthDate.cs</DependentUpon>
     </EmbeddedResource>

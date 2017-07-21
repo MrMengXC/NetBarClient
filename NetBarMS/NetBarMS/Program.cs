@@ -1,4 +1,5 @@
-﻿using System;
+﻿#define IDM
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -35,11 +36,11 @@ namespace NetBarMS
             //初始化XML
             XMLDataManage.Init();
 
-            OpenMemberView newview2 = new OpenMemberView("");
-            //MainForm newForm2 = new MainForm
-            //DayInComeView newview2 = new DayInComeView();
-            //CustomForm newForm2 = new CustomForm(newview2, true, false);
-            ToolsManage.ShowForm(newview2, true);
+            //OpenMemberView newview2 = new OpenMemberView("");
+            ////MainForm newForm2 = new MainForm
+            ////DayInComeView newview2 = new DayInComeView();
+            ////CustomForm newForm2 = new CustomForm(newview2, true, false);
+            //ToolsManage.ShowForm(newview2, true);
 
             //return;
 

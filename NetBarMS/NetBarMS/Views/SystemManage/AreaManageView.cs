@@ -280,7 +280,7 @@ namespace NetBarMS.Views.SystemManage
             }
 
             NetMessageManage.RemoveResultBlock(AddAreaResult);
-            //System.Console.WriteLine("AddAreaResult:" + result.pack);
+            System.Console.WriteLine("AddAreaResult:" + result.pack);
 
             if (result.pack.Content.MessageType == 1)
             {
@@ -314,7 +314,7 @@ namespace NetBarMS.Views.SystemManage
             {
                 return;
             }
-            //System.Console.WriteLine("DeleteAreaResult:" + result.pack);
+           // System.Console.WriteLine("DeleteAreaResult:" + result.pack);
             NetMessageManage.RemoveResultBlock(DeleteAreaResult);
             if (result.pack.Content.MessageType == 1)
             {
@@ -329,7 +329,10 @@ namespace NetBarMS.Views.SystemManage
                     areaManage.UpateHomePageComputerArea(areaId, AREA_SETTING.DELETE);
                     MessageBox.Show("删除成功");
                 }));
-          
+            }
+            else
+            {
+                MessageBox.Show("删除区域失败,请先删除区域所有所属电脑！");
             }
         }
         #endregion
@@ -440,7 +443,7 @@ namespace NetBarMS.Views.SystemManage
             {
                 int btnIndex = int.Parse((string)button.Tag);
                 StructRealTime.Builder com = new StructRealTime.Builder(this.areaManage.currentComs[btnIndex]);
-                com.Area = "-1";
+                com.Area = "0";
                 changeComs.Add(com.Build());
                 //移除按钮
                 this.currentComsPanel.Controls.Remove(button);

@@ -125,25 +125,28 @@ namespace NetBarMS.Codes.Tools
                     Console.WriteLine("断开连接");
                     break;
                 }
-               // Console.WriteLine("Time:" + DateTime.Now);
-                byte[] receiveBytes = new byte[1024];
-                //存储数据头的所有字节数 varint32:1419 1417
-                Int32 len = clientSocket.Receive(receiveBytes, 0);
-                if (len > 0)
+              
+
+                try
                 {
-                    try
+                    // Console.WriteLine("Time:" + DateTime.Now);
+                    byte[] receiveBytes = new byte[1024];
+                    //存储数据头的所有字节数 varint32:1419 1417
+                    Int32 len = clientSocket.Receive(receiveBytes, 0);
+                    if (len > 0)
                     {
                         //处理接受到的数据
                         HandleReceveBytes(receiveBytes, len);
+
                     }
-                    catch (Exception ex)
+                    else
                     {
-                        System.Console.WriteLine("接收服务器数据出错");
+
                     }
                 }
-                else
+                catch (System.Net.Sockets.SocketException exc)
                 {
-
+                    System.Console.WriteLine("接收服务器数据出错");
                 }
 
 

@@ -132,7 +132,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(72, 23);
             this.label3.TabIndex = 0;
-            this.label3.Text = "所需积分";
+            this.label3.Text = "赠送积分";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // integralTextEdit

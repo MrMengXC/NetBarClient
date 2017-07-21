@@ -90,7 +90,7 @@ namespace NetBarMS.Codes.Tools
             }
 
             NetMessageManage.RemoveResultBlock(GetMemberLvSettingResult);
-           // System.Console.WriteLine("GetMemberLvSettingResult:" + result.pack);
+          //System.Console.WriteLine("GetMemberLvSettingResult:" + result.pack);
             System.Console.WriteLine("获取会员等级信息");
             if (result.pack.Content.MessageType == 1)
             {
@@ -101,7 +101,8 @@ namespace NetBarMS.Codes.Tools
                 foreach (StructDictItem item in result.pack.Content.ScSysInfo.ChildList)
                 {
                     MemberTypeModel model = new MemberTypeModel(item);
-                    this.memberDict.Add(item.Code, model);
+                    //this.memberDict.Add(item.Code, model);
+                    this.memberDict[item.Code] = model;
                     this.memberTypes.Add(model);
                 }
                 if (RequestSysEvent != null)
@@ -136,10 +137,6 @@ namespace NetBarMS.Codes.Tools
                 SysManage.Manage().memberDict.TryGetValue(id, out model);
                 if (model == null)
                 {
-                    //if(id == IdTools.TEM_MEMBER_ID)
-                    //{
-                    //    return "临时会员";
-                    //}
                     return "该会员等级已移除";
                 }
                 else

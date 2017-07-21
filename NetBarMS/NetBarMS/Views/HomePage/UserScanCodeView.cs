@@ -99,9 +99,12 @@ namespace NetBarMS.Views.HomePage
             FLOW_ERROR error = FLOW_ERROR.OTHER;
             Enum.TryParse<FLOW_ERROR>(result.pack.Content.ErrorTip.Key, out error);
 
-            if (result.pack.Content.MessageType == 1 || error == FLOW_ERROR.NEED_RECHARGE)
+            if (result.pack.Content.MessageType == 1)
             {
-                GetRechargeCode();
+                this.Invoke(new RefreshUIHandle(delegate
+                { 
+                    this.CloseFormClick();
+                }));
             }
             else
             {
@@ -116,6 +119,11 @@ namespace NetBarMS.Views.HomePage
                         {
                             MessageBox.Show("该用户已经被锁");
 
+                        }
+                        break;
+                    case FLOW_ERROR.NEED_RECHARGE:
+                        {
+                            GetRechargeCode();
                         }
                         break;
                     default:
@@ -216,48 +224,38 @@ namespace NetBarMS.Views.HomePage
             {
                 this.Invoke(new RefreshUIHandle(delegate 
                 {
-                    //TODO:暂时显示充值成功
-                    //充值成功，显示充值成功的界面9
-                    //CloseFormHandle handle = new CloseFormHandle(delegate {
-                    //    if (this.flowstatus == FLOW_STATUS.ACTIVE_STATUS)
-                    //    {
-                    //        ActiveFlowManage.ActiveFlow().MemberPaySuccess();
-                    //    }
-                    //    this.CloseFormClick();
-                    //});
-                    //UserPayResultView view = new UserPayResultView();
-                    //ToolsManage.ShowForm(view, false, handle);
+                    
                     SCToCharge charge = result.pack.Content.CsToCharge;
-                    string msg = string.Format("充值成功！\n本次充值{0}元，赠送{1}元，赠送{2}积分", charge.Recharge, charge.Bonus, charge.Bonus);
+                    string msg = string.Format("充值成功！\n本次充值{0}元，赠送{1}元，赠送{2}积分", charge.Recharge, charge.Bonus, charge.Integal);
                     MessageBox.Show(msg);
-                    if (this.flowstatus == FLOW_STATUS.ACTIVE_STATUS)
+                    
+                    //正常充值流程继续调入口
+                    if(this.flowstatus == FLOW_STATUS.NORMAL_STATUS)
                     {
-                        ActiveFlowManage.ActiveFlow().MemberPaySuccess();
+                        MemberNetOperation.BeiginRecharge(BeginRechargeResult, this.cardNum);
                     }
-                    this.CloseFormClick();
+                    //其他则进行关闭
+                    else
+                    {
+                        if (this.flowstatus == FLOW_STATUS.ACTIVE_STATUS)
+                        {
+                            ActiveFlowManage.ActiveFlow().MemberPaySuccess();
+                        }
+                        this.CloseFormClick();
+                    }
+                 
                 }));
             }
             else
             {
                 this.Invoke(new RefreshUIHandle(delegate
                 {
-                    //TODO:暂时显示充值成功
-                    //充值成功，显示充值成功的界面9
-                    //CloseFormHandle handle = new CloseFormHandle(delegate {
-                    //    if (this.flowstatus == FLOW_STATUS.ACTIVE_STATUS)
-                    //    {
-                    //        ActiveFlowManage.ActiveFlow().MemberPaySuccess();
-                    //    }
-                    //    this.CloseFormClick();
-                    //});
-                    //UserPayResultView view = new UserPayResultView();
-                    //ToolsManage.ShowForm(view, false, handle
 
                     MessageBox.Show("充值失败");
-                    if (this.flowstatus == FLOW_STATUS.ACTIVE_STATUS)
-                    {
-                        ActiveFlowManage.ActiveFlow().MemberPaySuccess();
-                    }
+                    //if (this.flowstatus == FLOW_STATUS.ACTIVE_STATUS)
+                    //{
+                    //    ActiveFlowManage.ActiveFlow().MemberPaySuccess();
+                    //}
                     this.CloseFormClick();
                 }));
             }

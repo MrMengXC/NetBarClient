@@ -28,10 +28,9 @@ using System.Web.Security;
 
 namespace NetBarMS.Codes.Tools
 {
-    
+
     class ToolsManage
     {
-
 
         #region 显示自定义窗体
         /// <summary>
