@@ -23,39 +23,62 @@ namespace NetBarMS.Views.UserUseCp
     {
         private string cardNumber;
         private StructCard card;
+
         public UserActiveView()
         {
             InitializeComponent();
             this.titleLabel.Text = "用户上机";
-            InitUI();
-        }
+            cardNumber = ToolsManage.RandomCard;
+            label1.Text += cardNumber;
 
+        }
+        public UserActiveView(StructCard readCard)
+        {
+            InitializeComponent();
+            this.titleLabel.Text = "用户上机";
+            simpleButton2.Enabled = simpleButton3.Enabled = simpleButton1.Enabled = false;
+            IdCardReaderManage.ReadCard(ReadCardResult, null, null);
+            InitUI(readCard);
+        }
         #region 初始化UI
         private void InitUI()
         {
 
 #if RELEASE
-            cardNumber = ToolsManage.RandomCard;
-            label1.Text += cardNumber;
+            
 #else
-            simpleButton2.Enabled =simpleButton3.Enabled = simpleButton1.Enabled = false;
-            IdCardReaderManage.ReadCard(ReadCardResult,ConnectIDMResult,AuthenticateCardResult);
+           
 
 #endif
-
 
             //判断会员信息。是否是会员。是的话进行
             //  MemberNetOperation.MemberInfo(MemberInfoResult, card);
         }
-        //关闭重写
+        private void InitUI(StructCard showcard)
+        {
+
+            char[] sp = { ':', '：' };
+            simpleButton3.Enabled = simpleButton2.Enabled = simpleButton1.Enabled = true;
+
+            label1.Text = string.Format("{0}:{1}", label1.Text.Split(sp)[0], showcard.Number);
+            label2.Text = string.Format("{0}:{1}", label2.Text.Split(sp)[0], showcard.Name);
+            MemoryStream ms = new MemoryStream(System.Convert.FromBase64String(showcard.Head));
+            this.pictureEdit1.Image = Image.FromStream(ms);
+        }
+        #endregion
+
+        #region 关闭重写
+#if DEBUG
         protected override void CloseFormClick(object sender, EventArgs e)
         {
-#if DEBUG
-            IdCardReaderManage.RemoveReadCard(ReadCardResult, ConnectIDMResult, AuthenticateCardResult);
-#endif
+
+            IdCardReaderManage.OffCardReader(ReadCardResult, null, null);
+
             base.CloseFormClick(sender, e);
         }
-        //查询会员信息结果反馈
+#endif
+        #endregion
+        #region 查询会员信息结果反馈
         private void MemberInfoResult(ResultModel result)
         {
             if (result.pack.Cmd != Cmd.CMD_EMK_USERINFO)
@@ -146,47 +169,22 @@ namespace NetBarMS.Views.UserUseCp
         }
         #endregion
 
-        private void ReadCardResult(StructCard readCard)
+        #region 读取身份证结果回调
+        private void ReadCardResult(StructCard readCard,bool isSuccess)
         {
-            if(this.InvokeRequired)
+            if(readCard != null && isSuccess)
             {
-                this.Invoke(new RefreshUIHandle(delegate {
+                if (this.InvokeRequired)
+                {
+                    this.Invoke(new RefreshUIHandle(delegate {
+                        InitUI(readCard);
+                    }));
+                }
+                else
                     InitUI(readCard);
-
-
-                }));
             }
-            else
-             InitUI(readCard);
-
         }
-
-        private void AuthenticateCardResult(bool isSuccess)
-        {
-
-
-
-        }
-
-        private void ConnectIDMResult(bool isSuccess)
-        {
-
-
-
-        }
-     
-        private void InitUI(StructCard showcard)
-        {
-           
-            char[] sp = { ':', '：' };
-            simpleButton3.Enabled = simpleButton2.Enabled = simpleButton1.Enabled = true;
-
-            label1.Text = string.Format("{0}:{1}", label1.Text.Split(sp)[0], showcard.Number);
-            label2.Text = string.Format("{0}:{1}", label2.Text.Split(sp)[0], showcard.Name);
-            MemoryStream ms = new MemoryStream(System.Convert.FromBase64String(showcard.Head));
-            this.pictureEdit1.Image = Image.FromStream(ms);
-        }
-
+        #endregion
 
     }
 }

@@ -49,9 +49,6 @@ namespace NetBarMS.Views.NetUserManage
             {
                 idNum = card;
             }
-
-            //StructCard card = IdCardReaderManage.ReadCard();
-
             InitUI(idNum);
 
         }
@@ -61,31 +58,45 @@ namespace NetBarMS.Views.NetUserManage
             InitializeComponent();
             this.titleLabel.Text = "会员办理";
             this.flowstatus = status;
-            //InitUI(card);
+            InitUI(card);
+        }
+
+        public OpenMemberView(FLOW_STATUS status, StructCard card)
+        {
+            InitializeComponent();
+            this.titleLabel.Text = "会员办理";
+            this.flowstatus = status;
+            InitUI(card);
+        }
+        public OpenMemberView(StructCard card)
+        {
+            InitializeComponent();
+            this.titleLabel.Text = "会员办理";
+            InitUI(card);
+            IdCardReaderManage.ReadCard(ReadCardResult, null, null);
         }
         #endregion
 
+        #region 关闭重写
+#if DEBUG
+        protected override void CloseFormClick(object sender, EventArgs e)
+        {
+
+            IdCardReaderManage.OffCardReader(ReadCardResult, null, null);
+
+            base.CloseFormClick(sender, e);
+        }
+#endif
+        #endregion
+
         #region 初始化UI
+
         //初始化UI
         private void InitUI(string card)
         {
             //先接受数据
             this.memberTypes = SysManage.MemberTypes;
-            //初始化Label
-            //this.nameLabel.Text += card.Name;          //姓名
-            //this.genderLabel.Text += card.Gender;        //性别
-            //this.nationLabel.Text +=card.Nation;        //民族
-            //this.cardTypeLabel.Text += "身份证";      //卡类型
-            //this.cardNumLabel.Text += card.Number;       //卡号
-            //this.cardValidityLabel.Text += card.Vld;  //有效期
-            //this.addressLabel.Text += card.Address;           //地址
-            //this.organLabel.Text += card.Organization;             //发证机关
-            //this.countryLabel.Text += "中国";              //国籍
-            //this.birthdayLabel.Text += card.Birthday;              //出生日期
-
-
-            //MemoryStream ms = new MemoryStream(System.Convert.FromBase64String(card.Head));
-            //this.pictureEdit1.Image = Image.FromStream(ms);
+            
 
             this.nameLabel.Text += "2333";          //姓名
             this.genderLabel.Text += "男";        //性别
@@ -97,10 +108,6 @@ namespace NetBarMS.Views.NetUserManage
             this.organLabel.Text += "dad";             //发证机关
             this.countryLabel.Text += "中国";              //国籍
             this.birthdayLabel.Text += "2012-12-10";              //出生日期
-
-            //MemoryStream ms = new MemoryStream(System.Convert.FromBase64String(card.Head));
-            //this.pictureEdit1.Image = Image.FromStream(ms);
-
             //初始化GridControl
             ToolsManage.SetGridView(this.gridView1, GridControlType.OpenMember, out this.mainDataTable);
             this.gridControl1.DataSource = this.mainDataTable;
@@ -113,7 +120,39 @@ namespace NetBarMS.Views.NetUserManage
             //开通会员入口
             OpenMember();
         }
+        private void InitUI(StructCard readCard)
+        {
+            //初始化Label
+            char[] sp = { ':', '：' };
+            this.nameLabel.Text = string.Format("{0}：{1}", this.nameLabel.Text.Split(sp)[0], readCard.Name);
+            this.genderLabel.Text = string.Format("{0}：{1}", this.genderLabel.Text.Split(sp)[0], readCard.Gender);
+            this.nationLabel.Text = string.Format("{0}：{1}", this.nationLabel.Text.Split(sp)[0], readCard.Nation);
+            this.cardTypeLabel.Text = string.Format("{0}：{1}", this.cardTypeLabel.Text.Split(sp)[0], "身份证");
+            this.cardNumLabel.Text = string.Format("{0}：{1}", this.cardNumLabel.Text.Split(sp)[0], readCard.Number);
+            this.addressLabel.Text = string.Format("{0}：{1}", this.addressLabel.Text.Split(sp)[0], readCard.Address);
+            this.organLabel.Text = string.Format("{0}：{1}", this.organLabel.Text.Split(sp)[0], readCard.Organization);
+            this.countryLabel.Text = string.Format("{0}：{1}", this.countryLabel.Text.Split(sp)[0], "中国");
+            this.birthdayLabel.Text = string.Format("{0}：{1}", this.birthdayLabel.Text.Split(sp)[0], readCard.Birthday);
+            this.cardValidityLabel.Text = string.Format("{0}：{1}", this.cardValidityLabel.Text.Split(sp)[0], readCard.Vld);
+            MemoryStream ms = new MemoryStream(System.Convert.FromBase64String(readCard.Head));
+            this.pictureEdit1.Image = Image.FromStream(ms);
 
+
+            if(this.mainDataTable == null)
+            {
+                //先接受数据
+                this.memberTypes = SysManage.MemberTypes;
+                //初始化GridControl
+                ToolsManage.SetGridView(this.gridView1, GridControlType.OpenMember, out this.mainDataTable);
+                this.gridControl1.DataSource = this.mainDataTable;
+                RefreshGridControl();
+            }
+            //隐藏按钮可点击
+            this.simpleButton1.Enabled = false;
+            this.simpleButton2.Enabled = false;
+            this.moneyTextEdit.Text = "";
+
+        }
         //刷新GridControl
         private void RefreshGridControl()
         {
@@ -317,6 +356,21 @@ namespace NetBarMS.Views.NetUserManage
         }
         #endregion
 
-
+        #region 读取身份证结果回调
+        private void ReadCardResult(StructCard readCard, bool isSuccess)
+        {
+            if (readCard != null && isSuccess)
+            {
+                if (this.InvokeRequired)
+                {
+                    this.Invoke(new RefreshUIHandle(delegate {
+                        InitUI(readCard);
+                    }));
+                }
+                else { InitUI(readCard); }
+                   
+            }
+        }
+        #endregion
     }
 }

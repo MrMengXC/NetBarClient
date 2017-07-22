@@ -35,6 +35,14 @@ namespace NetBarMS
     {
 
         private char[] sp = { '\n' , ':', '：' };
+        /// <summary>
+        /// 是否是办理会员
+        /// </summary>
+        private bool IsOpenMember = false;
+        /// <summary>
+        /// 是否是激活
+        /// </summary>
+        private bool IsActiveCard = false;
 
         public MainForm()
         {
@@ -370,19 +378,97 @@ namespace NetBarMS
         //开卡
         private void simpleButton12_Click(object sender, EventArgs e)
         {
+#if DEBUG
+            //先连接设备进行读卡
+            this.IsOpenMember = true;
+            IdCardReaderManage.ReadCard(ReadCardResult, ConnectReaderResult, AuthenticateCardResult);
+#else
             ReminderScanView view = new ReminderScanView();
             ToolsManage.ShowForm(view, false);
+#endif
+
         }
 
-        //上网
+        #region 激活上网
         private void simpleButton13_Click(object sender, EventArgs e)
         {
+#if DEBUG
+            //先连接设备进行读卡
+            this.IsActiveCard = true;
+            IdCardReaderManage.ReadCard(ReadCardResult, ConnectReaderResult, AuthenticateCardResult);
+#else
             UserActiveView view = new UserActiveView();
             ToolsManage.ShowForm(view, false);
+#endif
+        }
+        //读卡结果
+        private void ReadCardResult(StructCard readCard,bool isSuccess)
+        {
+            if(readCard != null && isSuccess)
+            {
+                //激活
+                RefreshUIHandle active = new RefreshUIHandle(delegate
+                {
+                    this.IsActiveCard = false;
+                    UserActiveView view = new UserActiveView(readCard);
+                    ToolsManage.ShowForm(view, false);
+                });
+                //开通会员
+                RefreshUIHandle open = new RefreshUIHandle(delegate
+                {
+                    this.IsOpenMember = false;
+                    OpenMemberView view = new OpenMemberView(readCard);
+                    ToolsManage.ShowForm(view, false);
+                });
+
+                IdCardReaderManage.RemoveEvent(ReadCardResult, ConnectReaderResult, AuthenticateCardResult);
+                if (this.InvokeRequired)
+                {
+                    if(this.IsOpenMember){this.Invoke(open);}
+                    else if (this.IsActiveCard){this.Invoke(active);}
+                    
+                }
+                else
+                {
+                    if (this.IsOpenMember) { open(); }
+                    else if (this.IsActiveCard) { active(); }
+                }
+            }
+            else
+            {
+                this.IsOpenMember = this.IsActiveCard = false;
+                IdCardReaderManage.OffCardReader(ReadCardResult, ConnectReaderResult, AuthenticateCardResult);
+                MessageBox.Show("读取身份证信息失败");
+            }
+          
+
+        }
+        //认证是否放身份证回调
+        private void AuthenticateCardResult(bool isSuccess)
+        {
+
+            if(!isSuccess)
+            {
+                this.IsOpenMember = this.IsActiveCard = false;
+                IdCardReaderManage.OffCardReader(ReadCardResult, ConnectReaderResult, AuthenticateCardResult);
+                MessageBox.Show("请放置身份证");
+            }
+        }
+        //连接读卡器回调
+        private void ConnectReaderResult(bool isSuccess)
+        {
+            if (!isSuccess)
+            {
+                this.IsOpenMember = this.IsActiveCard = false;
+                IdCardReaderManage.OffCardReader(ReadCardResult, ConnectReaderResult, AuthenticateCardResult);
+                MessageBox.Show("请检查读卡器是否连接");
+            }
         }
         #endregion
 
-       
+        #endregion
+
+
     }
 }
 

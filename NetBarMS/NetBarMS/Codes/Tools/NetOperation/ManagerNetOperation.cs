@@ -63,7 +63,7 @@ namespace NetBarMS.Codes.Tools.NetOperation
         {
             CSAccountInfo.Builder info = new CSAccountInfo.Builder()
             {
-                Accountid = aid
+                Accountid = ""
             };
             MessageContent.Builder content = new MessageContent.Builder();
             content.MessageType = 1;

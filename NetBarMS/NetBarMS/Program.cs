@@ -41,8 +41,9 @@ namespace NetBarMS
             ////DayInComeView newview2 = new DayInComeView();
             ////CustomForm newForm2 = new CustomForm(newview2, true, false);
             //ToolsManage.ShowForm(newview2, true);
-
-            //return;
+            MainForm form1 = new MainForm();
+            Application.Run(form1);
+            return;
 
 
             ManagerLoginView view = new ManagerLoginView();
