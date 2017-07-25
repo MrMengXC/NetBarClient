@@ -38,6 +38,10 @@
             // 
             this.titlePanel.Size = new System.Drawing.Size(524, 50);
             // 
+            // closeBtn
+            // 
+            this.closeBtn.Location = new System.Drawing.Point(472, 0);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;

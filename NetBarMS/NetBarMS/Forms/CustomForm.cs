@@ -78,16 +78,7 @@ namespace NetBarMS.Forms
 
         public CustomForm(UserControl control, bool showInTaskbar, CloseFormHandle close)
         {
-            if(control.GetType().IsSubclassOf(typeof(RootUserControlView)))
-            {
-                RootUserControlView view = control as RootUserControlView;
-                if (close != null)
-                {
-                    view.CloseForm += close;
-                }
-                CommonInit(control, showInTaskbar, view.titlePanel);
-            }
-            else if (control.GetType().IsSubclassOf(typeof(RootFormView)))
+            if (control.GetType().IsSubclassOf(typeof(RootFormView)))
             {
                 RootFormView view = control as RootFormView;
                 if (close != null)

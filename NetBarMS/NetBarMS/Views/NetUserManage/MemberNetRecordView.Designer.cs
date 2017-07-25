@@ -35,7 +35,6 @@
             this.popupContainerControl1 = new DevExpress.XtraEditors.PopupContainerControl();
             this.dateNavigator = new DevExpress.XtraScheduler.DateNavigator();
             this.pageView1 = new NetBarMS.Views.CustomView.PageView();
-            this.titlePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
@@ -46,17 +45,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateNavigator.CalendarTimeProperties)).BeginInit();
             this.SuspendLayout();
             // 
-            // titlePanel
+            // titlePanelView1
             // 
-            this.titlePanel.Controls.Add(this.popupContainerEdit1);
-            this.titlePanel.Size = new System.Drawing.Size(1050, 50);
-            this.titlePanel.Controls.SetChildIndex(this.titleLabel, 0);
-            this.titlePanel.Controls.SetChildIndex(this.popupContainerEdit1, 0);
-            // 
-            // titleLabel
-            // 
-            this.titleLabel.Size = new System.Drawing.Size(110, 17);
-            this.titleLabel.Text = "上网记录查询";
+            this.titlePanelView1.Size = new System.Drawing.Size(1050, 50);
+            this.titlePanelView1.Title = "上网记录查询";
             // 
             // gridControl1
             // 
@@ -85,7 +77,7 @@
             // 
             // popupContainerEdit1
             // 
-            this.popupContainerEdit1.Location = new System.Drawing.Point(126, 17);
+            this.popupContainerEdit1.Location = new System.Drawing.Point(141, 19);
             this.popupContainerEdit1.Name = "popupContainerEdit1";
             this.popupContainerEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -132,17 +124,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.popupContainerEdit1);
             this.Controls.Add(this.popupContainerControl1);
             this.Controls.Add(this.pageView1);
             this.Controls.Add(this.gridControl1);
             this.Name = "MemberNetRecordView";
             this.Size = new System.Drawing.Size(1050, 773);
+            this.Controls.SetChildIndex(this.titlePanelView1, 0);
             this.Controls.SetChildIndex(this.gridControl1, 0);
-            this.Controls.SetChildIndex(this.titlePanel, 0);
             this.Controls.SetChildIndex(this.pageView1, 0);
             this.Controls.SetChildIndex(this.popupContainerControl1, 0);
-            this.titlePanel.ResumeLayout(false);
-            this.titlePanel.PerformLayout();
+            this.Controls.SetChildIndex(this.popupContainerEdit1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).EndInit();

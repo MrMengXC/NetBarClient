@@ -23,9 +23,7 @@ namespace NetBarMS.Views.InCome
 
         public DayInComeView()
         {
-            InitializeComponent();
-            //this.titleLabel.Text = "日营收管理";
-            
+            InitializeComponent();            
             InitUI();
         }
 
@@ -37,8 +35,6 @@ namespace NetBarMS.Views.InCome
             this.dateNavigator1.SyncSelectionWithEditValue = false;
             this.dateNavigator1.SelectionMode = DevExpress.XtraEditors.Repository.CalendarSelectionMode.Single;
             this.chartControl1.RuntimeHitTesting = true;
-
-         
 
             DateTime date = DateTime.Now.AddDays(-1);
             start = date.ToString("yyyy-MM-dd") + " 00:00:00";
@@ -190,7 +186,7 @@ namespace NetBarMS.Views.InCome
         //导出营收详情
         private void simpleButton2_Click(object sender, EventArgs e)
         {
-            IncomeDetail detail = new InCome.IncomeDetail(IncomeType.DAY_INCOME, this.earns.ToList<StructEarn>(),0,0);
+            IncomeDetailView detail = new InCome.IncomeDetailView(IncomeType.DAY_INCOME, this.earns.ToList<StructEarn>(),0,0);
             ToolsManage.ShowForm(detail, false);
         }
 

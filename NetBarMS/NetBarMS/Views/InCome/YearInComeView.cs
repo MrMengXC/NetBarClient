@@ -185,7 +185,7 @@ namespace NetBarMS.Views.InCome
         private void simpleButton2_Click(object sender, EventArgs e)
         {
             DateTime time = DateTime.ParseExact(this.start, "yyyy-MM-dd HH:mm:ss", System.Globalization.CultureInfo.CurrentCulture);
-            IncomeDetail detail = new InCome.IncomeDetail(IncomeType.YEAR_INCOME, this.earns.ToList<StructEarn>(),time.Year,0);
+            IncomeDetailView detail = new InCome.IncomeDetailView(IncomeType.YEAR_INCOME, this.earns.ToList<StructEarn>(),time.Year,0);
             ToolsManage.ShowForm(detail, false);
         }
 

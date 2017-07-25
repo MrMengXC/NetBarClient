@@ -45,10 +45,12 @@ namespace NetBarMS.Codes.Tools.NetOperation
             content.MessageType = 1;
             content.CsQueryCharge = charge.Build();
 
-            MessagePack.Builder pack = new MessagePack.Builder();
-            pack.SetCmd(Cmd.CMD_QUERY_CHARGE);
-            pack.SetContent(content.Build());
-            NetMessageManage.SendMsg(pack.Build(), resultBlock);
+            SendModel send = new SendModel()
+            {
+                cmd = Cmd.CMD_QUERY_CHARGE,
+                content = content.Build(),
+            };
+            NetMessageManage.SendMsg(send, resultBlock);
         }
         #endregion
 
@@ -92,10 +94,12 @@ namespace NetBarMS.Codes.Tools.NetOperation
             content.MessageType = 1;
             content.CsQueryApply = apply.Build();
 
-            MessagePack.Builder pack = new MessagePack.Builder();
-            pack.SetCmd(Cmd.CMD_QUERY_APPLY);
-            pack.SetContent(content.Build());
-            NetMessageManage.SendMsg(pack.Build(), resultBlock);
+            SendModel send = new SendModel()
+            {
+                cmd = Cmd.CMD_QUERY_APPLY,
+                content = content.Build(),
+            };
+            NetMessageManage.SendMsg(send, resultBlock);
         }
         #endregion
 
@@ -138,10 +142,12 @@ namespace NetBarMS.Codes.Tools.NetOperation
             content.MessageType = 1;
             content.CsQueryEmk = emk.Build();
 
-            MessagePack.Builder pack = new MessagePack.Builder();
-            pack.SetCmd(Cmd.CMD_QUERY_EMBARKATION);
-            pack.SetContent(content.Build());
-            NetMessageManage.SendMsg(pack.Build(), resultBlock);
+            SendModel send = new SendModel()
+            {
+                cmd = Cmd.CMD_QUERY_EMBARKATION,
+                content = content.Build(),
+            };
+            NetMessageManage.SendMsg(send, resultBlock);
         }
         #endregion
 
@@ -183,10 +189,12 @@ namespace NetBarMS.Codes.Tools.NetOperation
             content.MessageType = 1;
             content.CsQueryTrade = consume.Build();
 
-            MessagePack.Builder pack = new MessagePack.Builder();
-            pack.SetCmd(Cmd.CMD_QUERY_CONSUM);
-            pack.SetContent(content.Build());
-            NetMessageManage.SendMsg(pack.Build(), resultBlock);
+            SendModel send = new SendModel()
+            {
+                cmd = Cmd.CMD_QUERY_CONSUM,
+                content = content.Build(),
+            };
+            NetMessageManage.SendMsg(send, resultBlock);
         }
         #endregion
 
@@ -211,10 +219,12 @@ namespace NetBarMS.Codes.Tools.NetOperation
             content.MessageType = 1;
             content.CsQueryOccup = search.Build();
 
-            MessagePack.Builder pack = new MessagePack.Builder();
-            pack.SetCmd(Cmd.CMD_QUERY_OCCUPANCY);
-            pack.SetContent(content.Build());
-            NetMessageManage.SendMsg(pack.Build(), resultBlock);
+            SendModel send = new SendModel()
+            {
+                cmd = Cmd.CMD_QUERY_OCCUPANCY,
+                content = content.Build(),
+            };
+            NetMessageManage.SendMsg(send, resultBlock);
         }
         #endregion
 

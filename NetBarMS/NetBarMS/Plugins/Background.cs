@@ -140,6 +140,8 @@ public static partial class Background {
   internal static pb::FieldAccess.FieldAccessorTable<global::CSOrderDetail, global::CSOrderDetail.Builder> internal__static_CSOrderDetail__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_SCOrderDetail__Descriptor;
   internal static pb::FieldAccess.FieldAccessorTable<global::SCOrderDetail, global::SCOrderDetail.Builder> internal__static_SCOrderDetail__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_CSOrderProc__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::CSOrderProc, global::CSOrderProc.Builder> internal__static_CSOrderProc__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_SCShiftDeliveredBy__Descriptor;
   internal static pb::FieldAccess.FieldAccessorTable<global::SCShiftDeliveredBy, global::SCShiftDeliveredBy.Builder> internal__static_SCShiftDeliveredBy__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_CSShiftAdd__Descriptor;
@@ -252,34 +254,35 @@ public static partial class Background {
           "CHVzZXJuYW1lGAcgASgJIisKC1NDT3JkZXJMaXN0EhwKBm9yZGVycxgBIAMo", 
           "CzIMLlN0cnVjdE9yZGVyIiAKDUNTT3JkZXJEZXRhaWwSDwoHb3JkZXJpZBgB", 
           "IAIoBSI0Cg1TQ09yZGVyRGV0YWlsEiMKB2RldGFpbHMYASADKAsyEi5TdHJ1", 
-          "Y3RPcmRlckRldGFpbCJWChJTQ1NoaWZ0RGVsaXZlcmVkQnkSFAoMZGVsaXZl", 
-          "cmVkX2J5GAEgAigJEhUKDWNoYXJnZV9hbW91bnQYAiACKAUSEwoLc2FsZV9h", 
-          "bW91bnQYAyACKAUibwoKQ1NTaGlmdEFkZBIVCg1kZWxpdmVyZWRfcHdkGAEg", 
-          "AigJEhMKC3JlY2VpdmVkX2J5GAIgAigJEhQKDHJlY2VpdmVkX3B3ZBgDIAIo", 
-          "CRIPCgdpc2NoZWNrGAQgAigFEg4KBnJlbWFyaxgFIAIoCSJNCgtDU1NoaWZ0", 
-          "RmluZBIZCgRwYWdlGAEgAigLMgsuU3RydWN0UGFnZRIRCglzdGFydHRpbWUY", 
-          "AiABKAkSEAoIc3RvcHRpbWUYAyABKAkiKwoLU0NTaGlmdEZpbmQSHAoGc2hp", 
-          "ZnRzGAEgAygLMgwuU3RydWN0U2hpZnQibgoNQ1NRdWVyeUNoYXJnZRIZCgRw", 
-          "YWdlGAEgAigLMgsuU3RydWN0UGFnZRIRCglzdGFydHRpbWUYAiABKAkSEAoI", 
-          "c3RvcHRpbWUYAyABKAkSDwoHcGF5bW9kZRgEIAEoBRIMCgRuYW1lGAUgASgJ", 
-          "IkIKDVNDUXVlcnlDaGFyZ2USEQoJcGFnZWNvdW50GAEgAigFEh4KB2NoYXJn", 
-          "ZXMYAiADKAsyDS5TdHJ1Y3RDaGFyZ2UigAEKCkNTUXVlcnlFbWsSGQoEcGFn", 
-          "ZRgBIAIoCzILLlN0cnVjdFBhZ2USEQoJc3RhcnR0aW1lGAIgASgJEhAKCHN0", 
-          "b3B0aW1lGAMgASgJEgwKBG5hbWUYBCABKAkSEAoIbWVtYmVyaWQYBSABKAUS", 
-          "EgoKY29tcHV0ZXJpZBgGIAEoBSJBCgpTQ1F1ZXJ5RW1rEhEKCXBhZ2Vjb3Vu", 
-          "dBgBIAIoBRIgCgRlbWtzGAIgAygLMhIuU3RydWN0RW1iYXJrYXRpb24igAEK", 
-          "DENTUXVlcnlUcmFkZRIZCgRwYWdlGAEgAigLMgsuU3RydWN0UGFnZRIRCglz", 
-          "dGFydHRpbWUYAiABKAkSEAoIc3RvcHRpbWUYAyABKAkSDQoFdXNhZ2UYBCAB", 
-          "KAUSDwoHcGF5bW9kZRgFIAEoBRIQCghtZW1iZXJpZBgGIAEoBSI/CgxTQ1F1", 
-          "ZXJ5VHJhZGUSEQoJcGFnZWNvdW50GAEgAigFEhwKBnRyYWRlcxgCIAMoCzIM", 
-          "LlN0cnVjdFRyYWRlIn8KDENTUXVlcnlBcHBseRIZCgRwYWdlGAEgAigLMgsu", 
-          "U3RydWN0UGFnZRIRCglzdGFydHRpbWUYAiABKAkSEAoIc3RvcHRpbWUYAyAB", 
-          "KAkSEAoIb3BlcmF0b3IYBCABKAkSDwoHcmlnaHRpZBgFIAEoBRIMCgRuYW1l", 
-          "GAYgASgJIj8KDFNDUXVlcnlBcHBseRIRCglwYWdlY291bnQYASACKAUSHAoG", 
-          "YXBwbHlzGAIgAygLMgwuU3RydWN0QXBwbHkiLAoMQ1NRdWVyeU9jY3VwEg4K", 
-          "BmFyZWFpZBgBIAEoBRIMCgRkYXRlGAIgASgJIh4KDFNDUXVlcnlPY2N1cBIO", 
-          "CgZvY2N1cHMYASADKAVCMwodY29tLnNreXNvZnQuY29yZS5hdXRvLm1lc3Nh", 
-        "Z2VCEkJhY2tncm91bmRQcm90b2NvbA=="));
+          "Y3RPcmRlckRldGFpbCIeCgtDU09yZGVyUHJvYxIPCgdvcmRlcmlkGAEgAigF", 
+          "IlYKElNDU2hpZnREZWxpdmVyZWRCeRIUCgxkZWxpdmVyZWRfYnkYASACKAkS", 
+          "FQoNY2hhcmdlX2Ftb3VudBgCIAIoBRITCgtzYWxlX2Ftb3VudBgDIAIoBSJv", 
+          "CgpDU1NoaWZ0QWRkEhUKDWRlbGl2ZXJlZF9wd2QYASACKAkSEwoLcmVjZWl2", 
+          "ZWRfYnkYAiACKAkSFAoMcmVjZWl2ZWRfcHdkGAMgAigJEg8KB2lzY2hlY2sY", 
+          "BCACKAUSDgoGcmVtYXJrGAUgAigJIk0KC0NTU2hpZnRGaW5kEhkKBHBhZ2UY", 
+          "ASACKAsyCy5TdHJ1Y3RQYWdlEhEKCXN0YXJ0dGltZRgCIAEoCRIQCghzdG9w", 
+          "dGltZRgDIAEoCSIrCgtTQ1NoaWZ0RmluZBIcCgZzaGlmdHMYASADKAsyDC5T", 
+          "dHJ1Y3RTaGlmdCJuCg1DU1F1ZXJ5Q2hhcmdlEhkKBHBhZ2UYASACKAsyCy5T", 
+          "dHJ1Y3RQYWdlEhEKCXN0YXJ0dGltZRgCIAEoCRIQCghzdG9wdGltZRgDIAEo", 
+          "CRIPCgdwYXltb2RlGAQgASgFEgwKBG5hbWUYBSABKAkiQgoNU0NRdWVyeUNo", 
+          "YXJnZRIRCglwYWdlY291bnQYASACKAUSHgoHY2hhcmdlcxgCIAMoCzINLlN0", 
+          "cnVjdENoYXJnZSKAAQoKQ1NRdWVyeUVtaxIZCgRwYWdlGAEgAigLMgsuU3Ry", 
+          "dWN0UGFnZRIRCglzdGFydHRpbWUYAiABKAkSEAoIc3RvcHRpbWUYAyABKAkS", 
+          "DAoEbmFtZRgEIAEoCRIQCghtZW1iZXJpZBgFIAEoBRISCgpjb21wdXRlcmlk", 
+          "GAYgASgFIkEKClNDUXVlcnlFbWsSEQoJcGFnZWNvdW50GAEgAigFEiAKBGVt", 
+          "a3MYAiADKAsyEi5TdHJ1Y3RFbWJhcmthdGlvbiKAAQoMQ1NRdWVyeVRyYWRl", 
+          "EhkKBHBhZ2UYASACKAsyCy5TdHJ1Y3RQYWdlEhEKCXN0YXJ0dGltZRgCIAEo", 
+          "CRIQCghzdG9wdGltZRgDIAEoCRINCgV1c2FnZRgEIAEoBRIPCgdwYXltb2Rl", 
+          "GAUgASgFEhAKCG1lbWJlcmlkGAYgASgFIj8KDFNDUXVlcnlUcmFkZRIRCglw", 
+          "YWdlY291bnQYASACKAUSHAoGdHJhZGVzGAIgAygLMgwuU3RydWN0VHJhZGUi", 
+          "fwoMQ1NRdWVyeUFwcGx5EhkKBHBhZ2UYASACKAsyCy5TdHJ1Y3RQYWdlEhEK", 
+          "CXN0YXJ0dGltZRgCIAEoCRIQCghzdG9wdGltZRgDIAEoCRIQCghvcGVyYXRv", 
+          "chgEIAEoCRIPCgdyaWdodGlkGAUgASgFEgwKBG5hbWUYBiABKAkiPwoMU0NR", 
+          "dWVyeUFwcGx5EhEKCXBhZ2Vjb3VudBgBIAIoBRIcCgZhcHBseXMYAiADKAsy", 
+          "DC5TdHJ1Y3RBcHBseSIsCgxDU1F1ZXJ5T2NjdXASDgoGYXJlYWlkGAEgASgF", 
+          "EgwKBGRhdGUYAiABKAkiHgoMU0NRdWVyeU9jY3VwEg4KBm9jY3VwcxgBIAMo", 
+          "BUIzCh1jb20uc2t5c29mdC5jb3JlLmF1dG8ubWVzc2FnZUISQmFja2dyb3Vu", 
+        "ZFByb3RvY29s"));
     pbd::FileDescriptor.InternalDescriptorAssigner assigner = delegate(pbd::FileDescriptor root) {
       descriptor = root;
       internal__static_CSAuthen__Descriptor = Descriptor.MessageTypes[0];
@@ -534,59 +537,63 @@ public static partial class Background {
       internal__static_SCOrderDetail__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::SCOrderDetail, global::SCOrderDetail.Builder>(internal__static_SCOrderDetail__Descriptor,
               new string[] { "Details", });
-      internal__static_SCShiftDeliveredBy__Descriptor = Descriptor.MessageTypes[63];
+      internal__static_CSOrderProc__Descriptor = Descriptor.MessageTypes[63];
+      internal__static_CSOrderProc__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::CSOrderProc, global::CSOrderProc.Builder>(internal__static_CSOrderProc__Descriptor,
+              new string[] { "Orderid", });
+      internal__static_SCShiftDeliveredBy__Descriptor = Descriptor.MessageTypes[64];
       internal__static_SCShiftDeliveredBy__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::SCShiftDeliveredBy, global::SCShiftDeliveredBy.Builder>(internal__static_SCShiftDeliveredBy__Descriptor,
               new string[] { "DeliveredBy", "ChargeAmount", "SaleAmount", });
-      internal__static_CSShiftAdd__Descriptor = Descriptor.MessageTypes[64];
+      internal__static_CSShiftAdd__Descriptor = Descriptor.MessageTypes[65];
       internal__static_CSShiftAdd__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSShiftAdd, global::CSShiftAdd.Builder>(internal__static_CSShiftAdd__Descriptor,
               new string[] { "DeliveredPwd", "ReceivedBy", "ReceivedPwd", "Ischeck", "Remark", });
-      internal__static_CSShiftFind__Descriptor = Descriptor.MessageTypes[65];
+      internal__static_CSShiftFind__Descriptor = Descriptor.MessageTypes[66];
       internal__static_CSShiftFind__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSShiftFind, global::CSShiftFind.Builder>(internal__static_CSShiftFind__Descriptor,
               new string[] { "Page", "Starttime", "Stoptime", });
-      internal__static_SCShiftFind__Descriptor = Descriptor.MessageTypes[66];
+      internal__static_SCShiftFind__Descriptor = Descriptor.MessageTypes[67];
       internal__static_SCShiftFind__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::SCShiftFind, global::SCShiftFind.Builder>(internal__static_SCShiftFind__Descriptor,
               new string[] { "Shifts", });
-      internal__static_CSQueryCharge__Descriptor = Descriptor.MessageTypes[67];
+      internal__static_CSQueryCharge__Descriptor = Descriptor.MessageTypes[68];
       internal__static_CSQueryCharge__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSQueryCharge, global::CSQueryCharge.Builder>(internal__static_CSQueryCharge__Descriptor,
               new string[] { "Page", "Starttime", "Stoptime", "Paymode", "Name", });
-      internal__static_SCQueryCharge__Descriptor = Descriptor.MessageTypes[68];
+      internal__static_SCQueryCharge__Descriptor = Descriptor.MessageTypes[69];
       internal__static_SCQueryCharge__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::SCQueryCharge, global::SCQueryCharge.Builder>(internal__static_SCQueryCharge__Descriptor,
               new string[] { "Pagecount", "Charges", });
-      internal__static_CSQueryEmk__Descriptor = Descriptor.MessageTypes[69];
+      internal__static_CSQueryEmk__Descriptor = Descriptor.MessageTypes[70];
       internal__static_CSQueryEmk__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSQueryEmk, global::CSQueryEmk.Builder>(internal__static_CSQueryEmk__Descriptor,
               new string[] { "Page", "Starttime", "Stoptime", "Name", "Memberid", "Computerid", });
-      internal__static_SCQueryEmk__Descriptor = Descriptor.MessageTypes[70];
+      internal__static_SCQueryEmk__Descriptor = Descriptor.MessageTypes[71];
       internal__static_SCQueryEmk__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::SCQueryEmk, global::SCQueryEmk.Builder>(internal__static_SCQueryEmk__Descriptor,
               new string[] { "Pagecount", "Emks", });
-      internal__static_CSQueryTrade__Descriptor = Descriptor.MessageTypes[71];
+      internal__static_CSQueryTrade__Descriptor = Descriptor.MessageTypes[72];
       internal__static_CSQueryTrade__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSQueryTrade, global::CSQueryTrade.Builder>(internal__static_CSQueryTrade__Descriptor,
               new string[] { "Page", "Starttime", "Stoptime", "Usage", "Paymode", "Memberid", });
-      internal__static_SCQueryTrade__Descriptor = Descriptor.MessageTypes[72];
+      internal__static_SCQueryTrade__Descriptor = Descriptor.MessageTypes[73];
       internal__static_SCQueryTrade__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::SCQueryTrade, global::SCQueryTrade.Builder>(internal__static_SCQueryTrade__Descriptor,
               new string[] { "Pagecount", "Trades", });
-      internal__static_CSQueryApply__Descriptor = Descriptor.MessageTypes[73];
+      internal__static_CSQueryApply__Descriptor = Descriptor.MessageTypes[74];
       internal__static_CSQueryApply__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSQueryApply, global::CSQueryApply.Builder>(internal__static_CSQueryApply__Descriptor,
               new string[] { "Page", "Starttime", "Stoptime", "Operator", "Rightid", "Name", });
-      internal__static_SCQueryApply__Descriptor = Descriptor.MessageTypes[74];
+      internal__static_SCQueryApply__Descriptor = Descriptor.MessageTypes[75];
       internal__static_SCQueryApply__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::SCQueryApply, global::SCQueryApply.Builder>(internal__static_SCQueryApply__Descriptor,
               new string[] { "Pagecount", "Applys", });
-      internal__static_CSQueryOccup__Descriptor = Descriptor.MessageTypes[75];
+      internal__static_CSQueryOccup__Descriptor = Descriptor.MessageTypes[76];
       internal__static_CSQueryOccup__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSQueryOccup, global::CSQueryOccup.Builder>(internal__static_CSQueryOccup__Descriptor,
               new string[] { "Areaid", "Date", });
-      internal__static_SCQueryOccup__Descriptor = Descriptor.MessageTypes[76];
+      internal__static_SCQueryOccup__Descriptor = Descriptor.MessageTypes[77];
       internal__static_SCQueryOccup__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::SCQueryOccup, global::SCQueryOccup.Builder>(internal__static_SCQueryOccup__Descriptor,
               new string[] { "Occups", });
@@ -20847,6 +20854,282 @@ public sealed partial class SCOrderDetail : pb::GeneratedMessage<SCOrderDetail, 
     }
   }
   static SCOrderDetail() {
+    object.ReferenceEquals(global::Background.Descriptor, null);
+  }
+}
+
+[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+public sealed partial class CSOrderProc : pb::GeneratedMessage<CSOrderProc, CSOrderProc.Builder> {
+  private CSOrderProc() { }
+  private static readonly CSOrderProc defaultInstance = new CSOrderProc().MakeReadOnly();
+  private static readonly string[] _cSOrderProcFieldNames = new string[] { "orderid" };
+  private static readonly uint[] _cSOrderProcFieldTags = new uint[] { 8 };
+  public static CSOrderProc DefaultInstance {
+    get { return defaultInstance; }
+  }
+  
+  public override CSOrderProc DefaultInstanceForType {
+    get { return DefaultInstance; }
+  }
+  
+  protected override CSOrderProc ThisMessage {
+    get { return this; }
+  }
+  
+  public static pbd::MessageDescriptor Descriptor {
+    get { return global::Background.internal__static_CSOrderProc__Descriptor; }
+  }
+  
+  protected override pb::FieldAccess.FieldAccessorTable<CSOrderProc, CSOrderProc.Builder> InternalFieldAccessors {
+    get { return global::Background.internal__static_CSOrderProc__FieldAccessorTable; }
+  }
+  
+  public const int OrderidFieldNumber = 1;
+  private bool hasOrderid;
+  private int orderid_;
+  public bool HasOrderid {
+    get { return hasOrderid; }
+  }
+  public int Orderid {
+    get { return orderid_; }
+  }
+  
+  public override bool IsInitialized {
+    get {
+      if (!hasOrderid) return false;
+      return true;
+    }
+  }
+  
+  public override void WriteTo(pb::ICodedOutputStream output) {
+    CalcSerializedSize();
+    string[] field_names = _cSOrderProcFieldNames;
+    if (hasOrderid) {
+      output.WriteInt32(1, field_names[0], Orderid);
+    }
+    UnknownFields.WriteTo(output);
+  }
+  
+  private int memoizedSerializedSize = -1;
+  public override int SerializedSize {
+    get {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+      return CalcSerializedSize();
+    }
+  }
+  
+  private int CalcSerializedSize() {
+    int size = memoizedSerializedSize;
+    if (size != -1) return size;
+    
+    size = 0;
+    if (hasOrderid) {
+      size += pb::CodedOutputStream.ComputeInt32Size(1, Orderid);
+    }
+    size += UnknownFields.SerializedSize;
+    memoizedSerializedSize = size;
+    return size;
+  }
+  public static CSOrderProc ParseFrom(pb::ByteString data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static CSOrderProc ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static CSOrderProc ParseFrom(byte[] data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static CSOrderProc ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static CSOrderProc ParseFrom(global::System.IO.Stream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static CSOrderProc ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  public static CSOrderProc ParseDelimitedFrom(global::System.IO.Stream input) {
+    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
+  }
+  public static CSOrderProc ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
+  }
+  public static CSOrderProc ParseFrom(pb::ICodedInputStream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static CSOrderProc ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  private CSOrderProc MakeReadOnly() {
+    return this;
+  }
+  
+  public static Builder CreateBuilder() { return new Builder(); }
+  public override Builder ToBuilder() { return CreateBuilder(this); }
+  public override Builder CreateBuilderForType() { return new Builder(); }
+  public static Builder CreateBuilder(CSOrderProc prototype) {
+    return new Builder(prototype);
+  }
+  
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class Builder : pb::GeneratedBuilder<CSOrderProc, Builder> {
+    protected override Builder ThisBuilder {
+      get { return this; }
+    }
+    public Builder() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+    }
+    internal Builder(CSOrderProc cloneFrom) {
+      result = cloneFrom;
+      resultIsReadOnly = true;
+    }
+    
+    private bool resultIsReadOnly;
+    private CSOrderProc result;
+    
+    private CSOrderProc PrepareBuilder() {
+      if (resultIsReadOnly) {
+        CSOrderProc original = result;
+        result = new CSOrderProc();
+        resultIsReadOnly = false;
+        MergeFrom(original);
+      }
+      return result;
+    }
+    
+    public override bool IsInitialized {
+      get { return result.IsInitialized; }
+    }
+    
+    protected override CSOrderProc MessageBeingBuilt {
+      get { return PrepareBuilder(); }
+    }
+    
+    public override Builder Clear() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+      return this;
+    }
+    
+    public override Builder Clone() {
+      if (resultIsReadOnly) {
+        return new Builder(result);
+      } else {
+        return new Builder().MergeFrom(result);
+      }
+    }
+    
+    public override pbd::MessageDescriptor DescriptorForType {
+      get { return global::CSOrderProc.Descriptor; }
+    }
+    
+    public override CSOrderProc DefaultInstanceForType {
+      get { return global::CSOrderProc.DefaultInstance; }
+    }
+    
+    public override CSOrderProc BuildPartial() {
+      if (resultIsReadOnly) {
+        return result;
+      }
+      resultIsReadOnly = true;
+      return result.MakeReadOnly();
+    }
+    
+    public override Builder MergeFrom(pb::IMessage other) {
+      if (other is CSOrderProc) {
+        return MergeFrom((CSOrderProc) other);
+      } else {
+        base.MergeFrom(other);
+        return this;
+      }
+    }
+    
+    public override Builder MergeFrom(CSOrderProc other) {
+      if (other == global::CSOrderProc.DefaultInstance) return this;
+      PrepareBuilder();
+      if (other.HasOrderid) {
+        Orderid = other.Orderid;
+      }
+      this.MergeUnknownFields(other.UnknownFields);
+      return this;
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input) {
+      return MergeFrom(input, pb::ExtensionRegistry.Empty);
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+      PrepareBuilder();
+      pb::UnknownFieldSet.Builder unknownFields = null;
+      uint tag;
+      string field_name;
+      while (input.ReadTag(out tag, out field_name)) {
+        if(tag == 0 && field_name != null) {
+          int field_ordinal = global::System.Array.BinarySearch(_cSOrderProcFieldNames, field_name, global::System.StringComparer.Ordinal);
+          if(field_ordinal >= 0)
+            tag = _cSOrderProcFieldTags[field_ordinal];
+          else {
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            continue;
+          }
+        }
+        switch (tag) {
+          case 0: {
+            throw pb::InvalidProtocolBufferException.InvalidTag();
+          }
+          default: {
+            if (pb::WireFormat.IsEndGroupTag(tag)) {
+              if (unknownFields != null) {
+                this.UnknownFields = unknownFields.Build();
+              }
+              return this;
+            }
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            break;
+          }
+          case 8: {
+            result.hasOrderid = input.ReadInt32(ref result.orderid_);
+            break;
+          }
+        }
+      }
+      
+      if (unknownFields != null) {
+        this.UnknownFields = unknownFields.Build();
+      }
+      return this;
+    }
+    
+    
+    public bool HasOrderid {
+      get { return result.hasOrderid; }
+    }
+    public int Orderid {
+      get { return result.Orderid; }
+      set { SetOrderid(value); }
+    }
+    public Builder SetOrderid(int value) {
+      PrepareBuilder();
+      result.hasOrderid = true;
+      result.orderid_ = value;
+      return this;
+    }
+    public Builder ClearOrderid() {
+      PrepareBuilder();
+      result.hasOrderid = false;
+      result.orderid_ = 0;
+      return this;
+    }
+  }
+  static CSOrderProc() {
     object.ReferenceEquals(global::Background.Descriptor, null);
   }
 }

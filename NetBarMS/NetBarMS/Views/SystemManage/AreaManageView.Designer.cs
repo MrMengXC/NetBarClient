@@ -44,7 +44,6 @@
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.panel4 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.titlePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -53,9 +52,9 @@
             this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // titlePanel
+            // titlePanelView1
             // 
-            this.titlePanel.Size = new System.Drawing.Size(683, 50);
+            this.titlePanelView1.Size = new System.Drawing.Size(683, 50);
             // 
             // gridView
             // 
@@ -94,6 +93,7 @@
             // 
             // simpleButton2
             // 
+            this.simpleButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.simpleButton2.Appearance.BackColor = System.Drawing.Color.Aqua;
             this.simpleButton2.Appearance.Options.UseBackColor = true;
             this.simpleButton2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
@@ -246,12 +246,10 @@
             this.Controls.Add(this.simpleButton2);
             this.Name = "AreaManageView";
             this.Size = new System.Drawing.Size(683, 627);
+            this.Controls.SetChildIndex(this.titlePanelView1, 0);
             this.Controls.SetChildIndex(this.simpleButton2, 0);
             this.Controls.SetChildIndex(this.areaPanel, 0);
             this.Controls.SetChildIndex(this.tableLayoutPanel3, 0);
-            this.Controls.SetChildIndex(this.titlePanel, 0);
-            this.titlePanel.ResumeLayout(false);
-            this.titlePanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();

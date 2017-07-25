@@ -48,6 +48,14 @@
             // 
             this.titlePanel.Size = new System.Drawing.Size(623, 50);
             // 
+            // closeBtn
+            // 
+            this.closeBtn.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.closeBtn.Appearance.Options.UseBackColor = true;
+            this.closeBtn.Location = new System.Drawing.Point(576, 0);
+            this.closeBtn.LookAndFeel.SkinMaskColor = System.Drawing.Color.Transparent;
+            this.closeBtn.LookAndFeel.UseDefaultLookAndFeel = false;
+            // 
             // gridControl1
             // 
             this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 

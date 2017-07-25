@@ -12,7 +12,7 @@ using NetBarMS.Codes.Tools.NetOperation;
 
 namespace NetBarMS.Views.ManagersManage
 {
-    public partial class StaffAddView : RootUserControlView
+    public partial class StaffAddView : RootFormView
     {
 
         private List<StructRole> managers;

@@ -1,4 +1,5 @@
-﻿#region using
+﻿#define PRODUCT
+#region using
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -35,106 +36,84 @@ namespace NetBarMS.Views.NetUserManage
         private int memberIndex = -1;                   //当前会员类别索引
         private FLOW_STATUS flowstatus = FLOW_STATUS.NONE_STATUS;                 //判断返回的状态
         private char[] sp = { '：', ':' };
+        private StructCard openCard;            //需要开通会员的身份证信息
+
         #region 初始化方法
-        public OpenMemberView(string card)
-        {
-            InitializeComponent();
-            this.titleLabel.Text = "会员办理";
-            string idNum = "";
-            if (card.Equals(""))
-            {
-                idNum = ToolsManage.RandomCard;
-            }
-            else
-            {
-                idNum = card;
-            }
-            InitUI(idNum);
-
-        }
-        //临时使用
-        public OpenMemberView(FLOW_STATUS status,String card)
-        {
-            InitializeComponent();
-            this.titleLabel.Text = "会员办理";
-            this.flowstatus = status;
-            InitUI(card);
-        }
-
+       /// <summary>
+       /// 声明开通会员（激活时进入。不监听读卡）
+       /// </summary>
+       /// <param name="status"></param>
+       /// <param name="card"></param>
         public OpenMemberView(FLOW_STATUS status, StructCard card)
         {
             InitializeComponent();
-            this.titleLabel.Text = "会员办理";
             this.flowstatus = status;
             InitUI(card);
         }
+        /// <summary>
+        /// 直接进入开通会员界面
+        /// </summary>
+        /// <param name="card">若card为null自动生成card</param>
         public OpenMemberView(StructCard card)
         {
             InitializeComponent();
-            this.titleLabel.Text = "会员办理";
-            InitUI(card);
-            IdCardReaderManage.ReadCard(ReadCardResult, null, null);
-        }
-        #endregion
+            if(card == null)
+            {
+                StructCard.Builder newcard = new StructCard.Builder()
+                {
+                    Name = "xx22",
+                    Gender = 1,
+                    Nation = "2112",
+                    Number = ToolsManage.RandomCard,
+                    Birthday = "2012-09-01",
+                    Address = "海南省",
+                    Organization = "海南",
+                    Head = "#dasdasd#",
+                    Vld = "",
+                };
+                Bitmap b = Imgs.test;
+                string inputString = ToolsManage.BitmapToDataSring(b);
+                newcard.Head = inputString;
+                InitUI(newcard.Build());
 
-        #region 关闭重写
-#if DEBUG
-        protected override void CloseFormClick(object sender, EventArgs e)
-        {
-
-            IdCardReaderManage.OffCardReader(ReadCardResult, null, null);
-
-            base.CloseFormClick(sender, e);
-        }
-#endif
-        #endregion
-
-        #region 初始化UI
-
-        //初始化UI
-        private void InitUI(string card)
-        {
-            //先接受数据
-            this.memberTypes = SysManage.MemberTypes;
+            }
+            else
+            {
+                InitUI(card);
+                IdCardReaderManage.ReadCard(ReadCardResult, null, null);
+            }
             
-
-            this.nameLabel.Text += "2333";          //姓名
-            this.genderLabel.Text += "男";        //性别
-            this.nationLabel.Text += "汉族";        //民族
-            this.cardTypeLabel.Text += "身份证";      //卡类型
-            this.cardNumLabel.Text += card;       //卡号
-            this.cardValidityLabel.Text += "";  //有效期
-            this.addressLabel.Text += "dddd";           //地址
-            this.organLabel.Text += "dad";             //发证机关
-            this.countryLabel.Text += "中国";              //国籍
-            this.birthdayLabel.Text += "2012-12-10";              //出生日期
-            //初始化GridControl
-            ToolsManage.SetGridView(this.gridView1, GridControlType.OpenMember, out this.mainDataTable);
-            this.gridControl1.DataSource = this.mainDataTable;
-            RefreshGridControl();
-
-            //隐藏按钮可点击
-            this.simpleButton1.Enabled = false;
-            this.simpleButton2.Enabled = false;
-
-            //开通会员入口
-            OpenMember();
         }
-        private void InitUI(StructCard readCard)
+        #endregion
+
+#if PRODUCT
+        #region 关闭重写
+        protected override void RootUserControlView_Disposed(object sender, EventArgs e)
         {
+            IdCardReaderManage.OffCardReader(ReadCardResult, null, null);
+            base.RootUserControlView_Disposed(sender, e);
+        }
+        #endregion
+#endif
+
+#region 初始化UI
+        private void InitUI(StructCard card)
+        {
+            this.openCard = new StructCard.Builder(card).Build();
+
             //初始化Label
             char[] sp = { ':', '：' };
-            this.nameLabel.Text = string.Format("{0}：{1}", this.nameLabel.Text.Split(sp)[0], readCard.Name);
-            this.genderLabel.Text = string.Format("{0}：{1}", this.genderLabel.Text.Split(sp)[0], readCard.Gender);
-            this.nationLabel.Text = string.Format("{0}：{1}", this.nationLabel.Text.Split(sp)[0], readCard.Nation);
+            this.nameLabel.Text = string.Format("{0}：{1}", this.nameLabel.Text.Split(sp)[0], this.openCard.Name);
+            this.genderLabel.Text = string.Format("{0}：{1}", this.genderLabel.Text.Split(sp)[0], this.openCard.Gender);
+            this.nationLabel.Text = string.Format("{0}：{1}", this.nationLabel.Text.Split(sp)[0], this.openCard.Nation);
             this.cardTypeLabel.Text = string.Format("{0}：{1}", this.cardTypeLabel.Text.Split(sp)[0], "身份证");
-            this.cardNumLabel.Text = string.Format("{0}：{1}", this.cardNumLabel.Text.Split(sp)[0], readCard.Number);
-            this.addressLabel.Text = string.Format("{0}：{1}", this.addressLabel.Text.Split(sp)[0], readCard.Address);
-            this.organLabel.Text = string.Format("{0}：{1}", this.organLabel.Text.Split(sp)[0], readCard.Organization);
+            this.cardNumLabel.Text = string.Format("{0}：{1}", this.cardNumLabel.Text.Split(sp)[0], this.openCard.Number);
+            this.addressLabel.Text = string.Format("{0}：{1}", this.addressLabel.Text.Split(sp)[0], this.openCard.Address);
+            this.organLabel.Text = string.Format("{0}：{1}", this.organLabel.Text.Split(sp)[0], this.openCard.Organization);
             this.countryLabel.Text = string.Format("{0}：{1}", this.countryLabel.Text.Split(sp)[0], "中国");
-            this.birthdayLabel.Text = string.Format("{0}：{1}", this.birthdayLabel.Text.Split(sp)[0], readCard.Birthday);
-            this.cardValidityLabel.Text = string.Format("{0}：{1}", this.cardValidityLabel.Text.Split(sp)[0], readCard.Vld);
-            MemoryStream ms = new MemoryStream(System.Convert.FromBase64String(readCard.Head));
+            this.birthdayLabel.Text = string.Format("{0}：{1}", this.birthdayLabel.Text.Split(sp)[0], this.openCard.Birthday);
+            this.cardValidityLabel.Text = string.Format("{0}：{1}", this.cardValidityLabel.Text.Split(sp)[0], this.openCard.Vld);
+            MemoryStream ms = new MemoryStream(System.Convert.FromBase64String(this.openCard.Head));
             this.pictureEdit1.Image = Image.FromStream(ms);
 
 
@@ -152,7 +131,10 @@ namespace NetBarMS.Views.NetUserManage
             this.simpleButton2.Enabled = false;
             this.moneyTextEdit.Text = "";
 
+            //开通会员入口
+            OpenMember();
         }
+
         //刷新GridControl
         private void RefreshGridControl()
         {
@@ -165,26 +147,12 @@ namespace NetBarMS.Views.NetUserManage
                 row[TitleList.PayMoney.ToString()] = model.payMoney;
             }
         }
-        #endregion
+#endregion
 
-        #region 添加身份证信息。（临时会员）
+#region 添加身份证信息。（临时会员）
         private void AddCardInfo()
         {
-            StructCard.Builder card = new StructCard.Builder()
-            {
-                Name = nameLabel.Text.Split(sp)[1],
-                Gender = genderLabel.Text.Split(sp)[1].Equals("男") ? 1 : 0,
-                Nation = nationLabel.Text.Split(sp)[1],
-                Number = cardNumLabel.Text.Split(sp)[1],
-                Birthday = birthdayLabel.Text.Split(sp)[1],
-                Address = addressLabel.Text.Split(sp)[1],
-                Organization = organLabel.Text.Split(sp)[1],
-                Head = "#dasdasd#",
-                Vld = cardValidityLabel.Text.Split(sp)[1],
-            };
-
-            CommonOperation.AddCardInfo(AddCardInfoResult, card);
-
+            MemberNetOperation.AddCardInfo(AddCardInfoResult, this.openCard);
         }
         //添加身份证信息回调
         private void AddCardInfoResult(ResultModel result)
@@ -194,9 +162,8 @@ namespace NetBarMS.Views.NetUserManage
             {
                 return;
             }
-#if DEBUG
-            System.Console.WriteLine("AddCardInfoResult:" + result.pack);
-#endif
+
+            //System.Console.WriteLine("AddCardInfoResult:" + result.pack);
             NetMessageManage.RemoveResultBlock(AddCardInfoResult);
             if (result.pack.Content.MessageType == 1)
             {
@@ -204,12 +171,12 @@ namespace NetBarMS.Views.NetUserManage
             }
 
         }
-        #endregion
+#endregion
 
-        #region 开通会员入口-进行充值
+#region 开通会员入口-进行充值
         private void OpenMember()
         {
-            MemberNetOperation.OpenMember(OpenMemberResult, cardNumLabel.Text.Split(sp)[1]);
+            MemberNetOperation.OpenMember(OpenMemberResult, this.openCard.Number);
         }
 
         //开通会员入口回调
@@ -219,11 +186,9 @@ namespace NetBarMS.Views.NetUserManage
             {
                 return;
             }
-#if DEBUG
-            System.Console.WriteLine("OpenMemberResult:" + result.pack);
-#endif
-            NetMessageManage.RemoveResultBlock(OpenMemberResult);
 
+            System.Console.WriteLine("OpenMemberResult:" + result.pack);
+            NetMessageManage.RemoveResultBlock(OpenMemberResult);
             FLOW_ERROR error = FLOW_ERROR.OTHER;
             Enum.TryParse<FLOW_ERROR>(result.pack.Content.ErrorTip.Key, out error);
 
@@ -244,14 +209,10 @@ namespace NetBarMS.Views.NetUserManage
                     //需要添加身份证信息
                     case FLOW_ERROR.NEED_ADD_CARD:
                         AddCardInfo();
-
                         break;
                         //被锁
                     case FLOW_ERROR.USER_LOCK:
-                        {
-                            MessageBox.Show("该用户已经被锁");
-
-                        }
+                        MessageBox.Show("该用户已经被锁");
                         break;
                         //需要充值
                     case FLOW_ERROR.NEED_RECHARGE:
@@ -282,26 +243,26 @@ namespace NetBarMS.Views.NetUserManage
         }
 #endregion
 
-        #region 添加会员以及回调方法
+#region 添加会员以及回调方法
         //保存(更新会员)
         private void simpleButton2_Click(object sender, EventArgs e)
         {
-            CloseFormHandle closeHandle = new CloseFormHandle(delegate
-            {
-                this.CloseFormClick();   
-                //如果流程属于激活流程
-                if(this.flowstatus == FLOW_STATUS.ACTIVE_STATUS)
-                {
-                    ActiveFlowManage.ActiveFlow().MemberRegistSuccess();
-                }
-            });
+            //CloseFormHandle closeHandle = new CloseFormHandle(delegate
+            //{
+            //    this.CloseFormClick();   
+            //    //如果流程属于激活流程
+            //    if(this.flowstatus == FLOW_STATUS.ACTIVE_STATUS)
+            //    {
+            //        ActiveFlowManage.ActiveFlow().MemberRegistSuccess();
+            //    }
+            //});
             //显示提示
             OpenMemberResultView view = new OpenMemberResultView();
-            ToolsManage.ShowForm(view, false, closeHandle);
+            ToolsManage.ShowForm(view, false);
         }
-        #endregion
+#endregion
 
-        #region 控件的操作
+#region 控件的操作
         //金额的输入
         private void moneyTextEdit_EditValueChanged(object sender, EventArgs e)
         {
@@ -340,9 +301,9 @@ namespace NetBarMS.Views.NetUserManage
                 this.memberTypeTextEdit.Text = memberTypes[memberIndex].typeName;
             }
         }
-        #endregion
+#endregion
 
-        #region 进行充值
+#region 进行充值
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             //关闭后再获取入口
@@ -351,12 +312,12 @@ namespace NetBarMS.Views.NetUserManage
             });
 
             int money = int.Parse(this.moneyTextEdit.Text);
-            UserScanCodeView view = new UserScanCodeView(cardNumLabel.Text.Split(sp)[1], money,FLOW_STATUS.MEMBER_STATUS, PRECHARGE_TYPE.OPEN_MEMBER);
+            UserScanCodeView view = new UserScanCodeView(this.openCard, money,FLOW_STATUS.MEMBER_STATUS, PRECHARGE_TYPE.OPEN_MEMBER);
             ToolsManage.ShowForm(view, false,close);
         }
-        #endregion
+#endregion
 
-        #region 读取身份证结果回调
+#region 读取身份证结果回调
         private void ReadCardResult(StructCard readCard, bool isSuccess)
         {
             if (readCard != null && isSuccess)
@@ -371,6 +332,6 @@ namespace NetBarMS.Views.NetUserManage
                    
             }
         }
-        #endregion
+#endregion
     }
 }

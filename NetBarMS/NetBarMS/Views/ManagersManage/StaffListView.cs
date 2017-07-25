@@ -33,7 +33,6 @@ namespace NetBarMS.Views.ManagersManage
         public StaffListView()
         {
             InitializeComponent();
-            this.titleLabel.Text = "员工列表";
             InitUI();
         }
       

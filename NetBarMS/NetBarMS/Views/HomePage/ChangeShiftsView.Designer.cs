@@ -53,7 +53,6 @@
             this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
             this.panel1 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.titlePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
@@ -69,9 +68,11 @@
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // titlePanel
+            // titlePanelView1
             // 
-            this.titlePanel.Size = new System.Drawing.Size(450, 50);
+            this.titlePanelView1.ShowCloseButton = false;
+            this.titlePanelView1.Size = new System.Drawing.Size(450, 50);
+            this.titlePanelView1.Title = "交接班";
             // 
             // changeLabel
             // 
@@ -168,6 +169,7 @@
             this.comboBoxEdit1.Name = "comboBoxEdit1";
             this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.comboBoxEdit1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.comboBoxEdit1.Size = new System.Drawing.Size(169, 20);
             this.comboBoxEdit1.TabIndex = 75;
             // 
@@ -338,11 +340,9 @@
             this.Controls.Add(this.simpleButton5);
             this.Name = "ChangeShiftsView";
             this.Size = new System.Drawing.Size(450, 556);
+            this.Controls.SetChildIndex(this.titlePanelView1, 0);
             this.Controls.SetChildIndex(this.simpleButton5, 0);
-            this.Controls.SetChildIndex(this.titlePanel, 0);
             this.Controls.SetChildIndex(this.tableLayoutPanel1, 0);
-            this.titlePanel.ResumeLayout(false);
-            this.titlePanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();

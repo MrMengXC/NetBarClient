@@ -13,7 +13,7 @@ using DevExpress.XtraEditors;
 
 namespace NetBarMS.Views.SystemManage
 {
-    public partial class MemberLevAddView : RootUserControlView
+    public partial class MemberLevAddView : RootFormView
     {
         private StructDictItem item = null;
 

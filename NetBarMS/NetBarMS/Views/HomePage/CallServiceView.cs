@@ -13,7 +13,7 @@ using NetBarMS.Codes.Tools.NetOperation;
 
 namespace NetBarMS.Views.HomePage
 {
-    public partial class CallServiceView : RootUserControlView
+    public partial class CallServiceView : RootFormView
     {
         enum TitleList
         {

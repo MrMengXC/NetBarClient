@@ -106,12 +106,12 @@ namespace NetBarMS.Codes.Tools.NetOperation
             content.SetCsComputerUpdate(update);
             content.SetMessageType(1);
 
-            MessagePack.Builder pack = new MessagePack.Builder();
-            pack.SetCmd(Cmd.CMD_COMPUTER_UPDATE);
-            pack.SetContent(content);
-            NetMessageManage.SendMsg(pack.Build(), resultBlock);
-
-
+            SendModel send = new SendModel()
+            {
+                cmd = Cmd.CMD_COMPUTER_UPDATE,
+                content = content.Build()
+            };
+            NetMessageManage.SendMsg(send, resultBlock);
         }
         #endregion
 

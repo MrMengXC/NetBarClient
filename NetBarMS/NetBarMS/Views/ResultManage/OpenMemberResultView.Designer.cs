@@ -38,6 +38,10 @@
             // 
             this.titlePanel.Size = new System.Drawing.Size(524, 50);
             // 
+            // closeBtn
+            // 
+            this.closeBtn.Location = new System.Drawing.Point(472, 0);
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.label1);

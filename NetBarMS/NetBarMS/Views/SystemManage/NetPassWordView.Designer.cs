@@ -32,15 +32,16 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.pwCheckEdit = new DevExpress.XtraEditors.CheckEdit();
             this.pwTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.titlePanel.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pwCheckEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pwTextEdit.Properties)).BeginInit();
             this.SuspendLayout();
             // 
-            // titlePanel
+            // titlePanelView1
             // 
-            this.titlePanel.Size = new System.Drawing.Size(450, 50);
+            this.titlePanelView1.ShowCloseButton = false;
+            this.titlePanelView1.Size = new System.Drawing.Size(450, 50);
+            this.titlePanelView1.Title = "上网密码设置";
             // 
             // saveButton
             // 
@@ -86,11 +87,9 @@
             this.Controls.Add(this.saveButton);
             this.Name = "NetPassWordView";
             this.Size = new System.Drawing.Size(450, 145);
-            this.Controls.SetChildIndex(this.titlePanel, 0);
+            this.Controls.SetChildIndex(this.titlePanelView1, 0);
             this.Controls.SetChildIndex(this.saveButton, 0);
             this.Controls.SetChildIndex(this.flowLayoutPanel1, 0);
-            this.titlePanel.ResumeLayout(false);
-            this.titlePanel.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pwCheckEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pwTextEdit.Properties)).EndInit();

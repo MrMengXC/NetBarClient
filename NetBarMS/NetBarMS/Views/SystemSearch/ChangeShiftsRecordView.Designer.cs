@@ -40,7 +40,6 @@
             this.popupContainerControl1 = new DevExpress.XtraEditors.PopupContainerControl();
             this.dateNavigator = new DevExpress.XtraScheduler.DateNavigator();
             this.pageView1 = new NetBarMS.Views.CustomView.PageView();
-            this.titlePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.popupContainerEdit1.Properties)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
@@ -55,17 +54,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateNavigator.CalendarTimeProperties)).BeginInit();
             this.SuspendLayout();
             // 
-            // titlePanel
+            // titlePanelView1
             // 
-            this.titlePanel.Controls.Add(this.popupContainerEdit1);
-            this.titlePanel.Size = new System.Drawing.Size(1135, 50);
-            this.titlePanel.Controls.SetChildIndex(this.titleLabel, 0);
-            this.titlePanel.Controls.SetChildIndex(this.popupContainerEdit1, 0);
-            // 
-            // titleLabel
-            // 
-            this.titleLabel.Size = new System.Drawing.Size(127, 17);
-            this.titleLabel.Text = "交接班记录查询";
+            this.titlePanelView1.ShowCloseButton = false;
+            this.titlePanelView1.Size = new System.Drawing.Size(1135, 50);
+            this.titlePanelView1.Title = "交接班记录查询";
             // 
             // closeButton
             // 
@@ -79,7 +72,7 @@
             // 
             // popupContainerEdit1
             // 
-            this.popupContainerEdit1.Location = new System.Drawing.Point(143, 17);
+            this.popupContainerEdit1.Location = new System.Drawing.Point(137, 21);
             this.popupContainerEdit1.Name = "popupContainerEdit1";
             this.popupContainerEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -102,7 +95,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 674F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 496F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1132, 674);
             this.tableLayoutPanel1.TabIndex = 83;
             // 
@@ -190,17 +183,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.popupContainerEdit1);
             this.Controls.Add(this.pageView1);
             this.Controls.Add(this.popupContainerControl1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "ChangeShiftsRecordView";
             this.Size = new System.Drawing.Size(1135, 773);
+            this.Controls.SetChildIndex(this.titlePanelView1, 0);
             this.Controls.SetChildIndex(this.tableLayoutPanel1, 0);
             this.Controls.SetChildIndex(this.popupContainerControl1, 0);
             this.Controls.SetChildIndex(this.pageView1, 0);
-            this.Controls.SetChildIndex(this.titlePanel, 0);
-            this.titlePanel.ResumeLayout(false);
-            this.titlePanel.PerformLayout();
+            this.Controls.SetChildIndex(this.popupContainerEdit1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.popupContainerEdit1.Properties)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();

@@ -31,16 +31,8 @@ namespace NetBarMS.Views.RateManage
         /// </summary>
         private void InitializeComponent()
         {
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.defaultButton = new DevExpress.XtraEditors.SimpleButton();
             this.activeButton = new DevExpress.XtraEditors.SimpleButton();
-            this.textEdit6 = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit8 = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
             this.startComboBoxEdit = new DevExpress.XtraEditors.DateEdit();
             this.endComboBoxEdit = new DevExpress.XtraEditors.DateEdit();
             this.leftTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -84,10 +76,6 @@ namespace NetBarMS.Views.RateManage
             this.label24 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.titlePanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit8.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.startComboBoxEdit.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.startComboBoxEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.endComboBoxEdit.Properties.CalendarTimeProperties)).BeginInit();
@@ -116,33 +104,7 @@ namespace NetBarMS.Views.RateManage
             this.tableLayoutPanel13.SuspendLayout();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // titlePanel
-            // 
-            this.titlePanel.Size = new System.Drawing.Size(842, 50);
-            // 
-            // labelControl5
-            // 
-            this.labelControl5.Location = new System.Drawing.Point(36, 3);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(180, 14);
-            this.labelControl5.TabIndex = 78;
-            this.labelControl5.Text = "会员用户每次对员工进行评价赠送";
-            // 
-            // textEdit3
-            // 
-            this.textEdit3.Location = new System.Drawing.Point(3, 3);
-            this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Size = new System.Drawing.Size(27, 20);
-            this.textEdit3.TabIndex = 77;
-            // 
-            // labelControl4
-            // 
-            this.labelControl4.Location = new System.Drawing.Point(3, 3);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(36, 14);
-            this.labelControl4.TabIndex = 92;
-            this.labelControl4.Text = "积分。";
+  
             // 
             // defaultButton
             // 
@@ -161,44 +123,6 @@ namespace NetBarMS.Views.RateManage
             this.activeButton.TabIndex = 97;
             this.activeButton.Text = "保存活动配置";
             this.activeButton.Click += new System.EventHandler(this.SaveSetting_Click);
-            // 
-            // textEdit6
-            // 
-            this.textEdit6.Location = new System.Drawing.Point(210, 3);
-            this.textEdit6.Name = "textEdit6";
-            this.textEdit6.Size = new System.Drawing.Size(27, 20);
-            this.textEdit6.TabIndex = 102;
-            // 
-            // labelControl11
-            // 
-            this.labelControl11.Location = new System.Drawing.Point(3, 3);
-            this.labelControl11.Name = "labelControl11";
-            this.labelControl11.Size = new System.Drawing.Size(36, 14);
-            this.labelControl11.TabIndex = 101;
-            this.labelControl11.Text = "积分。";
-            // 
-            // labelControl12
-            // 
-            this.labelControl12.Location = new System.Drawing.Point(78, 3);
-            this.labelControl12.Name = "labelControl12";
-            this.labelControl12.Size = new System.Drawing.Size(84, 14);
-            this.labelControl12.TabIndex = 100;
-            this.labelControl12.Text = "会员用户每充值";
-            // 
-            // textEdit8
-            // 
-            this.textEdit8.Location = new System.Drawing.Point(45, 3);
-            this.textEdit8.Name = "textEdit8";
-            this.textEdit8.Size = new System.Drawing.Size(27, 20);
-            this.textEdit8.TabIndex = 99;
-            // 
-            // labelControl16
-            // 
-            this.labelControl16.Location = new System.Drawing.Point(3, 3);
-            this.labelControl16.Name = "labelControl16";
-            this.labelControl16.Size = new System.Drawing.Size(36, 14);
-            this.labelControl16.TabIndex = 98;
-            this.labelControl16.Text = "元赠送";
             // 
             // startComboBoxEdit
             // 
@@ -751,32 +675,11 @@ namespace NetBarMS.Views.RateManage
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.rightTableLayoutPanel);
             this.Controls.Add(this.leftTableLayoutPanel);
-            this.Controls.Add(this.textEdit6);
-            this.Controls.Add(this.labelControl11);
-            this.Controls.Add(this.labelControl12);
-            this.Controls.Add(this.textEdit8);
-            this.Controls.Add(this.labelControl16);
-            this.Controls.Add(this.labelControl4);
-            this.Controls.Add(this.labelControl5);
-            this.Controls.Add(this.textEdit3);
             this.Name = "IntegralManageView";
-            this.Size = new System.Drawing.Size(842, 423);
-            this.Controls.SetChildIndex(this.textEdit3, 0);
-            this.Controls.SetChildIndex(this.labelControl5, 0);
-            this.Controls.SetChildIndex(this.labelControl4, 0);
-            this.Controls.SetChildIndex(this.labelControl16, 0);
-            this.Controls.SetChildIndex(this.textEdit8, 0);
-            this.Controls.SetChildIndex(this.labelControl12, 0);
-            this.Controls.SetChildIndex(this.labelControl11, 0);
-            this.Controls.SetChildIndex(this.textEdit6, 0);
+            this.Size = new System.Drawing.Size(842, 612);
             this.Controls.SetChildIndex(this.leftTableLayoutPanel, 0);
             this.Controls.SetChildIndex(this.rightTableLayoutPanel, 0);
-            this.Controls.SetChildIndex(this.titlePanel, 0);
-            this.titlePanel.ResumeLayout(false);
-            this.titlePanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit8.Properties)).EndInit();
+  
             ((System.ComponentModel.ISupportInitialize)(this.startComboBoxEdit.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.startComboBoxEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.endComboBoxEdit.Properties.CalendarTimeProperties)).EndInit();
@@ -818,21 +721,12 @@ namespace NetBarMS.Views.RateManage
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        private DevExpress.XtraEditors.LabelControl labelControl5;
-        private DevExpress.XtraEditors.TextEdit textEdit3;
-        private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.SimpleButton defaultButton;
         private DevExpress.XtraEditors.SimpleButton activeButton;
-        private DevExpress.XtraEditors.TextEdit textEdit6;
-        private DevExpress.XtraEditors.LabelControl labelControl11;
-        private DevExpress.XtraEditors.LabelControl labelControl12;
-        private DevExpress.XtraEditors.TextEdit textEdit8;
-        private DevExpress.XtraEditors.LabelControl labelControl16;
         private DevExpress.XtraEditors.DateEdit endComboBoxEdit;
         private DevExpress.XtraEditors.DateEdit startComboBoxEdit;
         private System.Windows.Forms.TableLayoutPanel leftTableLayoutPanel;

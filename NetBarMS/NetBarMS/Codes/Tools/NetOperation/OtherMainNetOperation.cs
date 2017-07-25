@@ -20,10 +20,12 @@ namespace NetBarMS.Codes.Tools.NetOperation
             content.MessageType = 1;
             content.CsStaffPerform = perform.Build();
 
-            MessagePack.Builder pack = new MessagePack.Builder();
-            pack.Cmd = Cmd.CMD_STAFF_PERFORM;
-            pack.Content = content.Build();
-            NetMessageManage.SendMsg(pack.Build(), resultBlock);
+            SendModel send = new SendModel()
+            {
+                cmd = Cmd.CMD_STAFF_PERFORM,
+                content = content.Build()
+            };
+            NetMessageManage.SendMsg(send, resultBlock);
         }
         #endregion
 
@@ -50,10 +52,12 @@ namespace NetBarMS.Codes.Tools.NetOperation
             content.MessageType = 1;
             content.CsLog = log.Build();
 
-            MessagePack.Builder pack = new MessagePack.Builder();
-            pack.Cmd = Cmd.CMD_LOG;
-            pack.Content = content.Build();
-            NetMessageManage.SendMsg(pack.Build(), resultBlock);
+            SendModel send = new SendModel()
+            {
+                cmd = Cmd.CMD_LOG,
+                content = content.Build()
+            };
+            NetMessageManage.SendMsg(send, resultBlock);
         }
         #endregion
 

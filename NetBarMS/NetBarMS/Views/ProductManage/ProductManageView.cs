@@ -11,6 +11,7 @@ using NetBarMS.Codes.Tools;
 using DevExpress.XtraEditors.Controls;
 using NetBarMS.Codes.Tools.NetOperation;
 using NetBarMS.Codes.Model;
+using NetBarMS.Codes.Tools.Manage;
 
 namespace NetBarMS.Views.ProductManage
 {
@@ -187,7 +188,7 @@ namespace NetBarMS.Views.ProductManage
         private void simpleButton4_Click(object sender, EventArgs e)
         {
             ProductStockListView view = new ProductStockListView();
-            ToolsManage.ShowForm(view, false);
+            MainViewManage.ShowSecondView(view);
         }
         #endregion
 
@@ -200,12 +201,11 @@ namespace NetBarMS.Views.ProductManage
             DataRow row = this.gridView1.GetDataRow(rowhandle);
             String tag = (String)e.Button.Tag;
             String[] param = tag.Split('_');
-            //查看用户身份信息
+            //查看销售记录
             if (param[0].Equals(TitleList.SellRecord.ToString()))
             {
                 ProductSellRecordView view = new ProductSellRecordView(product.GoodsId);
-                ToolsManage.ShowForm(view, false);
-
+                MainViewManage.ShowSecondView(view);
             }else if(param[0].Equals(TitleList.Operation.ToString()))
             {
                 //修改信息

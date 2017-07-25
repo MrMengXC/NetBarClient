@@ -38,7 +38,6 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.pageView1 = new NetBarMS.Views.CustomView.PageView();
-            this.titlePanel.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.popupContainerEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupContainerControl1)).BeginInit();
@@ -52,24 +51,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // titlePanel
+            // titlePanelView1
             // 
-            this.titlePanel.Controls.Add(this.flowLayoutPanel1);
-            this.titlePanel.Size = new System.Drawing.Size(1100, 50);
-            this.titlePanel.Controls.SetChildIndex(this.titleLabel, 0);
-            this.titlePanel.Controls.SetChildIndex(this.flowLayoutPanel1, 0);
-            // 
-            // titleLabel
-            // 
-            this.titleLabel.Size = new System.Drawing.Size(144, 17);
-            this.titleLabel.Text = "会员消费记录查询";
+            this.titlePanelView1.ShowCloseButton = false;
+            this.titlePanelView1.Size = new System.Drawing.Size(1100, 50);
+            this.titlePanelView1.Title = "会员消费记录查询";
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.popupContainerEdit1);
             this.flowLayoutPanel1.Controls.Add(this.useComboBoxEdit);
             this.flowLayoutPanel1.Controls.Add(this.payChannelComboBoxEdit);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(160, 16);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(146, 19);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(538, 31);
             this.flowLayoutPanel1.TabIndex = 1;
@@ -172,17 +165,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.pageView1);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.popupContainerControl1);
             this.Name = "UserConsumeRecordView";
             this.Size = new System.Drawing.Size(1100, 805);
+            this.Controls.SetChildIndex(this.titlePanelView1, 0);
             this.Controls.SetChildIndex(this.popupContainerControl1, 0);
-            this.Controls.SetChildIndex(this.titlePanel, 0);
             this.Controls.SetChildIndex(this.gridControl1, 0);
             this.Controls.SetChildIndex(this.pageView1, 0);
-            this.titlePanel.ResumeLayout(false);
-            this.titlePanel.PerformLayout();
+            this.Controls.SetChildIndex(this.flowLayoutPanel1, 0);
             this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.popupContainerEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupContainerControl1)).EndInit();

@@ -27,18 +27,23 @@ namespace NetBarMS.Codes.Tools.NetOperation
             content.SetMessageType(1);
             content.SetCsSysBillUpdate(update);
 
-            MessagePack.Builder pack = new MessagePack.Builder();
-            pack.SetCmd(Cmd.CMD_SYS_BILLING_UPDATE);
-            pack.SetContent(content);
-            NetMessageManage.SendMsg(pack.Build(), resultBlock);
+            SendModel send = new SendModel()
+            {
+                cmd = Cmd.CMD_SYS_BILLING_UPDATE,
+                content = content.Build()
+            };
+            NetMessageManage.SendMsg(send, resultBlock);
 
         }
         //费率管理列表
         public static void RateManageList(DataResultBlock resultBlock)
         {
-            MessagePack.Builder pack = new MessagePack.Builder();
-            pack.SetCmd(Cmd.CMD_SYS_BILLING_LIST);
-            NetMessageManage.SendMsg(pack.Build(), resultBlock);
+ 
+            SendModel send = new SendModel()
+            {
+                cmd = Cmd.CMD_SYS_BILLING_LIST,
+            };
+            NetMessageManage.SendMsg(send, resultBlock);
         }
         #endregion
 

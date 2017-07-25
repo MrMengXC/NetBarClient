@@ -415,34 +415,6 @@ namespace NetBarMS.Codes.Tools
         }
         #endregion
 
-        #region 利用BigInteger对权限进行2的权的和计算
-        public static BigInteger SumRights(List<int> rights)
-        {
-
-            BigInteger big = new BigInteger();
-
-            for (int i = 0; i < rights.Count; i++)
-            {
-                //System.Console.WriteLine("(uint)rights[i]:"+(uint)rights[i]);
-                big.setBit((uint)rights[i]);
-            }
-            return big;
-        }
-        #endregion
-
-        #region 测试是否具有指定编码的权限
-        public static bool TestRights(string sum, int targetRights)
-        {
-            if(sum.Equals(""))
-            {
-                return false;
-            }
-            BigInteger big = new BigInteger(sum, 10);
-            big.setBit((uint)targetRights);
-            return big.ToString().Equals(sum);
-        }
-        #endregion
-
         #region 打印GridControl
         /// <summary>
         /// 打印GridControl

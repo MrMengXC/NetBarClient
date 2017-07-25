@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraCharts.Series series3 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.DoughnutSeriesView doughnutSeriesView1 = new DevExpress.XtraCharts.DoughnutSeriesView();
-            DevExpress.XtraCharts.Series series2 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.PieSeriesView pieSeriesView1 = new DevExpress.XtraCharts.PieSeriesView();
             DevExpress.XtraCharts.XYDiagram xyDiagram1 = new DevExpress.XtraCharts.XYDiagram();
             DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.Series series2 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.PieSeriesView pieSeriesView1 = new DevExpress.XtraCharts.PieSeriesView();
+            DevExpress.XtraCharts.Series series3 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.DoughnutSeriesView doughnutSeriesView1 = new DevExpress.XtraCharts.DoughnutSeriesView();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -47,15 +47,14 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.chartControl3 = new DevExpress.XtraCharts.ChartControl();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.chartControl2 = new DevExpress.XtraCharts.ChartControl();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.chartControl1 = new DevExpress.XtraCharts.ChartControl();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.chartControl1 = new DevExpress.XtraCharts.ChartControl();
-            this.chartControl2 = new DevExpress.XtraCharts.ChartControl();
-            this.chartControl3 = new DevExpress.XtraCharts.ChartControl();
-            this.titlePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
@@ -67,32 +66,26 @@
             this.panel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel6.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(doughnutSeriesView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartControl2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartControl2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView1)).BeginInit();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(doughnutSeriesView1)).BeginInit();
+            this.panel3.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // titlePanel
+            // titlePanelView1
             // 
-            this.titlePanel.Controls.Add(this.flowLayoutPanel2);
-            this.titlePanel.Size = new System.Drawing.Size(1160, 50);
-            this.titlePanel.Controls.SetChildIndex(this.titleLabel, 0);
-            this.titlePanel.Controls.SetChildIndex(this.flowLayoutPanel2, 0);
-            // 
-            // titleLabel
-            // 
-            this.titleLabel.Size = new System.Drawing.Size(76, 17);
-            this.titleLabel.Text = "会员管理";
+            this.titlePanelView1.ShowCloseButton = false;
+            this.titlePanelView1.Size = new System.Drawing.Size(1160, 50);
+            this.titlePanelView1.Title = "会员管理";
             // 
             // gridControl1
             // 
@@ -102,7 +95,7 @@
             this.gridControl1.Location = new System.Drawing.Point(3, 0);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1151, 401);
+            this.gridControl1.Size = new System.Drawing.Size(1151, 400);
             this.gridControl1.TabIndex = 48;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1,
@@ -125,7 +118,7 @@
             this.flowLayoutPanel2.Controls.Add(this.memberTypeComboBoxEdit);
             this.flowLayoutPanel2.Controls.Add(this.searchButtonEdit);
             this.flowLayoutPanel2.Controls.Add(this.simpleButton1);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(92, 13);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(89, 20);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(603, 30);
             this.flowLayoutPanel2.TabIndex = 79;
@@ -189,7 +182,7 @@
             // 
             this.pageView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.pageView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pageView1.Location = new System.Drawing.Point(0, 407);
+            this.pageView1.Location = new System.Drawing.Point(0, 406);
             this.pageView1.Name = "pageView1";
             this.pageView1.Size = new System.Drawing.Size(1154, 30);
             this.pageView1.TabIndex = 62;
@@ -218,10 +211,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.tableLayoutPanel1);
             this.panel2.Controls.Add(this.panel3);
-            this.panel2.Location = new System.Drawing.Point(0, 437);
+            this.panel2.Location = new System.Drawing.Point(0, 436);
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1154, 324);
+            this.panel2.Size = new System.Drawing.Size(1154, 325);
             this.panel2.TabIndex = 1;
             // 
             // tableLayoutPanel1
@@ -249,6 +242,21 @@
             this.panel6.Size = new System.Drawing.Size(397, 256);
             this.panel6.TabIndex = 2;
             // 
+            // chartControl3
+            // 
+            xyDiagram1.AxisX.VisibleInPanesSerializable = "-1";
+            xyDiagram1.AxisY.VisibleInPanesSerializable = "-1";
+            xyDiagram1.Rotated = true;
+            this.chartControl3.Diagram = xyDiagram1;
+            this.chartControl3.Legend.Visibility = DevExpress.Utils.DefaultBoolean.False;
+            this.chartControl3.Location = new System.Drawing.Point(48, 28);
+            this.chartControl3.Name = "chartControl3";
+            series1.Name = "Series 1";
+            this.chartControl3.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
+        series1};
+            this.chartControl3.Size = new System.Drawing.Size(300, 200);
+            this.chartControl3.TabIndex = 1;
+            // 
             // panel5
             // 
             this.panel5.Controls.Add(this.chartControl2);
@@ -258,6 +266,18 @@
             this.panel5.Size = new System.Drawing.Size(338, 256);
             this.panel5.TabIndex = 1;
             // 
+            // chartControl2
+            // 
+            this.chartControl2.Location = new System.Drawing.Point(31, 27);
+            this.chartControl2.Name = "chartControl2";
+            series2.LabelsVisibility = DevExpress.Utils.DefaultBoolean.False;
+            series2.Name = "Series 1";
+            series2.View = pieSeriesView1;
+            this.chartControl2.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
+        series2};
+            this.chartControl2.Size = new System.Drawing.Size(300, 200);
+            this.chartControl2.TabIndex = 0;
+            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.chartControl1);
@@ -266,6 +286,18 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(395, 256);
             this.panel4.TabIndex = 0;
+            // 
+            // chartControl1
+            // 
+            this.chartControl1.Location = new System.Drawing.Point(51, 28);
+            this.chartControl1.Name = "chartControl1";
+            series3.LabelsVisibility = DevExpress.Utils.DefaultBoolean.False;
+            series3.Name = "Series 1";
+            series3.View = doughnutSeriesView1;
+            this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
+        series3};
+            this.chartControl1.Size = new System.Drawing.Size(300, 200);
+            this.chartControl1.TabIndex = 0;
             // 
             // panel3
             // 
@@ -294,59 +326,20 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1154, 437);
+            this.panel1.Size = new System.Drawing.Size(1154, 436);
             this.panel1.TabIndex = 0;
-            // 
-            // chartControl1
-            // 
-            this.chartControl1.Location = new System.Drawing.Point(51, 28);
-            this.chartControl1.Name = "chartControl1";
-            series3.LabelsVisibility = DevExpress.Utils.DefaultBoolean.False;
-            series3.Name = "Series 1";
-            series3.View = doughnutSeriesView1;
-            this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series3};
-            this.chartControl1.Size = new System.Drawing.Size(300, 200);
-            this.chartControl1.TabIndex = 0;
-            // 
-            // chartControl2
-            // 
-            this.chartControl2.Location = new System.Drawing.Point(31, 27);
-            this.chartControl2.Name = "chartControl2";
-            series2.LabelsVisibility = DevExpress.Utils.DefaultBoolean.False;
-            series2.Name = "Series 1";
-            series2.View = pieSeriesView1;
-            this.chartControl2.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series2};
-            this.chartControl2.Size = new System.Drawing.Size(300, 200);
-            this.chartControl2.TabIndex = 0;
-            // 
-            // chartControl3
-            // 
-            xyDiagram1.AxisX.VisibleInPanesSerializable = "-1";
-            xyDiagram1.AxisY.VisibleInPanesSerializable = "-1";
-            xyDiagram1.Rotated = true;
-            this.chartControl3.Diagram = xyDiagram1;
-            this.chartControl3.Legend.Visibility = DevExpress.Utils.DefaultBoolean.False;
-            this.chartControl3.Location = new System.Drawing.Point(48, 28);
-            this.chartControl3.Name = "chartControl3";
-            series1.Name = "Series 1";
-            this.chartControl3.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series1};
-            this.chartControl3.Size = new System.Drawing.Size(300, 200);
-            this.chartControl3.TabIndex = 1;
             // 
             // MemberManageView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Name = "MemberManageView";
             this.Size = new System.Drawing.Size(1160, 820);
-            this.Controls.SetChildIndex(this.titlePanel, 0);
+            this.Controls.SetChildIndex(this.titlePanelView1, 0);
             this.Controls.SetChildIndex(this.tableLayoutPanel2, 0);
-            this.titlePanel.ResumeLayout(false);
-            this.titlePanel.PerformLayout();
+            this.Controls.SetChildIndex(this.flowLayoutPanel2, 0);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).EndInit();
@@ -358,20 +351,20 @@
             this.panel2.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(doughnutSeriesView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl3)).EndInit();
+            this.panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartControl2)).EndInit();
+            this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(doughnutSeriesView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

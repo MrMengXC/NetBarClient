@@ -29,7 +29,6 @@ namespace NetBarMS.Views.HomePage
         public PayedProductIndentView()
         {
             InitializeComponent();
-            this.titleLabel.Text = "已付款商品订单管理";
             InitUI();
         }
         #region 初始化UI
@@ -57,7 +56,7 @@ namespace NetBarMS.Views.HomePage
 
             //1提交 2付款完成 3订单处理完成（发货完成）
             //"1提交","2完成","3撤销"
-            ProductNetOperation.GetProdcutIndentList(GetProdcutIndentListResult, page.Build(), 1,"","","","", keyWords);
+            ProductNetOperation.GetProdcutIndentList(GetProdcutIndentListResult, page.Build(), 2,"","","","", keyWords);
         }
         //获取已付款商品订单列表
         private void GetProdcutIndentListResult(ResultModel result)
@@ -67,7 +66,7 @@ namespace NetBarMS.Views.HomePage
                 return;
             }
             NetMessageManage.RemoveResultBlock(GetProdcutIndentListResult);
-            System.Console.WriteLine("GetProdcutIndentListResult:" + result.pack);
+            //System.Console.WriteLine("GetProdcutIndentListResult:" + result.pack);
             if (result.pack.Content.MessageType == 1)
             {
                 this.Invoke(new RefreshUIHandle(delegate {
@@ -115,6 +114,8 @@ namespace NetBarMS.Views.HomePage
             PayedProductIndentDetailView detail = new PayedProductIndentDetailView(order);
             ToolsManage.ShowForm(detail, false, close);
         }
+
+
         #endregion
 
         #region 搜索按钮点击事件

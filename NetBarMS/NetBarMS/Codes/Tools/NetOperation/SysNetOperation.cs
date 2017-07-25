@@ -21,10 +21,13 @@ namespace NetBarMS.Codes.Tools.NetOperation
             MessageContent.Builder content = new MessageContent.Builder();
             content.SetMessageType(1);
             content.SetCsSysInfo(info);
-            MessagePack.Builder pack = new MessagePack.Builder();
-            pack.SetCmd(Cmd.CMD_SYS_INFO);
-            pack.SetContent(content);
-            NetMessageManage.SendMsg(pack.Build(), resultBlock);
+ 
+            SendModel send = new SendModel()
+            {
+                cmd = Cmd.CMD_SYS_INFO,
+                content = content.Build()
+            };
+            NetMessageManage.SendMsg(send, resultBlock);
         }
         #endregion
 
@@ -40,10 +43,12 @@ namespace NetBarMS.Codes.Tools.NetOperation
             content.SetMessageType(1);
             content.SetCsAddSysInfo(info);
 
-            MessagePack.Builder pack = new MessagePack.Builder();
-            pack.SetCmd(Cmd.CMD_SYS_ADD);
-            pack.SetContent(content);
-            NetMessageManage.SendMsg(pack.Build(), resultBlock);
+            SendModel send = new SendModel()
+            {
+                cmd = Cmd.CMD_SYS_ADD,
+                content = content.Build()
+            };
+            NetMessageManage.SendMsg(send, resultBlock);
         }
         #endregion
 
@@ -62,10 +67,12 @@ namespace NetBarMS.Codes.Tools.NetOperation
             content.SetMessageType(1);
             content.SetCsDelSysInfo(info);
 
-            MessagePack.Builder pack = new MessagePack.Builder();
-            pack.SetCmd(Cmd.CMD_SYS_DEL);
-            pack.SetContent(content);
-            NetMessageManage.SendMsg(pack.Build(), resultBlock);
+            SendModel send = new SendModel()
+            {
+                cmd = Cmd.CMD_SYS_DEL,
+                content = content.Build()
+            };
+            NetMessageManage.SendMsg(send, resultBlock);
         }
         #endregion
 
@@ -79,7 +86,7 @@ namespace NetBarMS.Codes.Tools.NetOperation
 
             SysNetOperation.UpdateSysInfo(result, parent, items);
         }
-        public static void UpdateSysInfo(DataResultBlock result, string parent, List<StructDictItem> items)
+        public static void UpdateSysInfo(DataResultBlock resultBlock, string parent, List<StructDictItem> items)
         {
             CSUpdateSysInfo.Builder update = new CSUpdateSysInfo.Builder()
             {
@@ -95,10 +102,12 @@ namespace NetBarMS.Codes.Tools.NetOperation
             content.SetMessageType(1);
             content.SetCsUpdateSysInfo(update);
 
-            MessagePack.Builder pack = new MessagePack.Builder();
-            pack.SetCmd(Cmd.CMD_SYS_UPDATE);
-            pack.SetContent(content);
-            NetMessageManage.SendMsg(pack.Build(), result);
+            SendModel send = new SendModel()
+            {
+                cmd = Cmd.CMD_SYS_UPDATE,
+                content = content.Build()
+            };
+            NetMessageManage.SendMsg(send, resultBlock);
 
 
         }

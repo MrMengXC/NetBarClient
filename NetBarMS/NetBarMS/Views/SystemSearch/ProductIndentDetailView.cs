@@ -12,7 +12,7 @@ using NetBarMS.Codes.Tools.NetOperation;
 
 namespace NetBarMS.Views.SystemSearch
 {
-    public partial class ProductIndentDetailView : RootUserControlView
+    public partial class ProductIndentDetailView : RootFormView
     {
         private enum TitleList {
             None = 0,

@@ -30,7 +30,6 @@ namespace NetBarMS.Views.SystemManage
         public MemberLevManageView()
         {
             InitializeComponent();
-            this.titleLabel.Text = "会员等级设置";
             InitUI();
         }
         #region 初始化UI

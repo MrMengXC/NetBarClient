@@ -23,22 +23,25 @@ namespace NetBarMS.Codes.Tools.NetOperation
             content.SetMessageType(1);
             content.SetCsEarning(earing);
 
-            MessagePack.Builder pack = new MessagePack.Builder();
+            SendModel send = new SendModel()
+            {
+                content = content.Build(),
+            };
+
             if(type == IncomeType.DAY_INCOME)
             {
-                pack.SetCmd(Cmd.CMD_EARNING_DAY);
+                send.cmd = Cmd.CMD_EARNING_DAY;
             }
             else if(type == IncomeType.MONTH_INCOME)
             {
-                pack.SetCmd(Cmd.CMD_EARNING_MONTH);
+                send.cmd = Cmd.CMD_EARNING_MONTH;
             }
             else
             {
-                pack.SetCmd(Cmd.CMD_EARNING_YEAR);
+                send.cmd = Cmd.CMD_EARNING_YEAR;
             }
-            pack.SetContent(content);
-            NetMessageManage.SendMsg(pack.Build(), resultBlock);
-
+          
+            NetMessageManage.SendMsg(send, resultBlock);
         }
         #endregion
 

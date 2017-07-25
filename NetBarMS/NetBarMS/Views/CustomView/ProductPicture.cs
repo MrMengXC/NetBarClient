@@ -103,7 +103,7 @@ namespace NetBarMS.Views.CustomView
         {
             this.netPath = "";
             this.simpleButton1.Hide();
-            this.pictureEdit2.Image = null;
+            this.pictureEdit2.Image = Imgs.icon_zengjia;
         }
         #endregion
 

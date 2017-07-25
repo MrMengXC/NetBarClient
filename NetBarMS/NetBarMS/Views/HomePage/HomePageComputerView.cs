@@ -72,6 +72,7 @@ namespace NetBarMS.Views.HomePage
             AreaComsView areaComsView = new AreaComsView(areaComsDict[areaId], SysManage.GetAreaName(areaId),ComLabel_Paint);
             areaComsView.Location = new Point(20 * (index % 2 + 1) + index % 2 * width, 20 * (index / 2 + 1) + index / 2 * height);
             areaComsView.Size = new Size(width, height);
+            areaComsView.Name = string.Format("area_{0}", areaId);
             this.panel1.Controls.Add(areaComsView);
 
         }
@@ -124,6 +125,7 @@ namespace NetBarMS.Views.HomePage
                 {
                     coms[comIndex] = com;
                     Label updateComLabel = res.First() as Label;
+                    updateComLabel.Tag = com;
                     COMPUTERSTATUS status = COMPUTERSTATUS.无;
                     Enum.TryParse<COMPUTERSTATUS>(com.Status, out status);
                     switch (status)
@@ -145,6 +147,7 @@ namespace NetBarMS.Views.HomePage
                     return;
                 }
                 this.filterComs[comindex] = com;
+                this.panel1.Refresh();
 
             }));
 

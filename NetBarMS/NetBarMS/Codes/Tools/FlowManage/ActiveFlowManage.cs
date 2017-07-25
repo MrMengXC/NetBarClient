@@ -20,7 +20,7 @@ namespace NetBarMS.Codes.Tools.FlowManage
     {
        
         private static ActiveFlowManage _manage = null;
-        public string card = "";                        //身份证号
+        private StructCard activeCard = null;                        //身份证
 
         #region 单例方法
         public static ActiveFlowManage ActiveFlow()
@@ -28,7 +28,7 @@ namespace NetBarMS.Codes.Tools.FlowManage
             if(_manage == null)
             {
                 _manage = new ActiveFlowManage();
-                _manage.card = "";
+                _manage.activeCard = null;
             }
             return _manage;
 
@@ -36,13 +36,12 @@ namespace NetBarMS.Codes.Tools.FlowManage
         #endregion
 
         #region 进行会员激活
-        public void CardCheckIn(string tem)
+        public void CardCheckIn(StructCard card)
         {
-            this.card = tem;
-            HomePageNetOperation.CardCheckIn(_manage.ActiveFlowResult,this.card);
-
+            this.activeCard = new StructCard.Builder(card).Build();
+            HomePageNetOperation.CardCheckIn(_manage.ActiveFlowResult, this.activeCard.Number);
         }
-     
+        //激活结果回调
         private void ActiveFlowResult(ResultModel result)
         {
             if (result.pack.Cmd != Cmd.CMD_EMK_CHECKIN)
@@ -55,18 +54,18 @@ namespace NetBarMS.Codes.Tools.FlowManage
             {
                 FLOW_ERROR error = FLOW_ERROR.OTHER;
                 Enum.TryParse<FLOW_ERROR>(result.pack.Content.ErrorTip.Key, out error);
-                //int tem = int.Parse(result.pack.Content.ErrorTip.Key);
                 switch (error)
                 {
+                    
                     //需要充值
                     case FLOW_ERROR.NEED_RECHARGE:
-                        UserScanCodeView codeView = new UserScanCodeView(this.card,10,FLOW_STATUS.ACTIVE_STATUS,(int)PRECHARGE_TYPE.NOT_MEMBER);
+                        UserScanCodeView codeView = new UserScanCodeView(this.activeCard,100,FLOW_STATUS.ACTIVE_STATUS,(int)PRECHARGE_TYPE.NOT_MEMBER);
                         ToolsManage.ShowForm(codeView, false);
                         break;
                     //提醒是否开通会员
                     case FLOW_ERROR.NEED_ADD_CARD:
                         {
-                            RemindIsOpenMember();
+                            AddCardInfo();
                         }
                         break;
                     //用户锁定
@@ -82,8 +81,8 @@ namespace NetBarMS.Codes.Tools.FlowManage
             //激活成功后提示激活成功，将值设置成不激活状态
             else
             {
-                //card = "";
                 _manage = null;
+                activeCard = null;
                 UserActivResultView view = new UserActivResultView();
                 ToolsManage.ShowForm(view, false);
             }
@@ -93,23 +92,8 @@ namespace NetBarMS.Codes.Tools.FlowManage
 
         #region 添加身份证信息（添加临时会员）
         private void AddCardInfo()
-        {
-            string cardNum = this.card;
-            StructCard.Builder structcard = new StructCard.Builder()
-            {
-                Name = "xx22",
-                Gender = 1,
-                Nation = "2112",
-                Number = cardNum,
-                Birthday = "2012-09-01",
-                Address = "海南省",
-                Organization = "海南",
-                Head = "#dasdasd#",
-                Vld = "",
-            };
-
-            CommonOperation.AddCardInfo(AddCardInfoResult, structcard);
-
+        {             
+            MemberNetOperation.AddCardInfo(AddCardInfoResult, this.activeCard);
         }
         //添加身份证信息回调
         private void AddCardInfoResult(ResultModel result)
@@ -119,29 +103,11 @@ namespace NetBarMS.Codes.Tools.FlowManage
             {
                 return;
             }
-            System.Console.WriteLine("AddCardInfoResult:" + result.pack);
+            //System.Console.WriteLine("AddCardInfoResult:" + result.pack);
             NetMessageManage.RemoveResultBlock(AddCardInfoResult);
             if (result.pack.Content.MessageType == 1)
             {
-                this.CardCheckIn(this.card);
-            }
-        }
-        #endregion
-
-        #region 提醒是否开通会员
-        private void RemindIsOpenMember()
-        {
-            DialogResult res = MessageBox.Show("询问用户是否开通会员！", "提醒", MessageBoxButtons.OKCancel);
-            //进入开通会员界面
-            if (res == DialogResult.OK)
-            {
-                OpenMemberView view = new OpenMemberView(FLOW_STATUS.ACTIVE_STATUS, this.card);
-                ToolsManage.ShowForm(view, false);
-            }
-            //添加身份证信息然后进入激活
-            else
-            {
-                AddCardInfo();
+                this.CardCheckIn(this.activeCard);
             }
         }
         #endregion
@@ -150,7 +116,7 @@ namespace NetBarMS.Codes.Tools.FlowManage
         //会员注册成功
         public void MemberRegistSuccess()
         {
-            this.CardCheckIn(this.card);
+            this.CardCheckIn(this.activeCard);
         }
         #endregion
 
@@ -158,7 +124,7 @@ namespace NetBarMS.Codes.Tools.FlowManage
         //会员充值成功
         public void MemberPaySuccess()
         {
-            this.CardCheckIn(this.card);
+            this.CardCheckIn(this.activeCard);
         }
         #endregion
     }

@@ -16,7 +16,6 @@ namespace NetBarMS.Views.SystemManage
         public BackUpManageView()
         {
             InitializeComponent();
-            this.titleLabel.Text = "备份设置";
             AddData();
         }
         /// <summary>

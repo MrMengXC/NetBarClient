@@ -31,7 +31,6 @@ namespace NetBarMS.Views.ManagersManage
         public ManagerManageView()
         {
             InitializeComponent();
-            this.titleLabel.Text = "角色管理";
             InitUI();
         }
 

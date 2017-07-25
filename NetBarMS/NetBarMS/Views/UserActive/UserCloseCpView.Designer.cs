@@ -49,6 +49,10 @@
             // 
             this.titlePanel.Size = new System.Drawing.Size(445, 50);
             // 
+            // closeBtn
+            // 
+            this.closeBtn.Location = new System.Drawing.Point(393, 0);
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveBorder;

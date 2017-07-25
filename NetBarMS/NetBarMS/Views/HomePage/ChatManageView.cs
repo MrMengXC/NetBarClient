@@ -28,7 +28,6 @@ namespace NetBarMS.Views.HomePage
         public ChatManageView()
         {
             InitializeComponent();
-            this.titleLabel.Text = "聊天管理";
             InitUI();
         }
         private List<StructRealTime> onlines;

@@ -15,6 +15,7 @@ namespace NetBarMS.Views.CustomView
     {
         //当前页书，总页数
         private int showPage = 0, allPage = 0, currentPage = 0;
+
         public PageView()
         {
             InitializeComponent();
@@ -70,6 +71,8 @@ namespace NetBarMS.Views.CustomView
         /// <summary>
         /// 当前页
         /// </summary>
+    
+        [Browsable(false)]
         public int Page
         {
             get
@@ -83,6 +86,7 @@ namespace NetBarMS.Views.CustomView
         /// <summary>
         /// 页数size
         /// </summary>
+        [Browsable(false)]
         public int PageSize
         {
             get
@@ -96,6 +100,7 @@ namespace NetBarMS.Views.CustomView
         /// <summary>
         /// 搜索起始页
         /// </summary>
+        [Browsable(false)]
         public int PageBegin
         {
             get
@@ -114,5 +119,6 @@ namespace NetBarMS.Views.CustomView
             currentPage = 0;
         }
         #endregion
+
     }
 }

@@ -37,6 +37,7 @@ namespace NetBarMS.Views.NetUserManage
         private int pageBegin = 0, pageSize = 15;
         public OpenMemberRecordView()
         {
+
             InitializeComponent();
             InitUI();
         }
@@ -148,7 +149,7 @@ namespace NetBarMS.Views.NetUserManage
             row[TitleList.OpenTime.ToString()] = apply.Addtime;
             row[TitleList.PayChannel.ToString()] = Enum.GetName(typeof(PAYCHANNEL), apply.Paymode);
             row[TitleList.IndentNumber.ToString()] = apply.Receiptid;
-            row[TitleList.Channel.ToString()] = Enum.GetName(typeof(MANAGECHANNEL), apply.Applyid);
+            row[TitleList.Channel.ToString()] = Enum.GetName(typeof(MANAGECHANNEL), apply.Channel);
 
         }
         #endregion

@@ -13,7 +13,7 @@ using NetBarMS.Codes.Tools.NetOperation;
 
 namespace NetBarMS.Views.ManagersManage
 {
-    public partial class ManagerAddView : RootUserControlView
+    public partial class ManagerAddView : RootFormView
     {
 
         public StructRole manager;
@@ -58,7 +58,7 @@ namespace NetBarMS.Views.ManagersManage
                 if(this.manager != null && !this.manager.Rights.Equals(""))
                 {
                   
-                   if (ToolsManage.TestRights(this.manager.Rights,nodeModel.nodeid))
+                   if (BigInteger.BigIntegerTools.TestRights(this.manager.Rights,nodeModel.nodeid))
                     {
                         node.Checked = true;
                     }
@@ -130,9 +130,8 @@ namespace NetBarMS.Views.ManagersManage
                 }
             }
 
-            BigInteger big = ToolsManage.SumRights(rights);
-            //System.Console.WriteLine(big.ToString(10));
-            ManagerNetOperation.UpdateManagerRights(UpdateManagerRightsResult, int.Parse(this.manager.Roleid), 1, big.ToString(10));
+            BigInteger.BigIntegerTools big = new BigInteger.BigIntegerTools(rights);
+            ManagerNetOperation.UpdateManagerRights(UpdateManagerRightsResult, int.Parse(this.manager.Roleid), 1, big.ToString());
 
         }
 

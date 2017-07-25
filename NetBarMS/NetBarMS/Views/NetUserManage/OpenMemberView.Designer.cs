@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
             this.nameLabel = new System.Windows.Forms.Label();
             this.nationLabel = new System.Windows.Forms.Label();
             this.cardTypeLabel = new System.Windows.Forms.Label();
@@ -42,35 +39,31 @@
             this.countryLabel = new System.Windows.Forms.Label();
             this.genderLabel = new System.Windows.Forms.Label();
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
             this.moneyTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
             this.memberTypeTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.phoneTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.titlePanel.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.flowLayoutPanel6.SuspendLayout();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.flowLayoutPanel5.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.moneyTextEdit.Properties)).BeginInit();
@@ -78,65 +71,27 @@
             ((System.ComponentModel.ISupportInitialize)(this.memberTypeTextEdit.Properties)).BeginInit();
             this.flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.phoneTextEdit.Properties)).BeginInit();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
-            this.panel5.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel8.SuspendLayout();
             this.SuspendLayout();
             // 
-            // titlePanel
+            // titlePanelView1
             // 
-            this.titlePanel.Size = new System.Drawing.Size(756, 50);
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Appearance.BackColor = System.Drawing.Color.Gray;
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.labelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.labelControl1.Location = new System.Drawing.Point(3, 0);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(122, 26);
-            this.labelControl1.TabIndex = 0;
-            this.labelControl1.Text = "用户身份信息";
-            // 
-            // panel2
-            // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.flowLayoutPanel6);
-            this.panel2.Controls.Add(this.pictureEdit1);
-            this.panel2.Location = new System.Drawing.Point(3, 14);
-            this.panel2.Margin = new System.Windows.Forms.Padding(0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(447, 240);
-            this.panel2.TabIndex = 1;
-            // 
-            // flowLayoutPanel6
-            // 
-            this.flowLayoutPanel6.Controls.Add(this.nameLabel);
-            this.flowLayoutPanel6.Controls.Add(this.nationLabel);
-            this.flowLayoutPanel6.Controls.Add(this.cardTypeLabel);
-            this.flowLayoutPanel6.Controls.Add(this.cardNumLabel);
-            this.flowLayoutPanel6.Controls.Add(this.birthdayLabel);
-            this.flowLayoutPanel6.Controls.Add(this.cardValidityLabel);
-            this.flowLayoutPanel6.Controls.Add(this.addressLabel);
-            this.flowLayoutPanel6.Controls.Add(this.organLabel);
-            this.flowLayoutPanel6.Controls.Add(this.countryLabel);
-            this.flowLayoutPanel6.Controls.Add(this.genderLabel);
-            this.flowLayoutPanel6.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel6.Location = new System.Drawing.Point(3, 30);
-            this.flowLayoutPanel6.Name = "flowLayoutPanel6";
-            this.flowLayoutPanel6.Size = new System.Drawing.Size(236, 166);
-            this.flowLayoutPanel6.TabIndex = 11;
+            this.titlePanelView1.ShowCloseButton = false;
+            this.titlePanelView1.Size = new System.Drawing.Size(1012, 50);
+            this.titlePanelView1.Title = "会员办理";
             // 
             // nameLabel
             // 
             this.nameLabel.AutoSize = true;
-            this.nameLabel.Location = new System.Drawing.Point(3, 3);
-            this.nameLabel.Margin = new System.Windows.Forms.Padding(3);
+            this.nameLabel.Location = new System.Drawing.Point(5, 5);
+            this.nameLabel.Margin = new System.Windows.Forms.Padding(5);
             this.nameLabel.Name = "nameLabel";
             this.nameLabel.Size = new System.Drawing.Size(41, 12);
             this.nameLabel.TabIndex = 10;
@@ -145,8 +100,8 @@
             // nationLabel
             // 
             this.nationLabel.AutoSize = true;
-            this.nationLabel.Location = new System.Drawing.Point(3, 21);
-            this.nationLabel.Margin = new System.Windows.Forms.Padding(3);
+            this.nationLabel.Location = new System.Drawing.Point(5, 27);
+            this.nationLabel.Margin = new System.Windows.Forms.Padding(5);
             this.nationLabel.Name = "nationLabel";
             this.nationLabel.Size = new System.Drawing.Size(41, 12);
             this.nationLabel.TabIndex = 11;
@@ -155,8 +110,9 @@
             // cardTypeLabel
             // 
             this.cardTypeLabel.AutoSize = true;
-            this.cardTypeLabel.Location = new System.Drawing.Point(3, 39);
-            this.cardTypeLabel.Margin = new System.Windows.Forms.Padding(3);
+            this.tableLayoutPanel2.SetColumnSpan(this.cardTypeLabel, 2);
+            this.cardTypeLabel.Location = new System.Drawing.Point(5, 49);
+            this.cardTypeLabel.Margin = new System.Windows.Forms.Padding(5);
             this.cardTypeLabel.Name = "cardTypeLabel";
             this.cardTypeLabel.Size = new System.Drawing.Size(65, 12);
             this.cardTypeLabel.TabIndex = 12;
@@ -165,8 +121,9 @@
             // cardNumLabel
             // 
             this.cardNumLabel.AutoSize = true;
-            this.cardNumLabel.Location = new System.Drawing.Point(3, 57);
-            this.cardNumLabel.Margin = new System.Windows.Forms.Padding(3);
+            this.tableLayoutPanel2.SetColumnSpan(this.cardNumLabel, 2);
+            this.cardNumLabel.Location = new System.Drawing.Point(5, 71);
+            this.cardNumLabel.Margin = new System.Windows.Forms.Padding(5);
             this.cardNumLabel.Name = "cardNumLabel";
             this.cardNumLabel.Size = new System.Drawing.Size(65, 12);
             this.cardNumLabel.TabIndex = 13;
@@ -175,8 +132,9 @@
             // birthdayLabel
             // 
             this.birthdayLabel.AutoSize = true;
-            this.birthdayLabel.Location = new System.Drawing.Point(3, 75);
-            this.birthdayLabel.Margin = new System.Windows.Forms.Padding(3);
+            this.tableLayoutPanel2.SetColumnSpan(this.birthdayLabel, 2);
+            this.birthdayLabel.Location = new System.Drawing.Point(5, 93);
+            this.birthdayLabel.Margin = new System.Windows.Forms.Padding(5);
             this.birthdayLabel.Name = "birthdayLabel";
             this.birthdayLabel.Size = new System.Drawing.Size(65, 12);
             this.birthdayLabel.TabIndex = 14;
@@ -185,8 +143,9 @@
             // cardValidityLabel
             // 
             this.cardValidityLabel.AutoSize = true;
-            this.cardValidityLabel.Location = new System.Drawing.Point(3, 93);
-            this.cardValidityLabel.Margin = new System.Windows.Forms.Padding(3);
+            this.tableLayoutPanel2.SetColumnSpan(this.cardValidityLabel, 2);
+            this.cardValidityLabel.Location = new System.Drawing.Point(5, 115);
+            this.cardValidityLabel.Margin = new System.Windows.Forms.Padding(5);
             this.cardValidityLabel.Name = "cardValidityLabel";
             this.cardValidityLabel.Size = new System.Drawing.Size(77, 12);
             this.cardValidityLabel.TabIndex = 15;
@@ -195,8 +154,9 @@
             // addressLabel
             // 
             this.addressLabel.AutoSize = true;
-            this.addressLabel.Location = new System.Drawing.Point(3, 111);
-            this.addressLabel.Margin = new System.Windows.Forms.Padding(3);
+            this.tableLayoutPanel2.SetColumnSpan(this.addressLabel, 2);
+            this.addressLabel.Location = new System.Drawing.Point(5, 137);
+            this.addressLabel.Margin = new System.Windows.Forms.Padding(5);
             this.addressLabel.Name = "addressLabel";
             this.addressLabel.Size = new System.Drawing.Size(41, 12);
             this.addressLabel.TabIndex = 16;
@@ -205,8 +165,9 @@
             // organLabel
             // 
             this.organLabel.AutoSize = true;
-            this.organLabel.Location = new System.Drawing.Point(3, 129);
-            this.organLabel.Margin = new System.Windows.Forms.Padding(3);
+            this.tableLayoutPanel2.SetColumnSpan(this.organLabel, 2);
+            this.organLabel.Location = new System.Drawing.Point(5, 159);
+            this.organLabel.Margin = new System.Windows.Forms.Padding(5);
             this.organLabel.Name = "organLabel";
             this.organLabel.Size = new System.Drawing.Size(65, 12);
             this.organLabel.TabIndex = 17;
@@ -215,8 +176,8 @@
             // countryLabel
             // 
             this.countryLabel.AutoSize = true;
-            this.countryLabel.Location = new System.Drawing.Point(3, 147);
-            this.countryLabel.Margin = new System.Windows.Forms.Padding(3);
+            this.countryLabel.Location = new System.Drawing.Point(157, 27);
+            this.countryLabel.Margin = new System.Windows.Forms.Padding(5);
             this.countryLabel.Name = "countryLabel";
             this.countryLabel.Size = new System.Drawing.Size(41, 12);
             this.countryLabel.TabIndex = 18;
@@ -225,8 +186,8 @@
             // genderLabel
             // 
             this.genderLabel.AutoSize = true;
-            this.genderLabel.Location = new System.Drawing.Point(86, 3);
-            this.genderLabel.Margin = new System.Windows.Forms.Padding(3);
+            this.genderLabel.Location = new System.Drawing.Point(157, 5);
+            this.genderLabel.Margin = new System.Windows.Forms.Padding(5);
             this.genderLabel.Name = "genderLabel";
             this.genderLabel.Size = new System.Drawing.Size(41, 12);
             this.genderLabel.TabIndex = 19;
@@ -234,56 +195,21 @@
             // 
             // pictureEdit1
             // 
-            this.pictureEdit1.Location = new System.Drawing.Point(313, 14);
+            this.pictureEdit1.Location = new System.Drawing.Point(277, 10);
             this.pictureEdit1.Name = "pictureEdit1";
             this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEdit1.Size = new System.Drawing.Size(100, 144);
             this.pictureEdit1.TabIndex = 10;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.labelControl12);
-            this.panel3.Controls.Add(this.panel4);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 256);
-            this.panel3.Margin = new System.Windows.Forms.Padding(0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(455, 234);
-            this.panel3.TabIndex = 63;
-            // 
-            // labelControl12
-            // 
-            this.labelControl12.Appearance.BackColor = System.Drawing.Color.Gray;
-            this.labelControl12.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.labelControl12.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.labelControl12.Location = new System.Drawing.Point(8, 0);
-            this.labelControl12.Name = "labelControl12";
-            this.labelControl12.Size = new System.Drawing.Size(122, 26);
-            this.labelControl12.TabIndex = 0;
-            this.labelControl12.Text = "用户上网信息";
-            // 
-            // panel4
-            // 
-            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.flowLayoutPanel5);
-            this.panel4.Controls.Add(this.simpleButton2);
-            this.panel4.Location = new System.Drawing.Point(7, 15);
-            this.panel4.Margin = new System.Windows.Forms.Padding(0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(443, 208);
-            this.panel4.TabIndex = 1;
             // 
             // flowLayoutPanel5
             // 
             this.flowLayoutPanel5.Controls.Add(this.flowLayoutPanel1);
             this.flowLayoutPanel5.Controls.Add(this.flowLayoutPanel4);
             this.flowLayoutPanel5.Controls.Add(this.flowLayoutPanel2);
-            this.flowLayoutPanel5.Location = new System.Drawing.Point(14, 26);
+            this.flowLayoutPanel5.Location = new System.Drawing.Point(18, 14);
             this.flowLayoutPanel5.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
-            this.flowLayoutPanel5.Size = new System.Drawing.Size(406, 103);
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(342, 103);
             this.flowLayoutPanel5.TabIndex = 21;
             // 
             // flowLayoutPanel1
@@ -291,7 +217,6 @@
             this.flowLayoutPanel1.Controls.Add(this.labelControl18);
             this.flowLayoutPanel1.Controls.Add(this.moneyTextEdit);
             this.flowLayoutPanel1.Controls.Add(this.labelControl14);
-            this.flowLayoutPanel1.Controls.Add(this.simpleButton1);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -314,29 +239,17 @@
             this.moneyTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.moneyTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.moneyTextEdit.Properties.NullText = "根据用户充值金额自动填充";
-            this.moneyTextEdit.Size = new System.Drawing.Size(166, 20);
+            this.moneyTextEdit.Size = new System.Drawing.Size(184, 20);
             this.moneyTextEdit.TabIndex = 13;
             this.moneyTextEdit.EditValueChanged += new System.EventHandler(this.moneyTextEdit_EditValueChanged);
             // 
             // labelControl14
             // 
-            this.labelControl14.Location = new System.Drawing.Point(241, 3);
+            this.labelControl14.Location = new System.Drawing.Point(259, 3);
             this.labelControl14.Name = "labelControl14";
             this.labelControl14.Size = new System.Drawing.Size(12, 14);
             this.labelControl14.TabIndex = 15;
             this.labelControl14.Text = "元";
-            // 
-            // simpleButton1
-            // 
-            this.simpleButton1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.simpleButton1.Appearance.Options.UseBackColor = true;
-            this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.simpleButton1.Location = new System.Drawing.Point(259, 3);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(113, 23);
-            this.simpleButton1.TabIndex = 17;
-            this.simpleButton1.Text = "充值";
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // flowLayoutPanel4
             // 
@@ -372,7 +285,7 @@
             this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 60);
             this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(425, 30);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(309, 30);
             this.flowLayoutPanel2.TabIndex = 18;
             // 
             // labelControl13
@@ -395,64 +308,39 @@
             this.phoneTextEdit.Size = new System.Drawing.Size(184, 20);
             this.phoneTextEdit.TabIndex = 12;
             // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.simpleButton1.Appearance.Options.UseBackColor = true;
+            this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.simpleButton1.Location = new System.Drawing.Point(21, 143);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(113, 23);
+            this.simpleButton1.TabIndex = 17;
+            this.simpleButton1.Text = "充值";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
             // simpleButton2
             // 
             this.simpleButton2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.simpleButton2.Appearance.Options.UseBackColor = true;
             this.simpleButton2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.simpleButton2.Location = new System.Drawing.Point(154, 159);
+            this.simpleButton2.Location = new System.Drawing.Point(140, 143);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(113, 23);
             this.simpleButton2.TabIndex = 16;
             this.simpleButton2.Text = "保存";
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60.8F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 39.2F));
-            this.tableLayoutPanel1.Controls.Add(this.panel6, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.panel5, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.panel3, 0, 1);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 56);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 52.2449F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.7551F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(750, 490);
-            this.tableLayoutPanel1.TabIndex = 66;
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.label1);
-            this.panel6.Controls.Add(this.gridControl1);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(455, 0);
-            this.panel6.Margin = new System.Windows.Forms.Padding(0);
-            this.panel6.Name = "panel6";
-            this.tableLayoutPanel1.SetRowSpan(this.panel6, 2);
-            this.panel6.Size = new System.Drawing.Size(295, 490);
-            this.panel6.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 69);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(137, 12);
-            this.label1.TabIndex = 81;
-            this.label1.Text = "办理会员对应充值金额：";
-            // 
             // gridControl1
             // 
             this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridControl1.Location = new System.Drawing.Point(13, 88);
+            this.gridControl1.Location = new System.Drawing.Point(11, 15);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(279, 200);
+            this.gridControl1.Size = new System.Drawing.Size(466, 305);
             this.gridControl1.TabIndex = 80;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1,
@@ -469,36 +357,142 @@
             this.gridView.GridControl = this.gridControl1;
             this.gridView.Name = "gridView";
             // 
-            // panel5
+            // tableLayoutPanel2
             // 
-            this.panel5.BackColor = System.Drawing.Color.Transparent;
-            this.panel5.Controls.Add(this.labelControl1);
-            this.panel5.Controls.Add(this.panel2);
-            this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Margin = new System.Windows.Forms.Padding(0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(450, 256);
-            this.panel5.TabIndex = 0;
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 64.57681F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.4232F));
+            this.tableLayoutPanel2.Controls.Add(this.organLabel, 0, 7);
+            this.tableLayoutPanel2.Controls.Add(this.addressLabel, 0, 6);
+            this.tableLayoutPanel2.Controls.Add(this.cardValidityLabel, 0, 5);
+            this.tableLayoutPanel2.Controls.Add(this.birthdayLabel, 0, 4);
+            this.tableLayoutPanel2.Controls.Add(this.cardNumLabel, 0, 3);
+            this.tableLayoutPanel2.Controls.Add(this.cardTypeLabel, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.nationLabel, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.nameLabel, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.genderLabel, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.countryLabel, 1, 1);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(18, 10);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 8;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(236, 217);
+            this.tableLayoutPanel2.TabIndex = 67;
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 3;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55F));
+            this.tableLayoutPanel3.Controls.Add(this.label2, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.label3, 2, 0);
+            this.tableLayoutPanel3.Controls.Add(this.label4, 0, 2);
+            this.tableLayoutPanel3.Controls.Add(this.panel1, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.panel7, 2, 1);
+            this.tableLayoutPanel3.Controls.Add(this.panel8, 0, 3);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 56);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 4;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(931, 535);
+            this.tableLayoutPanel3.TabIndex = 68;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.LightGray;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Location = new System.Drawing.Point(0, 0);
+            this.label2.Margin = new System.Windows.Forms.Padding(0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(405, 40);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "用户身份信息";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.LightGray;
+            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label3.Location = new System.Drawing.Point(435, 0);
+            this.label3.Margin = new System.Windows.Forms.Padding(0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(496, 40);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "办理会员对应充值金额";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.LightGray;
+            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label4.Location = new System.Drawing.Point(0, 267);
+            this.label4.Margin = new System.Windows.Forms.Padding(0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(405, 40);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "办理会员对应充值金额";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.pictureEdit1);
+            this.panel1.Controls.Add(this.tableLayoutPanel2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 40);
+            this.panel1.Margin = new System.Windows.Forms.Padding(0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(405, 227);
+            this.panel1.TabIndex = 3;
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.gridControl1);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel7.Location = new System.Drawing.Point(435, 40);
+            this.panel7.Margin = new System.Windows.Forms.Padding(0);
+            this.panel7.Name = "panel7";
+            this.tableLayoutPanel3.SetRowSpan(this.panel7, 3);
+            this.panel7.Size = new System.Drawing.Size(496, 495);
+            this.panel7.TabIndex = 4;
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.simpleButton2);
+            this.panel8.Controls.Add(this.flowLayoutPanel5);
+            this.panel8.Controls.Add(this.simpleButton1);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel8.Location = new System.Drawing.Point(0, 307);
+            this.panel8.Margin = new System.Windows.Forms.Padding(0);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(405, 228);
+            this.panel8.TabIndex = 5;
             // 
             // OpenMemberView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.tableLayoutPanel3);
             this.Name = "OpenMemberView";
-            this.Size = new System.Drawing.Size(756, 546);
-            this.Controls.SetChildIndex(this.tableLayoutPanel1, 0);
-            this.Controls.SetChildIndex(this.titlePanel, 0);
-            this.titlePanel.ResumeLayout(false);
-            this.titlePanel.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.flowLayoutPanel6.ResumeLayout(false);
-            this.flowLayoutPanel6.PerformLayout();
+            this.Size = new System.Drawing.Size(1012, 658);
+            this.Controls.SetChildIndex(this.tableLayoutPanel3, 0);
+            this.Controls.SetChildIndex(this.titlePanelView1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel4.ResumeLayout(false);
             this.flowLayoutPanel5.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
@@ -509,25 +503,22 @@
             this.flowLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.phoneTextEdit.Properties)).EndInit();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).EndInit();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private DevExpress.XtraEditors.LabelControl labelControl1;
-        private System.Windows.Forms.Panel panel2;
         private DevExpress.XtraEditors.PictureEdit pictureEdit1;
-        private System.Windows.Forms.Panel panel3;
-        private DevExpress.XtraEditors.LabelControl labelControl12;
-        private System.Windows.Forms.Panel panel4;
         private DevExpress.XtraEditors.LabelControl labelControl18;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
@@ -538,17 +529,12 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
         private DevExpress.XtraEditors.LabelControl labelControl15;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel6;
         private DevExpress.XtraEditors.TextEdit memberTypeTextEdit;
         private DevExpress.XtraEditors.LabelControl labelControl14;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Panel panel5;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label nameLabel;
         private System.Windows.Forms.Label nationLabel;
         private System.Windows.Forms.Label cardTypeLabel;
@@ -559,5 +545,13 @@
         private System.Windows.Forms.Label organLabel;
         private System.Windows.Forms.Label countryLabel;
         private System.Windows.Forms.Label genderLabel;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panel8;
     }
 }

@@ -21,10 +21,13 @@ namespace NetBarMS.Codes.Tools.NetOperation
             content.SetMessageType(1);
             content.SetCsMemberList(memberlist);
 
-            MessagePack.Builder pack = new MessagePack.Builder();
-            pack.SetCmd(Cmd.CMD_MEMBER_LIST);
-            pack.SetContent(content);
-            NetMessageManage.SendMsg(pack.Build(), resultBlock);
+            SendModel send = new SendModel()
+            {
+                cmd = Cmd.CMD_MEMBER_LIST,
+                content = content.Build(),
+            };
+            NetMessageManage.SendMsg(send, resultBlock);
+
 
         }
         #endregion
@@ -45,11 +48,12 @@ namespace NetBarMS.Codes.Tools.NetOperation
             content.MessageType = 1;
             content.CsEmkApplyMember = member.Build();
 
-            MessagePack.Builder pack = new MessagePack.Builder();
-            pack.Cmd = Cmd.CMD_EMK_APPLY_MEMBER;
-            pack.Content = content.Build();
-
-            NetMessageManage.SendMsg(pack.Build(), resultBlock);
+            SendModel send = new SendModel()
+            {
+                cmd = Cmd.CMD_EMK_APPLY_MEMBER,
+                content = content.Build(),
+            };
+            NetMessageManage.SendMsg(send, resultBlock);
         }
         #endregion
         
@@ -68,11 +72,12 @@ namespace NetBarMS.Codes.Tools.NetOperation
             content.MessageType = 1;
             content.CsEmkCharge = charge.Build();
 
-            MessagePack.Builder pack = new MessagePack.Builder();
-            pack.Cmd = Cmd.CMD_EMK_RECHARGE;
-            pack.Content = content.Build();
-
-            NetMessageManage.SendMsg(pack.Build(), resultBlock);
+            SendModel send = new SendModel()
+            {
+                cmd = Cmd.CMD_EMK_RECHARGE,
+                content = content.Build(),
+            };
+            NetMessageManage.SendMsg(send, resultBlock);
         }
         #endregion
 
@@ -91,11 +96,12 @@ namespace NetBarMS.Codes.Tools.NetOperation
             content.MessageType = 1;
             content.CsEmkAddCardInfo = info.Build();
 
-            MessagePack.Builder pack = new MessagePack.Builder();
-            pack.Cmd = Cmd.CMD_EMK_ADD_CARDINFO;
-            pack.Content = content.Build();
-
-            NetMessageManage.SendMsg(pack.Build(), resultBlock);
+            SendModel send = new SendModel()
+            {
+                cmd = Cmd.CMD_EMK_ADD_CARDINFO,
+                content = content.Build(),
+            };
+            NetMessageManage.SendMsg(send, resultBlock);
         }
         #endregion
 
@@ -115,35 +121,17 @@ namespace NetBarMS.Codes.Tools.NetOperation
             MessageContent.Builder content = new MessageContent.Builder();
             content.SetMessageType(1);
             content.SetCsMemberDel(memberDel);
-            MessagePack.Builder pack = new MessagePack.Builder();
-            pack.SetCmd(Cmd.CMD_MEMBER_DEL);
-            pack.SetContent(content);
-            NetMessageManage.SendMsg(pack.Build(), resultBlock);
+
+            SendModel send = new SendModel()
+            {
+                cmd = Cmd.CMD_MEMBER_DEL,
+                content = content.Build(),
+            };
+            NetMessageManage.SendMsg(send, resultBlock);
         }
         #endregion
 
-        #region 会员验证
-        /// <summary>
-        /// 验证会员
-        /// </summary>
-        public static void VerifyMember(DataResultBlock resultBlock, List<int> ids)
-        {
-
-            //CSMemberVerify.Builder memberVer = new CSMemberVerify.Builder();
-            //foreach (int id in ids)
-            //{
-            //    memberVer.AddMemberid(id);
-            //}
-            //MessageContent.Builder content = new MessageContent.Builder();
-            //content.SetMessageType(1);
-            //content.SetCsMemberVerify(memberVer);
-            //MessagePack.Builder pack = new MessagePack.Builder();
-            //pack.SetCmd(Cmd.CMD_MEMBER_VERIFY);
-            //pack.SetContent(content);
-            //NetMessageManage.SendMsg(pack.Build(), resultBlock);
-        }
-
-        #endregion
+       
 
         #region 按条件查询会员
         /// <summary>
@@ -177,10 +165,12 @@ namespace NetBarMS.Codes.Tools.NetOperation
             content.SetMessageType(1);
             content.SetCsMemberFind(memberFind);
 
-            MessagePack.Builder pack = new MessagePack.Builder();
-            pack.SetCmd(Cmd.CMD_MEMBER_FIND);
-            pack.SetContent(content);
-            NetMessageManage.SendMsg(pack.Build(), resultBlock);
+            SendModel send = new SendModel()
+            {
+                cmd = Cmd.CMD_MEMBER_FIND,
+                content = content.Build(),
+            };
+            NetMessageManage.SendMsg(send, resultBlock);
         }
 
         #endregion
@@ -199,10 +189,13 @@ namespace NetBarMS.Codes.Tools.NetOperation
             content.SetMessageType(1);
             content.SetCsMemberCardInfo(info);
 
-            MessagePack.Builder pack = new MessagePack.Builder();
-            pack.SetCmd(Cmd.CMD_MEMBER_CARD_INFO);
-            pack.SetContent(content);
-            NetMessageManage.SendMsg(pack.Build(), resultBlock);
+            SendModel send = new SendModel()
+            {
+                cmd = Cmd.CMD_MEMBER_CARD_INFO,
+                content = content.Build(),
+            };
+            NetMessageManage.SendMsg(send, resultBlock);
+
         }
         #endregion
 
@@ -223,19 +216,23 @@ namespace NetBarMS.Codes.Tools.NetOperation
             content.MessageType = 1;
             content.CsEmkUserInfo = info.Build();
 
-            MessagePack.Builder pack = new MessagePack.Builder();
-            pack.Cmd = Cmd.CMD_EMK_USERINFO;
-            pack.Content = content.Build();
-            NetMessageManage.SendMsg(pack.Build(), resultBlock);
+            SendModel send = new SendModel()
+            {
+                cmd = Cmd.CMD_EMK_USERINFO,
+                content = content.Build(),
+            };
+            NetMessageManage.SendMsg(send, resultBlock);
         }
         #endregion
 
         #region 取消操作
         public static void CancelOperation(DataResultBlock resultBlock)
         {
-            MessagePack.Builder pack = new MessagePack.Builder();
-            pack.Cmd = Cmd.CMD_EMK_CANCEL;
-            NetMessageManage.SendMsg(pack.Build(), resultBlock);
+            SendModel send = new SendModel()
+            {
+                cmd = Cmd.CMD_EMK_CANCEL,
+            };
+            NetMessageManage.SendMsg(send, resultBlock);
         }
 
 

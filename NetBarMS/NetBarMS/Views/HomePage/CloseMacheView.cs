@@ -12,7 +12,7 @@ using NetBarMS.Codes.Tools;
 
 namespace NetBarMS.Views.HomePage
 {
-    public partial class CloseMacheView : RootUserControlView
+    public partial class CloseMacheView : RootFormView
     {
         public CloseMacheView()
         {

@@ -184,9 +184,11 @@ namespace NetBarMS.Views.InCome
         private void simpleButton2_Click(object sender, EventArgs e)
         {
             DateTime time = DateTime.ParseExact(this.start, "yyyy-MM-dd HH:mm:ss", System.Globalization.CultureInfo.CurrentCulture);
-            IncomeDetail detail = new InCome.IncomeDetail(IncomeType.MONTH_INCOME, this.earns.ToList<StructEarn>(),time.Year,time.Month);
+            IncomeDetailView detail = new InCome.IncomeDetailView(IncomeType.MONTH_INCOME, this.earns.ToList<StructEarn>(),time.Year,time.Month);
             ToolsManage.ShowForm(detail, false);
         }
+
+      
 
         //关闭选择菜单
         private void ComboBoxEdit1_Closed(object sender, DevExpress.XtraEditors.Controls.ClosedEventArgs e)

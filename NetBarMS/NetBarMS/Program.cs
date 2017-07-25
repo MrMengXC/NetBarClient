@@ -41,24 +41,24 @@ namespace NetBarMS
             ////DayInComeView newview2 = new DayInComeView();
             ////CustomForm newForm2 = new CustomForm(newview2, true, false);
             //ToolsManage.ShowForm(newview2, true);
-            MainForm form1 = new MainForm();
-            Application.Run(form1);
-            return;
+            //MainView homePage1 = new MainView();
+            //Application.Run(ToolsManage.ShowForm(homePage1));
+            //return;
 
 
             ManagerLoginView view = new ManagerLoginView();
             //等待点击关闭
             if (ToolsManage.ShowForm(view, true,null) == DialogResult.OK)
             {
-                MainForm form = new MainForm();
-                //HomePageView homePage = new HomePageView();
-                //CustomForm form = new CustomForm(homePage, true);
-                Application.Run(form);
+                //MainForm form = new MainForm();
+
+                //Application.Run(form);
+                MainView homePage = new MainView();
+                Application.Run(ToolsManage.ShowForm(homePage));
             }
             else
             {
-                //HomePageView homePage = new HomePageView();
-                //Application.Run(ToolsManage.ShowForm(homePage));
+                
             }
         }
 

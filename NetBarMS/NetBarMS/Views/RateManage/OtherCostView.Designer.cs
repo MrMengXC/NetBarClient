@@ -38,7 +38,6 @@
             this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
             this.temMinuteText = new DevExpress.XtraEditors.TextEdit();
             this.label24 = new System.Windows.Forms.Label();
-            this.titlePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.temCheckEdit.Properties)).BeginInit();
             this.flowLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
@@ -48,9 +47,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.temMinuteText.Properties)).BeginInit();
             this.SuspendLayout();
             // 
-            // titlePanel
+            // titlePanelView1
             // 
-            this.titlePanel.Size = new System.Drawing.Size(524, 50);
+            this.titlePanelView1.Size = new System.Drawing.Size(524, 50);
+            this.titlePanelView1.Title = "其他费用管理";
             // 
             // temCheckEdit
             // 
@@ -175,11 +175,9 @@
             this.Controls.Add(this.saveButton);
             this.Name = "OtherCostView";
             this.Size = new System.Drawing.Size(524, 222);
-            this.Controls.SetChildIndex(this.titlePanel, 0);
+            this.Controls.SetChildIndex(this.titlePanelView1, 0);
             this.Controls.SetChildIndex(this.saveButton, 0);
             this.Controls.SetChildIndex(this.flowLayoutPanel3, 0);
-            this.titlePanel.ResumeLayout(false);
-            this.titlePanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.temCheckEdit.Properties)).EndInit();
             this.flowLayoutPanel3.ResumeLayout(false);
             this.flowLayoutPanel3.PerformLayout();

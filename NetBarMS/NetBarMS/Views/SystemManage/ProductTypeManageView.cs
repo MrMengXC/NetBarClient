@@ -15,7 +15,7 @@ namespace NetBarMS.Views.SystemManage
 {
     public partial class ProductTypeManageView : RootUserControlView
     {
-        enum TitleList
+        private enum TitleList
         {
             None = 0,
             Check,                  //勾选
@@ -30,7 +30,6 @@ namespace NetBarMS.Views.SystemManage
         public ProductTypeManageView()
         {
             InitializeComponent();
-            this.titleLabel.Text = "商品类别设置";
             InitUI();
         }
       

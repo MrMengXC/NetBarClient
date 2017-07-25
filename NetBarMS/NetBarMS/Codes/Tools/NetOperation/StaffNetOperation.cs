@@ -17,9 +17,11 @@ namespace NetBarMS.Codes.Tools.NetOperation
         /// <param name="resultBlock"></param>
         public static void GetStaffList(DataResultBlock resultBlock)
         {
-            MessagePack.Builder pack = new MessagePack.Builder();
-            pack.SetCmd(Cmd.CMD_STAFF_LIST);
-            NetMessageManage.SendMsg(pack.Build(), resultBlock);
+            SendModel send = new SendModel()
+            {
+                cmd = Cmd.CMD_STAFF_LIST,
+            };
+            NetMessageManage.SendMsg(send, resultBlock);
         }
         #endregion
 
@@ -40,10 +42,12 @@ namespace NetBarMS.Codes.Tools.NetOperation
             content.SetMessageType(1);
             content.SetCsAccountSnsSet(set.Build());
 
-            MessagePack.Builder pack = new MessagePack.Builder();
-            pack.SetCmd(Cmd.CMD_STAFF_SNS);
-            pack.SetContent(content.Build());
-            NetMessageManage.SendMsg(pack.Build(), resultBlock);
+            SendModel send = new SendModel()
+            {
+                cmd = Cmd.CMD_STAFF_SNS,
+                content = content.Build()
+            };
+            NetMessageManage.SendMsg(send, resultBlock);
         }
         #endregion
 
@@ -62,10 +66,12 @@ namespace NetBarMS.Codes.Tools.NetOperation
             content.SetMessageType(1);
             content.SetCsAccountUpdate(update.Build());
 
-            MessagePack.Builder pack = new MessagePack.Builder();
-            pack.SetCmd(Cmd.CMD_STAFF_UPDATE);
-            pack.SetContent(content.Build());
-            NetMessageManage.SendMsg(pack.Build(), resultBlock);
+            SendModel send = new SendModel()
+            {
+                cmd = Cmd.CMD_STAFF_UPDATE,
+                content = content.Build()
+            };
+            NetMessageManage.SendMsg(send, resultBlock);
         }
         #endregion
 
@@ -84,10 +90,12 @@ namespace NetBarMS.Codes.Tools.NetOperation
             content.SetMessageType(1);
             content.SetCsAccountAdd(add.Build());
 
-            MessagePack.Builder pack = new MessagePack.Builder();
-            pack.SetCmd(Cmd.CMD_STAFF_ADD);
-            pack.SetContent(content.Build());
-            NetMessageManage.SendMsg(pack.Build(), resultBlock);
+            SendModel send = new SendModel()
+            {
+                cmd = Cmd.CMD_STAFF_ADD,
+                content = content.Build()
+            };
+            NetMessageManage.SendMsg(send, resultBlock);
         }
         #endregion
 
@@ -105,10 +113,13 @@ namespace NetBarMS.Codes.Tools.NetOperation
             content.SetMessageType(1);
             content.SetCsAccountDel(del.Build());
 
-            MessagePack.Builder pack = new MessagePack.Builder();
-            pack.SetCmd(Cmd.CMD_STAFF_DEL);
-            pack.SetContent(content.Build());
-            NetMessageManage.SendMsg(pack.Build(), resultBlock);
+            SendModel send = new SendModel()
+            {
+                cmd = Cmd.CMD_STAFF_DEL,
+                content = content.Build()
+            };
+            NetMessageManage.SendMsg(send, resultBlock);
+
         }
         #endregion
 
@@ -130,10 +141,12 @@ namespace NetBarMS.Codes.Tools.NetOperation
             content.MessageType = 1;
             content.CsShiftFind = find.Build();
 
-            MessagePack.Builder pack = new MessagePack.Builder();
-            pack.SetCmd(Cmd.CMD_SHIFT_FIND);
-            pack.SetContent(content.Build());
-            NetMessageManage.SendMsg(pack.Build(), resultBlock);
+            SendModel send = new SendModel()
+            {
+                cmd = Cmd.CMD_SHIFT_FIND,
+                content = content.Build()
+            };
+            NetMessageManage.SendMsg(send, resultBlock);
         }
         #endregion
     }

@@ -19,7 +19,7 @@ namespace NetBarMS.Views.SystemManage
         enum TitleList
         {
             None,
-            Check = 0 ,                  //勾选
+            Check = 0,                  //勾选
             Staff,                     //员工姓名
             TelNumber,                 //手机号码
         }
@@ -34,7 +34,6 @@ namespace NetBarMS.Views.SystemManage
         public SmsManageView()
         {
             InitializeComponent();
-            this.titleLabel.Text = "短信设置";
             InitUI();
         }
 
@@ -47,7 +46,7 @@ namespace NetBarMS.Views.SystemManage
 
             this.panel1.AutoSize = true;
             this.panel1.AutoScroll = true;
-            this.panel1.MaximumSize = new Size(this.pushBgPanel.Width-this.addPushButton.Width, this.pushBgPanel.Height);
+            this.panel1.MaximumSize = new Size(this.pushBgPanel.Width - this.addPushButton.Width, this.pushBgPanel.Height);
             this.pushBgPanel.SizeChanged += Panel1_SizeChanged;
 
             GetPushMessageList();
@@ -77,9 +76,11 @@ namespace NetBarMS.Views.SystemManage
                 return;
             }
             NetMessageManage.RemoveResultBlock(GetStaffListResult);
+            // System.Console.WriteLine("GetStaffListResult:" + result.pack);
+
             if (result.pack.Content.MessageType == 1)
             {
-                
+
                 this.Invoke(new RefreshUIHandle(delegate
                 {
                     SysManage.UpdateStaffData(result.pack.Content.ScAccountList.AccountList);
@@ -97,7 +98,7 @@ namespace NetBarMS.Views.SystemManage
         //刷新GridControl
         private void RefreshGridControl()
         {
-            foreach(StructAccount account in this.showStaffs)
+            foreach (StructAccount account in this.showStaffs)
             {
                 DataRow row = this.mainDataTable.NewRow();
                 this.mainDataTable.Rows.Add(row);
@@ -120,11 +121,11 @@ namespace NetBarMS.Views.SystemManage
             {
                 return;
             }
-
+            //System.Console.WriteLine("SmsPushMessageInfoResult:" + result.pack);
             NetMessageManage.RemoveResultBlock(SmsPushMessageInfoResult);
-            if ( result.pack.Content.MessageType == 1)
+            if (result.pack.Content.MessageType == 1)
             {
-             
+
                 this.Invoke(new RefreshUIHandle(delegate
                 {
                     List<StructDictItem> temShow = this.showPushItems;
@@ -160,7 +161,17 @@ namespace NetBarMS.Views.SystemManage
                 for (int i = 0; i < this.showPushItems.Count; i++)
                 {
                     StructDictItem item = this.showPushItems[i];
+                    //判断之前是否改过内容
+                    if (temPushItems != null)
+                    {
+                        int index = temPushItems.FindIndex(tem => tem.Id == item.Id && !tem.GetItem(1).Equals(item.GetItem(1)));
+                        if (index >= 0)
+                        {
+                            this.showPushItems[i] = temPushItems[index];
+                        }
+                    }
 
+                    item = this.showPushItems[i];
                     Label pushLabel = new Label();
                     pushLabel.AutoSize = false;
                     pushLabel.Dock = DockStyle.Left;
@@ -168,7 +179,7 @@ namespace NetBarMS.Views.SystemManage
                     pushLabel.ForeColor = Color.Gray;
                     pushLabel.Text = item.GetItem(0);
                     pushLabel.Click += PushButton_ButtonClick;
-                    pushLabel.Tag = i.ToString();
+                    pushLabel.Tag = item;
                     pushLabel.Margin = new Padding(0);
                     pushLabel.Paint += Button_Paint;
                     pushLabel.TextAlign = ContentAlignment.MiddleCenter;
@@ -176,23 +187,11 @@ namespace NetBarMS.Views.SystemManage
                     pushLabel.Size = new Size((int)sizeF.Width + PUSHBUTTON_W, this.panel1.Size.Height);
                     this.panel1.Controls.Add(pushLabel);
 
-                    //判断之前是否改过内容
-                    if (temPushItems != null)
-                    {
-                        foreach (StructDictItem temItem in temPushItems)
-                        {
-                            if (temItem.Id == item.Id && !temItem.GetItem(1).Equals(item.GetItem(1)))
-                            {
-                                this.showPushItems[i] = temItem;
-                                break;
-                            }
-                        }
-                    }
 
                 }
 
             }
-            
+
         }
         //重绘推送事件的Label
         private void Button_Paint(object sender, PaintEventArgs e)
@@ -202,7 +201,7 @@ namespace NetBarMS.Views.SystemManage
             {
                 //e.Graphics.DrawRectangle(Pens.Red,)
                 ControlPaint.DrawBorder(e.Graphics, e.ClipRectangle,
-                    Color.Transparent,0,ButtonBorderStyle.None,
+                    Color.Transparent, 0, ButtonBorderStyle.None,
                     Color.Transparent, 0, ButtonBorderStyle.None,
                     Color.Transparent, 0, ButtonBorderStyle.None,
                     Color.Blue, 2, ButtonBorderStyle.Solid);
@@ -236,8 +235,8 @@ namespace NetBarMS.Views.SystemManage
             this.selectPush.ForeColor = Color.Black;
 
             //获取输入短信内容
-            int index = int.Parse((string)this.selectPush.Tag);
-            StructDictItem item = this.showPushItems[index];
+            // int index = int.Parse((string)this.selectPush.Tag);
+            StructDictItem item = (StructDictItem)this.selectPush.Tag;
             this.textBox1.Text = item.GetItem(1);
 
 
@@ -246,7 +245,8 @@ namespace NetBarMS.Views.SystemManage
             {
                 DataRow row = this.gridView1.GetDataRow(i);
                 StructAccount staff = showStaffs[i];
-                row[TitleList.Check.ToString()] = ToolsManage.TestRights(staff.Sns, item.Id);
+                bool check = BigInteger.BigIntegerTools.TestRights(staff.Sns, item.Id);
+                row[TitleList.Check.ToString()] = check;
             }
 
         }
@@ -257,7 +257,7 @@ namespace NetBarMS.Views.SystemManage
         //添加推送事项
         private void addPushButton_Click(object sender, EventArgs e)
         {
-          
+
             //保存当前的
             SaveCurrentSetting();
 
@@ -300,14 +300,14 @@ namespace NetBarMS.Views.SystemManage
                 return;
             }
 
-            System.Console.WriteLine("DeleteSmsPushMessage:" + result.pack);
+            //System.Console.WriteLine("DeleteSmsPushMessage:" + result.pack);
             NetMessageManage.RemoveResultBlock(DeleteSmsPushMessage);
             if (result.pack.Content.MessageType == 1)
             {
                 this.Invoke(new RefreshUIHandle(delegate {
-                 
+
                 }));
-              
+
             }
         }
         #endregion 添加推送事项
@@ -320,14 +320,14 @@ namespace NetBarMS.Views.SystemManage
             //根据Ori进行判断是否修改过
             //员工判断
             List<StructAccount> changeStaffs = new List<StructAccount>();
-            for(int i = 0;i<this.oriStaffs.Count;i++)
+            for (int i = 0; i < this.oriStaffs.Count; i++)
             {
                 StructAccount ori = this.oriStaffs[i];
                 StructAccount change = this.showStaffs[i];
-                if(!ori.Sns.Equals(change.Sns))
+                if (!ori.Sns.Equals(change.Sns))
                 {
                     changeStaffs.Add(change);
-                    System.Console.WriteLine("ori:" + ori + "\nchange:" + change);
+                    // System.Console.WriteLine("ori:" + ori + "\nchange:" + change);
                 }
             }
 
@@ -342,7 +342,7 @@ namespace NetBarMS.Views.SystemManage
                     changePush.Add(change);
                 }
             }
-            if(changePush.Count >0)
+            if (changePush.Count > 0)
             {
                 SystemManageNetOperation.UpdateSmsPushMessage(UpdateSmsPushMessage, changePush);
             }
@@ -359,7 +359,7 @@ namespace NetBarMS.Views.SystemManage
                 return;
             }
 
-            System.Console.WriteLine("UpdateSmsPushMessage:" + result.pack);
+            //System.Console.WriteLine("UpdateSmsPushMessage:" + result.pack);
             NetMessageManage.RemoveResultBlock(UpdateSmsPushMessage);
             if (result.pack.Content.MessageType == 1)
             {
@@ -378,10 +378,10 @@ namespace NetBarMS.Views.SystemManage
             {
                 return;
             }
-            System.Console.WriteLine("UpdateStaffSnsResult:" + result.pack);
+            //System.Console.WriteLine("UpdateStaffSnsResult:" + result.pack);
             NetMessageManage.RemoveResultBlock(UpdateStaffSnsResult);
             if (result.pack.Content.MessageType == 1)
-            {           
+            {
                 this.oriStaffs = this.showStaffs.ToList<StructAccount>();
                 MessageBox.Show("更新成功");
             }
@@ -391,15 +391,14 @@ namespace NetBarMS.Views.SystemManage
         #region 保存当前设置的数据
         private void SaveCurrentSetting()
         {
-            if(this.selectPush == null)
+            if (this.selectPush == null)
             {
                 return;
             }
 
             //获取当前选中的推送事项
-            int index = int.Parse((string)this.selectPush.Tag);
-            StructDictItem item = this.showPushItems[index];
-           
+            StructDictItem item = (StructDictItem)this.selectPush.Tag;//this.showPushItems[index];
+
             #region 修改员工短信Sns
             for (int i = 0; i < this.gridView1.RowCount; i++)
             {
@@ -408,38 +407,21 @@ namespace NetBarMS.Views.SystemManage
 
                 string value = row[TitleList.Check.ToString()].ToString();
                 StructAccount staff = showStaffs[i];
-                BigInteger big;
-                if (staff.Sns.Equals(""))
-                {
-                    big = new BigInteger();
-                }
-                else
-                {
-                    big = new BigInteger(staff.Sns, 10);
-                }
 
+                BigInteger.BigIntegerTools big = new BigInteger.BigIntegerTools(staff.Sns);
                 //勾选上的
                 if (value.Equals("True"))
                 {
-                    big.setBit((uint)item.Id);
+                    big.SumRights(item.Id);
                 }
                 else
                 {
-                    //判断之前是否保存过,保存过就删除掉
-                    if (ToolsManage.TestRights(staff.Sns,item.Id))
-                    {
-                        BigInteger other = new BigInteger();
-                        other.setBit((uint)item.Id);
-                       // System.Console.WriteLine("item.Id:" + (new BigInteger(item.Id).ToString() + "\nbig:" + big.ToString()));
-                        big = big - other;
-                       // System.Console.WriteLine("big:" + big.ToString());
-
-                    }
+                    big.RemoveRights(item.Id);
                 }
 
-                string sns = big.ToString(10);
-                
-               // System.Console.WriteLine("sns:"+sns);
+                string sns = big.ToString();
+
+                // System.Console.WriteLine("sns:"+sns);
                 //有改变
                 if (!sns.Equals(staff.Sns))
                 {
@@ -455,6 +437,7 @@ namespace NetBarMS.Views.SystemManage
             {
                 StructDictItem.Builder newItem = new StructDictItem.Builder(item);
                 newItem.SetItem(1, textBox1.Text);
+                int index = this.showPushItems.IndexOf(item);
                 this.showPushItems[index] = newItem.Build();
             }
             #endregion

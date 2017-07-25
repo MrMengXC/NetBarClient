@@ -12,7 +12,7 @@ using NetBarMS.Codes.Tools;
 
 namespace NetBarMS.Views.HomePage
 {
-    public partial class CheckOutView : RootUserControlView
+    public partial class CheckOutView : RootFormView
     {
         public CheckOutView()
         {

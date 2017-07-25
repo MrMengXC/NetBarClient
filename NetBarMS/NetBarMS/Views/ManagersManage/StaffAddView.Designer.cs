@@ -59,6 +59,10 @@
             // 
             this.titlePanel.Size = new System.Drawing.Size(360, 50);
             // 
+            // closeBtn
+            // 
+            this.closeBtn.Location = new System.Drawing.Point(308, 0);
+            // 
             // flowLayoutPanel2
             // 
             this.flowLayoutPanel2.BackColor = System.Drawing.Color.Transparent;

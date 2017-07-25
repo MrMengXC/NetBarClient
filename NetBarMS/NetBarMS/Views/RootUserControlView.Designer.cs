@@ -28,60 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.titlePanel = new System.Windows.Forms.Panel();
-            this.rootCloseButton = new System.Windows.Forms.Button();
-            this.titleLabel = new System.Windows.Forms.Label();
-            this.titlePanel.SuspendLayout();
+            this.titlePanelView1 = new NetBarMS.Views.CustomView.TitlePanelView();
             this.SuspendLayout();
             // 
-            // titlePanel
+            // titlePanelView1
             // 
-            this.titlePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.titlePanel.Controls.Add(this.rootCloseButton);
-            this.titlePanel.Controls.Add(this.titleLabel);
-            this.titlePanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.titlePanel.Location = new System.Drawing.Point(0, 0);
-            this.titlePanel.Name = "titlePanel";
-            this.titlePanel.Size = new System.Drawing.Size(637, 50);
-            this.titlePanel.TabIndex = 61;
-            // 
-            // rootCloseButton
-            // 
-            this.rootCloseButton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.rootCloseButton.Location = new System.Drawing.Point(589, 0);
-            this.rootCloseButton.Name = "rootCloseButton";
-            this.rootCloseButton.Size = new System.Drawing.Size(48, 50);
-            this.rootCloseButton.TabIndex = 2;
-            this.rootCloseButton.Text = "X";
-            this.rootCloseButton.UseVisualStyleBackColor = true;
-            // 
-            // titleLabel
-            // 
-            this.titleLabel.AutoSize = true;
-            this.titleLabel.Font = new System.Drawing.Font("宋体", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.titleLabel.ForeColor = System.Drawing.Color.Blue;
-            this.titleLabel.Location = new System.Drawing.Point(10, 20);
-            this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(0, 17);
-            this.titleLabel.TabIndex = 1;
+            this.titlePanelView1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.titlePanelView1.Location = new System.Drawing.Point(0, 0);
+            this.titlePanelView1.Name = "titlePanelView1";
+            this.titlePanelView1.Size = new System.Drawing.Size(417, 50);
+            this.titlePanelView1.TabIndex = 0;
             // 
             // RootUserControlView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.titlePanel);
+            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.titlePanelView1);
             this.Name = "RootUserControlView";
-            this.Size = new System.Drawing.Size(637, 399);
-            this.titlePanel.ResumeLayout(false);
-            this.titlePanel.PerformLayout();
+            this.Size = new System.Drawing.Size(417, 166);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        public System.Windows.Forms.Panel titlePanel;
-        private System.Windows.Forms.Button rootCloseButton;
-        public System.Windows.Forms.Label titleLabel;
+        public CustomView.TitlePanelView titlePanelView1;
     }
 }

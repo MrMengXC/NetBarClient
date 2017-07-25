@@ -84,7 +84,7 @@ namespace NetBarMS.Views
                 return;
             }
             NetMessageManage.RemoveResultBlock(GetLogListResult);
-         //   System.Console.WriteLine("GetLogListResult:" + result.pack);
+            System.Console.WriteLine("GetLogListResult:" + result.pack);
 
             if (result.pack.Content.MessageType == 1)
             {

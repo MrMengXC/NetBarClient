@@ -115,9 +115,18 @@ namespace NetBarMS.Codes.Tools.Manage
             RefreshUIHandle dailyCount,
             RefreshUIHandle statusUI)
         {
-            this.UpdateMsgNumEvent += msg;
-            this.UpdateDailyCountEvent += dailyCount;
-            this.UpdateStatusNumEvent += statusUI;
+            if(msg != null)
+            {
+                this.UpdateMsgNumEvent += msg;
+            }
+            if(dailyCount != null)
+            {
+                this.UpdateDailyCountEvent += dailyCount;
+            }
+            if(statusUI != null)
+            {
+                this.UpdateStatusNumEvent += statusUI;
+            }
         }
         #endregion
 

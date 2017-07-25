@@ -13,7 +13,7 @@ namespace NetBarMS.Views.Message
     /// <summary>
     /// 用户充值结果充值
     /// </summary>
-    public partial class UserPayResultView : RootUserControlView
+    public partial class UserPayResultView : RootFormView
     {
         public UserPayResultView()
         {

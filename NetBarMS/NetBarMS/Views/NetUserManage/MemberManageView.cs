@@ -14,6 +14,7 @@ using NetBarMS.Views.OtherMain;
 using DevExpress.XtraEditors;
 using NetBarMS.Codes.Model;
 using System.Drawing.Drawing2D;
+using NetBarMS.Codes.Tools.Manage;
 
 namespace NetBarMS.Views.NetUserManage
 {
@@ -371,13 +372,13 @@ namespace NetBarMS.Views.NetUserManage
             else if(param[0].Equals(TitleList.CsRecord.ToString())) 
             {
                 MemberConsumeRecordView view = new MemberConsumeRecordView(member.Memberid);
-                ToolsManage.ShowForm(view, false);
+                MainViewManage.ShowSecondView(view);
             }
             //上网记录
             else if(param[0].Equals(TitleList.NetRecord.ToString()))
             {
                 MemberNetRecordView view = new MemberNetRecordView(member.Memberid);
-                ToolsManage.ShowForm(view, false);
+                MainViewManage.ShowSecondView(view);
             }
         }
         #endregion
@@ -444,6 +445,9 @@ namespace NetBarMS.Views.NetUserManage
             //return path;
 
         }
+
+     
+
     }
 
 }

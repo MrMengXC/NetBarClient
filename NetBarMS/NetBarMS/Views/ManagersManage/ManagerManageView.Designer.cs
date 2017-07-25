@@ -33,15 +33,16 @@
             this.gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.addManagerButton = new DevExpress.XtraEditors.SimpleButton();
             this.deleteManagerButton = new DevExpress.XtraEditors.SimpleButton();
-            this.titlePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // titlePanel
+            // titlePanelView1
             // 
-            this.titlePanel.Size = new System.Drawing.Size(455, 46);
+            this.titlePanelView1.ShowCloseButton = false;
+            this.titlePanelView1.Size = new System.Drawing.Size(455, 50);
+            this.titlePanelView1.Title = "角色管理";
             // 
             // gridControl1
             // 
@@ -97,12 +98,10 @@
             this.Controls.Add(this.gridControl1);
             this.Name = "ManagerManageView";
             this.Size = new System.Drawing.Size(455, 418);
+            this.Controls.SetChildIndex(this.titlePanelView1, 0);
             this.Controls.SetChildIndex(this.gridControl1, 0);
-            this.Controls.SetChildIndex(this.titlePanel, 0);
             this.Controls.SetChildIndex(this.addManagerButton, 0);
             this.Controls.SetChildIndex(this.deleteManagerButton, 0);
-            this.titlePanel.ResumeLayout(false);
-            this.titlePanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).EndInit();

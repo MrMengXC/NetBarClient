@@ -45,7 +45,6 @@ namespace NetBarMS.Views.RateManage
         public AwardManageView()
         {
             InitializeComponent();
-            this.titleLabel.Text = "充值奖励管理";
             InitUI();
         }
         #region 初始化UI

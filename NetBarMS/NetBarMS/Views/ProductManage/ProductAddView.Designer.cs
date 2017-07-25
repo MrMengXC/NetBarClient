@@ -73,6 +73,10 @@
             // 
             this.titlePanel.Size = new System.Drawing.Size(360, 50);
             // 
+            // closeBtn
+            // 
+            this.closeBtn.Location = new System.Drawing.Point(308, 0);
+            // 
             // simpleButton2
             // 
             this.simpleButton2.Location = new System.Drawing.Point(109, 363);
@@ -154,7 +158,7 @@
             this.productPicture2.Location = new System.Drawing.Point(116, 176);
             this.productPicture2.Name = "productPicture2";
             this.productPicture2.NetPath = "";
-            this.productPicture2.Size = new System.Drawing.Size(94, 93);
+            this.productPicture2.Size = new System.Drawing.Size(81, 93);
             this.productPicture2.TabIndex = 121;
             // 
             // productPicture3
@@ -162,15 +166,15 @@
             this.productPicture3.Location = new System.Drawing.Point(226, 176);
             this.productPicture3.Name = "productPicture3";
             this.productPicture3.NetPath = "";
-            this.productPicture3.Size = new System.Drawing.Size(94, 93);
+            this.productPicture3.Size = new System.Drawing.Size(81, 93);
             this.productPicture3.TabIndex = 121;
             // 
             // productPicture1
             // 
-            this.productPicture1.Location = new System.Drawing.Point(5, 176);
+            this.productPicture1.Location = new System.Drawing.Point(11, 176);
             this.productPicture1.Name = "productPicture1";
             this.productPicture1.NetPath = "";
-            this.productPicture1.Size = new System.Drawing.Size(94, 93);
+            this.productPicture1.Size = new System.Drawing.Size(81, 93);
             this.productPicture1.TabIndex = 121;
             // 
             // flowLayoutPanel1

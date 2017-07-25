@@ -29,10 +29,12 @@ namespace NetBarMS.Codes.Tools.NetOperation
             content.MessageType = 1;
             content.CsUpload = picture.Build();
 
-            MessagePack.Builder pack = new MessagePack.Builder();
-            pack.Cmd = Cmd.CMD_UPLOAD_PICTURE;
-            pack.Content = content.Build();
-            NetMessageManage.SendMsg(pack.Build(), resultBlock);
+            SendModel send = new SendModel()
+            {
+                cmd = Cmd.CMD_UPLOAD_PICTURE,
+                content = content.Build()
+            };
+            NetMessageManage.SendMsg(send, resultBlock);
         }
         #endregion
 

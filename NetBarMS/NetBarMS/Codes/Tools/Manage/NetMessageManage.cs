@@ -137,7 +137,6 @@ namespace NetBarMS.Codes.Tools
                     {
                         //处理接受到的数据
                         HandleReceveBytes(receiveBytes, len);
-
                     }
                     else
                     {
@@ -226,6 +225,8 @@ namespace NetBarMS.Codes.Tools
             {
                 CodedInputStream inputStream = CodedInputStream.CreateInstance(result);
                 int varint32 = (int)inputStream.ReadRawVarint32(); 
+
+
                 byte[] body = inputStream.ReadRawBytes(varint32);
                 MessagePack pack = MessagePack.ParseFrom(body);
               //  System.Console.WriteLine("pack:"+ pack);
@@ -313,10 +314,18 @@ namespace NetBarMS.Codes.Tools
         /// </summary>
         /// <param name="value">Value.</param>
         /// <param name="resultBlock">Result block.</param>
-        public static void SendMsg(IMessageLite value, DataResultBlock resultBlock)
+        public static void SendMsg(SendModel send, DataResultBlock resultBlock)
         {
+            MessagePack.Builder pack = new MessagePack.Builder();
+            pack.SetCmd(send.cmd);
+            if(send.content != null)
+            {
+                pack.SetContent(send.content);
+            }
+            pack.SetReqId(0);
+
             NetMessageManage.Manage().ResultBlockEvent += resultBlock;
-            NetMessageManage.Manage().SendMsg(value);
+            NetMessageManage.Manage().SendMsg(pack.Build());
         }
 
         //发送数据结果回调
@@ -385,6 +394,18 @@ namespace NetBarMS.Codes.Tools
     {
         public int error = 0;   // 0/1 无错误、有错误
         public MessagePack pack;
+    }
+    #endregion
+
+
+    #region 发送Model
+    /// <summary>
+    /// 结果Model
+    /// </summary>
+    public class SendModel
+    {
+        public Cmd cmd;  
+        public MessageContent content;
     }
     #endregion
 }

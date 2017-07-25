@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace NetBarMS.Views.ResultManage
 {
-    public partial class OpenMemberResultView : RootUserControlView
+    public partial class OpenMemberResultView : RootFormView
     {
         public OpenMemberResultView()
         {

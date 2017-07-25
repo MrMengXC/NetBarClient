@@ -74,15 +74,5 @@ namespace NetBarMS.Codes.Tools.Manage
         }
 
         #endregion
-
-        #region 添加身份证信息
-        public static void AddCardInfo(DataResultBlock result,StructCard.Builder card)
-        {
-            Bitmap b = Imgs.test;
-            string inputString = ToolsManage.BitmapToDataSring(b);
-            card.Head = inputString;
-            MemberNetOperation.AddCardInfo(result, card.Build());
-        }
-        #endregion
     }
 }

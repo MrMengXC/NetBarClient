@@ -38,16 +38,16 @@ public static partial class Embark {
   internal static pb::FieldAccess.FieldAccessorTable<global::CSEmkCheckout, global::CSEmkCheckout.Builder> internal__static_CSEmkCheckout__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_SCEmkCheckout__Descriptor;
   internal static pb::FieldAccess.FieldAccessorTable<global::SCEmkCheckout, global::SCEmkCheckout.Builder> internal__static_SCEmkCheckout__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_CSEmkFingerInput__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::CSEmkFingerInput, global::CSEmkFingerInput.Builder> internal__static_CSEmkFingerInput__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_SCEmkFingerBind__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::SCEmkFingerBind, global::SCEmkFingerBind.Builder> internal__static_SCEmkFingerBind__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_CSEmkCancel__Descriptor;
   internal static pb::FieldAccess.FieldAccessorTable<global::CSEmkCancel, global::CSEmkCancel.Builder> internal__static_CSEmkCancel__FieldAccessorTable;
-  internal static pbd::MessageDescriptor internal__static_CSEmkVerifyList__Descriptor;
-  internal static pb::FieldAccess.FieldAccessorTable<global::CSEmkVerifyList, global::CSEmkVerifyList.Builder> internal__static_CSEmkVerifyList__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_SCEmkVerifyList__Descriptor;
   internal static pb::FieldAccess.FieldAccessorTable<global::SCEmkVerifyList, global::SCEmkVerifyList.Builder> internal__static_SCEmkVerifyList__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_CSEmkVerifyProc__Descriptor;
   internal static pb::FieldAccess.FieldAccessorTable<global::CSEmkVerifyProc, global::CSEmkVerifyProc.Builder> internal__static_CSEmkVerifyProc__FieldAccessorTable;
-  internal static pbd::MessageDescriptor internal__static_CSEmkOrderList__Descriptor;
-  internal static pb::FieldAccess.FieldAccessorTable<global::CSEmkOrderList, global::CSEmkOrderList.Builder> internal__static_CSEmkOrderList__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_SCEmkOrderList__Descriptor;
   internal static pb::FieldAccess.FieldAccessorTable<global::SCEmkOrderList, global::SCEmkOrderList.Builder> internal__static_SCEmkOrderList__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_CSEmkOrderProc__Descriptor;
@@ -80,12 +80,16 @@ public static partial class Embark {
           "Eg8KB2JhbGFuY2UYBCACKAUiIwoNQ1NFbWtDaGVja291dBISCgpjYXJkbnVt", 
           "YmVyGAEgAigJInYKDVNDRW1rQ2hlY2tvdXQSDAoEbmFtZRgBIAIoCRISCgpj", 
           "YXJkbnVtYmVyGAIgAigJEg0KBXJpZ2h0GAMgAigJEg8KB2JhbGFuY2UYBCAC", 
-          "KAUSEQoJdXNlZG1vbmV5GAUgAigFEhAKCHVzZWR0aW1lGAYgAigFIg0KC0NT", 
-          "RW1rQ2FuY2VsIhEKD0NTRW1rVmVyaWZ5TGlzdCIRCg9TQ0Vta1ZlcmlmeUxp", 
-          "c3QiJQoPQ1NFbWtWZXJpZnlQcm9jEhIKCmNhcmRudW1iZXIYASACKAkiEAoO", 
-          "Q1NFbWtPcmRlckxpc3QiEAoOU0NFbWtPcmRlckxpc3QiIQoOQ1NFbWtPcmRl", 
-          "clByb2MSDwoHb3JkZXJpZBgBIAIoBUIvCh1jb20uc2t5c29mdC5jb3JlLmF1", 
-        "dG8ubWVzc2FnZUIORW1iYXJrUHJvdG9jb2w="));
+          "KAUSEQoJdXNlZG1vbmV5GAUgAigFEhAKCHVzZWR0aW1lGAYgAigFIiYKEENT", 
+          "RW1rRmluZ2VySW5wdXQSEgoKY2FyZG51bWJlchgBIAIoCSIRCg9TQ0Vta0Zp", 
+          "bmdlckJpbmQiIQoLQ1NFbWtDYW5jZWwSEgoKY2FyZG51bWJlchgBIAIoCSI5", 
+          "Cg9TQ0Vta1ZlcmlmeUxpc3QSJgoLdmVyaWZ5aW5mb3MYASADKAsyES5TdHJ1", 
+          "Y3RWZXJpZnlJbmZvIjkKD0NTRW1rVmVyaWZ5UHJvYxISCgpjYXJkbnVtYmVy", 
+          "GAEgAigJEhIKCmZpbmdlcmNvZGUYAiACKAkiNgoOU0NFbWtPcmRlckxpc3QS", 
+          "JAoKb3JkZXJJbmZvcxgBIAMoCzIQLlN0cnVjdE9yZGVySW5mbyI1Cg5DU0Vt", 
+          "a09yZGVyUHJvYxIPCgdvcmRlcmlkGAEgAigFEhIKCmZpbmdlcmNvZGUYAiAC", 
+          "KAlCLwodY29tLnNreXNvZnQuY29yZS5hdXRvLm1lc3NhZ2VCDkVtYmFya1By", 
+        "b3RvY29s"));
     pbd::FileDescriptor.InternalDescriptorAssigner assigner = delegate(pbd::FileDescriptor root) {
       descriptor = root;
       internal__static_CSEmkUserInfo__Descriptor = Descriptor.MessageTypes[0];
@@ -136,34 +140,34 @@ public static partial class Embark {
       internal__static_SCEmkCheckout__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::SCEmkCheckout, global::SCEmkCheckout.Builder>(internal__static_SCEmkCheckout__Descriptor,
               new string[] { "Name", "Cardnumber", "Right", "Balance", "Usedmoney", "Usedtime", });
-      internal__static_CSEmkCancel__Descriptor = Descriptor.MessageTypes[12];
+      internal__static_CSEmkFingerInput__Descriptor = Descriptor.MessageTypes[12];
+      internal__static_CSEmkFingerInput__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::CSEmkFingerInput, global::CSEmkFingerInput.Builder>(internal__static_CSEmkFingerInput__Descriptor,
+              new string[] { "Cardnumber", });
+      internal__static_SCEmkFingerBind__Descriptor = Descriptor.MessageTypes[13];
+      internal__static_SCEmkFingerBind__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::SCEmkFingerBind, global::SCEmkFingerBind.Builder>(internal__static_SCEmkFingerBind__Descriptor,
+              new string[] { });
+      internal__static_CSEmkCancel__Descriptor = Descriptor.MessageTypes[14];
       internal__static_CSEmkCancel__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSEmkCancel, global::CSEmkCancel.Builder>(internal__static_CSEmkCancel__Descriptor,
-              new string[] { });
-      internal__static_CSEmkVerifyList__Descriptor = Descriptor.MessageTypes[13];
-      internal__static_CSEmkVerifyList__FieldAccessorTable = 
-          new pb::FieldAccess.FieldAccessorTable<global::CSEmkVerifyList, global::CSEmkVerifyList.Builder>(internal__static_CSEmkVerifyList__Descriptor,
-              new string[] { });
-      internal__static_SCEmkVerifyList__Descriptor = Descriptor.MessageTypes[14];
+              new string[] { "Cardnumber", });
+      internal__static_SCEmkVerifyList__Descriptor = Descriptor.MessageTypes[15];
       internal__static_SCEmkVerifyList__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::SCEmkVerifyList, global::SCEmkVerifyList.Builder>(internal__static_SCEmkVerifyList__Descriptor,
-              new string[] { });
-      internal__static_CSEmkVerifyProc__Descriptor = Descriptor.MessageTypes[15];
+              new string[] { "Verifyinfos", });
+      internal__static_CSEmkVerifyProc__Descriptor = Descriptor.MessageTypes[16];
       internal__static_CSEmkVerifyProc__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSEmkVerifyProc, global::CSEmkVerifyProc.Builder>(internal__static_CSEmkVerifyProc__Descriptor,
-              new string[] { "Cardnumber", });
-      internal__static_CSEmkOrderList__Descriptor = Descriptor.MessageTypes[16];
-      internal__static_CSEmkOrderList__FieldAccessorTable = 
-          new pb::FieldAccess.FieldAccessorTable<global::CSEmkOrderList, global::CSEmkOrderList.Builder>(internal__static_CSEmkOrderList__Descriptor,
-              new string[] { });
+              new string[] { "Cardnumber", "Fingercode", });
       internal__static_SCEmkOrderList__Descriptor = Descriptor.MessageTypes[17];
       internal__static_SCEmkOrderList__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::SCEmkOrderList, global::SCEmkOrderList.Builder>(internal__static_SCEmkOrderList__Descriptor,
-              new string[] { });
+              new string[] { "OrderInfos", });
       internal__static_CSEmkOrderProc__Descriptor = Descriptor.MessageTypes[18];
       internal__static_CSEmkOrderProc__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSEmkOrderProc, global::CSEmkOrderProc.Builder>(internal__static_CSEmkOrderProc__Descriptor,
-              new string[] { "Orderid", });
+              new string[] { "Orderid", "Fingercode", });
       return null;
     };
     pbd::FileDescriptor.InternalBuildGeneratedFileFrom(descriptorData,
@@ -4484,11 +4488,520 @@ public sealed partial class SCEmkCheckout : pb::GeneratedMessage<SCEmkCheckout, 
 }
 
 [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+public sealed partial class CSEmkFingerInput : pb::GeneratedMessage<CSEmkFingerInput, CSEmkFingerInput.Builder> {
+  private CSEmkFingerInput() { }
+  private static readonly CSEmkFingerInput defaultInstance = new CSEmkFingerInput().MakeReadOnly();
+  private static readonly string[] _cSEmkFingerInputFieldNames = new string[] { "cardnumber" };
+  private static readonly uint[] _cSEmkFingerInputFieldTags = new uint[] { 10 };
+  public static CSEmkFingerInput DefaultInstance {
+    get { return defaultInstance; }
+  }
+  
+  public override CSEmkFingerInput DefaultInstanceForType {
+    get { return DefaultInstance; }
+  }
+  
+  protected override CSEmkFingerInput ThisMessage {
+    get { return this; }
+  }
+  
+  public static pbd::MessageDescriptor Descriptor {
+    get { return global::Embark.internal__static_CSEmkFingerInput__Descriptor; }
+  }
+  
+  protected override pb::FieldAccess.FieldAccessorTable<CSEmkFingerInput, CSEmkFingerInput.Builder> InternalFieldAccessors {
+    get { return global::Embark.internal__static_CSEmkFingerInput__FieldAccessorTable; }
+  }
+  
+  public const int CardnumberFieldNumber = 1;
+  private bool hasCardnumber;
+  private string cardnumber_ = "";
+  public bool HasCardnumber {
+    get { return hasCardnumber; }
+  }
+  public string Cardnumber {
+    get { return cardnumber_; }
+  }
+  
+  public override bool IsInitialized {
+    get {
+      if (!hasCardnumber) return false;
+      return true;
+    }
+  }
+  
+  public override void WriteTo(pb::ICodedOutputStream output) {
+    CalcSerializedSize();
+    string[] field_names = _cSEmkFingerInputFieldNames;
+    if (hasCardnumber) {
+      output.WriteString(1, field_names[0], Cardnumber);
+    }
+    UnknownFields.WriteTo(output);
+  }
+  
+  private int memoizedSerializedSize = -1;
+  public override int SerializedSize {
+    get {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+      return CalcSerializedSize();
+    }
+  }
+  
+  private int CalcSerializedSize() {
+    int size = memoizedSerializedSize;
+    if (size != -1) return size;
+    
+    size = 0;
+    if (hasCardnumber) {
+      size += pb::CodedOutputStream.ComputeStringSize(1, Cardnumber);
+    }
+    size += UnknownFields.SerializedSize;
+    memoizedSerializedSize = size;
+    return size;
+  }
+  public static CSEmkFingerInput ParseFrom(pb::ByteString data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static CSEmkFingerInput ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static CSEmkFingerInput ParseFrom(byte[] data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static CSEmkFingerInput ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static CSEmkFingerInput ParseFrom(global::System.IO.Stream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static CSEmkFingerInput ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  public static CSEmkFingerInput ParseDelimitedFrom(global::System.IO.Stream input) {
+    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
+  }
+  public static CSEmkFingerInput ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
+  }
+  public static CSEmkFingerInput ParseFrom(pb::ICodedInputStream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static CSEmkFingerInput ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  private CSEmkFingerInput MakeReadOnly() {
+    return this;
+  }
+  
+  public static Builder CreateBuilder() { return new Builder(); }
+  public override Builder ToBuilder() { return CreateBuilder(this); }
+  public override Builder CreateBuilderForType() { return new Builder(); }
+  public static Builder CreateBuilder(CSEmkFingerInput prototype) {
+    return new Builder(prototype);
+  }
+  
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class Builder : pb::GeneratedBuilder<CSEmkFingerInput, Builder> {
+    protected override Builder ThisBuilder {
+      get { return this; }
+    }
+    public Builder() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+    }
+    internal Builder(CSEmkFingerInput cloneFrom) {
+      result = cloneFrom;
+      resultIsReadOnly = true;
+    }
+    
+    private bool resultIsReadOnly;
+    private CSEmkFingerInput result;
+    
+    private CSEmkFingerInput PrepareBuilder() {
+      if (resultIsReadOnly) {
+        CSEmkFingerInput original = result;
+        result = new CSEmkFingerInput();
+        resultIsReadOnly = false;
+        MergeFrom(original);
+      }
+      return result;
+    }
+    
+    public override bool IsInitialized {
+      get { return result.IsInitialized; }
+    }
+    
+    protected override CSEmkFingerInput MessageBeingBuilt {
+      get { return PrepareBuilder(); }
+    }
+    
+    public override Builder Clear() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+      return this;
+    }
+    
+    public override Builder Clone() {
+      if (resultIsReadOnly) {
+        return new Builder(result);
+      } else {
+        return new Builder().MergeFrom(result);
+      }
+    }
+    
+    public override pbd::MessageDescriptor DescriptorForType {
+      get { return global::CSEmkFingerInput.Descriptor; }
+    }
+    
+    public override CSEmkFingerInput DefaultInstanceForType {
+      get { return global::CSEmkFingerInput.DefaultInstance; }
+    }
+    
+    public override CSEmkFingerInput BuildPartial() {
+      if (resultIsReadOnly) {
+        return result;
+      }
+      resultIsReadOnly = true;
+      return result.MakeReadOnly();
+    }
+    
+    public override Builder MergeFrom(pb::IMessage other) {
+      if (other is CSEmkFingerInput) {
+        return MergeFrom((CSEmkFingerInput) other);
+      } else {
+        base.MergeFrom(other);
+        return this;
+      }
+    }
+    
+    public override Builder MergeFrom(CSEmkFingerInput other) {
+      if (other == global::CSEmkFingerInput.DefaultInstance) return this;
+      PrepareBuilder();
+      if (other.HasCardnumber) {
+        Cardnumber = other.Cardnumber;
+      }
+      this.MergeUnknownFields(other.UnknownFields);
+      return this;
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input) {
+      return MergeFrom(input, pb::ExtensionRegistry.Empty);
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+      PrepareBuilder();
+      pb::UnknownFieldSet.Builder unknownFields = null;
+      uint tag;
+      string field_name;
+      while (input.ReadTag(out tag, out field_name)) {
+        if(tag == 0 && field_name != null) {
+          int field_ordinal = global::System.Array.BinarySearch(_cSEmkFingerInputFieldNames, field_name, global::System.StringComparer.Ordinal);
+          if(field_ordinal >= 0)
+            tag = _cSEmkFingerInputFieldTags[field_ordinal];
+          else {
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            continue;
+          }
+        }
+        switch (tag) {
+          case 0: {
+            throw pb::InvalidProtocolBufferException.InvalidTag();
+          }
+          default: {
+            if (pb::WireFormat.IsEndGroupTag(tag)) {
+              if (unknownFields != null) {
+                this.UnknownFields = unknownFields.Build();
+              }
+              return this;
+            }
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            break;
+          }
+          case 10: {
+            result.hasCardnumber = input.ReadString(ref result.cardnumber_);
+            break;
+          }
+        }
+      }
+      
+      if (unknownFields != null) {
+        this.UnknownFields = unknownFields.Build();
+      }
+      return this;
+    }
+    
+    
+    public bool HasCardnumber {
+      get { return result.hasCardnumber; }
+    }
+    public string Cardnumber {
+      get { return result.Cardnumber; }
+      set { SetCardnumber(value); }
+    }
+    public Builder SetCardnumber(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasCardnumber = true;
+      result.cardnumber_ = value;
+      return this;
+    }
+    public Builder ClearCardnumber() {
+      PrepareBuilder();
+      result.hasCardnumber = false;
+      result.cardnumber_ = "";
+      return this;
+    }
+  }
+  static CSEmkFingerInput() {
+    object.ReferenceEquals(global::Embark.Descriptor, null);
+  }
+}
+
+[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+public sealed partial class SCEmkFingerBind : pb::GeneratedMessage<SCEmkFingerBind, SCEmkFingerBind.Builder> {
+  private SCEmkFingerBind() { }
+  private static readonly SCEmkFingerBind defaultInstance = new SCEmkFingerBind().MakeReadOnly();
+  private static readonly string[] _sCEmkFingerBindFieldNames = new string[] {  };
+  private static readonly uint[] _sCEmkFingerBindFieldTags = new uint[] {  };
+  public static SCEmkFingerBind DefaultInstance {
+    get { return defaultInstance; }
+  }
+  
+  public override SCEmkFingerBind DefaultInstanceForType {
+    get { return DefaultInstance; }
+  }
+  
+  protected override SCEmkFingerBind ThisMessage {
+    get { return this; }
+  }
+  
+  public static pbd::MessageDescriptor Descriptor {
+    get { return global::Embark.internal__static_SCEmkFingerBind__Descriptor; }
+  }
+  
+  protected override pb::FieldAccess.FieldAccessorTable<SCEmkFingerBind, SCEmkFingerBind.Builder> InternalFieldAccessors {
+    get { return global::Embark.internal__static_SCEmkFingerBind__FieldAccessorTable; }
+  }
+  
+  public override bool IsInitialized {
+    get {
+      return true;
+    }
+  }
+  
+  public override void WriteTo(pb::ICodedOutputStream output) {
+    CalcSerializedSize();
+    string[] field_names = _sCEmkFingerBindFieldNames;
+    UnknownFields.WriteTo(output);
+  }
+  
+  private int memoizedSerializedSize = -1;
+  public override int SerializedSize {
+    get {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+      return CalcSerializedSize();
+    }
+  }
+  
+  private int CalcSerializedSize() {
+    int size = memoizedSerializedSize;
+    if (size != -1) return size;
+    
+    size = 0;
+    size += UnknownFields.SerializedSize;
+    memoizedSerializedSize = size;
+    return size;
+  }
+  public static SCEmkFingerBind ParseFrom(pb::ByteString data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static SCEmkFingerBind ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static SCEmkFingerBind ParseFrom(byte[] data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static SCEmkFingerBind ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static SCEmkFingerBind ParseFrom(global::System.IO.Stream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static SCEmkFingerBind ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  public static SCEmkFingerBind ParseDelimitedFrom(global::System.IO.Stream input) {
+    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
+  }
+  public static SCEmkFingerBind ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
+  }
+  public static SCEmkFingerBind ParseFrom(pb::ICodedInputStream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static SCEmkFingerBind ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  private SCEmkFingerBind MakeReadOnly() {
+    return this;
+  }
+  
+  public static Builder CreateBuilder() { return new Builder(); }
+  public override Builder ToBuilder() { return CreateBuilder(this); }
+  public override Builder CreateBuilderForType() { return new Builder(); }
+  public static Builder CreateBuilder(SCEmkFingerBind prototype) {
+    return new Builder(prototype);
+  }
+  
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class Builder : pb::GeneratedBuilder<SCEmkFingerBind, Builder> {
+    protected override Builder ThisBuilder {
+      get { return this; }
+    }
+    public Builder() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+    }
+    internal Builder(SCEmkFingerBind cloneFrom) {
+      result = cloneFrom;
+      resultIsReadOnly = true;
+    }
+    
+    private bool resultIsReadOnly;
+    private SCEmkFingerBind result;
+    
+    private SCEmkFingerBind PrepareBuilder() {
+      if (resultIsReadOnly) {
+        SCEmkFingerBind original = result;
+        result = new SCEmkFingerBind();
+        resultIsReadOnly = false;
+        MergeFrom(original);
+      }
+      return result;
+    }
+    
+    public override bool IsInitialized {
+      get { return result.IsInitialized; }
+    }
+    
+    protected override SCEmkFingerBind MessageBeingBuilt {
+      get { return PrepareBuilder(); }
+    }
+    
+    public override Builder Clear() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+      return this;
+    }
+    
+    public override Builder Clone() {
+      if (resultIsReadOnly) {
+        return new Builder(result);
+      } else {
+        return new Builder().MergeFrom(result);
+      }
+    }
+    
+    public override pbd::MessageDescriptor DescriptorForType {
+      get { return global::SCEmkFingerBind.Descriptor; }
+    }
+    
+    public override SCEmkFingerBind DefaultInstanceForType {
+      get { return global::SCEmkFingerBind.DefaultInstance; }
+    }
+    
+    public override SCEmkFingerBind BuildPartial() {
+      if (resultIsReadOnly) {
+        return result;
+      }
+      resultIsReadOnly = true;
+      return result.MakeReadOnly();
+    }
+    
+    public override Builder MergeFrom(pb::IMessage other) {
+      if (other is SCEmkFingerBind) {
+        return MergeFrom((SCEmkFingerBind) other);
+      } else {
+        base.MergeFrom(other);
+        return this;
+      }
+    }
+    
+    public override Builder MergeFrom(SCEmkFingerBind other) {
+      if (other == global::SCEmkFingerBind.DefaultInstance) return this;
+      PrepareBuilder();
+      this.MergeUnknownFields(other.UnknownFields);
+      return this;
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input) {
+      return MergeFrom(input, pb::ExtensionRegistry.Empty);
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+      PrepareBuilder();
+      pb::UnknownFieldSet.Builder unknownFields = null;
+      uint tag;
+      string field_name;
+      while (input.ReadTag(out tag, out field_name)) {
+        if(tag == 0 && field_name != null) {
+          int field_ordinal = global::System.Array.BinarySearch(_sCEmkFingerBindFieldNames, field_name, global::System.StringComparer.Ordinal);
+          if(field_ordinal >= 0)
+            tag = _sCEmkFingerBindFieldTags[field_ordinal];
+          else {
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            continue;
+          }
+        }
+        switch (tag) {
+          case 0: {
+            throw pb::InvalidProtocolBufferException.InvalidTag();
+          }
+          default: {
+            if (pb::WireFormat.IsEndGroupTag(tag)) {
+              if (unknownFields != null) {
+                this.UnknownFields = unknownFields.Build();
+              }
+              return this;
+            }
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            break;
+          }
+        }
+      }
+      
+      if (unknownFields != null) {
+        this.UnknownFields = unknownFields.Build();
+      }
+      return this;
+    }
+    
+  }
+  static SCEmkFingerBind() {
+    object.ReferenceEquals(global::Embark.Descriptor, null);
+  }
+}
+
+[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 public sealed partial class CSEmkCancel : pb::GeneratedMessage<CSEmkCancel, CSEmkCancel.Builder> {
   private CSEmkCancel() { }
   private static readonly CSEmkCancel defaultInstance = new CSEmkCancel().MakeReadOnly();
-  private static readonly string[] _cSEmkCancelFieldNames = new string[] {  };
-  private static readonly uint[] _cSEmkCancelFieldTags = new uint[] {  };
+  private static readonly string[] _cSEmkCancelFieldNames = new string[] { "cardnumber" };
+  private static readonly uint[] _cSEmkCancelFieldTags = new uint[] { 10 };
   public static CSEmkCancel DefaultInstance {
     get { return defaultInstance; }
   }
@@ -4509,8 +5022,19 @@ public sealed partial class CSEmkCancel : pb::GeneratedMessage<CSEmkCancel, CSEm
     get { return global::Embark.internal__static_CSEmkCancel__FieldAccessorTable; }
   }
   
+  public const int CardnumberFieldNumber = 1;
+  private bool hasCardnumber;
+  private string cardnumber_ = "";
+  public bool HasCardnumber {
+    get { return hasCardnumber; }
+  }
+  public string Cardnumber {
+    get { return cardnumber_; }
+  }
+  
   public override bool IsInitialized {
     get {
+      if (!hasCardnumber) return false;
       return true;
     }
   }
@@ -4518,6 +5042,9 @@ public sealed partial class CSEmkCancel : pb::GeneratedMessage<CSEmkCancel, CSEm
   public override void WriteTo(pb::ICodedOutputStream output) {
     CalcSerializedSize();
     string[] field_names = _cSEmkCancelFieldNames;
+    if (hasCardnumber) {
+      output.WriteString(1, field_names[0], Cardnumber);
+    }
     UnknownFields.WriteTo(output);
   }
   
@@ -4535,6 +5062,9 @@ public sealed partial class CSEmkCancel : pb::GeneratedMessage<CSEmkCancel, CSEm
     if (size != -1) return size;
     
     size = 0;
+    if (hasCardnumber) {
+      size += pb::CodedOutputStream.ComputeStringSize(1, Cardnumber);
+    }
     size += UnknownFields.SerializedSize;
     memoizedSerializedSize = size;
     return size;
@@ -4657,6 +5187,9 @@ public sealed partial class CSEmkCancel : pb::GeneratedMessage<CSEmkCancel, CSEm
     public override Builder MergeFrom(CSEmkCancel other) {
       if (other == global::CSEmkCancel.DefaultInstance) return this;
       PrepareBuilder();
+      if (other.HasCardnumber) {
+        Cardnumber = other.Cardnumber;
+      }
       this.MergeUnknownFields(other.UnknownFields);
       return this;
     }
@@ -4700,236 +5233,8 @@ public sealed partial class CSEmkCancel : pb::GeneratedMessage<CSEmkCancel, CSEm
             ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
             break;
           }
-        }
-      }
-      
-      if (unknownFields != null) {
-        this.UnknownFields = unknownFields.Build();
-      }
-      return this;
-    }
-    
-  }
-  static CSEmkCancel() {
-    object.ReferenceEquals(global::Embark.Descriptor, null);
-  }
-}
-
-[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-public sealed partial class CSEmkVerifyList : pb::GeneratedMessage<CSEmkVerifyList, CSEmkVerifyList.Builder> {
-  private CSEmkVerifyList() { }
-  private static readonly CSEmkVerifyList defaultInstance = new CSEmkVerifyList().MakeReadOnly();
-  private static readonly string[] _cSEmkVerifyListFieldNames = new string[] {  };
-  private static readonly uint[] _cSEmkVerifyListFieldTags = new uint[] {  };
-  public static CSEmkVerifyList DefaultInstance {
-    get { return defaultInstance; }
-  }
-  
-  public override CSEmkVerifyList DefaultInstanceForType {
-    get { return DefaultInstance; }
-  }
-  
-  protected override CSEmkVerifyList ThisMessage {
-    get { return this; }
-  }
-  
-  public static pbd::MessageDescriptor Descriptor {
-    get { return global::Embark.internal__static_CSEmkVerifyList__Descriptor; }
-  }
-  
-  protected override pb::FieldAccess.FieldAccessorTable<CSEmkVerifyList, CSEmkVerifyList.Builder> InternalFieldAccessors {
-    get { return global::Embark.internal__static_CSEmkVerifyList__FieldAccessorTable; }
-  }
-  
-  public override bool IsInitialized {
-    get {
-      return true;
-    }
-  }
-  
-  public override void WriteTo(pb::ICodedOutputStream output) {
-    CalcSerializedSize();
-    string[] field_names = _cSEmkVerifyListFieldNames;
-    UnknownFields.WriteTo(output);
-  }
-  
-  private int memoizedSerializedSize = -1;
-  public override int SerializedSize {
-    get {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-      return CalcSerializedSize();
-    }
-  }
-  
-  private int CalcSerializedSize() {
-    int size = memoizedSerializedSize;
-    if (size != -1) return size;
-    
-    size = 0;
-    size += UnknownFields.SerializedSize;
-    memoizedSerializedSize = size;
-    return size;
-  }
-  public static CSEmkVerifyList ParseFrom(pb::ByteString data) {
-    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
-  }
-  public static CSEmkVerifyList ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
-  }
-  public static CSEmkVerifyList ParseFrom(byte[] data) {
-    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
-  }
-  public static CSEmkVerifyList ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
-  }
-  public static CSEmkVerifyList ParseFrom(global::System.IO.Stream input) {
-    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
-  }
-  public static CSEmkVerifyList ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
-  }
-  public static CSEmkVerifyList ParseDelimitedFrom(global::System.IO.Stream input) {
-    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
-  }
-  public static CSEmkVerifyList ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
-    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
-  }
-  public static CSEmkVerifyList ParseFrom(pb::ICodedInputStream input) {
-    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
-  }
-  public static CSEmkVerifyList ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
-  }
-  private CSEmkVerifyList MakeReadOnly() {
-    return this;
-  }
-  
-  public static Builder CreateBuilder() { return new Builder(); }
-  public override Builder ToBuilder() { return CreateBuilder(this); }
-  public override Builder CreateBuilderForType() { return new Builder(); }
-  public static Builder CreateBuilder(CSEmkVerifyList prototype) {
-    return new Builder(prototype);
-  }
-  
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-  public sealed partial class Builder : pb::GeneratedBuilder<CSEmkVerifyList, Builder> {
-    protected override Builder ThisBuilder {
-      get { return this; }
-    }
-    public Builder() {
-      result = DefaultInstance;
-      resultIsReadOnly = true;
-    }
-    internal Builder(CSEmkVerifyList cloneFrom) {
-      result = cloneFrom;
-      resultIsReadOnly = true;
-    }
-    
-    private bool resultIsReadOnly;
-    private CSEmkVerifyList result;
-    
-    private CSEmkVerifyList PrepareBuilder() {
-      if (resultIsReadOnly) {
-        CSEmkVerifyList original = result;
-        result = new CSEmkVerifyList();
-        resultIsReadOnly = false;
-        MergeFrom(original);
-      }
-      return result;
-    }
-    
-    public override bool IsInitialized {
-      get { return result.IsInitialized; }
-    }
-    
-    protected override CSEmkVerifyList MessageBeingBuilt {
-      get { return PrepareBuilder(); }
-    }
-    
-    public override Builder Clear() {
-      result = DefaultInstance;
-      resultIsReadOnly = true;
-      return this;
-    }
-    
-    public override Builder Clone() {
-      if (resultIsReadOnly) {
-        return new Builder(result);
-      } else {
-        return new Builder().MergeFrom(result);
-      }
-    }
-    
-    public override pbd::MessageDescriptor DescriptorForType {
-      get { return global::CSEmkVerifyList.Descriptor; }
-    }
-    
-    public override CSEmkVerifyList DefaultInstanceForType {
-      get { return global::CSEmkVerifyList.DefaultInstance; }
-    }
-    
-    public override CSEmkVerifyList BuildPartial() {
-      if (resultIsReadOnly) {
-        return result;
-      }
-      resultIsReadOnly = true;
-      return result.MakeReadOnly();
-    }
-    
-    public override Builder MergeFrom(pb::IMessage other) {
-      if (other is CSEmkVerifyList) {
-        return MergeFrom((CSEmkVerifyList) other);
-      } else {
-        base.MergeFrom(other);
-        return this;
-      }
-    }
-    
-    public override Builder MergeFrom(CSEmkVerifyList other) {
-      if (other == global::CSEmkVerifyList.DefaultInstance) return this;
-      PrepareBuilder();
-      this.MergeUnknownFields(other.UnknownFields);
-      return this;
-    }
-    
-    public override Builder MergeFrom(pb::ICodedInputStream input) {
-      return MergeFrom(input, pb::ExtensionRegistry.Empty);
-    }
-    
-    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
-      PrepareBuilder();
-      pb::UnknownFieldSet.Builder unknownFields = null;
-      uint tag;
-      string field_name;
-      while (input.ReadTag(out tag, out field_name)) {
-        if(tag == 0 && field_name != null) {
-          int field_ordinal = global::System.Array.BinarySearch(_cSEmkVerifyListFieldNames, field_name, global::System.StringComparer.Ordinal);
-          if(field_ordinal >= 0)
-            tag = _cSEmkVerifyListFieldTags[field_ordinal];
-          else {
-            if (unknownFields == null) {
-              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
-            }
-            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
-            continue;
-          }
-        }
-        switch (tag) {
-          case 0: {
-            throw pb::InvalidProtocolBufferException.InvalidTag();
-          }
-          default: {
-            if (pb::WireFormat.IsEndGroupTag(tag)) {
-              if (unknownFields != null) {
-                this.UnknownFields = unknownFields.Build();
-              }
-              return this;
-            }
-            if (unknownFields == null) {
-              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
-            }
-            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+          case 10: {
+            result.hasCardnumber = input.ReadString(ref result.cardnumber_);
             break;
           }
         }
@@ -4941,8 +5246,29 @@ public sealed partial class CSEmkVerifyList : pb::GeneratedMessage<CSEmkVerifyLi
       return this;
     }
     
+    
+    public bool HasCardnumber {
+      get { return result.hasCardnumber; }
+    }
+    public string Cardnumber {
+      get { return result.Cardnumber; }
+      set { SetCardnumber(value); }
+    }
+    public Builder SetCardnumber(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasCardnumber = true;
+      result.cardnumber_ = value;
+      return this;
+    }
+    public Builder ClearCardnumber() {
+      PrepareBuilder();
+      result.hasCardnumber = false;
+      result.cardnumber_ = "";
+      return this;
+    }
   }
-  static CSEmkVerifyList() {
+  static CSEmkCancel() {
     object.ReferenceEquals(global::Embark.Descriptor, null);
   }
 }
@@ -4951,8 +5277,8 @@ public sealed partial class CSEmkVerifyList : pb::GeneratedMessage<CSEmkVerifyLi
 public sealed partial class SCEmkVerifyList : pb::GeneratedMessage<SCEmkVerifyList, SCEmkVerifyList.Builder> {
   private SCEmkVerifyList() { }
   private static readonly SCEmkVerifyList defaultInstance = new SCEmkVerifyList().MakeReadOnly();
-  private static readonly string[] _sCEmkVerifyListFieldNames = new string[] {  };
-  private static readonly uint[] _sCEmkVerifyListFieldTags = new uint[] {  };
+  private static readonly string[] _sCEmkVerifyListFieldNames = new string[] { "verifyinfos" };
+  private static readonly uint[] _sCEmkVerifyListFieldTags = new uint[] { 10 };
   public static SCEmkVerifyList DefaultInstance {
     get { return defaultInstance; }
   }
@@ -4973,8 +5299,23 @@ public sealed partial class SCEmkVerifyList : pb::GeneratedMessage<SCEmkVerifyLi
     get { return global::Embark.internal__static_SCEmkVerifyList__FieldAccessorTable; }
   }
   
+  public const int VerifyinfosFieldNumber = 1;
+  private pbc::PopsicleList<global::StructVerifyInfo> verifyinfos_ = new pbc::PopsicleList<global::StructVerifyInfo>();
+  public scg::IList<global::StructVerifyInfo> VerifyinfosList {
+    get { return verifyinfos_; }
+  }
+  public int VerifyinfosCount {
+    get { return verifyinfos_.Count; }
+  }
+  public global::StructVerifyInfo GetVerifyinfos(int index) {
+    return verifyinfos_[index];
+  }
+  
   public override bool IsInitialized {
     get {
+      foreach (global::StructVerifyInfo element in VerifyinfosList) {
+        if (!element.IsInitialized) return false;
+      }
       return true;
     }
   }
@@ -4982,6 +5323,9 @@ public sealed partial class SCEmkVerifyList : pb::GeneratedMessage<SCEmkVerifyLi
   public override void WriteTo(pb::ICodedOutputStream output) {
     CalcSerializedSize();
     string[] field_names = _sCEmkVerifyListFieldNames;
+    if (verifyinfos_.Count > 0) {
+      output.WriteMessageArray(1, field_names[0], verifyinfos_);
+    }
     UnknownFields.WriteTo(output);
   }
   
@@ -4999,6 +5343,9 @@ public sealed partial class SCEmkVerifyList : pb::GeneratedMessage<SCEmkVerifyLi
     if (size != -1) return size;
     
     size = 0;
+    foreach (global::StructVerifyInfo element in VerifyinfosList) {
+      size += pb::CodedOutputStream.ComputeMessageSize(1, element);
+    }
     size += UnknownFields.SerializedSize;
     memoizedSerializedSize = size;
     return size;
@@ -5034,6 +5381,7 @@ public sealed partial class SCEmkVerifyList : pb::GeneratedMessage<SCEmkVerifyLi
     return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
   }
   private SCEmkVerifyList MakeReadOnly() {
+    verifyinfos_.MakeReadOnly();
     return this;
   }
   
@@ -5121,6 +5469,9 @@ public sealed partial class SCEmkVerifyList : pb::GeneratedMessage<SCEmkVerifyLi
     public override Builder MergeFrom(SCEmkVerifyList other) {
       if (other == global::SCEmkVerifyList.DefaultInstance) return this;
       PrepareBuilder();
+      if (other.verifyinfos_.Count != 0) {
+        result.verifyinfos_.Add(other.verifyinfos_);
+      }
       this.MergeUnknownFields(other.UnknownFields);
       return this;
     }
@@ -5164,6 +5515,10 @@ public sealed partial class SCEmkVerifyList : pb::GeneratedMessage<SCEmkVerifyLi
             ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
             break;
           }
+          case 10: {
+            input.ReadMessageArray(tag, field_name, result.verifyinfos_, global::StructVerifyInfo.DefaultInstance, extensionRegistry);
+            break;
+          }
         }
       }
       
@@ -5173,6 +5528,50 @@ public sealed partial class SCEmkVerifyList : pb::GeneratedMessage<SCEmkVerifyLi
       return this;
     }
     
+    
+    public pbc::IPopsicleList<global::StructVerifyInfo> VerifyinfosList {
+      get { return PrepareBuilder().verifyinfos_; }
+    }
+    public int VerifyinfosCount {
+      get { return result.VerifyinfosCount; }
+    }
+    public global::StructVerifyInfo GetVerifyinfos(int index) {
+      return result.GetVerifyinfos(index);
+    }
+    public Builder SetVerifyinfos(int index, global::StructVerifyInfo value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.verifyinfos_[index] = value;
+      return this;
+    }
+    public Builder SetVerifyinfos(int index, global::StructVerifyInfo.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
+      PrepareBuilder();
+      result.verifyinfos_[index] = builderForValue.Build();
+      return this;
+    }
+    public Builder AddVerifyinfos(global::StructVerifyInfo value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.verifyinfos_.Add(value);
+      return this;
+    }
+    public Builder AddVerifyinfos(global::StructVerifyInfo.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
+      PrepareBuilder();
+      result.verifyinfos_.Add(builderForValue.Build());
+      return this;
+    }
+    public Builder AddRangeVerifyinfos(scg::IEnumerable<global::StructVerifyInfo> values) {
+      PrepareBuilder();
+      result.verifyinfos_.Add(values);
+      return this;
+    }
+    public Builder ClearVerifyinfos() {
+      PrepareBuilder();
+      result.verifyinfos_.Clear();
+      return this;
+    }
   }
   static SCEmkVerifyList() {
     object.ReferenceEquals(global::Embark.Descriptor, null);
@@ -5183,8 +5582,8 @@ public sealed partial class SCEmkVerifyList : pb::GeneratedMessage<SCEmkVerifyLi
 public sealed partial class CSEmkVerifyProc : pb::GeneratedMessage<CSEmkVerifyProc, CSEmkVerifyProc.Builder> {
   private CSEmkVerifyProc() { }
   private static readonly CSEmkVerifyProc defaultInstance = new CSEmkVerifyProc().MakeReadOnly();
-  private static readonly string[] _cSEmkVerifyProcFieldNames = new string[] { "cardnumber" };
-  private static readonly uint[] _cSEmkVerifyProcFieldTags = new uint[] { 10 };
+  private static readonly string[] _cSEmkVerifyProcFieldNames = new string[] { "cardnumber", "fingercode" };
+  private static readonly uint[] _cSEmkVerifyProcFieldTags = new uint[] { 10, 18 };
   public static CSEmkVerifyProc DefaultInstance {
     get { return defaultInstance; }
   }
@@ -5215,9 +5614,20 @@ public sealed partial class CSEmkVerifyProc : pb::GeneratedMessage<CSEmkVerifyPr
     get { return cardnumber_; }
   }
   
+  public const int FingercodeFieldNumber = 2;
+  private bool hasFingercode;
+  private string fingercode_ = "";
+  public bool HasFingercode {
+    get { return hasFingercode; }
+  }
+  public string Fingercode {
+    get { return fingercode_; }
+  }
+  
   public override bool IsInitialized {
     get {
       if (!hasCardnumber) return false;
+      if (!hasFingercode) return false;
       return true;
     }
   }
@@ -5227,6 +5637,9 @@ public sealed partial class CSEmkVerifyProc : pb::GeneratedMessage<CSEmkVerifyPr
     string[] field_names = _cSEmkVerifyProcFieldNames;
     if (hasCardnumber) {
       output.WriteString(1, field_names[0], Cardnumber);
+    }
+    if (hasFingercode) {
+      output.WriteString(2, field_names[1], Fingercode);
     }
     UnknownFields.WriteTo(output);
   }
@@ -5247,6 +5660,9 @@ public sealed partial class CSEmkVerifyProc : pb::GeneratedMessage<CSEmkVerifyPr
     size = 0;
     if (hasCardnumber) {
       size += pb::CodedOutputStream.ComputeStringSize(1, Cardnumber);
+    }
+    if (hasFingercode) {
+      size += pb::CodedOutputStream.ComputeStringSize(2, Fingercode);
     }
     size += UnknownFields.SerializedSize;
     memoizedSerializedSize = size;
@@ -5373,6 +5789,9 @@ public sealed partial class CSEmkVerifyProc : pb::GeneratedMessage<CSEmkVerifyPr
       if (other.HasCardnumber) {
         Cardnumber = other.Cardnumber;
       }
+      if (other.HasFingercode) {
+        Fingercode = other.Fingercode;
+      }
       this.MergeUnknownFields(other.UnknownFields);
       return this;
     }
@@ -5420,6 +5839,10 @@ public sealed partial class CSEmkVerifyProc : pb::GeneratedMessage<CSEmkVerifyPr
             result.hasCardnumber = input.ReadString(ref result.cardnumber_);
             break;
           }
+          case 18: {
+            result.hasFingercode = input.ReadString(ref result.fingercode_);
+            break;
+          }
         }
       }
       
@@ -5450,240 +5873,29 @@ public sealed partial class CSEmkVerifyProc : pb::GeneratedMessage<CSEmkVerifyPr
       result.cardnumber_ = "";
       return this;
     }
+    
+    public bool HasFingercode {
+      get { return result.hasFingercode; }
+    }
+    public string Fingercode {
+      get { return result.Fingercode; }
+      set { SetFingercode(value); }
+    }
+    public Builder SetFingercode(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasFingercode = true;
+      result.fingercode_ = value;
+      return this;
+    }
+    public Builder ClearFingercode() {
+      PrepareBuilder();
+      result.hasFingercode = false;
+      result.fingercode_ = "";
+      return this;
+    }
   }
   static CSEmkVerifyProc() {
-    object.ReferenceEquals(global::Embark.Descriptor, null);
-  }
-}
-
-[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-public sealed partial class CSEmkOrderList : pb::GeneratedMessage<CSEmkOrderList, CSEmkOrderList.Builder> {
-  private CSEmkOrderList() { }
-  private static readonly CSEmkOrderList defaultInstance = new CSEmkOrderList().MakeReadOnly();
-  private static readonly string[] _cSEmkOrderListFieldNames = new string[] {  };
-  private static readonly uint[] _cSEmkOrderListFieldTags = new uint[] {  };
-  public static CSEmkOrderList DefaultInstance {
-    get { return defaultInstance; }
-  }
-  
-  public override CSEmkOrderList DefaultInstanceForType {
-    get { return DefaultInstance; }
-  }
-  
-  protected override CSEmkOrderList ThisMessage {
-    get { return this; }
-  }
-  
-  public static pbd::MessageDescriptor Descriptor {
-    get { return global::Embark.internal__static_CSEmkOrderList__Descriptor; }
-  }
-  
-  protected override pb::FieldAccess.FieldAccessorTable<CSEmkOrderList, CSEmkOrderList.Builder> InternalFieldAccessors {
-    get { return global::Embark.internal__static_CSEmkOrderList__FieldAccessorTable; }
-  }
-  
-  public override bool IsInitialized {
-    get {
-      return true;
-    }
-  }
-  
-  public override void WriteTo(pb::ICodedOutputStream output) {
-    CalcSerializedSize();
-    string[] field_names = _cSEmkOrderListFieldNames;
-    UnknownFields.WriteTo(output);
-  }
-  
-  private int memoizedSerializedSize = -1;
-  public override int SerializedSize {
-    get {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-      return CalcSerializedSize();
-    }
-  }
-  
-  private int CalcSerializedSize() {
-    int size = memoizedSerializedSize;
-    if (size != -1) return size;
-    
-    size = 0;
-    size += UnknownFields.SerializedSize;
-    memoizedSerializedSize = size;
-    return size;
-  }
-  public static CSEmkOrderList ParseFrom(pb::ByteString data) {
-    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
-  }
-  public static CSEmkOrderList ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
-  }
-  public static CSEmkOrderList ParseFrom(byte[] data) {
-    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
-  }
-  public static CSEmkOrderList ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
-  }
-  public static CSEmkOrderList ParseFrom(global::System.IO.Stream input) {
-    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
-  }
-  public static CSEmkOrderList ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
-  }
-  public static CSEmkOrderList ParseDelimitedFrom(global::System.IO.Stream input) {
-    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
-  }
-  public static CSEmkOrderList ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
-    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
-  }
-  public static CSEmkOrderList ParseFrom(pb::ICodedInputStream input) {
-    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
-  }
-  public static CSEmkOrderList ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
-    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
-  }
-  private CSEmkOrderList MakeReadOnly() {
-    return this;
-  }
-  
-  public static Builder CreateBuilder() { return new Builder(); }
-  public override Builder ToBuilder() { return CreateBuilder(this); }
-  public override Builder CreateBuilderForType() { return new Builder(); }
-  public static Builder CreateBuilder(CSEmkOrderList prototype) {
-    return new Builder(prototype);
-  }
-  
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-  public sealed partial class Builder : pb::GeneratedBuilder<CSEmkOrderList, Builder> {
-    protected override Builder ThisBuilder {
-      get { return this; }
-    }
-    public Builder() {
-      result = DefaultInstance;
-      resultIsReadOnly = true;
-    }
-    internal Builder(CSEmkOrderList cloneFrom) {
-      result = cloneFrom;
-      resultIsReadOnly = true;
-    }
-    
-    private bool resultIsReadOnly;
-    private CSEmkOrderList result;
-    
-    private CSEmkOrderList PrepareBuilder() {
-      if (resultIsReadOnly) {
-        CSEmkOrderList original = result;
-        result = new CSEmkOrderList();
-        resultIsReadOnly = false;
-        MergeFrom(original);
-      }
-      return result;
-    }
-    
-    public override bool IsInitialized {
-      get { return result.IsInitialized; }
-    }
-    
-    protected override CSEmkOrderList MessageBeingBuilt {
-      get { return PrepareBuilder(); }
-    }
-    
-    public override Builder Clear() {
-      result = DefaultInstance;
-      resultIsReadOnly = true;
-      return this;
-    }
-    
-    public override Builder Clone() {
-      if (resultIsReadOnly) {
-        return new Builder(result);
-      } else {
-        return new Builder().MergeFrom(result);
-      }
-    }
-    
-    public override pbd::MessageDescriptor DescriptorForType {
-      get { return global::CSEmkOrderList.Descriptor; }
-    }
-    
-    public override CSEmkOrderList DefaultInstanceForType {
-      get { return global::CSEmkOrderList.DefaultInstance; }
-    }
-    
-    public override CSEmkOrderList BuildPartial() {
-      if (resultIsReadOnly) {
-        return result;
-      }
-      resultIsReadOnly = true;
-      return result.MakeReadOnly();
-    }
-    
-    public override Builder MergeFrom(pb::IMessage other) {
-      if (other is CSEmkOrderList) {
-        return MergeFrom((CSEmkOrderList) other);
-      } else {
-        base.MergeFrom(other);
-        return this;
-      }
-    }
-    
-    public override Builder MergeFrom(CSEmkOrderList other) {
-      if (other == global::CSEmkOrderList.DefaultInstance) return this;
-      PrepareBuilder();
-      this.MergeUnknownFields(other.UnknownFields);
-      return this;
-    }
-    
-    public override Builder MergeFrom(pb::ICodedInputStream input) {
-      return MergeFrom(input, pb::ExtensionRegistry.Empty);
-    }
-    
-    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
-      PrepareBuilder();
-      pb::UnknownFieldSet.Builder unknownFields = null;
-      uint tag;
-      string field_name;
-      while (input.ReadTag(out tag, out field_name)) {
-        if(tag == 0 && field_name != null) {
-          int field_ordinal = global::System.Array.BinarySearch(_cSEmkOrderListFieldNames, field_name, global::System.StringComparer.Ordinal);
-          if(field_ordinal >= 0)
-            tag = _cSEmkOrderListFieldTags[field_ordinal];
-          else {
-            if (unknownFields == null) {
-              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
-            }
-            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
-            continue;
-          }
-        }
-        switch (tag) {
-          case 0: {
-            throw pb::InvalidProtocolBufferException.InvalidTag();
-          }
-          default: {
-            if (pb::WireFormat.IsEndGroupTag(tag)) {
-              if (unknownFields != null) {
-                this.UnknownFields = unknownFields.Build();
-              }
-              return this;
-            }
-            if (unknownFields == null) {
-              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
-            }
-            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
-            break;
-          }
-        }
-      }
-      
-      if (unknownFields != null) {
-        this.UnknownFields = unknownFields.Build();
-      }
-      return this;
-    }
-    
-  }
-  static CSEmkOrderList() {
     object.ReferenceEquals(global::Embark.Descriptor, null);
   }
 }
@@ -5692,8 +5904,8 @@ public sealed partial class CSEmkOrderList : pb::GeneratedMessage<CSEmkOrderList
 public sealed partial class SCEmkOrderList : pb::GeneratedMessage<SCEmkOrderList, SCEmkOrderList.Builder> {
   private SCEmkOrderList() { }
   private static readonly SCEmkOrderList defaultInstance = new SCEmkOrderList().MakeReadOnly();
-  private static readonly string[] _sCEmkOrderListFieldNames = new string[] {  };
-  private static readonly uint[] _sCEmkOrderListFieldTags = new uint[] {  };
+  private static readonly string[] _sCEmkOrderListFieldNames = new string[] { "orderInfos" };
+  private static readonly uint[] _sCEmkOrderListFieldTags = new uint[] { 10 };
   public static SCEmkOrderList DefaultInstance {
     get { return defaultInstance; }
   }
@@ -5714,8 +5926,23 @@ public sealed partial class SCEmkOrderList : pb::GeneratedMessage<SCEmkOrderList
     get { return global::Embark.internal__static_SCEmkOrderList__FieldAccessorTable; }
   }
   
+  public const int OrderInfosFieldNumber = 1;
+  private pbc::PopsicleList<global::StructOrderInfo> orderInfos_ = new pbc::PopsicleList<global::StructOrderInfo>();
+  public scg::IList<global::StructOrderInfo> OrderInfosList {
+    get { return orderInfos_; }
+  }
+  public int OrderInfosCount {
+    get { return orderInfos_.Count; }
+  }
+  public global::StructOrderInfo GetOrderInfos(int index) {
+    return orderInfos_[index];
+  }
+  
   public override bool IsInitialized {
     get {
+      foreach (global::StructOrderInfo element in OrderInfosList) {
+        if (!element.IsInitialized) return false;
+      }
       return true;
     }
   }
@@ -5723,6 +5950,9 @@ public sealed partial class SCEmkOrderList : pb::GeneratedMessage<SCEmkOrderList
   public override void WriteTo(pb::ICodedOutputStream output) {
     CalcSerializedSize();
     string[] field_names = _sCEmkOrderListFieldNames;
+    if (orderInfos_.Count > 0) {
+      output.WriteMessageArray(1, field_names[0], orderInfos_);
+    }
     UnknownFields.WriteTo(output);
   }
   
@@ -5740,6 +5970,9 @@ public sealed partial class SCEmkOrderList : pb::GeneratedMessage<SCEmkOrderList
     if (size != -1) return size;
     
     size = 0;
+    foreach (global::StructOrderInfo element in OrderInfosList) {
+      size += pb::CodedOutputStream.ComputeMessageSize(1, element);
+    }
     size += UnknownFields.SerializedSize;
     memoizedSerializedSize = size;
     return size;
@@ -5775,6 +6008,7 @@ public sealed partial class SCEmkOrderList : pb::GeneratedMessage<SCEmkOrderList
     return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
   }
   private SCEmkOrderList MakeReadOnly() {
+    orderInfos_.MakeReadOnly();
     return this;
   }
   
@@ -5862,6 +6096,9 @@ public sealed partial class SCEmkOrderList : pb::GeneratedMessage<SCEmkOrderList
     public override Builder MergeFrom(SCEmkOrderList other) {
       if (other == global::SCEmkOrderList.DefaultInstance) return this;
       PrepareBuilder();
+      if (other.orderInfos_.Count != 0) {
+        result.orderInfos_.Add(other.orderInfos_);
+      }
       this.MergeUnknownFields(other.UnknownFields);
       return this;
     }
@@ -5905,6 +6142,10 @@ public sealed partial class SCEmkOrderList : pb::GeneratedMessage<SCEmkOrderList
             ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
             break;
           }
+          case 10: {
+            input.ReadMessageArray(tag, field_name, result.orderInfos_, global::StructOrderInfo.DefaultInstance, extensionRegistry);
+            break;
+          }
         }
       }
       
@@ -5914,6 +6155,50 @@ public sealed partial class SCEmkOrderList : pb::GeneratedMessage<SCEmkOrderList
       return this;
     }
     
+    
+    public pbc::IPopsicleList<global::StructOrderInfo> OrderInfosList {
+      get { return PrepareBuilder().orderInfos_; }
+    }
+    public int OrderInfosCount {
+      get { return result.OrderInfosCount; }
+    }
+    public global::StructOrderInfo GetOrderInfos(int index) {
+      return result.GetOrderInfos(index);
+    }
+    public Builder SetOrderInfos(int index, global::StructOrderInfo value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.orderInfos_[index] = value;
+      return this;
+    }
+    public Builder SetOrderInfos(int index, global::StructOrderInfo.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
+      PrepareBuilder();
+      result.orderInfos_[index] = builderForValue.Build();
+      return this;
+    }
+    public Builder AddOrderInfos(global::StructOrderInfo value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.orderInfos_.Add(value);
+      return this;
+    }
+    public Builder AddOrderInfos(global::StructOrderInfo.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
+      PrepareBuilder();
+      result.orderInfos_.Add(builderForValue.Build());
+      return this;
+    }
+    public Builder AddRangeOrderInfos(scg::IEnumerable<global::StructOrderInfo> values) {
+      PrepareBuilder();
+      result.orderInfos_.Add(values);
+      return this;
+    }
+    public Builder ClearOrderInfos() {
+      PrepareBuilder();
+      result.orderInfos_.Clear();
+      return this;
+    }
   }
   static SCEmkOrderList() {
     object.ReferenceEquals(global::Embark.Descriptor, null);
@@ -5924,8 +6209,8 @@ public sealed partial class SCEmkOrderList : pb::GeneratedMessage<SCEmkOrderList
 public sealed partial class CSEmkOrderProc : pb::GeneratedMessage<CSEmkOrderProc, CSEmkOrderProc.Builder> {
   private CSEmkOrderProc() { }
   private static readonly CSEmkOrderProc defaultInstance = new CSEmkOrderProc().MakeReadOnly();
-  private static readonly string[] _cSEmkOrderProcFieldNames = new string[] { "orderid" };
-  private static readonly uint[] _cSEmkOrderProcFieldTags = new uint[] { 8 };
+  private static readonly string[] _cSEmkOrderProcFieldNames = new string[] { "fingercode", "orderid" };
+  private static readonly uint[] _cSEmkOrderProcFieldTags = new uint[] { 18, 8 };
   public static CSEmkOrderProc DefaultInstance {
     get { return defaultInstance; }
   }
@@ -5956,9 +6241,20 @@ public sealed partial class CSEmkOrderProc : pb::GeneratedMessage<CSEmkOrderProc
     get { return orderid_; }
   }
   
+  public const int FingercodeFieldNumber = 2;
+  private bool hasFingercode;
+  private string fingercode_ = "";
+  public bool HasFingercode {
+    get { return hasFingercode; }
+  }
+  public string Fingercode {
+    get { return fingercode_; }
+  }
+  
   public override bool IsInitialized {
     get {
       if (!hasOrderid) return false;
+      if (!hasFingercode) return false;
       return true;
     }
   }
@@ -5967,7 +6263,10 @@ public sealed partial class CSEmkOrderProc : pb::GeneratedMessage<CSEmkOrderProc
     CalcSerializedSize();
     string[] field_names = _cSEmkOrderProcFieldNames;
     if (hasOrderid) {
-      output.WriteInt32(1, field_names[0], Orderid);
+      output.WriteInt32(1, field_names[1], Orderid);
+    }
+    if (hasFingercode) {
+      output.WriteString(2, field_names[0], Fingercode);
     }
     UnknownFields.WriteTo(output);
   }
@@ -5988,6 +6287,9 @@ public sealed partial class CSEmkOrderProc : pb::GeneratedMessage<CSEmkOrderProc
     size = 0;
     if (hasOrderid) {
       size += pb::CodedOutputStream.ComputeInt32Size(1, Orderid);
+    }
+    if (hasFingercode) {
+      size += pb::CodedOutputStream.ComputeStringSize(2, Fingercode);
     }
     size += UnknownFields.SerializedSize;
     memoizedSerializedSize = size;
@@ -6114,6 +6416,9 @@ public sealed partial class CSEmkOrderProc : pb::GeneratedMessage<CSEmkOrderProc
       if (other.HasOrderid) {
         Orderid = other.Orderid;
       }
+      if (other.HasFingercode) {
+        Fingercode = other.Fingercode;
+      }
       this.MergeUnknownFields(other.UnknownFields);
       return this;
     }
@@ -6161,6 +6466,10 @@ public sealed partial class CSEmkOrderProc : pb::GeneratedMessage<CSEmkOrderProc
             result.hasOrderid = input.ReadInt32(ref result.orderid_);
             break;
           }
+          case 18: {
+            result.hasFingercode = input.ReadString(ref result.fingercode_);
+            break;
+          }
         }
       }
       
@@ -6188,6 +6497,27 @@ public sealed partial class CSEmkOrderProc : pb::GeneratedMessage<CSEmkOrderProc
       PrepareBuilder();
       result.hasOrderid = false;
       result.orderid_ = 0;
+      return this;
+    }
+    
+    public bool HasFingercode {
+      get { return result.hasFingercode; }
+    }
+    public string Fingercode {
+      get { return result.Fingercode; }
+      set { SetFingercode(value); }
+    }
+    public Builder SetFingercode(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasFingercode = true;
+      result.fingercode_ = value;
+      return this;
+    }
+    public Builder ClearFingercode() {
+      PrepareBuilder();
+      result.hasFingercode = false;
+      result.fingercode_ = "";
       return this;
     }
   }

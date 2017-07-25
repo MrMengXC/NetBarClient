@@ -40,7 +40,6 @@ namespace NetBarMS.Views.NetUserManage
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.pageView1 = new NetBarMS.Views.CustomView.PageView();
-            this.titlePanel.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.popupContainerEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupContainerControl1)).BeginInit();
@@ -55,17 +54,10 @@ namespace NetBarMS.Views.NetUserManage
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // titlePanel
+            // titlePanelView1
             // 
-            this.titlePanel.Controls.Add(this.flowLayoutPanel2);
-            this.titlePanel.Size = new System.Drawing.Size(1183, 50);
-            this.titlePanel.Controls.SetChildIndex(this.titleLabel, 0);
-            this.titlePanel.Controls.SetChildIndex(this.flowLayoutPanel2, 0);
-            // 
-            // titleLabel
-            // 
-            this.titleLabel.Size = new System.Drawing.Size(110, 17);
-            this.titleLabel.Text = "会员办理记录";
+            this.titlePanelView1.Size = new System.Drawing.Size(1183, 50);
+            this.titlePanelView1.Title = "会员办理记录";
             // 
             // flowLayoutPanel2
             // 
@@ -74,7 +66,7 @@ namespace NetBarMS.Views.NetUserManage
             this.flowLayoutPanel2.Controls.Add(this.comboBoxEdit2);
             this.flowLayoutPanel2.Controls.Add(this.buttonEdit1);
             this.flowLayoutPanel2.Controls.Add(this.popupContainerControl1);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(138, 13);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(130, 3);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(694, 34);
             this.flowLayoutPanel2.TabIndex = 79;
@@ -189,15 +181,15 @@ namespace NetBarMS.Views.NetUserManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.pageView1);
             this.Controls.Add(this.gridControl1);
             this.Name = "OpenMemberRecordView";
             this.Size = new System.Drawing.Size(1183, 805);
+            this.Controls.SetChildIndex(this.titlePanelView1, 0);
             this.Controls.SetChildIndex(this.gridControl1, 0);
             this.Controls.SetChildIndex(this.pageView1, 0);
-            this.Controls.SetChildIndex(this.titlePanel, 0);
-            this.titlePanel.ResumeLayout(false);
-            this.titlePanel.PerformLayout();
+            this.Controls.SetChildIndex(this.flowLayoutPanel2, 0);
             this.flowLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.popupContainerEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupContainerControl1)).EndInit();

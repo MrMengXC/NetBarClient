@@ -1,4 +1,5 @@
-﻿using System;
+﻿#define PRODUCT
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -19,18 +20,36 @@ using System.IO;
 namespace NetBarMS.Views.UserUseCp
 {
 
-    public partial class UserActiveView : RootUserControlView
+    public partial class UserActiveView : RootFormView
     {
-        private string cardNumber;
-        private StructCard card;
+        //private string cardNumber;
+        private StructCard activeCard;
 
+        #region 声明
         public UserActiveView()
         {
             InitializeComponent();
             this.titleLabel.Text = "用户上机";
-            cardNumber = ToolsManage.RandomCard;
-            label1.Text += cardNumber;
 
+            simpleButton2.Enabled = simpleButton3.Enabled = simpleButton1.Enabled = false;
+            StructCard.Builder card = new StructCard.Builder()
+            {
+                Name = "xx22",
+                Gender = 1,
+                Nation = "2112",
+                Number = ToolsManage.RandomCard,
+                Birthday = "2012-09-01",
+                Address = "海南省",
+                Organization = "海南",
+                Head = "#dasdasd#",
+                Vld = "",
+            };
+            Bitmap b = Imgs.test;
+            string inputString = ToolsManage.BitmapToDataSring(b);
+            card.Head = inputString;
+
+            InitUI(card.Build());
+                 //  MemberNetOperation.MemberInfo(MemberInfoResult, card);
         }
         public UserActiveView(StructCard readCard)
         {
@@ -40,22 +59,12 @@ namespace NetBarMS.Views.UserUseCp
             IdCardReaderManage.ReadCard(ReadCardResult, null, null);
             InitUI(readCard);
         }
+        #endregion
+
         #region 初始化UI
-        private void InitUI()
-        {
-
-#if RELEASE
-            
-#else
-           
-
-#endif
-
-            //判断会员信息。是否是会员。是的话进行
-            //  MemberNetOperation.MemberInfo(MemberInfoResult, card);
-        }
         private void InitUI(StructCard showcard)
         {
+            this.activeCard = new StructCard.Builder(showcard).Build();
 
             char[] sp = { ':', '：' };
             simpleButton3.Enabled = simpleButton2.Enabled = simpleButton1.Enabled = true;
@@ -68,16 +77,15 @@ namespace NetBarMS.Views.UserUseCp
         #endregion
 
         #region 关闭重写
-#if DEBUG
-        protected override void CloseFormClick(object sender, EventArgs e)
+#if PRODUCT
+        public override void RootUserControlView_Disposed(object sender, EventArgs e)
         {
-
             IdCardReaderManage.OffCardReader(ReadCardResult, null, null);
-
-            base.CloseFormClick(sender, e);
+            base.RootUserControlView_Disposed(sender, e);
         }
 #endif
         #endregion
+
         #region 查询会员信息结果反馈
         private void MemberInfoResult(ResultModel result)
         {
@@ -113,37 +121,58 @@ namespace NetBarMS.Views.UserUseCp
         //激活
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            string tem = this.cardNumber;
-            if(!this.textEdit1.Text.Equals(""))
+            if (!this.textEdit1.Text.Equals(""))
             {
-                tem = this.textEdit1.Text;
+                StructCard.Builder newCard = new StructCard.Builder(this.activeCard);
+                newCard.Number = this.textEdit1.Text;
+                ActiveFlowManage.ActiveFlow().CardCheckIn(newCard.Build());
+
             }
-             ActiveFlowManage.ActiveFlow().CardCheckIn(tem);
+            else
+            {
+                ActiveFlowManage.ActiveFlow().CardCheckIn(this.activeCard);
+
+            }
         }
         #endregion
         
         #region 充值
         private void simpleButton2_Click(object sender, EventArgs e)
         {
-            string tem = this.cardNumber;
             if (!this.textEdit1.Text.Equals(""))
             {
-                tem = this.textEdit1.Text;
+                StructCard.Builder newCard = new StructCard.Builder(this.activeCard);
+                newCard.Number = this.textEdit1.Text;
+                UserScanCodeView view = new UserScanCodeView(newCard.Build(), 100, PRECHARGE_TYPE.NOT_MEMBER);
+                ToolsManage.ShowForm(view, false);
             }
-            UserScanCodeView view = new UserScanCodeView(tem, 100, PRECHARGE_TYPE.NOT_MEMBER);
-            ToolsManage.ShowForm(view, false);
+            else
+            {
+                UserScanCodeView view = new UserScanCodeView(activeCard, 100, PRECHARGE_TYPE.NOT_MEMBER);
+                ToolsManage.ShowForm(view, false);
+            }
+        
+
         }
         #endregion
 
         #region 下机
         private void simpleButton3_Click(object sender, EventArgs e)
         {
-            string tem = this.cardNumber;
+
+
             if (!this.textEdit1.Text.Equals(""))
             {
-                tem = this.textEdit1.Text;
+                StructCard.Builder newCard = new StructCard.Builder(this.activeCard);
+                newCard.Number = this.textEdit1.Text;
+                HomePageNetOperation.CardCheckOut(CardCheckOutResult, newCard.Number);
+
             }
-            HomePageNetOperation.CardCheckOut(CardCheckOutResult, tem);  
+            else
+            {
+                HomePageNetOperation.CardCheckOut(CardCheckOutResult, this.activeCard.Number);
+
+            }
         }
         private void CardCheckOutResult(ResultModel result)
         {

@@ -29,10 +29,12 @@ namespace NetBarMS.Codes.Tools.NetOperation
             content.SetMessageType(1);
             content.SetCsGoodsFind(products);
 
-            MessagePack.Builder pack = new MessagePack.Builder();
-            pack.SetCmd(Cmd.CMD_GOODS_FIND);
-            pack.SetContent(content);
-            NetMessageManage.SendMsg(pack.Build(), resultBlock);
+            SendModel send = new SendModel()
+            {
+                cmd = Cmd.CMD_GOODS_FIND,
+                content = content.Build()
+            };
+            NetMessageManage.SendMsg(send, resultBlock);
 
         }
         #endregion
@@ -50,10 +52,12 @@ namespace NetBarMS.Codes.Tools.NetOperation
             content.SetMessageType(1);
             content.SetCsGoodsAdd(addproduct);
 
-            MessagePack.Builder pack = new MessagePack.Builder();
-            pack.SetCmd(Cmd.CMD_GOODS_ADD);
-            pack.SetContent(content);
-            NetMessageManage.SendMsg(pack.Build(), resultBlock);
+            SendModel send = new SendModel()
+            {
+                cmd = Cmd.CMD_GOODS_ADD,
+                content = content.Build()
+            };
+            NetMessageManage.SendMsg(send, resultBlock);
 
         }
         #endregion
@@ -71,10 +75,12 @@ namespace NetBarMS.Codes.Tools.NetOperation
             content.SetMessageType(1);
             content.SetCsGoodsDel(del);
 
-            MessagePack.Builder pack = new MessagePack.Builder();
-            pack.SetCmd(Cmd.CMD_GOODS_DEL);
-            pack.SetContent(content);
-            NetMessageManage.SendMsg(pack.Build(), resultBlock);
+            SendModel send = new SendModel()
+            {
+                cmd = Cmd.CMD_GOODS_DEL,
+                content = content.Build()
+            };
+            NetMessageManage.SendMsg(send, resultBlock);
 
         }
         #endregion
@@ -92,10 +98,12 @@ namespace NetBarMS.Codes.Tools.NetOperation
             content.SetMessageType(1);
             content.SetCsGoodsUpdate(update);
 
-            MessagePack.Builder pack = new MessagePack.Builder();
-            pack.SetCmd(Cmd.CMD_GOODS_UPDATE);
-            pack.SetContent(content);
-            NetMessageManage.SendMsg(pack.Build(), resultBlock);
+            SendModel send = new SendModel()
+            {
+                cmd = Cmd.CMD_GOODS_UPDATE,
+                content = content.Build()
+            };
+            NetMessageManage.SendMsg(send, resultBlock);
 
         }
         #endregion
@@ -113,10 +121,13 @@ namespace NetBarMS.Codes.Tools.NetOperation
             content.SetMessageType(1);
             content.SetCsGoodsStock(stock);
 
-            MessagePack.Builder pack = new MessagePack.Builder();
-            pack.SetCmd(Cmd.CMD_GOODS_STOCK);
-            pack.SetContent(content);
-            NetMessageManage.SendMsg(pack.Build(), resultBlock);
+            SendModel send = new SendModel()
+            {
+                cmd = Cmd.CMD_GOODS_STOCK,
+                content = content.Build()
+            };
+            NetMessageManage.SendMsg(send, resultBlock);
+
         }
         #endregion
 
@@ -139,10 +150,12 @@ namespace NetBarMS.Codes.Tools.NetOperation
             content.SetMessageType(1);
             content.SetCsSalesRecord(record);
 
-            MessagePack.Builder pack = new MessagePack.Builder();
-            pack.SetCmd(Cmd.CMD_GOODS_SALES);
-            pack.SetContent(content);
-            NetMessageManage.SendMsg(pack.Build(), resultBlock);
+            SendModel send = new SendModel()
+            {
+                cmd = Cmd.CMD_GOODS_SALES,
+                content = content.Build()
+            };
+            NetMessageManage.SendMsg(send, resultBlock);
         }
         #endregion
 
@@ -160,10 +173,12 @@ namespace NetBarMS.Codes.Tools.NetOperation
             content.SetMessageType(1);
             content.SetCsSalesTop(top);
 
-            MessagePack.Builder pack = new MessagePack.Builder();
-            pack.SetCmd(Cmd.CMD_GOODS_SALES_TOP);
-            pack.SetContent(content);
-            NetMessageManage.SendMsg(pack.Build(), resultBlock);
+            SendModel send = new SendModel()
+            {
+                cmd = Cmd.CMD_GOODS_SALES_TOP,
+                content = content.Build()
+            };
+            NetMessageManage.SendMsg(send, resultBlock);
         }
         #endregion
 
@@ -196,10 +211,13 @@ namespace NetBarMS.Codes.Tools.NetOperation
             content.SetMessageType(1);
             content.SetCsOrderList(order);
 
-            MessagePack.Builder pack = new MessagePack.Builder();
-            pack.SetCmd(Cmd.CMD_GOODS_ORDER);
-            pack.SetContent(content);
-            NetMessageManage.SendMsg(pack.Build(), resultBlock);
+            SendModel send = new SendModel()
+            {
+                cmd = Cmd.CMD_GOODS_ORDER,
+                content = content.Build()
+            };
+            NetMessageManage.SendMsg(send, resultBlock);
+
         }
         #endregion
 
@@ -221,10 +239,13 @@ namespace NetBarMS.Codes.Tools.NetOperation
             content.SetMessageType(1);
             content.SetCsOrderDetail(detail);
 
-            MessagePack.Builder pack = new MessagePack.Builder();
-            pack.SetCmd(Cmd.CMD_GOODS_ORDER_DETAIL);
-            pack.SetContent(content);
-            NetMessageManage.SendMsg(pack.Build(), resultBlock);
+            SendModel send = new SendModel()
+            {
+                cmd = Cmd.CMD_GOODS_ORDER_DETAIL,
+                content = content.Build()
+            };
+            NetMessageManage.SendMsg(send, resultBlock);
+
         }
         #endregion
 
@@ -237,17 +258,19 @@ namespace NetBarMS.Codes.Tools.NetOperation
         public static void HandleProductIndent(DataResultBlock resultBlock, Int32 orderid)
         {
 
-            CSEmkOrderProc.Builder process = new CSEmkOrderProc.Builder();
+            CSOrderProc.Builder process = new CSOrderProc.Builder();
             process.Orderid = orderid;
 
             MessageContent.Builder content = new MessageContent.Builder();
             content.SetMessageType(1);
-            content.SetCsEmkOrderProc(process);
+            content.SetCsOrderProc(process);
 
-            MessagePack.Builder pack = new MessagePack.Builder();
-            pack.SetCmd(Cmd.CMD_GOODS_ORDER_PROCESS);
-            pack.SetContent(content);
-            NetMessageManage.SendMsg(pack.Build(), resultBlock);
+            SendModel send = new SendModel()
+            {
+                cmd = Cmd.CMD_GOODS_ORDER_PROCESS,
+                content = content.Build()
+            };
+            NetMessageManage.SendMsg(send, resultBlock);
         }
         #endregion
     }

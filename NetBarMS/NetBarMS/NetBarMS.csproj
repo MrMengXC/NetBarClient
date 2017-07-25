@@ -48,6 +48,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BigInteger, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Plugins\BigInteger.dll</HintPath>
+    </Reference>
     <Reference Include="DevExpress.Charts.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.CodeParser.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -116,6 +120,7 @@
     <Compile Include="Codes\Tools\EnumManage.cs" />
     <Compile Include="Codes\Tools\Manage\HomePageMessageManage.cs" />
     <Compile Include="Codes\Tools\Manage\IdCardReaderManage.cs" />
+    <Compile Include="Codes\Tools\Manage\MainViewManage.cs" />
     <Compile Include="Codes\Tools\Manage\ManagerManage.cs" />
     <Compile Include="Codes\Tools\NetOperation\CommonNetOperation.cs" />
     <Compile Include="Codes\Tools\NetOperation\EvaluateNetOperation.cs" />
@@ -128,7 +133,6 @@
       <DependentUpon>MessageForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Plugins\Background.cs" />
-    <Compile Include="Plugins\BigInteger.cs" />
     <Compile Include="Codes\Tools\FlowManage\ActiveFlowManage.cs" />
     <Compile Include="Codes\Tools\Manage\IdTools.cs" />
     <Compile Include="Codes\Tools\Manage\NetBarException.cs" />
@@ -149,18 +153,6 @@
     </Compile>
     <Compile Include="Forms\CustomForm.Designer.cs">
       <DependentUpon>CustomForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\MainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\NewForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\NewForm.Designer.cs">
-      <DependentUpon>NewForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\TestForm.cs">
       <SubType>Form</SubType>
@@ -194,6 +186,12 @@
     <Compile Include="Views\CustomView\CustomMonthDate.Designer.cs">
       <DependentUpon>CustomMonthDate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\CustomView\HomePageButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\CustomView\HomePageButton.Designer.cs">
+      <DependentUpon>HomePageButton.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\CustomView\PageView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -205,6 +203,12 @@
     </Compile>
     <Compile Include="Views\CustomView\ProductPicture.Designer.cs">
       <DependentUpon>ProductPicture.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CustomView\TitlePanelView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\CustomView\TitlePanelView.Designer.cs">
+      <DependentUpon>TitlePanelView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\HomePage\HomePageView.cs">
       <SubType>UserControl</SubType>
@@ -218,11 +222,11 @@
     <Compile Include="Views\HomePage\MainView.Designer.cs">
       <DependentUpon>MainView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\InCome\IncomeDetail.cs">
+    <Compile Include="Views\InCome\IncomeDetailView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\InCome\IncomeDetail.Designer.cs">
-      <DependentUpon>IncomeDetail.cs</DependentUpon>
+    <Compile Include="Views\InCome\IncomeDetailView.Designer.cs">
+      <DependentUpon>IncomeDetailView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\HomePage\PayedProductIndentDetailView.cs">
       <SubType>UserControl</SubType>
@@ -260,18 +264,6 @@
     <Compile Include="Views\HomePage\UserScanCodeView.Designer.cs">
       <DependentUpon>UserScanCodeView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\InCome\AreaIncomeView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\InCome\AreaIncomeView.Designer.cs">
-      <DependentUpon>AreaIncomeView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\InCome\IncomeManageView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\InCome\IncomeManageView.Designer.cs">
-      <DependentUpon>IncomeManageView.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\InCome\MonthInComeView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -307,6 +299,12 @@
     </Compile>
     <Compile Include="Views\RootFormView.Designer.cs">
       <DependentUpon>RootFormView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RootUserControlView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\RootUserControlView.Designer.cs">
+      <DependentUpon>RootUserControlView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\SystemSearch\UserRechargeRecordView.cs">
       <SubType>UserControl</SubType>
@@ -356,12 +354,6 @@
     <Compile Include="Views\ComputerDetail\ComputerDetailView.Designer.cs">
       <DependentUpon>ComputerDetailView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\OtherMain\DataReportView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\OtherMain\DataReportView.Designer.cs">
-      <DependentUpon>DataReportView.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\EvaluateManage\NetBarEvaluateView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -385,12 +377,6 @@
     </Compile>
     <Compile Include="Views\HomePage\HomePageListView.Designer.cs">
       <DependentUpon>HomePageListView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\InCome\InComeDetailView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\InCome\InComeDetailView.Designer.cs">
-      <DependentUpon>InComeDetailView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\InCome\DayInComeView.cs">
       <SubType>UserControl</SubType>
@@ -434,12 +420,6 @@
     <Compile Include="Views\NetUserManage\MemberManageView.Designer.cs">
       <DependentUpon>MemberManageView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\OtherMain\NetRecordView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\OtherMain\NetRecordView.Designer.cs">
-      <DependentUpon>NetRecordView.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\NetUserManage\UserDetailView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -452,23 +432,11 @@
     <Compile Include="Views\HomePage\ChangeShiftsView.Designer.cs">
       <DependentUpon>ChangeShiftsView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\OtherMain\MsgBoardView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\OtherMain\MsgBoardView.Designer.cs">
-      <DependentUpon>MsgBoardView.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\NetUserManage\OpenMemberView.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\NetUserManage\OpenMemberView.Designer.cs">
       <DependentUpon>OpenMemberView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\OtherMain\UserPayView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\OtherMain\UserPayView.Designer.cs">
-      <DependentUpon>UserPayView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\ProductManage\ProductAddView.cs">
       <SubType>UserControl</SubType>
@@ -542,12 +510,6 @@
     <Compile Include="Views\ResultManage\OpenMemberResultView.Designer.cs">
       <DependentUpon>OpenMemberResultView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\RootUserControlView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\RootUserControlView.Designer.cs">
-      <DependentUpon>RootUserControlView.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\SystemManage\AreaManageView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -595,12 +557,6 @@
     </Compile>
     <Compile Include="Views\SystemManage\SmsManageView.Designer.cs">
       <DependentUpon>SmsManageView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\SystemManage\StaffMoneyView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\SystemManage\StaffMoneyView.Designer.cs">
-      <DependentUpon>StaffMoneyView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\SystemSearch\ChangeShiftsRecordView.cs">
       <SubType>UserControl</SubType>
@@ -659,14 +615,8 @@
     <EmbeddedResource Include="Forms\CustomForm.resx">
       <DependentUpon>CustomForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\MessageForm.resx">
       <DependentUpon>MessageForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\NewForm.resx">
-      <DependentUpon>NewForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TestForm.resx">
       <DependentUpon>TestForm.cs</DependentUpon>
@@ -692,11 +642,17 @@
     <EmbeddedResource Include="Views\CustomView\CustomMonthDate.resx">
       <DependentUpon>CustomMonthDate.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\CustomView\HomePageButton.resx">
+      <DependentUpon>HomePageButton.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\CustomView\PageView.resx">
       <DependentUpon>PageView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\CustomView\ProductPicture.resx">
       <DependentUpon>ProductPicture.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CustomView\TitlePanelView.resx">
+      <DependentUpon>TitlePanelView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\HomePage\HomePageView.resx">
       <DependentUpon>HomePageView.cs</DependentUpon>
@@ -704,8 +660,8 @@
     <EmbeddedResource Include="Views\HomePage\MainView.resx">
       <DependentUpon>MainView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\InCome\IncomeDetail.resx">
-      <DependentUpon>IncomeDetail.cs</DependentUpon>
+    <EmbeddedResource Include="Views\InCome\IncomeDetailView.resx">
+      <DependentUpon>IncomeDetailView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\InCome\YearInComeView.resx">
       <DependentUpon>YearInComeView.cs</DependentUpon>
@@ -728,12 +684,6 @@
     <EmbeddedResource Include="Views\HomePage\UserScanCodeView.resx">
       <DependentUpon>UserScanCodeView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\InCome\AreaIncomeView.resx">
-      <DependentUpon>AreaIncomeView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\InCome\IncomeManageView.resx">
-      <DependentUpon>IncomeManageView.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Views\InCome\MonthInComeView.resx">
       <DependentUpon>MonthInComeView.cs</DependentUpon>
     </EmbeddedResource>
@@ -748,6 +698,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\RootFormView.resx">
       <DependentUpon>RootFormView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\RootUserControlView.resx">
+      <DependentUpon>RootUserControlView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\SystemSearch\AttendanceSearchView.resx">
       <DependentUpon>AttendanceSearchView.cs</DependentUpon>
@@ -773,9 +726,6 @@
     <EmbeddedResource Include="Views\ComputerDetail\ComputerDetailView.resx">
       <DependentUpon>ComputerDetailView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\OtherMain\DataReportView.resx">
-      <DependentUpon>DataReportView.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Views\EvaluateManage\NetBarEvaluateView.resx">
       <DependentUpon>NetBarEvaluateView.cs</DependentUpon>
     </EmbeddedResource>
@@ -787,9 +737,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\HomePage\HomePageListView.resx">
       <DependentUpon>HomePageListView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\InCome\InComeDetailView.resx">
-      <DependentUpon>InComeDetailView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\InCome\DayInComeView.resx">
       <DependentUpon>DayInComeView.cs</DependentUpon>
@@ -812,23 +759,14 @@
     <EmbeddedResource Include="Views\NetUserManage\MemberManageView.resx">
       <DependentUpon>MemberManageView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\OtherMain\NetRecordView.resx">
-      <DependentUpon>NetRecordView.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Views\NetUserManage\UserDetailView.resx">
       <DependentUpon>UserDetailView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\HomePage\ChangeShiftsView.resx">
       <DependentUpon>ChangeShiftsView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\OtherMain\MsgBoardView.resx">
-      <DependentUpon>MsgBoardView.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Views\NetUserManage\OpenMemberView.resx">
       <DependentUpon>OpenMemberView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\OtherMain\UserPayView.resx">
-      <DependentUpon>UserPayView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ProductManage\ProductAddView.resx">
       <DependentUpon>ProductAddView.cs</DependentUpon>
@@ -866,9 +804,6 @@
     <EmbeddedResource Include="Views\ResultManage\OpenMemberResultView.resx">
       <DependentUpon>OpenMemberResultView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\RootUserControlView.resx">
-      <DependentUpon>RootUserControlView.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Views\SystemManage\AreaManageView.resx">
       <DependentUpon>AreaManageView.cs</DependentUpon>
     </EmbeddedResource>
@@ -892,9 +827,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\SystemManage\SmsManageView.resx">
       <DependentUpon>SmsManageView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\SystemManage\StaffMoneyView.resx">
-      <DependentUpon>StaffMoneyView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\SystemSearch\ChangeShiftsRecordView.resx">
       <DependentUpon>ChangeShiftsRecordView.cs</DependentUpon>
@@ -961,7 +893,61 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Plugins\BigInteger.dll" />
     <Content Include="Plugins\Google.ProtocolBuffers.dll" />
+    <None Include="Resources\img_beijing.jpg" />
+    <None Include="Resources\icon_yingshou2.png" />
+    <None Include="Resources\icon_yingshou.png" />
+    <None Include="Resources\icon_yichang.png" />
+    <None Include="Resources\icon_xitong2.png" />
+    <None Include="Resources\icon_xitong.png" />
+    <None Include="Resources\icon_xiaoxi.png" />
+    <None Include="Resources\icon_tianjia.png" />
+    <None Include="Resources\icon_sousuo.png" />
+    <None Include="Resources\icon_shitu2.png" />
+    <None Include="Resources\icon_shitu1.png" />
+    <None Include="Resources\icon_shebei2.png" />
+    <None Include="Resources\icon_shebei.png" />
+    <None Include="Resources\icon_shangpin副本.png" />
+    <None Include="Resources\icon_shangpin2.png" />
+    <None Include="Resources\icon_shangpin.png" />
+    <None Include="Resources\icon_shanchu.png" />
+    <None Include="Resources\icon_rizhi2.png" />
+    <None Include="Resources\icon_rizhi.png" />
+    <None Include="Resources\icon_quchu.png" />
+    <None Include="Resources\icon_pingjia2.png" />
+    <None Include="Resources\icon_pingjia.png" />
+    <None Include="Resources\icon_kaika.png" />
+    <None Include="Resources\icon_jixiao2.png" />
+    <None Include="Resources\icon_jixiao.png" />
+    <None Include="Resources\icon_jiezhang.png" />
+    <None Include="Resources\icon_jiesuo.png" />
+    <None Include="Resources\icon_jiaoban.png" />
+    <None Include="Resources\icon_jiantou.png" />
+    <None Include="Resources\icon_hujiao.png" />
+    <None Include="Resources\icon_huiyuan2.png" />
+    <None Include="Resources\icon_huiyuan.png" />
+    <None Include="Resources\icon_guanli2.png" />
+    <None Include="Resources\icon_guanli.png" />
+    <None Include="Resources\icon_guanbi.png" />
+    <None Include="Resources\icon_gou.png" />
+    <None Include="Resources\icon_feilv2.png" />
+    <None Include="Resources\icon_feilv.png" />
+    <None Include="Resources\icon_fanhui.png" />
+    <None Include="Resources\icon_close.png" />
+    <None Include="Resources\日历.png" />
+    <None Include="Resources\电脑选中状态.png" />
+    <None Include="Resources\img_zaixian.png" />
+    <None Include="Resources\img_yichang.png" />
+    <None Include="Resources\img_tishi.png" />
+    <None Include="Resources\img_kongxian.png" />
+    <None Include="Resources\img_guaji.png" />
+    <None Include="Resources\icon_zuo.png" />
+    <None Include="Resources\icon_zengjia.png" />
+    <None Include="Resources\icon_yuangong2.png" />
+    <None Include="Resources\icon_yuangong.png" />
+    <None Include="Resources\icon_you.png" />
+    <None Include="Resources\icon_yonghu.png" />
     <None Include="Resources\test.png" />
     <None Include="Resources\use.png" />
     <None Include="Resources\yz.png" />

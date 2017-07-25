@@ -26,5 +26,15 @@ namespace NetBarMS.Forms
        {
             
         }
+
+        private void dateNavigator1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void homePageButton1_TitleButtonClick(object sender, EventArgs e)
+        {
+
+        }
     }
 }

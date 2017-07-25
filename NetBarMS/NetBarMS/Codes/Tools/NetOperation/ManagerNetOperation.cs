@@ -23,10 +23,12 @@ namespace NetBarMS.Codes.Tools.NetOperation
             content.SetCsAuthen(auther);
             content.SetMessageType(1);
 
-            MessagePack.Builder pack = new MessagePack.Builder();
-            pack.SetCmd(Cmd.CMD_AUTHEN);
-            pack.SetContent(content);
-            NetMessageManage.SendMsg(pack.Build(), resultBlock);
+            SendModel send = new SendModel()
+            {
+                cmd = Cmd.CMD_AUTHEN,
+                content = content.Build(),
+            };
+            NetMessageManage.SendMsg(send, resultBlock);
         }
         #endregion
 
@@ -48,10 +50,13 @@ namespace NetBarMS.Codes.Tools.NetOperation
             content.SetCsLogin(login);
             content.SetMessageType(1);
 
-            MessagePack.Builder pack = new MessagePack.Builder();
-            pack.SetCmd(Cmd.CMD_LOGIN);
-            pack.SetContent(content);
-            NetMessageManage.SendMsg(pack.Build(), resultBlock);
+          
+            SendModel send = new SendModel()
+            {
+                cmd = Cmd.CMD_LOGIN,
+                content = content.Build(),
+            };
+            NetMessageManage.SendMsg(send, resultBlock);
         }
         #endregion
 
@@ -61,18 +66,24 @@ namespace NetBarMS.Codes.Tools.NetOperation
         /// </summary>
         public static void AccountInfo(DataResultBlock resultBlock,string aid)
         {
+            if(aid == null || aid.Equals(""))
+            {
+                return;
+            }
             CSAccountInfo.Builder info = new CSAccountInfo.Builder()
             {
-                Accountid = ""
+                Accountid = aid
             };
             MessageContent.Builder content = new MessageContent.Builder();
             content.MessageType = 1;
             content.CsAccountInfo = info.Build();
 
-            MessagePack.Builder pack = new MessagePack.Builder();
-            pack.Cmd = Cmd.CMD_ACCOUNT_INFO;
-            pack.Content = content.Build();
-            NetMessageManage.SendMsg(pack.Build(), resultBlock);
+            SendModel send = new SendModel()
+            {
+                cmd = Cmd.CMD_ACCOUNT_INFO,
+                content = content.Build(),
+            };
+            NetMessageManage.SendMsg(send, resultBlock);
         }
         #endregion
 
@@ -82,9 +93,11 @@ namespace NetBarMS.Codes.Tools.NetOperation
         /// </summary>
         public static void GetManagerList(DataResultBlock resultBlock)
         {
-            MessagePack.Builder pack = new MessagePack.Builder();
-            pack.SetCmd(Cmd.CMD_ROLE_LIST);
-            NetMessageManage.SendMsg(pack.Build(), resultBlock);
+            SendModel send = new SendModel()
+            {
+                cmd = Cmd.CMD_ROLE_LIST,
+            };
+            NetMessageManage.SendMsg(send, resultBlock);
         }
         #endregion
 
@@ -101,10 +114,12 @@ namespace NetBarMS.Codes.Tools.NetOperation
             content.SetMessageType(1);
             content.SetCsRoleAdd(add.Build());
 
-            MessagePack.Builder pack = new MessagePack.Builder();
-            pack.SetCmd(Cmd.CMD_ROLE_ADD);
-            pack.SetContent(content.Build());
-            NetMessageManage.SendMsg(pack.Build(), resultBlock);
+            SendModel send = new SendModel()
+            {
+                cmd = Cmd.CMD_ROLE_ADD,
+                content = content.Build()
+            };
+            NetMessageManage.SendMsg(send, resultBlock);
         }
         #endregion
 
@@ -121,10 +136,12 @@ namespace NetBarMS.Codes.Tools.NetOperation
             content.SetMessageType(1);
             content.SetCsRoleUpdate(update.Build());
 
-            MessagePack.Builder pack = new MessagePack.Builder();
-            pack.SetCmd(Cmd.CMD_ROLE_UPDATE);
-            pack.SetContent(content.Build());
-            NetMessageManage.SendMsg(pack.Build(), resultBlock);
+            SendModel send = new SendModel()
+            {
+                cmd = Cmd.CMD_ROLE_UPDATE,
+                content = content.Build()
+            };
+            NetMessageManage.SendMsg(send, resultBlock);
         }
         /// <summary>
         /// 修改管理员的角色权限
@@ -141,10 +158,12 @@ namespace NetBarMS.Codes.Tools.NetOperation
             content.SetMessageType(1);
             content.SetCsRoleRights(rolerights.Build());
 
-            MessagePack.Builder pack = new MessagePack.Builder();
-            pack.SetCmd(Cmd.CMD_ROLE_RIGHTS);
-            pack.SetContent(content.Build());
-            NetMessageManage.SendMsg(pack.Build(), resultBlock);
+            SendModel send = new SendModel()
+            {
+                cmd = Cmd.CMD_ROLE_RIGHTS,
+                content = content.Build()
+            };
+            NetMessageManage.SendMsg(send, resultBlock);
         }
         #endregion
 
@@ -161,10 +180,12 @@ namespace NetBarMS.Codes.Tools.NetOperation
             content.SetMessageType(1);
             content.SetCsRoleDel(del.Build());
 
-            MessagePack.Builder pack = new MessagePack.Builder();
-            pack.SetCmd(Cmd.CMD_ROLE_DEL);
-            pack.SetContent(content.Build());
-            NetMessageManage.SendMsg(pack.Build(), resultBlock);
+            SendModel send = new SendModel()
+            {
+                cmd = Cmd.CMD_ROLE_DEL,
+                content = content.Build()
+            };
+            NetMessageManage.SendMsg(send, resultBlock);
         }
         #endregion
     }

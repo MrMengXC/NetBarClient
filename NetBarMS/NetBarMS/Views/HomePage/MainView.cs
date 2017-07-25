@@ -1,4 +1,5 @@
-﻿#region using
+﻿#define PRODUCT
+#region using
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,40 +24,120 @@ using NetBarMS.Codes.Tools.NetOperation;
 using DevExpress.XtraEditors;
 using DevExpress.XtraBars;
 using NetBarMS.Views.UserUseCp;
+using NetBarMS.Codes.Tools.Manage;
 #endregion
 
 namespace NetBarMS.Views.HomePage
 {
     public partial class MainView : UserControl
     {
+        private char[] sp = { '\n', ':', '：' };
+        /// <summary>
+        /// 是否是办理会员
+        /// </summary>
+        private bool IsOpenMember = false;
+        /// <summary>
+        /// 是否是激活
+        /// </summary>
+        private bool IsActiveCard = false;
         public MainView()
         {
             InitializeComponent();
             InitUI();
+          
         }
 
         //初始化UI
         private void InitUI()
         {
+            MainViewManage.MainView = this.mainPanel ;
             //添加按钮列
-            List<HomePageNodeModel> modelList = XMLDataManage.GetNodesXML();
-           
+            List<HomePageNodeModel> modelList = XMLDataManage.GetNodesXML();           
             for (int i = modelList.Count-1; i>=0; i--)
             {
                 HomePageNodeModel nodeModel = modelList[i];
                 SimpleButton button = new SimpleButton();
                 button.Text = nodeModel.nodeName;
-                button.Size = new Size(50, 50);
+                button.Size = new Size(50, 78);
+                button.ForeColor = ColorTranslator.FromHtml("#ffffff");
+                
                 button.Dock = DockStyle.Top;
                 button.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
                 button.Click += Button_Click ;
                 button.MouseDown += Button_MouseDown;
                 button.Tag = nodeModel.nodeid;
+                button.Image = Imgs.icon_huiyuan;
                 this.functionPanel.Controls.Add(button);
             }
+            ////添加首页视图
+            AddHomePageView();
+            //添加系统消息监听
+            AddMsgDelegate();
         }
 
-        //按钮单击事件
+        #region 添加系统消息监听
+        private void AddMsgDelegate()
+        {
+            HomePageMessageManage.Manage().AddMsgNumDelegate(UpdateMsgNumResult, UpdateDailyDataResult, UpdateStatusNum);
+        }
+        //刷新状态数量显示
+        private void UpdateStatusNum()
+        {
+
+            this.Invoke(new RefreshUIHandle(delegate {
+
+                Dictionary<string, int> dict = HomePageMessageManage.StatusNum;
+                int idle = 0, online = 0, hangup = 0, exception = 0;
+                dict.TryGetValue(((int)COMPUTERSTATUS.空闲).ToString(), out idle);
+                dict.TryGetValue(((int)COMPUTERSTATUS.在线).ToString(), out online);
+                dict.TryGetValue(((int)COMPUTERSTATUS.挂机).ToString(), out hangup);
+                dict.TryGetValue(((int)COMPUTERSTATUS.异常).ToString(), out exception);
+
+                //当前上网上网人数（在线+关机）
+                this.netUserLabel.Text = string.Format("{0}\n{1}", (online + hangup), this.netUserLabel.Text.Split(sp)[1]);
+                //当前占座率
+                this.attenDanceLabel.Text = string.Format("{0}%\n{1}", (online + hangup) * 100 / (online + hangup + exception + idle), this.attenDanceLabel.Text.Split(sp)[1]);
+
+
+            }));
+
+        }
+        //呼叫消息通知回调
+        private void UpdateMsgNumResult()
+        {
+            this.Invoke(new RefreshUIHandle(delegate {
+
+                this.homePageButton5.Num = HomePageMessageManage.CallMsgNum;
+                this.homePageButton4.Num = HomePageMessageManage.OrderMsgNum;
+                this.homePageButton6.Num = HomePageMessageManage.ExceptionMsgNum;
+            }));
+
+        }
+        //日上机用户消息通知回调
+        private void UpdateDailyDataResult()
+        {
+            this.Invoke(new RefreshUIHandle(delegate {
+                this.dailyOnlineCountLabel.Text = string.Format("{0}\n{1}", HomePageMessageManage.DailyOnlineCount, this.dailyOnlineCountLabel.Text.Split(sp)[1]);
+                this.amountLabel.Text = string.Format("{0}\n{1}", HomePageMessageManage.DailyTradeAmount, this.amountLabel.Text.Split(sp)[1]);
+            }));
+
+        }
+        #endregion
+
+        #region 添加首页列表视图
+        private void AddHomePageView()
+        {
+
+            HomePageView homePage = new HomePageView();
+            this.mainPanel.Controls.Add(homePage);
+            homePage.Location = new Point(0, 0);
+            homePage.Size = this.mainPanel.Size;
+            homePage.Dock = DockStyle.Fill;
+            homePage.BringToFront();
+        }
+        #endregion
+
+        #region 按钮单击事件
         private void Button_Click(object sender, EventArgs e)
         {
             int nodeId = (int)((SimpleButton)sender).Tag;
@@ -93,8 +174,6 @@ namespace NetBarMS.Views.HomePage
             }
 
         }
-        
-
         //右键弹出框点击时间
         private void Item_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -105,11 +184,15 @@ namespace NetBarMS.Views.HomePage
             ShowView(nodeModel);
 
         }
-       
-        //点击显示视图
+        #endregion
+         
+        #region 点击显示视图
         private void ShowView(HomePageNodeModel nodeModel)
         {
-
+            if(!ManagerManage.Manage().IsRightUse(nodeModel.nodeid))
+            {
+                return;
+            }
             RootUserControlView view = null;
             TreeNodeTag tag = (TreeNodeTag)Enum.Parse(typeof(TreeNodeTag), nodeModel.nodeTag);
 
@@ -158,9 +241,6 @@ namespace NetBarMS.Views.HomePage
                 #endregion
 
                 #region 营收管理
-                case TreeNodeTag.InComeManage:   //营收管理
-                    view = new DayInComeView();
-                    break;
                 case TreeNodeTag.DayInCome:   //日营收
                     view = new DayInComeView();
                     break;
@@ -181,7 +261,7 @@ namespace NetBarMS.Views.HomePage
                     view = new UserRechargeView();
                     break;
                 case TreeNodeTag.UserNetRecord:   //用户上网记录查询
-                    //view = new UserNetRecordView();
+                    view = new UserNetRecordView();
                     break;
                 case TreeNodeTag.UserConsumeRecord:   //用户消费记录查询
                     view = new UserConsumeRecordView();
@@ -217,7 +297,7 @@ namespace NetBarMS.Views.HomePage
                     view = new NetPassWordView();
                     break;
                 case TreeNodeTag.StaffMoney:   //员工提成
-                    view = new StaffMoneyView();
+                   // view = new StaffMoneyView();
                     break;
                 case TreeNodeTag.MemberLevManage:   //会员等级
                     view = new MemberLevManageView();
@@ -259,25 +339,11 @@ namespace NetBarMS.Views.HomePage
                     break;
             }
 
-            foreach (UserControl control in this.contentBgPanel.Controls)
-            {
-                if (!control.GetType().Equals(typeof(HomePageListView)))
-                {
-                    this.contentBgPanel.Controls.Remove(control);
-                }
-            }
-
-            if (view != null)
-            {                
-                view.Dock = DockStyle.Fill;
-                this.contentBgPanel.Controls.Add(view);
-            }
+            MainViewManage.ShowView(view);
         }
-
-
-
+        #endregion
+       
         #region 顶部菜单的按钮功能
-
         //关闭闲机
         private void CloseMache_ButtonClick(object sender, EventArgs e)
         {
@@ -294,18 +360,18 @@ namespace NetBarMS.Views.HomePage
         private void ChangeShifts_ButtonClick(object sender, EventArgs e)
         {
             ChangeShiftsView view = new ChangeShiftsView();
-            ToolsManage.ShowForm(view, false);
+            MainViewManage.ShowView(view);
         }
 
         //商品订单
-        private void PayedIndent_ButtonClick(object sender, EventArgs e)
+        private void PayedProductIndent_ButtonClick(object sender, EventArgs e)
         {
             PayedProductIndentView view = new PayedProductIndentView();
-            ToolsManage.ShowForm(view, false);
+            MainViewManage.ShowView(view);
         }
 
         //呼叫服务
-        private void CallServer_ButtonClick(object sender, EventArgs e)
+        private void CallService_ButtonClick(object sender, EventArgs e)
         {
             CallServiceView view = new CallServiceView();
             ToolsManage.ShowForm(view, false);
@@ -322,28 +388,112 @@ namespace NetBarMS.Views.HomePage
         private void ChatManage_ButtonClick(object sender, EventArgs e)
         {
             ChatManageView view = new ChatManageView();
-            ToolsManage.ShowForm(view, false);
+            MainViewManage.ShowView(view);
         }
-        //解锁
+        //锁定列表
         private void LockList_ButtonClick(object sender, EventArgs e)
         {
             LockListView view = new LockListView();
-            ToolsManage.ShowForm(view, false);
-        }
-        //开卡
-        private void OpenMember_ButtonClick(object sender, EventArgs e)
-        {
-            ReminderScanView view = new ReminderScanView();
-            ToolsManage.ShowForm(view, false);
+            MainViewManage.ShowView(view);
         }
 
-        //上网
-        private void UserAcitve_ButtonClick(object sender, EventArgs e)
+        //开通会员
+        private void OpenMember_ButtonClick(object sender, EventArgs e)
         {
+#if PRODUCT
+            //先连接设备进行读卡
+            this.IsOpenMember = true;
+            IdCardReaderManage.ReadCard(ReadCardResult, ConnectReaderResult, AuthenticateCardResult);
+
+#else
+            OpenMemberView view = new OpenMemberView(null);
+            MainViewManage.ShowView(view);
+#endif
+
+        }
+
+        // 激活上网
+        private void UserActive_ButtonClick(object sender, EventArgs e)
+        {
+#if PRODUCT
+            //先连接设备进行读卡
+            this.IsActiveCard = true;
+            IdCardReaderManage.ReadCard(ReadCardResult, ConnectReaderResult, AuthenticateCardResult);
+#else
             UserActiveView view = new UserActiveView();
             ToolsManage.ShowForm(view, false);
+#endif
+        }
+
+        #endregion
+
+        #region 与读卡器交互回调
+
+        //读卡结果
+        private void ReadCardResult(StructCard readCard, bool isSuccess)
+        {
+            if (readCard != null && isSuccess)
+            {
+                //激活
+                RefreshUIHandle active = new RefreshUIHandle(delegate
+                {
+                    this.IsActiveCard = false;
+                    UserActiveView view = new UserActiveView(readCard);
+                    ToolsManage.ShowForm(view, false);
+                });
+                //开通会员
+                RefreshUIHandle open = new RefreshUIHandle(delegate
+                {
+                    this.IsOpenMember = false;
+                    OpenMemberView view = new OpenMemberView(readCard);
+                    MainViewManage.ShowView(view);
+                });
+
+                IdCardReaderManage.RemoveEvent(ReadCardResult, ConnectReaderResult, AuthenticateCardResult);
+                if (this.InvokeRequired)
+                {
+                    if (this.IsOpenMember) { this.Invoke(open); }
+                    else if (this.IsActiveCard) { this.Invoke(active); }
+
+                }
+                else
+                {
+                    if (this.IsOpenMember) { open(); }
+                    else if (this.IsActiveCard) { active(); }
+                }
+            }
+            else
+            {
+                this.IsOpenMember = this.IsActiveCard = false;
+                IdCardReaderManage.OffCardReader(ReadCardResult, ConnectReaderResult, AuthenticateCardResult);
+                MessageBox.Show("读取身份证信息失败");
+            }
+
+
+        }
+        //认证是否放身份证回调
+        private void AuthenticateCardResult(bool isSuccess)
+        {
+
+            if (!isSuccess)
+            {
+                this.IsOpenMember = this.IsActiveCard = false;
+                IdCardReaderManage.OffCardReader(ReadCardResult, ConnectReaderResult, AuthenticateCardResult);
+                MessageBox.Show("请放置身份证");
+            }
+        }
+        //连接读卡器回调
+        private void ConnectReaderResult(bool isSuccess)
+        {
+            if (!isSuccess)
+            {
+                this.IsOpenMember = this.IsActiveCard = false;
+                IdCardReaderManage.OffCardReader(ReadCardResult, ConnectReaderResult, AuthenticateCardResult);
+                MessageBox.Show("请检查读卡器是否连接");
+            }
         }
         #endregion
+
     }
 
 }

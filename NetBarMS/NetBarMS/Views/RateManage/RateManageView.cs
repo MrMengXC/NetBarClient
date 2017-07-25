@@ -44,7 +44,6 @@ namespace NetBarMS.Views.RateManage
         public RateManageView()
         {
             InitializeComponent();
-            this.titleLabel.Text = "费率管理";
             InitUI();
         }
 

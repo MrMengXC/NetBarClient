@@ -20,7 +20,6 @@ namespace NetBarMS.Views.SystemManage
         public NetPassWordView()
         {
             InitializeComponent();
-            this.titleLabel.Text = "上网密码设置";
             InitUI();
         }
         #region 初始化UI

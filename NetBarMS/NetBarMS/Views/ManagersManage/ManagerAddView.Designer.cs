@@ -43,6 +43,14 @@
             // 
             this.titlePanel.Size = new System.Drawing.Size(455, 50);
             // 
+            // closeBtn
+            // 
+            this.closeBtn.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.closeBtn.Appearance.Options.UseBackColor = true;
+            this.closeBtn.Location = new System.Drawing.Point(408, 0);
+            this.closeBtn.LookAndFeel.SkinMaskColor = System.Drawing.Color.Transparent;
+            this.closeBtn.LookAndFeel.UseDefaultLookAndFeel = false;
+            // 
             // labelControl1
             // 
             this.labelControl1.Location = new System.Drawing.Point(3, 3);

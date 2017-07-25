@@ -12,7 +12,7 @@ using NetBarMS.Codes.Tools.NetOperation;
 
 namespace NetBarMS.Views.HomePage
 {
-    public partial class PayedProductIndentDetailView : RootUserControlView
+    public partial class PayedProductIndentDetailView : RootFormView
     {
         private enum TitleList
         {

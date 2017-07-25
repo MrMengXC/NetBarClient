@@ -20,7 +20,6 @@ namespace NetBarMS.Views.HomePage
         public ChangeShiftsView()
         {
             InitializeComponent();
-            this.titleLabel.Text = "交接班";
             InitUI();
         }
 
@@ -124,7 +123,7 @@ namespace NetBarMS.Views.HomePage
             this.Invoke(new RefreshUIHandle(delegate
             {
                 MessageBox.Show("交接班成功");
-                this.CloseFormClick();
+                MainViewManage.RemoveView();
             }));
         }
         #endregion

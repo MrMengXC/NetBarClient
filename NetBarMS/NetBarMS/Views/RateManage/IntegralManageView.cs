@@ -21,7 +21,6 @@ namespace NetBarMS.Views.RateManage
         public IntegralManageView()
         {
             InitializeComponent();
-            this.titleLabel.Text = "积分管理";
             InitUI();
         }
 

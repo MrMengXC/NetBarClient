@@ -72,17 +72,13 @@ namespace NetBarMS.Views.CustomView
                 this.ComsTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, this.ComsTableLayoutPanel.Width / COLUMN_NUM));
 
             }
-
-
             for (int i = 0;i<coms.Count;i++)
             {
                 StructRealTime com = coms[i];
 
                 //创建显示的Label
                 Label comLabel = new Label();
-                comLabel.Text = com.Computer; ;
-         
-
+                comLabel.Text = com.Computer;
                 comLabel.AutoSize = false;
                 comLabel.Dock = DockStyle.Fill;
                 comLabel.TextAlign = ContentAlignment.MiddleCenter;
@@ -91,6 +87,8 @@ namespace NetBarMS.Views.CustomView
                 comLabel.Margin = new Padding(10);
                 comLabel.Name = string.Format("name_{0}", com.Computerid);
                 comLabel.Paint += paint;
+                comLabel.Click += ComLabel_Click;
+                comLabel.Tag = com;
                 this.ComsTableLayoutPanel.Controls.Add(comLabel);
                 this.ComsTableLayoutPanel.SetRow(comLabel, i / COLUMN_NUM);
                 this.ComsTableLayoutPanel.SetColumn(comLabel, i % COLUMN_NUM);
@@ -111,6 +109,15 @@ namespace NetBarMS.Views.CustomView
 
 
             }
+        }
+
+        //点击进行修改
+        private void ComLabel_Click(object sender, EventArgs e)
+        {
+
+            StructRealTime com = (StructRealTime)((Label)sender).Tag;
+            ComputerDetailView view = new ComputerDetailView(com);
+            ToolsManage.ShowForm(view, false);
         }
 
         #endregion

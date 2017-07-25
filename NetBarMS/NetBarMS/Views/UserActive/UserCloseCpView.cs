@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace NetBarMS.Views.UserUseCp
 {
-    public partial class UserCloseCpView : RootUserControlView
+    public partial class UserCloseCpView : RootFormView
     {
         public UserCloseCpView()
         {

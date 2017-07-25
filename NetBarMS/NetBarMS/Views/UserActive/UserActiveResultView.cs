@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace NetBarMS.Views.UserActive
 {
-    public partial class UserActivResultView : RootUserControlView
+    public partial class UserActivResultView : RootFormView
     {
         public UserActivResultView()
         {

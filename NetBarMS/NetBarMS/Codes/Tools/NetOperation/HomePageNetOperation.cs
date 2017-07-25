@@ -16,19 +16,11 @@ namespace NetBarMS.Codes.Tools.NetOperation
         /// </summary>
         public static void HompageList(DataResultBlock resultBlock)
         {
-            try
+            SendModel send = new SendModel()
             {
-                MessagePack.Builder pack = new MessagePack.Builder();
-                pack.SetCmd(Cmd.CMD_REALTIME_INFO);
-                NetMessageManage.SendMsg(pack.Build(), resultBlock);
-            }
-            catch(Exception exc)
-            {
-                System.Console.WriteLine("获取上网实时列表失败："+exc);
-            }
-
-         
-
+                cmd = Cmd.CMD_REALTIME_INFO,
+            };
+            NetMessageManage.SendMsg(send, resultBlock);
         }
         #endregion
 
@@ -46,10 +38,12 @@ namespace NetBarMS.Codes.Tools.NetOperation
             content.SetMessageType(1);
             content.SetCsEmkCheckin(checkin);
 
-            MessagePack.Builder pack = new MessagePack.Builder();
-            pack.SetCmd(Cmd.CMD_EMK_CHECKIN);
-            pack.SetContent(content);
-            NetMessageManage.SendMsg(pack.Build(), resultBlock);
+            SendModel send = new SendModel()
+            {
+                cmd = Cmd.CMD_EMK_CHECKIN,
+                content = content.Build()
+            };
+            NetMessageManage.SendMsg(send, resultBlock);
 
         }
         #endregion
@@ -67,10 +61,12 @@ namespace NetBarMS.Codes.Tools.NetOperation
             content.SetMessageType(1);
             content.SetCsEmkCheckout(checkout);
 
-            MessagePack.Builder pack = new MessagePack.Builder();
-            pack.SetCmd(Cmd.CMD_EMK_CHECKOUT);
-            pack.SetContent(content);
-            NetMessageManage.SendMsg(pack.Build(), resultBlock);
+            SendModel send = new SendModel()
+            {
+                cmd = Cmd.CMD_EMK_CHECKOUT,
+                content = content.Build()
+            };
+            NetMessageManage.SendMsg(send, resultBlock);
 
         }
         #endregion
@@ -90,11 +86,12 @@ namespace NetBarMS.Codes.Tools.NetOperation
             content.MessageType = 1;
             content.CsPreCharge = pay.Build();
 
-            MessagePack.Builder pack = new MessagePack.Builder();
-            pack.SetCmd(Cmd.CMD_PRECHARGE);
-            pack.SetContent(content);
-            NetMessageManage.SendMsg(pack.Build(), resultBlock);
-
+            SendModel send = new SendModel()
+            {
+                cmd = Cmd.CMD_PRECHARGE,
+                content = content.Build()
+            };
+            NetMessageManage.SendMsg(send, resultBlock);
         }
         #endregion
 
@@ -102,9 +99,12 @@ namespace NetBarMS.Codes.Tools.NetOperation
         // 获取充值结果
         public static void GetRecharge(DataResultBlock resultBlock)
         {
-            MessagePack.Builder pack = new MessagePack.Builder();
-            pack.SetCmd(Cmd.CMD_TOCHARGE);
-            NetMessageManage.SendMsg(pack.Build(), resultBlock);
+     
+            SendModel send = new SendModel()
+            {
+                cmd = Cmd.CMD_TOCHARGE,
+            };
+            NetMessageManage.SendMsg(send, resultBlock);
         }
         #endregion
 
@@ -124,10 +124,12 @@ namespace NetBarMS.Codes.Tools.NetOperation
             content.MessageType = 1;
             content.CsCommand = command.Build();
 
-            MessagePack.Builder pack = new MessagePack.Builder();
-            pack.Cmd = Cmd.CMD_COMMAND;
-            pack.Content = content.Build();
-            NetMessageManage.SendMsg(pack.Build(), resultBlock);
+            SendModel send = new SendModel()
+            {
+                cmd = Cmd.CMD_COMMAND,
+                content = content.Build(),
+            };
+            NetMessageManage.SendMsg(send, resultBlock);
         }
         #endregion
 
@@ -138,9 +140,12 @@ namespace NetBarMS.Codes.Tools.NetOperation
         /// <param name="resultBlock"></param>
         public static void GetCallList(DataResultBlock resultBlock)
         {           
-            MessagePack.Builder pack = new MessagePack.Builder();
-            pack.Cmd = Cmd.CMD_CALL_LIST;
-            NetMessageManage.SendMsg(pack.Build(), resultBlock);
+
+            SendModel send = new SendModel()
+            {
+                cmd = Cmd.CMD_CALL_LIST,
+            };
+            NetMessageManage.SendMsg(send, resultBlock);
         }
         #endregion
 
@@ -158,10 +163,12 @@ namespace NetBarMS.Codes.Tools.NetOperation
             content.MessageType = 1;
             content.CsCallProcess = call.Build();
             
-            MessagePack.Builder pack = new MessagePack.Builder();
-            pack.Cmd = Cmd.CMD_CALL_PROCESS;
-            pack.Content = content.Build();
-            NetMessageManage.SendMsg(pack.Build(), resultBlock);
+            SendModel send = new SendModel()
+            {
+                cmd = Cmd.CMD_CALL_PROCESS,
+                content = content.Build(),
+            };
+            NetMessageManage.SendMsg(send, resultBlock);
         }
         #endregion
 
@@ -187,19 +194,24 @@ namespace NetBarMS.Codes.Tools.NetOperation
             content.MessageType = 1;
             content.CsShiftAdd = add.Build();
 
-            MessagePack.Builder pack = new MessagePack.Builder();
-            pack.Cmd = Cmd.CMD_SHIFT_ADD;
-            pack.Content = content.Build();
-            NetMessageManage.SendMsg(pack.Build(), resultBlock);
+            SendModel send = new SendModel()
+            {
+                cmd = Cmd.CMD_SHIFT_ADD,
+                content = content.Build(),
+            };
+            NetMessageManage.SendMsg(send, resultBlock);
         }
         #endregion
 
         #region 获取交班人信息
         public static void GetGiveStaffInfo(DataResultBlock resultBlock)
         {
-            MessagePack.Builder pack = new MessagePack.Builder();
-            pack.Cmd = Cmd.CMD_SHIFT_DELIVEREDBY;
-            NetMessageManage.SendMsg(pack.Build(), resultBlock);
+   
+            SendModel send = new SendModel()
+            {
+                cmd = Cmd.CMD_SHIFT_DELIVEREDBY,
+            };
+            NetMessageManage.SendMsg(send, resultBlock);
         }
 
         #endregion

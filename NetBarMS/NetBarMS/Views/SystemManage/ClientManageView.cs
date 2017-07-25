@@ -32,7 +32,6 @@ namespace NetBarMS.Views.SystemManage
         public ClientManageView()
         {
             InitializeComponent();
-            this.titleLabel.Text = "客户端设置";
             InitUI();
         }
         #region 初始化UI

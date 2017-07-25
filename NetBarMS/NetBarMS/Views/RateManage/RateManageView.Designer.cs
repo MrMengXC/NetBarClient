@@ -81,7 +81,6 @@
             this.bDurPrieceText = new DevExpress.XtraEditors.TextEdit();
             this.bMinConsumeText = new DevExpress.XtraEditors.TextEdit();
             this.areaPanel = new System.Windows.Forms.Panel();
-            this.titlePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bDurComboBoxEdit.Properties)).BeginInit();
@@ -95,9 +94,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.bMinConsumeText.Properties)).BeginInit();
             this.SuspendLayout();
             // 
-            // titlePanel
+            // titlePanelView1
             // 
-            this.titlePanel.Size = new System.Drawing.Size(746, 50);
+            this.titlePanelView1.ShowCloseButton = false;
+            this.titlePanelView1.Size = new System.Drawing.Size(746, 50);
+            this.titlePanelView1.Title = "费率管理";
             // 
             // dataGridView1
             // 
@@ -626,14 +627,12 @@
             this.Controls.Add(this.memberTypePanel);
             this.Name = "RateManageView";
             this.Size = new System.Drawing.Size(746, 499);
+            this.Controls.SetChildIndex(this.titlePanelView1, 0);
             this.Controls.SetChildIndex(this.memberTypePanel, 0);
-            this.Controls.SetChildIndex(this.titlePanel, 0);
             this.Controls.SetChildIndex(this.simpleButton1, 0);
             this.Controls.SetChildIndex(this.flowLayoutPanel1, 0);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.areaPanel, 0);
-            this.titlePanel.ResumeLayout(false);
-            this.titlePanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bDurComboBoxEdit.Properties)).EndInit();

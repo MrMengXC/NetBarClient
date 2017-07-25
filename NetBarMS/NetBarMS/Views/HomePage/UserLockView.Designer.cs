@@ -51,7 +51,11 @@
             // 
             // closeBtn
             // 
-            this.closeBtn.Location = new System.Drawing.Point(407, 0);
+            this.closeBtn.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.closeBtn.Appearance.Options.UseBackColor = true;
+            this.closeBtn.Location = new System.Drawing.Point(412, 0);
+            this.closeBtn.LookAndFeel.SkinMaskColor = System.Drawing.Color.Transparent;
+            this.closeBtn.LookAndFeel.UseDefaultLookAndFeel = false;
             // 
             // panel1
             // 

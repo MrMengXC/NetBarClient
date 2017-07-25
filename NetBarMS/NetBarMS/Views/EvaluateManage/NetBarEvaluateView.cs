@@ -123,6 +123,8 @@ namespace NetBarMS.Views.EvaluateManage
         {
             lastDate = ToolsManage.GetDateNavigatorRangeTime(this.dateNavigator1, lastDate, out this.startTime, out this.endTime);
         }
+
+    
         #endregion
 
         #region 关闭日期

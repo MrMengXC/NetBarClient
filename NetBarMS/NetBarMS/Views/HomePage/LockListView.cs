@@ -32,7 +32,6 @@ namespace NetBarMS.Views.HomePage
         public LockListView()
         {
             InitializeComponent();
-            this.titleLabel.Text = "锁定用户列表";
             InitUI();
         }
         #region 初始化UI

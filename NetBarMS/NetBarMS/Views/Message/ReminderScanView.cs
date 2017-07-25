@@ -15,7 +15,7 @@ namespace NetBarMS.Views.HomePage
     /// <summary>
     /// 提示扫描身份证
     /// </summary>
-    public partial class ReminderScanView : RootUserControlView
+    public partial class ReminderScanView : RootFormView
     {
         public ReminderScanView()
         {
@@ -30,7 +30,7 @@ namespace NetBarMS.Views.HomePage
             this.FindForm().Close();
 
             //进入开卡界面
-            OpenMemberView open = new OpenMemberView(this.textEdit1.Text);
+            OpenMemberView open = new OpenMemberView(null);
             ToolsManage.ShowForm(open, false);
         }
 

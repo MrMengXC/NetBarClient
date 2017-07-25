@@ -71,18 +71,18 @@ public static partial class Common {
           "aWNhbBgEIAIoBSIdCgtTQ1ByZUNoYXJnZRIOCgZxcmNvZGUYASACKAkigAEK", 
           "ClNDVG9DaGFyZ2USDAoEbmFtZRgBIAIoCRISCgpjYXJkbnVtYmVyGAIgAigJ", 
           "Eg0KBXJpZ2h0GAMgAigJEhAKCHJlY2hhcmdlGAQgAigFEg0KBWJvbnVzGAUg", 
-          "AigFEg8KB2JhbGFuY2UYBiACKAUSDwoHaW50ZWdhbBgHIAIoBSI/CghDU1By", 
-          "ZUJ1eRISCgpjYXJkbnVtYmVyGAEgAigJEh8KBWdvb2RzGAIgAygLMhAuU3Ry", 
-          "dWN0Q2FydEdvb2RzIhoKCFNDUHJlQnV5Eg4KBnFyY29kZRgBIAIoCSKEAQoH", 
-          "U0NUb0J1eRIMCgRuYW1lGAEgAigJEhIKCmNhcmRudW1iZXIYAiACKAkSDQoF", 
-          "cmlnaHQYAyACKAkSEQoJdXNlZG1vbmV5GAQgAigFEhMKC3VzZWRpbnRlZ2Fs", 
-          "GAUgAigFEg8KB2JhbGFuY2UYBiACKAUSDwoHaW50ZWdhbBgHIAIoBSIoCglT", 
-          "Q01lc3NhZ2USCwoDY21kGAEgAigFEg4KBnBhcmFtcxgCIAMoCSIoCglDU0Nv", 
-          "bW1hbmQSCwoDY21kGAEgAigFEg4KBnBhcmFtcxgCIAMoCSJMCgtDU0dvb2Rz", 
-          "RmluZBIZCgRwYWdlGAEgAigLMgsuU3RydWN0UGFnZRIQCghjYXRlZ29yeRgC", 
-          "IAEoBRIQCghrZXl3b3JkcxgEIAEoCSIqCgtTQ0dvb2RzRmluZBIbCgVnb29k", 
-          "cxgBIAMoCzIMLlN0cnVjdEdvb2RzQi8KHWNvbS5za3lzb2Z0LmNvcmUuYXV0", 
-        "by5tZXNzYWdlQg5Db21tb25Qcm90b2NvbA=="));
+          "AigFEg8KB2JhbGFuY2UYBiACKAUSDwoHaW50ZWdhbBgHIAIoBSI9CghDU1By", 
+          "ZUJ1eRISCgpjYXJkbnVtYmVyGAEgAigJEh0KBWdvb2RzGAIgAygLMg4uU3Ry", 
+          "dWN0QnV5SW5mbyIaCghTQ1ByZUJ1eRIOCgZxcmNvZGUYASACKAkihAEKB1ND", 
+          "VG9CdXkSDAoEbmFtZRgBIAIoCRISCgpjYXJkbnVtYmVyGAIgAigJEg0KBXJp", 
+          "Z2h0GAMgAigJEhEKCXVzZWRtb25leRgEIAIoBRITCgt1c2VkaW50ZWdhbBgF", 
+          "IAIoBRIPCgdiYWxhbmNlGAYgAigFEg8KB2ludGVnYWwYByACKAUiKAoJU0NN", 
+          "ZXNzYWdlEgsKA2NtZBgBIAIoBRIOCgZwYXJhbXMYAiADKAkiKAoJQ1NDb21t", 
+          "YW5kEgsKA2NtZBgBIAIoBRIOCgZwYXJhbXMYAiADKAkiTAoLQ1NHb29kc0Zp", 
+          "bmQSGQoEcGFnZRgBIAIoCzILLlN0cnVjdFBhZ2USEAoIY2F0ZWdvcnkYAiAB", 
+          "KAUSEAoIa2V5d29yZHMYBCABKAkiKgoLU0NHb29kc0ZpbmQSGwoFZ29vZHMY", 
+          "ASADKAsyDC5TdHJ1Y3RHb29kc0IvCh1jb20uc2t5c29mdC5jb3JlLmF1dG8u", 
+        "bWVzc2FnZUIOQ29tbW9uUHJvdG9jb2w="));
     pbd::FileDescriptor.InternalDescriptorAssigner assigner = delegate(pbd::FileDescriptor root) {
       descriptor = root;
       internal__static_CSUploadPicture__Descriptor = Descriptor.MessageTypes[0];
@@ -3691,21 +3691,21 @@ public sealed partial class CSPreBuy : pb::GeneratedMessage<CSPreBuy, CSPreBuy.B
   }
   
   public const int GoodsFieldNumber = 2;
-  private pbc::PopsicleList<global::StructCartGoods> goods_ = new pbc::PopsicleList<global::StructCartGoods>();
-  public scg::IList<global::StructCartGoods> GoodsList {
+  private pbc::PopsicleList<global::StructBuyInfo> goods_ = new pbc::PopsicleList<global::StructBuyInfo>();
+  public scg::IList<global::StructBuyInfo> GoodsList {
     get { return goods_; }
   }
   public int GoodsCount {
     get { return goods_.Count; }
   }
-  public global::StructCartGoods GetGoods(int index) {
+  public global::StructBuyInfo GetGoods(int index) {
     return goods_[index];
   }
   
   public override bool IsInitialized {
     get {
       if (!hasCardnumber) return false;
-      foreach (global::StructCartGoods element in GoodsList) {
+      foreach (global::StructBuyInfo element in GoodsList) {
         if (!element.IsInitialized) return false;
       }
       return true;
@@ -3741,7 +3741,7 @@ public sealed partial class CSPreBuy : pb::GeneratedMessage<CSPreBuy, CSPreBuy.B
     if (hasCardnumber) {
       size += pb::CodedOutputStream.ComputeStringSize(1, Cardnumber);
     }
-    foreach (global::StructCartGoods element in GoodsList) {
+    foreach (global::StructBuyInfo element in GoodsList) {
       size += pb::CodedOutputStream.ComputeMessageSize(2, element);
     }
     size += UnknownFields.SerializedSize;
@@ -3921,7 +3921,7 @@ public sealed partial class CSPreBuy : pb::GeneratedMessage<CSPreBuy, CSPreBuy.B
             break;
           }
           case 18: {
-            input.ReadMessageArray(tag, field_name, result.goods_, global::StructCartGoods.DefaultInstance, extensionRegistry);
+            input.ReadMessageArray(tag, field_name, result.goods_, global::StructBuyInfo.DefaultInstance, extensionRegistry);
             break;
           }
         }
@@ -3955,40 +3955,40 @@ public sealed partial class CSPreBuy : pb::GeneratedMessage<CSPreBuy, CSPreBuy.B
       return this;
     }
     
-    public pbc::IPopsicleList<global::StructCartGoods> GoodsList {
+    public pbc::IPopsicleList<global::StructBuyInfo> GoodsList {
       get { return PrepareBuilder().goods_; }
     }
     public int GoodsCount {
       get { return result.GoodsCount; }
     }
-    public global::StructCartGoods GetGoods(int index) {
+    public global::StructBuyInfo GetGoods(int index) {
       return result.GetGoods(index);
     }
-    public Builder SetGoods(int index, global::StructCartGoods value) {
+    public Builder SetGoods(int index, global::StructBuyInfo value) {
       pb::ThrowHelper.ThrowIfNull(value, "value");
       PrepareBuilder();
       result.goods_[index] = value;
       return this;
     }
-    public Builder SetGoods(int index, global::StructCartGoods.Builder builderForValue) {
+    public Builder SetGoods(int index, global::StructBuyInfo.Builder builderForValue) {
       pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
       PrepareBuilder();
       result.goods_[index] = builderForValue.Build();
       return this;
     }
-    public Builder AddGoods(global::StructCartGoods value) {
+    public Builder AddGoods(global::StructBuyInfo value) {
       pb::ThrowHelper.ThrowIfNull(value, "value");
       PrepareBuilder();
       result.goods_.Add(value);
       return this;
     }
-    public Builder AddGoods(global::StructCartGoods.Builder builderForValue) {
+    public Builder AddGoods(global::StructBuyInfo.Builder builderForValue) {
       pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
       PrepareBuilder();
       result.goods_.Add(builderForValue.Build());
       return this;
     }
-    public Builder AddRangeGoods(scg::IEnumerable<global::StructCartGoods> values) {
+    public Builder AddRangeGoods(scg::IEnumerable<global::StructBuyInfo> values) {
       PrepareBuilder();
       result.goods_.Add(values);
       return this;

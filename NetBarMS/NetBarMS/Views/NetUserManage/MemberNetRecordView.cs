@@ -36,7 +36,7 @@ namespace NetBarMS.Views.NetUserManage
         private Int32 mid;
         private DateTime lastDate = DateTime.MinValue;
         private string startTime = "", endTime = "";
-        IList<StructEmbarkation> records;
+        private IList<StructEmbarkation> records;
 
         public MemberNetRecordView(Int32 tem)
         {
@@ -129,7 +129,6 @@ namespace NetBarMS.Views.NetUserManage
             row[TitleList.Ip.ToString()] = emb.Ip;
         }
         #endregion
-
 
         #region 过滤条件搜索/日期/关键字
         //关闭日期选择菜单

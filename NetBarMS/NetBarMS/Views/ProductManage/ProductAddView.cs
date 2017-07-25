@@ -17,7 +17,7 @@ using DevExpress.XtraEditors;
 
 namespace NetBarMS.Views.ProductManage
 {
-    public partial class ProductAddView : RootUserControlView
+    public partial class ProductAddView : RootFormView
     {
 
         private StructGoods product;

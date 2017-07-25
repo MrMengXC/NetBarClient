@@ -43,7 +43,6 @@ namespace NetBarMS.Views.SystemManage
         public AreaManageView()
         {
             InitializeComponent();
-            this.titleLabel.Text = "区域设置";
             InitUI();
         }
         #endregion

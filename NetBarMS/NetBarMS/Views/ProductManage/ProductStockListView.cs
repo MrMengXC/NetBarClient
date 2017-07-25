@@ -35,7 +35,6 @@ namespace NetBarMS.Views.ProductManage
         public ProductStockListView()
         {
             InitializeComponent();
-            titleLabel.Text = "库存清单";
             InitUI();
         }
 

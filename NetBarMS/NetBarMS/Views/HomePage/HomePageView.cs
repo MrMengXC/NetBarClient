@@ -41,11 +41,35 @@ namespace NetBarMS.Views.HomePage
             RefreshAreaCombox();
             //添加视图UI
             AddHomePageListView();
+            //添加刷新区域下拉
             HomePageMessageManage.AddRefreshAreaComBox(RefreshAreaCombox);
+            //添加消息回调
+            HomePageMessageManage.Manage().AddMsgNumDelegate(null, null, UpdateStatusNum);
             //获取账户信息
             ManagerManage.Manage().GetAccountInfo(GetAccountInfoResult);
-        }   
-      
+        }
+        //刷新状态数量显示
+        private void UpdateStatusNum()
+        {
+
+            this.Invoke(new RefreshUIHandle(delegate {
+                char[] sp = { '\n', ':', '：' };
+
+                Dictionary<string, int> dict = HomePageMessageManage.StatusNum;
+                int idle = 0, online = 0, hangup = 0, exception = 0;
+                dict.TryGetValue(((int)COMPUTERSTATUS.空闲).ToString(), out idle);
+                dict.TryGetValue(((int)COMPUTERSTATUS.在线).ToString(), out online);
+                dict.TryGetValue(((int)COMPUTERSTATUS.挂机).ToString(), out hangup);
+                dict.TryGetValue(((int)COMPUTERSTATUS.异常).ToString(), out exception);
+                //各状态数量
+                this.idleLabel.Text = string.Format("{0}：{1}", this.idleLabel.Text.Split(sp)[0], idle);
+                this.onlineLabel.Text = string.Format("{0}：{1}", this.onlineLabel.Text.Split(sp)[0], online);
+                
+
+
+            }));
+
+        }
         // 获取账户信息的回调
         public void GetAccountInfoResult(ResultModel result)
         {

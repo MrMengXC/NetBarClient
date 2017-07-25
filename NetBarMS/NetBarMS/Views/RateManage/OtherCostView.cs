@@ -19,7 +19,6 @@ namespace NetBarMS.Views.RateManage
         public OtherCostView()
         {
             InitializeComponent();
-            this.titleLabel.Text = "其他费用管理";
             InitUI();
         }
          
