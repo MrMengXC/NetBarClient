@@ -503,6 +503,26 @@ namespace NetBarMS {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        public static System.Drawing.Bitmap icon_zuida {
+            get {
+                object obj = ResourceManager.GetObject("icon_zuida", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        public static System.Drawing.Bitmap icon_zuixiao {
+            get {
+                object obj = ResourceManager.GetObject("icon_zuixiao", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         public static System.Drawing.Bitmap icon_zuo {
             get {
                 object obj = ResourceManager.GetObject("icon_zuo", resourceCulture);
@@ -516,6 +536,26 @@ namespace NetBarMS {
         public static System.Drawing.Bitmap img_beijing {
             get {
                 object obj = ResourceManager.GetObject("img_beijing", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        public static System.Drawing.Bitmap img_chenggong {
+            get {
+                object obj = ResourceManager.GetObject("img_chenggong", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        public static System.Drawing.Bitmap img_close {
+            get {
+                object obj = ResourceManager.GetObject("img_close", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -543,9 +583,59 @@ namespace NetBarMS {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        public static System.Drawing.Bitmap img_mima {
+            get {
+                object obj = ResourceManager.GetObject("img_mima", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        public static System.Drawing.Bitmap img_suoding {
+            get {
+                object obj = ResourceManager.GetObject("img_suoding", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         public static System.Drawing.Bitmap img_tishi {
             get {
                 object obj = ResourceManager.GetObject("img_tishi", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        public static System.Drawing.Bitmap img_weixin {
+            get {
+                object obj = ResourceManager.GetObject("img_weixin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        public static System.Drawing.Bitmap img_xiaolian {
+            get {
+                object obj = ResourceManager.GetObject("img_xiaolian", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        public static System.Drawing.Bitmap img_xiugai {
+            get {
+                object obj = ResourceManager.GetObject("img_xiugai", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -563,6 +653,26 @@ namespace NetBarMS {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        public static System.Drawing.Bitmap img_yonghu {
+            get {
+                object obj = ResourceManager.GetObject("img_yonghu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        public static System.Drawing.Bitmap img_yuanbg {
+            get {
+                object obj = ResourceManager.GetObject("img_yuanbg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         public static System.Drawing.Bitmap img_zaixian {
             get {
                 object obj = ResourceManager.GetObject("img_zaixian", resourceCulture);
@@ -573,29 +683,19 @@ namespace NetBarMS {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        public static System.Drawing.Bitmap img_zhifubao {
+            get {
+                object obj = ResourceManager.GetObject("img_zhifubao", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         public static System.Drawing.Bitmap test {
             get {
                 object obj = ResourceManager.GetObject("test", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        public static System.Drawing.Bitmap 日历 {
-            get {
-                object obj = ResourceManager.GetObject("日历", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        public static System.Drawing.Bitmap 电脑选中状态 {
-            get {
-                object obj = ResourceManager.GetObject("电脑选中状态", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

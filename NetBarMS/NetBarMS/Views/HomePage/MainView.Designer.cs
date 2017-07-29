@@ -31,11 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.functionPanel = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.amountLabel = new System.Windows.Forms.Label();
-            this.netUserLabel = new System.Windows.Forms.Label();
-            this.dailyOnlineCountLabel = new System.Windows.Forms.Label();
-            this.attenDanceLabel = new System.Windows.Forms.Label();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.homePageButton1 = new NetBarMS.Views.CustomView.HomePageButton();
@@ -49,6 +44,10 @@
             this.homePageButton9 = new NetBarMS.Views.CustomView.HomePageButton();
             this.homePageButton10 = new NetBarMS.Views.CustomView.HomePageButton();
             this.homePageButton11 = new NetBarMS.Views.CustomView.HomePageButton();
+            this.amountLabel = new System.Windows.Forms.Label();
+            this.netUserLabel = new System.Windows.Forms.Label();
+            this.dailyOnlineCountLabel = new System.Windows.Forms.Label();
+            this.attenDanceLabel = new System.Windows.Forms.Label();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
@@ -64,7 +63,6 @@
             this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel3.SuspendLayout();
-            this.flowLayoutPanel3.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
@@ -76,78 +74,19 @@
             this.functionPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.functionPanel.Location = new System.Drawing.Point(3, 3);
             this.functionPanel.Name = "functionPanel";
-            this.functionPanel.Size = new System.Drawing.Size(146, 864);
+            this.functionPanel.Size = new System.Drawing.Size(147, 790);
             this.functionPanel.TabIndex = 0;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Transparent;
-            this.panel3.Controls.Add(this.flowLayoutPanel3);
             this.panel3.Controls.Add(this.labelControl5);
             this.panel3.Controls.Add(this.flowLayoutPanel2);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1740, 70);
+            this.panel3.Size = new System.Drawing.Size(1740, 138);
             this.panel3.TabIndex = 42;
-            // 
-            // flowLayoutPanel3
-            // 
-            this.flowLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanel3.BackColor = System.Drawing.Color.Gray;
-            this.flowLayoutPanel3.Controls.Add(this.amountLabel);
-            this.flowLayoutPanel3.Controls.Add(this.netUserLabel);
-            this.flowLayoutPanel3.Controls.Add(this.dailyOnlineCountLabel);
-            this.flowLayoutPanel3.Controls.Add(this.attenDanceLabel);
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(471, 3);
-            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(542, 69);
-            this.flowLayoutPanel3.TabIndex = 58;
-            // 
-            // amountLabel
-            // 
-            this.amountLabel.BackColor = System.Drawing.Color.Red;
-            this.amountLabel.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.amountLabel.Location = new System.Drawing.Point(443, 0);
-            this.amountLabel.Name = "amountLabel";
-            this.amountLabel.Size = new System.Drawing.Size(96, 67);
-            this.amountLabel.TabIndex = 56;
-            this.amountLabel.Text = "0\r\n今日营收";
-            this.amountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // netUserLabel
-            // 
-            this.netUserLabel.BackColor = System.Drawing.Color.Red;
-            this.netUserLabel.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.netUserLabel.Location = new System.Drawing.Point(313, 0);
-            this.netUserLabel.Name = "netUserLabel";
-            this.netUserLabel.Size = new System.Drawing.Size(124, 67);
-            this.netUserLabel.TabIndex = 57;
-            this.netUserLabel.Text = "0\r\n当前上网用户";
-            this.netUserLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // dailyOnlineCountLabel
-            // 
-            this.dailyOnlineCountLabel.BackColor = System.Drawing.Color.Red;
-            this.dailyOnlineCountLabel.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dailyOnlineCountLabel.Location = new System.Drawing.Point(192, 0);
-            this.dailyOnlineCountLabel.Name = "dailyOnlineCountLabel";
-            this.dailyOnlineCountLabel.Size = new System.Drawing.Size(115, 67);
-            this.dailyOnlineCountLabel.TabIndex = 55;
-            this.dailyOnlineCountLabel.Text = "0\r\n当日上机人次";
-            this.dailyOnlineCountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // attenDanceLabel
-            // 
-            this.attenDanceLabel.BackColor = System.Drawing.Color.Red;
-            this.attenDanceLabel.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.attenDanceLabel.Location = new System.Drawing.Point(62, 0);
-            this.attenDanceLabel.Name = "attenDanceLabel";
-            this.attenDanceLabel.Size = new System.Drawing.Size(124, 67);
-            this.attenDanceLabel.TabIndex = 57;
-            this.attenDanceLabel.Text = "0\r\n当前上座率";
-            this.attenDanceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelControl5
             // 
@@ -162,7 +101,9 @@
             // flowLayoutPanel2
             // 
             this.flowLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanel2.BackColor = System.Drawing.Color.DarkGray;
+            this.flowLayoutPanel2.BackColor = System.Drawing.Color.Transparent;
+            this.flowLayoutPanel2.BackgroundImage = global::NetBarMS.Imgs.img_yuanbg;
+            this.flowLayoutPanel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.flowLayoutPanel2.Controls.Add(this.homePageButton1);
             this.flowLayoutPanel2.Controls.Add(this.homePageButton2);
             this.flowLayoutPanel2.Controls.Add(this.homePageButton3);
@@ -174,16 +115,20 @@
             this.flowLayoutPanel2.Controls.Add(this.homePageButton9);
             this.flowLayoutPanel2.Controls.Add(this.homePageButton10);
             this.flowLayoutPanel2.Controls.Add(this.homePageButton11);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(1019, 0);
+            this.flowLayoutPanel2.Controls.Add(this.amountLabel);
+            this.flowLayoutPanel2.Controls.Add(this.netUserLabel);
+            this.flowLayoutPanel2.Controls.Add(this.dailyOnlineCountLabel);
+            this.flowLayoutPanel2.Controls.Add(this.attenDanceLabel);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(350, 32);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(718, 69);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(1390, 70);
             this.flowLayoutPanel2.TabIndex = 127;
             // 
             // homePageButton1
             // 
             this.homePageButton1.ButtonImage = global::NetBarMS.Imgs.icon_yonghu;
-            this.homePageButton1.Location = new System.Drawing.Point(664, 3);
+            this.homePageButton1.Location = new System.Drawing.Point(1336, 3);
             this.homePageButton1.Name = "homePageButton1";
             this.homePageButton1.Num = 0;
             this.homePageButton1.NumLabelLocation = new System.Drawing.Point(0, 0);
@@ -196,7 +141,7 @@
             // homePageButton2
             // 
             this.homePageButton2.ButtonImage = global::NetBarMS.Imgs.icon_guanbi;
-            this.homePageButton2.Location = new System.Drawing.Point(607, 3);
+            this.homePageButton2.Location = new System.Drawing.Point(1279, 3);
             this.homePageButton2.Name = "homePageButton2";
             this.homePageButton2.Num = 0;
             this.homePageButton2.NumLabelLocation = new System.Drawing.Point(116, 0);
@@ -210,7 +155,7 @@
             // homePageButton3
             // 
             this.homePageButton3.ButtonImage = global::NetBarMS.Imgs.icon_jiezhang;
-            this.homePageButton3.Location = new System.Drawing.Point(550, 3);
+            this.homePageButton3.Location = new System.Drawing.Point(1222, 3);
             this.homePageButton3.Name = "homePageButton3";
             this.homePageButton3.Num = 0;
             this.homePageButton3.NumLabelLocation = new System.Drawing.Point(116, 0);
@@ -224,7 +169,7 @@
             // homePageButton4
             // 
             this.homePageButton4.ButtonImage = global::NetBarMS.Imgs.icon_shangpin副本;
-            this.homePageButton4.Location = new System.Drawing.Point(493, 3);
+            this.homePageButton4.Location = new System.Drawing.Point(1165, 3);
             this.homePageButton4.Name = "homePageButton4";
             this.homePageButton4.Num = 0;
             this.homePageButton4.NumLabelLocation = new System.Drawing.Point(0, 0);
@@ -237,7 +182,7 @@
             // homePageButton5
             // 
             this.homePageButton5.ButtonImage = global::NetBarMS.Imgs.icon_hujiao;
-            this.homePageButton5.Location = new System.Drawing.Point(436, 3);
+            this.homePageButton5.Location = new System.Drawing.Point(1108, 3);
             this.homePageButton5.Name = "homePageButton5";
             this.homePageButton5.Num = 0;
             this.homePageButton5.NumLabelLocation = new System.Drawing.Point(0, 0);
@@ -250,7 +195,7 @@
             // homePageButton6
             // 
             this.homePageButton6.ButtonImage = global::NetBarMS.Imgs.icon_yichang;
-            this.homePageButton6.Location = new System.Drawing.Point(361, 3);
+            this.homePageButton6.Location = new System.Drawing.Point(1033, 3);
             this.homePageButton6.Name = "homePageButton6";
             this.homePageButton6.Num = 0;
             this.homePageButton6.NumLabelLocation = new System.Drawing.Point(0, 0);
@@ -263,7 +208,7 @@
             // homePageButton7
             // 
             this.homePageButton7.ButtonImage = global::NetBarMS.Imgs.icon_xiaoxi;
-            this.homePageButton7.Location = new System.Drawing.Point(298, 3);
+            this.homePageButton7.Location = new System.Drawing.Point(970, 3);
             this.homePageButton7.Name = "homePageButton7";
             this.homePageButton7.Num = 0;
             this.homePageButton7.NumLabelLocation = new System.Drawing.Point(116, 0);
@@ -277,7 +222,7 @@
             // homePageButton8
             // 
             this.homePageButton8.ButtonImage = global::NetBarMS.Imgs.icon_jiesuo;
-            this.homePageButton8.Location = new System.Drawing.Point(248, 3);
+            this.homePageButton8.Location = new System.Drawing.Point(920, 3);
             this.homePageButton8.Name = "homePageButton8";
             this.homePageButton8.Num = 0;
             this.homePageButton8.NumLabelLocation = new System.Drawing.Point(116, 0);
@@ -291,7 +236,7 @@
             // homePageButton9
             // 
             this.homePageButton9.ButtonImage = global::NetBarMS.Imgs.icon_jiaoban;
-            this.homePageButton9.Location = new System.Drawing.Point(198, 3);
+            this.homePageButton9.Location = new System.Drawing.Point(870, 3);
             this.homePageButton9.Name = "homePageButton9";
             this.homePageButton9.Num = 0;
             this.homePageButton9.NumLabelLocation = new System.Drawing.Point(116, 0);
@@ -305,7 +250,7 @@
             // homePageButton10
             // 
             this.homePageButton10.ButtonImage = global::NetBarMS.Imgs.icon_kaika;
-            this.homePageButton10.Location = new System.Drawing.Point(148, 3);
+            this.homePageButton10.Location = new System.Drawing.Point(820, 3);
             this.homePageButton10.Name = "homePageButton10";
             this.homePageButton10.Num = 0;
             this.homePageButton10.NumLabelLocation = new System.Drawing.Point(116, 0);
@@ -319,7 +264,7 @@
             // homePageButton11
             // 
             this.homePageButton11.ButtonImage = global::NetBarMS.Imgs.icon_jiaoban;
-            this.homePageButton11.Location = new System.Drawing.Point(98, 3);
+            this.homePageButton11.Location = new System.Drawing.Point(770, 3);
             this.homePageButton11.Name = "homePageButton11";
             this.homePageButton11.Num = 0;
             this.homePageButton11.NumLabelLocation = new System.Drawing.Point(116, 0);
@@ -330,13 +275,61 @@
             this.homePageButton11.TitleText = "激活";
             this.homePageButton11.TitleButtonClick += new System.EventHandler(this.UserActive_ButtonClick);
             // 
+            // amountLabel
+            // 
+            this.amountLabel.BackColor = System.Drawing.Color.Transparent;
+            this.amountLabel.Font = new System.Drawing.Font("宋体", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.amountLabel.ForeColor = System.Drawing.Color.White;
+            this.amountLabel.Location = new System.Drawing.Point(668, 0);
+            this.amountLabel.Name = "amountLabel";
+            this.amountLabel.Size = new System.Drawing.Size(96, 67);
+            this.amountLabel.TabIndex = 56;
+            this.amountLabel.Text = "0\r\n今日营收";
+            this.amountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // netUserLabel
+            // 
+            this.netUserLabel.BackColor = System.Drawing.Color.Transparent;
+            this.netUserLabel.Font = new System.Drawing.Font("宋体", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.netUserLabel.ForeColor = System.Drawing.Color.White;
+            this.netUserLabel.Location = new System.Drawing.Point(538, 0);
+            this.netUserLabel.Name = "netUserLabel";
+            this.netUserLabel.Size = new System.Drawing.Size(124, 67);
+            this.netUserLabel.TabIndex = 57;
+            this.netUserLabel.Text = "0\r\n当前上网用户";
+            this.netUserLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // dailyOnlineCountLabel
+            // 
+            this.dailyOnlineCountLabel.BackColor = System.Drawing.Color.Transparent;
+            this.dailyOnlineCountLabel.Font = new System.Drawing.Font("宋体", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.dailyOnlineCountLabel.ForeColor = System.Drawing.Color.White;
+            this.dailyOnlineCountLabel.Location = new System.Drawing.Point(417, 0);
+            this.dailyOnlineCountLabel.Name = "dailyOnlineCountLabel";
+            this.dailyOnlineCountLabel.Size = new System.Drawing.Size(115, 67);
+            this.dailyOnlineCountLabel.TabIndex = 55;
+            this.dailyOnlineCountLabel.Text = "0\r\n当日上机人次";
+            this.dailyOnlineCountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // attenDanceLabel
+            // 
+            this.attenDanceLabel.BackColor = System.Drawing.Color.Transparent;
+            this.attenDanceLabel.Font = new System.Drawing.Font("宋体", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.attenDanceLabel.ForeColor = System.Drawing.Color.White;
+            this.attenDanceLabel.Location = new System.Drawing.Point(287, 0);
+            this.attenDanceLabel.Name = "attenDanceLabel";
+            this.attenDanceLabel.Size = new System.Drawing.Size(124, 67);
+            this.attenDanceLabel.TabIndex = 57;
+            this.attenDanceLabel.Text = "0\r\n当前上座率";
+            this.attenDanceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // mainPanel
             // 
             this.mainPanel.BackColor = System.Drawing.Color.White;
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainPanel.Location = new System.Drawing.Point(155, 3);
+            this.mainPanel.Location = new System.Drawing.Point(156, 3);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(1533, 864);
+            this.mainPanel.Size = new System.Drawing.Size(1538, 790);
             this.mainPanel.TabIndex = 44;
             // 
             // barManager1
@@ -432,24 +425,27 @@
             // 
             // tableLayoutPanel2
             // 
+            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel2.BackColor = System.Drawing.Color.Transparent;
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.0479F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 90.9521F));
             this.tableLayoutPanel2.Controls.Add(this.mainPanel, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.functionPanel, 0, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(33, 70);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(27, 144);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1691, 870);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1697, 796);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.barDockControlLeft);
@@ -460,7 +456,6 @@
             this.Size = new System.Drawing.Size(1740, 943);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.flowLayoutPanel3.ResumeLayout(false);
             this.flowLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
@@ -488,7 +483,6 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
         private System.Windows.Forms.Label amountLabel;
         private System.Windows.Forms.Label netUserLabel;
         private System.Windows.Forms.Label dailyOnlineCountLabel;

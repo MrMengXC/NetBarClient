@@ -29,173 +29,157 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.loginButton = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
-            this.titlePanel.SuspendLayout();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.loginButton = new DevExpress.XtraEditors.SimpleButton();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            this.flowLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
-            this.flowLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
             this.SuspendLayout();
-            // 
-            // titlePanel
-            // 
-            this.titlePanel.Size = new System.Drawing.Size(1000, 54);
-            // 
-            // titleLabel
-            // 
-            this.titleLabel.AutoSize = false;
-            this.titleLabel.Dock = System.Windows.Forms.DockStyle.None;
-            this.titleLabel.Location = new System.Drawing.Point(3, 16);
-            this.titleLabel.Size = new System.Drawing.Size(93, 17);
-            // 
-            // closeBtn
-            // 
-            this.closeBtn.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.closeBtn.Appearance.Options.UseBackColor = true;
-            this.closeBtn.Location = new System.Drawing.Point(953, 0);
-            this.closeBtn.LookAndFeel.SkinMaskColor = System.Drawing.Color.Transparent;
-            this.closeBtn.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.closeBtn.Size = new System.Drawing.Size(47, 54);
             // 
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel1.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.panel1.Controls.Add(this.flowLayoutPanel2);
-            this.panel1.Controls.Add(this.flowLayoutPanel1);
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.tableLayoutPanel2);
+            this.panel1.Controls.Add(this.tableLayoutPanel1);
             this.panel1.Controls.Add(this.loginButton);
-            this.panel1.Controls.Add(this.checkBox1);
             this.panel1.Location = new System.Drawing.Point(335, 195);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(331, 211);
             this.panel1.TabIndex = 1;
             // 
-            // flowLayoutPanel2
+            // tableLayoutPanel2
             // 
-            this.flowLayoutPanel2.Controls.Add(this.label2);
-            this.flowLayoutPanel2.Controls.Add(this.textEdit2);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(15, 86);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(300, 39);
-            this.flowLayoutPanel2.TabIndex = 13;
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.Controls.Add(this.simpleButton3, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.comboBoxEdit1, 1, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(25, 50);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(263, 42);
+            this.tableLayoutPanel2.TabIndex = 4;
             // 
-            // label2
+            // simpleButton3
             // 
-            this.label2.Location = new System.Drawing.Point(3, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 23);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "密码";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // textEdit2
-            // 
-            this.textEdit2.Location = new System.Drawing.Point(69, 3);
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Size = new System.Drawing.Size(186, 20);
-            this.textEdit2.TabIndex = 1;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.label1);
-            this.flowLayoutPanel1.Controls.Add(this.comboBoxEdit1);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(17, 23);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(300, 39);
-            this.flowLayoutPanel1.TabIndex = 12;
-            // 
-            // label1
-            // 
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 23);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "用户名";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.simpleButton3.AutoSize = true;
+            this.simpleButton3.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.simpleButton3.Image = global::NetBarMS.Imgs.img_yonghu;
+            this.simpleButton3.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.simpleButton3.Location = new System.Drawing.Point(0, 0);
+            this.simpleButton3.Margin = new System.Windows.Forms.Padding(0);
+            this.simpleButton3.Name = "simpleButton3";
+            this.simpleButton3.Size = new System.Drawing.Size(44, 40);
+            this.simpleButton3.TabIndex = 15;
             // 
             // comboBoxEdit1
             // 
-            this.comboBoxEdit1.Location = new System.Drawing.Point(69, 3);
+            this.comboBoxEdit1.Location = new System.Drawing.Point(47, 3);
             this.comboBoxEdit1.Name = "comboBoxEdit1";
             this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.comboBoxEdit1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit1.Size = new System.Drawing.Size(184, 20);
+            this.comboBoxEdit1.Size = new System.Drawing.Size(216, 20);
             this.comboBoxEdit1.TabIndex = 1;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.Controls.Add(this.textEdit2, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.simpleButton2, 0, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(25, 110);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(263, 42);
+            this.tableLayoutPanel1.TabIndex = 3;
+            // 
+            // textEdit2
+            // 
+            this.textEdit2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textEdit2.Location = new System.Drawing.Point(44, 0);
+            this.textEdit2.Margin = new System.Windows.Forms.Padding(0);
+            this.textEdit2.Name = "textEdit2";
+            this.textEdit2.Properties.AutoHeight = false;
+            this.textEdit2.Size = new System.Drawing.Size(219, 42);
+            this.textEdit2.TabIndex = 16;
+            // 
+            // simpleButton2
+            // 
+            this.simpleButton2.AutoSize = true;
+            this.simpleButton2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.simpleButton2.Image = global::NetBarMS.Imgs.img_mima;
+            this.simpleButton2.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.simpleButton2.Location = new System.Drawing.Point(0, 0);
+            this.simpleButton2.Margin = new System.Windows.Forms.Padding(0);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(44, 40);
+            this.simpleButton2.TabIndex = 15;
             // 
             // loginButton
             // 
-            this.loginButton.Font = new System.Drawing.Font("宋体", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.loginButton.Location = new System.Drawing.Point(93, 171);
+            this.loginButton.Location = new System.Drawing.Point(86, 155);
             this.loginButton.Name = "loginButton";
-            this.loginButton.Size = new System.Drawing.Size(140, 31);
-            this.loginButton.TabIndex = 11;
-            this.loginButton.Text = "登录";
-            this.loginButton.UseVisualStyleBackColor = true;
+            this.loginButton.Size = new System.Drawing.Size(146, 44);
+            this.loginButton.TabIndex = 14;
+            this.loginButton.Text = "立即登录";
             // 
-            // checkBox1
+            // label3
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("宋体", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.checkBox1.Location = new System.Drawing.Point(104, 147);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(146, 21);
-            this.checkBox1.TabIndex = 10;
-            this.checkBox1.Text = "记住用户名密码";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // pictureEdit1
-            // 
-            this.pictureEdit1.Location = new System.Drawing.Point(335, 93);
-            this.pictureEdit1.Name = "pictureEdit1";
-            this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit1.Size = new System.Drawing.Size(331, 96);
-            this.pictureEdit1.TabIndex = 62;
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("宋体", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label3.Location = new System.Drawing.Point(355, 153);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(292, 27);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "网吧后台智能管理系统";
             // 
             // ManagerLoginView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.pictureEdit1);
+            this.BackColor = System.Drawing.Color.Transparent;
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.panel1);
             this.Name = "ManagerLoginView";
             this.Size = new System.Drawing.Size(1000, 600);
-            this.Controls.SetChildIndex(this.panel1, 0);
-            this.Controls.SetChildIndex(this.titlePanel, 0);
-            this.Controls.SetChildIndex(this.pictureEdit1, 0);
-            this.titlePanel.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.flowLayoutPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
-            this.flowLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button loginButton;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private System.Windows.Forms.Label label2;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
-        private DevExpress.XtraEditors.PictureEdit pictureEdit1;
         private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
+        private DevExpress.XtraEditors.SimpleButton loginButton;
+        private System.Windows.Forms.Label label3;
+        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.TextEdit textEdit2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private DevExpress.XtraEditors.SimpleButton simpleButton3;
     }
 }

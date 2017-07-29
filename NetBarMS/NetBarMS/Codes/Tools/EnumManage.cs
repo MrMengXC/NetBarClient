@@ -59,6 +59,11 @@ namespace NetBarMS.Codes.Tools
 
         LogManage,          //日志管理
 
+        /// <summary>
+        /// 设备信息管理
+        /// </summary>
+        EquipmentInfo,      
+
 
     }
     #endregion

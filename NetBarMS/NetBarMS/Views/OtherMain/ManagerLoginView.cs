@@ -11,10 +11,11 @@ using NetBarMS.Codes.Tools;
 using NetBarMS.Codes.Tools.NetOperation;
 using NetBarMS.Codes;
 using NetBarMS.Codes.Tools.Manage;
+using NetBarMS.Views.HomePage;
 
 namespace NetBarMS.Views.OtherMain
 {
-    public partial class ManagerLoginView : RootFormView
+    public partial class ManagerLoginView : UserControl
     {
 
         private int num = 5;
@@ -25,19 +26,17 @@ namespace NetBarMS.Views.OtherMain
             //连接服务器
             NetMessageManage.ConnectServer(ConnectServerResult);
             this.loginButton.Click += LoginButtonClick;
-            this.loginButton.Enabled = false;
+            //this.loginButton.Enabled = false;
 
         }
 
-
         #region 进行准备工作连接服务器进行服务器认证
-
         // 连接服务器的回调
         public void ConnectServerResult()
         {
             NetMessageManage.RemoveConnetServer(ConnectServerResult);
             //进行客户端认证
-            ManagerNetOperation.ClientAuthen(ClientAuthenBlock);
+          //  ManagerNetOperation.ClientAuthen(ClientAuthenBlock);
         }
 
        
@@ -88,9 +87,11 @@ namespace NetBarMS.Views.OtherMain
         //进行登录
         private void LoginButtonClick(object sender, EventArgs e)
         {
+            LoginMainView();
+            return;
+
             string userName = this.comboBoxEdit1.Text;
             string ps = this.textEdit2.Text;
-
             if(userName.Equals("") || ps.Equals(""))
             {
                 MessageBox.Show("请输入用户名或密码");
@@ -109,18 +110,35 @@ namespace NetBarMS.Views.OtherMain
         {
             if (result.pack.Cmd != Cmd.CMD_LOGIN)
             {
-
+                return;
             }
             NetMessageManage.RemoveResultBlock(ManagerLoginBlock);
             System.Console.WriteLine("ManagerLoginBlock:" + result.pack);
             if (result.pack.Content.MessageType == 1)
             {               
                 this.Invoke(new RefreshUIHandle(delegate () {
-                    this.FindForm().DialogResult = DialogResult.OK;
-                    this.FindForm().Close();
+                    LoginMainView();
                 }));
 
             }
+        }
+        #endregion
+
+        #region 进行登录
+        private void LoginMainView()
+        {
+
+            //在父视图添加mainview
+            MainView mainView = new MainView();
+            this.Parent.Controls.Add(mainView);
+            mainView.Dock = DockStyle.Fill;
+
+            //移除登录页面
+            this.Parent.Controls.Remove(this);
+            this.Dispose();
+
+
+
         }
         #endregion
     }

@@ -250,11 +250,23 @@
   <data name="icon_zengjia" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\icon_zengjia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icon_zuida" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\icon_zuida.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_zuixiao" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\icon_zuixiao.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icon_zuo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\icon_zuo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="img_beijing" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\img_beijing.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="img_chenggong" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\img_chenggong.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="img_close" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\img_close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="img_guaji" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\img_guaji.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -262,22 +274,40 @@
   <data name="img_kongxian" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\img_kongxian.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="img_mima" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\img_mima.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="img_suoding" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\img_suoding.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="img_tishi" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\img_tishi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="img_weixin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\img_weixin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="img_xiaolian" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\img_xiaolian.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="img_xiugai" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\img_xiugai.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="img_yichang" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\img_yichang.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="img_yonghu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\img_yonghu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="img_yuanbg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\img_yuanbg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="img_zaixian" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\img_zaixian.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="img_zhifubao" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\img_zhifubao.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="test" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\test.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="日历" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\日历.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="电脑选中状态" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\电脑选中状态.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

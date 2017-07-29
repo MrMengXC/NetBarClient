@@ -222,6 +222,12 @@
     <Compile Include="Views\HomePage\MainView.Designer.cs">
       <DependentUpon>MainView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\HomePage\RootBgView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\HomePage\RootBgView.Designer.cs">
+      <DependentUpon>RootBgView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\InCome\IncomeDetailView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -660,6 +666,9 @@
     <EmbeddedResource Include="Views\HomePage\MainView.resx">
       <DependentUpon>MainView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\HomePage\RootBgView.resx">
+      <DependentUpon>RootBgView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\InCome\IncomeDetailView.resx">
       <DependentUpon>IncomeDetailView.cs</DependentUpon>
     </EmbeddedResource>
@@ -895,6 +904,19 @@
     </Content>
     <Content Include="Plugins\BigInteger.dll" />
     <Content Include="Plugins\Google.ProtocolBuffers.dll" />
+    <None Include="Resources\icon_guanbi.png" />
+    <None Include="Resources\icon_zuixiao.png" />
+    <None Include="Resources\img_yuanbg.png" />
+    <None Include="Resources\img_yonghu.png" />
+    <None Include="Resources\img_xiaolian.png" />
+    <None Include="Resources\img_mima.png" />
+    <None Include="Resources\icon_zuida.png" />
+    <None Include="Resources\img_suoding.png" />
+    <None Include="Resources\img_close.png" />
+    <None Include="Resources\img_chenggong.png" />
+    <None Include="Resources\img_xiugai.png" />
+    <None Include="Resources\img_weixin.png" />
+    <None Include="Resources\img_zhifubao.png" />
     <None Include="Resources\img_beijing.jpg" />
     <None Include="Resources\icon_yingshou2.png" />
     <None Include="Resources\icon_yingshou.png" />
@@ -929,7 +951,6 @@
     <None Include="Resources\icon_huiyuan.png" />
     <None Include="Resources\icon_guanli2.png" />
     <None Include="Resources\icon_guanli.png" />
-    <None Include="Resources\icon_guanbi.png" />
     <None Include="Resources\icon_gou.png" />
     <None Include="Resources\icon_feilv2.png" />
     <None Include="Resources\icon_feilv.png" />

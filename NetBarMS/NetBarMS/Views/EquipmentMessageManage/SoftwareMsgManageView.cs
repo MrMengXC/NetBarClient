@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace NetBarMS.Views
 {
-    public partial class SoftwareMsgManageView : UserControl
+    public partial class SoftwareMsgManageView : RootUserControlView
     {
         public SoftwareMsgManageView()
         {

@@ -8,20 +8,14 @@ using System.Xml;
 using NetBarMS.Codes.Model;
 
 namespace NetBarMS.Codes.Tools
-{
-
-   
-
+{ 
     class XMLDataManage
     {
         
         private static XMLDataManage manage = null;
         private Dictionary<string,GridControlModel> gridControlDict = new Dictionary<string,GridControlModel>();
-
         private List<HomePageNodeModel> homepageNodes = new List<HomePageNodeModel>();
         private Dictionary<int, HomePageNodeModel> homePageNodeDict = new Dictionary<int, HomePageNodeModel>();
-
-
 
         #region Static Fuc
         /// <summary>
@@ -178,20 +172,25 @@ namespace NetBarMS.Codes.Tools
         }
         #endregion
 
+        #region 获取GirdControlModel
         public static GridControlModel GetGridControlModel(string type)
         {
 
             GridControlModel model = null;
-
             XMLDataManage.Manage().gridControlDict.TryGetValue(type, out model);
             return model;
         }
+        #endregion
+
+        #region 获取HomePageNodeModel
         public static HomePageNodeModel GetHomePageNodeModel(int nodeId)
         {
             HomePageNodeModel model = null;
             XMLDataManage.Manage().homePageNodeDict.TryGetValue(nodeId, out model);
             return model;
         }
+        #endregion
+
     }
 
 

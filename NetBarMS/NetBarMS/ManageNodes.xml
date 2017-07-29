@@ -62,10 +62,11 @@
 
   <Node name ="日志管理" tag="LogManage" id="20"/>
 
-  <Node name ="设备信息管理" id="21">
-    <child name = "当前设备信息" id="50"/>
+  <Node name ="设备信息管理"  tag="EquipmentInfo" id="21">
+    <!--<child name = "当前设备信息" id="50"/>
     <child name = "客户端信息" id="51"/>
-    <child name = "后台管理系统信息" id="52"/>
+    <child name = "后台管理系统信息" id="52"/> -->
+    
   </Node>
 
 

@@ -58,9 +58,8 @@ namespace NetBarMS.Views.HomePage
                 HomePageNodeModel nodeModel = modelList[i];
                 SimpleButton button = new SimpleButton();
                 button.Text = nodeModel.nodeName;
-                button.Size = new Size(50, 78);
+                button.Size = new Size(50, 50);
                 button.ForeColor = ColorTranslator.FromHtml("#ffffff");
-                
                 button.Dock = DockStyle.Top;
                 button.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
                 button.Click += Button_Click ;
@@ -334,6 +333,12 @@ namespace NetBarMS.Views.HomePage
                     break;
                 #endregion
 
+                #region 设备信息管理
+                case TreeNodeTag.EquipmentInfo:
+                    view = new SoftwareMsgManageView();
+                    break;
+
+                #endregion
 
                 default:
                     break;

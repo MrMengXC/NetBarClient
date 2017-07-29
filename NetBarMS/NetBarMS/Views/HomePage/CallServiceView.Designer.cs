@@ -43,7 +43,12 @@
             // 
             // closeBtn
             // 
-            this.closeBtn.Location = new System.Drawing.Point(570, 0);
+            this.closeBtn.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.closeBtn.Appearance.Options.UseBackColor = true;
+            this.closeBtn.Location = new System.Drawing.Point(575, 0);
+            this.closeBtn.LookAndFeel.SkinMaskColor = System.Drawing.Color.Transparent;
+            this.closeBtn.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.closeBtn.Size = new System.Drawing.Size(47, 50);
             // 
             // gridControl1
             // 

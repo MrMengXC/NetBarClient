@@ -127,6 +127,7 @@ namespace NetBarMS.Views.NetUserManage
         #region 刷新GridControl
         private void RefreshGridControl()
         {
+
             this.mainDataTable.Rows.Clear();
             foreach (StructApply apply in records)
             {
