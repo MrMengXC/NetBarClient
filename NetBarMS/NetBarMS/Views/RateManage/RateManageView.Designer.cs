@@ -54,7 +54,6 @@
             this.Column22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.bDurComboBoxEdit = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -82,7 +81,6 @@
             this.bMinConsumeText = new DevExpress.XtraEditors.TextEdit();
             this.areaPanel = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bDurComboBoxEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nDurComboBoxEdit.Properties)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
@@ -97,12 +95,11 @@
             // titlePanelView1
             // 
             this.titlePanelView1.ShowCloseButton = false;
-            this.titlePanelView1.Size = new System.Drawing.Size(746, 50);
             this.titlePanelView1.Title = "费率管理";
             // 
             // dataGridView1
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.ColumnHeadersHeight = 42;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.星期时段,
             this.Column1,
@@ -129,11 +126,11 @@
             this.Column22,
             this.Column23,
             this.Column24});
-            this.dataGridView1.Location = new System.Drawing.Point(3, 37);
+            this.dataGridView1.Location = new System.Drawing.Point(16, 159);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 20;
             this.dataGridView1.RowTemplate.Height = 20;
-            this.dataGridView1.Size = new System.Drawing.Size(603, 160);
+            this.dataGridView1.Size = new System.Drawing.Size(1126, 336);
             this.dataGridView1.TabIndex = 5;
             // 
             // 星期时段
@@ -286,21 +283,11 @@
             this.Column24.Name = "Column24";
             this.Column24.Width = 20;
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Location = new System.Drawing.Point(16, 137);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(656, 206);
-            this.panel1.TabIndex = 62;
-            // 
             // label2
             // 
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(113, 0);
+            this.label2.Location = new System.Drawing.Point(1030, 122);
             this.label2.Margin = new System.Windows.Forms.Padding(0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(112, 34);
@@ -312,7 +299,7 @@
             // 
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(1, 0);
+            this.label1.Location = new System.Drawing.Point(913, 122);
             this.label1.Margin = new System.Windows.Forms.Padding(0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(112, 34);
@@ -356,7 +343,7 @@
             // 
             // simpleButton1
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(16, 452);
+            this.simpleButton1.Location = new System.Drawing.Point(24, 645);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(75, 23);
             this.simpleButton1.TabIndex = 13;
@@ -371,14 +358,14 @@
             this.memberTypePanel.Location = new System.Drawing.Point(0, 51);
             this.memberTypePanel.Margin = new System.Windows.Forms.Padding(0);
             this.memberTypePanel.Name = "memberTypePanel";
-            this.memberTypePanel.Size = new System.Drawing.Size(746, 50);
+            this.memberTypePanel.Size = new System.Drawing.Size(1657, 50);
             this.memberTypePanel.TabIndex = 11;
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.tableLayoutPanel2);
             this.flowLayoutPanel1.Controls.Add(this.tableLayoutPanel3);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(16, 349);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(24, 514);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(656, 84);
             this.flowLayoutPanel1.TabIndex = 64;
@@ -620,21 +607,24 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.areaPanel);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.memberTypePanel);
             this.Name = "RateManageView";
-            this.Size = new System.Drawing.Size(746, 499);
+            this.Size = new System.Drawing.Size(1657, 942);
             this.Controls.SetChildIndex(this.titlePanelView1, 0);
             this.Controls.SetChildIndex(this.memberTypePanel, 0);
             this.Controls.SetChildIndex(this.simpleButton1, 0);
             this.Controls.SetChildIndex(this.flowLayoutPanel1, 0);
-            this.Controls.SetChildIndex(this.panel1, 0);
+            this.Controls.SetChildIndex(this.dataGridView1, 0);
+            this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.areaPanel, 0);
+            this.Controls.SetChildIndex(this.label2, 0);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bDurComboBoxEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nDurComboBoxEdit.Properties)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
@@ -678,7 +668,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column22;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column23;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column24;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
