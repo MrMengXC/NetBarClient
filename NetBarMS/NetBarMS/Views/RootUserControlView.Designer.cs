@@ -36,7 +36,7 @@
             this.titlePanelView1.Dock = System.Windows.Forms.DockStyle.Top;
             this.titlePanelView1.Location = new System.Drawing.Point(0, 0);
             this.titlePanelView1.Name = "titlePanelView1";
-            this.titlePanelView1.Size = new System.Drawing.Size(417, 50);
+            this.titlePanelView1.Size = new System.Drawing.Size(1657, 50);
             this.titlePanelView1.TabIndex = 0;
             // 
             // RootUserControlView
@@ -46,7 +46,7 @@
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.titlePanelView1);
             this.Name = "RootUserControlView";
-            this.Size = new System.Drawing.Size(417, 166);
+            this.Size = new System.Drawing.Size(1657, 942);
             this.ResumeLayout(false);
 
         }

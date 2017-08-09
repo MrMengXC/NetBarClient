@@ -43,8 +43,7 @@ namespace NetBarMS.Views.HomePage
         public MainView()
         {
             InitializeComponent();
-            InitUI();
-          
+            InitUI();  
         }
 
         //初始化UI

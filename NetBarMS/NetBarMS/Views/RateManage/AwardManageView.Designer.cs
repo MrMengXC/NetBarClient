@@ -44,7 +44,6 @@
             this.dateNavigator = new DevExpress.XtraScheduler.DateNavigator();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.mUpdateButton = new DevExpress.XtraEditors.SimpleButton();
             this.mDeleteButton = new DevExpress.XtraEditors.SimpleButton();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
@@ -59,6 +58,8 @@
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridView5 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
@@ -91,7 +92,7 @@
             // titlePanelView1
             // 
             this.titlePanelView1.ShowCloseButton = false;
-            this.titlePanelView1.Size = new System.Drawing.Size(640, 50);
+            this.titlePanelView1.Size = new System.Drawing.Size(1657, 50);
             this.titlePanelView1.Title = "充值奖励管理";
             // 
             // gridControl1
@@ -99,10 +100,10 @@
             this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridControl1.Location = new System.Drawing.Point(17, 51);
+            this.gridControl1.Location = new System.Drawing.Point(17, 116);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(584, 261);
+            this.gridControl1.Size = new System.Drawing.Size(755, 525);
             this.gridControl1.TabIndex = 82;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1,
@@ -125,7 +126,7 @@
             this.nUpdateButton.Appearance.BackColor = System.Drawing.Color.Red;
             this.nUpdateButton.Appearance.Options.UseBackColor = true;
             this.nUpdateButton.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.nUpdateButton.Location = new System.Drawing.Point(526, 319);
+            this.nUpdateButton.Location = new System.Drawing.Point(674, 660);
             this.nUpdateButton.Name = "nUpdateButton";
             this.nUpdateButton.Size = new System.Drawing.Size(75, 23);
             this.nUpdateButton.TabIndex = 6;
@@ -138,7 +139,7 @@
             this.nDeleteButton.Appearance.BackColor = System.Drawing.Color.Red;
             this.nDeleteButton.Appearance.Options.UseBackColor = true;
             this.nDeleteButton.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.nDeleteButton.Location = new System.Drawing.Point(421, 319);
+            this.nDeleteButton.Location = new System.Drawing.Point(568, 660);
             this.nDeleteButton.Name = "nDeleteButton";
             this.nDeleteButton.Size = new System.Drawing.Size(75, 23);
             this.nDeleteButton.TabIndex = 5;
@@ -191,9 +192,9 @@
             this.flowLayoutPanel1.Controls.Add(this.popupContainerEdit1);
             this.flowLayoutPanel1.Controls.Add(this.nAddButton);
             this.flowLayoutPanel1.Controls.Add(this.popupContainerControl1);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(14, 8);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 73);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(617, 37);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(776, 37);
             this.flowLayoutPanel1.TabIndex = 83;
             // 
             // popupContainerEdit1
@@ -235,42 +236,31 @@
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 1);
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 15F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 50);
+            this.tableLayoutPanel1.Controls.Add(this.panel2, 2, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(35, 56);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(640, 849);
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1591, 709);
             this.tableLayoutPanel1.TabIndex = 66;
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.labelControl2);
+            this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.mUpdateButton);
             this.panel2.Controls.Add(this.mDeleteButton);
             this.panel2.Controls.Add(this.flowLayoutPanel3);
             this.panel2.Controls.Add(this.gridControl2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(3, 427);
+            this.panel2.Location = new System.Drawing.Point(806, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(634, 419);
+            this.panel2.Size = new System.Drawing.Size(782, 703);
             this.panel2.TabIndex = 1;
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Appearance.BackColor = System.Drawing.Color.Silver;
-            this.labelControl2.Location = new System.Drawing.Point(37, 8);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(84, 14);
-            this.labelControl2.TabIndex = 84;
-            this.labelControl2.Text = "会员日奖励设置";
             // 
             // mUpdateButton
             // 
@@ -278,7 +268,7 @@
             this.mUpdateButton.Appearance.BackColor = System.Drawing.Color.Red;
             this.mUpdateButton.Appearance.Options.UseBackColor = true;
             this.mUpdateButton.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.mUpdateButton.Location = new System.Drawing.Point(543, 376);
+            this.mUpdateButton.Location = new System.Drawing.Point(691, 660);
             this.mUpdateButton.Name = "mUpdateButton";
             this.mUpdateButton.Size = new System.Drawing.Size(75, 23);
             this.mUpdateButton.TabIndex = 6;
@@ -291,7 +281,7 @@
             this.mDeleteButton.Appearance.BackColor = System.Drawing.Color.Red;
             this.mDeleteButton.Appearance.Options.UseBackColor = true;
             this.mDeleteButton.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.mDeleteButton.Location = new System.Drawing.Point(438, 376);
+            this.mDeleteButton.Location = new System.Drawing.Point(586, 660);
             this.mDeleteButton.Name = "mDeleteButton";
             this.mDeleteButton.Size = new System.Drawing.Size(75, 23);
             this.mDeleteButton.TabIndex = 5;
@@ -306,9 +296,9 @@
             this.flowLayoutPanel3.Controls.Add(this.popupContainerEdit2);
             this.flowLayoutPanel3.Controls.Add(this.mAddButton);
             this.flowLayoutPanel3.Controls.Add(this.popupContainerControl2);
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(17, 28);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(14, 73);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(578, 37);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(634, 37);
             this.flowLayoutPanel3.TabIndex = 83;
             // 
             // comboBoxEdit3
@@ -390,10 +380,10 @@
             this.gridControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridControl2.Location = new System.Drawing.Point(14, 71);
+            this.gridControl2.Location = new System.Drawing.Point(14, 116);
             this.gridControl2.MainView = this.gridView4;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(584, 286);
+            this.gridControl2.Size = new System.Drawing.Size(732, 525);
             this.gridControl2.TabIndex = 82;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView4,
@@ -413,6 +403,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.nUpdateButton);
             this.panel1.Controls.Add(this.nDeleteButton);
             this.panel1.Controls.Add(this.flowLayoutPanel1);
@@ -420,8 +411,30 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(634, 418);
+            this.panel1.Size = new System.Drawing.Size(782, 703);
             this.panel1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.Gray;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(782, 70);
+            this.label1.TabIndex = 84;
+            this.label1.Text = "充值奖励设置";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.Gray;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label2.Location = new System.Drawing.Point(0, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(782, 70);
+            this.label2.TabIndex = 85;
+            this.label2.Text = "会员日奖励设置";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // AwardManageView
             // 
@@ -429,7 +442,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "AwardManageView";
-            this.Size = new System.Drawing.Size(640, 899);
+            this.Size = new System.Drawing.Size(1657, 942);
             this.Controls.SetChildIndex(this.titlePanelView1, 0);
             this.Controls.SetChildIndex(this.tableLayoutPanel1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
@@ -446,7 +459,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateNavigator)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.flowLayoutPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit3.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mRechargeTextEdit.Properties)).EndInit();
@@ -480,7 +492,6 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel2;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.SimpleButton mUpdateButton;
         private DevExpress.XtraEditors.SimpleButton mDeleteButton;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
@@ -498,5 +509,7 @@
         private DevExpress.XtraScheduler.DateNavigator dateNavigator;
         private DevExpress.XtraEditors.PopupContainerControl popupContainerControl2;
         private DevExpress.XtraScheduler.DateNavigator dateNavigator1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

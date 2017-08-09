@@ -33,6 +33,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -40,7 +41,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureEdit2 = new DevExpress.XtraEditors.PictureEdit();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -61,8 +61,8 @@
             this.linkLabel3 = new System.Windows.Forms.LinkLabel();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
+            this.tableLayoutPanel2.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
@@ -74,16 +74,16 @@
             // titlePanelView1
             // 
             this.titlePanelView1.ShowCloseButton = false;
-            this.titlePanelView1.Size = new System.Drawing.Size(969, 50);
+            this.titlePanelView1.Size = new System.Drawing.Size(1657, 50);
             this.titlePanelView1.Title = "设备信息管理";
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 5;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33332F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 26F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 26F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label1, 4, 0);
@@ -94,9 +94,9 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(20, 71);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(933, 491);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1474, 580);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // label2
@@ -107,7 +107,7 @@
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Margin = new System.Windows.Forms.Padding(0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(297, 50);
+            this.label2.Size = new System.Drawing.Size(473, 70);
             this.label2.TabIndex = 1;
             this.label2.Text = "当前设备信息";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -117,10 +117,10 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Location = new System.Drawing.Point(634, 0);
+            this.label1.Location = new System.Drawing.Point(999, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(299, 50);
+            this.label1.Size = new System.Drawing.Size(475, 70);
             this.label1.TabIndex = 2;
             this.label1.Text = "后台管理系统信息";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -130,10 +130,10 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.SystemColors.ControlLight;
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Location = new System.Drawing.Point(317, 0);
+            this.label3.Location = new System.Drawing.Point(499, 0);
             this.label3.Margin = new System.Windows.Forms.Padding(0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(297, 50);
+            this.label3.Size = new System.Drawing.Size(474, 70);
             this.label3.TabIndex = 3;
             this.label3.Text = "客户端信息";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -143,11 +143,19 @@
             this.panel1.Controls.Add(this.pictureEdit1);
             this.panel1.Controls.Add(this.tableLayoutPanel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(317, 50);
+            this.panel1.Location = new System.Drawing.Point(499, 70);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(297, 441);
+            this.panel1.Size = new System.Drawing.Size(474, 510);
             this.panel1.TabIndex = 4;
+            // 
+            // pictureEdit1
+            // 
+            this.pictureEdit1.Location = new System.Drawing.Point(14, 40);
+            this.pictureEdit1.Name = "pictureEdit1";
+            this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.pictureEdit1.Size = new System.Drawing.Size(216, 53);
+            this.pictureEdit1.TabIndex = 1;
             // 
             // tableLayoutPanel2
             // 
@@ -242,23 +250,15 @@
             this.linkLabel1.Text = "检查更新";
             this.linkLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // pictureEdit1
-            // 
-            this.pictureEdit1.Location = new System.Drawing.Point(14, 40);
-            this.pictureEdit1.Name = "pictureEdit1";
-            this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit1.Size = new System.Drawing.Size(216, 53);
-            this.pictureEdit1.TabIndex = 1;
-            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.pictureEdit2);
             this.panel2.Controls.Add(this.tableLayoutPanel3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 50);
+            this.panel2.Location = new System.Drawing.Point(0, 70);
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(297, 441);
+            this.panel2.Size = new System.Drawing.Size(473, 510);
             this.panel2.TabIndex = 5;
             // 
             // pictureEdit2
@@ -367,10 +367,10 @@
             this.panel3.Controls.Add(this.pictureEdit3);
             this.panel3.Controls.Add(this.tableLayoutPanel4);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(634, 50);
+            this.panel3.Location = new System.Drawing.Point(999, 70);
             this.panel3.Margin = new System.Windows.Forms.Padding(0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(299, 441);
+            this.panel3.Size = new System.Drawing.Size(475, 510);
             this.panel3.TabIndex = 6;
             // 
             // pictureEdit3
@@ -480,15 +480,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "SoftwareMsgManageView";
-            this.Size = new System.Drawing.Size(969, 580);
+            this.Size = new System.Drawing.Size(1657, 942);
             this.Controls.SetChildIndex(this.tableLayoutPanel1, 0);
             this.Controls.SetChildIndex(this.titlePanelView1, 0);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
