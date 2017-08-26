@@ -4,29 +4,29 @@
   <Node name ="首页" tag="HomePage" id="5">
   </Node>
   
-  <Node name ="会员管理" tag="MemberManage" id="11">
+  <Node name ="会员管理" tag="MemberManage" id="11" img ="icon_huiyuan" sel ="icon_huiyuan2">
   </Node>
 
-  <Node name ="商品管理" id="12">
+  <Node name ="商品管理" id="12" img ="icon_shangpin" sel ="icon_shangpin2">
     <child name = "上架商品管理" tag="ProductManage" id="22"/>
     <child name = "商品销售排行" tag="ProductSellRank" id="23"/>
 
   </Node>
 
-  <Node name ="费率管理" id="13">
+  <Node name ="费率管理" id="13" img ="icon_feilv" sel ="icon_feilv2">
     <child name = "费率管理"  tag="RataManage" id="24"/>
     <child name = "奖励管理" tag="AwardManage" id="25"/>
     <child name = "积分管理" tag="IntegralManage" id="26"/>
     <child name = "其他费用管理" tag="OtherCostManage" id="27"/>
   </Node>
 
-  <Node name ="营收统计" tag="InComeManage" id="14">
+  <Node name ="营收统计" tag="InComeManage" id="14" img ="icon_yingshou" sel ="icon_yingshou2">
     <child name = "日营收统计" tag="DayInCome" id="28"/>
     <child name = "月营收统计" tag="MonthInCome" id="29"/>
     <child name = "年营收统计" tag="YearInCome" id="30"/>
   </Node>
 
-  <Node name ="系统查询" id="15">
+  <Node name ="系统查询" id="15" img ="icon_xitong" sel ="icon_xitong2">
     <child name = "交接班记录查询" tag="ChangeShiftsRecord" id="31"/>
     <child name = "用户充值记录查询" tag="UserPayedRecord" id="32"/>
     <child name = "用户上网记录查询" tag="UserNetRecord" id="33"/>
@@ -36,14 +36,14 @@
     <child name = "上座率查询" tag="AttendanceSearch" id="37"/>
   </Node>
 
-  <Node name ="绩效考核" tag="JXInspect" id="16"/>
+  <Node name ="绩效考核" tag="JXInspect" id="16" img ="icon_jixiao" sel ="icon_jixiao2"/>
 
-  <Node name ="评价管理" id="17">
+  <Node name ="评价管理" id="17" img ="icon_pingjia" sel ="icon_pingjia2">
     <child name = "网吧评价" tag="NetBarEvaluate" id="38"/>
     <child name = "员工评价" tag="StaffEvaluate" id="39"/>
   </Node>
 
-  <Node name ="系统管理" id="18">
+  <Node name ="系统管理" id="18" img ="icon_guanli" sel ="icon_guanli2">
     <child name = "上网密码设置" tag="NetPassWord" id="40"/>
     <child name = "会员等级设置" tag="MemberLevManage" id="41"/>
     <child name = "商品类别设置" tag="ProductType" id="42"/>
@@ -55,19 +55,14 @@
 
   </Node>
 
-  <Node name ="员工账号管理" id="19">
+  <Node name ="员工账号管理" id="19" img ="icon_yuangong" sel ="icon_yuangong2">
     <child name = "员工列表" tag="StaffList" id="48"/>
     <child name = "员工角色设置" tag="ManagerManage" id="49"/>
   </Node>
 
-  <Node name ="日志管理" tag="LogManage" id="20"/>
+  <Node name ="日志管理" tag="LogManage" id="20" img ="icon_rizhi" sel ="icon_rizhi2"/>
 
-  <Node name ="设备信息管理"  tag="EquipmentInfo" id="21">
-    <!--<child name = "当前设备信息" id="50"/>
-    <child name = "客户端信息" id="51"/>
-    <child name = "后台管理系统信息" id="52"/> -->
-    
-  </Node>
+  <Node name ="设备信息管理"  tag="EquipmentInfo" id="21" img ="icon_shebei" sel ="icon_shebei2"/>
 
 
 

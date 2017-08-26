@@ -46,7 +46,7 @@
             // titlePanelView1
             // 
             this.titlePanelView1.ShowCloseButton = false;
-            this.titlePanelView1.Size = new System.Drawing.Size(689, 50);
+            this.titlePanelView1.Size = new System.Drawing.Size(689, 78);
             this.titlePanelView1.Title = "绩效管理";
             // 
             // gridControl1
@@ -54,10 +54,10 @@
             this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridControl1.Location = new System.Drawing.Point(3, 56);
+            this.gridControl1.Location = new System.Drawing.Point(0, 78);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(683, 539);
+            this.gridControl1.Size = new System.Drawing.Size(689, 612);
             this.gridControl1.TabIndex = 82;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1,
@@ -92,13 +92,18 @@
             // 
             // popupContainerEdit1
             // 
-            this.popupContainerEdit1.Location = new System.Drawing.Point(84, 15);
+            this.popupContainerEdit1.Location = new System.Drawing.Point(118, 19);
             this.popupContainerEdit1.Name = "popupContainerEdit1";
+            this.popupContainerEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.popupContainerEdit1.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
+            this.popupContainerEdit1.Properties.Appearance.Options.UseFont = true;
+            this.popupContainerEdit1.Properties.Appearance.Options.UseForeColor = true;
+            this.popupContainerEdit1.Properties.AutoHeight = false;
             this.popupContainerEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.popupContainerEdit1.Properties.NullText = "请选择时间段进行查询";
             this.popupContainerEdit1.Properties.PopupControl = this.popupContainerControl1;
-            this.popupContainerEdit1.Size = new System.Drawing.Size(146, 20);
+            this.popupContainerEdit1.Size = new System.Drawing.Size(272, 40);
             this.popupContainerEdit1.TabIndex = 76;
             this.popupContainerEdit1.Closed += new DevExpress.XtraEditors.Controls.ClosedEventHandler(this.PopupContainerEdit1_Closed);
             // 
@@ -106,7 +111,7 @@
             // 
             this.pageView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.pageView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pageView1.Location = new System.Drawing.Point(0, 601);
+            this.pageView1.Location = new System.Drawing.Point(0, 775);
             this.pageView1.Name = "pageView1";
             this.pageView1.Size = new System.Drawing.Size(689, 30);
             this.pageView1.TabIndex = 86;
@@ -120,7 +125,7 @@
             this.Controls.Add(this.popupContainerControl1);
             this.Controls.Add(this.gridControl1);
             this.Name = "JXInspectView";
-            this.Size = new System.Drawing.Size(689, 631);
+            this.Size = new System.Drawing.Size(689, 805);
             this.Controls.SetChildIndex(this.titlePanelView1, 0);
             this.Controls.SetChildIndex(this.gridControl1, 0);
             this.Controls.SetChildIndex(this.popupContainerControl1, 0);

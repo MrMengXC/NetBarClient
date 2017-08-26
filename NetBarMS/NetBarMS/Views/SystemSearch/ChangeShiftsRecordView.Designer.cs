@@ -57,7 +57,7 @@
             // titlePanelView1
             // 
             this.titlePanelView1.ShowCloseButton = false;
-            this.titlePanelView1.Size = new System.Drawing.Size(1135, 50);
+            this.titlePanelView1.Size = new System.Drawing.Size(1135, 78);
             this.titlePanelView1.Title = "交接班记录查询";
             // 
             // closeButton
@@ -72,12 +72,15 @@
             // 
             // popupContainerEdit1
             // 
-            this.popupContainerEdit1.Location = new System.Drawing.Point(137, 21);
+            this.popupContainerEdit1.Location = new System.Drawing.Point(170, 19);
             this.popupContainerEdit1.Name = "popupContainerEdit1";
+            this.popupContainerEdit1.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
+            this.popupContainerEdit1.Properties.Appearance.Options.UseForeColor = true;
+            this.popupContainerEdit1.Properties.AutoHeight = false;
             this.popupContainerEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.popupContainerEdit1.Properties.NullText = "按时间段查询";
-            this.popupContainerEdit1.Size = new System.Drawing.Size(141, 20);
+            this.popupContainerEdit1.Size = new System.Drawing.Size(272, 40);
             this.popupContainerEdit1.TabIndex = 5;
             this.popupContainerEdit1.Closed += new DevExpress.XtraEditors.Controls.ClosedEventHandler(this.ComboBoxEdit1_Closed);
             // 
@@ -91,21 +94,22 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.gridControl2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.gridControl1, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 56);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(10, 88);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 496F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1132, 674);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 612F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1115, 612);
             this.tableLayoutPanel1.TabIndex = 83;
             // 
             // gridControl2
             // 
             this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl2.Location = new System.Drawing.Point(569, 3);
+            this.gridControl2.Location = new System.Drawing.Point(562, 0);
             this.gridControl2.MainView = this.gridView2;
+            this.gridControl2.Margin = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(560, 668);
+            this.gridControl2.Size = new System.Drawing.Size(553, 612);
             this.gridControl2.TabIndex = 82;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2,
@@ -125,10 +129,11 @@
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(3, 3);
+            this.gridControl1.Location = new System.Drawing.Point(0, 0);
             this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Margin = new System.Windows.Forms.Padding(0, 0, 5, 0);
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(560, 668);
+            this.gridControl1.Size = new System.Drawing.Size(552, 612);
             this.gridControl1.TabIndex = 81;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1,
@@ -172,11 +177,12 @@
             // 
             // pageView1
             // 
-            this.pageView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.pageView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pageView1.Location = new System.Drawing.Point(0, 743);
+            this.pageView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pageView1.BackColor = System.Drawing.Color.Transparent;
+            this.pageView1.Location = new System.Drawing.Point(0, 706);
             this.pageView1.Name = "pageView1";
-            this.pageView1.Size = new System.Drawing.Size(1135, 30);
+            this.pageView1.Size = new System.Drawing.Size(1135, 40);
             this.pageView1.TabIndex = 84;
             // 
             // ChangeShiftsRecordView
@@ -188,7 +194,7 @@
             this.Controls.Add(this.popupContainerControl1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "ChangeShiftsRecordView";
-            this.Size = new System.Drawing.Size(1135, 773);
+            this.Size = new System.Drawing.Size(1135, 805);
             this.Controls.SetChildIndex(this.titlePanelView1, 0);
             this.Controls.SetChildIndex(this.tableLayoutPanel1, 0);
             this.Controls.SetChildIndex(this.popupContainerControl1, 0);

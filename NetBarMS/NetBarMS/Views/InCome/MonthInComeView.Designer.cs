@@ -55,14 +55,12 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.chartControl2 = new DevExpress.XtraCharts.ChartControl();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.popupContainerControl1 = new DevExpress.XtraEditors.PopupContainerControl();
-            this.customMonthDate1 = new NetBarMS.Views.CustomView.CustomMonthDate();
-            this.label1 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.chartControl1 = new DevExpress.XtraCharts.ChartControl();
             this.panel5 = new System.Windows.Forms.Panel();
             this.chartControl5 = new DevExpress.XtraCharts.ChartControl();
+            this.popupContainerControl1 = new DevExpress.XtraEditors.PopupContainerControl();
+            this.customMonthDate1 = new NetBarMS.Views.CustomView.CustomMonthDate();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.popupContainerEdit1 = new DevExpress.XtraEditors.PopupContainerEdit();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -81,9 +79,6 @@
             ((System.ComponentModel.ISupportInitialize)(pieSeriesLabel3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(pieSeriesView3)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.popupContainerControl1)).BeginInit();
-            this.popupContainerControl1.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(series4)).BeginInit();
@@ -93,17 +88,22 @@
             ((System.ComponentModel.ISupportInitialize)(series5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(pieSeriesLabel4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(pieSeriesView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupContainerControl1)).BeginInit();
+            this.popupContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.popupContainerEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // titlePanelView1
             // 
             this.titlePanelView1.ShowCloseButton = false;
-            this.titlePanelView1.Size = new System.Drawing.Size(1040, 50);
+            this.titlePanelView1.Size = new System.Drawing.Size(1040, 78);
             this.titlePanelView1.Title = "月营收管理";
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
@@ -113,14 +113,13 @@
             this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel5, 2, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 50);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(10, 88);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 56.75393F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 43.24607F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1040, 955);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1020, 908);
             this.tableLayoutPanel1.TabIndex = 63;
             // 
             // panel4
@@ -128,10 +127,10 @@
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.panel4.Controls.Add(this.chartControl4);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(692, 542);
+            this.panel4.Location = new System.Drawing.Point(680, 515);
             this.panel4.Margin = new System.Windows.Forms.Padding(0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(348, 413);
+            this.panel4.Size = new System.Drawing.Size(340, 393);
             this.panel4.TabIndex = 3;
             // 
             // chartControl4
@@ -159,7 +158,7 @@
             series1.View = pieSeriesView1;
             this.chartControl4.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
         series1};
-            this.chartControl4.Size = new System.Drawing.Size(348, 413);
+            this.chartControl4.Size = new System.Drawing.Size(340, 393);
             this.chartControl4.TabIndex = 1;
             chartTitle1.Text = "支付宝收入占比";
             this.chartControl4.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
@@ -170,10 +169,10 @@
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.panel3.Controls.Add(this.chartControl3);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(346, 542);
+            this.panel3.Location = new System.Drawing.Point(340, 515);
             this.panel3.Margin = new System.Windows.Forms.Padding(0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(346, 413);
+            this.panel3.Size = new System.Drawing.Size(340, 393);
             this.panel3.TabIndex = 2;
             // 
             // chartControl3
@@ -201,7 +200,7 @@
             series2.View = pieSeriesView2;
             this.chartControl3.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
         series2};
-            this.chartControl3.Size = new System.Drawing.Size(346, 413);
+            this.chartControl3.Size = new System.Drawing.Size(340, 393);
             this.chartControl3.TabIndex = 1;
             chartTitle2.Text = "微信支付收入占比";
             this.chartControl3.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
@@ -212,10 +211,10 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.panel2.Controls.Add(this.chartControl2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 542);
+            this.panel2.Location = new System.Drawing.Point(0, 515);
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(346, 413);
+            this.panel2.Size = new System.Drawing.Size(340, 393);
             this.panel2.TabIndex = 1;
             // 
             // chartControl2
@@ -243,7 +242,7 @@
             series3.View = pieSeriesView3;
             this.chartControl2.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
         series3};
-            this.chartControl2.Size = new System.Drawing.Size(346, 413);
+            this.chartControl2.Size = new System.Drawing.Size(340, 393);
             this.chartControl2.TabIndex = 0;
             chartTitle3.Text = "当日营业收入占比";
             this.chartControl2.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
@@ -253,62 +252,13 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.tableLayoutPanel1.SetColumnSpan(this.panel1, 2);
-            this.panel1.Controls.Add(this.popupContainerControl1);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.flowLayoutPanel1);
             this.panel1.Controls.Add(this.chartControl1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(692, 542);
+            this.panel1.Size = new System.Drawing.Size(680, 515);
             this.panel1.TabIndex = 0;
-            // 
-            // popupContainerControl1
-            // 
-            this.popupContainerControl1.Controls.Add(this.customMonthDate1);
-            this.popupContainerControl1.Location = new System.Drawing.Point(706, 6);
-            this.popupContainerControl1.Name = "popupContainerControl1";
-            this.popupContainerControl1.Size = new System.Drawing.Size(279, 241);
-            this.popupContainerControl1.TabIndex = 5;
-            // 
-            // customMonthDate1
-            // 
-            this.customMonthDate1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.customMonthDate1.Location = new System.Drawing.Point(3, 3);
-            this.customMonthDate1.Name = "customMonthDate1";
-            this.customMonthDate1.Size = new System.Drawing.Size(273, 200);
-            this.customMonthDate1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.BackColor = System.Drawing.Color.DarkGray;
-            this.label1.Location = new System.Drawing.Point(355, 3);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(205, 35);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "当月营收：";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.simpleButton2);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 6);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(331, 35);
-            this.flowLayoutPanel1.TabIndex = 3;
-            // 
-            // simpleButton2
-            // 
-            this.simpleButton2.Location = new System.Drawing.Point(3, 3);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(102, 23);
-            this.simpleButton2.TabIndex = 3;
-            this.simpleButton2.Text = "导出营收详情";
-            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
             // chartControl1
             // 
@@ -339,17 +289,17 @@
             series4.View = sideBySideBarSeriesView1;
             this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
         series4};
-            this.chartControl1.Size = new System.Drawing.Size(692, 484);
+            this.chartControl1.Size = new System.Drawing.Size(680, 457);
             this.chartControl1.TabIndex = 0;
             // 
             // panel5
             // 
             this.panel5.Controls.Add(this.chartControl5);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(692, 0);
+            this.panel5.Location = new System.Drawing.Point(680, 0);
             this.panel5.Margin = new System.Windows.Forms.Padding(0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(348, 542);
+            this.panel5.Size = new System.Drawing.Size(340, 515);
             this.panel5.TabIndex = 4;
             // 
             // chartControl5
@@ -377,21 +327,56 @@
             series5.View = pieSeriesView4;
             this.chartControl5.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
         series5};
-            this.chartControl5.Size = new System.Drawing.Size(348, 542);
+            this.chartControl5.Size = new System.Drawing.Size(340, 515);
             this.chartControl5.TabIndex = 2;
             chartTitle4.Text = "区域收入占比";
             this.chartControl5.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
             chartTitle4});
             // 
+            // popupContainerControl1
+            // 
+            this.popupContainerControl1.Controls.Add(this.customMonthDate1);
+            this.popupContainerControl1.Location = new System.Drawing.Point(133, 65);
+            this.popupContainerControl1.Name = "popupContainerControl1";
+            this.popupContainerControl1.Size = new System.Drawing.Size(367, 323);
+            this.popupContainerControl1.TabIndex = 5;
+            // 
+            // customMonthDate1
+            // 
+            this.customMonthDate1.Location = new System.Drawing.Point(14, 3);
+            this.customMonthDate1.Name = "customMonthDate1";
+            this.customMonthDate1.Size = new System.Drawing.Size(326, 293);
+            this.customMonthDate1.TabIndex = 0;
+            // 
+            // simpleButton2
+            // 
+            this.simpleButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.simpleButton2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(229)))), ((int)(((byte)(248)))));
+            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Tahoma", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.simpleButton2.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(140)))), ((int)(((byte)(190)))));
+            this.simpleButton2.Appearance.Options.UseBackColor = true;
+            this.simpleButton2.Appearance.Options.UseFont = true;
+            this.simpleButton2.Appearance.Options.UseForeColor = true;
+            this.simpleButton2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.simpleButton2.Location = new System.Drawing.Point(864, 14);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(166, 40);
+            this.simpleButton2.TabIndex = 3;
+            this.simpleButton2.Text = "导出营收详情";
+            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
+            // 
             // popupContainerEdit1
             // 
-            this.popupContainerEdit1.Location = new System.Drawing.Point(110, 24);
+            this.popupContainerEdit1.Location = new System.Drawing.Point(133, 19);
             this.popupContainerEdit1.Name = "popupContainerEdit1";
+            this.popupContainerEdit1.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
+            this.popupContainerEdit1.Properties.Appearance.Options.UseForeColor = true;
+            this.popupContainerEdit1.Properties.AutoHeight = false;
             this.popupContainerEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.popupContainerEdit1.Properties.NullText = "选择月份查询";
             this.popupContainerEdit1.Properties.PopupControl = this.popupContainerControl1;
-            this.popupContainerEdit1.Size = new System.Drawing.Size(141, 20);
+            this.popupContainerEdit1.Size = new System.Drawing.Size(272, 40);
             this.popupContainerEdit1.TabIndex = 4;
             this.popupContainerEdit1.Closed += new DevExpress.XtraEditors.Controls.ClosedEventHandler(this.ComboBoxEdit1_Closed);
             // 
@@ -399,6 +384,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.popupContainerControl1);
+            this.Controls.Add(this.simpleButton2);
             this.Controls.Add(this.popupContainerEdit1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "MonthInComeView";
@@ -406,6 +393,8 @@
             this.Controls.SetChildIndex(this.titlePanelView1, 0);
             this.Controls.SetChildIndex(this.tableLayoutPanel1, 0);
             this.Controls.SetChildIndex(this.popupContainerEdit1, 0);
+            this.Controls.SetChildIndex(this.simpleButton2, 0);
+            this.Controls.SetChildIndex(this.popupContainerControl1, 0);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(pieSeriesLabel1)).EndInit();
@@ -423,9 +412,6 @@
             ((System.ComponentModel.ISupportInitialize)(series3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl2)).EndInit();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.popupContainerControl1)).EndInit();
-            this.popupContainerControl1.ResumeLayout(false);
-            this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(series4)).EndInit();
@@ -435,6 +421,8 @@
             ((System.ComponentModel.ISupportInitialize)(pieSeriesView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(series5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupContainerControl1)).EndInit();
+            this.popupContainerControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.popupContainerEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
 
@@ -451,13 +439,11 @@
         private DevExpress.XtraCharts.ChartControl chartControl2;
         private System.Windows.Forms.Panel panel1;
         private DevExpress.XtraEditors.PopupContainerControl popupContainerControl1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private DevExpress.XtraEditors.PopupContainerEdit popupContainerEdit1;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraCharts.ChartControl chartControl1;
-        private CustomView.CustomMonthDate customMonthDate1;
         private System.Windows.Forms.Panel panel5;
         private DevExpress.XtraCharts.ChartControl chartControl5;
+        private CustomView.CustomMonthDate customMonthDate1;
     }
 }

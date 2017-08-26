@@ -54,7 +54,9 @@
             // 
             // titlePanelView1
             // 
-            this.titlePanelView1.Size = new System.Drawing.Size(683, 50);
+            this.titlePanelView1.ShowCloseButton = false;
+            this.titlePanelView1.Size = new System.Drawing.Size(1060, 78);
+            this.titlePanelView1.Title = "区域设置";
             // 
             // gridView
             // 
@@ -64,11 +66,11 @@
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(396, 58);
+            this.gridControl1.Location = new System.Drawing.Point(585, 47);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Margin = new System.Windows.Forms.Padding(10);
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(264, 354);
+            this.gridControl1.Size = new System.Drawing.Size(452, 475);
             this.gridControl1.TabIndex = 82;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1,
@@ -83,10 +85,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Location = new System.Drawing.Point(389, 1);
+            this.label2.Location = new System.Drawing.Point(578, 1);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(278, 46);
+            this.label2.Size = new System.Drawing.Size(466, 35);
             this.label2.TabIndex = 0;
             this.label2.Text = "设备列表";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -94,48 +97,53 @@
             // simpleButton2
             // 
             this.simpleButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.simpleButton2.Appearance.BackColor = System.Drawing.Color.Aqua;
+            this.simpleButton2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(165)))), ((int)(((byte)(248)))));
+            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Tahoma", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.simpleButton2.Appearance.ForeColor = System.Drawing.Color.White;
             this.simpleButton2.Appearance.Options.UseBackColor = true;
-            this.simpleButton2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.simpleButton2.Location = new System.Drawing.Point(3, 548);
+            this.simpleButton2.Appearance.Options.UseFont = true;
+            this.simpleButton2.Appearance.Options.UseForeColor = true;
+            this.simpleButton2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.simpleButton2.Location = new System.Drawing.Point(9, 705);
             this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(112, 30);
+            this.simpleButton2.Size = new System.Drawing.Size(184, 56);
             this.simpleButton2.TabIndex = 53;
             this.simpleButton2.Text = "保存";
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
             // label3
             // 
+            this.label3.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label3.Location = new System.Drawing.Point(4, 1);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(277, 46);
+            this.label3.Size = new System.Drawing.Size(466, 35);
             this.label3.TabIndex = 1;
             this.label3.Text = "区域从属电脑";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // currentComsPanel
             // 
             this.currentComsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.currentComsPanel.Location = new System.Drawing.Point(1, 48);
+            this.currentComsPanel.Location = new System.Drawing.Point(1, 37);
             this.currentComsPanel.Margin = new System.Windows.Forms.Padding(0);
             this.currentComsPanel.Name = "currentComsPanel";
-            this.currentComsPanel.Size = new System.Drawing.Size(283, 374);
+            this.currentComsPanel.Size = new System.Drawing.Size(472, 495);
             this.currentComsPanel.TabIndex = 3;
             // 
             // areaPanel
             // 
             this.areaPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.areaPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.areaPanel.BackColor = System.Drawing.Color.WhiteSmoke;
             this.areaPanel.Controls.Add(this.updateLabel);
             this.areaPanel.Controls.Add(this.deleteAreaLabel);
             this.areaPanel.Controls.Add(this.addAreaLabel);
             this.areaPanel.Controls.Add(this.panel1);
-            this.areaPanel.Location = new System.Drawing.Point(0, 53);
+            this.areaPanel.Location = new System.Drawing.Point(0, 78);
             this.areaPanel.Margin = new System.Windows.Forms.Padding(0);
             this.areaPanel.Name = "areaPanel";
-            this.areaPanel.Size = new System.Drawing.Size(683, 43);
+            this.areaPanel.Size = new System.Drawing.Size(1060, 70);
             this.areaPanel.TabIndex = 2;
             // 
             // updateLabel
@@ -143,7 +151,7 @@
             this.updateLabel.Dock = System.Windows.Forms.DockStyle.Left;
             this.updateLabel.Location = new System.Drawing.Point(240, 0);
             this.updateLabel.Name = "updateLabel";
-            this.updateLabel.Size = new System.Drawing.Size(66, 43);
+            this.updateLabel.Size = new System.Drawing.Size(66, 70);
             this.updateLabel.TabIndex = 6;
             this.updateLabel.Text = "更新区域";
             this.updateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -154,7 +162,7 @@
             this.deleteAreaLabel.Dock = System.Windows.Forms.DockStyle.Left;
             this.deleteAreaLabel.Location = new System.Drawing.Point(169, 0);
             this.deleteAreaLabel.Name = "deleteAreaLabel";
-            this.deleteAreaLabel.Size = new System.Drawing.Size(71, 43);
+            this.deleteAreaLabel.Size = new System.Drawing.Size(71, 70);
             this.deleteAreaLabel.TabIndex = 5;
             this.deleteAreaLabel.Text = "-删除区域";
             this.deleteAreaLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -165,7 +173,7 @@
             this.addAreaLabel.Dock = System.Windows.Forms.DockStyle.Left;
             this.addAreaLabel.Location = new System.Drawing.Point(100, 0);
             this.addAreaLabel.Name = "addAreaLabel";
-            this.addAreaLabel.Size = new System.Drawing.Size(69, 43);
+            this.addAreaLabel.Size = new System.Drawing.Size(69, 70);
             this.addAreaLabel.TabIndex = 4;
             this.addAreaLabel.Text = "+添加区域";
             this.addAreaLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -176,14 +184,14 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(100, 43);
+            this.panel1.Size = new System.Drawing.Size(100, 70);
             this.panel1.TabIndex = 2;
             // 
             // simpleButton1
             // 
             this.simpleButton1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.simpleButton1.Location = new System.Drawing.Point(23, 197);
+            this.simpleButton1.Location = new System.Drawing.Point(23, 252);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(55, 20);
             this.simpleButton1.TabIndex = 63;
@@ -193,7 +201,7 @@
             // simpleButton3
             // 
             this.simpleButton3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.simpleButton3.Location = new System.Drawing.Point(23, 241);
+            this.simpleButton3.Location = new System.Drawing.Point(23, 296);
             this.simpleButton3.Name = "simpleButton3";
             this.simpleButton3.Size = new System.Drawing.Size(55, 20);
             this.simpleButton3.TabIndex = 64;
@@ -205,11 +213,11 @@
             this.panel4.Controls.Add(this.simpleButton1);
             this.panel4.Controls.Add(this.simpleButton3);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(285, 1);
+            this.panel4.Location = new System.Drawing.Point(474, 1);
             this.panel4.Margin = new System.Windows.Forms.Padding(0);
             this.panel4.Name = "panel4";
             this.tableLayoutPanel3.SetRowSpan(this.panel4, 2);
-            this.panel4.Size = new System.Drawing.Size(100, 421);
+            this.panel4.Size = new System.Drawing.Size(100, 531);
             this.panel4.TabIndex = 1;
             // 
             // tableLayoutPanel3
@@ -227,12 +235,12 @@
             this.tableLayoutPanel3.Controls.Add(this.label3, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.label2, 2, 0);
             this.tableLayoutPanel3.Controls.Add(this.currentComsPanel, 0, 1);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 102);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(9, 151);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.14369F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 88.85631F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(671, 423);
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1048, 533);
             this.tableLayoutPanel3.TabIndex = 66;
             // 
             // AreaManageView
@@ -240,12 +248,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.tableLayoutPanel3);
             this.Controls.Add(this.areaPanel);
             this.Controls.Add(this.simpleButton2);
             this.Name = "AreaManageView";
-            this.Size = new System.Drawing.Size(683, 627);
+            this.Size = new System.Drawing.Size(1060, 785);
             this.Controls.SetChildIndex(this.titlePanelView1, 0);
             this.Controls.SetChildIndex(this.simpleButton2, 0);
             this.Controls.SetChildIndex(this.areaPanel, 0);

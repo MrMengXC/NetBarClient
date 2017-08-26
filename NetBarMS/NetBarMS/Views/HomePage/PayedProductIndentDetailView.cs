@@ -29,7 +29,6 @@ namespace NetBarMS.Views.HomePage
         public PayedProductIndentDetailView(StructOrder tem)
         {
             InitializeComponent();
-            this.titleLabel.Text = "订单详情";
             this.order = tem;
             InitUI();
             if (tem != null)

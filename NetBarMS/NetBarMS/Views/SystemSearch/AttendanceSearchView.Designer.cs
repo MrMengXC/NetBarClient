@@ -33,14 +33,12 @@ namespace NetBarMS.Views.SystemSearch
             DevExpress.XtraCharts.Series series3 = new DevExpress.XtraCharts.Series();
             DevExpress.XtraCharts.StackedBarSeriesView stackedBarSeriesView3 = new DevExpress.XtraCharts.StackedBarSeriesView();
             DevExpress.XtraCharts.ChartTitle chartTitle3 = new DevExpress.XtraCharts.ChartTitle();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
             this.popupContainerEdit1 = new DevExpress.XtraEditors.PopupContainerEdit();
             this.popupContainerControl1 = new DevExpress.XtraEditors.PopupContainerControl();
             this.dateNavigator1 = new DevExpress.XtraScheduler.DateNavigator();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.chartControl1 = new DevExpress.XtraCharts.ChartControl();
-            this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupContainerEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupContainerControl1)).BeginInit();
@@ -56,40 +54,32 @@ namespace NetBarMS.Views.SystemSearch
             // titlePanelView1
             // 
             this.titlePanelView1.ShowCloseButton = false;
-            this.titlePanelView1.Size = new System.Drawing.Size(880, 50);
+            this.titlePanelView1.Size = new System.Drawing.Size(880, 78);
             this.titlePanelView1.Title = "占座率查询";
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.comboBoxEdit1);
-            this.flowLayoutPanel1.Controls.Add(this.popupContainerEdit1);
-            this.flowLayoutPanel1.Controls.Add(this.simpleButton1);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(95, 14);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(426, 27);
-            this.flowLayoutPanel1.TabIndex = 62;
             // 
             // comboBoxEdit1
             // 
-            this.comboBoxEdit1.Location = new System.Drawing.Point(3, 3);
+            this.comboBoxEdit1.Location = new System.Drawing.Point(131, 18);
             this.comboBoxEdit1.Name = "comboBoxEdit1";
+            this.comboBoxEdit1.Properties.AutoHeight = false;
             this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.comboBoxEdit1.Properties.NullText = "请选择区域";
             this.comboBoxEdit1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit1.Size = new System.Drawing.Size(134, 20);
+            this.comboBoxEdit1.Size = new System.Drawing.Size(272, 40);
             this.comboBoxEdit1.TabIndex = 6;
             this.comboBoxEdit1.SelectedIndexChanged += new System.EventHandler(this.comboBoxEdit1_SelectedIndexChanged);
             // 
             // popupContainerEdit1
             // 
-            this.popupContainerEdit1.Location = new System.Drawing.Point(143, 3);
+            this.popupContainerEdit1.Location = new System.Drawing.Point(419, 18);
             this.popupContainerEdit1.Name = "popupContainerEdit1";
+            this.popupContainerEdit1.Properties.AutoHeight = false;
             this.popupContainerEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.popupContainerEdit1.Properties.NullText = "请选择时间";
             this.popupContainerEdit1.Properties.PopupControl = this.popupContainerControl1;
-            this.popupContainerEdit1.Size = new System.Drawing.Size(141, 20);
+            this.popupContainerEdit1.Size = new System.Drawing.Size(272, 40);
             this.popupContainerEdit1.TabIndex = 5;
             this.popupContainerEdit1.Closed += new DevExpress.XtraEditors.Controls.ClosedEventHandler(this.ComboBoxEdit1_Closed);
             // 
@@ -117,14 +107,24 @@ namespace NetBarMS.Views.SystemSearch
             // 
             // simpleButton1
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(290, 3);
+            this.simpleButton1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(229)))), ((int)(((byte)(248)))));
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.simpleButton1.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(140)))), ((int)(((byte)(190)))));
+            this.simpleButton1.Appearance.Options.UseBackColor = true;
+            this.simpleButton1.Appearance.Options.UseFont = true;
+            this.simpleButton1.Appearance.Options.UseForeColor = true;
+            this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.simpleButton1.Location = new System.Drawing.Point(707, 18);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(103, 23);
+            this.simpleButton1.Size = new System.Drawing.Size(146, 40);
             this.simpleButton1.TabIndex = 2;
             this.simpleButton1.Text = "查询上座率";
             // 
             // chartControl1
             // 
+            this.chartControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             xyDiagram3.AxisX.Color = System.Drawing.Color.Black;
             xyDiagram3.AxisX.Tickmarks.MinorVisible = false;
             xyDiagram3.AxisX.Tickmarks.Visible = false;
@@ -137,14 +137,14 @@ namespace NetBarMS.Views.SystemSearch
             xyDiagram3.Rotated = true;
             this.chartControl1.Diagram = xyDiagram3;
             this.chartControl1.Legend.Visibility = DevExpress.Utils.DefaultBoolean.False;
-            this.chartControl1.Location = new System.Drawing.Point(10, 56);
+            this.chartControl1.Location = new System.Drawing.Point(10, 88);
             this.chartControl1.Name = "chartControl1";
             series3.Name = "Series 1";
             stackedBarSeriesView3.BarWidth = 0.1D;
             series3.View = stackedBarSeriesView3;
             this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
         series3};
-            this.chartControl1.Size = new System.Drawing.Size(860, 491);
+            this.chartControl1.Size = new System.Drawing.Size(860, 463);
             this.chartControl1.TabIndex = 63;
             chartTitle3.Text = "上座率";
             this.chartControl1.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
@@ -154,16 +154,19 @@ namespace NetBarMS.Views.SystemSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.simpleButton1);
+            this.Controls.Add(this.popupContainerEdit1);
+            this.Controls.Add(this.comboBoxEdit1);
             this.Controls.Add(this.popupContainerControl1);
-            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.chartControl1);
             this.Name = "AttendanceSearchView";
             this.Size = new System.Drawing.Size(880, 562);
             this.Controls.SetChildIndex(this.titlePanelView1, 0);
             this.Controls.SetChildIndex(this.chartControl1, 0);
-            this.Controls.SetChildIndex(this.flowLayoutPanel1, 0);
             this.Controls.SetChildIndex(this.popupContainerControl1, 0);
-            this.flowLayoutPanel1.ResumeLayout(false);
+            this.Controls.SetChildIndex(this.comboBoxEdit1, 0);
+            this.Controls.SetChildIndex(this.popupContainerEdit1, 0);
+            this.Controls.SetChildIndex(this.simpleButton1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupContainerEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupContainerControl1)).EndInit();
@@ -179,8 +182,6 @@ namespace NetBarMS.Views.SystemSearch
         }
 
         #endregion
-
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraCharts.ChartControl chartControl1;
         private DevExpress.XtraEditors.PopupContainerEdit popupContainerEdit1;

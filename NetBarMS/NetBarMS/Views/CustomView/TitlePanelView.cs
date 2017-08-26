@@ -14,6 +14,7 @@ namespace NetBarMS.Views.CustomView
     public partial class TitlePanelView : UserControl
     {
         private bool IsShowCloseButton = true;
+        private bool IsShowTitle = true;
 
         public TitlePanelView()
         {
@@ -43,6 +44,32 @@ namespace NetBarMS.Views.CustomView
             {
                 return this.IsShowCloseButton;
             }
+        }
+        #endregion
+
+        #region 设置是否显示标题
+        [Browsable(true)]
+        [Description("是否显示标题"),DefaultValue(true)]
+        public bool ShowTitle
+        {
+            set
+            {
+                this.IsShowTitle = value;
+                if (this.IsShowTitle)
+                {
+                    this.titleLabel.Show();
+                }
+                else
+                {
+                    this.titleLabel.Hide();
+                }
+
+            }
+            get
+            {
+                return this.IsShowTitle;
+            }
+
         }
         #endregion
 

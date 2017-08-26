@@ -31,11 +31,9 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             this.buttonEdit1 = new DevExpress.XtraEditors.ButtonEdit();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.button1 = new System.Windows.Forms.Button();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.button1 = new System.Windows.Forms.Button();
             this.homePageButton1 = new NetBarMS.Views.CustomView.HomePageButton();
             this.homePageButton2 = new NetBarMS.Views.CustomView.HomePageButton();
             this.homePageButton3 = new NetBarMS.Views.CustomView.HomePageButton();
@@ -47,6 +45,8 @@
             this.homePageButton9 = new NetBarMS.Views.CustomView.HomePageButton();
             this.homePageButton10 = new NetBarMS.Views.CustomView.HomePageButton();
             this.homePageButton11 = new NetBarMS.Views.CustomView.HomePageButton();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.buttonEdit1.Properties)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
@@ -55,17 +55,17 @@
             // 
             // buttonEdit1
             // 
-            this.buttonEdit1.Location = new System.Drawing.Point(37, 300);
+            this.buttonEdit1.Location = new System.Drawing.Point(70, 342);
             this.buttonEdit1.Margin = new System.Windows.Forms.Padding(0);
             this.buttonEdit1.Name = "buttonEdit1";
-            serializableAppearanceObject1.BackColor = System.Drawing.Color.LightSteelBlue;
-            serializableAppearanceObject1.BorderColor = System.Drawing.Color.DeepSkyBlue;
+            serializableAppearanceObject1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(229)))), ((int)(((byte)(248)))));
+            serializableAppearanceObject1.BorderColor = System.Drawing.Color.Transparent;
             serializableAppearanceObject1.Options.UseBackColor = true;
             serializableAppearanceObject1.Options.UseBorderColor = true;
             this.buttonEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.Default, global::NetBarMS.Imgs.icon_sousuo, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
-            this.buttonEdit1.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.buttonEdit1.Size = new System.Drawing.Size(429, 36);
+            this.buttonEdit1.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.buttonEdit1.Size = new System.Drawing.Size(623, 38);
             this.buttonEdit1.TabIndex = 0;
             // 
             // tableLayoutPanel1
@@ -81,6 +81,18 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(350, 45);
             this.tableLayoutPanel1.TabIndex = 1;
+            // 
+            // button1
+            // 
+            this.button1.AutoSize = true;
+            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button1.Image = global::NetBarMS.Imgs.icon_sousuo;
+            this.button1.Location = new System.Drawing.Point(312, 0);
+            this.button1.Margin = new System.Windows.Forms.Padding(0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(38, 45);
+            this.button1.TabIndex = 0;
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // textEdit1
             // 
@@ -112,45 +124,6 @@
             this.flowLayoutPanel2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.flowLayoutPanel2.Size = new System.Drawing.Size(718, 69);
             this.flowLayoutPanel2.TabIndex = 126;
-            // 
-            // simpleButton2
-            // 
-            this.simpleButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButton2.Appearance.BackColor = System.Drawing.Color.White;
-            this.simpleButton2.Appearance.Options.UseBackColor = true;
-            this.simpleButton2.AutoSize = true;
-            this.simpleButton2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.simpleButton2.Image = global::NetBarMS.Imgs.icon_quchu;
-            this.simpleButton2.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.simpleButton2.Location = new System.Drawing.Point(497, 262);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(26, 22);
-            this.simpleButton2.TabIndex = 125;
-            // 
-            // simpleButton1
-            // 
-            this.simpleButton1.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.simpleButton1.Appearance.Options.UseBackColor = true;
-            this.simpleButton1.AutoSize = true;
-            this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.simpleButton1.Image = global::NetBarMS.Imgs.icon_close;
-            this.simpleButton1.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.simpleButton1.Location = new System.Drawing.Point(840, 238);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(30, 26);
-            this.simpleButton1.TabIndex = 2;
-            // 
-            // button1
-            // 
-            this.button1.AutoSize = true;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.Image = global::NetBarMS.Imgs.icon_sousuo;
-            this.button1.Location = new System.Drawing.Point(312, 0);
-            this.button1.Margin = new System.Windows.Forms.Padding(0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(38, 45);
-            this.button1.TabIndex = 0;
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // homePageButton1
             // 
@@ -295,6 +268,33 @@
             this.homePageButton11.Size = new System.Drawing.Size(44, 54);
             this.homePageButton11.TabIndex = 11;
             this.homePageButton11.TitleText = "激活";
+            // 
+            // simpleButton2
+            // 
+            this.simpleButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.simpleButton2.Appearance.BackColor = System.Drawing.Color.White;
+            this.simpleButton2.Appearance.Options.UseBackColor = true;
+            this.simpleButton2.AutoSize = true;
+            this.simpleButton2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.simpleButton2.Image = global::NetBarMS.Imgs.icon_quchu;
+            this.simpleButton2.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.simpleButton2.Location = new System.Drawing.Point(497, 262);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(26, 22);
+            this.simpleButton2.TabIndex = 125;
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.simpleButton1.Appearance.Options.UseBackColor = true;
+            this.simpleButton1.AutoSize = true;
+            this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.simpleButton1.Image = global::NetBarMS.Imgs.icon_close;
+            this.simpleButton1.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.simpleButton1.Location = new System.Drawing.Point(840, 238);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(30, 26);
+            this.simpleButton1.TabIndex = 2;
             // 
             // TestForm
             // 

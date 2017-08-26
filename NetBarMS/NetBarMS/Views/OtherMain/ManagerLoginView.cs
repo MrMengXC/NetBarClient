@@ -26,6 +26,7 @@ namespace NetBarMS.Views.OtherMain
             //连接服务器
             NetMessageManage.ConnectServer(ConnectServerResult);
             this.loginButton.Click += LoginButtonClick;
+            this.panel2.BackColor = Color.FromArgb(60, this.panel2.BackColor);
             //this.loginButton.Enabled = false;
 
         }

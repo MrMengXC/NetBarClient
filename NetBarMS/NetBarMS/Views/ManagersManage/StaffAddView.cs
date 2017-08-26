@@ -21,7 +21,6 @@ namespace NetBarMS.Views.ManagersManage
         public StaffAddView(StructAccount tem)
         {
             InitializeComponent();
-            this.titleLabel.Text = "员工管理";
             if(tem != null)
             {
                 this.staff = tem;

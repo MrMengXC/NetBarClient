@@ -59,7 +59,16 @@ namespace NetBarMS {
                 resourceCulture = value;
             }
         }
-        
+        /// <summary>
+        /// 通过图片名获取BitImg
+        /// </summary>
+        /// <param name="imgName"></param>
+        /// <returns></returns>
+        public static System.Drawing.Bitmap GetBitImg(string imgName)
+        {
+            object obj = ResourceManager.GetObject(imgName, resourceCulture);
+            return ((System.Drawing.Bitmap)(obj));
+        }
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>

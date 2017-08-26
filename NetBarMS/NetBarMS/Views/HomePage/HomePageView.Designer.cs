@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.ComViewButton = new DevExpress.XtraEditors.SimpleButton();
             this.ListViewButton = new DevExpress.XtraEditors.SimpleButton();
             this.comboBoxEdit2 = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -40,7 +40,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.idleLabel = new System.Windows.Forms.Label();
-            this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonEdit1.Properties)).BeginInit();
@@ -50,104 +49,94 @@
             // titlePanelView1
             // 
             this.titlePanelView1.ShowCloseButton = false;
-            this.titlePanelView1.Size = new System.Drawing.Size(1312, 50);
+            this.titlePanelView1.ShowTitle = false;
+            this.titlePanelView1.Size = new System.Drawing.Size(1312, 78);
             // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Location = new System.Drawing.Point(0, 50);
+            this.panel1.Location = new System.Drawing.Point(0, 78);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1312, 330);
+            this.panel1.Size = new System.Drawing.Size(1312, 311);
             this.panel1.TabIndex = 62;
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.ComViewButton, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.ListViewButton, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(1102, 14);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(196, 30);
-            this.tableLayoutPanel1.TabIndex = 0;
             // 
             // ComViewButton
             // 
-            this.ComViewButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ComViewButton.Image = global::NetBarMS.Imgs.icon_shitu1;
             this.ComViewButton.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
             this.ComViewButton.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.ComViewButton.Location = new System.Drawing.Point(0, 0);
+            this.ComViewButton.Location = new System.Drawing.Point(1096, 2);
             this.ComViewButton.Margin = new System.Windows.Forms.Padding(0);
             this.ComViewButton.Name = "ComViewButton";
-            this.ComViewButton.Size = new System.Drawing.Size(98, 30);
+            this.ComViewButton.Size = new System.Drawing.Size(108, 40);
             this.ComViewButton.TabIndex = 7;
             this.ComViewButton.Text = "电脑视图";
             this.ComViewButton.Click += new System.EventHandler(this.ChangeView_ButtonClick);
             // 
             // ListViewButton
             // 
-            this.ListViewButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ListViewButton.Image = global::NetBarMS.Imgs.icon_shitu2;
             this.ListViewButton.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
             this.ListViewButton.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.ListViewButton.Location = new System.Drawing.Point(98, 0);
+            this.ListViewButton.Location = new System.Drawing.Point(1204, 4);
             this.ListViewButton.Margin = new System.Windows.Forms.Padding(0);
             this.ListViewButton.Name = "ListViewButton";
-            this.ListViewButton.Size = new System.Drawing.Size(98, 30);
+            this.ListViewButton.Size = new System.Drawing.Size(108, 40);
             this.ListViewButton.TabIndex = 8;
             this.ListViewButton.Text = "列表视图";
             this.ListViewButton.Click += new System.EventHandler(this.ChangeView_ButtonClick);
             // 
             // comboBoxEdit2
             // 
-            this.comboBoxEdit2.Location = new System.Drawing.Point(19, 14);
+            this.comboBoxEdit2.Location = new System.Drawing.Point(19, 19);
             this.comboBoxEdit2.Name = "comboBoxEdit2";
             this.comboBoxEdit2.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.comboBoxEdit2.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
             this.comboBoxEdit2.Properties.Appearance.Options.UseFont = true;
             this.comboBoxEdit2.Properties.Appearance.Options.UseForeColor = true;
+            this.comboBoxEdit2.Properties.AutoHeight = false;
             this.comboBoxEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.comboBoxEdit2.Properties.NullText = "按区域查询";
             this.comboBoxEdit2.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit2.Size = new System.Drawing.Size(272, 28);
+            this.comboBoxEdit2.Size = new System.Drawing.Size(272, 40);
             this.comboBoxEdit2.TabIndex = 4;
             // 
             // comboBoxEdit1
             // 
-            this.comboBoxEdit1.Location = new System.Drawing.Point(313, 14);
+            this.comboBoxEdit1.Location = new System.Drawing.Point(313, 19);
             this.comboBoxEdit1.Name = "comboBoxEdit1";
             this.comboBoxEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.comboBoxEdit1.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
             this.comboBoxEdit1.Properties.Appearance.Options.UseFont = true;
             this.comboBoxEdit1.Properties.Appearance.Options.UseForeColor = true;
+            this.comboBoxEdit1.Properties.AutoHeight = false;
             this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.comboBoxEdit1.Properties.NullText = "按设备状态查询";
             this.comboBoxEdit1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit1.Size = new System.Drawing.Size(272, 28);
+            this.comboBoxEdit1.Size = new System.Drawing.Size(272, 40);
             this.comboBoxEdit1.TabIndex = 3;
             this.comboBoxEdit1.SelectedIndexChanged += new System.EventHandler(this.comboBoxEdit1_SelectedIndexChanged);
             // 
             // buttonEdit1
             // 
-            this.buttonEdit1.Location = new System.Drawing.Point(605, 14);
+            this.buttonEdit1.Location = new System.Drawing.Point(605, 19);
             this.buttonEdit1.Name = "buttonEdit1";
             this.buttonEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.buttonEdit1.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
             this.buttonEdit1.Properties.Appearance.Options.UseFont = true;
             this.buttonEdit1.Properties.Appearance.Options.UseForeColor = true;
+            this.buttonEdit1.Properties.AutoHeight = false;
+            serializableAppearanceObject1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(229)))), ((int)(((byte)(248)))));
+            serializableAppearanceObject1.Options.UseBackColor = true;
             this.buttonEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Search)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::NetBarMS.Imgs.icon_sousuo, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
+            this.buttonEdit1.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.buttonEdit1.Properties.NullText = "按设备号、mac、ip查询";
-            this.buttonEdit1.Size = new System.Drawing.Size(272, 28);
+            this.buttonEdit1.Size = new System.Drawing.Size(272, 40);
             this.buttonEdit1.TabIndex = 5;
             this.buttonEdit1.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.SearchButton_ButtonClick);
             // 
@@ -212,10 +201,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.ListViewButton);
+            this.Controls.Add(this.ComViewButton);
             this.Controls.Add(this.buttonEdit1);
             this.Controls.Add(this.comboBoxEdit1);
             this.Controls.Add(this.comboBoxEdit2);
-            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.panel1);
             this.Name = "HomePageView";
@@ -223,11 +213,11 @@
             this.Controls.SetChildIndex(this.titlePanelView1, 0);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.flowLayoutPanel2, 0);
-            this.Controls.SetChildIndex(this.tableLayoutPanel1, 0);
             this.Controls.SetChildIndex(this.comboBoxEdit2, 0);
             this.Controls.SetChildIndex(this.comboBoxEdit1, 0);
             this.Controls.SetChildIndex(this.buttonEdit1, 0);
-            this.tableLayoutPanel1.ResumeLayout(false);
+            this.Controls.SetChildIndex(this.ComViewButton, 0);
+            this.Controls.SetChildIndex(this.ListViewButton, 0);
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonEdit1.Properties)).EndInit();
@@ -242,7 +232,6 @@
         private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
         private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit2;
         private DevExpress.XtraEditors.ButtonEdit buttonEdit1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private DevExpress.XtraEditors.SimpleButton ComViewButton;
         private DevExpress.XtraEditors.SimpleButton ListViewButton;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;

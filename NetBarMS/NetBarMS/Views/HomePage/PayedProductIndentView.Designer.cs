@@ -41,7 +41,7 @@
             // titlePanelView1
             // 
             this.titlePanelView1.ShowCloseButton = false;
-            this.titlePanelView1.Size = new System.Drawing.Size(510, 50);
+            this.titlePanelView1.Size = new System.Drawing.Size(937, 78);
             this.titlePanelView1.Title = "已付款商品订单管理";
             // 
             // gridControl1
@@ -49,10 +49,10 @@
             this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridControl1.Location = new System.Drawing.Point(6, 56);
+            this.gridControl1.Location = new System.Drawing.Point(0, 78);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(496, 719);
+            this.gridControl1.Size = new System.Drawing.Size(937, 612);
             this.gridControl1.TabIndex = 81;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1,
@@ -71,11 +71,12 @@
             // 
             // buttonEdit1
             // 
-            this.buttonEdit1.Location = new System.Drawing.Point(227, 13);
+            this.buttonEdit1.Location = new System.Drawing.Point(210, 19);
             this.buttonEdit1.Name = "buttonEdit1";
+            this.buttonEdit1.Properties.AutoHeight = false;
             this.buttonEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Search)});
-            this.buttonEdit1.Size = new System.Drawing.Size(172, 20);
+            this.buttonEdit1.Size = new System.Drawing.Size(272, 40);
             this.buttonEdit1.TabIndex = 82;
             this.buttonEdit1.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.SearchButton_ButtonClick);
             // 
@@ -86,7 +87,7 @@
             this.Controls.Add(this.buttonEdit1);
             this.Controls.Add(this.gridControl1);
             this.Name = "PayedProductIndentView";
-            this.Size = new System.Drawing.Size(510, 805);
+            this.Size = new System.Drawing.Size(937, 805);
             this.Controls.SetChildIndex(this.titlePanelView1, 0);
             this.Controls.SetChildIndex(this.gridControl1, 0);
             this.Controls.SetChildIndex(this.buttonEdit1, 0);

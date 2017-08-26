@@ -32,7 +32,6 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.closeButton = new System.Windows.Forms.Button();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.popupContainerEdit1 = new DevExpress.XtraEditors.PopupContainerEdit();
             this.popupContainerControl1 = new DevExpress.XtraEditors.PopupContainerControl();
             this.dateNavigator = new DevExpress.XtraScheduler.DateNavigator();
@@ -42,7 +41,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
-            this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.popupContainerEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupContainerControl1)).BeginInit();
             this.popupContainerControl1.SuspendLayout();
@@ -54,7 +52,7 @@
             // 
             // titlePanelView1
             // 
-            this.titlePanelView1.Size = new System.Drawing.Size(1100, 50);
+            this.titlePanelView1.Size = new System.Drawing.Size(1241, 78);
             this.titlePanelView1.Title = "会员消费记录查询";
             // 
             // gridControl1
@@ -62,10 +60,10 @@
             this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridControl1.Location = new System.Drawing.Point(6, 56);
+            this.gridControl1.Location = new System.Drawing.Point(0, 78);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1091, 579);
+            this.gridControl1.Size = new System.Drawing.Size(1241, 612);
             this.gridControl1.TabIndex = 78;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1,
@@ -92,33 +90,25 @@
             this.closeButton.Text = "X";
             this.closeButton.UseVisualStyleBackColor = true;
             // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.popupContainerEdit1);
-            this.flowLayoutPanel1.Controls.Add(this.useComboBoxEdit);
-            this.flowLayoutPanel1.Controls.Add(this.payChannelComboBoxEdit);
-            this.flowLayoutPanel1.Controls.Add(this.popupContainerControl1);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(130, 19);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(538, 31);
-            this.flowLayoutPanel1.TabIndex = 1;
-            // 
             // popupContainerEdit1
             // 
-            this.popupContainerEdit1.Location = new System.Drawing.Point(3, 3);
+            this.popupContainerEdit1.Location = new System.Drawing.Point(193, 19);
             this.popupContainerEdit1.Name = "popupContainerEdit1";
+            this.popupContainerEdit1.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
+            this.popupContainerEdit1.Properties.Appearance.Options.UseForeColor = true;
+            this.popupContainerEdit1.Properties.AutoHeight = false;
             this.popupContainerEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.popupContainerEdit1.Properties.NullText = "请选择时间段进行查询";
             this.popupContainerEdit1.Properties.PopupControl = this.popupContainerControl1;
-            this.popupContainerEdit1.Size = new System.Drawing.Size(155, 20);
+            this.popupContainerEdit1.Size = new System.Drawing.Size(272, 40);
             this.popupContainerEdit1.TabIndex = 3;
             this.popupContainerEdit1.Closed += new DevExpress.XtraEditors.Controls.ClosedEventHandler(this.PopupContainerEdit1_Closed);
             // 
             // popupContainerControl1
             // 
             this.popupContainerControl1.Controls.Add(this.dateNavigator);
-            this.popupContainerControl1.Location = new System.Drawing.Point(3, 29);
+            this.popupContainerControl1.Location = new System.Drawing.Point(691, 166);
             this.popupContainerControl1.Name = "popupContainerControl1";
             this.popupContainerControl1.Size = new System.Drawing.Size(288, 261);
             this.popupContainerControl1.TabIndex = 4;
@@ -140,25 +130,31 @@
             // 
             // useComboBoxEdit
             // 
-            this.useComboBoxEdit.Location = new System.Drawing.Point(164, 3);
+            this.useComboBoxEdit.Location = new System.Drawing.Point(482, 19);
             this.useComboBoxEdit.Name = "useComboBoxEdit";
+            this.useComboBoxEdit.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
+            this.useComboBoxEdit.Properties.Appearance.Options.UseForeColor = true;
+            this.useComboBoxEdit.Properties.AutoHeight = false;
             this.useComboBoxEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.useComboBoxEdit.Properties.NullText = "按用途进行筛选";
             this.useComboBoxEdit.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.useComboBoxEdit.Size = new System.Drawing.Size(135, 20);
+            this.useComboBoxEdit.Size = new System.Drawing.Size(272, 40);
             this.useComboBoxEdit.TabIndex = 1;
             this.useComboBoxEdit.SelectedIndexChanged += new System.EventHandler(this.useComboBoxEdit_SelectedIndexChanged);
             // 
             // payChannelComboBoxEdit
             // 
-            this.payChannelComboBoxEdit.Location = new System.Drawing.Point(305, 3);
+            this.payChannelComboBoxEdit.Location = new System.Drawing.Point(771, 19);
             this.payChannelComboBoxEdit.Name = "payChannelComboBoxEdit";
+            this.payChannelComboBoxEdit.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
+            this.payChannelComboBoxEdit.Properties.Appearance.Options.UseForeColor = true;
+            this.payChannelComboBoxEdit.Properties.AutoHeight = false;
             this.payChannelComboBoxEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.payChannelComboBoxEdit.Properties.NullText = "按付款渠道进行筛选";
             this.payChannelComboBoxEdit.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.payChannelComboBoxEdit.Size = new System.Drawing.Size(135, 20);
+            this.payChannelComboBoxEdit.Size = new System.Drawing.Size(272, 40);
             this.payChannelComboBoxEdit.TabIndex = 2;
             this.payChannelComboBoxEdit.SelectedIndexChanged += new System.EventHandler(this.payChannelComboBoxEdit_SelectedIndexChanged);
             // 
@@ -166,9 +162,9 @@
             // 
             this.pageView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.pageView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pageView1.Location = new System.Drawing.Point(0, 641);
+            this.pageView1.Location = new System.Drawing.Point(0, 775);
             this.pageView1.Name = "pageView1";
-            this.pageView1.Size = new System.Drawing.Size(1100, 30);
+            this.pageView1.Size = new System.Drawing.Size(1241, 30);
             this.pageView1.TabIndex = 80;
             this.pageView1.PageChangedEvent += new NetBarMS.Codes.Tools.PageChangedHandle(this.PageView_PageChanged);
             // 
@@ -176,19 +172,24 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.popupContainerControl1);
+            this.Controls.Add(this.payChannelComboBoxEdit);
+            this.Controls.Add(this.useComboBoxEdit);
+            this.Controls.Add(this.popupContainerEdit1);
             this.Controls.Add(this.pageView1);
             this.Controls.Add(this.gridControl1);
             this.Name = "MemberConsumeRecordView";
-            this.Size = new System.Drawing.Size(1100, 671);
-            this.Controls.SetChildIndex(this.titlePanelView1, 0);
+            this.Size = new System.Drawing.Size(1241, 805);
             this.Controls.SetChildIndex(this.gridControl1, 0);
             this.Controls.SetChildIndex(this.pageView1, 0);
-            this.Controls.SetChildIndex(this.flowLayoutPanel1, 0);
+            this.Controls.SetChildIndex(this.titlePanelView1, 0);
+            this.Controls.SetChildIndex(this.popupContainerEdit1, 0);
+            this.Controls.SetChildIndex(this.useComboBoxEdit, 0);
+            this.Controls.SetChildIndex(this.payChannelComboBoxEdit, 0);
+            this.Controls.SetChildIndex(this.popupContainerControl1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).EndInit();
-            this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.popupContainerEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupContainerControl1)).EndInit();
             this.popupContainerControl1.ResumeLayout(false);
@@ -209,7 +210,6 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView;
         private System.Windows.Forms.Button closeButton;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private DevExpress.XtraEditors.ComboBoxEdit useComboBoxEdit;
         private DevExpress.XtraEditors.ComboBoxEdit payChannelComboBoxEdit;
         private DevExpress.XtraEditors.PopupContainerEdit popupContainerEdit1;

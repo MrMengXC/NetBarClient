@@ -13,13 +13,26 @@ namespace NetBarMS.Codes.Model
     {
         //tag
         public string nodeTag = "None";
-
-        //名称
+        /// <summary>
+        /// 节点名称
+        /// </summary>
         public string nodeName;
-
-        //id
+        /// <summary>
+        /// 节点id
+        /// </summary>
         public int nodeid;
-        //子节点
+        /// <summary>
+        /// 图片名称
+        /// </summary>
+        public string imgName;
+        /// <summary>
+        /// 选中图片名
+        /// </summary>
+        public string selName;
+
+        /// <summary>
+        /// 子节点数组
+        /// </summary>
         public List<HomePageNodeModel> childNodes;
 
     }

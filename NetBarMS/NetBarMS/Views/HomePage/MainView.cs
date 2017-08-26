@@ -40,6 +40,10 @@ namespace NetBarMS.Views.HomePage
         /// 是否是激活
         /// </summary>
         private bool IsActiveCard = false;
+
+        private SimpleButton selectButton = null;
+
+
         public MainView()
         {
             InitializeComponent();
@@ -57,14 +61,24 @@ namespace NetBarMS.Views.HomePage
                 HomePageNodeModel nodeModel = modelList[i];
                 SimpleButton button = new SimpleButton();
                 button.Text = nodeModel.nodeName;
-                button.Size = new Size(50, 50);
+                button.Size = new Size(50, 68);
                 button.ForeColor = ColorTranslator.FromHtml("#ffffff");
+                button.Font = new Font("宋体", 20, GraphicsUnit.Pixel);
                 button.Dock = DockStyle.Top;
+                button.ImageToTextAlignment = ImageAlignToText.LeftCenter;
                 button.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
                 button.Click += Button_Click ;
                 button.MouseDown += Button_MouseDown;
-                button.Tag = nodeModel.nodeid;
-                button.Image = Imgs.icon_huiyuan;
+                button.Tag = nodeModel;
+         
+                if(nodeModel.imgName == null || nodeModel.imgName == "" )
+                {
+                    button.Image = Imgs.icon_huiyuan;
+                }
+                else
+                {
+                    button.Image = Imgs.GetBitImg(nodeModel.imgName);
+                }
                 this.functionPanel.Controls.Add(button);
             }
             ////添加首页视图
@@ -138,8 +152,38 @@ namespace NetBarMS.Views.HomePage
         #region 按钮单击事件
         private void Button_Click(object sender, EventArgs e)
         {
-            int nodeId = (int)((SimpleButton)sender).Tag;
-            HomePageNodeModel nodeModel = XMLDataManage.GetHomePageNodeModel(nodeId);
+            if(selectButton == sender)
+            {
+                return;
+            }
+
+            //设置回原来的样子
+            if(selectButton != null)
+            {
+                HomePageNodeModel selectNodeModel = (HomePageNodeModel)(selectButton.Tag);
+                selectButton.ForeColor = ColorTranslator.FromHtml("#ffffff");
+                if (selectNodeModel.imgName == null || selectNodeModel.imgName == "")
+                {
+                    selectButton.Image = Imgs.icon_huiyuan;
+                }
+                else
+                {
+                    selectButton.Image = Imgs.GetBitImg(selectNodeModel.imgName);
+                }
+            }
+
+            //设置成选择状态
+            HomePageNodeModel nodeModel = (HomePageNodeModel)(((SimpleButton)sender).Tag);
+            selectButton = sender as SimpleButton;
+            selectButton.ForeColor = Color.FromArgb(108, 140, 190);
+            if (nodeModel.selName == null || nodeModel.selName == "")
+            {
+                selectButton.Image = Imgs.icon_huiyuan;
+            }
+            else
+            {
+                selectButton.Image = Imgs.GetBitImg(nodeModel.selName);
+            }
             ShowView(nodeModel);
         }
 
@@ -150,8 +194,7 @@ namespace NetBarMS.Views.HomePage
             SimpleButton button = (SimpleButton)sender;
             if (e.Button == MouseButtons.Right)
             {
-                int nodeId = (int)button.Tag;
-                HomePageNodeModel nodeModel = XMLDataManage.GetHomePageNodeModel(nodeId);
+                HomePageNodeModel nodeModel = button.Tag as HomePageNodeModel;
 
                 //设置右键弹出框
                 if (nodeModel.childNodes.Count > 0)

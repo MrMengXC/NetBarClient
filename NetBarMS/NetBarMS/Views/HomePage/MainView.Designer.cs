@@ -71,6 +71,7 @@
             // 
             // functionPanel
             // 
+            this.functionPanel.AutoScroll = true;
             this.functionPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.functionPanel.Location = new System.Drawing.Point(3, 3);
             this.functionPanel.Name = "functionPanel";

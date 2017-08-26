@@ -43,9 +43,7 @@ namespace NetBarMS.Codes.Tools
         /// </summary>
         public static List<HomePageNodeModel> GetNodesXML()
         {
-
             return XMLDataManage.Manage().homepageNodes;
-
         }
 
 
@@ -82,6 +80,8 @@ namespace NetBarMS.Codes.Tools
 
                 string nodeTag = nodeEle.GetAttribute("tag") == null || nodeEle.GetAttribute("tag") == "" ? "None" : nodeEle.GetAttribute("tag");
                 int nodeId = nodeEle.GetAttribute("id") == null || nodeEle.GetAttribute("id") == "" ? 0 : int.Parse(nodeEle.GetAttribute("id"));
+                string imgName = nodeEle.GetAttribute("img") == null || nodeEle.GetAttribute("img") == "" ? "": nodeEle.GetAttribute("img");
+                string selName = nodeEle.GetAttribute("sel") == null || nodeEle.GetAttribute("sel") == "" ? "" : nodeEle.GetAttribute("sel");
 
                 HomePageNodeModel nodeModel = new HomePageNodeModel()
                 {
@@ -89,6 +89,8 @@ namespace NetBarMS.Codes.Tools
                     childNodes = childNodes,
                     nodeTag = nodeTag,
                     nodeid = nodeId,
+                    imgName = imgName,
+                    selName = selName,
                 };
                
 

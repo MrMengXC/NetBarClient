@@ -31,13 +31,13 @@
             this.titlePanel = new System.Windows.Forms.Panel();
             this.closeBtn = new DevExpress.XtraEditors.SimpleButton();
             this.titleLabel = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.bottomPanel = new System.Windows.Forms.Panel();
             this.titlePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // titlePanel
             // 
-            this.titlePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
+            this.titlePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
             this.titlePanel.Controls.Add(this.closeBtn);
             this.titlePanel.Controls.Add(this.titleLabel);
             this.titlePanel.Dock = System.Windows.Forms.DockStyle.Top;
@@ -51,7 +51,7 @@
             // 
             this.closeBtn.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.closeBtn.Appearance.Options.UseBackColor = true;
-            this.closeBtn.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.closeBtn.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.closeBtn.Dock = System.Windows.Forms.DockStyle.Right;
             this.closeBtn.Image = global::NetBarMS.Imgs.icon_close;
             this.closeBtn.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
@@ -66,28 +66,29 @@
             // titleLabel
             // 
             this.titleLabel.AutoSize = true;
-            this.titleLabel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.titleLabel.Font = new System.Drawing.Font("宋体", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.titleLabel.Location = new System.Drawing.Point(0, 0);
+            this.titleLabel.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.titleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(140)))), ((int)(((byte)(190)))));
+            this.titleLabel.Location = new System.Drawing.Point(10, 17);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(0, 17);
+            this.titleLabel.Size = new System.Drawing.Size(53, 18);
             this.titleLabel.TabIndex = 1;
+            this.titleLabel.Text = "Title";
             // 
-            // panel1
+            // bottomPanel
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 317);
-            this.panel1.Margin = new System.Windows.Forms.Padding(0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(480, 64);
-            this.panel1.TabIndex = 63;
+            this.bottomPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
+            this.bottomPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.bottomPanel.Location = new System.Drawing.Point(0, 317);
+            this.bottomPanel.Margin = new System.Windows.Forms.Padding(0);
+            this.bottomPanel.Name = "bottomPanel";
+            this.bottomPanel.Size = new System.Drawing.Size(480, 64);
+            this.bottomPanel.TabIndex = 63;
             // 
             // RootFormView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.bottomPanel);
             this.Controls.Add(this.titlePanel);
             this.Name = "RootFormView";
             this.Size = new System.Drawing.Size(480, 381);
@@ -102,6 +103,6 @@
         public System.Windows.Forms.Panel titlePanel;
         public System.Windows.Forms.Label titleLabel;
         public DevExpress.XtraEditors.SimpleButton closeBtn;
-        private System.Windows.Forms.Panel panel1;
+        public System.Windows.Forms.Panel bottomPanel;
     }
 }

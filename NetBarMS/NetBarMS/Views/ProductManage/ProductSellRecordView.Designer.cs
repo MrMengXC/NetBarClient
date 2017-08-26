@@ -48,7 +48,7 @@
             // 
             // titlePanelView1
             // 
-            this.titlePanelView1.Size = new System.Drawing.Size(990, 50);
+            this.titlePanelView1.Size = new System.Drawing.Size(990, 78);
             this.titlePanelView1.Title = "销售记录";
             // 
             // gridControl1
@@ -56,10 +56,10 @@
             this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridControl1.Location = new System.Drawing.Point(11, 56);
+            this.gridControl1.Location = new System.Drawing.Point(0, 78);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(974, 682);
+            this.gridControl1.Size = new System.Drawing.Size(990, 612);
             this.gridControl1.TabIndex = 78;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1,
@@ -88,13 +88,16 @@
             // 
             // popupContainerEdit1
             // 
-            this.popupContainerEdit1.Location = new System.Drawing.Point(120, 13);
+            this.popupContainerEdit1.Location = new System.Drawing.Point(120, 19);
             this.popupContainerEdit1.Name = "popupContainerEdit1";
+            this.popupContainerEdit1.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
+            this.popupContainerEdit1.Properties.Appearance.Options.UseForeColor = true;
+            this.popupContainerEdit1.Properties.AutoHeight = false;
             this.popupContainerEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.popupContainerEdit1.Properties.NullText = "请选择时间段进行查询";
             this.popupContainerEdit1.Properties.PopupControl = this.popupContainerControl1;
-            this.popupContainerEdit1.Size = new System.Drawing.Size(146, 20);
+            this.popupContainerEdit1.Size = new System.Drawing.Size(272, 40);
             this.popupContainerEdit1.TabIndex = 0;
             // 
             // popupContainerControl1
@@ -119,11 +122,12 @@
             // 
             // pageView1
             // 
-            this.pageView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.pageView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pageView1.Location = new System.Drawing.Point(0, 744);
+            this.pageView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pageView1.BackColor = System.Drawing.Color.Transparent;
+            this.pageView1.Location = new System.Drawing.Point(0, 696);
             this.pageView1.Name = "pageView1";
-            this.pageView1.Size = new System.Drawing.Size(990, 30);
+            this.pageView1.Size = new System.Drawing.Size(990, 40);
             this.pageView1.TabIndex = 79;
             // 
             // ProductSellRecordView
@@ -135,7 +139,7 @@
             this.Controls.Add(this.popupContainerControl1);
             this.Controls.Add(this.gridControl1);
             this.Name = "ProductSellRecordView";
-            this.Size = new System.Drawing.Size(990, 774);
+            this.Size = new System.Drawing.Size(990, 805);
             this.Controls.SetChildIndex(this.titlePanelView1, 0);
             this.Controls.SetChildIndex(this.gridControl1, 0);
             this.Controls.SetChildIndex(this.popupContainerControl1, 0);

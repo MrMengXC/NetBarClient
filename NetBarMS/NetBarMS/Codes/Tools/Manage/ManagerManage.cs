@@ -90,10 +90,11 @@ namespace NetBarMS.Codes.Tools.Manage
         /// <returns></returns>
         public bool IsRightUse(int nodeId)
         {
+            //TODO:打开
+            return true;
             string rights = accountInfo.Role.Rights;
             bool isRight = BigInteger.BigIntegerTools.TestRights(rights, nodeId);
-            if(!isRight)
-                MessageBox.Show("很抱歉，您无权限使用该功能");
+            if (!isRight) { MessageBox.Show("很抱歉，您无权限使用该功能");}
             return isRight;
         }
     }

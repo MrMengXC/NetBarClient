@@ -17,6 +17,7 @@ namespace NetBarMS.Views
     {
         public event CloseFormHandle CloseForm;
         protected DataTable mainDataTable;     //
+        protected bool isShowBottom = true;
 
         public RootFormView()
         {
@@ -29,7 +30,30 @@ namespace NetBarMS.Views
         {
             //System.Console.WriteLine("RootUserControlView_Disposed");
         }
+        #region 设置是否显示底部
+        [Browsable(true)]
+        [Description("是否显示底部栏"), DefaultValue(true)]
+        public bool ShowBottom
+        {
+            set
+            {
+                this.isShowBottom = value;
+                if (this.isShowBottom)
+                {
+                    this.bottomPanel.Show();
+                }
+                else
+                {
+                    this.bottomPanel.Hide();
+                }
 
+            }
+            get
+            {
+                return this.isShowBottom;
+            }
+        }
+        #endregion
         #region 从父视图移除
         protected virtual void CloseFormClick(object sender, EventArgs e)
         {

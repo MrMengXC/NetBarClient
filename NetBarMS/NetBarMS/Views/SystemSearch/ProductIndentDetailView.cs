@@ -30,7 +30,6 @@ namespace NetBarMS.Views.SystemSearch
         public ProductIndentDetailView(StructOrder tem)
         {
             InitializeComponent();
-            this.titleLabel.Text = "订单详情";
             this.order = tem;
             InitUI();
             if(tem != null)

@@ -27,7 +27,6 @@ namespace NetBarMS.Views.ProductManage
         public ProductAddView(StructGoods updateProduct)
         {
             InitializeComponent();
-            this.titleLabel.Text = "商品管理";
             InitUI();
             if (updateProduct != null)
             {

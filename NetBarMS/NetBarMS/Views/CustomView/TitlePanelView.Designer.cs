@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.closeButton = new DevExpress.XtraEditors.SimpleButton();
-            this.mainPanel = new System.Windows.Forms.Panel();
             this.titleLabel = new System.Windows.Forms.Label();
+            this.mainPanel = new System.Windows.Forms.Panel();
             this.mainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -40,12 +40,25 @@
             this.closeButton.Image = global::NetBarMS.Imgs.icon_fanhui;
             this.closeButton.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
             this.closeButton.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.closeButton.Location = new System.Drawing.Point(604, 10);
+            this.closeButton.Location = new System.Drawing.Point(601, 20);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(72, 37);
             this.closeButton.TabIndex = 0;
             this.closeButton.Text = "返回";
             this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
+            // 
+            // titleLabel
+            // 
+            this.titleLabel.AutoSize = true;
+            this.titleLabel.BackColor = System.Drawing.Color.Transparent;
+            this.titleLabel.Font = new System.Drawing.Font("宋体", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.titleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
+            this.titleLabel.Location = new System.Drawing.Point(11, 27);
+            this.titleLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.titleLabel.Name = "titleLabel";
+            this.titleLabel.Size = new System.Drawing.Size(59, 20);
+            this.titleLabel.TabIndex = 1;
+            this.titleLabel.Text = "Title";
             // 
             // mainPanel
             // 
@@ -56,20 +69,8 @@
             this.mainPanel.Location = new System.Drawing.Point(0, 0);
             this.mainPanel.Margin = new System.Windows.Forms.Padding(0);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(676, 54);
+            this.mainPanel.Size = new System.Drawing.Size(676, 78);
             this.mainPanel.TabIndex = 1;
-            // 
-            // titleLabel
-            // 
-            this.titleLabel.AutoSize = true;
-            this.titleLabel.BackColor = System.Drawing.Color.Transparent;
-            this.titleLabel.Font = new System.Drawing.Font("宋体", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
-            this.titleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
-            this.titleLabel.Location = new System.Drawing.Point(14, 15);
-            this.titleLabel.Margin = new System.Windows.Forms.Padding(0);
-            this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(0, 20);
-            this.titleLabel.TabIndex = 1;
             // 
             // TitlePanelView
             // 
@@ -77,7 +78,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.mainPanel);
             this.Name = "TitlePanelView";
-            this.Size = new System.Drawing.Size(676, 54);
+            this.Size = new System.Drawing.Size(676, 78);
             this.mainPanel.ResumeLayout(false);
             this.mainPanel.PerformLayout();
             this.ResumeLayout(false);
@@ -87,7 +88,7 @@
         #endregion
 
         private DevExpress.XtraEditors.SimpleButton closeButton;
-        public System.Windows.Forms.Panel mainPanel;
         private System.Windows.Forms.Label titleLabel;
+        public System.Windows.Forms.Panel mainPanel;
     }
 }

@@ -17,7 +17,6 @@ namespace NetBarMS.Views.HomePage
         public CloseMacheView()
         {
             InitializeComponent();
-            this.titleLabel.Text = "关闭闲机";
         }
         #region 确定关闭闲机
         //确定关闭闲着的机子

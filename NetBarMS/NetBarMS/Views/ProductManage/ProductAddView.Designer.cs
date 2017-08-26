@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.Utils.SimpleContextButton simpleContextButton1 = new DevExpress.Utils.SimpleContextButton();
-            DevExpress.Utils.SimpleContextButton simpleContextButton2 = new DevExpress.Utils.SimpleContextButton();
-            DevExpress.Utils.SimpleContextButton simpleContextButton3 = new DevExpress.Utils.SimpleContextButton();
+            DevExpress.Utils.SimpleContextButton simpleContextButton10 = new DevExpress.Utils.SimpleContextButton();
+            DevExpress.Utils.SimpleContextButton simpleContextButton11 = new DevExpress.Utils.SimpleContextButton();
+            DevExpress.Utils.SimpleContextButton simpleContextButton12 = new DevExpress.Utils.SimpleContextButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.label2 = new System.Windows.Forms.Label();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
@@ -53,7 +53,10 @@
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.label10 = new System.Windows.Forms.Label();
             this.checkedListBoxControl1 = new DevExpress.XtraEditors.CheckedListBoxControl();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.label3 = new System.Windows.Forms.Label();
             this.titlePanel.SuspendLayout();
+            this.bottomPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
@@ -67,95 +70,125 @@
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checkedListBoxControl1)).BeginInit();
+            this.tableLayoutPanel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // titlePanel
             // 
-            this.titlePanel.Size = new System.Drawing.Size(360, 50);
+            this.titlePanel.Size = new System.Drawing.Size(607, 50);
+            // 
+            // titleLabel
+            // 
+            this.titleLabel.Size = new System.Drawing.Size(80, 18);
+            this.titleLabel.Text = "商品管理";
             // 
             // closeBtn
             // 
-            this.closeBtn.Location = new System.Drawing.Point(308, 0);
+            this.closeBtn.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.closeBtn.Appearance.Options.UseBackColor = true;
+            this.closeBtn.Location = new System.Drawing.Point(560, 0);
+            this.closeBtn.LookAndFeel.SkinMaskColor = System.Drawing.Color.Transparent;
+            this.closeBtn.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.closeBtn.Size = new System.Drawing.Size(47, 50);
+            // 
+            // bottomPanel
+            // 
+            this.bottomPanel.Controls.Add(this.simpleButton2);
+            this.bottomPanel.Location = new System.Drawing.Point(0, 662);
+            this.bottomPanel.Size = new System.Drawing.Size(607, 64);
             // 
             // simpleButton2
             // 
-            this.simpleButton2.Location = new System.Drawing.Point(109, 363);
+            this.simpleButton2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.simpleButton2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(249)))));
+            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.simpleButton2.Appearance.Options.UseBackColor = true;
+            this.simpleButton2.Appearance.Options.UseFont = true;
+            this.simpleButton2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.simpleButton2.Location = new System.Drawing.Point(242, 12);
             this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(101, 23);
+            this.simpleButton2.Size = new System.Drawing.Size(122, 40);
             this.simpleButton2.TabIndex = 17;
             this.simpleButton2.Text = "保存";
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
             // label2
             // 
-            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Location = new System.Drawing.Point(3, 0);
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.label2.Location = new System.Drawing.Point(3, 14);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 28);
+            this.label2.Size = new System.Drawing.Size(98, 18);
             this.label2.TabIndex = 0;
             this.label2.Text = "商品名称：";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // textEdit1
             // 
-            this.textEdit1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textEdit1.Location = new System.Drawing.Point(74, 3);
+            this.textEdit1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textEdit1.Location = new System.Drawing.Point(107, 3);
             this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(178, 20);
+            this.textEdit1.Properties.AutoHeight = false;
+            this.textEdit1.Size = new System.Drawing.Size(400, 40);
             this.textEdit1.TabIndex = 7;
             // 
             // comboBoxEdit1
             // 
-            this.comboBoxEdit1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBoxEdit1.Location = new System.Drawing.Point(74, 3);
+            this.comboBoxEdit1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboBoxEdit1.Location = new System.Drawing.Point(107, 3);
             this.comboBoxEdit1.Name = "comboBoxEdit1";
+            this.comboBoxEdit1.Properties.AutoHeight = false;
             this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit1.Size = new System.Drawing.Size(178, 20);
+            this.comboBoxEdit1.Size = new System.Drawing.Size(400, 40);
             this.comboBoxEdit1.TabIndex = 1;
             // 
             // textEdit2
             // 
-            this.textEdit2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textEdit2.Location = new System.Drawing.Point(74, 3);
+            this.textEdit2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textEdit2.Location = new System.Drawing.Point(107, 3);
             this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Size = new System.Drawing.Size(178, 20);
+            this.textEdit2.Properties.AutoHeight = false;
+            this.textEdit2.Size = new System.Drawing.Size(400, 40);
             this.textEdit2.TabIndex = 7;
             // 
             // textEdit3
             // 
-            this.textEdit3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textEdit3.Location = new System.Drawing.Point(74, 3);
+            this.textEdit3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textEdit3.Location = new System.Drawing.Point(107, 3);
             this.textEdit3.Name = "textEdit3";
+            this.textEdit3.Properties.AutoHeight = false;
             this.textEdit3.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.textEdit3.Size = new System.Drawing.Size(178, 20);
+            this.textEdit3.Size = new System.Drawing.Size(400, 40);
             this.textEdit3.TabIndex = 7;
             // 
             // textEdit4
             // 
-            this.textEdit4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textEdit4.Location = new System.Drawing.Point(74, 3);
+            this.textEdit4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textEdit4.Location = new System.Drawing.Point(107, 3);
             this.textEdit4.Name = "textEdit4";
-            this.textEdit4.Size = new System.Drawing.Size(178, 20);
+            this.textEdit4.Properties.AutoHeight = false;
+            this.textEdit4.Size = new System.Drawing.Size(400, 40);
             this.textEdit4.TabIndex = 7;
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.productPicture2);
-            this.panel2.Controls.Add(this.productPicture3);
-            this.panel2.Controls.Add(this.productPicture1);
+            this.panel2.AutoSize = true;
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.tableLayoutPanel6);
             this.panel2.Controls.Add(this.flowLayoutPanel1);
             this.panel2.Controls.Add(this.checkedListBoxControl1);
-            this.panel2.Controls.Add(this.simpleButton2);
-            this.panel2.Location = new System.Drawing.Point(8, 60);
+            this.panel2.Location = new System.Drawing.Point(10, 60);
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(340, 389);
+            this.panel2.Size = new System.Drawing.Size(522, 500);
             this.panel2.TabIndex = 2;
             // 
             // productPicture2
             // 
-            this.productPicture2.Location = new System.Drawing.Point(116, 176);
+            this.productPicture2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.productPicture2.Location = new System.Drawing.Point(123, 12);
             this.productPicture2.Name = "productPicture2";
             this.productPicture2.NetPath = "";
             this.productPicture2.Size = new System.Drawing.Size(81, 93);
@@ -163,7 +196,8 @@
             // 
             // productPicture3
             // 
-            this.productPicture3.Location = new System.Drawing.Point(226, 176);
+            this.productPicture3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.productPicture3.Location = new System.Drawing.Point(233, 12);
             this.productPicture3.Name = "productPicture3";
             this.productPicture3.NetPath = "";
             this.productPicture3.Size = new System.Drawing.Size(81, 93);
@@ -171,10 +205,11 @@
             // 
             // productPicture1
             // 
-            this.productPicture1.Location = new System.Drawing.Point(11, 176);
+            this.productPicture1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.productPicture1.Location = new System.Drawing.Point(6, 10);
             this.productPicture1.Name = "productPicture1";
             this.productPicture1.NetPath = "";
-            this.productPicture1.Size = new System.Drawing.Size(81, 93);
+            this.productPicture1.Size = new System.Drawing.Size(96, 97);
             this.productPicture1.TabIndex = 121;
             // 
             // flowLayoutPanel1
@@ -188,11 +223,12 @@
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(330, 174);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(516, 260);
             this.flowLayoutPanel1.TabIndex = 120;
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.AutoSize = true;
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -202,139 +238,186 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(255, 28);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(510, 46);
             this.tableLayoutPanel1.TabIndex = 62;
             // 
             // tableLayoutPanel2
             // 
+            this.tableLayoutPanel2.AutoSize = true;
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.comboBoxEdit1, 1, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 37);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 55);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(255, 28);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(510, 46);
             this.tableLayoutPanel2.TabIndex = 63;
             // 
             // label1
             // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(3, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 28);
+            this.label1.Size = new System.Drawing.Size(98, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "商品类别：";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tableLayoutPanel3
             // 
+            this.tableLayoutPanel3.AutoSize = true;
             this.tableLayoutPanel3.ColumnCount = 2;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.Controls.Add(this.label8, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.textEdit2, 1, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 71);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 107);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(255, 28);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(510, 46);
             this.tableLayoutPanel3.TabIndex = 64;
             // 
             // label8
             // 
-            this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label8.Location = new System.Drawing.Point(3, 0);
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.label8.Location = new System.Drawing.Point(3, 14);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(65, 28);
+            this.label8.Size = new System.Drawing.Size(98, 18);
             this.label8.TabIndex = 0;
             this.label8.Text = "库存数量：";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tableLayoutPanel4
             // 
+            this.tableLayoutPanel4.AutoSize = true;
             this.tableLayoutPanel4.ColumnCount = 2;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel4.Controls.Add(this.label9, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.textEdit3, 1, 0);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 105);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 159);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(255, 28);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(510, 46);
             this.tableLayoutPanel4.TabIndex = 65;
             // 
             // label9
             // 
-            this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label9.Location = new System.Drawing.Point(3, 0);
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.label9.Location = new System.Drawing.Point(3, 14);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(65, 28);
+            this.label9.Size = new System.Drawing.Size(98, 18);
             this.label9.TabIndex = 0;
             this.label9.Text = "商品单价：";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tableLayoutPanel5
             // 
+            this.tableLayoutPanel5.AutoSize = true;
             this.tableLayoutPanel5.ColumnCount = 2;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel5.Controls.Add(this.label10, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.textEdit4, 1, 0);
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 139);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 211);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(255, 28);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(510, 46);
             this.tableLayoutPanel5.TabIndex = 66;
             // 
             // label10
             // 
-            this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label10.Location = new System.Drawing.Point(3, 0);
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.label10.Location = new System.Drawing.Point(3, 14);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(65, 28);
+            this.label10.Size = new System.Drawing.Size(98, 18);
             this.label10.TabIndex = 0;
             this.label10.Text = "兑换积分：";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // checkedListBoxControl1
             // 
-            simpleContextButton1.Id = new System.Guid("7a5f8276-fd1b-4c5d-a151-dd81f8f8d42c");
-            simpleContextButton1.Name = "SimpleContextButton";
-            simpleContextButton1.Visibility = DevExpress.Utils.ContextItemVisibility.Visible;
-            simpleContextButton2.Id = new System.Guid("579ee131-84bb-45a8-8bf3-05fc40a4bd2e");
-            simpleContextButton2.Name = "SimpleContextButton";
-            simpleContextButton2.Visibility = DevExpress.Utils.ContextItemVisibility.Visible;
-            simpleContextButton3.Id = new System.Guid("761e5cbd-5db8-4a97-b370-9adb799db086");
-            simpleContextButton3.Name = "SimpleContextButton";
-            simpleContextButton3.Visibility = DevExpress.Utils.ContextItemVisibility.Visible;
-            this.checkedListBoxControl1.ContextButtons.Add(simpleContextButton1);
-            this.checkedListBoxControl1.ContextButtons.Add(simpleContextButton2);
-            this.checkedListBoxControl1.ContextButtons.Add(simpleContextButton3);
+            this.checkedListBoxControl1.Appearance.BackColor = System.Drawing.Color.White;
+            this.checkedListBoxControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.checkedListBoxControl1.Appearance.Options.UseBackColor = true;
+            this.checkedListBoxControl1.Appearance.Options.UseFont = true;
+            this.checkedListBoxControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            simpleContextButton10.Id = new System.Guid("7a5f8276-fd1b-4c5d-a151-dd81f8f8d42c");
+            simpleContextButton10.Name = "SimpleContextButton";
+            simpleContextButton10.Visibility = DevExpress.Utils.ContextItemVisibility.Visible;
+            simpleContextButton11.Id = new System.Guid("579ee131-84bb-45a8-8bf3-05fc40a4bd2e");
+            simpleContextButton11.Name = "SimpleContextButton";
+            simpleContextButton11.Visibility = DevExpress.Utils.ContextItemVisibility.Visible;
+            simpleContextButton12.Id = new System.Guid("761e5cbd-5db8-4a97-b370-9adb799db086");
+            simpleContextButton12.Name = "SimpleContextButton";
+            simpleContextButton12.Visibility = DevExpress.Utils.ContextItemVisibility.Visible;
+            this.checkedListBoxControl1.ContextButtons.Add(simpleContextButton10);
+            this.checkedListBoxControl1.ContextButtons.Add(simpleContextButton11);
+            this.checkedListBoxControl1.ContextButtons.Add(simpleContextButton12);
             this.checkedListBoxControl1.Items.AddRange(new DevExpress.XtraEditors.Controls.CheckedListBoxItem[] {
             new DevExpress.XtraEditors.Controls.CheckedListBoxItem(null, "允许使用积分购买"),
             new DevExpress.XtraEditors.Controls.CheckedListBoxItem(null, "允许第三方购买"),
             new DevExpress.XtraEditors.Controls.CheckedListBoxItem(null, "是否在商城中显示")});
-            this.checkedListBoxControl1.Location = new System.Drawing.Point(6, 275);
+            this.checkedListBoxControl1.Location = new System.Drawing.Point(12, 424);
             this.checkedListBoxControl1.Name = "checkedListBoxControl1";
             this.checkedListBoxControl1.Size = new System.Drawing.Size(324, 73);
             this.checkedListBoxControl1.TabIndex = 119;
+            // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanel6.ColumnCount = 3;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel6.Controls.Add(this.productPicture2, 1, 0);
+            this.tableLayoutPanel6.Controls.Add(this.productPicture1, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.productPicture3, 2, 0);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(95, 283);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 1;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(330, 118);
+            this.tableLayoutPanel6.TabIndex = 122;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.label3.Location = new System.Drawing.Point(9, 293);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(80, 18);
+            this.label3.TabIndex = 123;
+            this.label3.Text = "商品图片";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ProductAddView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.panel2);
             this.Name = "ProductAddView";
-            this.Size = new System.Drawing.Size(360, 474);
+            this.Size = new System.Drawing.Size(607, 726);
+            this.Controls.SetChildIndex(this.bottomPanel, 0);
             this.Controls.SetChildIndex(this.panel2, 0);
             this.Controls.SetChildIndex(this.titlePanel, 0);
             this.titlePanel.ResumeLayout(false);
             this.titlePanel.PerformLayout();
+            this.bottomPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
@@ -343,13 +426,21 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel4.PerformLayout();
             this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checkedListBoxControl1)).EndInit();
+            this.tableLayoutPanel6.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -376,5 +467,7 @@
         private CustomView.ProductPicture productPicture1;
         private CustomView.ProductPicture productPicture3;
         private CustomView.ProductPicture productPicture2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
+        private System.Windows.Forms.Label label3;
     }
 }

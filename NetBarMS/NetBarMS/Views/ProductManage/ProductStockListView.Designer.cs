@@ -40,7 +40,7 @@
             // 
             // titlePanelView1
             // 
-            this.titlePanelView1.Size = new System.Drawing.Size(775, 50);
+            this.titlePanelView1.Size = new System.Drawing.Size(775, 78);
             this.titlePanelView1.Title = "库存清单";
             // 
             // gridControl1
@@ -48,10 +48,10 @@
             this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridControl1.Location = new System.Drawing.Point(9, 56);
+            this.gridControl1.Location = new System.Drawing.Point(9, 78);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(756, 719);
+            this.gridControl1.Size = new System.Drawing.Size(756, 704);
             this.gridControl1.TabIndex = 77;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1,
@@ -81,7 +81,7 @@
             // simpleButton1
             // 
             this.simpleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButton1.Location = new System.Drawing.Point(550, 3);
+            this.simpleButton1.Location = new System.Drawing.Point(596, 3);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(92, 33);
             this.simpleButton1.TabIndex = 78;

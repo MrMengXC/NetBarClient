@@ -65,6 +65,7 @@
             this.closeBtn.Location = new System.Drawing.Point(403, 0);
             this.closeBtn.LookAndFeel.SkinMaskColor = System.Drawing.Color.Transparent;
             this.closeBtn.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.closeBtn.Size = new System.Drawing.Size(47, 50);
             // 
             // panel1
             // 

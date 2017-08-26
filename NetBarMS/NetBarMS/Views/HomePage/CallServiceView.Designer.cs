@@ -41,6 +41,11 @@
             // 
             this.titlePanel.Size = new System.Drawing.Size(622, 50);
             // 
+            // titleLabel
+            // 
+            this.titleLabel.Size = new System.Drawing.Size(80, 18);
+            this.titleLabel.Text = "呼叫服务";
+            // 
             // closeBtn
             // 
             this.closeBtn.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -50,6 +55,11 @@
             this.closeBtn.LookAndFeel.UseDefaultLookAndFeel = false;
             this.closeBtn.Size = new System.Drawing.Size(47, 50);
             // 
+            // bottomPanel
+            // 
+            this.bottomPanel.Location = new System.Drawing.Point(0, 300);
+            this.bottomPanel.Size = new System.Drawing.Size(622, 64);
+            // 
             // gridControl1
             // 
             this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -58,7 +68,7 @@
             this.gridControl1.Location = new System.Drawing.Point(10, 60);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(600, 262);
+            this.gridControl1.Size = new System.Drawing.Size(600, 467);
             this.gridControl1.TabIndex = 50;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1,
@@ -81,7 +91,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.gridControl1);
             this.Name = "CallServiceView";
-            this.Size = new System.Drawing.Size(622, 364);
+            this.ShowBottom = false;
+            this.Size = new System.Drawing.Size(622, 544);
+            this.Controls.SetChildIndex(this.bottomPanel, 0);
             this.Controls.SetChildIndex(this.gridControl1, 0);
             this.Controls.SetChildIndex(this.titlePanel, 0);
             this.titlePanel.ResumeLayout(false);

@@ -34,9 +34,10 @@ namespace NetBarMS.Views.RateManage
         //选中的区域文字color
         private Color S_AREA_F_COLOR = Color.White;
         //正常状态区域文字color
-        private Color N_AREA_F_COLOR = Color.Blue;
+        private Color N_AREA_F_COLOR = Color.FromArgb(0, 165, 248);
+
         //选中的区域背景颜色
-        private Color S_AREA_B_COLOR = Color.Blue;
+        private Color S_AREA_B_COLOR = Color.FromArgb(0, 165, 248);
         //正常状态区域文字color
         private Color N_AREA_B_COLOR = Color.Transparent;
 
@@ -66,6 +67,7 @@ namespace NetBarMS.Views.RateManage
             for (int i = 0;i< titls.Count(); i++)
             {
                 DataGridViewRow dr = new DataGridViewRow();
+                dr.Height = 42;
                 int index = this.dataGridView1.Rows.Add(dr);
                 dataGridView1.Rows[index].Cells[0].Value = titls[i];
             }
@@ -74,26 +76,27 @@ namespace NetBarMS.Views.RateManage
             this.dataGridView1.RowHeadersVisible = false;
 
             //获取会员类型列表
+            this.memberTypePanel.Hide();
+
             List<MemberTypeModel> types = SysManage.MemberTypes ;
             for(int i = types.Count()-1;i>=0;i--)
             {
                 string name = "type_" + types[i].typeId;
                 string text = types[i].typeName;
 
-                 Label type =  CreateLabel(this.memberTypePanel,name,text, DockStyle.Left);
+                Label type =  CreateLabel(this.memberTypePanel,name,text, DockStyle.Left);
                 type.ForeColor = N_TYPE_F_COLOR;
                 type.Paint += Type_Paint;
 
 
             }
+            this.memberTypePanel.Show();
             this.memberTypePanel.AutoScroll = true;
 
-
-           
             //添加区域
             List<AreaTypeModel> areas = SysManage.Areas;
             this.areaPanel.AutoScroll = true;
-
+            this.areaPanel.Hide();
             for (int i = 0; i < areas.Count; i++)
             {
                 string name = "area_" + areas[i].areaId;
@@ -104,31 +107,38 @@ namespace NetBarMS.Views.RateManage
                 areaL.ForeColor = N_AREA_F_COLOR;
                 areaL.BackColor = N_AREA_B_COLOR;
             }
+            this.areaPanel.Show();
+
             //获取费率列表数据
             RateManageList();
 
         }
-        
+
+
+
+
+
         //TableLayoutPanel 重绘触发的方法
         private void AreaLabel_Paint(object sender, PaintEventArgs e)
         {
             //System.Console.WriteLine("X:{0} Y:{1}",e.ClipRectangle.X,e.ClipRectangle.Y);
             int tag = (int)((Label)sender).Tag;
+            Color borderColor = Color.FromArgb(0, 165, 248);
             if(tag == 0)
             {
                 ControlPaint.DrawBorder(e.Graphics, e.ClipRectangle,
-                    Color.Blue, 1, ButtonBorderStyle.Solid,
-                    Color.Blue, 1, ButtonBorderStyle.Solid,
-                    Color.Blue, 1, ButtonBorderStyle.Solid,
-                    Color.Blue, 1, ButtonBorderStyle.Solid);
+                   borderColor, 1, ButtonBorderStyle.Solid,
+                    borderColor, 1, ButtonBorderStyle.Solid,
+                    borderColor, 1, ButtonBorderStyle.Solid,
+                    borderColor, 1, ButtonBorderStyle.Solid);
             }
             else
             {
                 ControlPaint.DrawBorder(e.Graphics, e.ClipRectangle,
-                   Color.Blue, 1, ButtonBorderStyle.Solid,
-                   Color.Blue, 1, ButtonBorderStyle.Solid,
-                   Color.Blue, 1, ButtonBorderStyle.Solid,
-                   Color.Transparent, 0, ButtonBorderStyle.None);
+                   borderColor, 1, ButtonBorderStyle.Solid,
+                   borderColor, 1, ButtonBorderStyle.Solid,
+                   Color.Transparent, 0, ButtonBorderStyle.None,
+                   borderColor, 1, ButtonBorderStyle.Solid);
             }
 
         }
@@ -157,6 +167,7 @@ namespace NetBarMS.Views.RateManage
             newLabel.Size = new Size(LABEL_WIDTH, parent.Height);
             newLabel.BackColor = Color.Transparent;
             newLabel.Text = text;
+            newLabel.Font = new Font("宋体", 18, GraphicsUnit.Pixel);
             newLabel.TextAlign = ContentAlignment.MiddleCenter;
             newLabel.Name = name;
             newLabel.Click += NewLabel_Click;

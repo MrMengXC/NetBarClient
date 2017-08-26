@@ -49,17 +49,17 @@
             // titlePanelView1
             // 
             this.titlePanelView1.ShowCloseButton = false;
-            this.titlePanelView1.Size = new System.Drawing.Size(696, 50);
+            this.titlePanelView1.Size = new System.Drawing.Size(1249, 78);
             this.titlePanelView1.Title = "短信设置";
             // 
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(346, 29);
+            this.gridControl1.Location = new System.Drawing.Point(622, 35);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Margin = new System.Windows.Forms.Padding(0);
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(330, 245);
+            this.gridControl1.Size = new System.Drawing.Size(607, 473);
             this.gridControl1.TabIndex = 81;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1,
@@ -79,51 +79,55 @@
             // textBox1
             // 
             this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Location = new System.Drawing.Point(0, 29);
+            this.textBox1.Location = new System.Drawing.Point(0, 35);
             this.textBox1.Margin = new System.Windows.Forms.Padding(0);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(330, 245);
+            this.textBox1.Size = new System.Drawing.Size(606, 473);
             this.textBox1.TabIndex = 0;
             // 
             // label3
             // 
-            this.label3.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label3.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Location = new System.Drawing.Point(346, 0);
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
+            this.label3.Location = new System.Drawing.Point(622, 0);
             this.label3.Margin = new System.Windows.Forms.Padding(0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(330, 29);
+            this.label3.Size = new System.Drawing.Size(607, 35);
             this.label3.TabIndex = 2;
-            this.label3.Text = "员工列表";
+            this.label3.Text = "     员工列表";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pushBgPanel
             // 
             this.pushBgPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.pushBgPanel.BackColor = System.Drawing.Color.WhiteSmoke;
             this.pushBgPanel.Controls.Add(this.addPushButton);
             this.pushBgPanel.Controls.Add(this.panel1);
-            this.pushBgPanel.Location = new System.Drawing.Point(0, 53);
+            this.pushBgPanel.Location = new System.Drawing.Point(0, 78);
             this.pushBgPanel.Margin = new System.Windows.Forms.Padding(0);
             this.pushBgPanel.Name = "pushBgPanel";
-            this.pushBgPanel.Size = new System.Drawing.Size(697, 42);
+            this.pushBgPanel.Size = new System.Drawing.Size(1250, 70);
             this.pushBgPanel.TabIndex = 3;
             // 
             // addPushButton
             // 
             this.addPushButton.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.False;
             this.addPushButton.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.addPushButton.Appearance.ForeColor = System.Drawing.Color.Gray;
+            this.addPushButton.Appearance.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.addPushButton.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
             this.addPushButton.Appearance.Options.UseBackColor = true;
+            this.addPushButton.Appearance.Options.UseFont = true;
             this.addPushButton.Appearance.Options.UseForeColor = true;
-            this.addPushButton.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.addPushButton.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.addPushButton.Dock = System.Windows.Forms.DockStyle.Left;
             this.addPushButton.Location = new System.Drawing.Point(185, 0);
             this.addPushButton.Margin = new System.Windows.Forms.Padding(0);
             this.addPushButton.Name = "addPushButton";
             this.addPushButton.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.addPushButton.Size = new System.Drawing.Size(95, 42);
+            this.addPushButton.Size = new System.Drawing.Size(132, 70);
             this.addPushButton.TabIndex = 1;
             this.addPushButton.Text = "+添加推送事项";
             this.addPushButton.Click += new System.EventHandler(this.addPushButton_Click);
@@ -133,15 +137,22 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(185, 42);
+            this.panel1.Size = new System.Drawing.Size(185, 70);
             this.panel1.TabIndex = 2;
             // 
             // simpleButton1
             // 
             this.simpleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.simpleButton1.Location = new System.Drawing.Point(9, 412);
+            this.simpleButton1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(165)))), ((int)(((byte)(248)))));
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.simpleButton1.Appearance.ForeColor = System.Drawing.Color.White;
+            this.simpleButton1.Appearance.Options.UseBackColor = true;
+            this.simpleButton1.Appearance.Options.UseFont = true;
+            this.simpleButton1.Appearance.Options.UseForeColor = true;
+            this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.simpleButton1.Location = new System.Drawing.Point(10, 686);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton1.Size = new System.Drawing.Size(184, 56);
             this.simpleButton1.TabIndex = 83;
             this.simpleButton1.Text = "保存";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
@@ -159,37 +170,37 @@
             this.tableLayoutPanel2.Controls.Add(this.textBox1, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.label3, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(9, 101);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(10, 158);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.9489F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 89.05109F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(676, 274);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1229, 508);
             this.tableLayoutPanel2.TabIndex = 84;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(330, 29);
+            this.label1.Size = new System.Drawing.Size(606, 35);
             this.label1.TabIndex = 0;
-            this.label1.Text = "编辑短信内容";
+            this.label1.Text = "     编辑短信内容";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // SmsManageView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.pushBgPanel);
             this.Name = "SmsManageView";
-            this.Size = new System.Drawing.Size(696, 461);
+            this.Size = new System.Drawing.Size(1249, 774);
             this.Controls.SetChildIndex(this.titlePanelView1, 0);
             this.Controls.SetChildIndex(this.pushBgPanel, 0);
             this.Controls.SetChildIndex(this.simpleButton1, 0);

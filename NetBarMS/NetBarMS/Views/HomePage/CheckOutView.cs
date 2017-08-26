@@ -17,7 +17,6 @@ namespace NetBarMS.Views.HomePage
         public CheckOutView()
         {
             InitializeComponent();
-            this.titleLabel.Text = "全部结帐";
         }
 
         #region 确定

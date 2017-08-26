@@ -126,5 +126,10 @@ namespace NetBarMS.Views.InCome
 
 
         }
+
+        private void IncomeDetailView_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

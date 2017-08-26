@@ -19,8 +19,8 @@ namespace NetBarMS.Codes.Tools.Manage
             switch(type)
             {
                 case BORDER_TYPE.TEXTEDIT_BORDER:
-                    ControlPaint.DrawBorder(gra, angle, Color.Blue, ButtonBorderStyle.Solid);
-
+                    ControlPaint.DrawBorder(gra, angle, Color.FromArgb(190, 211, 244), ButtonBorderStyle.Solid);
+                   
                     break;
 
                 default:

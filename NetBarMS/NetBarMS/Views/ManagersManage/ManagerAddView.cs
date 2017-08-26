@@ -21,7 +21,6 @@ namespace NetBarMS.Views.ManagersManage
         {
 
             InitializeComponent();
-            this.titleLabel.Text = "角色添加修改";
             if(role != null)
             {
                 manager = role;

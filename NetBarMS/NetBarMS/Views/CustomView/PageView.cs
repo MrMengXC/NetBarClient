@@ -29,7 +29,7 @@ namespace NetBarMS.Views.CustomView
             this.allPage = allPage;
 
             this.currentLabel.Text = this.showPage + "";
-            this.allLabel.Text = this.allPage + "";
+            this.allLabel.Text = string.Format("共{0}页",this.allPage + "");
             RefrshPageUI();
 
         }

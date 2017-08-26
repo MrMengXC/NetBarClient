@@ -31,6 +31,12 @@ namespace NetBarMS.Views.SystemManage
 
         private Label selectPush = null;                //当前选择的区域
 
+        //标签的未选中颜色
+        private Color normal_color = Color.FromArgb(136, 136, 136);
+
+
+
+
         public SmsManageView()
         {
             InitializeComponent();
@@ -44,6 +50,7 @@ namespace NetBarMS.Views.SystemManage
             ToolsManage.SetGridView(this.gridView1, GridControlType.SmsManage, out this.mainDataTable);
             this.gridControl1.DataSource = this.mainDataTable;
 
+            //设置自动尺寸
             this.panel1.AutoSize = true;
             this.panel1.AutoScroll = true;
             this.panel1.MaximumSize = new Size(this.pushBgPanel.Width - this.addPushButton.Width, this.pushBgPanel.Height);
@@ -150,6 +157,8 @@ namespace NetBarMS.Views.SystemManage
             this.panel1.Controls.Clear();
             this.textBox1.Text = "";
             this.selectPush = null;
+
+            this.panel1.Hide();
             //更新右侧员工数据
             for (int i = 0; i < this.gridView1.RowCount; i++)
             {
@@ -173,12 +182,13 @@ namespace NetBarMS.Views.SystemManage
 
                     item = this.showPushItems[i];
                     Label pushLabel = new Label();
-                    pushLabel.AutoSize = false;
+                    pushLabel.AutoSize = true;
                     pushLabel.Dock = DockStyle.Left;
                     pushLabel.BackColor = Color.Transparent;
-                    pushLabel.ForeColor = Color.Gray;
+                    pushLabel.ForeColor = normal_color;
                     pushLabel.Text = item.GetItem(0);
                     pushLabel.Click += PushButton_ButtonClick;
+                    pushLabel.Font = new Font("宋体", 18, GraphicsUnit.Pixel);
                     pushLabel.Tag = item;
                     pushLabel.Margin = new Padding(0);
                     pushLabel.Paint += Button_Paint;
@@ -191,6 +201,8 @@ namespace NetBarMS.Views.SystemManage
                 }
 
             }
+            this.panel1.Show();
+
 
         }
         //重绘推送事件的Label
@@ -230,7 +242,7 @@ namespace NetBarMS.Views.SystemManage
 
             if (tem != null)
             {
-                tem.ForeColor = Color.Gray;
+                tem.ForeColor = normal_color;
             }
             this.selectPush.ForeColor = Color.Black;
 
