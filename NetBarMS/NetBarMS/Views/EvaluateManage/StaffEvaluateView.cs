@@ -78,7 +78,7 @@ namespace NetBarMS.Views.EvaluateManage
             {
                 staff = this.staffs[this.comboBoxEdit1.SelectedIndex].Nickname;
             }
-            string member = this.buttonEdit1.Text;
+            string member = this.buttonEdit1.Text.Equals(this.buttonEdit1.Properties.NullText) ? "" : this.buttonEdit1.Text;
             EvaluateNetOperation.GetStaffEvaluateList(GetStaffEvaluateListResult,page.Build(),this.startTime,this.endTime,staff,member);
         }
         //获取员工评价列表结果回调

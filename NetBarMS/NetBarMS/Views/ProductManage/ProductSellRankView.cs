@@ -38,6 +38,12 @@ namespace NetBarMS.Views.ProductManage
         //初始化UI
         private void InitUI()
         {
+            //初始化ComboBoxEdit
+            DevExpress.XtraEditors.ComboBoxEdit[] edits = {
+                this.comboBoxEdit1,
+                this.comboBoxEdit2
+            };
+            SetupCombox(edits, false);
             ToolsManage.SetGridView(this.gridView1, GridControlType.ProductSellRank, out this.mainDataTable);
             DataRow row = this.mainDataTable.NewRow();
             this.mainDataTable.Rows.Add(row);

@@ -48,7 +48,6 @@
     <child name = "会员等级设置" tag="MemberLevManage" id="41"/>
     <child name = "商品类别设置" tag="ProductType" id="42"/>
     <child name = "区域设置" tag="AreaManage" id="43"/>
-    <child name = "第三方支付绑定"  tag="" id="44"/>
     <child name = "客户端设置" tag="ClientManage" id="45"/>
     <child name = "备份设置" tag="BackUpManage" id="46"/>
     <child name = "短信设置" tag="SmsManage" id="47"/>

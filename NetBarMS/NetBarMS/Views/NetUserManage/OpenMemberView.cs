@@ -95,8 +95,11 @@ namespace NetBarMS.Views.NetUserManage
         }
         #endregion
 #endif
-
-#region 初始化UI
+        private void ControlPaint(object sender, PaintEventArgs e)
+        {
+            BorderManage.DrawBorder(e.Graphics, this.simpleButton2.ClientRectangle, BORDER_TYPE.BUTTON_BORDER);
+        }
+        #region 初始化UI
         private void InitUI(StructCard card)
         {
             this.openCard = new StructCard.Builder(card).Build();
@@ -333,5 +336,8 @@ namespace NetBarMS.Views.NetUserManage
             }
         }
 #endregion
+
+
+
     }
 }

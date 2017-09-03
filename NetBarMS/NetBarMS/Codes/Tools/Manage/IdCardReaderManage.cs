@@ -386,7 +386,7 @@ namespace NetBarMS.Codes.Tools.Manage
         //时间间隔达到1000s
         private void Timer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
         {
-            System.Console.WriteLine("Timer_Elapsed");
+            //System.Console.WriteLine("Timer_Elapsed");
             AuthenticateCard();
 
         }

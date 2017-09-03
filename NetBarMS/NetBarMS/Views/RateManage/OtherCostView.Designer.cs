@@ -73,7 +73,7 @@
             this.saveButton.Appearance.Options.UseBackColor = true;
             this.saveButton.Appearance.Options.UseFont = true;
             this.saveButton.Appearance.Options.UseForeColor = true;
-            this.saveButton.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.saveButton.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.saveButton.Location = new System.Drawing.Point(16, 234);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(158, 56);
@@ -134,6 +134,8 @@
             this.memberMinuteText.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
             this.memberMinuteText.Properties.Appearance.Options.UseFont = true;
             this.memberMinuteText.Properties.Appearance.Options.UseForeColor = true;
+            this.memberMinuteText.Properties.Appearance.Options.UseTextOptions = true;
+            this.memberMinuteText.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.memberMinuteText.Properties.AutoHeight = false;
             this.memberMinuteText.Size = new System.Drawing.Size(42, 42);
             this.memberMinuteText.TabIndex = 63;
@@ -180,6 +182,8 @@
             this.temMinuteText.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
             this.temMinuteText.Properties.Appearance.Options.UseFont = true;
             this.temMinuteText.Properties.Appearance.Options.UseForeColor = true;
+            this.temMinuteText.Properties.Appearance.Options.UseTextOptions = true;
+            this.temMinuteText.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.temMinuteText.Properties.AutoHeight = false;
             this.temMinuteText.Size = new System.Drawing.Size(42, 42);
             this.temMinuteText.TabIndex = 64;

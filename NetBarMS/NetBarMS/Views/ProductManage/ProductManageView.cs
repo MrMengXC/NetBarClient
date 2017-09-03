@@ -72,6 +72,11 @@ namespace NetBarMS.Views.ProductManage
         #region 初始化UI
         private void InitUI()
         {
+            //初始化ComboBoxEdit
+            DevExpress.XtraEditors.ComboBoxEdit[] edits = {
+                this.comboBoxEdit1,
+            };
+            SetupCombox(edits, false);
             //首先要获取产品列表数组
             this.productTypes = SysManage.ProductTypes;
             this.comboBoxEdit1.Properties.Items.Add("无");
@@ -287,7 +292,6 @@ namespace NetBarMS.Views.ProductManage
         #region 选择进行搜索
         private void comboBoxEdit1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.mainDataTable.Clear();
             GetProductList();
         }
         #endregion

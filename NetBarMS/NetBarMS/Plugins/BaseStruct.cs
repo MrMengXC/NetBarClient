@@ -78,6 +78,8 @@ public static partial class BaseStruct {
   internal static pb::FieldAccess.FieldAccessorTable<global::StructVerifyInfo, global::StructVerifyInfo.Builder> internal__static_StructVerifyInfo__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_StructOrderInfo__Descriptor;
   internal static pb::FieldAccess.FieldAccessorTable<global::StructOrderInfo, global::StructOrderInfo.Builder> internal__static_StructOrderInfo__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_StructAdInfo__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::StructAdInfo, global::StructAdInfo.Builder> internal__static_StructAdInfo__FieldAccessorTable;
   #endregion
   #region Descriptor
   public static pbd::FileDescriptor Descriptor {
@@ -90,105 +92,108 @@ public static partial class BaseStruct {
         string.Concat(
           "ChBCYXNlU3RydWN0LnByb3RvIk4KDlN0cnVjdEVycm9yVGlwEgsKA2tleRgB", 
           "IAIoCRIRCgl0aXBTdHJpbmcYAiABKAkSDAoEYXJncxgDIAMoCRIOCgZhY3Rp", 
-          "b24YBCABKAkijgEKDVN0cnVjdEFjY291bnQSDAoEZ3VpZBgBIAIoCRIQCgh1", 
-          "c2VybmFtZRgCIAEoCRIQCghwYXNzd29yZBgDIAEoCRIQCghuaWNrbmFtZRgE", 
-          "IAEoCRIOCgZyb2xlaWQYBSABKAkSDQoFcGhvbmUYBiABKAkSDQoFZW1haWwY", 
-          "ByABKAkSCwoDc25zGAggASgJIo8BCgpTdHJ1Y3RSb2xlEg4KBnJvbGVpZBgB", 
-          "IAIoCRIMCgRuYW1lGAIgAigJEg4KBnJpZ2h0cxgDIAIoCRIQCghwYXJlbnRp", 
-          "ZBgEIAIoCRIOCgZhZGRfcXgYBSACKAkSDgoGZGVsX3F4GAYgAigJEg8KB2Vk", 
-          "aXRfcXgYByACKAkSEAoIcXVlcnlfcXgYCCACKAkiQAoOU3RydWN0Q29tcHV0", 
-          "ZXISEgoKY29tcHV0ZXJpZBgBIAIoBRIMCgRuYW1lGAIgASgJEgwKBGFyZWEY", 
-          "AyABKAkiKgoKU3RydWN0QXJlYRIOCgZhcmVhaWQYASACKAUSDAoEbmFtZRgC", 
-          "IAIoCSLWAQoMU3RydWN0Q2hhcmdlEhEKCXByb2R1Y3RpZBgBIAIoCRIMCgRu", 
-          "YW1lGAIgAigJEg8KB3JpZ2h0aWQYAyACKAUSEgoKY2FyZG51bWJlchgEIAIo", 
-          "CRIOCgZhcmVhaWQYBSACKAUSFQoNY2hhcmdlX2Ftb3VudBgGIAIoBRIUCgxi", 
-          "b251c19hbW91bnQYByACKAUSDwoHYWRkdGltZRgIIAIoCRIPCgdwYXltb2Rl", 
-          "GAkgAigFEhEKCXJlY2VpcHRpZBgKIAIoCRIOCgZzdGF0dXMYCyACKAUivwEK", 
-          "C1N0cnVjdFRyYWRlEg8KB3RyYWRlaWQYASACKAUSEAoIdXNlcm5hbWUYAiAC", 
-          "KAkSEgoKY2FyZG51bWJlchgDIAIoCRIMCgRhcmVhGAQgAigFEhEKCXRyYWRl", 
-          "dHlwZRgFIAIoBRIOCgZhbW91bnQYBiACKAUSDwoHYWRkdGltZRgHIAIoCRIP", 
-          "CgdwYXltb2RlGAggAigFEg8KB3RyYWRlTm8YCSACKAkSFQoNdHJhbnNhY3Rp", 
-          "b25ObxgKIAIoCSLKAQoRU3RydWN0RW1iYXJrYXRpb24SEAoIY29tcHV0ZXIY", 
-          "ASACKAkSEgoKY2FyZG51bWJlchgCIAIoCRIQCgh1c2VybmFtZRgDIAIoCRIQ", 
-          "Cgh1c2VydHlwZRgEIAIoCRIRCglzdGFydHRpbWUYBSACKAkSEAoIc3RvcHRp", 
-          "bWUYBiACKAkSDAoEYXJlYRgHIAIoCRIQCgh1c2VkdGltZRgIIAIoBRINCgVt", 
-          "b25leRgJIAIoBRILCgNtYWMYCiACKAkSCgoCaXAYCyACKAkingIKDlN0cnVj", 
-          "dFJlYWxUaW1lEhIKCmNvbXB1dGVyaWQYASACKAUSEAoIY29tcHV0ZXIYAiAC", 
-          "KAkSDAoEYXJlYRgDIAIoCRIOCgZzdGF0dXMYBCACKAkSDAoEbmFtZRgFIAIo", 
-          "CRISCgpjYXJkbnVtYmVyGAYgAigJEhAKCHVzZXJ0eXBlGAcgAigJEg8KB2Jp", 
-          "bGxpbmcYCCACKAkSDgoGdmVyaWZ5GAkgAigJEg8KB2JhbGFuY2UYCiACKAkS", 
-          "EgoKcmVtYWludGltZRgLIAIoCRIRCglzdGFydHRpbWUYDCACKAkSEAoIdXNl", 
-          "ZHRpbWUYDSACKAkSEAoIc3RvcHRpbWUYDiACKAkSCwoDbWFjGA8gAigJEgoK", 
-          "AmlwGBAgAigJIsUBCgtTdHJ1Y3RBcHBseRIMCgRuYW1lGAEgAigJEg8KB3Jp", 
-          "Z2h0aWQYAiACKAUSEgoKY2FyZG51bWJlchgDIAIoCRIVCg1jaGFyZ2VfYW1v", 
-          "dW50GAQgAigFEhQKDGJvbnVzX2Ftb3VudBgFIAIoBRIQCghvcGVyYXRvchgG", 
-          "IAIoCRIPCgdhZGR0aW1lGAcgAigJEg8KB3BheW1vZGUYCCACKAUSEQoJcmVj", 
-          "ZWlwdGlkGAkgAigJEg8KB2NoYW5uZWwYCiACKAUingEKClN0cnVjdENhcmQS", 
-          "DAoEbmFtZRgBIAIoCRIOCgZnZW5kZXIYAiACKAUSDgoGbmF0aW9uGAMgAigJ", 
-          "Eg4KBm51bWJlchgEIAIoCRIQCghiaXJ0aGRheRgFIAIoCRILCgN2bGQYBiAC", 
-          "KAkSDwoHYWRkcmVzcxgHIAIoCRIUCgxvcmdhbml6YXRpb24YCCACKAkSDAoE", 
-          "aGVhZBgJIAIoCSKrAgoMU3RydWN0TWVtYmVyEhAKCG1lbWJlcmlkGAEgAigF", 
-          "EhIKCmNhcmRudW1iZXIYAiACKAkSDgoGZ2VuZGVyGAMgAigJEgwKBG5hbWUY", 
-          "BCACKAkSEgoKbWVtYmVydHlwZRgFIAIoBRINCgVwaG9uZRgGIAIoCRIQCghv", 
-          "cGVudGltZRgHIAIoCRIQCghsYXN0dGltZRgIIAIoCRIPCgdiYWxhbmNlGAkg", 
-          "ASgFEhUKDXRvdGFsUmVjaGFyZ2UYCiABKAUSEgoKdG90YWxCb251cxgLIAEo", 
-          "BRIPCgdpbnRlZ2FsGAwgASgFEhMKC3VzZWRJbnRlZ2FsGA0gASgFEg4KBnN0", 
-          "YXR1cxgOIAEoBRIOCgZ2ZXJpZnkYDyABKAUSDgoGcmVhc29uGBAgASgJIlMK", 
-          "ClN0cnVjdFBhZ2USEAoIcGFnZXNpemUYASACKAUSEQoJcGFnZWJlZ2luGAIg", 
-          "AigFEhEKCWZpZWxkbmFtZRgDIAIoBRINCgVvcmRlchgEIAIoBSLGAQoOU3Ry", 
-          "dWN0VXNlckFyZWESEAoIdXNlcnR5cGUYASACKAUSEAoIYXJlYXR5cGUYAiAC", 
-          "KAUSFQoNb3JkaW5hcnlQcmljZRgDIAIoBRIYChBvcmRpbmFyeUludGVydmFs", 
-          "GAQgAigFEhMKC29yZGluYXJ5TWluGAUgAigFEhIKCm5pZ2h0UHJpY2UYBiAC", 
-          "KAUSFQoNbmlnaHRJbnRlcnZhbBgHIAIoBRIQCghuaWdodE1pbhgIIAIoBRIN", 
-          "CgVpbmRleBgJIAIoBSJ1ChFTdHJ1Y3RCaWxsU2V0dGluZxIMCgRkYXkwGAEg", 
-          "AigFEgwKBGRheTEYAiACKAUSDAoEZGF5MhgDIAIoBRIMCgRkYXkzGAQgAigF", 
-          "EgwKBGRheTQYBSACKAUSDAoEZGF5NRgGIAIoBRIMCgRkYXk2GAcgAigFIjgK", 
-          "DlN0cnVjdERpY3RJdGVtEgoKAmlkGAEgAigFEgwKBGNvZGUYAiACKAUSDAoE", 
-          "aXRlbRgDIAMoCSLNAQoLU3RydWN0R29vZHMSDwoHZ29vZHNJZBgBIAIoBRIR", 
-          "Cglnb29kc05hbWUYAiACKAkSEQoJZ29vZHNJbWcxGAMgAigJEhEKCWdvb2Rz", 
-          "SW1nMhgEIAIoCRIRCglnb29kc0ltZzMYBSACKAkSEAoIY2F0ZWdvcnkYBiAC", 
-          "KAUSDQoFcHJpY2UYByACKAkSEgoKdXNlSW50ZWdhbBgIIAIoCBIMCgRoaWRl", 
-          "GAkgAigIEg8KB2ludGVnYWwYCiACKAUSDQoFY291bnQYCyACKAUipgEKClN0", 
-          "cnVjdFNhbGUSDwoHb3JkZXJpZBgBIAIoBRIQCgh1c2VybmFtZRgCIAIoCRIS", 
-          "CgpjYXJkbnVtYmVyGAMgAigJEhAKCGFyZWFuYW1lGAQgAigJEhEKCWdvb2Rz", 
-          "bmFtZRgFIAIoCRILCgNudW0YBiACKAUSDQoFbW9uZXkYByACKAUSDwoHYWRk", 
-          "dGltZRgIIAIoCRIPCgdwYXltb2RlGAkgAigJIlAKDVN0cnVjdFNhbGVUb3AS", 
-          "EAoIY2F0ZWdvcnkYASACKAUSEQoJZ29vZHNuYW1lGAIgAigJEgsKA251bRgD", 
-          "IAIoBRINCgVtb25leRgEIAIoBSJOCgtTdHJ1Y3RTdG9jaxIRCglnb29kc25h", 
-          "bWUYASACKAkSEAoIY2F0ZWdvcnkYAiACKAUSDQoFcHJpY2UYAyACKAkSCwoD", 
-          "bnVtGAQgAigFIsoBCgtTdHJ1Y3RPcmRlchIPCgdvcmRlcmlkGAEgAigFEhAK", 
-          "CHVzZXJuYW1lGAIgAigJEhIKCmNhcmRudW1iZXIYAyACKAkSEAoIYXJlYW5h", 
-          "bWUYBCACKAkSDQoFbW9uZXkYBSACKAUSDwoHYWRkdGltZRgGIAIoCRIQCghw", 
-          "cm9jdGltZRgHIAIoCRIQCghvcGVyYXRvchgIIAIoCRIOCgZzdGF0dXMYCSAC", 
-          "KAkSDwoHcGF5bW9kZRgKIAIoCRINCgVwYXlpZBgLIAIoCSJUChFTdHJ1Y3RP", 
-          "cmRlckRldGFpbBIRCglnb29kc25hbWUYASACKAkSEAoIY2F0ZWdvcnkYAiAC", 
-          "KAUSDQoFcHJpY2UYAyACKAkSCwoDbnVtGAQgAigFIrkBCg1TdHJ1Y3RDb21t", 
-          "ZW50Eg8KB2FkZHRpbWUYASACKAkSEAoIY3VzdG9tZXIYAiACKAkSEgoKY2Fy", 
-          "ZG51bWJlchgDIAIoCRINCgVib251cxgEIAIoBRINCgVzdGFmZhgFIAEoCRIN", 
-          "CgVwb2ludBgGIAEoBRITCgtlbnZpcm9ubWVudBgHIAEoBRIPCgdzZXJ2aWNl", 
-          "GAggASgFEg4KBmRldmljZRgJIAEoBRIOCgZkZXRhaWwYCiABKAkiagoNU3Ry", 
-          "dWN0UGVyZm9ybRIMCgRuYW1lGAEgAigJEgwKBHJvbGUYAiACKAkSDQoFaG91", 
-          "cnMYAyACKAUSDgoGY2hhcmdlGAQgAigFEg0KBXNhbGVzGAUgAigFEg8KB3Nh", 
-          "dGlzZnkYBiACKAUiXQoJU3RydWN0TG9nEhAKCG9wZXJhdG9yGAEgAigJEhEK", 
-          "CW9wZXJhdGlvbhgCIAIoCRIKCgJpcBgDIAIoCRIPCgdhZGR0aW1lGAQgAigJ", 
-          "Eg4KBnN0YXR1cxgFIAIoCSIzCg9TdHJ1Y3RBcmVhVG90YWwSEAoIYXJlYW5h", 
-          "bWUYASACKAkSDgoGYW1vdW50GAIgAigFIsQBCgpTdHJ1Y3RFYXJuEhAKCGRh", 
-          "dGV0aW1lGAEgAigFEhUKDWFsaXBheV9jaGFyZ2UYAiACKAUSEwoLYWxpcGF5", 
-          "X3NhbGUYAyACKAUSFQoNdGVucGF5X2NoYXJnZRgEIAIoBRITCgt0ZW5wYXlf", 
-          "c2FsZRgFIAIoBRITCgtjYXNoX2NoYXJnZRgGIAIoBRIRCgljYXNoX3NhbGUY", 
-          "ByACKAUSJAoKYXJlYV90b3RhbBgIIAMoCzIQLlN0cnVjdEFyZWFUb3RhbCJK", 
-          "CgpTdHJ1Y3RDYWxsEg4KBmNhbGxpZBgBIAIoBRIOCgZjYWxsZXIYAiACKAkS", 
-          "DgoGZGV2aWNlGAMgAigJEgwKBGluZm8YBCACKAki0gEKC1N0cnVjdFNoaWZ0", 
-          "Eg8KB3NoaWZ0aWQYASACKAUSFAoMZGVsaXZlcmVkX2J5GAIgAigJEhEKCXN0", 
-          "YXJ0dGltZRgDIAIoCRIQCghzdG9wdGltZRgEIAIoCRIVCg1jaGFyZ2VfYW1v", 
-          "dW50GAUgAigFEhMKC3NhbGVfYW1vdW50GAYgAigFEhUKDXJlZnVuZF9hbW91", 
-          "bnQYByACKAUSEwoLcmVjZWl2ZWRfYnkYCCACKAkSDwoHaXNjaGVjaxgJIAIo", 
-          "BRIOCgZyZW1hcmsYCiACKAkiMgoNU3RydWN0QnV5SW5mbxIPCgdnb29kc2lk", 
-          "GAEgAigFEhAKCGdvb2RzbnVtGAIgAigFIkUKEFN0cnVjdFZlcmlmeUluZm8S", 
-          "DAoEbmFtZRgBIAIoCRISCgpjYXJkbnVtYmVyGAIgAigJEg8KB2hlYWR1cmwY", 
-          "AyACKAkiSAoPU3RydWN0T3JkZXJJbmZvEhAKCHBvc2l0aW9uGAEgAigJEhEK", 
-          "CWdvb2RzbmFtZRgCIAIoCRIQCghnb29kc251bRgDIAIoCUIrCh1jb20uc2t5", 
-        "c29mdC5jb3JlLmF1dG8ubWVzc2FnZUIKQmFzZVN0cnVjdA=="));
+          "b24YBCABKAkiogEKDVN0cnVjdEFjY291bnQSDAoEZ3VpZBgBIAIoCRIQCgh1", 
+          "c2VybmFtZRgCIAEoCRIQCghwYXNzd29yZBgDIAEoCRISCgpmaW5nZXJtYXNr", 
+          "GAQgASgIEhAKCG5pY2tuYW1lGAUgASgJEg4KBnJvbGVpZBgGIAEoCRINCgVw", 
+          "aG9uZRgHIAEoCRINCgVlbWFpbBgIIAEoCRILCgNzbnMYCSABKAkijwEKClN0", 
+          "cnVjdFJvbGUSDgoGcm9sZWlkGAEgAigJEgwKBG5hbWUYAiACKAkSDgoGcmln", 
+          "aHRzGAMgAigJEhAKCHBhcmVudGlkGAQgAigJEg4KBmFkZF9xeBgFIAIoCRIO", 
+          "CgZkZWxfcXgYBiACKAkSDwoHZWRpdF9xeBgHIAIoCRIQCghxdWVyeV9xeBgI", 
+          "IAIoCSJSCg5TdHJ1Y3RDb21wdXRlchISCgpjb21wdXRlcmlkGAEgAigFEgwK", 
+          "BG5hbWUYAiABKAkSDAoEYXJlYRgDIAEoCRIQCghsZWZ0dGltZRgEIAEoCSIq", 
+          "CgpTdHJ1Y3RBcmVhEg4KBmFyZWFpZBgBIAIoBRIMCgRuYW1lGAIgAigJItYB", 
+          "CgxTdHJ1Y3RDaGFyZ2USEQoJcHJvZHVjdGlkGAEgAigJEgwKBG5hbWUYAiAC", 
+          "KAkSDwoHcmlnaHRpZBgDIAIoBRISCgpjYXJkbnVtYmVyGAQgAigJEg4KBmFy", 
+          "ZWFpZBgFIAIoBRIVCg1jaGFyZ2VfYW1vdW50GAYgAigFEhQKDGJvbnVzX2Ft", 
+          "b3VudBgHIAIoBRIPCgdhZGR0aW1lGAggAigJEg8KB3BheW1vZGUYCSACKAUS", 
+          "EQoJcmVjZWlwdGlkGAogAigJEg4KBnN0YXR1cxgLIAIoBSK/AQoLU3RydWN0", 
+          "VHJhZGUSDwoHdHJhZGVpZBgBIAIoBRIQCgh1c2VybmFtZRgCIAIoCRISCgpj", 
+          "YXJkbnVtYmVyGAMgAigJEgwKBGFyZWEYBCACKAUSEQoJdHJhZGV0eXBlGAUg", 
+          "AigFEg4KBmFtb3VudBgGIAIoBRIPCgdhZGR0aW1lGAcgAigJEg8KB3BheW1v", 
+          "ZGUYCCACKAUSDwoHdHJhZGVObxgJIAIoCRIVCg10cmFuc2FjdGlvbk5vGAog", 
+          "AigJIsoBChFTdHJ1Y3RFbWJhcmthdGlvbhIQCghjb21wdXRlchgBIAIoCRIS", 
+          "CgpjYXJkbnVtYmVyGAIgAigJEhAKCHVzZXJuYW1lGAMgAigJEhAKCHVzZXJ0", 
+          "eXBlGAQgAigJEhEKCXN0YXJ0dGltZRgFIAIoCRIQCghzdG9wdGltZRgGIAIo", 
+          "CRIMCgRhcmVhGAcgAigJEhAKCHVzZWR0aW1lGAggAigFEg0KBW1vbmV5GAkg", 
+          "AigFEgsKA21hYxgKIAIoCRIKCgJpcBgLIAIoCSKeAgoOU3RydWN0UmVhbFRp", 
+          "bWUSEgoKY29tcHV0ZXJpZBgBIAIoBRIQCghjb21wdXRlchgCIAIoCRIMCgRh", 
+          "cmVhGAMgAigJEg4KBnN0YXR1cxgEIAIoCRIMCgRuYW1lGAUgAigJEhIKCmNh", 
+          "cmRudW1iZXIYBiACKAkSEAoIdXNlcnR5cGUYByACKAkSDwoHYmlsbGluZxgI", 
+          "IAIoCRIOCgZ2ZXJpZnkYCSACKAkSDwoHYmFsYW5jZRgKIAIoCRISCgpyZW1h", 
+          "aW50aW1lGAsgAigJEhEKCXN0YXJ0dGltZRgMIAIoCRIQCgh1c2VkdGltZRgN", 
+          "IAIoCRIQCghzdG9wdGltZRgOIAIoCRILCgNtYWMYDyACKAkSCgoCaXAYECAC", 
+          "KAkixQEKC1N0cnVjdEFwcGx5EgwKBG5hbWUYASACKAkSDwoHcmlnaHRpZBgC", 
+          "IAIoBRISCgpjYXJkbnVtYmVyGAMgAigJEhUKDWNoYXJnZV9hbW91bnQYBCAC", 
+          "KAUSFAoMYm9udXNfYW1vdW50GAUgAigFEhAKCG9wZXJhdG9yGAYgAigJEg8K", 
+          "B2FkZHRpbWUYByACKAkSDwoHcGF5bW9kZRgIIAIoBRIRCglyZWNlaXB0aWQY", 
+          "CSACKAkSDwoHY2hhbm5lbBgKIAIoBSKeAQoKU3RydWN0Q2FyZBIMCgRuYW1l", 
+          "GAEgAigJEg4KBmdlbmRlchgCIAIoBRIOCgZuYXRpb24YAyACKAkSDgoGbnVt", 
+          "YmVyGAQgAigJEhAKCGJpcnRoZGF5GAUgAigJEgsKA3ZsZBgGIAIoCRIPCgdh", 
+          "ZGRyZXNzGAcgAigJEhQKDG9yZ2FuaXphdGlvbhgIIAIoCRIMCgRoZWFkGAkg", 
+          "AigJItcCCgxTdHJ1Y3RNZW1iZXISEAoIbWVtYmVyaWQYASACKAUSEgoKY2Fy", 
+          "ZG51bWJlchgCIAIoCRISCgpmaW5nZXJtYXNrGAMgAigIEg4KBmdlbmRlchgE", 
+          "IAIoCRIMCgRuYW1lGAUgAigJEhIKCm1lbWJlcnR5cGUYBiACKAUSFgoOdmlw", 
+          "bGV2ZWxfdGl0bGUYByACKAkSDQoFcGhvbmUYCCACKAkSEAoIb3BlbnRpbWUY", 
+          "CSACKAkSEAoIbGFzdHRpbWUYCiACKAkSDwoHYmFsYW5jZRgLIAEoBRIVCg10", 
+          "b3RhbFJlY2hhcmdlGAwgASgFEhIKCnRvdGFsQm9udXMYDSABKAUSDwoHaW50", 
+          "ZWdhbBgOIAEoBRITCgt1c2VkSW50ZWdhbBgPIAEoBRIOCgZzdGF0dXMYECAB", 
+          "KAUSDgoGdmVyaWZ5GBEgASgFEg4KBnJlYXNvbhgSIAEoCSJTCgpTdHJ1Y3RQ", 
+          "YWdlEhAKCHBhZ2VzaXplGAEgAigFEhEKCXBhZ2ViZWdpbhgCIAIoBRIRCglm", 
+          "aWVsZG5hbWUYAyACKAUSDQoFb3JkZXIYBCACKAUixgEKDlN0cnVjdFVzZXJB", 
+          "cmVhEhAKCHVzZXJ0eXBlGAEgAigFEhAKCGFyZWF0eXBlGAIgAigFEhUKDW9y", 
+          "ZGluYXJ5UHJpY2UYAyACKAUSGAoQb3JkaW5hcnlJbnRlcnZhbBgEIAIoBRIT", 
+          "CgtvcmRpbmFyeU1pbhgFIAIoBRISCgpuaWdodFByaWNlGAYgAigFEhUKDW5p", 
+          "Z2h0SW50ZXJ2YWwYByACKAUSEAoIbmlnaHRNaW4YCCACKAUSDQoFaW5kZXgY", 
+          "CSACKAUidQoRU3RydWN0QmlsbFNldHRpbmcSDAoEZGF5MBgBIAIoBRIMCgRk", 
+          "YXkxGAIgAigFEgwKBGRheTIYAyACKAUSDAoEZGF5MxgEIAIoBRIMCgRkYXk0", 
+          "GAUgAigFEgwKBGRheTUYBiACKAUSDAoEZGF5NhgHIAIoBSI4Cg5TdHJ1Y3RE", 
+          "aWN0SXRlbRIKCgJpZBgBIAIoBRIMCgRjb2RlGAIgAigFEgwKBGl0ZW0YAyAD", 
+          "KAkizQEKC1N0cnVjdEdvb2RzEg8KB2dvb2RzSWQYASACKAUSEQoJZ29vZHNO", 
+          "YW1lGAIgAigJEhEKCWdvb2RzSW1nMRgDIAIoCRIRCglnb29kc0ltZzIYBCAC", 
+          "KAkSEQoJZ29vZHNJbWczGAUgAigJEhAKCGNhdGVnb3J5GAYgAigFEg0KBXBy", 
+          "aWNlGAcgAigJEhIKCnVzZUludGVnYWwYCCACKAgSDAoEaGlkZRgJIAIoCBIP", 
+          "CgdpbnRlZ2FsGAogAigFEg0KBWNvdW50GAsgAigFIqYBCgpTdHJ1Y3RTYWxl", 
+          "Eg8KB29yZGVyaWQYASACKAUSEAoIdXNlcm5hbWUYAiACKAkSEgoKY2FyZG51", 
+          "bWJlchgDIAIoCRIQCghhcmVhbmFtZRgEIAIoCRIRCglnb29kc25hbWUYBSAC", 
+          "KAkSCwoDbnVtGAYgAigFEg0KBW1vbmV5GAcgAigFEg8KB2FkZHRpbWUYCCAC", 
+          "KAkSDwoHcGF5bW9kZRgJIAIoCSJQCg1TdHJ1Y3RTYWxlVG9wEhAKCGNhdGVn", 
+          "b3J5GAEgAigFEhEKCWdvb2RzbmFtZRgCIAIoCRILCgNudW0YAyACKAUSDQoF", 
+          "bW9uZXkYBCACKAUiTgoLU3RydWN0U3RvY2sSEQoJZ29vZHNuYW1lGAEgAigJ", 
+          "EhAKCGNhdGVnb3J5GAIgAigFEg0KBXByaWNlGAMgAigJEgsKA251bRgEIAIo", 
+          "BSLKAQoLU3RydWN0T3JkZXISDwoHb3JkZXJpZBgBIAIoBRIQCgh1c2VybmFt", 
+          "ZRgCIAIoCRISCgpjYXJkbnVtYmVyGAMgAigJEhAKCGFyZWFuYW1lGAQgAigJ", 
+          "Eg0KBW1vbmV5GAUgAigFEg8KB2FkZHRpbWUYBiACKAkSEAoIcHJvY3RpbWUY", 
+          "ByACKAkSEAoIb3BlcmF0b3IYCCACKAkSDgoGc3RhdHVzGAkgAigJEg8KB3Bh", 
+          "eW1vZGUYCiACKAkSDQoFcGF5aWQYCyACKAkiVAoRU3RydWN0T3JkZXJEZXRh", 
+          "aWwSEQoJZ29vZHNuYW1lGAEgAigJEhAKCGNhdGVnb3J5GAIgAigFEg0KBXBy", 
+          "aWNlGAMgAigJEgsKA251bRgEIAIoBSK5AQoNU3RydWN0Q29tbWVudBIPCgdh", 
+          "ZGR0aW1lGAEgAigJEhAKCGN1c3RvbWVyGAIgAigJEhIKCmNhcmRudW1iZXIY", 
+          "AyACKAkSDQoFYm9udXMYBCACKAUSDQoFc3RhZmYYBSABKAkSDQoFcG9pbnQY", 
+          "BiABKAUSEwoLZW52aXJvbm1lbnQYByABKAUSDwoHc2VydmljZRgIIAEoBRIO", 
+          "CgZkZXZpY2UYCSABKAUSDgoGZGV0YWlsGAogASgJImoKDVN0cnVjdFBlcmZv", 
+          "cm0SDAoEbmFtZRgBIAIoCRIMCgRyb2xlGAIgAigJEg0KBWhvdXJzGAMgAigF", 
+          "Eg4KBmNoYXJnZRgEIAIoBRINCgVzYWxlcxgFIAIoBRIPCgdzYXRpc2Z5GAYg", 
+          "AigFIl0KCVN0cnVjdExvZxIQCghvcGVyYXRvchgBIAIoCRIRCglvcGVyYXRp", 
+          "b24YAiACKAkSCgoCaXAYAyACKAkSDwoHYWRkdGltZRgEIAIoCRIOCgZzdGF0", 
+          "dXMYBSACKAkiMwoPU3RydWN0QXJlYVRvdGFsEhAKCGFyZWFuYW1lGAEgAigJ", 
+          "Eg4KBmFtb3VudBgCIAIoBSLEAQoKU3RydWN0RWFybhIQCghkYXRldGltZRgB", 
+          "IAIoBRIVCg1hbGlwYXlfY2hhcmdlGAIgAigFEhMKC2FsaXBheV9zYWxlGAMg", 
+          "AigFEhUKDXRlbnBheV9jaGFyZ2UYBCACKAUSEwoLdGVucGF5X3NhbGUYBSAC", 
+          "KAUSEwoLY2FzaF9jaGFyZ2UYBiACKAUSEQoJY2FzaF9zYWxlGAcgAigFEiQK", 
+          "CmFyZWFfdG90YWwYCCADKAsyEC5TdHJ1Y3RBcmVhVG90YWwiSgoKU3RydWN0", 
+          "Q2FsbBIOCgZjYWxsaWQYASACKAUSDgoGY2FsbGVyGAIgAigJEg4KBmRldmlj", 
+          "ZRgDIAIoCRIMCgRpbmZvGAQgAigJItIBCgtTdHJ1Y3RTaGlmdBIPCgdzaGlm", 
+          "dGlkGAEgAigFEhQKDGRlbGl2ZXJlZF9ieRgCIAIoCRIRCglzdGFydHRpbWUY", 
+          "AyACKAkSEAoIc3RvcHRpbWUYBCACKAkSFQoNY2hhcmdlX2Ftb3VudBgFIAIo", 
+          "BRITCgtzYWxlX2Ftb3VudBgGIAIoBRIVCg1yZWZ1bmRfYW1vdW50GAcgAigF", 
+          "EhMKC3JlY2VpdmVkX2J5GAggAigJEg8KB2lzY2hlY2sYCSACKAUSDgoGcmVt", 
+          "YXJrGAogAigJIjIKDVN0cnVjdEJ1eUluZm8SDwoHZ29vZHNpZBgBIAIoBRIQ", 
+          "Cghnb29kc251bRgCIAIoBSJFChBTdHJ1Y3RWZXJpZnlJbmZvEgwKBG5hbWUY", 
+          "ASACKAkSEgoKY2FyZG51bWJlchgCIAIoCRIPCgdoZWFkdXJsGAMgAigJIkgK", 
+          "D1N0cnVjdE9yZGVySW5mbxIQCghwb3NpdGlvbhgBIAIoCRIRCglnb29kc25h", 
+          "bWUYAiACKAkSEAoIZ29vZHNudW0YAyACKAUiKAoMU3RydWN0QWRJbmZvEgsK", 
+          "A3VybBgBIAIoCRILCgNwb3MYAiACKAVCKwodY29tLnNreXNvZnQuY29yZS5h", 
+        "dXRvLm1lc3NhZ2VCCkJhc2VTdHJ1Y3Q="));
     pbd::FileDescriptor.InternalDescriptorAssigner assigner = delegate(pbd::FileDescriptor root) {
       descriptor = root;
       internal__static_StructErrorTip__Descriptor = Descriptor.MessageTypes[0];
@@ -198,7 +203,7 @@ public static partial class BaseStruct {
       internal__static_StructAccount__Descriptor = Descriptor.MessageTypes[1];
       internal__static_StructAccount__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructAccount, global::StructAccount.Builder>(internal__static_StructAccount__Descriptor,
-              new string[] { "Guid", "Username", "Password", "Nickname", "Roleid", "Phone", "Email", "Sns", });
+              new string[] { "Guid", "Username", "Password", "Fingermask", "Nickname", "Roleid", "Phone", "Email", "Sns", });
       internal__static_StructRole__Descriptor = Descriptor.MessageTypes[2];
       internal__static_StructRole__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructRole, global::StructRole.Builder>(internal__static_StructRole__Descriptor,
@@ -206,7 +211,7 @@ public static partial class BaseStruct {
       internal__static_StructComputer__Descriptor = Descriptor.MessageTypes[3];
       internal__static_StructComputer__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructComputer, global::StructComputer.Builder>(internal__static_StructComputer__Descriptor,
-              new string[] { "Computerid", "Name", "Area", });
+              new string[] { "Computerid", "Name", "Area", "Lefttime", });
       internal__static_StructArea__Descriptor = Descriptor.MessageTypes[4];
       internal__static_StructArea__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructArea, global::StructArea.Builder>(internal__static_StructArea__Descriptor,
@@ -238,7 +243,7 @@ public static partial class BaseStruct {
       internal__static_StructMember__Descriptor = Descriptor.MessageTypes[11];
       internal__static_StructMember__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructMember, global::StructMember.Builder>(internal__static_StructMember__Descriptor,
-              new string[] { "Memberid", "Cardnumber", "Gender", "Name", "Membertype", "Phone", "Opentime", "Lasttime", "Balance", "TotalRecharge", "TotalBonus", "Integal", "UsedIntegal", "Status", "Verify", "Reason", });
+              new string[] { "Memberid", "Cardnumber", "Fingermask", "Gender", "Name", "Membertype", "ViplevelTitle", "Phone", "Opentime", "Lasttime", "Balance", "TotalRecharge", "TotalBonus", "Integal", "UsedIntegal", "Status", "Verify", "Reason", });
       internal__static_StructPage__Descriptor = Descriptor.MessageTypes[12];
       internal__static_StructPage__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructPage, global::StructPage.Builder>(internal__static_StructPage__Descriptor,
@@ -319,6 +324,10 @@ public static partial class BaseStruct {
       internal__static_StructOrderInfo__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::StructOrderInfo, global::StructOrderInfo.Builder>(internal__static_StructOrderInfo__Descriptor,
               new string[] { "Position", "Goodsname", "Goodsnum", });
+      internal__static_StructAdInfo__Descriptor = Descriptor.MessageTypes[32];
+      internal__static_StructAdInfo__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::StructAdInfo, global::StructAdInfo.Builder>(internal__static_StructAdInfo__Descriptor,
+              new string[] { "Url", "Pos", });
       return null;
     };
     pbd::FileDescriptor.InternalBuildGeneratedFileFrom(descriptorData,
@@ -761,8 +770,8 @@ public sealed partial class StructErrorTip : pb::GeneratedMessage<StructErrorTip
 public sealed partial class StructAccount : pb::GeneratedMessage<StructAccount, StructAccount.Builder> {
   private StructAccount() { }
   private static readonly StructAccount defaultInstance = new StructAccount().MakeReadOnly();
-  private static readonly string[] _structAccountFieldNames = new string[] { "email", "guid", "nickname", "password", "phone", "roleid", "sns", "username" };
-  private static readonly uint[] _structAccountFieldTags = new uint[] { 58, 10, 34, 26, 50, 42, 66, 18 };
+  private static readonly string[] _structAccountFieldNames = new string[] { "email", "fingermask", "guid", "nickname", "password", "phone", "roleid", "sns", "username" };
+  private static readonly uint[] _structAccountFieldTags = new uint[] { 66, 32, 10, 42, 26, 58, 50, 74, 18 };
   public static StructAccount DefaultInstance {
     get { return defaultInstance; }
   }
@@ -813,7 +822,17 @@ public sealed partial class StructAccount : pb::GeneratedMessage<StructAccount, 
     get { return password_; }
   }
   
-  public const int NicknameFieldNumber = 4;
+  public const int FingermaskFieldNumber = 4;
+  private bool hasFingermask;
+  private bool fingermask_;
+  public bool HasFingermask {
+    get { return hasFingermask; }
+  }
+  public bool Fingermask {
+    get { return fingermask_; }
+  }
+  
+  public const int NicknameFieldNumber = 5;
   private bool hasNickname;
   private string nickname_ = "";
   public bool HasNickname {
@@ -823,7 +842,7 @@ public sealed partial class StructAccount : pb::GeneratedMessage<StructAccount, 
     get { return nickname_; }
   }
   
-  public const int RoleidFieldNumber = 5;
+  public const int RoleidFieldNumber = 6;
   private bool hasRoleid;
   private string roleid_ = "";
   public bool HasRoleid {
@@ -833,7 +852,7 @@ public sealed partial class StructAccount : pb::GeneratedMessage<StructAccount, 
     get { return roleid_; }
   }
   
-  public const int PhoneFieldNumber = 6;
+  public const int PhoneFieldNumber = 7;
   private bool hasPhone;
   private string phone_ = "";
   public bool HasPhone {
@@ -843,7 +862,7 @@ public sealed partial class StructAccount : pb::GeneratedMessage<StructAccount, 
     get { return phone_; }
   }
   
-  public const int EmailFieldNumber = 7;
+  public const int EmailFieldNumber = 8;
   private bool hasEmail;
   private string email_ = "";
   public bool HasEmail {
@@ -853,7 +872,7 @@ public sealed partial class StructAccount : pb::GeneratedMessage<StructAccount, 
     get { return email_; }
   }
   
-  public const int SnsFieldNumber = 8;
+  public const int SnsFieldNumber = 9;
   private bool hasSns;
   private string sns_ = "";
   public bool HasSns {
@@ -874,28 +893,31 @@ public sealed partial class StructAccount : pb::GeneratedMessage<StructAccount, 
     CalcSerializedSize();
     string[] field_names = _structAccountFieldNames;
     if (hasGuid) {
-      output.WriteString(1, field_names[1], Guid);
+      output.WriteString(1, field_names[2], Guid);
     }
     if (hasUsername) {
-      output.WriteString(2, field_names[7], Username);
+      output.WriteString(2, field_names[8], Username);
     }
     if (hasPassword) {
-      output.WriteString(3, field_names[3], Password);
+      output.WriteString(3, field_names[4], Password);
+    }
+    if (hasFingermask) {
+      output.WriteBool(4, field_names[1], Fingermask);
     }
     if (hasNickname) {
-      output.WriteString(4, field_names[2], Nickname);
+      output.WriteString(5, field_names[3], Nickname);
     }
     if (hasRoleid) {
-      output.WriteString(5, field_names[5], Roleid);
+      output.WriteString(6, field_names[6], Roleid);
     }
     if (hasPhone) {
-      output.WriteString(6, field_names[4], Phone);
+      output.WriteString(7, field_names[5], Phone);
     }
     if (hasEmail) {
-      output.WriteString(7, field_names[0], Email);
+      output.WriteString(8, field_names[0], Email);
     }
     if (hasSns) {
-      output.WriteString(8, field_names[6], Sns);
+      output.WriteString(9, field_names[7], Sns);
     }
     UnknownFields.WriteTo(output);
   }
@@ -923,20 +945,23 @@ public sealed partial class StructAccount : pb::GeneratedMessage<StructAccount, 
     if (hasPassword) {
       size += pb::CodedOutputStream.ComputeStringSize(3, Password);
     }
+    if (hasFingermask) {
+      size += pb::CodedOutputStream.ComputeBoolSize(4, Fingermask);
+    }
     if (hasNickname) {
-      size += pb::CodedOutputStream.ComputeStringSize(4, Nickname);
+      size += pb::CodedOutputStream.ComputeStringSize(5, Nickname);
     }
     if (hasRoleid) {
-      size += pb::CodedOutputStream.ComputeStringSize(5, Roleid);
+      size += pb::CodedOutputStream.ComputeStringSize(6, Roleid);
     }
     if (hasPhone) {
-      size += pb::CodedOutputStream.ComputeStringSize(6, Phone);
+      size += pb::CodedOutputStream.ComputeStringSize(7, Phone);
     }
     if (hasEmail) {
-      size += pb::CodedOutputStream.ComputeStringSize(7, Email);
+      size += pb::CodedOutputStream.ComputeStringSize(8, Email);
     }
     if (hasSns) {
-      size += pb::CodedOutputStream.ComputeStringSize(8, Sns);
+      size += pb::CodedOutputStream.ComputeStringSize(9, Sns);
     }
     size += UnknownFields.SerializedSize;
     memoizedSerializedSize = size;
@@ -1069,6 +1094,9 @@ public sealed partial class StructAccount : pb::GeneratedMessage<StructAccount, 
       if (other.HasPassword) {
         Password = other.Password;
       }
+      if (other.HasFingermask) {
+        Fingermask = other.Fingermask;
+      }
       if (other.HasNickname) {
         Nickname = other.Nickname;
       }
@@ -1139,23 +1167,27 @@ public sealed partial class StructAccount : pb::GeneratedMessage<StructAccount, 
             result.hasPassword = input.ReadString(ref result.password_);
             break;
           }
-          case 34: {
-            result.hasNickname = input.ReadString(ref result.nickname_);
+          case 32: {
+            result.hasFingermask = input.ReadBool(ref result.fingermask_);
             break;
           }
           case 42: {
-            result.hasRoleid = input.ReadString(ref result.roleid_);
+            result.hasNickname = input.ReadString(ref result.nickname_);
             break;
           }
           case 50: {
-            result.hasPhone = input.ReadString(ref result.phone_);
+            result.hasRoleid = input.ReadString(ref result.roleid_);
             break;
           }
           case 58: {
-            result.hasEmail = input.ReadString(ref result.email_);
+            result.hasPhone = input.ReadString(ref result.phone_);
             break;
           }
           case 66: {
+            result.hasEmail = input.ReadString(ref result.email_);
+            break;
+          }
+          case 74: {
             result.hasSns = input.ReadString(ref result.sns_);
             break;
           }
@@ -1229,6 +1261,26 @@ public sealed partial class StructAccount : pb::GeneratedMessage<StructAccount, 
       PrepareBuilder();
       result.hasPassword = false;
       result.password_ = "";
+      return this;
+    }
+    
+    public bool HasFingermask {
+      get { return result.hasFingermask; }
+    }
+    public bool Fingermask {
+      get { return result.Fingermask; }
+      set { SetFingermask(value); }
+    }
+    public Builder SetFingermask(bool value) {
+      PrepareBuilder();
+      result.hasFingermask = true;
+      result.fingermask_ = value;
+      return this;
+    }
+    public Builder ClearFingermask() {
+      PrepareBuilder();
+      result.hasFingermask = false;
+      result.fingermask_ = false;
       return this;
     }
     
@@ -1938,8 +1990,8 @@ public sealed partial class StructRole : pb::GeneratedMessage<StructRole, Struct
 public sealed partial class StructComputer : pb::GeneratedMessage<StructComputer, StructComputer.Builder> {
   private StructComputer() { }
   private static readonly StructComputer defaultInstance = new StructComputer().MakeReadOnly();
-  private static readonly string[] _structComputerFieldNames = new string[] { "area", "computerid", "name" };
-  private static readonly uint[] _structComputerFieldTags = new uint[] { 26, 8, 18 };
+  private static readonly string[] _structComputerFieldNames = new string[] { "area", "computerid", "lefttime", "name" };
+  private static readonly uint[] _structComputerFieldTags = new uint[] { 26, 8, 34, 18 };
   public static StructComputer DefaultInstance {
     get { return defaultInstance; }
   }
@@ -1990,6 +2042,16 @@ public sealed partial class StructComputer : pb::GeneratedMessage<StructComputer
     get { return area_; }
   }
   
+  public const int LefttimeFieldNumber = 4;
+  private bool hasLefttime;
+  private string lefttime_ = "";
+  public bool HasLefttime {
+    get { return hasLefttime; }
+  }
+  public string Lefttime {
+    get { return lefttime_; }
+  }
+  
   public override bool IsInitialized {
     get {
       if (!hasComputerid) return false;
@@ -2004,10 +2066,13 @@ public sealed partial class StructComputer : pb::GeneratedMessage<StructComputer
       output.WriteInt32(1, field_names[1], Computerid);
     }
     if (hasName) {
-      output.WriteString(2, field_names[2], Name);
+      output.WriteString(2, field_names[3], Name);
     }
     if (hasArea) {
       output.WriteString(3, field_names[0], Area);
+    }
+    if (hasLefttime) {
+      output.WriteString(4, field_names[2], Lefttime);
     }
     UnknownFields.WriteTo(output);
   }
@@ -2034,6 +2099,9 @@ public sealed partial class StructComputer : pb::GeneratedMessage<StructComputer
     }
     if (hasArea) {
       size += pb::CodedOutputStream.ComputeStringSize(3, Area);
+    }
+    if (hasLefttime) {
+      size += pb::CodedOutputStream.ComputeStringSize(4, Lefttime);
     }
     size += UnknownFields.SerializedSize;
     memoizedSerializedSize = size;
@@ -2166,6 +2234,9 @@ public sealed partial class StructComputer : pb::GeneratedMessage<StructComputer
       if (other.HasArea) {
         Area = other.Area;
       }
+      if (other.HasLefttime) {
+        Lefttime = other.Lefttime;
+      }
       this.MergeUnknownFields(other.UnknownFields);
       return this;
     }
@@ -2219,6 +2290,10 @@ public sealed partial class StructComputer : pb::GeneratedMessage<StructComputer
           }
           case 26: {
             result.hasArea = input.ReadString(ref result.area_);
+            break;
+          }
+          case 34: {
+            result.hasLefttime = input.ReadString(ref result.lefttime_);
             break;
           }
         }
@@ -2290,6 +2365,27 @@ public sealed partial class StructComputer : pb::GeneratedMessage<StructComputer
       PrepareBuilder();
       result.hasArea = false;
       result.area_ = "";
+      return this;
+    }
+    
+    public bool HasLefttime {
+      get { return result.hasLefttime; }
+    }
+    public string Lefttime {
+      get { return result.Lefttime; }
+      set { SetLefttime(value); }
+    }
+    public Builder SetLefttime(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasLefttime = true;
+      result.lefttime_ = value;
+      return this;
+    }
+    public Builder ClearLefttime() {
+      PrepareBuilder();
+      result.hasLefttime = false;
+      result.lefttime_ = "";
       return this;
     }
   }
@@ -7010,8 +7106,8 @@ public sealed partial class StructCard : pb::GeneratedMessage<StructCard, Struct
 public sealed partial class StructMember : pb::GeneratedMessage<StructMember, StructMember.Builder> {
   private StructMember() { }
   private static readonly StructMember defaultInstance = new StructMember().MakeReadOnly();
-  private static readonly string[] _structMemberFieldNames = new string[] { "balance", "cardnumber", "gender", "integal", "lasttime", "memberid", "membertype", "name", "opentime", "phone", "reason", "status", "totalBonus", "totalRecharge", "usedIntegal", "verify" };
-  private static readonly uint[] _structMemberFieldTags = new uint[] { 72, 18, 26, 96, 66, 8, 40, 34, 58, 50, 130, 112, 88, 80, 104, 120 };
+  private static readonly string[] _structMemberFieldNames = new string[] { "balance", "cardnumber", "fingermask", "gender", "integal", "lasttime", "memberid", "membertype", "name", "opentime", "phone", "reason", "status", "totalBonus", "totalRecharge", "usedIntegal", "verify", "viplevel_title" };
+  private static readonly uint[] _structMemberFieldTags = new uint[] { 88, 18, 24, 34, 112, 82, 8, 48, 42, 74, 66, 146, 128, 104, 96, 120, 136, 58 };
   public static StructMember DefaultInstance {
     get { return defaultInstance; }
   }
@@ -7052,7 +7148,17 @@ public sealed partial class StructMember : pb::GeneratedMessage<StructMember, St
     get { return cardnumber_; }
   }
   
-  public const int GenderFieldNumber = 3;
+  public const int FingermaskFieldNumber = 3;
+  private bool hasFingermask;
+  private bool fingermask_;
+  public bool HasFingermask {
+    get { return hasFingermask; }
+  }
+  public bool Fingermask {
+    get { return fingermask_; }
+  }
+  
+  public const int GenderFieldNumber = 4;
   private bool hasGender;
   private string gender_ = "";
   public bool HasGender {
@@ -7062,7 +7168,7 @@ public sealed partial class StructMember : pb::GeneratedMessage<StructMember, St
     get { return gender_; }
   }
   
-  public const int NameFieldNumber = 4;
+  public const int NameFieldNumber = 5;
   private bool hasName;
   private string name_ = "";
   public bool HasName {
@@ -7072,7 +7178,7 @@ public sealed partial class StructMember : pb::GeneratedMessage<StructMember, St
     get { return name_; }
   }
   
-  public const int MembertypeFieldNumber = 5;
+  public const int MembertypeFieldNumber = 6;
   private bool hasMembertype;
   private int membertype_;
   public bool HasMembertype {
@@ -7082,7 +7188,17 @@ public sealed partial class StructMember : pb::GeneratedMessage<StructMember, St
     get { return membertype_; }
   }
   
-  public const int PhoneFieldNumber = 6;
+  public const int ViplevelTitleFieldNumber = 7;
+  private bool hasViplevelTitle;
+  private string viplevelTitle_ = "";
+  public bool HasViplevelTitle {
+    get { return hasViplevelTitle; }
+  }
+  public string ViplevelTitle {
+    get { return viplevelTitle_; }
+  }
+  
+  public const int PhoneFieldNumber = 8;
   private bool hasPhone;
   private string phone_ = "";
   public bool HasPhone {
@@ -7092,7 +7208,7 @@ public sealed partial class StructMember : pb::GeneratedMessage<StructMember, St
     get { return phone_; }
   }
   
-  public const int OpentimeFieldNumber = 7;
+  public const int OpentimeFieldNumber = 9;
   private bool hasOpentime;
   private string opentime_ = "";
   public bool HasOpentime {
@@ -7102,7 +7218,7 @@ public sealed partial class StructMember : pb::GeneratedMessage<StructMember, St
     get { return opentime_; }
   }
   
-  public const int LasttimeFieldNumber = 8;
+  public const int LasttimeFieldNumber = 10;
   private bool hasLasttime;
   private string lasttime_ = "";
   public bool HasLasttime {
@@ -7112,7 +7228,7 @@ public sealed partial class StructMember : pb::GeneratedMessage<StructMember, St
     get { return lasttime_; }
   }
   
-  public const int BalanceFieldNumber = 9;
+  public const int BalanceFieldNumber = 11;
   private bool hasBalance;
   private int balance_;
   public bool HasBalance {
@@ -7122,7 +7238,7 @@ public sealed partial class StructMember : pb::GeneratedMessage<StructMember, St
     get { return balance_; }
   }
   
-  public const int TotalRechargeFieldNumber = 10;
+  public const int TotalRechargeFieldNumber = 12;
   private bool hasTotalRecharge;
   private int totalRecharge_;
   public bool HasTotalRecharge {
@@ -7132,7 +7248,7 @@ public sealed partial class StructMember : pb::GeneratedMessage<StructMember, St
     get { return totalRecharge_; }
   }
   
-  public const int TotalBonusFieldNumber = 11;
+  public const int TotalBonusFieldNumber = 13;
   private bool hasTotalBonus;
   private int totalBonus_;
   public bool HasTotalBonus {
@@ -7142,7 +7258,7 @@ public sealed partial class StructMember : pb::GeneratedMessage<StructMember, St
     get { return totalBonus_; }
   }
   
-  public const int IntegalFieldNumber = 12;
+  public const int IntegalFieldNumber = 14;
   private bool hasIntegal;
   private int integal_;
   public bool HasIntegal {
@@ -7152,7 +7268,7 @@ public sealed partial class StructMember : pb::GeneratedMessage<StructMember, St
     get { return integal_; }
   }
   
-  public const int UsedIntegalFieldNumber = 13;
+  public const int UsedIntegalFieldNumber = 15;
   private bool hasUsedIntegal;
   private int usedIntegal_;
   public bool HasUsedIntegal {
@@ -7162,7 +7278,7 @@ public sealed partial class StructMember : pb::GeneratedMessage<StructMember, St
     get { return usedIntegal_; }
   }
   
-  public const int StatusFieldNumber = 14;
+  public const int StatusFieldNumber = 16;
   private bool hasStatus;
   private int status_;
   public bool HasStatus {
@@ -7172,7 +7288,7 @@ public sealed partial class StructMember : pb::GeneratedMessage<StructMember, St
     get { return status_; }
   }
   
-  public const int VerifyFieldNumber = 15;
+  public const int VerifyFieldNumber = 17;
   private bool hasVerify;
   private int verify_;
   public bool HasVerify {
@@ -7182,7 +7298,7 @@ public sealed partial class StructMember : pb::GeneratedMessage<StructMember, St
     get { return verify_; }
   }
   
-  public const int ReasonFieldNumber = 16;
+  public const int ReasonFieldNumber = 18;
   private bool hasReason;
   private string reason_ = "";
   public bool HasReason {
@@ -7196,9 +7312,11 @@ public sealed partial class StructMember : pb::GeneratedMessage<StructMember, St
     get {
       if (!hasMemberid) return false;
       if (!hasCardnumber) return false;
+      if (!hasFingermask) return false;
       if (!hasGender) return false;
       if (!hasName) return false;
       if (!hasMembertype) return false;
+      if (!hasViplevelTitle) return false;
       if (!hasPhone) return false;
       if (!hasOpentime) return false;
       if (!hasLasttime) return false;
@@ -7210,52 +7328,58 @@ public sealed partial class StructMember : pb::GeneratedMessage<StructMember, St
     CalcSerializedSize();
     string[] field_names = _structMemberFieldNames;
     if (hasMemberid) {
-      output.WriteInt32(1, field_names[5], Memberid);
+      output.WriteInt32(1, field_names[6], Memberid);
     }
     if (hasCardnumber) {
       output.WriteString(2, field_names[1], Cardnumber);
     }
+    if (hasFingermask) {
+      output.WriteBool(3, field_names[2], Fingermask);
+    }
     if (hasGender) {
-      output.WriteString(3, field_names[2], Gender);
+      output.WriteString(4, field_names[3], Gender);
     }
     if (hasName) {
-      output.WriteString(4, field_names[7], Name);
+      output.WriteString(5, field_names[8], Name);
     }
     if (hasMembertype) {
-      output.WriteInt32(5, field_names[6], Membertype);
+      output.WriteInt32(6, field_names[7], Membertype);
+    }
+    if (hasViplevelTitle) {
+      output.WriteString(7, field_names[17], ViplevelTitle);
     }
     if (hasPhone) {
-      output.WriteString(6, field_names[9], Phone);
+      output.WriteString(8, field_names[10], Phone);
     }
     if (hasOpentime) {
-      output.WriteString(7, field_names[8], Opentime);
+      output.WriteString(9, field_names[9], Opentime);
     }
     if (hasLasttime) {
-      output.WriteString(8, field_names[4], Lasttime);
+      output.WriteString(10, field_names[5], Lasttime);
     }
     if (hasBalance) {
-      output.WriteInt32(9, field_names[0], Balance);
+      output.WriteInt32(11, field_names[0], Balance);
     }
     if (hasTotalRecharge) {
-      output.WriteInt32(10, field_names[13], TotalRecharge);
+      output.WriteInt32(12, field_names[14], TotalRecharge);
     }
     if (hasTotalBonus) {
-      output.WriteInt32(11, field_names[12], TotalBonus);
+      output.WriteInt32(13, field_names[13], TotalBonus);
     }
     if (hasIntegal) {
-      output.WriteInt32(12, field_names[3], Integal);
+      output.WriteInt32(14, field_names[4], Integal);
     }
     if (hasUsedIntegal) {
-      output.WriteInt32(13, field_names[14], UsedIntegal);
+      output.WriteInt32(15, field_names[15], UsedIntegal);
     }
     if (hasStatus) {
-      output.WriteInt32(14, field_names[11], Status);
+      output.WriteInt32(16, field_names[12], Status);
     }
     if (hasVerify) {
-      output.WriteInt32(15, field_names[15], Verify);
+      output.WriteInt32(17, field_names[16], Verify);
     }
     if (hasReason) {
-      output.WriteString(16, field_names[10], Reason);
+      output.WriteString(18, field_names[11], Reason);
     }
     UnknownFields.WriteTo(output);
   }
@@ -7280,47 +7404,53 @@ public sealed partial class StructMember : pb::GeneratedMessage<StructMember, St
     if (hasCardnumber) {
       size += pb::CodedOutputStream.ComputeStringSize(2, Cardnumber);
     }
+    if (hasFingermask) {
+      size += pb::CodedOutputStream.ComputeBoolSize(3, Fingermask);
+    }
     if (hasGender) {
-      size += pb::CodedOutputStream.ComputeStringSize(3, Gender);
+      size += pb::CodedOutputStream.ComputeStringSize(4, Gender);
     }
     if (hasName) {
-      size += pb::CodedOutputStream.ComputeStringSize(4, Name);
+      size += pb::CodedOutputStream.ComputeStringSize(5, Name);
     }
     if (hasMembertype) {
-      size += pb::CodedOutputStream.ComputeInt32Size(5, Membertype);
+      size += pb::CodedOutputStream.ComputeInt32Size(6, Membertype);
+    }
+    if (hasViplevelTitle) {
+      size += pb::CodedOutputStream.ComputeStringSize(7, ViplevelTitle);
     }
     if (hasPhone) {
-      size += pb::CodedOutputStream.ComputeStringSize(6, Phone);
+      size += pb::CodedOutputStream.ComputeStringSize(8, Phone);
     }
     if (hasOpentime) {
-      size += pb::CodedOutputStream.ComputeStringSize(7, Opentime);
+      size += pb::CodedOutputStream.ComputeStringSize(9, Opentime);
     }
     if (hasLasttime) {
-      size += pb::CodedOutputStream.ComputeStringSize(8, Lasttime);
+      size += pb::CodedOutputStream.ComputeStringSize(10, Lasttime);
     }
     if (hasBalance) {
-      size += pb::CodedOutputStream.ComputeInt32Size(9, Balance);
+      size += pb::CodedOutputStream.ComputeInt32Size(11, Balance);
     }
     if (hasTotalRecharge) {
-      size += pb::CodedOutputStream.ComputeInt32Size(10, TotalRecharge);
+      size += pb::CodedOutputStream.ComputeInt32Size(12, TotalRecharge);
     }
     if (hasTotalBonus) {
-      size += pb::CodedOutputStream.ComputeInt32Size(11, TotalBonus);
+      size += pb::CodedOutputStream.ComputeInt32Size(13, TotalBonus);
     }
     if (hasIntegal) {
-      size += pb::CodedOutputStream.ComputeInt32Size(12, Integal);
+      size += pb::CodedOutputStream.ComputeInt32Size(14, Integal);
     }
     if (hasUsedIntegal) {
-      size += pb::CodedOutputStream.ComputeInt32Size(13, UsedIntegal);
+      size += pb::CodedOutputStream.ComputeInt32Size(15, UsedIntegal);
     }
     if (hasStatus) {
-      size += pb::CodedOutputStream.ComputeInt32Size(14, Status);
+      size += pb::CodedOutputStream.ComputeInt32Size(16, Status);
     }
     if (hasVerify) {
-      size += pb::CodedOutputStream.ComputeInt32Size(15, Verify);
+      size += pb::CodedOutputStream.ComputeInt32Size(17, Verify);
     }
     if (hasReason) {
-      size += pb::CodedOutputStream.ComputeStringSize(16, Reason);
+      size += pb::CodedOutputStream.ComputeStringSize(18, Reason);
     }
     size += UnknownFields.SerializedSize;
     memoizedSerializedSize = size;
@@ -7450,6 +7580,9 @@ public sealed partial class StructMember : pb::GeneratedMessage<StructMember, St
       if (other.HasCardnumber) {
         Cardnumber = other.Cardnumber;
       }
+      if (other.HasFingermask) {
+        Fingermask = other.Fingermask;
+      }
       if (other.HasGender) {
         Gender = other.Gender;
       }
@@ -7458,6 +7591,9 @@ public sealed partial class StructMember : pb::GeneratedMessage<StructMember, St
       }
       if (other.HasMembertype) {
         Membertype = other.Membertype;
+      }
+      if (other.HasViplevelTitle) {
+        ViplevelTitle = other.ViplevelTitle;
       }
       if (other.HasPhone) {
         Phone = other.Phone;
@@ -7543,59 +7679,67 @@ public sealed partial class StructMember : pb::GeneratedMessage<StructMember, St
             result.hasCardnumber = input.ReadString(ref result.cardnumber_);
             break;
           }
-          case 26: {
-            result.hasGender = input.ReadString(ref result.gender_);
+          case 24: {
+            result.hasFingermask = input.ReadBool(ref result.fingermask_);
             break;
           }
           case 34: {
+            result.hasGender = input.ReadString(ref result.gender_);
+            break;
+          }
+          case 42: {
             result.hasName = input.ReadString(ref result.name_);
             break;
           }
-          case 40: {
+          case 48: {
             result.hasMembertype = input.ReadInt32(ref result.membertype_);
             break;
           }
-          case 50: {
-            result.hasPhone = input.ReadString(ref result.phone_);
-            break;
-          }
           case 58: {
-            result.hasOpentime = input.ReadString(ref result.opentime_);
+            result.hasViplevelTitle = input.ReadString(ref result.viplevelTitle_);
             break;
           }
           case 66: {
+            result.hasPhone = input.ReadString(ref result.phone_);
+            break;
+          }
+          case 74: {
+            result.hasOpentime = input.ReadString(ref result.opentime_);
+            break;
+          }
+          case 82: {
             result.hasLasttime = input.ReadString(ref result.lasttime_);
             break;
           }
-          case 72: {
+          case 88: {
             result.hasBalance = input.ReadInt32(ref result.balance_);
             break;
           }
-          case 80: {
+          case 96: {
             result.hasTotalRecharge = input.ReadInt32(ref result.totalRecharge_);
             break;
           }
-          case 88: {
+          case 104: {
             result.hasTotalBonus = input.ReadInt32(ref result.totalBonus_);
             break;
           }
-          case 96: {
+          case 112: {
             result.hasIntegal = input.ReadInt32(ref result.integal_);
             break;
           }
-          case 104: {
+          case 120: {
             result.hasUsedIntegal = input.ReadInt32(ref result.usedIntegal_);
             break;
           }
-          case 112: {
+          case 128: {
             result.hasStatus = input.ReadInt32(ref result.status_);
             break;
           }
-          case 120: {
+          case 136: {
             result.hasVerify = input.ReadInt32(ref result.verify_);
             break;
           }
-          case 130: {
+          case 146: {
             result.hasReason = input.ReadString(ref result.reason_);
             break;
           }
@@ -7647,6 +7791,26 @@ public sealed partial class StructMember : pb::GeneratedMessage<StructMember, St
       PrepareBuilder();
       result.hasCardnumber = false;
       result.cardnumber_ = "";
+      return this;
+    }
+    
+    public bool HasFingermask {
+      get { return result.hasFingermask; }
+    }
+    public bool Fingermask {
+      get { return result.Fingermask; }
+      set { SetFingermask(value); }
+    }
+    public Builder SetFingermask(bool value) {
+      PrepareBuilder();
+      result.hasFingermask = true;
+      result.fingermask_ = value;
+      return this;
+    }
+    public Builder ClearFingermask() {
+      PrepareBuilder();
+      result.hasFingermask = false;
+      result.fingermask_ = false;
       return this;
     }
     
@@ -7709,6 +7873,27 @@ public sealed partial class StructMember : pb::GeneratedMessage<StructMember, St
       PrepareBuilder();
       result.hasMembertype = false;
       result.membertype_ = 0;
+      return this;
+    }
+    
+    public bool HasViplevelTitle {
+      get { return result.hasViplevelTitle; }
+    }
+    public string ViplevelTitle {
+      get { return result.ViplevelTitle; }
+      set { SetViplevelTitle(value); }
+    }
+    public Builder SetViplevelTitle(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasViplevelTitle = true;
+      result.viplevelTitle_ = value;
+      return this;
+    }
+    public Builder ClearViplevelTitle() {
+      PrepareBuilder();
+      result.hasViplevelTitle = false;
+      result.viplevelTitle_ = "";
       return this;
     }
     
@@ -17549,7 +17734,7 @@ public sealed partial class StructOrderInfo : pb::GeneratedMessage<StructOrderIn
   private StructOrderInfo() { }
   private static readonly StructOrderInfo defaultInstance = new StructOrderInfo().MakeReadOnly();
   private static readonly string[] _structOrderInfoFieldNames = new string[] { "goodsname", "goodsnum", "position" };
-  private static readonly uint[] _structOrderInfoFieldTags = new uint[] { 18, 26, 10 };
+  private static readonly uint[] _structOrderInfoFieldTags = new uint[] { 18, 24, 10 };
   public static StructOrderInfo DefaultInstance {
     get { return defaultInstance; }
   }
@@ -17592,11 +17777,11 @@ public sealed partial class StructOrderInfo : pb::GeneratedMessage<StructOrderIn
   
   public const int GoodsnumFieldNumber = 3;
   private bool hasGoodsnum;
-  private string goodsnum_ = "";
+  private int goodsnum_;
   public bool HasGoodsnum {
     get { return hasGoodsnum; }
   }
-  public string Goodsnum {
+  public int Goodsnum {
     get { return goodsnum_; }
   }
   
@@ -17619,7 +17804,7 @@ public sealed partial class StructOrderInfo : pb::GeneratedMessage<StructOrderIn
       output.WriteString(2, field_names[0], Goodsname);
     }
     if (hasGoodsnum) {
-      output.WriteString(3, field_names[1], Goodsnum);
+      output.WriteInt32(3, field_names[1], Goodsnum);
     }
     UnknownFields.WriteTo(output);
   }
@@ -17645,7 +17830,7 @@ public sealed partial class StructOrderInfo : pb::GeneratedMessage<StructOrderIn
       size += pb::CodedOutputStream.ComputeStringSize(2, Goodsname);
     }
     if (hasGoodsnum) {
-      size += pb::CodedOutputStream.ComputeStringSize(3, Goodsnum);
+      size += pb::CodedOutputStream.ComputeInt32Size(3, Goodsnum);
     }
     size += UnknownFields.SerializedSize;
     memoizedSerializedSize = size;
@@ -17829,8 +18014,8 @@ public sealed partial class StructOrderInfo : pb::GeneratedMessage<StructOrderIn
             result.hasGoodsname = input.ReadString(ref result.goodsname_);
             break;
           }
-          case 26: {
-            result.hasGoodsnum = input.ReadString(ref result.goodsnum_);
+          case 24: {
+            result.hasGoodsnum = input.ReadInt32(ref result.goodsnum_);
             break;
           }
         }
@@ -17888,12 +18073,11 @@ public sealed partial class StructOrderInfo : pb::GeneratedMessage<StructOrderIn
     public bool HasGoodsnum {
       get { return result.hasGoodsnum; }
     }
-    public string Goodsnum {
+    public int Goodsnum {
       get { return result.Goodsnum; }
       set { SetGoodsnum(value); }
     }
-    public Builder SetGoodsnum(string value) {
-      pb::ThrowHelper.ThrowIfNull(value, "value");
+    public Builder SetGoodsnum(int value) {
       PrepareBuilder();
       result.hasGoodsnum = true;
       result.goodsnum_ = value;
@@ -17902,11 +18086,332 @@ public sealed partial class StructOrderInfo : pb::GeneratedMessage<StructOrderIn
     public Builder ClearGoodsnum() {
       PrepareBuilder();
       result.hasGoodsnum = false;
-      result.goodsnum_ = "";
+      result.goodsnum_ = 0;
       return this;
     }
   }
   static StructOrderInfo() {
+    object.ReferenceEquals(global::BaseStruct.Descriptor, null);
+  }
+}
+
+[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+public sealed partial class StructAdInfo : pb::GeneratedMessage<StructAdInfo, StructAdInfo.Builder> {
+  private StructAdInfo() { }
+  private static readonly StructAdInfo defaultInstance = new StructAdInfo().MakeReadOnly();
+  private static readonly string[] _structAdInfoFieldNames = new string[] { "pos", "url" };
+  private static readonly uint[] _structAdInfoFieldTags = new uint[] { 16, 10 };
+  public static StructAdInfo DefaultInstance {
+    get { return defaultInstance; }
+  }
+  
+  public override StructAdInfo DefaultInstanceForType {
+    get { return DefaultInstance; }
+  }
+  
+  protected override StructAdInfo ThisMessage {
+    get { return this; }
+  }
+  
+  public static pbd::MessageDescriptor Descriptor {
+    get { return global::BaseStruct.internal__static_StructAdInfo__Descriptor; }
+  }
+  
+  protected override pb::FieldAccess.FieldAccessorTable<StructAdInfo, StructAdInfo.Builder> InternalFieldAccessors {
+    get { return global::BaseStruct.internal__static_StructAdInfo__FieldAccessorTable; }
+  }
+  
+  public const int UrlFieldNumber = 1;
+  private bool hasUrl;
+  private string url_ = "";
+  public bool HasUrl {
+    get { return hasUrl; }
+  }
+  public string Url {
+    get { return url_; }
+  }
+  
+  public const int PosFieldNumber = 2;
+  private bool hasPos;
+  private int pos_;
+  public bool HasPos {
+    get { return hasPos; }
+  }
+  public int Pos {
+    get { return pos_; }
+  }
+  
+  public override bool IsInitialized {
+    get {
+      if (!hasUrl) return false;
+      if (!hasPos) return false;
+      return true;
+    }
+  }
+  
+  public override void WriteTo(pb::ICodedOutputStream output) {
+    CalcSerializedSize();
+    string[] field_names = _structAdInfoFieldNames;
+    if (hasUrl) {
+      output.WriteString(1, field_names[1], Url);
+    }
+    if (hasPos) {
+      output.WriteInt32(2, field_names[0], Pos);
+    }
+    UnknownFields.WriteTo(output);
+  }
+  
+  private int memoizedSerializedSize = -1;
+  public override int SerializedSize {
+    get {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+      return CalcSerializedSize();
+    }
+  }
+  
+  private int CalcSerializedSize() {
+    int size = memoizedSerializedSize;
+    if (size != -1) return size;
+    
+    size = 0;
+    if (hasUrl) {
+      size += pb::CodedOutputStream.ComputeStringSize(1, Url);
+    }
+    if (hasPos) {
+      size += pb::CodedOutputStream.ComputeInt32Size(2, Pos);
+    }
+    size += UnknownFields.SerializedSize;
+    memoizedSerializedSize = size;
+    return size;
+  }
+  public static StructAdInfo ParseFrom(pb::ByteString data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static StructAdInfo ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static StructAdInfo ParseFrom(byte[] data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static StructAdInfo ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static StructAdInfo ParseFrom(global::System.IO.Stream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static StructAdInfo ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  public static StructAdInfo ParseDelimitedFrom(global::System.IO.Stream input) {
+    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
+  }
+  public static StructAdInfo ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
+  }
+  public static StructAdInfo ParseFrom(pb::ICodedInputStream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static StructAdInfo ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  private StructAdInfo MakeReadOnly() {
+    return this;
+  }
+  
+  public static Builder CreateBuilder() { return new Builder(); }
+  public override Builder ToBuilder() { return CreateBuilder(this); }
+  public override Builder CreateBuilderForType() { return new Builder(); }
+  public static Builder CreateBuilder(StructAdInfo prototype) {
+    return new Builder(prototype);
+  }
+  
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class Builder : pb::GeneratedBuilder<StructAdInfo, Builder> {
+    protected override Builder ThisBuilder {
+      get { return this; }
+    }
+    public Builder() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+    }
+    internal Builder(StructAdInfo cloneFrom) {
+      result = cloneFrom;
+      resultIsReadOnly = true;
+    }
+    
+    private bool resultIsReadOnly;
+    private StructAdInfo result;
+    
+    private StructAdInfo PrepareBuilder() {
+      if (resultIsReadOnly) {
+        StructAdInfo original = result;
+        result = new StructAdInfo();
+        resultIsReadOnly = false;
+        MergeFrom(original);
+      }
+      return result;
+    }
+    
+    public override bool IsInitialized {
+      get { return result.IsInitialized; }
+    }
+    
+    protected override StructAdInfo MessageBeingBuilt {
+      get { return PrepareBuilder(); }
+    }
+    
+    public override Builder Clear() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+      return this;
+    }
+    
+    public override Builder Clone() {
+      if (resultIsReadOnly) {
+        return new Builder(result);
+      } else {
+        return new Builder().MergeFrom(result);
+      }
+    }
+    
+    public override pbd::MessageDescriptor DescriptorForType {
+      get { return global::StructAdInfo.Descriptor; }
+    }
+    
+    public override StructAdInfo DefaultInstanceForType {
+      get { return global::StructAdInfo.DefaultInstance; }
+    }
+    
+    public override StructAdInfo BuildPartial() {
+      if (resultIsReadOnly) {
+        return result;
+      }
+      resultIsReadOnly = true;
+      return result.MakeReadOnly();
+    }
+    
+    public override Builder MergeFrom(pb::IMessage other) {
+      if (other is StructAdInfo) {
+        return MergeFrom((StructAdInfo) other);
+      } else {
+        base.MergeFrom(other);
+        return this;
+      }
+    }
+    
+    public override Builder MergeFrom(StructAdInfo other) {
+      if (other == global::StructAdInfo.DefaultInstance) return this;
+      PrepareBuilder();
+      if (other.HasUrl) {
+        Url = other.Url;
+      }
+      if (other.HasPos) {
+        Pos = other.Pos;
+      }
+      this.MergeUnknownFields(other.UnknownFields);
+      return this;
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input) {
+      return MergeFrom(input, pb::ExtensionRegistry.Empty);
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+      PrepareBuilder();
+      pb::UnknownFieldSet.Builder unknownFields = null;
+      uint tag;
+      string field_name;
+      while (input.ReadTag(out tag, out field_name)) {
+        if(tag == 0 && field_name != null) {
+          int field_ordinal = global::System.Array.BinarySearch(_structAdInfoFieldNames, field_name, global::System.StringComparer.Ordinal);
+          if(field_ordinal >= 0)
+            tag = _structAdInfoFieldTags[field_ordinal];
+          else {
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            continue;
+          }
+        }
+        switch (tag) {
+          case 0: {
+            throw pb::InvalidProtocolBufferException.InvalidTag();
+          }
+          default: {
+            if (pb::WireFormat.IsEndGroupTag(tag)) {
+              if (unknownFields != null) {
+                this.UnknownFields = unknownFields.Build();
+              }
+              return this;
+            }
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            break;
+          }
+          case 10: {
+            result.hasUrl = input.ReadString(ref result.url_);
+            break;
+          }
+          case 16: {
+            result.hasPos = input.ReadInt32(ref result.pos_);
+            break;
+          }
+        }
+      }
+      
+      if (unknownFields != null) {
+        this.UnknownFields = unknownFields.Build();
+      }
+      return this;
+    }
+    
+    
+    public bool HasUrl {
+      get { return result.hasUrl; }
+    }
+    public string Url {
+      get { return result.Url; }
+      set { SetUrl(value); }
+    }
+    public Builder SetUrl(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasUrl = true;
+      result.url_ = value;
+      return this;
+    }
+    public Builder ClearUrl() {
+      PrepareBuilder();
+      result.hasUrl = false;
+      result.url_ = "";
+      return this;
+    }
+    
+    public bool HasPos {
+      get { return result.hasPos; }
+    }
+    public int Pos {
+      get { return result.Pos; }
+      set { SetPos(value); }
+    }
+    public Builder SetPos(int value) {
+      PrepareBuilder();
+      result.hasPos = true;
+      result.pos_ = value;
+      return this;
+    }
+    public Builder ClearPos() {
+      PrepareBuilder();
+      result.hasPos = false;
+      result.pos_ = 0;
+      return this;
+    }
+  }
+  static StructAdInfo() {
     object.ReferenceEquals(global::BaseStruct.Descriptor, null);
   }
 }

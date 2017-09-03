@@ -20,7 +20,6 @@ namespace NetBarMS.Views.SystemManage
         public MemberLevAddView(StructDictItem tem)
         {
             InitializeComponent();
-            this.titleLabel.Text = "会员等级增改";
             this.item = tem;
             InitUI();
         }
@@ -28,7 +27,6 @@ namespace NetBarMS.Views.SystemManage
         public MemberLevAddView()
         {
             InitializeComponent();
-            this.titleLabel.Text = "会员等级增改";
             InitUI();
 
         }

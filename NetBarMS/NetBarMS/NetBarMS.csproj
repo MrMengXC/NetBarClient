@@ -116,6 +116,7 @@
     <Compile Include="Codes\Tools\Manage\AreaSettingManage.cs" />
     <Compile Include="Codes\Tools\Manage\BorderManage.cs" />
     <Compile Include="Codes\Tools\Manage\CommonOperation.cs" />
+    <Compile Include="Codes\Tools\Manage\ControlColor.cs" />
     <Compile Include="Codes\Tools\Manage\DelegateManage.cs" />
     <Compile Include="Codes\Tools\EnumManage.cs" />
     <Compile Include="Codes\Tools\Manage\HomePageMessageManage.cs" />
@@ -180,11 +181,23 @@
     <Compile Include="Views\CustomView\AreaComsView.Designer.cs">
       <DependentUpon>AreaComsView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\CustomView\AreaComView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\CustomView\AreaComView.Designer.cs">
+      <DependentUpon>AreaComView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\CustomView\CustomMonthDate.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\CustomView\CustomMonthDate.Designer.cs">
       <DependentUpon>CustomMonthDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CustomView\CustomTest.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\CustomView\CustomTest.Designer.cs">
+      <DependentUpon>CustomTest.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\CustomView\HomePageButton.cs">
       <SubType>UserControl</SubType>
@@ -300,6 +313,12 @@
     <Compile Include="Views\Message\UserPayResultView.Designer.cs">
       <DependentUpon>UserPayResultView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\ResultManage\HandleResultView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ResultManage\HandleResultView.Designer.cs">
+      <DependentUpon>HandleResultView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\RootFormView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -311,6 +330,12 @@
     </Compile>
     <Compile Include="Views\RootUserControlView.Designer.cs">
       <DependentUpon>RootUserControlView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SystemManage\ProductTypeAddView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\SystemManage\ProductTypeAddView.Designer.cs">
+      <DependentUpon>ProductTypeAddView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\SystemSearch\UserRechargeRecordView.cs">
       <SubType>UserControl</SubType>
@@ -645,8 +670,14 @@
     <EmbeddedResource Include="Views\CustomView\AreaComsView.resx">
       <DependentUpon>AreaComsView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\CustomView\AreaComView.resx">
+      <DependentUpon>AreaComView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\CustomView\CustomMonthDate.resx">
       <DependentUpon>CustomMonthDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CustomView\CustomTest.resx">
+      <DependentUpon>CustomTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\CustomView\HomePageButton.resx">
       <DependentUpon>HomePageButton.cs</DependentUpon>
@@ -705,11 +736,17 @@
     <EmbeddedResource Include="Views\Message\UserPayResultView.resx">
       <DependentUpon>UserPayResultView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\ResultManage\HandleResultView.resx">
+      <DependentUpon>HandleResultView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\RootFormView.resx">
       <DependentUpon>RootFormView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\RootUserControlView.resx">
       <DependentUpon>RootUserControlView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SystemManage\ProductTypeAddView.resx">
+      <DependentUpon>ProductTypeAddView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\SystemSearch\AttendanceSearchView.resx">
       <DependentUpon>AttendanceSearchView.cs</DependentUpon>

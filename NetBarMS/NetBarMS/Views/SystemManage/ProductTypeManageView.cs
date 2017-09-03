@@ -21,7 +21,6 @@ namespace NetBarMS.Views.SystemManage
             Check,                  //勾选
             Number,                     //序号
             Type,                       //类别
-            ChildType,                   //子类别
             Operation,                     //操作
         }
 
@@ -67,7 +66,8 @@ namespace NetBarMS.Views.SystemManage
 
         #endregion
 
-        //刷新GridCOntrol
+        #region gridControl
+        //刷新GridControl
         private void RefreshGridControl()
         {
             this.mainDataTable.Clear();
@@ -86,11 +86,8 @@ namespace NetBarMS.Views.SystemManage
             this.mainDataTable.Rows.Add(row);
             row[TitleList.Number.ToString()] = this.mainDataTable.Rows.Count + "";
             row[TitleList.Type.ToString()] = item.GetItem(0);
-            row[TitleList.ChildType.ToString()] = item.GetItem(1);
-
-
-
         }
+        #endregion
 
         #region 按钮列触发事件
         //按钮列的点击事件
@@ -98,36 +95,18 @@ namespace NetBarMS.Views.SystemManage
         {
             int rowhandle = this.gridView1.FocusedRowHandle;
             DataRow row = this.gridView1.GetDataRow(rowhandle);
-            StructDictItem.Builder item = new StructDictItem.Builder(items[rowhandle]);
-            int name = new Random().Next() % 10000;
 
-            item.ClearItem();
-            item.AddItem(name.ToString());
-            item.AddItem(name.ToString());
-
-            SystemManageNetOperation.UpdateProductType(UpdateProductTypeResult, item.Build());
-           
-
-
-          
-        }
-        private void UpdateProductTypeResult(ResultModel result)
-        {
-            System.Console.WriteLine("UpdateProductTypeInfoResult:" + result.pack);
-            if (result.pack.Content.MessageType != 1)
-            {
-                return;
-            }
-
-            if (result.pack.Cmd == Cmd.CMD_SYS_UPDATE )
-            {
-                NetMessageManage.RemoveResultBlock(UpdateProductTypeResult);
+            ProductTypeAddView view = new ProductTypeAddView(items[rowhandle]);
+            CloseFormHandle close = new CloseFormHandle(delegate () {
                 this.Invoke(new RefreshUIHandle(delegate {
                     SystemManageNetOperation.ProductTypeInfo(ProductTypeInfoResult);
                 }));
+            });
+            ToolsManage.ShowForm(view, false, close);
 
-            }
+
         }
+        
         #endregion
 
         #region 获取所有勾选的ID
@@ -153,32 +132,16 @@ namespace NetBarMS.Views.SystemManage
         #region 添加商品类别
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            StructDictItem.Builder item = new StructDictItem.Builder();
-            int name = new Random().Next() % 10000;
-            item.Code = 0;
-            item.Id = 0;
-            item.AddItem(name.ToString());
-            item.AddItem(name.ToString());
-
-            SystemManageNetOperation.AddProductType(AddProductTypeResult, item.Build());
-        }
-        private void AddProductTypeResult(ResultModel result)
-        {
-            if (result.pack.Content.MessageType != 1)
-            {
-                return;
-            }
-
-            if (result.pack.Cmd == Cmd.CMD_SYS_ADD)
-            {
-                NetMessageManage.RemoveResultBlock(AddProductTypeResult);
-                System.Console.WriteLine("AddProductTypeInfoResult:" + result.pack);
-
+            ProductTypeAddView view = new ProductTypeAddView();
+            CloseFormHandle close = new CloseFormHandle(delegate () {
+                //GetProductIndentList();
                 this.Invoke(new RefreshUIHandle(delegate {
                     SystemManageNetOperation.ProductTypeInfo(ProductTypeInfoResult);
                 }));
+            });
+            ToolsManage.ShowForm(view, false, close);
 
-            }
+           
         }
         #endregion
 

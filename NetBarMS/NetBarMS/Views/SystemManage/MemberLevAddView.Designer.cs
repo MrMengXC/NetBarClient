@@ -40,6 +40,7 @@
             this.integralTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.titlePanel.SuspendLayout();
+            this.bottomPanel.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.typeTextEdit.Properties)).BeginInit();
@@ -51,114 +52,145 @@
             // 
             // titlePanel
             // 
-            this.titlePanel.Size = new System.Drawing.Size(366, 50);
+            this.titlePanel.Size = new System.Drawing.Size(417, 50);
+            // 
+            // titleLabel
+            // 
+            this.titleLabel.Size = new System.Drawing.Size(116, 18);
+            this.titleLabel.Text = "会员等级增改";
             // 
             // closeBtn
             // 
             this.closeBtn.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.closeBtn.Appearance.Options.UseBackColor = true;
-            this.closeBtn.Location = new System.Drawing.Point(319, 0);
+            this.closeBtn.Location = new System.Drawing.Point(370, 0);
             this.closeBtn.LookAndFeel.SkinMaskColor = System.Drawing.Color.Transparent;
             this.closeBtn.LookAndFeel.UseDefaultLookAndFeel = false;
             this.closeBtn.Size = new System.Drawing.Size(47, 50);
             // 
+            // bottomPanel
+            // 
+            this.bottomPanel.Controls.Add(this.simpleButton1);
+            this.bottomPanel.Location = new System.Drawing.Point(0, 243);
+            this.bottomPanel.Size = new System.Drawing.Size(417, 64);
+            // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.AutoSize = true;
             this.flowLayoutPanel1.Controls.Add(this.flowLayoutPanel2);
             this.flowLayoutPanel1.Controls.Add(this.flowLayoutPanel3);
             this.flowLayoutPanel1.Controls.Add(this.flowLayoutPanel4);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(24, 70);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(47, 88);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(294, 113);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(309, 120);
             this.flowLayoutPanel1.TabIndex = 62;
             // 
             // flowLayoutPanel2
             // 
+            this.flowLayoutPanel2.AutoSize = true;
             this.flowLayoutPanel2.Controls.Add(this.label1);
             this.flowLayoutPanel2.Controls.Add(this.typeTextEdit);
             this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(294, 28);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(300, 34);
             this.flowLayoutPanel2.TabIndex = 63;
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(3, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 23);
+            this.label1.Size = new System.Drawing.Size(67, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "等级名称";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // typeTextEdit
             // 
-            this.typeTextEdit.Location = new System.Drawing.Point(81, 3);
+            this.typeTextEdit.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.typeTextEdit.Location = new System.Drawing.Point(76, 3);
             this.typeTextEdit.Name = "typeTextEdit";
-            this.typeTextEdit.Size = new System.Drawing.Size(100, 20);
+            this.typeTextEdit.Properties.AutoHeight = false;
+            this.typeTextEdit.Size = new System.Drawing.Size(221, 28);
             this.typeTextEdit.TabIndex = 1;
             // 
             // flowLayoutPanel3
             // 
+            this.flowLayoutPanel3.AutoSize = true;
             this.flowLayoutPanel3.Controls.Add(this.label2);
             this.flowLayoutPanel3.Controls.Add(this.rechargeTextEdit);
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 37);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 43);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(294, 28);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(303, 34);
             this.flowLayoutPanel3.TabIndex = 64;
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(3, 0);
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.label2.Location = new System.Drawing.Point(3, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 23);
+            this.label2.Size = new System.Drawing.Size(67, 15);
             this.label2.TabIndex = 0;
             this.label2.Text = "充值金额";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // rechargeTextEdit
             // 
-            this.rechargeTextEdit.Location = new System.Drawing.Point(81, 3);
+            this.rechargeTextEdit.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.rechargeTextEdit.Location = new System.Drawing.Point(76, 3);
             this.rechargeTextEdit.Name = "rechargeTextEdit";
+            this.rechargeTextEdit.Properties.AutoHeight = false;
             this.rechargeTextEdit.Properties.Mask.EditMask = "[0-9]*";
             this.rechargeTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.rechargeTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.rechargeTextEdit.Size = new System.Drawing.Size(100, 20);
+            this.rechargeTextEdit.Size = new System.Drawing.Size(224, 28);
             this.rechargeTextEdit.TabIndex = 1;
             // 
             // flowLayoutPanel4
             // 
+            this.flowLayoutPanel4.AutoSize = true;
             this.flowLayoutPanel4.Controls.Add(this.label3);
             this.flowLayoutPanel4.Controls.Add(this.integralTextEdit);
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(3, 71);
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(3, 83);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(294, 28);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(300, 34);
             this.flowLayoutPanel4.TabIndex = 65;
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(3, 0);
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.label3.Location = new System.Drawing.Point(3, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 23);
+            this.label3.Size = new System.Drawing.Size(67, 15);
             this.label3.TabIndex = 0;
             this.label3.Text = "赠送积分";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // integralTextEdit
             // 
-            this.integralTextEdit.Location = new System.Drawing.Point(81, 3);
+            this.integralTextEdit.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.integralTextEdit.Location = new System.Drawing.Point(76, 3);
             this.integralTextEdit.Name = "integralTextEdit";
+            this.integralTextEdit.Properties.AutoHeight = false;
             this.integralTextEdit.Properties.Mask.EditMask = "[0-9]*";
             this.integralTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.integralTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.integralTextEdit.Size = new System.Drawing.Size(100, 20);
+            this.integralTextEdit.Size = new System.Drawing.Size(221, 28);
             this.integralTextEdit.TabIndex = 1;
             // 
             // simpleButton1
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(133, 189);
+            this.simpleButton1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.simpleButton1.Location = new System.Drawing.Point(162, 18);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton1.Size = new System.Drawing.Size(92, 29);
             this.simpleButton1.TabIndex = 63;
             this.simpleButton1.Text = "保存";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
@@ -168,23 +200,28 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "MemberLevAddView";
-            this.Size = new System.Drawing.Size(366, 224);
+            this.Size = new System.Drawing.Size(417, 307);
+            this.Controls.SetChildIndex(this.bottomPanel, 0);
             this.Controls.SetChildIndex(this.titlePanel, 0);
             this.Controls.SetChildIndex(this.flowLayoutPanel1, 0);
-            this.Controls.SetChildIndex(this.simpleButton1, 0);
             this.titlePanel.ResumeLayout(false);
             this.titlePanel.PerformLayout();
+            this.bottomPanel.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.typeTextEdit.Properties)).EndInit();
             this.flowLayoutPanel3.ResumeLayout(false);
+            this.flowLayoutPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rechargeTextEdit.Properties)).EndInit();
             this.flowLayoutPanel4.ResumeLayout(false);
+            this.flowLayoutPanel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.integralTextEdit.Properties)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

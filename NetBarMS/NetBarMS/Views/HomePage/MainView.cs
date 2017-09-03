@@ -41,7 +41,15 @@ namespace NetBarMS.Views.HomePage
         /// </summary>
         private bool IsActiveCard = false;
 
+        /// <summary>
+        /// 当前选择的列表按钮
+        /// </summary>
         private SimpleButton selectButton = null;
+        /// <summary>
+        /// 选择时候的背景颜色
+        /// </summary>
+        private static Color SEL_BACK_COLOR = Color.FromArgb(255, Color.White);
+        private static Color NOR_BACK_COLOR = Color.FromArgb((int)(255 * 0.1), Color.White);
 
 
         public MainView()
@@ -50,7 +58,7 @@ namespace NetBarMS.Views.HomePage
             InitUI();  
         }
 
-        //初始化UI
+        #region 初始化UI
         private void InitUI()
         {
             MainViewManage.MainView = this.mainPanel ;
@@ -61,17 +69,22 @@ namespace NetBarMS.Views.HomePage
                 HomePageNodeModel nodeModel = modelList[i];
                 SimpleButton button = new SimpleButton();
                 button.Text = nodeModel.nodeName;
-                button.Size = new Size(50, 68);
-                button.ForeColor = ColorTranslator.FromHtml("#ffffff");
-                button.Font = new Font("宋体", 20, GraphicsUnit.Pixel);
+                button.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+                button.Appearance.BackColor = NOR_BACK_COLOR;
+                button.Size = new Size(50, 50);
+                button.ForeColor = Color.White;
+                button.Font = new Font("宋体", 15, GraphicsUnit.Pixel);
+                button.Margin = new Padding(0);
+                button.Padding = new Padding(0);
                 button.Dock = DockStyle.Top;
-                button.ImageToTextAlignment = ImageAlignToText.LeftCenter;
-                button.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+                button.AllowFocus = false;
+                button.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
+                //button.ImageToTextAlignment = ImageAlignToText.LeftCenter;
+                button.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
                 button.Click += Button_Click ;
-                button.MouseDown += Button_MouseDown;
                 button.Tag = nodeModel;
-         
-                if(nodeModel.imgName == null || nodeModel.imgName == "" )
+                button.Paint += Button_Paint;
+                if (nodeModel.imgName == null || nodeModel.imgName == "" )
                 {
                     button.Image = Imgs.icon_huiyuan;
                 }
@@ -80,12 +93,33 @@ namespace NetBarMS.Views.HomePage
                     button.Image = Imgs.GetBitImg(nodeModel.imgName);
                 }
                 this.functionPanel.Controls.Add(button);
+                Image img = Imgs.GetBitImg(nodeModel.imgName);
             }
             ////添加首页视图
             AddHomePageView();
             //添加系统消息监听
             AddMsgDelegate();
         }
+        #endregion
+
+        #region 列表按钮重新绘制
+        private void Button_Paint(object sender, PaintEventArgs e)
+        {
+            SimpleButton button = sender as SimpleButton;
+            Rectangle rect = button.ClientRectangle;
+            Graphics gr = e.Graphics;
+            Color bc = Color.FromArgb(20, Color.White);
+            ControlPaint.DrawBorder(gr, rect,
+                bc, ButtonBorderStyle.Solid);
+                //bc, 1, ButtonBorderStyle.Solid,
+                //Color.Transparent, 0, ButtonBorderStyle.None,
+                //bc, 1, ButtonBorderStyle.Solid);
+
+
+
+
+        }
+        #endregion
 
         #region 添加系统消息监听
         private void AddMsgDelegate()
@@ -152,7 +186,12 @@ namespace NetBarMS.Views.HomePage
         #region 按钮单击事件
         private void Button_Click(object sender, EventArgs e)
         {
-            if(selectButton == sender)
+            HomePageNodeModel nodeModel = (HomePageNodeModel)(((SimpleButton)sender).Tag);
+            //列表类型
+            bool isList = nodeModel.childNodes.Count > 0;
+
+
+            if (selectButton == sender && !isList)
             {
                 return;
             }
@@ -161,7 +200,8 @@ namespace NetBarMS.Views.HomePage
             if(selectButton != null)
             {
                 HomePageNodeModel selectNodeModel = (HomePageNodeModel)(selectButton.Tag);
-                selectButton.ForeColor = ColorTranslator.FromHtml("#ffffff");
+                selectButton.ForeColor = Color.White;
+                selectButton.Appearance.BackColor = NOR_BACK_COLOR;
                 if (selectNodeModel.imgName == null || selectNodeModel.imgName == "")
                 {
                     selectButton.Image = Imgs.icon_huiyuan;
@@ -173,48 +213,43 @@ namespace NetBarMS.Views.HomePage
             }
 
             //设置成选择状态
-            HomePageNodeModel nodeModel = (HomePageNodeModel)(((SimpleButton)sender).Tag);
             selectButton = sender as SimpleButton;
             selectButton.ForeColor = Color.FromArgb(108, 140, 190);
+            selectButton.Appearance.BackColor = SEL_BACK_COLOR;
             if (nodeModel.selName == null || nodeModel.selName == "")
             {
-                selectButton.Image = Imgs.icon_huiyuan;
+                selectButton.Image = Imgs.icon_huiyuan2;
             }
             else
             {
                 selectButton.Image = Imgs.GetBitImg(nodeModel.selName);
             }
-            ShowView(nodeModel);
-        }
-
-        //鼠标右键点击
-        private void Button_MouseDown(object sender, MouseEventArgs e)
-        {
-           
-            SimpleButton button = (SimpleButton)sender;
-            if (e.Button == MouseButtons.Right)
+            //判断是否有子菜单
+            //设置右键弹出框
+            if (isList)
             {
-                HomePageNodeModel nodeModel = button.Tag as HomePageNodeModel;
-
-                //设置右键弹出框
-                if (nodeModel.childNodes.Count > 0)
+                this.popupMenu1.ClearLinks();
+                foreach (HomePageNodeModel model in nodeModel.childNodes)
                 {
-                    this.popupMenu1.ClearLinks();
-                    foreach (HomePageNodeModel model in nodeModel.childNodes)
-                    {
-                        BarButtonItem item = new BarButtonItem();
-                        item.Caption = model.nodeName;
-                        item.Tag = model.nodeid;
-                        item.ItemClick += Item_ItemClick;
-                        this.popupMenu1.AddItem(item);
-                    }
-
-                    Point screenPoint = button.PointToScreen(new Point(button.Width, 0));
-                   popupMenu1.ShowPopup(screenPoint);
+                    BarButtonItem item = new BarButtonItem();
+                    item.Caption = model.nodeName;
+                    item.Tag = model.nodeid;
+                    item.ItemClick += Item_ItemClick;
+                    this.popupMenu1.AddItem(item);
                 }
-            }
 
+                Point screenPoint = selectButton.PointToScreen(new Point(selectButton.Width, 0));
+                popupMenu1.ShowPopup(screenPoint);
+            }
+            else
+            {
+                //显示右侧内容列表
+                ShowView(nodeModel);
+            }
+           
         }
+
+        
         //右键弹出框点击时间
         private void Item_ItemClick(object sender, ItemClickEventArgs e)
         {

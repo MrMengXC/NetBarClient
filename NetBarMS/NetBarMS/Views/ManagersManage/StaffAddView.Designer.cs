@@ -31,20 +31,20 @@
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
-            this.nameTextBox = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
-            this.phoneTextBox = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
             this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
             this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
-            this.userNameTextBox = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
             this.label5 = new System.Windows.Forms.Label();
-            this.pwTextBox = new System.Windows.Forms.TextBox();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.nameTextBox = new DevExpress.XtraEditors.TextEdit();
+            this.phoneTextBox = new DevExpress.XtraEditors.TextEdit();
+            this.userNameTextBox = new DevExpress.XtraEditors.TextEdit();
+            this.pwTextBox = new DevExpress.XtraEditors.TextEdit();
             this.titlePanel.SuspendLayout();
             this.bottomPanel.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
@@ -54,6 +54,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
             this.flowLayoutPanel5.SuspendLayout();
             this.flowLayoutPanel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nameTextBox.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.phoneTextBox.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userNameTextBox.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pwTextBox.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // titlePanel
@@ -118,15 +122,6 @@
             this.label1.Text = "员工姓名：";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // nameTextBox
-            // 
-            this.nameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.nameTextBox.Location = new System.Drawing.Point(107, 3);
-            this.nameTextBox.Multiline = true;
-            this.nameTextBox.Name = "nameTextBox";
-            this.nameTextBox.Size = new System.Drawing.Size(400, 40);
-            this.nameTextBox.TabIndex = 1;
-            // 
             // flowLayoutPanel3
             // 
             this.flowLayoutPanel3.AutoSize = true;
@@ -149,15 +144,6 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "手机号码：";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // phoneTextBox
-            // 
-            this.phoneTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.phoneTextBox.Location = new System.Drawing.Point(107, 3);
-            this.phoneTextBox.Multiline = true;
-            this.phoneTextBox.Name = "phoneTextBox";
-            this.phoneTextBox.Size = new System.Drawing.Size(400, 40);
-            this.phoneTextBox.TabIndex = 1;
             // 
             // flowLayoutPanel4
             // 
@@ -216,15 +202,6 @@
             this.label4.Text = "登录用户名：";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // userNameTextBox
-            // 
-            this.userNameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.userNameTextBox.Location = new System.Drawing.Point(125, 3);
-            this.userNameTextBox.Multiline = true;
-            this.userNameTextBox.Name = "userNameTextBox";
-            this.userNameTextBox.Size = new System.Drawing.Size(400, 40);
-            this.userNameTextBox.TabIndex = 1;
-            // 
             // flowLayoutPanel6
             // 
             this.flowLayoutPanel6.AutoSize = true;
@@ -248,26 +225,57 @@
             this.label5.Text = "登录密码：";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pwTextBox
-            // 
-            this.pwTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pwTextBox.Location = new System.Drawing.Point(107, 3);
-            this.pwTextBox.Multiline = true;
-            this.pwTextBox.Name = "pwTextBox";
-            this.pwTextBox.Size = new System.Drawing.Size(400, 40);
-            this.pwTextBox.TabIndex = 1;
-            // 
             // simpleButton1
             // 
             this.simpleButton1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(249)))));
             this.simpleButton1.Appearance.Options.UseBackColor = true;
-            this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
+            this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.simpleButton1.Location = new System.Drawing.Point(222, 12);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(140, 40);
             this.simpleButton1.TabIndex = 64;
             this.simpleButton1.Text = "保存";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
+            // nameTextBox
+            // 
+            this.nameTextBox.Location = new System.Drawing.Point(107, 3);
+            this.nameTextBox.Name = "nameTextBox";
+            this.nameTextBox.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.nameTextBox.Properties.Appearance.Options.UseFont = true;
+            this.nameTextBox.Properties.AutoHeight = false;
+            this.nameTextBox.Size = new System.Drawing.Size(400, 40);
+            this.nameTextBox.TabIndex = 1;
+            // 
+            // phoneTextBox
+            // 
+            this.phoneTextBox.Location = new System.Drawing.Point(107, 3);
+            this.phoneTextBox.Name = "phoneTextBox";
+            this.phoneTextBox.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.phoneTextBox.Properties.Appearance.Options.UseFont = true;
+            this.phoneTextBox.Properties.AutoHeight = false;
+            this.phoneTextBox.Size = new System.Drawing.Size(400, 40);
+            this.phoneTextBox.TabIndex = 2;
+            // 
+            // userNameTextBox
+            // 
+            this.userNameTextBox.Location = new System.Drawing.Point(125, 3);
+            this.userNameTextBox.Name = "userNameTextBox";
+            this.userNameTextBox.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.userNameTextBox.Properties.Appearance.Options.UseFont = true;
+            this.userNameTextBox.Properties.AutoHeight = false;
+            this.userNameTextBox.Size = new System.Drawing.Size(400, 40);
+            this.userNameTextBox.TabIndex = 3;
+            // 
+            // pwTextBox
+            // 
+            this.pwTextBox.Location = new System.Drawing.Point(107, 3);
+            this.pwTextBox.Name = "pwTextBox";
+            this.pwTextBox.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.pwTextBox.Properties.Appearance.Options.UseFont = true;
+            this.pwTextBox.Properties.AutoHeight = false;
+            this.pwTextBox.Size = new System.Drawing.Size(400, 40);
+            this.pwTextBox.TabIndex = 4;
             // 
             // StaffAddView
             // 
@@ -296,6 +304,10 @@
             this.flowLayoutPanel5.PerformLayout();
             this.flowLayoutPanel6.ResumeLayout(false);
             this.flowLayoutPanel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nameTextBox.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.phoneTextBox.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userNameTextBox.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pwTextBox.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -306,19 +318,19 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox nameTextBox;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox phoneTextBox;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox userNameTextBox;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox pwTextBox;
         private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.TextEdit nameTextBox;
+        private DevExpress.XtraEditors.TextEdit phoneTextBox;
+        private DevExpress.XtraEditors.TextEdit userNameTextBox;
+        private DevExpress.XtraEditors.TextEdit pwTextBox;
     }
 }

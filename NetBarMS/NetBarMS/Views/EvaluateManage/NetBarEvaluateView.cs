@@ -66,7 +66,8 @@ namespace NetBarMS.Views.EvaluateManage
                 Order = 0
             };
 
-            string member = this.buttonEdit1.Text;
+
+            string member = this.buttonEdit1.Text.Equals(this.buttonEdit1.Properties.NullText)?"": this.buttonEdit1.Text;
             EvaluateNetOperation.GetNetBarEvaluateList(GetNetBarEvaluateListResult, page.Build(), startTime, endTime, member);
         }
         //获取网吧评价列表结果回调

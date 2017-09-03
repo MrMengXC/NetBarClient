@@ -91,7 +91,7 @@ namespace NetBarMS.Codes.Tools.Manage
         public bool IsRightUse(int nodeId)
         {
             //TODO:打开
-            return true;
+            //return true;
             string rights = accountInfo.Role.Rights;
             bool isRight = BigInteger.BigIntegerTools.TestRights(rights, nodeId);
             if (!isRight) { MessageBox.Show("很抱歉，您无权限使用该功能");}

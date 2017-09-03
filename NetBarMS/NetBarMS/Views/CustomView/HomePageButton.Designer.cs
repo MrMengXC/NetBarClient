@@ -30,6 +30,8 @@
         {
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.numLabel = new System.Windows.Forms.Label();
+            this.bgPanel = new System.Windows.Forms.Panel();
+            this.bgPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // simpleButton1
@@ -38,6 +40,8 @@
             this.simpleButton1.Appearance.ForeColor = System.Drawing.Color.White;
             this.simpleButton1.Appearance.Options.UseBackColor = true;
             this.simpleButton1.Appearance.Options.UseForeColor = true;
+            this.simpleButton1.Appearance.Options.UseTextOptions = true;
+            this.simpleButton1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Bottom;
             this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.simpleButton1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.simpleButton1.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
@@ -53,19 +57,31 @@
             this.numLabel.BackColor = System.Drawing.Color.DarkRed;
             this.numLabel.ForeColor = System.Drawing.Color.White;
             this.numLabel.Location = new System.Drawing.Point(0, 0);
+            this.numLabel.Margin = new System.Windows.Forms.Padding(0);
             this.numLabel.Name = "numLabel";
             this.numLabel.Size = new System.Drawing.Size(34, 32);
             this.numLabel.TabIndex = 1;
             this.numLabel.Text = "0";
             this.numLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // bgPanel
+            // 
+            this.bgPanel.Controls.Add(this.numLabel);
+            this.bgPanel.Controls.Add(this.simpleButton1);
+            this.bgPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bgPanel.Location = new System.Drawing.Point(0, 0);
+            this.bgPanel.Margin = new System.Windows.Forms.Padding(0);
+            this.bgPanel.Name = "bgPanel";
+            this.bgPanel.Size = new System.Drawing.Size(150, 150);
+            this.bgPanel.TabIndex = 2;
+            // 
             // HomePageButton
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.numLabel);
-            this.Controls.Add(this.simpleButton1);
+            this.Controls.Add(this.bgPanel);
             this.Name = "HomePageButton";
+            this.bgPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -74,5 +90,6 @@
 
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private System.Windows.Forms.Label numLabel;
+        private System.Windows.Forms.Panel bgPanel;
     }
 }

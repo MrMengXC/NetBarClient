@@ -165,7 +165,7 @@
             this.nAddButton.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(165)))), ((int)(((byte)(207)))));
             this.nAddButton.Appearance.Options.UseBackColor = true;
             this.nAddButton.Appearance.Options.UseForeColor = true;
-            this.nAddButton.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.nAddButton.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.nAddButton.Image = ((System.Drawing.Image)(resources.GetObject("nAddButton.Image")));
             this.nAddButton.ImageIndex = 0;
             this.nAddButton.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
@@ -181,7 +181,7 @@
             // 
             this.nGiveTextEdit.Location = new System.Drawing.Point(347, 3);
             this.nGiveTextEdit.Name = "nGiveTextEdit";
-            this.nGiveTextEdit.Properties.Appearance.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.nGiveTextEdit.Properties.Appearance.Font = new System.Drawing.Font("MS UI Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.nGiveTextEdit.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
             this.nGiveTextEdit.Properties.Appearance.Options.UseFont = true;
             this.nGiveTextEdit.Properties.Appearance.Options.UseForeColor = true;
@@ -194,7 +194,7 @@
             // 
             this.nRechargeTextEdit.Location = new System.Drawing.Point(191, 3);
             this.nRechargeTextEdit.Name = "nRechargeTextEdit";
-            this.nRechargeTextEdit.Properties.Appearance.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.nRechargeTextEdit.Properties.Appearance.Font = new System.Drawing.Font("MS UI Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.nRechargeTextEdit.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
             this.nRechargeTextEdit.Properties.Appearance.Options.UseFont = true;
             this.nRechargeTextEdit.Properties.Appearance.Options.UseForeColor = true;
@@ -207,7 +207,7 @@
             // 
             this.comboBoxEdit1.Location = new System.Drawing.Point(3, 3);
             this.comboBoxEdit1.Name = "comboBoxEdit1";
-            this.comboBoxEdit1.Properties.Appearance.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.comboBoxEdit1.Properties.Appearance.Font = new System.Drawing.Font("MS UI Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.comboBoxEdit1.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
             this.comboBoxEdit1.Properties.Appearance.Options.UseFont = true;
             this.comboBoxEdit1.Properties.Appearance.Options.UseForeColor = true;
@@ -235,7 +235,7 @@
             // 
             this.popupContainerEdit1.Location = new System.Drawing.Point(503, 3);
             this.popupContainerEdit1.Name = "popupContainerEdit1";
-            this.popupContainerEdit1.Properties.Appearance.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.popupContainerEdit1.Properties.Appearance.Font = new System.Drawing.Font("MS UI Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.popupContainerEdit1.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
             this.popupContainerEdit1.Properties.Appearance.Options.UseFont = true;
             this.popupContainerEdit1.Properties.Appearance.Options.UseForeColor = true;
@@ -402,7 +402,7 @@
             // 
             this.comboBoxEdit3.Location = new System.Drawing.Point(3, 3);
             this.comboBoxEdit3.Name = "comboBoxEdit3";
-            this.comboBoxEdit3.Properties.Appearance.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.comboBoxEdit3.Properties.Appearance.Font = new System.Drawing.Font("MS UI Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.comboBoxEdit3.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
             this.comboBoxEdit3.Properties.Appearance.Options.UseFont = true;
             this.comboBoxEdit3.Properties.Appearance.Options.UseForeColor = true;
@@ -417,7 +417,7 @@
             // 
             this.mRechargeTextEdit.Location = new System.Drawing.Point(191, 3);
             this.mRechargeTextEdit.Name = "mRechargeTextEdit";
-            this.mRechargeTextEdit.Properties.Appearance.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.mRechargeTextEdit.Properties.Appearance.Font = new System.Drawing.Font("MS UI Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.mRechargeTextEdit.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
             this.mRechargeTextEdit.Properties.Appearance.Options.UseFont = true;
             this.mRechargeTextEdit.Properties.Appearance.Options.UseForeColor = true;
@@ -430,7 +430,7 @@
             // 
             this.mGiveTextEdit.Location = new System.Drawing.Point(347, 3);
             this.mGiveTextEdit.Name = "mGiveTextEdit";
-            this.mGiveTextEdit.Properties.Appearance.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.mGiveTextEdit.Properties.Appearance.Font = new System.Drawing.Font("MS UI Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.mGiveTextEdit.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
             this.mGiveTextEdit.Properties.Appearance.Options.UseFont = true;
             this.mGiveTextEdit.Properties.Appearance.Options.UseForeColor = true;
@@ -443,7 +443,7 @@
             // 
             this.popupContainerEdit2.Location = new System.Drawing.Point(503, 3);
             this.popupContainerEdit2.Name = "popupContainerEdit2";
-            this.popupContainerEdit2.Properties.Appearance.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.popupContainerEdit2.Properties.Appearance.Font = new System.Drawing.Font("MS UI Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.popupContainerEdit2.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
             this.popupContainerEdit2.Properties.Appearance.Options.UseFont = true;
             this.popupContainerEdit2.Properties.Appearance.Options.UseForeColor = true;
@@ -486,7 +486,7 @@
             this.mAddButton.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(165)))), ((int)(((byte)(207)))));
             this.mAddButton.Appearance.Options.UseBackColor = true;
             this.mAddButton.Appearance.Options.UseForeColor = true;
-            this.mAddButton.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.mAddButton.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.mAddButton.Image = ((System.Drawing.Image)(resources.GetObject("mAddButton.Image")));
             this.mAddButton.ImageIndex = 0;
             this.mAddButton.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;

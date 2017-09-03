@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using NetBarMS.Codes.Tools.NetOperation;
 using NetBarMS.Codes.Tools;
 using NetBarMS.Views.HomePage;
+using NetBarMS.Codes.Tools.Manage;
 
 namespace NetBarMS.Views
 {
@@ -90,6 +91,11 @@ namespace NetBarMS.Views
         {
             UserLockView view = new UserLockView(currentCom.Cardnumber);
             ToolsManage.ShowForm(view, false);
+        }
+
+        private void ControlPaint(object sender, PaintEventArgs e)
+        {
+            BorderManage.DrawBorder(e.Graphics, this.simpleButton1.ClientRectangle, BORDER_TYPE.BUTTON_BORDER);
         }
     }
 }

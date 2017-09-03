@@ -47,24 +47,36 @@
             // 
             // titlePanel
             // 
-            this.titlePanel.Size = new System.Drawing.Size(445, 50);
+            this.titlePanel.Size = new System.Drawing.Size(560, 50);
             // 
             // closeBtn
             // 
-            this.closeBtn.Location = new System.Drawing.Point(393, 0);
+            this.closeBtn.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.closeBtn.Appearance.Options.UseBackColor = true;
+            this.closeBtn.Location = new System.Drawing.Point(513, 0);
+            this.closeBtn.LookAndFeel.SkinMaskColor = System.Drawing.Color.Transparent;
+            this.closeBtn.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.closeBtn.Size = new System.Drawing.Size(47, 50);
+            // 
+            // bottomPanel
+            // 
+            this.bottomPanel.Location = new System.Drawing.Point(0, 399);
+            this.bottomPanel.Size = new System.Drawing.Size(445, 64);
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.flowLayoutPanel1);
             this.panel1.Controls.Add(this.pictureEdit1);
-            this.panel1.Location = new System.Drawing.Point(8, 60);
+            this.panel1.Location = new System.Drawing.Point(66, 60);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(431, 396);
+            this.panel1.Size = new System.Drawing.Size(431, 292);
             this.panel1.TabIndex = 63;
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.AutoSize = true;
             this.flowLayoutPanel1.Controls.Add(this.label1);
             this.flowLayoutPanel1.Controls.Add(this.label2);
             this.flowLayoutPanel1.Controls.Add(this.label3);
@@ -74,14 +86,16 @@
             this.flowLayoutPanel1.Controls.Add(this.label7);
             this.flowLayoutPanel1.Controls.Add(this.label8);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(102, 159);
+            this.flowLayoutPanel1.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(5, 16);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(264, 186);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(285, 264);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Location = new System.Drawing.Point(5, 5);
+            this.label1.Margin = new System.Windows.Forms.Padding(5);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(261, 23);
             this.label1.TabIndex = 0;
@@ -90,7 +104,8 @@
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(3, 23);
+            this.label2.Location = new System.Drawing.Point(5, 38);
+            this.label2.Margin = new System.Windows.Forms.Padding(5);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(261, 23);
             this.label2.TabIndex = 1;
@@ -99,7 +114,8 @@
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(3, 46);
+            this.label3.Location = new System.Drawing.Point(5, 71);
+            this.label3.Margin = new System.Windows.Forms.Padding(5);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(261, 23);
             this.label3.TabIndex = 2;
@@ -108,7 +124,9 @@
             // 
             // label4
             // 
-            this.label4.Location = new System.Drawing.Point(3, 69);
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(27)))), ((int)(((byte)(12)))));
+            this.label4.Location = new System.Drawing.Point(5, 104);
+            this.label4.Margin = new System.Windows.Forms.Padding(5);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(261, 23);
             this.label4.TabIndex = 3;
@@ -117,7 +135,8 @@
             // 
             // label5
             // 
-            this.label5.Location = new System.Drawing.Point(3, 92);
+            this.label5.Location = new System.Drawing.Point(5, 137);
+            this.label5.Margin = new System.Windows.Forms.Padding(5);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(261, 23);
             this.label5.TabIndex = 4;
@@ -126,7 +145,8 @@
             // 
             // label6
             // 
-            this.label6.Location = new System.Drawing.Point(3, 115);
+            this.label6.Location = new System.Drawing.Point(5, 170);
+            this.label6.Margin = new System.Windows.Forms.Padding(5);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(261, 23);
             this.label6.TabIndex = 5;
@@ -135,7 +155,8 @@
             // 
             // label7
             // 
-            this.label7.Location = new System.Drawing.Point(3, 138);
+            this.label7.Location = new System.Drawing.Point(5, 203);
+            this.label7.Margin = new System.Windows.Forms.Padding(5);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(261, 23);
             this.label7.TabIndex = 6;
@@ -144,7 +165,8 @@
             // 
             // label8
             // 
-            this.label8.Location = new System.Drawing.Point(3, 161);
+            this.label8.Location = new System.Drawing.Point(5, 236);
+            this.label8.Margin = new System.Windows.Forms.Padding(5);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(261, 23);
             this.label8.TabIndex = 7;
@@ -153,7 +175,7 @@
             // 
             // pictureEdit1
             // 
-            this.pictureEdit1.Location = new System.Drawing.Point(163, 3);
+            this.pictureEdit1.Location = new System.Drawing.Point(328, 16);
             this.pictureEdit1.Name = "pictureEdit1";
             this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEdit1.Size = new System.Drawing.Size(100, 135);
@@ -165,12 +187,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
             this.Name = "UserCloseCpView";
-            this.Size = new System.Drawing.Size(445, 463);
+            this.ShowBottom = false;
+            this.Size = new System.Drawing.Size(560, 368);
+            this.Controls.SetChildIndex(this.bottomPanel, 0);
             this.Controls.SetChildIndex(this.titlePanel, 0);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.titlePanel.ResumeLayout(false);
             this.titlePanel.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             this.ResumeLayout(false);

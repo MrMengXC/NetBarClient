@@ -26,21 +26,25 @@ namespace NetBarMS.Views.RateManage
         //更新
         private CSSysBillUpdate.Builder updateRateMange = new CSSysBillUpdate.Builder();          //更新
 
+        #region 关于会员类型
         //选中的会员类型文字color
         private Color S_TYPE_F_COLOR = Color.Black;
         //正常状态会员类型文字color
-        private Color N_TYPE_F_COLOR = Color.Gray;
+        private Color N_TYPE_F_COLOR = Color.FromArgb(136, 136, 136);
+        //选中时会员类型底部横条颜色
+        private Color S_TYPE_LINE_COLOR = Color.FromArgb(0, 165, 248);
+        #endregion
 
-        //选中的区域文字color
+        #region 关于区域
+        //选中的区域文字颜色
         private Color S_AREA_F_COLOR = Color.White;
-        //正常状态区域文字color
+        //正常状态区域文字颜色
         private Color N_AREA_F_COLOR = Color.FromArgb(0, 165, 248);
-
         //选中的区域背景颜色
         private Color S_AREA_B_COLOR = Color.FromArgb(0, 165, 248);
-        //正常状态区域文字color
-        private Color N_AREA_B_COLOR = Color.Transparent;
-
+        //正常状态区背景颜色
+        private Color N_AREA_B_COLOR = Color.White;
+        #endregion
 
         public RateManageView()
         {
@@ -74,71 +78,65 @@ namespace NetBarMS.Views.RateManage
             this.dataGridView1.SelectionChanged += DataGridView1_SelectionChanged;
             //隐藏最左侧行头
             this.dataGridView1.RowHeadersVisible = false;
-
+           
             //获取会员类型列表
-            this.memberTypePanel.Hide();
-
             List<MemberTypeModel> types = SysManage.MemberTypes ;
-            for(int i = types.Count()-1;i>=0;i--)
+            this.memberTypeScollPanel.Hide();
+            this.memberTypeScrollBar.Hide();
+            for (int i = types.Count()-1;i>=0;i--)
             {
                 string name = "type_" + types[i].typeId;
                 string text = types[i].typeName;
 
-                Label type =  CreateLabel(this.memberTypePanel,name,text, DockStyle.Left);
+                Label type =  CreateLabel(this.memberTypeScollPanel,name,text, DockStyle.Left);
                 type.ForeColor = N_TYPE_F_COLOR;
                 type.Paint += Type_Paint;
-
-
             }
-            this.memberTypePanel.Show();
-            this.memberTypePanel.AutoScroll = true;
+            InitMemberScollBar();
+            this.memberTypeScollPanel.Show();
 
             //添加区域
             List<AreaTypeModel> areas = SysManage.Areas;
-            this.areaPanel.AutoScroll = true;
-            this.areaPanel.Hide();
+            this.areaScrollPanel.Hide();
+            this.areaScrollBar.Hide();
             for (int i = 0; i < areas.Count; i++)
             {
                 string name = "area_" + areas[i].areaId;
                 string text = areas[i].areaName;
-                Label areaL = CreateLabel(this.areaPanel, name, text, DockStyle.Left);
+                Label areaL = CreateLabel(this.areaScrollPanel, name, text, DockStyle.Left);
                 areaL.Tag = i;
                 areaL.Paint += AreaLabel_Paint;
                 areaL.ForeColor = N_AREA_F_COLOR;
                 areaL.BackColor = N_AREA_B_COLOR;
             }
-            this.areaPanel.Show();
+            this.areaScrollPanel.Show();
+            InitAreaScollBar();
 
             //获取费率列表数据
             RateManageList();
 
         }
 
-
-
-
-
         //TableLayoutPanel 重绘触发的方法
         private void AreaLabel_Paint(object sender, PaintEventArgs e)
         {
-            //System.Console.WriteLine("X:{0} Y:{1}",e.ClipRectangle.X,e.ClipRectangle.Y);
+            Label areaL = sender as Label;
+            Graphics labeGraphics = e.Graphics;
+            Rectangle angle = areaL.ClientRectangle;
+
+
             int tag = (int)((Label)sender).Tag;
-            Color borderColor = Color.FromArgb(0, 165, 248);
             if(tag == 0)
             {
-                ControlPaint.DrawBorder(e.Graphics, e.ClipRectangle,
-                   borderColor, 1, ButtonBorderStyle.Solid,
-                    borderColor, 1, ButtonBorderStyle.Solid,
-                    borderColor, 1, ButtonBorderStyle.Solid,
-                    borderColor, 1, ButtonBorderStyle.Solid);
+                ControlPaint.DrawBorder(labeGraphics, angle, S_AREA_B_COLOR, ButtonBorderStyle.Solid);
             }
             else
             {
-                ControlPaint.DrawBorder(e.Graphics, e.ClipRectangle,
-                   borderColor, 1, ButtonBorderStyle.Solid,
-                   borderColor, 1, ButtonBorderStyle.Solid,
+                ControlPaint.DrawBorder(labeGraphics, angle,
+                   S_AREA_B_COLOR, 1, ButtonBorderStyle.Solid,
+                   S_AREA_B_COLOR, 1, ButtonBorderStyle.Solid,
                    Color.Transparent, 0, ButtonBorderStyle.None,
-                   borderColor, 1, ButtonBorderStyle.Solid);
+                   S_AREA_B_COLOR, 1, ButtonBorderStyle.Solid);
             }
 
         }
@@ -146,14 +144,19 @@ namespace NetBarMS.Views.RateManage
         //会员类型重绘控件触发的方法
         private void Type_Paint(object sender, PaintEventArgs e)
         {
+            Label typeL = sender as Label;
+            Graphics labeGraphics = e.Graphics;
+            Rectangle angle = typeL.ClientRectangle;
 
-            if(sender.GetType() == typeof(Label)&&this.selectTypeLabel != null && this.selectTypeLabel.Equals(sender))
+            if (sender.GetType() == typeof(Label)&&
+                this.selectTypeLabel != null && 
+                this.selectTypeLabel.Equals(sender))
             {
-                ControlPaint.DrawBorder(e.Graphics, e.ClipRectangle,
+                ControlPaint.DrawBorder(labeGraphics, angle,
                     Color.Transparent, 0, ButtonBorderStyle.None,
                     Color.Transparent, 0, ButtonBorderStyle.None,
                     Color.Transparent, 0, ButtonBorderStyle.None,
-                    Color.Blue, 2, ButtonBorderStyle.Solid);
+                    S_TYPE_LINE_COLOR, 2, ButtonBorderStyle.Solid);
             }
         }
 
@@ -167,7 +170,7 @@ namespace NetBarMS.Views.RateManage
             newLabel.Size = new Size(LABEL_WIDTH, parent.Height);
             newLabel.BackColor = Color.Transparent;
             newLabel.Text = text;
-            newLabel.Font = new Font("宋体", 18, GraphicsUnit.Pixel);
+            newLabel.Font = new Font("宋体", 18,FontStyle.Bold, GraphicsUnit.Pixel);
             newLabel.TextAlign = ContentAlignment.MiddleCenter;
             newLabel.Name = name;
             newLabel.Click += NewLabel_Click;
@@ -214,10 +217,9 @@ namespace NetBarMS.Views.RateManage
             //保存当前
             SaveCurrentAreaSetting();
 
+            Label select = (Label)sender;
             //设置选择的Label
-            Label select = (Label)sender;       
-            string[] splits = select.Name.Split('_');
-           
+            string[] splits = select.Name.Split('_');           
             //这是会员类型点击
             if(splits[0].Equals("type"))
             {
@@ -660,6 +662,64 @@ namespace NetBarMS.Views.RateManage
             }
             
         }
+
+
         #endregion
+
+        #region 区域滚动条
+        private void areaScrollBar_Scroll(object sender, ScrollEventArgs e)
+        {
+            this.areaScrollPanel.Left -= e.NewValue - e.OldValue;
+        }
+        #endregion
+
+        #region 重置区域ScrollBar
+        private void InitAreaScollBar()
+        {
+            this.areaScrollBar.Hide();
+            //判断是否出现滑动条
+            if (this.areaScrollPanel.Width > this.areaBgPanel.Width)
+            {
+
+                this.areaScrollBar.Minimum = 0;
+                this.areaScrollBar.Maximum = this.areaScrollPanel.Width - this.areaBgPanel.Width + 15;
+                this.areaScrollBar.Show();
+            }
+        }
+
+
+        #endregion
+
+        #region 会员类型滑动条
+        private void memberTypeScrollBar_Scroll(object sender, ScrollEventArgs e)
+        {
+            this.memberTypeScollPanel.Left -= e.NewValue - e.OldValue;
+        }
+
+        #endregion
+
+        #region 会员类型背景视图尺寸变化
+        private void memberTypeBgPanel_SizeChanged(object sender, EventArgs e)
+        {
+            InitMemberScollBar();
+           
+        }
+        #endregion
+
+        #region 重置会员类型ScrollBar
+        private void InitMemberScollBar()
+        {
+            this.memberTypeScrollBar.Hide();
+            //判断是否出现滑动条
+            if (this.memberTypeScollPanel.Width > this.memberTypeBgPanel.Width)
+            {
+
+                this.memberTypeScrollBar.Minimum = 0;
+                this.memberTypeScrollBar.Maximum = this.memberTypeScollPanel.Width - this.memberTypeBgPanel.Width + 15;
+                this.memberTypeScrollBar.Show();
+            }
+        }
+        #endregion
+
     }
 }

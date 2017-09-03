@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.Utils.SimpleContextButton simpleContextButton10 = new DevExpress.Utils.SimpleContextButton();
-            DevExpress.Utils.SimpleContextButton simpleContextButton11 = new DevExpress.Utils.SimpleContextButton();
-            DevExpress.Utils.SimpleContextButton simpleContextButton12 = new DevExpress.Utils.SimpleContextButton();
+            DevExpress.Utils.SimpleContextButton simpleContextButton1 = new DevExpress.Utils.SimpleContextButton();
+            DevExpress.Utils.SimpleContextButton simpleContextButton2 = new DevExpress.Utils.SimpleContextButton();
+            DevExpress.Utils.SimpleContextButton simpleContextButton3 = new DevExpress.Utils.SimpleContextButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.label2 = new System.Windows.Forms.Label();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
@@ -39,9 +39,11 @@
             this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
             this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.productPicture2 = new NetBarMS.Views.CustomView.ProductPicture();
-            this.productPicture3 = new NetBarMS.Views.CustomView.ProductPicture();
             this.productPicture1 = new NetBarMS.Views.CustomView.ProductPicture();
+            this.productPicture3 = new NetBarMS.Views.CustomView.ProductPicture();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -53,8 +55,6 @@
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.label10 = new System.Windows.Forms.Label();
             this.checkedListBoxControl1 = new DevExpress.XtraEditors.CheckedListBoxControl();
-            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.label3 = new System.Windows.Forms.Label();
             this.titlePanel.SuspendLayout();
             this.bottomPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
@@ -63,6 +63,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
             this.panel2.SuspendLayout();
+            this.tableLayoutPanel6.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -70,7 +71,6 @@
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checkedListBoxControl1)).BeginInit();
-            this.tableLayoutPanel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // titlePanel
@@ -104,7 +104,7 @@
             this.simpleButton2.Appearance.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.simpleButton2.Appearance.Options.UseBackColor = true;
             this.simpleButton2.Appearance.Options.UseFont = true;
-            this.simpleButton2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.simpleButton2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.simpleButton2.Location = new System.Drawing.Point(242, 12);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(122, 40);
@@ -185,32 +185,59 @@
             this.panel2.Size = new System.Drawing.Size(522, 500);
             this.panel2.TabIndex = 2;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.label3.Location = new System.Drawing.Point(9, 293);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(80, 18);
+            this.label3.TabIndex = 123;
+            this.label3.Text = "商品图片";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanel6.ColumnCount = 3;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel6.Controls.Add(this.productPicture2, 1, 0);
+            this.tableLayoutPanel6.Controls.Add(this.productPicture1, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.productPicture3, 2, 0);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(95, 283);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 1;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(330, 118);
+            this.tableLayoutPanel6.TabIndex = 122;
+            // 
             // productPicture2
             // 
             this.productPicture2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.productPicture2.Location = new System.Drawing.Point(123, 12);
+            this.productPicture2.Location = new System.Drawing.Point(124, 12);
             this.productPicture2.Name = "productPicture2";
             this.productPicture2.NetPath = "";
             this.productPicture2.Size = new System.Drawing.Size(81, 93);
             this.productPicture2.TabIndex = 121;
             // 
-            // productPicture3
-            // 
-            this.productPicture3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.productPicture3.Location = new System.Drawing.Point(233, 12);
-            this.productPicture3.Name = "productPicture3";
-            this.productPicture3.NetPath = "";
-            this.productPicture3.Size = new System.Drawing.Size(81, 93);
-            this.productPicture3.TabIndex = 121;
-            // 
             // productPicture1
             // 
             this.productPicture1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.productPicture1.Location = new System.Drawing.Point(6, 10);
+            this.productPicture1.Location = new System.Drawing.Point(7, 10);
             this.productPicture1.Name = "productPicture1";
             this.productPicture1.NetPath = "";
             this.productPicture1.Size = new System.Drawing.Size(96, 97);
             this.productPicture1.TabIndex = 121;
+            // 
+            // productPicture3
+            // 
+            this.productPicture3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.productPicture3.Location = new System.Drawing.Point(234, 12);
+            this.productPicture3.Name = "productPicture3";
+            this.productPicture3.NetPath = "";
+            this.productPicture3.Size = new System.Drawing.Size(81, 93);
+            this.productPicture3.TabIndex = 121;
             // 
             // flowLayoutPanel1
             // 
@@ -356,18 +383,18 @@
             this.checkedListBoxControl1.Appearance.Options.UseBackColor = true;
             this.checkedListBoxControl1.Appearance.Options.UseFont = true;
             this.checkedListBoxControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            simpleContextButton10.Id = new System.Guid("7a5f8276-fd1b-4c5d-a151-dd81f8f8d42c");
-            simpleContextButton10.Name = "SimpleContextButton";
-            simpleContextButton10.Visibility = DevExpress.Utils.ContextItemVisibility.Visible;
-            simpleContextButton11.Id = new System.Guid("579ee131-84bb-45a8-8bf3-05fc40a4bd2e");
-            simpleContextButton11.Name = "SimpleContextButton";
-            simpleContextButton11.Visibility = DevExpress.Utils.ContextItemVisibility.Visible;
-            simpleContextButton12.Id = new System.Guid("761e5cbd-5db8-4a97-b370-9adb799db086");
-            simpleContextButton12.Name = "SimpleContextButton";
-            simpleContextButton12.Visibility = DevExpress.Utils.ContextItemVisibility.Visible;
-            this.checkedListBoxControl1.ContextButtons.Add(simpleContextButton10);
-            this.checkedListBoxControl1.ContextButtons.Add(simpleContextButton11);
-            this.checkedListBoxControl1.ContextButtons.Add(simpleContextButton12);
+            simpleContextButton1.Id = new System.Guid("7a5f8276-fd1b-4c5d-a151-dd81f8f8d42c");
+            simpleContextButton1.Name = "SimpleContextButton";
+            simpleContextButton1.Visibility = DevExpress.Utils.ContextItemVisibility.Visible;
+            simpleContextButton2.Id = new System.Guid("579ee131-84bb-45a8-8bf3-05fc40a4bd2e");
+            simpleContextButton2.Name = "SimpleContextButton";
+            simpleContextButton2.Visibility = DevExpress.Utils.ContextItemVisibility.Visible;
+            simpleContextButton3.Id = new System.Guid("761e5cbd-5db8-4a97-b370-9adb799db086");
+            simpleContextButton3.Name = "SimpleContextButton";
+            simpleContextButton3.Visibility = DevExpress.Utils.ContextItemVisibility.Visible;
+            this.checkedListBoxControl1.ContextButtons.Add(simpleContextButton1);
+            this.checkedListBoxControl1.ContextButtons.Add(simpleContextButton2);
+            this.checkedListBoxControl1.ContextButtons.Add(simpleContextButton3);
             this.checkedListBoxControl1.Items.AddRange(new DevExpress.XtraEditors.Controls.CheckedListBoxItem[] {
             new DevExpress.XtraEditors.Controls.CheckedListBoxItem(null, "允许使用积分购买"),
             new DevExpress.XtraEditors.Controls.CheckedListBoxItem(null, "允许第三方购买"),
@@ -376,33 +403,6 @@
             this.checkedListBoxControl1.Name = "checkedListBoxControl1";
             this.checkedListBoxControl1.Size = new System.Drawing.Size(324, 73);
             this.checkedListBoxControl1.TabIndex = 119;
-            // 
-            // tableLayoutPanel6
-            // 
-            this.tableLayoutPanel6.ColumnCount = 3;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel6.Controls.Add(this.productPicture2, 1, 0);
-            this.tableLayoutPanel6.Controls.Add(this.productPicture1, 0, 0);
-            this.tableLayoutPanel6.Controls.Add(this.productPicture3, 2, 0);
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(95, 283);
-            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
-            this.tableLayoutPanel6.RowCount = 1;
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(330, 118);
-            this.tableLayoutPanel6.TabIndex = 122;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
-            this.label3.Location = new System.Drawing.Point(9, 293);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 18);
-            this.label3.TabIndex = 123;
-            this.label3.Text = "商品图片";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ProductAddView
             // 
@@ -425,6 +425,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.tableLayoutPanel6.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -438,7 +439,6 @@
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checkedListBoxControl1)).EndInit();
-            this.tableLayoutPanel6.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

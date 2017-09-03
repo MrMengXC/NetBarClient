@@ -153,6 +153,7 @@ namespace NetBarMS.Views.HomePage
             }
             //System.Console.WriteLine("GridView1_CustomDrawCell:" + e.RowHandle);
             StructRealTime com = this.coms[e.RowHandle];
+            //是否认证
             if (com.Verify.Equals("1"))
             {
                 e.RepositoryItem = verietyEdit;

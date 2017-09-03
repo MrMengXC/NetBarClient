@@ -31,10 +31,18 @@ namespace NetBarMS.Views.SystemManage
 
         private Label selectPush = null;                //当前选择的区域
 
-        //标签的未选中颜色
-        private Color normal_color = Color.FromArgb(136, 136, 136);
 
+        #region 推送事项的颜色
+        //选中的推送事项文字color
+        private Color S_PUSH_F_COLOR = Color.Black;
+        //正常状态推送事项文字color
+        private Color N_PUSH_F_COLOR = Color.FromArgb(136, 136, 136);
+        //选中时推送事项底部横条颜色
+        private Color S_PUSH_LINE_COLOR = Color.FromArgb(0, 165, 248);
+        #endregion
 
+        //
+        int num = 5;
 
 
         public SmsManageView()
@@ -52,19 +60,8 @@ namespace NetBarMS.Views.SystemManage
 
             //设置自动尺寸
             this.panel1.AutoSize = true;
-            this.panel1.AutoScroll = true;
-            this.panel1.MaximumSize = new Size(this.pushBgPanel.Width - this.addPushButton.Width, this.pushBgPanel.Height);
-            this.pushBgPanel.SizeChanged += Panel1_SizeChanged;
-
             GetPushMessageList();
             GetStaffList();
-        }
-
-        //SizeChange
-        private void Panel1_SizeChanged(object sender, EventArgs e)
-        {
-            this.panel1.MaximumSize = new Size(this.pushBgPanel.Width - this.addPushButton.Width, this.pushBgPanel.Height);
-
         }
         #endregion
 
@@ -154,11 +151,14 @@ namespace NetBarMS.Views.SystemManage
         const int PUSHBUTTON_W = 10;
         private void InitPushMsgUI(List<StructDictItem> temPushItems)
         {
+
+            this.pushScrollView.Hide();
+            this.hScrollBar1.Hide();
+
             this.panel1.Controls.Clear();
             this.textBox1.Text = "";
             this.selectPush = null;
 
-            this.panel1.Hide();
             //更新右侧员工数据
             for (int i = 0; i < this.gridView1.RowCount; i++)
             {
@@ -182,10 +182,10 @@ namespace NetBarMS.Views.SystemManage
 
                     item = this.showPushItems[i];
                     Label pushLabel = new Label();
-                    pushLabel.AutoSize = true;
+                    pushLabel.AutoSize = false;
                     pushLabel.Dock = DockStyle.Left;
                     pushLabel.BackColor = Color.Transparent;
-                    pushLabel.ForeColor = normal_color;
+                    pushLabel.ForeColor = N_PUSH_F_COLOR;
                     pushLabel.Text = item.GetItem(0);
                     pushLabel.Click += PushButton_ButtonClick;
                     pushLabel.Font = new Font("宋体", 18, GraphicsUnit.Pixel);
@@ -201,36 +201,36 @@ namespace NetBarMS.Views.SystemManage
                 }
 
             }
-            this.panel1.Show();
 
-
+            InitScollBar();
+            this.pushScrollView.Show();
         }
+
         //重绘推送事件的Label
         private void Button_Paint(object sender, PaintEventArgs e)
         {
-            Label button = (Label)sender;
-            if (this.selectPush != null && this.selectPush.Equals(button))
+           
+            Label pushLabel = (Label)sender;
+            Rectangle angle = pushLabel.ClientRectangle;
+            Graphics g = e.Graphics;
+
+            if (this.selectPush != null && this.selectPush.Equals(pushLabel))
             {
-                //e.Graphics.DrawRectangle(Pens.Red,)
-                ControlPaint.DrawBorder(e.Graphics, e.ClipRectangle,
+                ControlPaint.DrawBorder(g, angle,
                     Color.Transparent, 0, ButtonBorderStyle.None,
                     Color.Transparent, 0, ButtonBorderStyle.None,
                     Color.Transparent, 0, ButtonBorderStyle.None,
-                    Color.Blue, 2, ButtonBorderStyle.Solid);
-
-
+                    S_PUSH_LINE_COLOR, 2, ButtonBorderStyle.Solid);
             }
-
         }
 
         //标签点击
         private void PushButton_ButtonClick(object sender, EventArgs e)
         {
-            Label push = (Label)sender;
-            push.Focus();
-
+       
             //保存当前勾选的状态
             this.SaveCurrentSetting();
+            Label push = (Label)sender;
             //设置选中按钮/前一个选中按钮的状态
             if (this.selectPush != null && this.selectPush.Equals(push))
             {
@@ -242,9 +242,9 @@ namespace NetBarMS.Views.SystemManage
 
             if (tem != null)
             {
-                tem.ForeColor = normal_color;
+                tem.ForeColor = N_PUSH_F_COLOR;
             }
-            this.selectPush.ForeColor = Color.Black;
+            this.selectPush.ForeColor = S_PUSH_F_COLOR;
 
             //获取输入短信内容
             // int index = int.Parse((string)this.selectPush.Tag);
@@ -269,10 +269,8 @@ namespace NetBarMS.Views.SystemManage
         //添加推送事项
         private void addPushButton_Click(object sender, EventArgs e)
         {
-
             //保存当前的
             SaveCurrentSetting();
-
             //进行添加推送事项
             StructDictItem.Builder item = new StructDictItem.Builder();
             item.Code = 0;
@@ -457,5 +455,37 @@ namespace NetBarMS.Views.SystemManage
         }
         #endregion
 
+        #region 滑动滚动条
+        private void hScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        {
+            this.pushScrollView.Left -= e.NewValue-e.OldValue;
+        }
+        #endregion
+
+        #region 推送按钮背景板尺寸改变
+        private void pushBgPanel_SizeChanged(object sender, EventArgs e)
+        {
+            InitScollBar();
+        }
+        #endregion
+
+        #region 重置ScrollBar
+        private void InitScollBar()
+        {
+            this.hScrollBar1.Hide();
+            //判断是否出现滑动条
+            this.pushScrollView.Width =
+                this.panel1.Width
+                + this.addPushButton.Width;
+
+            if (this.pushScrollView.Width > this.pushBgPanel.Width)
+            {
+
+                this.hScrollBar1.Minimum = 0;
+                this.hScrollBar1.Maximum = this.pushScrollView.Width - this.pushBgPanel.Width + 15;
+                this.hScrollBar1.Show();
+            }
+        }
+        #endregion
     }
 }

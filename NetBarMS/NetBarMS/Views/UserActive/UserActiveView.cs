@@ -121,37 +121,38 @@ namespace NetBarMS.Views.UserUseCp
         //激活
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            if (!this.textEdit1.Text.Equals(""))
-            {
-                StructCard.Builder newCard = new StructCard.Builder(this.activeCard);
-                newCard.Number = this.textEdit1.Text;
-                ActiveFlowManage.ActiveFlow().CardCheckIn(newCard.Build());
+            //if (!this.textEdit1.Text.Equals(""))
+            //{
+            //    StructCard.Builder newCard = new StructCard.Builder(this.activeCard);
+            //    newCard.Number = this.textEdit1.Text;
+            //    ActiveFlowManage.ActiveFlow().CardCheckIn(newCard.Build());
 
-            }
-            else
-            {
-                ActiveFlowManage.ActiveFlow().CardCheckIn(this.activeCard);
+            //}
+            //else
+            //{
 
-            }
+            //}
+            ActiveFlowManage.ActiveFlow().CardCheckIn(this.activeCard);
+
         }
         #endregion
-        
+
         #region 充值
         private void simpleButton2_Click(object sender, EventArgs e)
         {
-            if (!this.textEdit1.Text.Equals(""))
-            {
-                StructCard.Builder newCard = new StructCard.Builder(this.activeCard);
-                newCard.Number = this.textEdit1.Text;
-                UserScanCodeView view = new UserScanCodeView(newCard.Build(), 100, PRECHARGE_TYPE.NOT_MEMBER);
-                ToolsManage.ShowForm(view, false);
-            }
-            else
-            {
-                UserScanCodeView view = new UserScanCodeView(activeCard, 100, PRECHARGE_TYPE.NOT_MEMBER);
-                ToolsManage.ShowForm(view, false);
-            }
-        
+            //if (!this.textEdit1.Text.Equals(""))
+            //{
+            //    StructCard.Builder newCard = new StructCard.Builder(this.activeCard);
+            //    newCard.Number = this.textEdit1.Text;
+            //    UserScanCodeView view = new UserScanCodeView(newCard.Build(), 100, PRECHARGE_TYPE.NOT_MEMBER);
+            //    ToolsManage.ShowForm(view, false);
+            //}
+            //else
+            //{
+
+            //}
+            UserScanCodeView view = new UserScanCodeView(activeCard, 100, PRECHARGE_TYPE.NOT_MEMBER);
+            ToolsManage.ShowForm(view, false);
 
         }
         #endregion
@@ -161,18 +162,19 @@ namespace NetBarMS.Views.UserUseCp
         {
 
 
-            if (!this.textEdit1.Text.Equals(""))
-            {
-                StructCard.Builder newCard = new StructCard.Builder(this.activeCard);
-                newCard.Number = this.textEdit1.Text;
-                HomePageNetOperation.CardCheckOut(CardCheckOutResult, newCard.Number);
+            //if (!this.textEdit1.Text.Equals(""))
+            //{
+            //    StructCard.Builder newCard = new StructCard.Builder(this.activeCard);
+            //    newCard.Number = this.textEdit1.Text;
+            //    HomePageNetOperation.CardCheckOut(CardCheckOutResult, newCard.Number);
 
-            }
-            else
-            {
-                HomePageNetOperation.CardCheckOut(CardCheckOutResult, this.activeCard.Number);
+            //}
+            //else
+            //{
 
-            }
+            //}
+            HomePageNetOperation.CardCheckOut(CardCheckOutResult, this.activeCard.Number);
+
         }
         private void CardCheckOutResult(ResultModel result)
         {
@@ -215,5 +217,9 @@ namespace NetBarMS.Views.UserUseCp
         }
         #endregion
 
+        private void ControlPaint(object sender, PaintEventArgs e)
+        {
+            BorderManage.DrawBorder(e.Graphics, this.simpleButton3.ClientRectangle, BORDER_TYPE.BUTTON_BORDER);
+        }
     }
 }

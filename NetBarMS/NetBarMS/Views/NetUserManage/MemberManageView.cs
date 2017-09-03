@@ -63,11 +63,12 @@ namespace NetBarMS.Views.NetUserManage
         // 初始化UI
         private void InitUI()
         {
-            this.statusComboBoxEdit.Paint += Control_Paint;
-            this.memberTypeComboBoxEdit.Paint += Control_Paint;
-
-
             //初始化ComboBoxEdit
+            ComboBoxEdit[] edits = {
+                this.statusComboBoxEdit,
+                this.memberTypeComboBoxEdit
+            };
+            SetupCombox(edits, false);
             //会员状态
             foreach (string status in Enum.GetNames(typeof(MEMBERSTATUS)))
             {
@@ -90,58 +91,9 @@ namespace NetBarMS.Views.NetUserManage
         }
 
         //重绘控件
-        private void Control_Paint(object sender, PaintEventArgs e)
+        protected override void Control_Paint(object sender, PaintEventArgs e)
         {
-
-
-
-            //GraphicsPath path = new GraphicsPath();
-
-            //int thisWidth = e.ClipRectangle.Width;
-            //int thisHeight = e.ClipRectangle.Height;
-            //int angle = 5;
-            //Pen linePen = Pens.Blue;
-            //int ArcWidth = angle;
-            //int ArcHeight = angle;
-            //int ArcX1 = 1;
-            //int ArcX2 =  thisWidth - (ArcWidth + 1);
-            //int ArcY1 = 1;
-            //int ArcY2 = thisHeight - (ArcHeight + 1);
-            if (e.ClipRectangle.X == 0)
-            {
-
-                //画出图形  
-                //                4个int分别表示矩形的左上角X，Y坐标，矩形的宽和高，C#里面画的椭圆的大小是用矩形来定义的，你定义矩形后，绘制的就是矩形的内切椭圆，后面两个为起始角度和终止角度与起始角度的夹角。
-                //考虑边线宽度
-                //path.AddArc(ArcX1, ArcY1, angle, angle, 180, 90);
-                //path.AddArc(ArcX2, ArcY1, angle, angle, 270, 90);
-                //path.AddArc(ArcX2, ArcY2, angle, angle, 360, 90);
-                //path.AddArc(ArcX1, ArcY2, angle, angle, 90, 90);
-                //path.CloseAllFigures();
-                //e.Graphics.DrawPath(linePen, path);
-                //e.Graphics.pa(Brushes.White, path);
-
-                ControlPaint.DrawBorder(e.Graphics, e.ClipRectangle, Color.Blue, ButtonBorderStyle.Solid);
-
-
-            }
-            else
-            {
-
-                //oPath.AddArc(thisWidth - angle, y, angle, angle, 270, 90);                 // 右上角
-                //oPath.AddArc(thisWidth - angle, thisHeight - angle, angle, angle, 0, 90);  // 右下角
-                //oPath.CloseAllFigures();
-                ////e.Graphics.DrawPath(Pens.Blue, oPath);
-                //   e.Graphics.DrawArc(Brushes.Blue, oPath);
-
-                ControlPaint.DrawBorder(e.Graphics, e.ClipRectangle,
-                    Color.Transparent, 0, ButtonBorderStyle.Solid,
-                    Color.Blue, 1, ButtonBorderStyle.Solid,
-                    Color.Blue, 1, ButtonBorderStyle.Solid,
-                    Color.Blue, 1, ButtonBorderStyle.Solid);
-
-            }
-
+            base.Control_Paint(sender, e);
         }
         public static GraphicsPath DrawRoundRect(int x, int y, int width, int height, int radius)
         {
@@ -178,7 +130,7 @@ namespace NetBarMS.Views.NetUserManage
                 return;
             }
             NetMessageManage.RemoveResultBlock(MemberListResult);
-           // System.Console.WriteLine("MemberListBlock:" + result.pack);
+            System.Console.WriteLine("MemberListBlock:" + result.pack);
             if (result.pack.Content.MessageType == 1)
             {           
                 this.Invoke(new RefreshUIHandle(delegate () {

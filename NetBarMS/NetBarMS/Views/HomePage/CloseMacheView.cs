@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using NetBarMS.Codes.Tools.NetOperation;
 using NetBarMS.Codes.Tools;
+using NetBarMS.Codes.Tools.Manage;
 
 namespace NetBarMS.Views.HomePage
 {
@@ -53,5 +54,10 @@ namespace NetBarMS.Views.HomePage
             this.CloseFormClick();
         }
         #endregion
+
+        private void ControlPaint(object sender, PaintEventArgs e)
+        {
+            BorderManage.DrawBorder(e.Graphics, this.simpleButton1.ClientRectangle, BORDER_TYPE.BUTTON_BORDER);
+        }
     }
 }

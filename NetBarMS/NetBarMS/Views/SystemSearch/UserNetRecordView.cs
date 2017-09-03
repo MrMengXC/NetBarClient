@@ -50,7 +50,11 @@ namespace NetBarMS.Views.SystemSearch
         private void InitUI()
         {
 
-
+            //初始化ComboBoxEdit
+            DevExpress.XtraEditors.ComboBoxEdit[] edits = {
+                this.comboBoxEdit1,
+            };
+            SetupCombox(edits, false);
             ToolsManage.SetGridView(this.gridView1, GridControlType.UserNetRecord, out this.mainDataTable);
             this.gridControl1.DataSource = this.mainDataTable;
             this.dateNavigator.UpdateDateTimeWhenNavigating = false;

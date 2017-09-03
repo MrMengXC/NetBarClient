@@ -45,6 +45,11 @@ namespace NetBarMS.Views.SystemSearch
         #region 初始化UI
         private void InitUI()
         {
+            //初始化ComboBoxEdit
+            DevExpress.XtraEditors.ComboBoxEdit[] edits = {
+                this.comboBoxEdit1,
+            };
+            SetupCombox(edits, false);
             ToolsManage.SetGridView(this.gridView1, GridControlType.ProductIndent, out this.mainDataTable,ColumnButtonClick,null);
             this.gridControl1.DataSource = this.mainDataTable;
 

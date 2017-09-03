@@ -60,7 +60,7 @@
             this.bDurComboBoxEdit = new DevExpress.XtraEditors.ComboBoxEdit();
             this.nDurComboBoxEdit = new DevExpress.XtraEditors.ComboBoxEdit();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.memberTypePanel = new System.Windows.Forms.Panel();
+            this.memberTypeScollPanel = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.nMinConsumeText = new DevExpress.XtraEditors.TextEdit();
@@ -80,10 +80,14 @@
             this.label36 = new System.Windows.Forms.Label();
             this.bDurPrieceText = new DevExpress.XtraEditors.TextEdit();
             this.bMinConsumeText = new DevExpress.XtraEditors.TextEdit();
-            this.areaPanel = new System.Windows.Forms.Panel();
+            this.areaScrollPanel = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.areaBgPanel = new System.Windows.Forms.Panel();
+            this.areaScrollBar = new System.Windows.Forms.HScrollBar();
+            this.memberTypeBgPanel = new System.Windows.Forms.Panel();
+            this.memberTypeScrollBar = new System.Windows.Forms.HScrollBar();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bDurComboBoxEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nDurComboBoxEdit.Properties)).BeginInit();
@@ -95,6 +99,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.bDurPrieceText.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bMinConsumeText.Properties)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
+            this.areaBgPanel.SuspendLayout();
+            this.memberTypeBgPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // titlePanelView1
@@ -105,6 +111,8 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.ColumnHeadersHeight = 42;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.星期时段,
@@ -132,10 +140,13 @@
             this.Column22,
             this.Column23,
             this.Column24});
-            this.dataGridView1.Location = new System.Drawing.Point(30, 246);
+            this.dataGridView1.Location = new System.Drawing.Point(30, 262);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 42;
+            this.dataGridView1.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridView1.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
+            this.dataGridView1.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.dataGridView1.RowTemplate.Height = 20;
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dataGridView1.Size = new System.Drawing.Size(1112, 336);
@@ -354,6 +365,8 @@
             this.bDurComboBoxEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.bDurComboBoxEdit.Location = new System.Drawing.Point(331, 3);
             this.bDurComboBoxEdit.Name = "bDurComboBoxEdit";
+            this.bDurComboBoxEdit.Properties.Appearance.Options.UseTextOptions = true;
+            this.bDurComboBoxEdit.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.bDurComboBoxEdit.Properties.AutoHeight = false;
             this.bDurComboBoxEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -373,6 +386,8 @@
             this.nDurComboBoxEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.nDurComboBoxEdit.Location = new System.Drawing.Point(331, 3);
             this.nDurComboBoxEdit.Name = "nDurComboBoxEdit";
+            this.nDurComboBoxEdit.Properties.Appearance.Options.UseTextOptions = true;
+            this.nDurComboBoxEdit.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.nDurComboBoxEdit.Properties.AutoHeight = false;
             this.nDurComboBoxEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -395,7 +410,7 @@
             this.simpleButton1.Appearance.Options.UseBackColor = true;
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.Appearance.Options.UseForeColor = true;
-            this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.simpleButton1.Location = new System.Drawing.Point(30, 738);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(184, 56);
@@ -403,16 +418,15 @@
             this.simpleButton1.Text = "保存";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
-            // memberTypePanel
+            // memberTypeScollPanel
             // 
-            this.memberTypePanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.memberTypePanel.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.memberTypePanel.Location = new System.Drawing.Point(0, 78);
-            this.memberTypePanel.Margin = new System.Windows.Forms.Padding(0);
-            this.memberTypePanel.Name = "memberTypePanel";
-            this.memberTypePanel.Size = new System.Drawing.Size(1657, 78);
-            this.memberTypePanel.TabIndex = 11;
+            this.memberTypeScollPanel.AutoSize = true;
+            this.memberTypeScollPanel.BackColor = System.Drawing.Color.Transparent;
+            this.memberTypeScollPanel.Location = new System.Drawing.Point(0, 0);
+            this.memberTypeScollPanel.Margin = new System.Windows.Forms.Padding(0);
+            this.memberTypeScollPanel.Name = "memberTypeScollPanel";
+            this.memberTypeScollPanel.Size = new System.Drawing.Size(1234, 78);
+            this.memberTypeScollPanel.TabIndex = 11;
             // 
             // flowLayoutPanel1
             // 
@@ -462,6 +476,8 @@
             this.nMinConsumeText.Name = "nMinConsumeText";
             this.nMinConsumeText.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
             this.nMinConsumeText.Properties.Appearance.Options.UseForeColor = true;
+            this.nMinConsumeText.Properties.Appearance.Options.UseTextOptions = true;
+            this.nMinConsumeText.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.nMinConsumeText.Properties.AutoHeight = false;
             this.nMinConsumeText.Size = new System.Drawing.Size(42, 42);
             this.nMinConsumeText.TabIndex = 66;
@@ -473,6 +489,8 @@
             this.nDurPrieceText.Name = "nDurPrieceText";
             this.nDurPrieceText.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
             this.nDurPrieceText.Properties.Appearance.Options.UseForeColor = true;
+            this.nDurPrieceText.Properties.Appearance.Options.UseTextOptions = true;
+            this.nDurPrieceText.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.nDurPrieceText.Properties.AutoHeight = false;
             this.nDurPrieceText.Size = new System.Drawing.Size(42, 42);
             this.nDurPrieceText.TabIndex = 65;
@@ -646,6 +664,8 @@
             this.bDurPrieceText.Name = "bDurPrieceText";
             this.bDurPrieceText.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
             this.bDurPrieceText.Properties.Appearance.Options.UseForeColor = true;
+            this.bDurPrieceText.Properties.Appearance.Options.UseTextOptions = true;
+            this.bDurPrieceText.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.bDurPrieceText.Properties.AutoHeight = false;
             this.bDurPrieceText.Size = new System.Drawing.Size(42, 42);
             this.bDurPrieceText.TabIndex = 66;
@@ -658,16 +678,20 @@
             this.bMinConsumeText.Name = "bMinConsumeText";
             this.bMinConsumeText.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
             this.bMinConsumeText.Properties.Appearance.Options.UseForeColor = true;
+            this.bMinConsumeText.Properties.Appearance.Options.UseTextOptions = true;
+            this.bMinConsumeText.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.bMinConsumeText.Properties.AutoHeight = false;
             this.bMinConsumeText.Size = new System.Drawing.Size(42, 42);
             this.bMinConsumeText.TabIndex = 67;
             // 
-            // areaPanel
+            // areaScrollPanel
             // 
-            this.areaPanel.Location = new System.Drawing.Point(30, 188);
-            this.areaPanel.Name = "areaPanel";
-            this.areaPanel.Size = new System.Drawing.Size(852, 40);
-            this.areaPanel.TabIndex = 65;
+            this.areaScrollPanel.AutoSize = true;
+            this.areaScrollPanel.BackColor = System.Drawing.Color.White;
+            this.areaScrollPanel.Location = new System.Drawing.Point(0, 0);
+            this.areaScrollPanel.Name = "areaScrollPanel";
+            this.areaScrollPanel.Size = new System.Drawing.Size(818, 54);
+            this.areaScrollPanel.TabIndex = 65;
             // 
             // tableLayoutPanel1
             // 
@@ -691,7 +715,7 @@
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Location = new System.Drawing.Point(3, 4);
             this.panel1.Name = "panel1";
@@ -707,26 +731,71 @@
             this.flowLayoutPanel2.Size = new System.Drawing.Size(10, 10);
             this.flowLayoutPanel2.TabIndex = 10;
             // 
+            // areaBgPanel
+            // 
+            this.areaBgPanel.BackColor = System.Drawing.Color.Transparent;
+            this.areaBgPanel.Controls.Add(this.areaScrollPanel);
+            this.areaBgPanel.Location = new System.Drawing.Point(30, 183);
+            this.areaBgPanel.Name = "areaBgPanel";
+            this.areaBgPanel.Size = new System.Drawing.Size(847, 54);
+            this.areaBgPanel.TabIndex = 69;
+            // 
+            // areaScrollBar
+            // 
+            this.areaScrollBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.areaScrollBar.Location = new System.Drawing.Point(30, 237);
+            this.areaScrollBar.Name = "areaScrollBar";
+            this.areaScrollBar.Size = new System.Drawing.Size(847, 13);
+            this.areaScrollBar.TabIndex = 66;
+            this.areaScrollBar.Scroll += new System.Windows.Forms.ScrollEventHandler(this.areaScrollBar_Scroll);
+            // 
+            // memberTypeBgPanel
+            // 
+            this.memberTypeBgPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.memberTypeBgPanel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.memberTypeBgPanel.Controls.Add(this.memberTypeScollPanel);
+            this.memberTypeBgPanel.Location = new System.Drawing.Point(0, 78);
+            this.memberTypeBgPanel.Name = "memberTypeBgPanel";
+            this.memberTypeBgPanel.Size = new System.Drawing.Size(1657, 78);
+            this.memberTypeBgPanel.TabIndex = 70;
+            this.memberTypeBgPanel.SizeChanged += new System.EventHandler(this.memberTypeBgPanel_SizeChanged);
+            // 
+            // memberTypeScrollBar
+            // 
+            this.memberTypeScrollBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.memberTypeScrollBar.Location = new System.Drawing.Point(0, 156);
+            this.memberTypeScrollBar.Name = "memberTypeScrollBar";
+            this.memberTypeScrollBar.Size = new System.Drawing.Size(1657, 17);
+            this.memberTypeScrollBar.TabIndex = 12;
+            this.memberTypeScrollBar.Scroll += new System.Windows.Forms.ScrollEventHandler(this.memberTypeScrollBar_Scroll);
+            // 
             // RateManageView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.areaScrollBar);
+            this.Controls.Add(this.memberTypeScrollBar);
+            this.Controls.Add(this.memberTypeBgPanel);
+            this.Controls.Add(this.areaBgPanel);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.areaPanel);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.simpleButton1);
-            this.Controls.Add(this.memberTypePanel);
             this.Name = "RateManageView";
             this.Size = new System.Drawing.Size(1657, 942);
-            this.Controls.SetChildIndex(this.memberTypePanel, 0);
             this.Controls.SetChildIndex(this.simpleButton1, 0);
             this.Controls.SetChildIndex(this.flowLayoutPanel1, 0);
             this.Controls.SetChildIndex(this.dataGridView1, 0);
-            this.Controls.SetChildIndex(this.areaPanel, 0);
             this.Controls.SetChildIndex(this.tableLayoutPanel1, 0);
+            this.Controls.SetChildIndex(this.areaBgPanel, 0);
             this.Controls.SetChildIndex(this.titlePanelView1, 0);
+            this.Controls.SetChildIndex(this.memberTypeBgPanel, 0);
+            this.Controls.SetChildIndex(this.memberTypeScrollBar, 0);
+            this.Controls.SetChildIndex(this.areaScrollBar, 0);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bDurComboBoxEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nDurComboBoxEdit.Properties)).EndInit();
@@ -742,6 +811,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.bMinConsumeText.Properties)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.areaBgPanel.ResumeLayout(false);
+            this.areaBgPanel.PerformLayout();
+            this.memberTypeBgPanel.ResumeLayout(false);
+            this.memberTypeBgPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -754,7 +827,7 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.ComboBoxEdit nDurComboBoxEdit;
         private DevExpress.XtraEditors.ComboBoxEdit bDurComboBoxEdit;
-        private System.Windows.Forms.Panel memberTypePanel;
+        private System.Windows.Forms.Panel memberTypeScollPanel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label nRateLabel;
@@ -774,7 +847,7 @@
         private DevExpress.XtraEditors.TextEdit nDurPrieceText;
         private DevExpress.XtraEditors.TextEdit bDurPrieceText;
         private DevExpress.XtraEditors.TextEdit bMinConsumeText;
-        private System.Windows.Forms.Panel areaPanel;
+        private System.Windows.Forms.Panel areaScrollPanel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
@@ -803,5 +876,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column22;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column23;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column24;
+        private System.Windows.Forms.Panel areaBgPanel;
+        private System.Windows.Forms.Panel memberTypeBgPanel;
+        private System.Windows.Forms.HScrollBar areaScrollBar;
+        private System.Windows.Forms.HScrollBar memberTypeScrollBar;
     }
 }

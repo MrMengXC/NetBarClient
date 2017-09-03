@@ -13,6 +13,7 @@ using System.Threading;
 using DevExpress.XtraEditors;
 using NetBarMS.Forms;
 using NetBarMS.Codes.Tools.Manage;
+using NetBarMS.Views.CustomView;
 
 namespace NetBarMS.Views.SystemManage
 {
@@ -34,10 +35,26 @@ namespace NetBarMS.Views.SystemManage
         //当前选择的区域
         private Label selectArea = null;
         //当前选择的按钮            
-        private List<SimpleButton> selectButtons = new List<SimpleButton>();
+        private List<AreaComView> selectButtons = new List<AreaComView>();
         //区域管理
         AreaSettingManage areaManage = new AreaSettingManage();
         #endregion
+        #region 区域的颜色
+        /// <summary>
+        /// 选中的区域文字color
+        /// </summary>
+        private Color S_AREA_F_COLOR = Color.Black;
+        /// <summary>
+        /// 正常状态区域文字color
+        /// </summary>
+        private Color N_AREA_F_COLOR = Color.FromArgb(136, 136, 136);
+        /// <summary>
+        /// 选中时区域底部横条颜色
+        /// </summary>
+        private Color S_AREA_LINE_COLOR = Color.FromArgb(0, 165, 248);
+        #endregion
+
+        private int num = 10;
 
         #region 声明方法
         public AreaManageView()
@@ -52,21 +69,10 @@ namespace NetBarMS.Views.SystemManage
         {
             ToolsManage.SetGridView(this.gridView1, GridControlType.AreaManage, out this.mainDataTable);
             this.gridControl1.DataSource = this.mainDataTable;
-
-
-            this.panel1.MaximumSize = new Size(this.areaPanel.Width-this.addAreaLabel.Width - this.deleteAreaLabel.Width - this.updateLabel.Width, this.areaPanel.Height);
             this.panel1.AutoSize = true;
-            this.panel1.AutoScroll = true;
-            this.MouseWheel += AreaFlowPanel_MouseWheel;
-            this.areaPanel.SizeChanged += AreaPanel_SizeChanged;
-          
+            //this.MouseWheel += AreaFlowPanel_MouseWheel;     
             //获取区域列表
             GetAreaList();
-        }
-        //bgSize change
-        private void AreaPanel_SizeChanged(object sender, EventArgs e)
-        {
-            this.panel1.MaximumSize = new Size(this.areaPanel.Width - this.addAreaLabel.Width - this.deleteAreaLabel.Width - this.updateLabel.Width, this.areaPanel.Height);
         }
         #endregion
 
@@ -108,6 +114,8 @@ namespace NetBarMS.Views.SystemManage
         const int AREABTN_WITH = 10;
         private void InitAreaUI()
         {
+            this.areaScrollPanel.Hide();
+            this.hScrollBar1.Hide();
 
             this.mainDataTable.Clear();
             this.currentComsPanel.Controls.Clear();
@@ -122,37 +130,40 @@ namespace NetBarMS.Views.SystemManage
                     Label area = new Label();
                     area.AutoSize = false;
                     area.BackColor = Color.Transparent;
-                    area.ForeColor = Color.Gray;
+                    area.ForeColor = N_AREA_F_COLOR;
                     area.Text = item.GetItem(0);
                     area.Click += AreaLabel_Click;
                     area.Tag = i;
                     area.TextAlign = ContentAlignment.MiddleCenter;
+                    area.Font = new Font("宋体", 18, GraphicsUnit.Pixel);
                     area.Margin = new Padding(0);
                     area.Paint += Area_Paint;
                     this.panel1.Controls.Add(area);
                     area.Dock = DockStyle.Left;
-
                     SizeF size = gra.MeasureString(area.Text, area.Font);
                     area.Size = new Size((int)size.Width + AREABTN_WITH, this.panel1.Size.Height);
 
                 }
             }
-                
-        }
+            InitScollBar();
+            this.areaScrollPanel.Show();
 
+        }
+        //区域重绘
         private void Area_Paint(object sender, PaintEventArgs e)
         {
 
             Label tem = (Label)sender;
-
+            Rectangle angle = tem.ClientRectangle;
+            Graphics g = e.Graphics;
             //如果是同一个返回
             if (tem != null && tem.Equals(this.selectArea))
             {
-                ControlPaint.DrawBorder(e.Graphics, e.ClipRectangle,
+                ControlPaint.DrawBorder(g, angle,
                     Color.Transparent, 0, ButtonBorderStyle.None,
                     Color.Transparent, 0, ButtonBorderStyle.None,
                     Color.Transparent, 0, ButtonBorderStyle.None,
-                    Color.Blue, 2, ButtonBorderStyle.Solid);
+                    S_AREA_LINE_COLOR, 2, ButtonBorderStyle.Solid);
 
             }
 
@@ -174,7 +185,6 @@ namespace NetBarMS.Views.SystemManage
                 tem.ForeColor = Color.Gray ;
             }
             this.selectArea.ForeColor = Color.Black;
-
             //将选中的按钮数组清空
             this.selectButtons.Clear();
             //更新区域从属电脑和其他电脑列表
@@ -217,29 +227,30 @@ namespace NetBarMS.Views.SystemManage
             for (int i = 0;i< this.areaManage.currentComs.Count;i++)
             {
                 StructRealTime time = this.areaManage.currentComs[i];
-                SimpleButton button = new SimpleButton();
-                button.Text = time.Computer;
-                button.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-                button.Size = new Size(50, 50);
-                button.Click += Button_Click;
-                button.Tag = i.ToString();
-                this.currentComsPanel.Controls.Add(button);
+                AreaComView view = new AreaComView();
+
+                view.Click += Button_Click;
+                view.Title = time.Computer;
+                this.currentComsPanel.Controls.Add(view);
+                view.Tag = i.ToString();
+       
             }
 
         }
         //点击区域从属电脑
         private void Button_Click(object sender, EventArgs e)
         {
-            SimpleButton button = (SimpleButton)sender;
+            AreaComView button = sender as AreaComView;
             if(selectButtons.Contains(button))
             {
                 selectButtons.Remove(button);
-                button.Appearance.BackColor = Color.White;
+              
+                button.BackColor = Color.Transparent;
             }
             else
             {               
                 selectButtons.Add(button);
-                button.Appearance.BackColor = Color.Green;
+                button.BackColor = Color.Green;
             }
         }
         #endregion
@@ -438,7 +449,7 @@ namespace NetBarMS.Views.SystemManage
 
             //Dictionary<int, StructRealTime> changeComDict = new Dictionary<int, StructRealTime>();//已经改变的字典
             //改变管理工具电脑数组
-            foreach (SimpleButton button in selectButtons)
+            foreach (AreaComView button in selectButtons)
             {
                 int btnIndex = int.Parse((string)button.Tag);
                 StructRealTime.Builder com = new StructRealTime.Builder(this.areaManage.currentComs[btnIndex]);
@@ -519,8 +530,43 @@ namespace NetBarMS.Views.SystemManage
 
 
         }
+
         #endregion
 
-        
+        #region 滑动条滑动
+        private void hScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        {
+            this.areaScrollPanel.Left -= e.NewValue - e.OldValue;
+        }
+        #endregion
+
+        #region 背景Size改变的时候
+        private void areaBgPanel_SizeChanged(object sender, EventArgs e)
+        {
+            InitScollBar();
+        }
+        #endregion
+
+
+        #region 重置ScrollBar
+        private void InitScollBar()
+        {
+            this.hScrollBar1.Hide();
+            //判断是否出现滑动条
+            this.areaScrollPanel.Width = 
+                this.panel1.Width
+                + this.addAreaLabel.Width
+                + this.deleteAreaLabel.Width
+                + this.updateLabel.Width;
+
+            if (this.areaScrollPanel.Width > this.areaBgPanel.Width)
+            {
+
+                this.hScrollBar1.Minimum = 0;
+                this.hScrollBar1.Maximum = this.areaScrollPanel.Width - this.areaBgPanel.Width + 15;
+                this.hScrollBar1.Show();
+            }
+        }
+        #endregion
     }
 }

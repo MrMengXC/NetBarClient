@@ -27,7 +27,7 @@ namespace NetBarMS.Views.OtherMain
             NetMessageManage.ConnectServer(ConnectServerResult);
             this.loginButton.Click += LoginButtonClick;
             this.panel2.BackColor = Color.FromArgb(60, this.panel2.BackColor);
-            //this.loginButton.Enabled = false;
+            this.loginButton.Enabled = false;
 
         }
 
@@ -37,7 +37,7 @@ namespace NetBarMS.Views.OtherMain
         {
             NetMessageManage.RemoveConnetServer(ConnectServerResult);
             //进行客户端认证
-          //  ManagerNetOperation.ClientAuthen(ClientAuthenBlock);
+             ManagerNetOperation.ClientAuthen(ClientAuthenBlock);
         }
 
        
@@ -88,8 +88,9 @@ namespace NetBarMS.Views.OtherMain
         //进行登录
         private void LoginButtonClick(object sender, EventArgs e)
         {
-            LoginMainView();
-            return;
+            //TODO:测试打开
+            //LoginMainView();
+            //return;
 
             string userName = this.comboBoxEdit1.Text;
             string ps = this.textEdit2.Text;
@@ -142,5 +143,23 @@ namespace NetBarMS.Views.OtherMain
 
         }
         #endregion
+
+   
+
+        #region 控件绘制时触发的方法
+        protected virtual void Control_Paint(object sender, PaintEventArgs e)
+        {
+            //System.Console.WriteLine("sender:" + sender.GetType().ToString());
+            Graphics gr = e.Graphics;
+
+            if (sender.GetType().Equals(typeof(FlowLayoutPanel)))
+            {
+                Rectangle rect = (sender as TableLayoutPanel).ClientRectangle;
+
+                ControlPaint.DrawBorder(gr, rect, Color.FromArgb(213, 213, 213), ButtonBorderStyle.Solid) ;
+            }
+        }
+        #endregion
+
     }
 }

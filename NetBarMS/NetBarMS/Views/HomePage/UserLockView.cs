@@ -18,7 +18,6 @@ namespace NetBarMS.Views.HomePage
         public UserLockView(string tem)
         {
             InitializeComponent();
-            this.titleLabel.Text = "用户锁定";
             card = tem;
             InitUI();
         }

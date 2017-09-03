@@ -11,6 +11,7 @@ using DevExpress.XtraEditors.Controls;
 using NetBarMS.Codes.Tools;
 using NetBarMS.Codes.Model;
 using NetBarMS.Codes.Tools.Manage;
+using DevExpress.XtraEditors;
 
 namespace NetBarMS.Views.HomePage
 {
@@ -22,6 +23,11 @@ namespace NetBarMS.Views.HomePage
         private HomePageListView homePageListView = null;
         //首页电脑视图
         private HomePageComputerView homePageComputerView = null;
+        //选中状态按钮颜色
+        private static Color SEL_BACK_COLOR = Color.White;
+        //未选中状态按钮颜色
+        private static Color NOR_BACK_COLOR = Color.FromArgb(237, 248, 255);
+
 
         public HomePageView()
         {
@@ -31,7 +37,14 @@ namespace NetBarMS.Views.HomePage
         #region 初始化UI
 
         private void InitUI()
-        {            
+        {
+            //初始化ComboBoxEdit
+            ComboBoxEdit[] edits = {
+                this.comboBoxEdit1,
+                this.comboBoxEdit2
+            };
+            SetupCombox(edits, false);
+            this.ListViewButton.Appearance.BackColor = SEL_BACK_COLOR;
             //设置电脑状态Combox
             foreach (string name in Enum.GetNames(typeof(COMPUTERSTATUS)))
             {
@@ -255,13 +268,32 @@ namespace NetBarMS.Views.HomePage
         {
             if(sender.Equals(this.ComViewButton))
             {
+                this.ComViewButton.Appearance.BackColor = SEL_BACK_COLOR;
+                this.ListViewButton.Appearance.BackColor = NOR_BACK_COLOR;
+
+
                 AddHomePageComputerView();
 
             } else if(sender.Equals(this.ListViewButton))
             {
+                this.ComViewButton.Appearance.BackColor = NOR_BACK_COLOR;
+                this.ListViewButton.Appearance.BackColor = SEL_BACK_COLOR;
                 AddHomePageListView();
             }
         }
         #endregion
+
+        protected override void Control_Paint(object sender, PaintEventArgs e)
+        {
+            if (sender == this.ListViewButton || sender == this.ComViewButton)
+            {
+                Graphics gr = e.Graphics;
+                Rectangle ag = (sender as SimpleButton).ClientRectangle;
+                ControlPaint.DrawBorder(gr, ag, Color.FromArgb(190, 211, 244), ButtonBorderStyle.Solid);
+                return;
+            }
+           
+            base.Control_Paint(sender, e);
+        }
     }
 }

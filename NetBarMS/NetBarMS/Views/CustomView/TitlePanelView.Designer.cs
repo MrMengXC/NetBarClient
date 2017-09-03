@@ -89,6 +89,6 @@
 
         private DevExpress.XtraEditors.SimpleButton closeButton;
         private System.Windows.Forms.Label titleLabel;
-        public System.Windows.Forms.Panel mainPanel;
+        private System.Windows.Forms.Panel mainPanel;
     }
 }

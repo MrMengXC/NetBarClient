@@ -340,9 +340,7 @@
   <grid type ="ProductType">
     <column name = "勾选" field="Check" type ="C_Check" width ="" height =""/>
     <column name = "序号" field="Number" type ="C_Text" width ="" height =""/>
-    <column name = "类别" field="Type" type ="C_Text" width ="" height =""/>
-    <column name = "子类别" field="ChildType" type ="C_Text" width ="" height =""/>
-    
+    <column name = "类别" field="Type" type ="C_Text" width ="" height =""/>    
     <column name = "操作" field="Operation" type ="C_Button" width ="" height ="" bnames="修改"/>
   </grid>
   

@@ -45,8 +45,15 @@ namespace NetBarMS
             //Application.Run(ToolsManage.ShowForm(homePage1));
             //return;
 
+            //this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            //this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            //this.TopMost = true;
 
+            //Application.Run(new TestForm());
+            //return;
             RootBgView root = new RootBgView();
+            //设置全屏
+            root.Size = System.Windows.Forms.Screen.PrimaryScreen.WorkingArea.Size;
             Application.Run(ToolsManage.ShowForm(root));
         }
 

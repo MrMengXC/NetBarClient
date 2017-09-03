@@ -49,9 +49,10 @@
             // 
             // closeBtn
             // 
+            this.closeBtn.AllowFocus = false;
             this.closeBtn.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.closeBtn.Appearance.Options.UseBackColor = true;
-            this.closeBtn.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.closeBtn.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.closeBtn.Dock = System.Windows.Forms.DockStyle.Right;
             this.closeBtn.Image = global::NetBarMS.Imgs.icon_close;
             this.closeBtn.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
@@ -88,6 +89,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.bottomPanel);
             this.Controls.Add(this.titlePanel);
             this.Name = "RootFormView";

@@ -14,15 +14,20 @@ namespace NetBarMS.Codes.Tools.Manage
     class BorderManage
     {
 
+        //
         public static void DrawBorder(Graphics gra,Rectangle angle,BORDER_TYPE type)
         {
             switch(type)
             {
+                //输入框
                 case BORDER_TYPE.TEXTEDIT_BORDER:
                     ControlPaint.DrawBorder(gra, angle, Color.FromArgb(190, 211, 244), ButtonBorderStyle.Solid);
                    
                     break;
-
+                    //按钮
+                case BORDER_TYPE.BUTTON_BORDER:
+                    ControlPaint.DrawBorder(gra, angle, Color.FromArgb(0, 165, 248), ButtonBorderStyle.Solid);
+                    break;
                 default:
 
                     break;

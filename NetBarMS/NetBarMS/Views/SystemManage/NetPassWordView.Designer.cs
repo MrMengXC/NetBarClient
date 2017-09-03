@@ -51,7 +51,7 @@
             this.saveButton.Appearance.Options.UseBackColor = true;
             this.saveButton.Appearance.Options.UseFont = true;
             this.saveButton.Appearance.Options.UseForeColor = true;
-            this.saveButton.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.saveButton.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.saveButton.Location = new System.Drawing.Point(10, 160);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(184, 56);
@@ -91,7 +91,7 @@
             this.tableLayoutPanel1.AutoSize = true;
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 188F));
             this.tableLayoutPanel1.Controls.Add(this.pwTextEdit, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.pwCheckEdit, 0, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(10, 88);

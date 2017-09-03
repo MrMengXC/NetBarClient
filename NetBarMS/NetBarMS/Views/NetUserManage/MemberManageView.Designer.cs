@@ -86,7 +86,7 @@
             this.gridControl1.Location = new System.Drawing.Point(3, 0);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1157, 390);
+            this.gridControl1.Size = new System.Drawing.Size(1157, 378);
             this.gridControl1.TabIndex = 48;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1,
@@ -107,7 +107,7 @@
             // 
             this.statusComboBoxEdit.Location = new System.Drawing.Point(125, 19);
             this.statusComboBoxEdit.Name = "statusComboBoxEdit";
-            this.statusComboBoxEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.statusComboBoxEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.statusComboBoxEdit.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
             this.statusComboBoxEdit.Properties.Appearance.Options.UseFont = true;
             this.statusComboBoxEdit.Properties.Appearance.Options.UseForeColor = true;
@@ -120,12 +120,13 @@
             this.statusComboBoxEdit.Size = new System.Drawing.Size(272, 40);
             this.statusComboBoxEdit.TabIndex = 0;
             this.statusComboBoxEdit.SelectedIndexChanged += new System.EventHandler(this.statusComboBoxEdit_SelectedIndexChanged);
+            this.statusComboBoxEdit.Paint += new System.Windows.Forms.PaintEventHandler(this.Control_Paint);
             // 
             // memberTypeComboBoxEdit
             // 
             this.memberTypeComboBoxEdit.Location = new System.Drawing.Point(417, 19);
             this.memberTypeComboBoxEdit.Name = "memberTypeComboBoxEdit";
-            this.memberTypeComboBoxEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.memberTypeComboBoxEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.memberTypeComboBoxEdit.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
             this.memberTypeComboBoxEdit.Properties.Appearance.Options.UseFont = true;
             this.memberTypeComboBoxEdit.Properties.Appearance.Options.UseForeColor = true;
@@ -137,12 +138,13 @@
             this.memberTypeComboBoxEdit.Size = new System.Drawing.Size(272, 40);
             this.memberTypeComboBoxEdit.TabIndex = 1;
             this.memberTypeComboBoxEdit.SelectedIndexChanged += new System.EventHandler(this.memberTypeComboBoxEdit_SelectedIndexChanged);
+            this.memberTypeComboBoxEdit.Paint += new System.Windows.Forms.PaintEventHandler(this.Control_Paint);
             // 
             // searchButtonEdit
             // 
             this.searchButtonEdit.Location = new System.Drawing.Point(709, 19);
             this.searchButtonEdit.Name = "searchButtonEdit";
-            this.searchButtonEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.searchButtonEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.searchButtonEdit.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
             this.searchButtonEdit.Properties.Appearance.Options.UseFont = true;
             this.searchButtonEdit.Properties.Appearance.Options.UseForeColor = true;
@@ -151,11 +153,12 @@
             serializableAppearanceObject1.Options.UseBackColor = true;
             this.searchButtonEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::NetBarMS.Imgs.icon_sousuo, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
-            this.searchButtonEdit.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.searchButtonEdit.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.searchButtonEdit.Properties.NullText = "按卡号、姓名查询";
             this.searchButtonEdit.Size = new System.Drawing.Size(272, 40);
             this.searchButtonEdit.TabIndex = 2;
             this.searchButtonEdit.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.SearchButtonEdit_ButtonClick);
+            this.searchButtonEdit.Paint += new System.Windows.Forms.PaintEventHandler(this.Control_Paint);
             // 
             // simpleButton1
             // 
@@ -168,11 +171,12 @@
             // 
             // pageView1
             // 
-            this.pageView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.pageView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pageView1.Location = new System.Drawing.Point(0, 396);
+            this.pageView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pageView1.BackColor = System.Drawing.Color.Transparent;
+            this.pageView1.Location = new System.Drawing.Point(0, 384);
             this.pageView1.Name = "pageView1";
-            this.pageView1.Size = new System.Drawing.Size(1160, 30);
+            this.pageView1.Size = new System.Drawing.Size(1160, 42);
             this.pageView1.TabIndex = 62;
             // 
             // tableLayoutPanel2

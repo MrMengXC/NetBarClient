@@ -482,7 +482,11 @@ namespace NetBarMS.Codes.Tools
         /// <summary>
         /// 输入框边框
         /// </summary>
-        TEXTEDIT_BORDER,
+        TEXTEDIT_BORDER = 0,
+        /// <summary>
+        /// 按钮边框蓝色
+        /// </summary>
+        BUTTON_BORDER,
 
     }
     #endregion

@@ -21,7 +21,6 @@ namespace NetBarMS.Views.CustomView
         public CustomMonthDate()
         {
             InitializeComponent();
-           
             DateTime time = DateTime.Now;
             int year = time.Year;
             this.YearLabel.Text = year + "";

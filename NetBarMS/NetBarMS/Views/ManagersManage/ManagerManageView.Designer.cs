@@ -78,7 +78,7 @@
             this.addManagerButton.Appearance.Options.UseBackColor = true;
             this.addManagerButton.Appearance.Options.UseFont = true;
             this.addManagerButton.Appearance.Options.UseForeColor = true;
-            this.addManagerButton.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.addManagerButton.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.addManagerButton.Image = global::NetBarMS.Imgs.icon_tianjia;
             this.addManagerButton.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.addManagerButton.Location = new System.Drawing.Point(247, 19);
@@ -97,7 +97,7 @@
             this.deleteManagerButton.Appearance.Options.UseBackColor = true;
             this.deleteManagerButton.Appearance.Options.UseFont = true;
             this.deleteManagerButton.Appearance.Options.UseForeColor = true;
-            this.deleteManagerButton.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.deleteManagerButton.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.deleteManagerButton.Image = global::NetBarMS.Imgs.icon_shanchu;
             this.deleteManagerButton.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.deleteManagerButton.Location = new System.Drawing.Point(351, 19);

@@ -74,7 +74,7 @@
             // titlePanelView1
             // 
             this.titlePanelView1.ShowCloseButton = false;
-            this.titlePanelView1.Size = new System.Drawing.Size(1657, 50);
+            this.titlePanelView1.Size = new System.Drawing.Size(1657, 78);
             this.titlePanelView1.Title = "设备信息管理";
             // 
             // tableLayoutPanel1
@@ -91,7 +91,7 @@
             this.tableLayoutPanel1.Controls.Add(this.panel1, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel3, 4, 1);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(20, 71);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(20, 88);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));

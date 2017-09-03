@@ -34,17 +34,18 @@ namespace NetBarMS.Views.HomePage
         public HomePageComputerView()
         {
             InitializeComponent();
-            width = this.panel1.Width / 2;
-            height = this.panel1.Height / 2;
+            width = this.comsBg.Width / 2;
+            height = this.comsBg.Height / 2;
             InitUI();
         }
 
         #region 初始化UI
         private void InitUI()
         {
-            this.panel1.Controls.Clear();
-            //获取数据字典
-            areaComsDict = HomePageMessageManage.GetAreaComsDict();
+            this.tableLayoutPanel1.Controls.Clear();
+            this.tableLayoutPanel1.ColumnStyles.Clear();
+            this.tableLayoutPanel1.RowStyles.Clear();
+
             //获取过滤数据数组
             if (HomePageMessageManage.IsFilter)
             {
@@ -55,35 +56,61 @@ namespace NetBarMS.Views.HomePage
                 this.filterComs = new List<StructRealTime>();
             }
 
-            int i = 0;
-            foreach (string area in areaComsDict.Keys)
+            //初始化列表视图
+            InitTableView();
+            //int i = 0;
+            //foreach (string area in areaComsDict.Keys)
+            //{
+            //    AddAreaComsPanel(area, i);
+            //    i++;
+            //}
+
+        }
+        const int COLUMN_NUM = 2;
+        private void InitTableView ()
+        {
+
+            //获取数据字典
+            areaComsDict = HomePageMessageManage.GetAreaComsDict();
+            int num = areaComsDict.Count();
+
+            this.tableLayoutPanel1.RowCount = num % COLUMN_NUM == 0 ? num / COLUMN_NUM : num / COLUMN_NUM + 1;
+            this.tableLayoutPanel1.ColumnCount = COLUMN_NUM;
+
+            this.tableLayoutPanel1.Height = this.tableLayoutPanel1.RowCount * this.comsBg.Height / 2;
+
+            //创建行
+            for (int row = 0; row < this.tableLayoutPanel1.RowCount; row++)
             {
-                AddAreaComsPanel(area, i);
-                i++;
+                this.tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, this.comsBg.Height / 2));
+            }
+            for (int column = 0; column < this.tableLayoutPanel1.ColumnCount; column++)
+            {
+                this.tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, this.tableLayoutPanel1.Width / 2));
+
             }
 
-        }
+            int i = 0;
+            foreach (string areaId in areaComsDict.Keys)
+            {
+                AreaComsView areaComsView = new AreaComsView(areaComsDict[areaId], SysManage.GetAreaName(areaId), ComView_Paint);
+                areaComsView.Dock = DockStyle.Fill;
+                areaComsView.Name = string.Format("area_{0}", areaId);
+                this.tableLayoutPanel1.Controls.Add(areaComsView);
+                this.tableLayoutPanel1.SetRow(areaComsView, i / COLUMN_NUM);
+                this.tableLayoutPanel1.SetColumn(areaComsView, i % COLUMN_NUM);
+                i++;
+            }
+          
 
-        
-        //添加区域电脑Panel
-        private void AddAreaComsPanel(string areaId, int index)
-        {
-           
-            AreaComsView areaComsView = new AreaComsView(areaComsDict[areaId], SysManage.GetAreaName(areaId),ComLabel_Paint);
-            areaComsView.Location = new Point(20 * (index % 2 + 1) + index % 2 * width, 20 * (index / 2 + 1) + index / 2 * height);
-            areaComsView.Size = new Size(width, height);
-            areaComsView.Name = string.Format("area_{0}", areaId);
-            this.panel1.Controls.Add(areaComsView);
-
-        }
-        
-        //电脑Label重绘
-        private void ComLabel_Paint(object sender, PaintEventArgs e)
+        }    
+        //电脑视图重绘
+        private void ComView_Paint(object sender, PaintEventArgs e)
         {
             char[] sp = { '_' };
             //电脑id
-            string cid = ((Label)sender).Name.Split(sp)[1];
-            DrawComLabelBorder(int.Parse(cid), e.Graphics, e.ClipRectangle);
+            string cid = (sender as AreaComView).Name.Split(sp)[1];
+            DrawComViewBorder(int.Parse(cid), e.Graphics, e.ClipRectangle);
         }
         #endregion
 
@@ -120,25 +147,15 @@ namespace NetBarMS.Views.HomePage
                 {
                     return;
                 }
-                Control[] res = this.panel1.Controls.Find(string.Format("name_{0}", com.Computerid), true);
+                Control[] res = this.comsBg.Controls.Find(string.Format("name_{0}", com.Computerid), true);
                 if(res.Count()>0)
                 {
                     coms[comIndex] = com;
-                    Label updateComLabel = res.First() as Label;
-                    updateComLabel.Tag = com;
+                    AreaComView updateComView = res.First() as AreaComView;
+                    updateComView.Tag = com;
                     COMPUTERSTATUS status = COMPUTERSTATUS.无;
                     Enum.TryParse<COMPUTERSTATUS>(com.Status, out status);
-                    switch (status)
-                    {
-                        case COMPUTERSTATUS.空闲:
-                            updateComLabel.BackColor = IDLE_COLOR;
-                            break;
-                        case COMPUTERSTATUS.在线:
-                            updateComLabel.BackColor = ONLINE_COLOR;
-                            break;
-                        default:
-                            break;
-                    }
+                    updateComView.ComStatus = status;
                 }
                 //修改过滤数组的值
                 int comindex = HomePageMessageManage.GetComputerIndex(com.Computerid, this.filterComs);
@@ -147,7 +164,7 @@ namespace NetBarMS.Views.HomePage
                     return;
                 }
                 this.filterComs[comindex] = com;
-                this.panel1.Refresh();
+                this.comsBg.Refresh();
 
             }));
 
@@ -181,15 +198,17 @@ namespace NetBarMS.Views.HomePage
                 {
                     this.filterComs = new List<StructRealTime>();
                 }
-                this.panel1.Refresh();
+                this.comsBg.Refresh();
                 
             }));
 
         }
+
+     
         #endregion
 
         #region 重绘LableBorder
-        private void DrawComLabelBorder(int comId,Graphics gra,Rectangle rec)
+        private void DrawComViewBorder(int comId,Graphics gra,Rectangle rec)
         {
 
             if (this.filterComs.Where(com => com.Computerid == comId).Count() > 0 && HomePageMessageManage.IsFilter)
@@ -211,6 +230,23 @@ namespace NetBarMS.Views.HomePage
             }
         }
         #endregion
+
+        //背景板尺寸改变
+        private void comsBg_SizeChanged(object sender, EventArgs e)
+        {
+            this.tableLayoutPanel1.Height = this.tableLayoutPanel1.RowCount * this.comsBg.Height / 2;
+            for (int row = 0; row < this.tableLayoutPanel1.RowCount; row++)
+            {
+                RowStyle rowStyle = this.tableLayoutPanel1.RowStyles[row];
+                rowStyle.Height = this.comsBg.Height / 2;
+            }
+            for (int column = 0; column < this.tableLayoutPanel1.ColumnCount; column++)
+            {
+                ColumnStyle columnStyle = this.tableLayoutPanel1.ColumnStyles[column];
+                columnStyle.Width = this.tableLayoutPanel1.Width / 2;
+
+            }
+        }
     }
 
 }

@@ -77,7 +77,7 @@
             this.addManagerButton.Appearance.Options.UseBackColor = true;
             this.addManagerButton.Appearance.Options.UseFont = true;
             this.addManagerButton.Appearance.Options.UseForeColor = true;
-            this.addManagerButton.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.addManagerButton.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.addManagerButton.Image = global::NetBarMS.Imgs.icon_tianjia;
             this.addManagerButton.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.addManagerButton.Location = new System.Drawing.Point(575, 19);

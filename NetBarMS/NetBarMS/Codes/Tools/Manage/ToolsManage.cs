@@ -184,7 +184,7 @@ namespace NetBarMS.Codes.Tools
                     #region 添加按钮
                     case ColumnType.C_Button:        //添加按钮
                         {
-                           
+                            //color = "131,157,199"
                             RepositoryItemButtonEdit buttonEdit = new RepositoryItemButtonEdit();
                             buttonEdit.Buttons.Clear();
                             buttonEdit.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
@@ -211,18 +211,20 @@ namespace NetBarMS.Codes.Tools
                                 //按钮显示
                                 button.Visible = true;
                                 button.Tag = fieldname + "_" + num;
-                               
-                                if(names.Count() > 1)
-                                {
-                                    char[] color_sp = { ','};
-                                    string[] colors = names[1].Split(color_sp);
-                                    button.Appearance.ForeColor = Color.FromArgb(int.Parse(colors[0]), int.Parse(colors[1]), int.Parse(colors[2]));
-                                }
-                                else
-                                {
-                                    button.Appearance.ForeColor = Color.Blue;
+                                //62,141,232
+                                //if (names.Count() > 1)
+                                //{
+                                //    char[] color_sp = { ','};
+                                //    string[] colors = names[1].Split(color_sp);
+                                //    button.Appearance.ForeColor = Color.FromArgb(int.Parse(colors[0]), int.Parse(colors[1]), int.Parse(colors[2]));
+                                //}
+                                //else
+                                //{
+                                //    button.Appearance.ForeColor = Color.Blue;
 
-                                }
+                                //}
+
+                                button.Appearance.ForeColor = Color.FromArgb(62, 141, 232);
                                 button.Caption = names[0];
                                 width += 50;
 

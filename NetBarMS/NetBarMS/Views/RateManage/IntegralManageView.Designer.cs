@@ -114,7 +114,7 @@ namespace NetBarMS.Views.RateManage
             this.defaultButton.Appearance.Options.UseBackColor = true;
             this.defaultButton.Appearance.Options.UseFont = true;
             this.defaultButton.Appearance.Options.UseForeColor = true;
-            this.defaultButton.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.defaultButton.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.defaultButton.Location = new System.Drawing.Point(12, 346);
             this.defaultButton.Name = "defaultButton";
             this.defaultButton.Size = new System.Drawing.Size(218, 56);
@@ -130,7 +130,7 @@ namespace NetBarMS.Views.RateManage
             this.activeButton.Appearance.Options.UseBackColor = true;
             this.activeButton.Appearance.Options.UseFont = true;
             this.activeButton.Appearance.Options.UseForeColor = true;
-            this.activeButton.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.activeButton.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.activeButton.Location = new System.Drawing.Point(12, 346);
             this.activeButton.Name = "activeButton";
             this.activeButton.Size = new System.Drawing.Size(218, 56);
@@ -267,6 +267,8 @@ namespace NetBarMS.Views.RateManage
             this.dRechargeText.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
             this.dRechargeText.Properties.Appearance.Options.UseFont = true;
             this.dRechargeText.Properties.Appearance.Options.UseForeColor = true;
+            this.dRechargeText.Properties.Appearance.Options.UseTextOptions = true;
+            this.dRechargeText.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.dRechargeText.Properties.AutoHeight = false;
             this.dRechargeText.Properties.Mask.EditMask = "[0-9]*";
             this.dRechargeText.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
@@ -317,6 +319,8 @@ namespace NetBarMS.Views.RateManage
             this.dRechargeItText.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
             this.dRechargeItText.Properties.Appearance.Options.UseFont = true;
             this.dRechargeItText.Properties.Appearance.Options.UseForeColor = true;
+            this.dRechargeItText.Properties.Appearance.Options.UseTextOptions = true;
+            this.dRechargeItText.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.dRechargeItText.Properties.AutoHeight = false;
             this.dRechargeItText.Size = new System.Drawing.Size(42, 42);
             this.dRechargeItText.TabIndex = 9;
@@ -370,6 +374,8 @@ namespace NetBarMS.Views.RateManage
             this.staffPjItText.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
             this.staffPjItText.Properties.Appearance.Options.UseFont = true;
             this.staffPjItText.Properties.Appearance.Options.UseForeColor = true;
+            this.staffPjItText.Properties.Appearance.Options.UseTextOptions = true;
+            this.staffPjItText.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.staffPjItText.Properties.AutoHeight = false;
             this.staffPjItText.Size = new System.Drawing.Size(42, 42);
             this.staffPjItText.TabIndex = 9;
@@ -401,6 +407,8 @@ namespace NetBarMS.Views.RateManage
             this.netBarPjItText.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
             this.netBarPjItText.Properties.Appearance.Options.UseFont = true;
             this.netBarPjItText.Properties.Appearance.Options.UseForeColor = true;
+            this.netBarPjItText.Properties.Appearance.Options.UseTextOptions = true;
+            this.netBarPjItText.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.netBarPjItText.Properties.AutoHeight = false;
             this.netBarPjItText.Size = new System.Drawing.Size(42, 42);
             this.netBarPjItText.TabIndex = 10;
@@ -454,6 +462,8 @@ namespace NetBarMS.Views.RateManage
             this.logItText.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
             this.logItText.Properties.Appearance.Options.UseFont = true;
             this.logItText.Properties.Appearance.Options.UseForeColor = true;
+            this.logItText.Properties.Appearance.Options.UseTextOptions = true;
+            this.logItText.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.logItText.Properties.AutoHeight = false;
             this.logItText.Size = new System.Drawing.Size(42, 42);
             this.logItText.TabIndex = 10;
@@ -507,6 +517,8 @@ namespace NetBarMS.Views.RateManage
             this.bingingItText.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
             this.bingingItText.Properties.Appearance.Options.UseFont = true;
             this.bingingItText.Properties.Appearance.Options.UseForeColor = true;
+            this.bingingItText.Properties.Appearance.Options.UseTextOptions = true;
+            this.bingingItText.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.bingingItText.Properties.AutoHeight = false;
             this.bingingItText.Size = new System.Drawing.Size(42, 42);
             this.bingingItText.TabIndex = 10;
@@ -617,6 +629,8 @@ namespace NetBarMS.Views.RateManage
             this.aRechargeText.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
             this.aRechargeText.Properties.Appearance.Options.UseFont = true;
             this.aRechargeText.Properties.Appearance.Options.UseForeColor = true;
+            this.aRechargeText.Properties.Appearance.Options.UseTextOptions = true;
+            this.aRechargeText.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.aRechargeText.Properties.AutoHeight = false;
             this.aRechargeText.Size = new System.Drawing.Size(42, 42);
             this.aRechargeText.TabIndex = 7;
@@ -653,6 +667,8 @@ namespace NetBarMS.Views.RateManage
             this.aRechargItText.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
             this.aRechargItText.Properties.Appearance.Options.UseFont = true;
             this.aRechargItText.Properties.Appearance.Options.UseForeColor = true;
+            this.aRechargItText.Properties.Appearance.Options.UseTextOptions = true;
+            this.aRechargItText.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.aRechargItText.Properties.AutoHeight = false;
             this.aRechargItText.Size = new System.Drawing.Size(42, 42);
             this.aRechargItText.TabIndex = 8;

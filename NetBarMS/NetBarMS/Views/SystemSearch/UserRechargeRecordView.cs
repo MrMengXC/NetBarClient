@@ -46,8 +46,13 @@ namespace NetBarMS.Views.SystemSearch
         // 初始化UI
         private void InitUI()
         {
+            //初始化ComboBoxEdit
+            DevExpress.XtraEditors.ComboBoxEdit[] edits = {
+                this.comboBoxEdit1,
+            };
+            SetupCombox(edits, false);
             //PAYCHANNEL_TYPE
-            foreach(string name in Enum.GetNames(typeof(PAYCHANNEL)))
+            foreach (string name in Enum.GetNames(typeof(PAYCHANNEL)))
             {
                 this.comboBoxEdit1.Properties.Items.Add(name);
             }

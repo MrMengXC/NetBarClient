@@ -47,6 +47,12 @@ namespace NetBarMS.Views.NetUserManage
         // 初始化UI
         private void InitUI()
         {
+            //初始化ComboBoxEdit
+            DevExpress.XtraEditors.ComboBoxEdit[] edits = {
+                this.comboBoxEdit1,
+                this.comboBoxEdit2
+            };
+            SetupCombox(edits, false);
             this.staffs = SysManage.Staffs;
             this.comboBoxEdit1.Properties.Items.Add("无");
             foreach (StructAccount staff in this.staffs)

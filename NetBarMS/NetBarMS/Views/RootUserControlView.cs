@@ -21,6 +21,9 @@ namespace NetBarMS.Views
         {
             InitializeComponent();
             this.Disposed += RootUserControlView_Disposed;
+            //双缓冲
+            SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.AllPaintingInWmPaint, true);
+
         }
 
         protected virtual void RootUserControlView_Disposed(object sender, EventArgs e)
@@ -31,13 +34,51 @@ namespace NetBarMS.Views
         protected virtual void Control_Paint(object sender, PaintEventArgs e)
         {
             //System.Console.WriteLine("sender:" + sender.GetType().ToString());
-
-            if (sender.GetType().Equals(typeof(DevExpress.XtraEditors.TextEdit)))
+            Graphics gr = e.Graphics;
+            //这是输入框
+            if (sender.GetType().Equals(typeof(TextEdit)))
             {
                 BorderManage.DrawBorder(e.Graphics, e.ClipRectangle, BORDER_TYPE.TEXTEDIT_BORDER);
             }
+            //这是下拉菜单
+            else if(sender.GetType().Equals(typeof(ComboBoxEdit)))
+            {
+                Rectangle rect = (sender as ComboBoxEdit).ClientRectangle;
+                ControlPaint.DrawBorder(e.Graphics, rect, ControlColor.EDITBOX_BORDCOLOR, ButtonBorderStyle.Solid);
+
+            }
+            //这是搜索框
+            else if (sender.GetType().Equals(typeof(ButtonEdit))&& !sender.GetType().Equals(typeof(SimpleButton)))
+            {
+                Rectangle rect = (sender as ButtonEdit).ClientRectangle;
+                ControlPaint.DrawBorder(e.Graphics, rect, ControlColor.EDITBOX_BORDCOLOR, ButtonBorderStyle.Solid);
+            }
         }
         #endregion
+        #region 设置Combox的图标和下拉高度字体
+        /// <summary>
+        /// 设置Combox下拉箭头
+        /// </summary>
+        /// <param name="coms">combox 数组</param>
+        /// <param name="isDate">是否是日期</param>
+        protected void SetupCombox(ComboBoxEdit[] coms,bool isDate)
+        {
+            foreach (ComboBoxEdit combox in coms)
+            {
+
+
+                combox.Properties.Buttons[0].Kind = DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph;
+                combox.Properties.Buttons[0].Image = Imgs.icon_jiantou;
+                if(!isDate)
+                {
+                    combox.Properties.AppearanceDropDown.Font = new Font("Tahoma", 15, GraphicsUnit.Pixel);
+                    combox.Properties.DropDownItemHeight = 25;
+                }
+            }
+        }
+
+        #endregion
+
 
         #region 初始化TextEdit
         /// <summary>

@@ -338,14 +338,15 @@
             this.popupContainerControl1.Controls.Add(this.customMonthDate1);
             this.popupContainerControl1.Location = new System.Drawing.Point(133, 65);
             this.popupContainerControl1.Name = "popupContainerControl1";
-            this.popupContainerControl1.Size = new System.Drawing.Size(367, 323);
+            this.popupContainerControl1.Size = new System.Drawing.Size(292, 285);
             this.popupContainerControl1.TabIndex = 5;
             // 
             // customMonthDate1
             // 
-            this.customMonthDate1.Location = new System.Drawing.Point(14, 3);
+            this.customMonthDate1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.customMonthDate1.Location = new System.Drawing.Point(0, 0);
             this.customMonthDate1.Name = "customMonthDate1";
-            this.customMonthDate1.Size = new System.Drawing.Size(326, 293);
+            this.customMonthDate1.Size = new System.Drawing.Size(292, 285);
             this.customMonthDate1.TabIndex = 0;
             // 
             // simpleButton2
@@ -369,7 +370,9 @@
             // 
             this.popupContainerEdit1.Location = new System.Drawing.Point(133, 19);
             this.popupContainerEdit1.Name = "popupContainerEdit1";
+            this.popupContainerEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.popupContainerEdit1.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
+            this.popupContainerEdit1.Properties.Appearance.Options.UseFont = true;
             this.popupContainerEdit1.Properties.Appearance.Options.UseForeColor = true;
             this.popupContainerEdit1.Properties.AutoHeight = false;
             this.popupContainerEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
