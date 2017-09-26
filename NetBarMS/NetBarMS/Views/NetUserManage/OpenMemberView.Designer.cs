@@ -80,12 +80,7 @@
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // titlePanelView1
-            // 
-            this.titlePanelView1.ShowCloseButton = false;
-            this.titlePanelView1.Size = new System.Drawing.Size(1550, 78);
-            this.titlePanelView1.Title = "会员办理";
+   
             // 
             // nameLabel
             // 
@@ -539,7 +534,6 @@
             this.Name = "OpenMemberView";
             this.Size = new System.Drawing.Size(1550, 728);
             this.Controls.SetChildIndex(this.tableLayoutPanel3, 0);
-            this.Controls.SetChildIndex(this.titlePanelView1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             this.flowLayoutPanel5.ResumeLayout(false);
             this.flowLayoutPanel5.PerformLayout();

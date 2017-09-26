@@ -37,12 +37,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
             this.SuspendLayout();
-            // 
-            // titlePanelView1
-            // 
-            this.titlePanelView1.ShowCloseButton = false;
-            this.titlePanelView1.Size = new System.Drawing.Size(982, 78);
-            this.titlePanelView1.Title = "商品类别设置";
+        
             // 
             // gridControl1
             // 
@@ -116,7 +111,6 @@
             this.Controls.Add(this.gridControl1);
             this.Name = "ProductTypeManageView";
             this.Size = new System.Drawing.Size(982, 610);
-            this.Controls.SetChildIndex(this.titlePanelView1, 0);
             this.Controls.SetChildIndex(this.gridControl1, 0);
             this.Controls.SetChildIndex(this.simpleButton1, 0);
             this.Controls.SetChildIndex(this.simpleButton3, 0);

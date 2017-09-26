@@ -37,12 +37,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
             this.SuspendLayout();
-            // 
-            // titlePanelView1
-            // 
-            this.titlePanelView1.ShowCloseButton = false;
-            this.titlePanelView1.Size = new System.Drawing.Size(670, 78);
-            this.titlePanelView1.Title = "会员等级管理";
+           
             // 
             // gridControl1
             // 
@@ -116,7 +111,6 @@
             this.Controls.Add(this.gridControl1);
             this.Name = "MemberLevManageView";
             this.Size = new System.Drawing.Size(670, 695);
-            this.Controls.SetChildIndex(this.titlePanelView1, 0);
             this.Controls.SetChildIndex(this.gridControl1, 0);
             this.Controls.SetChildIndex(this.simpleButton1, 0);
             this.Controls.SetChildIndex(this.simpleButton2, 0);

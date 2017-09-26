@@ -44,7 +44,7 @@
             this.titlePanel.Location = new System.Drawing.Point(0, 0);
             this.titlePanel.Margin = new System.Windows.Forms.Padding(0);
             this.titlePanel.Name = "titlePanel";
-            this.titlePanel.Size = new System.Drawing.Size(480, 52);
+            this.titlePanel.Size = new System.Drawing.Size(480, 40);
             this.titlePanel.TabIndex = 62;
             // 
             // closeBtn
@@ -61,17 +61,17 @@
             this.closeBtn.LookAndFeel.UseDefaultLookAndFeel = false;
             this.closeBtn.Name = "closeBtn";
             this.closeBtn.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.closeBtn.Size = new System.Drawing.Size(47, 52);
+            this.closeBtn.Size = new System.Drawing.Size(47, 40);
             this.closeBtn.TabIndex = 3;
             // 
             // titleLabel
             // 
             this.titleLabel.AutoSize = true;
-            this.titleLabel.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.titleLabel.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
             this.titleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(140)))), ((int)(((byte)(190)))));
-            this.titleLabel.Location = new System.Drawing.Point(10, 17);
+            this.titleLabel.Location = new System.Drawing.Point(12, 15);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(53, 18);
+            this.titleLabel.Size = new System.Drawing.Size(35, 12);
             this.titleLabel.TabIndex = 1;
             this.titleLabel.Text = "Title";
             // 

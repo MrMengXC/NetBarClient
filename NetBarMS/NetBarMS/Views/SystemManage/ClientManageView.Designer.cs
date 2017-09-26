@@ -86,12 +86,7 @@
             this.panel2.SuspendLayout();
             this.leftTableLayout.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // titlePanelView1
-            // 
-            this.titlePanelView1.ShowCloseButton = false;
-            this.titlePanelView1.Size = new System.Drawing.Size(1449, 78);
-            this.titlePanelView1.Title = "客户端设置";
+           
             // 
             // gridControl1
             // 
@@ -586,7 +581,6 @@
             this.Name = "ClientManageView";
             this.Size = new System.Drawing.Size(1449, 828);
             this.Controls.SetChildIndex(this.mainTableLayout, 0);
-            this.Controls.SetChildIndex(this.titlePanelView1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).EndInit();

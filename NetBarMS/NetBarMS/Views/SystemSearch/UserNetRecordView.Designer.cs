@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             this.popupContainerEdit1 = new DevExpress.XtraEditors.PopupContainerEdit();
             this.popupContainerControl1 = new DevExpress.XtraEditors.PopupContainerControl();
             this.dateNavigator = new DevExpress.XtraScheduler.DateNavigator();
@@ -39,6 +39,7 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.pageView1 = new NetBarMS.Views.CustomView.PageView();
+            this.titlePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.popupContainerEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupContainerControl1)).BeginInit();
             this.popupContainerControl1.SuspendLayout();
@@ -51,26 +52,36 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // titlePanelView1
+            // titlePanel
             // 
-            this.titlePanelView1.ShowCloseButton = false;
-            this.titlePanelView1.Size = new System.Drawing.Size(1386, 78);
-            this.titlePanelView1.Title = "上网记录查询";
+            this.titlePanel.Controls.Add(this.searchButtonEdit);
+            this.titlePanel.Controls.Add(this.popupContainerEdit1);
+            this.titlePanel.Controls.Add(this.comboBoxEdit1);
+            this.titlePanel.Size = new System.Drawing.Size(1386, 40);
+            this.titlePanel.Controls.SetChildIndex(this.comboBoxEdit1, 0);
+            this.titlePanel.Controls.SetChildIndex(this.popupContainerEdit1, 0);
+            this.titlePanel.Controls.SetChildIndex(this.searchButtonEdit, 0);
+            this.titlePanel.Controls.SetChildIndex(this.titleLabel, 0);
+            // 
+            // titleLabel
+            // 
+            this.titleLabel.Size = new System.Drawing.Size(127, 14);
+            this.titleLabel.Text = "用户上网记录查询";
             // 
             // popupContainerEdit1
             // 
-            this.popupContainerEdit1.Location = new System.Drawing.Point(158, 19);
+            this.popupContainerEdit1.Location = new System.Drawing.Point(157, 8);
             this.popupContainerEdit1.Name = "popupContainerEdit1";
-            this.popupContainerEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.popupContainerEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.popupContainerEdit1.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
             this.popupContainerEdit1.Properties.Appearance.Options.UseFont = true;
             this.popupContainerEdit1.Properties.Appearance.Options.UseForeColor = true;
             this.popupContainerEdit1.Properties.AutoHeight = false;
             this.popupContainerEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::NetBarMS.Imgs.icon_jiantou, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::NetBarMS.Imgs.icon_jiantou, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true)});
             this.popupContainerEdit1.Properties.NullText = "请选择时间段进行查询";
             this.popupContainerEdit1.Properties.PopupControl = this.popupContainerControl1;
-            this.popupContainerEdit1.Size = new System.Drawing.Size(272, 40);
+            this.popupContainerEdit1.Size = new System.Drawing.Size(180, 25);
             this.popupContainerEdit1.TabIndex = 4;
             this.popupContainerEdit1.Closed += new DevExpress.XtraEditors.Controls.ClosedEventHandler(this.PopupContainerEdit1_Closed);
             // 
@@ -99,9 +110,9 @@
             // 
             // comboBoxEdit1
             // 
-            this.comboBoxEdit1.Location = new System.Drawing.Point(445, 19);
+            this.comboBoxEdit1.Location = new System.Drawing.Point(353, 8);
             this.comboBoxEdit1.Name = "comboBoxEdit1";
-            this.comboBoxEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.comboBoxEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.comboBoxEdit1.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
             this.comboBoxEdit1.Properties.Appearance.Options.UseFont = true;
             this.comboBoxEdit1.Properties.Appearance.Options.UseForeColor = true;
@@ -109,26 +120,26 @@
             this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.comboBoxEdit1.Properties.NullText = "请选择设备编号";
-            this.comboBoxEdit1.Size = new System.Drawing.Size(272, 40);
+            this.comboBoxEdit1.Size = new System.Drawing.Size(180, 25);
             this.comboBoxEdit1.TabIndex = 7;
             this.comboBoxEdit1.SelectedIndexChanged += new System.EventHandler(this.comboBoxEdit1_SelectedIndexChanged);
             // 
             // searchButtonEdit
             // 
-            this.searchButtonEdit.Location = new System.Drawing.Point(731, 19);
+            this.searchButtonEdit.Location = new System.Drawing.Point(549, 8);
             this.searchButtonEdit.Name = "searchButtonEdit";
-            this.searchButtonEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.searchButtonEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.searchButtonEdit.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
             this.searchButtonEdit.Properties.Appearance.Options.UseFont = true;
             this.searchButtonEdit.Properties.Appearance.Options.UseForeColor = true;
             this.searchButtonEdit.Properties.AutoHeight = false;
-            serializableAppearanceObject2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(229)))), ((int)(((byte)(248)))));
-            serializableAppearanceObject2.Options.UseBackColor = true;
+            serializableAppearanceObject1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(229)))), ((int)(((byte)(248)))));
+            serializableAppearanceObject1.Options.UseBackColor = true;
             this.searchButtonEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::NetBarMS.Imgs.icon_sousuo, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::NetBarMS.Imgs.icon_sousuo, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
             this.searchButtonEdit.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.searchButtonEdit.Properties.NullText = "输入会员名称、设备编号、卡号、Mac、IP地址等关键词进行搜索";
-            this.searchButtonEdit.Size = new System.Drawing.Size(386, 40);
+            this.searchButtonEdit.Size = new System.Drawing.Size(180, 25);
             this.searchButtonEdit.TabIndex = 5;
             this.searchButtonEdit.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.SearchButtonEdit_ButtonClick);
             // 
@@ -137,10 +148,10 @@
             this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridControl1.Location = new System.Drawing.Point(0, 78);
+            this.gridControl1.Location = new System.Drawing.Point(0, 46);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1386, 580);
+            this.gridControl1.Size = new System.Drawing.Size(1386, 681);
             this.gridControl1.TabIndex = 79;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1,
@@ -159,10 +170,9 @@
             // 
             // pageView1
             // 
-            this.pageView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.pageView1.BackColor = System.Drawing.Color.Transparent;
-            this.pageView1.Location = new System.Drawing.Point(-3, 664);
+            this.pageView1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pageView1.Location = new System.Drawing.Point(0, 733);
             this.pageView1.Name = "pageView1";
             this.pageView1.Size = new System.Drawing.Size(1386, 40);
             this.pageView1.TabIndex = 80;
@@ -173,20 +183,16 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.popupContainerControl1);
-            this.Controls.Add(this.searchButtonEdit);
-            this.Controls.Add(this.comboBoxEdit1);
-            this.Controls.Add(this.popupContainerEdit1);
             this.Controls.Add(this.pageView1);
             this.Controls.Add(this.gridControl1);
             this.Name = "UserNetRecordView";
             this.Size = new System.Drawing.Size(1386, 773);
-            this.Controls.SetChildIndex(this.titlePanelView1, 0);
+            this.Controls.SetChildIndex(this.titlePanel, 0);
             this.Controls.SetChildIndex(this.gridControl1, 0);
             this.Controls.SetChildIndex(this.pageView1, 0);
-            this.Controls.SetChildIndex(this.popupContainerEdit1, 0);
-            this.Controls.SetChildIndex(this.comboBoxEdit1, 0);
-            this.Controls.SetChildIndex(this.searchButtonEdit, 0);
             this.Controls.SetChildIndex(this.popupContainerControl1, 0);
+            this.titlePanel.ResumeLayout(false);
+            this.titlePanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.popupContainerEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupContainerControl1)).EndInit();
             this.popupContainerControl1.ResumeLayout(false);

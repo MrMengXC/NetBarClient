@@ -102,12 +102,7 @@
             this.areaBgPanel.SuspendLayout();
             this.memberTypeBgPanel.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // titlePanelView1
-            // 
-            this.titlePanelView1.ShowCloseButton = false;
-            this.titlePanelView1.Size = new System.Drawing.Size(1657, 78);
-            this.titlePanelView1.Title = "费率管理";
+          
             // 
             // dataGridView1
             // 
@@ -792,7 +787,6 @@
             this.Controls.SetChildIndex(this.dataGridView1, 0);
             this.Controls.SetChildIndex(this.tableLayoutPanel1, 0);
             this.Controls.SetChildIndex(this.areaBgPanel, 0);
-            this.Controls.SetChildIndex(this.titlePanelView1, 0);
             this.Controls.SetChildIndex(this.memberTypeBgPanel, 0);
             this.Controls.SetChildIndex(this.memberTypeScrollBar, 0);
             this.Controls.SetChildIndex(this.areaScrollBar, 0);

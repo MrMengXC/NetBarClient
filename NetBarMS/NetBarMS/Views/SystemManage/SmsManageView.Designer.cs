@@ -48,12 +48,7 @@
             this.pushScrollView.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // titlePanelView1
-            // 
-            this.titlePanelView1.ShowCloseButton = false;
-            this.titlePanelView1.Size = new System.Drawing.Size(1249, 78);
-            this.titlePanelView1.Title = "短信设置";
+            
             // 
             // gridControl1
             // 
@@ -228,7 +223,6 @@
             this.Controls.Add(this.pushBgPanel);
             this.Name = "SmsManageView";
             this.Size = new System.Drawing.Size(1249, 774);
-            this.Controls.SetChildIndex(this.titlePanelView1, 0);
             this.Controls.SetChildIndex(this.pushBgPanel, 0);
             this.Controls.SetChildIndex(this.simpleButton1, 0);
             this.Controls.SetChildIndex(this.tableLayoutPanel2, 0);

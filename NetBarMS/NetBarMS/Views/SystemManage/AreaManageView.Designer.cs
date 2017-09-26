@@ -54,12 +54,7 @@
             this.tableLayoutPanel3.SuspendLayout();
             this.areaBgPanel.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // titlePanelView1
-            // 
-            this.titlePanelView1.ShowCloseButton = false;
-            this.titlePanelView1.Size = new System.Drawing.Size(1060, 78);
-            this.titlePanelView1.Title = "区域设置";
+         
             // 
             // gridView
             // 
@@ -283,7 +278,6 @@
             this.Controls.Add(this.simpleButton2);
             this.Name = "AreaManageView";
             this.Size = new System.Drawing.Size(1060, 785);
-            this.Controls.SetChildIndex(this.titlePanelView1, 0);
             this.Controls.SetChildIndex(this.simpleButton2, 0);
             this.Controls.SetChildIndex(this.tableLayoutPanel3, 0);
             this.Controls.SetChildIndex(this.areaBgPanel, 0);

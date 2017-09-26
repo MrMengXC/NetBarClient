@@ -50,11 +50,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.useComboBoxEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.payChannelComboBoxEdit.Properties)).BeginInit();
             this.SuspendLayout();
-            // 
-            // titlePanelView1
-            // 
-            this.titlePanelView1.Size = new System.Drawing.Size(1241, 78);
-            this.titlePanelView1.Title = "会员消费记录查询";
+        
             // 
             // gridControl1
             // 
@@ -184,7 +180,6 @@
             this.Size = new System.Drawing.Size(1241, 805);
             this.Controls.SetChildIndex(this.gridControl1, 0);
             this.Controls.SetChildIndex(this.pageView1, 0);
-            this.Controls.SetChildIndex(this.titlePanelView1, 0);
             this.Controls.SetChildIndex(this.popupContainerEdit1, 0);
             this.Controls.SetChildIndex(this.useComboBoxEdit, 0);
             this.Controls.SetChildIndex(this.payChannelComboBoxEdit, 0);

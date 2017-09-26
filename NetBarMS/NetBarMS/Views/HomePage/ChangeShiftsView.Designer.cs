@@ -65,12 +65,7 @@
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // titlePanelView1
-            // 
-            this.titlePanelView1.ShowCloseButton = false;
-            this.titlePanelView1.Size = new System.Drawing.Size(1066, 78);
-            this.titlePanelView1.Title = "交接班";
+           
             // 
             // changeLabel
             // 
@@ -365,7 +360,6 @@
             this.Controls.Add(this.panel1);
             this.Name = "ChangeShiftsView";
             this.Size = new System.Drawing.Size(1066, 761);
-            this.Controls.SetChildIndex(this.titlePanelView1, 0);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.panel2, 0);
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).EndInit();

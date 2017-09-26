@@ -272,10 +272,10 @@ namespace NetBarMS.Codes.Tools
 
             gridView.OptionsSelection.MultiSelect = true;
             gridView.OptionsSelection.MultiSelectMode = GridMultiSelectMode.RowSelect;
-            gridView.RowHeight = 40;
+            gridView.RowHeight = 25;
           
             //表头高度
-            gridView.ColumnPanelRowHeight = 50;
+            gridView.ColumnPanelRowHeight = 30;
           
             //关闭最左侧
             gridView.OptionsView.ShowIndicator = false;

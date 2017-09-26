@@ -100,11 +100,7 @@ namespace NetBarMS.Views.RateManage
             ((System.ComponentModel.ISupportInitialize)(this.aRechargItText.Properties)).BeginInit();
             this.tableLayoutPanel13.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // titlePanelView1
-            // 
-            this.titlePanelView1.Size = new System.Drawing.Size(1240, 78);
-            this.titlePanelView1.Title = "积分设置";
+         
             // 
             // defaultButton
             // 
@@ -751,7 +747,6 @@ namespace NetBarMS.Views.RateManage
             this.Size = new System.Drawing.Size(1240, 612);
             this.Controls.SetChildIndex(this.leftTableLayoutPanel, 0);
             this.Controls.SetChildIndex(this.rightTableLayoutPanel, 0);
-            this.Controls.SetChildIndex(this.titlePanelView1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.startComboBoxEdit.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.startComboBoxEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.endComboBoxEdit.Properties.CalendarTimeProperties)).EndInit();

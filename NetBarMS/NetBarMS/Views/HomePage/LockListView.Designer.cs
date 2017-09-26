@@ -38,12 +38,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonEdit1.Properties)).BeginInit();
             this.SuspendLayout();
-            // 
-            // titlePanelView1
-            // 
-            this.titlePanelView1.ShowCloseButton = false;
-            this.titlePanelView1.Size = new System.Drawing.Size(697, 78);
-            this.titlePanelView1.Title = "锁定用户列表";
+     
             // 
             // gridControl1
             // 
@@ -97,7 +92,6 @@
             this.Controls.Add(this.gridControl1);
             this.Name = "LockListView";
             this.Size = new System.Drawing.Size(697, 805);
-            this.Controls.SetChildIndex(this.titlePanelView1, 0);
             this.Controls.SetChildIndex(this.gridControl1, 0);
             this.Controls.SetChildIndex(this.buttonEdit1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();

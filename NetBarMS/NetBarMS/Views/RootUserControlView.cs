@@ -16,7 +16,7 @@ namespace NetBarMS.Views
     public partial class RootUserControlView : UserControl
     {
         protected DataTable mainDataTable;     //
-
+        private bool isHideTitle = false;
         public RootUserControlView()
         {
             InitializeComponent();
@@ -29,6 +29,27 @@ namespace NetBarMS.Views
         protected virtual void RootUserControlView_Disposed(object sender, EventArgs e)
         {
             //System.Console.WriteLine("RootUserControlView_Disposed");
+        }
+
+        [Browsable(true)]
+        [Description("是否隐藏标题")]
+        public bool HideTitle
+        {
+            set
+            {
+                isHideTitle = value;
+                if(isHideTitle)
+                {
+                    this.titleLabel.Hide();
+                }
+                else
+                {
+                    this.titleLabel.Show();
+                }
+            }get
+            {
+                return isHideTitle;
+            }
         }
         #region 控件绘制时触发的方法
         protected virtual void Control_Paint(object sender, PaintEventArgs e)
@@ -55,6 +76,7 @@ namespace NetBarMS.Views
             }
         }
         #endregion
+
         #region 设置Combox的图标和下拉高度字体
         /// <summary>
         /// 设置Combox下拉箭头
@@ -78,7 +100,6 @@ namespace NetBarMS.Views
         }
 
         #endregion
-
 
         #region 初始化TextEdit
         /// <summary>

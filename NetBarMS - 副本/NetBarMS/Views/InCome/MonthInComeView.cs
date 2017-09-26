@@ -1,0 +1,208 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Drawing;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using NetBarMS.Codes.Tools.NetOperation;
+using NetBarMS.Codes.Tools;
+using DevExpress.XtraCharts;
+
+namespace NetBarMS.Views.InCome
+{
+    public partial class MonthInComeView : RootUserControlView
+    {
+        private string start, end;
+        private IList<StructEarn> earns;
+
+
+        public MonthInComeView()
+        {
+            InitializeComponent();
+            InitUI();
+        }
+
+        #region 初始化UI
+        private void InitUI()
+        {
+           
+            this.chartControl1.RuntimeHitTesting = true;
+
+
+            int year = DateTime.Now.Year;
+            int month = DateTime.Now.Month-1;
+            int days = DateTime.DaysInMonth(year, month);
+            start = year+"-"+string.Format("{0:D2}",month)+ "-01 00:00:00";
+            end = year + "-" + string.Format("{0:D2}", month) + "-" + days + " 23:59:59";
+            this.popupContainerEdit1.Text = string.Format("{0}/{1:D2}", year, month);
+
+            GetMonthIncomeDetail();
+        }
+        #endregion
+
+        #region 获取营收详情
+        //获取月营收详情
+        private void GetMonthIncomeDetail()
+        {
+            IncomeNetOperation.GetIncomeDetail(GetIncomeDetailResult, start, end, IncomeType.MONTH_INCOME);
+        }
+        //获取月收入的结果回调
+        private void GetIncomeDetailResult(ResultModel result)
+        {
+            if (result.pack.Cmd != Cmd.CMD_EARNING_MONTH)
+            {
+                return;
+            }
+            NetMessageManage.RemoveResultBlock(GetIncomeDetailResult);
+            System.Console.WriteLine("GetIncomeDetailResult:" + result.pack);
+            if (result.pack.Content.MessageType == 1)
+            {
+                this.earns = result.pack.Content.ScEarning.EarnsList;
+                this.Invoke(new RefreshUIHandle(delegate {
+                    if(this.earns != null && this.earns.Count > 0)
+                    {
+                        IncomeDetail();
+                        IncomeRate(earns[0]);
+                        WxRate(earns[0]);
+                        ZfbRate(earns[0]);
+                        AreaRate(earns[0].AreaTotalList);
+
+                    }
+                }));
+
+            }
+        }
+        #endregion
+
+        #region 数据展示
+        //营收详情
+        private void IncomeDetail()
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("time", typeof(string));
+            dt.Columns.Add("money", typeof(int));
+
+            Series lineseries = this.chartControl1.Series[0];
+            lineseries.ArgumentDataMember = "time";
+            lineseries.ValueDataMembers[0] = "money";
+            lineseries.DataSource = dt;
+
+            for (int i = 1; i <= this.earns.Count; i++)
+            {
+
+                StructEarn earn = this.earns[i - 1];
+                dt.Rows.Add(i + "", earn.CashCharge + earn.CashSale + earn.TenpaySale + earn.TenpayCharge + earn.AlipaySale + earn.AlipayCharge);
+            }
+            this.chartControl1.MouseClick += chartControl_MouseClick;
+        }
+        //条形图点击事件
+        private void chartControl_MouseClick(object sender, MouseEventArgs e)
+        {
+            ChartHitInfo hitInfo = this.chartControl1.CalcHitInfo(e.Location);
+            if (hitInfo.SeriesPoint != null)
+            {
+                StructEarn earn = this.earns[this.chartControl1.Series[0].Points.IndexOf(hitInfo.SeriesPoint)];
+                IncomeRate(earn);
+                WxRate(earn);
+                ZfbRate(earn);
+                AreaRate(earn.AreaTotalList);
+            }
+        }
+        //营收占比
+        private void IncomeRate(StructEarn earn)
+        {
+            //当日营业收入占比
+
+            Series pieseries = this.chartControl2.Series[0];
+            pieseries.ToolTipEnabled = DevExpress.Utils.DefaultBoolean.True;  // 设置鼠标悬浮显示toolTip  
+            pieseries.Points.Clear();
+
+            SeriesPoint p1 = new SeriesPoint("现金", earn.CashCharge + earn.CashSale);
+            SeriesPoint p2 = new SeriesPoint("微信", earn.TenpayCharge + earn.TenpaySale);
+            SeriesPoint p3 = new SeriesPoint("支付宝", earn.AlipayCharge + earn.AlipaySale);
+
+            p1.Color = Color.Blue;
+            p2.Color = Color.Orange;
+            p3.Color = Color.Gray;
+            pieseries.Points.Add(p1);
+            pieseries.Points.Add(p2);
+            pieseries.Points.Add(p3);
+
+        }
+
+        //微信支付占比
+        private void WxRate(StructEarn earn)
+        {
+            //微信收入占比
+            Series wxPieSeries = this.chartControl3.Series[0];
+            wxPieSeries.ToolTipEnabled = DevExpress.Utils.DefaultBoolean.True;  // 设置鼠标悬浮显示toolTip  
+            wxPieSeries.Points.Clear();
+
+            SeriesPoint p1 = new SeriesPoint("充值", earn.TenpayCharge);
+            SeriesPoint p2 = new SeriesPoint("购物", earn.TenpaySale);
+            p1.Color = Color.Blue;
+            p2.Color = Color.Orange;
+            wxPieSeries.Points.Add(p1);
+            wxPieSeries.Points.Add(p2);
+
+        }
+        //支付宝支付占比
+        private void ZfbRate(StructEarn earn)
+        {
+            //支付宝收入占比
+            Series zfbPieSeries = this.chartControl4.Series[0];
+            zfbPieSeries.ToolTipEnabled = DevExpress.Utils.DefaultBoolean.True;  // 设置鼠标悬浮显示toolTip  
+            zfbPieSeries.Points.Clear();
+
+            SeriesPoint p1 = new SeriesPoint("充值", earn.AlipayCharge);
+            SeriesPoint p2 = new SeriesPoint("购物", earn.AlipaySale);
+            p1.Color = Color.Blue;
+            p2.Color = Color.Orange;
+            zfbPieSeries.Points.Add(p1);
+            zfbPieSeries.Points.Add(p2);
+        }
+        //区域收入占比
+        private void AreaRate(IList<StructAreaTotal> areas)
+        {
+            //支付宝收入占比
+            Series areaPieSeries = this.chartControl5.Series[0];
+            areaPieSeries.ToolTipEnabled = DevExpress.Utils.DefaultBoolean.True;  // 设置鼠标悬浮显示toolTip  
+            areaPieSeries.Points.Clear();
+            foreach (StructAreaTotal area in areas)
+            {
+                SeriesPoint p = new SeriesPoint(area.Areaname, area.Amount);
+                areaPieSeries.Points.Add(p);
+            }
+        }
+        #endregion
+
+        #region 功能显示
+        //导出营收详情
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            DateTime time = DateTime.ParseExact(this.start, "yyyy-MM-dd HH:mm:ss", System.Globalization.CultureInfo.CurrentCulture);
+            IncomeDetailView detail = new InCome.IncomeDetailView(IncomeType.MONTH_INCOME, this.earns.ToList<StructEarn>(),time.Year,time.Month);
+            ToolsManage.ShowForm(detail, false);
+        }
+
+      
+
+        //关闭选择菜单
+        private void ComboBoxEdit1_Closed(object sender, DevExpress.XtraEditors.Controls.ClosedEventArgs e)
+        {
+
+            int year, month;
+            this.customMonthDate1.GetCurrentTimeDur(out year, out month);
+            int days = DateTime.DaysInMonth(year, month);
+            start = year + "-" + string.Format("{0:D2}", month) + "-01 00:00:00";
+            end = year + "-" + string.Format("{0:D2}", month) + "-" + days + " 23:59:59";
+            this.popupContainerEdit1.Text = string.Format("{0}/{1:D2}", year, month);
+
+            GetMonthIncomeDetail();
+        }
+        #endregion
+    }
+}

@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductIndentView));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductIndentView));
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             this.closeButton = new System.Windows.Forms.Button();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -45,6 +45,7 @@
             this.dateNavigator2 = new DevExpress.XtraScheduler.DateNavigator();
             this.buttonEdit1 = new DevExpress.XtraEditors.ButtonEdit();
             this.pageView1 = new NetBarMS.Views.CustomView.PageView();
+            this.titlePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
@@ -62,11 +63,23 @@
             ((System.ComponentModel.ISupportInitialize)(this.buttonEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
-            // titlePanelView1
+            // titlePanel
             // 
-            this.titlePanelView1.ShowCloseButton = false;
-            this.titlePanelView1.Size = new System.Drawing.Size(1451, 78);
-            this.titlePanelView1.Title = "商品订单查询";
+            this.titlePanel.Controls.Add(this.buttonEdit1);
+            this.titlePanel.Controls.Add(this.popupContainerEdit3);
+            this.titlePanel.Controls.Add(this.comboBoxEdit1);
+            this.titlePanel.Controls.Add(this.popupContainerEdit2);
+            this.titlePanel.Size = new System.Drawing.Size(1451, 40);
+            this.titlePanel.Controls.SetChildIndex(this.popupContainerEdit2, 0);
+            this.titlePanel.Controls.SetChildIndex(this.comboBoxEdit1, 0);
+            this.titlePanel.Controls.SetChildIndex(this.popupContainerEdit3, 0);
+            this.titlePanel.Controls.SetChildIndex(this.titleLabel, 0);
+            this.titlePanel.Controls.SetChildIndex(this.buttonEdit1, 0);
+            // 
+            // titleLabel
+            // 
+            this.titleLabel.Size = new System.Drawing.Size(97, 14);
+            this.titleLabel.Text = "商品订单查询";
             // 
             // closeButton
             // 
@@ -83,10 +96,10 @@
             this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridControl1.Location = new System.Drawing.Point(0, 78);
+            this.gridControl1.Location = new System.Drawing.Point(0, 46);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1451, 612);
+            this.gridControl1.Size = new System.Drawing.Size(1451, 713);
             this.gridControl1.TabIndex = 75;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1,
@@ -105,9 +118,9 @@
             // 
             // comboBoxEdit1
             // 
-            this.comboBoxEdit1.Location = new System.Drawing.Point(157, 19);
+            this.comboBoxEdit1.Location = new System.Drawing.Point(127, 8);
             this.comboBoxEdit1.Name = "comboBoxEdit1";
-            this.comboBoxEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.comboBoxEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.comboBoxEdit1.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
             this.comboBoxEdit1.Properties.Appearance.Options.UseFont = true;
             this.comboBoxEdit1.Properties.Appearance.Options.UseForeColor = true;
@@ -116,24 +129,24 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.comboBoxEdit1.Properties.NullText = "按状态查询";
             this.comboBoxEdit1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit1.Size = new System.Drawing.Size(272, 40);
+            this.comboBoxEdit1.Size = new System.Drawing.Size(180, 25);
             this.comboBoxEdit1.TabIndex = 3;
             this.comboBoxEdit1.SelectedIndexChanged += new System.EventHandler(this.comboBoxEdit1_SelectedIndexChanged);
             // 
             // popupContainerEdit2
             // 
-            this.popupContainerEdit2.Location = new System.Drawing.Point(445, 19);
+            this.popupContainerEdit2.Location = new System.Drawing.Point(323, 8);
             this.popupContainerEdit2.Name = "popupContainerEdit2";
-            this.popupContainerEdit2.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.popupContainerEdit2.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.popupContainerEdit2.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
             this.popupContainerEdit2.Properties.Appearance.Options.UseFont = true;
             this.popupContainerEdit2.Properties.Appearance.Options.UseForeColor = true;
             this.popupContainerEdit2.Properties.AutoHeight = false;
             this.popupContainerEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("popupContainerEdit2.Properties.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("popupContainerEdit2.Properties.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject3, "", null, null, true)});
             this.popupContainerEdit2.Properties.NullText = "按下单时间段查询";
             this.popupContainerEdit2.Properties.PopupControl = this.popupContainerControl1;
-            this.popupContainerEdit2.Size = new System.Drawing.Size(272, 40);
+            this.popupContainerEdit2.Size = new System.Drawing.Size(180, 25);
             this.popupContainerEdit2.TabIndex = 1;
             this.popupContainerEdit2.Closed += new DevExpress.XtraEditors.Controls.ClosedEventHandler(this.PopupContainerEdit1_Closed);
             // 
@@ -162,9 +175,9 @@
             // 
             // popupContainerEdit3
             // 
-            this.popupContainerEdit3.Location = new System.Drawing.Point(733, 19);
+            this.popupContainerEdit3.Location = new System.Drawing.Point(519, 8);
             this.popupContainerEdit3.Name = "popupContainerEdit3";
-            this.popupContainerEdit3.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.popupContainerEdit3.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.popupContainerEdit3.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
             this.popupContainerEdit3.Properties.Appearance.Options.UseFont = true;
             this.popupContainerEdit3.Properties.Appearance.Options.UseForeColor = true;
@@ -173,7 +186,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("popupContainerEdit3.Properties.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true)});
             this.popupContainerEdit3.Properties.NullText = "按处理时间段查询";
             this.popupContainerEdit3.Properties.PopupControl = this.popupContainerControl2;
-            this.popupContainerEdit3.Size = new System.Drawing.Size(272, 40);
+            this.popupContainerEdit3.Size = new System.Drawing.Size(180, 25);
             this.popupContainerEdit3.TabIndex = 2;
             this.popupContainerEdit3.Closed += new DevExpress.XtraEditors.Controls.ClosedEventHandler(this.PopupContainerEdit1_Closed);
             // 
@@ -202,29 +215,28 @@
             // 
             // buttonEdit1
             // 
-            this.buttonEdit1.Location = new System.Drawing.Point(1021, 19);
+            this.buttonEdit1.Location = new System.Drawing.Point(715, 8);
             this.buttonEdit1.Name = "buttonEdit1";
-            this.buttonEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.buttonEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.buttonEdit1.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
             this.buttonEdit1.Properties.Appearance.Options.UseFont = true;
             this.buttonEdit1.Properties.Appearance.Options.UseForeColor = true;
             this.buttonEdit1.Properties.AutoHeight = false;
-            serializableAppearanceObject3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(229)))), ((int)(((byte)(248)))));
-            serializableAppearanceObject3.Options.UseBackColor = true;
+            serializableAppearanceObject1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(229)))), ((int)(((byte)(248)))));
+            serializableAppearanceObject1.Options.UseBackColor = true;
             this.buttonEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::NetBarMS.Imgs.icon_sousuo, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject3, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::NetBarMS.Imgs.icon_sousuo, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
             this.buttonEdit1.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.buttonEdit1.Properties.NullText = "输入会员名称、身份证号查询";
-            this.buttonEdit1.Size = new System.Drawing.Size(272, 40);
+            this.buttonEdit1.Size = new System.Drawing.Size(180, 25);
             this.buttonEdit1.TabIndex = 4;
             this.buttonEdit1.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.ButtonEdit1_ButtonClick);
             // 
             // pageView1
             // 
-            this.pageView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.pageView1.BackColor = System.Drawing.Color.Transparent;
-            this.pageView1.Location = new System.Drawing.Point(3, 696);
+            this.pageView1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pageView1.Location = new System.Drawing.Point(0, 765);
             this.pageView1.Name = "pageView1";
             this.pageView1.Size = new System.Drawing.Size(1451, 40);
             this.pageView1.TabIndex = 78;
@@ -233,25 +245,19 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.buttonEdit1);
-            this.Controls.Add(this.popupContainerEdit3);
-            this.Controls.Add(this.popupContainerEdit2);
-            this.Controls.Add(this.comboBoxEdit1);
             this.Controls.Add(this.pageView1);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.popupContainerControl1);
             this.Controls.Add(this.popupContainerControl2);
             this.Name = "ProductIndentView";
             this.Size = new System.Drawing.Size(1451, 805);
-            this.Controls.SetChildIndex(this.titlePanelView1, 0);
+            this.Controls.SetChildIndex(this.titlePanel, 0);
             this.Controls.SetChildIndex(this.popupContainerControl2, 0);
             this.Controls.SetChildIndex(this.popupContainerControl1, 0);
             this.Controls.SetChildIndex(this.gridControl1, 0);
             this.Controls.SetChildIndex(this.pageView1, 0);
-            this.Controls.SetChildIndex(this.comboBoxEdit1, 0);
-            this.Controls.SetChildIndex(this.popupContainerEdit2, 0);
-            this.Controls.SetChildIndex(this.popupContainerEdit3, 0);
-            this.Controls.SetChildIndex(this.buttonEdit1, 0);
+            this.titlePanel.ResumeLayout(false);
+            this.titlePanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).EndInit();

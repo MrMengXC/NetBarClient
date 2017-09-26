@@ -36,12 +36,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pwTextEdit.Properties)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // titlePanelView1
-            // 
-            this.titlePanelView1.ShowCloseButton = false;
-            this.titlePanelView1.Size = new System.Drawing.Size(803, 78);
-            this.titlePanelView1.Title = "上网密码设置";
+            
             // 
             // saveButton
             // 
@@ -109,7 +104,6 @@
             this.Controls.Add(this.saveButton);
             this.Name = "NetPassWordView";
             this.Size = new System.Drawing.Size(803, 398);
-            this.Controls.SetChildIndex(this.titlePanelView1, 0);
             this.Controls.SetChildIndex(this.saveButton, 0);
             this.Controls.SetChildIndex(this.tableLayoutPanel1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pwCheckEdit.Properties)).EndInit();

@@ -32,26 +32,33 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.addManagerButton = new DevExpress.XtraEditors.SimpleButton();
+            this.titlePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // titlePanelView1
+            // titlePanel
             // 
-            this.titlePanelView1.ShowCloseButton = false;
-            this.titlePanelView1.Size = new System.Drawing.Size(676, 78);
-            this.titlePanelView1.Title = "员工列表";
+            this.titlePanel.Controls.Add(this.addManagerButton);
+            this.titlePanel.Size = new System.Drawing.Size(676, 40);
+            this.titlePanel.Controls.SetChildIndex(this.titleLabel, 0);
+            this.titlePanel.Controls.SetChildIndex(this.addManagerButton, 0);
+            // 
+            // titleLabel
+            // 
+            this.titleLabel.Size = new System.Drawing.Size(67, 14);
+            this.titleLabel.Text = "员工列表";
             // 
             // gridControl1
             // 
             this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridControl1.Location = new System.Drawing.Point(0, 78);
+            this.gridControl1.Location = new System.Drawing.Point(0, 46);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(676, 612);
+            this.gridControl1.Size = new System.Drawing.Size(676, 756);
             this.gridControl1.TabIndex = 80;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1,
@@ -72,17 +79,16 @@
             // 
             this.addManagerButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.addManagerButton.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(229)))), ((int)(((byte)(248)))));
-            this.addManagerButton.Appearance.Font = new System.Drawing.Font("Tahoma", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.addManagerButton.Appearance.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.addManagerButton.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(146)))), ((int)(((byte)(194)))));
             this.addManagerButton.Appearance.Options.UseBackColor = true;
             this.addManagerButton.Appearance.Options.UseFont = true;
             this.addManagerButton.Appearance.Options.UseForeColor = true;
             this.addManagerButton.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.addManagerButton.Image = global::NetBarMS.Imgs.icon_tianjia;
-            this.addManagerButton.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.addManagerButton.Location = new System.Drawing.Point(575, 19);
+            this.addManagerButton.Location = new System.Drawing.Point(608, 8);
             this.addManagerButton.Name = "addManagerButton";
-            this.addManagerButton.Size = new System.Drawing.Size(88, 40);
+            this.addManagerButton.Size = new System.Drawing.Size(55, 25);
             this.addManagerButton.TabIndex = 81;
             this.addManagerButton.Text = "添加";
             this.addManagerButton.Click += new System.EventHandler(this.addManagerButton_Click);
@@ -91,13 +97,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.addManagerButton);
             this.Controls.Add(this.gridControl1);
             this.Name = "StaffListView";
             this.Size = new System.Drawing.Size(676, 805);
-            this.Controls.SetChildIndex(this.titlePanelView1, 0);
+            this.Controls.SetChildIndex(this.titlePanel, 0);
             this.Controls.SetChildIndex(this.gridControl1, 0);
-            this.Controls.SetChildIndex(this.addManagerButton, 0);
+            this.titlePanel.ResumeLayout(false);
+            this.titlePanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).EndInit();

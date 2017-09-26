@@ -82,12 +82,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // titlePanelView1
-            // 
-            this.titlePanelView1.ShowCloseButton = false;
-            this.titlePanelView1.Size = new System.Drawing.Size(1657, 78);
-            this.titlePanelView1.Title = "备份设置";
+          
             // 
             // labelControl4
             // 
@@ -527,7 +522,6 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "BackUpManageView";
             this.Size = new System.Drawing.Size(1657, 942);
-            this.Controls.SetChildIndex(this.titlePanelView1, 0);
             this.Controls.SetChildIndex(this.tableLayoutPanel1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();

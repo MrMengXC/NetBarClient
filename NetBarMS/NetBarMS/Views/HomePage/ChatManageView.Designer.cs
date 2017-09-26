@@ -50,12 +50,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // titlePanelView1
-            // 
-            this.titlePanelView1.ShowCloseButton = false;
-            this.titlePanelView1.Size = new System.Drawing.Size(1441, 78);
-            this.titlePanelView1.Title = "聊天管理";
+           
             // 
             // panel2
             // 
@@ -214,7 +209,6 @@
             this.Controls.Add(this.panel2);
             this.Name = "ChatManageView";
             this.Size = new System.Drawing.Size(1441, 790);
-            this.Controls.SetChildIndex(this.titlePanelView1, 0);
             this.Controls.SetChildIndex(this.panel2, 0);
             this.Controls.SetChildIndex(this.panel3, 0);
             this.panel2.ResumeLayout(false);

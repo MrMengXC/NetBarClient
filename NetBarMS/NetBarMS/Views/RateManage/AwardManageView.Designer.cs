@@ -29,7 +29,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AwardManageView));
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -61,6 +60,7 @@
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridView5 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.titlePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
@@ -90,21 +90,24 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView5)).BeginInit();
             this.SuspendLayout();
             // 
-            // titlePanelView1
+            // titlePanel
             // 
-            this.titlePanelView1.ShowCloseButton = false;
-            this.titlePanelView1.Size = new System.Drawing.Size(1606, 78);
-            this.titlePanelView1.Title = "充值奖励管理";
+            this.titlePanel.Size = new System.Drawing.Size(1606, 40);
+            // 
+            // titleLabel
+            // 
+            this.titleLabel.Size = new System.Drawing.Size(97, 14);
+            this.titleLabel.Text = "充值奖励设置";
             // 
             // gridControl1
             // 
             this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridControl1.Location = new System.Drawing.Point(0, 125);
+            this.gridControl1.Location = new System.Drawing.Point(0, 76);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(782, 599);
+            this.gridControl1.Size = new System.Drawing.Size(792, 748);
             this.gridControl1.TabIndex = 82;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1,
@@ -129,13 +132,13 @@
             this.nUpdateButton.Appearance.Options.UseBackColor = true;
             this.nUpdateButton.Appearance.Options.UseForeColor = true;
             this.nUpdateButton.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.nUpdateButton.Image = ((System.Drawing.Image)(resources.GetObject("nUpdateButton.Image")));
+            this.nUpdateButton.Image = global::NetBarMS.Imgs.img_xiugai;
             this.nUpdateButton.ImageIndex = 0;
             this.nUpdateButton.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
             this.nUpdateButton.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.nUpdateButton.Location = new System.Drawing.Point(694, 739);
+            this.nUpdateButton.Location = new System.Drawing.Point(734, 837);
             this.nUpdateButton.Name = "nUpdateButton";
-            this.nUpdateButton.Size = new System.Drawing.Size(88, 40);
+            this.nUpdateButton.Size = new System.Drawing.Size(55, 25);
             this.nUpdateButton.TabIndex = 6;
             this.nUpdateButton.Text = "修改";
             this.nUpdateButton.Click += new System.EventHandler(this.update_Click);
@@ -148,13 +151,13 @@
             this.nDeleteButton.Appearance.Options.UseBackColor = true;
             this.nDeleteButton.Appearance.Options.UseForeColor = true;
             this.nDeleteButton.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.nDeleteButton.Image = ((System.Drawing.Image)(resources.GetObject("nDeleteButton.Image")));
+            this.nDeleteButton.Image = global::NetBarMS.Imgs.icon_shanchu;
             this.nDeleteButton.ImageIndex = 0;
             this.nDeleteButton.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
             this.nDeleteButton.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.nDeleteButton.Location = new System.Drawing.Point(591, 739);
+            this.nDeleteButton.Location = new System.Drawing.Point(666, 837);
             this.nDeleteButton.Name = "nDeleteButton";
-            this.nDeleteButton.Size = new System.Drawing.Size(88, 40);
+            this.nDeleteButton.Size = new System.Drawing.Size(55, 25);
             this.nDeleteButton.TabIndex = 5;
             this.nDeleteButton.Text = "删除";
             this.nDeleteButton.Click += new System.EventHandler(this.DeletAward_Click);
@@ -166,48 +169,48 @@
             this.nAddButton.Appearance.Options.UseBackColor = true;
             this.nAddButton.Appearance.Options.UseForeColor = true;
             this.nAddButton.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.nAddButton.Image = ((System.Drawing.Image)(resources.GetObject("nAddButton.Image")));
+            this.nAddButton.Image = global::NetBarMS.Imgs.icon_tianjia;
             this.nAddButton.ImageIndex = 0;
             this.nAddButton.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
             this.nAddButton.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.nAddButton.Location = new System.Drawing.Point(691, 3);
+            this.nAddButton.Location = new System.Drawing.Point(587, 3);
             this.nAddButton.Name = "nAddButton";
-            this.nAddButton.Size = new System.Drawing.Size(88, 40);
+            this.nAddButton.Size = new System.Drawing.Size(55, 25);
             this.nAddButton.TabIndex = 4;
             this.nAddButton.Text = "添加";
             this.nAddButton.Click += new System.EventHandler(this.AddAward_Click);
             // 
             // nGiveTextEdit
             // 
-            this.nGiveTextEdit.Location = new System.Drawing.Point(347, 3);
+            this.nGiveTextEdit.Location = new System.Drawing.Point(295, 3);
             this.nGiveTextEdit.Name = "nGiveTextEdit";
-            this.nGiveTextEdit.Properties.Appearance.Font = new System.Drawing.Font("MS UI Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.nGiveTextEdit.Properties.Appearance.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.nGiveTextEdit.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
             this.nGiveTextEdit.Properties.Appearance.Options.UseFont = true;
             this.nGiveTextEdit.Properties.Appearance.Options.UseForeColor = true;
             this.nGiveTextEdit.Properties.AutoHeight = false;
             this.nGiveTextEdit.Properties.NullText = "请输入赠送金额";
-            this.nGiveTextEdit.Size = new System.Drawing.Size(150, 40);
+            this.nGiveTextEdit.Size = new System.Drawing.Size(140, 25);
             this.nGiveTextEdit.TabIndex = 3;
             // 
             // nRechargeTextEdit
             // 
-            this.nRechargeTextEdit.Location = new System.Drawing.Point(191, 3);
+            this.nRechargeTextEdit.Location = new System.Drawing.Point(149, 3);
             this.nRechargeTextEdit.Name = "nRechargeTextEdit";
-            this.nRechargeTextEdit.Properties.Appearance.Font = new System.Drawing.Font("MS UI Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.nRechargeTextEdit.Properties.Appearance.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.nRechargeTextEdit.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
             this.nRechargeTextEdit.Properties.Appearance.Options.UseFont = true;
             this.nRechargeTextEdit.Properties.Appearance.Options.UseForeColor = true;
             this.nRechargeTextEdit.Properties.AutoHeight = false;
             this.nRechargeTextEdit.Properties.NullText = "请输入充值金额";
-            this.nRechargeTextEdit.Size = new System.Drawing.Size(150, 40);
+            this.nRechargeTextEdit.Size = new System.Drawing.Size(140, 25);
             this.nRechargeTextEdit.TabIndex = 2;
             // 
             // comboBoxEdit1
             // 
             this.comboBoxEdit1.Location = new System.Drawing.Point(3, 3);
             this.comboBoxEdit1.Name = "comboBoxEdit1";
-            this.comboBoxEdit1.Properties.Appearance.Font = new System.Drawing.Font("MS UI Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.comboBoxEdit1.Properties.Appearance.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.comboBoxEdit1.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
             this.comboBoxEdit1.Properties.Appearance.Options.UseFont = true;
             this.comboBoxEdit1.Properties.Appearance.Options.UseForeColor = true;
@@ -215,27 +218,29 @@
             this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.comboBoxEdit1.Properties.NullText = "请选择会员类型";
-            this.comboBoxEdit1.Size = new System.Drawing.Size(182, 40);
+            this.comboBoxEdit1.Size = new System.Drawing.Size(140, 25);
             this.comboBoxEdit1.TabIndex = 0;
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel1.Controls.Add(this.comboBoxEdit1);
             this.flowLayoutPanel1.Controls.Add(this.nRechargeTextEdit);
             this.flowLayoutPanel1.Controls.Add(this.nGiveTextEdit);
             this.flowLayoutPanel1.Controls.Add(this.popupContainerEdit1);
             this.flowLayoutPanel1.Controls.Add(this.nAddButton);
             this.flowLayoutPanel1.Controls.Add(this.popupContainerControl1);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 73);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 38);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(791, 50);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(791, 38);
             this.flowLayoutPanel1.TabIndex = 83;
             // 
             // popupContainerEdit1
             // 
-            this.popupContainerEdit1.Location = new System.Drawing.Point(503, 3);
+            this.popupContainerEdit1.Location = new System.Drawing.Point(441, 3);
             this.popupContainerEdit1.Name = "popupContainerEdit1";
-            this.popupContainerEdit1.Properties.Appearance.Font = new System.Drawing.Font("MS UI Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.popupContainerEdit1.Properties.Appearance.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.popupContainerEdit1.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
             this.popupContainerEdit1.Properties.Appearance.Options.UseFont = true;
             this.popupContainerEdit1.Properties.Appearance.Options.UseForeColor = true;
@@ -244,14 +249,14 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.popupContainerEdit1.Properties.NullText = "请选择时间段进行查询";
             this.popupContainerEdit1.Properties.PopupControl = this.popupContainerControl1;
-            this.popupContainerEdit1.Size = new System.Drawing.Size(182, 40);
+            this.popupContainerEdit1.Size = new System.Drawing.Size(140, 25);
             this.popupContainerEdit1.TabIndex = 5;
             this.popupContainerEdit1.Closed += new DevExpress.XtraEditors.Controls.ClosedEventHandler(this.ContainerEdit_Closed);
             // 
             // popupContainerControl1
             // 
             this.popupContainerControl1.Controls.Add(this.dateNavigator);
-            this.popupContainerControl1.Location = new System.Drawing.Point(3, 49);
+            this.popupContainerControl1.Location = new System.Drawing.Point(3, 34);
             this.popupContainerControl1.Name = "popupContainerControl1";
             this.popupContainerControl1.Size = new System.Drawing.Size(288, 261);
             this.popupContainerControl1.TabIndex = 6;
@@ -284,12 +289,12 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel2, 2, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(10, 88);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 43);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1586, 841);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1606, 886);
             this.tableLayoutPanel1.TabIndex = 66;
             // 
             // panel1
@@ -303,19 +308,19 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(782, 835);
+            this.panel1.Size = new System.Drawing.Size(792, 880);
             this.panel1.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.label1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(782, 70);
+            this.label1.Size = new System.Drawing.Size(792, 35);
             this.label1.TabIndex = 84;
             this.label1.Text = "充值奖励设置";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -328,21 +333,21 @@
             this.panel2.Controls.Add(this.flowLayoutPanel3);
             this.panel2.Controls.Add(this.gridControl2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(801, 3);
+            this.panel2.Location = new System.Drawing.Point(811, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(782, 835);
+            this.panel2.Size = new System.Drawing.Size(792, 880);
             this.panel2.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label2.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.label2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Margin = new System.Windows.Forms.Padding(0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(782, 70);
+            this.label2.Size = new System.Drawing.Size(792, 35);
             this.label2.TabIndex = 85;
             this.label2.Text = "会员日奖励设置";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -359,9 +364,9 @@
             this.mUpdateButton.ImageIndex = 0;
             this.mUpdateButton.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
             this.mUpdateButton.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.mUpdateButton.Location = new System.Drawing.Point(694, 739);
+            this.mUpdateButton.Location = new System.Drawing.Point(734, 837);
             this.mUpdateButton.Name = "mUpdateButton";
-            this.mUpdateButton.Size = new System.Drawing.Size(88, 40);
+            this.mUpdateButton.Size = new System.Drawing.Size(55, 25);
             this.mUpdateButton.TabIndex = 6;
             this.mUpdateButton.Text = "修改";
             this.mUpdateButton.Click += new System.EventHandler(this.update_Click);
@@ -378,9 +383,9 @@
             this.mDeleteButton.ImageIndex = 0;
             this.mDeleteButton.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
             this.mDeleteButton.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.mDeleteButton.Location = new System.Drawing.Point(588, 739);
+            this.mDeleteButton.Location = new System.Drawing.Point(666, 837);
             this.mDeleteButton.Name = "mDeleteButton";
-            this.mDeleteButton.Size = new System.Drawing.Size(88, 40);
+            this.mDeleteButton.Size = new System.Drawing.Size(55, 25);
             this.mDeleteButton.TabIndex = 5;
             this.mDeleteButton.Text = "删除";
             this.mDeleteButton.Click += new System.EventHandler(this.DeletAward_Click);
@@ -393,16 +398,16 @@
             this.flowLayoutPanel3.Controls.Add(this.popupContainerEdit2);
             this.flowLayoutPanel3.Controls.Add(this.mAddButton);
             this.flowLayoutPanel3.Controls.Add(this.popupContainerControl2);
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(0, 73);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(0, 38);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(814, 50);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(791, 38);
             this.flowLayoutPanel3.TabIndex = 83;
             // 
             // comboBoxEdit3
             // 
             this.comboBoxEdit3.Location = new System.Drawing.Point(3, 3);
             this.comboBoxEdit3.Name = "comboBoxEdit3";
-            this.comboBoxEdit3.Properties.Appearance.Font = new System.Drawing.Font("MS UI Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.comboBoxEdit3.Properties.Appearance.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.comboBoxEdit3.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
             this.comboBoxEdit3.Properties.Appearance.Options.UseFont = true;
             this.comboBoxEdit3.Properties.Appearance.Options.UseForeColor = true;
@@ -410,40 +415,40 @@
             this.comboBoxEdit3.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.comboBoxEdit3.Properties.NullText = "请选择会员类型";
-            this.comboBoxEdit3.Size = new System.Drawing.Size(182, 40);
+            this.comboBoxEdit3.Size = new System.Drawing.Size(140, 25);
             this.comboBoxEdit3.TabIndex = 0;
             // 
             // mRechargeTextEdit
             // 
-            this.mRechargeTextEdit.Location = new System.Drawing.Point(191, 3);
+            this.mRechargeTextEdit.Location = new System.Drawing.Point(149, 3);
             this.mRechargeTextEdit.Name = "mRechargeTextEdit";
-            this.mRechargeTextEdit.Properties.Appearance.Font = new System.Drawing.Font("MS UI Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.mRechargeTextEdit.Properties.Appearance.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.mRechargeTextEdit.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
             this.mRechargeTextEdit.Properties.Appearance.Options.UseFont = true;
             this.mRechargeTextEdit.Properties.Appearance.Options.UseForeColor = true;
             this.mRechargeTextEdit.Properties.AutoHeight = false;
             this.mRechargeTextEdit.Properties.NullText = "请输入充值金额";
-            this.mRechargeTextEdit.Size = new System.Drawing.Size(150, 40);
+            this.mRechargeTextEdit.Size = new System.Drawing.Size(140, 25);
             this.mRechargeTextEdit.TabIndex = 2;
             // 
             // mGiveTextEdit
             // 
-            this.mGiveTextEdit.Location = new System.Drawing.Point(347, 3);
+            this.mGiveTextEdit.Location = new System.Drawing.Point(295, 3);
             this.mGiveTextEdit.Name = "mGiveTextEdit";
-            this.mGiveTextEdit.Properties.Appearance.Font = new System.Drawing.Font("MS UI Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.mGiveTextEdit.Properties.Appearance.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.mGiveTextEdit.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
             this.mGiveTextEdit.Properties.Appearance.Options.UseFont = true;
             this.mGiveTextEdit.Properties.Appearance.Options.UseForeColor = true;
             this.mGiveTextEdit.Properties.AutoHeight = false;
             this.mGiveTextEdit.Properties.NullText = "请输入赠送金额";
-            this.mGiveTextEdit.Size = new System.Drawing.Size(150, 40);
+            this.mGiveTextEdit.Size = new System.Drawing.Size(140, 25);
             this.mGiveTextEdit.TabIndex = 3;
             // 
             // popupContainerEdit2
             // 
-            this.popupContainerEdit2.Location = new System.Drawing.Point(503, 3);
+            this.popupContainerEdit2.Location = new System.Drawing.Point(441, 3);
             this.popupContainerEdit2.Name = "popupContainerEdit2";
-            this.popupContainerEdit2.Properties.Appearance.Font = new System.Drawing.Font("MS UI Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.popupContainerEdit2.Properties.Appearance.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.popupContainerEdit2.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
             this.popupContainerEdit2.Properties.Appearance.Options.UseFont = true;
             this.popupContainerEdit2.Properties.Appearance.Options.UseForeColor = true;
@@ -452,14 +457,14 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.popupContainerEdit2.Properties.NullText = "请选择时间段进行查询";
             this.popupContainerEdit2.Properties.PopupControl = this.popupContainerControl2;
-            this.popupContainerEdit2.Size = new System.Drawing.Size(182, 40);
+            this.popupContainerEdit2.Size = new System.Drawing.Size(140, 25);
             this.popupContainerEdit2.TabIndex = 6;
             this.popupContainerEdit2.Closed += new DevExpress.XtraEditors.Controls.ClosedEventHandler(this.ContainerEdit_Closed);
             // 
             // popupContainerControl2
             // 
             this.popupContainerControl2.Controls.Add(this.dateNavigator1);
-            this.popupContainerControl2.Location = new System.Drawing.Point(3, 49);
+            this.popupContainerControl2.Location = new System.Drawing.Point(3, 34);
             this.popupContainerControl2.Name = "popupContainerControl2";
             this.popupContainerControl2.Size = new System.Drawing.Size(288, 261);
             this.popupContainerControl2.TabIndex = 7;
@@ -487,13 +492,13 @@
             this.mAddButton.Appearance.Options.UseBackColor = true;
             this.mAddButton.Appearance.Options.UseForeColor = true;
             this.mAddButton.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.mAddButton.Image = ((System.Drawing.Image)(resources.GetObject("mAddButton.Image")));
+            this.mAddButton.Image = global::NetBarMS.Imgs.icon_tianjia;
             this.mAddButton.ImageIndex = 0;
             this.mAddButton.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
             this.mAddButton.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.mAddButton.Location = new System.Drawing.Point(691, 3);
+            this.mAddButton.Location = new System.Drawing.Point(587, 3);
             this.mAddButton.Name = "mAddButton";
-            this.mAddButton.Size = new System.Drawing.Size(88, 40);
+            this.mAddButton.Size = new System.Drawing.Size(55, 25);
             this.mAddButton.TabIndex = 4;
             this.mAddButton.Text = "添加";
             this.mAddButton.Click += new System.EventHandler(this.AddAward_Click);
@@ -503,10 +508,10 @@
             this.gridControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridControl2.Location = new System.Drawing.Point(0, 140);
+            this.gridControl2.Location = new System.Drawing.Point(0, 76);
             this.gridControl2.MainView = this.gridView4;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(779, 584);
+            this.gridControl2.Size = new System.Drawing.Size(789, 748);
             this.gridControl2.TabIndex = 82;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView4,
@@ -531,8 +536,10 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "AwardManageView";
             this.Size = new System.Drawing.Size(1606, 942);
-            this.Controls.SetChildIndex(this.titlePanelView1, 0);
+            this.Controls.SetChildIndex(this.titlePanel, 0);
             this.Controls.SetChildIndex(this.tableLayoutPanel1, 0);
+            this.titlePanel.ResumeLayout(false);
+            this.titlePanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).EndInit();
