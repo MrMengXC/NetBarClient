@@ -47,21 +47,21 @@
             // 
             // titlePanel
             // 
-            this.titlePanel.Size = new System.Drawing.Size(560, 50);
+            this.titlePanel.Size = new System.Drawing.Size(466, 40);
+            // 
+            // titleLabel
+            // 
+            this.titleLabel.Size = new System.Drawing.Size(53, 12);
+            this.titleLabel.Text = "用户下机";
+            this.titleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // closeBtn
             // 
             this.closeBtn.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.closeBtn.Appearance.Options.UseBackColor = true;
-            this.closeBtn.Location = new System.Drawing.Point(513, 0);
+            this.closeBtn.Location = new System.Drawing.Point(419, 0);
             this.closeBtn.LookAndFeel.SkinMaskColor = System.Drawing.Color.Transparent;
             this.closeBtn.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.closeBtn.Size = new System.Drawing.Size(47, 50);
-            // 
-            // bottomPanel
-            // 
-            this.bottomPanel.Location = new System.Drawing.Point(0, 399);
-            this.bottomPanel.Size = new System.Drawing.Size(445, 64);
             // 
             // panel1
             // 
@@ -69,9 +69,9 @@
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.flowLayoutPanel1);
             this.panel1.Controls.Add(this.pictureEdit1);
-            this.panel1.Location = new System.Drawing.Point(66, 60);
+            this.panel1.Location = new System.Drawing.Point(19, 60);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(431, 292);
+            this.panel1.Size = new System.Drawing.Size(428, 287);
             this.panel1.TabIndex = 63;
             // 
             // flowLayoutPanel1
@@ -94,6 +94,7 @@
             // 
             // label1
             // 
+            this.label1.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
             this.label1.Location = new System.Drawing.Point(5, 5);
             this.label1.Margin = new System.Windows.Forms.Padding(5);
             this.label1.Name = "label1";
@@ -104,6 +105,7 @@
             // 
             // label2
             // 
+            this.label2.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
             this.label2.Location = new System.Drawing.Point(5, 38);
             this.label2.Margin = new System.Windows.Forms.Padding(5);
             this.label2.Name = "label2";
@@ -114,6 +116,7 @@
             // 
             // label3
             // 
+            this.label3.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
             this.label3.Location = new System.Drawing.Point(5, 71);
             this.label3.Margin = new System.Windows.Forms.Padding(5);
             this.label3.Name = "label3";
@@ -124,6 +127,7 @@
             // 
             // label4
             // 
+            this.label4.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(27)))), ((int)(((byte)(12)))));
             this.label4.Location = new System.Drawing.Point(5, 104);
             this.label4.Margin = new System.Windows.Forms.Padding(5);
@@ -135,6 +139,7 @@
             // 
             // label5
             // 
+            this.label5.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
             this.label5.Location = new System.Drawing.Point(5, 137);
             this.label5.Margin = new System.Windows.Forms.Padding(5);
             this.label5.Name = "label5";
@@ -145,6 +150,7 @@
             // 
             // label6
             // 
+            this.label6.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
             this.label6.Location = new System.Drawing.Point(5, 170);
             this.label6.Margin = new System.Windows.Forms.Padding(5);
             this.label6.Name = "label6";
@@ -155,6 +161,7 @@
             // 
             // label7
             // 
+            this.label7.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
             this.label7.Location = new System.Drawing.Point(5, 203);
             this.label7.Margin = new System.Windows.Forms.Padding(5);
             this.label7.Name = "label7";
@@ -165,6 +172,7 @@
             // 
             // label8
             // 
+            this.label8.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
             this.label8.Location = new System.Drawing.Point(5, 236);
             this.label8.Margin = new System.Windows.Forms.Padding(5);
             this.label8.Name = "label8";
@@ -175,7 +183,8 @@
             // 
             // pictureEdit1
             // 
-            this.pictureEdit1.Location = new System.Drawing.Point(328, 16);
+            this.pictureEdit1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureEdit1.Location = new System.Drawing.Point(318, 16);
             this.pictureEdit1.Name = "pictureEdit1";
             this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEdit1.Size = new System.Drawing.Size(100, 135);
@@ -188,7 +197,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "UserCloseCpView";
             this.ShowBottom = false;
-            this.Size = new System.Drawing.Size(560, 368);
+            this.Size = new System.Drawing.Size(466, 369);
             this.Controls.SetChildIndex(this.bottomPanel, 0);
             this.Controls.SetChildIndex(this.titlePanel, 0);
             this.Controls.SetChildIndex(this.panel1, 0);

@@ -51,6 +51,11 @@
             this.titlePanel.Controls.SetChildIndex(this.titleLabel, 0);
             this.titlePanel.Controls.SetChildIndex(this.comboBoxEdit2, 0);
             // 
+            // titleLabel
+            // 
+            this.titleLabel.Size = new System.Drawing.Size(97, 14);
+            this.titleLabel.Text = "商品销售排行";
+            // 
             // gridControl1
             // 
             this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -59,7 +64,7 @@
             this.gridControl1.Location = new System.Drawing.Point(0, 46);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1084, 709);
+            this.gridControl1.Size = new System.Drawing.Size(1084, 723);
             this.gridControl1.TabIndex = 79;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1,
@@ -78,9 +83,9 @@
             // 
             // comboBoxEdit1
             // 
-            this.comboBoxEdit1.Location = new System.Drawing.Point(124, 3);
+            this.comboBoxEdit1.Location = new System.Drawing.Point(127, 8);
             this.comboBoxEdit1.Name = "comboBoxEdit1";
-            this.comboBoxEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.comboBoxEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.comboBoxEdit1.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
             this.comboBoxEdit1.Properties.Appearance.Options.UseFont = true;
             this.comboBoxEdit1.Properties.Appearance.Options.UseForeColor = true;
@@ -88,14 +93,14 @@
             this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.comboBoxEdit1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit1.Size = new System.Drawing.Size(210, 25);
+            this.comboBoxEdit1.Size = new System.Drawing.Size(180, 25);
             this.comboBoxEdit1.TabIndex = 0;
             // 
             // comboBoxEdit2
             // 
-            this.comboBoxEdit2.Location = new System.Drawing.Point(431, 3);
+            this.comboBoxEdit2.Location = new System.Drawing.Point(323, 8);
             this.comboBoxEdit2.Name = "comboBoxEdit2";
-            this.comboBoxEdit2.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.comboBoxEdit2.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.comboBoxEdit2.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
             this.comboBoxEdit2.Properties.Appearance.Options.UseFont = true;
             this.comboBoxEdit2.Properties.Appearance.Options.UseForeColor = true;
@@ -103,16 +108,16 @@
             this.comboBoxEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.comboBoxEdit2.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit2.Size = new System.Drawing.Size(210, 25);
+            this.comboBoxEdit2.Size = new System.Drawing.Size(180, 25);
             this.comboBoxEdit2.TabIndex = 1;
             // 
             // pageView1
             // 
             this.pageView1.BackColor = System.Drawing.Color.Transparent;
             this.pageView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pageView1.Location = new System.Drawing.Point(0, 761);
+            this.pageView1.Location = new System.Drawing.Point(0, 775);
             this.pageView1.Name = "pageView1";
-            this.pageView1.Size = new System.Drawing.Size(1084, 44);
+            this.pageView1.Size = new System.Drawing.Size(1084, 30);
             this.pageView1.TabIndex = 80;
             // 
             // ProductSellRankView

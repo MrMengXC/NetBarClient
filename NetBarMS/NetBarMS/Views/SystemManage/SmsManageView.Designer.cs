@@ -41,6 +41,7 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.hScrollBar1 = new System.Windows.Forms.HScrollBar();
+            this.titlePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
@@ -48,7 +49,15 @@
             this.pushScrollView.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
-            
+            // 
+            // titlePanel
+            // 
+            this.titlePanel.Size = new System.Drawing.Size(1249, 40);
+            // 
+            // titleLabel
+            // 
+            this.titleLabel.Size = new System.Drawing.Size(67, 14);
+            this.titleLabel.Text = "短信设置";
             // 
             // gridControl1
             // 
@@ -57,7 +66,7 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Margin = new System.Windows.Forms.Padding(0);
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(607, 455);
+            this.gridControl1.Size = new System.Drawing.Size(607, 564);
             this.gridControl1.TabIndex = 81;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1,
@@ -82,7 +91,7 @@
             this.textBox1.Margin = new System.Windows.Forms.Padding(0);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(606, 455);
+            this.textBox1.Size = new System.Drawing.Size(606, 564);
             this.textBox1.TabIndex = 0;
             // 
             // label3
@@ -104,10 +113,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pushBgPanel.BackColor = System.Drawing.Color.WhiteSmoke;
             this.pushBgPanel.Controls.Add(this.pushScrollView);
-            this.pushBgPanel.Location = new System.Drawing.Point(0, 78);
+            this.pushBgPanel.Location = new System.Drawing.Point(0, 40);
             this.pushBgPanel.Margin = new System.Windows.Forms.Padding(0);
             this.pushBgPanel.Name = "pushBgPanel";
-            this.pushBgPanel.Size = new System.Drawing.Size(1250, 70);
+            this.pushBgPanel.Size = new System.Drawing.Size(1250, 50);
             this.pushBgPanel.TabIndex = 3;
             this.pushBgPanel.SizeChanged += new System.EventHandler(this.pushBgPanel_SizeChanged);
             // 
@@ -119,7 +128,7 @@
             this.pushScrollView.Controls.Add(this.panel1);
             this.pushScrollView.Location = new System.Drawing.Point(0, 0);
             this.pushScrollView.Name = "pushScrollView";
-            this.pushScrollView.Size = new System.Drawing.Size(317, 70);
+            this.pushScrollView.Size = new System.Drawing.Size(317, 50);
             this.pushScrollView.TabIndex = 0;
             // 
             // addPushButton
@@ -137,7 +146,7 @@
             this.addPushButton.Margin = new System.Windows.Forms.Padding(0);
             this.addPushButton.Name = "addPushButton";
             this.addPushButton.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.addPushButton.Size = new System.Drawing.Size(132, 70);
+            this.addPushButton.Size = new System.Drawing.Size(132, 50);
             this.addPushButton.TabIndex = 1;
             this.addPushButton.Text = "+添加推送事项";
             this.addPushButton.Click += new System.EventHandler(this.addPushButton_Click);
@@ -148,22 +157,22 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(185, 70);
+            this.panel1.Size = new System.Drawing.Size(185, 50);
             this.panel1.TabIndex = 2;
             // 
             // simpleButton1
             // 
             this.simpleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.simpleButton1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(165)))), ((int)(((byte)(248)))));
-            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.simpleButton1.Appearance.ForeColor = System.Drawing.Color.White;
             this.simpleButton1.Appearance.Options.UseBackColor = true;
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.Appearance.Options.UseForeColor = true;
             this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.simpleButton1.Location = new System.Drawing.Point(10, 686);
+            this.simpleButton1.Location = new System.Drawing.Point(10, 715);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(184, 56);
+            this.simpleButton1.Size = new System.Drawing.Size(130, 30);
             this.simpleButton1.TabIndex = 83;
             this.simpleButton1.Text = "保存";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
@@ -181,12 +190,12 @@
             this.tableLayoutPanel2.Controls.Add(this.textBox1, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.label3, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(10, 176);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(10, 110);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1229, 490);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1229, 599);
             this.tableLayoutPanel2.TabIndex = 84;
             // 
             // label1
@@ -207,7 +216,7 @@
             // 
             this.hScrollBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.hScrollBar1.Location = new System.Drawing.Point(0, 152);
+            this.hScrollBar1.Location = new System.Drawing.Point(0, 90);
             this.hScrollBar1.Name = "hScrollBar1";
             this.hScrollBar1.Size = new System.Drawing.Size(1250, 17);
             this.hScrollBar1.TabIndex = 85;
@@ -223,10 +232,13 @@
             this.Controls.Add(this.pushBgPanel);
             this.Name = "SmsManageView";
             this.Size = new System.Drawing.Size(1249, 774);
+            this.Controls.SetChildIndex(this.titlePanel, 0);
             this.Controls.SetChildIndex(this.pushBgPanel, 0);
             this.Controls.SetChildIndex(this.simpleButton1, 0);
             this.Controls.SetChildIndex(this.tableLayoutPanel2, 0);
             this.Controls.SetChildIndex(this.hScrollBar1, 0);
+            this.titlePanel.ResumeLayout(false);
+            this.titlePanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).EndInit();

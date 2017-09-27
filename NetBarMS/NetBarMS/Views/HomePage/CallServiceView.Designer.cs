@@ -39,11 +39,11 @@
             // 
             // titlePanel
             // 
-            this.titlePanel.Size = new System.Drawing.Size(622, 50);
+            this.titlePanel.Size = new System.Drawing.Size(622, 40);
             // 
             // titleLabel
             // 
-            this.titleLabel.Size = new System.Drawing.Size(80, 18);
+            this.titleLabel.Size = new System.Drawing.Size(53, 12);
             this.titleLabel.Text = "呼叫服务";
             // 
             // closeBtn
@@ -53,22 +53,16 @@
             this.closeBtn.Location = new System.Drawing.Point(575, 0);
             this.closeBtn.LookAndFeel.SkinMaskColor = System.Drawing.Color.Transparent;
             this.closeBtn.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.closeBtn.Size = new System.Drawing.Size(47, 50);
-            // 
-            // bottomPanel
-            // 
-            this.bottomPanel.Location = new System.Drawing.Point(0, 300);
-            this.bottomPanel.Size = new System.Drawing.Size(622, 64);
             // 
             // gridControl1
             // 
             this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridControl1.Location = new System.Drawing.Point(10, 60);
+            this.gridControl1.Location = new System.Drawing.Point(10, 46);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(600, 467);
+            this.gridControl1.Size = new System.Drawing.Size(600, 481);
             this.gridControl1.TabIndex = 50;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1,

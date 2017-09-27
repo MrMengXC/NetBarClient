@@ -37,8 +37,10 @@
             // simpleButton1
             // 
             this.simpleButton1.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.simpleButton1.Appearance.ForeColor = System.Drawing.Color.White;
             this.simpleButton1.Appearance.Options.UseBackColor = true;
+            this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.Appearance.Options.UseForeColor = true;
             this.simpleButton1.Appearance.Options.UseTextOptions = true;
             this.simpleButton1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Bottom;
@@ -55,6 +57,7 @@
             // numLabel
             // 
             this.numLabel.BackColor = System.Drawing.Color.DarkRed;
+            this.numLabel.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
             this.numLabel.ForeColor = System.Drawing.Color.White;
             this.numLabel.Location = new System.Drawing.Point(0, 0);
             this.numLabel.Margin = new System.Windows.Forms.Padding(0);

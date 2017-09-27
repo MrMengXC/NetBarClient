@@ -100,7 +100,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateNavigator.DateTime = new System.DateTime(2017, 7, 18, 14, 11, 55, 200);
             this.dateNavigator.EditValue = new System.DateTime(2017, 7, 18, 14, 11, 55, 200);
-            this.dateNavigator.FirstDayOfWeek = System.DayOfWeek.Sunday;
+            this.dateNavigator.FirstDayOfWeek = System.DayOfWeek.Monday;
             this.dateNavigator.Location = new System.Drawing.Point(3, 3);
             this.dateNavigator.Name = "dateNavigator";
             this.dateNavigator.Size = new System.Drawing.Size(283, 258);
@@ -149,7 +149,7 @@
             this.gridControl1.Location = new System.Drawing.Point(0, 46);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1100, 713);
+            this.gridControl1.Size = new System.Drawing.Size(1100, 723);
             this.gridControl1.TabIndex = 81;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1,
@@ -170,9 +170,9 @@
             // 
             this.pageView1.BackColor = System.Drawing.Color.Transparent;
             this.pageView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pageView1.Location = new System.Drawing.Point(0, 765);
+            this.pageView1.Location = new System.Drawing.Point(0, 775);
             this.pageView1.Name = "pageView1";
-            this.pageView1.Size = new System.Drawing.Size(1100, 40);
+            this.pageView1.Size = new System.Drawing.Size(1100, 30);
             this.pageView1.TabIndex = 82;
             this.pageView1.PageChangedEvent += new NetBarMS.Codes.Tools.PageChangedHandle(this.PageView_PageChanged);
             // 

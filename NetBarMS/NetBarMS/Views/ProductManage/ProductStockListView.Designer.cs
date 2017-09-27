@@ -46,6 +46,11 @@
             this.titlePanel.Controls.SetChildIndex(this.titleLabel, 0);
             this.titlePanel.Controls.SetChildIndex(this.simpleButton1, 0);
             // 
+            // titleLabel
+            // 
+            this.titleLabel.Size = new System.Drawing.Size(97, 14);
+            this.titleLabel.Text = "商品库存清单";
+            // 
             // gridControl1
             // 
             this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -84,9 +89,11 @@
             // simpleButton1
             // 
             this.simpleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButton1.Location = new System.Drawing.Point(615, 7);
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.simpleButton1.Appearance.Options.UseFont = true;
+            this.simpleButton1.Location = new System.Drawing.Point(673, 7);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(92, 33);
+            this.simpleButton1.Size = new System.Drawing.Size(92, 25);
             this.simpleButton1.TabIndex = 78;
             this.simpleButton1.Text = "打印库存清单";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);

@@ -30,6 +30,7 @@
         {
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.popupContainerEdit1 = new DevExpress.XtraEditors.PopupContainerEdit();
             this.popupContainerControl1 = new DevExpress.XtraEditors.PopupContainerControl();
             this.dateNavigator = new DevExpress.XtraScheduler.DateNavigator();
@@ -101,7 +102,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateNavigator.DateTime = new System.DateTime(2017, 7, 18, 14, 14, 3, 58);
             this.dateNavigator.EditValue = new System.DateTime(2017, 7, 18, 14, 14, 3, 58);
-            this.dateNavigator.FirstDayOfWeek = System.DayOfWeek.Sunday;
+            this.dateNavigator.FirstDayOfWeek = System.DayOfWeek.Monday;
             this.dateNavigator.Location = new System.Drawing.Point(3, 3);
             this.dateNavigator.Name = "dateNavigator";
             this.dateNavigator.Size = new System.Drawing.Size(283, 258);
@@ -151,10 +152,13 @@
             this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            gridLevelNode1.RelationName = "Level1";
+            this.gridControl1.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode1});
             this.gridControl1.Location = new System.Drawing.Point(0, 46);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1183, 713);
+            this.gridControl1.Size = new System.Drawing.Size(1183, 723);
             this.gridControl1.TabIndex = 80;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1,
@@ -175,9 +179,9 @@
             // 
             this.pageView1.BackColor = System.Drawing.Color.Transparent;
             this.pageView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pageView1.Location = new System.Drawing.Point(0, 765);
+            this.pageView1.Location = new System.Drawing.Point(0, 775);
             this.pageView1.Name = "pageView1";
-            this.pageView1.Size = new System.Drawing.Size(1183, 40);
+            this.pageView1.Size = new System.Drawing.Size(1183, 30);
             this.pageView1.TabIndex = 82;
             // 
             // UserRechargeView

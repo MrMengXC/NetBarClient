@@ -113,7 +113,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateNavigator.DateTime = new System.DateTime(2017, 7, 17, 23, 3, 19, 808);
             this.dateNavigator.EditValue = new System.DateTime(2017, 7, 17, 23, 3, 19, 808);
-            this.dateNavigator.FirstDayOfWeek = System.DayOfWeek.Sunday;
+            this.dateNavigator.FirstDayOfWeek = System.DayOfWeek.Monday;
             this.dateNavigator.Location = new System.Drawing.Point(3, 3);
             this.dateNavigator.Name = "dateNavigator";
             this.dateNavigator.Size = new System.Drawing.Size(283, 258);
@@ -137,7 +137,7 @@
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 713F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1115, 713);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1115, 723);
             this.tableLayoutPanel1.TabIndex = 83;
             // 
             // gridControl2
@@ -147,7 +147,7 @@
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Margin = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(553, 713);
+            this.gridControl2.Size = new System.Drawing.Size(553, 723);
             this.gridControl2.TabIndex = 82;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2,
@@ -171,7 +171,7 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Margin = new System.Windows.Forms.Padding(0, 0, 5, 0);
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(552, 713);
+            this.gridControl1.Size = new System.Drawing.Size(552, 723);
             this.gridControl1.TabIndex = 81;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1,
@@ -192,9 +192,9 @@
             // 
             this.pageView1.BackColor = System.Drawing.Color.Transparent;
             this.pageView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pageView1.Location = new System.Drawing.Point(0, 765);
+            this.pageView1.Location = new System.Drawing.Point(0, 775);
             this.pageView1.Name = "pageView1";
-            this.pageView1.Size = new System.Drawing.Size(1135, 40);
+            this.pageView1.Size = new System.Drawing.Size(1135, 30);
             this.pageView1.TabIndex = 84;
             // 
             // ChangeShiftsRecordView

@@ -71,7 +71,7 @@ namespace NetBarMS.Views.RateManage
             for (int i = 0;i< titls.Count(); i++)
             {
                 DataGridViewRow dr = new DataGridViewRow();
-                dr.Height = 42;
+                dr.Height = 25;
                 int index = this.dataGridView1.Rows.Add(dr);
                 dataGridView1.Rows[index].Cells[0].Value = titls[i];
             }
@@ -704,8 +704,26 @@ namespace NetBarMS.Views.RateManage
             InitMemberScollBar();
            
         }
-        #endregion
 
+
+        #endregion
+        #region gridView sizechanged
+        private void dataGridView1_SizeChanged(object sender, EventArgs e)
+        {
+            
+            for(int row  = 0;row < this.dataGridView1.RowCount;row++)
+            {
+                DataGridViewRow dr = this.dataGridView1.Rows[row];
+                dr.Height = (this.dataGridView1.Height -  this.dataGridView1.ColumnHeadersHeight)/ this.dataGridView1.RowCount;
+            }
+            for (int col = 1; col < this.dataGridView1.ColumnCount;col++)
+            {
+                DataGridViewColumn column = this.dataGridView1.Columns[col];
+
+                column.Width = (this.dataGridView1.Width - this.dataGridView1.Columns[0].Width) / (this.dataGridView1.ColumnCount - 1);
+            }
+        }
+        #endregion
         #region 重置会员类型ScrollBar
         private void InitMemberScollBar()
         {

@@ -126,7 +126,14 @@ namespace NetBarMS.Views
                 TextEdit text = sender as TextEdit;
                 if (!text.Equals(""))
                 {
-                    text.Text = string.Format("{0}", int.Parse(text.Text));
+                    try
+                    {
+                        text.Text = string.Format("{0}", int.Parse(text.Text));
+                    }
+                    catch(Exception exc)
+                    {
+
+                    }
                 }
             }
         }

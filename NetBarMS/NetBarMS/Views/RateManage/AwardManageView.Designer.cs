@@ -38,7 +38,6 @@
             this.nGiveTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.nRechargeTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.popupContainerEdit1 = new DevExpress.XtraEditors.PopupContainerEdit();
             this.popupContainerControl1 = new DevExpress.XtraEditors.PopupContainerControl();
             this.dateNavigator = new DevExpress.XtraScheduler.DateNavigator();
@@ -49,7 +48,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.mUpdateButton = new DevExpress.XtraEditors.SimpleButton();
             this.mDeleteButton = new DevExpress.XtraEditors.SimpleButton();
-            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.comboBoxEdit3 = new DevExpress.XtraEditors.ComboBoxEdit();
             this.mRechargeTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.mGiveTextEdit = new DevExpress.XtraEditors.TextEdit();
@@ -60,6 +58,8 @@
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridView5 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.titlePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -67,7 +67,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nGiveTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nRechargeTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
-            this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.popupContainerEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupContainerControl1)).BeginInit();
             this.popupContainerControl1.SuspendLayout();
@@ -76,7 +75,6 @@
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.flowLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit3.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mRechargeTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mGiveTextEdit.Properties)).BeginInit();
@@ -88,6 +86,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView5)).BeginInit();
+            this.tableLayoutPanel3.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // titlePanel
@@ -173,7 +173,7 @@
             this.nAddButton.ImageIndex = 0;
             this.nAddButton.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
             this.nAddButton.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.nAddButton.Location = new System.Drawing.Point(587, 3);
+            this.nAddButton.Location = new System.Drawing.Point(731, 3);
             this.nAddButton.Name = "nAddButton";
             this.nAddButton.Size = new System.Drawing.Size(55, 25);
             this.nAddButton.TabIndex = 4;
@@ -182,7 +182,7 @@
             // 
             // nGiveTextEdit
             // 
-            this.nGiveTextEdit.Location = new System.Drawing.Point(295, 3);
+            this.nGiveTextEdit.Location = new System.Drawing.Point(367, 3);
             this.nGiveTextEdit.Name = "nGiveTextEdit";
             this.nGiveTextEdit.Properties.Appearance.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.nGiveTextEdit.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
@@ -190,12 +190,12 @@
             this.nGiveTextEdit.Properties.Appearance.Options.UseForeColor = true;
             this.nGiveTextEdit.Properties.AutoHeight = false;
             this.nGiveTextEdit.Properties.NullText = "请输入赠送金额";
-            this.nGiveTextEdit.Size = new System.Drawing.Size(140, 25);
+            this.nGiveTextEdit.Size = new System.Drawing.Size(176, 25);
             this.nGiveTextEdit.TabIndex = 3;
             // 
             // nRechargeTextEdit
             // 
-            this.nRechargeTextEdit.Location = new System.Drawing.Point(149, 3);
+            this.nRechargeTextEdit.Location = new System.Drawing.Point(185, 3);
             this.nRechargeTextEdit.Name = "nRechargeTextEdit";
             this.nRechargeTextEdit.Properties.Appearance.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.nRechargeTextEdit.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
@@ -203,7 +203,7 @@
             this.nRechargeTextEdit.Properties.Appearance.Options.UseForeColor = true;
             this.nRechargeTextEdit.Properties.AutoHeight = false;
             this.nRechargeTextEdit.Properties.NullText = "请输入充值金额";
-            this.nRechargeTextEdit.Size = new System.Drawing.Size(140, 25);
+            this.nRechargeTextEdit.Size = new System.Drawing.Size(176, 25);
             this.nRechargeTextEdit.TabIndex = 2;
             // 
             // comboBoxEdit1
@@ -218,27 +218,12 @@
             this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.comboBoxEdit1.Properties.NullText = "请选择会员类型";
-            this.comboBoxEdit1.Size = new System.Drawing.Size(140, 25);
+            this.comboBoxEdit1.Size = new System.Drawing.Size(176, 25);
             this.comboBoxEdit1.TabIndex = 0;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanel1.Controls.Add(this.comboBoxEdit1);
-            this.flowLayoutPanel1.Controls.Add(this.nRechargeTextEdit);
-            this.flowLayoutPanel1.Controls.Add(this.nGiveTextEdit);
-            this.flowLayoutPanel1.Controls.Add(this.popupContainerEdit1);
-            this.flowLayoutPanel1.Controls.Add(this.nAddButton);
-            this.flowLayoutPanel1.Controls.Add(this.popupContainerControl1);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 38);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(791, 38);
-            this.flowLayoutPanel1.TabIndex = 83;
             // 
             // popupContainerEdit1
             // 
-            this.popupContainerEdit1.Location = new System.Drawing.Point(441, 3);
+            this.popupContainerEdit1.Location = new System.Drawing.Point(549, 3);
             this.popupContainerEdit1.Name = "popupContainerEdit1";
             this.popupContainerEdit1.Properties.Appearance.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.popupContainerEdit1.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
@@ -249,14 +234,14 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.popupContainerEdit1.Properties.NullText = "请选择时间段进行查询";
             this.popupContainerEdit1.Properties.PopupControl = this.popupContainerControl1;
-            this.popupContainerEdit1.Size = new System.Drawing.Size(140, 25);
+            this.popupContainerEdit1.Size = new System.Drawing.Size(176, 25);
             this.popupContainerEdit1.TabIndex = 5;
             this.popupContainerEdit1.Closed += new DevExpress.XtraEditors.Controls.ClosedEventHandler(this.ContainerEdit_Closed);
             // 
             // popupContainerControl1
             // 
             this.popupContainerControl1.Controls.Add(this.dateNavigator);
-            this.popupContainerControl1.Location = new System.Drawing.Point(3, 34);
+            this.popupContainerControl1.Location = new System.Drawing.Point(165, 126);
             this.popupContainerControl1.Name = "popupContainerControl1";
             this.popupContainerControl1.Size = new System.Drawing.Size(288, 261);
             this.popupContainerControl1.TabIndex = 6;
@@ -269,7 +254,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateNavigator.DateTime = new System.DateTime(2017, 7, 17, 21, 52, 9, 908);
             this.dateNavigator.EditValue = new System.DateTime(2017, 7, 17, 21, 52, 9, 908);
-            this.dateNavigator.FirstDayOfWeek = System.DayOfWeek.Sunday;
+            this.dateNavigator.FirstDayOfWeek = System.DayOfWeek.Monday;
             this.dateNavigator.Location = new System.Drawing.Point(3, 3);
             this.dateNavigator.Name = "dateNavigator";
             this.dateNavigator.Size = new System.Drawing.Size(283, 258);
@@ -300,10 +285,11 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.tableLayoutPanel2);
+            this.panel1.Controls.Add(this.popupContainerControl1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.nUpdateButton);
             this.panel1.Controls.Add(this.nDeleteButton);
-            this.panel1.Controls.Add(this.flowLayoutPanel1);
             this.panel1.Controls.Add(this.gridControl1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
@@ -327,10 +313,11 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.popupContainerControl2);
+            this.panel2.Controls.Add(this.tableLayoutPanel3);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.mUpdateButton);
             this.panel2.Controls.Add(this.mDeleteButton);
-            this.panel2.Controls.Add(this.flowLayoutPanel3);
             this.panel2.Controls.Add(this.gridControl2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(811, 3);
@@ -390,19 +377,6 @@
             this.mDeleteButton.Text = "删除";
             this.mDeleteButton.Click += new System.EventHandler(this.DeletAward_Click);
             // 
-            // flowLayoutPanel3
-            // 
-            this.flowLayoutPanel3.Controls.Add(this.comboBoxEdit3);
-            this.flowLayoutPanel3.Controls.Add(this.mRechargeTextEdit);
-            this.flowLayoutPanel3.Controls.Add(this.mGiveTextEdit);
-            this.flowLayoutPanel3.Controls.Add(this.popupContainerEdit2);
-            this.flowLayoutPanel3.Controls.Add(this.mAddButton);
-            this.flowLayoutPanel3.Controls.Add(this.popupContainerControl2);
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(0, 38);
-            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(791, 38);
-            this.flowLayoutPanel3.TabIndex = 83;
-            // 
             // comboBoxEdit3
             // 
             this.comboBoxEdit3.Location = new System.Drawing.Point(3, 3);
@@ -415,12 +389,12 @@
             this.comboBoxEdit3.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.comboBoxEdit3.Properties.NullText = "请选择会员类型";
-            this.comboBoxEdit3.Size = new System.Drawing.Size(140, 25);
+            this.comboBoxEdit3.Size = new System.Drawing.Size(175, 25);
             this.comboBoxEdit3.TabIndex = 0;
             // 
             // mRechargeTextEdit
             // 
-            this.mRechargeTextEdit.Location = new System.Drawing.Point(149, 3);
+            this.mRechargeTextEdit.Location = new System.Drawing.Point(184, 3);
             this.mRechargeTextEdit.Name = "mRechargeTextEdit";
             this.mRechargeTextEdit.Properties.Appearance.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.mRechargeTextEdit.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
@@ -428,12 +402,12 @@
             this.mRechargeTextEdit.Properties.Appearance.Options.UseForeColor = true;
             this.mRechargeTextEdit.Properties.AutoHeight = false;
             this.mRechargeTextEdit.Properties.NullText = "请输入充值金额";
-            this.mRechargeTextEdit.Size = new System.Drawing.Size(140, 25);
+            this.mRechargeTextEdit.Size = new System.Drawing.Size(175, 25);
             this.mRechargeTextEdit.TabIndex = 2;
             // 
             // mGiveTextEdit
             // 
-            this.mGiveTextEdit.Location = new System.Drawing.Point(295, 3);
+            this.mGiveTextEdit.Location = new System.Drawing.Point(365, 3);
             this.mGiveTextEdit.Name = "mGiveTextEdit";
             this.mGiveTextEdit.Properties.Appearance.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.mGiveTextEdit.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
@@ -441,12 +415,12 @@
             this.mGiveTextEdit.Properties.Appearance.Options.UseForeColor = true;
             this.mGiveTextEdit.Properties.AutoHeight = false;
             this.mGiveTextEdit.Properties.NullText = "请输入赠送金额";
-            this.mGiveTextEdit.Size = new System.Drawing.Size(140, 25);
+            this.mGiveTextEdit.Size = new System.Drawing.Size(175, 25);
             this.mGiveTextEdit.TabIndex = 3;
             // 
             // popupContainerEdit2
             // 
-            this.popupContainerEdit2.Location = new System.Drawing.Point(441, 3);
+            this.popupContainerEdit2.Location = new System.Drawing.Point(546, 3);
             this.popupContainerEdit2.Name = "popupContainerEdit2";
             this.popupContainerEdit2.Properties.Appearance.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.popupContainerEdit2.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
@@ -457,14 +431,14 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.popupContainerEdit2.Properties.NullText = "请选择时间段进行查询";
             this.popupContainerEdit2.Properties.PopupControl = this.popupContainerControl2;
-            this.popupContainerEdit2.Size = new System.Drawing.Size(140, 25);
+            this.popupContainerEdit2.Size = new System.Drawing.Size(175, 25);
             this.popupContainerEdit2.TabIndex = 6;
             this.popupContainerEdit2.Closed += new DevExpress.XtraEditors.Controls.ClosedEventHandler(this.ContainerEdit_Closed);
             // 
             // popupContainerControl2
             // 
             this.popupContainerControl2.Controls.Add(this.dateNavigator1);
-            this.popupContainerControl2.Location = new System.Drawing.Point(3, 34);
+            this.popupContainerControl2.Location = new System.Drawing.Point(122, 156);
             this.popupContainerControl2.Name = "popupContainerControl2";
             this.popupContainerControl2.Size = new System.Drawing.Size(288, 261);
             this.popupContainerControl2.TabIndex = 7;
@@ -477,7 +451,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateNavigator1.DateTime = new System.DateTime(2017, 7, 17, 21, 52, 10, 2);
             this.dateNavigator1.EditValue = new System.DateTime(2017, 7, 17, 21, 52, 10, 2);
-            this.dateNavigator1.FirstDayOfWeek = System.DayOfWeek.Sunday;
+            this.dateNavigator1.FirstDayOfWeek = System.DayOfWeek.Monday;
             this.dateNavigator1.Location = new System.Drawing.Point(0, 3);
             this.dateNavigator1.Name = "dateNavigator1";
             this.dateNavigator1.Size = new System.Drawing.Size(283, 258);
@@ -496,7 +470,7 @@
             this.mAddButton.ImageIndex = 0;
             this.mAddButton.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
             this.mAddButton.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.mAddButton.Location = new System.Drawing.Point(587, 3);
+            this.mAddButton.Location = new System.Drawing.Point(727, 3);
             this.mAddButton.Name = "mAddButton";
             this.mAddButton.Size = new System.Drawing.Size(55, 25);
             this.mAddButton.TabIndex = 4;
@@ -528,6 +502,50 @@
             this.gridView5.GridControl = this.gridControl2;
             this.gridView5.Name = "gridView5";
             // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel3.ColumnCount = 5;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel3.Controls.Add(this.mAddButton, 4, 0);
+            this.tableLayoutPanel3.Controls.Add(this.popupContainerEdit2, 3, 0);
+            this.tableLayoutPanel3.Controls.Add(this.mGiveTextEdit, 2, 0);
+            this.tableLayoutPanel3.Controls.Add(this.mRechargeTextEdit, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.comboBoxEdit3, 0, 0);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 38);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(786, 34);
+            this.tableLayoutPanel3.TabIndex = 86;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel2.ColumnCount = 5;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.Controls.Add(this.nAddButton, 4, 0);
+            this.tableLayoutPanel2.Controls.Add(this.popupContainerEdit1, 3, 0);
+            this.tableLayoutPanel2.Controls.Add(this.nRechargeTextEdit, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.nGiveTextEdit, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.comboBoxEdit1, 0, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 38);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(789, 34);
+            this.tableLayoutPanel2.TabIndex = 85;
+            // 
             // AwardManageView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -546,7 +564,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nGiveTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nRechargeTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
-            this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.popupContainerEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupContainerControl1)).EndInit();
             this.popupContainerControl1.ResumeLayout(false);
@@ -555,7 +572,6 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.flowLayoutPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit3.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mRechargeTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mGiveTextEdit.Properties)).EndInit();
@@ -567,6 +583,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView5)).EndInit();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -584,12 +602,10 @@
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel2;
         private DevExpress.XtraEditors.SimpleButton mUpdateButton;
         private DevExpress.XtraEditors.SimpleButton mDeleteButton;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
         private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit3;
         private DevExpress.XtraEditors.TextEdit mRechargeTextEdit;
         private DevExpress.XtraEditors.TextEdit mGiveTextEdit;
@@ -606,5 +622,7 @@
         private DevExpress.XtraScheduler.DateNavigator dateNavigator1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
     }
 }

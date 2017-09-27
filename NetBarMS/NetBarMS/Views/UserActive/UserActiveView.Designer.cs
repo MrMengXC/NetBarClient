@@ -52,16 +52,20 @@
             // 
             // titlePanel
             // 
-            this.titlePanel.Size = new System.Drawing.Size(445, 50);
+            this.titlePanel.Size = new System.Drawing.Size(431, 40);
+            // 
+            // titleLabel
+            // 
+            this.titleLabel.Size = new System.Drawing.Size(53, 12);
+            this.titleLabel.Text = "用户激活";
             // 
             // closeBtn
             // 
             this.closeBtn.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.closeBtn.Appearance.Options.UseBackColor = true;
-            this.closeBtn.Location = new System.Drawing.Point(398, 0);
+            this.closeBtn.Location = new System.Drawing.Point(384, 0);
             this.closeBtn.LookAndFeel.SkinMaskColor = System.Drawing.Color.Transparent;
             this.closeBtn.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.closeBtn.Size = new System.Drawing.Size(47, 50);
             // 
             // panel1
             // 
@@ -74,7 +78,7 @@
             this.panel1.Controls.Add(this.pictureEdit1);
             this.panel1.Location = new System.Drawing.Point(8, 60);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(431, 404);
+            this.panel1.Size = new System.Drawing.Size(417, 352);
             this.panel1.TabIndex = 62;
             // 
             // flowLayoutPanel2
@@ -83,15 +87,15 @@
             this.flowLayoutPanel2.Controls.Add(this.simpleButton1);
             this.flowLayoutPanel2.Controls.Add(this.simpleButton2);
             this.flowLayoutPanel2.Controls.Add(this.simpleButton3);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(82, 307);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(117, 294);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(282, 42);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(198, 36);
             this.flowLayoutPanel2.TabIndex = 3;
             // 
             // simpleButton1
             // 
             this.simpleButton1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(165)))), ((int)(((byte)(248)))));
-            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.simpleButton1.Appearance.ForeColor = System.Drawing.Color.White;
             this.simpleButton1.Appearance.Options.UseBackColor = true;
             this.simpleButton1.Appearance.Options.UseFont = true;
@@ -99,7 +103,7 @@
             this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.simpleButton1.Location = new System.Drawing.Point(3, 3);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(88, 36);
+            this.simpleButton1.Size = new System.Drawing.Size(60, 30);
             this.simpleButton1.TabIndex = 2;
             this.simpleButton1.Text = "激活";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
@@ -107,15 +111,15 @@
             // simpleButton2
             // 
             this.simpleButton2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(151)))), ((int)(((byte)(0)))));
-            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.simpleButton2.Appearance.ForeColor = System.Drawing.Color.White;
             this.simpleButton2.Appearance.Options.UseBackColor = true;
             this.simpleButton2.Appearance.Options.UseFont = true;
             this.simpleButton2.Appearance.Options.UseForeColor = true;
             this.simpleButton2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.simpleButton2.Location = new System.Drawing.Point(97, 3);
+            this.simpleButton2.Location = new System.Drawing.Point(69, 3);
             this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(88, 36);
+            this.simpleButton2.Size = new System.Drawing.Size(60, 30);
             this.simpleButton2.TabIndex = 3;
             this.simpleButton2.Text = "充值";
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
@@ -123,15 +127,15 @@
             // simpleButton3
             // 
             this.simpleButton3.Appearance.BackColor = System.Drawing.Color.White;
-            this.simpleButton3.Appearance.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.simpleButton3.Appearance.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.simpleButton3.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(165)))), ((int)(((byte)(248)))));
             this.simpleButton3.Appearance.Options.UseBackColor = true;
             this.simpleButton3.Appearance.Options.UseFont = true;
             this.simpleButton3.Appearance.Options.UseForeColor = true;
             this.simpleButton3.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.simpleButton3.Location = new System.Drawing.Point(191, 3);
+            this.simpleButton3.Location = new System.Drawing.Point(135, 3);
             this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(88, 36);
+            this.simpleButton3.Size = new System.Drawing.Size(60, 30);
             this.simpleButton3.TabIndex = 4;
             this.simpleButton3.Text = "下机";
             this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
@@ -149,6 +153,7 @@
             this.flowLayoutPanel1.Controls.Add(this.label7);
             this.flowLayoutPanel1.Controls.Add(this.label8);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel1.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 15);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(295, 264);
@@ -156,7 +161,7 @@
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.label1.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
             this.label1.Location = new System.Drawing.Point(5, 5);
             this.label1.Margin = new System.Windows.Forms.Padding(5);
             this.label1.Name = "label1";
@@ -167,7 +172,7 @@
             // 
             // label2
             // 
-            this.label2.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.label2.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
             this.label2.Location = new System.Drawing.Point(5, 38);
             this.label2.Margin = new System.Windows.Forms.Padding(5);
             this.label2.Name = "label2";
@@ -178,7 +183,7 @@
             // 
             // label3
             // 
-            this.label3.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.label3.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
             this.label3.Location = new System.Drawing.Point(5, 71);
             this.label3.Margin = new System.Windows.Forms.Padding(5);
             this.label3.Name = "label3";
@@ -189,7 +194,7 @@
             // 
             // label4
             // 
-            this.label4.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.label4.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(27)))), ((int)(((byte)(12)))));
             this.label4.Location = new System.Drawing.Point(5, 104);
             this.label4.Margin = new System.Windows.Forms.Padding(5);
@@ -201,7 +206,7 @@
             // 
             // label5
             // 
-            this.label5.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.label5.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
             this.label5.Location = new System.Drawing.Point(5, 137);
             this.label5.Margin = new System.Windows.Forms.Padding(5);
             this.label5.Name = "label5";
@@ -212,7 +217,7 @@
             // 
             // label6
             // 
-            this.label6.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.label6.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
             this.label6.Location = new System.Drawing.Point(5, 170);
             this.label6.Margin = new System.Windows.Forms.Padding(5);
             this.label6.Name = "label6";
@@ -223,7 +228,7 @@
             // 
             // label7
             // 
-            this.label7.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.label7.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
             this.label7.Location = new System.Drawing.Point(5, 203);
             this.label7.Margin = new System.Windows.Forms.Padding(5);
             this.label7.Name = "label7";
@@ -234,7 +239,7 @@
             // 
             // label8
             // 
-            this.label8.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.label8.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
             this.label8.Location = new System.Drawing.Point(5, 236);
             this.label8.Margin = new System.Windows.Forms.Padding(5);
             this.label8.Name = "label8";
@@ -245,7 +250,8 @@
             // 
             // pictureEdit1
             // 
-            this.pictureEdit1.Location = new System.Drawing.Point(318, 15);
+            this.pictureEdit1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureEdit1.Location = new System.Drawing.Point(305, 15);
             this.pictureEdit1.Name = "pictureEdit1";
             this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEdit1.Size = new System.Drawing.Size(100, 135);
@@ -258,7 +264,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "UserActiveView";
             this.ShowBottom = false;
-            this.Size = new System.Drawing.Size(445, 474);
+            this.Size = new System.Drawing.Size(431, 422);
             this.Controls.SetChildIndex(this.bottomPanel, 0);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.titlePanel, 0);

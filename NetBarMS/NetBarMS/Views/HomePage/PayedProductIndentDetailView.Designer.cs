@@ -46,36 +46,30 @@
             // 
             // titlePanel
             // 
-            this.titlePanel.Size = new System.Drawing.Size(822, 50);
+            this.titlePanel.Size = new System.Drawing.Size(791, 40);
             // 
             // titleLabel
             // 
-            this.titleLabel.Size = new System.Drawing.Size(80, 18);
+            this.titleLabel.Size = new System.Drawing.Size(53, 12);
             this.titleLabel.Text = "订单详情";
             // 
             // closeBtn
             // 
             this.closeBtn.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.closeBtn.Appearance.Options.UseBackColor = true;
-            this.closeBtn.Location = new System.Drawing.Point(775, 0);
+            this.closeBtn.Location = new System.Drawing.Point(744, 0);
             this.closeBtn.LookAndFeel.SkinMaskColor = System.Drawing.Color.Transparent;
             this.closeBtn.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.closeBtn.Size = new System.Drawing.Size(47, 50);
-            // 
-            // bottomPanel
-            // 
-            this.bottomPanel.Location = new System.Drawing.Point(0, 379);
-            this.bottomPanel.Size = new System.Drawing.Size(1005, 64);
             // 
             // gridControl1
             // 
             this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridControl1.Location = new System.Drawing.Point(16, 119);
+            this.gridControl1.Location = new System.Drawing.Point(14, 86);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(799, 203);
+            this.gridControl1.Size = new System.Drawing.Size(768, 212);
             this.gridControl1.TabIndex = 77;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1,
@@ -94,32 +88,34 @@
             // 
             // simpleButton1
             // 
+            this.simpleButton1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.simpleButton1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(165)))), ((int)(((byte)(248)))));
-            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.simpleButton1.Appearance.ForeColor = System.Drawing.Color.White;
             this.simpleButton1.Appearance.Options.UseBackColor = true;
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.Appearance.Options.UseForeColor = true;
-            this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.simpleButton1.Location = new System.Drawing.Point(283, 338);
+            this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.simpleButton1.Location = new System.Drawing.Point(304, 304);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(120, 40);
+            this.simpleButton1.Size = new System.Drawing.Size(80, 30);
             this.simpleButton1.TabIndex = 78;
             this.simpleButton1.Text = "完成";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // simpleButton2
             // 
+            this.simpleButton2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.simpleButton2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(165)))), ((int)(((byte)(248)))));
-            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.simpleButton2.Appearance.ForeColor = System.Drawing.Color.White;
             this.simpleButton2.Appearance.Options.UseBackColor = true;
             this.simpleButton2.Appearance.Options.UseFont = true;
             this.simpleButton2.Appearance.Options.UseForeColor = true;
-            this.simpleButton2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.simpleButton2.Location = new System.Drawing.Point(419, 338);
+            this.simpleButton2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.simpleButton2.Location = new System.Drawing.Point(415, 304);
             this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(120, 40);
+            this.simpleButton2.Size = new System.Drawing.Size(80, 30);
             this.simpleButton2.TabIndex = 79;
             this.simpleButton2.Text = "撤销";
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
@@ -127,10 +123,10 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
-            this.label3.Location = new System.Drawing.Point(202, 0);
+            this.label3.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.label3.Location = new System.Drawing.Point(164, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(103, 18);
+            this.label3.Size = new System.Drawing.Size(82, 14);
             this.label3.TabIndex = 2;
             this.label3.Text = "订单金额：";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -138,10 +134,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
-            this.label2.Location = new System.Drawing.Point(93, 0);
+            this.label2.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.label2.Location = new System.Drawing.Point(76, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 18);
+            this.label2.Size = new System.Drawing.Size(82, 14);
             this.label2.TabIndex = 1;
             this.label2.Text = "下单时间：";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -149,23 +145,25 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.label1.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 18);
+            this.label1.Size = new System.Drawing.Size(67, 14);
             this.label1.TabIndex = 0;
             this.label1.Text = "订单号：";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel1.AutoSize = true;
             this.flowLayoutPanel1.Controls.Add(this.label1);
             this.flowLayoutPanel1.Controls.Add(this.label2);
             this.flowLayoutPanel1.Controls.Add(this.label3);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(10, 78);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(14, 52);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(308, 18);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(768, 17);
             this.flowLayoutPanel1.TabIndex = 80;
             // 
             // PayedProductIndentDetailView
@@ -178,7 +176,7 @@
             this.Controls.Add(this.gridControl1);
             this.Name = "PayedProductIndentDetailView";
             this.ShowBottom = false;
-            this.Size = new System.Drawing.Size(822, 397);
+            this.Size = new System.Drawing.Size(791, 348);
             this.Controls.SetChildIndex(this.bottomPanel, 0);
             this.Controls.SetChildIndex(this.gridControl1, 0);
             this.Controls.SetChildIndex(this.simpleButton1, 0);

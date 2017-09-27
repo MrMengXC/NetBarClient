@@ -63,6 +63,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.titlePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             this.flowLayoutPanel5.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -80,7 +81,15 @@
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
             this.SuspendLayout();
-   
+            // 
+            // titlePanel
+            // 
+            this.titlePanel.Size = new System.Drawing.Size(793, 40);
+            // 
+            // titleLabel
+            // 
+            this.titleLabel.Size = new System.Drawing.Size(67, 14);
+            this.titleLabel.Text = "会员办理";
             // 
             // nameLabel
             // 
@@ -88,17 +97,17 @@
             this.nameLabel.Location = new System.Drawing.Point(5, 5);
             this.nameLabel.Margin = new System.Windows.Forms.Padding(5);
             this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(62, 18);
+            this.nameLabel.Size = new System.Drawing.Size(49, 14);
             this.nameLabel.TabIndex = 10;
             this.nameLabel.Text = "姓名：";
             // 
             // nationLabel
             // 
             this.nationLabel.AutoSize = true;
-            this.nationLabel.Location = new System.Drawing.Point(5, 33);
+            this.nationLabel.Location = new System.Drawing.Point(5, 29);
             this.nationLabel.Margin = new System.Windows.Forms.Padding(5);
             this.nationLabel.Name = "nationLabel";
-            this.nationLabel.Size = new System.Drawing.Size(62, 18);
+            this.nationLabel.Size = new System.Drawing.Size(49, 14);
             this.nationLabel.TabIndex = 11;
             this.nationLabel.Text = "民族：";
             // 
@@ -106,10 +115,10 @@
             // 
             this.cardTypeLabel.AutoSize = true;
             this.tableLayoutPanel2.SetColumnSpan(this.cardTypeLabel, 2);
-            this.cardTypeLabel.Location = new System.Drawing.Point(5, 61);
+            this.cardTypeLabel.Location = new System.Drawing.Point(5, 53);
             this.cardTypeLabel.Margin = new System.Windows.Forms.Padding(5);
             this.cardTypeLabel.Name = "cardTypeLabel";
-            this.cardTypeLabel.Size = new System.Drawing.Size(98, 18);
+            this.cardTypeLabel.Size = new System.Drawing.Size(77, 14);
             this.cardTypeLabel.TabIndex = 12;
             this.cardTypeLabel.Text = "证件类型：";
             // 
@@ -117,10 +126,10 @@
             // 
             this.cardNumLabel.AutoSize = true;
             this.tableLayoutPanel2.SetColumnSpan(this.cardNumLabel, 2);
-            this.cardNumLabel.Location = new System.Drawing.Point(5, 89);
+            this.cardNumLabel.Location = new System.Drawing.Point(5, 77);
             this.cardNumLabel.Margin = new System.Windows.Forms.Padding(5);
             this.cardNumLabel.Name = "cardNumLabel";
-            this.cardNumLabel.Size = new System.Drawing.Size(98, 18);
+            this.cardNumLabel.Size = new System.Drawing.Size(77, 14);
             this.cardNumLabel.TabIndex = 13;
             this.cardNumLabel.Text = "证件号码：";
             // 
@@ -128,10 +137,10 @@
             // 
             this.birthdayLabel.AutoSize = true;
             this.tableLayoutPanel2.SetColumnSpan(this.birthdayLabel, 2);
-            this.birthdayLabel.Location = new System.Drawing.Point(5, 117);
+            this.birthdayLabel.Location = new System.Drawing.Point(5, 101);
             this.birthdayLabel.Margin = new System.Windows.Forms.Padding(5);
             this.birthdayLabel.Name = "birthdayLabel";
-            this.birthdayLabel.Size = new System.Drawing.Size(98, 18);
+            this.birthdayLabel.Size = new System.Drawing.Size(77, 14);
             this.birthdayLabel.TabIndex = 14;
             this.birthdayLabel.Text = "出生日期：";
             // 
@@ -139,10 +148,10 @@
             // 
             this.cardValidityLabel.AutoSize = true;
             this.tableLayoutPanel2.SetColumnSpan(this.cardValidityLabel, 2);
-            this.cardValidityLabel.Location = new System.Drawing.Point(5, 145);
+            this.cardValidityLabel.Location = new System.Drawing.Point(5, 125);
             this.cardValidityLabel.Margin = new System.Windows.Forms.Padding(5);
             this.cardValidityLabel.Name = "cardValidityLabel";
-            this.cardValidityLabel.Size = new System.Drawing.Size(116, 18);
+            this.cardValidityLabel.Size = new System.Drawing.Size(91, 14);
             this.cardValidityLabel.TabIndex = 15;
             this.cardValidityLabel.Text = "证件有效期：";
             // 
@@ -150,10 +159,10 @@
             // 
             this.addressLabel.AutoSize = true;
             this.tableLayoutPanel2.SetColumnSpan(this.addressLabel, 2);
-            this.addressLabel.Location = new System.Drawing.Point(5, 173);
+            this.addressLabel.Location = new System.Drawing.Point(5, 149);
             this.addressLabel.Margin = new System.Windows.Forms.Padding(5);
             this.addressLabel.Name = "addressLabel";
-            this.addressLabel.Size = new System.Drawing.Size(62, 18);
+            this.addressLabel.Size = new System.Drawing.Size(49, 14);
             this.addressLabel.TabIndex = 16;
             this.addressLabel.Text = "地址：";
             // 
@@ -161,30 +170,30 @@
             // 
             this.organLabel.AutoSize = true;
             this.tableLayoutPanel2.SetColumnSpan(this.organLabel, 2);
-            this.organLabel.Location = new System.Drawing.Point(5, 201);
+            this.organLabel.Location = new System.Drawing.Point(5, 173);
             this.organLabel.Margin = new System.Windows.Forms.Padding(5);
             this.organLabel.Name = "organLabel";
-            this.organLabel.Size = new System.Drawing.Size(98, 18);
+            this.organLabel.Size = new System.Drawing.Size(77, 14);
             this.organLabel.TabIndex = 17;
             this.organLabel.Text = "发证机关：";
             // 
             // countryLabel
             // 
             this.countryLabel.AutoSize = true;
-            this.countryLabel.Location = new System.Drawing.Point(234, 33);
+            this.countryLabel.Location = new System.Drawing.Point(174, 29);
             this.countryLabel.Margin = new System.Windows.Forms.Padding(5);
             this.countryLabel.Name = "countryLabel";
-            this.countryLabel.Size = new System.Drawing.Size(62, 18);
+            this.countryLabel.Size = new System.Drawing.Size(49, 14);
             this.countryLabel.TabIndex = 18;
             this.countryLabel.Text = "国籍：";
             // 
             // genderLabel
             // 
             this.genderLabel.AutoSize = true;
-            this.genderLabel.Location = new System.Drawing.Point(234, 5);
+            this.genderLabel.Location = new System.Drawing.Point(174, 5);
             this.genderLabel.Margin = new System.Windows.Forms.Padding(5);
             this.genderLabel.Name = "genderLabel";
-            this.genderLabel.Size = new System.Drawing.Size(62, 18);
+            this.genderLabel.Size = new System.Drawing.Size(49, 14);
             this.genderLabel.TabIndex = 19;
             this.genderLabel.Text = "性别：";
             // 
@@ -198,16 +207,18 @@
             // 
             // flowLayoutPanel5
             // 
+            this.flowLayoutPanel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel5.AutoSize = true;
             this.flowLayoutPanel5.Controls.Add(this.flowLayoutPanel1);
             this.flowLayoutPanel5.Controls.Add(this.flowLayoutPanel4);
             this.flowLayoutPanel5.Controls.Add(this.flowLayoutPanel2);
             this.flowLayoutPanel5.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel5.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.flowLayoutPanel5.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
             this.flowLayoutPanel5.Location = new System.Drawing.Point(18, 14);
             this.flowLayoutPanel5.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
-            this.flowLayoutPanel5.Size = new System.Drawing.Size(415, 138);
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(331, 93);
             this.flowLayoutPanel5.TabIndex = 21;
             // 
             // flowLayoutPanel1
@@ -219,25 +230,25 @@
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(398, 46);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(313, 31);
             this.flowLayoutPanel1.TabIndex = 17;
             // 
             // labelControl18
             // 
             this.labelControl18.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelControl18.Appearance.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.labelControl18.Location = new System.Drawing.Point(3, 12);
+            this.labelControl18.Appearance.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.labelControl18.Location = new System.Drawing.Point(3, 7);
             this.labelControl18.Name = "labelControl18";
-            this.labelControl18.Size = new System.Drawing.Size(90, 22);
+            this.labelControl18.Size = new System.Drawing.Size(70, 17);
             this.labelControl18.TabIndex = 4;
             this.labelControl18.Text = "充值金额：";
             // 
             // moneyTextEdit
             // 
             this.moneyTextEdit.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.moneyTextEdit.Location = new System.Drawing.Point(99, 3);
+            this.moneyTextEdit.Location = new System.Drawing.Point(79, 3);
             this.moneyTextEdit.Name = "moneyTextEdit";
-            this.moneyTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.moneyTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.moneyTextEdit.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(149)))), ((int)(((byte)(202)))));
             this.moneyTextEdit.Properties.Appearance.Options.UseFont = true;
             this.moneyTextEdit.Properties.Appearance.Options.UseForeColor = true;
@@ -246,17 +257,17 @@
             this.moneyTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.moneyTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.moneyTextEdit.Properties.NullText = "根据用户充值金额自动填充";
-            this.moneyTextEdit.Size = new System.Drawing.Size(272, 40);
+            this.moneyTextEdit.Size = new System.Drawing.Size(211, 25);
             this.moneyTextEdit.TabIndex = 13;
             this.moneyTextEdit.EditValueChanged += new System.EventHandler(this.moneyTextEdit_EditValueChanged);
             // 
             // labelControl14
             // 
             this.labelControl14.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelControl14.Appearance.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.labelControl14.Location = new System.Drawing.Point(377, 12);
+            this.labelControl14.Appearance.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.labelControl14.Location = new System.Drawing.Point(296, 7);
             this.labelControl14.Name = "labelControl14";
-            this.labelControl14.Size = new System.Drawing.Size(18, 22);
+            this.labelControl14.Size = new System.Drawing.Size(14, 17);
             this.labelControl14.TabIndex = 15;
             this.labelControl14.Text = "元";
             // 
@@ -265,35 +276,35 @@
             this.flowLayoutPanel4.AutoSize = true;
             this.flowLayoutPanel4.Controls.Add(this.labelControl15);
             this.flowLayoutPanel4.Controls.Add(this.memberTypeTextEdit);
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(0, 46);
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(0, 31);
             this.flowLayoutPanel4.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(374, 46);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(293, 31);
             this.flowLayoutPanel4.TabIndex = 20;
             // 
             // labelControl15
             // 
             this.labelControl15.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelControl15.Appearance.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.labelControl15.Location = new System.Drawing.Point(3, 12);
+            this.labelControl15.Appearance.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.labelControl15.Location = new System.Drawing.Point(3, 7);
             this.labelControl15.Name = "labelControl15";
-            this.labelControl15.Size = new System.Drawing.Size(90, 22);
+            this.labelControl15.Size = new System.Drawing.Size(70, 17);
             this.labelControl15.TabIndex = 4;
             this.labelControl15.Text = "会员类型：";
             // 
             // memberTypeTextEdit
             // 
             this.memberTypeTextEdit.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.memberTypeTextEdit.Location = new System.Drawing.Point(99, 3);
+            this.memberTypeTextEdit.Location = new System.Drawing.Point(79, 3);
             this.memberTypeTextEdit.Name = "memberTypeTextEdit";
-            this.memberTypeTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.memberTypeTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.memberTypeTextEdit.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(149)))), ((int)(((byte)(202)))));
             this.memberTypeTextEdit.Properties.Appearance.Options.UseFont = true;
             this.memberTypeTextEdit.Properties.Appearance.Options.UseForeColor = true;
             this.memberTypeTextEdit.Properties.AutoHeight = false;
             this.memberTypeTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.memberTypeTextEdit.Properties.NullText = "根据充值金额自动填充会员类型";
-            this.memberTypeTextEdit.Size = new System.Drawing.Size(272, 40);
+            this.memberTypeTextEdit.Size = new System.Drawing.Size(211, 25);
             this.memberTypeTextEdit.TabIndex = 14;
             // 
             // flowLayoutPanel2
@@ -301,19 +312,19 @@
             this.flowLayoutPanel2.AutoSize = true;
             this.flowLayoutPanel2.Controls.Add(this.labelControl13);
             this.flowLayoutPanel2.Controls.Add(this.phoneTextEdit);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 92);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 62);
             this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(374, 46);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(293, 31);
             this.flowLayoutPanel2.TabIndex = 18;
             // 
             // labelControl13
             // 
             this.labelControl13.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelControl13.Appearance.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.labelControl13.Location = new System.Drawing.Point(3, 12);
+            this.labelControl13.Appearance.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.labelControl13.Location = new System.Drawing.Point(3, 7);
             this.labelControl13.Name = "labelControl13";
-            this.labelControl13.Size = new System.Drawing.Size(90, 22);
+            this.labelControl13.Size = new System.Drawing.Size(70, 17);
             this.labelControl13.TabIndex = 4;
             this.labelControl13.Text = "手机号码：";
             // 
@@ -321,9 +332,9 @@
             // 
             this.phoneTextEdit.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.phoneTextEdit.EditValue = "";
-            this.phoneTextEdit.Location = new System.Drawing.Point(99, 3);
+            this.phoneTextEdit.Location = new System.Drawing.Point(79, 3);
             this.phoneTextEdit.Name = "phoneTextEdit";
-            this.phoneTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.phoneTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.phoneTextEdit.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(149)))), ((int)(((byte)(202)))));
             this.phoneTextEdit.Properties.Appearance.Options.UseFont = true;
             this.phoneTextEdit.Properties.Appearance.Options.UseForeColor = true;
@@ -332,7 +343,7 @@
             this.phoneTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.phoneTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.phoneTextEdit.Properties.NullText = "请输入手机号码";
-            this.phoneTextEdit.Size = new System.Drawing.Size(272, 40);
+            this.phoneTextEdit.Size = new System.Drawing.Size(211, 25);
             this.phoneTextEdit.TabIndex = 12;
             // 
             // simpleButton1
@@ -344,7 +355,7 @@
             this.simpleButton1.Appearance.Options.UseBorderColor = true;
             this.simpleButton1.Appearance.Options.UseForeColor = true;
             this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.simpleButton1.Location = new System.Drawing.Point(18, 178);
+            this.simpleButton1.Location = new System.Drawing.Point(18, 123);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(88, 36);
             this.simpleButton1.TabIndex = 17;
@@ -361,7 +372,7 @@
             this.simpleButton2.Appearance.Options.UseFont = true;
             this.simpleButton2.Appearance.Options.UseForeColor = true;
             this.simpleButton2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.simpleButton2.Location = new System.Drawing.Point(142, 178);
+            this.simpleButton2.Location = new System.Drawing.Point(131, 123);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(88, 36);
             this.simpleButton2.TabIndex = 16;
@@ -376,7 +387,7 @@
             this.gridControl1.Location = new System.Drawing.Point(11, 15);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(811, 394);
+            this.gridControl1.Size = new System.Drawing.Size(398, 488);
             this.gridControl1.TabIndex = 80;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1,
@@ -395,6 +406,8 @@
             // 
             // tableLayoutPanel2
             // 
+            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel2.AutoSize = true;
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.11111F));
@@ -409,7 +422,7 @@
             this.tableLayoutPanel2.Controls.Add(this.nameLabel, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.genderLabel, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.countryLabel, 1, 1);
-            this.tableLayoutPanel2.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.tableLayoutPanel2.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
             this.tableLayoutPanel2.Location = new System.Drawing.Point(18, 10);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -422,14 +435,17 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(450, 224);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(331, 192);
             this.tableLayoutPanel2.TabIndex = 67;
             // 
             // tableLayoutPanel3
             // 
+            this.tableLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel3.ColumnCount = 3;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 15F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 10F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55F));
             this.tableLayoutPanel3.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.label3, 2, 0);
@@ -437,14 +453,14 @@
             this.tableLayoutPanel3.Controls.Add(this.panel1, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.panel7, 2, 1);
             this.tableLayoutPanel3.Controls.Add(this.panel8, 0, 3);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 84);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 46);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 4;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1544, 644);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(787, 585);
             this.tableLayoutPanel3.TabIndex = 68;
             // 
             // label2
@@ -457,7 +473,7 @@
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Margin = new System.Windows.Forms.Padding(0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(688, 60);
+            this.label2.Size = new System.Drawing.Size(349, 40);
             this.label2.TabIndex = 0;
             this.label2.Text = "用户身份信息";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -469,10 +485,10 @@
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label3.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
-            this.label3.Location = new System.Drawing.Point(703, 0);
+            this.label3.Location = new System.Drawing.Point(359, 0);
             this.label3.Margin = new System.Windows.Forms.Padding(0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(841, 60);
+            this.label3.Size = new System.Drawing.Size(428, 40);
             this.label3.TabIndex = 1;
             this.label3.Text = "办理会员对应充值金额";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -483,10 +499,10 @@
             this.label4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.label4.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
-            this.label4.Location = new System.Drawing.Point(0, 329);
+            this.label4.Location = new System.Drawing.Point(0, 292);
             this.label4.Margin = new System.Windows.Forms.Padding(0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(688, 60);
+            this.label4.Size = new System.Drawing.Size(349, 40);
             this.label4.TabIndex = 2;
             this.label4.Text = "办理会员对应充值金额";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -496,21 +512,21 @@
             this.panel1.Controls.Add(this.pictureEdit1);
             this.panel1.Controls.Add(this.tableLayoutPanel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 60);
+            this.panel1.Location = new System.Drawing.Point(0, 40);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(688, 254);
+            this.panel1.Size = new System.Drawing.Size(349, 252);
             this.panel1.TabIndex = 3;
             // 
             // panel7
             // 
             this.panel7.Controls.Add(this.gridControl1);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(703, 60);
+            this.panel7.Location = new System.Drawing.Point(359, 40);
             this.panel7.Margin = new System.Windows.Forms.Padding(0);
             this.panel7.Name = "panel7";
             this.tableLayoutPanel3.SetRowSpan(this.panel7, 3);
-            this.panel7.Size = new System.Drawing.Size(841, 584);
+            this.panel7.Size = new System.Drawing.Size(428, 545);
             this.panel7.TabIndex = 4;
             // 
             // panel8
@@ -519,10 +535,10 @@
             this.panel8.Controls.Add(this.flowLayoutPanel5);
             this.panel8.Controls.Add(this.simpleButton1);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel8.Location = new System.Drawing.Point(0, 389);
+            this.panel8.Location = new System.Drawing.Point(0, 332);
             this.panel8.Margin = new System.Windows.Forms.Padding(0);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(688, 255);
+            this.panel8.Size = new System.Drawing.Size(349, 253);
             this.panel8.TabIndex = 5;
             // 
             // OpenMemberView
@@ -532,8 +548,11 @@
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.tableLayoutPanel3);
             this.Name = "OpenMemberView";
-            this.Size = new System.Drawing.Size(1550, 728);
+            this.Size = new System.Drawing.Size(793, 631);
+            this.Controls.SetChildIndex(this.titlePanel, 0);
             this.Controls.SetChildIndex(this.tableLayoutPanel3, 0);
+            this.titlePanel.ResumeLayout(false);
+            this.titlePanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             this.flowLayoutPanel5.ResumeLayout(false);
             this.flowLayoutPanel5.PerformLayout();

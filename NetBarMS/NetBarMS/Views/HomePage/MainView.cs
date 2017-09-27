@@ -71,9 +71,9 @@ namespace NetBarMS.Views.HomePage
                 button.Text = nodeModel.nodeName;
                 button.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
                 button.Appearance.BackColor = NOR_BACK_COLOR;
-                button.Size = new Size(50, 50);
+                button.Size = new Size(50, 40);
                 button.ForeColor = Color.White;
-                button.Font = new Font("宋体", 15, GraphicsUnit.Pixel);
+                button.Font = new Font("宋体", 12, GraphicsUnit.Pixel);
                 button.Margin = new Padding(0);
                 button.Padding = new Padding(0);
                 button.Dock = DockStyle.Top;

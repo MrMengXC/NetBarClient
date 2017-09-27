@@ -48,11 +48,11 @@
             // 
             // titlePanel
             // 
-            this.titlePanel.Size = new System.Drawing.Size(513, 50);
+            this.titlePanel.Size = new System.Drawing.Size(513, 40);
             // 
             // titleLabel
             // 
-            this.titleLabel.Size = new System.Drawing.Size(80, 18);
+            this.titleLabel.Size = new System.Drawing.Size(53, 12);
             this.titleLabel.Text = "用户锁定";
             // 
             // closeBtn
@@ -62,7 +62,6 @@
             this.closeBtn.Location = new System.Drawing.Point(466, 0);
             this.closeBtn.LookAndFeel.SkinMaskColor = System.Drawing.Color.Transparent;
             this.closeBtn.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.closeBtn.Size = new System.Drawing.Size(47, 50);
             // 
             // bottomPanel
             // 
@@ -78,10 +77,10 @@
             this.panel1.Controls.Add(this.pictureEdit1);
             this.panel1.Controls.Add(this.flowLayoutPanel1);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(5, 53);
+            this.panel1.Location = new System.Drawing.Point(5, 43);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(504, 180);
+            this.panel1.Size = new System.Drawing.Size(504, 190);
             this.panel1.TabIndex = 62;
             // 
             // pictureEdit1
@@ -102,7 +101,7 @@
             this.flowLayoutPanel1.Controls.Add(this.label5);
             this.flowLayoutPanel1.Controls.Add(this.label6);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.flowLayoutPanel1.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
             this.flowLayoutPanel1.Location = new System.Drawing.Point(8, 46);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(369, 122);
@@ -182,10 +181,10 @@
             // 
             this.textBox1.AllowDrop = true;
             this.textBox1.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
-            this.textBox1.Location = new System.Drawing.Point(5, 249);
+            this.textBox1.Location = new System.Drawing.Point(5, 236);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(503, 105);
+            this.textBox1.Size = new System.Drawing.Size(503, 134);
             this.textBox1.TabIndex = 65;
             // 
             // UserLockView

@@ -46,7 +46,7 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Margin = new System.Windows.Forms.Padding(0);
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1191, 571);
+            this.gridControl1.Size = new System.Drawing.Size(1191, 597);
             this.gridControl1.TabIndex = 47;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1,
@@ -67,9 +67,9 @@
             // 
             this.pageView1.BackColor = System.Drawing.Color.Transparent;
             this.pageView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pageView1.Location = new System.Drawing.Point(0, 580);
+            this.pageView1.Location = new System.Drawing.Point(0, 600);
             this.pageView1.Name = "pageView1";
-            this.pageView1.Size = new System.Drawing.Size(1191, 50);
+            this.pageView1.Size = new System.Drawing.Size(1191, 30);
             this.pageView1.TabIndex = 48;
             // 
             // HomePageListView

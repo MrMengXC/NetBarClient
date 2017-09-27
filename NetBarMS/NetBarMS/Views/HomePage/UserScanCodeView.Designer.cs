@@ -44,7 +44,7 @@
             // 
             // titlePanel
             // 
-            this.titlePanel.Size = new System.Drawing.Size(630, 50);
+            this.titlePanel.Size = new System.Drawing.Size(630, 40);
             // 
             // closeBtn
             // 
@@ -53,7 +53,6 @@
             this.closeBtn.Location = new System.Drawing.Point(583, 0);
             this.closeBtn.LookAndFeel.SkinMaskColor = System.Drawing.Color.Transparent;
             this.closeBtn.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.closeBtn.Size = new System.Drawing.Size(47, 50);
             // 
             // panel1
             // 
@@ -65,10 +64,10 @@
             this.panel1.Controls.Add(this.pictureEdit1);
             this.panel1.Controls.Add(this.pictureEdit3);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(0, 50);
+            this.panel1.Location = new System.Drawing.Point(0, 43);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(630, 424);
+            this.panel1.Size = new System.Drawing.Size(630, 431);
             this.panel1.TabIndex = 62;
             // 
             // pictureEdit2
@@ -117,7 +116,7 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(253, 345);
+            this.label1.Location = new System.Drawing.Point(253, 352);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(113, 12);
             this.label1.TabIndex = 2;

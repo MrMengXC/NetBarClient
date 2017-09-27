@@ -33,7 +33,7 @@ namespace NetBarMS.Views.CustomView
         }
 
         [Browsable(true)]
-        [Description("设置img") DefaultValue(null)]
+        [Description("设置img") ]
         public Image ButtonImage
         {
             get
@@ -47,7 +47,7 @@ namespace NetBarMS.Views.CustomView
         }
 
         [Browsable(true)]
-        [Description("设置名称") DefaultValue("")]
+        [Description("设置名称")]
         public string TitleText
         {
             get
@@ -61,7 +61,7 @@ namespace NetBarMS.Views.CustomView
         }
 
         [Browsable(true)]
-        [Description("设置数量Label是否显示") DefaultValue(true)]
+        [Description("设置数量Label是否显示")]
         public bool ShowNumLabel
         {
             get

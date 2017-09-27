@@ -49,11 +49,11 @@
             // 
             // titlePanel
             // 
-            this.titlePanel.Size = new System.Drawing.Size(473, 50);
+            this.titlePanel.Size = new System.Drawing.Size(473, 40);
             // 
             // titleLabel
             // 
-            this.titleLabel.Size = new System.Drawing.Size(116, 18);
+            this.titleLabel.Size = new System.Drawing.Size(77, 12);
             this.titleLabel.Text = "当前设备信息";
             // 
             // closeBtn
@@ -63,7 +63,6 @@
             this.closeBtn.Location = new System.Drawing.Point(426, 0);
             this.closeBtn.LookAndFeel.SkinMaskColor = System.Drawing.Color.Transparent;
             this.closeBtn.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.closeBtn.Size = new System.Drawing.Size(47, 50);
             // 
             // label1
             // 
@@ -200,15 +199,15 @@
             // 
             this.simpleButton1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.simpleButton1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(165)))), ((int)(((byte)(248)))));
-            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.simpleButton1.Appearance.ForeColor = System.Drawing.Color.White;
             this.simpleButton1.Appearance.Options.UseBackColor = true;
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.Appearance.Options.UseForeColor = true;
             this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.simpleButton1.Location = new System.Drawing.Point(113, 376);
+            this.simpleButton1.Location = new System.Drawing.Point(121, 337);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(111, 40);
+            this.simpleButton1.Size = new System.Drawing.Size(95, 40);
             this.simpleButton1.TabIndex = 4;
             this.simpleButton1.Text = "强制下机";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
@@ -217,15 +216,15 @@
             // 
             this.simpleButton2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.simpleButton2.Appearance.BackColor = System.Drawing.Color.White;
-            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.simpleButton2.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(165)))), ((int)(((byte)(248)))));
             this.simpleButton2.Appearance.Options.UseBackColor = true;
             this.simpleButton2.Appearance.Options.UseFont = true;
             this.simpleButton2.Appearance.Options.UseForeColor = true;
             this.simpleButton2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.simpleButton2.Location = new System.Drawing.Point(245, 376);
+            this.simpleButton2.Location = new System.Drawing.Point(243, 337);
             this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(111, 40);
+            this.simpleButton2.Size = new System.Drawing.Size(95, 40);
             this.simpleButton2.TabIndex = 5;
             this.simpleButton2.Text = "封禁账户";
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
@@ -250,7 +249,7 @@
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "ComputerDetailView";
             this.ShowBottom = false;
-            this.Size = new System.Drawing.Size(473, 434);
+            this.Size = new System.Drawing.Size(473, 395);
             this.Controls.SetChildIndex(this.bottomPanel, 0);
             this.Controls.SetChildIndex(this.flowLayoutPanel1, 0);
             this.Controls.SetChildIndex(this.simpleButton1, 0);

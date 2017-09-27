@@ -42,18 +42,18 @@
             // 
             // titlePanel
             // 
-            this.titlePanel.Size = new System.Drawing.Size(544, 50);
+            this.titlePanel.Size = new System.Drawing.Size(457, 50);
             // 
             // titleLabel
             // 
-            this.titleLabel.Size = new System.Drawing.Size(116, 18);
+            this.titleLabel.Size = new System.Drawing.Size(77, 12);
             this.titleLabel.Text = "角色添加修改";
             // 
             // closeBtn
             // 
             this.closeBtn.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.closeBtn.Appearance.Options.UseBackColor = true;
-            this.closeBtn.Location = new System.Drawing.Point(497, 0);
+            this.closeBtn.Location = new System.Drawing.Point(410, 0);
             this.closeBtn.LookAndFeel.SkinMaskColor = System.Drawing.Color.Transparent;
             this.closeBtn.LookAndFeel.UseDefaultLookAndFeel = false;
             this.closeBtn.Size = new System.Drawing.Size(47, 50);
@@ -61,44 +61,46 @@
             // bottomPanel
             // 
             this.bottomPanel.Controls.Add(this.simpleButton1);
-            this.bottomPanel.Location = new System.Drawing.Point(0, 502);
-            this.bottomPanel.Size = new System.Drawing.Size(544, 64);
+            this.bottomPanel.Location = new System.Drawing.Point(0, 420);
+            this.bottomPanel.Size = new System.Drawing.Size(457, 64);
             // 
             // labelControl1
             // 
             this.labelControl1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.labelControl1.Location = new System.Drawing.Point(3, 12);
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.labelControl1.Location = new System.Drawing.Point(3, 7);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(90, 22);
+            this.labelControl1.Size = new System.Drawing.Size(70, 17);
             this.labelControl1.TabIndex = 62;
             this.labelControl1.Text = "角色名称：";
             // 
             // labelControl2
             // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.labelControl2.Location = new System.Drawing.Point(20, 131);
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.labelControl2.Location = new System.Drawing.Point(23, 107);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(90, 22);
+            this.labelControl2.Size = new System.Drawing.Size(70, 17);
             this.labelControl2.TabIndex = 63;
             this.labelControl2.Text = "功能权限：";
             // 
             // textEdit1
             // 
             this.textEdit1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textEdit1.Location = new System.Drawing.Point(99, 3);
+            this.textEdit1.Location = new System.Drawing.Point(79, 3);
             this.textEdit1.Name = "textEdit1";
+            this.textEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.textEdit1.Properties.Appearance.Options.UseFont = true;
             this.textEdit1.Properties.AutoHeight = false;
-            this.textEdit1.Size = new System.Drawing.Size(400, 40);
+            this.textEdit1.Size = new System.Drawing.Size(180, 25);
             this.textEdit1.TabIndex = 64;
             // 
             // treeView1
             // 
             this.treeView1.CheckBoxes = true;
             this.treeView1.HotTracking = true;
-            this.treeView1.Location = new System.Drawing.Point(119, 131);
+            this.treeView1.Location = new System.Drawing.Point(99, 107);
             this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(400, 297);
+            this.treeView1.Size = new System.Drawing.Size(332, 284);
             this.treeView1.TabIndex = 65;
             // 
             // flowLayoutPanel1
@@ -108,19 +110,20 @@
             this.flowLayoutPanel1.Controls.Add(this.textEdit1);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(20, 70);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(502, 46);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(262, 31);
             this.flowLayoutPanel1.TabIndex = 66;
             // 
             // simpleButton1
             // 
+            this.simpleButton1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.simpleButton1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(249)))));
-            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.simpleButton1.Appearance.Options.UseBackColor = true;
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.simpleButton1.Location = new System.Drawing.Point(202, 12);
+            this.simpleButton1.Location = new System.Drawing.Point(188, 3);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(140, 40);
+            this.simpleButton1.Size = new System.Drawing.Size(80, 30);
             this.simpleButton1.TabIndex = 67;
             this.simpleButton1.Text = "保存";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
@@ -133,7 +136,7 @@
             this.Controls.Add(this.treeView1);
             this.Controls.Add(this.labelControl2);
             this.Name = "ManagerAddView";
-            this.Size = new System.Drawing.Size(544, 566);
+            this.Size = new System.Drawing.Size(457, 484);
             this.Controls.SetChildIndex(this.bottomPanel, 0);
             this.Controls.SetChildIndex(this.titlePanel, 0);
             this.Controls.SetChildIndex(this.labelControl2, 0);

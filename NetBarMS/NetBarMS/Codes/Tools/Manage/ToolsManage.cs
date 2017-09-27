@@ -136,7 +136,7 @@ namespace NetBarMS.Codes.Tools
                 column.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
                 //表头文本自动换行
                 column.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-              
+                column.AppearanceHeader.Font = new Font("宋体", 12, GraphicsUnit.Pixel);
              
               
                 column.OptionsColumn.AllowEdit = false;

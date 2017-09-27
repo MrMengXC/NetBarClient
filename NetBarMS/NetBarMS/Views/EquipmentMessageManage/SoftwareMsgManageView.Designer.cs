@@ -76,6 +76,11 @@
             // 
             this.titlePanel.Size = new System.Drawing.Size(1657, 40);
             // 
+            // titleLabel
+            // 
+            this.titleLabel.Size = new System.Drawing.Size(67, 14);
+            this.titleLabel.Text = "设备信息";
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 5;
