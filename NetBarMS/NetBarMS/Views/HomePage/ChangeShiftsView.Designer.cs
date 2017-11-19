@@ -42,17 +42,17 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.titlePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit2.Properties)).BeginInit();
@@ -71,7 +71,10 @@
             // 
             // titlePanel
             // 
+            this.titlePanel.Controls.Add(this.simpleButton3);
             this.titlePanel.Size = new System.Drawing.Size(1066, 40);
+            this.titlePanel.Controls.SetChildIndex(this.simpleButton3, 0);
+            this.titlePanel.Controls.SetChildIndex(this.titleLabel, 0);
             // 
             // changeLabel
             // 
@@ -155,15 +158,15 @@
             // 
             this.simpleButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton3.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(229)))), ((int)(((byte)(248)))));
-            this.simpleButton3.Appearance.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.simpleButton3.Appearance.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.simpleButton3.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(140)))), ((int)(((byte)(190)))));
             this.simpleButton3.Appearance.Options.UseBackColor = true;
             this.simpleButton3.Appearance.Options.UseFont = true;
             this.simpleButton3.Appearance.Options.UseForeColor = true;
             this.simpleButton3.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.simpleButton3.Location = new System.Drawing.Point(475, 10);
+            this.simpleButton3.Location = new System.Drawing.Point(950, 6);
             this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(130, 40);
+            this.simpleButton3.Size = new System.Drawing.Size(111, 25);
             this.simpleButton3.TabIndex = 69;
             this.simpleButton3.Text = "打印库存清单";
             this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
@@ -171,15 +174,15 @@
             // simpleButton5
             // 
             this.simpleButton5.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(165)))), ((int)(((byte)(248)))));
-            this.simpleButton5.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.simpleButton5.Appearance.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.simpleButton5.Appearance.ForeColor = System.Drawing.Color.White;
             this.simpleButton5.Appearance.Options.UseBackColor = true;
             this.simpleButton5.Appearance.Options.UseFont = true;
             this.simpleButton5.Appearance.Options.UseForeColor = true;
             this.simpleButton5.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.simpleButton5.Location = new System.Drawing.Point(3, 362);
+            this.simpleButton5.Location = new System.Drawing.Point(6, 362);
             this.simpleButton5.Name = "simpleButton5";
-            this.simpleButton5.Size = new System.Drawing.Size(55, 25);
+            this.simpleButton5.Size = new System.Drawing.Size(80, 30);
             this.simpleButton5.TabIndex = 78;
             this.simpleButton5.Text = "登录";
             this.simpleButton5.Click += new System.EventHandler(this.simpleButton5_Click);
@@ -189,16 +192,15 @@
             this.panel2.Controls.Add(this.textBox1);
             this.panel2.Controls.Add(this.flowLayoutPanel2);
             this.panel2.Controls.Add(this.simpleButton5);
-            this.panel2.Controls.Add(this.simpleButton3);
             this.panel2.Controls.Add(this.labelControl2);
             this.panel2.Controls.Add(this.checkEdit1);
             this.panel2.Controls.Add(this.checkEdit2);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(424, 0);
+            this.panel2.Location = new System.Drawing.Point(428, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(622, 499);
+            this.panel2.Size = new System.Drawing.Size(628, 512);
             this.panel2.TabIndex = 1;
             // 
             // textBox1
@@ -209,7 +211,7 @@
             this.textBox1.Location = new System.Drawing.Point(3, 97);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(616, 142);
+            this.textBox1.Size = new System.Drawing.Size(622, 142);
             this.textBox1.TabIndex = 79;
             // 
             // flowLayoutPanel2
@@ -240,6 +242,16 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(240, 31);
             this.tableLayoutPanel2.TabIndex = 80;
             // 
+            // labelControl3
+            // 
+            this.labelControl3.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.labelControl3.Location = new System.Drawing.Point(3, 8);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(48, 14);
+            this.labelControl3.TabIndex = 72;
+            this.labelControl3.Text = "接班人：";
+            // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.AutoSize = true;
@@ -254,6 +266,16 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(228, 31);
             this.tableLayoutPanel3.TabIndex = 81;
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.labelControl1.Location = new System.Drawing.Point(3, 8);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(36, 14);
+            this.labelControl1.TabIndex = 77;
+            this.labelControl1.Text = "密码：";
             // 
             // tableLayoutPanel5
             // 
@@ -270,6 +292,14 @@
             this.tableLayoutPanel5.Size = new System.Drawing.Size(252, 31);
             this.tableLayoutPanel5.TabIndex = 83;
             // 
+            // textEdit3
+            // 
+            this.textEdit3.Location = new System.Drawing.Point(69, 3);
+            this.textEdit3.Name = "textEdit3";
+            this.textEdit3.Properties.AutoHeight = false;
+            this.textEdit3.Size = new System.Drawing.Size(180, 25);
+            this.textEdit3.TabIndex = 76;
+            // 
             // labelControl8
             // 
             this.labelControl8.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -280,24 +310,16 @@
             this.labelControl8.TabIndex = 72;
             this.labelControl8.Text = "交班人密码";
             // 
-            // textEdit3
-            // 
-            this.textEdit3.Location = new System.Drawing.Point(69, 3);
-            this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Properties.AutoHeight = false;
-            this.textEdit3.Size = new System.Drawing.Size(180, 25);
-            this.textEdit3.TabIndex = 76;
-            // 
             // label2
             // 
             this.label2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label2.Cursor = System.Windows.Forms.Cursors.Default;
             this.label2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.label2.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(622, 40);
+            this.label2.Size = new System.Drawing.Size(628, 40);
             this.label2.TabIndex = 80;
             this.label2.Text = "接班人";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -310,7 +332,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(414, 499);
+            this.panel1.Size = new System.Drawing.Size(418, 512);
             this.panel1.TabIndex = 0;
             // 
             // label1
@@ -318,11 +340,11 @@
             this.label1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label1.Cursor = System.Windows.Forms.Cursors.Default;
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.label1.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(414, 40);
+            this.label1.Size = new System.Drawing.Size(418, 40);
             this.label1.TabIndex = 69;
             this.label1.Text = "交班人";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -348,32 +370,12 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel2, 2, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(17, 46);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(5, 45);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1046, 499);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1056, 512);
             this.tableLayoutPanel1.TabIndex = 2;
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.labelControl3.Location = new System.Drawing.Point(3, 8);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(48, 14);
-            this.labelControl3.TabIndex = 72;
-            this.labelControl3.Text = "接班人：";
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.labelControl1.Location = new System.Drawing.Point(3, 8);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(36, 14);
-            this.labelControl1.TabIndex = 77;
-            this.labelControl1.Text = "密码：";
             // 
             // ChangeShiftsView
             // 

@@ -39,7 +39,6 @@ namespace NetBarMS.Views.InCome
             end = year + "-" + string.Format("{0:D2}", month) + "-" + days + " 23:59:59";
             this.popupContainerEdit1.Text = string.Format("{0}/{1:D2}", year, month);
 
-            GetMonthIncomeDetail();
         }
         #endregion
 
@@ -188,7 +187,9 @@ namespace NetBarMS.Views.InCome
             ToolsManage.ShowForm(detail, false);
         }
 
-      
+     
+
+
 
         //关闭选择菜单
         private void ComboBoxEdit1_Closed(object sender, DevExpress.XtraEditors.Controls.ClosedEventArgs e)
@@ -204,5 +205,10 @@ namespace NetBarMS.Views.InCome
             GetMonthIncomeDetail();
         }
         #endregion
+        private void MonthInComeView_Load(object sender, EventArgs e)
+        {
+            GetMonthIncomeDetail();
+
+        }
     }
 }

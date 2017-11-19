@@ -54,11 +54,13 @@
             // titlePanel
             // 
             this.titlePanel.Controls.Add(this.payChannelComboBoxEdit);
+            this.titlePanel.Controls.Add(this.popupContainerControl1);
             this.titlePanel.Controls.Add(this.useComboBoxEdit);
             this.titlePanel.Controls.Add(this.popupContainerEdit1);
             this.titlePanel.Size = new System.Drawing.Size(1100, 40);
             this.titlePanel.Controls.SetChildIndex(this.popupContainerEdit1, 0);
             this.titlePanel.Controls.SetChildIndex(this.useComboBoxEdit, 0);
+            this.titlePanel.Controls.SetChildIndex(this.popupContainerControl1, 0);
             this.titlePanel.Controls.SetChildIndex(this.titleLabel, 0);
             this.titlePanel.Controls.SetChildIndex(this.payChannelComboBoxEdit, 0);
             // 
@@ -87,9 +89,9 @@
             // popupContainerControl1
             // 
             this.popupContainerControl1.Controls.Add(this.dateNavigator);
-            this.popupContainerControl1.Location = new System.Drawing.Point(398, 72);
+            this.popupContainerControl1.Location = new System.Drawing.Point(353, 39);
             this.popupContainerControl1.Name = "popupContainerControl1";
-            this.popupContainerControl1.Size = new System.Drawing.Size(288, 261);
+            this.popupContainerControl1.Size = new System.Drawing.Size(282, 241);
             this.popupContainerControl1.TabIndex = 4;
             // 
             // dateNavigator
@@ -99,11 +101,12 @@
             this.dateNavigator.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateNavigator.DateTime = new System.DateTime(2017, 7, 18, 14, 11, 55, 200);
+            this.dateNavigator.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dateNavigator.EditValue = new System.DateTime(2017, 7, 18, 14, 11, 55, 200);
-            this.dateNavigator.FirstDayOfWeek = System.DayOfWeek.Monday;
-            this.dateNavigator.Location = new System.Drawing.Point(3, 3);
+            this.dateNavigator.FirstDayOfWeek = System.DayOfWeek.Sunday;
+            this.dateNavigator.Location = new System.Drawing.Point(0, 0);
             this.dateNavigator.Name = "dateNavigator";
-            this.dateNavigator.Size = new System.Drawing.Size(283, 258);
+            this.dateNavigator.Size = new System.Drawing.Size(282, 241);
             this.dateNavigator.TabIndex = 0;
             this.dateNavigator.Click += new System.EventHandler(this.DateNavigator_EditValueChanged);
             // 
@@ -146,10 +149,10 @@
             this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridControl1.Location = new System.Drawing.Point(0, 46);
+            this.gridControl1.Location = new System.Drawing.Point(5, 45);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1100, 723);
+            this.gridControl1.Size = new System.Drawing.Size(1090, 724);
             this.gridControl1.TabIndex = 81;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1,
@@ -182,11 +185,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pageView1);
             this.Controls.Add(this.gridControl1);
-            this.Controls.Add(this.popupContainerControl1);
             this.Name = "UserConsumeRecordView";
             this.Size = new System.Drawing.Size(1100, 805);
+            this.Load += new System.EventHandler(this.UserConsumeRecordView_Load);
             this.Controls.SetChildIndex(this.titlePanel, 0);
-            this.Controls.SetChildIndex(this.popupContainerControl1, 0);
             this.Controls.SetChildIndex(this.gridControl1, 0);
             this.Controls.SetChildIndex(this.pageView1, 0);
             this.titlePanel.ResumeLayout(false);

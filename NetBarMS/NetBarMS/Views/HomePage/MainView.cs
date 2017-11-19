@@ -55,16 +55,16 @@ namespace NetBarMS.Views.HomePage
         public MainView()
         {
             InitializeComponent();
-            InitUI();  
+            InitUI();
         }
 
         #region 初始化UI
         private void InitUI()
         {
-            MainViewManage.MainView = this.mainPanel ;
+            MainViewManage.MainView = this.mainPanel;
             //添加按钮列
-            List<HomePageNodeModel> modelList = XMLDataManage.GetNodesXML();           
-            for (int i = modelList.Count-1; i>=0; i--)
+            List<HomePageNodeModel> modelList = XMLDataManage.GetNodesXML();
+            for (int i = modelList.Count - 1; i >= 0; i--)
             {
                 HomePageNodeModel nodeModel = modelList[i];
                 SimpleButton button = new SimpleButton();
@@ -81,10 +81,10 @@ namespace NetBarMS.Views.HomePage
                 button.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
                 //button.ImageToTextAlignment = ImageAlignToText.LeftCenter;
                 button.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-                button.Click += Button_Click ;
+                button.Click += Button_Click;
                 button.Tag = nodeModel;
                 button.Paint += Button_Paint;
-                if (nodeModel.imgName == null || nodeModel.imgName == "" )
+                if (nodeModel.imgName == null || nodeModel.imgName == "")
                 {
                     button.Image = Imgs.icon_huiyuan;
                 }
@@ -111,9 +111,9 @@ namespace NetBarMS.Views.HomePage
             Color bc = Color.FromArgb(20, Color.White);
             ControlPaint.DrawBorder(gr, rect,
                 bc, ButtonBorderStyle.Solid);
-                //bc, 1, ButtonBorderStyle.Solid,
-                //Color.Transparent, 0, ButtonBorderStyle.None,
-                //bc, 1, ButtonBorderStyle.Solid);
+            //bc, 1, ButtonBorderStyle.Solid,
+            //Color.Transparent, 0, ButtonBorderStyle.None,
+            //bc, 1, ButtonBorderStyle.Solid);
 
 
 
@@ -197,7 +197,7 @@ namespace NetBarMS.Views.HomePage
             }
 
             //设置回原来的样子
-            if(selectButton != null)
+            if (selectButton != null)
             {
                 HomePageNodeModel selectNodeModel = (HomePageNodeModel)(selectButton.Tag);
                 selectButton.ForeColor = Color.White;
@@ -246,10 +246,10 @@ namespace NetBarMS.Views.HomePage
                 //显示右侧内容列表
                 ShowView(nodeModel);
             }
-           
+
         }
 
-        
+
         //右键弹出框点击时间
         private void Item_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -261,11 +261,11 @@ namespace NetBarMS.Views.HomePage
 
         }
         #endregion
-         
+
         #region 点击显示视图
         private void ShowView(HomePageNodeModel nodeModel)
         {
-            if(!ManagerManage.Manage().IsRightUse(nodeModel.nodeid))
+            if (!ManagerManage.Manage().IsRightUse(nodeModel.nodeid))
             {
                 return;
             }
@@ -351,6 +351,9 @@ namespace NetBarMS.Views.HomePage
                 case TreeNodeTag.AttendanceSearch:   //上座率查询
                     view = new AttendanceSearchView();
                     break;
+                case TreeNodeTag.UserDrawBackRecord:
+                    view = new UserDrawBackRecordView();
+                    break;
                 #endregion
 
                 #region 绩效考核
@@ -373,7 +376,7 @@ namespace NetBarMS.Views.HomePage
                     view = new NetPassWordView();
                     break;
                 case TreeNodeTag.StaffMoney:   //员工提成
-                   // view = new StaffMoneyView();
+                                               // view = new StaffMoneyView();
                     break;
                 case TreeNodeTag.MemberLevManage:   //会员等级
                     view = new MemberLevManageView();
@@ -424,7 +427,7 @@ namespace NetBarMS.Views.HomePage
             MainViewManage.ShowView(view);
         }
         #endregion
-       
+
         #region 顶部菜单的按钮功能
         //关闭闲机
         private void CloseMache_ButtonClick(object sender, EventArgs e)

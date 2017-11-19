@@ -42,11 +42,11 @@
             this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridControl1.Location = new System.Drawing.Point(0, 0);
+            this.gridControl1.Location = new System.Drawing.Point(5, 5);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Margin = new System.Windows.Forms.Padding(0);
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1191, 597);
+            this.gridControl1.Size = new System.Drawing.Size(1181, 592);
             this.gridControl1.TabIndex = 47;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1,

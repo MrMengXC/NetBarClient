@@ -56,9 +56,9 @@
             this.saveButton.Appearance.Options.UseFont = true;
             this.saveButton.Appearance.Options.UseForeColor = true;
             this.saveButton.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.saveButton.Location = new System.Drawing.Point(10, 103);
+            this.saveButton.Location = new System.Drawing.Point(5, 94);
             this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(100, 25);
+            this.saveButton.Size = new System.Drawing.Size(70, 30);
             this.saveButton.TabIndex = 65;
             this.saveButton.Text = "保存";
             this.saveButton.Click += new System.EventHandler(this.SaveSetting_Click);
@@ -66,23 +66,25 @@
             // pwCheckEdit
             // 
             this.pwCheckEdit.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pwCheckEdit.Location = new System.Drawing.Point(3, 6);
+            this.pwCheckEdit.Location = new System.Drawing.Point(3, 5);
             this.pwCheckEdit.Name = "pwCheckEdit";
-            this.pwCheckEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.pwCheckEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.pwCheckEdit.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(74)))));
             this.pwCheckEdit.Properties.Appearance.Options.UseFont = true;
             this.pwCheckEdit.Properties.Appearance.Options.UseForeColor = true;
             this.pwCheckEdit.Properties.Caption = "使用默认密码    默认密码设置：";
-            this.pwCheckEdit.Size = new System.Drawing.Size(192, 19);
+            this.pwCheckEdit.Size = new System.Drawing.Size(217, 21);
             this.pwCheckEdit.TabIndex = 0;
             // 
             // pwTextEdit
             // 
             this.pwTextEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.pwTextEdit.Location = new System.Drawing.Point(201, 3);
+            this.pwTextEdit.Location = new System.Drawing.Point(226, 3);
             this.pwTextEdit.Name = "pwTextEdit";
-            this.pwTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.pwTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.pwTextEdit.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
             this.pwTextEdit.Properties.Appearance.Options.UseFont = true;
+            this.pwTextEdit.Properties.Appearance.Options.UseForeColor = true;
             this.pwTextEdit.Properties.AutoHeight = false;
             this.pwTextEdit.Properties.Mask.EditMask = "[0-9]*";
             this.pwTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
@@ -99,11 +101,11 @@
             this.tableLayoutPanel1.Controls.Add(this.pwTextEdit, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.pwCheckEdit, 0, 0);
             this.tableLayoutPanel1.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(10, 56);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(5, 55);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(284, 31);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(309, 31);
             this.tableLayoutPanel1.TabIndex = 67;
             // 
             // NetPassWordView
@@ -114,6 +116,7 @@
             this.Controls.Add(this.saveButton);
             this.Name = "NetPassWordView";
             this.Size = new System.Drawing.Size(803, 398);
+            this.Load += new System.EventHandler(this.NetPassWordView_Load);
             this.Controls.SetChildIndex(this.titlePanel, 0);
             this.Controls.SetChildIndex(this.saveButton, 0);
             this.Controls.SetChildIndex(this.tableLayoutPanel1, 0);

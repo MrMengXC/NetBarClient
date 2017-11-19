@@ -52,7 +52,6 @@ namespace NetBarMS.Views
             {
                 this.comboBoxEdit1.Properties.Items.Add(staff.Nickname);
             }
-            GetLogList();
         }
         #endregion
 
@@ -141,6 +140,8 @@ namespace NetBarMS.Views
             }
             GetLogList();
         }
+
+       
         #endregion
 
         #region 条件筛选
@@ -155,5 +156,10 @@ namespace NetBarMS.Views
             GetLogList();
         }
         #endregion
+        private void LogManageView_Load(object sender, EventArgs e)
+        {
+            GetLogList();
+
+        }
     }
 }

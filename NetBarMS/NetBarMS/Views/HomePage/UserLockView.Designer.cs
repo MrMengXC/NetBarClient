@@ -66,8 +66,8 @@
             // bottomPanel
             // 
             this.bottomPanel.Controls.Add(this.simpleButton1);
-            this.bottomPanel.Location = new System.Drawing.Point(0, 373);
-            this.bottomPanel.Size = new System.Drawing.Size(513, 64);
+            this.bottomPanel.Location = new System.Drawing.Point(0, 397);
+            this.bottomPanel.Size = new System.Drawing.Size(513, 40);
             // 
             // panel1
             // 
@@ -156,6 +156,7 @@
             // 
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(502, 36);
@@ -170,7 +171,7 @@
             this.simpleButton1.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(27)))), ((int)(((byte)(12)))));
             this.simpleButton1.Appearance.Options.UseBackColor = true;
             this.simpleButton1.Appearance.Options.UseForeColor = true;
-            this.simpleButton1.Location = new System.Drawing.Point(209, 16);
+            this.simpleButton1.Location = new System.Drawing.Point(199, 3);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(94, 30);
             this.simpleButton1.TabIndex = 64;
@@ -184,7 +185,7 @@
             this.textBox1.Location = new System.Drawing.Point(5, 236);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(503, 134);
+            this.textBox1.Size = new System.Drawing.Size(503, 149);
             this.textBox1.TabIndex = 65;
             // 
             // UserLockView

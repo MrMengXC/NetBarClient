@@ -39,6 +39,7 @@ namespace NetBarMS.Codes.Tools
         ProductIndent,      //商品订单查寻
         OpenMemberRecord,        //  会员办理记录
         AttendanceSearch,       //上座率查询
+        UserDrawBackRecord,     //用户退款记录
 
         JXInspect,          //绩效考核
 
@@ -62,7 +63,7 @@ namespace NetBarMS.Codes.Tools
         /// <summary>
         /// 设备信息管理
         /// </summary>
-        EquipmentInfo,      
+        EquipmentInfo,
 
 
     }
@@ -131,118 +132,123 @@ namespace NetBarMS.Codes.Tools
         /// <summary>
         /// 营收详情
         /// </summary>
-        InComeDetail,       //营收详情
+        InComeDetail,
         /// <summary>
         /// 聊天管理
         /// </summary>
-        ChatManage,         //聊天管理
+        ChatManage,
         /// <summary>
         /// 绩效考核
         /// </summary>
-        JXInspect,          //绩效考核
+        JXInspect,
         /// <summary>
         /// 用户上网记录
         /// </summary>
-        UserNetRecord,          //用户上网记录
+        UserNetRecord,
         /// <summary>
         /// 用户消费记录
         /// </summary>
-        UserConsumeRecord,      //用户消费记录
+        UserConsumeRecord,
         /// <summary>
         /// 商品销售记录
         /// </summary>
-        ProductSellRecord,      //商品销售记录
+        ProductSellRecord,
         /// <summary>
         /// 开卡记录
         /// </summary>
-        OpenCardRecord,         //开卡记录
+        OpenCardRecord,
         /// <summary>
         /// 交班记录
         /// </summary>
-        GiveShiftsRecord,       //交班记录
+        GiveShiftsRecord,
         /// <summary>
         /// 接班记录
         /// </summary>
-        ReceiveShiftsRecord,    //接班记录
+        ReceiveShiftsRecord,
         /// <summary>
         /// 会员办理记录
         /// </summary>
-        OpenMemberRecord,       //会员办理记录
+        OpenMemberRecord,
         /// <summary>
         /// 会员充值记录
         /// </summary>
-        MemberRechargeRecord,       //会员充值记录
+        MemberRechargeRecord,
 
         /// <summary>
         /// 网吧评价
         /// </summary>
-        NetBarEvaluate,     //网吧评价
+        NetBarEvaluate,
         /// <summary>
         /// 员工评价
         /// </summary>
-        StaffEvaluate,      //员工评价
+        StaffEvaluate,
         /// <summary>
         /// 留言板
         /// </summary>
-        MsgBoard,           //留言板
+        MsgBoard,
 
         /// <summary>
         /// 会员等级
         /// </summary>
-        MemberLevManage,        //会员等级
+        MemberLevManage,
         /// <summary>
         /// 商品类别
         /// </summary>
-        ProductType,        //商品类别
+        ProductType,
         /// <summary>
         /// 客户端管理
         /// </summary>
-        ClientManage,       //客户端管理
+        ClientManage,
         /// <summary>
         /// 区域管理
         /// </summary>
-        AreaManage,         //区域管理
+        AreaManage,
         /// <summary>
         /// 备份管理
         /// </summary>
-        BackUpManage,       //备份管理
+        BackUpManage,
         /// <summary>
         /// 短信管理
         /// </summary>
-        SmsManage,          //短信管理
+        SmsManage,
         /// <summary>
         /// 管理人员
         /// </summary>
-        ManagerManage,      //管理人员
+        ManagerManage,
         /// <summary>
         /// 日志管理
         /// </summary>
-        LogManage,          //日志管理
+        LogManage,
         /// <summary>
         /// 呼叫服务
         /// </summary>
-        CallService,        //呼叫服务
+        CallService,
         /// <summary>
         /// 员工列表
         /// </summary>
-        StaffList,          //员工列表
+        StaffList,
         /// <summary>
         /// 产品销售排行
         /// </summary>
-        ProductSellRank,    //产品销售排行
+        ProductSellRank,
 
         /// <summary>
         /// 日营收详情
         /// </summary>
-        DayIncomeDetail,          //日营收
+        DayIncomeDetail,
         /// <summary>
         /// 月营收详情
         /// </summary>
-        MonthIncomeDetail,          //月营收
+        MonthIncomeDetail,
         /// <summary>
         /// 年营收详情
         /// </summary>
-        YearIncomeDetail,          //年营收
+        YearIncomeDetail,
+
+        /// <summary>
+        /// 退款记录
+        /// </summary>
+        DrawBackRecord,
 
     }
     #endregion
@@ -283,10 +289,10 @@ namespace NetBarMS.Codes.Tools
     /// </summary>
     public enum IncomeType
     {
-       /// <summary>
-       /// 日收入
-       /// </summary>
-        DAY_INCOME,  
+        /// <summary>
+        /// 日收入
+        /// </summary>
+        DAY_INCOME,
         /// <summary>
         /// 月收入
         /// </summary>
@@ -356,15 +362,15 @@ namespace NetBarMS.Codes.Tools
         /// <summary>
         /// 解锁
         /// </summary>
-        UNLOCK = 3,         
+        UNLOCK = 3,
         /// <summary>
         /// 验证
         /// </summary>
-        VERIFY = 4, 
+        VERIFY = 4,
         /// <summary>
         /// 全部结帐
         /// </summary>
-        CHECKOUT =  5,     
+        CHECKOUT = 5,
         /// <summary>
         /// 关闭闲机
         /// </summary>
@@ -452,7 +458,7 @@ namespace NetBarMS.Codes.Tools
         /// <summary>
         /// 激活状态，返回激活页面，再次激活
         /// </summary>
-        ACTIVE_STATUS,      
+        ACTIVE_STATUS,
     }
     #endregion
 
@@ -465,7 +471,8 @@ namespace NetBarMS.Codes.Tools
     #endregion
 
     #region 办理渠道
-    public enum MANAGECHANNEL {
+    public enum MANAGECHANNEL
+    {
         无 = 0,
         智能终端 = 1,
         电脑客户端 = 2,
@@ -501,7 +508,7 @@ namespace NetBarMS.Codes.Tools
         /// <summary>
         /// 需要添加身份证信息（临时会员）
         /// </summary>
-        NEED_ADD_CARD = 207, 
+        NEED_ADD_CARD = 207,
         /// <summary>
         /// 需要充值
         /// </summary>
@@ -552,7 +559,8 @@ namespace NetBarMS.Codes.Tools
 
 
     #region 区域设置
-    enum AREA_SETTING {
+    enum AREA_SETTING
+    {
         /// <summary>
         /// 无
         /// </summary>

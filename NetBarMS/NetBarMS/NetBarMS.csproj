@@ -27,6 +27,7 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -37,6 +38,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -46,6 +48,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="BigInteger, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -175,6 +178,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Codes\Tools\Manage\XMLDataManage.cs" />
+    <Compile Include="Views\CustomMainView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\CustomMainView.Designer.cs">
+      <DependentUpon>CustomMainView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\CustomView\AreaComsView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -336,6 +345,12 @@
     </Compile>
     <Compile Include="Views\SystemManage\ProductTypeAddView.Designer.cs">
       <DependentUpon>ProductTypeAddView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SystemSearch\UserDrawBackRecordView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\SystemSearch\UserDrawBackRecordView.Designer.cs">
+      <DependentUpon>UserDrawBackRecordView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\SystemSearch\UserRechargeRecordView.cs">
       <SubType>UserControl</SubType>
@@ -666,7 +681,11 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Views\CustomMainView.resx">
+      <DependentUpon>CustomMainView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\CustomView\AreaComsView.resx">
       <DependentUpon>AreaComsView.cs</DependentUpon>
     </EmbeddedResource>
@@ -750,6 +769,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\SystemSearch\AttendanceSearchView.resx">
       <DependentUpon>AttendanceSearchView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SystemSearch\UserDrawBackRecordView.resx">
+      <DependentUpon>UserDrawBackRecordView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\SystemSearch\UserRechargeRecordView.resx">
       <DependentUpon>UserRechargeRecordView.cs</DependentUpon>

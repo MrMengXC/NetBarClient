@@ -109,11 +109,12 @@
             this.gridControl1.Location = new System.Drawing.Point(5, 5);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(696, 360);
+            this.gridControl1.Size = new System.Drawing.Size(691, 329);
             this.gridControl1.TabIndex = 82;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1,
             this.gridView});
+            this.gridControl1.Load += new System.EventHandler(this.gridControl1_Load);
             // 
             // gridView1
             // 
@@ -136,9 +137,9 @@
             this.simpleButton2.Appearance.Options.UseFont = true;
             this.simpleButton2.Appearance.Options.UseForeColor = true;
             this.simpleButton2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.simpleButton2.Location = new System.Drawing.Point(5, 327);
+            this.simpleButton2.Location = new System.Drawing.Point(5, 297);
             this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(100, 25);
+            this.simpleButton2.Size = new System.Drawing.Size(70, 30);
             this.simpleButton2.TabIndex = 84;
             this.simpleButton2.Text = "保存";
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
@@ -152,7 +153,7 @@
             this.textBox1.Location = new System.Drawing.Point(5, 5);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(696, 316);
+            this.textBox1.Size = new System.Drawing.Size(691, 284);
             this.textBox1.TabIndex = 83;
             // 
             // panel4
@@ -163,7 +164,7 @@
             this.panel4.Location = new System.Drawing.Point(1, 42);
             this.panel4.Margin = new System.Windows.Forms.Padding(0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(717, 742);
+            this.panel4.Size = new System.Drawing.Size(712, 679);
             this.panel4.TabIndex = 1;
             // 
             // simpleButton1
@@ -175,9 +176,9 @@
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.Appearance.Options.UseForeColor = true;
             this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.simpleButton1.Location = new System.Drawing.Point(13, 211);
+            this.simpleButton1.Location = new System.Drawing.Point(13, 203);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(100, 25);
+            this.simpleButton1.Size = new System.Drawing.Size(70, 30);
             this.simpleButton1.TabIndex = 2;
             this.simpleButton1.Text = "保存";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
@@ -193,11 +194,11 @@
             this.flowLayoutPanel2.Controls.Add(this.tableLayoutPanel7);
             this.flowLayoutPanel2.Controls.Add(this.tableLayoutPanel8);
             this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel2.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.flowLayoutPanel2.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
             this.flowLayoutPanel2.Location = new System.Drawing.Point(10, 10);
             this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(707, 185);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(702, 185);
             this.flowLayoutPanel2.TabIndex = 1;
             // 
             // tableLayoutPanel1
@@ -214,35 +215,35 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(371, 31);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(349, 31);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // labelControl2
             // 
             this.labelControl2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.labelControl2.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(74)))));
-            this.labelControl2.Location = new System.Drawing.Point(323, 6);
+            this.labelControl2.Location = new System.Drawing.Point(304, 7);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(45, 18);
+            this.labelControl2.Size = new System.Drawing.Size(42, 17);
             this.labelControl2.TabIndex = 2;
             this.labelControl2.Text = "分钟。";
             // 
             // labelControl1
             // 
             this.labelControl1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.labelControl1.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(74)))));
-            this.labelControl1.Location = new System.Drawing.Point(3, 6);
+            this.labelControl1.Location = new System.Drawing.Point(3, 7);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(283, 18);
+            this.labelControl1.Size = new System.Drawing.Size(264, 17);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "1.客户端进入登录界面后多久内自动关机：";
             // 
             // textEdit1
             // 
             this.textEdit1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textEdit1.Location = new System.Drawing.Point(292, 3);
+            this.textEdit1.Location = new System.Drawing.Point(273, 3);
             this.textEdit1.Name = "textEdit1";
             this.textEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.textEdit1.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
@@ -269,13 +270,13 @@
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(356, 31);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(335, 31);
             this.tableLayoutPanel5.TabIndex = 2;
             // 
             // textEdit2
             // 
             this.textEdit2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textEdit2.Location = new System.Drawing.Point(277, 3);
+            this.textEdit2.Location = new System.Drawing.Point(259, 3);
             this.textEdit2.Name = "textEdit2";
             this.textEdit2.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.textEdit2.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
@@ -291,22 +292,22 @@
             // labelControl5
             // 
             this.labelControl5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.labelControl5.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(74)))));
-            this.labelControl5.Location = new System.Drawing.Point(3, 6);
+            this.labelControl5.Location = new System.Drawing.Point(3, 7);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(268, 18);
+            this.labelControl5.Size = new System.Drawing.Size(250, 17);
             this.labelControl5.TabIndex = 0;
             this.labelControl5.Text = "2.客户端与服务器失联多久后自动锁屏：";
             // 
             // labelControl11
             // 
             this.labelControl11.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelControl11.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.labelControl11.Appearance.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.labelControl11.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(74)))));
-            this.labelControl11.Location = new System.Drawing.Point(308, 6);
+            this.labelControl11.Location = new System.Drawing.Point(290, 7);
             this.labelControl11.Name = "labelControl11";
-            this.labelControl11.Size = new System.Drawing.Size(45, 18);
+            this.labelControl11.Size = new System.Drawing.Size(42, 17);
             this.labelControl11.TabIndex = 2;
             this.labelControl11.Text = "分钟。";
             // 
@@ -324,13 +325,13 @@
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(296, 31);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(279, 31);
             this.tableLayoutPanel6.TabIndex = 3;
             // 
             // textEdit3
             // 
             this.textEdit3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textEdit3.Location = new System.Drawing.Point(217, 3);
+            this.textEdit3.Location = new System.Drawing.Point(203, 3);
             this.textEdit3.Name = "textEdit3";
             this.textEdit3.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.textEdit3.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
@@ -346,22 +347,22 @@
             // labelControl7
             // 
             this.labelControl7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.labelControl7.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(74)))));
-            this.labelControl7.Location = new System.Drawing.Point(3, 6);
+            this.labelControl7.Location = new System.Drawing.Point(3, 7);
             this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(208, 18);
+            this.labelControl7.Size = new System.Drawing.Size(194, 17);
             this.labelControl7.TabIndex = 0;
             this.labelControl7.Text = "3.用户帐户余额不足提醒金额：";
             // 
             // labelControl12
             // 
             this.labelControl12.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelControl12.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.labelControl12.Appearance.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.labelControl12.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(74)))));
-            this.labelControl12.Location = new System.Drawing.Point(248, 6);
+            this.labelControl12.Location = new System.Drawing.Point(234, 7);
             this.labelControl12.Name = "labelControl12";
-            this.labelControl12.Size = new System.Drawing.Size(45, 18);
+            this.labelControl12.Size = new System.Drawing.Size(42, 17);
             this.labelControl12.TabIndex = 2;
             this.labelControl12.Text = "分钟。";
             // 
@@ -379,24 +380,24 @@
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(281, 31);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(265, 31);
             this.tableLayoutPanel7.TabIndex = 4;
             // 
             // labelControl6
             // 
             this.labelControl6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.labelControl6.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(74)))));
-            this.labelControl6.Location = new System.Drawing.Point(3, 6);
+            this.labelControl6.Location = new System.Drawing.Point(3, 7);
             this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(193, 18);
+            this.labelControl6.Size = new System.Drawing.Size(180, 17);
             this.labelControl6.TabIndex = 0;
             this.labelControl6.Text = "4.余额不足时间隔提醒时间：\r\n";
             // 
             // textEdit4
             // 
             this.textEdit4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textEdit4.Location = new System.Drawing.Point(202, 3);
+            this.textEdit4.Location = new System.Drawing.Point(189, 3);
             this.textEdit4.Name = "textEdit4";
             this.textEdit4.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.textEdit4.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
@@ -412,11 +413,11 @@
             // labelControl8
             // 
             this.labelControl8.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.labelControl8.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(74)))));
-            this.labelControl8.Location = new System.Drawing.Point(233, 6);
+            this.labelControl8.Location = new System.Drawing.Point(220, 7);
             this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(45, 18);
+            this.labelControl8.Size = new System.Drawing.Size(42, 17);
             this.labelControl8.TabIndex = 2;
             this.labelControl8.Text = "分钟。";
             // 
@@ -434,24 +435,24 @@
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 1;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(296, 31);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(279, 31);
             this.tableLayoutPanel8.TabIndex = 5;
             // 
             // labelControl9
             // 
             this.labelControl9.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelControl9.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.labelControl9.Appearance.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.labelControl9.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(74)))));
-            this.labelControl9.Location = new System.Drawing.Point(3, 6);
+            this.labelControl9.Location = new System.Drawing.Point(3, 7);
             this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(208, 18);
+            this.labelControl9.Size = new System.Drawing.Size(194, 17);
             this.labelControl9.TabIndex = 0;
             this.labelControl9.Text = "5.客户端失去联系后提醒时间：";
             // 
             // textEdit5
             // 
             this.textEdit5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textEdit5.Location = new System.Drawing.Point(217, 3);
+            this.textEdit5.Location = new System.Drawing.Point(203, 3);
             this.textEdit5.Name = "textEdit5";
             this.textEdit5.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.textEdit5.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
@@ -467,11 +468,11 @@
             // labelControl10
             // 
             this.labelControl10.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelControl10.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.labelControl10.Appearance.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.labelControl10.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(74)))));
-            this.labelControl10.Location = new System.Drawing.Point(248, 6);
+            this.labelControl10.Location = new System.Drawing.Point(234, 7);
             this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Size = new System.Drawing.Size(45, 18);
+            this.labelControl10.Size = new System.Drawing.Size(42, 17);
             this.labelControl10.TabIndex = 2;
             this.labelControl10.Text = "分钟。";
             // 
@@ -486,22 +487,22 @@
             this.mainTableLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.mainTableLayout.Controls.Add(this.panel3, 2, 0);
             this.mainTableLayout.Controls.Add(this.panel2, 0, 0);
-            this.mainTableLayout.Location = new System.Drawing.Point(0, 43);
+            this.mainTableLayout.Location = new System.Drawing.Point(5, 45);
             this.mainTableLayout.Margin = new System.Windows.Forms.Padding(0);
             this.mainTableLayout.Name = "mainTableLayout";
             this.mainTableLayout.RowCount = 1;
             this.mainTableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.mainTableLayout.Size = new System.Drawing.Size(1449, 785);
+            this.mainTableLayout.Size = new System.Drawing.Size(1439, 722);
             this.mainTableLayout.TabIndex = 63;
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.rightTableLayout);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(729, 0);
+            this.panel3.Location = new System.Drawing.Point(724, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(720, 785);
+            this.panel3.Size = new System.Drawing.Size(715, 722);
             this.panel3.TabIndex = 1;
             // 
             // rightTableLayout
@@ -518,19 +519,19 @@
             this.rightTableLayout.RowCount = 2;
             this.rightTableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.rightTableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.rightTableLayout.Size = new System.Drawing.Size(720, 785);
+            this.rightTableLayout.Size = new System.Drawing.Size(715, 722);
             this.rightTableLayout.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("宋体", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.label1.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
             this.label1.Location = new System.Drawing.Point(1, 1);
             this.label1.Margin = new System.Windows.Forms.Padding(0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(718, 40);
+            this.label1.Size = new System.Drawing.Size(713, 40);
             this.label1.TabIndex = 4;
             this.label1.Text = "欢迎词设置";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -547,17 +548,17 @@
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(712, 736);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(707, 673);
             this.tableLayoutPanel2.TabIndex = 5;
             // 
             // panel5
             // 
             this.panel5.Controls.Add(this.gridControl1);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(0, 368);
+            this.panel5.Location = new System.Drawing.Point(0, 336);
             this.panel5.Margin = new System.Windows.Forms.Padding(0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(712, 368);
+            this.panel5.Size = new System.Drawing.Size(707, 337);
             this.panel5.TabIndex = 1;
             // 
             // panel1
@@ -568,7 +569,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(712, 368);
+            this.panel1.Size = new System.Drawing.Size(707, 336);
             this.panel1.TabIndex = 0;
             // 
             // panel2
@@ -578,7 +579,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(719, 785);
+            this.panel2.Size = new System.Drawing.Size(714, 722);
             this.panel2.TabIndex = 0;
             // 
             // leftTableLayout
@@ -595,19 +596,19 @@
             this.leftTableLayout.RowCount = 2;
             this.leftTableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.leftTableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.leftTableLayout.Size = new System.Drawing.Size(719, 785);
+            this.leftTableLayout.Size = new System.Drawing.Size(714, 722);
             this.leftTableLayout.TabIndex = 0;
             // 
             // label2
             // 
             this.label2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Font = new System.Drawing.Font("宋体", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.label2.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
             this.label2.Location = new System.Drawing.Point(1, 1);
             this.label2.Margin = new System.Windows.Forms.Padding(0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(717, 40);
+            this.label2.Size = new System.Drawing.Size(712, 40);
             this.label2.TabIndex = 3;
             this.label2.Text = "默认配置";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -619,7 +620,7 @@
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.mainTableLayout);
             this.Name = "ClientManageView";
-            this.Size = new System.Drawing.Size(1449, 828);
+            this.Size = new System.Drawing.Size(1449, 777);
             this.Controls.SetChildIndex(this.titlePanel, 0);
             this.Controls.SetChildIndex(this.mainTableLayout, 0);
             this.titlePanel.ResumeLayout(false);

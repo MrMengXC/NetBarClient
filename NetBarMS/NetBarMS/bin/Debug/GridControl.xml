@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <gridcontrol>
-  
+
   <!--主页-->
   <grid type ="HomePageList">
     <column name = "设备编号" field="EpNumber" type ="C_Text" width ="" height =""/>
@@ -25,8 +25,8 @@
     <column name = "充值金额" field="PayMoney" type ="C_Text" width ="" height =""/>
     <column name = "赠送金额" field="GiveMoney" type ="C_Text" width ="" height =""/>
   </grid>
-  
-  
+
+
   <!--获取锁定列表-->
   <grid type ="LockList">
     <column name = "姓名" field="Name" type ="C_Text" width ="" height =""/>
@@ -37,7 +37,7 @@
     <column name = "锁定原因" field="Reason" type ="C_Text" width ="" height =""/>
     <column name = "操作" field="Operation" type ="C_Button" width ="" height ="" bnames ="解锁"/>
   </grid>
-  
+
   <!--已付款商品订单管理-->
   <grid type ="PayedProductIndent">
     <column name = "订单用户" field="Name" type ="C_Text" width ="" height =""/>
@@ -58,9 +58,9 @@
     <column name = "金额" type ="C_Text" width ="" height =""/>
     <column name = "MAC地址" type ="C_Text" width ="" height =""/>
     <column name = "IP地址" type ="C_Text" width ="" height =""/>
-   
+
   </grid>
-  
+
   <!--会员管理-->
   <grid type ="MemberManage">
     <column name = "勾选" field="Check" type ="C_Check" width ="" height =""/>
@@ -120,7 +120,7 @@
     <column name = "销售额" field="SellMoney" type ="C_Text" width ="" height =""/>
     <column name = "销售额排名" field="SellMoneyRank" type ="C_Text" width ="" height =""/>
   </grid>
-  
+
   <!--商品订单查询-->
   <grid type ="ProductIndent">
     <column name = "订单号" field="IndentNumber" type ="C_Text" width ="" height =""/>
@@ -137,7 +137,7 @@
     <column name = "订单详情" field="Detail" type ="C_Button" width ="" height ="" bnames ="查看"/>
 
   </grid>
-  
+
   <!--商品订单详情-->
   <grid type ="ProductIndentDetail">
     <column name = "商品类别" field="Type" type ="C_Text" width ="" height =""/>
@@ -146,7 +146,7 @@
     <column name = "数量" field="Num" type ="C_Text" width ="" height =""/>
     <column name = "价格" field="Money" type ="C_Text" width ="" height =""/>
   </grid>
-    
+
   <!--正常奖励-->
   <grid type ="NormalAward">
     <column name = "勾选" field="Check" type ="C_Check" width ="" height =""/>
@@ -156,7 +156,7 @@
     <column name = "奖励金额" field="GiveMoney" type ="C_Text" width ="" height =""/>
     <column name = "有效期" field="ValidDay" type ="C_Text" width ="" height =""/>
   </grid>
-  
+
   <!--会员日奖励-->
   <grid type ="MemberDayAward">
     <column name = "勾选" field="Check" type ="C_Check" width ="" height =""/>
@@ -166,7 +166,7 @@
     <column name = "奖励金额" field="GiveMoney" type ="C_Text" width ="" height =""/>
     <column name = "会员日" field="ValidDay" type ="C_Text" width ="" height =""/>
   </grid>
-  
+
   <!--营收详情-->
   <grid type ="InComeDetail">
     <column name = "订单号" field="IndentNumber" type ="C_Text" width ="" height =""/>
@@ -181,14 +181,14 @@
     <column name = "具体事项" field="Detail" type ="C_Text" width ="" height =""/>
 
   </grid>
-  
+
   <grid type ="ChatManage">
     <column name = "电脑" field="Check" type ="C_Check" width ="" height =""/>
     <column name = "姓名" field="Name"  type ="C_Text" width ="" height =""/>
     <column name = "卡号" field="Card"  type ="C_Text" width ="" height =""/>
     <column name = "ip地址" field="Ip"  type ="C_Text" width ="" height =""/>
   </grid>
-  
+
   <!--绩效考核-->
   <grid type ="JXInspect">
     <column name = "员工姓名" field="StaffName" type ="C_Text" width ="" height =""/>
@@ -198,7 +198,7 @@
     <column name = "当班期间商品销售金额" field="SellMoney" type ="C_Text" width ="" height =""/>
     <column name = "用户满意度统计" field="SfDegree" type ="C_Text" width ="" height =""/>
   </grid>
-  
+
   <!--用户上网记录查询-->
   <grid type ="UserNetRecord">
     <column name = "身份证号" field="IdNumber" type ="C_Text" width ="" height =""/>
@@ -212,7 +212,7 @@
     <column name = "MAC地址" field="Mac" type ="C_Text" width ="" height =""/>
     <column name = "IP地址" field="Ip" type ="C_Text" width ="" height =""/>
   </grid>
-  
+
   <!--用户消费记录查询-->
   <grid type ="UserConsumeRecord">
     <column name = "订单号" field="IndentNumber" type ="C_Text" width ="" height =""/>
@@ -236,7 +236,7 @@
     <column name = "下单时间" field="IndentTime" type ="C_Text" width ="" height =""/>
     <column name = "付款渠道" field="PayChannel" type ="C_Text" width ="" height =""/>
   </grid>
-  
+
   <!--开卡记录查询-->
   <grid type ="OpenCardRecord">
     <column name = "用户姓名" type ="C_Text" width ="" height =""/>
@@ -326,6 +326,23 @@
     <column name = "订单到帐状态" field="IndentStatus" type ="C_Text" width ="" height =""/>
 
   </grid>
+  <!--用户退款记录-->
+  <grid type ="DrawBackRecord">
+    <column name = "订单号" field="IndentNumber" type ="C_Text" width ="" height =""/>
+    <column name = "用户姓名" field="MemberName" type ="C_Text" width ="" height =""/>
+    <column name = "会员类型" field="MemberType" type ="C_Text" width ="" height =""/>
+    <column name = "身份证号" field="IdNumber" type ="C_Text" width ="" height =""/>
+    <column name = "位置" field="Area" type ="C_Text" width ="" height =""/>
+    <column name = "退款类型" field="DrawBackType" type ="C_Text" width ="" height =""/>
+    <column name = "退款金额" field="DrawBackMoney" type ="C_Text" width ="" height =""/>
+    <column name = "退款时间" field="DrawBackTime" type ="C_Text" width ="" height =""/>
+
+    <column name = "退款渠道" field="DrawBackChannel" type ="C_Text" width ="" height =""/>
+    <column name = "退款订单号" field="DrawBackIndentNumber" type ="C_Text" width ="" height =""/>
+    <column name = "退款状态" field="DrawBackStatus" type ="C_Text" width ="" height =""/>
+
+  </grid>
+
   <!--会员等级管理-->
   <grid type ="MemberLevManage">
     <column name = "勾选" field="Check" type ="C_Check" width ="" height =""/>
@@ -335,27 +352,29 @@
     <column name = "赠送积分" field="GiveIntegral" type ="C_Text" width ="" height =""/>
     <column name = "操作" field="Operation" type ="C_Button" width ="" height ="" bnames="修改"/>
   </grid>
-  
+
   <!--商品类型-->
   <grid type ="ProductType">
     <column name = "勾选" field="Check" type ="C_Check" width ="" height =""/>
     <column name = "序号" field="Number" type ="C_Text" width ="" height =""/>
-    <column name = "类别" field="Type" type ="C_Text" width ="" height =""/>    
+    <column name = "类别" field="Type" type ="C_Text" width ="" height =""/>
     <column name = "操作" field="Operation" type ="C_Button" width ="" height ="" bnames="修改"/>
   </grid>
-  
+  <!--客户端管理-->
   <grid type ="ClientManage">
     <column name = "欢迎词" field="Wecome" type ="C_Text" width ="" height =""/>
     <column name = "操作" field="Operation" type ="C_Button" width ="" height ="" bnames="使用/删除"/>
   </grid>
-  
+
+  <!--区域管理-->
   <grid type ="AreaManage">
     <column name = "设备名称" field="CpName" type ="C_Text" width ="" height =""/>
     <column name = "ip地址" field="Ip" type ="C_Text" width ="" height =""/>
     <column name = "MAC地址" field="Mac" type ="C_Text" width ="" height =""/>
     <column name = "操作" field="Operation" type ="C_Button" width ="" height ="" bnames="重命名"/>
   </grid>
-  
+
+  <!--备份管理-->
   <grid type ="BackUpManage">
     <column name = "序号" type ="C_Text" width ="" height =""/>
     <column name = "备份计划" type ="C_Text" width ="" height =""/>
@@ -367,9 +386,9 @@
     <column name = "勾选" field="Check" type ="C_Check" width ="" height =""/>
     <column name = "姓名" field="Staff" type ="C_Text" width ="" height =""/>
     <column name = "手机号码" field="TelNumber" type ="C_Text" width ="" height =""/>
-    
+
   </grid>
-  
+
   <!--员工角色设置-->
   <grid type ="ManagerManage">
     <column name = "勾选" field="Check" type ="C_Check" width ="" height =""/>

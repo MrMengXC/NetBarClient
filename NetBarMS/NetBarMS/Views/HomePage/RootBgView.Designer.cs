@@ -70,7 +70,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::NetBarMS.Imgs.img_beijing;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.simpleButton2);
             this.Controls.Add(this.simpleButton1);
             this.Name = "RootBgView";

@@ -53,10 +53,10 @@
             this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridControl1.Location = new System.Drawing.Point(10, 46);
+            this.gridControl1.Location = new System.Drawing.Point(5, 45);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(962, 515);
+            this.gridControl1.Size = new System.Drawing.Size(972, 516);
             this.gridControl1.TabIndex = 80;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1,
@@ -77,16 +77,17 @@
             // 
             this.simpleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(229)))), ((int)(((byte)(248)))));
-            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.simpleButton1.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(169)))), ((int)(((byte)(209)))));
             this.simpleButton1.Appearance.Options.UseBackColor = true;
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.Appearance.Options.UseForeColor = true;
             this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.simpleButton1.Image = global::NetBarMS.Imgs.icon_tianjia;
-            this.simpleButton1.Location = new System.Drawing.Point(847, 567);
+            this.simpleButton1.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.simpleButton1.Location = new System.Drawing.Point(811, 569);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(55, 25);
+            this.simpleButton1.Size = new System.Drawing.Size(80, 30);
             this.simpleButton1.TabIndex = 81;
             this.simpleButton1.Text = "添加";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
@@ -95,16 +96,17 @@
             // 
             this.simpleButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton3.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(229)))), ((int)(((byte)(248)))));
-            this.simpleButton3.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.simpleButton3.Appearance.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.simpleButton3.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(169)))), ((int)(((byte)(209)))));
             this.simpleButton3.Appearance.Options.UseBackColor = true;
             this.simpleButton3.Appearance.Options.UseFont = true;
             this.simpleButton3.Appearance.Options.UseForeColor = true;
             this.simpleButton3.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.simpleButton3.Image = global::NetBarMS.Imgs.icon_shanchu;
-            this.simpleButton3.Location = new System.Drawing.Point(917, 567);
+            this.simpleButton3.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.simpleButton3.Location = new System.Drawing.Point(897, 569);
             this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(55, 25);
+            this.simpleButton3.Size = new System.Drawing.Size(80, 30);
             this.simpleButton3.TabIndex = 83;
             this.simpleButton3.Text = "删除";
             this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
@@ -118,6 +120,7 @@
             this.Controls.Add(this.gridControl1);
             this.Name = "ProductTypeManageView";
             this.Size = new System.Drawing.Size(982, 610);
+            this.Load += new System.EventHandler(this.ProductTypeManageView_Load);
             this.Controls.SetChildIndex(this.titlePanel, 0);
             this.Controls.SetChildIndex(this.gridControl1, 0);
             this.Controls.SetChildIndex(this.simpleButton1, 0);

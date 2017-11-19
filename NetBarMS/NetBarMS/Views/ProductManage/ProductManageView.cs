@@ -93,7 +93,6 @@ namespace NetBarMS.Views.ProductManage
             this.gridControl1.DataSource = this.mainDataTable;
           
         
-            GetProductList();
 
         }
         #endregion
@@ -295,5 +294,11 @@ namespace NetBarMS.Views.ProductManage
             GetProductList();
         }
         #endregion
+
+        private void ProductManageView_Load(object sender, EventArgs e)
+        {
+            GetProductList();
+
+        }
     }
 }

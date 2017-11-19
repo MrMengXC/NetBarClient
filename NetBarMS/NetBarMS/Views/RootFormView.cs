@@ -107,7 +107,7 @@ namespace NetBarMS.Views
             if (sender.GetType().Equals(typeof(TextEdit)))
             {
                 TextEdit text = sender as TextEdit;
-                if (!text.Equals(""))
+                if (!text.Text.Equals(""))
                 {
                     text.Text = string.Format("{0}", int.Parse(text.Text));
                 }

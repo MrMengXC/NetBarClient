@@ -32,8 +32,13 @@
             DevExpress.Utils.SimpleContextButton simpleContextButton3 = new DevExpress.Utils.SimpleContextButton();
             DevExpress.Utils.SimpleContextButton simpleContextButton4 = new DevExpress.Utils.SimpleContextButton();
             this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.popupContainerControl1 = new DevExpress.XtraEditors.PopupContainerControl();
+            this.dateNavigator = new DevExpress.XtraScheduler.DateNavigator();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupContainerControl1)).BeginInit();
+            this.popupContainerControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dateNavigator)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateNavigator.CalendarTimeProperties)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBoxEdit1
@@ -64,19 +69,30 @@
             this.comboBoxEdit1.Size = new System.Drawing.Size(305, 35);
             this.comboBoxEdit1.TabIndex = 0;
             // 
-            // simpleButton1
+            // popupContainerControl1
             // 
-            this.simpleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButton1.Appearance.Options.UseImage = true;
-            this.simpleButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.simpleButton1.Image = global::NetBarMS.Imgs.icon_feilv2;
-            this.simpleButton1.Location = new System.Drawing.Point(41, 27);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(310, 103);
-            this.simpleButton1.TabIndex = 1;
-            this.simpleButton1.Text = "simpleButton1";
+            this.popupContainerControl1.Controls.Add(this.dateNavigator);
+            this.popupContainerControl1.Location = new System.Drawing.Point(203, 261);
+            this.popupContainerControl1.Name = "popupContainerControl1";
+            this.popupContainerControl1.Size = new System.Drawing.Size(269, 259);
+            this.popupContainerControl1.TabIndex = 82;
+            // 
+            // dateNavigator
+            // 
+            this.dateNavigator.CalendarAppearance.DayCellSpecial.FontStyleDelta = System.Drawing.FontStyle.Bold;
+            this.dateNavigator.CalendarAppearance.DayCellSpecial.Options.UseFont = true;
+            this.dateNavigator.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateNavigator.DateTime = new System.DateTime(2017, 7, 18, 14, 14, 3, 58);
+            this.dateNavigator.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dateNavigator.EditValue = new System.DateTime(2017, 7, 18, 14, 14, 3, 58);
+            this.dateNavigator.FirstDayOfWeek = System.DayOfWeek.Monday;
+            this.dateNavigator.Location = new System.Drawing.Point(0, 0);
+            this.dateNavigator.Name = "dateNavigator";
+            this.dateNavigator.Size = new System.Drawing.Size(269, 259);
+            this.dateNavigator.SyncSelectionWithEditValue = false;
+            this.dateNavigator.TabIndex = 0;
+            this.dateNavigator.UpdateDateTimeWhenNavigating = false;
             // 
             // TestForm
             // 
@@ -84,12 +100,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(1360, 708);
-            this.Controls.Add(this.simpleButton1);
+            this.Controls.Add(this.popupContainerControl1);
             this.Controls.Add(this.comboBoxEdit1);
             this.Name = "TestForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "255";
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupContainerControl1)).EndInit();
+            this.popupContainerControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dateNavigator.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateNavigator)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -97,6 +117,7 @@
         #endregion
 
         private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.PopupContainerControl popupContainerControl1;
+        private DevExpress.XtraScheduler.DateNavigator dateNavigator;
     }
 }

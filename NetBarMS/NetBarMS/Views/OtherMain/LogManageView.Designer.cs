@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -72,10 +74,10 @@
             this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridControl1.Location = new System.Drawing.Point(0, 46);
+            this.gridControl1.Location = new System.Drawing.Point(5, 45);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1186, 723);
+            this.gridControl1.Size = new System.Drawing.Size(1176, 724);
             this.gridControl1.TabIndex = 53;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1,
@@ -97,7 +99,7 @@
             this.popupContainerControl1.Controls.Add(this.dateNavigator1);
             this.popupContainerControl1.Location = new System.Drawing.Point(463, 204);
             this.popupContainerControl1.Name = "popupContainerControl1";
-            this.popupContainerControl1.Size = new System.Drawing.Size(258, 220);
+            this.popupContainerControl1.Size = new System.Drawing.Size(282, 241);
             this.popupContainerControl1.TabIndex = 86;
             // 
             // dateNavigator1
@@ -107,11 +109,12 @@
             this.dateNavigator1.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateNavigator1.DateTime = new System.DateTime(2017, 7, 18, 14, 1, 56, 288);
+            this.dateNavigator1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dateNavigator1.EditValue = new System.DateTime(2017, 7, 18, 14, 1, 56, 288);
-            this.dateNavigator1.FirstDayOfWeek = System.DayOfWeek.Monday;
-            this.dateNavigator1.Location = new System.Drawing.Point(0, 3);
+            this.dateNavigator1.FirstDayOfWeek = System.DayOfWeek.Sunday;
+            this.dateNavigator1.Location = new System.Drawing.Point(0, 0);
             this.dateNavigator1.Name = "dateNavigator1";
-            this.dateNavigator1.Size = new System.Drawing.Size(255, 214);
+            this.dateNavigator1.Size = new System.Drawing.Size(282, 241);
             this.dateNavigator1.TabIndex = 0;
             this.dateNavigator1.Click += new System.EventHandler(this.DateNavigator_EditValueChanged);
             // 
@@ -125,7 +128,7 @@
             this.comboBoxEdit1.Properties.Appearance.Options.UseForeColor = true;
             this.comboBoxEdit1.Properties.AutoHeight = false;
             this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::NetBarMS.Imgs.icon_jiantou, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject3, "", null, null, true)});
             this.comboBoxEdit1.Properties.NullText = "按操作人进行查询";
             this.comboBoxEdit1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.comboBoxEdit1.Size = new System.Drawing.Size(180, 25);
@@ -142,7 +145,7 @@
             this.popupContainerEdit1.Properties.Appearance.Options.UseForeColor = true;
             this.popupContainerEdit1.Properties.AutoHeight = false;
             this.popupContainerEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::NetBarMS.Imgs.icon_jiantou, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true)});
             this.popupContainerEdit1.Properties.NullText = "请选择时间段查询";
             this.popupContainerEdit1.Properties.PopupControl = this.popupContainerControl1;
             this.popupContainerEdit1.Size = new System.Drawing.Size(180, 25);
@@ -186,6 +189,7 @@
             this.Controls.Add(this.gridControl1);
             this.Name = "LogManageView";
             this.Size = new System.Drawing.Size(1186, 805);
+            this.Load += new System.EventHandler(this.LogManageView_Load);
             this.Controls.SetChildIndex(this.titlePanel, 0);
             this.Controls.SetChildIndex(this.gridControl1, 0);
             this.Controls.SetChildIndex(this.popupContainerControl1, 0);

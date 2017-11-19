@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductIndentView));
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             this.closeButton = new System.Windows.Forms.Button();
@@ -96,10 +95,10 @@
             this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridControl1.Location = new System.Drawing.Point(0, 46);
+            this.gridControl1.Location = new System.Drawing.Point(5, 45);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1451, 723);
+            this.gridControl1.Size = new System.Drawing.Size(1441, 724);
             this.gridControl1.TabIndex = 75;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1,
@@ -143,7 +142,7 @@
             this.popupContainerEdit2.Properties.Appearance.Options.UseForeColor = true;
             this.popupContainerEdit2.Properties.AutoHeight = false;
             this.popupContainerEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("popupContainerEdit2.Properties.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject3, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::NetBarMS.Imgs.icon_jiantou, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject3, "", null, null, true)});
             this.popupContainerEdit2.Properties.NullText = "按下单时间段查询";
             this.popupContainerEdit2.Properties.PopupControl = this.popupContainerControl1;
             this.popupContainerEdit2.Size = new System.Drawing.Size(180, 25);
@@ -153,9 +152,9 @@
             // popupContainerControl1
             // 
             this.popupContainerControl1.Controls.Add(this.dateNavigator1);
-            this.popupContainerControl1.Location = new System.Drawing.Point(699, 72);
+            this.popupContainerControl1.Location = new System.Drawing.Point(235, 93);
             this.popupContainerControl1.Name = "popupContainerControl1";
-            this.popupContainerControl1.Size = new System.Drawing.Size(258, 220);
+            this.popupContainerControl1.Size = new System.Drawing.Size(282, 241);
             this.popupContainerControl1.TabIndex = 77;
             // 
             // dateNavigator1
@@ -165,11 +164,12 @@
             this.dateNavigator1.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateNavigator1.DateTime = new System.DateTime(2017, 7, 18, 14, 9, 54, 788);
+            this.dateNavigator1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dateNavigator1.EditValue = new System.DateTime(2017, 7, 18, 14, 9, 54, 788);
-            this.dateNavigator1.FirstDayOfWeek = System.DayOfWeek.Monday;
-            this.dateNavigator1.Location = new System.Drawing.Point(0, 3);
+            this.dateNavigator1.FirstDayOfWeek = System.DayOfWeek.Sunday;
+            this.dateNavigator1.Location = new System.Drawing.Point(0, 0);
             this.dateNavigator1.Name = "dateNavigator1";
-            this.dateNavigator1.Size = new System.Drawing.Size(255, 214);
+            this.dateNavigator1.Size = new System.Drawing.Size(282, 241);
             this.dateNavigator1.TabIndex = 0;
             this.dateNavigator1.Click += new System.EventHandler(this.DateNavigator_EditValueChanged);
             // 
@@ -183,7 +183,7 @@
             this.popupContainerEdit3.Properties.Appearance.Options.UseForeColor = true;
             this.popupContainerEdit3.Properties.AutoHeight = false;
             this.popupContainerEdit3.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("popupContainerEdit3.Properties.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::NetBarMS.Imgs.icon_jiantou, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true)});
             this.popupContainerEdit3.Properties.NullText = "按处理时间段查询";
             this.popupContainerEdit3.Properties.PopupControl = this.popupContainerControl2;
             this.popupContainerEdit3.Size = new System.Drawing.Size(180, 25);
@@ -193,9 +193,9 @@
             // popupContainerControl2
             // 
             this.popupContainerControl2.Controls.Add(this.dateNavigator2);
-            this.popupContainerControl2.Location = new System.Drawing.Point(270, 75);
+            this.popupContainerControl2.Location = new System.Drawing.Point(565, 75);
             this.popupContainerControl2.Name = "popupContainerControl2";
-            this.popupContainerControl2.Size = new System.Drawing.Size(258, 220);
+            this.popupContainerControl2.Size = new System.Drawing.Size(282, 241);
             this.popupContainerControl2.TabIndex = 2;
             // 
             // dateNavigator2
@@ -205,11 +205,12 @@
             this.dateNavigator2.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateNavigator2.DateTime = new System.DateTime(2017, 7, 18, 14, 9, 54, 819);
+            this.dateNavigator2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dateNavigator2.EditValue = new System.DateTime(2017, 7, 18, 14, 9, 54, 819);
-            this.dateNavigator2.FirstDayOfWeek = System.DayOfWeek.Monday;
-            this.dateNavigator2.Location = new System.Drawing.Point(0, 3);
+            this.dateNavigator2.FirstDayOfWeek = System.DayOfWeek.Sunday;
+            this.dateNavigator2.Location = new System.Drawing.Point(0, 0);
             this.dateNavigator2.Name = "dateNavigator2";
-            this.dateNavigator2.Size = new System.Drawing.Size(255, 214);
+            this.dateNavigator2.Size = new System.Drawing.Size(282, 241);
             this.dateNavigator2.TabIndex = 0;
             this.dateNavigator2.Click += new System.EventHandler(this.DateNavigator_EditValueChanged);
             // 
@@ -247,13 +248,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pageView1);
             this.Controls.Add(this.gridControl1);
-            this.Controls.Add(this.popupContainerControl1);
             this.Controls.Add(this.popupContainerControl2);
+            this.Controls.Add(this.popupContainerControl1);
             this.Name = "ProductIndentView";
             this.Size = new System.Drawing.Size(1451, 805);
+            this.Load += new System.EventHandler(this.ProductIndentView_Load);
+            this.Controls.SetChildIndex(this.popupContainerControl1, 0);
             this.Controls.SetChildIndex(this.titlePanel, 0);
             this.Controls.SetChildIndex(this.popupContainerControl2, 0);
-            this.Controls.SetChildIndex(this.popupContainerControl1, 0);
             this.Controls.SetChildIndex(this.gridControl1, 0);
             this.Controls.SetChildIndex(this.pageView1, 0);
             this.titlePanel.ResumeLayout(false);

@@ -76,7 +76,7 @@
             // 
             // buttonEdit1
             // 
-            this.buttonEdit1.Location = new System.Drawing.Point(3, 51);
+            this.buttonEdit1.Location = new System.Drawing.Point(3, 43);
             this.buttonEdit1.Name = "buttonEdit1";
             this.buttonEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.buttonEdit1.Properties.Appearance.Options.UseFont = true;
@@ -131,7 +131,7 @@
             // 
             this.label2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label2.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.label2.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(74)))));
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Name = "label2";
@@ -161,9 +161,9 @@
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.Appearance.Options.UseForeColor = true;
             this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.simpleButton1.Location = new System.Drawing.Point(3, 382);
+            this.simpleButton1.Location = new System.Drawing.Point(3, 373);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(130, 30);
+            this.simpleButton1.Size = new System.Drawing.Size(80, 30);
             this.simpleButton1.TabIndex = 7;
             this.simpleButton1.Text = "保存";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
@@ -174,17 +174,17 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
-            this.textBox1.Location = new System.Drawing.Point(3, 56);
+            this.textBox1.Location = new System.Drawing.Point(3, 48);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(433, 311);
+            this.textBox1.Size = new System.Drawing.Size(433, 319);
             this.textBox1.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label3.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.label3.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(74)))));
             this.label3.Location = new System.Drawing.Point(0, 0);
             this.label3.Name = "label3";
@@ -200,13 +200,15 @@
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 10F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel3, 2, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 40);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;

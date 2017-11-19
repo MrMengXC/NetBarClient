@@ -44,7 +44,6 @@ namespace NetBarMS.Views.ProductManage
             ToolsManage.SetGridView(this.gridView1, GridControlType.ProductStockList, out this.mainDataTable);
             this.gridControl1.DataSource = this.mainDataTable;
 
-            GetStoreList();
 
         }
         #endregion
@@ -109,6 +108,7 @@ namespace NetBarMS.Views.ProductManage
 
         }
 
+    
         #endregion
 
         //进行打印
@@ -116,5 +116,11 @@ namespace NetBarMS.Views.ProductManage
         {
             ToolsManage.PrintGridControl(this.gridControl1);
         }
+        private void ProductStockListView_Load(object sender, EventArgs e)
+        {
+            GetStoreList();
+
+        }
+
     }
 }

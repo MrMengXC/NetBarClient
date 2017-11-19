@@ -41,7 +41,6 @@ namespace NetBarMS.Views.OtherMain
         {
             ToolsManage.SetGridView(this.gridView1, GridControlType.JXInspect, out this.mainDataTable);
             this.gridControl1.DataSource = this.mainDataTable;
-            GetJXList();
         }
         //获取绩效数据列表
         private void GetJXList()
@@ -104,5 +103,10 @@ namespace NetBarMS.Views.OtherMain
             GetJXList();
         }
         #endregion
+
+        private void JXInspectView_Load(object sender, EventArgs e)
+        {
+            GetJXList();
+        }
     }
 }

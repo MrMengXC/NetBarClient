@@ -80,9 +80,7 @@ namespace NetBarMS.Views.RateManage
             this.dateNavigator1.UpdateDateTimeWhenNavigating = false;
             this.dateNavigator1.UpdateSelectionWhenNavigating = false;
             this.dateNavigator1.SyncSelectionWithEditValue = false;
-            //获取数据
-            RateManageNetOperation.AwardManageList(AwardManageListResult);
-            RateManageNetOperation.MemberDayAwardManageList(MemberDayAwardManageListResult);
+            
 
 
         }
@@ -378,6 +376,8 @@ namespace NetBarMS.Views.RateManage
                 }));
             }
         }
+
+     
         #endregion
 
         #region 关闭日期回调
@@ -484,6 +484,11 @@ namespace NetBarMS.Views.RateManage
             return item.Build();
           }
         #endregion
-
+        private void AwardManageView_Load(object sender, EventArgs e)
+        {
+            //获取数据
+            RateManageNetOperation.AwardManageList(AwardManageListResult);
+            RateManageNetOperation.MemberDayAwardManageList(MemberDayAwardManageListResult);
+        }
     }
 }

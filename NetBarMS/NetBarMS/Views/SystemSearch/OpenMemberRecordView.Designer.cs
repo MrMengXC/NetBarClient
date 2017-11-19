@@ -95,7 +95,7 @@ namespace NetBarMS.Views.NetUserManage
             this.popupContainerControl1.Controls.Add(this.dateNavigator);
             this.popupContainerControl1.Location = new System.Drawing.Point(133, 302);
             this.popupContainerControl1.Name = "popupContainerControl1";
-            this.popupContainerControl1.Size = new System.Drawing.Size(288, 261);
+            this.popupContainerControl1.Size = new System.Drawing.Size(282, 241);
             this.popupContainerControl1.TabIndex = 80;
             // 
             // dateNavigator
@@ -105,11 +105,12 @@ namespace NetBarMS.Views.NetUserManage
             this.dateNavigator.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateNavigator.DateTime = new System.DateTime(2017, 7, 18, 14, 7, 54, 800);
+            this.dateNavigator.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dateNavigator.EditValue = new System.DateTime(2017, 7, 18, 14, 7, 54, 800);
-            this.dateNavigator.FirstDayOfWeek = System.DayOfWeek.Monday;
-            this.dateNavigator.Location = new System.Drawing.Point(3, 3);
+            this.dateNavigator.FirstDayOfWeek = System.DayOfWeek.Sunday;
+            this.dateNavigator.Location = new System.Drawing.Point(0, 0);
             this.dateNavigator.Name = "dateNavigator";
-            this.dateNavigator.Size = new System.Drawing.Size(283, 258);
+            this.dateNavigator.Size = new System.Drawing.Size(282, 241);
             this.dateNavigator.SyncSelectionWithEditValue = false;
             this.dateNavigator.TabIndex = 0;
             this.dateNavigator.UpdateDateTimeWhenNavigating = false;
@@ -173,10 +174,10 @@ namespace NetBarMS.Views.NetUserManage
             this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridControl1.Location = new System.Drawing.Point(0, 46);
+            this.gridControl1.Location = new System.Drawing.Point(5, 45);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1457, 723);
+            this.gridControl1.Size = new System.Drawing.Size(1447, 724);
             this.gridControl1.TabIndex = 79;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1,
@@ -211,6 +212,7 @@ namespace NetBarMS.Views.NetUserManage
             this.Controls.Add(this.gridControl1);
             this.Name = "OpenMemberRecordView";
             this.Size = new System.Drawing.Size(1457, 805);
+            this.Load += new System.EventHandler(this.OpenMemberRecordView_Load);
             this.Controls.SetChildIndex(this.titlePanel, 0);
             this.Controls.SetChildIndex(this.gridControl1, 0);
             this.Controls.SetChildIndex(this.pageView1, 0);

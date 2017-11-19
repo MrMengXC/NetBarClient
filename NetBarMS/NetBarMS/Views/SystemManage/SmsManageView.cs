@@ -60,8 +60,7 @@ namespace NetBarMS.Views.SystemManage
 
             //设置自动尺寸
             this.panel1.AutoSize = true;
-            GetPushMessageList();
-            GetStaffList();
+         
         }
         #endregion
 
@@ -487,5 +486,11 @@ namespace NetBarMS.Views.SystemManage
             }
         }
         #endregion
+
+        private void SmsManageView_Load(object sender, EventArgs e)
+        {
+            GetPushMessageList();
+            GetStaffList();
+        }
     }
 }

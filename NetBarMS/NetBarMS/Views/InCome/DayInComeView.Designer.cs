@@ -28,25 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraCharts.Series series11 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.PieSeriesLabel pieSeriesLabel9 = new DevExpress.XtraCharts.PieSeriesLabel();
-            DevExpress.XtraCharts.PieSeriesView pieSeriesView9 = new DevExpress.XtraCharts.PieSeriesView();
-            DevExpress.XtraCharts.ChartTitle chartTitle9 = new DevExpress.XtraCharts.ChartTitle();
-            DevExpress.XtraCharts.XYDiagram xyDiagram3 = new DevExpress.XtraCharts.XYDiagram();
-            DevExpress.XtraCharts.Series series12 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.SideBySideBarSeriesView sideBySideBarSeriesView3 = new DevExpress.XtraCharts.SideBySideBarSeriesView();
-            DevExpress.XtraCharts.Series series13 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.PieSeriesLabel pieSeriesLabel10 = new DevExpress.XtraCharts.PieSeriesLabel();
-            DevExpress.XtraCharts.PieSeriesView pieSeriesView10 = new DevExpress.XtraCharts.PieSeriesView();
-            DevExpress.XtraCharts.ChartTitle chartTitle10 = new DevExpress.XtraCharts.ChartTitle();
-            DevExpress.XtraCharts.Series series14 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.PieSeriesLabel pieSeriesLabel11 = new DevExpress.XtraCharts.PieSeriesLabel();
-            DevExpress.XtraCharts.PieSeriesView pieSeriesView11 = new DevExpress.XtraCharts.PieSeriesView();
-            DevExpress.XtraCharts.ChartTitle chartTitle11 = new DevExpress.XtraCharts.ChartTitle();
-            DevExpress.XtraCharts.Series series15 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.PieSeriesLabel pieSeriesLabel12 = new DevExpress.XtraCharts.PieSeriesLabel();
-            DevExpress.XtraCharts.PieSeriesView pieSeriesView12 = new DevExpress.XtraCharts.PieSeriesView();
-            DevExpress.XtraCharts.ChartTitle chartTitle12 = new DevExpress.XtraCharts.ChartTitle();
+            DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.PieSeriesLabel pieSeriesLabel1 = new DevExpress.XtraCharts.PieSeriesLabel();
+            DevExpress.XtraCharts.PieSeriesView pieSeriesView1 = new DevExpress.XtraCharts.PieSeriesView();
+            DevExpress.XtraCharts.ChartTitle chartTitle1 = new DevExpress.XtraCharts.ChartTitle();
+            DevExpress.XtraCharts.XYDiagram xyDiagram1 = new DevExpress.XtraCharts.XYDiagram();
+            DevExpress.XtraCharts.Series series5 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.SideBySideBarSeriesView sideBySideBarSeriesView1 = new DevExpress.XtraCharts.SideBySideBarSeriesView();
+            DevExpress.XtraCharts.Series series4 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.PieSeriesLabel pieSeriesLabel4 = new DevExpress.XtraCharts.PieSeriesLabel();
+            DevExpress.XtraCharts.PieSeriesView pieSeriesView4 = new DevExpress.XtraCharts.PieSeriesView();
+            DevExpress.XtraCharts.ChartTitle chartTitle4 = new DevExpress.XtraCharts.ChartTitle();
+            DevExpress.XtraCharts.Series series3 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.PieSeriesLabel pieSeriesLabel3 = new DevExpress.XtraCharts.PieSeriesLabel();
+            DevExpress.XtraCharts.PieSeriesView pieSeriesView3 = new DevExpress.XtraCharts.PieSeriesView();
+            DevExpress.XtraCharts.ChartTitle chartTitle3 = new DevExpress.XtraCharts.ChartTitle();
+            DevExpress.XtraCharts.Series series2 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.PieSeriesLabel pieSeriesLabel2 = new DevExpress.XtraCharts.PieSeriesLabel();
+            DevExpress.XtraCharts.PieSeriesView pieSeriesView2 = new DevExpress.XtraCharts.PieSeriesView();
+            DevExpress.XtraCharts.ChartTitle chartTitle2 = new DevExpress.XtraCharts.ChartTitle();
             this.panel5 = new System.Windows.Forms.Panel();
             this.chartControl5 = new DevExpress.XtraCharts.ChartControl();
             this.popupContainerEdit1 = new DevExpress.XtraEditors.PopupContainerEdit();
@@ -65,9 +65,9 @@
             this.titlePanel.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesLabel9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesView9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesLabel1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupContainerEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupContainerControl1)).BeginInit();
             this.popupContainerControl1.SuspendLayout();
@@ -75,24 +75,24 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateNavigator1.CalendarTimeProperties)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesLabel10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesView10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesLabel4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView4)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series14)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesLabel11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesView11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesLabel3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView3)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series15)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesLabel12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesView12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesLabel2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView2)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -135,21 +135,22 @@
             this.chartControl5.Location = new System.Drawing.Point(0, 0);
             this.chartControl5.Name = "chartControl5";
             this.chartControl5.PaletteName = "Orange Red";
-            pieSeriesLabel9.TextPattern = "{A}";
-            series11.Label = pieSeriesLabel9;
-            series11.LabelsVisibility = DevExpress.Utils.DefaultBoolean.False;
-            series11.Name = "Series 1";
-            pieSeriesView9.ExplodedDistancePercentage = 1D;
-            pieSeriesView9.ExplodeMode = DevExpress.XtraCharts.PieExplodeMode.All;
-            pieSeriesView9.FillStyle.FillMode = DevExpress.XtraCharts.FillMode.Solid;
-            series11.View = pieSeriesView9;
+            pieSeriesLabel1.TextPattern = "{A}";
+            series1.Label = pieSeriesLabel1;
+            series1.LabelsVisibility = DevExpress.Utils.DefaultBoolean.False;
+            series1.Name = "Series 1";
+            pieSeriesView1.ExplodedDistancePercentage = 1D;
+            pieSeriesView1.ExplodeMode = DevExpress.XtraCharts.PieExplodeMode.All;
+            pieSeriesView1.FillStyle.FillMode = DevExpress.XtraCharts.FillMode.Solid;
+            series1.View = pieSeriesView1;
             this.chartControl5.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series11};
+        series1};
             this.chartControl5.Size = new System.Drawing.Size(340, 539);
             this.chartControl5.TabIndex = 2;
-            chartTitle9.Text = "区域收入占比";
+            chartTitle1.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            chartTitle1.Text = "区域收入占比";
             this.chartControl5.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
-            chartTitle9});
+            chartTitle1});
             // 
             // popupContainerEdit1
             // 
@@ -173,7 +174,7 @@
             this.popupContainerControl1.Controls.Add(this.dateNavigator1);
             this.popupContainerControl1.Location = new System.Drawing.Point(296, 44);
             this.popupContainerControl1.Name = "popupContainerControl1";
-            this.popupContainerControl1.Size = new System.Drawing.Size(279, 241);
+            this.popupContainerControl1.Size = new System.Drawing.Size(282, 241);
             this.popupContainerControl1.TabIndex = 5;
             // 
             // dateNavigator1
@@ -182,10 +183,11 @@
             this.dateNavigator1.CalendarAppearance.DayCellSpecial.Options.UseFont = true;
             this.dateNavigator1.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateNavigator1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dateNavigator1.FirstDayOfWeek = System.DayOfWeek.Sunday;
-            this.dateNavigator1.Location = new System.Drawing.Point(3, 3);
+            this.dateNavigator1.Location = new System.Drawing.Point(0, 0);
             this.dateNavigator1.Name = "dateNavigator1";
-            this.dateNavigator1.Size = new System.Drawing.Size(273, 235);
+            this.dateNavigator1.Size = new System.Drawing.Size(282, 241);
             this.dateNavigator1.TabIndex = 1;
             // 
             // panel1
@@ -207,29 +209,29 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chartControl1.BorderOptions.Visibility = DevExpress.Utils.DefaultBoolean.False;
-            xyDiagram3.AxisX.Tickmarks.MinorVisible = false;
-            xyDiagram3.AxisX.Tickmarks.Visible = false;
-            xyDiagram3.AxisX.Visibility = DevExpress.Utils.DefaultBoolean.True;
-            xyDiagram3.AxisX.VisibleInPanesSerializable = "-1";
-            xyDiagram3.AxisX.VisualRange.Auto = false;
-            xyDiagram3.AxisX.VisualRange.MaxValueSerializable = "9";
-            xyDiagram3.AxisX.VisualRange.MinValueSerializable = "0";
-            xyDiagram3.AxisY.Tickmarks.MinorVisible = false;
-            xyDiagram3.AxisY.Tickmarks.Visible = false;
-            xyDiagram3.AxisY.VisibleInPanesSerializable = "-1";
-            xyDiagram3.Margins.Bottom = 0;
-            xyDiagram3.Margins.Left = 0;
-            xyDiagram3.Margins.Right = 0;
-            xyDiagram3.Margins.Top = 0;
-            this.chartControl1.Diagram = xyDiagram3;
+            xyDiagram1.AxisX.Tickmarks.MinorVisible = false;
+            xyDiagram1.AxisX.Tickmarks.Visible = false;
+            xyDiagram1.AxisX.Visibility = DevExpress.Utils.DefaultBoolean.True;
+            xyDiagram1.AxisX.VisibleInPanesSerializable = "-1";
+            xyDiagram1.AxisX.VisualRange.Auto = false;
+            xyDiagram1.AxisX.VisualRange.MaxValueSerializable = "9";
+            xyDiagram1.AxisX.VisualRange.MinValueSerializable = "0";
+            xyDiagram1.AxisY.Tickmarks.MinorVisible = false;
+            xyDiagram1.AxisY.Tickmarks.Visible = false;
+            xyDiagram1.AxisY.VisibleInPanesSerializable = "-1";
+            xyDiagram1.Margins.Bottom = 0;
+            xyDiagram1.Margins.Left = 0;
+            xyDiagram1.Margins.Right = 0;
+            xyDiagram1.Margins.Top = 0;
+            this.chartControl1.Diagram = xyDiagram1;
             this.chartControl1.Legend.Visibility = DevExpress.Utils.DefaultBoolean.False;
             this.chartControl1.Location = new System.Drawing.Point(-1, 58);
             this.chartControl1.Name = "chartControl1";
-            series12.Name = "Series 1";
-            sideBySideBarSeriesView3.BarWidth = 0.2D;
-            series12.View = sideBySideBarSeriesView3;
+            series5.Name = "Series 1";
+            sideBySideBarSeriesView1.BarWidth = 0.2D;
+            series5.View = sideBySideBarSeriesView1;
             this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series12};
+        series5};
             this.chartControl1.Size = new System.Drawing.Size(681, 481);
             this.chartControl1.TabIndex = 0;
             // 
@@ -276,21 +278,22 @@
             this.chartControl2.Location = new System.Drawing.Point(0, 0);
             this.chartControl2.Name = "chartControl2";
             this.chartControl2.PaletteName = "Orange Red";
-            pieSeriesLabel10.TextPattern = "{A}";
-            series13.Label = pieSeriesLabel10;
-            series13.LabelsVisibility = DevExpress.Utils.DefaultBoolean.False;
-            series13.Name = "Series 1";
-            pieSeriesView10.ExplodedDistancePercentage = 1D;
-            pieSeriesView10.ExplodeMode = DevExpress.XtraCharts.PieExplodeMode.All;
-            pieSeriesView10.FillStyle.FillMode = DevExpress.XtraCharts.FillMode.Solid;
-            series13.View = pieSeriesView10;
+            pieSeriesLabel4.TextPattern = "{A}";
+            series4.Label = pieSeriesLabel4;
+            series4.LabelsVisibility = DevExpress.Utils.DefaultBoolean.False;
+            series4.Name = "Series 1";
+            pieSeriesView4.ExplodedDistancePercentage = 1D;
+            pieSeriesView4.ExplodeMode = DevExpress.XtraCharts.PieExplodeMode.All;
+            pieSeriesView4.FillStyle.FillMode = DevExpress.XtraCharts.FillMode.Solid;
+            series4.View = pieSeriesView4;
             this.chartControl2.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series13};
+        series4};
             this.chartControl2.Size = new System.Drawing.Size(340, 411);
             this.chartControl2.TabIndex = 0;
-            chartTitle10.Text = "当日营业收入占比";
+            chartTitle4.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            chartTitle4.Text = "当日营业收入占比";
             this.chartControl2.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
-            chartTitle10});
+            chartTitle4});
             // 
             // panel3
             // 
@@ -318,21 +321,22 @@
             this.chartControl3.Location = new System.Drawing.Point(0, 0);
             this.chartControl3.Name = "chartControl3";
             this.chartControl3.PaletteName = "Orange Red";
-            pieSeriesLabel11.TextPattern = "{A}";
-            series14.Label = pieSeriesLabel11;
-            series14.LabelsVisibility = DevExpress.Utils.DefaultBoolean.False;
-            series14.Name = "Series 1";
-            pieSeriesView11.ExplodedDistancePercentage = 1D;
-            pieSeriesView11.ExplodeMode = DevExpress.XtraCharts.PieExplodeMode.All;
-            pieSeriesView11.FillStyle.FillMode = DevExpress.XtraCharts.FillMode.Solid;
-            series14.View = pieSeriesView11;
+            pieSeriesLabel3.TextPattern = "{A}";
+            series3.Label = pieSeriesLabel3;
+            series3.LabelsVisibility = DevExpress.Utils.DefaultBoolean.False;
+            series3.Name = "Series 1";
+            pieSeriesView3.ExplodedDistancePercentage = 1D;
+            pieSeriesView3.ExplodeMode = DevExpress.XtraCharts.PieExplodeMode.All;
+            pieSeriesView3.FillStyle.FillMode = DevExpress.XtraCharts.FillMode.Solid;
+            series3.View = pieSeriesView3;
             this.chartControl3.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series14};
+        series3};
             this.chartControl3.Size = new System.Drawing.Size(340, 411);
             this.chartControl3.TabIndex = 1;
-            chartTitle11.Text = "微信支付收入占比";
+            chartTitle3.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            chartTitle3.Text = "微信支付收入占比";
             this.chartControl3.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
-            chartTitle11});
+            chartTitle3});
             // 
             // panel4
             // 
@@ -360,21 +364,22 @@
             this.chartControl4.Location = new System.Drawing.Point(0, 0);
             this.chartControl4.Name = "chartControl4";
             this.chartControl4.PaletteName = "Orange Red";
-            pieSeriesLabel12.TextPattern = "{A}";
-            series15.Label = pieSeriesLabel12;
-            series15.LabelsVisibility = DevExpress.Utils.DefaultBoolean.False;
-            series15.Name = "Series 1";
-            pieSeriesView12.ExplodedDistancePercentage = 1D;
-            pieSeriesView12.ExplodeMode = DevExpress.XtraCharts.PieExplodeMode.All;
-            pieSeriesView12.FillStyle.FillMode = DevExpress.XtraCharts.FillMode.Solid;
-            series15.View = pieSeriesView12;
+            pieSeriesLabel2.TextPattern = "{A}";
+            series2.Label = pieSeriesLabel2;
+            series2.LabelsVisibility = DevExpress.Utils.DefaultBoolean.False;
+            series2.Name = "Series 1";
+            pieSeriesView2.ExplodedDistancePercentage = 1D;
+            pieSeriesView2.ExplodeMode = DevExpress.XtraCharts.PieExplodeMode.All;
+            pieSeriesView2.FillStyle.FillMode = DevExpress.XtraCharts.FillMode.Solid;
+            series2.View = pieSeriesView2;
             this.chartControl4.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series15};
+        series2};
             this.chartControl4.Size = new System.Drawing.Size(340, 411);
             this.chartControl4.TabIndex = 1;
-            chartTitle12.Text = "支付宝收入占比";
+            chartTitle2.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            chartTitle2.Text = "支付宝收入占比";
             this.chartControl4.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
-            chartTitle12});
+            chartTitle2});
             // 
             // tableLayoutPanel1
             // 
@@ -407,14 +412,15 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "DayInComeView";
             this.Size = new System.Drawing.Size(1040, 1005);
+            this.Load += new System.EventHandler(this.DayInComeView_Load);
             this.Controls.SetChildIndex(this.titlePanel, 0);
             this.Controls.SetChildIndex(this.tableLayoutPanel1, 0);
             this.titlePanel.ResumeLayout(false);
             this.titlePanel.PerformLayout();
             this.panel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesLabel9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesView9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesLabel1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupContainerEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupContainerControl1)).EndInit();
@@ -422,24 +428,24 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateNavigator1.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNavigator1)).EndInit();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).EndInit();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesLabel10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesView10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesLabel4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl2)).EndInit();
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesLabel11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesView11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesLabel3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl3)).EndInit();
             this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesLabel12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesView12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesLabel2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl4)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);

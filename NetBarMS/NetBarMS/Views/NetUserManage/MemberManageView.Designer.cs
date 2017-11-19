@@ -41,7 +41,6 @@
             this.statusComboBoxEdit = new DevExpress.XtraEditors.ComboBoxEdit();
             this.memberTypeComboBoxEdit = new DevExpress.XtraEditors.ComboBoxEdit();
             this.searchButtonEdit = new DevExpress.XtraEditors.ButtonEdit();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.pageView1 = new NetBarMS.Views.CustomView.PageView();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -51,6 +50,7 @@
             this.chartControl3 = new DevExpress.XtraCharts.ChartControl();
             this.chartControl2 = new DevExpress.XtraCharts.ChartControl();
             this.chartControl1 = new DevExpress.XtraCharts.ChartControl();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.titlePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -75,7 +75,7 @@
             // 
             // titlePanel
             // 
-            this.titlePanel.Controls.Add(this.simpleButton1);
+            this.titlePanel.Controls.Add(this.simpleButton2);
             this.titlePanel.Controls.Add(this.searchButtonEdit);
             this.titlePanel.Controls.Add(this.memberTypeComboBoxEdit);
             this.titlePanel.Controls.Add(this.statusComboBoxEdit);
@@ -84,7 +84,7 @@
             this.titlePanel.Controls.SetChildIndex(this.memberTypeComboBoxEdit, 0);
             this.titlePanel.Controls.SetChildIndex(this.titleLabel, 0);
             this.titlePanel.Controls.SetChildIndex(this.searchButtonEdit, 0);
-            this.titlePanel.Controls.SetChildIndex(this.simpleButton1, 0);
+            this.titlePanel.Controls.SetChildIndex(this.simpleButton2, 0);
             // 
             // titleLabel
             // 
@@ -96,10 +96,11 @@
             this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridControl1.Location = new System.Drawing.Point(0, 3);
+            this.gridControl1.Location = new System.Drawing.Point(5, 5);
             this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Margin = new System.Windows.Forms.Padding(0);
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1157, 468);
+            this.gridControl1.Size = new System.Drawing.Size(1150, 469);
             this.gridControl1.TabIndex = 48;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1,
@@ -124,10 +125,13 @@
             this.statusComboBoxEdit.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
             this.statusComboBoxEdit.Properties.Appearance.Options.UseFont = true;
             this.statusComboBoxEdit.Properties.Appearance.Options.UseForeColor = true;
+            this.statusComboBoxEdit.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.statusComboBoxEdit.Properties.AppearanceDropDown.Options.UseFont = true;
             this.statusComboBoxEdit.Properties.AutoHeight = false;
             this.statusComboBoxEdit.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.statusComboBoxEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.statusComboBoxEdit.Properties.DropDownItemHeight = 23;
             this.statusComboBoxEdit.Properties.NullText = "按状态查询";
             this.statusComboBoxEdit.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.statusComboBoxEdit.Size = new System.Drawing.Size(180, 25);
@@ -143,9 +147,12 @@
             this.memberTypeComboBoxEdit.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
             this.memberTypeComboBoxEdit.Properties.Appearance.Options.UseFont = true;
             this.memberTypeComboBoxEdit.Properties.Appearance.Options.UseForeColor = true;
+            this.memberTypeComboBoxEdit.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.memberTypeComboBoxEdit.Properties.AppearanceDropDown.Options.UseFont = true;
             this.memberTypeComboBoxEdit.Properties.AutoHeight = false;
             this.memberTypeComboBoxEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.memberTypeComboBoxEdit.Properties.DropDownItemHeight = 23;
             this.memberTypeComboBoxEdit.Properties.NullText = "按会员等级查询";
             this.memberTypeComboBoxEdit.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.memberTypeComboBoxEdit.Size = new System.Drawing.Size(180, 25);
@@ -171,16 +178,8 @@
             this.searchButtonEdit.Size = new System.Drawing.Size(180, 25);
             this.searchButtonEdit.TabIndex = 2;
             this.searchButtonEdit.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.SearchButtonEdit_ButtonClick);
+            this.searchButtonEdit.Click += new System.EventHandler(this.DeleteButton_ButtonClick);
             this.searchButtonEdit.Paint += new System.Windows.Forms.PaintEventHandler(this.Control_Paint);
-            // 
-            // simpleButton1
-            // 
-            this.simpleButton1.Location = new System.Drawing.Point(1033, 8);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton1.TabIndex = 3;
-            this.simpleButton1.Text = "删除";
-            this.simpleButton1.Click += new System.EventHandler(this.DeleteButton_ButtonClick);
             // 
             // pageView1
             // 
@@ -301,6 +300,25 @@
             this.chartControl1.Size = new System.Drawing.Size(300, 200);
             this.chartControl1.TabIndex = 0;
             // 
+            // simpleButton2
+            // 
+            this.simpleButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.simpleButton2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(229)))), ((int)(((byte)(248)))));
+            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.simpleButton2.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(146)))), ((int)(((byte)(194)))));
+            this.simpleButton2.Appearance.Options.UseBackColor = true;
+            this.simpleButton2.Appearance.Options.UseFont = true;
+            this.simpleButton2.Appearance.Options.UseForeColor = true;
+            this.simpleButton2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.simpleButton2.Image = global::NetBarMS.Imgs.icon_shanchu;
+            this.simpleButton2.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.simpleButton2.Location = new System.Drawing.Point(1100, 6);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(55, 25);
+            this.simpleButton2.TabIndex = 4;
+            this.simpleButton2.Text = "删除";
+            this.simpleButton2.Click += new System.EventHandler(this.DeleteButton_ButtonClick);
+            // 
             // MemberManageView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -308,6 +326,7 @@
             this.Controls.Add(this.tableLayoutPanel2);
             this.Name = "MemberManageView";
             this.Size = new System.Drawing.Size(1160, 820);
+            this.Load += new System.EventHandler(this.MemberManageView_Load);
             this.Controls.SetChildIndex(this.titlePanel, 0);
             this.Controls.SetChildIndex(this.tableLayoutPanel2, 0);
             this.titlePanel.ResumeLayout(false);
@@ -343,7 +362,6 @@
         private DevExpress.XtraEditors.ButtonEdit searchButtonEdit;
         private DevExpress.XtraEditors.ComboBoxEdit statusComboBoxEdit;
         private CustomView.PageView pageView1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
@@ -352,5 +370,6 @@
         private DevExpress.XtraCharts.ChartControl chartControl2;
         private DevExpress.XtraCharts.ChartControl chartControl1;
         private System.Windows.Forms.Label label1;
+        private DevExpress.XtraEditors.SimpleButton simpleButton2;
     }
 }

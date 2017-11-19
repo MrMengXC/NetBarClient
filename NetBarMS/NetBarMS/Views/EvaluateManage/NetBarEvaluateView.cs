@@ -52,7 +52,6 @@ namespace NetBarMS.Views.EvaluateManage
             this.dateNavigator1.UpdateSelectionWhenNavigating = false;
             this.dateNavigator1.SyncSelectionWithEditValue = false;
 
-            GetNetBarEvaluateList();
         }
 
         //获取网吧评价列表
@@ -125,8 +124,14 @@ namespace NetBarMS.Views.EvaluateManage
             lastDate = ToolsManage.GetDateNavigatorRangeTime(this.dateNavigator1, lastDate, out this.startTime, out this.endTime);
         }
 
-    
+
+
         #endregion
+        private void NetBarEvaluateView_Load(object sender, EventArgs e)
+        {
+            GetNetBarEvaluateList();
+
+        }
 
         #region 关闭日期
         private void PopupContainerEdit1_Closed(object sender, DevExpress.XtraEditors.Controls.ClosedEventArgs e)

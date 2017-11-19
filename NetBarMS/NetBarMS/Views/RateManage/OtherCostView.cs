@@ -31,7 +31,6 @@ namespace NetBarMS.Views.RateManage
                 this.memberMinuteText,this.temMinuteText
             };
             InitTextEdit(edits);
-            RateManageNetOperation.GetOtherSetting(GetOthertSettingResult);
         }
         //设置界面
         private void SetSetting()
@@ -115,6 +114,11 @@ namespace NetBarMS.Views.RateManage
         protected override void Control_Paint(object sender, PaintEventArgs e)
         {
             base.Control_Paint(sender, e);
+        }
+
+        private void OtherCostView_Load(object sender, EventArgs e)
+        {
+            RateManageNetOperation.GetOtherSetting(GetOthertSettingResult);
         }
     }
 }

@@ -40,7 +40,7 @@
             // 
             // titleLabel
             // 
-            this.titleLabel.Size = new System.Drawing.Size(116, 18);
+            this.titleLabel.Size = new System.Drawing.Size(77, 12);
             this.titleLabel.Text = "商品类别增改";
             // 
             // closeBtn
@@ -53,7 +53,8 @@
             // bottomPanel
             // 
             this.bottomPanel.Controls.Add(this.simpleButton1);
-            this.bottomPanel.Location = new System.Drawing.Point(0, 158);
+            this.bottomPanel.Location = new System.Drawing.Point(0, 182);
+            this.bottomPanel.Size = new System.Drawing.Size(480, 40);
             // 
             // flowLayoutPanel2
             // 
@@ -69,10 +70,10 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(3, 9);
+            this.label1.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(3, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 15);
+            this.label1.Size = new System.Drawing.Size(91, 14);
             this.label1.TabIndex = 0;
             this.label1.Text = "商品类别名称";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -80,7 +81,7 @@
             // typeTextEdit
             // 
             this.typeTextEdit.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.typeTextEdit.Location = new System.Drawing.Point(106, 3);
+            this.typeTextEdit.Location = new System.Drawing.Point(100, 3);
             this.typeTextEdit.Name = "typeTextEdit";
             this.typeTextEdit.Properties.AutoHeight = false;
             this.typeTextEdit.Size = new System.Drawing.Size(221, 28);
@@ -89,19 +90,19 @@
             // simpleButton1
             // 
             this.simpleButton1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.simpleButton1.Location = new System.Drawing.Point(194, 18);
+            this.simpleButton1.Location = new System.Drawing.Point(194, 3);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(92, 29);
             this.simpleButton1.TabIndex = 64;
             this.simpleButton1.Text = "保存";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
-            // ProductTypeAdd
+            // ProductTypeAddView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.flowLayoutPanel2);
-            this.Name = "ProductTypeAdd";
+            this.Name = "ProductTypeAddView";
             this.Size = new System.Drawing.Size(480, 222);
             this.Controls.SetChildIndex(this.titlePanel, 0);
             this.Controls.SetChildIndex(this.bottomPanel, 0);

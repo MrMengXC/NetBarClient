@@ -39,7 +39,6 @@ namespace NetBarMS.Views.ManagersManage
         {
             ToolsManage.SetGridView(this.gridView1, GridControlType.ManagerManage, out this.mainDataTable,ButtonPressedEventClick,null);
             this.gridControl1.DataSource = this.mainDataTable;
-            GetManagerList();
 
         }
         #region 获取管理员
@@ -157,5 +156,9 @@ namespace NetBarMS.Views.ManagersManage
         }
         #endregion
 
+        private void ManagerManageView_Load(object sender, EventArgs e)
+        {
+            GetManagerList();
+        }
     }
 }

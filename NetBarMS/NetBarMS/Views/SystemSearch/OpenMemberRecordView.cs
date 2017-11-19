@@ -71,7 +71,6 @@ namespace NetBarMS.Views.NetUserManage
             ToolsManage.SetGridView(this.gridView1, GridControlType.OpenMemberRecord, out this.mainDataTable, null, null);
             this.gridControl1.DataSource = this.mainDataTable;
 
-            GetOpenMemberRecord();
         }
         #endregion
 
@@ -187,8 +186,13 @@ namespace NetBarMS.Views.NetUserManage
         {
             GetOpenMemberRecord();
         }
-        #endregion
 
+
+        #endregion
+        private void OpenMemberRecordView_Load(object sender, EventArgs e)
+        {
+            GetOpenMemberRecord();
+        }
         #region 会员类型搜索
         private void comboBoxEdit2_SelectedIndexChanged(object sender, EventArgs e)
         {

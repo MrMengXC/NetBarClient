@@ -36,8 +36,8 @@
             this.memberMinuteText = new DevExpress.XtraEditors.TextEdit();
             this.memberCheckEdit = new DevExpress.XtraEditors.CheckEdit();
             this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
-            this.temMinuteText = new DevExpress.XtraEditors.TextEdit();
             this.label24 = new System.Windows.Forms.Label();
+            this.temMinuteText = new DevExpress.XtraEditors.TextEdit();
             this.titlePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.temCheckEdit.Properties)).BeginInit();
             this.flowLayoutPanel3.SuspendLayout();
@@ -60,14 +60,14 @@
             // temCheckEdit
             // 
             this.temCheckEdit.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.temCheckEdit.Location = new System.Drawing.Point(3, 3);
+            this.temCheckEdit.Location = new System.Drawing.Point(3, 6);
             this.temCheckEdit.Name = "temCheckEdit";
-            this.temCheckEdit.Properties.Appearance.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.temCheckEdit.Properties.Appearance.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
             this.temCheckEdit.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(74)))));
             this.temCheckEdit.Properties.Appearance.Options.UseFont = true;
             this.temCheckEdit.Properties.Appearance.Options.UseForeColor = true;
             this.temCheckEdit.Properties.Caption = "临时会员用户上机第一个小时超过";
-            this.temCheckEdit.Size = new System.Drawing.Size(256, 19);
+            this.temCheckEdit.Size = new System.Drawing.Size(234, 19);
             this.temCheckEdit.TabIndex = 63;
             // 
             // saveButton
@@ -79,9 +79,9 @@
             this.saveButton.Appearance.Options.UseFont = true;
             this.saveButton.Appearance.Options.UseForeColor = true;
             this.saveButton.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.saveButton.Location = new System.Drawing.Point(16, 139);
+            this.saveButton.Location = new System.Drawing.Point(16, 137);
             this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(130, 30);
+            this.saveButton.Size = new System.Drawing.Size(70, 30);
             this.saveButton.TabIndex = 64;
             this.saveButton.Text = "保存";
             this.saveButton.Click += new System.EventHandler(this.SaveSetting_Click);
@@ -98,7 +98,7 @@
             this.flowLayoutPanel3.Location = new System.Drawing.Point(16, 55);
             this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(845, 68);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(845, 74);
             this.flowLayoutPanel3.TabIndex = 118;
             // 
             // tableLayoutPanel8
@@ -115,17 +115,18 @@
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 1;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(425, 31);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(415, 31);
             this.tableLayoutPanel8.TabIndex = 118;
             // 
             // label14
             // 
             this.label14.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
             this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(74)))));
             this.label14.Location = new System.Drawing.Point(265, 8);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(157, 15);
+            this.label14.Size = new System.Drawing.Size(147, 14);
             this.label14.TabIndex = 5;
             this.label14.Text = "分钟按正常费率收费。";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -135,7 +136,7 @@
             this.memberMinuteText.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.memberMinuteText.Location = new System.Drawing.Point(234, 3);
             this.memberMinuteText.Name = "memberMinuteText";
-            this.memberMinuteText.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.memberMinuteText.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.memberMinuteText.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
             this.memberMinuteText.Properties.Appearance.Options.UseFont = true;
             this.memberMinuteText.Properties.Appearance.Options.UseForeColor = true;
@@ -151,7 +152,7 @@
             this.memberCheckEdit.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.memberCheckEdit.Location = new System.Drawing.Point(3, 6);
             this.memberCheckEdit.Name = "memberCheckEdit";
-            this.memberCheckEdit.Properties.Appearance.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.memberCheckEdit.Properties.Appearance.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
             this.memberCheckEdit.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(74)))));
             this.memberCheckEdit.Properties.Appearance.Options.UseFont = true;
             this.memberCheckEdit.Properties.Appearance.Options.UseForeColor = true;
@@ -166,24 +167,38 @@
             this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel13.Controls.Add(this.label24, 2, 0);
             this.tableLayoutPanel13.Controls.Add(this.temCheckEdit, 0, 0);
+            this.tableLayoutPanel13.Controls.Add(this.temMinuteText, 1, 0);
             this.tableLayoutPanel13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(74)))));
             this.tableLayoutPanel13.Location = new System.Drawing.Point(3, 40);
             this.tableLayoutPanel13.Name = "tableLayoutPanel13";
             this.tableLayoutPanel13.RowCount = 1;
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel13.Size = new System.Drawing.Size(425, 25);
+            this.tableLayoutPanel13.Size = new System.Drawing.Size(424, 31);
             this.tableLayoutPanel13.TabIndex = 120;
+            // 
+            // label24
+            // 
+            this.label24.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.label24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(74)))));
+            this.label24.Location = new System.Drawing.Point(274, 8);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(147, 14);
+            this.label24.TabIndex = 7;
+            this.label24.Text = "分钟按正常费率收费。";
+            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // temMinuteText
             // 
-            this.temMinuteText.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.temMinuteText.Location = new System.Drawing.Point(306, 3);
+            this.temMinuteText.Location = new System.Drawing.Point(243, 3);
             this.temMinuteText.Name = "temMinuteText";
+            this.temMinuteText.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.temMinuteText.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.temMinuteText.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
+            this.temMinuteText.Properties.Appearance.Options.UseBackColor = true;
             this.temMinuteText.Properties.Appearance.Options.UseFont = true;
             this.temMinuteText.Properties.Appearance.Options.UseForeColor = true;
             this.temMinuteText.Properties.Appearance.Options.UseTextOptions = true;
@@ -193,18 +208,6 @@
             this.temMinuteText.TabIndex = 64;
             this.temMinuteText.Paint += new System.Windows.Forms.PaintEventHandler(this.Control_Paint);
             // 
-            // label24
-            // 
-            this.label24.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label24.AutoSize = true;
-            this.label24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(74)))));
-            this.label24.Location = new System.Drawing.Point(265, 5);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(157, 15);
-            this.label24.TabIndex = 7;
-            this.label24.Text = "分钟按正常费率收费。";
-            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // OtherCostView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -213,6 +216,7 @@
             this.Controls.Add(this.saveButton);
             this.Name = "OtherCostView";
             this.Size = new System.Drawing.Size(862, 456);
+            this.Load += new System.EventHandler(this.OtherCostView_Load);
             this.Controls.SetChildIndex(this.titlePanel, 0);
             this.Controls.SetChildIndex(this.saveButton, 0);
             this.Controls.SetChildIndex(this.flowLayoutPanel3, 0);

@@ -54,7 +54,6 @@ namespace NetBarMS.Views.NetUserManage
 
             ToolsManage.SetGridView(this.gridView1, GridControlType.UserNetRecord, out this.mainDataTable);
             this.gridControl1.DataSource = this.mainDataTable;
-            GetMemberNetRecord(false);
         }
         #endregion
 
@@ -142,8 +141,13 @@ namespace NetBarMS.Views.NetUserManage
         {
             lastDate = ToolsManage.GetDateNavigatorRangeTime(this.dateNavigator, lastDate, out this.startTime, out this.endTime);
         }
-        #endregion
 
+
+        #endregion
+        private void MemberNetRecordView_Load(object sender, EventArgs e)
+        {
+            GetMemberNetRecord(false);
+        }
         //
         private void PageView_PageChanged(int current)
         {

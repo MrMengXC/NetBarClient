@@ -112,8 +112,7 @@ namespace NetBarMS.Views.RateManage
             this.areaScrollPanel.Show();
             InitAreaScollBar();
 
-            //获取费率列表数据
-            RateManageList();
+         
 
         }
 
@@ -170,7 +169,7 @@ namespace NetBarMS.Views.RateManage
             newLabel.Size = new Size(LABEL_WIDTH, parent.Height);
             newLabel.BackColor = Color.Transparent;
             newLabel.Text = text;
-            newLabel.Font = new Font("宋体", 18,FontStyle.Bold, GraphicsUnit.Pixel);
+            newLabel.Font = new Font("宋体", 12,FontStyle.Bold, GraphicsUnit.Pixel);
             newLabel.TextAlign = ContentAlignment.MiddleCenter;
             newLabel.Name = name;
             newLabel.Click += NewLabel_Click;
@@ -720,10 +719,13 @@ namespace NetBarMS.Views.RateManage
             {
                 DataGridViewColumn column = this.dataGridView1.Columns[col];
 
-                column.Width = (this.dataGridView1.Width - this.dataGridView1.Columns[0].Width) / (this.dataGridView1.ColumnCount - 1);
+                column.Width = (this.dataGridView1.Width - this.dataGridView1.Columns[0].Width + 20) / (this.dataGridView1.ColumnCount - 1);
             }
         }
+
+       
         #endregion
+
         #region 重置会员类型ScrollBar
         private void InitMemberScollBar()
         {
@@ -738,6 +740,12 @@ namespace NetBarMS.Views.RateManage
             }
         }
         #endregion
+
+        private void RateManageView_Load(object sender, EventArgs e)
+        {
+            //获取费率列表数据
+            RateManageList();
+        }
 
     }
 }

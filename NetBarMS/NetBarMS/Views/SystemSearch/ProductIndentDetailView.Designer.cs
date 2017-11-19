@@ -44,11 +44,11 @@
             // 
             // titlePanel
             // 
-            this.titlePanel.Size = new System.Drawing.Size(822, 50);
+            this.titlePanel.Size = new System.Drawing.Size(822, 40);
             // 
             // titleLabel
             // 
-            this.titleLabel.Size = new System.Drawing.Size(80, 18);
+            this.titleLabel.Size = new System.Drawing.Size(53, 12);
             this.titleLabel.Text = "订单详情";
             // 
             // closeBtn
@@ -58,22 +58,16 @@
             this.closeBtn.Location = new System.Drawing.Point(775, 0);
             this.closeBtn.LookAndFeel.SkinMaskColor = System.Drawing.Color.Transparent;
             this.closeBtn.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.closeBtn.Size = new System.Drawing.Size(47, 50);
-            // 
-            // bottomPanel
-            // 
-            this.bottomPanel.Location = new System.Drawing.Point(0, 314);
-            this.bottomPanel.Size = new System.Drawing.Size(822, 64);
             // 
             // gridControl1
             // 
             this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridControl1.Location = new System.Drawing.Point(16, 119);
+            this.gridControl1.Location = new System.Drawing.Point(5, 90);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(790, 203);
+            this.gridControl1.Size = new System.Drawing.Size(812, 244);
             this.gridControl1.TabIndex = 76;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1,
@@ -93,10 +87,10 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
-            this.label3.Location = new System.Drawing.Point(93, 0);
+            this.label3.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.label3.Location = new System.Drawing.Point(76, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(103, 18);
+            this.label3.Size = new System.Drawing.Size(82, 14);
             this.label3.TabIndex = 2;
             this.label3.Text = "订单金额：";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -104,10 +98,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
-            this.label2.Location = new System.Drawing.Point(202, 0);
+            this.label2.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.label2.Location = new System.Drawing.Point(164, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 18);
+            this.label2.Size = new System.Drawing.Size(82, 14);
             this.label2.TabIndex = 1;
             this.label2.Text = "下单时间：";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -115,10 +109,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.label1.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 18);
+            this.label1.Size = new System.Drawing.Size(67, 14);
             this.label1.TabIndex = 0;
             this.label1.Text = "订单号：";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -129,9 +123,9 @@
             this.flowLayoutPanel1.Controls.Add(this.label1);
             this.flowLayoutPanel1.Controls.Add(this.label3);
             this.flowLayoutPanel1.Controls.Add(this.label2);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(10, 78);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(5, 55);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(308, 18);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(707, 29);
             this.flowLayoutPanel1.TabIndex = 78;
             // 
             // ProductIndentDetailView

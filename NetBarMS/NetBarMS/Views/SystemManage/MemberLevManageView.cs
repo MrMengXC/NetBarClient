@@ -38,7 +38,6 @@ namespace NetBarMS.Views.SystemManage
         {
             ToolsManage.SetGridView(this.gridView1, GridControlType.MemberLevManage, out this.mainDataTable, ColumnButtonClick,null);
             this.gridControl1.DataSource = this.mainDataTable;
-            GetMemberLvList();
         }
         #endregion
 
@@ -184,7 +183,13 @@ namespace NetBarMS.Views.SystemManage
                 }));
             }
         }
-        
-#endregion
+
+        #endregion
+
+        private void MemberLevManageView_Load(object sender, EventArgs e)
+        {
+            GetMemberLvList();
+
+        }
     }
 }

@@ -75,7 +75,6 @@ namespace NetBarMS.Views.NetUserManage
             ToolsManage.SetGridView(this.gridView1, GridControlType.UserConsumeRecord, out this.mainDataTable);
             this.gridControl1.DataSource = this.mainDataTable;
 
-            GetMemberConsumeRecord(false);
 
 
         }
@@ -183,6 +182,8 @@ namespace NetBarMS.Views.NetUserManage
         {
             GetMemberConsumeRecord(true);
         }
+
+        
         #endregion
 
         #region 翻页
@@ -191,6 +192,10 @@ namespace NetBarMS.Views.NetUserManage
             GetMemberConsumeRecord(false);
         }
         #endregion
+        private void MemberConsumeRecordView_Load(object sender, EventArgs e)
+        {
+            GetMemberConsumeRecord(false);
 
+        }
     }
 }

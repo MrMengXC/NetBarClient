@@ -40,7 +40,6 @@ namespace NetBarMS.Views.InCome
             start = year + "-01-01 00:00:00";
             end = year + "-12-31 23:59:59";
             this.dateEdit1.DateTime = DateTime.Now.AddYears(-1);
-            GetYearIncomeDetail();
         }
         #endregion
 
@@ -189,6 +188,8 @@ namespace NetBarMS.Views.InCome
             ToolsManage.ShowForm(detail, false);
         }
 
+        
+
         //关闭选择菜单
         private void ComboBoxEdit1_Closed(object sender, DevExpress.XtraEditors.Controls.ClosedEventArgs e)
         {
@@ -201,5 +202,9 @@ namespace NetBarMS.Views.InCome
             GetYearIncomeDetail();
         }
         #endregion
+        private void YearInComeView_Load(object sender, EventArgs e)
+        {
+            GetYearIncomeDetail();
+        }
     }
 }

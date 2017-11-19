@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using NetBarMS.Views.OtherMain;
+using System.Drawing.Imaging;
 
 namespace NetBarMS.Views.HomePage
 {
@@ -16,6 +17,12 @@ namespace NetBarMS.Views.HomePage
         public RootBgView()
         {
             InitializeComponent();
+            //SetStyle(ControlStyles.UserPaint 
+            //    | ControlStyles.AllPaintingInWmPaint 
+            //    | ControlStyles.OptimizedDoubleBuffer 
+            //    | ControlStyles.ResizeRedraw 
+            //    | ControlStyles.SupportsTransparentBackColor,
+            //    true);
             InitUI();
         }
         #region 初始化UI
@@ -32,10 +39,11 @@ namespace NetBarMS.Views.HomePage
         {
             System.Environment.Exit(0);
         }
-
         private void simpleButton2_Click(object sender, EventArgs e)
         {
             this.FindForm().WindowState = FormWindowState.Minimized;
         }
+
+      
     }
 }

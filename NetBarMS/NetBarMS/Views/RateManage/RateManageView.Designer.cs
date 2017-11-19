@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.星期时段 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -126,14 +126,14 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeight = 30;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.星期时段,
@@ -163,18 +163,18 @@
             this.Column24});
             this.dataGridView1.Location = new System.Drawing.Point(30, 175);
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 10;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dataGridView1.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.dataGridView1.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
@@ -187,9 +187,9 @@
             // 
             // 星期时段
             // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.星期时段.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.星期时段.DefaultCellStyle = dataGridViewCellStyle2;
             this.星期时段.HeaderText = "星期\\时段";
             this.星期时段.MinimumWidth = 80;
             this.星期时段.Name = "星期时段";
@@ -471,7 +471,7 @@
             // bDurComboBoxEdit
             // 
             this.bDurComboBoxEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.bDurComboBoxEdit.Location = new System.Drawing.Point(270, 3);
+            this.bDurComboBoxEdit.Location = new System.Drawing.Point(256, 3);
             this.bDurComboBoxEdit.Name = "bDurComboBoxEdit";
             this.bDurComboBoxEdit.Properties.Appearance.Options.UseTextOptions = true;
             this.bDurComboBoxEdit.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -492,7 +492,7 @@
             // nDurComboBoxEdit
             // 
             this.nDurComboBoxEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.nDurComboBoxEdit.Location = new System.Drawing.Point(270, 3);
+            this.nDurComboBoxEdit.Location = new System.Drawing.Point(256, 3);
             this.nDurComboBoxEdit.Name = "nDurComboBoxEdit";
             this.nDurComboBoxEdit.Properties.Appearance.Options.UseTextOptions = true;
             this.nDurComboBoxEdit.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -520,9 +520,9 @@
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.Appearance.Options.UseForeColor = true;
             this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.simpleButton1.Location = new System.Drawing.Point(30, 898);
+            this.simpleButton1.Location = new System.Drawing.Point(30, 891);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(130, 30);
+            this.simpleButton1.Size = new System.Drawing.Size(70, 30);
             this.simpleButton1.TabIndex = 13;
             this.simpleButton1.Text = "保存";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
@@ -546,7 +546,7 @@
             this.flowLayoutPanel1.Controls.Add(this.tableLayoutPanel3);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(30, 818);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(30, 809);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(862, 74);
             this.flowLayoutPanel1.TabIndex = 64;
@@ -577,13 +577,13 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(703, 31);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(672, 31);
             this.tableLayoutPanel2.TabIndex = 120;
             // 
             // nMinConsumeText
             // 
             this.nMinConsumeText.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.nMinConsumeText.Location = new System.Drawing.Point(632, 3);
+            this.nMinConsumeText.Location = new System.Drawing.Point(603, 3);
             this.nMinConsumeText.Name = "nMinConsumeText";
             this.nMinConsumeText.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
             this.nMinConsumeText.Properties.Appearance.Options.UseForeColor = true;
@@ -596,7 +596,7 @@
             // nDurPrieceText
             // 
             this.nDurPrieceText.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.nDurPrieceText.Location = new System.Drawing.Point(498, 3);
+            this.nDurPrieceText.Location = new System.Drawing.Point(475, 3);
             this.nDurPrieceText.Name = "nDurPrieceText";
             this.nDurPrieceText.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
             this.nDurPrieceText.Properties.Appearance.Options.UseForeColor = true;
@@ -611,9 +611,10 @@
             // 
             this.label26.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
             this.label26.Location = new System.Drawing.Point(3, 8);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(67, 15);
+            this.label26.Size = new System.Drawing.Size(63, 14);
             this.label26.TabIndex = 0;
             this.label26.Text = "正常费率";
             this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -622,9 +623,10 @@
             // 
             this.label27.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(529, 8);
+            this.label27.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.label27.Location = new System.Drawing.Point(506, 8);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(97, 15);
+            this.label27.Size = new System.Drawing.Size(91, 14);
             this.label27.TabIndex = 2;
             this.label27.Text = "元，最低消费";
             this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -633,9 +635,10 @@
             // 
             this.label29.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(350, 8);
+            this.label29.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.label29.Location = new System.Drawing.Point(336, 8);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(142, 15);
+            this.label29.Size = new System.Drawing.Size(133, 14);
             this.label29.TabIndex = 7;
             this.label29.Text = "分钟，时段收费单位";
             this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -644,9 +647,10 @@
             // 
             this.label28.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(663, 8);
+            this.label28.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.label28.Location = new System.Drawing.Point(634, 8);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(37, 15);
+            this.label28.Size = new System.Drawing.Size(35, 14);
             this.label28.TabIndex = 5;
             this.label28.Text = "元。";
             this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -655,9 +659,10 @@
             // 
             this.label30.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(107, 8);
+            this.label30.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.label30.Location = new System.Drawing.Point(103, 8);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(157, 15);
+            this.label30.Size = new System.Drawing.Size(147, 14);
             this.label30.TabIndex = 9;
             this.label30.Text = "元小时，收费最小时段";
             this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -667,7 +672,7 @@
             this.nRateLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.nRateLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.nRateLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
-            this.nRateLabel.Location = new System.Drawing.Point(76, 3);
+            this.nRateLabel.Location = new System.Drawing.Point(72, 3);
             this.nRateLabel.Name = "nRateLabel";
             this.nRateLabel.Size = new System.Drawing.Size(25, 25);
             this.nRateLabel.TabIndex = 1;
@@ -699,16 +704,17 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(703, 31);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(672, 31);
             this.tableLayoutPanel3.TabIndex = 121;
             // 
             // label31
             // 
             this.label31.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(107, 8);
+            this.label31.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.label31.Location = new System.Drawing.Point(103, 8);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(157, 15);
+            this.label31.Size = new System.Drawing.Size(147, 14);
             this.label31.TabIndex = 9;
             this.label31.Text = "元小时，收费最小时段";
             this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -718,7 +724,7 @@
             this.bRateLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.bRateLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.bRateLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
-            this.bRateLabel.Location = new System.Drawing.Point(76, 3);
+            this.bRateLabel.Location = new System.Drawing.Point(72, 3);
             this.bRateLabel.Name = "bRateLabel";
             this.bRateLabel.Size = new System.Drawing.Size(25, 25);
             this.bRateLabel.TabIndex = 1;
@@ -728,9 +734,10 @@
             // 
             this.label33.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
             this.label33.Location = new System.Drawing.Point(3, 8);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(67, 15);
+            this.label33.Size = new System.Drawing.Size(63, 14);
             this.label33.TabIndex = 0;
             this.label33.Text = "包夜费率";
             this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -739,9 +746,10 @@
             // 
             this.label34.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(529, 8);
+            this.label34.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.label34.Location = new System.Drawing.Point(506, 8);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(97, 15);
+            this.label34.Size = new System.Drawing.Size(91, 14);
             this.label34.TabIndex = 2;
             this.label34.Text = "元，最低消费";
             this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -750,9 +758,10 @@
             // 
             this.label35.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(350, 8);
+            this.label35.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.label35.Location = new System.Drawing.Point(336, 8);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(142, 15);
+            this.label35.Size = new System.Drawing.Size(133, 14);
             this.label35.TabIndex = 7;
             this.label35.Text = "分钟，时段收费单位";
             this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -761,9 +770,10 @@
             // 
             this.label36.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(663, 8);
+            this.label36.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.label36.Location = new System.Drawing.Point(634, 8);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(37, 15);
+            this.label36.Size = new System.Drawing.Size(35, 14);
             this.label36.TabIndex = 5;
             this.label36.Text = "元。";
             this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -771,7 +781,7 @@
             // bDurPrieceText
             // 
             this.bDurPrieceText.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bDurPrieceText.Location = new System.Drawing.Point(498, 3);
+            this.bDurPrieceText.Location = new System.Drawing.Point(475, 3);
             this.bDurPrieceText.Name = "bDurPrieceText";
             this.bDurPrieceText.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
             this.bDurPrieceText.Properties.Appearance.Options.UseForeColor = true;
@@ -785,7 +795,7 @@
             // bMinConsumeText
             // 
             this.bMinConsumeText.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bMinConsumeText.Location = new System.Drawing.Point(632, 3);
+            this.bMinConsumeText.Location = new System.Drawing.Point(603, 3);
             this.bMinConsumeText.Name = "bMinConsumeText";
             this.bMinConsumeText.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
             this.bMinConsumeText.Properties.Appearance.Options.UseForeColor = true;
@@ -901,6 +911,7 @@
             this.Controls.Add(this.simpleButton1);
             this.Name = "RateManageView";
             this.Size = new System.Drawing.Size(1401, 942);
+            this.Load += new System.EventHandler(this.RateManageView_Load);
             this.Controls.SetChildIndex(this.simpleButton1, 0);
             this.Controls.SetChildIndex(this.flowLayoutPanel1, 0);
             this.Controls.SetChildIndex(this.dataGridView1, 0);

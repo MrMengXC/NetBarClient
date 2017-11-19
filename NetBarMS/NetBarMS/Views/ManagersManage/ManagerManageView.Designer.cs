@@ -58,10 +58,11 @@
             this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridControl1.Location = new System.Drawing.Point(0, 46);
+            this.gridControl1.Location = new System.Drawing.Point(5, 45);
             this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Margin = new System.Windows.Forms.Padding(0);
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(455, 756);
+            this.gridControl1.Size = new System.Drawing.Size(445, 760);
             this.gridControl1.TabIndex = 79;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1,
@@ -121,6 +122,7 @@
             this.Controls.Add(this.gridControl1);
             this.Name = "ManagerManageView";
             this.Size = new System.Drawing.Size(455, 805);
+            this.Load += new System.EventHandler(this.ManagerManageView_Load);
             this.Controls.SetChildIndex(this.titlePanel, 0);
             this.Controls.SetChildIndex(this.gridControl1, 0);
             this.titlePanel.ResumeLayout(false);

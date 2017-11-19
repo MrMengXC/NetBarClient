@@ -64,8 +64,7 @@ namespace NetBarMS.Views.SystemSearch
             ToolsManage.SetGridView(this.gridView1, GridControlType.MemberRechargeRecord, out this.mainDataTable);
             this.gridControl1.DataSource = this.mainDataTable;
 
-          
-            GetUserRechargeRecord();
+         
         }
         #endregion
 
@@ -164,8 +163,13 @@ namespace NetBarMS.Views.SystemSearch
         {
             lastDate = ToolsManage.GetDateNavigatorRangeTime(this.dateNavigator, lastDate, out this.startTime, out this.endTime);
         }
-        #endregion
 
+
+        #endregion
+        private void UserRechargeView_Load(object sender, EventArgs e)
+        {
+            GetUserRechargeRecord();
+        }
         #region 搜索按钮点击
         private void SearchButton_ButtonClick(object sender,ButtonPressedEventArgs args)
         {

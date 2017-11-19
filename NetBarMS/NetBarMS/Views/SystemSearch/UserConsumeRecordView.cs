@@ -69,8 +69,7 @@ namespace NetBarMS.Views.SystemSearch
 
             ToolsManage.SetGridView(this.gridView1, GridControlType.UserConsumeRecord, out this.mainDataTable);
             this.gridControl1.DataSource = this.mainDataTable;
-            //获取记录
-            GetUserConsumeRecord(false);
+        
 
 
         }
@@ -186,8 +185,14 @@ namespace NetBarMS.Views.SystemSearch
             GetUserConsumeRecord(true);
 
         }
-        #endregion
 
+
+        #endregion
+        private void UserConsumeRecordView_Load(object sender, EventArgs e)
+        {
+            //获取记录
+            GetUserConsumeRecord(false);
+        }
         #region 翻页
         private void PageView_PageChanged(int current)
         {

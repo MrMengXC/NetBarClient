@@ -61,7 +61,7 @@ namespace NetBarMS.Views.SystemSearch
             this.gridControl2.DataSource = this.receiveTable;
             // RepositoryItemHyperLinkEdit
 
-            GetStaffShiftsRecord();
+       
 
 
         }
@@ -147,6 +147,11 @@ namespace NetBarMS.Views.SystemSearch
         private void DateNavigator_Click(object sender, System.EventArgs e)
         {
             lastDate = ToolsManage.GetDateNavigatorRangeTime(this.dateNavigator, lastDate, out this.startTime, out this.endTime);
+        }
+
+        private void ChangeShiftsRecordView_Load(object sender, EventArgs e)
+        {
+            GetStaffShiftsRecord();
         }
 
 

@@ -89,9 +89,9 @@
             // popupContainerControl1
             // 
             this.popupContainerControl1.Controls.Add(this.dateNavigator);
-            this.popupContainerControl1.Location = new System.Drawing.Point(513, 121);
+            this.popupContainerControl1.Location = new System.Drawing.Point(517, 121);
             this.popupContainerControl1.Name = "popupContainerControl1";
-            this.popupContainerControl1.Size = new System.Drawing.Size(288, 261);
+            this.popupContainerControl1.Size = new System.Drawing.Size(282, 241);
             this.popupContainerControl1.TabIndex = 81;
             // 
             // dateNavigator
@@ -101,11 +101,12 @@
             this.dateNavigator.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateNavigator.DateTime = new System.DateTime(2017, 7, 18, 14, 14, 3, 58);
+            this.dateNavigator.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dateNavigator.EditValue = new System.DateTime(2017, 7, 18, 14, 14, 3, 58);
-            this.dateNavigator.FirstDayOfWeek = System.DayOfWeek.Monday;
-            this.dateNavigator.Location = new System.Drawing.Point(3, 3);
+            this.dateNavigator.FirstDayOfWeek = System.DayOfWeek.Sunday;
+            this.dateNavigator.Location = new System.Drawing.Point(0, 0);
             this.dateNavigator.Name = "dateNavigator";
-            this.dateNavigator.Size = new System.Drawing.Size(283, 258);
+            this.dateNavigator.Size = new System.Drawing.Size(282, 241);
             this.dateNavigator.SyncSelectionWithEditValue = false;
             this.dateNavigator.TabIndex = 0;
             this.dateNavigator.UpdateDateTimeWhenNavigating = false;
@@ -155,10 +156,10 @@
             gridLevelNode1.RelationName = "Level1";
             this.gridControl1.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
             gridLevelNode1});
-            this.gridControl1.Location = new System.Drawing.Point(0, 46);
+            this.gridControl1.Location = new System.Drawing.Point(5, 45);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1183, 723);
+            this.gridControl1.Size = new System.Drawing.Size(1173, 724);
             this.gridControl1.TabIndex = 80;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1,
@@ -193,6 +194,7 @@
             this.Controls.Add(this.gridControl1);
             this.Name = "UserRechargeView";
             this.Size = new System.Drawing.Size(1183, 805);
+            this.Load += new System.EventHandler(this.UserRechargeView_Load);
             this.Controls.SetChildIndex(this.titlePanel, 0);
             this.Controls.SetChildIndex(this.gridControl1, 0);
             this.Controls.SetChildIndex(this.popupContainerControl1, 0);

@@ -36,7 +36,6 @@ namespace NetBarMS.Views.SystemManage
         {
             ToolsManage.SetGridView(this.gridView1, GridControlType.ProductType, out this.mainDataTable, ColumnButtonClick,null);
             this.gridControl1.DataSource = this.mainDataTable;
-            SystemManageNetOperation.ProductTypeInfo(ProductTypeInfoResult);
         }
         
 
@@ -176,5 +175,10 @@ namespace NetBarMS.Views.SystemManage
             }
         }
         #endregion
+
+        private void ProductTypeManageView_Load(object sender, EventArgs e)
+        {
+            SystemManageNetOperation.ProductTypeInfo(ProductTypeInfoResult);
+        }
     }
 }

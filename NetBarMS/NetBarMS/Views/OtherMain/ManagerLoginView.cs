@@ -17,17 +17,16 @@ namespace NetBarMS.Views.OtherMain
 {
     public partial class ManagerLoginView : UserControl
     {
-
+        static object locker = new object();
         private int num = 5;
         private List<StructAccount> staffs;
         public ManagerLoginView()
         {
             InitializeComponent();
-            //连接服务器
-            NetMessageManage.ConnectServer(ConnectServerResult);
+         
             this.loginButton.Click += LoginButtonClick;
             this.panel2.BackColor = Color.FromArgb(60, this.panel2.BackColor);
-            //this.loginButton.Enabled = false;
+            this.loginButton.Enabled = false;
 
         }
 
@@ -66,21 +65,25 @@ namespace NetBarMS.Views.OtherMain
         //获取系统信息结果
         private void RequestSysInfoResult(ResultModel result)
         {
-            this.num--;
-            //System.Console.WriteLine("num:"+this.num);
-            if (this.num == 0)
+            lock (locker)
             {
-                this.Invoke(new RefreshUIHandle(delegate {
-                    SysManage.RemoveRequestSysInfo(RequestSysInfoResult);
-                    this.loginButton.Enabled = true;
-                    //设置用户名列表
-                    this.staffs = SysManage.Staffs;
-                    foreach (StructAccount staff in staffs)
-                    {
-                        this.comboBoxEdit1.Properties.Items.Add(staff.Username);
-                    }
-                }));
+                this.num--;
+                //System.Console.WriteLine("num:"+this.num);
+                if (this.num == 0)
+                {
+                    this.Invoke(new RefreshUIHandle(delegate {
+                        SysManage.RemoveRequestSysInfo(RequestSysInfoResult);
+                        this.loginButton.Enabled = true;
+                        //设置用户名列表
+                        this.staffs = SysManage.Staffs;
+                        foreach (StructAccount staff in staffs)
+                        {
+                            this.comboBoxEdit1.Properties.Items.Add(staff.Username);
+                        }
+                    }));
+                }
             }
+            
         }
         #endregion
 
@@ -89,9 +92,9 @@ namespace NetBarMS.Views.OtherMain
         private void LoginButtonClick(object sender, EventArgs e)
         {
             //TODO:测试打开
-            LoginMainView();
-            return;
-
+            //LoginMainView();
+            //return;
+           
             string userName = this.comboBoxEdit1.Text;
             string ps = this.textEdit2.Text;
             if(userName.Equals("") || ps.Equals(""))
@@ -134,7 +137,9 @@ namespace NetBarMS.Views.OtherMain
             MainView mainView = new MainView();
             this.Parent.Controls.Add(mainView);
             mainView.Dock = DockStyle.Fill;
-
+            //CustomMainView mainView = new CustomMainView();
+            //this.Parent.Controls.Add(mainView);
+            //mainView.Dock = DockStyle.Fill;
             //移除登录页面
             this.Parent.Controls.Remove(this);
             this.Dispose();
@@ -143,8 +148,6 @@ namespace NetBarMS.Views.OtherMain
 
         }
         #endregion
-
-   
 
         #region 控件绘制时触发的方法
         protected virtual void Control_Paint(object sender, PaintEventArgs e)
@@ -161,5 +164,10 @@ namespace NetBarMS.Views.OtherMain
         }
         #endregion
 
+        private void ManagerLoginView_Load(object sender, EventArgs e)
+        {
+            //连接服务器
+            NetMessageManage.ConnectServer(ConnectServerResult);
+        }
     }
 }

@@ -32,15 +32,15 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.loginButton = new DevExpress.XtraEditors.SimpleButton();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
@@ -62,7 +62,7 @@
             this.panel1.Controls.Add(this.loginButton);
             this.panel1.Location = new System.Drawing.Point(10, 10);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(468, 290);
+            this.panel1.Size = new System.Drawing.Size(420, 240);
             this.panel1.TabIndex = 1;
             // 
             // label1
@@ -71,7 +71,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(74)))));
-            this.label1.Location = new System.Drawing.Point(104, 74);
+            this.label1.Location = new System.Drawing.Point(76, 31);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(84, 18);
             this.label1.TabIndex = 15;
@@ -85,14 +85,29 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel2.Controls.Add(this.simpleButton3, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.comboBoxEdit1, 1, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(106, 117);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(79, 67);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(276, 30);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(276, 35);
             this.tableLayoutPanel2.TabIndex = 4;
             this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.Control_Paint);
+            // 
+            // simpleButton3
+            // 
+            this.simpleButton3.AllowFocus = false;
+            this.simpleButton3.AutoSize = true;
+            this.simpleButton3.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.simpleButton3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.simpleButton3.Image = global::NetBarMS.Imgs.img_yonghu;
+            this.simpleButton3.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.simpleButton3.Location = new System.Drawing.Point(2, 2);
+            this.simpleButton3.Margin = new System.Windows.Forms.Padding(0);
+            this.simpleButton3.Name = "simpleButton3";
+            this.simpleButton3.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
+            this.simpleButton3.Size = new System.Drawing.Size(30, 31);
+            this.simpleButton3.TabIndex = 15;
             // 
             // comboBoxEdit1
             // 
@@ -112,7 +127,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::NetBarMS.Imgs.icon_jiantou, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
             this.comboBoxEdit1.Properties.DropDownItemHeight = 25;
             this.comboBoxEdit1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit1.Size = new System.Drawing.Size(240, 26);
+            this.comboBoxEdit1.Size = new System.Drawing.Size(240, 31);
             this.comboBoxEdit1.TabIndex = 1;
             // 
             // tableLayoutPanel1
@@ -123,12 +138,12 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.Controls.Add(this.textEdit2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.simpleButton2, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(106, 163);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(79, 123);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(276, 30);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(276, 35);
             this.tableLayoutPanel1.TabIndex = 3;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.Control_Paint);
             // 
@@ -144,8 +159,23 @@
             this.textEdit2.Properties.Appearance.Options.UseForeColor = true;
             this.textEdit2.Properties.AutoHeight = false;
             this.textEdit2.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.textEdit2.Size = new System.Drawing.Size(243, 28);
+            this.textEdit2.Size = new System.Drawing.Size(243, 33);
             this.textEdit2.TabIndex = 16;
+            // 
+            // simpleButton2
+            // 
+            this.simpleButton2.AllowFocus = false;
+            this.simpleButton2.AutoSize = true;
+            this.simpleButton2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.simpleButton2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.simpleButton2.Image = global::NetBarMS.Imgs.img_mima;
+            this.simpleButton2.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.simpleButton2.Location = new System.Drawing.Point(1, 1);
+            this.simpleButton2.Margin = new System.Windows.Forms.Padding(0);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
+            this.simpleButton2.Size = new System.Drawing.Size(30, 33);
+            this.simpleButton2.TabIndex = 15;
             // 
             // loginButton
             // 
@@ -156,10 +186,10 @@
             this.loginButton.Appearance.Options.UseFont = true;
             this.loginButton.Appearance.Options.UseForeColor = true;
             this.loginButton.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.loginButton.Location = new System.Drawing.Point(122, 209);
+            this.loginButton.Location = new System.Drawing.Point(79, 175);
             this.loginButton.Name = "loginButton";
-            this.loginButton.Size = new System.Drawing.Size(245, 41);
-            this.loginButton.TabIndex = 14;
+            this.loginButton.Size = new System.Drawing.Size(276, 35);
+            this.loginButton.TabIndex = 12;
             this.loginButton.Text = "立即登录";
             // 
             // label3
@@ -179,9 +209,9 @@
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.BackColor = System.Drawing.Color.Black;
             this.panel2.Controls.Add(this.panel1);
-            this.panel2.Location = new System.Drawing.Point(398, 232);
+            this.panel2.Location = new System.Drawing.Point(422, 232);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(488, 310);
+            this.panel2.Size = new System.Drawing.Size(440, 260);
             this.panel2.TabIndex = 15;
             // 
             // panel3
@@ -194,36 +224,6 @@
             this.panel3.Size = new System.Drawing.Size(1285, 774);
             this.panel3.TabIndex = 16;
             // 
-            // simpleButton3
-            // 
-            this.simpleButton3.AllowFocus = false;
-            this.simpleButton3.AutoSize = true;
-            this.simpleButton3.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.simpleButton3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.simpleButton3.Image = global::NetBarMS.Imgs.img_yonghu;
-            this.simpleButton3.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.simpleButton3.Location = new System.Drawing.Point(2, 2);
-            this.simpleButton3.Margin = new System.Windows.Forms.Padding(0);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.simpleButton3.Size = new System.Drawing.Size(30, 26);
-            this.simpleButton3.TabIndex = 15;
-            // 
-            // simpleButton2
-            // 
-            this.simpleButton2.AllowFocus = false;
-            this.simpleButton2.AutoSize = true;
-            this.simpleButton2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.simpleButton2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.simpleButton2.Image = global::NetBarMS.Imgs.img_mima;
-            this.simpleButton2.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.simpleButton2.Location = new System.Drawing.Point(1, 1);
-            this.simpleButton2.Margin = new System.Windows.Forms.Padding(0);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.simpleButton2.Size = new System.Drawing.Size(30, 28);
-            this.simpleButton2.TabIndex = 15;
-            // 
             // ManagerLoginView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -232,6 +232,7 @@
             this.Controls.Add(this.panel3);
             this.Name = "ManagerLoginView";
             this.Size = new System.Drawing.Size(1285, 774);
+            this.Load += new System.EventHandler(this.ManagerLoginView_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);

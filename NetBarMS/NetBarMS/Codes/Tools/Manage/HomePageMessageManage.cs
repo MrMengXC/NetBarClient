@@ -90,6 +90,9 @@ namespace NetBarMS.Codes.Tools.Manage
         private int dailyOnlineCount = 0, dailyTradeAmount = 0;
         //呼叫服务数量/客户端报错数量/商品订单数量
         private int callMsgNum = 0, exceptionMsgNum = 0, orderMsgNum = 0;
+
+        //锁定
+        static object locker = new object();
         #endregion
 
         #region 单例方法

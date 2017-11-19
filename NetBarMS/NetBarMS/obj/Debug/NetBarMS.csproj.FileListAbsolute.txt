@@ -1113,3 +1113,8 @@ C:\Users\Administrator\Desktop\NetBarMS\NetBarMS\obj\Debug\NetBarMS.Views.UserUs
 C:\Users\Administrator\Desktop\NetBarMS\NetBarMS\obj\Debug\NetBarMS.Views.UserUseCp.UserActiveView.resources
 C:\Users\Administrator\Desktop\NetBarMS\NetBarMS\obj\Debug\NetBarMS.csproj.GenerateResource.Cache
 C:\Users\Administrator\Desktop\NetBarMS\NetBarMS\obj\Debug\NetBarMS.exe.licenses
+C:\Users\D\Desktop\NetBarMS\NetBarMS\obj\Debug\NetBarMS.Views.CustomMainView.resources
+C:\Users\Administrator\Desktop\NetBarMS\NetBarMS\obj\Debug\NetBarMS.Views.CustomMainView.resources
+C:\Users\Administrator\Desktop\NetBarMS\NetBarMS\obj\Debug\NetBarMS.Views.SystemSearch.UserDrawBackRecordView.resources
+C:\Users\Administrator\Desktop\GitHub 上的网吧客户端开发\NetBarClient\NetBarMS\NetBarMS\obj\Debug\NetBarMS.Views.CustomMainView.resources
+C:\Users\Administrator\Desktop\GitHub 上的网吧客户端开发\NetBarClient\NetBarMS\NetBarMS\obj\Debug\NetBarMS.Views.SystemSearch.UserDrawBackRecordView.resources

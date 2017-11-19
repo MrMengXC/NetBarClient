@@ -114,7 +114,7 @@
             this.simpleButton2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.simpleButton2.Location = new System.Drawing.Point(9, 732);
             this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(130, 30);
+            this.simpleButton2.Size = new System.Drawing.Size(70, 30);
             this.simpleButton2.TabIndex = 53;
             this.simpleButton2.Text = "保存";
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
@@ -287,6 +287,7 @@
             this.Controls.Add(this.simpleButton2);
             this.Name = "AreaManageView";
             this.Size = new System.Drawing.Size(1060, 785);
+            this.Load += new System.EventHandler(this.AreaManageView_Load);
             this.Controls.SetChildIndex(this.simpleButton2, 0);
             this.Controls.SetChildIndex(this.tableLayoutPanel3, 0);
             this.Controls.SetChildIndex(this.areaBgPanel, 0);

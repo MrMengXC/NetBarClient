@@ -52,11 +52,11 @@
             // 
             // titlePanel
             // 
-            this.titlePanel.Size = new System.Drawing.Size(417, 50);
+            this.titlePanel.Size = new System.Drawing.Size(417, 40);
             // 
             // titleLabel
             // 
-            this.titleLabel.Size = new System.Drawing.Size(116, 18);
+            this.titleLabel.Size = new System.Drawing.Size(77, 12);
             this.titleLabel.Text = "会员等级增改";
             // 
             // closeBtn
@@ -66,13 +66,12 @@
             this.closeBtn.Location = new System.Drawing.Point(370, 0);
             this.closeBtn.LookAndFeel.SkinMaskColor = System.Drawing.Color.Transparent;
             this.closeBtn.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.closeBtn.Size = new System.Drawing.Size(47, 50);
             // 
             // bottomPanel
             // 
             this.bottomPanel.Controls.Add(this.simpleButton1);
-            this.bottomPanel.Location = new System.Drawing.Point(0, 243);
-            this.bottomPanel.Size = new System.Drawing.Size(417, 64);
+            this.bottomPanel.Location = new System.Drawing.Point(0, 267);
+            this.bottomPanel.Size = new System.Drawing.Size(417, 40);
             // 
             // flowLayoutPanel1
             // 
@@ -81,7 +80,7 @@
             this.flowLayoutPanel1.Controls.Add(this.flowLayoutPanel3);
             this.flowLayoutPanel1.Controls.Add(this.flowLayoutPanel4);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(47, 88);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(54, 88);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(309, 120);
             this.flowLayoutPanel1.TabIndex = 62;
@@ -93,17 +92,17 @@
             this.flowLayoutPanel2.Controls.Add(this.typeTextEdit);
             this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(300, 34);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(296, 34);
             this.flowLayoutPanel2.TabIndex = 63;
             // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(3, 9);
+            this.label1.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(3, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 15);
+            this.label1.Size = new System.Drawing.Size(63, 14);
             this.label1.TabIndex = 0;
             this.label1.Text = "等级名称";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -111,7 +110,7 @@
             // typeTextEdit
             // 
             this.typeTextEdit.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.typeTextEdit.Location = new System.Drawing.Point(76, 3);
+            this.typeTextEdit.Location = new System.Drawing.Point(72, 3);
             this.typeTextEdit.Name = "typeTextEdit";
             this.typeTextEdit.Properties.AutoHeight = false;
             this.typeTextEdit.Size = new System.Drawing.Size(221, 28);
@@ -124,17 +123,17 @@
             this.flowLayoutPanel3.Controls.Add(this.rechargeTextEdit);
             this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 43);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(303, 34);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(299, 34);
             this.flowLayoutPanel3.TabIndex = 64;
             // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
-            this.label2.Location = new System.Drawing.Point(3, 9);
+            this.label2.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.label2.Location = new System.Drawing.Point(3, 10);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 15);
+            this.label2.Size = new System.Drawing.Size(63, 14);
             this.label2.TabIndex = 0;
             this.label2.Text = "充值金额";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -142,7 +141,7 @@
             // rechargeTextEdit
             // 
             this.rechargeTextEdit.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.rechargeTextEdit.Location = new System.Drawing.Point(76, 3);
+            this.rechargeTextEdit.Location = new System.Drawing.Point(72, 3);
             this.rechargeTextEdit.Name = "rechargeTextEdit";
             this.rechargeTextEdit.Properties.AutoHeight = false;
             this.rechargeTextEdit.Properties.Mask.EditMask = "[0-9]*";
@@ -158,17 +157,17 @@
             this.flowLayoutPanel4.Controls.Add(this.integralTextEdit);
             this.flowLayoutPanel4.Location = new System.Drawing.Point(3, 83);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(300, 34);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(296, 34);
             this.flowLayoutPanel4.TabIndex = 65;
             // 
             // label3
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
-            this.label3.Location = new System.Drawing.Point(3, 9);
+            this.label3.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.label3.Location = new System.Drawing.Point(3, 10);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 15);
+            this.label3.Size = new System.Drawing.Size(63, 14);
             this.label3.TabIndex = 0;
             this.label3.Text = "赠送积分";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -176,7 +175,7 @@
             // integralTextEdit
             // 
             this.integralTextEdit.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.integralTextEdit.Location = new System.Drawing.Point(76, 3);
+            this.integralTextEdit.Location = new System.Drawing.Point(72, 3);
             this.integralTextEdit.Name = "integralTextEdit";
             this.integralTextEdit.Properties.AutoHeight = false;
             this.integralTextEdit.Properties.Mask.EditMask = "[0-9]*";
@@ -188,7 +187,7 @@
             // simpleButton1
             // 
             this.simpleButton1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.simpleButton1.Location = new System.Drawing.Point(162, 18);
+            this.simpleButton1.Location = new System.Drawing.Point(161, 3);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(92, 29);
             this.simpleButton1.TabIndex = 63;

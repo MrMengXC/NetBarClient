@@ -117,23 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="popupContainerEdit3.Properties.Buttons" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAA4AAAAKCAYAAACE2W/HAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
-        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAACMSURBVChTlcuxDcIwEIVhy1VoYYGwQlgCr0HGSONF
-        PAddNmAGJqCmQsd76BydjZUoxScl5/+56zQnkJ0Shx08zHEL24MTEY57eOnDGjZnbn5DHQf4aNDCt5D7
-        ZajjaMJatG099HA3ccabt20xJARHeOqA+H2qu+InQzjAW11azd8hw+AGY+uNmsdt4r5XWW1tQ2+j4QAA
-        AABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="popupContainerEdit2.Properties.Buttons" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAA4AAAAKCAYAAACE2W/HAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
-        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAACMSURBVChTlcuxDcIwEIVhy1VoYYGwQlgCr0HGSONF
-        PAddNmAGJqCmQsd76BydjZUoxScl5/+56zQnkJ0Shx08zHEL24MTEY57eOnDGjZnbn5DHQf4aNDCt5D7
-        ZajjaMJatG099HA3ccabt20xJARHeOqA+H2qu+InQzjAW11azd8hw+AGY+uNmsdt4r5XWW1tQ2+j4QAA
-        AABJRU5ErkJggg==
-</value>
-  </data>
 </root>

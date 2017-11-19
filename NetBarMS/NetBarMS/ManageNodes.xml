@@ -3,7 +3,7 @@
 
   <Node name ="首页" tag="HomePage" id="5">
   </Node>
-  
+
   <Node name ="会员管理" tag="MemberManage" id="11" img ="icon_huiyuan" sel ="icon_huiyuan2">
   </Node>
 
@@ -34,6 +34,8 @@
     <child name = "会员办理记录" tag="OpenMemberRecord" id="35"/>
     <child name = "商品订单查询" tag="ProductIndent" id="36"/>
     <child name = "上座率查询" tag="AttendanceSearch" id="37"/>
+    <child name = "用户退款记录" tag="UserDrawBackRecord" />
+
   </Node>
 
   <Node name ="绩效考核" tag="JXInspect" id="16" img ="icon_jixiao" sel ="icon_jixiao2"/>

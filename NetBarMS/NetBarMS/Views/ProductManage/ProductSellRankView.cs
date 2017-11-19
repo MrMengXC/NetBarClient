@@ -91,5 +91,9 @@ namespace NetBarMS.Views.ProductManage
         }
         #endregion
 
+        private void ProductSellRankView_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

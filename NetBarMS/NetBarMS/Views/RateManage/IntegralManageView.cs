@@ -37,7 +37,6 @@ namespace NetBarMS.Views.RateManage
             //初始化ComboxEdit
             this.startComboBoxEdit.Properties.DisplayFormat.FormatString = "yyyy-MM-dd";
             this.endComboBoxEdit.Properties.DisplayFormat.FormatString = "yyyy-MM-dd";
-            RateManageNetOperation.GetIntegralDefaultSetting(GetIntegralDefaultSettingResult);
         }
         private void SetSetting()
         {
@@ -157,6 +156,11 @@ namespace NetBarMS.Views.RateManage
         protected override void Control_Paint(object sender, PaintEventArgs e)
         {
             base.Control_Paint(sender, e);
+        }
+
+        private void IntegralManageView_Load(object sender, EventArgs e)
+        {
+            RateManageNetOperation.GetIntegralDefaultSetting(GetIntegralDefaultSettingResult);
         }
     }
 }

@@ -60,7 +60,6 @@ namespace NetBarMS.Views.SystemSearch
             DateTime date = DateTime.Now.AddDays(-1);
             start = date.ToString("yyyy-MM-dd");
             this.popupContainerEdit1.Text = start;
-            GetAttendanceSearch();
         }
         #endregion
 
@@ -129,5 +128,10 @@ namespace NetBarMS.Views.SystemSearch
             GetAttendanceSearch();
         }
         #endregion
+
+        private void AttendanceSearchView_Load(object sender, EventArgs e)
+        {
+            GetAttendanceSearch();
+        }
     }
 }

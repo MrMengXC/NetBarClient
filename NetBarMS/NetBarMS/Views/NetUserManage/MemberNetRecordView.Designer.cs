@@ -64,10 +64,11 @@
             this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridControl1.Location = new System.Drawing.Point(0, 46);
+            this.gridControl1.Location = new System.Drawing.Point(5, 45);
             this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Margin = new System.Windows.Forms.Padding(0);
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1050, 723);
+            this.gridControl1.Size = new System.Drawing.Size(1040, 727);
             this.gridControl1.TabIndex = 76;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1,
@@ -116,11 +117,12 @@
             this.dateNavigator.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateNavigator.DateTime = new System.DateTime(2017, 6, 13, 18, 13, 56, 0);
+            this.dateNavigator.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dateNavigator.EditValue = new System.DateTime(2017, 6, 13, 18, 13, 56, 0);
-            this.dateNavigator.FirstDayOfWeek = System.DayOfWeek.Monday;
-            this.dateNavigator.Location = new System.Drawing.Point(3, 3);
+            this.dateNavigator.FirstDayOfWeek = System.DayOfWeek.Sunday;
+            this.dateNavigator.Location = new System.Drawing.Point(0, 0);
             this.dateNavigator.Name = "dateNavigator";
-            this.dateNavigator.Size = new System.Drawing.Size(283, 258);
+            this.dateNavigator.Size = new System.Drawing.Size(288, 261);
             this.dateNavigator.TabIndex = 0;
             this.dateNavigator.Click += new System.EventHandler(this.DateNavigator_Click);
             // 
@@ -143,6 +145,7 @@
             this.Controls.Add(this.gridControl1);
             this.Name = "MemberNetRecordView";
             this.Size = new System.Drawing.Size(1050, 805);
+            this.Load += new System.EventHandler(this.MemberNetRecordView_Load);
             this.Controls.SetChildIndex(this.titlePanel, 0);
             this.Controls.SetChildIndex(this.gridControl1, 0);
             this.Controls.SetChildIndex(this.pageView1, 0);

@@ -54,7 +54,6 @@ namespace NetBarMS.Views.ProductManage
             this.dateNavigator1.UpdateSelectionWhenNavigating = false;
             this.dateNavigator1.SyncSelectionWithEditValue = false;
 
-            GetSellRecordList();
         }
 
         #region 获取销售记录
@@ -118,6 +117,8 @@ namespace NetBarMS.Views.ProductManage
 
 
         }
+
+       
         #endregion
 
         #region 日期选择
@@ -137,6 +138,12 @@ namespace NetBarMS.Views.ProductManage
            GetSellRecordList();
         }
         #endregion
+
+        private void ProductSellRecordView_Load(object sender, EventArgs e)
+        {
+            GetSellRecordList();
+
+        }
 
     }
 }

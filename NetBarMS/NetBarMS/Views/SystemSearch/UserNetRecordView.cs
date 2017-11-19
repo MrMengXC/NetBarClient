@@ -69,7 +69,7 @@ namespace NetBarMS.Views.SystemSearch
                 this.comboBoxEdit1.Properties.Items.Add(com.Computer);
             }
 
-            GetUserNetRecord(false);
+        
 
         }
         #endregion
@@ -193,12 +193,17 @@ namespace NetBarMS.Views.SystemSearch
             GetUserNetRecord(true);
 
         }
+
+       
         #endregion
         //进行页数通知
         private void PageView_PageChanged(int current)
         {
             GetUserNetRecord(false);
         }
-
+        private void UserNetRecordView_Load(object sender, EventArgs e)
+        {
+            GetUserNetRecord(false);
+        }
     }
 }

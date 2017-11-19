@@ -58,7 +58,6 @@ namespace NetBarMS.Views.EvaluateManage
             {
                 this.comboBoxEdit1.Properties.Items.Add(staff.Nickname);
             }
-            GetStaffEvaluateList();
         }
         #endregion
 
@@ -156,8 +155,13 @@ namespace NetBarMS.Views.EvaluateManage
 
 
         }
-        #endregion
 
+
+        #endregion
+        private void StaffEvaluateView_Load(object sender, EventArgs e)
+        {
+            GetStaffEvaluateList();
+        }
         #region 条件搜索
         //进行搜索点击
         private void ButtonEdit1_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)

@@ -69,7 +69,6 @@ namespace NetBarMS.Views.SystemSearch
             }
 
 
-            GetProductIndentList();
 
         }
         #endregion
@@ -165,6 +164,11 @@ namespace NetBarMS.Views.SystemSearch
             ProductIndentDetailView view = new ProductIndentDetailView(order);
             ToolsManage.ShowForm(view, false);
 
+        }
+
+        private void ProductIndentView_Load(object sender, EventArgs e)
+        {
+            GetProductIndentList();
         }
         #region 日期选择
         //日期选择触发

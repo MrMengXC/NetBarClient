@@ -1,4 +1,5 @@
-﻿using System;
+﻿//#define Test
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,17 +21,22 @@ namespace NetBarMS.Codes.Tools
 
         private byte[] receiveBytes = new byte[1024];
         private Socket clientSocket;
+#if Test
         private const string ipString = "jorkenw.gnway.org";
         private const int port = 8465;
+#else
+     private const string ipString = "47.93.98.247";
+     private const int port = 8465;
+#endif
 
-        #region Event
+#region Event
         //结果
         private event DataResultBlock ResultBlockEvent;
         //连接结果
         public event ConnectResultBlock ConnectBlockEvent;
-        #endregion
+#endregion
 
-        #region 连接服务器
+#region 连接服务器
         /// <summary>
         /// 连接服务器
         /// </summary>
@@ -47,9 +53,9 @@ namespace NetBarMS.Codes.Tools
             }
         }
 
-        #endregion
+#endregion
 
-        #region 静态方法
+#region 静态方法
         private static NetMessageManage Manage(ConnectResultBlock connect)
         {
 
@@ -72,9 +78,9 @@ namespace NetBarMS.Codes.Tools
             return _instance;
         }
 
-        #endregion
+#endregion
 
-        #region 开始连接服务器
+#region 开始连接服务器
         /// <summary>
         /// 连接服务器
         /// </summary>
@@ -111,9 +117,9 @@ namespace NetBarMS.Codes.Tools
             }
         }
 
-        #endregion
+#endregion
 
-        #region 接收数据
+#region 接收数据
         //循环接收数据
         private void ReceiveData()
         {
@@ -263,9 +269,9 @@ namespace NetBarMS.Codes.Tools
             }
 
         }
-        #endregion
+#endregion
 
-        #region 发送数据
+#region 发送数据
         // 发送数据1
         private void SendMsg(IMessageLite value)
         {
@@ -345,7 +351,7 @@ namespace NetBarMS.Codes.Tools
             }
         }
 
-        #endregion
+#endregion
 
 
         //是否连接中
@@ -359,7 +365,7 @@ namespace NetBarMS.Codes.Tools
 
         }
 
-        #region 添加/移除结果回调
+#region 添加/移除结果回调
         /// <summary>
         /// 移除结果回调
         /// </summary>
@@ -382,11 +388,11 @@ namespace NetBarMS.Codes.Tools
         {
             NetMessageManage.Manage().ConnectBlockEvent -= result;
         }
-        #endregion
+#endregion
 
     }
 
-    #region 结果Model
+#region 结果Model
     /// <summary>
     /// 结果Model
     /// </summary>
@@ -395,10 +401,10 @@ namespace NetBarMS.Codes.Tools
         public int error = 0;   // 0/1 无错误、有错误
         public MessagePack pack;
     }
-    #endregion
+#endregion
 
 
-    #region 发送Model
+#region 发送Model
     /// <summary>
     /// 结果Model
     /// </summary>
@@ -407,5 +413,5 @@ namespace NetBarMS.Codes.Tools
         public Cmd cmd;  
         public MessageContent content;
     }
-    #endregion
+#endregion
 }

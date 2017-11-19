@@ -42,7 +42,6 @@ namespace NetBarMS.Views.ManagersManage
             //new 
             ToolsManage.SetGridView(this.gridView1, GridControlType.StaffList, out this.mainDataTable, ButtonPressedEventClick,null);
             this.gridControl1.DataSource = this.mainDataTable;
-            GetStaffList();
         }
         #region 获取员工列表
         private void GetStaffList()
@@ -156,5 +155,9 @@ namespace NetBarMS.Views.ManagersManage
         }
         #endregion
 
+        private void StaffListView_Load(object sender, EventArgs e)
+        {
+            GetStaffList();
+        }
     }
 }

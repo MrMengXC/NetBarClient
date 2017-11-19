@@ -22,8 +22,7 @@ namespace NetBarMS.Views
             InitializeComponent();
             this.Disposed += RootUserControlView_Disposed;
             //双缓冲
-            SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.AllPaintingInWmPaint, true);
-
+            SetStyle(ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer | ControlStyles.ResizeRedraw | ControlStyles.SupportsTransparentBackColor, true);
         }
 
         protected virtual void RootUserControlView_Disposed(object sender, EventArgs e)

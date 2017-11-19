@@ -71,8 +71,7 @@ namespace NetBarMS.Views.SystemManage
             this.gridControl1.DataSource = this.mainDataTable;
             this.panel1.AutoSize = true;
             //this.MouseWheel += AreaFlowPanel_MouseWheel;     
-            //获取区域列表
-            GetAreaList();
+           
         }
         #endregion
 
@@ -568,5 +567,11 @@ namespace NetBarMS.Views.SystemManage
             }
         }
         #endregion
+
+        private void AreaManageView_Load(object sender, EventArgs e)
+        {
+            //获取区域列表
+            GetAreaList();
+        }
     }
 }

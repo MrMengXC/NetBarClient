@@ -41,7 +41,6 @@ namespace NetBarMS.Views.InCome
             end = date.ToString("yyyy-MM-dd") + " 23:59:59";
             this.dateNavigator1.EditValue = date;
             this.popupContainerEdit1.Text = date.ToString("yyyy/MM/dd");
-            GetDayIncomeDetail();
         }
         #endregion
 
@@ -190,6 +189,7 @@ namespace NetBarMS.Views.InCome
             ToolsManage.ShowForm(detail, false);
         }
 
+       
         //关闭选择菜单
         private void ComboBoxEdit1_Closed(object sender, DevExpress.XtraEditors.Controls.ClosedEventArgs e)
         {
@@ -201,6 +201,11 @@ namespace NetBarMS.Views.InCome
             GetDayIncomeDetail();
         }
         #endregion
+        private void DayInComeView_Load(object sender, EventArgs e)
+        {
+            GetDayIncomeDetail();
+
+        }
 
     }
 }

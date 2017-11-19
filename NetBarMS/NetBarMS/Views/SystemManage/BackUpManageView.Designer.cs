@@ -96,18 +96,18 @@
             // labelControl4
             // 
             this.labelControl4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.labelControl4.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(74)))));
-            this.labelControl4.Location = new System.Drawing.Point(3, 8);
+            this.labelControl4.Location = new System.Drawing.Point(3, 7);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(72, 14);
+            this.labelControl4.Size = new System.Drawing.Size(84, 17);
             this.labelControl4.TabIndex = 65;
             this.labelControl4.Text = "数据库名称：";
             // 
             // textEdit1
             // 
             this.textEdit1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textEdit1.Location = new System.Drawing.Point(81, 3);
+            this.textEdit1.Location = new System.Drawing.Point(93, 3);
             this.textEdit1.Name = "textEdit1";
             this.textEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.textEdit1.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
@@ -120,18 +120,18 @@
             // labelControl6
             // 
             this.labelControl6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.labelControl6.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(74)))));
-            this.labelControl6.Location = new System.Drawing.Point(179, 8);
+            this.labelControl6.Location = new System.Drawing.Point(196, 7);
             this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(24, 14);
+            this.labelControl6.Size = new System.Drawing.Size(28, 17);
             this.labelControl6.TabIndex = 71;
             this.labelControl6.Text = "分钟";
             // 
             // textEdit3
             // 
             this.textEdit3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textEdit3.Location = new System.Drawing.Point(148, 3);
+            this.textEdit3.Location = new System.Drawing.Point(165, 3);
             this.textEdit3.Name = "textEdit3";
             this.textEdit3.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.textEdit3.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
@@ -152,7 +152,7 @@
             this.checkButton2.Appearance.Options.UseFont = true;
             this.checkButton2.Appearance.Options.UseForeColor = true;
             this.checkButton2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.checkButton2.Location = new System.Drawing.Point(13, 147);
+            this.checkButton2.Location = new System.Drawing.Point(10, 131);
             this.checkButton2.Name = "checkButton2";
             this.checkButton2.Size = new System.Drawing.Size(130, 30);
             this.checkButton2.TabIndex = 73;
@@ -160,14 +160,14 @@
             // 
             // checkEdit2
             // 
-            this.checkEdit2.Location = new System.Drawing.Point(14, 100);
+            this.checkEdit2.Location = new System.Drawing.Point(13, 92);
             this.checkEdit2.Name = "checkEdit2";
-            this.checkEdit2.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.checkEdit2.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.checkEdit2.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(74)))));
             this.checkEdit2.Properties.Appearance.Options.UseFont = true;
             this.checkEdit2.Properties.Appearance.Options.UseForeColor = true;
             this.checkEdit2.Properties.Caption = "设定备份计划任务";
-            this.checkEdit2.Size = new System.Drawing.Size(147, 19);
+            this.checkEdit2.Size = new System.Drawing.Size(147, 21);
             this.checkEdit2.TabIndex = 74;
             // 
             // gridControl1
@@ -175,10 +175,10 @@
             this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridControl1.Location = new System.Drawing.Point(14, 135);
+            this.gridControl1.Location = new System.Drawing.Point(14, 121);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(762, 364);
+            this.gridControl1.Size = new System.Drawing.Size(780, 594);
             this.gridControl1.TabIndex = 83;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1,
@@ -205,7 +205,7 @@
             this.checkButton3.Appearance.Options.UseFont = true;
             this.checkButton3.Appearance.Options.UseForeColor = true;
             this.checkButton3.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.checkButton3.Location = new System.Drawing.Point(14, 515);
+            this.checkButton3.Location = new System.Drawing.Point(14, 723);
             this.checkButton3.Name = "checkButton3";
             this.checkButton3.Size = new System.Drawing.Size(130, 30);
             this.checkButton3.TabIndex = 84;
@@ -221,7 +221,7 @@
             this.checkButton4.Appearance.Options.UseFont = true;
             this.checkButton4.Appearance.Options.UseForeColor = true;
             this.checkButton4.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.checkButton4.Location = new System.Drawing.Point(385, 3);
+            this.checkButton4.Location = new System.Drawing.Point(419, 3);
             this.checkButton4.Name = "checkButton4";
             this.checkButton4.Size = new System.Drawing.Size(74, 25);
             this.checkButton4.TabIndex = 87;
@@ -231,7 +231,7 @@
             // textEdit4
             // 
             this.textEdit4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textEdit4.Location = new System.Drawing.Point(191, 3);
+            this.textEdit4.Location = new System.Drawing.Point(225, 3);
             this.textEdit4.Name = "textEdit4";
             this.textEdit4.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.textEdit4.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
@@ -244,20 +244,20 @@
             // checkEdit3
             // 
             this.checkEdit3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.checkEdit3.Location = new System.Drawing.Point(3, 6);
+            this.checkEdit3.Location = new System.Drawing.Point(3, 5);
             this.checkEdit3.Name = "checkEdit3";
-            this.checkEdit3.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.checkEdit3.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.checkEdit3.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(74)))));
             this.checkEdit3.Properties.Appearance.Options.UseFont = true;
             this.checkEdit3.Properties.Appearance.Options.UseForeColor = true;
             this.checkEdit3.Properties.Caption = "选择需恢复的数据库备份路径：";
-            this.checkEdit3.Size = new System.Drawing.Size(182, 19);
+            this.checkEdit3.Size = new System.Drawing.Size(216, 21);
             this.checkEdit3.TabIndex = 88;
             // 
             // comboBoxEdit1
             // 
             this.comboBoxEdit1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxEdit1.Location = new System.Drawing.Point(191, 3);
+            this.comboBoxEdit1.Location = new System.Drawing.Point(225, 3);
             this.comboBoxEdit1.Name = "comboBoxEdit1";
             this.comboBoxEdit1.Properties.AutoHeight = false;
             this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -274,7 +274,7 @@
             this.checkButton5.Appearance.Options.UseFont = true;
             this.checkButton5.Appearance.Options.UseForeColor = true;
             this.checkButton5.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.checkButton5.Location = new System.Drawing.Point(13, 151);
+            this.checkButton5.Location = new System.Drawing.Point(10, 135);
             this.checkButton5.Name = "checkButton5";
             this.checkButton5.Size = new System.Drawing.Size(130, 30);
             this.checkButton5.TabIndex = 91;
@@ -282,7 +282,8 @@
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel1.ColumnCount = 3;
@@ -292,13 +293,13 @@
             this.tableLayoutPanel1.Controls.Add(this.panel2, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.panel4, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 46);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(5, 45);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1610, 680);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1647, 894);
             this.tableLayoutPanel1.TabIndex = 93;
             // 
             // panel2
@@ -309,10 +310,10 @@
             this.panel2.Controls.Add(this.checkButton3);
             this.panel2.Controls.Add(this.checkEdit2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(823, 4);
+            this.panel2.Location = new System.Drawing.Point(842, 4);
             this.panel2.Name = "panel2";
             this.tableLayoutPanel1.SetRowSpan(this.panel2, 3);
-            this.panel2.Size = new System.Drawing.Size(783, 672);
+            this.panel2.Size = new System.Drawing.Size(801, 886);
             this.panel2.TabIndex = 1;
             // 
             // tableLayoutPanel6
@@ -325,35 +326,35 @@
             this.tableLayoutPanel6.Controls.Add(this.checkEdit5, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.textEdit3, 1, 0);
             this.tableLayoutPanel6.Controls.Add(this.labelControl6, 2, 0);
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(9, 53);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(10, 53);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(206, 31);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(227, 31);
             this.tableLayoutPanel6.TabIndex = 94;
             // 
             // checkEdit5
             // 
             this.checkEdit5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.checkEdit5.Location = new System.Drawing.Point(3, 6);
+            this.checkEdit5.Location = new System.Drawing.Point(3, 5);
             this.checkEdit5.Name = "checkEdit5";
-            this.checkEdit5.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.checkEdit5.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.checkEdit5.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(74)))));
             this.checkEdit5.Properties.Appearance.Options.UseFont = true;
             this.checkEdit5.Properties.Appearance.Options.UseForeColor = true;
             this.checkEdit5.Properties.Caption = "定时备份，间隔时间：";
-            this.checkEdit5.Size = new System.Drawing.Size(139, 19);
+            this.checkEdit5.Size = new System.Drawing.Size(156, 21);
             this.checkEdit5.TabIndex = 88;
             // 
             // label3
             // 
             this.label3.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label3.Font = new System.Drawing.Font("宋体", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.label3.Font = new System.Drawing.Font("宋体", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
             this.label3.Location = new System.Drawing.Point(0, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(783, 40);
+            this.label3.Size = new System.Drawing.Size(801, 40);
             this.label3.TabIndex = 85;
             this.label3.Text = "数据库计划";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -366,9 +367,9 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            this.panel1.Location = new System.Drawing.Point(4, 349);
+            this.panel1.Location = new System.Drawing.Point(4, 456);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(801, 327);
+            this.panel1.Size = new System.Drawing.Size(820, 434);
             this.panel1.TabIndex = 95;
             // 
             // tableLayoutPanel5
@@ -379,24 +380,24 @@
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel5.Controls.Add(this.checkEdit4, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.comboBoxEdit1, 1, 0);
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(13, 104);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(10, 96);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(382, 31);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(416, 31);
             this.tableLayoutPanel5.TabIndex = 93;
             // 
             // checkEdit4
             // 
             this.checkEdit4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.checkEdit4.Location = new System.Drawing.Point(3, 6);
+            this.checkEdit4.Location = new System.Drawing.Point(3, 5);
             this.checkEdit4.Name = "checkEdit4";
-            this.checkEdit4.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.checkEdit4.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.checkEdit4.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(74)))));
             this.checkEdit4.Properties.Appearance.Options.UseFont = true;
             this.checkEdit4.Properties.Appearance.Options.UseForeColor = true;
             this.checkEdit4.Properties.Caption = "选择需恢复的数据库备份时间：";
-            this.checkEdit4.Size = new System.Drawing.Size(182, 19);
+            this.checkEdit4.Size = new System.Drawing.Size(216, 21);
             this.checkEdit4.TabIndex = 88;
             // 
             // tableLayoutPanel4
@@ -409,11 +410,11 @@
             this.tableLayoutPanel4.Controls.Add(this.checkEdit3, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.textEdit4, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.checkButton4, 2, 0);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(13, 57);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(10, 57);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(462, 31);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(496, 31);
             this.tableLayoutPanel4.TabIndex = 92;
             // 
             // label2
@@ -424,7 +425,7 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(801, 40);
+            this.label2.Size = new System.Drawing.Size(820, 40);
             this.label2.TabIndex = 0;
             this.label2.Text = "数据库恢复";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -438,7 +439,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(4, 4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(801, 327);
+            this.panel4.Size = new System.Drawing.Size(820, 434);
             this.panel4.TabIndex = 94;
             // 
             // tableLayoutPanel7
@@ -451,28 +452,28 @@
             this.tableLayoutPanel7.Controls.Add(this.labelControl1, 0, 0);
             this.tableLayoutPanel7.Controls.Add(this.textEdit5, 1, 0);
             this.tableLayoutPanel7.Controls.Add(this.checkButton6, 2, 0);
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(13, 100);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(10, 92);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(400, 31);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(420, 31);
             this.tableLayoutPanel7.TabIndex = 93;
             // 
             // labelControl1
             // 
             this.labelControl1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.labelControl1.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(74)))));
-            this.labelControl1.Location = new System.Drawing.Point(3, 8);
+            this.labelControl1.Location = new System.Drawing.Point(3, 7);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(120, 14);
+            this.labelControl1.Size = new System.Drawing.Size(140, 17);
             this.labelControl1.TabIndex = 65;
             this.labelControl1.Text = "选择数据库备份路径：";
             // 
             // textEdit5
             // 
             this.textEdit5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textEdit5.Location = new System.Drawing.Point(129, 3);
+            this.textEdit5.Location = new System.Drawing.Point(149, 3);
             this.textEdit5.Name = "textEdit5";
             this.textEdit5.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.textEdit5.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
@@ -492,7 +493,7 @@
             this.checkButton6.Appearance.Options.UseFont = true;
             this.checkButton6.Appearance.Options.UseForeColor = true;
             this.checkButton6.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.checkButton6.Location = new System.Drawing.Point(323, 3);
+            this.checkButton6.Location = new System.Drawing.Point(343, 3);
             this.checkButton6.Name = "checkButton6";
             this.checkButton6.Size = new System.Drawing.Size(74, 25);
             this.checkButton6.TabIndex = 87;
@@ -506,11 +507,11 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel2.Controls.Add(this.labelControl4, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.textEdit1, 1, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(13, 53);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(10, 53);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(272, 31);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(284, 31);
             this.tableLayoutPanel2.TabIndex = 74;
             // 
             // label1
@@ -521,7 +522,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(801, 40);
+            this.label1.Size = new System.Drawing.Size(820, 40);
             this.label1.TabIndex = 0;
             this.label1.Text = "数据库备份";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;

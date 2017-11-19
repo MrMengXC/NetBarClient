@@ -30,10 +30,10 @@ namespace NetBarMS.Views.SystemSearch
         private void InitializeComponent()
         {
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraCharts.XYDiagram xyDiagram3 = new DevExpress.XtraCharts.XYDiagram();
-            DevExpress.XtraCharts.Series series3 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.StackedBarSeriesView stackedBarSeriesView3 = new DevExpress.XtraCharts.StackedBarSeriesView();
-            DevExpress.XtraCharts.ChartTitle chartTitle3 = new DevExpress.XtraCharts.ChartTitle();
+            DevExpress.XtraCharts.XYDiagram xyDiagram1 = new DevExpress.XtraCharts.XYDiagram();
+            DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.StackedBarSeriesView stackedBarSeriesView1 = new DevExpress.XtraCharts.StackedBarSeriesView();
+            DevExpress.XtraCharts.ChartTitle chartTitle1 = new DevExpress.XtraCharts.ChartTitle();
             this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
             this.popupContainerEdit1 = new DevExpress.XtraEditors.PopupContainerEdit();
             this.popupContainerControl1 = new DevExpress.XtraEditors.PopupContainerControl();
@@ -48,9 +48,9 @@ namespace NetBarMS.Views.SystemSearch
             ((System.ComponentModel.ISupportInitialize)(this.dateNavigator1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNavigator1.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(stackedBarSeriesView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(stackedBarSeriesView1)).BeginInit();
             this.SuspendLayout();
             // 
             // titlePanel
@@ -108,7 +108,7 @@ namespace NetBarMS.Views.SystemSearch
             this.popupContainerControl1.Controls.Add(this.dateNavigator1);
             this.popupContainerControl1.Location = new System.Drawing.Point(464, 106);
             this.popupContainerControl1.Name = "popupContainerControl1";
-            this.popupContainerControl1.Size = new System.Drawing.Size(279, 241);
+            this.popupContainerControl1.Size = new System.Drawing.Size(282, 241);
             this.popupContainerControl1.TabIndex = 64;
             // 
             // dateNavigator1
@@ -118,11 +118,12 @@ namespace NetBarMS.Views.SystemSearch
             this.dateNavigator1.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateNavigator1.DateTime = new System.DateTime(2017, 7, 17, 22, 56, 38, 864);
+            this.dateNavigator1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dateNavigator1.EditValue = new System.DateTime(2017, 7, 17, 22, 56, 38, 864);
             this.dateNavigator1.FirstDayOfWeek = System.DayOfWeek.Sunday;
-            this.dateNavigator1.Location = new System.Drawing.Point(3, 3);
+            this.dateNavigator1.Location = new System.Drawing.Point(0, 0);
             this.dateNavigator1.Name = "dateNavigator1";
-            this.dateNavigator1.Size = new System.Drawing.Size(273, 235);
+            this.dateNavigator1.Size = new System.Drawing.Size(282, 241);
             this.dateNavigator1.TabIndex = 1;
             // 
             // simpleButton1
@@ -145,30 +146,30 @@ namespace NetBarMS.Views.SystemSearch
             this.chartControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            xyDiagram3.AxisX.Color = System.Drawing.Color.Black;
-            xyDiagram3.AxisX.Tickmarks.MinorVisible = false;
-            xyDiagram3.AxisX.Tickmarks.Visible = false;
-            xyDiagram3.AxisX.VisibleInPanesSerializable = "-1";
-            xyDiagram3.AxisY.Alignment = DevExpress.XtraCharts.AxisAlignment.Far;
-            xyDiagram3.AxisY.Tickmarks.MinorVisible = false;
-            xyDiagram3.AxisY.Tickmarks.Visible = false;
-            xyDiagram3.AxisY.Visibility = DevExpress.Utils.DefaultBoolean.True;
-            xyDiagram3.AxisY.VisibleInPanesSerializable = "-1";
-            xyDiagram3.Rotated = true;
-            this.chartControl1.Diagram = xyDiagram3;
+            xyDiagram1.AxisX.Color = System.Drawing.Color.Black;
+            xyDiagram1.AxisX.Tickmarks.MinorVisible = false;
+            xyDiagram1.AxisX.Tickmarks.Visible = false;
+            xyDiagram1.AxisX.VisibleInPanesSerializable = "-1";
+            xyDiagram1.AxisY.Alignment = DevExpress.XtraCharts.AxisAlignment.Far;
+            xyDiagram1.AxisY.Tickmarks.MinorVisible = false;
+            xyDiagram1.AxisY.Tickmarks.Visible = false;
+            xyDiagram1.AxisY.Visibility = DevExpress.Utils.DefaultBoolean.True;
+            xyDiagram1.AxisY.VisibleInPanesSerializable = "-1";
+            xyDiagram1.Rotated = true;
+            this.chartControl1.Diagram = xyDiagram1;
             this.chartControl1.Legend.Visibility = DevExpress.Utils.DefaultBoolean.False;
             this.chartControl1.Location = new System.Drawing.Point(10, 46);
             this.chartControl1.Name = "chartControl1";
-            series3.Name = "Series 1";
-            stackedBarSeriesView3.BarWidth = 0.1D;
-            series3.View = stackedBarSeriesView3;
+            series1.Name = "Series 1";
+            stackedBarSeriesView1.BarWidth = 0.1D;
+            series1.View = stackedBarSeriesView1;
             this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series3};
+        series1};
             this.chartControl1.Size = new System.Drawing.Size(860, 505);
             this.chartControl1.TabIndex = 63;
-            chartTitle3.Text = "上座率";
+            chartTitle1.Text = "上座率";
             this.chartControl1.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
-            chartTitle3});
+            chartTitle1});
             // 
             // AttendanceSearchView
             // 
@@ -178,6 +179,7 @@ namespace NetBarMS.Views.SystemSearch
             this.Controls.Add(this.chartControl1);
             this.Name = "AttendanceSearchView";
             this.Size = new System.Drawing.Size(880, 562);
+            this.Load += new System.EventHandler(this.AttendanceSearchView_Load);
             this.Controls.SetChildIndex(this.titlePanel, 0);
             this.Controls.SetChildIndex(this.chartControl1, 0);
             this.Controls.SetChildIndex(this.popupContainerControl1, 0);
@@ -189,9 +191,9 @@ namespace NetBarMS.Views.SystemSearch
             this.popupContainerControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dateNavigator1.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNavigator1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(stackedBarSeriesView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(stackedBarSeriesView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).EndInit();
             this.ResumeLayout(false);
 

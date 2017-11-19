@@ -43,13 +43,10 @@ namespace NetBarMS.Views.SystemManage
             InitTextEdit(edits);
 
             //初始化GridControl
-            ToolsManage.SetGridView(this.gridView1, GridControlType.ClientManage,out this.mainDataTable, ColumnButtonClick,null);
+            ToolsManage.SetGridView(this.gridView1, GridControlType.ClientManage, out this.mainDataTable, ColumnButtonClick, null);
             this.gridControl1.DataSource = this.mainDataTable;
-
-            SystemManageNetOperation.ClientInfo(ClientInfoResult);
-            SystemManageNetOperation.ClientWecomeInfo(ClientWecomeInfoResult);
-
         }
+
         //刷新客户端基本设置UI
         private void RefreshClientUI()
         {
@@ -66,7 +63,7 @@ namespace NetBarMS.Views.SystemManage
         {
             this.mainDataTable.Clear();
 
-            foreach(StructDictItem item in this.wecomeitems)
+            foreach (StructDictItem item in this.wecomeitems)
             {
                 DataRow row = this.mainDataTable.NewRow();
                 this.mainDataTable.Rows.Add(row);
@@ -137,7 +134,7 @@ namespace NetBarMS.Views.SystemManage
             item.AddItem(item5);
 
             this.clientItem = item.Build();
-            SystemManageNetOperation.UpdateClient(UpdateClientResult,clientItem);
+            SystemManageNetOperation.UpdateClient(UpdateClientResult, clientItem);
 
         }
         //更新客户端基本设置结果回调
@@ -166,7 +163,7 @@ namespace NetBarMS.Views.SystemManage
         private void simpleButton2_Click(object sender, EventArgs e)
         {
             string wecome = this.textBox1.Text;
-            if(wecome.Equals(""))
+            if (wecome.Equals(""))
             {
                 return;
             }
@@ -208,11 +205,11 @@ namespace NetBarMS.Views.SystemManage
 
             String tag = (String)e.Button.Tag;
             String[] param = tag.Split('_');
-           
+
             //使用
             if (param[1].Equals("0"))
             {
-             
+
 
             }
             //删除
@@ -223,12 +220,12 @@ namespace NetBarMS.Views.SystemManage
                     item.Id.ToString(),
                 };
 
-                SystemManageNetOperation.DeleteClientWecome(DeletelientWecomeResult,ids);
+                SystemManageNetOperation.DeleteClientWecome(DeletelientWecomeResult, ids);
                 //
                 this.mainDataTable.Rows.RemoveAt(rowhandle);
                 wecomeitems.RemoveAt(rowhandle);
             }
-            
+
         }
         //删除客户端欢迎辞结果回调
         private void DeletelientWecomeResult(ResultModel result)
@@ -257,6 +254,17 @@ namespace NetBarMS.Views.SystemManage
         protected override void Control_Paint(object sender, PaintEventArgs e)
         {
             base.Control_Paint(sender, e);
+        }
+
+        private void gridControl1_Load(object sender, EventArgs e)
+        {
+            RequestData();
+        }
+
+        private void RequestData()
+        {
+            SystemManageNetOperation.ClientInfo(ClientInfoResult);
+            SystemManageNetOperation.ClientWecomeInfo(ClientWecomeInfoResult);
         }
     }
 }

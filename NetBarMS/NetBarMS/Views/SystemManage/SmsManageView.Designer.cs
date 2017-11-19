@@ -98,6 +98,7 @@
             // 
             this.label3.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label3.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
             this.label3.Location = new System.Drawing.Point(622, 0);
             this.label3.Margin = new System.Windows.Forms.Padding(0);
@@ -135,7 +136,7 @@
             // 
             this.addPushButton.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.False;
             this.addPushButton.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.addPushButton.Appearance.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.addPushButton.Appearance.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.addPushButton.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
             this.addPushButton.Appearance.Options.UseBackColor = true;
             this.addPushButton.Appearance.Options.UseFont = true;
@@ -170,9 +171,9 @@
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.Appearance.Options.UseForeColor = true;
             this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.simpleButton1.Location = new System.Drawing.Point(10, 715);
+            this.simpleButton1.Location = new System.Drawing.Point(10, 717);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(130, 30);
+            this.simpleButton1.Size = new System.Drawing.Size(80, 30);
             this.simpleButton1.TabIndex = 83;
             this.simpleButton1.Text = "保存";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
@@ -203,6 +204,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(0);
@@ -232,6 +234,7 @@
             this.Controls.Add(this.pushBgPanel);
             this.Name = "SmsManageView";
             this.Size = new System.Drawing.Size(1249, 774);
+            this.Load += new System.EventHandler(this.SmsManageView_Load);
             this.Controls.SetChildIndex(this.titlePanel, 0);
             this.Controls.SetChildIndex(this.pushBgPanel, 0);
             this.Controls.SetChildIndex(this.simpleButton1, 0);

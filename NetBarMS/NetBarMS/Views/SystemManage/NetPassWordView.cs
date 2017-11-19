@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using NetBarMS.Codes.Tools.NetOperation;
 using NetBarMS.Codes.Tools;
+using DevExpress.XtraEditors;
 
 namespace NetBarMS.Views.SystemManage
 {
@@ -26,7 +27,10 @@ namespace NetBarMS.Views.SystemManage
         //初始化UI
         private void InitUI()
         {
-            SystemManageNetOperation.GetPwSetting(GetPwSettingResult);
+            TextEdit[] edits = {
+                this.pwTextEdit
+            };
+            InitTextEdit(edits);
         }
         //设置界面
         private void SetSetting()
@@ -100,5 +104,10 @@ namespace NetBarMS.Views.SystemManage
 
         }
         #endregion
+
+        private void NetPassWordView_Load(object sender, EventArgs e)
+        {
+            SystemManageNetOperation.GetPwSetting(GetPwSettingResult);
+        }
     }
 }

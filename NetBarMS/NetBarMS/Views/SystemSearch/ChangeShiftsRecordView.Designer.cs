@@ -100,9 +100,9 @@
             // popupContainerControl1
             // 
             this.popupContainerControl1.Controls.Add(this.dateNavigator);
-            this.popupContainerControl1.Location = new System.Drawing.Point(394, 13);
+            this.popupContainerControl1.Location = new System.Drawing.Point(403, 3);
             this.popupContainerControl1.Name = "popupContainerControl1";
-            this.popupContainerControl1.Size = new System.Drawing.Size(290, 286);
+            this.popupContainerControl1.Size = new System.Drawing.Size(282, 241);
             this.popupContainerControl1.TabIndex = 7;
             // 
             // dateNavigator
@@ -112,11 +112,12 @@
             this.dateNavigator.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateNavigator.DateTime = new System.DateTime(2017, 7, 17, 23, 3, 19, 808);
+            this.dateNavigator.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dateNavigator.EditValue = new System.DateTime(2017, 7, 17, 23, 3, 19, 808);
-            this.dateNavigator.FirstDayOfWeek = System.DayOfWeek.Monday;
-            this.dateNavigator.Location = new System.Drawing.Point(3, 3);
+            this.dateNavigator.FirstDayOfWeek = System.DayOfWeek.Sunday;
+            this.dateNavigator.Location = new System.Drawing.Point(0, 0);
             this.dateNavigator.Name = "dateNavigator";
-            this.dateNavigator.Size = new System.Drawing.Size(283, 258);
+            this.dateNavigator.Size = new System.Drawing.Size(282, 241);
             this.dateNavigator.SyncSelectionWithEditValue = false;
             this.dateNavigator.TabIndex = 0;
             this.dateNavigator.UpdateDateTimeWhenNavigating = false;
@@ -132,22 +133,22 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.gridControl2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.gridControl1, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(10, 46);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(5, 45);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 713F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1115, 723);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 724F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1125, 724);
             this.tableLayoutPanel1.TabIndex = 83;
             // 
             // gridControl2
             // 
             this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl2.Location = new System.Drawing.Point(562, 0);
+            this.gridControl2.Location = new System.Drawing.Point(567, 0);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Margin = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(553, 723);
+            this.gridControl2.Size = new System.Drawing.Size(558, 724);
             this.gridControl2.TabIndex = 82;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2,
@@ -171,7 +172,7 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Margin = new System.Windows.Forms.Padding(0, 0, 5, 0);
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(552, 723);
+            this.gridControl1.Size = new System.Drawing.Size(557, 724);
             this.gridControl1.TabIndex = 81;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1,
@@ -205,6 +206,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "ChangeShiftsRecordView";
             this.Size = new System.Drawing.Size(1135, 805);
+            this.Load += new System.EventHandler(this.ChangeShiftsRecordView_Load);
             this.Controls.SetChildIndex(this.titlePanel, 0);
             this.Controls.SetChildIndex(this.tableLayoutPanel1, 0);
             this.Controls.SetChildIndex(this.pageView1, 0);

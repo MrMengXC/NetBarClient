@@ -98,7 +98,7 @@
             this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.simpleButton1.Location = new System.Drawing.Point(304, 304);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(80, 30);
+            this.simpleButton1.Size = new System.Drawing.Size(70, 30);
             this.simpleButton1.TabIndex = 78;
             this.simpleButton1.Text = "完成";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
@@ -115,7 +115,7 @@
             this.simpleButton2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.simpleButton2.Location = new System.Drawing.Point(415, 304);
             this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(80, 30);
+            this.simpleButton2.Size = new System.Drawing.Size(70, 30);
             this.simpleButton2.TabIndex = 79;
             this.simpleButton2.Text = "撤销";
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
@@ -163,7 +163,7 @@
             this.flowLayoutPanel1.Controls.Add(this.label3);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(14, 52);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(768, 17);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(768, 28);
             this.flowLayoutPanel1.TabIndex = 80;
             // 
             // PayedProductIndentDetailView

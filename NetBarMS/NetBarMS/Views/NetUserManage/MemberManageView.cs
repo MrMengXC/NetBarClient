@@ -86,7 +86,6 @@ namespace NetBarMS.Views.NetUserManage
             ToolsManage.SetGridView(this.gridView1, GridControlType.MemberManage, out this.mainDataTable,ColumnButtonClick,null);
             this.gridControl1.DataSource = this.mainDataTable;
 
-            GetMemberList();
 
         }
 
@@ -336,6 +335,11 @@ namespace NetBarMS.Views.NetUserManage
         #endregion
 
 
+
+        private void MemberManageView_Load(object sender, EventArgs e)
+        {
+            GetMemberList();
+        }
 
         private Region GetRoundedRectPath(Rectangle rect, int radius)
         {

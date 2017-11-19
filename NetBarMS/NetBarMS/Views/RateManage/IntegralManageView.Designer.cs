@@ -122,7 +122,7 @@ namespace NetBarMS.Views.RateManage
             this.defaultButton.Appearance.Options.UseFont = true;
             this.defaultButton.Appearance.Options.UseForeColor = true;
             this.defaultButton.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.defaultButton.Location = new System.Drawing.Point(3, 215);
+            this.defaultButton.Location = new System.Drawing.Point(3, 207);
             this.defaultButton.Name = "defaultButton";
             this.defaultButton.Size = new System.Drawing.Size(130, 30);
             this.defaultButton.TabIndex = 96;
@@ -138,7 +138,7 @@ namespace NetBarMS.Views.RateManage
             this.activeButton.Appearance.Options.UseFont = true;
             this.activeButton.Appearance.Options.UseForeColor = true;
             this.activeButton.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.activeButton.Location = new System.Drawing.Point(3, 100);
+            this.activeButton.Location = new System.Drawing.Point(3, 96);
             this.activeButton.Name = "activeButton";
             this.activeButton.Size = new System.Drawing.Size(130, 30);
             this.activeButton.TabIndex = 97;
@@ -149,7 +149,7 @@ namespace NetBarMS.Views.RateManage
             // 
             this.startComboBoxEdit.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.startComboBoxEdit.EditValue = null;
-            this.startComboBoxEdit.Location = new System.Drawing.Point(106, 3);
+            this.startComboBoxEdit.Location = new System.Drawing.Point(100, 3);
             this.startComboBoxEdit.Name = "startComboBoxEdit";
             this.startComboBoxEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.startComboBoxEdit.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
@@ -175,7 +175,7 @@ namespace NetBarMS.Views.RateManage
             // 
             this.endComboBoxEdit.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.endComboBoxEdit.EditValue = null;
-            this.endComboBoxEdit.Location = new System.Drawing.Point(290, 3);
+            this.endComboBoxEdit.Location = new System.Drawing.Point(283, 3);
             this.endComboBoxEdit.Name = "endComboBoxEdit";
             this.endComboBoxEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.endComboBoxEdit.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
@@ -264,13 +264,13 @@ namespace NetBarMS.Views.RateManage
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(296, 31);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(283, 31);
             this.tableLayoutPanel7.TabIndex = 118;
             // 
             // dRechargeText
             // 
             this.dRechargeText.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dRechargeText.Location = new System.Drawing.Point(121, 3);
+            this.dRechargeText.Location = new System.Drawing.Point(114, 3);
             this.dRechargeText.Name = "dRechargeText";
             this.dRechargeText.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.dRechargeText.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
@@ -290,9 +290,10 @@ namespace NetBarMS.Views.RateManage
             // 
             this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
             this.label13.Location = new System.Drawing.Point(3, 8);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(112, 15);
+            this.label13.Size = new System.Drawing.Size(105, 14);
             this.label13.TabIndex = 0;
             this.label13.Text = "会员用户每充值";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -301,9 +302,10 @@ namespace NetBarMS.Views.RateManage
             // 
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(241, 8);
+            this.label12.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.label12.Location = new System.Drawing.Point(231, 8);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(52, 15);
+            this.label12.Size = new System.Drawing.Size(49, 14);
             this.label12.TabIndex = 6;
             this.label12.Text = "积分。";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -312,9 +314,10 @@ namespace NetBarMS.Views.RateManage
             // 
             this.label14.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(152, 8);
+            this.label14.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.label14.Location = new System.Drawing.Point(145, 8);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(52, 15);
+            this.label14.Size = new System.Drawing.Size(49, 14);
             this.label14.TabIndex = 5;
             this.label14.Text = "元赠送";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -322,7 +325,7 @@ namespace NetBarMS.Views.RateManage
             // dRechargeItText
             // 
             this.dRechargeItText.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dRechargeItText.Location = new System.Drawing.Point(210, 3);
+            this.dRechargeItText.Location = new System.Drawing.Point(200, 3);
             this.dRechargeItText.Name = "dRechargeItText";
             this.dRechargeItText.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.dRechargeItText.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
@@ -349,16 +352,17 @@ namespace NetBarMS.Views.RateManage
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 1;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(327, 31);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(309, 31);
             this.tableLayoutPanel8.TabIndex = 119;
             // 
             // label18
             // 
             this.label18.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
             this.label18.Location = new System.Drawing.Point(3, 8);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(232, 15);
+            this.label18.Size = new System.Drawing.Size(217, 14);
             this.label18.TabIndex = 0;
             this.label18.Text = "会员用户每次对员工进行评价赠送";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -367,9 +371,10 @@ namespace NetBarMS.Views.RateManage
             // 
             this.label19.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(272, 8);
+            this.label19.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.label19.Location = new System.Drawing.Point(257, 8);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(52, 15);
+            this.label19.Size = new System.Drawing.Size(49, 14);
             this.label19.TabIndex = 7;
             this.label19.Text = "积分。";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -377,7 +382,7 @@ namespace NetBarMS.Views.RateManage
             // staffPjItText
             // 
             this.staffPjItText.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.staffPjItText.Location = new System.Drawing.Point(241, 3);
+            this.staffPjItText.Location = new System.Drawing.Point(226, 3);
             this.staffPjItText.Name = "staffPjItText";
             this.staffPjItText.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.staffPjItText.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
@@ -404,13 +409,13 @@ namespace NetBarMS.Views.RateManage
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 1;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(327, 31);
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(309, 31);
             this.tableLayoutPanel9.TabIndex = 120;
             // 
             // netBarPjItText
             // 
             this.netBarPjItText.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.netBarPjItText.Location = new System.Drawing.Point(241, 3);
+            this.netBarPjItText.Location = new System.Drawing.Point(226, 3);
             this.netBarPjItText.Name = "netBarPjItText";
             this.netBarPjItText.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.netBarPjItText.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
@@ -427,9 +432,10 @@ namespace NetBarMS.Views.RateManage
             // 
             this.label20.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
             this.label20.Location = new System.Drawing.Point(3, 8);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(232, 15);
+            this.label20.Size = new System.Drawing.Size(217, 14);
             this.label20.TabIndex = 0;
             this.label20.Text = "会员用户每次对网吧进行评价赠送";
             this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -438,9 +444,10 @@ namespace NetBarMS.Views.RateManage
             // 
             this.label21.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(272, 8);
+            this.label21.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.label21.Location = new System.Drawing.Point(257, 8);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(52, 15);
+            this.label21.Size = new System.Drawing.Size(49, 14);
             this.label21.TabIndex = 7;
             this.label21.Text = "积分。";
             this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -459,13 +466,13 @@ namespace NetBarMS.Views.RateManage
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
             this.tableLayoutPanel10.RowCount = 1;
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(252, 31);
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(239, 31);
             this.tableLayoutPanel10.TabIndex = 121;
             // 
             // logItText
             // 
             this.logItText.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.logItText.Location = new System.Drawing.Point(166, 3);
+            this.logItText.Location = new System.Drawing.Point(156, 3);
             this.logItText.Name = "logItText";
             this.logItText.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.logItText.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
@@ -482,9 +489,10 @@ namespace NetBarMS.Views.RateManage
             // 
             this.label22.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
             this.label22.Location = new System.Drawing.Point(3, 8);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(157, 15);
+            this.label22.Size = new System.Drawing.Size(147, 14);
             this.label22.TabIndex = 0;
             this.label22.Text = "会员用户每次留言赠送";
             this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -493,9 +501,10 @@ namespace NetBarMS.Views.RateManage
             // 
             this.label25.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(197, 8);
+            this.label25.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.label25.Location = new System.Drawing.Point(187, 8);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(52, 15);
+            this.label25.Size = new System.Drawing.Size(49, 14);
             this.label25.TabIndex = 7;
             this.label25.Text = "积分。";
             this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -514,13 +523,13 @@ namespace NetBarMS.Views.RateManage
             this.tableLayoutPanel11.Name = "tableLayoutPanel11";
             this.tableLayoutPanel11.RowCount = 1;
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel11.Size = new System.Drawing.Size(252, 31);
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(239, 31);
             this.tableLayoutPanel11.TabIndex = 122;
             // 
             // bingingItText
             // 
             this.bingingItText.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bingingItText.Location = new System.Drawing.Point(166, 3);
+            this.bingingItText.Location = new System.Drawing.Point(156, 3);
             this.bingingItText.Name = "bingingItText";
             this.bingingItText.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.bingingItText.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
@@ -537,9 +546,10 @@ namespace NetBarMS.Views.RateManage
             // 
             this.label26.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
             this.label26.Location = new System.Drawing.Point(3, 8);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(157, 15);
+            this.label26.Size = new System.Drawing.Size(147, 14);
             this.label26.TabIndex = 0;
             this.label26.Text = "会员用户绑定手机赠送";
             this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -548,9 +558,10 @@ namespace NetBarMS.Views.RateManage
             // 
             this.label27.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(197, 8);
+            this.label27.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.label27.Location = new System.Drawing.Point(187, 8);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(52, 15);
+            this.label27.Size = new System.Drawing.Size(49, 14);
             this.label27.TabIndex = 7;
             this.label27.Text = "积分。";
             this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -559,7 +570,7 @@ namespace NetBarMS.Views.RateManage
             // 
             this.label2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Font = new System.Drawing.Font("宋体", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.label2.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
             this.label2.Location = new System.Drawing.Point(1, 1);
             this.label2.Margin = new System.Windows.Forms.Padding(0);
             this.label2.Name = "label2";
@@ -606,7 +617,7 @@ namespace NetBarMS.Views.RateManage
             this.flowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel3.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
             this.flowLayoutPanel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(74)))));
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 10);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 14);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.Size = new System.Drawing.Size(602, 74);
             this.flowLayoutPanel3.TabIndex = 0;
@@ -630,13 +641,13 @@ namespace NetBarMS.Views.RateManage
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(296, 31);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(283, 31);
             this.tableLayoutPanel1.TabIndex = 119;
             // 
             // aRechargeText
             // 
             this.aRechargeText.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.aRechargeText.Location = new System.Drawing.Point(121, 3);
+            this.aRechargeText.Location = new System.Drawing.Point(114, 3);
             this.aRechargeText.Name = "aRechargeText";
             this.aRechargeText.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.aRechargeText.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
@@ -653,9 +664,10 @@ namespace NetBarMS.Views.RateManage
             // 
             this.label17.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(152, 8);
+            this.label17.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.label17.Location = new System.Drawing.Point(145, 8);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(52, 15);
+            this.label17.Size = new System.Drawing.Size(49, 14);
             this.label17.TabIndex = 5;
             this.label17.Text = "元赠送";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -664,9 +676,10 @@ namespace NetBarMS.Views.RateManage
             // 
             this.label16.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
             this.label16.Location = new System.Drawing.Point(3, 8);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(112, 15);
+            this.label16.Size = new System.Drawing.Size(105, 14);
             this.label16.TabIndex = 0;
             this.label16.Text = "会员用户每充值";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -674,7 +687,7 @@ namespace NetBarMS.Views.RateManage
             // aRechargItText
             // 
             this.aRechargItText.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.aRechargItText.Location = new System.Drawing.Point(210, 3);
+            this.aRechargItText.Location = new System.Drawing.Point(200, 3);
             this.aRechargItText.Name = "aRechargItText";
             this.aRechargItText.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.aRechargItText.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(123)))), ((int)(((byte)(190)))));
@@ -691,9 +704,10 @@ namespace NetBarMS.Views.RateManage
             // 
             this.label15.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(241, 8);
+            this.label15.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.label15.Location = new System.Drawing.Point(231, 8);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(52, 15);
+            this.label15.Size = new System.Drawing.Size(49, 14);
             this.label15.TabIndex = 6;
             this.label15.Text = "积分。";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -714,16 +728,17 @@ namespace NetBarMS.Views.RateManage
             this.tableLayoutPanel13.Name = "tableLayoutPanel13";
             this.tableLayoutPanel13.RowCount = 1;
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel13.Size = new System.Drawing.Size(443, 31);
+            this.tableLayoutPanel13.Size = new System.Drawing.Size(436, 31);
             this.tableLayoutPanel13.TabIndex = 120;
             // 
             // label23
             // 
             this.label23.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
             this.label23.Location = new System.Drawing.Point(3, 8);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(97, 15);
+            this.label23.Size = new System.Drawing.Size(91, 14);
             this.label23.TabIndex = 0;
             this.label23.Text = "活动有效期：";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -732,9 +747,10 @@ namespace NetBarMS.Views.RateManage
             // 
             this.label24.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(262, 8);
+            this.label24.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.label24.Location = new System.Drawing.Point(256, 8);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(22, 15);
+            this.label24.Size = new System.Drawing.Size(21, 14);
             this.label24.TabIndex = 7;
             this.label24.Text = "至";
             this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -743,7 +759,7 @@ namespace NetBarMS.Views.RateManage
             // 
             this.label1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("宋体", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
+            this.label1.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(134)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
             this.label1.Location = new System.Drawing.Point(1, 1);
             this.label1.Margin = new System.Windows.Forms.Padding(0);
@@ -777,6 +793,7 @@ namespace NetBarMS.Views.RateManage
             this.Controls.Add(this.tableLayoutPanel2);
             this.Name = "IntegralManageView";
             this.Size = new System.Drawing.Size(1240, 612);
+            this.Load += new System.EventHandler(this.IntegralManageView_Load);
             this.Controls.SetChildIndex(this.titlePanel, 0);
             this.Controls.SetChildIndex(this.tableLayoutPanel2, 0);
             this.titlePanel.ResumeLayout(false);

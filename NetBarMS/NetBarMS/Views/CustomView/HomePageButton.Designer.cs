@@ -36,8 +36,9 @@
             // 
             // simpleButton1
             // 
+            this.simpleButton1.AllowFocus = false;
             this.simpleButton1.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.simpleButton1.Appearance.ForeColor = System.Drawing.Color.White;
             this.simpleButton1.Appearance.Options.UseBackColor = true;
             this.simpleButton1.Appearance.Options.UseFont = true;
@@ -51,7 +52,7 @@
             this.simpleButton1.Location = new System.Drawing.Point(0, 0);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(150, 150);
-            this.simpleButton1.TabIndex = 0;
+            this.simpleButton1.TabIndex = 10;
             this.simpleButton1.Text = "simpleButton1";
             // 
             // numLabel
@@ -82,6 +83,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.bgPanel);
             this.Name = "HomePageButton";
             this.bgPanel.ResumeLayout(false);
